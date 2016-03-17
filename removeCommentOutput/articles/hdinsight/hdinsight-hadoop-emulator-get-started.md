@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Get started with a Hadoop emulator for HDInsight | Windows Azure"
+	pageTitle="Get started with a Hadoop emulator for HDInsight | Azure"
 	description="Use an installed emulator with a MapReduce tutorial and other samples to learn the Hadoop ecosystem. HDInsight emulator works like a Hadoop sandbox."
 	keywords="emulator,hadoop ecosystem,hadoop sandbox,mapreduce tutorial"
 	editor="cgronlun"
@@ -511,25 +511,24 @@ In this MapReduce tutorial, you installed the HDInsight Emulator - a Hadoop sand
 
 
 [azure-sdk]: /downloads/
-[azure-create-storage-account]: ../storage-create-storage-account.md
+[azure-create-storage-account]: /documentation/articles/storage-create-storage-account
 [azure-management-portal]: https://manage.windowsazure.cn/
 [netstat-url]: http://technet.microsoft.com/zh-cn/library/ff961504.aspx
 
-[hdinsight-develop-mapreduce]: hdinsight-develop-deploy-java-mapreduce.md
+[hdinsight-develop-mapreduce]: /documentation/articles/hdinsight-develop-deploy-java-mapreduce
 
 [hdinsight-emulator-install]: http://www.microsoft.com/web/gallery/install.aspx?appid=HDINSIGHT
-[hdinsight-emulator-release-notes]: hdinsight-emulator-release-notes.md
+[hdinsight-emulator-release-notes]: /documentation/articles/hdinsight-emulator-release-notes
 
-[hdinsight-storage]: ../hdinsight-use-blob-storage.md
-[hdinsight-submit-jobs]: hdinsight-submit-hadoop-jobs-programmatically.md
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
+[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
 [hdinsight-powershell-reference]: https://msdn.microsoft.com/zh-cn/library/dn858087.aspx
-[hdinsight-get-started]: ../hdinsight-get-started.md
-[hdinsight-develop-deploy-streaming]: hdinsight-hadoop-develop-deploy-streaming-jobs.md
-[hdinsight-versions]: hdinsight-component-versioning-v1.md
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
+[hdinsight-develop-deploy-streaming]: /documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs
+[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning-v1
 
-[Powershell-install-configure]: ../install-configure-powershell.md
+[Powershell-install-configure]: /documentation/articles/powershell-install-configure
 
 [hadoop-commands-manual]: http://hadoop.apache.org/docs/r1.1.1/commands_manual.html
 
 [image-hdi-emulator-services]: ./media/hdinsight-hadoop-emulator-get-started/HDI.Emulator.Services.png
- 

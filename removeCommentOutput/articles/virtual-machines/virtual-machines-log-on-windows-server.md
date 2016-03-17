@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Log on to a VM | Windows Azure"
+	pageTitle="Log on to a VM | Azure"
 	description="Use the Azure Management Portal to log on to a Windows virtual machine created with the classic deployment model."
 	services="virtual-machines"
 	documentationCenter=""

@@ -1,7 +1,7 @@
 <!-- not suitable for Mooncake -->
 
 <properties
-    pageTitle="Script Action Development with Linux-based HDInsight | Windows Azure"
+    pageTitle="Script Action Development with Linux-based HDInsight | Azure"
     description="Learn how to customize Linux-based HDInsight clusters with Script Action."
     services="hdinsight"
     documentationCenter=""

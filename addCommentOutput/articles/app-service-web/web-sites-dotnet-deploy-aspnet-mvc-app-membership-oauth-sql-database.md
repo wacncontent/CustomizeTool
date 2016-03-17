@@ -33,13 +33,13 @@ You'll learn:
 
 >[AZURE.NOTE] This is a long tutorial. If you want a quick introduction to Azure and Visual Studio web projects, see [Create an ASP.NET web app in Azure](/documentation/articles/web-sites-dotnet-get-started). For troubleshooting info, see the [Troubleshooting](#troubleshooting) section.
 >
-<!-- deleted by customization
+
 >Or if you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.
--->
+
 
 ## Prerequisites
 
-To complete this tutorial, you need a Windows Azure account. If you don't have an account, you can <!-- deleted by customization [activate your Visual Studio subscriber benefits](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F) or --> [sign up for a trial](/pricing/1rmb-trial/?WT.mc_id=A261C142F).
+To complete this tutorial, you need a Azure account. If you don't have an account, you can  [activate your Visual Studio subscriber benefits](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F) or  [sign up for a trial](/pricing/1rmb-trial/?WT.mc_id=A261C142F).
 
 To set up your development environment, you must install [Visual Studio 2013 Update 5](http://go.microsoft.com/fwlink/?LinkId=390521) or higher, and the latest version of the [Azure SDK for .NET](http://go.microsoft.com/fwlink/?linkid=324322&clcid=0x409). This article was written for Visual Studio Update 4 and SDK 2.8.1. The same instructions work for Visual Studio 2015 with the latest [Azure SDK for .NET](http://go.microsoft.com/fwlink/?linkid=518003&clcid=0x409) installed, but some screens will look different from the illustrations.
 
@@ -59,19 +59,19 @@ To set up your development environment, you must install [Visual Studio 2013 Upd
  
 	**Note:** Make sure you enter "ContactManager". Code blocks that you'll be copying later assume that the project name is ContactManager. 
 
-<!-- deleted by customization
+
 1. In the **New ASP.NET Project** dialog box, select the **MVC** template. Verify **Authentication** is set to **Individual User Accounts**, **Host in the cloud** is checked, and **App Services** is selected.
 
 	![New ASP.NET Project dialog box](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/newproject.png)
--->
-<!-- keep by customization: begin -->
+
+
 1. In the **New ASP.NET Project** dialog box, select the **MVC** template. Make sure **Host in the cloud** is unchecked.
-<!-- keep by customization: end -->
+
 
 1. Click **OK**.
 
-<!-- deleted by customization
-3. When the **Configure Windows Azure Web App Settings** dialog appears, make sure that you are signed in to Azure:  sign in if you have not already done so, or reenter your credentials if your login is expired.
+
+3. When the **Configure Azure Web App Settings** dialog appears, make sure that you are signed in to Azure:  sign in if you have not already done so, or reenter your credentials if your login is expired.
 
 	![Reenter credentials](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/reentercredentials.png)
 
@@ -106,10 +106,10 @@ To set up your development environment, you must install [Visual Studio 2013 Upd
 4. Click **OK**.
 
 	Visual Studio creates the ContactManager web project, creates the resource group and App Service plan that you specified, and creates a web app in Azure with the name you specified.
--->
-<!-- keep by customization: begin -->
+
+
 If you haven't create a Web App yet, go to [Azure Management Portal](https://manage.windowsazure.cn) to create on. And in **Dashboard** page of your web app, under **quick glance**, download the "publish profile".
-<!-- keep by customization: end -->
+
 
 ### Set the page header and footer
 
@@ -176,12 +176,12 @@ If you haven't create a Web App yet, go to [Azure Management Portal](https://man
 
 This is all you need to do for now to create the application that you'll deploy to Azure. 
 
-<!-- deleted by customization
+
 ## Deploy the application to Azure
--->
-<!-- keep by customization: begin -->
+
+
 ##<a name="bkmk_deploytowindowsazure1"></a> Deploy the application to Azure
-<!-- keep by customization: end -->
+
 
 1. In Visual Studio, right-click the project in **Solution Explorer** and select **Publish** from the context menu.
 
@@ -189,10 +189,10 @@ This is all you need to do for now to create the application that you'll deploy 
 	
 	The **Publish Web** wizard opens.
 
-<!-- keep by customization: begin -->
+
 2. Click **Import**, and choose the previously downloaded "publish profile".
 
-<!-- keep by customization: end -->
+
 1. In the **Publish Web** dialog box, click **Publish**.
 
 	![Publish](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/rr3.png)
@@ -245,12 +245,12 @@ This is all you need to do for now to create the application that you'll deploy 
 
 	 ![FireFox Cert Warning](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/ss30.PNG)
 
-<!-- deleted by customization
+
 ## Add a database to the application
--->
-<!-- keep by customization: begin -->
+
+
 ##<a name="bkmk_addadatabase"></a> Add a database to the application
-<!-- keep by customization: end -->
+
 
 Next, you'll update the app to add the ability to display and update contacts and store the data in a database. The app will use the Entity Framework (EF) to create the database and to read and update data.
 
@@ -410,14 +410,14 @@ The next task is to enable the [Code First Migrations](http://msdn.microsoft.com
 
 	![MVC view of data][rx2]
 
-<!-- deleted by customization
+
 ## Add an OAuth2 Provider
 
 >[AZURE.NOTE] For detailed instructions on how to use the Google and Facebook developer portal sites, this tutorial links to tutorials on the ASP.NET site. However, Google and Facebook change their sites more frequently than those tutorials are updated, and they are now out of date. If you have trouble following the directions, see the featured Disqus comment at the end of this tutorial for a list of what has changed. 
--->
-<!-- keep by customization: begin -->
+
+
 ##<a name="addOauth"></a> Add an OAuth2 Provider
-<!-- keep by customization: end -->
+
 
 [OAuth](http://oauth.net/ "http://oauth.net/") is an open protocol that allows secure authorization in a simple and standard method from web, mobile, and desktop applications. The ASP.NET MVC internet template uses OAuth to expose Facebook, Twitter, Google and Microsoft as authentication providers. Although this tutorial uses only Google as the authentication provider, you can easily modify the code to use any of these providers. The steps to implement other providers are very similar to the steps you see in this tutorial. To use Facebook as an authentication provider, see [MVC 5 App with Facebook, Twitter, LinkedIn and Google OAuth2 Sign-on ](http://www.asp.net/mvc/tutorials/mvc-5/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on).
 
@@ -429,12 +429,12 @@ In addition to authentication, this tutorial uses roles to implement authorizati
 
 2. If you want to create social login buttons with provider-specific icons, see [Pretty social login buttons for ASP.NET MVC 5](http://www.jerriepelser.com/blog/pretty-social-login-buttons-for-asp-net-mvc-5)
 
-<!-- deleted by customization
+
 ## Using the Membership API
--->
-<!-- keep by customization: begin -->
+
+
 ##<a name="mbrDB"></a> Using the Membership API
-<!-- keep by customization: end -->
+
 
 In this section you will add a local user and the *canEdit* role to the membership database. Only those users in the *canEdit* role will be able to edit data. A best practice is to name roles by the actions they can perform, so *canEdit* is preferred over a role called *admin*. When your application evolves, you can add new roles such as *canDeleteMembers* rather than the less descriptive *superAdmin*.
 
@@ -535,7 +535,7 @@ In the **Package Manager Console** hit the up arrow key to bring up the followin
 
 The **Update-Database** command runs the **Seed** method, and that runs the **AddUserAndRole** method you added earlier. The **AddUserAndRole** method creates the user *user1@contoso.com* and adds her to the *canEdit* role.
 
-<!-- deleted by customization ## --><!-- keep by customization: begin --> ##<a id="protect-the-application-with-ssl-and-the-authorize-attribute"></a> <!-- keep by customization: end --> Protect the Application with SSL and the Authorize Attribute ##
+ ##  ##<a id="protect-the-application-with-ssl-and-the-authorize-attribute"></a>  Protect the Application with SSL and the Authorize Attribute ##
 
 In this section you apply the [Authorize](http://msdn.microsoft.com/zh-cn/library/system.web.mvc.authorizeattribute.aspx) attribute to restrict access to the action methods. Anonymous users will be able to view only the **Index** action method of the home controller. Registered users will be able to see contact data (The **Index** and **Details** pages of the Cm controller), the About page, and the Contact page. Only users in the *canEdit* role will be able to access action methods that change data.
 
@@ -626,12 +626,12 @@ In this section you apply the [Authorize](http://msdn.microsoft.com/zh-cn/librar
 
 1. Verify you can make data changes.
 
-<!-- deleted by customization
+
 ## Deploy the app to Azure
--->
-<!-- keep by customization: begin -->
+
+
 ##<a name="bkmk_deploytowindowsazure11"></a> Deploy the app to Azure
-<!-- keep by customization: end -->
+
 
 1. In Visual Studio, right-click the project in **Solution Explorer** and select **Publish** from the context menu.
 
@@ -661,20 +661,20 @@ In this section you apply the [Authorize](http://msdn.microsoft.com/zh-cn/librar
 
 ### Stop the web app to prevent other people from registering  
 
-1. In **Server Explorer**, navigate to **Azure > Azure <!-- keep by customization: begin --> Web App <!-- keep by customization: end --> > {your resource group} > {your web app}**.
+1. In **Server Explorer**, navigate to **Azure > Azure  Web App  > {your resource group} > {your web app}**.
 
 4. Right-click the web app and select **Stop**. 
 
-<!-- deleted by customization
+
 	Alternatively, from the [Azure Management Portal](https://manage.windowsazure.cn/), you can go to the web app's blade, then click the **Stop** icon at the top of the blade.
 
 	![stop web app portal](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/stopweb.png)
--->
-<!-- keep by customization: begin -->
+
+
 	Alternatively, from the [Azure Management Portal](https://manage.windowsazure.cn), you can go to the web site's blade, then click the **Stop** icon at the bottom of the page.
 
 	![stop web site portal](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/stopweb.png)
-<!-- keep by customization: end -->
+
 
 ### Remove AddToRoleAsync, Publish, and Test
 
@@ -774,17 +774,17 @@ You've created a basic ASP.NET MVC web application that authenticates users. For
 
 For a  more advanced tutorial about how to use the Entity Framework, see [Getting Started with EF and MVC](http://www.asp.net/mvc/tutorials/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application).
 
-<!-- deleted by customization
+
 This tutorial was written by [Rick Anderson](http://blogs.msdn.com/b/rickandy/) (Twitter [@RickAndMSFT](https://twitter.com/RickAndMSFT)) with assistance from Tom Dykstra and Barry Dorrans (Twitter [@blowdart](https://twitter.com/blowdart)). 
 
--->
+
 ***Please leave feedback*** on what you liked or what you would like to see improved, not only about the tutorial itself but also about the products that it demonstrates. Your feedback will help us prioritize improvements. You can also request and vote on new topics at [Show Me How With Code](http://aspnet.uservoice.com/forums/228522-show-me-how-with-code).
-<!-- deleted by customization
+
 
 ## What's changed
 
 * For a guide to the change from Websites to Azure see: [Azure and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
--->
+
 
 <!-- bookmarks -->
 [Add an OAuth Provider]: #addOauth

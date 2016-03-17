@@ -1,5 +1,7 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
-	pageTitle="Use Apache Spark to build machine learning applications on HDInsight | Windows Azure" 
+	pageTitle="Use Apache Spark to build machine learning applications on HDInsight | Azure" 
 	description="Step-by-step instructions on how to use notebooks with Apache Spark to build machine learning applications" 
 	services="hdinsight" 
 	documentationCenter="" 
@@ -10,7 +12,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="12/22/2015"
+	ms.date="02/05/2016"
 	wacn.date=""/>
 
 
@@ -242,7 +244,9 @@ Apache Spark clusters on HDInsight include Anaconda libraries. This also include
 
 * [Run jobs remotely on a Spark cluster using Livy](/documentation/articles/hdinsight-apache-spark-livy-rest-interface)
 
-### Extensions
+### Tools and extensions
+
+* [Use HDInsight Tools Plugin for IntelliJ IDEA to create and submit Spark Scala applicatons](/documentation/articles/hdinsight-apache-spark-intellij-tool-plugin)
 
 * [Use Zeppelin notebooks with a Spark cluster on HDInsight](/documentation/articles/hdinsight-apache-spark-use-zeppelin-notebook)
 
@@ -253,18 +257,6 @@ Apache Spark clusters on HDInsight include Anaconda libraries. This also include
 * [Manage resources for the Apache Spark cluster in Azure HDInsight](/documentation/articles/hdinsight-apache-spark-resource-manager)
 
 
-<!-- deleted by customization
-[hdinsight-versions]: ../hdinsight-component-versioning-v1/
-
-[hdinsight-upload-data]: ../hdinsight-upload-data/
-
-[hdinsight-storage]: ../hdinsight-use-blob-storage/
-
-
-[hdinsight-weblogs-sample]: ../hdinsight-hive-analyze-website-log/
-[hdinsight-sensor-data-sample]: ../hdinsight-hive-analyze-sensor-data/
--->
-<!-- keep by customization: begin -->
 [hdinsight-versions]: /documentation/articles/hdinsight-component-versioning-v1
 
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
@@ -274,15 +266,9 @@ Apache Spark clusters on HDInsight include Anaconda libraries. This also include
 
 [hdinsight-weblogs-sample]: /documentation/articles/hdinsight-hive-analyze-website-log
 [hdinsight-sensor-data-sample]: /documentation/articles/hdinsight-hive-analyze-sensor-data
-<!-- keep by customization: end -->
 
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: /pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
 [azure-management-portal]: https://manage.windowsazure.cn/
-<!-- deleted by customization
-[azure-create-storageaccount]: ../storage-create-storage-account/
--->
-<!-- keep by customization: begin -->
 [azure-create-storageaccount]: /documentation/articles/storage-create-storage-account
-<!-- keep by customization: end -->

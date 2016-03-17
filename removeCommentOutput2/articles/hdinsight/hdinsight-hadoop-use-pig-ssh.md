@@ -1,7 +1,7 @@
 <!-- not suitable for Mooncake -->
 
 <properties
-   pageTitle="Use Hadoop Pig with SSH on an HDInsight cluster | Windows Azure"
+   pageTitle="Use Hadoop Pig with SSH on an HDInsight cluster | Azure"
    description="Learn how connect to a Linux-based Hadoop cluster with SSH, and then use the Pig command to run Pig Latin statements interactively, or as a batch job."
    services="hdinsight"
    documentationCenter=""

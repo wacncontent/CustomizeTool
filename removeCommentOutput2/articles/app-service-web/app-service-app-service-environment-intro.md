@@ -84,7 +84,7 @@ For details on using an Azure Environment with ExpressRoute, see the following a
 [AppServicePlan]: /documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview/
 [HowToCreateAnAppServiceEnvironment]: /documentation/articles/app-service-web-how-to-create-an-app-service-environment/
 [AzureAppService]: /documentation/services/web-sites/
-[WebApps]: /home/features/web-site//
+[WebApps]: /home/features/web-site/
 [MobileApps]: /documentation/articles/app-service-mobile-value-prop-preview/
 [APIApps]: /documentation/articles/app-service-api-apps-why-best-platform/
 [LogicApps]: /documentation/articles/app-service-logic-what-are-logic-apps/

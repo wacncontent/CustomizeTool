@@ -14,6 +14,7 @@
 
 
 # Configure web apps in Azure #
+
 In the Azure Management Portal, you can change the configuration options for websites and link to other Azure resources, such as a database.
 
 ## Table of Contents ##
@@ -39,8 +40,9 @@ The **Configure** tab has the following sections:
 
 **Framework versions**. Set these options if your app uses any these frameworks: 
 
-- **.NET Framework Version**: Set the .NET framework version. 
-- **PHP Version**: Set the PHP version, or **OFF **to disable PHP. 
+- **.NET Framework**: Set the .NET framework version.
+- **PHP**: Set the PHP version, or **OFF **to disable PHP.
+
 - **Java Version**: Select the displayed version to enable Java, or **OFF** to disable Java. 
 - **Python Version**: Select the Python version, or **OFF** to disable Python.
 
@@ -49,14 +51,18 @@ For technical reasons, enabling Java for your app disables the .NET, PHP, and Py
 **Managed Pipeline Mode**. Sets the IIS [pipeline mode](http://www.iis.net/learn/get-started/introduction-to-iis/introduction-to-iis-architecture#Application). Leave this set to Integrated (the default) unless you have a legacy website that requires an older version of IIS.
 
 <a name="platform"></a>
-**Platform**. Selects whether your application runs in a 32-bit or 64-bit environment. The 64-bit environment requires Basic or Standard mode. Free and Shared modes always run in a 32-bit environment.
+**Platform**. Selects whether your web app runs in a 32-bit or 64-bit environment. The 64-bit environment requires Basic or Standard mode. Free and Shared modes always run in a 32-bit environment.
 
-**Web Sockets**. Set **ON** to enable the WebSocket protocol; for example, if your website uses [ASP.NET SignalR](http://www.asp.net/signalr) or [socket.io](/documentation/articles/web-sites-nodejs-chat-app-socketio/).
+**Web Sockets**. Set **ON** to enable the WebSocket protocol; for example, if your web app uses [ASP.NET SignalR](http://www.asp.net/signalr) or [socket.io](/documentation/.
 
 <a name="alwayson"></a>
-**Always On**. By default, websites are unloaded if they are idle for some period of time. This lets the system conserve resources. In Basic or Standard mode, you can enable **Always On** to keep the site loaded all the time. If your site runs continuous web jobs, you should enable **Always On**, or the web jobs may not run reliably
+**Always On**. By default, web apps are unloaded if they are idle for some period of time. This lets the system conserve resources. In Basic or Standard mode, you can enable **Always On** to keep the app loaded all the time. If your app runs continuous web jobs, you should enable **Always On**, or the web jobs may not run reliably.
+
 
 **Edit in Visual Studio Online**. Enables live code editing with Visual Studio Online. If enabled, the Dashboard tab will show a link called **Edit in Visual Studio Online**, under the **Quick Glance** section. Click this link to edit your website directly online. If you need to authenticate, you can use your basic deployment credentials.
+
+	>[AZURE.NOTE]
+	> This feature is on preview.
 
 Note: If you enable deployment from source control, it is possible for a deployment to overwrite changes you make in the Visual Studio Online editor. 
 
@@ -118,10 +124,7 @@ Options for gathering diagnostic information for your website.
 
 ### Developer analytics
 
-Choose <strong>Add-on</strong> to select an analytics add-on from a list (Currently, Azure China does not support Azure gallery). Choose <strong>Custom</strong> to select an analytics provider such as New Relic from a list. If you use a custom provider, you must enter the license key in the<strong> Provider Key</strong> box. 
-
-For more information on using New Relic with Azure  Websites, see <a href="/documentation/articles/store-new-relic-web-sites-dotnet-application-performance-management/">New Relic Application Performance Management on Azure  Websites</a>.
-
+Choose <strong>Add-on</strong> to select an analytics add-on from a list (Currently, Azure China does not support Azure Marketplace). Choose <strong>Custom</strong> to select an analytics provider such as New Relic from a list. If you use a custom provider, you must enter the license key in the<strong> Provider Key</strong> box. 
 
 ### App settings
 

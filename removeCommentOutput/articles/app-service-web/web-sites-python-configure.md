@@ -40,7 +40,7 @@ If you do not have an existing web app, you can create one from the [Azure Manag
 
 ## Git Publishing
 
-Configure Git publishing for your newly created web app by following the instructions at [Continuous deployment using GIT in Azure Web App](/documentation/articles/web-sites-publish-source-control). This tutorial uses Git to create, manage, and publish our Python web app to Azure Web App.
+Configure Git publishing for your newly created web app by following the instructions at [Continuous deployment using GIT in Azure Web App](/documentation/articles/web-sites-publish-source-control). This tutorial uses Git to create, manage, and publish our Python web app to Azure.
 
 Once Git publishing is set up, a Git repository will be created and associated with your web app. The repository's URL will be displayed and can henceforth be used to push data from the local development environment to the cloud. To publish applications via Git, make sure a Git client is also installed and use the instructions provided to push your web app content to Azure Web App.
 

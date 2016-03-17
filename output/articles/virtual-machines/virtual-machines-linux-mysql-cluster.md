@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Clusterize MySQL with load-balanced sets | Windows Azure"
+	pageTitle="Clusterize MySQL with load-balanced sets | Azure"
 	description="Setup a load-balanced, high availability Linux MySQL cluster created with the classic deployment model on Azure"
 	services="virtual-machines"
 	documentationCenter=""
@@ -15,22 +15,22 @@
 
 # Using load-balanced sets to clusterize MySQL on Linux
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+ Resource Manager model. [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
 
-The purpose of this article is to explore and illustrate the different approaches available to deploy highly available Linux-based services on Windows Azure, exploring MySQL Server high availability as a primer. A video illustrating this approach is available on [Channel 9](http://channel9.msdn.com/Blogs/Open/Load-balancing-highly-available-Linux-services-on-Windows-Azure-OpenLDAP-and-MySQL).
+The purpose of this article is to explore and illustrate the different approaches available to deploy highly available Linux-based services on Azure, exploring MySQL Server high availability as a primer. A video illustrating this a A video illustrating this approach is available on [Channel 9](http://channel9.msdn.com/Blogs/Open/Load-balancing-highly-available-Linux-services-on-Windows-Azure-OpenLDAP-and-MySQL). 
 
 We outline a shared-nothing two-node single-master MySQL high availability solution based on DRBD, Corosync and Pacemaker. Only one node is running MySQL at a time. Reading and writing from the DRBD resource is also limited to only one node at a time.
 
-There is no need for a VIP solution like LVS since we use Windows Azure's Load Balanced Sets to provide both the round-robin functionality and the endpoint detection, removal and graceful recovery of the VIP. The VIP is a globally routable IPv4 address assigned by Windows Azure when we first create the cloud service.
+There is no need for a VIP solution like LVS since we use Azure's Load Balanced Sets to provide both the round-robin functionality and the endpoint detection, removal and graceful recovery of the VIP. The VIP is a globally routable IPv4 address assigned by Azure when we first create the cloud service.
 
-There are other possible architectures for MySQL including NBD Cluster, Percona and Galera as well as several middleware solutions, including at least one available as a VM on [VM Depot](http://vmdepot.msopentech.com). As long as these solutions can replicate on unicast vs. multicast or broadcast and don't rely on shared storage or multiple network interfaces, the scenarios should be easy to deploy on Windows Azure.
+There are other possible architectures for MySQL including NBD Cluster, Percona and Galera as well as several middleware solutions, including at least one available as a VM on [VM Depot](http://vmdepot.msopentech.com). As long as these solutions can replicate on unicast vs. multicast or broadcast and don't rely on shared storage or multiple network interfaces, the scenarios should be easy to deploy on Azure.
 
 Of course these clustering architectures can be extended to other products like PostgreSQL and OpenLDAP on a similar fashion. For example, this load balancing procedure with shared nothing was successfully tested with multi-master OpenLDAP, and you can watch it on our Channel 9 blog.
 
 ## Getting ready
 
-You will need a Windows Azure account with a valid subscription able to create at least two (2) VMs (XS was used in this example), a network and a subnet, an affinity group and an availability set, as well as the ability to create new VHDs in the same region as the cloud service, and to attach them to the Linux VMs.
+You will need a Azure account with a valid subscription able to create at least two (2) VMs (XS was used in this example), a network and a subnet, an affinity group and an availability set, as well as the ability to create new VHDs in the same region as the cloud service, and to attach them to the Linux VMs.
 
 ### Tested environment
 
@@ -179,7 +179,7 @@ Once you failover manually you can repeat your remote query and it should be wor
 
 Corosync is the underlying cluster infrastructure required for Pacemaker to work. For Heartbeat v1 and v2 users (and other methodologies like Ultramonkey) Corosync is a split of the CRM functionalities, while Pacemaker remains more similar to Hearbeat in functionality.
 
-The main constraint for Corosync on Azure is that Corosync prefers multicast over broadcast over unicast communications, but Windows Azure networking only supports unicast.
+The main constraint for Corosync on Azure is that Corosync prefers multicast over broadcast over unicast communications, but Azure networking only supports unicast.
 
 Fortunately, Corosync has a working unicast mode and the only real constraint is that, since all nodes are not communicating among themselves *automagically*, you need to define the nodes in your configuration files, including their IP addresses. We can use the Corosync example files for Unicast and just change bind address, node lists and logging directory (Ubuntu uses `/var/log/corosync` while the example files use `/var/log/cluster`) and enabling quorum tools.
 

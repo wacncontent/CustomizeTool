@@ -1,7 +1,7 @@
 <!-- not suitable for Mooncake -->
 
 <properties 
-	pageTitle="Use custom libraries with an HDInsight Spark cluster to analyze website logs | Windows Azure" 
+	pageTitle="Use custom libraries with an HDInsight Spark cluster to analyze website logs | Azure" 
 	description="Use custom libraries with an HDInsight Spark cluster to analyze website logs" 
 	services="hdinsight" 
 	documentationCenter="" 

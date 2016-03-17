@@ -1,7 +1,7 @@
 <!-- not suitable for Mooncake -->
 
 <properties
-   pageTitle="Use Beeline to work with Hive on HDInsight (Hadoop) | Windows Azure"
+   pageTitle="Use Beeline to work with Hive on HDInsight (Hadoop) | Azure"
    description="Learn how to use SSH to connect to a Hadoop cluster in HDInsight, and then interactively submit Hive queries by using Beeline. Beeline is a utility for working with HiveServer2 over JDBC."
    services="hdinsight"
    documentationCenter=""
@@ -222,15 +222,15 @@ For information on other ways you can work with Hadoop on HDInsight:
 [import-to-excel]: /documentation/articles/hdinsight-connect-excel-power-query/
 
 
-[hdinsight-use-oozie]: hdinsight-use-oozie.md
-[hdinsight-analyze-flight-data]: hdinsight-analyze-flight-delay-data.md
+[hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie
+[hdinsight-analyze-flight-data]: /documentation/articles/hdinsight-analyze-flight-delay-data
 
 [putty]: http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html
 
 
-[hdinsight-provision]: hdinsight-provision-clusters-v1.md
-[hdinsight-submit-jobs]: hdinsight-submit-hadoop-jobs-programmatically.md
-[hdinsight-upload-data]: hdinsight-upload-data.md
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
+[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
 
 
 [powershell-here-strings]: http://technet.microsoft.com/zh-cn/library/ee692792.aspx

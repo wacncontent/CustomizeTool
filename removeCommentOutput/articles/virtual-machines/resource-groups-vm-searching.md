@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Navigate and select VM images | Windows Azure"
+   pageTitle="Navigate and select VM images | Azure"
    description="Learn how to determine the publisher, offer, and SKU for images when creating an Azure virtual machine with the Resource Manager deployment model."
    services="virtual-machines"
    documentationCenter=""

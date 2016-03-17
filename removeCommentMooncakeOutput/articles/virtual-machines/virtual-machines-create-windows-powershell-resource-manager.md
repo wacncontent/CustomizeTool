@@ -1,7 +1,7 @@
 <!-- not suitable for Mooncake -->
 
 <properties
-	pageTitle="Create a Windows VM | Windows Azure"
+	pageTitle="Create a Windows VM | Azure"
 	description="Use Azure PowerShell and Resource Manager templates to easily create a new Windows virtual machine."
 	services="virtual-machines"
 	documentationCenter=""
@@ -33,7 +33,7 @@ First, you must logon to Azure with this command.
 
 	Login-AzureRmAccount
 
-Specify the email address of your Azure account and its password in the Windows Azure sign-in dialog.
+Specify the email address of your Azure account and its password in the Azure sign-in dialog.
 
 Next, if you have multiple Azure subscriptions, you need to set your Azure subscription. To see a list of your current subscriptions, run this command.
 

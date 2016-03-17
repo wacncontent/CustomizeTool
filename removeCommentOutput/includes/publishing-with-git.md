@@ -268,12 +268,12 @@ The following are errors or problems commonly encountered when using Git to publ
 ## What's changed
 * For a guide to the change from Websites to Azure see: [Azure and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
 
-[Azure Developer Center]: /develop/overview/
+[Azure Developer Center]: http://azure.microsoft.com/develop/overview/
 [Azure Management Portal]: https://manage.windowsazure.cn
 [Git website]: http://git-scm.com
 [Installing Git]: http://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%AE%89%E8%A3%85-Git
-[How to use PowerShell for Azure]: ../articles/install-configure-powershell.md
-[How to use the Azure Command-Line Tools for Mac and Linux]: ../articles/xplat-cli-install.md
+[How to use PowerShell for Azure]: /documentation/articles/powershell-install-configure
+[How to use the Azure Command-Line Tools for Mac and Linux]: /documentation/articles/xplat-cli-install
 [Git Documentation]: http://git-scm.com/documentation
 
 [portal-select-website]: ./media/publishing-with-git/git-select-website.png
@@ -293,4 +293,4 @@ The following are errors or problems commonly encountered when using Git to publ
 [Create a Repo (BitBucket)]: https://confluence.atlassian.com/display/BITBUCKET/Create+an+Account+and+a+Git+Repo
 [Quick Start - Mercurial]: http://mercurial.selenic.com/wiki/QuickStart
 [Using Dropbox to Share Git Repositories]: https://gist.github.com/trey/2722927
-[Continuous delivery to Azure using Visual Studio Team Services]: ../articles/cloud-services/cloud-services-continuous-delivery-use-vso.md
+[Continuous delivery to Azure using Visual Studio Team Services]: /documentation/articles/cloud-services-continuous-delivery-use-vso

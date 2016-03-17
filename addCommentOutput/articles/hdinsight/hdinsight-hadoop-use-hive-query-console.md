@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Use Hadoop Hive on the Query Console in HDInsight | Windows Azure"
+   pageTitle="Use Hadoop Hive on the Query Console in HDInsight | Azure"
    description="Learn how to use the web-based Query Console to run Hive queries on an HDInsight Hadoop cluster from your browser."
    services="hdinsight"
    documentationCenter=""
@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="12/04/2015"
+	ms.date="02/05/2016"
 	wacn.date=""/>
 
 # Run Hive queries using the Query Console
@@ -32,13 +32,13 @@ To complete the steps in this article, you will need the following.
 
 ##<a id="run"></a> Run Hive queries using the Query Console
 
-<!-- deleted by customization
+
 1. Open a web browser and navigate to __https://CLUSTERNAME.azurehdinsight.cn__, where __CLUSTERNAME__ is the name of your HDInsight cluster. If prompted, enter the user name and password that you used when you created the cluster.
 
--->
-<!-- keep by customization: begin -->
+
+
 1. Open the <a href="https://manage.windowsazure.cn" target="_blank">Azure Management Portal</a> and select your HDInsight cluster. From the bottom of the page, select **Query Console**. When prompted, enter the username and password that you used when you created the cluster.
-<!-- keep by customization: end -->
+
 
 2. From the links at the top of the page, select **Hive Editor**. This displays a form that can be used to enter the HiveQL statements that you want to run in the HDInsight cluster.
 
@@ -46,6 +46,7 @@ To complete the steps in this article, you will need the following.
 
 	Replace the text `Select * from hivesampletable` with the following HiveQL statements:
 
+        set hive.execution.engine=tez;
         DROP TABLE log4jLogs;
         CREATE EXTERNAL TABLE log4jLogs (t1 string, t2 string, t3 string, t4 string, t5 string, t6 string, t7 string)
         ROW FORMAT DELIMITED FIELDS TERMINATED BY ' '
@@ -58,8 +59,13 @@ To complete the steps in this article, you will need the following.
     * **CREATE EXTERNAL TABLE**: Creates a new 'external' table in Hive. External tables store only the table definition in Hive; the data is left in the original location.
 
     > [AZURE.NOTE] External tables should be used when you expect the underlying data to be updated by an external source (such as an automated data upload process) or by another MapReduce operation, but you always want Hive queries to use the latest data.
+
     >
     > Dropping an external table does **not** delete the data, only the table definition.
+
+
+    > <p>Dropping an external table does **not** delete the data, only the table definition.
+
 
     * **ROW FORMAT**: Tells Hive how the data is formatted. In this case, the fields in each log are separated by a space.
     * **STORED AS TEXTFILE LOCATION**: Tells Hive where the data is stored (the example/data directory) and that it is stored as text
@@ -89,12 +95,7 @@ For information about other ways you can work with Hadoop on HDInsight:
 
 * [Use MapReduce with Hadoop on HDInsight](/documentation/articles/hdinsight-use-mapreduce)
 
-<!-- deleted by customization
-[1]: ../HDInsight/hdinsight-hadoop-visual-studio-tools-get-started.md
--->
-<!-- keep by customization: begin -->
 [1]: /documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started
-<!-- keep by customization: end -->
 
 [hdinsight-sdk-documentation]: http://msdn.microsoft.com/zh-cn/library/dn479185.aspx
 
@@ -109,22 +110,6 @@ For information about other ways you can work with Hadoop on HDInsight:
 [import-to-excel]: /documentation/articles/hdinsight-connect-excel-power-query/
 
 
-<!-- deleted by customization
-[hdinsight-use-oozie]: hdinsight-use-oozie.md
-[hdinsight-analyze-flight-data]: hdinsight-analyze-flight-delay-data.md
-
-
-
-[hdinsight-storage]: hdinsight-use-blob-storage.md
-
-[hdinsight-provision]: hdinsight-provision-clusters-v1.md
-[hdinsight-submit-jobs]: hdinsight-submit-hadoop-jobs-programmatically.md
-[hdinsight-upload-data]: hdinsight-upload-data.md
-[hdinsight-get-started]: hdinsight-get-started.md
-
-[Powershell-install-configure]: install-configure-powershell.md
--->
-<!-- keep by customization: begin -->
 [hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie
 [hdinsight-analyze-flight-data]: /documentation/articles/hdinsight-analyze-flight-delay-data
 
@@ -138,7 +123,6 @@ For information about other ways you can work with Hadoop on HDInsight:
 [hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
 
 [Powershell-install-configure]: /documentation/articles/powershell-install-configure
-<!-- keep by customization: end -->
 [powershell-here-strings]: http://technet.microsoft.com/zh-cn/library/ee692792.aspx
 
 

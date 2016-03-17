@@ -1,5 +1,5 @@
 <properties
-	pageTitle="HBase tutorial: Get started with HBase in Hadoop | Windows Azure"
+	pageTitle="HBase tutorial: Get started with HBase in Hadoop | Azure"
 	description="Follow this HBase tutorial to get started using Apache HBase with Hadoop in HDInsight. Create tables from the HBase shell and query them using Hive."
 	keywords="apache hbase,hbase,hbase shell,hbase tutorial"
 	services="hdinsight"
@@ -29,7 +29,7 @@ The information in this document is specific to Windows-based HDInsight clusters
 
 Before you begin this HBase tutorial, you must have the following:
 
-- **A Windows Azure subscription**. See [Get Azure trial](/pricing/1rmb-trial/).
+- **A Azure subscription**. See [Get Azure trial](/pricing/1rmb-trial/).
 - **A workstation** with Visual Studio 2013 or greater: For instructions, see [Install Visual Studio](http://msdn.microsoft.com/zh-cn/library/e2h7fzkw.aspx).
 
 ## Create HBase cluster
@@ -44,7 +44,7 @@ Before you begin this HBase tutorial, you must have the following:
 
 	- **Cluster Name** - Enter a name to identify this cluster.
 	- **Cluster Type** - Select **HBase**.
-	- **Cluster Operating System** - Select **Windows**.  For creating Linux-based HBase cluster, see  [HBase tutorial: Get started using Apache HBase with Hadoop in HDInsight (Linux)](/documentation/articles/hdinsight-hbase-tutorial-get-started-v1-linux).
+	- **Cluster Operating System** - Select **Windows**.  For creating Linux-based HBase cluster, see  [HBase tutorial: Get started using Apache HBase with Hadoop in HDInsight (Linux)](/documentation/articles/hdinsight-hbase-tutorial-get-started-v1).
 	- **Version** - Select an HBase version.
 	- **Subscription** - Select your Azure subscription used for creating this cluster.
 	- **Resource Group** -  Create a new Azure resource group or select an existing one. For more information, see [Azure Resource Manager Overview](/documentation/articles/resource-group-overview)
@@ -283,7 +283,7 @@ HBase in HDInsight ships with a Web UI for monitoring clusters. Using the Web UI
 
 To open the Web UI, you must RDP into the cluster, and then click the HMaster Info Web UI shortcut on your desktop, or use the following URL in a web browser:
 
-	http://zookeeper[0-2]:60010/master-status
+	http://zookeeper[0-2]: master-status
 
 In a high availability cluster, you'll find a link to the current active HBase master node that is hosting the Web UI.
 
@@ -303,8 +303,8 @@ With virtual network integration, HBase clusters can be deployed to the same vir
 - [Analyze Twitter sentiment with HBase in HDInsight][hbase-twitter-sentiment].
 Learn how to do real-time [sentiment analysis](http://en.wikipedia.org/wiki/Sentiment_analysis) of big data by using HBase in a Hadoop cluster in HDInsight.
 
-[hdinsight-manage-portal]: hdinsight-administer-use-management-portal-v1
-[hdinsight-upload-data]: hdinsight-upload-data.md
+[hdinsight-manage-portal]: /documentation/articles/hdinsight-administer-use-management-portal-v1
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
 [hbase-reference]: http://hbase.apache.org/book.html#importtsv
 [hbase-schema]: http://0b4af6cdc2f0c5998459-c0245c5c937c5dedcca3f1764ecc9b2f.r43.cf2.rackcdn.com/9353-login1210_khurana.pdf
 [hbase-quick-start]: http://hbase.apache.org/book.html#quickstart
@@ -313,10 +313,10 @@ Learn how to do real-time [sentiment analysis](http://en.wikipedia.org/wiki/Sent
 
 
 
-[hdinsight-hbase-overview]: hdinsight-hbase-overview.md
-[hdinsight-hbase-provision-vnet-v1]: hdinsight-hbase-provision-vnet-v1.md
-[hdinsight-versions]: hdinsight-component-versioning-v1.md
-[hbase-twitter-sentiment]: hdinsight-hbase-analyze-twitter-sentiment.md
+[hdinsight-hbase-overview]: /documentation/articles/hdinsight-hbase-overview
+[hdinsight-hbase-provision-vnet-v1]: /documentation/articles/hdinsight-hbase-provision-vnet-v1
+[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning-v1
+[hbase-twitter-sentiment]: /documentation/articles/hdinsight-hbase-analyze-twitter-sentiment
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: /pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/

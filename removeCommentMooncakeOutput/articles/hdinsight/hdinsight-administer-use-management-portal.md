@@ -1,7 +1,7 @@
 <!-- not suitable for Mooncake -->
 
 <properties
-	pageTitle="Manage Hadoop clusters in HDInsight using the Azure Management Portal | Windows Azure"
+	pageTitle="Manage Hadoop clusters in HDInsight using the Azure Management Portal | Azure"
 	description="Learn how to administer HDInsight Service. Create an HDInsight cluster, open the interactive JavaScript console, and open the Hadoop command console."
 	services="hdinsight"
 	documentationCenter=""
@@ -63,7 +63,7 @@ see [What version of Hadoop is in Azure HDInsight](/documentation/articles/hdins
 - Use the cluster customization parameters in the HDInsight .NET SDK or Azure PowerShell during cluster creation. These configuration changes are then preserved through the lifetime of the cluster and are not affected by cluster node reimages that Azure platform periodically performs for maintenance. For more information on using the cluster customization parameters, see [Create HDInsight clusters](/documentation/articles/hdinsight-provision-clusters-v1).
 - Some native Java components, like Mahout and Cascading, can be run on the cluster as JAR files. These JAR files can be distributed to Azure Blob storage, and submitted to HDInsight clusters through Hadoop job submission mechanisms. For more information, see [Submit Hadoop jobs programmatically](/documentation/articles/hdinsight-submit-hadoop-jobs-programmatically).
 
-	>[AZURE.NOTE] If you have issues deploying JAR files to HDInsight clusters or calling JAR files on HDInsight clusters, contact [Microsoft Support](/support/contact/).
+	>[AZURE.NOTE] If you have issues deploying JAR files to HDInsight clusters or calling JAR files on HDInsight clusters, contact [Microsoft Support](https://azure.microsoft.com/support/contact/).
 
 	> Cascading is not supported by HDInsight, and is not eligible for Microsoft Support. For lists of supported components, see [What's new in the cluster versions provided by HDInsight?](/documentation/articles/hdinsight-component-versioning-v1).
 

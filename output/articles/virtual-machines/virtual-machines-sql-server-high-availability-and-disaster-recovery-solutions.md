@@ -1,5 +1,5 @@
 <properties
-	pageTitle="High Availability and Disaster Recovery for SQL Server | Windows Azure"
+	pageTitle="High Availability and Disaster Recovery for SQL Server | Azure"
 	description="A discussion of the various types of HADR strategies for SQL Server running in Azure Virtual Machines."
 	services="virtual-machines"
 	documentationCenter="na"
@@ -16,9 +16,9 @@
 
 ## Overview
 
-Windows Azure virtual machines (VMs) with SQL Server can help lower the cost of a high availability and disaster recovery (HADR) database solution. Most SQL Server HADR solutions are supported in Azure virtual machines, both as Azure-only and as hybrid solutions. In an Azure-only solution, the entire HADR system runs in Azure. In a hybrid configuration, part of the solution runs in Azure and the other part runs on-premises in your organization. The flexibility of the Azure environment enables you to move partially or completely to Azure to satisfy the budget and HADR requirements of your SQL Server database systems.
+Azure virtual machines (VMs) with SQL Server can help lower the cost of a high availability and disaster recovery (HADR) database solution. Most SQL Server HADR solutions are supported in Azure virtual machines, both as Azure-only and as hybrid solutions. In an Azure-only solution, the entire HADR system runs in Azure. In a hybrid configuration, part of the solution runs in Azure and the other part runs on-premises in your organization. The flexibility of the Azure environment enables you to move partially or completely to Azure to satisfy the budget and HADR requirements of your SQL Server database systems.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+ Resource Manager model. [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
 
 ## Understanding the need for an HADR solution
@@ -55,7 +55,7 @@ You can have a disaster recovery solution for your SQL Server databases in Azure
 
 |Technology|Example Architectures|
 |---|---|
-|**AlwaysOn Availability Groups**|Availability replicas running across multiple datacenters in Azure VMs for disaster recovery.  This cross-region solution protects against complete site outage. <br/> ![AlwaysOn Availability Groups](./media/virtual-machines-sql-server-high-availability-and-disaster-recovery-solutions/azure_only_dr_alwayson.png)<br/>Within a region, all replicas should be within the same cloud service and the same VNet. Because each region will have a separate VNet, these solutions require VNet to VNet connectivity. For more information, see [Configure a Site-to-Site VPN in the Azure Management Portal](/documentation/articles/vpn-gateway-site-to-site-create).|
+|**AlwaysOn Availability Groups**|Availability replicas running across multiple datacenters in Azure VMs for disaster recovery.  This cross-region solution protects against complete site outage. <br/> ![AlwaysOn Availability Groups](./media/virtual-machines-sql-server-high-availability-and-disaster-recovery-solutions/azure_only_dr_alwayson.png)<br/>Within a region, all replicas should be within the same cloud service and the same VNet. Because each region will have a separate VNet, these solutions require VNet to VNet connectivity. For more info connectivity. For more information, see [Configure a Site-to-Site VPN in the Azure Management Portal](/documentation/articles/vpn-gateway-site-to-site-create).|  
 |**Database Mirroring**|Principal and mirror and servers running in different  datacenters for disaster recovery. You must deploy using server certificates because an active directory domain cannot span multiple  datacenters.<br/>![Database Mirroring](./media/virtual-machines-sql-server-high-availability-and-disaster-recovery-solutions/azure_only_dr_dbmirroring.gif)|
 |**Backup and Restore with Azure Blob Storage Service**|Production databases backed up directly to blob storage in a different  datacenter for disaster recovery.<br/>![Backup and Restore](./media/virtual-machines-sql-server-high-availability-and-disaster-recovery-solutions/azure_only_dr_backup_restore.gif)<br/>For more information, see [Backup and Restore  for SQL Server in Azure Virtual Machines](/documentation/articles/virtual-machines-sql-server-backup-and-restore).|
 
@@ -66,7 +66,7 @@ You can have a disaster recovery solution for your SQL Server databases in a hyb
 |Technology|Example Architectures|
 |---|---|
 |**AlwaysOn Availability Groups**|Some availability replicas running in Azure VMs and other replicas running on-premises for cross-site disaster recovery. The production site can be either on-premises or in an Azure datacenter.<br/>![AlwaysOn Availability Groups](./media/virtual-machines-sql-server-high-availability-and-disaster-recovery-solutions/hybrid_dr_alwayson.gif)<br/>Because all availability replicas must be in the same WSFC cluster, the WSFC cluster must span both networks (a multi-subnet WSFC cluster). This configuration requires a VPN connection between Azure and the on-premises network.<br/><br/>For successful disaster recovery of your databases, you should also install a replica domain controller at the disaster recovery site.<br/><br/>It is possible to use the Add Replica Wizard in SSMS to add an Azure replica to an existing AlwaysOn Availability Group. For more information, see Tutorial: Extend your AlwaysOn Availability Group to Azure.|
-|**Database Mirroring**|One partner running in an Azure VM and the other running on-premises for cross-site disaster recovery using server certificates. Partners do not need to be in the same Active Directory domain, and no VPN connection is required.<br/>![Database Mirroring](./media/virtual-machines-sql-server-high-availability-and-disaster-recovery-solutions/hybrid_dr_dbmirroring.gif)<br/>Another database mirroring sceanario involves one partner running in an Azure VM and the other running on-premises in the same Active Directory domain for cross-site disaster recovery. A [VPN connection between the Azure virtual network and the on-premises network](/documentation/articles/vpn-gateway-site-to-site-create) is required.<br/><br/>For successful disaster recovery of your databases, you should also install a replica domain controller at the disaster recovery site.|
+|**Database Mirroring**|One partner running in an Azure VM and the other running on-premises for cross-site disaster recovery using server certificates. Partners do not need to be in the same Active Directory domain, and no VPN connection is required.<br/>![Database Mirroring](./media/virtual-machines-sql-server-high-availability-and-disaster-recovery-solutions/hybrid_dr_dbmirroring.gif)<br/>Another database mirroring sceanario involves one partner running in an Azure VM and the other running on-premises in the same Active Directory domain for cross-site disaster recovery. A [VPN connection between t A [VPN connection between the Azure virtual network and the on-premises network](/documentation/articles/vpn-gateway-site-to-site-create) is required.<br/><br/>For   successful disaster recovery of your databases, you should also install a replica domain controller at the disaster recovery site.|
 |**Log Shipping**|One server running in an Azure VM and the other running on-premises for cross-site disaster recovery. Log shipping depends on Windows file sharing, so a VPN connection between the Azure virtual network and the on-premises network is required.<br/>![Log Shipping](./media/virtual-machines-sql-server-high-availability-and-disaster-recovery-solutions/hybrid_dr_log_shipping.gif)<br/>For successful disaster recovery of your databases, you should also install a replica domain controller at the disaster recovery site.|
 |**Backup and Restore with Azure Blob Storage Service**|On-premises production databases backed up directly to Azure blob storage for disaster recovery.<br/>![Backup and Restore](./media/virtual-machines-sql-server-high-availability-and-disaster-recovery-solutions/hybrid_dr_backup_restore.gif)<br/>For more information, see [Backup and Restore  for SQL Server in Azure Virtual Machines](/documentation/articles/virtual-machines-sql-server-backup-and-restore).|
 
@@ -133,7 +133,12 @@ For more information on client connectivity, see:
 
 You should deploy your HADR solution with the assumption that there may be periods of time with high network latency between your on-premises network and Azure. When deploying replicas to Azure, you should use asynchronous commit instead of synchronous commit for the synchronization mode. When deploying database mirroring servers both on-premises and in Azure, use the high performance mode instead of the high safety mode.
 
+
 ### Geo-replication support
+
+
+###<a name="geo-replication-support"></a> Geo-replication support
+
 
 Geo-replication in Azure disks does not support the data file and log file of the same database to be stored on separate disks. GRS replicates changes on each disk independently and asynchronously. This mechanism guarantees the write order within a single disk on the geo-replicated copy, but not across geo-replicated copies of multiple disks. If you configure a database to store its data file and its log file on separate disks, the recovered disks after a disaster may contain a more up-to-date copy of the data file than the log file, which breaks the write-ahead log in SQL Server and the ACID properties of transactions. If you do not have the option to disable geo-replication on the storage account, you should keep all data and log files for a given database on the same disk. If you must use more than one disk due to the size of the database, you need to deploy one of the disaster recovery solutions listed above to ensure data redundancy.
 

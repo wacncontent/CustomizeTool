@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Log on to a Linux VM in Azure | Windows Azure"
+	pageTitle="Log on to a Linux VM in Azure | Azure"
 	description="Learn how to log on to an Azure virtual machine running Linux by using a Secure Shell (SSH) client."
 	services="virtual-machines"
 	documentationCenter=""
@@ -47,4 +47,4 @@ This procedure shows you how to use the PuTTY program to access the virtual mach
 You can now work with the virtual machine just as you would with any other server.
 
 <!-- LINKS -->
-[How to Reset a Password or SSH for Linux Virtual Machines]: http://go.microsoft.com/fwlink/p/?LinkId=512138
+[How to Reset a Password or SSH for Linux Virtual Machines]: /documentation/articles/virtual-machines-linux-use-vmaccess-reset-password-or-ssh

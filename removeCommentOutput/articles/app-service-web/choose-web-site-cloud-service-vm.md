@@ -94,7 +94,7 @@ For web developers and designers, Azure integrates easily with a variety of fram
 
 ### <a id="multitier"></a>I'm migrating my multi-tier application with a web front-end to the Cloud
 
-If youâre running a multi-tier application, such as a web server that connects to a database, Azure is a good option that offers tight integration with Azure SQL Database. And you can use the WebJobs feature for running backend processes.
+If you're running a multi-tier application, such as a web server that connects to a database, Azure is a good option that offers tight integration with Azure SQL Database. And you can use the WebJobs feature for running backend processes.
 
 Choose Cloud Service for one or more of your tiers if you need more control over the server environment, such as the ability to remote into your server or configure server startup tasks.
 
@@ -125,7 +125,7 @@ If you want to create a line-of-business application, your website might require
 
 HTTP-based web services enable you to support a wide variety of clients, including mobile clients. Frameworks like ASP.NET Web API integrate with Visual Studio to make it easier to create and consume REST services.  These services are exposed from a web endpoint, so it is possible to use any web hosting technique on Azure to support this scenario. However, Azure is a great choice for hosting REST APIs. With Azure Web App, you can:
 
-- Quickly create a web app to host the HTTP web service in one of Azureâs globally distributed datacenters.
+- Quickly create a web app to host the HTTP web service in one of Azure's globally distributed datacenters.
 - Migrate existing services or create new ones.
 - Achieve SLA for availability with a single instance, or scale out to multiple dedicated machines.
 - Use the published site to provide REST APIs to any HTTP clients, including mobile clients.
@@ -194,6 +194,6 @@ To get started with the option(s) you choose for your application, see the follo
   [PHP]: /develop/php/
   [Python]: /develop/python/
   [servicebus]: /documentation/services/service-bus/
-  [sqldatabase]: /documentation/services/sql-database/
+  [sqldatabase]: /documentation/services/sql-databases/
   [Storage]: /documentation/services/storage/
  

@@ -1,7 +1,7 @@
 <!-- not suitable for Mooncake -->
 
 <properties
-	pageTitle="Highly-available Active Directory Domain Services ARM template | Windows Azure"
+	pageTitle="Highly-available Active Directory Domain Services ARM template | Azure"
 	description="Easily deploy two servers acting as Active Directory Domain Services domain controllers with a Resource Manager Template and the Azure Management Portal, Azure PowerShell, or the Azure CLI."
 	services="virtual-machines"
 	documentationCenter=""

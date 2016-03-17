@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Point a company Internet domain to a Traffic Manager domain | Windows Azure"
+   pageTitle="Point a company Internet domain to a Traffic Manager domain | Azure"
    description="This article will help you point your company domain name to a Traffic Manager domain name."
    services="traffic-manager"
    documentationCenter=""
@@ -8,7 +8,7 @@
    editor="tysonn" />
 <tags
 	ms.service="traffic-manager"
-	ms.date="11/12/2015"
+	ms.date="02/09/2016"
 	wacn.date=""/>
 
 # Point a company Internet domain to a Azure Traffic Manager domain

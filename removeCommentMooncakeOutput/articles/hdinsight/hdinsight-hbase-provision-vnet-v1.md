@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Provision HBase clusters on a Virtual Network | Windows Azure"
+	pageTitle="Provision HBase clusters on a Virtual Network | Azure"
 	description="Get started using HBase in Azure HDInsight. Learn how to create HDInsight HBase clusters on Azure Virtual Network."
 	keywords=""
 	services="hdinsight,virtual-network"
@@ -305,8 +305,7 @@ To begin working with your new HBase cluster, you can use the procedures found i
 		This will return the DNS suffix. For example, **yourclustername.b4.internal.chinacloudapp.cn**.
 
 	> [AZURE.NOTE] You can also use Remote Desktop to connect to the HBase cluster (you will be connected to the head node) and run **ipconfig** from a command prompt to obtain the DNS suffix. For instructions on enabling Remote Desktop Protocol (RDP) and connecting to the cluster by using RDP, see [Manage Hadoop clusters in HDInsight using the Azure Management Portal][hdinsight-admin-portal].
-	>
-	> ![hdinsight.hbase.dns.surffix][img-dns-surffix]
+	> <p>![hdinsight.hbase.dns.surffix][img-dns-surffix]
 
 
 <!--

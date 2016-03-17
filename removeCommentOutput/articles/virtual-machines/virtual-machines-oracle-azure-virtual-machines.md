@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Oracle on Azure VMs | Windows Azure"
+	pageTitle="Oracle on Azure VMs | Azure"
 	description="Find the articles that describe how to set up Oracle software on Windows-based or Linux-based Azure virtual machines."
 	services="virtual-machines"
 	documentationCenter=""

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Create and manage a Windows VM using Azure PowerShell | Windows Azure"
+	pageTitle="Create and manage a Windows VM using Azure PowerShell | Azure"
 	description="Create and manage a Windows virtual machine with Azure Powershell using the classic deployment model."
 	services="virtual-machines"
 	documentationCenter=""
@@ -32,7 +32,7 @@ First, you must sign in to Azure by using this command:
 
 	Add-AzureAccount
 
-Specify the email address of your Azure account and its password in the Windows Azure sign-in dialog.
+Specify the email address of your Azure account and its password in the Azure sign-in dialog.
 
 Next, if you have multiple Azure subscriptions, you need to set your Azure subscription. To see a list of your current subscriptions, run this command:
 

@@ -1,5 +1,7 @@
+<!-- not suitable for Mooncake -->
+
 <properties
-   	pageTitle="Create Hadoop, HBase, or Storm clusters on Linux in HDInsight using cURL and the Azure REST API | Windows Azure"
+   	pageTitle="Create Hadoop, HBase, or Storm clusters on Linux in HDInsight using cURL and the Azure REST API | Azure"
    	description="Learn how to create Linux-based HDInsight clusters using cURL, Azure Resource Manager templates, and the Azure REST API. You can specify the cluster type (Hadoop, HBase, or Storm,) or use scripts to install custom components."
    	services="hdinsight"
    	documentationCenter=""
@@ -10,7 +12,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="12/04/2015"
+	ms.date="02/05/2016"
 	wacn.date=""/>
 
 #Create Linux-based clusters in HDInsight using cURL and the Azure REST API
@@ -23,7 +25,7 @@ The Azure REST API allows you to perform management operations on services hoste
 >
 > For more information on node sizes and associated costs, see [HDInsight pricing](/home/features/hdinsight/#price).
 
-<!-- deleted by customization ###Prerequisites --><!-- keep by customization: begin --> ##Prerequisites <!-- keep by customization: end -->
+###Prerequisites
 
 - **An Azure subscription**. See [Get Azure trial](/pricing/1rmb-trial/).
 
@@ -352,7 +354,7 @@ Now that you have successfully created an HDInsight cluster, use the following t
 
 ###HBase clusters
 
-* [Get started with HBase on HDInsight](/documentation/articles/hdinsight-hbase-tutorial-get-started-v1-linux)
+* [Get started with HBase on HDInsight](/documentation/articles/hdinsight-hbase-tutorial-get-started-v1)
 * [Develop Java applications for HBase on HDInsight](/documentation/articles/hdinsight-hbase-build-java-maven-linux)
 
 ###Storm clusters

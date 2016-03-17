@@ -1,5 +1,7 @@
+<!-- not suitable for Mooncake -->
+
 <properties
-	pageTitle="Log on to a Windows Server VM | Windows Azure"
+	pageTitle="Log on to a Windows Server VM | Azure"
 	description="Learn how to log on to a Windows Server VM using the Azure Management Portal and the Resource Manager deployment model."
 	services="virtual-machines"
 	documentationCenter=""

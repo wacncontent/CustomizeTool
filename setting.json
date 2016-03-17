@@ -1,12 +1,11 @@
 {
     "customize": false,
-    "path": "E:/GitHub/azure-content-mooncake-pr/",
+    "path": "E:/GitHub/azure-content-pr/",
     "language": "en-us",
     "folders": [
         "articles/virtual-machines/",
         "articles/app-service-web/",
         "articles/hdinsight/",
-        "articles/media-services/",
         "articles/redis-cache/",
         "articles/traffic-manager/",
         "articles/virtual-network/"
@@ -61,16 +60,16 @@
     "815path": "E:/GitHub/techcontent/",
     "removeComment": {
         "remove": false,
-        "path": "removeCommentOutput/"
+        "path": "removeCommentOutput2/"
     },
     "updateLinks": false,
     "addComment": {
-        "add": false,
+        "add": true,
         "globalPath": "removeCommentOutput/",
         "mooncakePath": "removeCommentMooncakeOutput/",
         "outputPath": "addCommentOutput/"
     },
-    "wordCount": true,
+    "wordCount": false,
     "getDeletionAndReplacement": {
         "get": false,
         "input": "addCommentOutput/",

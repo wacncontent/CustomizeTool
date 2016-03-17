@@ -10,14 +10,14 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="10/23/2015"
+	ms.date="02/03/2016"
 	wacn.date=""/>
 
 
 #Enable HTTPS for an app in Azure
 
-<!-- deleted by customization
+
 [AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)]
 
--->
+
 [AZURE.INCLUDE [configure-ssl-web-site](../includes/configure-ssl-web-site.md)]

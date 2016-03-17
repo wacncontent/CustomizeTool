@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 The Azure gallery makes available a wide range of popular web apps developed by Microsoft, third party companies, and open source software initiatives. Web apps created from the Azure gallery do not require installation of any software other than the browser used to connect to the [Azure Preview Portal](https://manage.windowsazure.cn/). 
 
 In this tutorial, you'll learn:

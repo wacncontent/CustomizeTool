@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Configure an external Listener for AlwaysOn Availability Groups | Windows Azure"
+	pageTitle="Configure an external Listener for AlwaysOn Availability Groups | Azure"
 	description="This tutorial walks you through steps of creating an AlwaysOn Availability Group Listener in Azure that is externally accessible by using the public Virtual IP address of the associated cloud service."
 	services="virtual-machines"
 	documentationCenter="na"
@@ -20,7 +20,7 @@
 
 This topic shows you how to configure a listener for an AlwaysOn Availability Group that is externally accessible on the internet. This is made possible associating the cloud service's **public Virtual IP (VIP)** address with the listener.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+ Resource Manager model. [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
 
 Your Availability Group can contain replicas that are on-premises only, Azure only, or span both on-premises and Azure for hybrid configurations. Azure replicas can reside within the same region or across multiple regions using multiple virtual networks (VNets). The steps below assume you have already [configured an availability group](/documentation/articles/virtual-machines-sql-server-alwayson-availability-groups-gui) but have not configured a listener.
@@ -33,11 +33,13 @@ Note the following guidelines about the availability group listener in Azure whe
 
 - The client application must reside on a different cloud service than the one that contains your availability group VMs. Azure does not support direct server return with client and server in the same cloud service.
 
-- By default, the steps in this article show how to configure one listener to use the cloud service Virtual IP (VIP) address. However, it is possible to reserve and create multiple VIP addresses for your cloud service. This enables you to use the steps in this article to create multiple listeners that are each associated with a different VIP. For information on how to create multiple VIP addresses, see [Multiple VIPs per cloud service](/documentation/articles/load-balancer-multivip).
+- By default, the steps in this article show how to configure one listener to use the cloud service Virtual IP (VIP) address. However, it is possible to reserve and create multiple VIP addresses for your cloud service. This enables you to use the  This enables you to use the steps in this article to create multiple listeners that are each associated with a different VIP. For information on how to create multiple VIP addresses, see [Multiple VIPs per cloud service](/documentation/articles/load-balancer-multivip). 
 
 - If you are creating a listener for a hybrid environment, the on-premises network must have connectivity to the public Internet in addition to the site-to-site VPN with the Azure virtual network. When in the Azure subnet, the availability group listener is reachable only by the public IP address of the respective cloud service.
+
 
 - It is not supported to create an external listener in the same cloud service where you also have an internal listener using the Internal Load Balancer (ILB).
+
 
 ## Determine the accessibility of the listener
 

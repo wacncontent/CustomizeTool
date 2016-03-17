@@ -32,7 +32,7 @@ This walkthrough shows you how to create an Azure SDK for Java application that 
 
 The AzureWebDemo application code in this article was written using Azure Java SDK 0.7.0, which you can install using the [Web Platform Installer][] (WebPI). In addition, make sure to use the latest version of the [Azure Toolkit for Eclipse][]. After you install the SDK, update the dependencies in your Eclipse project by running **Update Index** in **Maven Repositories**, then re-add the latest version of each package in the **Dependencies** window. You can verify the version of your installed software in Eclipse by clicking **Help > Installation Details**; you should have at least the following versions:
 
-- Package for Windows Azure Libraries for Java 0.7.0.20150309
+- Package for Azure Libraries for Java 0.7.0.20150309
 - Eclipse IDE for Java EE Developers 4.4.2.20150219
 
 
@@ -151,7 +151,7 @@ In this section you create a workspace and a Maven project for the web app creat
 
     ![][1]
     
-    This step can take several minutes depending on the speed of your connection. When the index rebuilds, you should see the Windows Azure packages in the **central** Maven repository.
+    This step can take several minutes depending on the speed of your connection. When the index rebuilds, you should see the Azure packages in the **central** Maven repository.
 
 6. In **Dependencies**, click **Add**. In **Enter Group ID...** enter `azure-management`. Select the packages for base management and Azure Web Apps management:
 

@@ -19,15 +19,15 @@ how to define parameters that are specified when the deployment is executed. You
 
 For more information about creating templates, see [Authoring Azure Resource Manager Templates](/documentation/articles/resource-group-authoring-templates).
 
-<!-- deleted by customization
+
 For more information about deploying apps, see [Deploy a complex application predictably in Azure](/documentation/articles/app-service-deploy-complex-application-predictably).
 
--->
+
 For the complete template, see [Web App With SQL Database template](https://github.com/Azure/azure-quickstart-templates/blob/master/201-web-app-sql-database/azuredeploy.json).
-<!-- deleted by customization
+
 
 [AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)] 
--->
+
 
 ## What you will deploy
 
@@ -39,12 +39,12 @@ In this template, you will deploy:
 - AutoScale settings
 - Alert rules
 - App Insights
-<!-- deleted by customization
+
 
 To run the deployment automatically, click the following button:
 
 [![Deploy to Azure](./media/app-service-web-arm-with-sql-database-provision/deploybutton.png)](https://manage.windowsazure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F201-web-app-sql-database%2Fazuredeploy.json)
--->
+
 
 ## Parameters to specify
 
@@ -426,9 +426,9 @@ you must provide a login name and password for the database server administrator
           "customEmails": [ ]
         }
       }
-    } <!-- deleted by customization, -->
+    } , 
 
-<!-- deleted by customization
+
 ### App Insights
 
     {
@@ -446,7 +446,7 @@ you must provide a login name and password for the database server administrator
         "ApplicationId": "[parameters('siteName')]"
       }
     }
--->
+
 
 ## Commands to run deployment
 

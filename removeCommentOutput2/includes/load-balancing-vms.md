@@ -24,7 +24,7 @@ Azure Traffic Manager uses three load-balancing methods to distribute traffic:
 - **Performance**:  Use this method when you have endpoints in different geographic locations and you want requesting clients to use the "closest" endpoint in terms of the lowest latency.
 - **Round Robin:**  Use this method when you want to distribute load across a set of cloud services in the same datacenter or across cloud services or websites in different datacenters.
 
-For more information, see [About Traffic Manager Load Balancing Methods](http://msdn.microsoft.com/zh-cn/library/azure/dn339010.aspx).
+For more information, see [About Traffic Manager Load Balancing Methods](/documentation/art.
 
 The following figure shows an example of the Round Robin load balancing method for distributing traffic between different cloud services.
 
@@ -49,7 +49,7 @@ The following figure shows a load-balanced endpoint for standard (unencrypted) w
 
 ![loadbalancing](./media/load-balancing-vms/LoadBalancing.png)
 
-For more information, see [Azure Load Balancer](http://msdn.microsoft.com/zh-cn/library/azure/dn655058.aspx). For the steps to create a load-balanced set, see [Configure a load-balanced set](http://msdn.microsoft.com/zh-cn/library/azure/dn655055.aspx).
+For more information, see [Azure Load Balancer](/documentation/ar. For the steps to create a load-balanced set, see [Configure a load-balanced set](/documentation/article.
 
 Azure can also load balance within a cloud service or virtual network. This is known as internal load balancing and can be used in the following ways:
 
@@ -63,6 +63,6 @@ The following figure shows an example of an internal load-balanced endpoint for 
 
 ![loadbalancing](./media/load-balancing-vms/LOBServers.png)
 
-For more information, see [Internal load balancing](http://msdn.microsoft.com/zh-cn/library/azure/dn690121.aspx). For the steps to create a load-balanced set, see [Configure an internal load-balanced set](http://msdn.microsoft.com/zh-cn/library/azure/dn690125.aspx).
+For more information, see [Internal load balancing](/documentation/a. For the steps to create a load-balanced set, see [Configure an internal load-balanced set](/documentation/article.
 
 <!-- LINKS -->

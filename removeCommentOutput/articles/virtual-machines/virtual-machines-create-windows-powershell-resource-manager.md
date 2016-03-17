@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Create a Windows VM | Windows Azure"
+	pageTitle="Create a Windows VM | Azure"
 	description="Use Azure PowerShell and Resource Manager templates to easily create a new Windows virtual machine."
 	services="virtual-machines"
 	documentationCenter=""
@@ -31,7 +31,7 @@ First, you must logon to Azure with this command.
 
 	Login-AzureRmAccount
 
-Specify the email address of your Azure account and its password in the Windows Azure sign-in dialog.
+Specify the email address of your Azure account and its password in the Azure sign-in dialog.
 
 Next, if you have multiple Azure subscriptions, you need to set your Azure subscription. To see a list of your current subscriptions, run this command.
 
@@ -40,7 +40,7 @@ Next, if you have multiple Azure subscriptions, you need to set your Azure subsc
 Now, replace everything within the quotes, including the < and > characters, with the correct subscription name and run these commands.
 
 	$subscrName="<subscription name>"
-	Select-AzureRmSubscription -SubscriptionName $subscrName â€"Current
+	Select-AzureRmSubscription -SubscriptionName $subscrName -Current
 
 Next, you need to create a storage account. You must pick a unique name that contains only lowercase letters and numbers. You can test for the uniqueness of the storage account name with this command.
 

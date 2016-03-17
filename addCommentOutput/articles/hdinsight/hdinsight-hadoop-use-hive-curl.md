@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Use Hadoop Hive with Curl in HDInsight | Windows Azure"
+   pageTitle="Use Hadoop Hive with Curl in HDInsight | Azure"
    description="Learn how to remotely submit Pig jobs to HDInsight using Curl."
    services="hdinsight"
    documentationCenter=""
@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="12/04/2015"
+	ms.date="02/05/2016"
 	wacn.date=""/>
 
 #Run Hive queries with Hadoop in HDInsight with Curl
@@ -21,20 +21,20 @@ In this document, you will learn how to use Curl to run Hive queries on a Hadoop
 
 Curl is used to demonstrate how you can interact with HDInsight by using raw HTTP requests to run, monitor, and retrieve the results of Hive queries. This works by using the WebHCat REST API (formerly known as Templeton) provided by your HDInsight cluster.
 
-<!-- deleted by customization
+
 > [AZURE.NOTE] If you are already familiar with using Linux-based Hadoop servers, but are new to HDInsight, see [What you need to know about Hadoop on Linux-based HDInsight](/documentation/articles/hdinsight-hadoop-linux-information).
 
--->
+
 ##<a id="prereq"></a>Prerequisites
 
 To complete the steps in this article, you will need the following:
 
-<!-- deleted by customization
+
 * A Hadoop on HDInsight cluster (Linux or Windows-based)
--->
-<!-- keep by customization: begin -->
+
+
 * A Hadoop on HDInsight cluster ( Windows-based)
-<!-- keep by customization: end -->
+
 
 * [Curl](http://curl.haxx.se/)
 
@@ -43,10 +43,16 @@ To complete the steps in this article, you will need the following:
 ##<a id="curl"></a>Run Hive queries by using Curl
 
 > [AZURE.NOTE] When using Curl or any other REST communication with WebHCat, you must authenticate the requests by providing the user name and password for the HDInsight cluster administrator. You must also use the cluster name as part of the Uniform Resource Identifier (URI) used to send the requests to the server.
+
 >
 > For the commands in this section, replace **USERNAME** with the user to authenticate to the cluster, and replace **PASSWORD** with the password for the user account. Replace **CLUSTERNAME** with the name of your cluster.
 >
 > The REST API is secured via [basic authentication](http://en.wikipedia.org/wiki/Basic_access_authentication). You should always make requests by using Secure HTTP (HTTPS) to help ensure that your credentials are securely sent to the server.
+
+
+> <p>For the commands in this section, replace **USERNAME** with the user to authenticate to the cluster, and replace **PASSWORD** with the password for the user account. Replace **CLUSTERNAME** with the name of your cluster.
+> <p>The REST API is secured via [basic authentication](http://en.wikipedia.org/wiki/Basic_access_authentication). You should always make requests by using Secure HTTP (HTTPS) to help ensure that your credentials are securely sent to the server.
+
 
 1. From a command line, use the following command to verify that you can connect to your HDInsight cluster:
 
@@ -90,8 +96,13 @@ To complete the steps in this article, you will need the following:
     * **CREATE EXTERNAL TABLE** - Creates a new 'external' table in Hive. External tables store only the table definition in Hive. The data is left in the original location.
 
 		> [AZURE.NOTE] External tables should be used when you expect the underlying data to be updated by an external source, such as an automated data upload process, or by another MapReduce operation, but always want Hive queries to use the latest data.
+
 		>
 		> Dropping an external table does **not** delete the data, only the table definition.
+
+
+		> <p>Dropping an external table does **not** delete the data, only the table definition.
+
 
     * **ROW FORMAT** - Tells Hive how the data is formatted. In this case, the fields in each log are separated by a space.
 
@@ -178,33 +189,23 @@ For information on other ways you can work with Hadoop on HDInsight:
 [import-to-excel]: /documentation/articles/hdinsight-connect-excel-power-query/
 
 
-<!-- deleted by customization
-[hdinsight-use-oozie]: hdinsight-use-oozie.md
-[hdinsight-analyze-flight-data]: hdinsight-analyze-flight-delay-data.md
-
-
-
-
-[hdinsight-provision]: hdinsight-provision-clusters-v1.md
-[hdinsight-submit-jobs]: hdinsight-submit-hadoop-jobs-programmatically.md
-[hdinsight-upload-data]: hdinsight-upload-data.md
-
--->
-<!-- keep by customization: begin -->
 [hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie
 [hdinsight-analyze-flight-data]: /documentation/articles/hdinsight-analyze-flight-delay-data
 
 
 
+
 [hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
+
 
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
 [hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
+
 [hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
 
 [Powershell-install-configure]: /documentation/articles/powershell-install-configure
-<!-- keep by customization: end -->
+
 [powershell-here-strings]: http://technet.microsoft.com/zh-cn/library/ee692792.aspx
 
 

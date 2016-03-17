@@ -29,7 +29,7 @@ Persistence can be configured from the **New Redis Cache** blade during cache cr
 
 ## Create a premium cache
 
-In Windows Azure China, Redis Cache can only be managed by Azure PowerShell or Azure CLI
+In Azure China, Redis Cache can only be managed by Azure PowerShell or Azure CLI
 
 
 [AZURE.INCLUDE [azurerm-azurechinacloud-environment-parameter](../includes/azurerm-azurechinacloud-environment-parameter.md)]
@@ -58,7 +58,7 @@ As you can see in this PowerShell command, for **-RedisConfiguration** parameter
 
 To configure the backup interval, you can set "rdb-backup-frequency" to 15 which means **15 Minutes**, 30 which means **30 minutes**, 60 which means **60 minutes**, 360 which means **6 hours**, 720 which means **12 hours**, 1440 which means and **24 hours**. This interval starts counting down after the previous backup operation successfully completes and when it elapses a new backup is initiated.
 
-To configure a Storage Account, you can "rdb-storage-connection-string" to a connection String in Windows Azure China. As you can see in the command above, you need to specify BlobEndpoint, QueueEndpoint, TableEndpoint in your connection string.
+To configure a Storage Account, you can "rdb-storage-connection-string" to a connection String in Azure China. As you can see in the command above, you need to specify BlobEndpoint, QueueEndpoint, TableEndpoint in your connection string.
 
 >[AZURE.IMPORTANT] If the storage key for your persistence account is regenerated, you must update your "rdb-backup-frequency".
 
@@ -76,7 +76,9 @@ Yes, Redis persistence can be configured both at cache creation and on existing 
 
 ## Can I change the backup frequency after I create the cache?
 
-Yes, you can change the backup frequency on the **Redis data persistence** blade. For instructions, see [Configure Redis persistence](#configure-redis-persistence).
+Yes, you can change the backup frequency with Azure PowerShell. The following is a sample command that changes backup frequency by modifying `rdb-backup-frequency`
+
+	Set-AzureRmRedisCache -Name $cacheName  -ResourceGroupName $resourceGroupName -RedisConfiguration @{"rdb-backup-enabled"="true"; "rdb-backup-frequency"="60"; "rdb-backup-max-snapshot-count"="1"; "rdb-storage-connection-string"="DefaultEndpointsProtocol=[http|https];AccountName=myAccountName;AccountKey=myAccountKey;EndpointSuffix=core.chinacloudapi.cn"}
 
 ## Why if I have a backup frequency of 60 minutes there is more than 60 minutes between backups?
 

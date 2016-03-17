@@ -1,5 +1,7 @@
+<!-- not suitable for Mooncake -->
+
 <properties
-   pageTitle="Twitter trending topics with Apache Storm on HDInsight | Windows Azure"
+   pageTitle="Twitter trending topics with Apache Storm on HDInsight | Azure"
    description="Learn how to use Trident to create an Apache Storm topology that determines trending topics on Twitter based on hashtags."
    services="hdinsight"
    documentationCenter=""

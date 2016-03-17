@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Release notes: Microsoft HDInsight Emulator for Azure | Windows Azure" 
+	pageTitle="Release notes: Microsoft HDInsight Emulator for Azure | Azure" 
 	description="Get late-breaking information about the most recent releases of the HDInsight Hadoop Emulator, a Hadoop sandbox environment." 
 	editor="cgronlun" 
 	manager="paulettm" 
@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="10/29/2015"
+	ms.date="02/04/2016"
 	wacn.date=""/>
 
 

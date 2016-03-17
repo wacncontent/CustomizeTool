@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Use Hadoop Hive and Remote Desktop in HDInsight | Windows Azure"
+   pageTitle="Use Hadoop Hive and Remote Desktop in HDInsight | Azure"
    description="Learn how to connect to Hadoop cluster in HDInsight by using Remote Desktop, and then run Hive queries by using the Hive Command-Line Interface."
    services="hdinsight"
    documentationCenter=""
@@ -110,7 +110,7 @@ For information about other ways you can work with Hadoop on HDInsight:
 * [Use MapReduce with Hadoop on HDInsight](/documentation/articles/hdinsight-use-mapreduce)
 
 
-[1]: ../HDInsight/hdinsight-hadoop-visual-studio-tools-get-started.md
+[1]: /documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started
 
 [hdinsight-sdk-documentation]: http://msdn.microsoft.com/zh-cn/library/dn479185.aspx
 
@@ -125,18 +125,18 @@ For information about other ways you can work with Hadoop on HDInsight:
 [import-to-excel]: /documentation/articles/hdinsight-connect-excel-power-query/
 
 
-[hdinsight-use-oozie]: hdinsight-use-oozie.md
-[hdinsight-analyze-flight-data]: hdinsight-analyze-flight-delay-data.md
+[hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie
+[hdinsight-analyze-flight-data]: /documentation/articles/hdinsight-analyze-flight-delay-data
 
 
 
 
 
-[hdinsight-provision]: hdinsight-provision-clusters-v1.md
-[hdinsight-submit-jobs]: hdinsight-submit-hadoop-jobs-programmatically.md
-[hdinsight-upload-data]: hdinsight-upload-data.md
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
+[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
 
 
-[Powershell-install-configure]: ../powershell-install-configure.md
+[Powershell-install-configure]: /documentation/articles/powershell-install-configure
 [powershell-here-strings]: http://technet.microsoft.com/zh-cn/library/ee692792.aspx
 

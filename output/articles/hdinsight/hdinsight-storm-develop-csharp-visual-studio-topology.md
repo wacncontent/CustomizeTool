@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Apache Storm topologies with Visual Studio and C#  | Windows Azure"
+   pageTitle="Apache Storm topologies with Visual Studio and C#  | Azure"
    description="Learn how to create Storm topologies in C# by creating a simple word count topology in Visual Studio using the HDInsight Tools for Visual Studio."
    services="hdinsight"
    documentationCenter=""
@@ -18,8 +18,10 @@
 Learn how to create a C# Storm topology by using the HDInsight tools for Visual Studio. This tutorial walks through the process of creating a new Storm project in Visual Studio, testing it locally, and deploying it to an Apache Storm on HDInsight cluster.
 
 You will also learn how to create hybrid topologies that use C# and Java components.
+
 
 [AZURE.INCLUDE [windows-only](../includes/hdinsight-windows-only.md)]
+
 
 ##Prerequisites
 
@@ -96,7 +98,7 @@ In the next sections, you will modify this project into a basic WordCount applic
 
 2.	Replace the contents of the **Spout** class with the following. This creates a spout that randomly emits a sentence into the topology.
 
-	```
+	 ``` ```
 	private Context ctx;
 	private Random r = new Random();
 	string[] sentences = new string[] {
@@ -161,7 +163,7 @@ In the next sections, you will modify this project into a basic WordCount applic
 	{
 	    // Only used for transactional topologies
 	}
-	```
+	 ``` ```
 
 	Take a moment to read through the comments to understand what this code does.
 
@@ -181,7 +183,7 @@ In the next sections, you will modify this project into a basic WordCount applic
 
 4.	Replace the contents of the **Splitter** class with the following code:
 
-	```
+	 ``` ```
 	private Context ctx;
 
 
@@ -220,7 +222,151 @@ In the next sections, you will modify this project into a basic WordCount applic
 	    string sentence = tuple.GetString(0);
 	    // Split at space characters
 	    foreach (string word in sentence.Split(' '))
+
+		    {
+		        Context.Logger.Info("Emit: {0}", word);
+		        //Emit each word
+		        this.ctx.Emit(new Values(word));
+		    }
+	
+	
+		    Context.Logger.Info("Execute exit");
+		}
+		
+
+	Take a moment to read through the comments to understand what this code does.
+
+5.	Open **Counter.cs** and replace the class contents with the following:
+
+	
+		private Context ctx;
+	
+	
+		// Dictionary for holding words and counts
+		private Dictionary<string, int> counts = new Dictionary<string, int>();
+	
+	
+		// Constructor
+		public Counter(Context ctx)
+		{
+		    Context.Logger.Info("Counter constructor called");
+		    // Set instance context
+		    this.ctx = ctx;
+	
+	
+		    // Declare Input and Output schemas
+		    Dictionary<string, List<Type>> inputSchema = new Dictionary<string, List<Type>>();
+		    // A tuple containing a string field - the word
+		    inputSchema.Add("default", new List<Type>() { typeof(string) });
+	
+	
+		    Dictionary<string, List<Type>> outputSchema = new Dictionary<string, List<Type>>();
+		    // A tuple containing a string and integer field - the word and the word count
+		    outputSchema.Add("default", new List<Type>() { typeof(string), typeof(int) });
+		    this.ctx.DeclareComponentSchema(new ComponentStreamSchema(inputSchema, outputSchema));
+		}
+	
+	
+		// Get a new instance
+		public static Counter Get(Context ctx, Dictionary<string, Object> parms)
+		{
+		    return new Counter(ctx);
+		}
+	
+	
+		// Called when a new tuple is available
+		public void Execute(SCPTuple tuple)
+		{
+		    Context.Logger.Info("Execute enter");
+	
+	
+		    // Get the word from the tuple
+		    string word = tuple.GetString(0);
+		    // Do we already have an entry for the word in the dictionary?
+		    // If no, create one with a count of 0
+		    int count = counts.ContainsKey(word) ? counts[word] : 0;
+		    // Increment the count
+		    count++;
+		    // Update the count in the dictionary
+		    counts[word] = count;
+	
+	
+		    Context.Logger.Info("Emit: {0}, count: {1}", word, count);
+		    // Emit the word and count information
+		    this.ctx.Emit(Constants.DEFAULT_STREAM_ID, new List<SCPTuple> { tuple }, new Values(word, count));
+	
+	
+		    Context.Logger.Info("Execute exit");
+		}
+		
+
+	Take a moment to read through the comments to understand what this code does.
+
+###Define the topology
+
+Spouts and bolts are arranged in a graph, which defines how the data flows between components. For this topology, the graph is as follows:
+
+![image of how components are arranged](./media/hdinsight-storm-develop-csharp-visual-studio-topology/wordcount-topology.png)
+
+Sentences are emitted from the spout, which are distributed to instances of the Splitter bolt. The Splitter bolt breaks the sentences into words, which are distributed to the Counter bolt.
+
+Because word count is held locally in the Counter instance, we want to make sure that specific words flow to the same Counter bolt instance, so we have only one instance keeping track of a specific word. But for the Splitter bolt, it really doesn't matter which bolt receives which sentence, so we simply want to load balance sentences across those instances.
+
+Open **Program.cs**. The important method is **ITopologyBuilder**, which is used to define the topology that is submitted to Storm. Replace the contents of **ITopologyBuilder** with the following code to implement the topology described previously:
+
+	
+	    // Create a new topology named 'WordCount'
+	    TopologyBuilder topologyBuilder = new TopologyBuilder("WordCount");
+	
+	    // Add the spout to the topology.
+	    // Name the component 'sentences'
+	    // Name the field that is emitted as 'sentence'
+	    topologyBuilder.SetSpout(
+	        "sentences",
+	        Spout.Get,
+	        new Dictionary<string, List<string>>()
+	        {
+	            {Constants.DEFAULT_STREAM_ID, new List<string>(){"sentence"}}
+	        },
+	        1);
+	    // Add the splitter bolt to the topology.
+	    // Name the component 'splitter'
+	    // Name the field that is emitted 'word'
+	    // Use suffleGrouping to distribute incoming tuples
+	    //   from the 'sentences' spout across instances
+	    //   of the splitter
+	    topologyBuilder.SetBolt(
+	        "splitter",
+	        Splitter.Get,
+	        new Dictionary<string, List<string>>()
+	        {
+	            {Constants.DEFAULT_STREAM_ID, new List<string>(){"word"}}
+	        },
+	        1).shuffleGrouping("sentences");
+	
+	    // Add the counter bolt to the topology.
+	    // Name the component 'counter'
+	    // Name the fields that are emitted 'word' and 'count'
+	    // Use fieldsGrouping to ensure that tuples are routed
+	    //   to counter instances based on the contents of field
+	    //   position 0 (the word). This could also have been
+	    //   List<string>(){"word"}.
+	    //   This ensures that the word 'jumped', for example, will always
+	    //   go to the same instance
+	    topologyBuilder.SetBolt(
+	        "counter",
+	        Counter.Get,
+	        new Dictionary<string, List<string>>()
+	        {
+	            {Constants.DEFAULT_STREAM_ID, new List<string>(){"word", "count"}}
+	        },
+	        1).fieldsGrouping("splitter", new List<int>() { 0 });
+	
+	    // Add topology config
+	    topologyBuilder.SetTopologyConfig(new Dictionary<string, string>()
+
 	    {
+
 	        Context.Logger.Info("Emit: {0}", word);
 	        //Emit each word
 	        this.ctx.Emit(new Values(word));
@@ -363,10 +509,14 @@ Open **Program.cs**. The important method is **ITopologyBuilder**, which is used
     topologyBuilder.SetTopologyConfig(new Dictionary<string, string>()
     {
         {"topology.kryo.register","[\"[B\"]"}
+
+
+	        {"topology.kryo.register","[\"[B\"]"}
+
     });
 
     return topologyBuilder;
-```
+ ``` ```
 
 Take a moment to read through the comments to understand what this code does.
 
@@ -402,9 +552,9 @@ Transactional topologies implement the following to support replay of data:
 
 -	**Sequence ID**: When emitting a tuple, a sequence ID can be specified. This should be a value that identifies the tuple for replay (Ack and Fail) processing. For example, the spout in the **Storm Sample** project uses the following when emitting data:
 
-	```
+	 ``` ```
 	this.ctx.Emit(Constants.DEFAULT_STREAM_ID, new Values(sentence), lastSeqId);
-	```
+	 ``` ```
 
 	This emits a new tuple that contains a sentence to the default stream, with the sequence ID value contained in **lastSeqId**. For this example, **lastSeqId** is simply incremented for every tuple emitted.
 
@@ -479,13 +629,13 @@ Although it is easy to deploy a topology to a cluster, in some cases, you may ne
 
 3.	Open **LocalTest.cs** and add the following **using** statement at the top:
 
-	```
+	 ``` ```
 	using Microsoft.SCP;
-	```
+	 ``` ```
 
 4.	Use the following as the contents of the **LocalTest** class:
 
-	```
+	 ``` ```
 	// Drives the topology components
 	public void RunTestCase()
 	{
@@ -566,13 +716,13 @@ Although it is easy to deploy a topology to a cluster, in some cases, you may ne
 	    }
 	    #endregion
 	}
-	```
+	 ``` ```
 
 	Take a moment to read through the code comments. This code uses **LocalContext** to run the components in the development environment, and it persists the data stream between components to text files on the local drive.
 
 5.	Open **Program.cs** and add the following to the **Main** method:
 
-	```
+	 ``` ```
 	Console.WriteLine("Starting tests");
 	System.Environment.SetEnvironmentVariable("microsoft.scp.logPrefix", "WordCount-LocalTest");
 	// Initialize the runtime
@@ -590,7 +740,7 @@ Although it is easy to deploy a topology to a cluster, in some cases, you may ne
 	tests.RunTestCase();
 	Console.WriteLine("Tests finished");
 	Console.ReadKey();
-	```
+	 ``` ```
 
 6.	Save the changes, then click **F5** or select **Debug** > **Start Debugging** to start the project. A console window should appear, and log status as the tests progress. When **Tests finished** appears, press any key to close the window.
 
@@ -606,9 +756,9 @@ Although testing a basic word count application locally is pretty trivial, the r
 
 You can easily log information from your topology components by using `Context.Logger`. For example, the following will create an informational log entry:
 
-```
+ ``` ```
 Context.Logger.Info("Component started");
-```
+ ``` ```
 
 Logged information can be viewed from the **Hadoop Service Log**, which is found in **Server Explorer**. Expand the entry for your Storm on HDInsight cluster, then expand **Hadoop Service Log**. Finally, select the log file to view.
 

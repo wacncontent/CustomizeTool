@@ -33,9 +33,9 @@ You'll build a simple contact list web application that is built on ASP.NET MVC 
 
 ![screenshot of web site][intro001]
 
-<!-- keep by customization: begin -->
+
 <a name="bkmk_setupdevenv"></a>
-<!-- keep by customization: end -->
+
 <!-- the next line produces the "Set up the development environment" section as see at /documentation/articles/web-sites-dotnet-get-started/ -->
 [AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
 
@@ -47,7 +47,7 @@ You'll build a simple contact list web application that is built on ASP.NET MVC 
 
 	![New Project dialog box](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/rr4.png)
 
-<!-- deleted by customization
+
 1. In the **New ASP.NET Project** dialog box, select the **MVC** template, check **Web API** and then click **Change Authentication**.
 
 	![New ASP.NET Project dialog box](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/rt3.png)
@@ -68,20 +68,20 @@ If you have not previously signed in to Azure, you will be prompted to sign in.
 2. If you haven't created a database server before, select **Create new server**, enter a database user name and password.
 
 	![Configure Azure Website](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/configAz.PNG)
--->
-<!-- keep by customization: begin -->
+
+
 1. In the **New ASP.NET Project** dialog box, make sure the **Host in the Cloud** is unchecked and click **OK**.
 
 	![New ASP.NET Project dialog box](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/rt3.png)
 
 If you do not have a web site in Azure yet, you can go to the [Azure Management Portal](http://manage.windowsazure.cn) to create one. After the web site is created, go to the **Dashboard**, under **quick glance**, you can download the publish profile. You will need it in the publish section in this article.
-<!-- keep by customization: end -->
+
 
 If you have a database server, use that to create a new database. Database servers are a precious resource, and you generally want to create multiple databases on the same server for testing and development rather than creating a database server per database. Make sure your web site and database are in the same region.
-<!-- deleted by customization
+
 
 ![Configure Azure Website](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/configWithDB.PNG)
--->
+
 
 ### Set the page header and footer
 
@@ -147,16 +147,16 @@ This is all you need to do for now to create the application that you'll deploy 
 
 	The **Publish Web** wizard opens.
 
-<!-- deleted by customization
+
 12. Click **Publish**.
 
 ![Settings tab](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/pw.png)
--->
-<!-- keep by customization: begin -->
+
+
 12. Click **Publish**, click **Import**, and Choose the previously downloaded "publish profile".
 
 ![Settings tab](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/pw.png)
-<!-- keep by customization: end -->
+
 
 Visual Studio begins the process of copying the files to the Azure server. The **Output** window shows what deployment actions were taken and reports successful completion of the deployment.
 
@@ -717,15 +717,15 @@ To publish the application, you repeat the procedure you followed earlier.
 
 	![Publish][rxP]
 
-<!-- deleted by customization
+
 5. Click the **Settings** tab.
 	
 
--->
-<!-- keep by customization: begin -->
+
+
 5. Click **Import**, and choose the publish profile downloaded above.
 	
-<!-- keep by customization: end -->
+
 1. Under **ContactsManagerContext(ContactsManagerContext)**, click the **v** icon to change *Remote connection string* to the connection string for the contact database. Click **ContactDB**.
 
 	![Settings](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/rt5.png)
@@ -751,14 +751,14 @@ When you see that the item you enter is saved and appears on the contact manager
 
 The application is now running in the cloud, using SQL Database to store its data. After you finish testing the application in Azure, delete it. The application is public and doesn't have a mechanism to limit access.
 
-<!-- deleted by customization
+
 >[AZURE.NOTE] If you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.
 
 ## Next Steps
--->
-<!-- keep by customization: begin -->
+
+
 ##<a name="nextsteps"></a> Next Steps
-<!-- keep by customization: end -->
+
 
 A real application would require authentication and authorization, and you would use the membership database for that purpose. The tutorial [Deploy a Secure ASP.NET MVC application with OAuth, Membership and SQL Database](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database) is based on this tutorial and shows how to deploy a web application with the membership database.
 
@@ -770,14 +770,14 @@ Another way to store data in an Azure application is to use Azure storage, which
 * [Your First ASP.NET Web API](http://www.asp.net/web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api)
 * [Debugging WAWS](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio)
 
-This tutorial and the sample application was written by [Rick Anderson](http://blogs.msdn.com/b/rickandy/) <!-- deleted by customization (Twitter [@RickAndMSFT](https://twitter.com/RickAndMSFT)) --> with assistance from Tom Dykstra and Barry Dorrans <!-- deleted by customization (Twitter [@blowdart](https://twitter.com/blowdart)) -->.
+This tutorial and the sample application was written by [Rick Anderson](http://blogs.msdn.com/b/rickandy/)  (Twitter [@RickAndMSFT](https://twitter.com/RickAndMSFT))  with assistance from Tom Dykstra and Barry Dorrans  (Twitter [@blowdart](https://twitter.com/blowdart)) .
 
 Please leave feedback on what you liked or what you would like to see improved, not only about the tutorial itself but also about the products that it demonstrates. Your feedback will help us prioritize improvements. We are especially interested in finding out how much interest there is in more automation for the process of configuring and deploying the membership database. 
-<!-- deleted by customization
+
 
 ## What's changed
 * For a guide to the change from Websites to Azure see: [Azure and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
--->
+
 
 <!-- bookmarks -->
 [Add an OAuth Provider]: #addOauth

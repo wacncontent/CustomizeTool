@@ -25,32 +25,32 @@ A screenshot of the completed application is below:
 
 [AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
 
-<!-- deleted by customization
+
 >[AZURE.NOTE] If you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.
 
--->
+
 ## Sign into Azure
 
 Follow these steps to create a web app in Azure.
 
 1. Launch WebMatrix
-<!-- deleted by customization
-2. If this is the first time you've used WebMatrix, you will be prompted to sign into Azure.  Otherwise, you can click on the **Sign In** button, and choose **Add Account**.  Select to **Sign in** using your Microsoft Account <!-- keep by customization: begin -->, and select the profile downloaded in the previous step <!-- keep by customization: end -->.
+
+2. If this is the first time you've used WebMatrix, you will be prompted to sign into Azure.  Otherwise, you can click on the **Sign In** button, and choose **Add Account**.  Select to **Sign in**.
 
 	![Add Account][addaccount]
 
 3. If you have signed up for an Azure account, you may log in using your Microsoft Account:
 
 	![Sign into Azure][signin]	
--->
-<!-- keep by customization: begin -->
+
+
 2. Log into the [Azure Management Portal], and click [publish profile](https://manage.windowsazure.cn/publishsettings/index?client=powershell&schemaversion=1.0) to download the publish profile for your account.
-2. If this is the first time you've used WebMatrix, you will be prompted to sign into Azure.  Otherwise, you can click on the **Sign In** button, and choose **Add Account**.  Select to **Import an account** using your Microsoft Account <!-- keep by customization: begin -->, and select the profile downloaded in the previous step <!-- keep by customization: end -->.
+2. If this is the first time you've used WebMatrix, you will be prompted to sign into Azure.  Otherwise, you can click on the **Sign In** button, and choose **Add Account**.  Select to **Import an account**  using your Microsoft Account , and select the profile downloaded in the previous step.
 
 	![Add Account][addaccount]
 
 4. You will be prompted to enter a name for you account. Enter what ever you want, and click ok.
-<!-- keep by customization: end -->
+
 
 
 ## Create a site using a built in template for Azure
@@ -110,17 +110,17 @@ You can easily modify and republish your application. Here, you will make a simp
 To learn more about the versions of Node.js that are provided with Azure and how to specify the version to be used with your application, see [Specifying a Node.js version in an Azure application](/documentation/articles/nodejs-specify-node-version-azure-apps).
 
 If you encounter problems with your application after it has been deployed to Azure, see [How to debug a Node.js web app in Azure](/documentation/articles/web-sites-nodejs-debug) for information on diagnosing the problem.
-<!-- deleted by customization
+
 
 ## What's changed
 * For a guide to the change from Websites to Azure see: [Azure and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
 
--->
-<!-- keep by customization: begin -->
+
+
 [Azure Management Portal]: http://manage.windowsazure.cn
 [Publishing an Azure  Website using Git]: /documentation/articles/web-sites-publish-source-control
 [for free]: /zh-cn/pricing/1rmb-trial
-<!-- keep by customization: end -->
+
 [WebMatrix WebSite]: http://www.microsoft.com/click/services/Redirect2.ashx?CR_CC=200106398
 [WebMatrix for Azure]: http://go.microsoft.com/fwlink/?LinkID=253622&clcid=0x409
 
@@ -137,5 +137,4 @@ If you encounter problems with your application after it has been deployed to Az
 [addaccount]: ./media/web-sites-nodejs-use-webmatrix/webmatrix-add-account.png
 [signin]: ./media/web-sites-nodejs-use-webmatrix/webmatrix-sign-in.png
 [sitefromtemplate]: ./media/web-sites-nodejs-use-webmatrix/webmatrix-site-from-template.png
-[nodesitefromtemplateazure]: ./media/web-sites-nodejs-use-webmatrix/webmatrix-node-site-azure.png
- 
+[nodesitefromtemplateazure]: ./media/web-sites-nodejs-use-webmatrix/webmatrix-node-site-azure.png

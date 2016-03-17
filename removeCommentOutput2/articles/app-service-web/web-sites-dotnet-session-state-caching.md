@@ -20,12 +20,6 @@ This topic explains how to use the Azure Redis Cache Service for session state.
 
 If your ASP.NET web app uses session state, you will need to configure an external session state provider (either the Redis Cache Service or a SQL Server session state provider). If you use session state, and don't use an external provider, you will be limited to one instance of your web app. The Redis Cache Service is the fastest and simplest to enable.
 
-The basic steps to use the Cache Service (Preview) for session state caching include:
-
-* [Create the cache.](#createcache)
-* [Add the RedisSessionStateProvider NuGet package to your web site.](#configureproject)
-* [Modify the web.config file.](#configurewebconfig)
-* [Use the Session object to store and retrieve cached items.](#usesessionobject)
 
 ##<a id="createcache"></a>Create the Cache
 Follow [these directions](/documentation/articles/cache-dotnet-how-to-use-azure-redis-cache#create-cache) to create the cache.

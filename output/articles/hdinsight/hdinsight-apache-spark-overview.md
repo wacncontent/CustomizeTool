@@ -1,5 +1,7 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
-	pageTitle="An overview of Apache Spark in HDInsight | Windows Azure" 
+	pageTitle="An overview of Apache Spark in HDInsight | Azure" 
 	description="An introduction to Apache Spark in HDInsight and scenarios in which to use Spark on HDInsight in your applications." 
 	services="hdinsight" 
 	documentationCenter="" 
@@ -118,4 +120,4 @@ Start with creating a Spark cluster on HDInsight Linux. See [QuickStart: create 
 * [Manage resources for the Apache Spark cluster in Azure HDInsight](/documentation/articles/hdinsight-apache-spark-resource-manager)
 
 
-[hdinsight-storage]: ../hdinsight-use-blob-storage/
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage

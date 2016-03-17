@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Create a VM running Windows in the Management Portal | Windows Azure"
+	pageTitle="Create a VM running Windows in the Management Portal | Azure"
 	description="Create a Windows virtual machine in the Azure Management Portal."
 	services="virtual-machines"
 	documentationCenter=""

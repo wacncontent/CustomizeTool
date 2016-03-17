@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Configure an ILB Listener for AlwaysOn Availability Groups | Windows Azure"
+	pageTitle="Configure an ILB Listener for AlwaysOn Availability Groups | Azure"
 	description="This tutorial uses resources created with  the classic deployment model, and creates an AlwaysOn Availability Group Listener in Azure using an Internal Load Balancer (ILB)."
 	services="virtual-machines"
 	documentationCenter="na"
@@ -105,7 +105,7 @@ For ILB, you must first create the internal load balancer. This is done in the s
 		# Define variables
 		$ClusterNetworkName = "<MyClusterNetworkName>" # the cluster network name (Use Get-ClusterNetwork on Windows Server 2012 of higher to find the name)
 		$IPResourceName = "<IPResourceName>" # the IP Address resource name
-		$ILBIP = â<X.X.X.X>â # the IP Address of the Internal Load Balancer (ILB)
+		$ILBIP = "<X.X.X.X>" # the IP Address of the Internal Load Balancer (ILB)
 
 		Import-Module FailoverClusters
 

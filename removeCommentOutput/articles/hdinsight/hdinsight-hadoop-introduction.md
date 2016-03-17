@@ -1,5 +1,5 @@
 <properties
-	pageTitle="What is Hadoop in the cloud? Introduction to HDInsight | Windows Azure"
+	pageTitle="What is Hadoop in the cloud? Introduction to HDInsight | Azure"
 	description="What is Hadoop in the cloud and how is it managed in HDInsight? An introduction to Hadoop components and big data analysis."
 	keywords="big data analysis,introduction to hadoop,what is hadoop,hadoop in the cloud"
 	services="hdinsight"
@@ -33,7 +33,7 @@ For big data to provide actionable intelligence or insight, not only must you co
 
 ## <a name="overview"></a>Overview of the Hadoop ecosystem on HDInsight
 
-HDInsight is a cloud implementation on Windows Azure of the rapidly expanding Apache Hadoop technology stack that is the go-to solution for big data analysis. It includes implementations of Apache Spark, HBase, Storm, Pig, Hive, Sqoop, Oozie, Ambari, and so on. HDInsight also integrates with business intelligence (BI) tools such as Power BI, Excel, SQL Server Analysis Services, and SQL Server Reporting Services.
+HDInsight is a cloud implementation on Azure of the rapidly expanding Apache Hadoop technology stack that is the go-to solution for big data analysis. It includes implementations of Apache Spark, HBase, Storm, Pig, Hive, Sqoop, Oozie, Ambari, and so on. HDInsight also integrates with business intelligence (BI) tools such as Power BI, Excel, SQL Server Analysis Services, and SQL Server Reporting Services.
 
 ### Clusters on Linux
 
@@ -286,5 +286,5 @@ Use big data analysis on your organization's data to gain insights into your bus
 
 
 [marketing-page]: /home/features/hdinsight/
-[component-versioning]: hdinsight-component-versioning-v1.md
+[component-versioning]: /documentation/articles/hdinsight-component-versioning-v1
 [zookeeper]: http://zookeeper.apache.org/

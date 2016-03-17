@@ -1,5 +1,5 @@
 <properties
-	pageTitle="SharePoint Server 2013 farm Phase 3 | Windows Azure"
+	pageTitle="SharePoint Server 2013 farm Phase 3 | Azure"
 	description="Create the computers and the SQL Server cluster and enable Availability Groups in Phase 3 of the SharePoint Server 2013 farm in Azure."
 	documentationCenter=""
 	services="virtual-machines"

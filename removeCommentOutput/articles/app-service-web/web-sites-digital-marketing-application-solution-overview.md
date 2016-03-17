@@ -78,7 +78,7 @@ Maintain high availability of your web app using [Azure Traffic Manager]. Using 
 
 Stay up-to-date on your web app's performance with Azure or third-party tools. Receive alerts on critical web app events. Gain user insight easily with Application Insight or with web log analytics from HDInsight. 
 
-Get a [quick glance] of the web app's current performance metrics and resource quotas in the web app's blade in the [Azure Management Portal](https://manage.windowsazure.cn/). For a 360Â° view of your application across availability, performance and usage, use [Azure Application Insights] to give you fast & powerful troubleshooting, diagnostics and usage insights. Or, use a third-party tool like [New Relic] to provide advanced monitoring data for your web apps.
+Get a [quick glance] of the web app's current performance metrics and resource quotas in the web app's blade in the [Azure Management Portal](https://manage.windowsazure.cn/). For a 360° view of your application across availability, performance and usage, use [Azure Application Insights] to give you fast & powerful troubleshooting, diagnostics and usage insights. Or, use a third-party tool like [New Relic] to provide advanced monitoring data for your web apps.
 
 In the **Standard** tier, monitor app responsiveness receive email notifications whenever your web app becomes unresponsive. For more information, see [How to: Receive Alert Notifications and Manage Alert Rules in Azure].
 
@@ -92,28 +92,28 @@ In the **Standard** tier, monitor app responsiveness receive email notifications
 
 [Azure Web App]: /home/features/web-site/
 
-[WordPress]:web-sites-php-web-site-gallery.md
+[WordPress]: /documentation/articles/web-sites-php-web-site-gallery
   
-[MySQL]:web-sites-php-mysql-deploy-use-git.md
-[Azure SQL Database]:web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database.md
+[MySQL]: /documentation/articles/web-sites-php-mysql-deploy-use-git
+[Azure SQL Database]: /documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database
 [FTP]: /documentation/articles/web-sites-deploy#ftp
-[Visual Studio]:web-sites-dotnet-get-started.md
-[Visual Studio Team Services]:../cloud-services-continuous-delivery-use-vso.md
-[Git]:web-sites-publish-source-control.md
+[Visual Studio]: /documentation/articles/web-sites-dotnet-get-started
+[Visual Studio Team Services]: /documentation/articles/cloud-services-continuous-delivery-use-vso
+[Git]: /documentation/articles/web-sites-publish-source-control
 
-[deploying to a staging slot]:web-sites-staged-publishing.md 
+[deploying to a staging slot]: /documentation/articles/web-sites-staged-publishing
 [continuously publish]:http://rickrainey.com/2014/01/21/continuous-deployment-github-with-azure-web-sites-and-staged-publishing/
 [run A/B tests]:http://blogs.msdn.com/b/tomholl/archive/2014/11/10/a-b-testing-with-azure-websites.aspx
 
-[Create an ASP.NET MVC app with auth and SQL DB and deploy to Azure Web App]:web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database.md
+[Create an ASP.NET MVC app with auth and SQL DB and deploy to Azure Web App]: /documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database
 
 [Azure Media Services]:http://blogs.technet.com/b/cbernier/archive/2013/09/03/windows-azure-media-services-and-web-sites.aspx
-[SendGrid service in Azure gallery]:sendgrid-dotnet-how-to-send-email.md
-[Mobile Services]:../mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users.md
-[Notification Hub]:../mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users.md
+[SendGrid service in Azure gallery]: /documentation/articles/sendgrid-dotnet-how-to-send-email
+[Mobile Services]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users
+[Notification Hub]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users
 
 [Azure Traffic Manager]:http://www.hanselman.com/blog/CloudPowerHowToScaleAzureWebsitesGloballyWithTrafficManager.aspx
-[integrating your web app with Azure CDN]:cdn-websites-with-cdn.md 
+[integrating your web app with Azure CDN]: /documentation/articles/cdn-websites-with-cdn
 [CDN node]:https://msdn.microsoft.com/zh-cn/library/azure/gg680302.aspx
 
 [scale up and out]:/manage/services/web-sites/how-to-scale-websites/

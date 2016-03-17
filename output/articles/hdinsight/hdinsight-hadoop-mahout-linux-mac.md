@@ -1,5 +1,7 @@
+<!-- not suitable for Mooncake -->
+
 <properties
-	pageTitle="Generate recommendations using Mahout and Linux-based HDInsight | Windows Azure"
+	pageTitle="Generate recommendations using Mahout and Linux-based HDInsight | Azure"
 	description="Learn how to use the Apache Mahout machine learning library to generate movie recommendations with Linux-based HDInsight (Hadoop)."
 	services="hdinsight"
 	documentationCenter=""
@@ -252,8 +254,8 @@ Now that you have learned how to use Mahout, discover other ways of working with
 [build]: http://mahout.apache.org/developers/buildingmahout.html
 [movielens]: http://grouplens.org/datasets/movielens/
 [100k]: http://files.grouplens.org/datasets/movielens/ml-100k.zip
-[getstarted]: hdinsight-hadoop-linux-tutorial-get-started.md
-[upload]: hdinsight-upload-data.md
+[getstarted]: /documentation/articles/hdinsight-hadoop-linux-tutorial-get-started
+[upload]: /documentation/articles/hdinsight-upload-data
 [ml]: http://en.wikipedia.org/wiki/Machine_learning
 [forest]: http://en.wikipedia.org/wiki/Random_forest
 [management]: https://manage.windowsazure.cn/

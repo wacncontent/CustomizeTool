@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Use Azure Premium Storage with SQL Server | Windows Azure"
+	pageTitle="Use Azure Premium Storage with SQL Server | Azure"
 	description="This article uses resources created with the classic deployment model, and gives guidance on using Azure Premium Storage with SQL Server running on Azure Virtual Machines."
 	services="virtual-machines"
 	documentationCenter=""
@@ -366,7 +366,7 @@ On-premises SQL Server AlwaysOn Availability Groups use a Listener on-premises t
 
 ![DeploymentsUseAlwaysOn][6]
 
-In Windows Azure you can have only one IP address assigned to a NIC on the VM, so in order to achieve the same layer of abstraction as on-premises, Azure utilizes the IP address that is assigned to the Internal/External Load Balancers (ILB/ELB). The IP resource that is shared between the servers is set to the same IP as the ILB/ELB. This is published in the DNS, and client traffic is passed through the ILB/ELB to the Primary SQL Server replica. The ILB/ELB knows which SQL Server is primary since it uses probes to probe the AlwaysOn IP resource. In the previous example, it probes each node that has an endpoint referenced by the ELB/ILB, whichever responds is the Primary SQL Server.
+In Azure you can have only one IP address assigned to a NIC on the VM, so in order to achieve the same layer of abstraction as on-premises, Azure utilizes the IP address that is assigned to the Internal/External Load Balancers (ILB/ELB). The IP resource that is shared between the servers is set to the same IP as the ILB/ELB. This is published in the DNS, and client traffic is passed through the ILB/ELB to the Primary SQL Server replica. The ILB/ELB knows which SQL Server is primary since it uses probes to probe the AlwaysOn IP resource. In the previous example, it probes each node that has an endpoint referenced by the ELB/ILB, whichever responds is the Primary SQL Server.
 
 > [AZURE.NOTE] The ILB and ELB are both assigned to a particular Azure cloud service, therefore any cloud migration in Azure will most likely mean that the Load Balancer IP will change.
 

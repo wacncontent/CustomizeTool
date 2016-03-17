@@ -34,9 +34,11 @@ By following this tutorial, you will build a simple registration web application
 
 Follow these steps to create an Azure web app and a SQL Database:
 
+
 1. Login to the [Azure Management Portal][management-portal].
 2. Click the **New** icon on the bottom left of the portal.
-![Create New Azure  Website][new- Website]
+
+	![Create New Azure  Website][new- Website]
 
 3. Click ** Website**, then **Custom Create**.
 
@@ -274,6 +276,7 @@ To publish changes to application, follow these steps:
 	You will be prompted for the password you created earlier.
 
 3. Browse to **http://[web app name].chinacloudsites.cn/index.php** to see your changes.
+
 
 
 

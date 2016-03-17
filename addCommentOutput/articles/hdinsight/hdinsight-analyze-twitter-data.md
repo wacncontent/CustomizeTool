@@ -1,5 +1,7 @@
+<!-- not suitable for Mooncake -->
+
 <properties
-	pageTitle="Analyze Twitter data with Hadoop in HDInsight | Windows Azure"
+	pageTitle="Analyze Twitter data with Hadoop in HDInsight | Azure"
 	description="Learn how to use Hive to analyze Twitter data on Hadoop in HDInsight to find the usage frequency of a particular word."
 	services="hdinsight"
 	documentationCenter=""
@@ -551,37 +553,16 @@ In this tutorial we have seen how to transform an unstructured JSON dataset into
 [twitter-statuses-filter]: https://dev.twitter.com/docs/api/1.1/post/statuses/filter
 
 [powershell-start]: http://technet.microsoft.com/zh-cn/library/hh847889.aspx
-<!-- deleted by customization
-[powershell-install]: ../install-configure-powershell.md
--->
-<!-- keep by customization: begin -->
 [powershell-install]: /documentation/articles/powershell-install-configure
-<!-- keep by customization: end -->
 [powershell-script]: http://technet.microsoft.com/zh-cn/library/ee176961.aspx
 
 
-<!-- deleted by customization
-[hdinsight-provision]: hdinsight-provision-clusters-v1.md
-[hdinsight-get-started]: ../hdinsight-get-started.md
--->
-<!-- keep by customization: begin -->
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
 [hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
-<!-- keep by customization: end -->
 [hdinsight-storage-powershell]: /documentation/articles/hdinsight-hadoop-use-blob-storage#powershell
-<!-- deleted by customization
-[hdinsight-analyze-flight-delay-data]: hdinsight-analyze-flight-delay-data.md
-[hdinsight-storage]: ../hdinsight-use-blob-storage.md
-[hdinsight-use-sqoop]: hdinsight-use-sqoop.md
-[hdinsight-power-query]: hdinsight-connect-excel-power-query.md
-[hdinsight-hive-odbc]: hdinsight-connect-excel-hive-ODBC-driver.md
-[hdinsight-hbase-twitter-sentiment]: hdinsight-hbase-analyze-twitter-sentiment.md
--->
-<!-- keep by customization: begin -->
 [hdinsight-analyze-flight-delay-data]: /documentation/articles/hdinsight-analyze-flight-delay-data
 [hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
 [hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop
 [hdinsight-power-query]: /documentation/articles/hdinsight-connect-excel-power-query
 [hdinsight-hive-odbc]: /documentation/articles/hdinsight-connect-excel-hive-ODBC-driver
 [hdinsight-hbase-twitter-sentiment]: /documentation/articles/hdinsight-hbase-analyze-twitter-sentiment
-<!-- keep by customization: end -->

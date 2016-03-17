@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Create Windows-based Hadoop clusters in HDInsight using .NET SDK | Windows Azure"
+   pageTitle="Create Windows-based Hadoop clusters in HDInsight using .NET SDK | Azure"
    	description="Learn how to create HDInsight clusters for Azure HDInsight using .NET SDK."
    services="hdinsight"
    documentationCenter=""
@@ -31,7 +31,7 @@ Before you begin the instructions in this article, you must have the following:
 ## Create clusters
 The HDInsight .NET SDK provides .NET client libraries that make it easier to work with HDInsight from a .NET Framework application. Follow the instructions below to create a Visual Studio console application and paste the code for creating a cluster.
 
-The application requires <!-- deleted by customization an Azure resource group, --> and the default storage account.  The [Appendix A](#appx-a-create-dependent-components) provices a PowerShell script to create the dependent components.
+The application requires  an Azure resource group,  and the default storage account.  The [Appendix A](#appx-a-create-dependent-components) provices a PowerShell script to create the dependent components.
 
 **To create a Visual Studio console application**
 
@@ -59,9 +59,9 @@ The application requires <!-- deleted by customization an Azure resource group, 
 				private static HDInsightManagementClient _hdiManagementClient;
 		
 				private static Guid SubscriptionId = new Guid("<Azure Subscription ID>");
-<!-- deleted by customization
+
 				private const string ExistingResourceGroupName = "<Azure Resource Group Name>";
--->
+
 				private const string ExistingStorageName = "<Default Storage Account Name>.blob.core.chinacloudapi.cn";
 				private const string ExistingStorageKey = "<Default Storage Account Key>";
 				private const string ExistingBlobContainer = "<Default Blob Container Name>";
@@ -96,12 +96,12 @@ The application requires <!-- deleted by customization an Azure resource group, 
 						OSType = NewClusterOsType
 					};
 		
-<!-- deleted by customization
+
 					_hdiManagementClient.Clusters.Create(ExistingResourceGroupName, NewClusterName, parameters);
--->
-<!-- keep by customization: begin -->
+
+
 					_hdiManagementClient.Clusters.Create(NewClusterName, parameters);
-<!-- keep by customization: end -->
+
 
                     System.Console.WriteLine("The cluster has been created. Press ENTER to continue ...");
                     System.Console.ReadLine();
@@ -171,9 +171,9 @@ The following Azure PowerShell script can be use to create the dependent compone
     #region - service names
     $namePrefix = $nameToken.ToLower() + (Get-Date -Format "MMdd")
 
-<!-- deleted by customization
+
     $resourceGroupName = $namePrefix + "rg"
--->
+
     $hdinsightClusterName = $namePrefix + "hdi"
     $defaultStorageAccountName = $namePrefix + "store"
     $defaultBlobContainerName = $hdinsightClusterName
@@ -189,49 +189,49 @@ The following Azure PowerShell script can be use to create the dependent compone
     ####################################
     #region - Connect to Azure subscription
     Write-Host "`nConnecting to your Azure subscription ..." -ForegroundColor Green
-<!-- deleted by customization
+
     try{Get-AzureRmContext}
     catch{Login-AzureRmAccount}
--->
-<!-- keep by customization: begin -->
+
+
     try{Get-AzureContext}
     catch{Add-AzureAccount -Environment AzureChinaCloud}
-<!-- keep by customization: end -->
+
     #endregion
 
     #region - Create an HDInsight cluster
     ####################################
     # Create dependent components
     ####################################
-<!-- deleted by customization
+
     Write-Host "Creating a resource group ..." -ForegroundColor Green
     New-AzureRmResourceGroup `
         -Name  $resourceGroupName `
         -Location $location
--->
+
 
     Write-Host "Creating the default storage account and default blob container ..."  -ForegroundColor Green
-<!-- deleted by customization
+
     New-AzureRmStorageAccount `
         -ResourceGroupName $resourceGroupName `
         -Name $defaultStorageAccountName `
--->
-<!-- keep by customization: begin -->
+
+
     New-AzureStorageAccount `
         -StorageAccountName $defaultStorageAccountName `
-<!-- keep by customization: end -->
+
         -Location $location `
         -Type Standard_GRS
 
-<!-- deleted by customization
+
     $defaultStorageAccountKey = Get-AzureRmStorageAccountKey `
                                     -ResourceGroupName $resourceGroupName `
                                     -Name $defaultStorageAccountName |  %{ $_.Key1 }
--->
-<!-- keep by customization: begin -->
+
+
     $defaultStorageAccountKey = Get-AzureStorageKey `
                                     -StorageAccountName $defaultStorageAccountName |  %{ $_.Primary }
-<!-- keep by customization: end -->
+
     $defaultStorageContext = New-AzureStorageContext `
                                     -StorageAccountName $defaultStorageAccountName `
                                     -StorageAccountKey $defaultStorageAccountKey
@@ -240,9 +240,9 @@ The following Azure PowerShell script can be use to create the dependent compone
         -Context $defaultStorageContext #use the cluster name as the container name
 
     Write-Host "Use the following names in your .NET application" -ForegroundColor Green
-<!-- deleted by customization
+
     Write-host "Resource Group Name: $resourceGroupName"
--->
+
     Write-host "Default Storage Account Name: $defaultStorageAccountName"
     Write-host "Default Storage Account Key: $defaultStorageAccountKey"
     Write-host "Default Blob Container Name: $defaultBlobContainerName"

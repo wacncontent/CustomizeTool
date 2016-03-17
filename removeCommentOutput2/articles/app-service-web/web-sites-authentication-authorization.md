@@ -12,15 +12,9 @@
 	ms.date="12/10/2015"
 	wacn.date=""/>
 
-# Use Active Directory for authentication in Azure Web App#
+# Use Active Directory for authentication in Azure #
 
 [Azure Web Apps](/documentation/services/web-sites/) enables enterprise line-of-business application scenarios by supporting single sign-on (SSO) of users whether they access the application from your on-premises environment or the public internet. It can be integrated with [Azure Active Directory](/home/features/identity/) (AAD) or an on-premises secure token service (STS), such as Active Directory Federation Services (AD FS), to authenticate your internal Active Directory (AD) users and authorize them properly.
-
-## Zero-friction authentication and authorization ##
-
-With a few clicks of a button, you can enable authentication and authorization for your web app. The checkbox style configuration in every Azure web app provides basic access control for your line-of-business web app. It does so by enforcing HTTPS and authentication to an Azure AD tenant of your choice before granting users access to your web app content. For more information, see [Web Apps Authentication / Authorization](https://azure.microsoft.com/blog/2014/11/13/azure-websites-authentication-authorization/).
-
->[AZURE.NOTE] This feature is currently in preview.
 
 ## Manually implement authentication and authorization ##
 

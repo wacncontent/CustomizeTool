@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Access Hadoop YARN application logs programmatically | Windows Azure"
+	pageTitle="Access Hadoop YARN application logs programmatically | Azure"
 	description="Access application logs programmatically on a Hadoop cluster in HDInsight."
 	services="hdinsight"
 	documentationCenter=""

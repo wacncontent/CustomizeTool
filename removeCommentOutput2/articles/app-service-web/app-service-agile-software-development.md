@@ -15,7 +15,7 @@
 
 # Agile software development with Azure #
 
-In this tutorial, you will learn how to create high-scale complex applications with [Azure Web App](/home/features/web-site/) in a way that supports [agile software development](https://en.wikipedia.org/wiki/Agile_software_development). 
+In this tutorial, you will learn how to create high-scale complex applications with [Azure Web App](/home/features/web-site/) in a way that supports [agile software development](https://en.wikipedia.org/wiki/Agile_software_development). It assumes that you already
 
 Limitations in technical processes can often stand in the way of successful implementation of agile methodologies. Azure with features such as [continuous publishing](/documentation/articles/web-sites-publish-source-control), [staging environments](/documentation/articles/web-sites-staged-publishing) (slots), and [monitoring](/documentation/articles/web-sites-monitor), when coupled wisely with the orchestration and management of deployment in [Azure Resource Manager](/documentation/articles/resource-group-overview), can be part of a great solution for developers who embrace agile software development.
 
@@ -34,9 +34,9 @@ You will walk through a typical dev-test-stage-production workflow in order to p
 
 To put the picture into words :
 
--	The deployment architecture is separated into three distinct environments (or [resource groups](/documentation/articles/resource-group-overview) in Azure), each with its own [App Service plan](/documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview), [scaling](/documentation/articles/web-sites-scale) settings, and SQL database. 
+-	The deployment architecture is separated into three distinct environments (or [resource groups](/documentation/articles/resource-group-overview) in Azure), each with its own [App Service plan](/documentation/articl, [scaling](/documentation/articles/web-sites-scale) settings, and SQL database.
 -	Each environment can be managed separately. They can even exist in different subscriptions.
--	Staging and production are implemented as two slots of the same Azure Web App. 
+-	Staging and production are implemented as two slots of the same Azure Web App. The master branch is setup
 -	When a commit to master branch is verified on the staging slot (with production data), the verified staging app is swapped into the production slot [with no downtime](/documentation/articles/web-sites-staged-publishing).
 
 The production and staging environment is defined by the template at [*&lt;repository_root>*/ARMTemplates/ProdandStage.json](https://github.com/azure-appservice-samples/ToDoApp/blob/master/ARMTemplates/ProdAndStage.json).
@@ -61,60 +61,12 @@ You will also use the typical branching strategy, with code moving from the dev 
 	> 3. Decomposite `New-AzureResourceGroup` into `New-AzureRmResourceGroup` and `New-AzureRmResourceGroupDeployment`, i.e. `New-AzureRmResourceGroup -Name $RG_Name -Location $RG_Location` and `New-AzureRmResourceGroupDeployment -Verbose -name $RG_Name -ResourceGroupName $RG_Name -TemplateFile ".\$TemplateFile" -TemplateParameterFile ".\temp.json" -ErrorAction Stop`
 
 -	Basic understanding of the following:
-	-	[Azure Resource Manager](/documentation/articles/resource-group-overview) template deployment (also see [Deploy a complex application predictably in Azure](/documentation/articles/app-service-deploy-complex-application-predictably))
+	-	[Azure Resource Manager](/documentation/articles/resource-group-overview) template deployment (also see [Deploy a complex
 	-	[Git](http://git-scm.com/documentation)
 	-	[PowerShell](https://technet.microsoft.com/zh-cn/library/bb978526.aspx)
 
 > [AZURE.NOTE] You need an Azure account to complete this tutorial:
-> + You can [open an trial Azure account](/pricing/1rmb-trial/) - You get credits you can use to try out paid Azure services, and even after they're used up you can keep the account and use free Azure services, such as Web Apps.
-
-## Set up your production environment ##
-
-In a typical DevOps scenario, you have an application that's running live in Azure, and you want to make changes to it. In this scenario, you have a template that you developed, tested, and used to deploy the production environment. You will set it up in this section.
-
-1.	Create your own fork of the [ToDoApp](https://github.com/azure-appservice-samples/ToDoApp) repository. For information on creating your fork, see [Fork a Repo](https://help.github.com/articles/fork-a-repo/). Once your fork is created, you can see it in your browser.
- 
-	![](./media/app-service-agile-software-development/production-1-private-repo.png)
-
-2.	Open a Git Shell session. If you don't have Git Shell yet, install [GitHub for Windows](https://windows.github.com/) now.
-
-3.	Create a local clone of your fork by executing the following command:
-
-		git clone https://github.com/<your_fork>/ToDoApp.git 
-
-4.	Once you have your local clone, navigate to *&lt;repository_root>*\ARMTemplates, and run the deploy.ps1 script as follows:
-
-		.\deploy.ps1 -RepoUrl https://github.com/<your_fork>/todoapp.git
-
-	>[AZURE.NOTE] Before you can use these templates, you need to do the following edition, in order to fit in the Azure China Cloud environment:
-
-	> 1. Open file "ProdAndStage.json", and search for "sourcecontrols".
-	> 2. Inside the block and fater `"branch": "[parameters('branch')]"`, add `"IsManualIntegration": true`
-	> 3. Replace "China North" or "China East" by "China East" or "China North" in both "ProdAndStage.json", and "deploy.ps1"
-
-	> Since, The Ibiza Portal is not availible yet in Windows Azure China, it's not possible for us to setup GitHub credentials.
-
-4.	When prompted, type in the desired username and password for database access.
-
-	You should see the provisioning progress of various Azure resources. When deployment completes, the script will launch the application in the browser and give you a friendly beep.
-
-	![](./media/app-service-agile-software-development/production-2-app-in-browser.png)
- 
-	>[AZURE.TIP] Take a look at *&lt;repository_root>*\ARMTemplates\Deploy.ps1, to see how it generates resources with unique IDs. You can use the same approach to create clones of the same deployment without worrying about conflicting resource names.
- 
-6.	Back in your Git Shell session, run:
-
-		.\swap -Name ToDoApp<unique_string>master
-
-	![](./media/app-service-agile-software-development/production-4-swap.png)
-
-	>[AZURE.NOTE] For Azure PowerShell 1.0 and greater, delete all `Switch-AzureMode` command in "swap.ps1".
-
-7.	When the script finishes, go back to browse to the frontend's address (http://ToDoApp*&lt;unique_string>*master.chinacloudsites.cn/) to see the application running in production.
- 
-5.	Log into the [Azure Management Portal](https://manage.windowsazure.cn/) and take a look at what's created.
-
-	You should be able to see two web apps, one with the `Api` suffix in the name. you will also see the SQL Database and server, the App Service plan, and the staging slots for the web apps. Browse through the different resources and compare them with *&lt;repository_root>*\ARMTemplates\ProdAndStage.json to see how they are configured in the template.
+> + You can [open an trial Azure, You should be able to see two web apps in the same resource group, one with the `Api` suffix in the name. If you look at the resource y you will also see the SQL Database and server, the App Service plan, and the staging slots for the web apps. Browse through the different resources and compare them with *&lt;repository_root>*\ARMTemplates\ProdAndStage.json to see how they are configured in the template.
 
 
 You have now set up the production environment. Next, you will kick off a new update to the application.
@@ -165,6 +117,7 @@ Now that you have a complex application running in production in Azure, you will
 When you're done, your GitHub fork should have three branches:
 
 ![](./media/app-service-agile-software-development/test-1-github-view.png)
+
 
 And you should have six web sites (three sets of two) in [Azure Management Portal](https://manage.windowsazure.cn):
  
@@ -230,7 +183,6 @@ Agile software development is a must-have for many companies who want to adopt A
 
 ## More resources ##
 
--	[Deploy a complex application predictably in Azure](/documentation/articles/app-service-deploy-complex-application-predictably)
 -	[Agile Development in Practice: Tips and Tricks for Modernized Development Cycle](http://channel9.msdn.com/Events/Ignite/2015/BRK3707)
 -	[Advanced deployment strategies for Azure Web Apps using Resource Manager templates](http://channel9.msdn.com/Events/Build/2015/2-620)
 -	[Authoring Azure Resource Manager Templates](/documentation/articles/resource-group-authoring-templates)
@@ -241,4 +193,3 @@ Agile software development is a must-have for many companies who want to adopt A
 -	[Azure PowerShell](/documentation/articles/powershell-install-configure)
 -	[Azure Cross-Platform Command-Line Tools](/documentation/articles/xplat-cli-install)
 -	[Create or edit users in Azure AD](https://msdn.microsoft.com/zh-cn/library/azure/hh967632.aspx#BKMK_1)
--	[Project Kudu Wiki](https://github.com/projectkudu/kudu/wiki)

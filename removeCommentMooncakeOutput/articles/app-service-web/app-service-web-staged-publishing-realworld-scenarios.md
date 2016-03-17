@@ -1,6 +1,3 @@
-<!-- not suitable for Mooncake -->
-<!-- ? -->
-
 <properties
    pageTitle="Use DevOps environments effectively for your web app"
    description="Learn how to use deployment slots to setup and manage multiple development environments for your application"
@@ -27,11 +24,11 @@ Once you have a production web app up and running, the next step is to create a 
 2. Deploying a web app to a slot first and swapping it into production ensures that all instances of the slot are warmed up before being swapped into production. This eliminates downtime when you deploy your web app. The traffic redirection is seamless, and no requests are dropped due to swap operations. 
 3. After a swap, the slot with previously staged web app now has the previous production web app. If the changes swapped into the production slot are not as you expected, you can perform the same swap immediately to get your "last known good web app" back.
 
-To setup a staging deployment slot, see [Set up staging environments for web apps in Azure](/documentation/articles/web-sites-staged-publishing) . Every environment should include its own set of resources, for example if your r web app uses a database then both production web app and staging web app should be using different databases.  Add staging development environment resources such as database, storage or cache for setting up r staging development environment.
+To setup a staging deployment slot, see [Set up staging environments for web apps in Azure](/documentation/articles/web-sites-staged-publishing) . Every environment should include its own set of resources, for example if your web app uses a database then both production web app and staging web app should be using different databases.  Add staging development environment resources such as database, storage or cache for setting up your staging development environment.
 
 ## Examples of using multiple development environments
 
-, Any project should follow a source code management with at least two environments, a development and production environment, but when using Content management systems, Application frameworks etc we might run into issues where the application does not support this scenario out of the box. This is true for some of the popular frameworks discussed below. Lots of questions come to mind when working with a CMS/frameworks such as
+Any project should follow a source code management with at least two environments, a development and production environment, but when using Content management systems, Application frameworks etc we might run into issues where the application does not support this scenario out of the box. This is true for some of the popular frameworks discussed below. Lots of questions come to mind when working with a CMS/frameworks such as
 
 1. How to break it out into different environments
 2. What files can I change and wont impact framework version updates
@@ -45,8 +42,7 @@ In this section you will learn how to setup a deployment workflow using slots fo
 
 Before creating a staging slot, setup your application code to support multiple environments. To support multiple environments in WordPress you need to edit `wp-config.php` on your local development web app add the following code at the beginning of the file. This will allow your application to pick the correct configuration based on the selected environment.
 
-<!
-	// Support multiple environments
+
 	// Support multiple environments
 	// set the config file based on current environment
 	/**/
@@ -62,7 +58,7 @@ Before creating a staging slot, setup your application code to support multiple 
 	if (file_exists($path . $config_file)) {
 	    // include the config file if it exists, otherwise WP is going to fail
 	    require_once $path . $config_file;
-	<!}
+	}
 
 
 
@@ -71,6 +67,7 @@ Create a folder under web app root called `config` and add two files: `wp-config
 Copy the following in `wp-config.local.php` :
 
 	<?php
+	
 	// MySQL settings
 	/** The name of the database for WordPress */
 	
@@ -173,8 +170,7 @@ Add the following entries to your `wp-config.php` file before the `That's all, s
     define('WP_HOME', 'http://' . filter_input(INPUT_SERVER, 'HTTP_HOST', FILTER_SANITIZE_STRING));
 	define('WP_SITEURL', 'http://' . filter_input(INPUT_SERVER, 'HTTP_HOST', FILTER_SANITIZE_STRING));
 	define('WP_CONTENT_URL', '/wp-content');
-define('DOMAIN_CURRENT_SITE', filter_input(INPUT_SERVER, 'HTTP_HOST', FILTER_SANITIZE_STRING));
-```
+	define('DOMAIN_CURRENT_SITE', filter_input(INPUT_SERVER, 'HTTP_HOST', FILTER_SANITIZE_STRING));
 
 Activate the plugin through the `Plugins` menu in WordPress Administrator dashboard.  Save your permalink settings for WordPress app.
 
@@ -235,7 +231,7 @@ Any WordPress Core updates will not affect your `wp-config.php` , `wp-config.azu
 	require_once(ABSPATH . 'wp-settings.php');
 
 #### Setup a Staging Environment
-Assuming you already have a WordPress web app running on Azure Web, login to [Azure Management Portal](http://manage.windowsazure.cn) and go to your WordPress web app. If not you can create one from the marketplace. To learn more, click [here](/documentation/articles/web-sites-php-web-site-gallery).
+Assuming you already have a WordPress web app running on Azure Web, login to [Azure Management Portal](https://manage.windowsazure.cn/) and go to your WordPress web app.
 Click on **Dashboard** -> **quick glance** -> **Add a new deployment slot** with the name stage .A deployment slot is another web site sharing the same resources as the primary web site created above.
 
 

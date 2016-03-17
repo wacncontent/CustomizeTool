@@ -1,7 +1,7 @@
 <!-- not suitable for Mooncake -->
 
 <properties
-	pageTitle="Spark on Ubuntu Resource Manager Template | Windows Azure"
+	pageTitle="Spark on Ubuntu Resource Manager Template | Azure"
 	description="How to deploy a new Spark cluster on Ubuntu VMs using Azure PowerShell or the Azure CLI and a Resource Manager template"
 	services="virtual-machines"
 	documentationCenter=""

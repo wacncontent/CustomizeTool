@@ -1,7 +1,7 @@
 <!-- not suitable for Mooncake -->
 
 <properties 
-	pageTitle="An overview of Apache Spark in HDInsight | Windows Azure" 
+	pageTitle="An overview of Apache Spark in HDInsight | Azure" 
 	description="An introduction to Apache Spark in HDInsight and scenarios in which to use Spark on HDInsight in your applications." 
 	services="hdinsight" 
 	documentationCenter="" 

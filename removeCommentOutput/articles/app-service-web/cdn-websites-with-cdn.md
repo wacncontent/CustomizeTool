@@ -34,7 +34,7 @@ You will deploy a web app to Azure using the default ASP.NET MVC template in Vis
 
 This tutorial has the following prerequisites:
 
--	An active [Windows Azure account](/account/)
+-	An active [Azure account](/account/)
 -	Visual Studio 2015 with the [Azure SDK for .NET](https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VWDOrVs2013AzurePack.appids). If you use Visual Studio, the steps may vary.
 
 > [AZURE.NOTE] You need an Azure account to complete this tutorial:

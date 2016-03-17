@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Process events from Event Hubs with Storm on HDInsight | Windows Azure"
+   pageTitle="Process events from Event Hubs with Storm on HDInsight | Azure"
    description="Learn how to process Event Hubs data with a C# Storm topology created in Visual Studio using the HDInsight Tools for Visual Studio."
    services="hdinsight,notification hubs"
    documentationCenter=""
@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="12/04/2015"
+	ms.date="01/28/2016"
 	wacn.date=""/>
 
 # Process events from Azure Event Hubs with Storm on HDInsight (C#)

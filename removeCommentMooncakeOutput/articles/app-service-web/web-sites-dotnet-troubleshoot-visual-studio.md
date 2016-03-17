@@ -29,24 +29,6 @@ You'll learn:
 
 If you have Visual Studio Ultimate, you can also use [IntelliTrace](http://msdn.microsoft.com/zh-cn/library/vstudio/dd264915.aspx) for debugging. IntelliTrace is not covered in this tutorial.
 
-### Tutorial segments
-
-- [Prerequisites](#prerequisites)
-- [Site configuration and management](#sitemanagement)
-- [Access website files in Server Explorer](#remoteview)
-- [Remote debugging](#remotedebug)
-	- Remote debugging websites
-	- Remote debugging WebJobs
-	- Notes about remote debugging 
-- [Diagnostic logs overview](#logsoverview)
-- [Create and view application trace logs](#apptracelogs)
-- [View web server logs](#webserverlogs)
-- [View detailed error message logs](#detailederrorlogs)
-- [Download file system logs](#downloadlogs)
-- [View storage logs](#storagelogs)
-- [View failed request logs](#failedrequestlogs)
-- [Next steps](#nextsteps)
-
 ## <a name="prerequisites"></a>Prerequisites
 
 This tutorial works with the development environment, web project, and Azure web app that you set up in [Get started with Azure and ASP.NET][GetStarted]. For the WebJobs sections, you'll need the application that you create in [Get Started with the Azure WebJobs SDK][GetStartedWJ].
@@ -627,7 +609,7 @@ Storage accounts offer more storage and longer-lasting retention for logs compar
 
 	![Storage logs in table view](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-tracelogtableview.png)
 
-	This view shows additional fields you don't see in any other views. This view also enables you to filter logs by using special Query Builder UI for constructing a query.
+	This view shows additional fields you don't see in any other views. This view also enables you to filter logs by using special Query Builder UI for constructing a query. 
 
 7. To look at the details for a single row, double-click one of the rows.
 

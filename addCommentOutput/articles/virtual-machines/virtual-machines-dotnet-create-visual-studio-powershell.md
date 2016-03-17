@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Creating a VM for a web project using Visual Studio | Windows Azure"
+	pageTitle="Creating a VM for a web project using Visual Studio | Azure"
 	description="Create a virtual machine for a web application"
 	services="virtual-machines"
 	documentationCenter=""
@@ -15,7 +15,7 @@
 
 # Creating a virtual machine for a web application with Visual Studio
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] <!-- deleted by customization Resource Manager model. -->
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]  Resource Manager model. 
 
 When you create a web application project for Azure, you can provision a virtual machine in Azure. You can then configure the virtual machine with additional software, or use the virtual machine for diagnostic or debugging purposes.
 
@@ -26,8 +26,8 @@ To create a virtual machine when you create a web application, follow these step
 
 	![][0]
 
-3. For this example, in the drop-down list under Windows Azure, choose **Virtual Machine (v1)**, and then click the **OK** button.
-<!-- deleted by customization
+3. For this example, in the drop-down list under Azure, choose **Virtual Machine (v1)**, and then click the **OK** button.
+
 4. Sign in to Azure if you're prompted. The **Create Virtual Machine** dialog box appears.
 
 	![][2]
@@ -55,8 +55,13 @@ To create a virtual machine when you create a web application, follow these step
 13. (Optional) You can connect to the new virtual machine. In **Server Explorer**, expand the **Virtual Machines** node, choose the node for the virtual machine you created, and on its shortcut menu, choose **Connect with Remote Desktop**. Alternatively, in **Cloud Explorer** you can choose **Open in Portal** on the shortcut menu and connect to the virtual machine there.
 
  ![][5]
--->
-<!-- keep by customization: begin -->
+
+
+## Next steps
+
+If you want to customize the published scripts you created, read more in-depth information at [Using Windows PowerShell Scripts to Publish to Dev and Test Environments](/documentation/articles/vs-azure-tools-publishing-using-powershell-scripts).
+
+
 
 4. Click **View**, Open the **Server Explorer**, and then right click **Azure**, choose **Manage and Filter Subscriptions...**. Click tag **Certificates**. Now, you can add a certificate for you Azure Subscription.
 
@@ -77,12 +82,8 @@ To create a virtual machine when you create a web application, follow these step
 10. Go back to you Visual Studio, right click your solution, and choose publish.
 
 11. Select **Import** and choose the files copied from the server. And then enter the password, and check **Save password**. Now, you can publish your web app to the VM.
-<!-- keep by customization: end -->
 
-
-## Next steps
-
-If you want to customize the published scripts you created, read more in-depth information at [Using Windows PowerShell Scripts to Publish to Dev and Test Environments](/documentation/articles/vs-azure-tools-publishing-using-powershell-scripts).
+
 
 [0]: ./media/virtual-machines-dotnet-create-visual-studio-powershell/CreateVM_NewProject.PNG
 [1]: ./media/dotnet-visual-studio-create-virtual-machine/CreateVM_SignIn.PNG

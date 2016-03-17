@@ -1,7 +1,7 @@
 <!-- not suitable for Mooncake -->
 
 <properties
-	pageTitle="Using Docker VM Extension for Linux | Windows Azure"
+	pageTitle="Using Docker VM Extension for Linux | Azure"
 	description="Describes Docker and the Azure Virtual Machines extensions, and how to create Azure Virtual Machines that are docker hosts using the Azure CLI in classic deployment model."
 	services="virtual-machines"
 	documentationCenter=""

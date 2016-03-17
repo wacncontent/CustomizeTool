@@ -36,7 +36,7 @@ You'll learn:
 
 ## Prerequisites
 
-To complete this tutorial, you need a Windows Azure account. If you don't have an account, you can [sign up for a trial](/pricing/1rmb-trial/?WT.mc_id=A261C142F).
+To complete this tutorial, you need a Azure account. If you don't have an account, you can [activate your Visual Studi[ [sign up for a trial](/pricing/1rmb-trial/?WT.mc_id=A261C142F).
 
 To set up your development environment, you must install [Visual Studio 2013 Update 5](http://go.microsoft.com/fwlink/?LinkId=390521) or higher, and the latest version of the [Azure SDK for .NET](http://go.microsoft.com/fwlink/?linkid=324322&clcid=0x409). This article was written for Visual Studio Update 4 and SDK 2.8.1. The same instructions work for Visual Studio 2015 with the latest [Azure SDK for .NET](http://go.microsoft.com/fwlink/?linkid=518003&clcid=0x409) installed, but some screens will look different from the illustrations.
 
@@ -56,9 +56,11 @@ To set up your development environment, you must install [Visual Studio 2013 Upd
  
 	**Note:** Make sure you enter "ContactManager". Code blocks that you'll be copying later assume that the project name is ContactManager. 
 
+
 1. In the **New ASP.NET Project** dialog box, select the **MVC** template. Make sure **Host in the cloud** is unchecked.
 
 1. Click **OK**.
+
 
 If you haven't create a Web App yet, go to [Azure Management Portal](https://manage.windowsazure.cn) to create on. And in **Dashboard** page of your web app, under **quick glance**, download the "publish profile".
 
@@ -127,6 +129,7 @@ If you haven't create a Web App yet, go to [Azure Management Portal](https://man
 
 This is all you need to do for now to create the application that you'll deploy to Azure. 
 
+
 ##<a name="bkmk_deploytowindowsazure1"></a> Deploy the application to Azure
 
 1. In Visual Studio, right-click the project in **Solution Explorer** and select **Publish** from the context menu.
@@ -188,6 +191,7 @@ This is all you need to do for now to create the application that you'll deploy 
 	 Internet Explorer is a good choice when you're using SSL because it accepts the certificate and shows HTTPS content without a warning. Microsoft Edge and Google Chrome also accept the certificate. Firefox uses its own certificate store, so it displays a warning.
 
 	 ![FireFox Cert Warning](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/ss30.PNG)
+
 
 ##<a name="bkmk_addadatabase"></a> Add a database to the application
 
@@ -349,6 +353,7 @@ The next task is to enable the [Code First Migrations](http://msdn.microsoft.com
 
 	![MVC view of data][rx2]
 
+
 ##<a name="addOauth"></a> Add an OAuth2 Provider
 
 [OAuth](http://oauth.net/ "http://oauth.net/") is an open protocol that allows secure authorization in a simple and standard method from web, mobile, and desktop applications. The ASP.NET MVC internet template uses OAuth to expose Facebook, Twitter, Google and Microsoft as authentication providers. Although this tutorial uses only Google as the authentication provider, you can easily modify the code to use any of these providers. The steps to implement other providers are very similar to the steps you see in this tutorial. To use Facebook as an authentication provider, see [MVC 5 App with Facebook, Twitter, LinkedIn and Google OAuth2 Sign-on ](http://www.asp.net/mvc/tutorials/mvc-5/create-an-aspnet-mvc-5-app-with-facebook-and-google-oauth2-and-openid-sign-on).
@@ -360,6 +365,7 @@ In addition to authentication, this tutorial uses roles to implement authorizati
 3. Run and test the app to verify that you can log on using Google authentication.
 
 2. If you want to create social login buttons with provider-specific icons, see [Pretty social login buttons for ASP.NET MVC 5](http://www.jerriepelser.com/blog/pretty-social-login-buttons-for-asp-net-mvc-5)
+
 
 ##<a name="mbrDB"></a> Using the Membership API
 
@@ -462,7 +468,7 @@ In the **Package Manager Console** hit the up arrow key to bring up the followin
 
 The **Update-Database** command runs the **Seed** method, and that runs the **AddUserAndRole** method you added earlier. The **AddUserAndRole** method creates the user *user1@contoso.com* and adds her to the *canEdit* role.
 
-##<a id="protect-the-application-with-ssl-and-the-authorize-attribute"></a> Protect the Application with SSL and the Authorize Attribute ##
+## Protect the Application with SSL and the Authorize Attribute ##
 
 In this section you apply the [Authorize](http://msdn.microsoft.com/zh-cn/library/system.web.mvc.authorizeattribute.aspx) attribute to restrict access to the action methods. Anonymous users will be able to view only the **Index** action method of the home controller. Registered users will be able to see contact data (The **Index** and **Details** pages of the Cm controller), the About page, and the Contact page. Only users in the *canEdit* role will be able to access action methods that change data.
 
@@ -553,6 +559,7 @@ In this section you apply the [Authorize](http://msdn.microsoft.com/zh-cn/librar
 
 1. Verify you can make data changes.
 
+
 ##<a name="bkmk_deploytowindowsazure11"></a> Deploy the app to Azure
 
 1. In Visual Studio, right-click the project in **Solution Explorer** and select **Publish** from the context menu.
@@ -583,9 +590,10 @@ In this section you apply the [Authorize](http://msdn.microsoft.com/zh-cn/librar
 
 ### Stop the web app to prevent other people from registering  
 
-1. In **Server Explorer**, navigate to **Azure > Azure Web App > {your resource group} > {your web app}**.
+1. In **Server Explorer**, navigate to **Azure > Azure Web App > {your resource group} > {your w  > {your resource group} > {your web app}**.
 
 4. Right-click the web app and select **Stop**. 
+
 
 	Alternatively, from the [Azure Management Portal](https://manage.windowsazure.cn), you can go to the web site's blade, then click the **Stop** icon at the bottom of the page.
 

@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Troubleshooting resource group deployments | Windows Azure"
+   pageTitle="Troubleshooting resource group deployments | Azure"
    description="Describes common problems deploying resources created using Resource Manager deployment model, and shows how to detect and fix these issues."
    services="azure-resource-manager,virtual-machines"
    documentationCenter=""

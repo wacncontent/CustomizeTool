@@ -1,7 +1,7 @@
 <!-- not suitable for Mooncake -->
 
 <properties 
-	pageTitle="Analyze flight delay data with Hive on Linux-based HDInsight | Windows Azure" 
+	pageTitle="Analyze flight delay data with Hive on Linux-based HDInsight | Azure" 
 	description="Learn how to use Hive to analyze flight data on Linux-based HDInsight, then export the data to SQL Database using Sqoop." 
 	services="hdinsight" 
 	documentationCenter="" 
@@ -287,7 +287,6 @@ Now you understand how to upload a file to Azure Blob storage, how to populate a
 
 [rita-website]: http://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236&DB_Short_Name=On-Time
 [cindygross-hive-tables]: http://blogs.msdn.com/b/cindygross/archive/2013/02/06/hdinsight-hive-internal-and-external-tables-intro.aspx
-[powershell-install-configure]: /documentation/articles/powershell-install-configure
 
 [hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie-linux-mac
 [hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive

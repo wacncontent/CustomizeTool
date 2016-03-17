@@ -1,5 +1,5 @@
 <properties
-   pageTitle="DMZ Example - Build a Simple DMZ with NSGs | Windows Azure"
+   pageTitle="DMZ Example - Build a Simple DMZ with NSGs | Azure"
    description="Build a DMZ with Network Security Groups (NSG)"
    services="virtual-network"
    documentationCenter="na"
@@ -544,6 +544,6 @@ If you wish to install a sample application for this, and other DMZ Examples, on
 [1]: ./media/virtual-networks-dmz-nsg-asm/example1design.png "Inbound DMZ with NSG"
 
 <!--Link References-->
-[HOME]: ../best-practices-network-security.md
-[SampleApp]: ./virtual-networks-sample-app.md
+[HOME]: /documentation/articles/best-practices-network-security
+[SampleApp]: /documentation/articles/virtual-networks-sample-app
 

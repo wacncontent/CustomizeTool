@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Use SSH on Linux and Mac | Windows Azure" 
+	pageTitle="Use SSH on Linux and Mac | Azure" 
 	description="Generate and use SSH keys on Linux and Mac for the Resource Manager and classic deployment models on Azure." 
 	services="virtual-machines" 
 	documentationCenter="" 
@@ -77,7 +77,7 @@ You can use ssh-rsa (`.pub`) keys for all new work; you may need to create a `.p
 
 ## Create a VM with your public key file
 
-Once you've created the files you need, there are many ways to create a VM to which you can securely connect using a public-private key exchange. In almost all situations, pass the .pub file when prompted for an ssh key file path or the contents of a file as a string. 
+Once you've created the files you need, there are many ways to create a VM to which you can securely connect using a public-private key exchange. In almost all situations, pass the .pub file when prompted for an ssh key file path or the contents of a file as a string.
 
 ### Example: Creating a VM with the id_rsa.pub file
 
@@ -163,7 +163,7 @@ Examine the network profile section:
 	data:    Network Profile:
 	data:      Network Interfaces:
 	data:        Network Interface #1:
-	data:          Id                        :/subscriptions/<guid>/providers/Microsoft.Network/networkInterfaces/testnic
+	data:          Id:/subscriptions/<guid>/providers/Microsoft.Network/networkInterfaces/testnic 
 	data:          Primary                   :true
 	data:          MAC Address               :00-0D-3A-21-8E-AE
 	data:          Provisioning State        :Succeeded
@@ -182,7 +182,7 @@ If you didn't use the default SSH port of 22 when you created the VM, you can di
 	azure network nsg show testrg testnsg
 	info:    Executing command network nsg show
 	+ Looking up the network security group "testnsg"
-	data:    Id                              : /subscriptions/<guid>/providers/Microsoft.Network/networkSecurityGroups/testnsg
+	data:    Id                              : /subscriptions/<guid>/providers/Microsoft.Network/networkSecurityGroups/testnsg 
 	data:    Name                            : testnsg
 	data:    Type                            : Microsoft.Network/networkSecurityGroups
 	data:    Location                        : westeurope

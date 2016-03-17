@@ -1,5 +1,7 @@
+<!-- not suitable for Mooncake -->
+
 <properties
-	pageTitle="Use Script Action to install Solr on Linux-based HDInsight | Windows Azure"
+	pageTitle="Use Script Action to install Solr on Linux-based HDInsight | Azure"
 	description="Learn how to install Solr on Linux-based HDInsight Hadoop clusters using Script Actions."
 	services="hdinsight"
 	documentationCenter=""
@@ -10,7 +12,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="12/04/2015"
+	ms.date="02/05/2016"
 	wacn.date=""/>
 
 # Install and use Solr on HDInsight Hadoop clusters
@@ -116,7 +118,7 @@ You must start with indexing Solr with some data files. You can then use Solr to
 			          "Comprehensive HTML Administration Interfaces",
 			          "Scalability - Efficient Replication to other Solr Search Servers",
 			          "Flexible and Adaptable with XML configuration and Schema",
-			          "Good unicode support: hĂŠllo (hello with an accent over the e)"
+			          "Good unicode support:  héllo  hĂŠllo  (hello with an accent over the e)"
 			        ],
 			        "price": 0,
 			        "price_c": "0,USD",
@@ -202,7 +204,7 @@ Once you have established an SSH tunnel, use the following steps to use the Solr
 			          "Comprehensive HTML Administration Interfaces",
 			          "Scalability - Efficient Replication to other Solr Search Servers",
 			          "Flexible and Adaptable with XML configuration and Schema",
-			          "Good unicode support: hĂŠllo (hello with an accent over the e)"
+			          "Good unicode support:  héllo  hĂŠllo  (hello with an accent over the e)"
 			        ],
 			        "price": 0,
 			        "price_c": "0,USD",
@@ -294,18 +296,10 @@ For more information on working with Solr backup and restores, see [Making and r
 
 - [Install Giraph on HDInsight clusters](/documentation/articles/hdinsight-hadoop-giraph-install-v1-linux). Use cluster customization to install Giraph on HDInsight Hadoop clusters. Giraph allows you to perform graph processing by using Hadoop, and can be used with Azure HDInsight.
 
-- [Install Hue on HDInsight clusters](/documentation/articles/hdinsight-hadoop-hue-linux). Use cluster customization to install Hue on HDInsight Hadoop clusters. Hue is a set of <!-- deleted by customization Web applications --><!-- keep by customization: begin --> web sites <!-- keep by customization: end --> used to interact with a Hadoop cluster.
+- [Install Hue on HDInsight clusters](/documentation/articles/hdinsight-hadoop-hue-linux). Use cluster customization to install Hue on HDInsight Hadoop clusters. Hue is a set of Web applications used to interact with a Hadoop cluster.
 
 
 
-<!-- deleted by customization
-[hdinsight-install-r]: hdinsight-hadoop-r-scripts-linux.md
-[hdinsight-install-spark]: hdinsight-hadoop-spark-install-linux.md
-[hdinsight-cluster-customize]: hdinsight-hadoop-customize-cluster-v1.md
--->
-<!-- keep by customization: begin -->
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1-linux
 [hdinsight-install-r]: /documentation/articles/hdinsight-hadoop-r-scripts-linux
 [hdinsight-install-spark]: /documentation/articles/hdinsight-hadoop-spark-install-linux
 [hdinsight-cluster-customize]: /documentation/articles/hdinsight-hadoop-customize-cluster-v1
-<!-- keep by customization: end -->

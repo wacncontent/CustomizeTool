@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Use docker-machine with Azure | Windows Azure"
+   pageTitle="Use docker-machine with Azure | Azure"
    description="Shows how to get up and running on Azure with Docker Machine on Ubuntu, using the classic deployment model."
    services="virtual-machines"
    documentationCenter="virtual-machines"
@@ -197,7 +197,7 @@ Open your favorite browser and have a look.
 
 <!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
 ## Next steps
-Go to the [Docker user guide](https://docs.docker.com/userguide/) and create some applications on Windows Azure. Or, go play with [**docker** and swarm](https://github.com/docker/swarm) on <!-- deleted by customization Azure](virtual-machines-docker-swarm.md) --><!-- keep by customization: begin --> Azure](/documentation/articles/virtual-machines-docker-swarm) <!-- keep by customization: end --> and see how swarm can be used with docker and Azure.
+Go to the [Docker user guide](https://docs.docker.com/userguide/) and create some applications on Azure. Or, go play with [Docker Swarm on Azure] and see how [swarm](https://github.com/docker/swarm) can be used with docker and Azure.
 
 <!--Image references-->
 [nginx]: ./media/virtual-machines-docker-machine/nginxondocker.png
@@ -206,6 +206,7 @@ Go to the [Docker user guide](https://docs.docker.com/userguide/) and create som
 [uploaditem]: ./media/virtual-machines-docker-machine/uploaditem.png
 
 <!--Link references-->
-[Link 1 to another azure.microsoft.com documentation topic]: <!-- deleted by customization virtual-machines-windows-tutorial.md --><!-- keep by customization: begin --> /documentation/articles/virtual-machines-windows-tutorial-classic-portal <!-- keep by customization: end -->
-[Link 2 to another azure.microsoft.com documentation topic]: <!-- deleted by customization ../web-sites-custom-domain-name.md --><!-- keep by customization: begin --> /documentation/articles/web-sites-custom-domain-name <!-- keep by customization: end -->
-[Link 3 to another azure.microsoft.com documentation topic]: <!-- deleted by customization ../storage-whatis-account.md --><!-- keep by customization: begin --> /documentation/articles/storage-whatis-account <!-- keep by customization: end -->
+[Link 1 to another azure.microsoft.com documentation topic]: /documentation/articles/virtual-machines-windows-tutorial-classic-portal
+[Link 2 to another azure.microsoft.com documentation topic]: /documentation/articles/web-sites-custom-domain-name
+[Link 3 to another azure.microsoft.com documentation topic]: /documentation/articles/storage-whatis-account
+[Docker Swarm on Azure]: /documentation/articles/virtual-machines-docker-swarm

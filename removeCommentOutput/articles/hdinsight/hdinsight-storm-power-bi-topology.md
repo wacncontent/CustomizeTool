@@ -1,5 +1,5 @@
 <properties
- pageTitle="Write data to Power BI from Apache Storm | Windows Azure"
+ pageTitle="Write data to Power BI from Apache Storm | Azure"
  description="Write data to Power BI from a C# topology running on an Apache Storm cluster in HDInsight. Also, create a report and real-time dashboard using Power BI."
  services="hdinsight"
  documentationCenter=""

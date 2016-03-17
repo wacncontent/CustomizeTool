@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Use Hadoop Pig with PowerShell in HDInsight | Windows Azure"
+   pageTitle="Use Hadoop Pig with PowerShell in HDInsight | Azure"
    description="Learn how to submit Pig jobs to a Hadoop cluster on HDInsight using Azure PowerShell."
    services="hdinsight"
    documentationCenter=""
@@ -35,27 +35,33 @@ Azure PowerShell provides *cmdlets* that allow you to remotely run Pig jobs on H
 
 The following cmdlets are used when running Pig jobs on a remote HDInsight cluster:
 
-* **Login-AzureRmAccount**: Authenticates Azure PowerShell to your Azure Subscription
+ **Login-AzureRmAccount**  * **Login-AzureRmAccount**: Authenticates Azure PowerShell to your Azure Subscription
 
-* **New-AzureRmHDInsightPigJobDefinition**: Creates a new *job definition* by using the specified Pig Latin statements
+* **New-AzureRmHDInsightPigJo **New-AzureRmHDInsightPigJobDefinition**  : Creates a new *job definition* by using the specified Pig Latin statements
 
-* **Start-AzureRmHDInsightJob**: Sends the job definition to HDInsight, starts the job, and returns a *job* object that can be used to check the status of the job
+*  **Start-AzureRmHDInsightJob**  Start-AzureRmHDInsightJob**: Sends the job definition to HDInsight, starts the job, and returns a *job* object that can be used to check the status of the job
 
-* **Wait-AzureRmHDInsightJob**: Uses the job object to check the status of the job. It will wait until the job has completed, or the wait time has been exceeded.
+ **Wait-AzureRmHDInsightJob**   **Wait-AzureRmHDInsightJob**: Uses the job object to check the status of the job. It will wait until the job has completed, or the wait time has been exceeded.
 
-* **Get-AzureRmHDInsightJobOutput**: Used to retrieve the output of the job
+* **Get-AzureRmHDInsightJobOu **Get-AzureRmHDInsightJobOutput**  : Used to retrieve the output of the job
 
 The following steps demonstrate how to use these cmdlets to run a job on your HDInsight cluster.
 
 1. Using an editor, save the following code as **pigjob.ps1**. You must replace **CLUSTERNAME** with the name of your HDInsight cluster.
 
         #Login to your Azure subscription
+
         Login-AzureRmAccount
         #Get credentials for the admin/HTTPs account
         $creds=Get-Credential
+
+
+		Add-AzureAccount
+
 
         #Specify the cluster name
         $clusterName = "CLUSTERNAME"
+
         
         #Get the cluster info so we can get the resource group, storage, etc.
         $clusterInfo = Get-AzureRmHDInsightCluster -ClusterName $clusterName
@@ -66,8 +72,14 @@ The following steps demonstrate how to use these cmdlets to run a job on your HD
             -Name $storageAccountName `
             -ResourceGroupName $resourceGroup `
             | %{ $_.Key1 }
+
+
+		#Where the output will be saved
+		$statusFolder = "/tutorial/pig/status"
+
 
         #Store the Pig Latin into $QueryString
+
         $QueryString =  @"
         LOGS = LOAD 'wasb:///example/data/sample.log';
         LEVELS = foreach LOGS generate REGEX_EXTRACT(`$0, '(TRACE|DEBUG|INFO|WARN|ERROR|FATAL)', 1)  as LOGLEVEL;
@@ -77,21 +89,42 @@ The following steps demonstrate how to use these cmdlets to run a job on your HD
         RESULT = order FREQUENCIES by COUNT desc;
         DUMP RESULT;
         "@
+
+
+		$QueryString =  "LOGS = LOAD 'wasb:///example/data/sample.log';" +
+        LOGLEVEL;" +
+        null;" +
+        LOGLEVEL;" +
+        COUNT;" +
+        desc;" +
+		"DUMP RESULT;"
+
 
         #Create a new HDInsight Pig Job definition
+
         $pigJobDefinition = New-AzureRmHDInsightPigJobDefinition `
             -Query $QueryString `
             -Arguments "-w"
+
+
+		$pigJobDefinition = New-AzureHDInsightPigJobDefinition -Query $QueryString -StatusFolder $statusFolder
+
 
         # Start the Pig job on the HDInsight cluster
         Write-Host "Start the Pig job ..." -ForegroundColor Green
+
         $pigJob = Start-AzureRmHDInsightJob `
             -ClusterName $clusterName `
             -JobDefinition $pigJobDefinition `
             -HttpCredential $creds
+
+
+		$pigJob = Start-AzureHDInsightJob -Cluster $clusterName -JobDefinition $pigJobDefinition
+
 
         # Wait for the Pig job to complete
         Write-Host "Wait for the Pig job to complete ..." -ForegroundColor Green
+
         $jobStatus = Wait-AzureRmHDInsightJob `
             -ClusterName $clusterName `
             -JobId $pigJob.JobId `
@@ -121,6 +154,14 @@ The following steps demonstrate how to use these cmdlets to run a job on your HD
                 -HttpCredential $creds `
                 -DisplayOutputType StandardError
         }
+
+
+		Wait-AzureHDInsightJob -Job $pigJob -WaitTimeoutInSeconds 3600
+
+		# Print the output of the Pig job.
+		Write-Host "Display the standard output ..." -ForegroundColor Green
+		Get-AzureHDInsightJobOutput -Cluster $clusterName -JobId $pigJob.JobId -StandardOutput
+
 
 2. Open a new Azure PowerShell command prompt. Change directories to the location of the **pigjob.ps1** file, then use the following command to run the script:
 
@@ -132,13 +173,40 @@ The following steps demonstrate how to use these cmdlets to run a job on your HD
 
         Start the Pig job ...
         Wait for the Pig job to complete ...
+
+
+		Cluster         : CLUSTERNAME
+		ExitCode        : 0
+		Name            :
+		PercentComplete : 100% complete
+		Query           : LOGS = LOAD 'wasb:///example/data/sample.log';LEVELS = foreach LOGS generate REGEX_EXTRACT($0,
+			'(TRACE|DEBUG|INFO|WARN|ERROR|FATAL)', 1)  as LOGLEVEL;FILTEREDLEVELS = FILTER LEVELS by LOGLEVEL is
+			not null;GROUPEDLEVELS = GROUP FILTEREDLEVELS by LOGLEVEL;FREQUENCIES = foreach GROUPEDLEVELS
+			generate group as LOGLEVEL, COUNT(FILTEREDLEVELS.LOGLEVEL) as COUNT;RESULT = order FREQUENCIES by
+			COUNT desc;DUMP RESULT;
+			State           : Completed
+			StatusDirectory : /tutorial/pig/status
+			SubmissionTime  : 11/20/2014 4:04:58 PM
+			JobId           : job_1415949758166_0023
+
+
         Display the standard output ...
+
         (TRACE,816)
         (DEBUG,434)
         (INFO,96)
         (WARN,11)
         (ERROR,6)
         (FATAL,2)
+
+
+			(TRACE,816)
+			(DEBUG,434)
+			(INFO,96)
+			(WARN,11)
+			(ERROR,6)
+			(FATAL,2)
+
 
 ##<a id="troubleshooting"></a>Troubleshooting
 
@@ -146,6 +214,7 @@ If no information is returned when the job completes, an error may have occurred
 
 	# Print the output of the Pig job.
 	Write-Host "Display the standard output ..." -ForegroundColor Green
+
     Get-AzureRmHDInsightJobOutput `
             -Clustername $clusterName `
             -JobId $pigJob.JobId `
@@ -154,6 +223,10 @@ If no information is returned when the job completes, an error may have occurred
             -DefaultStorageAccountKey $storageAccountKey `
             -HttpCredential $creds `
             -DisplayOutputType StandardError
+
+
+    Get-AzureHDInsightJobOutput -Cluster $clusterName -JobId $pigJob.JobId -StandardError
+
 
 This will return the information that was written to STDERR on the server when you ran the job, and it may help determine why the job is failing.
 

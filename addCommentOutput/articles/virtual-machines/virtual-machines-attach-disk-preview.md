@@ -1,5 +1,7 @@
+<!-- not suitable for Mooncake -->
+
 <properties
-	pageTitle="Attach a data disk | Windows Azure"
+	pageTitle="Attach a data disk | Azure"
 	description="How to attach new or existing data disk to a VM in the Azure Management Portal using the Resource Manager deployment model."
 	services="virtual-machines"
 	documentationCenter=""
@@ -10,7 +12,7 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="09/14/2015"
+	ms.date="01/21/2016"
 	wacn.date=""/>
 
 # How to attach a data disk in the Azure Management Portal
@@ -23,21 +25,17 @@ This article shows you how to attach both new and existing disks to a virtual ma
 - To use Premium storage, you'll need a DS-series or GS-series virtual machine. You can use disks from both Premium and Standard storage accounts with these virtual machines. Premium storage is available in certain regions. For details, see [Premium Storage: High-Performance Storage for Azure Virtual Machine Workloads](/documentation/articles/storage-premium-storage-preview-portal).
 - Disks attached to virtual machines are actually .vhd files in an Azure storage account. For details, see [About disks and VHDs for virtual machines](/documentation/articles/virtual-machines-disks-vhds).
 - For a new disk, you don't need to create it first because Azure creates it when you attach it.
-- For an existing disk, the .vhd file must be available in an Azure storage account. You can use one that's already there, if it's not attached to another virtual machine, or upload your own .vhd file to the storage account.
+- For an existing disk, the .vhd file must be available in an Azure storage account. You can use a .vhd that's already there, if it's not attached to another virtual machine, or upload your own .vhd file to the storage account.
 
 ## Find the virtual machine
 
 1. Sign in to the Azure Management Portal.
 
-2. On the Hub menu, click **Browse**.
+2. On the Hub menu, click **Virtual Machines**.
 
-3. On the search blade, scroll down and click **Virtual Machines**.
+3.	Select the virtual machine from the list.
 
-	![Search for virtual machines](./media/virtual-machines-attach-disk-preview/search-blade-preview-portal.png)
-
-4.	Select the virtual machine from the list.
-
-5. To the right, under **Essentials**, click **All settings**, and then click **Disks**.
+4. To the right, under **Essentials**, click **All settings**, and then click **Disks**.
 
 	![Open disk settings](./media/virtual-machines-attach-disk-preview/find-disk-settings.png)
 
@@ -84,4 +82,9 @@ After the disk is added, you need to prepare it for use in the virtual machine's
 
 <!--Link references-->
 
+
+[About Azure Storage Accounts]: /documentation/articles/storage-whatis-account
+
+
 [About Azure Storage Accounts]: ../storage-whatis-account/
+

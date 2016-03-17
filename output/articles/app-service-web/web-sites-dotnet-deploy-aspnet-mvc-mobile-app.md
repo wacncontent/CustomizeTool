@@ -60,7 +60,7 @@ work:
 
 -   Browser Emulator in [Internet Explorer 11 F12 developer tools][EmulatorIE11] (used in all mobile
     browser screenshots). It has user agent string presets for Windows Phone 8, Windows Phone 7, and Apple iPad.
--	Browser Emulator in [Google Chrome DevTools][EmulatorChrome]. It contains presets for numerous Android devices, as well as Apple iPhone, Apple iPad, and Amazon Kindle Fire. It also emulates touch events.
+ [Google   DevTools][EmulatorChrome]  -	Browser Emulator in [Google Chrome DevTools][EmulatorChrome]. It contains presets for numerous Android devices, as well as Apple iPhone, Apple iPad, and Amazon Kindle Fire. It also emulates touch events.
 -   [Opera Mobile Emulator][EmulatorOpera]
 
 Visual Studio projects with C\# source code are available to accompany
@@ -85,11 +85,18 @@ unzip the file.
 
 5. 	In Visual Studio, open the *C#\Mvc5Mobile.sln* file.
 
+
+6.	Log into the [Management Portal](https://manage.windowsazure.cn/), and click an exited website or create a new website.
+
+7.	In the **Dashboard**, under ther **Quick Glance**, *Download the publish profile*
+
+
 6.  In Solution Explorer, right-click the project and click **Publish**.
 
 	![][DeployClickPublish]
 
-7.	In Publish Web, click **Windows Azure Web App**.
+
+7.	In Publish Web, click **App Services**.
 
 	![][DeployClickWebSites]
 
@@ -118,6 +125,14 @@ unzip the file.
 13.	After the Azure resources are created, the Publish Web dialog will be filled with the settings for your new app. Click **Publish**.
 
 	![][DeployPublishSite]
+
+
+7.	In Publish Web, click **Import**, and choose the publish profile downloaded above.
+
+13.	The Publish Web dialog will be filled with the settings for your new web app. Click **Publish**.
+
+	![][DeployPublishSite]
+
 
 	Once Visual Studio finishes publishing the starter project to the Azure web app, the desktop browser opens to display the live web app.
 
@@ -390,7 +405,12 @@ navigate the long list of speakers. Bootstrap doesn't provide a
 search filter functionality out-of-the-box, but you can add it with a
 few lines of code. You will first add a search box to the view, then
 hook up with the JavaScript code for the filter function. In
+
 *Views\\Home\\AllSpeakers.cshtml*, add a \<form\> tag just after the \<h2\> tag, as shown below:
+
+
+*Views\\Home\\AllSpeakers.cshtml*, add a <form\> tag just after the <h2\> tag, as shown below:
+
 
     @model IEnumerable<string>
 
@@ -550,7 +570,7 @@ Switch to the desktop browser. Again, note the consistent look.
 In this section, you'll make the *SessionsTable* view more
 mobile-friendly. This change is more extensive the previous changes.
 
-In the mobile browser, tap the **Tag** button, then enter `asp` in the
+ `asp`  In the mobile browser, tap the **Tag** button, then enter `asp` in the
 search box.
 
 ![][AllTagsFixedSearchByASP]
@@ -626,7 +646,7 @@ browser, you will see that the arrangement changes to three columns.
 
 Finally, you'll fix the *SessionByCode* view to make it mobile-friendly.
 
-In the mobile browser, tap the **Tag** button, then enter `asp` in the
+ `asp`  In the mobile browser, tap the **Tag** button, then enter `asp` in the
 search box.
 
 ![][AllTagsFixedSearchByASP]
@@ -715,9 +735,11 @@ mobile-friendly Web applications. These include:
 -   [The Bootstrap Playground][]
 -   [W3C Recommendation Mobile Web Application Best Practices][]
 -   [W3C Candidate Recommendation for media queries][]
+
 
 ## What's changed
 * For a guide to the change from Websites to Azure see: [Azure and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
+
 
 <!-- Internal Links -->
 [Deploy the starter project to an Azure web app]: #bkmk_DeployStarterProject

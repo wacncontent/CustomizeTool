@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Log on to a Linux VM in Azure | Windows Azure"
+	pageTitle="Log on to a Linux VM in Azure | Azure"
 	description="Learn how to log on to an Azure virtual machine running Linux by using a Secure Shell (SSH) client."
 	services="virtual-machines"
 	documentationCenter=""

@@ -1,5 +1,5 @@
 <properties
- pageTitle="Submit jobs to an HPC Pack cluster in Azure | Windows Azure"
+ pageTitle="Submit jobs to an HPC Pack cluster in Azure | Azure"
  description="Learn how to set up an on-premises computer to submit jobs to an HPC Pack cluster in Azure"
  services="virtual-machines"
  documentationCenter=""

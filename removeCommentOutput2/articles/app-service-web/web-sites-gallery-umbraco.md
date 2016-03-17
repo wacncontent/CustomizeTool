@@ -1,7 +1,7 @@
 <!-- not suitable for Mooncake -->
 
 <properties 
-	pageTitle="Create an Umbraco web app from the Marketplace in Windows Azure" 
+	pageTitle="Create an Umbraco web app from the Marketplace in Azure" 
 	description="Create an Umbraco content management system and deploy to Azure Websites." 
 	tags="azure-portal"
 	services="app-service\web" 
@@ -15,7 +15,7 @@
 	ms.date="08/03/2015"
 	wacn.date=""/>
 
-#Create an Umbraco web app from the Marketplace in Windows Azure#
+#Create an Umbraco web app from the Marketplace in Azure#
 
 Umbraco CMS is a fully-featured open source content management system that can be used to create a variety of applications from small to complex. The Azure Marketplace provides a wide range of popular web applications developed by Microsoft, third party companies, and open source software initiatives. The gallery allows you to create an Umbraco CMS app in just a few minutes by either applying the starter kits or by integrating your own design. 
 
@@ -85,7 +85,7 @@ After the deployment is completed, the portal will display the blade for your Um
 	![Published web site page][17MyPage]
 	
 
-That’s it! You've successfully created a blog web app using Umbraco CMS, in just a few minutes. 
+That's it! You've successfully created a blog web app using Umbraco CMS, in just a few minutes. 
 
 ##Additional Resources
 

@@ -1,5 +1,7 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
-   pageTitle="Network Resource Provider Overview | Windows Azure"
+   pageTitle="Network Resource Provider Overview | Azure"
    description="Learn about the new Network Resource Provider in Azure Resource Manager"
    services="virtual-network"
    documentationCenter="na"
@@ -30,9 +32,7 @@ Azure Resource Manager relies on different resource providers to provide access 
 	- Node.JS SDK
 	- Java SDK
 	- Azure CLI
-<!-- deleted by customization
 	- Preview Portal
--->
 	- ARM template language
 
 ## Network resources 
@@ -118,12 +118,12 @@ The template is primarily a JSON description of the resources and the instance v
 	    "parameters" : {
 	      "location": {
 	        "type": "String",
-<!-- deleted by customization
+
 	        "allowedValues": ["China East", "China North", "West Europe", "China East", "South China East"],
--->
-<!-- keep by customization: begin -->
+
+
 	        "allowedValues": ["China East", "China North"],
-<!-- keep by customization: end -->
+
 	        "metadata" : {
 	          "Description" : "Deployment location"
 	        }

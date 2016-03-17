@@ -30,7 +30,7 @@ Before you begin the instructions in this article, you must have the following:
 
 Use the following command to connect to Azure:
 
-	azure login -e AzureChinaCloud -u <your account> 
+	azure login -e AzureChinaCloud -u <your account>
 
 For more information on authenticating using a work or school account, see [Connect to an Azure subscription from the Azure CLI](/documentation/articles/xplat-cli-connect).
 
@@ -40,7 +40,7 @@ To get help, use the **-h** switch.  For example:
 	
 ##Create clusters
 
-You must have a Azure Blob storage account before you can create an HDInsight cluster. To create an HDInsight cluster, you must specify the following:
+You must have a Azure Resource Management a a Azure Blob storage account before you can create an HDInsight cluster. To create an HDInsight cluster, you must specify the following:
 
 - **HDInsight cluster name**
 
@@ -50,7 +50,7 @@ You must have a Azure Blob storage account before you can create an HDInsight cl
 
 	To create a new Azure storage account:
 	
-		azure storage account create "<Azure Storage Account Name>" -l "<Azure Location>" --type LRS
+		-azure storage account create "<Azure Storage Account Name>" -g "<Resource Group Name>" -l "<Azure Location>" --type LRS
 
 	> [AZURE.NOTE] The Storage account must be collocated with HDInsight in the data center.
 	> The storage account type can't be ZRS, because ZRS doesn't support table.
@@ -64,7 +64,7 @@ You must have a Azure Blob storage account before you can create an HDInsight cl
 		-- Shows a Storage account
 		azure storage account show "<Storage Account Name>"
 		-- Lists the keys for a Storage account
-		azure storage account keys list "<Storage Account Name>" 
+		azure storage account keys list "<Storage Account Name>" -g "<Resource Group Name>"
 
 	For details on getting the information by using the Azure Management Portal, see the "View, copy, and regenerate storage access keys" section of [Create, manage, or delete a Storage account][azure-create-storageaccount].
 
@@ -75,7 +75,7 @@ You must have a Azure Blob storage account before you can create an HDInsight cl
 Once you have the Storage account prepared, you are ready to create a cluster:
 
     
-    azure hdinsight cluster create -c <HDInsight Cluster Name> -l <Location> --osType Windows --version <Cluster Version> --clusterType <Hadoop | HBase | Spark | Storm> --workerNodeCount 2 --headNodeSize Large --workerNodeSize Large --defaultStorageAccountName <Azure Storage Account Name>.blob.core.chinacloudapi.cn --defaultStorageAccountKey "<Default Storage Account Key>" --defaultStorageContainer <Default Blob Storage Container> --userName admin --password "<HTTP User Password>" --rdpUserName <RDP Username> --rdpPassword "<RDP User Password" --rdpAccessExpiry "03/01/2016"
+    -azure hdinsight cluster create -g <Resource Group Name> -c <HDInsight Cluster Name> -l <Location> --osType <Windows | Linux> --version <Cluster Version> --clusterType <Hadoop | HBase | Spark | Storm> --workerNodeCount 2 --headNodeSize Large --workerNodeSize Large --defaultStorageAccountName <Azure Storage Account Name>.blob.core.chinacloudapi.cn --defaultStorageAccountKey "<Default Storage Account Key>" --defaultStorageContainer <Default Blob Storage Container> --userName admin --password "<HTTP User Password>" --rdpUserName <RDP Username> --rdpPassword "<RDP User Password" --rdpAccessExpiry "03/01/2016"
 
 ## See also
 

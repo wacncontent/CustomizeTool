@@ -1,5 +1,5 @@
 <properties
- pageTitle="Develop Scalding MapReduce jobs with Maven | Windows Azure"
+ pageTitle="Develop Scalding MapReduce jobs with Maven | Azure"
  description="Learn how to use Maven to create a Scalding MapReduce job, then deploy and run the job on a Hadoop on HDInsight cluster."
  services="hdinsight"
  documentationCenter=""
@@ -21,7 +21,7 @@ In this document, learn how to use Maven to create a basic word count MapReduce 
 ## Prerequisites
 
 - **An Azure subscription**. See [Get Azure trial](/pricing/1rmb-trial/).
-* **A Windows based Hadoop on HDInsight cluster**. See [Provision Windows-based Hadoop on HDInsight](/documentation/articles/hdinsight-provision-clusters-v1) for more information.
+b* **A Windows or Linux based Hadoop on HDInsight cluster**. See [Provision Linux-based Hado[ [Provision Windows-based Hadoop on HDInsight](/documentation/articles/hdinsight-provision-clusters-v1) for more information.
 
 * **[Maven](http://maven.apache.org/)**
 
@@ -179,9 +179,10 @@ In this document, learn how to use Maven to create a basic word count MapReduce 
 
     Once this job completes, the package containing the WordCount application can be found at **target/scaldingwordcount-1.0-SNAPSHOT.jar**.
 
-## Run the job on a Windows-based cluster
+## Run the job on a Linux-based cluster
 
-> [AZURE.NOTE] The following steps use Windows PowerShell. For other methods of running MapReduce jobs, see [Use MapReduce in Hadoop on HDInsight](/documentation/articles/hdinsight-use-mapreduce).
+> [AZURE.NOTE] The following steps use SSH and the Hadoop command. For other methods of running MapReduce jobs, see [Use MapReduce in Hadoop on HDInsight](/documentation/articles/hdinsight-use-mapreduce).
+
 
 1. [Install and configure Azure PowerShell](/documentation/articles/powershell-install-configure).
 

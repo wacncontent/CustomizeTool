@@ -1,5 +1,5 @@
 <properties
-	pageTitle="About disks and VHDs | Windows Azure"
+	pageTitle="About disks and VHDs | Azure"
 	description="Learn about the basics of disks and VHDs for virtual machines in Azure."
 	services="virtual-machines"
 	documentationCenter=""

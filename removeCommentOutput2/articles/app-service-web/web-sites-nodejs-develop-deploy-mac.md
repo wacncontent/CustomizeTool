@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Create a Node.js web app in Azure | Windows Azure"
+	pageTitle="Create a Node.js web app in Azure | Azure"
 	description="Learn how to deploy a Node.js application to a web app in Azure."
 	services="app-service\web"
 	documentationCenter="nodejs"
@@ -36,13 +36,15 @@ The completed application writes a short "hello world" string to the browser.
 For tutorials and sample code with more complex Node.js applications, or for other topics about how to use Node.js in Azure, see the [Node.js Developer Center](/develop/nodejs/).
 
 > [AZURE.NOTE]
-> To complete this tutorial, you need a Windows Azure account. If you don't have an account, you can [sign up for a trial](/pricing/1rmb-trial/?WT.mc_id=A261C142F).
+
+> To complete this tutorial, you need a Azure account. If you don't have an account, you can [sign up for a trial](/pricing/1rmb-trial/?WT.mc_id=A261C142F).
 
 ## Create a web app and enable Git publishing
 
 Follow these steps to create a web app in Azure and enable Git publishing. 
 
 [Git](http://git-scm.com/) is a distributed version control system that you can use to deploy your Azure Website. You'll store the code you write for your web app in a local Git repository, and you'll deploy your code to Azure by pushing to a remote repository. This method of deployment is a feature of Azure web apps.  
+
 
 1. Login to the [Azure Management Portal].
 
@@ -160,6 +162,7 @@ In this section, you'll create a **server.js** file that contains a slightly mod
 3. Refresh the browser window that you navigated to the web app's URL.
 
 	![A web page displaying 'Hello Azure'][helloworld-completed]
+
 4. You can revert to the previous deployment by selecting it in **Deployments**.
 
 ## Next steps
@@ -177,7 +180,7 @@ For more information about how to develop Node.js applications on Azure, see the
 [Azure Management Portal]: http://manage.windowsazure.cn
 [Azure Command-Line Tools for Mac and Linux]: /documentation/articles/xplat-cli-install
 [Azure PowerShell]: /documentation/articles/powershell-install-configure
-[portal-new- Website]: ./media/web-sites-nodejs-develop-deploy-mac/plus-new.png
+[portal-new-website]: ./media/web-sites-nodejs-develop-deploy-mac/plus-new.png
 [portal-git-username-password]: ./media/web-sites-nodejs-develop-deploy-mac/git-deployment-credentials.png
 [git-instructions]: ./media/web-sites-nodejs-develop-deploy-mac/git-instructions.png
 [git-deployments-first]: ./media/web-sites-nodejs-develop-deploy-mac/git_deployments_first.png

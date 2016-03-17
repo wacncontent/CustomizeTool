@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 Resource|Default Limit
 ---|---
 Virtual machines per availability set | 100 

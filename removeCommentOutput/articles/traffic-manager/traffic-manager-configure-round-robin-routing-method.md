@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Configure Traffic Manager round robin traffic routing method | Windows Azure"
+   pageTitle="Configure Traffic Manager round robin traffic routing method | Azure"
    description="This article will help you configure round robin load balancing for your Traffic Manager endpoints."
    services="traffic-manager"
    documentationCenter=""
@@ -24,7 +24,7 @@ A common traffic routing method pattern is to provide a set of identical endpoin
 3. On the page for your profile, click **Endpoints** at the top of the page and verify that the service endpoints that you want to include in your configuration are present. For steps to add or remove endpoints, see [Manage Endpoints in Traffic Manager](/documentation/articles/traffic-manager-endpoints).
 4. On your profile page, click **Configure** at the top to open the configuration page.
 5. For **traffic routing method Settings**, verify that the traffic routing method is **Round Robin**. If it is not, click **Round Robin** in the dropdown list.
-6. Verify that the **Monitoring Settings** are configured appropriately. Monitoring ensures that endpoints that are offline are not sent traffic. In order to monitor endpoints, you must specify a path and filename. Note that a forward slash â/â is a valid entry for the relative path and implies that the file is in the root directory (default). For more information about monitoring, see [About Traffic Manager Monitoring](/documentation/articles/traffic-manager-monitoring).
+6. Verify that the **Monitoring Settings** are configured appropriately. Monitoring ensures that endpoints that are offline are not sent traffic. In order to monitor endpoints, you must specify a path and filename. Note that a forward slash "/" is a valid entry for the relative path and implies that the file is in the root directory (default). For more information about monitoring, see [About Traffic Manager Monitoring](/documentation/articles/traffic-manager-monitoring).
 7. After you complete your configuration changes, click **Save** at the bottom of the page.
 8. Test the changes in your configuration. For more information, see [Testing Traffic Manager Settings](/documentation/articles/traffic-manager-testing-settings).
 9. Once your Traffic Manager profile is setup and working, edit the DNS record on your authoritative DNS server to point your company domain name to the Traffic Manager domain name. For more information about how to do this, see [Point a Company Internet Domain to a Traffic Manager Domain](/documentation/articles/traffic-manager-point-internet-domain).
@@ -46,4 +46,3 @@ A common traffic routing method pattern is to provide a set of identical endpoin
 
 [Traffic Manager - Disable or enable an endpoint](/documentation/articles/disable-or-enable-an-endpoint)
 
- 

@@ -17,10 +17,10 @@
 ## Overview
 
 This tutorial shows how to use Visual Studio tools that help debug a web app while it runs in [Azure Web App](/documentation/services/web-sites/), by running in [debug mode](http://www.visualstudio.com/get-started/debug-your-app-vs.aspx) remotely or by viewing application logs and web server logs.
-<!-- deleted by customization
+
 
 [AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)]
--->
+
 
 You'll learn:
 
@@ -33,26 +33,6 @@ You'll learn:
 
 If you have Visual Studio Ultimate, you can also use [IntelliTrace](http://msdn.microsoft.com/zh-cn/library/vstudio/dd264915.aspx) for debugging. IntelliTrace is not covered in this tutorial.
 
-<!-- keep by customization: begin -->
-### Tutorial segments
-
-- [Prerequisites](#prerequisites)
-- [Site configuration and management](#sitemanagement)
-- [Access website files in Server Explorer](#remoteview)
-- [Remote debugging](#remotedebug)
-	- Remote debugging websites
-	- Remote debugging WebJobs
-	- Notes about remote debugging 
-- [Diagnostic logs overview](#logsoverview)
-- [Create and view application trace logs](#apptracelogs)
-- [View web server logs](#webserverlogs)
-- [View detailed error message logs](#detailederrorlogs)
-- [Download file system logs](#downloadlogs)
-- [View storage logs](#storagelogs)
-- [View failed request logs](#failedrequestlogs)
-- [Next steps](#nextsteps)
-
-<!-- keep by customization: end -->
 ## <a name="prerequisites"></a>Prerequisites
 
 This tutorial works with the development environment, web project, and Azure web app that you set up in [Get started with Azure and ASP.NET][GetStarted]. For the WebJobs sections, you'll need the application that you create in [Get Started with the Azure WebJobs SDK][GetStartedWJ].
@@ -74,10 +54,10 @@ Visual Studio provides access to a subset of the web app management functions an
 	> [AZURE.NOTE]
 	> If you download a subscription file, save it to a folder outside your source code directories (for example, in the Downloads folder), and then delete it once the import has completed. A malicious user who gains access to the subscription file can edit, create, and delete your Azure services.
 
-<!-- deleted by customization
+
 	For more information about connecting to Azure resources from Visual Studio, see [Manage Accounts, Subscriptions, and Administrative Roles](https://msdn.microsoft.com/zh-cn/library/azure/hh531793.aspx).
 
--->
+
 2. In **Server Explorer**, expand **Azure** and expand **App Services**.
 
 3. Expand the resource group that includes the web app that you created in [Getting started with Azure and ASP.NET][GetStarted], and then right-click the web app node and click **View Settings**.
@@ -90,7 +70,7 @@ Visual Studio provides access to a subset of the web app management functions an
 
 	In this tutorial you'll be using the logging and tracing drop-downs. You'll also use remote debugging but you'll use a different method to enable it.
    
-	For information about the App Settings and Connection Strings boxes in this window, see [Azure Web Apps: How Application Strings and Connection Strings <!-- deleted by customization Work](http://blogs.msdn.com/b/windowsazure/archive/2013/07/17/windows-azure-web-sites-how-application-strings-and-connection-strings-work.aspx) --><!-- keep by customization: begin --> Work](https://azure.microsoft.com/zh-cn/blog/windows-azure-web-sites-how-application-strings-and-connection-strings-work) <!-- keep by customization: end -->.
+	For information about the App Settings and Connection Strings boxes in this window, see [Azure Web Apps: How Application Strings and Connection Strings  Work](http://blogs.msdn.com/b/windowsazure/archive/2013/07/17/windows-azure-web-sites-how-application-strings-and-connection-strings-work.aspx)  Work](https://azure.microsoft.com/zh-cn/blog/windows-azure-web-sites-how-application-strings-and-connection-strings-work) .
 
 	If you want to perform a web app management task that can't be done in this window, click **Open in Management Portal** to open a browser window to the Azure Management Portal. For more information, see [How to Configure Web Apps](/documentation/articles/web-sites-configure/#howtochangeconfig).
 
@@ -177,12 +157,12 @@ This section shows how to debug remotely using the project you create in [Gettin
 
 6. For Visual Studio 2012 with Update 4 or later:<a id="vs2012"></a>
 
-<!-- deleted by customization
+
 	* In the Azure Management Portal, go to **Settings > Application settings** for your web app, and then scroll down to the **Debugging** section.
--->
-<!-- keep by customization: begin -->
+
+
 	* In the Azure Management Portal, go to the **Configure** tab for your website, and then scroll down to the **Site Diagnostics** section.
-<!-- keep by customization: end -->
+
 
 	* Set **Remote Debugging** to **On**, and set **Remote Visual Studio Version** to **2012**.
 
@@ -642,7 +622,7 @@ Storage accounts offer more storage and longer-lasting retention for logs compar
 
 	![Storage logs in table view](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-tracelogtableview.png)
 
-	This view shows additional fields you don't see in any other views. This view also enables you to filter logs by using special Query Builder UI for constructing a query. <!-- deleted by customization For more information, see Working with Table Resources - Filtering Entities in [Browsing Storage Resources with Server Explorer](http://msdn.microsoft.com/zh-cn/library/ff683677.aspx). -->
+	This view shows additional fields you don't see in any other views. This view also enables you to filter logs by using special Query Builder UI for constructing a query.  For more information, see Working with Table Resources - Filtering Entities in [Browsing Storage Resources with Server Explorer](http://msdn.microsoft.com/zh-cn/library/ff683677.aspx). 
 
 7. To look at the details for a single row, double-click one of the rows.
 
@@ -668,7 +648,7 @@ You can view failed request tracing logs in a browser directly via FTP or locall
 
 2. In Visual Studio, in the **Configuration** tab of the **App Services** window, click **Open in Management Portal**.
 
-<!-- deleted by customization
+
 3. In the Azure Management Portal(https://manage.windowsazure.cn) blade for your web app, click **Settings > Deployment credentials**, and then enter a new user name and password.
 
 	![New FTP user name and password](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-enterftpcredentials.png)
@@ -676,8 +656,8 @@ You can view failed request tracing logs in a browser directly via FTP or locall
 	**When you log in, you have to use the full user name with the web app name prefixed to it. For example, if you enter "myid" as a user name and the site is "myexample", you log in as "myexample\myid".
 
 5. In a new browser window, go to the URL that is shown under **FTP hostname** or **FTPS hostname** in the **Web App** blade for your web app. 
--->
-<!-- keep by customization: begin -->
+
+
 3. In the management portal, click **Dashboard**, and then click **Reset your deployment credentials** in the **Quick Glance** section.
 
 	![Reset FTP credentials link in Dashboard](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-resetftpcredentials.png)
@@ -689,7 +669,7 @@ You can view failed request tracing logs in a browser directly via FTP or locall
 5. In the management portal **Dashboard** tab press F5 to refresh the page, and then scroll down to where you see **Deployment / FTP User**. Notice that the user name has the web site name prefixed to it. **When you log in, you have to use this full user name with the web site name prefixed to it as shown here.**
 
 5. In a new browser window, go to the URL that is shown under **FTP Host Name** in the **Dashboard** tab of the management portal page for your web site. **FTP Host Name** is located near **Deployment / FTP User** in the **Quick Glance** section.
-<!-- keep by customization: end -->
+
 
 6. Log in using the FTP credentials that you created earlier (including the web app name prefix for the user name).
 
@@ -732,25 +712,25 @@ For more information about troubleshooting web apps in Azure, see the following 
 
 * [How to monitor web apps](/documentation/articles/web-sites-monitor/)
 * [Investigating Memory Leaks in Azure Web Apps with Visual Studio 2013](http://blogs.msdn.com/b/visualstudioalm/archive/2013/12/20/investigating-memory-leaks-in-azure-web-sites-with-visual-studio-2013.aspx). Microsoft ALM blog post about Visual Studio features for analyzing managed memory issues.
-<!-- deleted by customization
+
 * [Azure web apps online tools you should know about](/blog/2014/03/28/windows-azure-websites-online-tools-you-should-know-about-2/). Blog post by Amit Apple.
--->
+
 
 For help with a specific troubleshooting question, start a thread in one of the following forums:
 
 * [The Azure forum on the ASP.NET site](http://forums.asp.net/1247.aspx/1?Azure+and+ASP+NET).
 * [The Azure forum on MSDN](http://social.msdn.microsoft.com/Forums/zh-cn/home?forum=windowsazurezhchs).
-<!-- deleted by customization
+
 * [StackOverflow.com](http://www.stackoverflow.com).
--->
-<!-- keep by customization: begin -->
+
+
 * [CSDN](http://azure.csdn.net/).
-<!-- keep by customization: end -->
+
 
 ### Debugging in Visual Studio 
 
-For more information about how to use debug mode in Visual Studio, see the [Debugging in Visual <!-- deleted by customization Studio](http://msdn.microsoft.com/zh-cn/library/vstudio/sc65sadd.aspx) --><!-- keep by customization: begin --> Studio](http://msdn.microsoft.com/zh-cn/library/sc65sadd.aspx) <!-- keep by customization: end --> MSDN topic and [Debugging Tips with Visual Studio 2010](http://weblogs.asp.net/scottgu/archive/2010/08/18/debugging-tips-with-visual-studio-2010.aspx).
-<!-- deleted by customization
+For more information about how to use debug mode in Visual Studio, see the [Debugging in Visual  Studio](http://msdn.microsoft.com/zh-cn/library/vstudio/sc65sadd.aspx)  Studio](http://msdn.microsoft.com/zh-cn/library/sc65sadd.aspx)  MSDN topic and [Debugging Tips with Visual Studio 2010](http://weblogs.asp.net/scottgu/archive/2010/08/18/debugging-tips-with-visual-studio-2010.aspx).
+
 
 ### Remote debugging in Azure
 
@@ -762,7 +742,7 @@ For more information about remote debugging for Azure web apps and WebJobs, see 
 * [WebJobs Debugging (video)](https://www.youtube.com/watch?v=ncQm9q5ZFZs&list=UU_SjTh-ZltPmTYzAybypB-g&index=1)
 
 If your web app uses an Azure Web API or Mobile Services back-end and you need to debug that, see [Debugging .NET Backend in Visual Studio](http://blogs.msdn.com/b/azuremobile/archive/2014/03/14/debugging-net-backend-in-visual-studio.aspx).
--->
+
 
 ### Tracing in ASP.NET applications
 
@@ -813,7 +793,7 @@ For more information about analyzing web server logs, see the following resource
 
 The Microsoft TechNet website includes a [Using Failed Request Tracing](http://www.iis.net/learn/troubleshoot/using-failed-request-tracing) section which may be helpful for understanding how to use these logs. However, this documentation focuses mainly on configuring failed request tracing in IIS, which you can't do in Azure Web Apps.
 
-<!-- deleted by customization
+
 ### Debugging Cloud Services
 
 If you want to debug an Azure Cloud Service rather than a web app, see [Debugging Cloud Services](http://msdn.microsoft.com/zh-cn/library/azure/ee405479.aspx).
@@ -822,11 +802,10 @@ If you want to debug an Azure Cloud Service rather than a web app, see [Debuggin
 * For a guide to the change from Websites to Azure see: [Azure and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
 * For a guide to the change of the Azure Management Portal to the Azure preview portal see: [Reference for navigating the preview portal](https://manage.windowsazure.cn/)
 
-[GetStarted]: web-sites-dotnet-get-started.md
-[GetStartedWJ]: websites-dotnet-webjobs-sdk.md
--->
-<!-- keep by customization: begin -->
 [GetStarted]: /documentation/articles/web-sites-dotnet-get-started
+
+
+[GetStarted]: /documentation/articles/web-sites-dotnet-get-started
+
 [GetStartedWJ]: /documentation/articles/websites-dotnet-webjobs-sdk
-<!-- keep by customization: end -->
  

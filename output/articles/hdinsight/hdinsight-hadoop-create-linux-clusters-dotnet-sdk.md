@@ -1,5 +1,7 @@
+<!-- not suitable for Mooncake -->
+
 <properties
-   	pageTitle="Create Hadoop, HBase, Storm, or Spark clusters on Linux in HDInsight using the HDInsight .NET SDK | Windows Azure"
+   	pageTitle="Create Hadoop, HBase, Storm, or Spark clusters on Linux in HDInsight using the HDInsight .NET SDK | Azure"
    	description="Learn how to create Hadoop, HBase, Storm, or Spark clusters on Linux for HDInsight using the HDInsight .NET SDK."
    	services="hdinsight"
    	documentationCenter=""

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Customize HDInsight Clusters using bootstrap | Windows Azure"
+	pageTitle="Customize HDInsight Clusters using bootstrap | Azure"
 	description="Learn how to customize HDInsight clusters using bootstrap."
 	services="hdinsight"
 	documentationCenter=""
@@ -28,7 +28,7 @@ Sometimes, you want to configure the configuration files which include:
 
 The clusters can't retain the changes due to re-imaging. For more information on re-imaging, 
 see [Role Instance Restarts Due to OS Upgrades](http://blogs.msdn.com/b/kwill/archive/2012/09/19/role-instance-restarts-due-to-os-upgrades.aspx). 
-To keep the changes through the clusters' lifetime, you can use HDInsight cluster customization during the creation process. This is the recommended way to change configurations of a cluster and persist across these Azure reimage reboot restart events. These configuration changes are applied before service start, so services neednât be restarted. 
+To keep the changes through the clusters' lifetime, you can use HDInsight cluster customization during the creation process. This is the recommended way to change configurations of a cluster and persist across these Azure reimage reboot restart events. These configuration changes are applied before service start, so services needn't be restarted. 
 
 There are 3 methods to use bootstrap:
 
@@ -107,7 +107,7 @@ See [Create Linux-based clusters in HDInsight using the .NET SDK](/documentation
 You can use bootstrap in ARM template:
 
     "configurations": {
-        âŚ
+        …
         "hive-site": {
             "hive.metastore.client.connect.retry.delay": "5",
             "hive.execution.engine": "mr",
@@ -129,11 +129,11 @@ You can use bootstrap in ARM template:
 - [Install and use Solr on HDInsight clusters](/documentation/articles/hdinsight-hadoop-solr-install-v1).
 - [Install and use Giraph on HDInsight clusters](/documentation/articles/hdinsight-hadoop-giraph-install-v1).
 
-[hdinsight-install-spark]: hdinsight-hadoop-spark-install.md
-[hdinsight-install-r]: hdinsight-hadoop-r-scripts.md
-[hdinsight-write-script]: hdinsight-hadoop-script-actions.md
-[hdinsight-provision-cluster]: hdinsight-provision-clusters-v1.md
-[powershell-install-configure]: ../install-configure-powershell.md
+[hdinsight-install-spark]: /documentation/articles/hdinsight-hadoop-spark-install
+[hdinsight-install-r]: /documentation/articles/hdinsight-hadoop-r-scripts
+[hdinsight-write-script]: /documentation/articles/hdinsight-hadoop-script-actions
+[hdinsight-provision-cluster]: /documentation/articles/hdinsight-provision-clusters-v1
+[powershell-install-configure]: /documentation/articles/powershell-install-configure
 
 
 [img-hdi-cluster-states]: ./media/hdinsight-hadoop-customize-cluster-v1/HDI-Cluster-state.png "Stages during cluster creation"

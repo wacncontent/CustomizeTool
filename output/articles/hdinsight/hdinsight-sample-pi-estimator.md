@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Pi estimator Hadoop sample in HDInsight | Windows Azure"
+	pageTitle="Pi estimator Hadoop sample in HDInsight | Azure"
 	description="Learn how to run a Hadoop MapReduce sample Pi estimator on HDInsight."
 	editor="cgronlun"
 	manager="paulettm"
@@ -469,11 +469,13 @@ For tutorials that describe running other samples and provide instructions on us
 [powershell-install-configure]: /documentation/articles/powershell-install-configure
 
 [hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
+
 [hdinsight-samples]: /documentation/articles/hdinsight-run-samples
 [hdinsight-sample-10gb-graysort]: /documentation/articles/hdinsight-sample-10gb-graysort
 [hdinsight-sample-csharp-streaming]: /documentation/articles/hdinsight-sample-csharp-streaming
 [hdinsight-sample-pi-estimator]: /documentation/articles/hdinsight-sample-pi-estimator
 [hdinsight-sample-wordcount]: /documentation/articles/hdinsight-sample-wordcount
+
 [hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
 [hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
 [hdinsight-sample-cs-streaming]: /documentation/articles/hdinsight-sample-csharp-streaming

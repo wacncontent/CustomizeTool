@@ -1,5 +1,5 @@
 <properties
-pageTitle="Considerations for using Oracle VM images | Windows Azure"
+pageTitle="Considerations for using Oracle VM images | Azure"
 description="Learn about supported configurations and limitations for an Oracle VM on Windows Server in Azure before you deploy."
 services="virtual-machines"
 documentationCenter=""
@@ -18,7 +18,7 @@ tags="azure-service-management"/>
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
 
-This article covers considerations for Oracle virtual machines in Azure, which are based on Oracle software images provided by Microsoft, with Windows Server as the operating system.  
+This article covers considerations for Oracle virtual machines in Azure, which are based on Oracle software images uploaded by user, with Windows Server as the operating system. You can also create VHD locally and upload it to Azure for the virtual machine creation.
 
 -  Oracle Database virtual machine images
 -  Oracle WebLogic Server virtual machine images
@@ -56,7 +56,7 @@ Consider two different approaches for attaching multiple disks based on whether 
 
 When using Oracle Database in Azure virtual machines, you are responsible for implementing a high availability and disaster recovery solution to avoid any downtime. You are also responsible for backing up your own data and application.
 
-High availability and disaster recovery for Oracle Database Enterprise Edition (without RAC) on Azure can be achieved using [Data Guard, Active Data Guard](http://www.oracle.com/technetwork/articles/oem/dataguardoverview-083155.html), or [Oracle Golden Gate](http://www.oracle.com/technetwork/middleware/goldengate), with two databases in two separate virtual machines. Both virtual machines should be in the same [cloud service](/documentation/articles/cloud-services-connect-virtual-machine) and the same [virtual network](/documentation/services/networking/) to ensure they can access each other over the private persistent IP address. Â Additionally, we recommend to place the virtual machines in the same [availability set](/documentation/articles/manage-availability-virtual-machines) to allow Azure to place them into separate fault domains and upgrade domains. Note that only virtual machines in the same cloud service can participate in the same availability set. Each virtual machine must have at least 2 GB of memory and 5 GB of disk space.
+High availability and disaster recovery for Oracle Database Enterprise Edition (without RAC) on Azure can be achieved using [Data Guard, Active Data Guard](http://www.oracle.com/technetwork/articles/oem/dataguardoverview-083155.html), or [Oracle Golden Gate](http://www.oracle.com/technetwork/middleware/goldengate), with two databases in two separate virtual machines. Both virtual machines should be in the same [cloud service](/documentation/articles/cloud-services-connect-virtual-machine) and the same [virtual network](/documentation/services/networking/) to ensure they can access each other over the private persistent IP address.  Additionally, we recommend to place the virtual machines in the same [availability set](/documentation/articles/manage-availability-virtual-machines) to allow Azure to place them into separate fault domains and upgrade domains. Note that only virtual machines in the same cloud service can participate in the same availability set. Each virtual machine must have at least 2 GB of memory and 5 GB of disk space.
 
 With Oracle Data Guard, high availability can be achieved with a primary database in one virtual machine, a secondary (standby) database in another virtual machine, and one-way replication set up between them. The result is read access to the copy of the database. With Oracle GoldenGate, you can configure bi-directional replication between the two databases. To learn how to set up a high-availability solution for your databases using these tools, see [Active Data Guard](http://www.oracle.com/technetwork/database/features/availability/data-guard-documentation-152848.html) and [GoldenGate](http://docs.oracle.com/goldengate/1212/gg-winux/index.html) documentation at the Oracle website. If you need read-write access to the copy of the database, you can use [Oracle Active Data Guard](http://www.oracle.com/uk/products/database/options/active-data-guard/overview/index.html).
 
@@ -101,6 +101,3 @@ For related information, see KB article **860340.1** at <http://support.oracle.c
 	Note that the JDK available in this JDK 6 and 7 images, and the virtual machines and images derived from them, can only be used within Azure.
 
 -  **64-bit JDK.** The Oracle WebLogic Server virtual machine images and the Oracle JDK virtual machine images provided by Azure contain the 64-bit versions of both Windows Server and the JDK.
-
-##Additional resources
-[Oracle virtual machine images for Azure](/documentation/articles/virtual-machines-oracle-list-oracle-virtual-machine-images)

@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 
 <properties
 	pageTitle="How to buy a custom domain name in Azure Web Apps"

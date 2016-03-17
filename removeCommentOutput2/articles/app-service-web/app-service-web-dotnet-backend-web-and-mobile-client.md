@@ -1,7 +1,7 @@
 <!-- not suitable for Mooncake -->
 
 <properties
-	pageTitle="Create an app with a mobile and web client in Azure | Windows Azure"
+	pageTitle="Create an app with a mobile and web client in Azure | Azure"
 	description="Create a multi-channel app with both a website and mobile client in Azure Web App."
 	services="app-service\web"
 	documentationCenter=".net"

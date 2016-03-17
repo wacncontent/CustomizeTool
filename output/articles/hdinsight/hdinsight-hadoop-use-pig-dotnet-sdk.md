@@ -1,5 +1,7 @@
+<!-- not suitable for Mooncake -->
+
 <properties
-   pageTitle="Use Hadoop Pig with .NET in HDInsight | Windows Azure"
+   pageTitle="Use Hadoop Pig with .NET in HDInsight | Azure"
    description="Learn how to use the .NET SDK for Hadoop to submit Pig jobs to Hadoop on HDInsight."
    services="hdinsight"
    documentationCenter=".net"

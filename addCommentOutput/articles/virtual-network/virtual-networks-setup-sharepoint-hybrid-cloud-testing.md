@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="SharePoint 2013 farm test environment | Windows Azure" 
+	pageTitle="SharePoint 2013 farm test environment | Azure" 
 	description="Learn how to create a two-tier SharePoint Server 2013 intranet farm in a hybrid cloud environment for development or IT pro testing." 
 	services="virtual-network" 
 	documentationCenter="" 
@@ -10,22 +10,22 @@
 
 <tags
 	ms.service="virtual-network"
-	ms.date="09/10/2015"
+	ms.date="01/28/2016"
 	wacn.date=""/>
 
 # Set up a SharePoint intranet farm in a hybrid cloud for testing
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] <!-- deleted by customization Resource Manager model. -->
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]  Resource Manager model. 
  
 
-This topic steps you through creating a hybrid cloud environment for testing an intranet SharePoint farm hosted in Windows Azure. Here is the resulting configuration.
+This topic steps you through creating a hybrid cloud environment for testing an intranet SharePoint farm hosted in Azure. Here is the resulting configuration.
 
 ![](./media/virtual-networks-setup-sharepoint-hybrid-cloud-testing/CreateSPFarmHybridCloud_3.png)
  
 This configuration simulates a SharePoint in Azure production environment from your location on the Internet. It consists of:
 
 - A simplified on-premises network (the Corpnet subnet).
-- A cross-premises virtual network hosted in Windows Azure (TestVNET).
+- A cross-premises virtual network hosted in Azure (TestVNET).
 - A site-to-site VPN connection.
 - A two-tier SharePoint farm and secondary domain controller in the TestVNET virtual network.
 
@@ -40,7 +40,7 @@ There are three major phases to setting up this hybrid cloud test environment:
 2.	Configure the SQL server computer (SQL1).
 3.	Configure the SharePoint server (SP1).
 
-If you do not already have an Azure subscription, you can sign up for a trial at [Try Azure](/pricing/1rmb-trial/). <!-- deleted by customization If you have an MSDN Subscription, see [Azure benefit for MSDN subscribers](/pricing/member-offers/msdn-benefits-details/). -->
+If you do not already have an Azure subscription, you can sign up for a trial at [Try Azure](/pricing/1rmb-trial/).  If you have an MSDN Subscription, see [Azure benefit for MSDN subscribers](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/). 
 
 ## Phase 1: Set up the hybrid cloud environment
 
@@ -191,21 +191,8 @@ This is your current configuration.
  
 Your SharePoint intranet farm in a hybrid cloud environment is now ready for testing.
 
-## Additional resources
+## Next steps
 
-[SharePoint on Azure Infrastructure Services](http://msdn.microsoft.com/zh-cn/library/azure/dn275955.aspx)
+- Set up the [production workload](/documentation/articles/virtual-machines-workload-intranet-sharepoint-overview).
 
-[SharePoint Server Farm](/documentation/articles/virtual-machines-sharepoint-farm-azure-preview)
 
-[Set up a hybrid cloud environment for testing](/documentation/articles/virtual-networks-setup-hybrid-cloud-environment-testing)
-
-[Set up a web-based LOB application in a hybrid cloud for testing](/documentation/articles/virtual-networks-setup-lobapp-hybrid-cloud-testing)
-
-[Set up Office 365 Directory Synchronization (DirSync) in a hybrid cloud for testing](/documentation/articles/virtual-networks-setup-dirsync-hybrid-cloud-testing)
-
-[Set up a simulated hybrid cloud environment for testing](/documentation/articles/virtual-networks-setup-simulated-hybrid-cloud-environment-testing)
-
-[Azure hybrid cloud test environments](/documentation/articles/virtual-machines-hybrid-cloud-test-environments)
-
-[Azure infrastructure services implementation guidelines](/documentation/articles/virtual-machines-infrastructure-services-implementation-guidelines)
- 

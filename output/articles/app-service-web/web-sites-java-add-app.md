@@ -18,7 +18,9 @@ Once you have initialized your Java web app in [Azure Web App][] as documented a
 
 The navigation path to the **webapps** folder differs based on how you set up your Web Apps instance.
 
+
 - If you set up your web app by using the Azure gallery, the path to the **webapps** folder is in the form **d:\home\site\wwwroot\bin\application\_server\webapps**, where **application\_server** is the name of the application server in effect for your Web Apps instance. 
+
 - If you set up your web app by using the Azure configuration UI, the path to the **webapps** folder is in the form **d:\home\site\wwwroot\webapps**. 
 
 Note that you can use source control to upload your application or web pages, including continuous integration scenarios. Instructions for using source control with your web app are available at [Continuous deployment using GIT in Azure Web App](/documentation/articles/web-sites-publish-source-control). FTP is also an option for uploading your application or web pages.
@@ -28,6 +30,7 @@ Note for Tomcat web apps: Once you've uploaded your WAR file to the **webapps** 
 ## Next steps
 
 For more information, see the [Java Developer Center](/develop/java/).
+
 
 [AZURE.INCLUDE [app-service-web-whats-changed](../includes/app-service-web-whats-changed.md)]
 
@@ -35,3 +38,4 @@ For more information, see the [Java Developer Center](/develop/java/).
 
 <!-- External Links -->
 [Azure Web App]: /documentation/services/web-sites/
+

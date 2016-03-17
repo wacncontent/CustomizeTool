@@ -1,5 +1,5 @@
 > [AZURE.SELECTOR]
-<!-- deleted by customization
-- [Linux cluster](/documentation/articles/hdinsight-hbase-tutorial-get-started-v1-linux)
--->
+
+- [Linux cluster](/documentation/articles/hdinsight-hbase-tutorial-get-started-v1)
+
 - [Windows cluster](/documentation/articles/hdinsight-hbase-tutorial-get-started-v1)

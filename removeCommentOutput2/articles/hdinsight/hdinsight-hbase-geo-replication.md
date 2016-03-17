@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Configure HBase replication between two datacenters | Windows Azure" 
+   pageTitle="Configure HBase replication between two datacenters | Azure" 
    description="Learn how to configure HBase replication across two data centers, and about the use cases for cluster replication." 
    services="hdinsight,virtual-network" 
    documentationCenter="" 

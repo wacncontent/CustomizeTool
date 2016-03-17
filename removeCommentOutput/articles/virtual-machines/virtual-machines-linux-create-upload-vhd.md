@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Create and upload a Linux VHD | Windows Azure"
+	pageTitle="Create and upload a Linux VHD | Azure"
 	description="Create and upload an Azure virtual hard disk (VHD) with the classic deployment model that contains the Linux operating system."
 	services="virtual-machines"
 	documentationCenter=""

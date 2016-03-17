@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Use Hadoop Hive and Remote Desktop in HDInsight | Windows Azure"
+   pageTitle="Use Hadoop Hive and Remote Desktop in HDInsight | Azure"
    description="Learn how to connect to Hadoop cluster in HDInsight by using Remote Desktop, and then run Hive queries by using the Hive Command-Line Interface."
    services="hdinsight"
    documentationCenter=""
@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="12/04/2015"
+	ms.date="02/05/2016"
 	wacn.date=""/>
 
 # Use Hive with Hadoop on HDInsight with Remote Desktop
@@ -60,8 +60,7 @@ When you have connected to the desktop for the HDInsight cluster, use the follow
     * **CREATE EXTERNAL TABLE**: Creates a new 'external' table in Hive. External tables store only the table definition in Hive (the data is left in the original location).
 
 		> [AZURE.NOTE] External tables should be used when you expect the underlying data to be updated by an external source (such as an automated data upload process) or by another MapReduce operation, but you always want Hive queries to use the latest data.
-    	>
-    	> Dropping an external table does **not** delete the data, only the table definition.
+    	> <p>Dropping an external table does **not** delete the data, only the table definition.
 
 	* **ROW FORMAT**: Tells Hive how the data is formatted. In this case, the fields in each log are separated by a space.
 

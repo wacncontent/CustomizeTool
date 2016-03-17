@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Use Apache Spark to build machine learning applications on HDInsight | Windows Azure" 
+	pageTitle="Use Apache Spark to build machine learning applications on HDInsight | Azure" 
 	description="Step-by-step instructions on how to use notebooks with Apache Spark to build machine learning applications" 
 	services="hdinsight" 
 	documentationCenter="" 
@@ -255,18 +255,18 @@ Apache Spark clusters on HDInsight include Anaconda libraries. This also include
 * [Manage resources for the Apache Spark cluster in Azure HDInsight](/documentation/articles/hdinsight-apache-spark-resource-manager)
 
 
-[hdinsight-versions]: ../hdinsight-component-versioning-v1/
+[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning-v1
 
-[hdinsight-upload-data]: ../hdinsight-upload-data/
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
 
-[hdinsight-storage]: ../hdinsight-use-blob-storage/
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
 
 
-[hdinsight-weblogs-sample]: ../hdinsight-hive-analyze-website-log/
-[hdinsight-sensor-data-sample]: ../hdinsight-hive-analyze-sensor-data/
+[hdinsight-weblogs-sample]: /documentation/articles/hdinsight-hive-analyze-website-log
+[hdinsight-sensor-data-sample]: /documentation/articles/hdinsight-hive-analyze-sensor-data
 
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: /pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
 [azure-management-portal]: https://manage.windowsazure.cn/
-[azure-create-storageaccount]: ../storage-create-storage-account/
+[azure-create-storageaccount]: /documentation/articles/storage-create-storage-account

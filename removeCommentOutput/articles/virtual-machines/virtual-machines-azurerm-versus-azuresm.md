@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Compute, Network, and Storage providers | Windows Azure"
+   pageTitle="Compute, Network, and Storage providers | Azure"
    description="Conceptual overview of the Compute, Network, and Storage Resource Providers (CRP, NRP, and SRP) in Azure Resource Manager"
    services="virtual-machines"
    documentationCenter=""

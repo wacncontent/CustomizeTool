@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 ## How to create a VNet using PowerShell
 To create a VNet by using PowerShell, follow the steps below.
 

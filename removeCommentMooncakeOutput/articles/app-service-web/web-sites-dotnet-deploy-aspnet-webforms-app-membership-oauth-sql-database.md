@@ -3,7 +3,7 @@
 	description="This tutorial shows you how to build a secure ASP.NET 4.5 Web Forms web app that incorporates a SQL Database and deploy the application to Azure." 
 	services="app-service\web" 
 	documentationCenter=".net" 
-	authors="Erikre" 
+	authors="erikre" 
 	manager="wpickett" 
 	editor="jimbe"/>
 
@@ -23,7 +23,7 @@ For an MVC version of this tutorial, see [Create an ASP.NET MVC app with auth an
 
 You can open an Azure account for free, and if you don't already have Visual Studio 2013, the SDK automatically installs Visual Studio 2013 for Web Express. You can start developing for Azure for free.
 
-This tutorial assumes that you have no prior experience using Windows Azure. Once completing this tutorial, you'll have a web application up and running in the cloud that uses a cloud database.
+This tutorial assumes that you have no prior experience using Azure. Once completing this tutorial, you'll have a web application up and running in the cloud that uses a cloud database.
 
 You'll learn:
 
@@ -40,19 +40,6 @@ You'll build a simple contact list web application that is built on ASP.NET 4.5 
 
 >[AZURE.NOTE] 
 To complete this tutorial, you need an Azure account. If you don't have an account, you can <a href="/pricing/1rmb-trial/?WT.mc_id=A261C142F" target="_blank">sign up for a trial</a>. 
-
-This tutorial contains the following sections:
-
-- [Set up the Development Environment](#set-up-the-development-environment)
-- [Set up the Azure environment](#Set-up-the-Azure-environment)
-- [Create an ASP.NET Web Forms Application](#Create-an-ASP.NET-Web-Forms-Application)
-- [Add a Database to the Application](#Add-a-Database-to-the-Application)
-- [Enable SSL for the Project](#Enable-SSL-for-the-Project)
-- [Add an OAuth 2.0 Provider](#Add-an-OAuth-2.0-Provider)
-- [Use the Membership API to Restrict Access](#Use-the-Membership-API-to-Restrict-Access)
-- [Deploy the Application with the Database to Azure](#Deploy-the-Application-with-the-Database-to-Azure)
-- [Review the Database](#Review-the-Database)
-- [Next Steps](#Next-Steps)
 
 ##<a name="set-up-the-development-environment"></a>Set up the Development Environment 
 To start, set up your development environment by installing the Visual Studio 2013 and the Azure SDK for .NET.
@@ -232,11 +219,11 @@ Now that you have created and ran your application locally, it is time to deploy
 
 1. In Visual Studio, right-click the project in **Solution Explorer** and select **Publish** from the context menu.  
 	
-	![Select Publish](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms05.png) 
+	![Select Publish](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms05.png)  
  
 	The **Publish Web** dialog box is displayed.  
 
-2. In the **Profile** tab of the **Publish Web** dialog box, click **Import**.  
+2. In the **Profile** tab of the **Publish Web** dialog box, click **Import**.
 	  
 3. Choose the previously downloaded "publish profile", and click **OK**.
 
@@ -729,8 +716,7 @@ Now that the web application is complete, you can publish it to Azure.
 
 7. Set the **Configuration** dropdown box to **Debug**.
 8. Click the **down arrow** icon next to **ApplicationDbContext** and set it to **ContactDB**.
-9. Check the **Execute Code First Migrations** checkbox.
-
+9. Check the **Execute Code First Migrations** checkbox.  
 	In this example, you should select this checkbox only the first time you publish the application. This way, the *Seed* method in the *Configuration.cs* file will only be called once.  
 
 10. Then, click **Publish**.  
@@ -740,7 +726,7 @@ Now that the web application is complete, you can publish it to Azure.
 If you closed and re-opened Visual Studio after you created the publish profile, you might not see the connection string in the drop-down list. In that case, instead of editing the publish profile that you created earlier, create a new one the same way you did earlier, and then follow these steps on the **Settings** tab.)  
 
 ###<a name="Review-the-Database"></a>Review the Application in Azure 
-1. In the browser, click the **Contact Demo** link.
+1. In the browser, click the **Contact Demo** link.  
 	The Contacts List is displayed.
 	![Contacts listed in Browser](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms27.png)  
 
@@ -803,7 +789,7 @@ Earlier in the tutorial you used code to add users to the canEdit role. An alter
 We are working on a tool that will make managing users and roles much easier.  
 
 ##<a name="Next-Steps"></a>Next steps
-For more information about ASP.NET Web Forms, see [Learn About ASP.NET Web Forms](http://www.asp.net/web-forms) on the ASP.NET web app and [Windows Azure Tutorials and Guides](/documentation/services/web-sites/#net).
+For more information about ASP.NET Web Forms, see [Learn About ASP.NET Web Forms](http://www.asp.net/web-forms) on the ASP.NET web app and [Azure Tutorials and Guides](/documentation/services/web-sites/#net).
 
 This tutorial was based on the MVC tutorial [Create an ASP.NET MVC app with auth and SQL DB and deploy to Azure Web App](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database) written by Rick Anderson (Twitter [@RickAndMSFT](https://twitter.com/RickAndMSFT)) with assistance from Tom Dykstra and Barry Dorrans (Twitter [@blowdart](https://twitter.com/blowdart)). 
 

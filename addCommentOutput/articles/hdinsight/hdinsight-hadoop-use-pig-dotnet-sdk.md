@@ -1,5 +1,7 @@
+<!-- not suitable for Mooncake -->
+
 <properties
-   pageTitle="Use Hadoop Pig with .NET in HDInsight | Windows Azure"
+   pageTitle="Use Hadoop Pig with .NET in HDInsight | Azure"
    description="Learn how to use the .NET SDK for Hadoop to submit Pig jobs to Hadoop on HDInsight."
    services="hdinsight"
    documentationCenter=".net"
@@ -10,7 +12,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="12/04/2015"
+	ms.date="02/05/2016"
 	wacn.date=""/>
 
 #Run Pig jobs using the .NET SDK for Hadoop in HDInsight
@@ -21,17 +23,15 @@ This document provides an example of using the .NET SDK for Hadoop to submit Pig
 
 The HDInsight .NET SDK provides .NET client libraries that makes it easier to work with HDInsight clusters from .NET. Pig allows you to create MapReduce operations by modeling a series of data transformations. You will learn how to use a basic C# application to submit a Pig job to an HDInsight cluster.
 
-<!-- deleted by customization
 [AZURE.INCLUDE [azure-portal](../includes/hdinsight-azure-portal.md)]
 
--->
 * [Run Pig jobs using the .NET SDK for Hadoop in HDInsight](/documentation/articles/hdinsight-hadoop-use-pig-dotnet-sdk-v1)
 
 ##<a id="prereq"></a>Prerequisites
 
 To complete the steps in this article, you will need the following.
 
-* An Azure HDInsight (Hadoop on HDInsight) cluster <!-- deleted by customization (either Windows or Linux-based) -->
+* An Azure HDInsight (Hadoop on HDInsight) cluster (either Windows or Linux-based)
 
 * Visual Studio 2012 or 2013 or 2015
 
@@ -46,7 +46,6 @@ For instructions on how to do this, see [Create a self-signed certificate](/docu
 ##<a id="subscriptionid"></a>Find your subscription ID
 
 Each Azure subscription is identified by a GUID value, known as the subscription ID. Use the following steps to find this value.
-<!-- deleted by customization
 
 1. Visit the [Azure Management Portal][preview-portal].
 
@@ -54,14 +53,6 @@ Each Azure subscription is identified by a GUID value, known as the subscription
 
 3. In the information presented on the __Subscriptions__ blade, find the subscription you wish to use and note the value in the **Subscription ID** column.
 
--->
-<!-- keep by customization: begin -->
-1. Visit the <a href="https://manage.windowsazure.cn/" target="_blank">Azure Management Console</a>.
-
-2. From the bar on the left of the portal, select **Settings**.
-
-3. In the information presented on the right of the page, find the subscription you wish to use and note the value in the **Subscription ID** column.
-<!-- keep by customization: end -->
 Save the subscription ID, as it will be used later.
 
 ##<a id="create"></a>Create the application
@@ -96,54 +87,54 @@ Save the subscription ID, as it will be used later.
 
 7. From Solution Explorer, double-click **Program.cs** to open it. Replace the existing code with the following.
 
-		using System;
-		using Microsoft.Azure.Management.HDInsight.Job;
-		using Microsoft.Azure.Management.HDInsight.Job.Models;
-		using Hyak.Common;
-		
-		namespace HDInsightSubmitPigJobsDotNet
-		{
-		    class Program
-		    {
-		        static void Main(string[] args)
-		        {
-					var ExistingClusterName = "<HDInsightClusterName>";
-					var ExistingClusterUri = ExistingClusterName + ".azurehdinsight.cn";
-					var ExistingClusterUsername = "<HDInsightClusterHttpUsername>";
-					var ExistingClusterPassword = "<HDInsightClusterHttpUserPassword>";
-		
-		            // The Pig Latin statements to run
-		            string queryString = "LOGS = LOAD 'wasb:///example/data/sample.log';" +
-		                "LEVELS = foreach LOGS generate REGEX_EXTRACT($0, '(TRACE|DEBUG|INFO|WARN|ERROR|FATAL)', 1)  as LOGLEVEL;" +
-		                "FILTEREDLEVELS = FILTER LEVELS by LOGLEVEL is not null;" +
-		                "GROUPEDLEVELS = GROUP FILTEREDLEVELS by LOGLEVEL;" +
-		                "FREQUENCIES = foreach GROUPEDLEVELS generate group as LOGLEVEL, COUNT(FILTEREDLEVELS.LOGLEVEL) as COUNT;" +
-		                "RESULT = order FREQUENCIES by COUNT desc;" +
-		                "DUMP RESULT;";
-		
-		
-		            HDInsightJobManagementClient _hdiJobManagementClient;
-		            var clusterCredentials = new BasicAuthenticationCloudCredentials { Username = ExistingClusterUsername, Password = ExistingClusterPassword };
-		            _hdiJobManagementClient = new HDInsightJobManagementClient(ExistingClusterUri, clusterCredentials);
-		
-		            // Define the Pig job
-		            var parameters = new PigJobSubmissionParameters()
-		            {
-		                UserName = ExistingClusterUsername,
-		                Query = queryString,
-		            };
-		
-		            System.Console.WriteLine("Submitting the Sqoop job to the cluster...");
-		            var response = _hdiJobManagementClient.JobManagement.SubmitPigJob(parameters);
-		            System.Console.WriteLine("Validating that the response is as expected...");
-		            System.Console.WriteLine("Response status code is " + response.StatusCode);
-		            System.Console.WriteLine("Validating the response object...");
-		            System.Console.WriteLine("JobId is " + response.JobSubmissionJsonResponse.Id);
-		            Console.WriteLine("Press ENTER to continue ...");
-		            Console.ReadLine();
-		        }
-		    }
-		}
+        using System;
+        using Microsoft.Azure.Management.HDInsight.Job;
+        using Microsoft.Azure.Management.HDInsight.Job.Models;
+        using Hyak.Common;
+        
+        namespace HDInsightSubmitPigJobsDotNet
+        {
+            class Program
+            {
+                static void Main(string[] args)
+                {
+                    var ExistingClusterName = "<HDInsightClusterName>";
+                    var ExistingClusterUri = ExistingClusterName + ".azurehdinsight.cn";
+                    var ExistingClusterUsername = "<HDInsightClusterHttpUsername>";
+                    var ExistingClusterPassword = "<HDInsightClusterHttpUserPassword>";
+        
+                    // The Pig Latin statements to run
+                    string queryString = "LOGS = LOAD 'wasb:///example/data/sample.log';" +
+                        "LEVELS = foreach LOGS generate REGEX_EXTRACT($0, '(TRACE|DEBUG|INFO|WARN|ERROR|FATAL)', 1)  as LOGLEVEL;" +
+                        "FILTEREDLEVELS = FILTER LEVELS by LOGLEVEL is not null;" +
+                        "GROUPEDLEVELS = GROUP FILTEREDLEVELS by LOGLEVEL;" +
+                        "FREQUENCIES = foreach GROUPEDLEVELS generate group as LOGLEVEL, COUNT(FILTEREDLEVELS.LOGLEVEL) as COUNT;" +
+                        "RESULT = order FREQUENCIES by COUNT desc;" +
+                        "DUMP RESULT;";
+        
+        
+                    HDInsightJobManagementClient _hdiJobManagementClient;
+                    var clusterCredentials = new BasicAuthenticationCloudCredentials { Username = ExistingClusterUsername, Password = ExistingClusterPassword };
+                    _hdiJobManagementClient = new HDInsightJobManagementClient(ExistingClusterUri, clusterCredentials);
+        
+                    // Define the Pig job
+                    var parameters = new PigJobSubmissionParameters()
+                    {
+                        UserName = ExistingClusterUsername,
+                        Query = queryString,
+                    };
+        
+                    System.Console.WriteLine("Submitting the Pig job to the cluster...");
+                    var response = _hdiJobManagementClient.JobManagement.SubmitPigJob(parameters);
+                    System.Console.WriteLine("Validating that the response is as expected...");
+                    System.Console.WriteLine("Response status code is " + response.StatusCode);
+                    System.Console.WriteLine("Validating the response object...");
+                    System.Console.WriteLine("JobId is " + response.JobSubmissionJsonResponse.Id);
+                    Console.WriteLine("Press ENTER to continue ...");
+                    Console.ReadLine();
+                }
+            }
+        }
 
 7. Press **F5** to start the application.
 8. Press **ENTER** to exit the application.

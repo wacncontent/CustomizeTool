@@ -52,11 +52,11 @@ With Azure SDK 2.6 you can develop cloud service applications (PaaS) targeting .
 
 ##In-Role Cache updates
 
-- **In-Role Cache** was updated to use **Microsoft Azure Storage SDK** version 4.3. Until now, the **In-Role Cache** was using Azure Storage SDK version 1.7.
+- **In-Role Cache** was updated to use **Microsoft Azure Storage SDK** version 4.3. Until now, the **In-Role Cache** was using Microsoft Azure Storage SDK version 1.7.
 
-	Customers using Azure SDK 2.5 or below should update to Azure SDK 2.6 and move to the new version of Azure Storage SDK. 
+	Customers using Azure SDK 2.5 or below should update to Azure SDK 2.6 and move to the new version of Microsoft Azure Storage SDK. 
 
-	At this time Azure Storage version 2011-08-18 is scheduled to be removed August 1, 2016. Any migrations of In-Role Cache from Azure SDK 2.5 or below to 2.6 must be complete by this time. For more information on the retirement of Azure Storage version 2011-08-18, see [Windows Azure Storage Service Version Removal Update: Extension to 2016](http://blogs.msdn.com/b/windowsazurestorage/archive/2015/10/19/microsoft-azure-storage-service-version-removal-update-extension-to-2016.aspx).
+	At this time Azure Storage version 2011-08-18 is scheduled to be removed August 1, 2016. Any migrations of In-Role Cache from Azure SDK 2.5 or below to 2.6 must be complete by this time. For more information on the retirement of Azure Storage version 2011-08-18, see [Azure Storage Service Version Removal Update: Extension to 2016](http://blogs.msdn.com/b/windowsazurestorage/archive/2015/10/19/microsoft-azure-storage-service-version-removal-update-extension-to-2016.aspx).
 
 >[AZURE.IMPORTANT]We're announcing the November 30, 2016, retirement for Azure Managed Cache Service and Azure In-Role Cache. We recommend that you migrate to Azure Redis Cache in preparation for this retirement. For more information on dates and migration guidance, see [Which Azure Cache offering is right for me?](/documentation/articles/cache-faq#which-azure-cache-offering-is-right-for-me)
 

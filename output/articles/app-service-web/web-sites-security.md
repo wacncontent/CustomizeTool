@@ -48,6 +48,7 @@ application code and content in a secure way. Without this, your application cod
 A full discussion of security considerations for web-based applications is beyond the scope of this document. As a starting point for further guidance on securing your application,
 see the [Open Web Application Security Project (OWASP)](https://www.owasp.org/index.php/Main_Page), specifically the [top 10 project.](https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project), 
 which lists the current top 10 critical web application security flaws, as determined by OWASP members.
+
 
 ## Perform penetration testing on your app
 
@@ -56,6 +57,7 @@ to perform one-click vulnerability scanning on your app. You can view the test r
 
 If you prefer to perform your own penetration tests or want to use another scanner suite or provider, you must follow the [Azure penetration testing approval process](https://security-forms.azure.com/penetration-testing/terms) and 
 obtain prior approval to perform the desired penetration tests.
+
 
 ##<a name="https"></a> Secure communication with customers
 
@@ -117,25 +119,44 @@ always use FTPS instead of FTP.
 The FTPS link for your app can be found with the following steps:
 
 1. Open the [Azure Management Portal](https://manage.windowsazure.cn).
+
 2. Select **Browse All**.
 3. From the **Browse** blade, select **App Services**.
 4. From the **App Services** blade, Select the desired app.
 5. From the app's blade, select **All settings**.
 6. From the **Settings** blade, select **Properties**.
 7. The FTP and FTPS links are provided on the **Settings** blade. 
+
+
+2. Select **Web Apps**.
+4. Select the desired app.
+5. Click **Dashboard**
+6. You can find the **FTPS HOST NAME** there.
+
 
 For more information on FTPS, see [File Transfer Protocol](http://en.wikipedia.org/wiki/File_Transfer_Protocol).
 
+
 ## Next steps
 
-For more information on the security of the Azure platform, information on reporting a **security incident or abuse**, or to inform Microsoft that you will be performing **penetration testing** of your site, see the security section of the [Windows Azure Trust Center](https://azure.microsoft.com/support/trust-center/security/).
+For more information on the security of the Azure platform, information on reporting a **security incident or abuse**, or to inform Microsoft that you will be performing **penetration testing** of your site, see the security section of the [Azure Trust Center](https://azure.microsoft.com/support/trust-center/security/).
 
 For more information on **web.config** or **applicationhost.config** files in Azure Web Apps, see [Configuration options unlocked in Azure web apps](https://azure.microsoft.com/blog/2014/01/28/more-to-explore-configuration-options-unlocked-in-windows-azure-web-sites/).
+
+
+##<a name="next"></a> Next steps
+
+For more information on the security of the Azure platform, information on reporting a **security incident or abuse**, or to inform Microsoft that you will be performing **penetration testing** of your site, see the security section of the [Azure Trust Center](/support/trust-center/security/).
+
+For more information on **web.config** or **applicationhost.config** files in Azure Web Apps, see [Configuration options unlocked in Azure web apps](/blog/2014/01/28/more-to-explore-configuration-options-unlocked-in-windows-azure-web-sites/).
+
 
 For information on logging information for Azure Web Apps, which may be useful in detecting attacks, see [Enable diagnostic logging](/documentation/articles/web-sites-enable-diagnostic-log).
+
 
 >[AZURE.NOTE] If you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter app in Azure Web App. No credit cards required; no commitments.
 
 ## What's changed
 
 * For a guide to the change from Websites to Azure see: [Azure and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
+

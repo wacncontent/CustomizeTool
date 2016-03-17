@@ -1,5 +1,7 @@
+<!-- not suitable for Mooncake -->
+
  <properties 
-	pageTitle="Create Spark Scala applications using HDInsight plugin for IntelliJ IDEA | Windows Azure" 
+	pageTitle="Create Spark Scala applications using HDInsight plugin for IntelliJ IDEA | Azure" 
 	description="Learn how to create a standalone Spark application to run on HDInsight Spark clusters." 
 	services="hdinsight" 
 	documentationCenter="" 
@@ -51,7 +53,7 @@ If IntelliJ IDEA installation did not not prompt for enabling Scala plugin, laun
 
 1. If you are back on the IntelliJ IDEA welcome screen, click click **Configure** and then click **Plugins** again.
 
-2. In the next screen, click **Browse Repositories** from the lower left corner. In the **Browse Repositories** dialog box that opens, search for **HDInsight**, select the **Windows Azure HDInsight Tools for IntelliJ**, and then click **Install**.
+2. In the next screen, click **Browse Repositories** from the lower left corner. In the **Browse Repositories** dialog box that opens, search for **HDInsight**, select the **Azure HDInsight Tools for IntelliJ**, and then click **Install**.
 
 3. When prompted, click the **Restart IntelliJ IDEA** button to restart the IDE.
 

@@ -11,7 +11,7 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="10/23/2015"
+	ms.date="01/12/2016"
 	wacn.date=""/>
 
 # Configure a custom domain name in Azure (Purchased directly from GoDaddy)

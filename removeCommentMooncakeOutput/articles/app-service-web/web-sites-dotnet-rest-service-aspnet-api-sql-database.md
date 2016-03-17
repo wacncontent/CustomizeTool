@@ -719,7 +719,7 @@ Another way to store data in an Azure application is to use Azure storage, which
 * [Your First ASP.NET Web API](http://www.asp.net/web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api)
 * [Debugging WAWS](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio)
 
-This tutorial and the sample application was written by [Rick Anderson](http://blogs.msdn.com/b/rickandy/) with assistance from Tom Dykstra and Barry Dorrans. 
+This tutorial and the sample application was written by [Rick Anderson](http://blogs.msdn.com/b/rickandy/) with assistance from Tom Dykstra and Barry Dorrans.
 
 Please leave feedback on what you liked or what you would like to see improved, not only about the tutorial itself but also about the products that it demonstrates. Your feedback will help us prioritize improvements. We are especially interested in finding out how much interest there is in more automation for the process of configuring and deploying the membership database. 
 

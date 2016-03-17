@@ -1,5 +1,7 @@
+<!-- not suitable for Mooncake -->
+
 <properties
-	pageTitle="Create a Windows virtual machine in the Azure Management Portal | Windows Azure"
+	pageTitle="Create a Windows virtual machine in the Azure Management Portal | Azure"
 	description="Learn how to create a Windows virtual machine or virtual computer by using the Azure gallery in the Azure Management Portal"
 	keywords="Windows virtual machine,create a virtual machine,virtual computer,setting up a virtual machine"
 	services="virtual-machines"

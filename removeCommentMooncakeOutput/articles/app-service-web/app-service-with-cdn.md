@@ -33,7 +33,7 @@ You will deploy a web app to Azure Websites using the default ASP.NET MVC templa
 
 This tutorial has the following prerequisites:
 
--	An active [Windows Azure account](http://azure.microsoft.com/account/)
+-	An active [Azure account](http://azure.microsoft.com/account/)
 -	Visual Studio 2013 with [Azure SDK](https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VWDOrVs2013AzurePack.appids)
 
 > [AZURE.NOTE] You need an Azure account to complete this tutorial:
@@ -61,7 +61,7 @@ In this section, you will deploy the default ASP.NET MVC application template in
 
 	![](./media/app-service-with-cdn/4-signed-in.png)
 
-8. Assuming that you haven't created an Azure web app, Visual Studio can help you create it. In the **Configure Windows Azure Website** dialog, make sure your site name is unique. Then, click **OK**.
+8. Assuming that you haven't created an Azure web app, Visual Studio can help you create it. In the **Configure Microsoft Azure Website** dialog, make sure your site name is unique. Then, click **OK**.
 
 	![](./media/app-service-with-cdn/5-create-website.png)
 

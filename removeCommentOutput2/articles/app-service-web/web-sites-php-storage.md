@@ -439,7 +439,7 @@ To publish changes to application, follow these steps:
 [go-to-dashboard]: ./media/web-sites-php-storage/selectsite.png
 [where-is-code]: ./media/web-sites-php-storage/where_is_code.png
 [install-php]: http://www.php.net/manual/en/install.php
-[install-git]: http://git-scm.com/book/en/Getting-Started-Installing-Git
+[install-git]: http://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%AE%89%E8%A3%85-Git
 [composer-phar]: http://getcomposer.org/composer.phar
 [msdn-errors]: http://msdn.microsoft.com/zh-cn/library/azure/dd179438.aspx
 

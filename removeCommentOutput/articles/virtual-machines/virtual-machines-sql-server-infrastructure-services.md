@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Overview of SQL Server on Virtual Machines | Windows Azure"
+	pageTitle="Overview of SQL Server on Virtual Machines | Azure"
 	description="This article provides an overview of SQL Server hosted on Azure Virtual Machines. This includes links to depth content."
 	services="virtual-machines"
 	documentationCenter=""
@@ -127,7 +127,7 @@ The following database engine settings are configured. For more settings, examin
 
 ### Customer Experience Improvement Program (CEIP)
 
-The [Customer Experience Improvement Program (CEIP)](https://technet.microsoft.com/zh-cn/library/cc730757.aspx) is enabled. You can disable the CEIP by using the SQL Server Error and Usage Reporting utility. To launch the SQL Server Error and Usage Reporting utility; on the Start menu, click All Programs, click Microsoft SQL Server version, click Configuration Tools, and then click SQL Server Error and Usage Reporting. If you do not want to use an instance of SQL Server with CEIP enabled, you might also consider deploying your own virtual machine image to Azure.Â  For more information, see [Creating and Uploading a Virtual Hard Disk that Contains the Windows Server Operating System](/documentation/articles/virtual-machines-create-upload-vhd-windows-server).
+The [Customer Experience Improvement Program (CEIP)](https://technet.microsoft.com/zh-cn/library/cc730757.aspx) is enabled. You can disable the CEIP by using the SQL Server Error and Usage Reporting utility. To launch the SQL Server Error and Usage Reporting utility; on the Start menu, click All Programs, click Microsoft SQL Server version, click Configuration Tools, and then click SQL Server Error and Usage Reporting. If you do not want to use an instance of SQL Server with CEIP enabled, you might also consider deploying your own virtual machine image to Azure.  For more information, see [Creating and Uploading a Virtual Hard Disk that Contains the Windows Server Operating System](/documentation/articles/virtual-machines-create-upload-vhd-windows-server).
 
 ## Run SQL Server setup from the platform-provided SQL Server image
 

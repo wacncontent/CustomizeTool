@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Configure Traffic Manager round robin traffic routing method | Windows Azure"
+   pageTitle="Configure Traffic Manager round robin traffic routing method | Azure"
    description="This article will help you configure round robin load balancing for your Traffic Manager endpoints."
    services="traffic-manager"
    documentationCenter=""
@@ -45,5 +45,4 @@ A common traffic routing method pattern is to provide a set of identical endpoin
 
 [Operations on Traffic Manager (REST API Reference)](https://msdn.microsoft.com/zh-cn/library/hh758255.aspx)
 
-[Azure Traffic Manager Cmdlets](https://msdn.microsoft.com/zh-cn/library/dn690250.aspx)
- 
+[Azure Traffic Manager Cmdlets](https://msdn.microsoft.com/zh-cn/library/dn690250.aspx)

@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Testing SAP NetWeaver on Windows Azure SUSE Linux VMs | Windows Azure"
-   description="Testing SAP NetWeaver on Windows Azure SUSE Linux VMs"
+   pageTitle="Testing SAP NetWeaver on Azure SUSE Linux VMs | Azure"
+   description="Testing SAP NetWeaver on Azure SUSE Linux VMs"
    services="virtual-machines,virtual-network,storage"
    documentationCenter="saponazure"
    authors="hermanndms"
@@ -13,10 +13,10 @@
 	ms.date="02/12/2016"
 	wacn.date=""/>
 
-# Testing SAP NetWeaver on Windows Azure SUSE Linux VMs
+# Testing SAP NetWeaver on Azure SUSE Linux VMs
 
 
-Here is a list of items to consider when you're testing SAP NetWeaver on Windows Azure SUSE Linux VMs.
+Here is a list of items to consider when you're testing SAP NetWeaver on Azure SUSE Linux VMs.
 There is no official SAP support statement for SAP-Linux-Azure at this point.
 Nevertheless, customers can do some testing, demonstrating, or prototyping as long as they are not dependent
 on official SAP support.
@@ -25,7 +25,7 @@ The following information should help you avoid some potential pitfalls.
 
 
 
-## SUSE images on Windows Azure for testing SAP
+## SUSE images on Azure for testing SAP
 
 For SAP testing on Azure, use only SUSE Linux Enterprise Server (SLES) 11 SP4 and SLES 12. A special SUSE image is in the Azure gallery ("SLES 11 SP3 for SAP CAL"), but this is not intended for general usage. It's reserved for the [SAP Cloud Appliance Library]
 (https://cal.sap.com/) solution. There was no option

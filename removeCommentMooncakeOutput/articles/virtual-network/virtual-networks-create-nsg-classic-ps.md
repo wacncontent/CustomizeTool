@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="How to create NSGs in classic mode using PowerShell| Windows Azure"
+   pageTitle="How to create NSGs in classic mode using PowerShell| Azure"
    description="Learn how to create and deploy NSGs in classic mode using PowerShell"
    services="virtual-network"
    documentationCenter="na"
@@ -10,7 +10,7 @@
 />
 <tags
 	ms.service="virtual-network"
-	ms.date="12/11/2015"
+	ms.date="02/02/2016"
 	wacn.date=""/>
 
 # How to create NSGs (classic) in PowerShell
@@ -19,14 +19,12 @@
 
 [AZURE.INCLUDE [virtual-networks-create-nsg-intro-include](../includes/virtual-networks-create-nsg-intro-include.md)]
 
-[AZURE.INCLUDE [azure-arm-classic-important-include](../includes/azure-arm-classic-important-include.md)]
-
 [AZURE.INCLUDE [virtual-networks-create-nsg-scenario-include](../includes/virtual-networks-create-nsg-scenario-include.md)]
 
 The sample PowerShell commands below expect a simple environment already created based on the scenario above. If you want to run the commands as they are displayed in this document, first build the test environment by [creating a VNet](/documentation/articles/virtual-networks-create-vnet-classic-netcfg-ps).
 
 ## How to create the NSG for the front end subnet
-To create an NSG named named *NSG-FrontEnd* based on the scenario above, follow the steps below:
+To create an NSG named named **NSG-FrontEnd** based on the scenario above, follow the steps below:
 
 1. If you have never used Azure PowerShell, see [How to Install and Configure Azure PowerShell](/documentation/articles/powershell-install-configure) and follow the instructions all the way to the end to sign into Azure and select your subscription.
 

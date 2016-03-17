@@ -57,7 +57,7 @@ When scaling is complete, the status changes from **Scaling** to **Running**.
 
 ## How to automate a scaling operation
 
-In addition to scaling your Azure Redis Cache instances in the Azure Management Portal, you can scale using Azure Redis Cache PowerShell cmdlets, Azure CLI, and by using the Windows Azure Management Libraries (MAML). 
+In addition to scaling your Azure Redis Cache instances in the Azure Management Portal, you can scale using Azure Redis Cache PowerShell cmdlets, Azure CLI, and by using the Azure Management Libraries (MAML). 
 
 ### Scale using PowerShell
 
@@ -75,7 +75,7 @@ For more information on scaling with Azure CLI, see [Change settings of an exist
 
 ### Scale using MAML
 
-To scalue your Azure Redis Cache instances using the [Windows Azure Management Libraries (MAML)](http://azure.microsoft.com/updates/management-libraries-for-net-release-announcement/), call the `IRedisOperations.CreateOrUpdate` method and pass in the new size for the `RedisProperties.SKU.Capacity`.
+To scalue your Azure Redis Cache instances using the [Azure Management Libraries (MAML)](http://azure.microsoft.com/updates/management-libraries-for-net-release-announcement/), call the `IRedisOperations.CreateOrUpdate` method and pass in the new size for the `RedisProperties.SKU.Capacity`.
 
     static void Main(string[] args)
     {

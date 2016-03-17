@@ -1,5 +1,5 @@
 <properties
-	pageTitle="HDInsight Application Partners | Windows Azure" 
+	pageTitle="HDInsight Application Partners | Azure" 
 	description="Customers can now easily discovery and deploy big data application alongside their HDInsight clusters right from within the provisioning portal."
 	services="hdinsight" 
 	documentationCenter="na" 

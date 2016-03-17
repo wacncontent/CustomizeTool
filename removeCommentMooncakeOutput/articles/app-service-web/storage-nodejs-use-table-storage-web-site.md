@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Node.js web app using the Azure Table Service"
-	description="A tutorial that teaches you how to use the Azure Table service to store data from a Node.js application hosted in Azure Web Apps."
+	description="This tutorial teaches you how to use the Azure Table service to store data from a Node.js application which is hosted in Azure Web Apps."
 	tags="azure-portal"
 	services="app-service\web, storage"
 	documentationCenter="nodejs"
@@ -10,10 +10,8 @@
 
 <tags
 	ms.service="storage"
-	ms.date="01/09/2016"
+	ms.date="01/20/2016"
 	wacn.date=""/>
-
-
 
 # Node.js web app using the Azure Table Service
 
@@ -35,7 +33,6 @@ Here is the completed application:
 
 ![A web page displaying an empty tasklist][node-table-finished]
 
-
 ## Prerequisites
 
 Before following the instructions in this article, ensure that you have the following installed:
@@ -43,7 +40,6 @@ Before following the instructions in this article, ensure that you have the foll
 * [node] version 0.10.24 or higher
 
 * [Git]
-
 
 [AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
 
@@ -292,7 +288,7 @@ A *controller* handles HTTP requests and renders the HTML response.
 		  },
 
 		  addTask: function(req,res) {
-		    var self = this
+		    var self = this;
 		    var item = req.body.item;
 		    self.task.addItem(item, function itemAdded(error) {
 		      if(error) {
@@ -481,7 +477,7 @@ Even though the application is running locally, it is storing the data in the Az
 
 The steps in this section use the Azure command-line tools to create a new web app in Azure, and then use Git to deploy your application. To perform these steps you must have an Azure subscription.
 
-> [AZURE.NOTE] These steps can also be performed by using the [Azure Management Portal](https://manage.windowsazure.cn). See [Build and deploy a Node.js web app in Azure].
+> [AZURE.NOTE] These steps can also be performed by using the [Azure Management Portal](https://manage.windowsazure.cn/). See [Build and deploy a Node.js web app in Azure].
 >
 > If this is the first web app you have created, you must use the Azure Management Portal to deploy this application.
 
@@ -605,10 +601,9 @@ To publish the app, commit the code files to Git and then push to azure/master.
 
 [Azure CLI]
 
-[Build and deploy a Node.js web site in Azure Websites]: /documentation/articles/web-sites-nodejs-develop-deploy-mac
-[Continuous deployment using GIT in Azure Websites]: /documentation/articles/web-sites-publish-source-control
+[Build and deploy a Node.js web app in Azure]: /documentation/articles/web-sites-nodejs-develop-deploy-mac
+[Continuous deployment using GIT in Azure Web App]: /documentation/articles/web-sites-publish-source-control
 [Azure Developer Center]: /develop/nodejs/
-
 
 [node]: http://nodejs.org
 [Git]: http://git-scm.com
@@ -616,10 +611,10 @@ To publish the app, commit the code files to Git and then push to azure/master.
 [for free]: http://windowsazure.cn
 [Git remote]: http://git-scm.com/docs/git-remote
 
-[Node.js web site with MongoDB]: /documentation/articles/web-sites-nodejs-store-data-mongodb
+[Node.js web app with MongoDB]: /documentation/articles/web-sites-nodejs-store-data-mongodb
 [Azure CLI]: /documentation/articles/xplat-cli-install
 
-[Continuous deployment using GIT in Azure Websites]: /documentation/articles/web-sites-publish-source-control
+[Continuous deployment using GIT in Azure Web App]: /documentation/articles/web-sites-publish-source-control
 [azure]: https://github.com/Azure/azure-sdk-for-node
 [node-uuid]: https://www.npmjs.com/package/node-uuid
 [nconf]: https://www.npmjs.com/package/nconf
@@ -627,6 +622,9 @@ To publish the app, commit the code files to Git and then push to azure/master.
 
 [Azure Management Portal]: https://manage.windowsazure.cn
 
+[Create and deploy a Node.js application to an Azure Web Site]: /documentation/articles/web-sites-nodejs-develop-deploy-mac
+ 
+<!-- Image References -->
 
 [node-table-finished]: ./media/storage-nodejs-use-table-storage-web-site/table_todo_empty.png
 [node-table-list-items]: ./media/storage-nodejs-use-table-storage-web-site/table_todo_list.png
@@ -635,11 +633,8 @@ To publish the app, commit the code files to Git and then push to azure/master.
 [portal-storage-account]: ./media/storage-nodejs-use-table-storage-web-site/new-storage.png
 [portal-quick-create-storage]: ./media/storage-nodejs-use-table-storage-web-site/quick-storage.png
 [portal-storage-access-keys]: ./media/storage-nodejs-use-table-storage-web-site/manage-access-keys.png
-
 [go-to-dashboard]: ./media/storage-nodejs-use-table-storage-web-site/go_to_dashboard.png
 [web-configure]: ./media/storage-nodejs-use-table-storage-web-site/sql-task-configure.png
 [app-settings-save]: ./media/storage-nodejs-use-table-storage-web-site/savebutton.png
 [app-settings]: ./media/storage-nodejs-use-table-storage-web-site/storage-tasks-appsettings.png
 
-[Create and deploy a Node.js application to an Azure Web Site]: /documentation/articles/web-sites-nodejs-develop-deploy-mac 
- 

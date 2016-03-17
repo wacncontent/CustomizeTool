@@ -4,13 +4,13 @@
 	tags="azure-portal"
 	services="app-service\web"
 	documentationCenter="nodejs"
-	authors="TomArcher"
+	authors="rmcmurray"
 	manager="wpickett"
-	editor="mollybos"/>
+	editor=""/>
 
 <tags
 	ms.service="app-service-web"
-	ms.date="11/18/2015"
+	ms.date="02/03/2016"
 	wacn.date=""/>
 
 # How to debug a Node.js web app in Azure
@@ -102,9 +102,16 @@ This will return a stream of log events that are updated as they occur on the se
 
 In this article you learned how to enable and access diagnostics information for Azure. While this information is useful in understanding problems that occur with your application, it may point to a problem with a module you are using or that the version of Node.js used by Azure Web Apps is different than the one used in your deployment environment.
 
+For information in working with modules on Azure, see [Using Node.js Modules with Azure Applications](/documentation/articles/nodejs-use-node-modules-azure-apps).
+
+For information on specifying a Node.js version for your application, see [Specifying a Node.js version in an Azure application].
+
+For more information, see also the [Node.js Developer Center](/develop/nodejs/).
 
 [IISNode]: https://github.com/tjanczuk/iisnode
 [IISNode Readme]: https://github.com/tjanczuk/iisnode#readme
 [How to Use The Azure Command-Line Interface]: /documentation/articles/xplat-cli-install 
+[Using Node.js Modules with Azure Applications]: /documentation/articles/nodejs-use-node-modules-azure-apps
+[Specifying a Node.js version in an Azure application]: /documentation/articles/nodejs-specify-node-version-azure-apps
 [restart-button]: ./media/web-sites-nodejs-debug/restartbutton.png
  

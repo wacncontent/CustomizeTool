@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
 	pageTitle="Configure a custom domain name in Azure (GoDaddy)"
 	description="Learn how to use a domain name from GoDaddy with Azure Web Apps"
@@ -9,7 +11,7 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="10/23/2015"
+	ms.date="01/12/2016"
 	wacn.date=""/>
 
 # Configure a custom domain name in Azure (Purchased directly from GoDaddy)

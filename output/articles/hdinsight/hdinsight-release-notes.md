@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Release notes for Hadoop components on Azure HDInsight | Windows Azure"
+	pageTitle="Release notes for Hadoop components on Azure HDInsight | Azure"
 	description="Latest release notes and versions of Hadoop components for Azure HDInsight. Get development tips and details for Hadoop, Apache Storm, and HBase."
 	services="hdinsight"
 	documentationCenter=""
@@ -15,6 +15,7 @@
 
 
 # Release notes for Hadoop components on Azure HDInsight
+
 
 ## Notes for 01/27/2016 release of HDInsight
 
@@ -53,6 +54,7 @@ This release contains the following updates.
 | Title                                           | Description                                          | Impacted Area (for example, Service, component, or SDK) | Cluster Type (for example, Hadoop, HBase, or Storm) | JIRA (if applicable) |
 |-------------------------------------------------|------------------------------------------------------|---------------------------------------------------------|-----------------------------------------------------|----------------------|
 | Added HDInsight 3.3 version and updated HDInsight versions for all HDInsight clusters | With this release, we have added HDInsight v3.3 (based on HDP 2.3) and have also updated other HDP versions. HDP 2.3 release notes are available [here](http://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.3.0/bk_HDP_RelNotes/content/ch_relnotes_v230.html) and more information on HDInsight versions can be found [here](/documentation/articles/hdinsight-component-versioning-v1/).| Service    | All| N/A
+
 
 ## Notes for 11/30/2015 release of HDInsight
 
@@ -62,14 +64,16 @@ The full version numbers for HDInsight clusters deployed with this release:
 * HDInsight	(Windows)	 	3.0.6.757.1923908  (HDP 2.0.13.0-2117 - unchanged)
 * HDInsight	(Windows)	 	3.1.4.757.1923908  (HDP 2.1.15.0-2374 - unchanged)
 * HDInsight	(Windows)		3.2.7.757.1923908  (HDP 2.2.7.1-34)
+
 * HDInsight	(Linux)			3.2.1000.0.6392801 (HDP	2.2.7.1-34)
+
 * SDK			1.5.8
 
 This release contains the following updates.
 
 | Title                                           | Description                                          | Impacted Area (for example, Service, component, or SDK) | Cluster Type (for example, Hadoop, HBase, or Storm) | JIRA (if applicable) |
 |-------------------------------------------------|------------------------------------------------------|---------------------------------------------------------|-----------------------------------------------------|----------------------|
-| Updated HDInsight versions for all HDInsight clusters and HDP versions for HDInsight 3.2 clusters (Windows and Linux) | With this release, HDInsight and HDP versions have been updated | Service    | All| N/A
+ (Windows and Linux)  | Updated HDInsight versions for all HDInsight clusters and HDP versions for HDInsight 3.2 clusters (Windows and Linux) | With this release, HDInsight and HDP versions have been updated | Service    | All| N/A
 
 
 ## Notes for 10/27/2015 release of HDInsight
@@ -80,15 +84,19 @@ The full version numbers for HDInsight clusters deployed with this release:
 * HDInsight	(Windows)	 	3.0.6.726.1866228  (HDP 2.0.13.0-2117 - unchanged)
 * HDInsight	(Windows)	 	3.1.4.726.1866228  (HDP 2.1.15.0-2374 - unchanged)
 * HDInsight	(Windows)		3.2.7.726.1866228  (HDP 2.2.7.1-33)
+
 * HDInsight	(Linux)			3.2.1000.0.6035701 (HDP	2.2.7.1-33)
+
 * SDK			1.5.8
 
 This release contains the following updates.
 
 | Title                                           | Description                                          | Impacted Area (for example, Service, component, or SDK) | Cluster Type (for example, Hadoop, HBase, or Storm) | JIRA (if applicable) |
 |-------------------------------------------------|------------------------------------------------------|---------------------------------------------------------|-----------------------------------------------------|----------------------|
-| Updated HDInsight versions for all HDInsight clusters (Windows and Linux) | With this release, HDInsight and HDP versions have been updated | Service    | All| N/A
+ (Windows and Linux)  | Updated HDInsight versions for all HDInsight clusters (Windows and Linux) | With this release, HDInsight and HDP versions have been updated | Service    | All| N/A
+
 | Fixed Jupyter for Windows Spark clusters with capital letters clusters | Clusters that had DNS names specified in capital letters had issues with Jupyter notebooks due to an origin request check. The fix was to change the DNS name for Jupyter's configuration to lower case. | Service    | HDInsight Spark (Windows)| N/A
+
 
 
 ## Notes for 10/20/2015 release of HDInsight
@@ -99,7 +107,9 @@ The full version numbers for HDInsight clusters deployed with this release:
 * HDInsight 	3.0.6.716.1846990 (Windows)  	(HDP 2.0.13.0-2117 - unchanged)
 * HDInsight 	3.1.4.716.1846990 (Windows)  	(HDP 2.1.16.0-2374)
 * HDInsight		3.2.7.716.1846990 (Windows)  	(HDP 2.2.7.1-0004)
+
 * HDInsight		3.2.1000.0.5930166 (Linux)		(HDP 2.2.7.1-0004)
+
 * SDK			1.5.8
 
 This release contains the following updates.
@@ -107,7 +117,9 @@ This release contains the following updates.
 | Title                                           | Description                                          | Impacted Area (for example, Service, component, or SDK) | Cluster Type (for example, Hadoop, HBase, or Storm) | JIRA (if applicable) |
 |-------------------------------------------------|------------------------------------------------------|---------------------------------------------------------|-----------------------------------------------------|----------------------|
 | Default HDP version changed to HDP 2.2 | The default version for HDInsight Windows clusters is changed to HDP 2.2. HDInsight version 3.2 (HDP 2.2) has been generally available in since February 2015. This change only flips the default cluster version, when an explicit selection has not been made while provisioning the cluster using the Azure Management Portal, PowerShell cmdlets, or the SDK. | Service    | All| N/A                  |
+
 |Changes in VM name format for deploying multiple HDInsight on Linux clusters in a single Virtual Network | Support for deploying multiple HDInsight Linux clusters in a single virtual network is being added in this release. As part of this, the format of virtual machine names in the cluster has changed from headnode\*, workernode\* and zookeepernode\* to hn\*, wn\*, and zk\* respectively. It is not a recommended practice to take a direct dependency on the format of virtual machine names, since this is subject to change. Please use "hostname -f" on the local machine or Ambari APIs to determine the list of hosts, and the mapping of components to hosts. You can find more info at [https://github.com/apache/ambari/blob/trunk/ambari-server/docs/api/v1/hosts.md](https://github.com/apache/ambari/blob/trunk/ambari-server/docs/api/v1/hosts.md) and [https://github.com/apache/ambari/blob/trunk/ambari-server/docs/api/v1/host-components.md](https://github.com/apache/ambari/blob/trunk/ambari-server/docs/api/v1/host-components.md). | Service | HDInsight clusters on Linux | N/A |
+
 | Configuration changes | For HDInsight 3.1 clusters, the following configurations are now enabled: <ul><li>tez.yarn.ats.enabled and yarn.log.server.url. This enables the Application Timeline Server and the Log server to be able to serve out logs.</li></ul>For HDInsight 3.2 clusters, the following configurations have been modified: <ul><li>mapreduce.fileoutputcommitter.algorithm.version has been set to 2. This enables use of the V2 version of the FileOutputCommitter.</li></ul> | Service | All | N/A |
 
 
@@ -136,6 +148,7 @@ The full version numbers for HDInsight clusters deployed with this release:
 * HDInsight 	3.1.4.640.1695824  (HDP 2.1.15.0-2334 - unchanged)
 * HDInsight		3.2.6.640.1695824  (HDP 2.2.6.1-0012 - unchanged)
 * SDK			1.5.8
+
 
 This release contains the following updates.
 
@@ -143,6 +156,7 @@ This release contains the following updates.
 |-------------------------------------------------|------------------------------------------------------|---------------------------------------------------------|-----------------------------------------------------|----------------------|
 | Fix Spark cluster node re-imaging workflow | Fixed a bug that was causing Spark cluster nodes to not recover after re-image | Service    | Spark| N/A                  |
 
+
 
 ## Notes for 07/31/2015 release of HDInsight
 
@@ -521,6 +535,7 @@ This release contains the following updates.
 <th>JIRA (if applicable)</th>
 </tr>
 
+
 
 <tr>
 <td>HDInsight .NET SDK 1.5.6</td>
@@ -530,6 +545,7 @@ This release contains the following updates.
 <td>N/A</td>
 </tr>
 
+
 <tr>
 <td>Avro Library 1.5.6</td>
 <td>Added <b>KnownTypeAttribute</b> for method <b>GetAllKnownTypes</b>. Fixed NullReferenceException when a type is null for GetAllKnownTypes method.</td>
@@ -629,8 +645,8 @@ This release contains the following updates.
 </tr>
 
 <tr>
-<td>Upgrade to Azure Storage SDK for Java 2.0</td>
-<td>HDInsight version 3.2 is upgraded to use the latest version of the Azure Storage SDK for Java. This contains several important bug fixes over the current 0.6.0 version.</td>
+ Microsoft  A<td>Upgrade to Microsoft Azure Storage SDK for Java 2.0</td>
+ Microsoft  A<td>HDInsight version 3.2 is upgraded to use the latest version of the Microsoft Azure Storage SDK for Java. This contains several important bug fixes over the current 0.6.0 version.</td>
 <td>HDP</td>
 <td>All</td>
 <td>N/A</td>
@@ -725,6 +741,7 @@ This release contains the following updates.
 </tr>
 
 <tr>
+
 <td>HDinsight on Linux (Preview)</td>
 <td>Clusters can be deployed running on Ubuntu Linux. For more details, see Get Started with HDInsight on Linux.</td>
 <td>Service</td>
@@ -733,6 +750,7 @@ This release contains the following updates.
 </tr>
 
 <tr>
+
 <td>Storm General Availability</td>
 <td>Apache Storm clusters are generally available. For more details, see Get started using Storm in HDInsight.</td>
 <td>Service</td>
@@ -760,6 +778,7 @@ This release contains the following updates.
 <td>Visual Studio tooling</td>
 <td>In addition to complete tooling for Apache Storm, the tooling for Apache Hive in Visual Studio has been updated to include statement completion, local validation, and improved debugging support. For more information, see Get Started with HDInsight Hadoop Tools for Visual Studio.</td>
 <td>Tooling</td>
+
 <td>Hadoop</td>
 <td>N/A</td>
 </tr>
@@ -768,6 +787,7 @@ This release contains the following updates.
 <td>Hadoop Connector for DocumentDB</td>
 <td>With Hadoop Connector for DocumentDB, you can perform complex aggregations, analysis, and manipulations over your schema-less JSON documents stored across DocumentDB collections or across database accounts. For more information and a tutorial, see Run Hadoop jobs using DocumentDB and HDInsight.</td>
 <td>Service</td>
+
 <td>Hadoop</td>
 <td>N/A</td>
 </tr>
@@ -967,8 +987,8 @@ This release contains the following component update.
 </tr>
 
 <tr>
-<td><a href = "hdinsight-hadoop-customize-cluster-v1.md" target="_blank">Cluster customization General Avalability</a></td>
-<td><p>Customization provides the ability for you to customize your Azure HDInsight clusters with projects that are available from the Apache Hadoop ecosystem. With this new feature, you can experiment and deploy Hadoop projects to Azure HDInsight. This is enabled through the **Script Action** feature, which can modify Hadoop clusters in arbitrary ways by using custom scripts. This customization is available on all types of HDInsight clusters including Hadoop, HBase, and Storm. To demonstrate the power of this capability, we have documented the process to install the popular <a href = "hdinsight-hadoop-spark-install.md" target="_blank">Spark</a>, <a href = "hdinsight-hadoop-r-scripts.md" target="_blank">R</a>, <a href = "hdinsight-hadoop-solr-install-v1.md" target="_blank">Solr</a>, and <a href = "hdinsight-hadoop-giraph-install-v1.md" target="_blank">Giraph</a> modules. This release also adds the capability for customers to specify their custom script action via the Azure Management Portal, provides guidelines and best practices about how to build custom script actions using helper methods, and provides guidelines about how to test the script action. </p></td>
+<td><a href = "hdinsight-hadoop-customize "hdinsight-hadoop-customize-cluster-v1.md"   target="_blank">Cluster customization General Avalability</a></td>
+<td><p>Customization provides the ability for you to customize your Azure HDInsight clusters with projects that are available from the Apache Hadoop ecosystem. With this new feature, you can experiment and deploy Hadoop projects to Azure HDInsight. This is enabled through the **Script Action** feature, which can modify Hadoop clusters in arbitrary ways by using custom scripts. This customization is available on all types of HDInsight clusters including Hadoop, HBase, and Storm. To demonstrate the power of this capability, we have documented the process to install the popular <a href = "hdinsight-hadoop-spark-ins "hdinsight-hadoop-spark-install.md" target="_blank">Spark</a>, <a href = "hdinsight-hadoop-r-scripts.md"   target="_blank">R</a>, <a href = "hdinsight-hadoop-solr-inst "hdinsight-hadoop-solr-install-v1.md"   target="_blank">Solr</a>, and <a href = "hdinsight-hadoop-giraph-in "hdinsight-hadoop-giraph-install-v1.md"   target="_blank">Giraph</a> modules. This release also adds the capability for customers to specify their custom script action via the Azure Management Portal, provides guidelines and best practices about how to build custom script actions using helper methods, and provides guidelines about how to test the script action. </p></td>
 <td>Feature General Availability</td>
 <td>All</td>
 <td>N/A</td>
@@ -1130,9 +1150,11 @@ Learn how to work with HDInsight by walking through some basic scenarios (such a
 <br>
 
 
-**Note**: To demonstrate the new capabilities made available by cluster customization, the procedures using Script Action to install Spark and R modules on a cluster have been documented. For further information, see:
+ Spark and  R**Note**: To demonstrate the new capabilities made available by cluster customization, the procedures using Script Action to install Spark and R modules on a cluster have been documented. For further information, see:
 
+
 * [Install and use Spark 1.0 on HDInsight clusters](/documentation/articles/hdinsight-hadoop-spark-install)
+
 * [Install and use R on HDInsight Hadoop clusters](/documentation/articles/hdinsight-hadoop-r-scripts)
 
 
@@ -1262,7 +1284,9 @@ These compatibility issues are resolved in the latest versions of the HDInsight 
 ## Notes for 7/28/2014 release
 
 * **HDInsight available in new regions**:  We expanded HDInsight geographical presence to three regions. HDInsight customers can create clusters in these regions:
+
 	* China East
+
 	* China North
 	* China East
 * HDInsight version 1.6 (HDP 1.1 and Hadoop 1.0.3) and HDInsight version 2.1 (HDP1.3 and Hadoop 1.2) are being removed from the Azure Management Portal. You can continue to create Hadoop clusters for these versions by using the Azure PowerShell cmdlet, [New-AzureRmHDInsightCluster](http://msdn.microsoft.com/zh-cn/library/dn593744.aspx) or by using the [HDInsight SDK](http://msdn.microsoft.com/zh-cn/library/azure/dn469975.aspx). Please refer to the [HDInsight component versioning](/documentation/articles/hdinsight-component-versioning-v1) page for more information.
@@ -1496,6 +1520,11 @@ Release notes for the Hortonworks Data Platforms (HDPs) that are used by HDInsig
 
 [webpi-link]: http://go.microsoft.com/?linkid=9811175&clcid=0x409
 
-[hdinsight-install-spark]: ../hdinsight-hadoop-spark-install/
-[hdinsight-r-scripts]: ../hdinsight-hadoop-r-scripts/
+
+[hdinsight-install-spark]: /documentation/articles/hdinsight-hadoop-spark-install
+[hdinsight-r-scripts]: /documentation/articles/hdinsight-hadoop-r-scripts
+
+
+[hdinsight-r-scripts]: /documentation/articles/hdinsight-hadoop-r-scripts
+
  

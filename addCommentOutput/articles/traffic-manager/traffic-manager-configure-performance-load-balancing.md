@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Configure Performance traffic routing method | Windows Azure"
+   pageTitle="Configure Performance traffic routing method | Azure"
    description="This article will help you configure performance traffic routing method in Traffic Manager"
    services="traffic-manager"
    documentationCenter=""
@@ -44,5 +44,4 @@ In order to route traffic for cloud services and websites (endpoints) that are l
 [Operations on Traffic Manager (REST API Reference)](https://msdn.microsoft.com/zh-cn/library/hh758255.aspx)
 
 [Azure Traffic Manager Cmdlets](https://msdn.microsoft.com/zh-cn/library/dn690250.aspx)
-
- 
+

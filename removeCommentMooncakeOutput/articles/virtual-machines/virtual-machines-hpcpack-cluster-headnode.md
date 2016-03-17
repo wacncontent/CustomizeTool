@@ -1,5 +1,5 @@
 <properties
- pageTitle="Create an HPC Pack head node in an Azure VM | Windows Azure"
+ pageTitle="Create an HPC Pack head node in an Azure VM | Azure"
  description="Learn how to use the Azure Management Portal and the classic deployment model to create a Microsoft HPC Pack head node in an Azure VM."
  services="virtual-machines"
  documentationCenter=""
@@ -9,23 +9,20 @@
  tags="azure-service-management,hpc-pack"/>
 <tags
 	ms.service="virtual-machines"
-	ms.date="09/28/2015"
+	ms.date="02/04/2016"
 	wacn.date=""/>
 
 # Create the head node of an HPC Pack cluster in an Azure VM with a Marketplace image
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] 
 
-
-This article shows you how to use the [Microsoft HPC Pack virtual machine image](https://azure.microsoft.com/marketplace/partners/microsoft/hpcpack2012r2onwindowsserver2012r2/) in the Azure gallery
-to create the head node of a Windows HPC cluster in Azure in the classic (Service Management) deployment model. The head node needs to be joined to an Active Directory domain in an Azure virtual network. You can use this head node for a proof of concept deployment of HPC Pack in Azure and add compute resources to the cluster to run HPC workloads.
-
+The head node needs to be joined to an Active Directory domain in an Azure virtual network. You can use this head node for a proof of concept deployment of HPC Pack in Azure and add compute resources to the cluster to run HPC workloads.
 
 ![HPC Pack head node][headnode]
 
 >[AZURE.NOTE] Currently the HPC Pack
 VM image is based on Windows Server 2012 R2 Datacenter with HPC
-PackÂ 2012Â R2 Update 2 pre-installed. Microsoft SQL Server 2014 Express
+Pack 2012 R2 Update 2 pre-installed. Microsoft SQL Server 2014 Express
 is also pre-installed.
 
 
@@ -49,9 +46,7 @@ Pack head node. You can use a variety of Azure tools to do these steps in the Az
     **Considerations**
 
     * You can accept the default configuration of the virtual network address space and subnets.
-
-    * If you plan to use a compute-intensive instance size (A8 - A11) for the HPC Pack head node or when later adding compute resources to the cluster, choose a region in which the instances are available. When using A8 or A9 instances for MPI workloads, also ensure that the address space of the virtual network doesn't overlap the address space reserved by the RDMA network in Azure (172.16.0.0/12). For more information, see [About the A8, A9, A10, and A11 compute-intensive instances](/documentation/articles/virtual-machines-a8-a9-a10-a11-specs).
-
+    
 2. If you need to create a new Active Directory forest on a separate VM, see [Install a new Active Directory forest on an Azure virtual network](/documentation/articles/active-directory-new-forest-virtual-machine).
 
     **Considerations**
@@ -60,7 +55,7 @@ Pack head node. You can use a variety of Azure tools to do these steps in the Az
 
     * For a simple proof of concept deployment, you can omit this step and later promote the head node VM as a domain controller.
 
-3. In the Azure Management Portal or Azure Management Portal, create a classic VM by selecting the HPC Pack 2012 R2 image from the Azure gallery. (See steps for the Azure Management Portal [here](/documentation/articles/virtual-machines-windows-tutorial-classic-portal).)
+3. In the Azure Management Portal, create a classic VM by selecting the HPC Pack 2012 R2 image from the Azure gallery. (See steps for the Azure Management Portal [here](/documentation/articles/virtual-machines-windows-tutorial-classic-portal).)
 
     **Considerations**
 
@@ -84,9 +79,9 @@ Pack head node. You can use a variety of Azure tools to do these steps in the Az
 
     b. For a default head node configuration, start Windows PowerShell as an administrator and type the following:
 
-    ```
-    & $env:CCP_HOME\bin\HPCHNPrepare.ps1 -DBServerInstance ".\ComputeCluster"
-    ```
+	
+	    & $env:CCP_HOME\bin\HPCHNPrepare.ps1 -DBServerInstance ".\ComputeCluster"
+	    
 
     It can take several minutes for the HPC Pack services to start.
 

@@ -219,8 +219,6 @@ You can only use compute services within VNets. Compute services are limited to 
 
 - [Using VNet Integration and Hybrid Connections with Web Apps](https://azure.microsoft.com/blog/2014/10/30/using-vnet-or-hybrid-conn-with-websites/)
 
-- [Integrate a web app with an Azure Virtual Network](/documentation/articles/web-sites-integrate-with-vnet)
-
 ### Can I deploy cloud services with web and worker roles (PaaS) in a VNet?
 
 Yes. You can deploy PaaS services within VNets.

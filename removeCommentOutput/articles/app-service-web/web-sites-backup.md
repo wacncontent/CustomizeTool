@@ -170,7 +170,7 @@ The database backup for the web app is stored in the root of the .zip file. For 
 For information on restoring web app from backup, see [Restore a web app in Azure](/documentation/articles/web-sites-restore). You can also backup and restore Azure Web Apps
 using REST API (see [Use REST to back up and restore Azure Web Apps](/documentation/articles/websites-csm-backup)).
 
-To get started with Azure, see [Windows Azure Trial](/pricing/1rmb-trial/).
+To get started with Azure, see [Azure Trial](/pricing/1rmb-trial/).
 
 ## What's changed
 * For a guide to the change from Websites to Azure see: [Azure and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
@@ -189,4 +189,3 @@ To get started with Azure, see [Windows Azure Trial](/pricing/1rmb-trial/).
 [ImagesFolder]: ./media/web-sites-backup/11Images.png
 [LogsFolder]: ./media/web-sites-backup/12Logs.png
 [GhostUpgradeWarning]: ./media/web-sites-backup/13GhostUpgradeWarning.png
- 

@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Use Python components in a Storm topology on HDinsight | Windows Azure"
+   pageTitle="Use Python components in a Storm topology on HDinsight | Azure"
    description="Learn how you can use Python components from with Apache Storm on Azure HDInsight. You will learn how to use Python components from both a Java based, and Clojure based Storm topology."
    services="hdinsight"
    documentationCenter=""

@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Disable or Enable a Traffic Manager endpoint | Windows Azure"
+   pageTitle="Disable or Enable a Traffic Manager endpoint | Azure"
    description="This article will help disable or enable your Traffic Manager profile endpoints."
    services="traffic-manager"
    documentationCenter="na"

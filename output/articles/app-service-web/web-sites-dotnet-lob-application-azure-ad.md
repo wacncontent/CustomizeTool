@@ -54,7 +54,12 @@ The sample application in this tutorial, [WebApp-RoleClaims-DotNet](https://gith
 - Contains a sample `TaskTracker` controller that demonstrates how you can authorize different roles for specific actions in an application, including the standard usage of `[Authorize]`. 
 - Is a multitenant application with pre-defined roles that you can immediately assign your users and groups. 
 
+
 <a name="bkmk_run" />
+
+
+<a name="bkmk_run"></a>
+
 ## Run the sample application ##
 
 1.	Clone or download the sample solution at [WebApp-RoleClaims-DotNet](https://github.com/Azure-Samples/active-directory-dotnet-webapp-roleclaims) to your local directory.
@@ -81,7 +86,8 @@ Here, you will publish the application to a web app in Azure. There are already 
 
 	![](./media/web-sites-dotnet-lob-application-azure-ad/publish-app.png)
 
-2. Select **Windows Azure Web Apps**.
+
+2. Select **Azure Web Apps**.
 
 3. If you haven't signed in to Azure, click **Add an account** and use the Microsoft account for your Azure subscription to sign in.
 
@@ -100,6 +106,10 @@ Here, you will publish the application to a web app in Azure. There are already 
 	 ![](./media/web-sites-dotnet-lob-application-azure-ad/4-config-database.png)
 
 6. Click **Create**. Once the web app is created, the **Publish Web** dialog is opened.
+
+
+2. In Profile Tag, click **Import**, and select a publish profile which you can download from a existing web site in [Azure Management Portal](https://manage.windowsazure.cn/).
+
 
 7. In **Destination URL**, change **http** to **https**. Copy the entire URL to a text editor. You will use it later. Then, click **Next**.
 
@@ -349,7 +359,7 @@ In this part of the tutorial, you will learn how to build out the desired line-o
 
 	In the script, the AadPicker object calls [Azure Active Directory Graph API](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/api-catalog) to search for users and groups that match the input.  
 
-15. Open the [Package Manger Console](http://docs.nuget.org/Consume/Package-Manager-Console) and run **Enable-Migrations âEnableAutomaticMigrations**. Similar to the option you selected when you published the app to Azure, this command helps update your app's database schema in [LocalDB](https://msdn.microsoft.com/zh-cn/library/hh510202.aspx) when you debug it in Visual Studio.
+15. Open the [Package Manger Console](http://docs.nuget.org/Consume/Package-Manager-Console) and run **Enable-Migrations -EnableAutomaticMigrations**. Similar to the option you selected when you published the app to Azure, this command helps update your app's database schema in [LocalDB](https://msdn.microsoft.com/zh-cn/library/hh510202.aspx) when you debug it in Visual Studio.
 
 15. Now, either run the app in the Visual Studio debugger or publish again to Azure Web Apps. Log in as the application owner and navigate to `https://<webappname>.chinacloudsites.cn/WorkItems/Create`. You'll see now that you can pick an Azure Active Directory user or group from the drop down list, or type in something to filter the list.
 
@@ -373,15 +383,17 @@ Now that you have configured the authorizations and line-of-business functionali
 - [Protect the Application with SSL and the Authorize Attribute](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database#protect-the-application-with-ssl-and-the-authorize-attribute)
 - [Use Active Directory for authentication in Azure Web App](/documentation/articles/web-sites-authentication-authorization)
 - [Create a .NET MVC web app in Azure with AD FS authentication](/documentation/articles/web-sites-dotnet-lob-application-adfs)
-- [Windows Azure Active Directory Samples and Documentation](https://github.com/AzureADSamples)
+- [Azure Active Directory Samples and Documentation](https://github.com/AzureADSamples)
 - [Vittorio Bertocci's blog](http://blogs.msdn.com/b/vbertocci/)
 - [Migrate a VS2013 Web Project From WIF to Katana](http://www.cloudidentity.com/blog/2014/09/15/MIGRATE-A-VS2013-WEB-PROJECT-FROM-WIF-TO-KATANA/)
 - [Azure's new Hybrid Connections not your father's #hybridCloud](/documentation/videos/new-hybrid-connections-not-your-fathers-hybridcloud/)
 - [Similarities between Active Directory and Azure Active Directory](http://technet.microsoft.com/zh-cn/library/dn518177.aspx)
 - [Directory Sync with Single Sign-On Scenario](http://technet.microsoft.com/zh-cn/library/dn441213.aspx)
 - [Azure Active Directory Supported Token and Claim Types](/documentation/articles/active-directory-token-and-claims/)
+
 
 [AZURE.INCLUDE [app-service-web-whats-changed](../includes/app-service-web-whats-changed.md)]
 
 [AZURE.INCLUDE [app-service-web-try-app-service](../includes/app-service-web-try-app-service.md)]
+
  

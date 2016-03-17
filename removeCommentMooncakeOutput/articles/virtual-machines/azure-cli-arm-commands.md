@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Use the Azure CLI with Resource Manager | Windows Azure"
+	pageTitle="Use the Azure CLI with Resource Manager | Azure"
 	description="Learn about using the Azure CLI for Mac, Linux, and Windows to manage Azure resources using the CLI in Azure Resource Manager mode."
 	services="virtual-machines,virtual-network,mobile-services,cloud-services"
 	documentationCenter=""
@@ -15,7 +15,7 @@
 
 # Using the Azure CLI for Mac, Linux, and Windows with Azure Resource Manager
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] [classic deployment model](/documentation/articles/virtual-machines-command-line-tools)
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)]
 
 This article describes how to use the Azure Command-Line Interface (Azure CLI) in the Azure Resource Manager mode to create, manage, and delete services on the command line of Mac, Linux, and Windows computers. You can perform many of the same tasks using the various libraries of the Azure SDKs, with Azure PowerShell, and using the Azure Management Portal.
 
@@ -122,19 +122,19 @@ Your Azure subscription information is used by the tool to connect to your accou
 
 **List Azure CLI configuration settings**
 
-	config list [options]
+	conconfig list [options]
 
 **Delete a config setting**
 
-	config delete [options] <name>
+	conconfig delete [options] <name>
 
 **Update a config setting**
 
-	config set <name> <value>
+	conconfig set <name> <value>
 
-**Sets the Azure CLI working mode to either `arm` or `asm`**
+**Sets the Azure CLI working mode to either arm or asm**
 
-	config mode [options] <modename>
+	conconfig mode [options] <modename>
 
 
 ## azure feature: commands to manage account features
@@ -191,6 +191,10 @@ Your Azure subscription information is used by the tool to connect to your accou
 	group template download [options] [name] [file]
 	group template validate [options] <resource-group>
 
+## azure hdinsight: Commands to manage your HDInsight clusters
+
+In Azure China, HDInsight is not manageable by ARM yet. For Azure CLI ASM commands of HDInsight, read [Create Windows-based Hadoop clusters in HDInsight using Azure CLI](/documentation/articles/hdinsight-hadoop-create-windows-clusters-cli) and [Create Windows-based Hadoop clusters in HDInsight using Azure CLI](/documentation/articles/hdinsight-hadoop-create-windows-clusters-cli)
+
 ## azure insights: Commands related to monitoring Insights (events, alert rules, autoscale settings, metrics)
 
 **Retrieve operation logs for a subscription, a correlationId, a resource group, resource, or resource provider**
@@ -205,7 +209,7 @@ Your Azure subscription information is used by the tool to connect to your accou
 
 ## azure network: Commands to manage network resources
 
-In Windows Azure China, VNet is not manageable by ARM yet. For Azure CLI ASM commands of VNet, read the following articles:
+In Azure China, VNet is not manageable by ARM yet. For Azure CLI ASM commands of VNet, read the following articles:
 
 - [Create a virtual network using Azure CLI](/documentation/articles/virtual-networks-create-vnet-classic-cli)
 - [How to create NSGs in classic mode using the Azure CLI](/documentation/articles/virtual-networks-create-nsg-classic-cli)
@@ -271,7 +275,7 @@ In Windows Azure China, VNet is not manageable by ARM yet. For Azure CLI ASM com
 
 ## azure storage: Commands to manage your Storage objects
 
-In Windows Azure China, Storage is not manageable by ARM yet. For Azure CLI ASM commands of Storage, read [Using the Azure CLI with Azure Storage](/documentation/articles/storage-azure-cli)
+In Azure China, Storage is not manageable by ARM yet. For Azure CLI ASM commands of Storage, read [Using the Azure CLI with Azure Storage](/documentation/articles/storage-azure-cli)
 
 ## azure tag: Commands to manage your resource manager tag
 
@@ -293,8 +297,5 @@ In Windows Azure China, Storage is not manageable by ARM yet. For Azure CLI ASM 
 
 ## azure vm: Commands to manage your Azure Virtual Machines
 
-In Windows Azure China, Virtual Machines is not manageable by ARM yet. For Azure CLI ASM commands of Virtual Machines, read [Equivalent Azure CLI commands for VM tasks](/documentation/articles/xplat-cli-azure-manage-vm-asm-arm)
+In Azure China, Virtual Machines is not manageable by ARM yet. For Azure CLI ASM commands of Virtual Machines, read [Equivalent Azure CLI commands for VM tasks](/documentation/articles/xplat-cli-azure-manage-vm-asm-arm)
 
-## azure hdinsight: Commands to manage your HDInsight clusters
-
-In Windows Azure China, HDInsight is not manageable by ARM yet. For Azure CLI ASM commands of HDInsight, read [Create Windows-based Hadoop clusters in HDInsight using Azure CLI](/documentation/articles/hdinsight-hadoop-create-windows-clusters-cli)

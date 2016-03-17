@@ -1,5 +1,5 @@
 <properties
- pageTitle="Linux compute VMs in an HPC Pack cluster | Windows Azure"
+ pageTitle="Linux compute VMs in an HPC Pack cluster | Azure"
  description="Learn how to script the deployment of an HPC Pack cluster in Azure containing a head node running Windows Server with Linux compute nodes."
  services="virtual-machines"
  documentationCenter=""
@@ -39,47 +39,47 @@ For an overview of HPC Pack cluster deployment options, see the [Getting started
 
 * **Azure subscription** - You can use a subscription in either the Azure Global or Azure China service. If you don't have an account, you can create a trial account in just a couple of minutes. For details, see [Azure Trial](/pricing/1rmb-trial/).
 
-* **Cores quota** - You might need to increase the quota of cores, especially if you choose to deploy several cluster nodes with multicore VM sizes. For the example in this article, you will need at least 12 available cores. To increase a quota, [open an online customer support request](http://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/) at no charge.
+* **Cores quota** - You might need to increase the quota of cores, especially if you choose to deploy several cluster nodes with multicore VM sizes. For the example in this article, you will need at least 12 available cores.
 
 ### Create the configuration file
 
 The HPC Pack IaaS deployment script uses an XML configuration file as input which describes the infrastructure of the HPC cluster. To deploy a small cluster consisting of a head node and 2 Linux compute nodes, substitute values for your environment into the following sample configuration file. For more information about the configuration file, see the Manual.rtf file in the script folder and [Create an HPC cluster with the HPC Pack IaaS deployment script](/documentation/articles/virtual-machines-hpcpack-cluster-powershell-script).
 
-```
-<?xml version="1.0" encoding="utf-8" ?>
-<IaaSClusterConfig>
-  <Subscription>
-    <SubscriptionName>Subscription-1</SubscriptionName>
-    <StorageAccount>allvhdsje</StorageAccount>
-  </Subscription>
-  <Location>Japan East</Location>  
-  <VNet>
-    <VNetName>centos7rdmavnetje</VNetName>
-    <SubnetName>CentOS7RDMACluster</SubnetName>
-  </VNet>
-  <Domain>
-    <DCOption>HeadNodeAsDC</DCOption>
-    <DomainFQDN>hpc.local</DomainFQDN>
-  </Domain>
-  <Database>
-    <DBOption>LocalDB</DBOption>
-  </Database>
-  <HeadNode>
-    <VMName>CentOS7RDMA-HN</VMName>
-    <ServiceName>centos7rdma-je</ServiceName>
-  <VMSize>A4</VMSize>
-  <EnableRESTAPI />
-  <EnableWebPortal />
-  </HeadNode>
-  <LinuxComputeNodes>
-    <VMNamePattern>CentOS7RDMA-LN%1%</VMNamePattern>
-    <ServiceName>centos7rdma-je</ServiceName>
-    <VMSize>A7</VMSize>
-    <NodeCount>2</NodeCount>
-    <ImageName>5112500ae3b842c8b9c604889f8753c3__OpenLogic-CentOS-70-20150325</ImageName>
-  </LinuxComputeNodes>
-</IaaSClusterConfig>
-```
+	
+	<?xml version="1.0" encoding="utf-8" ?>
+	<IaaSClusterConfig>
+	  <Subscription>
+	    <SubscriptionName>Subscription-1</SubscriptionName>
+	    <StorageAccount>allvhdsje</StorageAccount>
+	  </Subscription>
+	  <Location>Japan East</Location>  
+	  <VNet>
+	    <VNetName>centos7rdmavnetje</VNetName>
+	    <SubnetName>CentOS7RDMACluster</SubnetName>
+	  </VNet>
+	  <Domain>
+	    <DCOption>HeadNodeAsDC</DCOption>
+	    <DomainFQDN>hpc.local</DomainFQDN>
+	  </Domain>
+	  <Database>
+	    <DBOption>LocalDB</DBOption>
+	  </Database>
+	  <HeadNode>
+	    <VMName>CentOS7RDMA-HN</VMName>
+	    <ServiceName>centos7rdma-je</ServiceName>
+	  <VMSize>A4</VMSize>
+	  <EnableRESTAPI />
+	  <EnableWebPortal />
+	  </HeadNode>
+	  <LinuxComputeNodes>
+	    <VMNamePattern>CentOS7RDMA-LN%1%</VMNamePattern>
+	    <ServiceName>centos7rdma-je</ServiceName>
+	    <VMSize>A7</VMSize>
+	    <NodeCount>2</NodeCount>
+	    <ImageName>5112500ae3b842c8b9c604889f8753c3__OpenLogic-CentOS-70-20150325</ImageName>
+	  </LinuxComputeNodes>
+	</IaaSClusterConfig>
+	
 
 Here are brief descriptions of the elements in the configuration file.
 
@@ -87,9 +87,9 @@ Here are brief descriptions of the elements in the configuration file.
 
 * **Subscription** - Azure subscription used to deploy the HPC Pack cluster. Use the command below to make sure the Azure subscription name is configured and unique in your client computer. In this sample, we use the Azure subscription "Subscription-1".
 
-    ```
-    PS > Get-AzureSubscription -SubscriptionName <SubscriptionName>
-    ```
+	
+	    PS > Get-AzureSubscription -SubscriptionName <SubscriptionName>
+	    
 
     >[AZURE.NOTE]Alternatively, use the subscription ID to specify the subscription you want to use. See the Manual.rtf file in the script folder.
 
@@ -113,9 +113,9 @@ Here are brief descriptions of the elements in the configuration file.
 
 * The example in this article uses a specific CentOS version available in the Azure gallery to create the cluster. If you want to use other images available, use the **get-azurevmimage** Azure PowerShell cmdlet  to find the one you need. For example, to list all the CentOS 7.0 images, run the following command:
 
-    ```
-    get-azurevmimage | ?{$_.Label -eq "OpenLogic 7.0"}
-    ```
+	
+	    get-azurevmimage | ?{$_.Label -eq "OpenLogic 7.0"}
+	    
 
     Find the one you need and replace the **ImageName** value in the configuration file.
 
@@ -132,15 +132,15 @@ Here are brief descriptions of the elements in the configuration file.
 
 2. Change directory to the script folder (E:\IaaSClusterScript in this example).
 
-    ```
-    cd E:\IaaSClusterScript
-    ```
+	
+	    cd E:\IaaSClusterScript
+	    
 
 3. Run the command below to deploy the HPC Pack cluster. This example assumes that the configuration file is located in E:\HPCDemoConfig.xml.
 
-    ```
-    .\New-HpcIaaSCluster.ps1 -ConfigFile E:\HPCDemoConfig.xml -AdminUserName MyAdminName
-    ```
+	
+	    .\New-HpcIaaSCluster.ps1 -ConfigFile E:\HPCDemoConfig.xml -AdminUserName MyAdminName
+	    
 
     The script generates a log file automatically since  the **-LogFile** parameter isn't specified. The logs aren't written in real time, but collected at the end of the validation and the deployment, so if the PowerShell process is stopped while the script is running, some logs will be lost.
 
@@ -180,14 +180,14 @@ You have several choices to move data among Linux nodes and the Windows head nod
 
 The [Azure File](/home/features/storage/files/) service exposes file shares using the standard SMB 2.1 protocol. Azure VMs and cloud services can share file data across application components via mounted shares, and on-premises applications can access file data in a share through the File storage API. For more information, see [How to use Azure File storage with PowerShell and .NET](/documentation/articles/storage-dotnet-how-to-use-files).
 
-To create an Azure File share, see the detailed steps in [Introducing Windows Azure File Service](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/12/introducing-microsoft-azure-file-service.aspx). To set up persisting connections, see [Persisting connections to Windows Azure Files](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/27/persisting-connections-to-microsoft-azure-files.aspx).
+To create an Azure File share, see the detailed steps in [Introducing Azure File Service](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/12/introducing-microsoft-azure-file-service.aspx). To set up persisting connections, see [Persisting connections to Azure Files](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/27/persisting-connections-to-microsoft-azure-files.aspx).
 
 In this example, we create an Azure File share named rdma on our storage account allvhdsje. To mount the share on the head node, open a Command window and enter the following commands:
 
-```
-> cmdkey /add:allvhdsje.file.core.chinacloudapi.cn /user:allvhdsje /pass:<storageaccountkey>
-> net use Z: \\allvhdje.file.core.chinacloudapi.cn\rdma /persistent:yes
-```
+	
+	> cmdkey /add:allvhdsje.file.core.chinacloudapi.cn /user:allvhdsje /pass:<storageaccountkey>
+	> net use Z: \\allvhdje.file.core.chinacloudapi.cn\rdma /persistent:yes
+	
 
 In this example, allvhdsje is the storage account name, storageaccountkey is the storage account key, and rdma is the Azure File share name. The Azure File share will be mounted onto Z: on your head node.
 
@@ -246,10 +246,10 @@ The NFS service enables users to share and migrate files between computers runni
 
 2. Open a Windows PowerShell window and run the following command to mount the NFS share.
 
-  ```
-  PS > clusrun /nodegroup:LinuxNodes mkdir -p /nfsshare
-  PS > clusrun /nodegroup:LinuxNodes mount CentOS7RDMA-HN:/nfs /nfsshared
-  ```
+	
+	  PS > clusrun /nodegroup:LinuxNodes mkdir -p /nfsshare
+	  PS > clusrun /nodegroup:LinuxNodes mount CentOS7RDMA-HN:/nfs /nfsshared
+	  
 
   The first command creates a folder named /nfsshared on all nodes in the LinuxNodes group. The second command mounts the NFS share CentOS7RDMA-HN:/nfs onto the folder. Here CentOS7RDMA-HN:/nfs is the remote path of your NFS share.
 
@@ -272,21 +272,21 @@ The HPC Pack **clusrun** tool can be used to execute commands on Linux nodes eit
 
 * Show current user names on all nodes in the cluster.
 
-    ```
-    > clusrun whoami
-    ```
+	
+	    > clusrun whoami
+	    
 
 * Install the **gdb** debugger tool with **yum** on all nodes in the linuxnodes group and then restart the nodes after 10 minutes.
 
-    ```
-    > clusrun /nodegroup:linuxnodes yum install gdb -y; shutdown -r 10
-    ```
+	
+	    > clusrun /nodegroup:linuxnodes yum install gdb -y; shutdown -r 10
+	    
 
 * Create a shell script displaying each number 1 through 10 for one second on each Linux node in the cluster, run it, and show output from the nodes immediately.
 
-    ```
-    > clusrun /interleaved /nodegroup:linuxnodes echo \"for i in {1..10}; do echo \\\"\$i\\\"; sleep 1; done\" ^> script.sh; chmod +x script.sh; ./script.sh
-    ```
+	
+	    > clusrun /interleaved /nodegroup:linuxnodes echo \"for i in {1..10}; do echo \\\"\$i\\\"; sleep 1; done\" ^> script.sh; chmod +x script.sh; ./script.sh
+	    
 
 >[AZURE.NOTE] You might need to use certain escape characters in **clusrun** commands. As shown in this example, use ^ in a Command window to escape the ">" symbol.
 

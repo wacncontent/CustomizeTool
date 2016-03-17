@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="01/09/2016"
+	ms.date="02/04/2016"
 	wacn.date=""/>
 
 #Configuring a custom domain name for a web app in Azure using Traffic Manager
@@ -56,5 +56,3 @@ To associate your custom domain with a web app in Azure, you must add a new entr
 ## Enable Traffic Manager
 
 [AZURE.INCLUDE [modes](../includes/custom-dns-web-site-enable-on-traffic-manager.md)]
- 
- 

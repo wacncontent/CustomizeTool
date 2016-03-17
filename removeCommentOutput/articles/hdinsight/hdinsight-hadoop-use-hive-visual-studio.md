@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Hive query with Hadoop tools for Visual Studio | Windows Azure"
+   pageTitle="Hive query with Hadoop tools for Visual Studio | Azure"
    description="Learn how to use Hive with Hadoop in HDInsight using Visual Studio Hadoop tools."
    services="hdinsight"
    documentationCenter=""
@@ -113,17 +113,17 @@ For more information about the HDInsight tools for Visual Studio:
 [import-to-excel]: /documentation/articles/hdinsight-connect-excel-power-query/
 
 
-[hdinsight-use-oozie]: hdinsight-use-oozie.md
-[hdinsight-analyze-flight-data]: hdinsight-analyze-flight-delay-data.md
+[hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie
+[hdinsight-analyze-flight-data]: /documentation/articles/hdinsight-analyze-flight-delay-data
 
 
 
-[hdinsight-storage]: hdinsight-use-blob-storage.md
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
 
-[hdinsight-provision]: hdinsight-provision-clusters-v1.md
-[hdinsight-submit-jobs]: hdinsight-submit-hadoop-jobs-programmatically.md
-[hdinsight-upload-data]: hdinsight-upload-data.md
-[hdinsight-get-started]: hdinsight-get-started.md
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
+[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
 
 [powershell-here-strings]: http://technet.microsoft.com/zh-cn/library/ee692792.aspx
 

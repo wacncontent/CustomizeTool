@@ -215,7 +215,7 @@ At this point you can republish the server project and test the new connection w
 <a name="NextSteps"></a>
 ## Next Steps ##
 
-- For information on creating an ASP.NET web application that uses a hybrid connection, see [Connect to an on-premises SQL Server from an Azure web site using Hybrid Connections](/documentation/articles/web-sites-hybrid-connection-connect-on-premises-sql-server/). 
+- For information on creating an ASP.NET web application that uses a hybrid connection, see [Connect to an on-premises SQL Server from an Azure web site using Hybrid Connections](/documentation/articles/web-sites-hybrid-connection-connect-on-premises-sql-server/).
 
 ### Additional Resources
 
@@ -258,4 +258,3 @@ At this point you can republish the server project and test the new connection w
 [HCMInstalling]:./media/web-sites-hybrid-connection-get-started/D08HCMInstalling.png
 [HCMInstallComplete]:./media/web-sites-hybrid-connection-get-started/D09HCMInstallComplete.png
 [HCStatusConnected]:./media/web-sites-hybrid-connection-get-started/D10HCStatusConnected.png
- 

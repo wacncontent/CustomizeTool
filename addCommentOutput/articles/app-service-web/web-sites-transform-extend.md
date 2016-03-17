@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
 	pageTitle="Azure web app advanced config and extensions"
 	description="Use XML Document Transformation(XDT) declarations to transform the ApplicationHost.config file in your Azure web app and to add private extensions to enable custom administration actions."
@@ -16,10 +18,10 @@
 # Azure web app advanced config and extensions
 
 By using [XML Document Transformation](http://msdn.microsoft.com/zh-cn/library/dd465326.aspx) (XDT) declarations, you can transform the [ApplicationHost.config](http://www.iis.net/learn/get-started/planning-your-iis-architecture/introduction-to-applicationhostconfig) file in your web app in Azure. You can also use XDT declarations to add private extensions to enable custom web app administration actions. This article includes a sample PHP Manager web app extension that enables management of PHP settings through a web interface.
-<!-- deleted by customization
+
 
 [AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)]
--->
+
 
 ##<a id="transform"></a>Advanced configuration through ApplicationHost.config
 The Azure platform provides flexibility and control for web app configuration. Although the standard IIS ApplicationHost.config configuration file is not available for direct editing in Azure Web App, the platform supports a declarative ApplicationHost.config transform model based on XML Document Transformation (XDT).
@@ -170,13 +172,13 @@ Note that the URL looks just like the URL for your web app, except that it uses 
 
 It is possible to disable all private (not pre-installed) extensions for your web app during development and investigations by adding an app settings with the key `WEBSITE_PRIVATE_EXTENSIONS` and a value of `0`.
 
-<!-- deleted by customization
+
 >[AZURE.NOTE] If you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.
 
 ## What's changed
 * For a guide to the change from Websites to Azure see: [Azure and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
 
--->
+
 <!-- IMAGES -->
 [TransformSitePHPUI]: ./media/web-sites-transform-extend/TransformSitePHPUI.png
 [TransformSiteSolEx]: ./media/web-sites-transform-extend/TransformSiteSolEx.png

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="LOB application test environment | Windows Azure" 
+	pageTitle="LOB application test environment | Azure" 
 	description="Learn how to create a web-based, line of business application in a hybrid cloud environment for IT pro or development testing." 
 	services="virtual-network" 
 	documentationCenter="" 
@@ -10,15 +10,15 @@
 
 <tags
 	ms.service="virtual-network"
-	ms.date="09/10/2015"
+	ms.date="01/28/2016"
 	wacn.date=""/>
 
 # Set up a web-based LOB application in a hybrid cloud for testing
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] 
 
 
-This topic steps you through creating a hybrid cloud environment for testing an intranet line-of-business (LOB) application hosted in Windows Azure. Here is the resulting configuration.
+This topic steps you through creating a hybrid cloud environment for testing an intranet line-of-business (LOB) application hosted in Azure. Here is the resulting configuration.
 
 ![](./media/virtual-networks-setup-lobapp-hybrid-cloud-testing/CreateLOBAppHybridCloud_3.png)
 
@@ -176,21 +176,6 @@ This is your current configuration.
  
 This environment is now ready for you to deploy your web-based application on LOB1 and test functionality and performance from the Corpnet subnet.
 
-## Additional resources
+## Next steps
 
-[Microsoft Software Architecture Diagrams and Blueprints](http://msdn.microsoft.com/dn630664)
-
-[Hosting-Friendly Web Server Platform (IIS)](http://technet.microsoft.com/zh-cn/library/hh831818)
-
-[Set up a hybrid cloud environment for testing](/documentation/articles/virtual-networks-setup-hybrid-cloud-environment-testing)
-
-[Set up a SharePoint intranet farm in a hybrid cloud for testing](/documentation/articles/virtual-networks-setup-sharepoint-hybrid-cloud-testing)
-
-[Set up Office 365 Directory Synchronization (DirSync) in a hybrid cloud for testing](/documentation/articles/virtual-networks-setup-dirsync-hybrid-cloud-testing)
-
-[Set up a simulated hybrid cloud environment for testing](/documentation/articles/virtual-networks-setup-simulated-hybrid-cloud-environment-testing)
-
-[Azure hybrid cloud test environments](/documentation/articles/virtual-machines-hybrid-cloud-test-environments)
-
-[Azure infrastructure services implementation guidelines](/documentation/articles/virtual-machines-infrastructure-services-implementation-guidelines)
- 
+- Set up the [production environment](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-overview).

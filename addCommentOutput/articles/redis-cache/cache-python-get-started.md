@@ -1,5 +1,5 @@
 <properties
-	pageTitle="How to use Azure Redis Cache with Python | Windows Azure"
+	pageTitle="How to use Azure Redis Cache with Python | Azure"
 	description="Get started with Azure Redis Cache using Python"
 	services="redis-cache"
 	documentationCenter=""
@@ -30,7 +30,7 @@ Install [redis-py](https://github.com/andymccurdy/redis-py).
 
 ## Create a Redis cache on Azure
 
-<!-- deleted by customization
+
 In the [Azure Management Portal](https://manage.windowsazure.cn/), click **New**, **DATA SERVICE**, and select **Redis Cache**.
 
   ![][1]
@@ -45,9 +45,9 @@ Enter a DNS hostname. It will have the form `<name>
   - **Hostname.** You entered this name when you created the cache.
   - **Port.** Click the link under **Ports** to view the ports. Use the SSL port.
   - **Access Key.** Click the link under **Keys** and copy the primary key.
--->
-<!-- keep by customization: begin -->
-In Windows Azure China, Redis Cache can only be managed by Azure PowerShell or Azure CLI
+
+
+In Azure China, Redis Cache can only be managed by Azure PowerShell or Azure CLI
 
 [AZURE.INCLUDE [azurerm-azurechinacloud-environment-parameter](../includes/azurerm-azurechinacloud-environment-parameter.md)]
 
@@ -62,7 +62,7 @@ Use the following PowerShell Script to create a cache:
 	
 	$movieCache = New-AzureRmRedisCache -Location $location -Name $cacheName  -ResourceGroupName $resourceGroupName -Size 250MB -Sku Basic
 
-<!-- keep by customization: end -->
+
 
   ## Add something to the cache and retrieve it
 

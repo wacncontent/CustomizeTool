@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="09/22/2015"
+	ms.date="01/12/2016"
 	wacn.date=""/>
 
 # Run Background tasks with WebJobs
@@ -21,15 +21,7 @@ You can run programs or scripts in WebJobs in your [Azure Web App](/documentatio
 This article shows how to deploy WebJobs by using the [Azure Management Portal](https://manage.windowsazure.cn). For information about how to deploy by using Visual Studio or a continuous delivery process, see [How to Deploy Azure WebJobs to Web Apps](/documentation/articles/websites-dotnet-deploy-webjobs).
 
 The Azure WebJobs SDK simplifies many WebJobs programming tasks. For more information, see [What is the WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk).
-## Table of Contents ##
-- [Acceptable File Types for Scripts](#acceptablefiles)
-- [Create an On Demand Task](#CreateOnDemand)
-- [Create a Continuously Running Task](#CreateContinuous)
-- [Create a Scheduled Task](#CreateScheduled)
-	- [Scheduled jobs and Azure Scheduler](#Scheduler)
-- [View the Job History](#ViewJobHistory)
-- [Notes](#WHPNotes)
-- [Next Steps](#NextSteps)
+
 ## <a name="acceptablefiles"></a>Acceptable file types for scripts or programs
 
 The following file types are accepted:
@@ -69,7 +61,7 @@ The following file types are accepted:
 	
 2. To start or stop a continuously running task, select the task in the list and click **Start** or **Stop** in the command bar.
 
-> [AZURE.NOTE] If your website runs on more than one instance, a continuously running task will run on all of your instances. On-demand and scheduled tasks run on a single instance selected for load balancing by Windows Azure.
+> [AZURE.NOTE] If your website runs on more than one instance, a continuously running task will run on all of your instances. On-demand and scheduled tasks run on a single instance selected for load balancing by Azure.
 
 > [AZURE.NOTE]
 > For continuous tasks, it is recommended that you enable **Always On** on the Configure page for your website. The Always On feature, available in Basic and Standard mode, prevents websites from being unloaded, even if they have been idle for some time. If your website is always loaded, your continuously running task may run more reliably. 

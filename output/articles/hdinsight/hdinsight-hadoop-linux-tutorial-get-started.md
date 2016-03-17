@@ -1,5 +1,7 @@
+<!-- not suitable for Mooncake -->
+
 <properties
-   	pageTitle="Linux tutorial: Get started with Hadoop and Hive | Windows Azure"
+   	pageTitle="Linux tutorial: Get started with Hadoop and Hive | Azure"
    	description="Follow this Linux tutorial to get started using Hadoop in HDInsight. Learn how to provision Linux clusters, and query data with Hive."
    	services="hdinsight"
    	documentationCenter=""
@@ -234,17 +236,17 @@ If you'd like to learn more about creating or managing an HDInsight cluster, see
 	* The use of Azure Storage (WASB) instead of HDFS as the default data store
 
 
-[1]: ../HDInsight/hdinsight-hadoop-visual-studio-tools-get-started.md
+[1]: /documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started
 
-[hdinsight-provision]: hdinsight-provision-clusters-v1.md
-[hdinsight-admin-powershell]: hdinsight-administer-use-powershell.md
-[hdinsight-upload-data]: hdinsight-upload-data.md
-[hdinsight-use-mapreduce]: hdinsight-use-mapreduce.md
-[hdinsight-use-hive]: hdinsight-use-hive.md
-[hdinsight-use-pig]: hdinsight-use-pig.md
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
+[hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
+[hdinsight-use-mapreduce]: /documentation/articles/hdinsight-use-mapreduce
+[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
+[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
 
 [powershell-download]: http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409
-[powershell-install-configure]: ../install-configure-powershell.md
+[powershell-install-configure]: /documentation/articles/powershell-install-configure
 [powershell-open]: /documentation/articles/powershell-install-configure#Install
 
 [img-hdi-dashboard]: ./media/hdinsight-hadoop-tutorial-get-started-windows-v1/HDI.dashboard.png

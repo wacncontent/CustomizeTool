@@ -1,5 +1,5 @@
 <properties
- pageTitle="Add burst nodes to an HPC Pack cluster | Windows Azure"
+ pageTitle="Add burst nodes to an HPC Pack cluster | Azure"
  description="Learn how to add worker role instances running in a cloud service on-demand as compute resources to an HPC Pack head node in Azure."
  services="virtual-machines"
  documentationCenter=""

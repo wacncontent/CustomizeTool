@@ -28,12 +28,12 @@ We'll learn how to use a MySQL service hosted on Azure, how to configure the web
 
 See the [Python Developer Center] for more articles that cover development of Azure Web Apps with PTVS using Bottle, Flask and Django web frameworks, with MongoDB, Azure Table Storage, MySQL and SQL Database services. While this article focuses on Azure Web App, the steps are similar when developing [Azure Cloud Services].
 
-<!-- deleted by customization
+
 ## Prerequisites
--->
-<!-- keep by customization: begin -->
+
+
 ##<a name="prerequisites"></a> Prerequisites
-<!-- keep by customization: end -->
+
 
  - Visual Studio 2013 or 2015
  - [Python Tools 2.2 for Visual Studio]
@@ -42,10 +42,10 @@ See the [Python Developer Center] for more articles that cover development of Az
  - [Python 2.7 32-bit]
 
 [AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
-<!-- deleted by customization
+
 
 >[AZURE.NOTE] If you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.
--->
+
 
 ## Create the Project
 
@@ -99,11 +99,11 @@ For the database, we'll create a ClearDB MySQL hosted database on Azure.
 
 As an alternative, you can create your own Virtual Machine running in Azure, then install and administer MySQL yourself.
 
-You can create a database with a free plan by following these steps.
+You can create a database  with a free plan  by following these steps.
 
 1.  Log into the [Azure Management Portal](https://manage.windowsazure.cn/).
 
-<!-- deleted by customization
+
 1.  At the Top of the navigation pane, click **NEW**. Then, click **DATA SERVICE** > **MySQL Database**. 
 
 
@@ -116,14 +116,14 @@ You can create a database with a free plan by following these steps.
 
 1.  Once the MySQL database is created, click **Properties** in the database blade.
 2.  Use the copy button to put the value of **CONNECTION STRING** on the clipboard.
--->
-<!-- keep by customization: begin -->
+
+
 1.  At the bottom of the navigation pane. 
 
 1.  Click **DATA SERVICE**, then **MYSQL DATABASE ON AZURE**, then **QUICK CREATE**.
 
 1.  Filled in with name, version, and so on, then click **CREATE**.
-<!-- keep by customization: end -->
+
 
 ## Configure the Project
 
@@ -163,13 +163,14 @@ In this section, we'll configure our web app to use the MySQL database we just c
 
 ## Publish the web app to Azure
 
-The Azure .NET SDK provides an easy way to deploy your web app to Azure Web App.
+The Azure .NET SDK provides an easy way to deploy your web app to Azure  Web App .
 
 1.  In **Solution Explorer**, right-click on the project node and select **Publish**.
 
   	![Publish Web Dialog](./media/web-sites-python-ptvs-django-mysql/PollsCommonPublishWebSiteDialog.png)
 
-1.  Click on **Windows Azure Web Apps**.
+
+1.  Click on **Azure Web Apps**.
 
 1.  Click on **New** to create a new web app.
 
@@ -180,7 +181,13 @@ The Azure .NET SDK provides an easy way to deploy your web app to Azure Web App.
 	-	**Region**
 	-	Leave **Database server** set to **No database**
 
-  	<!-- ![Create Site on Windows Azure Dialog](./media/web-sites-python-ptvs-django-mysql/PollsCommonCreateWebSite.png) -->
+  	<!-- ![Create Site on Azure Dialog](./media/web-sites-python-ptvs-django-mysql/PollsCommonCreateWebSite.png) -->
+
+
+1.  Click on **Import**, and choose the downloaded "Publish Profile".
+
+	If you haven't create a web app yet, you can log into the [Azure Management Portal](https://manage.windowsazure.cn/) to create one, and go to the **Dashboard** page, under the **quick glance**, download the "Publish Profile".
+
 
 1.  Accept all other defaults and click **Publish**.
 
@@ -197,26 +204,21 @@ Follow these links to learn more about Python Tools for Visual Studio, Django an
 - [Python Tools for Visual Studio Documentation]
   - [Web Projects]
   - [Cloud Service Projects]
-  - [Remote Debugging on Windows Azure]
+  - [Remote Debugging on Azure]
 - [Django Documentation]
 - [MySQL]
 
-<!-- deleted by customization
+
 For more information, see the [Python Developer Center](/develop/python/).
 
 ## What's changed
 * For a guide to the change from Websites to Azure see: [Azure and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
 
--->
+
 
 <!--Link references-->
 [Python Developer Center]: /develop/python/
-<!-- deleted by customization
-[Azure Cloud Services]: ../cloud-services-python-ptvs.md
--->
-<!-- keep by customization: begin -->
 [Azure Cloud Services]: /documentation/articles/cloud-services-python-ptvs
-<!-- keep by customization: end -->
 
 <!--External Link references-->
 [Azure Management Portal]: https://manage.windowsazure.cn
@@ -227,7 +229,7 @@ For more information, see the [Python Developer Center](/develop/python/).
 [Azure SDK Tools for VS 2015]: http://go.microsoft.com/fwlink/?LinkId=518003
 [Python 2.7 32-bit]: http://go.microsoft.com/fwlink/?LinkId=517190 
 [Python Tools for Visual Studio Documentation]: http://aka.ms/ptvsdocs
-[Remote Debugging on Windows Azure]: http://go.microsoft.com/fwlink/?LinkId=624026
+[Remote Debugging on Azure]: http://go.microsoft.com/fwlink/?LinkId=624026
 [Web Projects]: http://go.microsoft.com/fwlink/?LinkId=624027
 [Cloud Service Projects]: http://go.microsoft.com/fwlink/?LinkId=624028
 [Django Documentation]: https://www.djangoproject.com/

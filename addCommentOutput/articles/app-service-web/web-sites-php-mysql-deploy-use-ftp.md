@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="10/01/2015"
+	ms.date="01/12/2016"
 	wacn.date=""/>
 
 
@@ -34,9 +34,9 @@ By following this tutorial, you will build a simple registration web app in PHP.
 
 ![Azure PHP Web Site][running-app]
 
-<!-- deleted by customization
+
 >[AZURE.NOTE] If you want to get started with Azure before signing up for an account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required, no commitments. 
--->
+
 
 
 ##Create a web app and set up FTP publishing
@@ -44,43 +44,39 @@ By following this tutorial, you will build a simple registration web app in PHP.
 Follow these steps to create a web app and a MySQL database:
 
 1. Login to the [Azure Management Portal][management-portal].
-2. Click the **+ New** icon on the bottom left of the Azure Management Portal.
+2. Click the **+ New** icon on the  top  bottom  left of the Azure Management Portal.
 
 	![Create New Azure Web Site][new-website]
 
-<!-- deleted by customization
-3. Click **Web + Mobile**, then **Web app + MySQL**.
+
+3. In the search type **Web app + MySQL** and click on **Web app + MySQL**.
 
 	![Custom Create a new Web Site][custom-create]
-4. Enter a valid name for your resource group.
+4. Click **Create**. Enter a unique app service name, a valid name for the resource group and a new service plan.
 
     ![Set resource group name][resource-group]
 
-5. Enter values for your new web app.
-
-     ![Create web app][new-web-app]
 
 6. Enter values for your new database, including agreeing to the legal terms.
 
 	![Create new MySQL database][new-mysql-db]
-7. When the web app has been created, you will see the new resource group. Click the name of the web app to configure its settings.
+7. When the web app has been created, you will see the new app service blade.
 
-	![Open web app][go-to-webapp]
 
-6. Scroll down until you find **Set deployment credentials**. 
+6. Click on **Settings** > **Deployment credentials**. 
 
 	![Set deployment credentials][set-deployment-credentials]
 
 7. To enable FTP publishing, you must provide a user name and password. Save the credentials and make a note of the user name and password you create.
 
 	![Create publishing credentials][portal-ftp-username-password]
--->
-<!-- keep by customization: begin -->
+
+
 3. Click ** web site**, then **CUSTOM CREATE**.
 
 	![Custom Create a new  Website][custom-create]
 	
-	Enter a value for **URL**, select **Create a New MySQL Database** from the **DATABASE** dropdown,  and select the data center for your  Website in the **REGION** dropdown. Click the arrow at the bottom of the dialog.
+	Enter a value for **URL**, select **No Database** from the **DATABASE** dropdown,  and select the data center for your  Website in the **REGION** dropdown. Click the arrow at the bottom of the dialog.
 
 	![Fill in  Website details][Website-details]
 
@@ -90,19 +86,19 @@ Follow these steps to create a web app and a MySQL database:
 
 	When the  Website has been created you will see the text **Creation of  Website '[SITENAME]' completed successfully**. Now, you can enable FTP publishing.
 
-5. Click the name of the  Website displayed in the list of  Websites to open the  Website's **QUICKSTART** dashboard.
+5. Click the name of the  Website displayed in the list of Websites and click the  Website's **Dashboard**.
 
 	![Open  Website dashboard][go-to-dashboard]
 
 
-6. At the bottom of the **QUICKSTART** page, click **Reset deployment credentials**. 
+6. In the **Dashboard** page, under the **quick glance**, click **Reset deployment credentials**. 
 
 	![Reset deployment credentials][reset-deployment-credentials]
 
 7. To enable FTP publishing, you must provide a user name and password. Make a note of the user name and password you create.
 
 	![Create publishing credentials][portal-git-username-password]
-<!-- keep by customization: end -->
+
 
 ##Build and test your app locally
 
@@ -250,12 +246,16 @@ You can now browse to [http://localhost/registration/index.php][localhost-index]
 
 To connect to the MySQL database that is running in Web Apps, your will need the connection information. To get MySQL connection information, follow these steps:
 
-<!-- deleted by customization
+
+1. From the app service web app blade click on the resource group link:
+
+	![Select Resource Group][select-resourcegroup]
+
 1. From your resource group, click the database:
 
 	![Select database][select-database]
 
-2. From the database sumamry, select **Properties**.
+2. From the database summary, select **Settings** > **Properties**.
 
     ![Select properties][select-properties]
 	
@@ -276,8 +276,8 @@ To connect to the MySQL database that is running in Web Apps, your will need the
 		</publishProfile>
 	
 Make note of the `publishUrl`, `userName`, and `userPWD` attributes.
--->
-<!-- keep by customization: begin -->
+
+
 1. In Azure Management Portal, click **MYSQL DATABASE ON AZURE**, and open your MYSQL database server. In **Dashboard** page, under **quick glance**, you can get your host and port.
 
 	![connection][connection-string-info]
@@ -287,7 +287,7 @@ Make note of the `publishUrl`, `userName`, and `userPWD` attributes.
 3. in **Database** page, you can get all Database under this MYSQL Database Server.
 
 	The Data source would be `tcp:<your MYSQL server name>.database.chinacloudapi.cn,<port>`
-<!-- keep by customization: end -->
+
 
 ##Publish your app
 
@@ -312,45 +312,46 @@ Now you are ready to publish your app using FTP.
 After you have connected you will be able to upload and download files as needed. Be sure that you are uploading files to the root directory, which is `/site/wwwroot`.
 
 After uploading both `index.php` and `createtable.php`, browse to **http://[site name].chinacloudsites.cn/createtable.php** to create the MySQL table for the application, then browse to **http://[site name].chinacloudsites.cn/index.php** to begin using the application.
-<!-- deleted by customization
+
 ## Next steps
 
 For more information, see the [PHP Developer Center](/develop/php/).
 
--->
-<!-- keep by customization: begin -->
+
+
 
 [go-to-dashboard]: ./media/web-sites-php-web-site-mysql-deploy-use-ftp/go_to_dashboard.png
 [reset-deployment-credentials]: ./media/web-sites-php-web-site-mysql-deploy-use-ftp/reset-deployment-credentials.png
 [portal-git-username-password]: ./media/web-sites-php-web-site-mysql-deploy-use-ftp/git-deployment-credentials.png
-<!-- keep by customization: end -->
+
 [install-php]: http://www.php.net/manual/en/install.php
 [install-mysql]: http://dev.mysql.com/doc/refman/5.6/en/installing.html
 [pdo-mysql]: http://www.php.net/manual/en/ref.pdo-mysql.php
 [localhost-createtable]: http://localhost/tasklist/createtable.php
 [localhost-index]: http://localhost/tasklist/index.php
 [running-app]: ./media/web-sites-php-mysql-deploy-use-ftp/running_app_2.png
-<!-- deleted by customization
+
 [new-website]: ./media/web-sites-php-mysql-deploy-use-ftp/new_website2.png
 [custom-create]: ./media/web-sites-php-mysql-deploy-use-ftp/create_web_mysql.png
--->
-<!-- keep by customization: begin -->
+
+
 [new-website]: ./media/web-sites-php-mysql-deploy-use-ftp/new_website.jpg
 [custom-create]: ./media/web-sites-php-mysql-deploy-use-ftp/custom_create.png
-<!-- keep by customization: end -->
+
 [website-details]: ./media/web-sites-php-web-site-mysql-deploy-use-ftp/website_details.jpg
-<!-- deleted by customization
+
 [new-mysql-db]: ./media/web-sites-php-mysql-deploy-use-ftp/create_db.png
--->
-<!-- keep by customization: begin -->
+
+
 [new-mysql-db]: ./media/web-sites-php-mysql-deploy-use-ftp/new_mysql_db.jpg
-<!-- keep by customization: end -->
+
 [go-to-webapp]: ./media/web-sites-php-mysql-deploy-use-ftp/select_webapp.png
 [set-deployment-credentials]: ./media/web-sites-php-mysql-deploy-use-ftp/set_credentials.png
 [portal-ftp-username-password]: ./media/web-sites-php-mysql-deploy-use-ftp/save_credentials.png
 [resource-group]: ./media/web-sites-php-mysql-deploy-use-ftp/set_group.png
 [new-web-app]: ./media/web-sites-php-mysql-deploy-use-ftp/create_wa.png
 [select-database]: ./media/web-sites-php-mysql-deploy-use-ftp/select_database.png
+[select-resourcegroup]: ./media/web-sites-php-mysql-deploy-use-ftp/select_resourcegroup.png
 [select-properties]: ./media/web-sites-php-mysql-deploy-use-ftp/select_properties.png
 [note-properties]: ./media/web-sites-php-mysql-deploy-use-ftp/note-properties.png
 

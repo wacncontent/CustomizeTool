@@ -44,7 +44,7 @@ When you create an HDInsight cluster in HDInsight, you specify an Azure Storage 
 
 >[AZURE.NOTE]  Make sure you create the storage account in a location that is supported for the cluster.
 
-Select the new storage account from the list and click **MANAGE ACCESS KEYS** at the bottom of the page. Make a note of the **PRIMARY ACCESS KEY** (or the **SECONDARY ACCESS KEY**-either of the keys work).  You will need this later in the tutorial. For more information, see [How to Create a Storage Account][azure-create-storageaccount] .
+Select the new storage account from the list and click **MANAGE ACCESS KEYS** at the bottom of the page. Make a note of the **PRIMARY ACCESS KEY** (or the **SECONDARY ACCESS KEY**—either of the keys work).  You will need this later in the tutorial. For more information, see [How to Create a Storage Account][azure-create-storageaccount] .
 	
 ##Create an HDInsight Spark cluster
 

@@ -1,5 +1,7 @@
+<!-- not suitable for Mooncake -->
+
 <properties
-	pageTitle="Customize HDInsight Clusters using script actions | Windows Azure"
+	pageTitle="Customize HDInsight Clusters using script actions | Azure"
 	description="Learn how to add custom components to Linux-based HDInsight clusters using Script Actions. Script Actions are Bash scripts that run during cluster creation, and can be used to customize the cluster configuration or add additional services and utilities like Hue, Solr, or R."
 	services="hdinsight"
 	documentationCenter=""
@@ -408,7 +410,7 @@ If the cluster creation failed due to an error in script action, the script acti
 
 ## Support for open-source software used on HDInsight clusters
 
-The Windows Azure HDInsight service is a flexible platform that enables you to build big-data applications in the cloud by using an ecosystem of open-source technologies formed around Hadoop. Windows Azure provides a general level of support for open-source technologies, as discussed in the **Support Scope** section of the [Azure Support FAQ website](/support/faq/). The HDInsight service provides an additional level of support for some of the components, as described below.
+The Azure HDInsight service is a flexible platform that enables you to build big-data applications in the cloud by using an ecosystem of open-source technologies formed around Hadoop. Azure provides a general level of support for open-source technologies, as discussed in the **Support Scope** section of the [Azure Support FAQ website](/support/faq/). The HDInsight service provides an additional level of support for some of the components, as described below.
 
 There are two types of open-source components that are available in the HDInsight service:
 

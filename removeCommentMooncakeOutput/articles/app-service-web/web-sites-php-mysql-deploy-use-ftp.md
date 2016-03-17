@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="10/01/2015"
+	ms.date="01/12/2016"
 	wacn.date=""/>
 
 
@@ -49,7 +49,7 @@ Follow these steps to create a web app and a MySQL database:
 
 	![Custom Create a new  Website][custom-create]
 	
-	Enter a value for **URL**, select **Create a New MySQL Database** from the **DATABASE** dropdown,  and select the data center for your  Website in the **REGION** dropdown. Click the arrow at the bottom of the dialog.
+	Enter a value for **URL**, select **No Database** from the **DATABASE** dropdown,  and select the data center for your  Website in the **REGION** dropdown. Click the arrow at the bottom of the dialog.
 
 	![Fill in  Website details][Website-details]
 
@@ -59,12 +59,12 @@ Follow these steps to create a web app and a MySQL database:
 
 	When the  Website has been created you will see the text **Creation of  Website '[SITENAME]' completed successfully**. Now, you can enable FTP publishing.
 
-5. Click the name of the  Website displayed in the list of  Websites to open the  Website's **QUICKSTART** dashboard.
+5. Click the name of the  Website displayed in the list of Websites and click the  Website's **Dashboard**.
 
 	![Open  Website dashboard][go-to-dashboard]
 
 
-6. At the bottom of the **QUICKSTART** page, click **Reset deployment credentials**. 
+6. In the **Dashboard** page, under the **quick glance**, click **Reset deployment credentials**. 
 
 	![Reset deployment credentials][reset-deployment-credentials]
 
@@ -271,6 +271,7 @@ After uploading both `index.php` and `createtable.php`, browse to **http://[site
 [resource-group]: ./media/web-sites-php-mysql-deploy-use-ftp/set_group.png
 [new-web-app]: ./media/web-sites-php-mysql-deploy-use-ftp/create_wa.png
 [select-database]: ./media/web-sites-php-mysql-deploy-use-ftp/select_database.png
+[select-resourcegroup]: ./media/web-sites-php-mysql-deploy-use-ftp/select_resourcegroup.png
 [select-properties]: ./media/web-sites-php-mysql-deploy-use-ftp/select_properties.png
 [note-properties]: ./media/web-sites-php-mysql-deploy-use-ftp/note-properties.png
 

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Use the CustomScript Extension on a Linux VM | Windows Azure"
+	pageTitle="Use the CustomScript Extension on a Linux VM | Azure"
 	description="Learn how to use the CustomScript extension to deploy applications on Linux Virtual Machines in Azure created using the classic deployment model."
 	editor="tysonn"
 	manager="timlt"
@@ -18,7 +18,7 @@
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
 
-The Windows Azure CustomScript Extension for Linux provides a way to customize your virtual machines (VMs) by running arbitrary code written in any scripting language supported by the VM (for example, Python, and Bash). This provides a very flexible way to automate application deployment to multiple machines.
+The Azure CustomScript Extension for Linux provides a way to customize your virtual machines (VMs) by running arbitrary code written in any scripting language supported by the VM (for example, Python, and Bash). This provides a very flexible way to automate application deployment to multiple machines.
 
 You can deploy the CustomScript Extension using the Azure Management Portal, Windows PowerShell, or the Azure Command-Line Interface (Azure CLI).
 

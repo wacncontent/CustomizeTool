@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Introduction to Apache Storm on HDInsight | Windows Azure"
+	pageTitle="Introduction to Apache Storm on HDInsight | Azure"
 	description="Get an introduction to Apache Storm, and learn how you can use Storm on HDInsight to build real-time data analytics solutions in the cloud."
 	services="hdinsight"
 	documentationCenter=""

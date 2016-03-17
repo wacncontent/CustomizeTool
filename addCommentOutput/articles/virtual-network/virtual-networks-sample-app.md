@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Sample Application for Use with Security Boundary Environments | Windows Azure"
+   pageTitle="Sample Application for Use with Security Boundary Environments | Azure"
    description="Deploy this simple web application after creating a DMZ to test traffic flow scenarios"
    services="virtual-network"
    documentationCenter="na"
@@ -9,12 +9,14 @@
 
 <tags
 	ms.service="virtual-network"
-	ms.date="09/16/2015"
+	ms.date="02/01/2016"
 	wacn.date=""/>
 
 # Sample Application for Use with Security Boundary Environments
+
 
 [Return to the Security Boundary Best Practices Page][HOME]
+
 
 These PowerShell scripts can be run locally on the IIS01 and AppVM01 servers to install and setup a very simple web application that displays an html page from the front end IIS01 server with content from the backend AppVM01 server.
 

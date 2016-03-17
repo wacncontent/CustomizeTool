@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Manage Hadoop clusters in HDInsight with PowerShell | Windows Azure"
+	pageTitle="Manage Hadoop clusters in HDInsight with PowerShell | Azure"
 	description="Learn how to perform administrative tasks for the Hadoop clusters in HDInsight using Azure PowerShell."
 	services="hdinsight"
 	editor="cgronlun"
@@ -27,7 +27,7 @@ Before you begin this article, you must have the following:
 
 - **An Azure subscription**. See [Get Azure trial](/pricing/1rmb-trial/).
 
-##Install Azure PowerShell 1.0 and greater
+##<a id="install-azure-powershell-10-and-greater"></a>Install Azure PowerShell 1.0 and greater
 
 First you must unintall the 0.9x versions.
 
@@ -75,7 +75,7 @@ HDInsight cluster requires a Blob container on an Azure Storage account:
 
 	New-AzureStorageAccount -StorageAccountName <Azure Storage Account Name> -Location "<Azure Location>" -Type <AccountType> # account type example: Standard_LRS for zero redundancy storage
 	
-	Don't use **Standard_ZRS** because it deson't support Azure Table.  HDInsight uses Azure Table to logging. For a full list of the storage account types, see [https://msdn.microsoft.com/zh-cn/library/azure/hh264518.aspx](https://msdn.microsoft.com/zh-cn/library/azure/hh264518.aspx).
+Don't use **Standard_ZRS** because it deson't support Azure Table.  HDInsight uses Azure Table to logging. For a full list of the storage account types, see [https://msdn.microsoft.com/zh-cn/library/azure/hh264518.aspx](https://msdn.microsoft.com/zh-cn/library/azure/hh264518.aspx).
 
 [AZURE.INCLUDE [data center list](../includes/hdinsight-pricing-data-centers-clusters.md)]
 
@@ -144,7 +144,7 @@ Use the following command to delete a cluster:
 ##Scale clusters
 The cluster scaling feature allows you to change the number of worker nodes used by a cluster that is running in Azure HDInsight without having to re-create the cluster.
 
->[AZURE.NOTE] Only clusters with HDInsight version 3.1.3 or higher are supported. If you are unsure of the version of your cluster, you can check the Properties page.  See [Get familiar with the cluster portal interface](/documentation/articles/hdinsight-administer-use-management-portal-v1#Get-familiar-with-the-cluster-portal-interface).
+>[AZURE.NOTE] Only clusters with HDInsight version 3.1.3 or higher are supported. If you are unsure of the version of your cluster, you can check the Properties page.
 
 The impact of changing the number of data nodes for each type of cluster supported by HDInsight:
 
@@ -188,10 +188,10 @@ The impact of changing the number of data nodes for each type of cluster support
 
 To change the Hadoop cluster size by using Azure PowerShell, run the following command from a client machine:
 
-	Set-AzureHDInsightClusterSize -Name <Cluster Name> -ClusterSizeInNodes <NewSize>
+	Set-AzureHDInsightClusterSize -Cluster <Cluster Name> -ClusterSizeInNodes <NewSize>
 	
 
-##Grant/revoke access
+##<a name="grant/revoke-access"></a>Grant/revoke access
 
 HDInsight clusters have the following HTTP web services (all of these services have RESTful endpoints):
 

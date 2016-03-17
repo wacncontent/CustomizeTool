@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Create a Windows VM with Powershell | Windows Azure"
+	pageTitle="Create a Windows VM with Powershell | Azure"
 	description="Create Windows virtual machines using Azure PowerShell and the classic deploment model."
 	services="virtual-machines"
 	documentationCenter=""
@@ -43,7 +43,7 @@ Set your Azure subscription and storage account by running these commands at the
 	$subscr="<subscription name>"
 	$staccount="<storage account name>"
 	Select-AzureSubscription -SubscriptionName $subscr -Current
-	Set-AzureSubscription -SubscriptionName $subscr -CurrentStorageAccountName $staccount
+	Set-AzureSubscription -Environment AzureChinaCloud -SubscriptionName $subscr -CurrentStorageAccountName $staccount
 
 You can get the correct subscription name from the SubscriptionName property of the output of the **Get-AzureSubscription** command. You can get the correct storage account name from the Label property of the output of the **Get-AzureStorageAccount** command after you run the **Select-AzureSubscription** command.
 
@@ -254,9 +254,9 @@ Here is the corresponding Azure PowerShell command set to create this virtual ma
 
 [Virtual machines documentation](/documentation/services/virtual-machines/)
 
-[Azure virtual machines FAQ](http://msdn.microsoft.com/zh-cn/library/azure/dn683781.aspx)
+[Azure virtual machines FAQ](/documentation/articles/virtual-machines-questions/)
 
-[Overview of Azure Virtual Machines](http://msdn.microsoft.com/zh-cn/library/azure/jj156143.aspx)
+[Overview of Azure Virtual Machines](/documentation/articles/virtual-machines-about/)
 
 [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure)
 

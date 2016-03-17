@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 ## How to create a VNet in the Azure Management Portal
 
 To create a VNet based on the scenario above by using the Azure preview portal, follow the steps below.

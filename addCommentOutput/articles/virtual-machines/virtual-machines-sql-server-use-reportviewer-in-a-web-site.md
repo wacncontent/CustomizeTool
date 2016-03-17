@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Use ReportViewer in a Web Site | Windows Azure"
-	description="This topic describes how to build a Windows Azure Web site with the Visual Studio ReportViewer control that displays a report stored on an Windows Azure Virtual Machine."
+	pageTitle="Use ReportViewer in a Web Site | Azure"
+	description="This topic describes how to build a Azure Web site with the Visual Studio ReportViewer control that displays a report stored on an Azure Virtual Machine."
 	services="virtual-machines"
 	documentationCenter="na"
 	authors="rothja"
@@ -17,11 +17,11 @@
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
 
-You can build a Windows Azure Web site with the Visual Studio ReportViewer control that displays a report stored on an Windows Azure Virtual Machine. The ReportViewer control is in a Web application that you build using the ASP.NET Web application template.
+You can build a Azure Web site with the Visual Studio ReportViewer control that displays a report stored on an Azure Virtual Machine. The ReportViewer control is in a Web application that you build using the ASP.NET Web application template.
 
 >[AZURE.IMPORTANT] The ASP.NET MVC Web Application templates do not support the ReportViewer control.
 
-To incorporate ReportViewer into your Windows Azure Web site, you need to complete the following tasks.
+To incorporate ReportViewer into your Azure Web site, you need to complete the following tasks.
 
 - **Add** Assemblies to the Deployment Package
 
@@ -34,14 +34,19 @@ To incorporate ReportViewer into your Windows Azure Web site, you need to comple
 Review the "General recommendation and best practices" section in [SQL Server Business Intelligence in Azure Virtual Machines](/documentation/articles/virtual-machines-sql-server-business-intelligence).
 
 >[AZURE.NOTE] ReportViewer controls are shipped with Visual Studio, Standard Edition or above. If you are using the Web Developer Express Edition, you must install the [MICROSOFT REPORT VIEWER 2012 RUNTIME](https://www.microsoft.com/download/details.aspx?id=35747) to use the ReportViewer runtime features.
+
 >
->ReportViewer configured in local processing mode is not supported in Windows Azure.
+>ReportViewer configured in local processing mode is not supported in Azure.
 
-Review the white paper [Reporting Services report viewer control and Windows Azure virtual machine based report servers](http://download.microsoft.com/download/2/2/0/220DE2F1-8AB3-474D-8F8B-C998F7C56B5D/Reporting%20Services%20report%20viewer%20control%20and%20Azure%20VM%20based%20report%20servers.docx).
+Review the white paper [Reporting Services report viewer control and Azure virtual machine based report servers](http://download.microsoft.com/download/2/2/0/220DE2F1-8AB3-474D-8F8B-C998F7C56B5D/Reporting%20Services%20report%20viewer%20control%20and%20Azure%20VM%20based%20report%20servers.docx).
+
+
+><p>ReportViewer configured in local processing mode is not supported in Azure.
+
 
 ## Adding Assemblies to the Deployment Package
 
-When you host your ASP.NET application on-premise, the ReportViewer assemblies are usually installed directly in the global assembly cache (GAC) of the IIS server during Visual Studio installation, and can be accessed directly by the application. However, when you host your ASP.NET application in the cloud, Windows Azure does not allow anything to be installed into the GAC, so you must make sure the ReportViewer assemblies are available locally for your application. You can do this by adding references to them in your project and configure them to be copied locally.
+When you host your ASP.NET application on-premise, the ReportViewer assemblies are usually installed directly in the global assembly cache (GAC) of the IIS server during Visual Studio installation, and can be accessed directly by the application. However, when you host your ASP.NET application in the cloud, Azure does not allow anything to be installed into the GAC, so you must make sure the ReportViewer assemblies are available locally for your application. You can do this by adding references to them in your project and configure them to be copied locally.
 
 In remote processing mode, the ReportViewer control uses the following assemblies:
 
@@ -85,15 +90,20 @@ In remote processing mode, the ReportViewer control uses the following assemblie
 
 ## Configuring Authentication and Authorization
 
-The ReportViewer needs to use proper credentials to authenticate with the report server, and the credentials must be authorized by the report server to access the reports you want. For information on authentication, see the white paper [Reporting Services report viewer control and Windows Azure virtual machine based report servers](https://msdn.microsoft.com/zh-cn/library/azure/dn753698.aspx).
+The ReportViewer needs to use proper credentials to authenticate with the report server, and the credentials must be authorized by the report server to access the reports you want. For information on authentication, see the white paper [Reporting Services report viewer control and Azure virtual machine based report servers](https://msdn.microsoft.com/zh-cn/library/azure/dn753698.aspx).
 
 ## Publish the ASP.NET Web application to Azure
 
-For instructions on publishing an ASP.NET Web application to Azure, see [How to: Migrate and Publish a Web Application to Azure from Visual Studio](/documentation/articles/vs-azure-tools-migrate-publish-web-app-to-cloud-service) and [Get started with Web Apps and ASP.NET](/documentation/articles/web-sites-dotnet-get-started).
+For instructions on publishing an ASP.NET Web application to Azure, see  [How to: Migrate and Publish a Web Application to Azure from Visual Studio](/documentation/articles/vs-azure-tools-migrate-publish-web-app-to-cloud-service) and  [Get started with Web Apps and ASP.NET](/documentation/articles/web-sites-dotnet-get-started).
 
 >[AZURE.IMPORTANT] If the Add Azure Deployment Project or Add Azure Cloud Service Project command does not appear in the shortcut menu in Solution Explorer, you may need to change the Target framework for the project to .NET Framework 4.
+
 >
->The two commands provide essentially the same functionality. One or the other command will appear in the shortcut menu depending on which version of the Windows Azure SDK you have installed.
+>The two commands provide essentially the same functionality. One or the other command will appear in the shortcut menu depending on which version of the Azure SDK you have installed.
+
+
+><p>The two commands provide essentially the same functionality. One or the other command will appear in the shortcut menu depending on which version of the Azure SDK you have installed.
+
 
 ## Resources
 
@@ -103,4 +113,4 @@ For instructions on publishing an ASP.NET Web application to Azure, see [How to:
 
 [Use PowerShell to Create an Azure VM With a Native Mode Report Server](/documentation/articles/virtual-machines-sql-server-create-native-mode-report-server-powershell)
 
-[Reporting Services report viewer control and Windows Azure virtual machine based report servers](http://download.microsoft.com/download/2/2/0/220DE2F1-8AB3-474D-8F8B-C998F7C56B5D/Reporting%20Services%20report%20viewer%20control%20and%20Azure%20VM%20based%20report%20servers.docx)
+[Reporting Services report viewer control and Azure virtual machine based report servers](http://download.microsoft.com/download/2/2/0/220DE2F1-8AB3-474D-8F8B-C998F7C56B5D/Reporting%20Services%20report%20viewer%20control%20and%20Azure%20VM%20based%20report%20servers.docx)

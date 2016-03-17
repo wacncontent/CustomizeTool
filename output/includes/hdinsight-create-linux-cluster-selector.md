@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 > [AZURE.SELECTOR]
 - [Windows-based](/documentation/articles/hdinsight-provision-clusters-v1)
 - [Overview](/documentation/articles/hdinsight-provision-clusters-v1)

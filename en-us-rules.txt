@@ -846,8 +846,6 @@ http://feedback.azure.com/forums/217298-storage = /product-feedback
 ://www.microsoft.com/visualstudio/eng/2013-downloads = ://www.visualstudio.com/zh-cn/downloads/download-visual-studio-vs
 http://feedback.azure.com/forums/169385-websites = /product-feedback
 http://feedback.windowsazure.com/forums/34192--general-feedback = /product-feedback
-https://zh.wikipedia.org = 	https://en.wikipedia.org
-http://zh.wikipedia.org = 	http://en.wikipedia.org
 https://passwordreset.microsoftonline.com = 	???
 http://myapps.microsoft.com = 	???
 
@@ -973,14 +971,14 @@ https://acom-sandbox.azurewebsites.net/en-us/documentation/articles/web-sites-ja
 # [execution model-vms]: fundamentals-application-models.md#VMachine
 # [execution model-cloud services]: fundamentals-application-models.md#CloudServices
 # [dotnet]: /develop/net/
-\[([^\[|^\]]*)\]:\s*(\.\./|\./)?(?!includes/|media/|services/)([\w|\-]+/)?(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(\.md)?/?[ \t\f\v]*\n = [\1]: /documentation/articles/\5\n
-\[([^\[|^\]]*)\]:\s*(\.\./|\./)?(?!includes/|media/|services/)([\w|\-]+/)?(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(\.md)?/?(#[^/]*)/?[ \t\f\v]*\n = [\1]: /documentation/articles/\5\7\n
-\[([^\[|^\]]*)\]:\s*(\.\./|\./)?(?!includes/|media/|services/)([\w|\-]+/)?(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(\.md)?/?\s*("[^"]*")[ \t\f\v]*\n = [\1]: /documentation/articles/\5 \7\n
-\[([^\[|^\]]*)\]:\s*(\.\./|\./)?(?!includes/|media/|services/)([\w|\-]+/)?(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(\.md)?/?(#[^/]*)/?\s*("[^"]*")[ \t\f\v]*\n = [\1]: /documentation/articles/\5\7 \8\n
+\[([^\[|^\]]*)\]:\s*(\.\./|\./)?(?!includes/|media/|services/)([\w|\-]+/)?(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(\.md)?/?[ \t\f\v\r]*\n = [\1]: /documentation/articles/\5\n
+\[([^\[|^\]]*)\]:\s*(\.\./|\./)?(?!includes/|media/|services/)([\w|\-]+/)?(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(\.md)?/?(#[^/]*)/?[ \t\f\v\r]*\n = [\1]: /documentation/articles/\5\7\n
+\[([^\[|^\]]*)\]:\s*(\.\./|\./)?(?!includes/|media/|services/)([\w|\-]+/)?(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(\.md)?/?\s*("[^"]*")[ \t\f\v\r]*\n = [\1]: /documentation/articles/\5 \7\n
+\[([^\[|^\]]*)\]:\s*(\.\./|\./)?(?!includes/|media/|services/)([\w|\-]+/)?(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(\.md)?/?(#[^/]*)/?\s*("[^"]*")[ \t\f\v\r]*\n = [\1]: /documentation/articles/\5\7 \8\n
 \[([^\[|^\]]*)\]:\s*(\.\./|\./)?(?!includes/|media/|services/)([\w|\-]+/)?(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(\.md)?/?[ \t\f\v]*$ = [\1]: /documentation/articles/\5
-\[([^\[|^\]]*)\]:\s*(\.\./|\./)?(?!includes/|media/|services/)([\w|\-]+/)?(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(\.md)?/?(#[^/]*)/?[ \t\f\v]*$ = [\1]: /documentation/articles/\5\7
-\[([^\[|^\]]*)\]:\s*(\.\./|\./)?(?!includes/|media/|services/)([\w|\-]+/)?(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(\.md)?/?\s*("[^"]*")[ \t\f\v]*$ = [\1]: /documentation/articles/\5 \7
-\[([^\[|^\]]*)\]:\s*(\.\./|\./)?(?!includes/|media/|services/)([\w|\-]+/)?(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(\.md)?/?(#[^/]*)/?\s*("[^"]*")[ \t\f\v]*$ = [\1]: /documentation/articles/\5\7 \8
+\[([^\[|^\]]*)\]:\s*(\.\./|\./)?(?!includes/|media/|services/)([\w|\-]+/)?(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(\.md)?/?(#[^/]*)/?[ \t\f\v\r]*$ = [\1]: /documentation/articles/\5\7
+\[([^\[|^\]]*)\]:\s*(\.\./|\./)?(?!includes/|media/|services/)([\w|\-]+/)?(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(\.md)?/?\s*("[^"]*")[ \t\f\v\r]*$ = [\1]: /documentation/articles/\5 \7
+\[([^\[|^\]]*)\]:\s*(\.\./|\./)?(?!includes/|media/|services/)([\w|\-]+/)?(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(\.md)?/?(#[^/]*)/?\s*("[^"]*")[ \t\f\v\r]*$ = [\1]: /documentation/articles/\5\7 \8
 
 # [link text](/documentation/articles/xxx-xxx-xxx.md#xxx-xxx)
 # [link text](/documentation/articles/xxx-xxx-xxx.md)
@@ -989,8 +987,8 @@ https://acom-sandbox.azurewebsites.net/en-us/documentation/articles/web-sites-ja
 
 # [link text]: /documentation/articles/xxx-xxx-xxx.md#xxx-xxx
 # [link text]: /documentation/articles/xxx-xxx-xxx.md
-\[([^\[|^\]]*)\]:\s*/documentation/articles/([\w|\-]+)\.md/?\s*\n = [\1]: /documentation/articles/\2\n
-\[([^\[|^\]]*)\]:\s*/documentation/articles/([\w|\-]+)\.md/?(#[^/]*)/\s*\n? = [\1]: /documentation/articles/\2\3\n
+\[([^\[|^\]]*)\]:\s*/documentation/articles/([\w|\-]+)\.md/?[ \t\f\v\r]*\n = [\1]: /documentation/articles/\2\n
+\[([^\[|^\]]*)\]:\s*/documentation/articles/([\w|\-]+)\.md/?(#[^/]*)/[ \t\f\v\r]*\n? = [\1]: /documentation/articles/\2\3\n
 
 # href="hdinsight-use-mapreduce.md"
 # href="../hdinsight-hadoop-linux-use-ssh-unix/"
@@ -1012,21 +1010,15 @@ href{equal}"\.\./(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(.md)?/?#([
 # [image text]: media/xxx-xxx-xxx/xxx-xxx.xxx = ![image text]: ./media/xxx-xxx-xxx/xxx-xxx.xxx
 # [apps_service_principals_directory]:media/active-directory-how-applications-are-added/HowAppsAreAddedToAAD.jpg
 # [app_settings]:media/active-directory-how-applications-are-added/IntegratedAppSettings.jpg
-\[([^\[|^\]]*)\]:\s*media/([\w|\-]+)/([^\(|^\)]*)\s*\n = [\1]: ./media/\2/\3\n
-\[([^\[|^\]]*)\]:\s*media/([\w|\-]+)/([^\(|^\)]*)\s* = [\1]: ./media/\2/\3
+\[([^\[|^\]]*)\]:\s*media/([\w|\-]+)/([^\(|^\)]*)[ \t\f\v\r]*\n = [\1]: ./media/\2/\3\n
+\[([^\[|^\]]*)\]:\s*media/([\w|\-]+)/([^\(|^\)]*)[ \t\f\v\r]*$ = [\1]: ./media/\2/\3
 
 # (..\virtual-network\media\virtual-networks-arm-asm-s2s\figure01.png) = (.\media\virtual-networks-arm-asm-s2s\figure01.png)
 \(\.\.[\\|/][\w|\-]+[\\|/]media[\\|/]([\w|\-]+)[\\|/]([^\(|^\)]+\.\w+)\) = (./media/\1/\2)
 
 #[image text]: ..\virtual-network\media\xxx-xxx-xxx\xxx-xxx.xxx = ![image text]: ./media/xxx-xxx-xxx/xxx-xxx.xxx
-\[([^\[|^\]]*)\]:\s*\.\.[\\|/][\w|\-]+[\\|/]media[\\|/]([\w|\-]+)[\\|/]([^\s]+\.\w+)\s*\n = [\1]: ./media/\2/\3\n
-\[([^\[|^\]]*)\]:\s*\.\.[\\|/][\w|\-]+[\\|/]media[\\|/]([\w|\-]+)[\\|/]([^\s]+\.\w+)\s* = [\1]: ./media/\2/\3
-
-
-# Landingpage
-(\.\.)?/documentation/services/app-service/(web/)? = /documentation/services/web-sites/
-
-
+\[([^\[|^\]]*)\]:\s*\.\.[\\|/][\w|\-]+[\\|/]media[\\|/]([\w|\-]+)[\\|/]([^\s]+\.\w+)[ \t\f\v\r]*\n = [\1]: ./media/\2/\3\n
+\[([^\[|^\]]*)\]:\s*\.\.[\\|/][\w|\-]+[\\|/]media[\\|/]([\w|\-]+)[\\|/]([^\s]+\.\w+)[ \t\f\v\r]*$ = [\1]: ./media/\2/\3
 
 # /home/feature/
 \[(.+)\]: /pricing/details/ = [\1]: /pricing/overview/
@@ -1037,19 +1029,7 @@ href{equal}"\.\./(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(.md)?/?#([
 ("|\()(https?://azure.microsoft.com)?/services/ = \1/home/features/
 (https?://azure.microsoft.com)?/pricing/purchase-options/ = /pricing/overview/
 /pricing/overview/([\w|\-]+)/ = /home/features/\1/#price
-/services/app-service/(web/)? = /home/features/web-site/
-/home/features/web-sites/ = /home/features/web-site/
-/home/features/hbase/ = /services/hbase/
-/home/features/yarn/ = /services/yarn/
 
-
-# Portal
-#(P|p)review (P|p)ortal = Management Portal
-(C|c)lassic (P|p)ortal = Management Portal
-(C|c)lassic (P|p)ortal = Management Portal
-(O|o)ld (P|p)ortal = Management Portal
-(A|a)zure (P|p)ortal = Azure Management Portal
-#preview\-portal = management-portal
 
 # Terminology
 (Azure )?App Services?( (w|W)web)? (a|A)pp = Azure Web App
@@ -1058,6 +1038,27 @@ href{equal}"\.\./(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(.md)?/?#([
 ((w|W)eb (a|A)pps? in Azure) Web Apps? = \1
 \*\*Azure Web App\*\* = **App Services**
 \*\*Azure Websitess\*\* = **App Services**
+
+
+
+
+[SEMIREGEX]
+
+# Landingpage
+(\.\.)?/documentation/services/app-service/(web/)? = /documentation/services/web-sites/
+
+/services/app-service/(web/)? = /home/features/web-site/
+/home/features/web-sites/ = /home/features/web-site/
+/home/features/hbase/ = /services/hbase/
+/home/features/yarn/ = /services/yarn/
+
+# Portal
+#(P|p)review (P|p)ortal = Management Portal
+(C|c)lassic (P|p)ortal = Management Portal
+(C|c)lassic (P|p)ortal = Management Portal
+(O|o)ld (P|p)ortal = Management Portal
+(A|a)zure (P|p)ortal = Azure Management Portal
+#preview\-portal = management-portal
 
 # Others
 https?://msdn.microsoft.com/(zh-cn/)?library/(windows)?azure/dd179354.aspx = /documentation/articles/storage-manage-access-to-resources
@@ -1091,6 +1092,21 @@ hdinsight-hadoop-giraph-install(-v1)? = hdinsight-hadoop-giraph-install-v1
 /home/features/app-service/(web/)? = /home/features/web-site/
 /documentation/articles/xplat-cli(-install)? = /documentation/articles/xplat-cli-install
 
+https?://azure.microsoft.com/(zh-cn/|en-us/)?support/faq/ = /support/faq/
+https?://azure.microsoft.com/services/active-directory/ = 	/home/features/identity/
+https?://azure.microsoft.com/(zh-cn/|en-us/)?services/app-service/web/ = /home/features/web-site/
+https?://azure.microsoft.com/(zh-cn/|en-us/)?downloads/ = 	/downloads/
+https?://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/ = /pricing/1rmb-trial/
+https?://azure.microsoft.com/documentation/services/ = /documentation/services/
+https?://azure.microsoft.com/develop/ = /develop/
+https?://azure.microsoft.com/documentation/videos/install-and-use-azure-powershell/ = /documentation/articles/powershell-install-configure
+https?://azure.microsoft.com/overview/preview-portal/ = https://manage.windowsazure.cn
+https?://azure.microsoft.com/services/active-directory/ = 	/home/features/identity/
+https?://azure.microsoft.com/(zh-cn/|en-us/)?downloads/ = 	/downloads/
+https?://azure.microsoft.com/documentation/articles/ = /documentation/articles/
+https?://azure.microsoft.com/pricing/1rmb-trial/ = /pricing/1rmb-trial/
+https?://azure.microsoft.com/home/features/identity/all/ = /home/features/identity/
+https?://azure.microsoft.com/home/features = /home/features
 
 [CORRECTION]
 
@@ -1105,29 +1121,6 @@ sltoken.chinacloudsites.cn = sltoken.azurewebsites.net
 dashplayer.chinacloudsites.cn = dashplayer.azurewebsites.net
 Azure Storage SDK = Microsoft Azure Storage SDK
 Azure Tools for Microsoft Visual Studio = Microsoft Azure Tools for Microsoft Visual Studio
-https://azure.microsoft.com/zh-cn/support/faq/ = /support/faq/
-https://azure.microsoft.com/support/faq/ = /support/faq/
-http://azure.microsoft.com/zh-cn/support/faq/ = /support/faq/
-http://azure.microsoft.com/support/faq/ = /support/faq/
-https://azure.microsoft.com/services/active-directory/ = 	/home/features/identity/
-https://azure.microsoft.com/zh-cn/services/app-service/web/ = /home/features/web-site/
-https://azure.microsoft.com/(en-us/)?downloads/ = 	/downloads/
-https://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/ = /pricing/1rmb-trial/
-https://azure.microsoft.com/documentation/services/ = /documentation/services/
-https://azure.microsoft.com/develop/ = /develop/
-https://azure.microsoft.com/documentation/videos/install-and-use-azure-powershell/ = /documentation/articles/powershell-install-configure
-https://azure.microsoft.com/overview/preview-portal/ = https://manage.windowsazure.cn
-http://azure.microsoft.com/services/active-directory/ = 	/home/features/identity/
-http://azure.microsoft.com/zh-cn/services/app-service/web/ = /home/features/web-site/
-http://azure.microsoft.com/(en-us/)?downloads/ = 	/downloads/
-http://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/ = /pricing/1rmb-trial/
-http://azure.microsoft.com/documentation/services/ = /documentation/services/
-http://azure.microsoft.com/develop/ = /develop/
-http://azure.microsoft.com/documentation/videos/install-and-use-azure-powershell/ = /documentation/articles/powershell-install-configure
-http://azure.microsoft.com/overview/preview-portal/ = https://manage.windowsazure.cn
-https://azure.microsoft.com/documentation/articles/ = /documentation/articles/
-http://azure.microsoft.com/documentation/articles/ = /documentation/articles/
-http://azure.microsoft.com/pricing/1rmb-trial/ = /pricing/1rmb-trial/
 /zh-cn/library/windowsazure/ = /zh-cn/library/azure/
 /home/features/active-directory/ = /home/features/identity/
 /documentation/articles/app-service-value-prop-what-is = /documentation/services/web-sites
@@ -1164,12 +1157,8 @@ http://azure.microsoft.com/pricing/1rmb-trial/ = /pricing/1rmb-trial/
 [Windows, Linux]: /documentation/articles/linux = [Windows, Linux]: linux
 /documentation/articles/media-services-channels-overview = /documentation/articles/media-services-manage-channels-overview
 [AZURE.NOTE](/documentation/articles/optional) = [AZURE.NOTE]  optional
-http://azure.microsoft.com/downloads/ = /downloads/
 Azure Active Directory Connect = Microsoft Azure Active Directory Connect
 ://technet.microsoft.com/library/ = ://technet.microsoft.com/zh-cn/library/
-http://azure.microsoft.com/home/features/identity/all/ = /home/features/identity/
-https://azure.microsoft.com/home/features = /home/features
-https://azure.microsoft.com/pricing/1rmb-trial/ = /pricing/1rmb-trial/
 /develop/mobile/how-to-guides/register-for-twitter-authentication = /documentation/articles/mobile-services-how-to-register-twitter-authentication
 /documentation/services/sql-database/ = /documentation/services/sql-databases/
 dl.windowsazure.cn/javadoc/ = azure.github.io/azure-sdk-for-java/
@@ -1276,5 +1265,7 @@ hdinsight-hadoop-customize-cluster-v1-bootstrap = hdinsight-hadoop-customize-clu
 xplat-cli-install-azure-resource-manager = xplat-cli-azure-resource-manager
 xplat-cli-install-azure-manage-vm-asm-arm = xplat-cli-azure-manage-vm-asm-arm
 //dsahandler.blob.core.chinacloudapi.cn = //dsahandler.blob.core.windows.net
-/documentation/articles/app-service-value-prop-what-is = /documentation/services/web-sites
-/documentation/articles/app-service-web-overview = /home/features/web-site
+//en.wikipedia.org/wiki/RBAC = //zh.wikipedia.org/wiki/RBAC
+/home/features/reserved-ip-addresses/#price = /pricing/details/reserved-ip-addresses
+/documentation/services/app-service = /documentation/services/web-sites
+web app to Azure Web App = web app to Azure

@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Azure virtual machine deployment with Chef | Windows Azure"
-   description="Learn how to use Chef to do automated virtual machine deployment and configuration on Windows Azure"
+   pageTitle="Azure virtual machine deployment with Chef | Azure"
+   description="Learn how to use Chef to do automated virtual machine deployment and configuration on Azure"
    services="virtual-machines"
    documentationCenter=""
    authors="diegoviso"

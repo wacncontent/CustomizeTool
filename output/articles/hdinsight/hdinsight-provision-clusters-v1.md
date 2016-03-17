@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Custom-provision Hadoop clusters in HDInsight | Windows Azure" 
+   pageTitle="Custom-provision Hadoop clusters in HDInsight | Azure" 
    description="Learn how to custom-provision clusters for Azure HDInsight by using the Azure Management Portal, Azure PowerShell, a command line, or a .NET SDK." 
    services="hdinsight" 
    documentationCenter="" 
@@ -43,9 +43,16 @@ Before you begin the instructions in this article, you must have the following:
  
 - **Operating system**
 
+
 	You can provision HDInsight clusters on one of the following two operating systems:
+
+
+	You can provision HDInsight clusters on one of the following operating system: 
+
 	- **HDInsight on Windows (Windows Server 2012 R2 Datacenter)**:
+
 	- **HDInsight on Linux (Ubuntu 12.04 LTS for Linux) (Preview)**: HDInsight provides the option of configuring Linux clusters on Azure. Configure a Linux cluster if you are familiar with Linux or Unix, migrating from an existing Linux-based Hadoop solution, or want easy integration with Hadoop ecosystem components built for Linux. For more information, see [Get started with Hadoop on Linux in HDInsight](/documentation/articles/hdinsight-hadoop-linux-get-started). 
+
 
 
 - **HDInsight version**
@@ -59,11 +66,17 @@ Before you begin the instructions in this article, you must have the following:
 	- Hadoop clusters: for query and analysis workloads
 	- HBase clusters:  for NoSQL workloads
 	- Storm clusters: for real time event processing workloads
+
 	- Spark clusters (preview): for in-memory processing, interactive queries, stream, and machines learning workloads.
 
 	![HDInsight clusters](./media/hdinsight-provision-clusters-v1/hdinsight.clusters.png)
+
+
+
+	![HDInsight clusters](./media/hdinsight-provision-clusters-v1/hdinsight.clusters.png)
+
  
-	> [AZURE.NOTE] *Azure HDInsight cluster* is also called *Hadoop clusters in HDInsight*, or *HDInsight cluster*. Sometimes, it is used interchangeably with *Hadoop cluster*. They all refer to the Hadoop clusters hosted in the Windows Azure environment. 	   
+	> [AZURE.NOTE] *Azure HDInsight cluster* is also called *Hadoop clusters in HDInsight*, or *HDInsight cluster*. Sometimes, it is used interchangeably with *Hadoop cluster*. They all refer to the Hadoop clusters hosted in the Azure environment. 	   
 
 	Within a given cluster type, there are different roles for the various nodes, which allow a customer to size those nodes in a given role appropriate to the details of their workload. For example, a Hadoop cluster can have its worker nodes provisioned with a large amount of memory if the type of analytics being performed are memory intensive.
 
@@ -89,6 +102,7 @@ Before you begin the instructions in this article, you must have the following:
 	- Zookeeper nodes (3 nodes)
 	
 
+
 	![HDInsight Hadoop cluster roles](./media/hdinsight-provision-clusters-v1/HDInsight.Spark.roles.png)
 
 	Spark clusters for HDInsight are deployed with three roles:
@@ -96,7 +110,8 @@ Before you begin the instructions in this article, you must have the following:
 	- Worker node (at least 1 node)
 	- Zookeeper nodes (3 nodes) (Free for A1 Zookeepers)
 
-	Customers are billed for the usage of those nodes for the duration of the clusterâs life. Billing starts once a cluster is created and stops when the cluster is deleted (clusters canât be de-allocated or put on hold). The cluster size affects the cluster price. For learning purposes, it is recommended to use 1 data node. For more information about HDInsight pricing, see [HDInsight pricing](/home/features/hdinsight/#price).
+
+	Customers are billed for the usage of those nodes for the duration of the cluster's life. Billing starts once a cluster is created and stops when the cluster is deleted (clusters can't be de-allocated or put on hold). The cluster size affects the cluster price. For learning purposes, it is recommended to use 1 data node. For more information about HDInsight pricing, see [HDInsight pricing](/home/features/hdinsight/#price).
 
 
 	>[AZURE.NOTE] The cluster size limit varies among Azure subscriptions. Contact billing support to increase the limit.
@@ -122,7 +137,9 @@ Before you begin the instructions in this article, you must have the following:
 
 	- HTTP user. The default user name is admin using the basic configuration on the Azure Management Portal.
 	- RDP user (Windows clusters): It is used to connect to the cluster using RDP. When you create the account, you must set an expiration date that is within 90 days from today. 
+
 	- SSH User (Linux clusters): Is used to connect to the cluster using SSH. You can create additional SSH user accounts after the cluster is created by following the steps in [Use SSH with Linux-based Hadoop on HDInsight from Linux, Unix, or OS X](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix).
+
   
  
 
@@ -227,9 +244,25 @@ You can install additional components or customize cluster configuration by usin
 
 	![diagram of point-to-site configuration](./media/hdinsight-provision-clusters-v1/hdinsight-vnet-point-to-site.png)
 
+
 For information on using HDInsight with a Virtual Network, including specific configuration requirements for the Virtual Network, see [Extend HDInsight capbilities by using an Azure Virtual Network](/documentation/articles/hdinsight-extend-hadoop-virtual-network).
 
 ## Provision tools
+
+
+For more information on Virtual Network features, benefits, and capabilities, see the [Azure Virtual Network overview](/documentation/articles/virtual-networks-overview).
+
+> [AZURE.NOTE] You must create the Azure virtual network before provisioning an HDInsight cluster. For more information, see [Virtual Network configuration tasks](/home/features/virtual-machines/).
+>
+> Azure HDInsight only supports location-based Virtual Networks, and does not currently work with Affinity Group-based Virtual Networks. Use Azure PowerShell cmdlet Get-AzureVNetConfig to check whether an existing Azure virtual network is location-based. If your virtual network is not location-based, you have the following options:
+>
+> - Export the existing Virtual Network configuration and then create a new Virtual Network. All new Virtual Networks are location based  by default.
+> - Migrate to a location-based Virtual Network.  See [Migrate existing services to regional scope](http://azure.microsoft.com/blog/2014/11/26/migrating-existing-services-to-regional-scope/).
+>
+> It is highly recommended to designate a single subnet for one cluster.
+
+##<a name="cluster-creation-methods"></a> Provision tools
+
 
 - The Azure Management Portal
 - Azure PowerShell
@@ -570,7 +603,7 @@ HDInsight uses an Azure Blob storage container as the default file system. An Az
 
 		azure storage account create [options] <StorageAccountName>
 
-	When prompted for a location, select a location where an HDInsight cluster can be provisioned. The storage must be in the same location as the HDInsight cluster. Currently, only the **China East**, **China North**, **China North**, **West Europe**, **China East**, **China North**, **China North**, and **China East** regions can host HDInsight clusters.  
+	When prompted for a location, select a location where an HDInsight cluster can be provisioned. The storage must be in the same location as the HDInsight cluster. Currently, only the **China East**, **China North**, ** East**, **China North**, **China North**, **West Europe**, **China East**, **China North**, **China  N North**, and **China East** regions can host HDInsight clusters.
 
 For information on creating an Azure Storage account by using the Azure Management Portal, see [Create, manage, or delete a storage account](/documentation/articles/storage-create-storage-account).
 

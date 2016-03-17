@@ -1,7 +1,5 @@
-<!-- not suitable for Mooncake -->
-
 <properties
-   pageTitle="Public and private IP addressing in Azure Resource Manager | Windows Azure"
+   pageTitle="Public and private IP addressing in Azure Resource Manager | Azure"
    description="Learn about public and private IP addressing in Azure Resource Manager"
    services="virtual-network"
    documentationCenter="na"

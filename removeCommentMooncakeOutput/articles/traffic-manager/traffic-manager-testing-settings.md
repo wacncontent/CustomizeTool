@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Testing Traffic Manager Settings | Windows Azure"
+   pageTitle="Testing Traffic Manager Settings | Azure"
    description="This article will help you test Traffic Manager settings"
    services="traffic-manager"
    documentationCenter=""
@@ -57,7 +57,7 @@ The best way to test your Traffic Manager settings is to set up a number of clie
 
 To effectively test a performance traffic routing method, you must have clients located in different parts of the world. You could create clients in Azure that will attempt to call your services via your company domain name. Alternatively, if your corporation is global, you can remotely log into clients in other parts of the world and test from those clients.
 
-There are free web-based DNS lookup and dig services available. Some of these give you the ability to check DNS name resolution from various locations. Do a search on âDNS lookupâ for examples. Another option is to use a third-party solution like Gomez or Keynote to confirm that your profiles are distributing traffic as expected.
+There are free web-based DNS lookup and dig services available. Some of these give you the ability to check DNS name resolution from various locations. Do a search on "DNS lookup" for examples. Another option is to use a third-party solution like Gomez or Keynote to confirm that your profiles are distributing traffic as expected.
 
 ## Next steps
 

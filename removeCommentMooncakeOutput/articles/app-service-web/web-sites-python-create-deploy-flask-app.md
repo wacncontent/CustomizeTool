@@ -196,7 +196,7 @@ To trigger a deployment, click on **Sync** or **Push**.  Sync does both a push a
 
 The first deployment will take some time, as it will create a virtual environment, install packages, etc.
 
-Visual Studio doesn't show the progress of the deployment.
+Visual Studio doesn't show the progress of the deployment.  
 
 Browse to the Azure URL to view your changes.
 

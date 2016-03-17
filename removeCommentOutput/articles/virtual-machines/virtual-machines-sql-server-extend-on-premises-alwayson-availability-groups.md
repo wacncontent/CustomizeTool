@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Extend on-premises AlwaysOn Availability Groups to Azure | Windows Azure"
+	pageTitle="Extend on-premises AlwaysOn Availability Groups to Azure | Azure"
 	description="This tutorial uses resources created with the classic deployment model, and describes how to use the Add Replica wizard in SQL Server Management Studio (SSMS) to add an AlwaysOn Availability Group replica in Azure."
 	services="virtual-machines"
 	documentationCenter="na"
@@ -17,7 +17,7 @@
 
 AlwaysOn Availability Groups provide high availability for groups of database by adding secondary replicas. These replicas allow failing over databases in case of a failure. In addition they can be used to offload read workloads or backup tasks.
 
-You can extend on-premises Availability Groups to Windows Azure by provisioning one or more Azure VMs with SQL Server and then adding them as replicas to your on-premises Availability Groups.
+You can extend on-premises Availability Groups to Azure by provisioning one or more Azure VMs with SQL Server and then adding them as replicas to your on-premises Availability Groups.
 
 This tutorial assumes you have the following:
 

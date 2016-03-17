@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
 	pageTitle="Provision and deploy microservices predictably in Azure"
 	description="Learn how to deploy an application composed of microservices in Azure as a single unit and in a predictable manner using JSON resource group templates and PowerShell scripting."

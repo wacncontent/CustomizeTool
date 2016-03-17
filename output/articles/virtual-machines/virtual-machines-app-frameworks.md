@@ -1,5 +1,7 @@
+<!-- not suitable for Mooncake -->
+
 <properties
-   pageTitle="Deploy popular application frameworks using templates | Windows Azure"
+   pageTitle="Deploy popular application frameworks using templates | Azure"
    description="Create popular application frameworks by using Azure Resource Manager templates to install Active Directory, Docker, and many more."
    services="virtual-machines"
    documentationCenter="virtual-machines"

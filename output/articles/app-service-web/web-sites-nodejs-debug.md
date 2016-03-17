@@ -108,16 +108,18 @@ For information on specifying a Node.js version for your application, see [Speci
 
 For more information, see also the [Node.js Developer Center](/develop/nodejs/).
 
+
 ## What's changed
 * For a guide to the change from Websites to Azure see: [Azure and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
 
 >[AZURE.NOTE] If you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.
 
+
 [IISNode]: https://github.com/tjanczuk/iisnode
 [IISNode Readme]: https://github.com/tjanczuk/iisnode#readme
-[How to Use The Azure Command-Line Interface]: ../xplat-cli-install.md
-[Using Node.js Modules with Azure Applications]: ../nodejs-use-node-modules-azure-apps.md
-[Specifying a Node.js version in an Azure application]: ../nodejs-specify-node-version-azure-apps.md
+[How to Use The Azure Command-Line Interface]: /documentation/articles/xplat-cli-install
+[Using Node.js Modules with Azure Applications]: /documentation/articles/nodejs-use-node-modules-azure-apps
+[Specifying a Node.js version in an Azure application]: /documentation/articles/nodejs-specify-node-version-azure-apps
 
 [restart-button]: ./media/web-sites-nodejs-debug/restartbutton.png
  

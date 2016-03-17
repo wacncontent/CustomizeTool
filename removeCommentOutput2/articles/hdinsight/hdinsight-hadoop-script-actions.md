@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Script Action development with HDInsight | Windows Azure"
+	pageTitle="Script Action development with HDInsight | Azure"
 	description="Learn how to customize Hadoop clusters with Script Action."
 	services="hdinsight"
 	documentationCenter=""
@@ -15,14 +15,14 @@
 
 # Develop Script Action scripts for HDInsight
 
-Learn how to write Script Action scripts for HDInsight. For information on using Script Action scripts, see [Customize HDInsight clusters using Script Action](/documentation/articles/hdinsight-hadoop-customize-cluster-v1).
+Learn how to write Script Action scripts for HDInsight. For information on using Script Action scripts, see [Customize HDInsight clusters using Script Action](/documentation/articles/hdinsight-hadoop-customize-cluster-v1). For the same article writte
 
 Script Action can be used to install additional software running on a Hadoop cluster or to change the configuration of applications installed on a cluster. Script actions are scripts that run on the cluster nodes when HDInsight clusters are deployed, and they are executed once nodes in the cluster complete HDInsight configuration. A script action is executed under system admin account privileges and provides full access rights to the cluster nodes. Each cluster can be provided with a list of script actions to be executed in the order in which they are specified. 
 
 > [AZURE.NOTE] If you experience the following error message: 
-> 
->     System.Management.Automation.CommandNotFoundException; ExceptionMessage : The term 'Save-HDIFile' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
-> It is because you didn't include the helper methods.  See [Helper methods for custom scripts](/documentation/articles/hdinsight-hadoop-script-actions#helper-methods-for-custom-scripts).
+
+> <p>`System.Management.Automation.CommandNotFoundException; ExceptionMessage : The term 'Save-HDIFile' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.`
+> <p>It is because you didn't include the helper methods.  See [Helper methods for custom scripts](/documentation/articles/hdinsight-hadoop-script-actions#helper-methods-for-custom-scripts).
 
 ## Sample scripts
 
@@ -90,6 +90,7 @@ Name | Script
 Script Action can be deployed from the Azure Management Portal, Azure PowerShell or by using the HDInsight .NET SDK.  For more information, see [Customize HDInsight clusters using Script Action][hdinsight-cluster-customize].
 
 > [AZURE.NOTE] The sample scripts work only with HDInsight cluster version 3.1 or above. For more information on HDInsight cluster versions, see [HDInsight cluster versions](/documentation/articles/hdinsight-component-versioning-v1).
+
 
 
 
@@ -168,7 +169,7 @@ When you develop a custom script for an HDInsight cluster, there are several bes
 
 	HDInsight has an active-passive architecture for high availability, in which one head node is in active mode (where the HDInsight services are running) and the other head node is in standby mode (in which HDInsight services are not running). The nodes switch active and passive modes if HDInsight services are interrupted. If a script action is used to install services on both head nodes for high availability, note that the HDInsight failover mechanism will not be able to automatically fail over these user-installed services. So user-installed services on HDInsight head nodes that are expected to be highly available must either have their own failover mechanism if in active-passive mode or be in active-active mode.
 
-	An HDInsight Script Action command runs on both head nodes when the head-node role is specified as a value in the *ClusterRoleCollection* parameter. So when you design a custom script, make sure that your script is aware of this setup. You should not run into problems where the same services are installed and started on both of the head nodes and they end up competing with each other. Also, be aware that data will be lost during re-imaging, so software installed via Script Action has to be resilient to such events. Applications should be designed to work with highly available data that is distributed across many nodes. Note that as many as 1/5 of the nodes in a cluster can be re-imaged at the same time.
+	An HDInsight Script Action command runs on both head nodes when the head-node role is specified as a value in the *ClusterRoleCollection* parameter (documented below in the se. . So when you design a custom script, make sure that your script is aware of this setup. You should not run into problems where the same services are installed and started on both of the head nodes and they end up competing with each other. Also, be aware that data will be lost during re-imaging, so software installed via Script Action has to be resilient to such events. Applications should be designed to work with highly available data that is distributed across many nodes. Note that as many as 1/5 of the nodes in a cluster can be re-imaged at the same time.
 
 
 - Configure the custom components to use Azure Blob storage
@@ -195,6 +196,7 @@ Scripts used to customize a cluster needs to either be in the default storage ac
 	Save-HDIFile -SrcUri 'https://somestorageaccount.blob.core.chinacloudapi.cn/somecontainer/some-file.jar' -DestFile 'C:\apps\dist\hadoop-2.4.0.2.1.9.0-2196\share\hadoop\mapreduce\some-file.jar'
 
 In this example, you must ensure that the container 'somecontainer' in storage account 'somestorageaccount' is publicly accessible. Otherwise, the script will throw a 'Not Found' exception and fail.
+
 
 ### Pass parameters to the Add-AzureHDInsightScriptAction cmdlet
 
@@ -262,10 +264,10 @@ We need this policy to be unrestricted as scripts are not signed.
 * **Solr**. https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1
 * **Giraph**. https://hdiconfigactions.blob.core.windows.net/giraphconfigactionv01/giraph-installer-v01.ps1
 
-**Run the script action** - Open a new Azure PowerShell window in admin mode and run the R installation script from the local location where they were saved.
+R**Run the script action** - Open a new Azure PowerShell window in admin mode and run the Spark or R installation script from the local location where they were saved.
 
 **Usage examples**
-When you're using the R clusters, data files needed may not be present in the HDInsight Emulator. So you may need to upload relevant .txt files that contain data to a path in HDFS and then use that path to access the data. For example:
+RWhen you're using the Spark and R clusters, data files needed may not be present in the HDInsight Emulator. So you may need to upload relevant .txt files that contain data to a path in HDFS and then use that path to access the data. For example:
 
 	val file = sc.textFile("/example/data/gutenberg/davinci.txt")
 
@@ -282,7 +284,7 @@ An easy way to check the logs is to use HDInsight Tools for Visual Studio. For i
 
 1. Open Visual Studio.
 2. Click **View**, and then click **Server Explorer**.
-3. Right-click "Azure", click Connect to **Windows Azure Subscriptions**, and then enter your credentials.
+3. Right-click "Azure", click Connect to **Azure Subscriptions**, and then enter your credentials.
 4. Expand **Storage**, expand the Azure storage account used as the default file system, expand **Tables**, and then double-click the table name.
 
 
@@ -340,6 +342,7 @@ In the event that an execution failure occurs, the output describing it will als
 
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
 [hdinsight-cluster-customize]: /documentation/articles/hdinsight-hadoop-customize-cluster-v1
+
 [hdinsight-r-scripts]: /documentation/articles/hdinsight-hadoop-r-scripts
 [powershell-install-configure]: /documentation/articles/powershell-install-configure
 

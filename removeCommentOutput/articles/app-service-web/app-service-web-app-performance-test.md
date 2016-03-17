@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Test your Azure web app's performance | Windows Azure"
+   pageTitle="Test your Azure web app's performance | Azure"
    description="Run Azure web app performance tests to check how your app handles user load. Measure response time and find failures that might indicate problems."
    services="app-service\web"
    documentationCenter=""
@@ -122,7 +122,7 @@ A: You can check this amount in the Azure Management Portal.
 #### Q: What else can I do with a Visual Studio Team Services account?
 
 A: To find your new account, go to ```https://{accountname}.visualstudio.com```. 
-Share your code, build, test, track work, and ship software â all in the cloud 
+Share your code, build, test, track work, and ship software - all in the cloud 
 using any tool or language. Learn more about how [Visual Studio Team Services][WhatIsTeamServices] 
 features and services help your team collaborate more easily and deploy continuously.
 

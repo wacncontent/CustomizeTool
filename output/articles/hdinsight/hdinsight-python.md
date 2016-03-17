@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Use Python with Hive and Pig in HDInsight | Windows Azure"
+	pageTitle="Use Python with Hive and Pig in HDInsight | Azure"
 	description="Learn how to use Python User Defined Functions (UDF) from Hive and Pig in HDInsight, the Hadoop technology stack on Azure."
 	services="hdinsight"
 	documentationCenter=""
@@ -21,12 +21,19 @@ Hive and Pig are great for working with data in HDInsight, but sometimes you nee
 
 ##Requirements
 
+
 * An HDInsight cluster (Windows or Linux-based)
+
+
+* An HDInsight cluster (Windows-based)
+
 
 * A text editor
+
 
     > [AZURE.IMPORTANT] If you are using a Linux-based HDInsight server, but creating the Python files on a Windows client, you must use an editor that uses LF as a line ending. If you are not sure whether your editor uses LF or CRLF, see the [Troubleshooting](#troubleshooting) section for steps on removing the CR character using utilities on the HDInsight cluster.
     
+
 ##<a name="python"></a>Python on HDInsight
 
 Python2.7 is installed by default on HDInsight 3.0 and later clusters. Hive can be used with this version of Python for stream processing (data is passed between Hive and Python using STDOUT/STDIN).
@@ -36,6 +43,7 @@ HDInsight also includes Jython, which is a Python implementation written in Java
 ###<a name="hivepython"></a>Hive and Python
 
 Python can be used as a UDF from Hive through the HiveQL **TRANSFORM** statement. For example, the following HiveQL invokes a Python script stored in the **streaming.py** file.
+
 
 **Linux-based HDInsight**
 
@@ -46,6 +54,7 @@ Python can be used as a UDF from Hive through the HiveQL **TRANSFORM** statement
 	  (clientid string, phoneLable string, phoneHash string)
 	FROM hivesampletable
 	ORDER BY clientid LIMIT 50;
+
 
 **Windows-based HDInsight**
 
@@ -156,6 +165,7 @@ When the data is returned to Pig, it will have a consistent schema as defined in
 
 ##<a name="running"></a>Running the examples
 
+
 If you are using a Linux-based HDInsight cluster, use the **SSH** steps below. If you are using a Windows-based HDInsight cluster and a Windows client, use the **PowerShell** steps.
 
 ###SSH
@@ -178,6 +188,10 @@ For more information on using SSH, see <a href="/documentation/articles/hdinsigh
 		hadoop fs -copyFromLocal jython.py /jython.py
 
 After uploading the files, use the following steps to run the Hive and Pig jobs.
+
+
+If you are using a Windows-based HDInsight cluster and a Windows client, use the **PowerShell** steps.
+
 
 ####Hive
 
@@ -232,6 +246,7 @@ These steps use Azure PowerShell. If this is not already installed and configure
 		$pathToStreamingFile = "C:\path\to\streaming.py"
 		$pathToJythonFile = "C:\path\to\jython.py"
 
+
 		$clusterInfo = Get-AzureRmHDInsightCluster -ClusterName $clusterName
         $resourceGroup = $clusterInfo.ResourceGroup
         $storageAccountName=$clusterInfo.DefaultStorageAccount.split('.')[0]
@@ -257,6 +272,17 @@ These steps use Azure PowerShell. If this is not already installed and configure
             -Blob "jython.py" `
             -Container $container `
             -Context $context
+
+
+		$hdiStore = get-azurehdinsightcluster -name $clusterName
+		$storageAccountName = $hdiStore.DefaultStorageAccount.StorageAccountName.Split(".",2)[0]
+		$storageAccountKey = $hdiStore.defaultstorageaccount.storageaccountkey
+		$defaultContainer = $hdiStore.DefaultStorageAccount.StorageContainerName
+
+		$destContext = new-azurestoragecontext -storageaccountname $storageAccountName -storageaccountkey $storageAccountKey
+		set-azurestorageblobcontent -file $pathToStreamingFile -Container $defaultContainer -Blob "streaming.py" -context $destContext
+		set-azurestorageblobcontent -file $pathToJythonFile -Container $defaultContainer -Blob "jython.py" -context $destContext
+
 
 	This script retrieves information for your HDInsight cluster, then extracts the account and key for the default storage account, and uploads the files to the root of the container.
 
@@ -265,11 +291,14 @@ These steps use Azure PowerShell. If this is not already installed and configure
 After uploading the files, use the following PowerShell scripts to start the jobs. When the job completes, the output should be written to the PowerShell console.
 
 ####Hive
+
 
 The following script will run the __streaming.py__ script. Before running, it will prompt you for the HTTPs/Admin account information for your HDInsight cluster.
+
 
     # Replace 'YourHDIClusterName' with the name of your cluster
 	$clusterName = YourHDIClusterName
+
     $creds=Get-Credential
     #Get the cluster info so we can get the resource group, storage, etc.
     $clusterInfo = Get-AzureRmHDInsightCluster -ClusterName $clusterName
@@ -285,6 +314,7 @@ The following script will run the __streaming.py__ script. Before running, it wi
         -StorageAccountName $storageAccountName `
         -StorageAccountKey $storageAccountKey
             
+
 	$HiveQuery = "add file wasb:///streaming.py;" +
 	             "SELECT TRANSFORM (clientid, devicemake, devicemodel) " +
 	               "USING 'D:\Python27\python.exe streaming.py' AS " +
@@ -292,6 +322,7 @@ The following script will run the __streaming.py__ script. Before running, it wi
 	             "FROM hivesampletable " +
 	             "ORDER BY clientid LIMIT 50;"
 
+
 	$jobDefinition = New-AzureRmHDInsightHiveJobDefinition `
         -Query $HiveQuery
 
@@ -299,12 +330,24 @@ The following script will run the __streaming.py__ script. Before running, it wi
         -ClusterName $clusterName `
         -JobDefinition $jobDefinition `
         -HttpCredential $creds
+
+
+	$jobDefinition = New-AzureHDInsightHiveJobDefinition -Query $HiveQuery -StatusFolder '/hivepython'
+
+	$job = Start-AzureHDInsightJob -Cluster $clusterName -JobDefinition $jobDefinition
+
 	Write-Host "Wait for the Hive job to complete ..." -ForegroundColor Green
+
 	Wait-AzureRmHDInsightJob `
         -JobId $job.JobId `
         -ClusterName $clusterName `
         -HttpCredential $creds
+
+
+	Wait-AzureHDInsightJob -Job $job
+
     # Uncomment the following to see stderr output
+
     # Get-AzureRmHDInsightJobOutput `
         -Clustername $clusterName `
         -JobId $job.JobId `
@@ -313,7 +356,12 @@ The following script will run the __streaming.py__ script. Before running, it wi
         -DefaultStorageAccountKey $storageAccountKey `
         -HttpCredential $creds `
         -DisplayOutputType StandardError
+
+
+    # Get-AzureHDInsightJobOutput -StandardError -JobId $job.JobId -Cluster $clusterName
+
 	Write-Host "Display the standard output ..." -ForegroundColor Green
+
 	Get-AzureRmHDInsightJobOutput `
         -Clustername $clusterName `
         -JobId $job.JobId `
@@ -321,6 +369,10 @@ The following script will run the __streaming.py__ script. Before running, it wi
         -DefaultStorageAccountName $storageAccountName `
         -DefaultStorageAccountKey $storageAccountKey `
         -HttpCredential $creds
+
+
+	Get-AzureHDInsightJobOutput -Cluster $clusterName -JobId $job.JobId -StandardOutput
+
 
 The output for the **Hive** job should appear similar to the following:
 
@@ -332,10 +384,13 @@ The output for the **Hive** job should appear similar to the following:
 
 ####Pig
 
+
 The following will use the __jython.py__ script. Before running, it will prompt you for the HTTPs/Admin information for the HDInsight cluster.
 
+
 	# Replace 'YourHDIClusterName' with the name of your cluster
 	$clusterName = YourHDIClusterName
+
 
     $creds = Get-Credential
     #Get the cluster info so we can get the resource group, storage, etc.
@@ -353,12 +408,14 @@ The following will use the __jython.py__ script. Before running, it will prompt 
         -StorageAccountName $storageAccountName `
         -StorageAccountKey $storageAccountKey
             
+
 	$PigQuery = "Register wasb:///jython.py using jython as myfuncs;" +
 	            "LOGS = LOAD 'wasb:///example/data/sample.log' as (LINE:chararray);" +
 	            "LOG = FILTER LOGS by LINE is not null;" +
 	            "DETAILS = foreach LOG generate myfuncs.create_structure(LINE);" +
 	            "DUMP DETAILS;"
 
+
 	$jobDefinition = New-AzureRmHDInsightPigJobDefinition -Query $PigQuery
 
 	$job = Start-AzureRmHDInsightJob `
@@ -366,12 +423,24 @@ The following will use the __jython.py__ script. Before running, it will prompt 
         -JobDefinition $jobDefinition `
         -HttpCredential $creds
         
+
+
+	$jobDefinition = New-AzureHDInsightPigJobDefinition -Query $PigQuery -StatusFolder '/pigpython'
+
+	$job = Start-AzureHDInsightJob -Cluster $clusterName -JobDefinition $jobDefinition
+
 	Write-Host "Wait for the Pig job to complete ..." -ForegroundColor Green
+
 	Wait-AzureRmHDInsightJob `
         -Job $job.JobId `
         -ClusterName $clusterName `
         -HttpCredential $creds
+
+
+	Wait-AzureHDInsightJob -Job $job
+
     # Uncomment the following to see stderr output
+
     # Get-AzureRmHDInsightJobOutput `
         -Clustername $clusterName `
         -JobId $job.JobId `
@@ -380,7 +449,12 @@ The following will use the __jython.py__ script. Before running, it will prompt 
         -DefaultStorageAccountKey $storageAccountKey `
         -HttpCredential $creds `
         -DisplayOutputType StandardError
+
+
+    # Get-AzureHDInsightJobOutput -StandardError -JobId $job.JobId -Cluster $clusterName
+
 	Write-Host "Display the standard output ..." -ForegroundColor Green
+
 	Get-AzureRmHDInsightJobOutput `
         -Clustername $clusterName `
         -JobId $job.JobId `
@@ -388,6 +462,10 @@ The following will use the __jython.py__ script. Before running, it will prompt 
         -DefaultStorageAccountName $storageAccountName `
         -DefaultStorageAccountKey $storageAccountKey `
         -HttpCredential $creds
+
+
+	Get-AzureHDInsightJobOutput -Cluster $clusterName -JobId $job.JobId -StandardOutput
+
 
 The output for the **Pig** job should appear similar to the following:
 
@@ -417,6 +495,7 @@ If you are using an editor that cannot create LF line endings, or are unsure wha
 
 Both of the example PowerShell scripts used to run the examples contain a commented line that will display error output for the job. If you are not seeing the expected output for the job, uncomment the following line and see if the error information indicates a problem.
 
+
 	# Get-AzureRmHDInsightJobOutput `
             -Clustername $clusterName `
             -JobId $job.JobId `
@@ -425,6 +504,10 @@ Both of the example PowerShell scripts used to run the examples contain a commen
             -DefaultStorageAccountKey $storageAccountKey `
             -HttpCredential $creds `
             -DisplayOutputType StandardError
+
+
+	# Get-AzureHDInsightJobOutput -StandardError -JobId $job.JobId -Cluster $clusterName
+
 
 The error information (STDERR,) and the result of the job (STDOUT,) are also logged to the default blob container for your clusters at the following locations.
 

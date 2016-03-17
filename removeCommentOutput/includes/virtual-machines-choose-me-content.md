@@ -39,7 +39,7 @@ Along with the OS, other configuration choices you have with VMs include:
 
 Other benefits to consider for VMs include:
 
-**Pay-as-you-go** -- Azure charges an hourly price based on the VMâs size and operating system. For partial hours, Azure charges only for the minutes of use. Storage is priced and charged separately. For details, see [Virtual Machines Pricing](/home/features/virtual-machines/#price).
+**Pay-as-you-go** -- Azure charges an hourly price based on the VM's size and operating system. For partial hours, Azure charges only for the minutes of use. Storage is priced and charged separately. For details, see [Virtual Machines Pricing](/home/features/virtual-machines/#price).
 
 **Resiliency** -- Azure monitors the physical hardware that hosts each running VM. If a physical server running a VM fails, Azure notices this, moves the VM to new hardware and restarts the VM. This process is sometimes called service healing. Azure also protects a virtual machine's data, by keeping redundant copies of the VHDs in blob storage. 
 

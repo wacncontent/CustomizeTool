@@ -1,5 +1,5 @@
 <properties
- pageTitle="Virtual machine sizes | Windows Azure"
+ pageTitle="Virtual machine sizes | Azure"
  description="Lists the different sizes for virtual machines and their capacities."
  services="virtual-machines"
  documentationCenter=""

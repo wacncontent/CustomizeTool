@@ -1,5 +1,7 @@
+<!-- not suitable for Mooncake -->
+
 <properties
-	pageTitle="High availability features of Linux-based HDInsight (Hadoop) | Windows Azure"
+	pageTitle="High availability features of Linux-based HDInsight (Hadoop) | Azure"
 	description="Learn how Linux-based HDInsight clusters improve reliability and availability by using an additional head node. You will learn how this impacts Hadoop services such as Ambari and Hive, as well as how to individually connect to each head node using SSH."
 	services="hdinsight"
 	editor="cgronlun"
@@ -25,7 +27,7 @@ Some implementations of Hadoop have a single head node that hosts services and c
 
 HDInsight clusters provide a secondary head node, which allows master services and components to continue to run on on the secondary node in the event of a failure on the primary.
 
-> [AZURE.IMPORTANT] Both head nodes are active and running within the cluster simultaneously. Some services, such as HDFS or YARN, are only 'active' on one head node at any given time (and âstandbyâ on the other head node). Other services such as HiveServer2 or Hive MetaStore are active on both head nodes at the same time.
+> [AZURE.IMPORTANT] Both head nodes are active and running within the cluster simultaneously. Some services, such as HDFS or YARN, are only 'active' on one head node at any given time (and 'standby' on the other head node). Other services such as HiveServer2 or Hive MetaStore are active on both head nodes at the same time.
 
 [ZooKeeper](http://zookeeper.apache.org/ ) nodes (ZKs) are used for leader election of master services on head nodes, and to insure that services, data (worker) nodes and gateways know which head node a master service is active on.
 
@@ -159,5 +161,5 @@ In this document you have learned how Azure HDInsight provides high availability
 - [Provision Linux-based HDInsight clusters](/documentation/articles/hdinsight-provision-clusters-v1)
 
 [preview-portal]: https://manage.windowsazure.cn/
-[azure-powershell]: ../powershell-install-configure.md
-[azure-cli]: ../xplat-cli-install.md
+[azure-powershell]: /documentation/articles/powershell-install-configure
+[azure-cli]: /documentation/articles/xplat-cli-install

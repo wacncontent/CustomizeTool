@@ -1,6 +1,6 @@
 
 <properties
-	pageTitle="Develop C# Hadoop streaming programs for HDInsight | Windows Azure"
+	pageTitle="Develop C# Hadoop streaming programs for HDInsight | Azure"
 	description="Learn how to develop Hadoop streaming MapReduce programs in C#, and how to deploy them to Azure HDInsight."
 	services="hdinsight"
 	documentationCenter=""
@@ -532,21 +532,21 @@ In this tutorial, you have learned how to develop a Hadoop streaming MapReduce j
 [azure-member-offers]: /pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
 
-[hdinsight-develop-mapreduce]: hdinsight-develop-deploy-java-mapreduce.md
-[hdinsight-submit-jobs]: hdinsight-submit-hadoop-jobs-programmatically.md
+[hdinsight-develop-mapreduce]: /documentation/articles/hdinsight-develop-deploy-java-mapreduce
+[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
 
-[hdinsight-get-started-emulator]: ../hdinsight-get-started-emulator.md
+[hdinsight-get-started-emulator]: /documentation/articles/hdinsight-hadoop-emulator-get-started
 [hdinsight-emulator-wasb]: /documentation/articles/hdinsight-hadoop-emulator-get-started#blobstorage
-[hdinsight-upload-data]: hdinsight-upload-data.md
-[hdinsight-storage]: ../hdinsight-use-blob-storage.md
-[hdinsight-admin-powershell]: hdinsight-administer-use-powershell.md
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
+[hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell
 
-[hdinsight-use-hive]: hdinsight-use-hive.md
-[hdinsight-use-pig]: hdinsight-use-pig.md
-[hdinsight-ODBC]: hdinsight-connect-excel-hive-ODBC-driver.md
-[hdinsight-power-query]: hdinsight-connect-excel-power-query.md
+[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
+[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
+[hdinsight-ODBC]: /documentation/articles/hdinsight-connect-excel-hive-ODBC-driver
+[hdinsight-power-query]: /documentation/articles/hdinsight-connect-excel-power-query
 
 [powershell-PSCredential]: http://social.technet.microsoft.com/wiki/contents/articles/4546.working-with-passwords-secure-strings-and-credentials-in-windows-powershell.aspx
-[powershell-install]: ../powershell-install-configure.md
+[powershell-install]: /documentation/articles/powershell-install-configure
 
 [image-hdi-wordcountdiagram]: ./media/hdinsight-hadoop-develop-deploy-streaming-jobs/HDI.WordCountDiagram.gif "MapReduce wordcount application flow"

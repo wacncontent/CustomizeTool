@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Use Hadoop Hive with PowerShell in HDInsight | Windows Azure"
+   pageTitle="Use Hadoop Hive with PowerShell in HDInsight | Azure"
    description="Use PowerShell to run Hive queries in Hadoop on HDInsight."
    services="hdinsight"
    documentationCenter=""
@@ -20,12 +20,14 @@
 > [AZURE.NOTE] This document does not provide a detailed description of what the HiveQL statements that are used in the examples do. For information on the HiveQL that is used in this example, see [Use Hive with Hadoop on HDInsight](/documentation/articles/hdinsight-use-hive).
 
 
+
 **<a id="prereq"></a> Prerequisites**
 
 To complete the steps in this article, you will need the following.
 
-- **An Azure HDInsight (Hadoop on HDInsight) cluster (Windows-based )** 
+- **An Azure HDInsight (Hadoop on HDInsight) cluster (Windows-based or Linux-based)**
 - **A workstation with Azure PowerShell**. See [Install Azure PowerShell 1.0 and greater](/documentation/articles/hdinsight-administer-use-powershell#install-azure-powershell-10-and-greater).
+
 
 ##<a id="powershell"></a> Run Hive queries using Azure PowerShell
 
@@ -33,7 +35,10 @@ Azure PowerShell provides *cmdlets* that allow you to remotely run Hive queries 
 
 The following cmdlets are used when running Hive queries in a remote HDInsight cluster:
 
-* **Add-AzureAccount**: Authenticates Azure PowerShell to your Azure subscription
+* **Add-AzureRmAccount**: Authenticates Azure PowerShell to your Azure subscription
+
+
+[AZURE.INCLUDE [automation-azurechinacloud-environment-parameter](../includes/automation-azurechinacloud-environment-parameter.md)]
 
 * **New-AzureHDInsightHiveJobDefinition**: Creates a new *job definition* by using the specified HiveQL statements
 
@@ -53,14 +58,17 @@ The following steps demonstrate how to use these cmdlets to run a job in your HD
 
 		#Specify the values
 		$clusterName = "CLUSTERNAME"
+
 		$httpUsername = "HTTPUSERNAME"
 		$httpUserPassword  = "HTTPUSERPASSWORD"
 		# Login to your Azure subscription
 		# Is there an active Azure subscription?
+
 		$sub = Get-AzureSubscription -ErrorAction SilentlyContinue
 		if(-not($sub))
 		{
-		    Add-AzureAccount
+
+		    Add-AzureAccount -Environment AzureChinaCloud
 		}
 
 		#HiveQL
@@ -69,10 +77,12 @@ The following steps demonstrate how to use these cmdlets to run a job in your HD
 				       "SELECT * FROM log4jLogs WHERE t4 = '[ERROR]';"
 
 		#Create an HDInsight Hive job definition
+
 		$hiveJobDefinition = New-AzureHDInsightHiveJobDefinition -Query $queryString 
 
 		#Submit the job to the cluster
 		Write-Host "Start the Hive job..." -ForegroundColor Green
+
 
 		$passwd = ConvertTo-SecureString $httpUserPassword -AsPlainText -Force
 		$creds = New-Object System.Management.Automation.PSCredential ($httpUsername, $passwd)
@@ -81,10 +91,12 @@ The following steps demonstrate how to use these cmdlets to run a job in your HD
 
 		#Wait for the Hive job to complete
 		Write-Host "Wait for the job to complete..." -ForegroundColor Green
+
 		Wait-AzureHDInsightJob -Cluster $clusterName -JobId $hiveJob.JobId -Credential $creds
 
 		# Print the output
 		Write-Host "Display the standard output..." -ForegroundColor Green
+
 		Get-AzureHDInsightJobOutput -ClusterName $clusterName -JobId $hiveJob.JobId -StandardOutput 
 
             
@@ -103,6 +115,7 @@ The following steps demonstrate how to use these cmdlets to run a job in your HD
 
 4. As mentioned earlier, **Invoke-Hive** can be used to run a query and wait for the response. Use the following commands, and replace **CLUSTERNAME** with the name of your cluster:
 
+
         Use-AzureHDInsightCluster CLUSTERNAME
 		Invoke-Hive -Query @"
 		CREATE TABLE IF NOT EXISTS errorLogs (t1 string, t2 string, t3 string, t4 string, t5 string, t6 string, t7 string) STORED AS ORC;
@@ -117,24 +130,26 @@ The following steps demonstrate how to use these cmdlets to run a job in your HD
 		2012-02-03	19:25:27	SampleClass4	[ERROR]	incorrect	id
 
 	> [AZURE.NOTE] For longer HiveQL queries, you can use the Azure PowerShell **Here-Strings** cmdlet or HiveQL script files. The following snippet shows how to use the **Invoke-Hive** cmdlet to run a HiveQL script file. The HiveQL script file must be uploaded to wasb://.
-	>
-	> `Invoke-Hive -File "wasb://<ContainerName>@<StorageAccountName>/<Path>/query.hql"`
-	>
-	> For more information about **Here-Strings**, see <a href="http://technet.microsoft.com/zh-cn/library/ee692792.aspx" target="_blank">Using Windows PowerShell Here-Strings</a>.
+
+	> <p>`Invoke-Hive -File "wasb://<ContainerName>@<StorageAccountName>/<Path>/query.hql"`
+	> <p>For more information about **Here-Strings**, see <a href="http://technet.microsoft.com/zh-cn/library/ee692792.aspx" target="_blank">Using Windows PowerShell Here-Strings</a>.
 
 ##<a id="troubleshooting"></a> Troubleshooting
 
 If no information is returned when the job completes, an error may have occurred during processing. To view error information for this job, add the following to the end of the **hivejob.ps1** file, save it, and then run it again.
 
 	# Print the output of the Hive job.
+
 	Write-Host "Display the standard output ..." -ForegroundColor Green
 	Get-AzureHDInsightJobOutput -Cluster $clusterName -JobId $hiveJob.JobId -StandardError
 
 This returns the information that is written to STDERR on the server when you ran the job, and it may help determine why the job is failing.
 
+
 ##<a id="summary"></a> Summary
 
 As you can see, Azure PowerShell provides an easy way to run Hive queries in an HDInsight cluster, monitor the job status, and retrieve the output.
+
 
 ##<a id="nextsteps"></a> Next steps
 

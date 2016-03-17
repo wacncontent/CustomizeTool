@@ -1,9 +1,9 @@
 <properties
-	pageTitle="Create a custom virtual machine running Windows in Azure"
+	pageTitle="Create a custom virtual machine running Windows | Azure"
 	description="Learn to create a custom virtual machine running Windows in Azure."
 	services="virtual-machines"
 	documentationCenter=""
-	authors="KBDAzure"
+	authors="cynthn"
 	manager="timlt"
 	editor=""
 	tags="azure-service-management"/>
@@ -15,6 +15,9 @@
 	wacn.date=""/>
 
 #Create a custom virtual machine running Windows in Azure
+
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
+
 
 A *custom* virtual machine simply means a virtual machine you create using the **From Gallery** option because it gives you more configuration choices than the **Quick Create** option. These choices include:
 

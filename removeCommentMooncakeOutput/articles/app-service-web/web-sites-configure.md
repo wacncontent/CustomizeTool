@@ -58,6 +58,9 @@ For technical reasons, enabling Java for your app disables the .NET, PHP, and Py
 
 **Edit in Visual Studio Online**. Enables live code editing with Visual Studio Online. If enabled, the Dashboard tab will show a link called **Edit in Visual Studio Online**, under the **Quick Glance** section. Click this link to edit your website directly online. If you need to authenticate, you can use your basic deployment credentials.
 
+	>[AZURE.NOTE]
+	> This feature is on preview.
+
 Note: If you enable deployment from source control, it is possible for a deployment to overwrite changes you make in the Visual Studio Online editor. 
 
 ### Certificates
@@ -118,10 +121,7 @@ Options for gathering diagnostic information for your website.
 
 ### Developer analytics
 
-Choose <strong>Add-on</strong> to select an analytics add-on from a list (Currently, Azure China does not support Azure gallery). Choose <strong>Custom</strong> to select an analytics provider such as New Relic from a list. If you use a custom provider, you must enter the license key in the<strong> Provider Key</strong> box. 
-
-For more information on using New Relic with Azure  Websites, see <a href="/documentation/articles/store-new-relic-web-sites-dotnet-application-performance-management/">New Relic Application Performance Management on Azure  Websites</a>.
-
+Choose <strong>Add-on</strong> to select an analytics add-on from a list (Currently, Azure China does not support Azure Marketplace). Choose <strong>Custom</strong> to select an analytics provider such as New Relic from a list. If you use a custom provider, you must enter the license key in the<strong> Provider Key</strong> box. 
 
 ### App settings
 

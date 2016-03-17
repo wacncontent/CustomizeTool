@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Set up PostgreSQL on a Linux VM | Windows Azure"
+	pageTitle="Set up PostgreSQL on a Linux VM | Azure"
 	description="Learn how to install and configure PostgreSQL on a Linux virtual machine in Azure"
 	services="virtual-machines"
 	documentationCenter=""

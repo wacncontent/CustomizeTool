@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Use Apache Phoenix and SQuirreL in HDInsight | Windows Azure" 
+   pageTitle="Use Apache Phoenix and SQuirreL in HDInsight | Azure" 
    description="Learn how to use Apache Phoenix in HDInsight, and how to install and configure SQuirreL on your workstation to connect to an HBase cluster in HDInsight." 
    services="hdinsight" 
    documentationCenter="" 
@@ -143,7 +143,7 @@ One way to create an X.509 certificate is by using the Certificate Creation Tool
 
 1. From your workstation, open a command prompt window.
 2. Navigate to the Visual Studio tools folder. 
-3. The following command in the example below will create and install a root certificate in the Personal certificate store on your workstation and also create a corresponding .cer file that youâll later upload to the Azure Management Portal. 
+3. The following command in the example below will create and install a root certificate in the Personal certificate store on your workstation and also create a corresponding .cer file that you'll later upload to the Azure Management Portal. 
 
 		makecert -sky exchange -r -n "CN=HBaseVnetVPNRootCertificate" -pe -a sha1 -len 2048 -ss My "C:\Users\JohnDole\Desktop\HBaseVNetVPNRootCertificate.cer"
 
@@ -287,12 +287,12 @@ Learn how to do real-time [sentiment analysis](http://en.wikipedia.org/wiki/Sent
 [azure-portal]: https://manage.windowsazure.cn
 [vnet-point-to-site-connectivity]: https://msdn.microsoft.com/zh-cn/library/azure/09926218-92ab-4f43-aa99-83ab4d355555#BKMK_VNETPT
 
-[hdinsight-versions]: hdinsight-component-versioning-v1.md
-[hdinsight-hbase-get-started]: ../hdinsight-hbase-get-started.md
+[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning-v1
+[hdinsight-hbase-get-started]: /documentation/articles/hdinsight-hbase-tutorial-get-started-v1
 [hdinsight-manage-portal]: /documentation/articles/hdinsight-administer-use-management-portal-v1#connect-to-hdinsight-clusters-by-using-rdp
-[hdinsight-hbase-provision-vnet-v1]: hdinsight-hbase-provision-vnet-v1.md
-[hdinsight-hbase-overview]: hdinsight-hbase-overview.md
-[hbase-twitter-sentiment]: hdinsight-hbase-analyze-twitter-sentiment.md
+[hdinsight-hbase-provision-vnet-v1]: /documentation/articles/hdinsight-hbase-provision-vnet-v1
+[hdinsight-hbase-overview]: /documentation/articles/hdinsight-hbase-overview
+[hbase-twitter-sentiment]: /documentation/articles/hdinsight-hbase-analyze-twitter-sentiment
 
 [hdinsight-hbase-phoenix-sqlline]: ./media/hdinsight-hbase-phoenix-squirrel/hdinsight-hbase-phoenix-sqlline.png
 [img-certificate]: ./media/hdinsight-hbase-phoenix-squirrel/hdinsight-hbase-vpn-certificate.png

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Office 365 DirSync test environment  | Windows Azure" 
+	pageTitle="Office 365 DirSync test environment  | Azure" 
 	description="Learn how to configure an Office 365 Directory Synchronization (DirSync) server in a hybrid cloud for IT pro or development testing." 
 	services="virtual-network" 
 	documentationCenter="" 
@@ -18,7 +18,7 @@
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
  
 
-This topic steps you through creating a hybrid cloud environment for testing Office 365 Directory Synchronization (DirSync) with password synchronization hosted in Windows Azure. Here is the resulting configuration.
+This topic steps you through creating a hybrid cloud environment for testing Office 365 Directory Synchronization (DirSync) with password synchronization hosted in Azure. Here is the resulting configuration.
 
 ![](./media/virtual-networks-setup-dirsync-hybrid-cloud-testing/CreateDirSyncHybridCloud_3.png)
  
@@ -129,7 +129,7 @@ When you run each Windows PowerShell command, you are prompted for the new user'
 Next, install and configure the Azure AD Connect tool on DS1.
 
 1.	Run Internet Explorer, type **https://www.microsoft.com/download/details.aspx?id=47594** in the **Address** bar, and then press ENTER.
-2.	Run the Windows Azure AD Connect Setup program.
+2.	Run the Azure AD Connect Setup program.
 3.	From the desktop, double-click **Azure AD Connect**.
 4.	On the **Welcome** page, select **I agree to the license terms and privacy notice**, and then click **Continue**.
 5.	On the **Express Settings** page, click **Use express settings**.
@@ -165,7 +165,7 @@ This environment is now ready for you to perform testing of Office 365 applicati
 
 ## Additional resources
 
-[Deploy Office 365 Directory Synchronization (DirSync) in Windows Azure](http://technet.microsoft.com/zh-cn/library/dn635310.aspx)
+[Deploy Office 365 Directory Synchronization (DirSync) in Azure](http://technet.microsoft.com/zh-cn/library/dn635310.aspx)
 
 [Solutions using Office Servers and the Cloud](http://technet.microsoft.com/zh-cn/library/dn262744.aspx)
 

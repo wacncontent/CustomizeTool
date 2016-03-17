@@ -13,29 +13,18 @@
 	wacn.date=""/>
 
 # What is the Azure WebJobs SDK
-<!-- keep by customization: begin -->
-
-## Table of Contents
-
-- [Overview](#overview)
-- [Scenarios](#scenarios)
-- [Code samples](#code)
-- [Using the WebJobs SDK outside of WebJobs](#workerrole)
-- [Using the WebJobs SDK to invoke any function](#nostorage)
-- [Next steps](#nextsteps)
-<!-- keep by customization: end -->
 
 ## <a id="overview"></a>Overview
 
 This article explains what the WebJobs SDK is, reviews some common scenarios it is useful for, and gives an overview of how you use it in your code.
 
-[WebJobs](/documentation/articles/websites-webjobs-resources) is a feature of Azure <!-- keep by customization: begin --> Web App <!-- keep by customization: end --> that enables you to run a program or script in the same context as a web app, API app, or mobile app. The purpose of the [WebJobs SDK](/documentation/articles/websites-webjobs-resources) is to simplify the code you write for common tasks that a WebJob can perform, such as image processing, queue processing, RSS aggregation, file maintenance, and sending emails. The WebJobs SDK has built-in features for working with Azure Storage and Service Bus, for scheduling tasks and handling errors, and for many other common scenarios. In addition, it's designed to be extensible, and there's an [open source repository for extensions](https://github.com/Azure/azure-webjobs-sdk-extensions/wiki/Binding-Extensions-Overview).
+[WebJobs](/documentation/articles/websites-webjobs-resources) is a feature of Azure  Web App  that enables you to run a program or script in the same context as a web app, API app, or mobile app. The purpose of the [WebJobs SDK](/documentation/articles/websites-webjobs-resources) is to simplify the code you write for common tasks that a WebJob can perform, such as image processing, queue processing, RSS aggregation, file maintenance, and sending emails. The WebJobs SDK has built-in features for working with Azure Storage and Service Bus, for scheduling tasks and handling errors, and for many other common scenarios. In addition, it's designed to be extensible, and there's an [open source repository for extensions](https://github.com/Azure/azure-webjobs-sdk-extensions/wiki/Binding-Extensions-Overview).
 
 The WebJobs SDK includes the following components:
 
 * **NuGet packages**. NuGet packages that you add to a Visual Studio Console Application project provide a framework that your code uses by decorating your methods with WebJobs SDK attributes.
   
-* **Dashboard**. Part of the WebJobs SDK is included in Azure <!-- keep by customization: begin --> Web App <!-- keep by customization: end --> and provides rich monitoring and diagnostics for programs that use the NuGet packages. You don't have to write code to use these monitoring and diagnostics features.
+* **Dashboard**. Part of the WebJobs SDK is included in Azure  Web App  and provides rich monitoring and diagnostics for programs that use the NuGet packages. You don't have to write code to use these monitoring and diagnostics features.
 
 ## <a id="scenarios"></a>Scenarios
 
@@ -96,9 +85,9 @@ The trigger and binder features of the WebJobs SDK greatly simplify the code you
 
 The following code example shows a variety of triggers in one WebJob: `QueueTrigger`, `FileTrigger`, `WebHookTrigger`, and `ErrorTrigger`. 
 
-<!-- deleted by customization
+
 ```
--->
+
     public class Functions
     {
         public static void ProcessQueueMessage([QueueTrigger("queue")] string message,
@@ -143,21 +132,21 @@ The following code example shows a variety of triggers in one WebJob: `QueueTrig
             message.Text = filter.GetDetailedMessage(1);
         }
     }
-<!-- deleted by customization
+
 ```
--->
+
 
 ## <a id="schedule"></a> Scheduling
 
 The `TimerTrigger` attribute gives you the ability to trigger functions to run on a schedule. You can schedule a WebJob as a whole through Azure or schedule individual functions of a WebJob using the WebJobs SDK `TimerTrigger`. Here's a code sample.
 
-<!-- deleted by customization
+
 ```
 public class Functions
--->
-<!-- keep by customization: begin -->
+
+
 	public class Functions
-<!-- keep by customization: end -->
+
 {
     public static void ProcessTimer([TimerTrigger("*/15 * * * * *", RunOnStartup = true)]
     TimerInfo info, [Queue("queue")] out string message)
@@ -165,9 +154,9 @@ public class Functions
         message = info.FormatNextOccurrences(1);
     }
 }
-<!-- deleted by customization
+
 ```
--->
+
 
 For more sample code, see [TimerSamples.cs](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/master/src/ExtensionsSample/Samples/TimerSamples.cs) in the azure-webjobs-sdk-extensions repository on GitHub.com.
 

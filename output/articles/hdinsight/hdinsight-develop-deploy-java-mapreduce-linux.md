@@ -1,5 +1,7 @@
+<!-- not suitable for Mooncake -->
+
 <properties
-	pageTitle="Develop Java MapReduce programs for Linux-based HDInsight | Windows Azure"
+	pageTitle="Develop Java MapReduce programs for Linux-based HDInsight | Azure"
 	description="Learn how to develop Java MapReduce programs and deploy them to Linux-based HDInsight."
 	services="hdinsight"
 	editor="cgronlun"
@@ -272,19 +274,19 @@ For more information, see also the [Java Developer Center](/develop/java/).
 [azure-member-offers]: /pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
 
-[hdinsight-use-sqoop]: hdinsight-use-sqoop.md
-[hdinsight-ODBC]: hdinsight-connect-excel-hive-ODBC-driver.md
-[hdinsight-power-query]: hdinsight-connect-excel-power-query.md
+[hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop
+[hdinsight-ODBC]: /documentation/articles/hdinsight-connect-excel-hive-ODBC-driver
+[hdinsight-power-query]: /documentation/articles/hdinsight-connect-excel-power-query
 
-[hdinsight-develop-streaming]: hdinsight-hadoop-develop-deploy-streaming-jobs.md
+[hdinsight-develop-streaming]: /documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs
 
 
 
-[hdinsight-upload-data]: hdinsight-upload-data.md
-[hdinsight-admin-powershell]: hdinsight-administer-use-powershell.md
-[hdinsight-use-hive]: hdinsight-use-hive.md
-[hdinsight-use-pig]: hdinsight-use-pig.md
-[hdinsight-power-query]: hdinsight-connect-excel-power-query.md
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
+[hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell
+[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
+[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
+[hdinsight-power-query]: /documentation/articles/hdinsight-connect-excel-power-query
 
 [powershell-PSCredential]: http://social.technet.microsoft.com/wiki/contents/articles/4546.working-with-passwords-secure-strings-and-credentials-in-windows-powershell.aspx
 

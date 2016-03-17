@@ -1,7 +1,7 @@
 <!-- not suitable for Mooncake -->
 
 <properties
-   pageTitle="Create Windows-based Hadoop clusters in HDInsight using ARM templates | Windows Azure"
+   pageTitle="Create Windows-based Hadoop clusters in HDInsight using ARM templates | Azure"
    	description="Learn how to create clusters for Azure HDInsight using Azure ARM templates."
    services="hdinsight"
    documentationCenter=""
@@ -126,7 +126,7 @@ In this article, you have learned several ways to create an HDInsight cluster. T
 
 - For an example of deploying resources through the .NET client library, see [Deploy resources using .NET libraries and a template](/documentation/articles/arm-template-deployment).
 - For an in-depth example of deploying an application, see [Provision and deploy microservices predictably in Azure](/documentation/articles/app-service-deploy-complex-application-predictably).
-- For guidance on deploying your solution to different environments, see [Development and test environments in Windows Azure](/documentation/articles/solution-dev-test-environments).
+- For guidance on deploying your solution to different environments, see [Development and test environments in Azure](/documentation/articles/solution-dev-test-environments).
 - To learn about the sections of the Azure Resource Manager template, see [Authoring templates](/documentation/articles/resource-group-authoring-templates).
 - For a list of the functions you can use in an Azure Resource Manager template, see [Template functions](/documentation/articles/resource-group-template-functions).
 

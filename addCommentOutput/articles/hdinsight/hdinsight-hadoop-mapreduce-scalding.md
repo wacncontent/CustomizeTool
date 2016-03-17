@@ -1,5 +1,5 @@
 <properties
- pageTitle="Develop Scalding MapReduce jobs with Maven | Windows Azure"
+ pageTitle="Develop Scalding MapReduce jobs with Maven | Azure"
  description="Learn how to use Maven to create a Scalding MapReduce job, then deploy and run the job on a Hadoop on HDInsight cluster."
  services="hdinsight"
  documentationCenter=""
@@ -9,7 +9,7 @@
 	tags="azure-portal"/>
 <tags
 	ms.service="hdinsight"
-	ms.date="12/04/2015"
+	ms.date="02/05/2016"
 	wacn.date=""/>
 
 # Develop Scalding MapReduce jobs with Apache Hadoop on HDInsight
@@ -21,7 +21,7 @@ In this document, learn how to use Maven to create a basic word count MapReduce 
 ## Prerequisites
 
 - **An Azure subscription**. See [Get Azure trial](/pricing/1rmb-trial/).
-* **A Windows <!-- deleted by customization or Linux --> based Hadoop on HDInsight cluster**. See <!-- deleted by customization [Provision Linux-based Hadoop on HDInsight](/documentation/articles/hdinsight-provision-clusters-v1) or --> [Provision Windows-based Hadoop on HDInsight](/documentation/articles/hdinsight-provision-clusters-v1) for more information.
+* **A Windows  or Linux  based Hadoop on HDInsight cluster**. See  [Provision Linux-based Hadoop on HDInsight](/documentation/articles/hdinsight-provision-clusters-v1) or  [Provision Windows-based Hadoop on HDInsight](/documentation/articles/hdinsight-provision-clusters-v1) for more information.
 
 * **[Maven](http://maven.apache.org/)**
 
@@ -38,95 +38,95 @@ In this document, learn how to use Maven to create a basic word count MapReduce 
 2. In the **scaldingwordcount** directory, open the **pom.xml** file and replace the contents with the following:
 
         <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-          <modelVersion>4.0.0</modelVersion>
-          <groupId>com.microsoft.example</groupId>
-          <artifactId>scaldingwordcount</artifactId>
-          <version>1.0-SNAPSHOT</version>
-          <name>${project.artifactId}</name>
-          <properties>
+            <modelVersion>4.0.0</modelVersion>
+            <groupId>com.microsoft.example</groupId>
+            <artifactId>scaldingwordcount</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <name>${project.artifactId}</name>
+            <properties>
             <maven.compiler.source>1.6</maven.compiler.source>
             <maven.compiler.target>1.6</maven.compiler.target>
             <encoding>UTF-8</encoding>
-          </properties>
-          <repositories>
+            </properties>
+            <repositories>
             <repository>
-              <id>conjars</id>
-              <url>http://conjars.org/repo</url>
+                <id>conjars</id>
+                <url>http://conjars.org/repo</url>
             </repository>
             <repository>
-              <id>maven-central</id>
-              <url>http://repo1.maven.org/maven2</url>
+                <id>maven-central</id>
+                <url>http://repo1.maven.org/maven2</url>
             </repository>
-          </repositories>
-          <dependencies>
+            </repositories>
+            <dependencies>
             <dependency>
-              <groupId>com.twitter</groupId>
-              <artifactId>scalding-core_2.11</artifactId>
-              <version>0.13.1</version>
+                <groupId>com.twitter</groupId>
+                <artifactId>scalding-core_2.11</artifactId>
+                <version>0.13.1</version>
             </dependency>
             <dependency>
-              <groupId>org.apache.hadoop</groupId>
-              <artifactId>hadoop-core</artifactId>
-              <version>1.2.1</version>
-              <scope>provided</scope>
+                <groupId>org.apache.hadoop</groupId>
+                <artifactId>hadoop-core</artifactId>
+                <version>1.2.1</version>
+                <scope>provided</scope>
             </dependency>
-          </dependencies>
-          <build>
+            </dependencies>
+            <build>
             <sourceDirectory>src/main/scala</sourceDirectory>
             <plugins>
-              <plugin>
+                <plugin>
                 <groupId>org.scala-tools</groupId>
                 <artifactId>maven-scala-plugin</artifactId>
                 <version>2.15.2</version>
                 <executions>
-                  <execution>
+                    <execution>
                     <id>scala-compile-first</id>
                     <phase>process-resources</phase>
                     <goals>
-                      <goal>add-source</goal>
-                      <goal>compile</goal>
+                        <goal>add-source</goal>
+                        <goal>compile</goal>
                     </goals>
-                  </execution>
+                    </execution>
                 </executions>
-              </plugin>
-              <plugin>
+                </plugin>
+                <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
                 <version>2.3</version>
                 <configuration>
-                  <transformers>
+                    <transformers>
                     <transformer implementation="org.apache.maven.plugins.shade.resource.ApacheLicenseResourceTransformer">
                     </transformer>
-                  </transformers>
-                  <filters>
+                    </transformers>
+                    <filters>
                     <filter>
-                      <artifact>*:*</artifact>
-                      <excludes>
+                        <artifact>*:*</artifact>
+                        <excludes>
                         <exclude>META-INF/*.SF</exclude>
                         <exclude>META-INF/*.DSA</exclude>
                         <exclude>META-INF/*.RSA</exclude>
-                      </excludes>
+                        </excludes>
                     </filter>
-                  </filters>
+                    </filters>
                 </configuration>
                 <executions>
-                  <execution>
+                    <execution>
                     <phase>package</phase>
                     <goals>
-                      <goal>shade</goal>
+                        <goal>shade</goal>
                     </goals>
                     <configuration>
-                      <transformers>
+                        <transformers>
                         <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                          <mainClass>com.twitter.scalding.Tool</mainClass>
+                            <mainClass>com.twitter.scalding.Tool</mainClass>
                         </transformer>
-                      </transformers>
+                        </transformers>
                     </configuration>
-                  </execution>
+                    </execution>
                 </executions>
-              </plugin>
+                </plugin>
             </plugins>
-          </build>
+            </build>
         </project>
 
     This file describes the project, dependencies, and plugins. Here are the important entries:
@@ -154,19 +154,19 @@ In this document, learn how to use Maven to create a basic word count MapReduce 
         import com.twitter.scalding._
 
         class WordCount(args : Args) extends Job(args) {
-          // 1. Read lines from the specified input location
-          // 2. Extract individual words from each line
-          // 3. Group words and count them
-          // 4. Write output to the specified output location
-          TextLine(args("input"))
+            // 1. Read lines from the specified input location
+            // 2. Extract individual words from each line
+            // 3. Group words and count them
+            // 4. Write output to the specified output location
+            TextLine(args("input"))
             .flatMap('line -> 'word) { line : String => tokenize(line) }
             .groupBy('word) { _.size }
             .write(Tsv(args("output")))
 
-          //Tokenizer to split sentance into words
-          def tokenize(text : String) : Array[String] = {
+            //Tokenizer to split sentance into words
+            def tokenize(text : String) : Array[String] = {
             text.toLowerCase.replaceAll("[^a-zA-Z0-9\\s]", "").split("\\s+")
-          }
+            }
         }
 
     This implements a basic word count job.
@@ -179,11 +179,11 @@ In this document, learn how to use Maven to create a basic word count MapReduce 
 
     Once this job completes, the package containing the WordCount application can be found at **target/scaldingwordcount-1.0-SNAPSHOT.jar**.
 
-## Run the job on a <!-- deleted by customization Linux-based --><!-- keep by customization: begin --> Windows-based <!-- keep by customization: end --> cluster
+## Run the job on a  Linux-based  Windows-based  cluster
 
-> [AZURE.NOTE] The following steps use <!-- deleted by customization SSH and the Hadoop command --><!-- keep by customization: begin --> Windows PowerShell <!-- keep by customization: end -->. For other methods of running MapReduce jobs, see [Use MapReduce in Hadoop on HDInsight](/documentation/articles/hdinsight-use-mapreduce).
+> [AZURE.NOTE] The following steps use  SSH and the Hadoop command  Windows PowerShell . For other methods of running MapReduce jobs, see [Use MapReduce in Hadoop on HDInsight](/documentation/articles/hdinsight-use-mapreduce).
 
-<!-- deleted by customization
+
 1. Use the following command to upload the package to your HDInsight cluster:
 
         scp target/scaldingwordcount-1.0-SNAPSHOT.jar username@clustername-ssh.azurehdinsight.cn:
@@ -209,8 +209,8 @@ In this document, learn how to use Maven to create a basic word count MapReduce 
         hadoop fs -text wasb:///example/wordcountout/part-00000
 
     This will display information similar to the following:
--->
-<!-- keep by customization: begin -->
+
+
 1. [Install and configure Azure PowerShell](/documentation/articles/powershell-install-configure).
 
 2. Download [hdinsight-tools.psm1](https://github.com/Blackmist/hdinsight-tools/blob/master/hdinsight-tools.psm1) and save to a file named **hdinsight-tools.psm1**.
@@ -241,7 +241,7 @@ In this document, learn how to use Maven to create a basic word count MapReduce 
         cat output.txt
 
     The file should contain values similar to the following:
-<!-- keep by customization: end -->
+
 
         writers 9
         writes  18
@@ -257,7 +257,7 @@ In this document, learn how to use Maven to create a basic word count MapReduce 
         wrotefootnote   1
         wrought 7
 
-<!-- deleted by customization
+
 ## Run the job on a Windows-based cluster
 
 > [AZURE.NOTE] The following steps use Windows PowerShell. For other methods of running MapReduce jobs, see [Use MapReduce in Hadoop on HDInsight](/documentation/articles/hdinsight-use-mapreduce).
@@ -322,7 +322,7 @@ In this document, learn how to use Maven to create a basic word count MapReduce 
             -clustername $clusterName `
             -jobdefinition $jobDef `
             -HttpCredential $creds
-        Write-Output "Job ID is: " + $job.JobId
+        Write-Output "Job ID is: $job.JobId"
         Wait-AzureRmHDInsightJob `
             -ClusterName $clusterName `
             -JobId $job.JobId `
@@ -365,7 +365,7 @@ In this document, learn how to use Maven to create a basic word count MapReduce 
         wrotefootnote   1
         wrought 7
 
--->
+
 ## Next steps
 
 Now that you have learned how to use Scalding to create MapReduce jobs for HDInsight, use the following links to explore other ways to work with Azure HDInsight.

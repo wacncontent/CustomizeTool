@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Detailed Remote Desktop troubleshooting | Windows Azure"
+	pageTitle="Detailed Remote Desktop troubleshooting | Azure"
 	description="Detailed troubleshooting steps for RDP connections to an Azure virtual machine running Windows."
 	services="virtual-machines"
 	documentationCenter=""
@@ -23,7 +23,7 @@ This article provides detailed troubleshooting steps to diagnose and fix complex
 
 If you get a Remote Desktop error message that does not resemble any of the specific error messages covered in [the basic Remote Desktop troubleshooting guide](/documentation/articles/virtual-machines-troubleshoot-remote-desktop-connections), you can follow these steps and try to figure out why the Remote Desktop (or [RDP](https://en.wikipedia.org/wiki/Remote_Desktop_Protocol)) client is unable to connect to the RDP service on the Azure VM.
 
-If you need more help at any point in this article, you can contact the Azure experts on [the MSDN Azure and the Stack Overflow forums](https://azure.microsoft.com/support/forums/). Alternatively, you can also file an Azure support incident. Go to the [Azure Support site](https://azure.microsoft.com/support/contact/) and click on **Get Support**. For information about using Azure Support, read the [Windows Azure Support FAQ](/support/faq/).
+If you need more help at any point in this article, you can contact the Azure experts on [the MSDN Azure and the Stack Overflow forums](http Stack Overflow forums](https://azure.microsoft.com/support/forums/)  . Alternatively, you can also file an Azure support incident. Go to the [Azure Support site](https://azure.microso site](https://azure.microsoft.com/support/contact/)   and click on **Get Support**. For information about using Azure Support, read the [Azure Support FAQ](/support/faq/).
 
 
 ## Components of a Remote Desktop connection
@@ -80,7 +80,7 @@ Verify that a computer directly connected to the Internet can make Remote Deskto
 
 ![](./media/virtual-machines-rdp-detailed-troubleshoot/tshootrdp_2.png)
 
-If you do not have a computer that is directly connected to the Internet, create and test with a new Azure virtual machine in a resource group or cloud service. For more information, see [Create a virtual machine running Windows in Azure](/documentation/articles/virtual-machines-windows-tutorial-classic-portal). You can delete the virtual machine and the resource group or the cloud service, after the test.
+ a resource group or  c resource group or the  cIf you do not have a computer that is directly connected to the Internet, create and test with a new Azure virtual machine in a resource group or cloud service. For more information, see [Create a virtual machine running Windows in Azure](/documentation/articles/virtual-machines-windows-tutorial-classic-portal). You can delete the virtual machine and the resource group or the cloud service, after the test.
 
 If you can create a Remote Desktop connection with a computer directly attached to the Internet, check your organization intranet edge device for:
 
@@ -95,8 +95,10 @@ Work with your network administrator to correct the settings of your organizatio
 For virtual machines created using the classic deployment model, verify that another Azure virtual machine that is in the same cloud service or virtual network can make Remote Desktop connections to your Azure virtual machine.
 
 ![](./media/virtual-machines-rdp-detailed-troubleshoot/tshootrdp_3.png)
+
 
 > [AZURE.NOTE] For virtual machines created in Resource Manager, skip to [Source 4: Network Security Groups](#nsgs).
+
 
 If you do not have another virtual machine in the same cloud service or virtual network, you can create a new one by using the steps in [Create a virtual machine running Windows in Azure](/documentation/articles/virtual-machines-windows-tutorial-classic-portal). Delete the extra virtual machine after the test is completed.
 
@@ -105,7 +107,7 @@ If you can connect via Remote Desktop to a virtual machine in the same cloud ser
 - The endpoint configuration for Remote Desktop traffic on the target VM: The private TCP port of the endpoint must match the TCP port on which the VM's Remote Desktop service is listening (default is 3389).
 - The ACL for the Remote Desktop traffic endpoint on the target VM: ACLs allow you to specify allowed or denied incoming traffic from the Internet based on its source IP address. Misconfigured ACLs can prevent incoming Remote Desktop traffic to the endpoint. Check your ACLs to ensure that incoming traffic from your public IP addresses of your proxy or other edge server is allowed. For more information, see [What is a Network Access Control List (ACL)?](/documentation/articles/virtual-networks-acl).
 
-To check if the endpoint is the source of the problem, remove the current endpoint and create a new one, choosing a random port in the range 49152â65535 for the external port number. For more information, see [How to set up endpoints to a virtual machine](/documentation/articles/virtual-machines-set-up-endpoints).
+To check if the endpoint is the source of the problem, remove the current endpoint and create a new one, choosing a random port in the range 49152-65535 for the external port number. For more information, see [How to set up endpoints to a virtual machine](/documentation/articles/virtual-machines-set-up-endpoints).
 
 ### <a id="nsgs"></a>Source 4: Network Security Groups
 

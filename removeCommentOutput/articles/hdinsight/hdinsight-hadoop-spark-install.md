@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Use Script Action to install Spark on Hadoop cluster | Windows Azure"
+	pageTitle="Use Script Action to install Spark on Hadoop cluster | Azure"
 	description="Learn how to customize an HDInsight cluster with Spark using Script Action."
 	services="hdinsight"
 	documentationCenter=""
@@ -311,7 +311,7 @@ See [Customize HDInsight clusters using Script Action](/documentation/articles/h
 - [Install Giraph on HDInsight clusters](/documentation/articles/hdinsight-hadoop-giraph-install-v1). Use cluster customization to install Giraph on HDInsight Hadoop clusters. Giraph allows you to perform graph processing by using Hadoop, and can be used with Azure HDInsight.
 - [Install Solr on HDInsight clusters](/documentation/articles/hdinsight-hadoop-solr-install-v1). Use cluster customization to install Solr on HDInsight Hadoop clusters. Solr allows you to perform powerful search operations on data stored.
 
-[hdinsight-provision]: hdinsight-provision-clusters-v1.md
-[hdinsight-install-r]: hdinsight-hadoop-r-scripts.md
-[hdinsight-cluster-customize]: hdinsight-hadoop-customize-cluster-v1.md
-[powershell-install-configure]: ../install-configure-powershell.md
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
+[hdinsight-install-r]: /documentation/articles/hdinsight-hadoop-r-scripts
+[hdinsight-cluster-customize]: /documentation/articles/hdinsight-hadoop-customize-cluster-v1
+[powershell-install-configure]: /documentation/articles/powershell-install-configure

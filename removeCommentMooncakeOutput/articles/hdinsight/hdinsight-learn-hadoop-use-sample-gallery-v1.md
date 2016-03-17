@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Learn Hadoop in HDInsight with the Sample Gallery | Windows Azure"
+   pageTitle="Learn Hadoop in HDInsight with the Sample Gallery | Azure"
    description="Quickly learn Hadoop by running sample applications from the HDInsight Getting Started Gallery. Use sample data or supply your own."
    services="hdinsight"
    documentationCenter=""
@@ -17,8 +17,8 @@
 The HDInsight Getting Started Gallery provides an easy and quick way learn Hadoop by running sample applications in HDInsight. Some of the samples come with sample data. You can supply your own data for the remaining samples. Currently, there are the following six samples (with more coming):
 
 - Solutions with your Azure data
-	- Windows Azure website log analysis
-	- Windows Azure storage analytics
+	- Azure website log analysis
+	- Azure storage analytics
 - Solutions with sample data
 	- Sensor data analysis
 	- Twitter trend analysis

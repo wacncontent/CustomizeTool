@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Install and use Giraph on Hadoop clusters in HDInsight | Windows Azure"
+	pageTitle="Install and use Giraph on Hadoop clusters in HDInsight | Azure"
 	description="Learn how to customize HDInsight cluster with Giraph, and how to use Giraph."
 	services="hdinsight"
 	documentationCenter=""
@@ -173,10 +173,10 @@ See [Customize HDInsight clusters using Script Action](/documentation/articles/h
 
 
 [tools]: https://github.com/Blackmist/hdinsight-tools
-[aps]: /documentation/articles/install-configure-powershell/
+[aps]: /documentation/articles/powershell-install-configure/
 
-[powershell-install]: ../powershell-install-configure.md
-[hdinsight-provision]: hdinsight-provision-clusters-v1.md
-[hdinsight-install-r]: hdinsight-hadoop-r-scripts.md
-[hdinsight-install-spark]: hdinsight-hadoop-spark-install.md
-[hdinsight-cluster-customize]: hdinsight-hadoop-customize-cluster-v1.md
+[powershell-install]: /documentation/articles/powershell-install-configure
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
+[hdinsight-install-r]: /documentation/articles/hdinsight-hadoop-r-scripts
+[hdinsight-install-spark]: /documentation/articles/hdinsight-hadoop-spark-install
+[hdinsight-cluster-customize]: /documentation/articles/hdinsight-hadoop-customize-cluster-v1

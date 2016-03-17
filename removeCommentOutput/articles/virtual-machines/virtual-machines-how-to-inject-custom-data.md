@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Injecting Custom Data into Virtual Machines | Windows Azure"
+	pageTitle="Injecting Custom Data into Virtual Machines | Azure"
 	description="This topic describes how to inject custom data into an Azure virtual machine when the instance is created and how to locate the custom data on either Windows or Linux."
 	services="virtual-machines"
 	documentationCenter=""

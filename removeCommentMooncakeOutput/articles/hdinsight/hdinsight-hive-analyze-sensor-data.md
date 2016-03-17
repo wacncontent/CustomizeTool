@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Analyze sensor data using Hive and Hadoop | Windows Azure"
+	pageTitle="Analyze sensor data using Hive and Hadoop | Azure"
 	description="Learn how to analyze sensor data by using the Hive Query Console with HDInsight (Hadoop), then visualize the data in Microsoft Excel with PowerView."
 	services="hdinsight"
 	documentationCenter=""
@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="12/04/2015"
+	ms.date="02/05/2016"
 	wacn.date=""/>
 
 #Analyze sensor data using the Hive Query Console on Hadoop in HDInsight

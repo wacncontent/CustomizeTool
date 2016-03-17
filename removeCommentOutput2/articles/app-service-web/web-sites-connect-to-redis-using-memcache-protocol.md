@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Connect a web app in Azure to Redis Cache via the Memcache protocol | Windows Azure"
+	pageTitle="Connect a web app in Azure to Redis Cache via the Memcache protocol | Azure"
 	description="Connect a web app in Azure App service to Redis Cache using the Memcache protocol"
 	services="app-service\web"
 	documentationCenter="php"
@@ -14,30 +14,31 @@
 
 # Connect a web app in Azure to Redis Cache via the Memcache protocol
 
-In this article, you'll learn how to connect a WordPress web app in [Azure Web App](/documentation/services/web-sites/) to [Azure Redis Cache][12] using the [Memcache][13] protocol. If you have an existing web app that uses a Memcached server for in-memory caching, You can migrate it to Azure and use the first-party caching solution in Windows Azure with little or no change to your application code. Furthermore, you can use your existing Memcache expertise to create highly scalable, distributed apps in Azure with Azure Redis Cache for in-memory caching, while using popular application frameworks such as .NET, PHP, Node.js, Java, and Python.  
+In this article, you'll learn how to connect a WordPress web app in [Azure Web App](/documentation/services/web-sites/) to [Azure Redis Cache][12] using the [Memcache][13] protocol. If you have an existing web app that uses a Memcached server for in-memory caching, You can migrate it to Azure and use the first-party caching solution in Azure with little or no change to your application code. Furthermore, you can use your existing Memcache expertise to create highly scalable, distributed apps in Azure with Azure Redis Cache for in-memory caching, while using popular application frameworks such as .NET, PHP, Node.js, Java, and Python.  
 
 Azure Web Apps enables this application scenario with the Web Apps Memcache shim, which is a local Memcached server that acts as a Memcache proxy for caching calls to Azure Redis Cache. This enables any app that communicates using the Memcache protocol to cache data with Redis Cache. This Memcache shim works at the protocol level, so it can be used by any application or application framework as long as it communicates using the Memcache protocol.
 
 ## Prerequisites
 
-The Web Apps Memcache shim can be used with any application provided it communicates using the Memcache protocol. For this particular example, the reference application is a Scalable WordPress site which can be provisioned from the Azure gallery.
+The Web Apps Memcache shim can be used with any application provided it communicates using the Memcache protocol. For this particular example, the reference application is a Scalable WordPress site which can be provisioned fr..
 
 Follow the steps outlined in these articles:
 
 * [Provision an instance of the Azure Redis Cache Service][0]
-* [Deploy a Scalable WordPress site in Azure][1]
 
 Once you have the Scalable WordPress site deployed and a Redis Cache instance provisioned you will be ready to proceed with enabling the Memcache shim in Azure Web Apps.
 
 ## Enable the Web Apps Memcache shim
 
-In Windows Azure China, Redis Cache can only be managed by Azure PowerShell or Azure CLI
+
+In Azure China, Redis Cache can only be managed by Azure PowerShell or Azure CLI. However, you can get the necessary information through the following tutorial. 
 
 [AZURE.INCLUDE [azurerm-azurechinacloud-environment-parameter](../includes/azurerm-azurechinacloud-environment-parameter.md)]
 
 ### Add REDIS_HOST app setting
 
-The first app setting you need to create is the **REDIS\_HOST** app setting. This setting sets the destination to which the shim forwards the cache information. The value required for the REDIS_HOST app setting can be retrieved from the following PowerShell Command.
+The first app setting you need to create is the **REDIS\_HOST** app setting. This setting sets the destination to which the shim forwards the cache information. The value required for the REDIS_HOST app setting can be retrieved from the **Properties** blade of you.
+
 
 	$myRedisCache = Get-AzureRmRedisCache -Name "<your cache name>" -ResourceGroupName "<your resource group name>"; $myRedisCache.HostName
 
@@ -45,7 +46,8 @@ Set the key of the app setting to **REDIS\_HOST** and the value of the app setti
 
 ### Add REDIS_KEY app setting
 
-The second app setting you need to create is the **REDIS\_KEY** app setting. This setting provides the authentication token required to securely access the Redis Cache instance. You can retrieve the value required for the REDIS_KEY app setting from the following PowerShell Command.
+The second app setting you need to create is the **REDIS\_KEY** app setting. This setting provides the authentication token required to securely access th. You can retrieve the value required for the REDIS_KEY app setting from the **Access keys** blade of the Redis Cache instance.
+
 
 	Get-AzureRmRedisCacheKey -Name "<your cache name>" -ResourceGroupName "<your resource group name>"
 
@@ -73,10 +75,10 @@ Download the Non-Thread Safe (NTS) x86 link for the version of PHP enabled in We
 
 ### Enable the php_memcache extension
 
-After you download the file, unzip and upload the **php\_memcache.dll** into the **d:\\home\\site\\wwwroot\\bin\\ext\\** directory. After the php_memcache.dll is uploaded into the web app, you need to enable the extension to the PHP Runtime. To enable the Memcache extension in the Azure Management Portal, open the **Configure** of your the web app, then add a new app setting with the key of **PHP\_EXTENSIONS** and the value **bin\\ext\\php_memcache.dll**.
+After you download the file, unzip and upload the **php\_memcache.dll** into the **d:\\home\\site\\wwwroot\\bin\\ext\\** directory. After the php_memcache.dll is uploaded into the web app, you need to enable the extension to the PHP Runtime. To enable the Memcache extension in the Azure Management Portal, open the **Application Settings** blthe web app, then add a new app setting with the key of **PHP\_EXTENSIONS** and the value **bin\\ext\\php_memcache.dll**.
 
 
-> [AZURE.NOTE] If the web site needs to load multiple PHP extensions, the value of PHP_EXTENSIONS should be a comma delimited list of relative paths to DLL files.
+> [AZURE.NOTE] If the web app needs to load multiple PHP extensions, the value of PHP_EXTENSIONS should be a comma delimited list of relative paths to DLL files.
 
 Once finished, click **Save**.
 
@@ -102,9 +104,10 @@ Find **Memcached Object Cache** in the list, then click **Install Now**.
 
 In the `wp-config.php` file, add the following code above the stop editing comment near the end of the file.
 
+
 	$memcached_servers = array(
-		'default' => array('localhost:' . getenv("MEMCACHESHIM_PORT"))
-	);
+	'default' => array('localhost:' . getenv("MEMCACHESHIM_PORT"))
+);
 
 Once this code has been pasted, monaco will automatically save the document.
 
@@ -124,6 +127,7 @@ All of the steps to enable the Web Apps Memcache shim are now complete. The only
 
 >[AZURE.NOTE] At the time of writing this article, the Redis CLI does not support SSL connectivity, thus the following steps are necessary.
 
+
 You can use the following PowerShell Command to enable NON-SSL port.
 
 	Set-AzureRmRedisCache -Name "<your cache name>" -ResourceGroupName "<your resource group name>" -EnableNonSslPort $true
@@ -133,6 +137,7 @@ You can use the following PowerShell Command to enable NON-SSL port.
 >[AZURE.NOTE] This step assumes that redis is installed locally on your development machine. [Install Redis locally using these instructions][9].
 
 Open your command-line console of choice and type the following command:
+
 
 	redis-cli -h <hostname-for-redis-cache> -a <primary-key-for-redis-cache> -p 6379
 
@@ -144,7 +149,7 @@ The call to list the keys should return a value. If not, try navigating to the w
 
 ## Conclusion
 
-Congratulations! The WordPress app now has a centralized in-memory cache to aid in increasing throughput. Remember, the Web Apps Memcache Shim can be used with any Memcache client regardless of programming language or application framework. To provide feedback or to ask questions about the Web Apps Memcache shim, post to [MSDN Forums][10] or [CSDN][11].
+Congratulations! The WordPress app now has a centralized in-memory cache to aid in increasing throughput. Remember, the Web Apps Memcache Shim can be used with any Memcache client regardless of programming language or application framework. To provide feedback or to ask questions about the Web Apps Memcache shim, post to [MSDN Forums][10] or [Stackoverflow][11].
 
 
 
@@ -158,7 +163,8 @@ Congratulations! The WordPress app now has a centralized in-memory cache to aid 
 [7]: http://pecl.php.net/package/memcache
 [8]: http://blog.syntaxc4.net/post/2015/02/05/how-to-enable-a-site-extension-in-azure-websites.aspx
 [9]: http://redis.io/download#installation
-[10]: https://social.msdn.microsoft.com/Forums/home?forum=windowsazurewebsitespreview
+
+[10]: https://social.msdn.microsoft.com/Forums/zh-cn/home
 [11]: http://azure.csdn.net/
-[12]: /services/cache/
+[12]: /documentation/services/redis-cache
 [13]: http://memcached.org

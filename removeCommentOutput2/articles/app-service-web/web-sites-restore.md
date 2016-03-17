@@ -12,22 +12,17 @@
 	ms.date="01/26/2016"
 	wacn.date=""/>
 
-# Restore a web site in Azure Websites
+# Restore an app in Azure
 
-This article shows you how to restore an Azure Website that you have previously backed up by using the [Azure Websites](/documentation/services/web-sites) Backup feature. For more information, see [Azure Websites Backups](/documentation/articles/web-sites-backup).
+This article shows you how to restore an Azure Web App that you have previously backed up by using the [Azure Web App](/documentation/services/web-sites) Backup feature. For more information, see [Azure Backups](/documentation/articles/web-sites-backup) Web App Backups](/documentation/articles/ .
 
-The Azure Websites Restore feature lets you restore your web site with its linked databases (SQL Database or MySQL) on-demand to a previous state, or create a new web site based on one of your original web site's backup. Creating a new web site that runs in parallel to the latest version can be useful for A/B testing.
+The Azure web app Restore feature lets you restore   Restore feature lets you restore your app with its linked databases (SQL Database or MySQL) on-demand to a previous state, or create a new app based on one of your original app's backup. Creating a new app that runs in parallel to the latest version can be useful for A/B testing.
 
-The Azure Websites Restore feature, available on the **Backups** blade in the [Azure Management Portal](http://manage.windowsazure.cn), is available only in Standard  pricing tiers. For information about scaling your app using Standard  tier, see [Scale a web site in Azure Websites](/documentation/articles/web-sites-scale). 
-
-##In this article
-- [To Restore an Azure  Website from a previously made backup](#PreviousBackup)
-- [To Restore an Azure  Website directly from a storage account](#StorageAccount)
-- [Choose Your  Website Restore Settings and Start the Restore Operation](#RestoreSettings)
-- [View the Operation Logs](#OperationLogs)
+The Azure web app Restore feature, available on the  ptRestore feature, available on the **Backups** blade in the [Azure Management Portal](https://manage.windowsazure.cn), is available only in Standard and Premium pricing tiers. For information about scaling your app using Standard or Premium tier, see [Scale an app in Azure Web App](/documentation/articles/web-sites-scale). Note that the Premium tier allows a greater number of daily backups to be performed over the Standard tier.
 
 <a name="PreviousBackup"></a>
-## To Restore a web site from a previously made backup
+## To Restore an app from a previously made backup
+
 
 1. On the **Backups** tab, click **Restore Now** in the command bar at the bottom of the portal page. The **Restore Now** dialog box appears.
 	
@@ -38,6 +33,7 @@ The Azure Websites Restore feature, available on the **Backups** blade in the [A
 4. Follow the steps in the [Choose Your  Website Restore Settings](#RestoreSettings) section later in this article.
 <a name="StorageAccount"></a>
 ## Download or delete a backup from a storage account
+
 
 1. On the **Backups** tab, click **Restore Now** in the command bar at the bottom of the portal page. The **Restore Now** dialog box appears.
 	
@@ -98,6 +94,7 @@ The Azure Websites Restore feature, available on the **Backups** blade in the [A
 
 <a name="OperationLogs"></a>
 ## View the Audit Logs
+
 
 1. To see details about the success or failure of the  Website restore operation, go to the  Website's Dashboard tab. In the **Quick Glance** section, under **Management Services**, click **Operation Logs**.
 	

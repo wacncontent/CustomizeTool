@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Use Hadoop Pig with Curl in HDInsight | Windows Azure"
+   pageTitle="Use Hadoop Pig with Curl in HDInsight | Azure"
    description="Learn how to use Curl to run Pig Latin jobs on a Hadoop cluster in Azure HDInsight."
    services="hdinsight"
    documentationCenter=""
@@ -24,6 +24,7 @@ Curl is used to demonstrate how you can interact with HDInsight by using raw HTT
 ##<a id="prereq"></a>Prerequisites
 
 To complete the steps in this article, you will need the following:
+
 
 * An Azure HDInsight (Hadoop on HDInsight) cluster (Windows-based)
 

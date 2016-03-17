@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Equivalent Azure CLI commands for VM tasks | Windows Azure"
+	pageTitle="Equivalent Azure CLI commands for VM tasks | Azure"
 	description="Equivalent Azure CLI commands to create and manage Azure VMs in Azure Resource Manager and Azure Service Management modes"
 	services="virtual-machines"
 	documentationCenter=""
@@ -15,7 +15,7 @@
 
 
 # Equivalent Resource Manager and Service Management commands for VM tasks with the Azure command-line interface
-This article shows equivalent Windows Azure command-line interface (Azure CLI) commands to create and manage Azure VMs in Azure Service Management and Azure Resource Manager. Use this as a handy guide to migrate scripts from one command mode to the other.
+This article shows equivalent Azure command-line interface (Azure CLI) commands to create and manage Azure VMs in Azure Service Management and Azure Resource Manager. Use this as a handy guide to migrate scripts from one command mode to the other.
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
 

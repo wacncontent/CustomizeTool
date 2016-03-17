@@ -41,15 +41,16 @@ By following this tutorial, you will build a simple registration web app in PHP.
 Follow these steps to create a web app and a MySQL database:
 
 1. Login to the [Azure Management Portal][management-portal].
-2. Click the **+ New** icon on the bottom left of the Azure Management Portal.
+2. Click the **+ New** icon on the top left of the Azure Management Portal.
 
 	![Create New Azure Web Site][new-website]
+
 
 3. Click ** web site**, then **CUSTOM CREATE**.
 
 	![Custom Create a new  Website][custom-create]
 	
-	Enter a value for **URL**, select **Create a New MySQL Database** from the **DATABASE** dropdown,  and select the data center for your  Website in the **REGION** dropdown. Click the arrow at the bottom of the dialog.
+	Enter a value for **URL**, select **No Database** from the **DATABASE** dropdown,  and select the data center for your  Website in the **REGION** dropdown. Click the arrow at the bottom of the dialog.
 
 	![Fill in  Website details][Website-details]
 
@@ -59,12 +60,12 @@ Follow these steps to create a web app and a MySQL database:
 
 	When the  Website has been created you will see the text **Creation of  Website '[SITENAME]' completed successfully**. Now, you can enable FTP publishing.
 
-5. Click the name of the  Website displayed in the list of  Websites to open the  Website's **QUICKSTART** dashboard.
+5. Click the name of the  Website displayed in the list of Websites and click the  Website's **Dashboard**.
 
 	![Open  Website dashboard][go-to-dashboard]
 
 
-6. At the bottom of the **QUICKSTART** page, click **Reset deployment credentials**. 
+6. In the **Dashboard** page, under the **quick glance**, click **Reset deployment credentials**. 
 
 	![Reset deployment credentials][reset-deployment-credentials]
 
@@ -218,6 +219,7 @@ You can now browse to [http://localhost/registration/index.php][localhost-index]
 
 To connect to the MySQL database that is running in Web Apps, your will need the connection information. To get MySQL connection information, follow these steps:
 
+
 1. In Azure Management Portal, click **MYSQL DATABASE ON AZURE**, and open your MYSQL database server. In **Dashboard** page, under **quick glance**, you can get your host and port.
 
 	![connection][connection-string-info]
@@ -252,6 +254,7 @@ After you have connected you will be able to upload and download files as needed
 
 After uploading both `index.php` and `createtable.php`, browse to **http://[site name].chinacloudsites.cn/createtable.php** to create the MySQL table for the application, then browse to **http://[site name].chinacloudsites.cn/index.php** to begin using the application.
 
+
 [go-to-dashboard]: ./media/web-sites-php-web-site-mysql-deploy-use-ftp/go_to_dashboard.png
 [reset-deployment-credentials]: ./media/web-sites-php-web-site-mysql-deploy-use-ftp/reset-deployment-credentials.png
 [portal-git-username-password]: ./media/web-sites-php-web-site-mysql-deploy-use-ftp/git-deployment-credentials.png
@@ -261,9 +264,11 @@ After uploading both `index.php` and `createtable.php`, browse to **http://[site
 [localhost-createtable]: http://localhost/tasklist/createtable.php
 [localhost-index]: http://localhost/tasklist/index.php
 [running-app]: ./media/web-sites-php-mysql-deploy-use-ftp/running_app_2.png
+
 [new-website]: ./media/web-sites-php-mysql-deploy-use-ftp/new_website.jpg
 [custom-create]: ./media/web-sites-php-mysql-deploy-use-ftp/custom_create.png
 [website-details]: ./media/web-sites-php-web-site-mysql-deploy-use-ftp/website_details.jpg
+
 [new-mysql-db]: ./media/web-sites-php-mysql-deploy-use-ftp/new_mysql_db.jpg
 [go-to-webapp]: ./media/web-sites-php-mysql-deploy-use-ftp/select_webapp.png
 [set-deployment-credentials]: ./media/web-sites-php-mysql-deploy-use-ftp/set_credentials.png

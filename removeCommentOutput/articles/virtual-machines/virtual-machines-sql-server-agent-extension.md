@@ -1,5 +1,5 @@
 <properties
-	pageTitle="SQL Server IaaS Agent Extension | Windows Azure"
+	pageTitle="SQL Server IaaS Agent Extension | Azure"
 	description="This topic uses resources created with the classic deployment model, and describes the SQL Server agent extension, which enables a VM running SQL Server on Azure to use automation features."
 	services="virtual-machines"
 	documentationCenter=""

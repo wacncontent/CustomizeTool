@@ -44,6 +44,7 @@ This tutorial assumes you have [PHP][install-php], the MySQL Command-Line Tool (
 Follow these steps to create a web app and a MySQL database:
 
 1. Login to the [Azure Management Portal][management-portal].
+
 2. Click the **New** icon on the bottom left of the portal.
 
 	![Create New Azure  Website][new-website]
@@ -62,12 +63,12 @@ Follow these steps to create a web app and a MySQL database:
 
 	When the  Website has been created you will see the text **Creation of  Website "[SITENAME]" completed successfully**. Now, you can enable Git publishing.
 
-6. Click the name of the  Website displayed in the list of  Websites to open the  Website's **QuickStart** dashboard.
+6. Click the name of the  Website displayed in the list of Websites.
 
 	![Open  Website dashboard][go-to-dashboard]
 
 
-7. At the bottom of the **QuickStart** page, click **Set up Git publishing**. 
+7. Under the **Integrate source control**, click **Set up deployment from source control**, and choose **Local Git Repository**. 
 
 	![Set up Git publishing][setup-git-publishing]
 
@@ -84,6 +85,7 @@ Follow these steps to create a web app and a MySQL database:
 ##Get remote MySQL connection information
 
 To connect to the MySQL database that is running in Web Apps, your will need the connection information. To get MySQL connection information, follow these steps:
+
 
 1. In Azure Management Portal, click **MYSQL DATABASE ON AZURE**, and open your MYSQL database server. In **Dashboard** page, under **quick glance**, you can get your host and port.
 
@@ -107,11 +109,11 @@ To build and run the application locally, follow the steps below. Note that thes
 
 1. Connect to the remote MySQL server, using the value for `Data Source`, `User Id`, `Password`, and `Database` that you retrieved earlier:
 
-		<pre><code class="prettyprint">mysql -h{Data Source] -u[User Id] -p[Password] -D[Database]</code></pre> 
+		mysql -h{Data Source] -u[User Id] -p[Password] -D[Database]
 
 2. The MySQL command prompt will appear:
 
-		<pre><code class="prettyprint">mysql></code></pre> 
+		mysql>
 
 3. Paste in the following `CREATE TABLE` command to create the `registration_tbl` table in your database:
 
@@ -258,6 +260,7 @@ To publish changes to your app, follow these steps:
 3. Browse to **http://[site name].chinacloudsites.cn/index.php** to see your app and any changes you may have made:
 
 	![Azure PHP web site][running-app]
+
 	
 [go-to-dashboard]: ./media/web-sites-php-mysql-deploy-use-git/go_to_dashboard.png
 [install-php]: http://www.php.net/manual/en/install.php
@@ -268,9 +271,11 @@ To publish changes to your app, follow these steps:
 
 [pdo-mysql]: http://www.php.net/manual/en/ref.pdo-mysql.php
 [running-app]: ./media/web-sites-php-mysql-deploy-use-git/running_app_2.png
+
 [new-website]: ./media/web-sites-php-mysql-deploy-use-git/new_website.jpg
 [custom-create]: ./media/web-sites-php-mysql-deploy-use-git/custom_create.png
 [website-details]: ./media/web-sites-php-mysql-deploy-use-git/website_details.jpg
+
 [new-mysql-db]: ./media/web-sites-php-mysql-deploy-use-git/new_mysql_db.jpg
 [go-to-webapp]: ./media/web-sites-php-mysql-deploy-use-git/select_webapp.png
 [setup-git-publishing]: ./media/web-sites-php-mysql-deploy-use-git/setup_git_publishing.png

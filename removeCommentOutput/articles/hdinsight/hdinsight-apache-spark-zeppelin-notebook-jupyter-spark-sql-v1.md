@@ -42,7 +42,7 @@ When you create an HDInsight cluster in HDInsight, you specify an Azure Storage 
 
 >[AZURE.NOTE]  Make sure you create the storage account in a location that is supported for the cluster.
 
-Select the new storage account from the list and click **MANAGE ACCESS KEYS** at the bottom of the page. Make a note of the **PRIMARY ACCESS KEY** (or the **SECONDARY ACCESS KEY**âeither of the keys work).  You will need this later in the tutorial. For more information, see [How to Create a Storage Account][azure-create-storageaccount] .
+Select the new storage account from the list and click **MANAGE ACCESS KEYS** at the bottom of the page. Make a note of the **PRIMARY ACCESS KEY** (or the **SECONDARY ACCESS KEY**—either of the keys work).  You will need this later in the tutorial. For more information, see [How to Create a Storage Account][azure-create-storageaccount] .
 	
 ##Create an HDInsight Spark cluster
 
@@ -242,15 +242,15 @@ In this section, you use a Jupyter notebook to run Spark SQL queries against a S
 * [Manage resources for the Apache Spark cluster in Azure HDInsight](/documentation/articles/hdinsight-apache-spark-resource-manager-v1)
 
 
-[hdinsight-versions]: ../hdinsight-component-versioning-v1/
-[hdinsight-upload-data]: ../hdinsight-upload-data/
-[hdinsight-storage]: ../hdinsight-use-blob-storage/
+[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning-v1
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
 
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: /pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
 [azure-management-portal]: https://manage.windowsazure.cn/
-[azure-create-storageaccount]: ../storage-create-storage-account/ 
+[azure-create-storageaccount]: /documentation/articles/storage-create-storage-account
 
 
 

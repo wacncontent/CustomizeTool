@@ -85,12 +85,10 @@ In the **Standard** hosting plan, monitor site responsiveness receive email noti
 Make your .COM site attractive with rich media, such as:
 
 -  Upload and stream videos globally with [Azure Media Services]
--  Send emails to users with [SendGrid service in Azure gallery]
 
 ## More Resources
 
 - [Azure Web Apps Documentation](/home/features/web-site/)
-- [Learning Map for Azure Web Apps](/documentation/articles/websites-learning-map)
 - [Azure Web Blog](/blog/tags/网站/)
 
 [AZURE.INCLUDE [app-service-web-whats-changed](../includes/app-service-web-whats-changed.md)]
@@ -131,6 +129,5 @@ Make your .COM site attractive with rich media, such as:
 [How to: Receive Alert Notifications and Manage Alert Rules in Azure]:http://msdn.microsoft.com/zh-cn/library/azure/dn306638.aspx
 
 [Azure Media Services]:http://blogs.technet.com/b/cbernier/archive/2013/09/03/windows-azure-media-services-and-web-sites.aspx
-[SendGrid service in Azure gallery]: /documentation/articles/sendgrid-dotnet-how-to-send-email
 
  

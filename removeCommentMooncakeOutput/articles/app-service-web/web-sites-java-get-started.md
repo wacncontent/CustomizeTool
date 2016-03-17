@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Create a Java web app in Azure | Windows Azure"
+	pageTitle="Create a Java web app in Azure | Azure"
 	description="This tutorial shows you how to deploy a Java web app to Azure."
 	services="app-service\web"
 	documentationCenter="java"
@@ -23,7 +23,7 @@
 
 This tutorial shows how to create a Java [web app in Azure](/documentation/services/web-sites/) by using the [Azure Management Portal](https://manage.windowsazure.cn/). 
 
-> [AZURE.NOTE] To complete this tutorial, you need a Windows Azure account. If you don't have an account, you can [sign up for a trial][].
+> [AZURE.NOTE] To complete this tutorial, you need a Azure account. If you don't have an account, you can [sign up for a trial][].
 >
 
 ## Java application options
@@ -44,8 +44,6 @@ There are several ways you can set up a Java application in an Azure web app.
 	* You want to use a version of Java that isn't supported in Azure and want to upload it yourself.
 
 	For cases like these, you can create an app using the Azure Management Portal, and then provide the appropriate runtime files manually. In this case the files will be counted against your storage space quotas for your App Service plan. For more information, see [Upload a custom Java web app to Azure](/documentation/articles/web-sites-java-custom-upload/).
-
-## <a name="portal"></a> Create and configure a Java web app
 
 This information shows how to use the Azure configuration UI to select a Java application container, either Apache Tomcat or Jetty, for your web site.
 

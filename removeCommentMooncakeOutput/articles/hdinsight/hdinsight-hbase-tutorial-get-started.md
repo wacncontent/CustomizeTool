@@ -1,7 +1,7 @@
 <!-- not suitable for Mooncake -->
 
 <properties
-	pageTitle="HBase tutorial: Get started with HBase in Hadoop | Windows Azure"
+	pageTitle="HBase tutorial: Get started with HBase in Hadoop | Azure"
 	description="Follow this HBase tutorial to get started using Apache HBase with Hadoop in HDInsight. Create tables from the HBase shell and query them using Hive."
 	keywords="apache hbase,hbase,hbase shell,hbase tutorial"
 	services="hdinsight"
@@ -12,49 +12,60 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="12/02/2015"
+	ms.date="02/05/2016"
 	wacn.date=""/>
 
 
 
-# HBase tutorial: Get started using Apache HBase with Hadoop in HDInsight (Windows)
+# HBase tutorial: Get started using Apache HBase with Windows-based Hadoop in HDInsight
+
+[AZURE.INCLUDE [hbase-selector](../includes/hdinsight-hbase-selector.md)]
 
 Learn how to create HBase clusters in HDInsight, create HBase tables, and query the tables by using Apache Hive. For general HBase information, see [HDInsight HBase overview][hdinsight-hbase-overview].
 
-> [AZURE.NOTE]
-> HBase (version 0.98.0) on Windows-based HDInsight is only available for use with HDInsight 3.1 clusters (based on Apache Hadoop and YARN 2.4.0). For version information, see [What's new in the Hadoop cluster versions provided by HDInsight?][hdinsight-versions]
+The information in this document is specific to Windows-based HDInsight clusters. For information on Windows-based clusters, use the tab selector on the top of the page to switch.
+
+> [AZURE.NOTE] HBase (version 0.98.0) on Windows-based HDInsight is only available for use with HDInsight 3.1 clusters (based on Apache Hadoop and YARN 2.4.0). For version information, see [What's new in the Hadoop cluster versions provided by HDInsight?][hdinsight-versions]
 
 ###Prerequisites
 
 Before you begin this HBase tutorial, you must have the following:
 
-- **A Windows Azure subscription**. See [Get Azure trial](/pricing/1rmb-trial/).
+- **A Azure subscription**. See [Get Azure trial](/pricing/1rmb-trial/).
 - **A workstation** with Visual Studio 2013 or greater: For instructions, see [Install Visual Studio](http://msdn.microsoft.com/zh-cn/library/e2h7fzkw.aspx).
 
-##<a name="create-hbase-cluster"></a> Create HBase cluster
+## Create HBase cluster
 
 [AZURE.INCLUDE [provisioningnote](../includes/hdinsight-provisioning.md)]
 
 **To create an HBase cluster by using the Azure Management Portal**
 
 1. Sign in to the [Azure Management Portal][azure-management-portal].
-2. Click **NEW** in the lower left, and then click **DATA SERVICES** > **HDINSIGHT** > **HBASE**.
+2. Click **New** or **+** in the upper left corner, and then click **Data + Analytics**, **HDInsight**.
+3. Enter the following values:
 
-	You can also use the CUSTOM CREATE option.
-3. Enter **CLUSTER NAME**, **CLUSTER SIZE**, CLUSTER USER PASSWORD, and **STORAGE ACCOUNT**.
-
-	![Choosing an HBase cluster type and entering cluster login credentials.][img-hdinsight-hbase-cluster-quick-create]
-
-	The default HTTP USER NAME is admin. You can customize the name by using the CUSTOM CREATION option.
-
-	An Azure storage account is required using the default HBase provision process. For instructions, see [How To Create a Storage Account][azure-create-storageaccount]. The custom create option gives the option to create a storage account with the cluster provision process.  
+	- **Cluster Name** - Enter a name to identify this cluster.
+	- **Cluster Type** - Select **HBase**.
+	- **Cluster Operating System** - Select **Windows**.  For creating Linux-based HBase cluster, see  [HBase tutorial: Get started using Apache HBase with Hadoop in HDInsight (Linux)](/documentation/articles/hdinsight-hbase-tutorial-get-started-v1-linux).
+	- **Version** - Select an HBase version.
+	- **Subscription** - Select your Azure subscription used for creating this cluster.
+	- **Resource Group** -  Create a new Azure resource group or select an existing one. For more information, see [Azure Resource Manager Overview](/documentation/articles/resource-group-overview)
+	- **Credentials** - For Windows based cluster, you can create a cluster user (a.k.a HTTP user, HTTP web service user) and a Remote Desktop user. Click **Enable Remote Desktop** to add the remote desktop user credentials. The next section requires RDP.
+	- **Data Source** - create a new Azure storage account or select an existing Azure storage account to be used as the default file system for the cluster. The default storage account location determines the location of the cluster location. The default storage account and the cluster must co-locate in the same data center.
+	- **Node Pricing Tiers** - Select the number of region servers for the HBase cluster
 
 		> [AZURE.WARNING] For high availability of HBase services, you must create a cluster that contains at least **three** nodes. This ensures that, if one node goes down, the HBase data regions are available on other nodes.
 
-4. Click the checkmark icon in the lower right to create the HBase cluster.
+		> If you are learning HBase, always choose 1 for the cluster size, and delete the cluster after each use to reduce the cost.
+
+	- **Optional Configuration** - Configure Azure virtual network, configure Script actions, and add additional storage accounts.
+
+4. Click **Create**.
+
 >[AZURE.NOTE] After an HBase cluster is deleted, you can create another HBase cluster by using the same default storage account and the default blob container. The new cluster will pick up the HBase tables you created in the original cluster.
 
-## Use the HBase shell
+## Create tables and insert data
+
 Currently, there are two way to access HBase. This section covers using the HBase shell. The next section covers using the .NET SDK.
 
 For most people, data appears in the tabular format:
@@ -148,10 +159,7 @@ You can query data stored in HBase by using Hive. This section creates a Hive ta
 
 **To open the cluster dashboard**
 
-1. Sign in to the [Azure Management Portal][azure-management-portal].
-2. Click **HDINSIGHT** in the left pane. You will see a list of clusters, including the one you created earlier in this tutorial.
-3. Click the cluster name where you want to run the Hive job.
-4. Click **QUERY CONSOLE** at the bottom of the page to open the cluster dashboard. It opens a webpage in a different browser tab.
+1. Browse to **https://<HDInsight Cluster Name>.azurehdinsight.cn/**.
 5. Enter the Hadoop user account user name and password. The default user name is **admin** and the password is what you entered during the creation process. A new browser tab opens.
 6. Click **Hive Editor** at the top of the page. The Hive Editor looks like this:
 
@@ -285,7 +293,7 @@ In a high availability cluster, you'll find a link to the current active HBase m
 
 
 ## What's next?
-In this HBase tutorial for HDInsight, you learned how to provision an HBase cluster and how to create tables and view the data in those tables from the HBase shell. You also learned how use a Hive query on data in HBase tables and how to use the HBase C# REST APIs to create an HBase table and retrieve data from the table.
+In this HBase tutorial for HDInsight, you learned how to create an HBase cluster and how to create tables and view the data in those tables from the HBase shell. You also learned how use a Hive query on data in HBase tables and how to use the HBase C# REST APIs to create an HBase table and retrieve data from the table.
 
 For more information, see:
 
@@ -294,6 +302,8 @@ HBase is an Apache, open-source, NoSQL database built on Hadoop that provides ra
 - [Create HBase clusters on Azure Virtual Network][hdinsight-hbase-provision-vnet-v1].
 With virtual network integration, HBase clusters can be deployed to the same virtual network as your applications so that applications can communicate with HBase directly.
 - [Configure HBase replication in HDInsight](/documentation/articles/hdinsight-hbase-geo-replication). Learn how to configure HBase replication across two Azure datacenters.
+- [Analyze Twitter sentiment with HBase in HDInsight][hbase-twitter-sentiment].
+Learn how to do real-time [sentiment analysis](http://en.wikipedia.org/wiki/Sentiment_analysis) of big data by using HBase in a Hadoop cluster in HDInsight.
 
 [hdinsight-manage-portal]: /documentation/articles/hdinsight-administer-use-management-portal-v1
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
@@ -308,6 +318,7 @@ With virtual network integration, HBase clusters can be deployed to the same vir
 [hdinsight-hbase-overview]: /documentation/articles/hdinsight-hbase-overview
 [hdinsight-hbase-provision-vnet-v1]: /documentation/articles/hdinsight-hbase-provision-vnet-v1
 [hdinsight-versions]: /documentation/articles/hdinsight-component-versioning-v1
+[hbase-twitter-sentiment]: /documentation/articles/hdinsight-hbase-analyze-twitter-sentiment
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: /pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/

@@ -1,5 +1,7 @@
+<!-- not suitable for Mooncake -->
+
 <properties
-	pageTitle="Use Script Action to install Solr on Linux-based HDInsight | Windows Azure"
+	pageTitle="Use Script Action to install Solr on Linux-based HDInsight | Azure"
 	description="Learn how to install Solr on Linux-based HDInsight Hadoop clusters using Script Actions."
 	services="hdinsight"
 	documentationCenter=""
@@ -116,7 +118,7 @@ You must start with indexing Solr with some data files. You can then use Solr to
 			          "Comprehensive HTML Administration Interfaces",
 			          "Scalability - Efficient Replication to other Solr Search Servers",
 			          "Flexible and Adaptable with XML configuration and Schema",
-			          "Good unicode support: hĂŠllo (hello with an accent over the e)"
+			          "Good unicode support: héllo (hello with an accent over the e)"
 			        ],
 			        "price": 0,
 			        "price_c": "0,USD",
@@ -202,7 +204,7 @@ Once you have established an SSH tunnel, use the following steps to use the Solr
 			          "Comprehensive HTML Administration Interfaces",
 			          "Scalability - Efficient Replication to other Solr Search Servers",
 			          "Flexible and Adaptable with XML configuration and Schema",
-			          "Good unicode support: hĂŠllo (hello with an accent over the e)"
+			          "Good unicode support: héllo (hello with an accent over the e)"
 			        ],
 			        "price": 0,
 			        "price_c": "0,USD",
@@ -298,6 +300,6 @@ For more information on working with Solr backup and restores, see [Making and r
 
 
 
-[hdinsight-install-r]: hdinsight-hadoop-r-scripts-linux.md
-[hdinsight-install-spark]: hdinsight-hadoop-spark-install-linux.md
-[hdinsight-cluster-customize]: hdinsight-hadoop-customize-cluster-v1.md
+[hdinsight-install-r]: /documentation/articles/hdinsight-hadoop-r-scripts-linux
+[hdinsight-install-spark]: /documentation/articles/hdinsight-hadoop-spark-install-linux
+[hdinsight-cluster-customize]: /documentation/articles/hdinsight-hadoop-customize-cluster-v1

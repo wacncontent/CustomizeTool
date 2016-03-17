@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Use Hadoop Pig with .NET in HDInsight | Windows Azure"
+   pageTitle="Use Hadoop Pig with .NET in HDInsight | Azure"
    description="Learn how to use the .NET SDK for Hadoop to submit Pig jobs to Hadoop on HDInsight."
    services="hdinsight"
    documentationCenter=".net"
@@ -28,7 +28,12 @@ The HDInsight .NET SDK provides .NET client libraries that makes it easier to wo
 
 To complete the steps in this article, you will need the following.
 
+
 * An Azure HDInsight (Hadoop on HDInsight) cluster (either Windows or Linux-based)
+
+
+* An Azure HDInsight (Hadoop on HDInsight) cluster (Windows) 
+
 
 * Visual Studio 2012 or 2013
 

@@ -1,7 +1,7 @@
 <!-- not suitable for Mooncake -->
 
 <properties
-   pageTitle="Manage virtual machines with the CLI | Windows Azure"
+   pageTitle="Manage virtual machines with the CLI | Azure"
    description="Automate the management of your Azure Resource Manager VMs by using the Azure Command-Line Interface (CLI)."
    services="virtual-machines"
    documentationCenter=""
@@ -11,9 +11,9 @@
    tags="azure-resource-manager"/>
 
    <tags
-   ms.service="virtual-machines"
-   ms.date="10/07/2015"
-   wacn.date=""/>
+	ms.service="virtual-machines"
+	ms.date="10/07/2015"
+	wacn.date=""/>
 
 # Manage your Resource Manager virtual machines by using the Azure CLI for Mac, Linux, and Windows
 
@@ -83,6 +83,6 @@ Of course, if you already have those values you can find the proper switches to 
 
 ## Next steps
 
-* For more examples of Azure CLI usage with the Azure Resource Manager mode, see [Using the Windows Azure CLI for Mac, Linux, and Windows with Azure Resource Management](/documentation/articles/xplat-cli-azure-resource-manager).
+* For more examples of Azure CLI usage with the Azure Resource Manager mode, see [Using the Azure CLI for Mac, Linux, and Windows with Azure Resource Management](/documentation/articles/xplat-cli-azure-resource-manager).
 
 * To learn more about Azure resources and their concepts, see [Azure Resource Manager Overview](/documentation/articles/resource-group-overview).

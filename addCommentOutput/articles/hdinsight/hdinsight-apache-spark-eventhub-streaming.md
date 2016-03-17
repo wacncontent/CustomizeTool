@@ -1,5 +1,7 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
-	pageTitle="Use Azure Event Hubs with Apache Spark in HDInsight to process streaming data | Windows Azure" 
+	pageTitle="Use Azure Event Hubs with Apache Spark in HDInsight to process streaming data | Azure" 
 	description="Step-by-step instructions on how to send a data stream to Azure Event Hub and then receive those events in Spark using a scala application" 
 	services="hdinsight" 
 	documentationCenter="" 
@@ -10,7 +12,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="12/29/2015"
+	ms.date="02/05/2016"
 	wacn.date=""/>
 
 
@@ -119,9 +121,9 @@ A sample Scala application to receive the event and route it to different destin
 
 5. The application requires two dependency jars:
 
-	* **EventHub receiver jar**. This is required for Spark to receive the messages from Event Hub. This jar is available on your Spark Linux cluster at `/usr/hdp/current/spark-client/lib/spark-streaming-eventhubs-example-1.5.1.2.3.2.1-12-jar-with-dependencies.jar`. You can use pscp to copy the jar to your local computer.
+	* **EventHub receiver jar**. This is required for Spark to receive the messages from Event Hub. This jar is available on your Spark Linux cluster at `/usr/hdp/current/spark-client/lib/spark-streaming-eventhubs-example-1.5.2.2.3.3.1-7-jar-with-dependencies.jar`. You can use pscp to copy the jar to your local computer.
 
-			pscp sshuser@mysparkcluster-ssh.azurehdinsight.cn/usr/hdp/current/spark-client/lib/spark-streaming-eventhubs-example-1.5.1.2.3.2.1-12-jar-with-dependencies.jar C:/eventhubjar
+			pscp sshuser@mysparkcluster-ssh.azurehdinsight.cn:/usr/hdp/current/spark-client/lib/spark-streaming-eventhubs-example-1.5.2.2.3.3.1-7-jar-with-dependencies.jar C:/eventhubjar
 
 		This will copy the jar file from the Spark cluster on to your local computer. 
 
@@ -347,7 +349,9 @@ You should see output similar to the following:
 
 * [Run jobs remotely on a Spark cluster using Livy](/documentation/articles/hdinsight-apache-spark-livy-rest-interface)
 
-### Extensions
+### Tools and extensions
+
+* [Use HDInsight Tools Plugin for IntelliJ IDEA to create and submit Spark Scala applicatons](/documentation/articles/hdinsight-apache-spark-intellij-tool-plugin)
 
 * [Use Zeppelin notebooks with a Spark cluster on HDInsight](/documentation/articles/hdinsight-apache-spark-use-zeppelin-notebook)
 
@@ -358,9 +362,16 @@ You should see output similar to the following:
 * [Manage resources for the Apache Spark cluster in Azure HDInsight](/documentation/articles/hdinsight-apache-spark-resource-manager)
 
 
+
+[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning-v1
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
+
+
 [hdinsight-versions]: ../hdinsight-component-versioning-v1/
 [hdinsight-upload-data]: ../hdinsight-upload-data/
 [hdinsight-storage]: ../hdinsight-use-blob-storage/
+
 
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: /pricing/member-offers/

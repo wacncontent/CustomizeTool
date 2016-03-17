@@ -1,5 +1,7 @@
+<!-- not suitable for Mooncake -->
+
 <properties
-	pageTitle="SharePoint Server 2013 farm in Azure | Windows Azure"
+	pageTitle="SharePoint Server 2013 farm in Azure | Azure"
 	description="Learn the value of a SharePoint Server 2013 farm in Azure, set up a test environment, and deploy a high-availability configuration."
 	services="virtual-machines"
 	documentationCenter=""
@@ -17,7 +19,7 @@
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
 
-Set up your first or next SharePoint farm in Windows Azure and take advantage of ease of configuration and the ability to quickly expand the farm to include new capacity or optimization of key functionality. Many SharePoint farms grow from a standard, highly-available, three-tier configuration to a farm with possibly a dozen or more servers optimized for performance or separate roles, such as distributed caching or search.
+Set up your first or next SharePoint farm in Azure and take advantage of ease of configuration and the ability to quickly expand the farm to include new capacity or optimization of key functionality. Many SharePoint farms grow from a standard, highly-available, three-tier configuration to a farm with possibly a dozen or more servers optimized for performance or separate roles, such as distributed caching or search.
 
 With the virtual machines and virtual network features of Azure infrastructure services, you can quickly deploy and run a SharePoint farm that is transparently connected to your on-premises network. For example, you can set up the following:
 
@@ -31,7 +33,7 @@ Hosting an intranet SharePoint farm in Azure infrastructure services is an examp
 
 Your next step is to set up a dev/test intranet SharePoint farm hosted in Azure.
 
-> [AZURE.NOTE] Microsoft has released the SharePoint Server 2016 IT Preview. To make this preview easy to install and test, you can use an Azure virtual machine gallery image with SharePoint Server 2016 IT Preview and its prerequisites pre-installed. For more information, see [Test the SharePoint Server 2016 IT Preview in Azure](http://azure.microsoft.com/blog/test-sharepoint-server-2016-it-preview-4/).
+> [AZURE.NOTE] Microsoft has released the SharePoint Server 2016 IT Preview. To make this preview easy to install and test, you can use an Azure virtual machine gallery image with SharePoint Server 2016 IT Preview and its prerequisites pre-installed. For more information, see [Test the SharePoint Server 2016 IT Preview in Azure](https://azure.microsoft.com/blog/test-sharepoint-server-2016-it-preview-4/).
 
 ## Create a dev/test intranet SharePoint farm hosted in Azure
 
@@ -40,7 +42,7 @@ You have two choices for creating a dev/test environment for a SharePoint farm h
 - Cloud-only virtual network
 - Cross-premises virtual network
 
-You can create these dev/test environments for free with your [Visual Studio subscription](/pricing/member-offers/msdn-benefits/) or an [Azure Trial Subscription](/pricing/1rmb-trial/).
+You can create these dev/test environments for free with your [Visual Studio subscription](https://azure.microsoft.com/pricing/member-offers/msdn-benefits/) or an [Azure Trial Subscription](/pricing/1rmb-trial/).
 
 ### Cloud-only virtual network
 
@@ -92,7 +94,7 @@ To deploy this configuration, use the following process:
 
 	Prepare the SharePoint databases, create an AlwaysOn Availability Group, and then add the SharePoint databases to it. For the detailed configuration steps, see [Phase 5](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase5).
 
-Once configured, you can expand this SharePoint farm with guidance from [Windows Azure architectures for SharePoint 2013](http://technet.microsoft.com/zh-cn/library/dn635309.aspx).
+Once configured, you can expand this SharePoint farm with guidance from [Azure architectures for SharePoint 2013](http://technet.microsoft.com/zh-cn/library/dn635309.aspx).
 
 ## Next step
 

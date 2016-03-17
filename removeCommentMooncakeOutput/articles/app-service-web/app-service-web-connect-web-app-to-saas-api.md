@@ -41,7 +41,7 @@ This tutorial builds upon the series from the API App tutorials:
 
 	![Add Azure API App Reference...](./media/app-service-web-connect-web-app-to-saas-api/3-Add-Azure-API-App-SDK.png)
 
-1. In the **Add REST API Client** select download from Windows Azure API App and click browse. select the API App you would like to connect to.
+1. In the **Add REST API Client** select download from Azure API App and click browse. select the API App you would like to connect to.
 
 	![Select Existing API App](./media/app-service-web-connect-web-app-to-saas-api/4-Add-Azure-API-App-SDK-Dialog.png)
 

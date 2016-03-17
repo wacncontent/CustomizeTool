@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Attach a disk to a Linux VM | Windows Azure"
+	pageTitle="Attach a disk to a Linux VM | Azure"
 	description="Learn how to attach a data disk to an Azure virtual machine running Linux and initialize it so it's ready for use."
 	services="virtual-machines"
 	documentationCenter=""
@@ -173,5 +173,5 @@ You can use the same instructions to initialize multiple data disks, using the r
 [Using the Azure CLI with the Service Management API](/documentation/articles/virtual-machines-command-line-tools)
 
 <!--Link references-->
-[Agent]: virtual-machines-linux-agent-user-guide.md
-[Logon]: virtual-machines-linux-how-to-log-on.md
+[Agent]: /documentation/articles/virtual-machines-linux-agent-user-guide
+[Logon]: /documentation/articles/virtual-machines-linux-how-to-log-on

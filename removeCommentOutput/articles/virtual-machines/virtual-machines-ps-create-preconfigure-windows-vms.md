@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Create a Windows VM with Powershell | Windows Azure"
+	pageTitle="Create a Windows VM with Powershell | Azure"
 	description="Create Windows virtual machines using Azure PowerShell and the classic deploment model."
 	services="virtual-machines"
 	documentationCenter=""

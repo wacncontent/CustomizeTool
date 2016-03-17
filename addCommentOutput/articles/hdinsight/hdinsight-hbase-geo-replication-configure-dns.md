@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Configure DNS between two Azure virtual networks | Windows Azure" 
+   pageTitle="Configure DNS between two Azure virtual networks | Azure" 
    description="Learn how to configure VPN connections and domain name resolution between two virtual networks, and how to configure HBase geo-replication." 
    services="hdinsight,virtual-network" 
    documentationCenter="" 
@@ -210,15 +210,8 @@ In this tutorial, you have learned how to configure name resolution across virtu
 
 
 
-<!-- deleted by customization
-[hdinsight-hbase-geo-replication]: hdinsight-hbase-geo-replication.md
-[hdinsight-hbase-geo-replication-vnet]: hdinsight-hbase-geo-replication-configure-VNets.md
-[powershell-install]: ../install-configure-powershell.md
--->
-<!-- keep by customization: begin -->
 [hdinsight-hbase-geo-replication]: /documentation/articles/hdinsight-hbase-geo-replication
 [hdinsight-hbase-geo-replication-vnet]: /documentation/articles/hdinsight-hbase-geo-replication-configure-VNets
 [powershell-install]: /documentation/articles/powershell-install-configure
-<!-- keep by customization: end -->
 
-[img-vnet-diagram]: ./media/hdinsight-hbase-geo-replication-configure-DNS/HDInsight.HBase.VPN.diagram.png 
+[img-vnet-diagram]: ./media/hdinsight-hbase-geo-replication-configure-DNS/HDInsight.HBase.VPN.diagram.png

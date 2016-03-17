@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Introduction to Apache Storm on HDInsight | Windows Azure"
+	pageTitle="Introduction to Apache Storm on HDInsight | Azure"
 	description="Get an introduction to Apache Storm, and learn how you can use Storm on HDInsight to build real-time data analytics solutions in the cloud."
 	services="hdinsight"
 	documentationCenter=""
@@ -213,4 +213,4 @@ Learn more about real-time analytics solutions with Apache Storm in HDInsight:
 [stormtrident]: https://storm.incubator.apache.org/documentation/Trident-API-Overview.html
 [samoa]: http://yahooeng.tumblr.com/post/65453012905/introducing-samoa-an-open-source-platform-for-mining
 [apachetutorial]: https://storm.incubator.apache.org/documentation/Tutorial.html
-[gettingstarted]: hdinsight-apache-storm-tutorial-get-started.md
+[gettingstarted]: /documentation/articles/hdinsight-apache-storm-tutorial-get-started

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Query data from HDFS-compatible Blob storage | Windows Azure"
+	pageTitle="Query data from HDFS-compatible Blob storage | Azure"
 	description="HDInsight uses Azure Blob storage as the big data store for HDFS. Learn how to query data from Blob storage and store results of your analysis."
 	keywords="blob storage,hdfs,structured data,unstructured data"
 	services="hdinsight,storage"
@@ -283,16 +283,16 @@ For more information, see:
 * [Use Pig with HDInsight][hdinsight-use-pig]
 * [Use Azure Storage Shared Access Signatures to restrict access to data with HDInsight][hdinsight-use-sas]
 
-[hdinsight-use-sas]: hdinsight-storage-sharedaccesssignature-permissions.md
-[powershell-install]: ../install-configure-powershell.md
-[hdinsight-creation]: hdinsight-provision-clusters-v1.md
-[hdinsight-get-started]: hdinsight-hadoop-tutorial-get-started-windows-v1.md
-[hdinsight-upload-data]: hdinsight-upload-data.md
-[hdinsight-use-hive]: hdinsight-use-hive.md
-[hdinsight-use-pig]: hdinsight-use-pig.md
+[hdinsight-use-sas]: /documentation/articles/hdinsight-storage-sharedaccesssignature-permissions
+[powershell-install]: /documentation/articles/powershell-install-configure
+[hdinsight-creation]: /documentation/articles/hdinsight-provision-clusters-v1
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
+[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
+[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
 
 [blob-storage-restAPI]: http://msdn.microsoft.com/zh-cn/library/azure/dd135733.aspx
-[azure-storage-create]: ../storage-create-storage-account.md
+[azure-storage-create]: /documentation/articles/storage-create-storage-account
 
 [img-hdi-powershell-blobcommands]: ./media/hdinsight-hadoop-use-blob-storage/HDI.PowerShell.BlobCommands.png
 [img-hdi-quick-create]: ./media/hdinsight-hadoop-use-blob-storage/HDI.QuickCreateCluster.png

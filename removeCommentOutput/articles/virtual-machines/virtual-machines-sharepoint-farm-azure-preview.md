@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Create SharePoint server farms | Windows Azure"
+	pageTitle="Create SharePoint server farms | Azure"
 	description="Quickly create a new basic or highly-available SharePoint Server 2013 farm with the Azure Management Portal marketplace."
 	services="virtual-machines"
 	documentationCenter=""
@@ -17,7 +17,7 @@
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic model.
 
-With the Windows Azure Management Portal marketplace, you can quickly create pre-configured SharePoint Server 2013 farms. This can save you a lot of time when you need a basic or high-availability SharePoint farm for a development and testing environment or if you are evaluating SharePoint Server 2013 as a collaboration solution for your organization.
+With the Azure Management Portal marketplace, you can quickly create pre-configured SharePoint Server 2013 farms. This can save you a lot of time when you need a basic or high-availability SharePoint farm for a development and testing environment or if you are evaluating SharePoint Server 2013 as a collaboration solution for your organization.
 
 > [AZURE.NOTE] The **SharePoint Server Farm** item in the Azure gallery of the Azure Management Portal has been removed. It has been replaced with the **SharePoint 2013 non-HA Farm** and **SharePoint 2013 HA Farm** items.
 

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Different ways to create a Windows VM | Windows Azure"
+	pageTitle="Different ways to create a Windows VM | Azure"
 	description="Lists the different ways to create a Windows virtual machine with Resource Manager."
 	services="virtual-machines"
 	documentationCenter=""
@@ -54,23 +54,23 @@ For Azure PowerShell, see:
 Choose an image based on the operating system you want to run. Azure and its partners offer many images, some of which include applications and tools. Or, use one of your own images. Find the platform image that you need for your application by using the information in: [Navigate and select Azure virtual machine images with Windows PowerShell and the Azure CLI][].
 
 <!-- LINKS -->
-[overview]: ../documentation/articles/resource-group-overview
+[overview]: /documentation/articles/resource-group-overview
 
-[Create a virtual machine running Windows]: virtual-machines-windows-tutorial.md
+[Create a virtual machine running Windows]: /documentation/articles/virtual-machines-windows-tutorial-classic-portal
 
-[Equivalent Resource Manager and Service Management commands for virtual machine operations with the Azure CLI for Mac, Linux, and Windows]:xplat-cli-azure-manage-vm-asm-arm.md
-[Deploy and manage virtual machines using Azure Resource Manager templates and the Azure CLI]: virtual-machines-deploy-rmtemplates-azure-cli.md
-[Create and preconfigure a Windows virtual machine with Resource Manager and Azure PowerShell]:  virtual-machines-ps-create-preconfigure-windows-resource-manager-vms.md
-[Deploy and manage virtual machines using Azure Resource Manager templates and PowerShell]: virtual-machines-deploy-rmtemplates-powershell.md
-[Create a Windows VM with Resource Manager and PowerShell]: virtual-machines-create-windows-powershell-resource-manager.md
-[Create a Windows virtual machine with a Resource Manager template and PowerShell]: virtual-machines-create-windows-powershell-resource-manager-template.md
+[Equivalent Resource Manager and Service Management commands for virtual machine operations with the Azure CLI for Mac, Linux, and Windows]: /documentation/articles/xplat-cli-azure-manage-vm-asm-arm
+[Deploy and manage virtual machines using Azure Resource Manager templates and the Azure CLI]: /documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli
+[Create and preconfigure a Windows virtual machine with Resource Manager and Azure PowerShell]: /documentation/articles/virtual-machines-ps-create-preconfigure-windows-resource-manager-vms
+[Deploy and manage virtual machines using Azure Resource Manager templates and PowerShell]: /documentation/articles/virtual-machines-deploy-rmtemplates-powershell
+[Create a Windows VM with Resource Manager and PowerShell]: /documentation/articles/virtual-machines-create-windows-powershell-resource-manager
+[Create a Windows virtual machine with a Resource Manager template and PowerShell]: /documentation/articles/virtual-machines-create-windows-powershell-resource-manager-template
 
 
-[Navigate and select Azure virtual machine images with Windows PowerShell and the Azure CLI]: resource-groups-vm-searching.md
-[Deploy Azure resources using the Compute, Network, and Storage .NET libraries]: virtual-machines-arm-deployment.md
+[Navigate and select Azure virtual machine images with Windows PowerShell and the Azure CLI]: /documentation/articles/resource-groups-vm-searching
+[Deploy Azure resources using the Compute, Network, and Storage .NET libraries]: /documentation/articles/virtual-machines-arm-deployment
 
-[Sign in to the virtual machine]: virtual-machines-log-on-windows-server.md
+[Sign in to the virtual machine]: /documentation/articles/virtual-machines-log-on-windows-server
 
-[Base configuration test environment]: virtual-machines-base-configuration-test-environment.md
+[Base configuration test environment]: /documentation/articles/virtual-machines-base-configuration-test-environment
 
-[Azure hybrid cloud test environments]: virtual-machines-hybrid-cloud-test-environments.md
+[Azure hybrid cloud test environments]: /documentation/articles/virtual-machines-hybrid-cloud-test-environments

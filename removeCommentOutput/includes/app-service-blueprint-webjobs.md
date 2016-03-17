@@ -28,6 +28,6 @@
 * [WebJobs Tooling and Remote Debugging](http://channel9.msdn.com/Shows/Web+Camps+TV/WebJobs-GA-Series-Episode-1-WebJobs-Tooling-with-Brady-Gaster)
 * [WebJobs Tooling and Remote Debugging](http://channel9.msdn.com/Shows/Web+Camps+TV/WebJobs-GA-Series-Episode-1-WebJobs-Tooling-with-Brady-Gaster)
 * [Scaling out WebJobs](http://channel9.msdn.com/Shows/Azure-Friday/Azure-WebJobs-105-Scaling-out-Web-Jobs)
-* [Azure WebJobs videos by Magnus MĂĽrtensson](https://www.youtube.com/playlist?list=PLqp1ZOYYUSd81yEzMYLTw8cz91wx_LU9r)
+* [Azure WebJobs videos by Magnus Mårtensson](https://www.youtube.com/playlist?list=PLqp1ZOYYUSd81yEzMYLTw8cz91wx_LU9r)
 * [Azure WebJobs video series on Channel 9](http://channel9.msdn.com/Tags/azurefridaywebjobs)
 * [Azure WebJobs video series on Channel 9](http://channel9.msdn.com/Tags/azurefridaywebjobs)

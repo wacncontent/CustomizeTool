@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Provision a SQL Server virtual machine | Windows Azure"
+	pageTitle="Provision a SQL Server virtual machine | Azure"
 	description="This tutorial teaches you how to create and configure a SQL Server VM on Azure."
 	services="virtual-machines"
 	documentationCenter=""

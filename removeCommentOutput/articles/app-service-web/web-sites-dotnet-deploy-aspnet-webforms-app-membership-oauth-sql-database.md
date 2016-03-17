@@ -23,7 +23,7 @@ For an MVC version of this tutorial, see [Create an ASP.NET MVC app with auth an
 
 You can open an Azure account for free, and if you don't already have Visual Studio 2013, the SDK automatically installs Visual Studio 2013 for Web Express. You can start developing for Azure for free.
 
-This tutorial assumes that you have no prior experience using Windows Azure. Once completing this tutorial, you'll have a web application up and running in the cloud that uses a cloud database.
+This tutorial assumes that you have no prior experience using Azure. Once completing this tutorial, you'll have a web application up and running in the cloud that uses a cloud database.
 
 You'll learn:
 
@@ -202,7 +202,7 @@ The new site needs the application name and a link updated. The link will point 
 		</body>
 		</html>
 
-	Later in this tutorial you will add Web Forms scaffolding. Scaffolding will create the page that the above âContact Demoâ link references.
+	Later in this tutorial you will add Web Forms scaffolding. Scaffolding will create the page that the above "Contact Demo" link references.
  
 ###Run the Application Locally 
  
@@ -784,7 +784,7 @@ Earlier in the tutorial you used code to add users to the canEdit role. An alter
 We are working on a tool that will make managing users and roles much easier.  
 
 ##Next steps
-For more information about ASP.NET Web Forms, see [Learn About ASP.NET Web Forms](http://www.asp.net/web-forms) on the ASP.NET web app and [Windows Azure Tutorials and Guides](/documentation/services/web-sites/#net).
+For more information about ASP.NET Web Forms, see [Learn About ASP.NET Web Forms](http://www.asp.net/web-forms) on the ASP.NET web app and [Azure Tutorials and Guides](/documentation/services/web-sites/#net).
 
 This tutorial was based on the MVC tutorial [Create an ASP.NET MVC app with auth and SQL DB and deploy to Azure Web App](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database) written by Rick Anderson (Twitter [@RickAndMSFT](https://twitter.com/RickAndMSFT)) with assistance from Tom Dykstra and Barry Dorrans (Twitter [@blowdart](https://twitter.com/blowdart)). 
 

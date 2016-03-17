@@ -1,5 +1,7 @@
+<!-- not suitable for Mooncake -->
+
 <properties
-   	pageTitle="Create Hadoop, HBase, Storm, or Spark clusters on Linux in HDInsight | Windows Azure"
+   	pageTitle="Create Hadoop, HBase, Storm, or Spark clusters on Linux in HDInsight | Azure"
    	description="Learn how to create Hadoop, HBase, Storm, or Spark clusters on Linux for HDInsight using a browser, the Azure CLI, Azure PowerShell, REST, or through an SDK."
    	services="hdinsight"
    	documentationCenter=""
@@ -226,24 +228,24 @@ In this article, you have learned basic information about creating a Linux-based
 | [.NET SDK](/documentation/articles/hdinsight-hadoop-create-linux-clusters-dotnet-sdk) | &nbsp; | &nbsp; | &nbsp; | ✔ | ✔      | ✔ |
 
 
-[hdinsight-use-mapreduce]: ../hdinsight-use-mapreduce/
-[hdinsight-use-hive]: ../hdinsight-use-hive/
-[hdinsight-use-pig]: ../hdinsight-use-pig/
-[hdinsight-upload-data]: ../hdinsight-upload-data/
+[hdinsight-use-mapreduce]: /documentation/articles/hdinsight-use-mapreduce
+[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
+[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
 [hdinsight-sdk-documentation]: http://msdn.microsoft.com/zh-cn/library/dn479185.aspx
 
 
-[hdinsight-customize-cluster]: ../hdinsight-hadoop-customize-cluster-v1/
-[hdinsight-get-started]: ../hdinsight-get-started/
-[hdinsight-admin-powershell]: ../hdinsight-administer-use-powershell/
+[hdinsight-customize-cluster]: /documentation/articles/hdinsight-hadoop-customize-cluster-v1
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
+[hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell
 
-[hdinsight-submit-jobs]: ../hdinsight-submit-hadoop-jobs-programmatically/
+[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
 [hdinsight-powershell-reference]: https://msdn.microsoft.com/zh-cn/library/dn858087.aspx
 
 [azure-management-portal]: https://manage.windowsazure.cn/
 
-[azure-command-line-tools]: ../xplat-cli/
-[azure-create-storageaccount]: ../storage-create-storage-account/
+[azure-command-line-tools]: /documentation/articles/xplat-cli-install
+[azure-create-storageaccount]: /documentation/articles/storage-create-storage-account
 
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: /pricing/member-offers/
@@ -251,7 +253,7 @@ In this article, you have learned basic information about creating a Linux-based
 [hdi-remote]: /documentation/articles/hdinsight-administer-use-management-portal-v1/#rdp
 
 
-[Powershell-install-configure]: ../install-configure-powershell/
+[Powershell-install-configure]: /documentation/articles/powershell-install-configure
 
 [image-hdi-customcreatecluster]: ./media/hdinsight-get-started/HDI.CustomCreateCluster.png
 [image-hdi-customcreatecluster-clusteruser]: ./media/hdinsight-get-started/HDI.CustomCreateCluster.ClusterUser.png

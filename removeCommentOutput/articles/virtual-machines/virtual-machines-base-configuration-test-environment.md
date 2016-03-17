@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Base Configuration Test Environment"
-	description="Learn how to create a simple dev/test environment that simulates a simplified intranet in Windows Azure."
+	description="Learn how to create a simple dev/test environment that simulates a simplified intranet in Azure."
 	documentationCenter=""
 	services="virtual-machines"
 	authors="JoeDavies-MSFT"

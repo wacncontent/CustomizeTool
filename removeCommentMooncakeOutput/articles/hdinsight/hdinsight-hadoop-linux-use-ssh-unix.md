@@ -1,7 +1,7 @@
 <!-- not suitable for Mooncake -->
 
 <properties
-   pageTitle="Use SSH keys with  Linux-based Hadoop from Linux, Unix, or OS X | Windows Azure"
+   pageTitle="Use SSH keys with  Linux-based Hadoop from Linux, Unix, or OS X | Azure"
    description=" You can access Linux-based HDInsight using Secure Shell (SSH). This document provides information on using SSH with HDInsight from Linux, Unix, or OS X clients."
    services="hdinsight"
    documentationCenter=""
@@ -12,7 +12,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="11/16/2015"
+	ms.date="01/28/2016"
 	wacn.date=""/>
 
 #Use SSH with Linux-based Hadoop on HDInsight from Linux, Unix, or OS X

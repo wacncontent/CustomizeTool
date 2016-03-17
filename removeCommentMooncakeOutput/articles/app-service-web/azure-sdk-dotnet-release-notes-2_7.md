@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="11/18/2015"
+	ms.date="01/19/2016"
 	wacn.date=""/>
 
 
@@ -59,11 +59,11 @@ In this release the following updates were made. These updates are in preview. F
 
 ###Azure Web App Tools
 
-In this release the following updates were made to Web Tools Extensions. For more information see [this](https://azure.microsoft.com/zh-cn/blog/2015/07/20/announcing-the-azure-sdk-2-7-for-net/)  blog. 
+In this release the following updates were made to Web Tools Extensions. For more information see [this](https://azure.microsoft.com/zh-cn/blog/2015/07/20/announcing-the-azure-sdk-2-7-for-net/)  blog.
 
 - Support for DreamSpark accounts added
 - Full change to Azure Tools made to support the new Azure Resource Management APIs
-- Support for Azure Web App added to [Cloud Explorer](/documentation/articles/azure-sdk-dot-net-release-notes-2_7#cloud_explorer)
+- Support for Azure Web App added to [Cloud Explorer](#cloud_explorer)
 
 ####Known issues
 

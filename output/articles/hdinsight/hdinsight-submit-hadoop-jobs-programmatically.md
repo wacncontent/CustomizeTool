@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Submit Hadoop jobs in HDInsight | Windows Azure"
+	pageTitle="Submit Hadoop jobs in HDInsight | Azure"
 	description="Learn how to submit Hadoop jobs to Azure HDInsight Hadoop."
 	editor="cgronlun"
 	manager="paulettm"
@@ -18,7 +18,9 @@
 Learn how to use Azure PowerShell to submit MapReduce and Hive jobs, and how to use the HDInsight .NET SDK to submit MapReduce, Hadoop streaming, and Hive jobs.
 
 > [AZURE.NOTE] The steps in this article must be performed from a Windows client. For information on using a Linux, OS X, or Unix client to work with MapReduce, Hive, or Pig on HDInsight, see the following articles and select either the **SSH** or **Curl** links within each:
+
 >
+
 > - [Use Hive with HDInsight](/documentation/articles/hdinsight-use-hive)
 > - [Use Pig with HDInsight](/documentation/articles/hdinsight-use-pig)
 > - [Use MapReduce with HDInsight](/documentation/articles/hdinsight-use-mapreduce)
@@ -49,7 +51,12 @@ See [Use Sqoop with HDInsight][hdinsight-use-sqoop].
 ##Submit Hive/Pig/Sqoop jobs using HDInsight .NET SDK
 The HDInsight .NET SDK provides .NET client libraries, which makes it easier to work with HDInsight clusters from .NET. 
 
+
 **To Submit jobs**
+
+
+**<a name="mapreduce-sdk"></a> To Submit jobs**
+
 
 1. Create a C# console application in Visual Studio.
 2. From the Nuget Package Manager Console, run the following command.
@@ -208,7 +215,7 @@ The HDInsight .NET SDK provides .NET client libraries, which makes it easier to 
 						return null;
 					}
 		
-					return "&define=" + string.Join("&define=", defines.Select(x => x.Key + "%3D" + x.Value).ToArray());
+					 "&define=" +  sreturn "&define=" + string.Join("&define=", defines.Select(x => x.Key + "%3D" + x.Value).ToArray());
 				}
 				private static string ConvertArgsToString(List<string> args)
 				{
@@ -239,23 +246,28 @@ In this article, you have learned several ways to create an HDInsight cluster. T
 * [Use Pig with HDInsight][hdinsight-use-pig]
 
 
+
 [azure-certificate]: http://msdn.microsoft.com/zh-cn/library/azure/gg551722.aspx
+
+
+[azure-certificate]: /documentation/articles/cloud-services-certs-create/
+
 [azure-management-portal]: https://manage.windowsazure.cn/
 
-[hdinsight-visual-studio-tools]: ../HDInsight/hdinsight-hadoop-visual-studio-tools-get-started.md
-[hdinsight-use-sqoop]: hdinsight-use-sqoop.md
-[hdinsight-provision]: hdinsight-provision-clusters-v1.md
-[hdinsight-use-mapreduce]: hdinsight-use-mapreduce.md
-[hdinsight-use-hive]: hdinsight-use-hive.md
-[hdinsight-use-pig]: hdinsight-use-pig.md
-[hdinsight-get-started]: ../hdinsight-get-started.md
-[hdinsight-storage]: ../hdinsight-use-blob-storage.md
-[hdinsight-admin-powershell]: hdinsight-administer-use-powershell.md
-[hdinsight-develop-streaming-jobs]: hdinsight-hadoop-develop-deploy-streaming-jobs.md
+[hdinsight-visual-studio-tools]: /documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started
+[hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
+[hdinsight-use-mapreduce]: /documentation/articles/hdinsight-use-mapreduce
+[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
+[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
+[hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell
+[hdinsight-develop-streaming-jobs]: /documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs
 
 [hdinsight-powershell-reference]: https://msdn.microsoft.com/zh-cn/library/dn858087.aspx
 
-[powershell-install-configure]: ../install-configure-powershell.md
+[powershell-install-configure]: /documentation/articles/powershell-install-configure
 
 [image-hdi-gettingstarted-runmrjob]: ./media/hdinsight-submit-hadoop-jobs-programmatically/HDI.GettingStarted.RunMRJob.png
 [image-hdi-gettingstarted-mrjoboutput]: ./media/hdinsight-submit-hadoop-jobs-programmatically/HDI.GettingStarted.MRJobOutput.png

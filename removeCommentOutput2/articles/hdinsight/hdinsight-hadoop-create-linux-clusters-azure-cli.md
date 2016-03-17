@@ -1,7 +1,7 @@
 <!-- not suitable for Mooncake -->
 
 <properties
-   	pageTitle="Create Hadoop, HBase, or Storm clusters on Linux in HDInsight using the cross-platform Azure CLI | Windows Azure"
+   	pageTitle="Create Hadoop, HBase, or Storm clusters on Linux in HDInsight using the cross-platform Azure CLI | Azure"
    	description="Learn how to create Linux-based HDInsight clusters using the cross-platform Azure CLI, Azure Resource Manager templates, and the Azure REST API. You can specify the cluster type (Hadoop, HBase, or Storm,) or use scripts to install custom components.."
    	services="hdinsight"
    	documentationCenter=""
@@ -26,6 +26,7 @@ Azure Resource Management templates are JSON documents that describe a __resourc
 The steps in this document walk through the process of creating a new HDInsight cluster using the Azure CLI and a template.
 
 > [AZURE.IMPORTANT] The steps in this document use the default number of worker nodes (4) for an HDInsight cluster. If you plan on more than 32 worker nodes, either at cluster creation or by scaling the cluster after creation, then you must select a head node size with at least 8 cores and 14GB ram.
+>
 > For more information on node sizes and associated costs, see [HDInsight pricing](/home/features/hdinsight/#price).
 
 ##Prerequisites

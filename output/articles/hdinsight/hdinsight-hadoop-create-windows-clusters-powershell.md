@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Create Windows-based Hadoop clusters in HDInsight using Azure PowerShell| Windows Azure"
+   pageTitle="Create Windows-based Hadoop clusters in HDInsight using Azure PowerShell| Azure"
    	description="Learn how to create clusters for Azure HDInsight by using Azure PowerShell."
    services="hdinsight"
    documentationCenter=""
@@ -53,12 +53,19 @@ The following procedures are needed to create an HDInsight cluster by using Azur
     #region - service names
     $namePrefix = $nameToken.ToLower() + (Get-Date -Format "MMdd")
 
+
     $resourceGroupName = $namePrefix + "rg"
+
     $hdinsightClusterName = $namePrefix + "hdi"
     $defaultStorageAccountName = $namePrefix + "store"
     $defaultBlobContainerName = $hdinsightClusterName
 
+
     $location = "China East 2"
+
+
+    $location = "China East"
+
     $clusterSizeInNodes = 1
     #endregion
 
@@ -70,27 +77,47 @@ The following procedures are needed to create an HDInsight cluster by using Azur
     ###########################################
     #region - Connect to Azure subscription
     Write-Host "`nConnecting to your Azure subscription ..." -ForegroundColor Green
+
     try{Get-AzureRmContext}
     catch{Login-AzureRmAccount}
+
+
+    try{Get-AzureContext}
+    catch{Add-AzureAccount -Environment AzureChinaCloud}
+
     #endregion
+
 
     ###########################################
     # Create the resource group
     ###########################################
     New-AzureRmResourceGroup -Name $resourceGroupName -Location $location
+
 
     ###########################################
     # Preapre default storage account and container
     ###########################################
+
     New-AzureRmStorageAccount `
         -ResourceGroupName $resourceGroupName `
         -Name $defaultStorageAccountName `
+
+
+    New-AzureStorageAccount `
+        -StorageAccountName $defaultStorageAccountName `
+
         -Type Standard_GRS `
         -Location $location
 
+
     $defaultStorageAccountKey = Get-AzureRmStorageAccountKey `
                                     -ResourceGroupName $resourceGroupName `
                                     -Name $defaultStorageAccountName |  %{ $_.Key1 }
+
+
+    $defaultStorageAccountKey = Get-AzureStorageKey `
+                                    -StorageAccountName $defaultStorageAccountName |  %{ $_.Primary }
+
     $defaultStorageContext = New-AzureStorageContext `
                                     -StorageAccountName $defaultStorageAccountName `
                                     -StorageAccountKey $defaultStorageAccountKey
@@ -105,27 +132,50 @@ The following procedures are needed to create an HDInsight cluster by using Azur
     $httpPW = ConvertTo-SecureString -String $httpPassword -AsPlainText -Force
     $httpCredential = New-Object System.Management.Automation.PSCredential($httpUserName,$httpPW)
 
+
     New-AzureRmHDInsightCluster `
         -ResourceGroupName $resourceGroupName `
         -ClusterName $hdinsightClusterName `
+
+
+    New-AzureHDInsightCluster `
+        -Name $hdinsightClusterName `
+
         -Location $location `
         -ClusterSizeInNodes $clusterSizeInNodes `
         -ClusterType Hadoop `
+
         -OSType Windows `
+
         -Version "3.2" `
+
         -HttpCredential $httpCredential `
+
+
+        -Credential $httpCredential `
+
         -DefaultStorageAccountName "$defaultStorageAccountName.blob.core.chinacloudapi.cn" `
         -DefaultStorageAccountKey $defaultStorageAccountKey `
+
         -DefaultStorageContainer $hdinsightClusterName 
+
+
+        -DefaultStorageContainerName $hdinsightClusterName 
+
 
     ####################################
     # Verify the cluster
     ####################################
+
     Get-AzureRmHDInsightCluster -ClusterName $hdinsightClusterName 
 
 ## Create clusters using ARM template
 
 You can use Azure PowerShell to deploy an ARM template which creates an HDInsight cluster.  See [Call templates using Azure PowerShell](/documentation/articles/hdinsight-hadoop-create-windows-clusters-arm-templates#call-templates-using-powershell).
+
+
+    Get-AzureHDInsightCluster -Name $hdinsightClusterName 
+
 
 ##Customize clusters
 

@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="11/19/2015"
+	ms.date="02/09/2016"
 	wacn.date=""/>
 
 #Create a PHP-MySQL web app in Azure and deploy using Git
@@ -62,12 +62,12 @@ Follow these steps to create a web app and a MySQL database:
 
 	When the  Website has been created you will see the text **Creation of  Website "[SITENAME]" completed successfully**. Now, you can enable Git publishing.
 
-6. Click the name of the  Website displayed in the list of  Websites to open the  Website's **QuickStart** dashboard.
+6. Click the name of the  Website displayed in the list of Websites.
 
 	![Open  Website dashboard][go-to-dashboard]
 
 
-7. At the bottom of the **QuickStart** page, click **Set up Git publishing**. 
+7. Under the **Integrate source control**, click **Set up deployment from source control**, and choose **Local Git Repository**. 
 
 	![Set up Git publishing][setup-git-publishing]
 
@@ -107,11 +107,11 @@ To build and run the application locally, follow the steps below. Note that thes
 
 1. Connect to the remote MySQL server, using the value for `Data Source`, `User Id`, `Password`, and `Database` that you retrieved earlier:
 
-		<pre><code class="prettyprint">mysql -h{Data Source] -u[User Id] -p[Password] -D[Database]</code></pre> 
+		mysql -h{Data Source] -u[User Id] -p[Password] -D[Database]
 
 2. The MySQL command prompt will appear:
 
-		<pre><code class="prettyprint">mysql></code></pre> 
+		mysql>
 
 3. Paste in the following `CREATE TABLE` command to create the `registration_tbl` table in your database:
 

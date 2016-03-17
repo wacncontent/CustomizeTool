@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Use Hadoop Hive and Remote Desktop in HDInsight | Windows Azure"
+   pageTitle="Use Hadoop Hive and Remote Desktop in HDInsight | Azure"
    description="Learn how to connect to Hadoop cluster in HDInsight by using Remote Desktop, and then run Hive queries by using the Hive Command-Line Interface."
    services="hdinsight"
    documentationCenter=""
@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="12/04/2015"
+	ms.date="02/05/2016"
 	wacn.date=""/>
 
 # Use Hive with Hadoop on HDInsight with Remote Desktop
@@ -60,8 +60,13 @@ When you have connected to the desktop for the HDInsight cluster, use the follow
     * **CREATE EXTERNAL TABLE**: Creates a new 'external' table in Hive. External tables store only the table definition in Hive (the data is left in the original location).
 
 		> [AZURE.NOTE] External tables should be used when you expect the underlying data to be updated by an external source (such as an automated data upload process) or by another MapReduce operation, but you always want Hive queries to use the latest data.
+
     	>
     	> Dropping an external table does **not** delete the data, only the table definition.
+
+
+    	> <p>Dropping an external table does **not** delete the data, only the table definition.
+
 
 	* **ROW FORMAT**: Tells Hive how the data is formatted. In this case, the fields in each log are separated by a space.
 
@@ -110,12 +115,7 @@ For information about other ways you can work with Hadoop on HDInsight:
 * [Use MapReduce with Hadoop on HDInsight](/documentation/articles/hdinsight-use-mapreduce)
 
 
-<!-- deleted by customization
-[1]: ../HDInsight/hdinsight-hadoop-visual-studio-tools-get-started.md
--->
-<!-- keep by customization: begin -->
 [1]: /documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started
-<!-- keep by customization: end -->
 
 [hdinsight-sdk-documentation]: http://msdn.microsoft.com/zh-cn/library/dn479185.aspx
 
@@ -130,27 +130,22 @@ For information about other ways you can work with Hadoop on HDInsight:
 [import-to-excel]: /documentation/articles/hdinsight-connect-excel-power-query/
 
 
-<!-- deleted by customization
-[hdinsight-use-oozie]: hdinsight-use-oozie.md
-[hdinsight-analyze-flight-data]: hdinsight-analyze-flight-delay-data.md
-
-
-
-
-
-[hdinsight-provision]: hdinsight-provision-clusters-v1.md
-[hdinsight-submit-jobs]: hdinsight-submit-hadoop-jobs-programmatically.md
-[hdinsight-upload-data]: hdinsight-upload-data.md
-
-
-[Powershell-install-configure]: ../powershell-install-configure.md
--->
-<!-- keep by customization: begin -->
 [hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie
 [hdinsight-analyze-flight-data]: /documentation/articles/hdinsight-analyze-flight-delay-data
 
 
 
+
+
+
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
+[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
+
+
+[Powershell-install-configure]: /documentation/articles/powershell-install-configure
+
+
 [hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
 
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
@@ -159,6 +154,6 @@ For information about other ways you can work with Hadoop on HDInsight:
 [hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
 
 [Powershell-install-configure]: /documentation/articles/powershell-install-configure
-<!-- keep by customization: end -->
+
 [powershell-here-strings]: http://technet.microsoft.com/zh-cn/library/ee692792.aspx
 

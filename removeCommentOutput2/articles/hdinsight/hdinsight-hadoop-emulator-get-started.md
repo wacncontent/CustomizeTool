@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Get started with a Hadoop emulator for HDInsight | Windows Azure"
+	pageTitle="Get started with a Hadoop emulator for HDInsight | Azure"
 	description="Use an installed emulator with a MapReduce tutorial and other samples to learn the Hadoop ecosystem. HDInsight emulator works like a Hadoop sandbox."
 	keywords="emulator,hadoop ecosystem,hadoop sandbox,mapreduce tutorial"
 	editor="cgronlun"
@@ -432,6 +432,7 @@ Before you start with the instructions below, you must have created a storage ac
 
 **To create a container**
 
+
 1. Sign in to the [Azure Management Portal][azure-management-portal].
 2. Click **STORAGE** on the left. A list of storage accounts appears under your subscription.
 3. Click the storage account where you want to create the container from the list.
@@ -527,4 +528,3 @@ In this MapReduce tutorial, you installed the HDInsight Emulator - a Hadoop sand
 [hadoop-commands-manual]: http://hadoop.apache.org/docs/r1.1.1/commands_manual.html
 
 [image-hdi-emulator-services]: ./media/hdinsight-hadoop-emulator-get-started/HDI.Emulator.Services.png
- 

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Attach a disk to a Linux VM | Windows Azure"
+	pageTitle="Attach a disk to a Linux VM | Azure"
 	description="Learn how to attach a data disk to an Azure virtual machine running Linux and initialize it so it's ready for use."
 	services="virtual-machines"
 	documentationCenter=""
@@ -15,7 +15,7 @@
 
 # How to Attach a Data Disk to a Linux Virtual Machine
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]  Resource Manager model. 
 
 
 You can attach both empty disks and disks that contain data. In both cases, the disks are actually .vhd files that reside in an Azure storage account. Also in both cases, after you attach the disk, you'll need to initialize it so it's ready for use.
@@ -173,5 +173,5 @@ You can use the same instructions to initialize multiple data disks, using the r
 [Using the Azure CLI with the Service Management API](/documentation/articles/virtual-machines-command-line-tools)
 
 <!--Link references-->
-[Agent]: virtual-machines-linux-agent-user-guide.md
-[Logon]: virtual-machines-linux-how-to-log-on.md
+[Agent]: /documentation/articles/virtual-machines-linux-agent-user-guide
+[Logon]: /documentation/articles/virtual-machines-linux-how-to-log-on

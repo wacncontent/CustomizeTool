@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Use Hive with Hadoop for website log analysis| Windows Azure" 
+	pageTitle="Use Hive with Hadoop for website log analysis| Azure" 
 	description="Learn how to use Hive with HDInsight to analyze website logs. You'll use a log file as input into an HDInsight table, and use HiveQL to query the data." 
 	services="hdinsight" 
 	documentationCenter="" 
@@ -51,8 +51,7 @@ In this sample, you will use an HDInsight cluster to analyze website log files t
 Try the following sample: [Analyzing sensor data using Hive with HDInsight](/documentation/articles/hdinsight-hive-analyze-sensor-data).
 
 
-[hdinsight-provision]: hdinsight-provision-clusters-v1.md
-[hdinsight-sensor-data-sample]: ../hdinsight-use-hive-sensor-data-analysis.md
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
+[hdinsight-sensor-data-sample]: /documentation/articles/hdinsight-use-hive-sensor-data-analysis
 
 [img-hdi-weblogs-sample]: ./media/hdinsight-hive-analyze-website-log/hdinsight-weblogs-sample.png
- 

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Provision HBase clusters on a Virtual Network | Windows Azure"
+	pageTitle="Provision HBase clusters on a Virtual Network | Azure"
 	description="Get started using HBase in Azure HDInsight. Learn how to create HDInsight HBase clusters on Azure Virtual Network."
 	keywords=""
 	services="hdinsight,virtual-network"
@@ -305,8 +305,13 @@ To begin working with your new HBase cluster, you can use the procedures found i
 		This will return the DNS suffix. For example, **yourclustername.b4.internal.chinacloudapp.cn**.
 
 	> [AZURE.NOTE] You can also use Remote Desktop to connect to the HBase cluster (you will be connected to the head node) and run **ipconfig** from a command prompt to obtain the DNS suffix. For instructions on enabling Remote Desktop Protocol (RDP) and connecting to the cluster by using RDP, see [Manage Hadoop clusters in HDInsight using the Azure Management Portal][hdinsight-admin-portal].
+
 	>
 	> ![hdinsight.hbase.dns.surffix][img-dns-surffix]
+
+
+	> <p>![hdinsight.hbase.dns.surffix][img-dns-surffix]
+
 
 
 <!--
@@ -382,7 +387,9 @@ In this tutorial you learned how to provision an HBase cluster. To learn more, s
 - [Configure HBase replication in HDInsight](/documentation/articles/hdinsight-hbase-geo-replication)
 - [Provision Hadoop clusters in HDInsight](/documentation/articles/hdinsight-provision-clusters-v1)
 - [Get started using HBase with Hadoop in HDInsight](/documentation/articles/hdinsight-hbase-tutorial-get-started-v1)
+
 - [Analyze Twitter sentiment with HBase in HDInsight](/documentation/articles/hdinsight-hbase-twitter-sentiment)
+
 - [Virtual Network Overview][vnet-overview]
 
 
@@ -390,18 +397,23 @@ In this tutorial you learned how to provision an HBase cluster. To learn more, s
 [2]: http://technet.microsoft.com/zh-cn/library/ee176961.aspx
 [3]: http://technet.microsoft.com/zh-cn/library/hh847889.aspx
 
-[hbase-get-started]: ../hdinsight-hbase-get-started.md
-[hbase-twitter-sentiment]: ../hdinsight-hbase-twitter-sentiment.md
-[vnet-overview]: ../networking/virtual-networks-overview.md
-[vm-create]: ../virtual-machines-windows-tutorial.md
+[hbase-get-started]: /documentation/articles/hdinsight-hbase-tutorial-get-started-v1
+
+[hbase-twitter-sentiment]: /documentation/articles/hdinsight-hbase-twitter-sentiment
+[vnet-overview]: /documentation/articles/virtual-networks-overview
+
+
+[vnet-overview]: /documentation/articles/virtual-networks-overview
+
+[vm-create]: /documentation/articles/virtual-machines-windows-tutorial-classic-portal
 
 [azure-portal]: https://management.windowsazure.cn
-[azure-create-storageaccount]: ../storage-create-storage-account.md
+[azure-create-storageaccount]: /documentation/articles/storage-create-storage-account
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: /pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
 
-[hdinsight-admin-powershell]: hdinsight-administer-use-powershell.md
+[hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell
 [hdinsight-admin-portal]: /documentation/articles/hdinsight-administer-use-management-portal-v1#rdp
 
 [hdinsight-powershell-reference]: https://msdn.microsoft.com/zh-cn/library/dn858087.aspx
@@ -411,19 +423,19 @@ In this tutorial you learned how to provision an HBase cluster. To learn more, s
 [twitter-statuses-filter]: https://dev.twitter.com/docs/api/1.1/post/statuses/filter
 
 
-[powershell-install]: ../install-configure-powershell.md
+[powershell-install]: /documentation/articles/powershell-install-configure
 
 
-[hdinsight-customize-cluster]: hdinsight-hadoop-customize-cluster-v1.md
-[hdinsight-provision]: hdinsight-provision-clusters-v1.md
-[hdinsight-get-started]: ../hdinsight-get-started.md
+[hdinsight-customize-cluster]: /documentation/articles/hdinsight-hadoop-customize-cluster-v1
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
 [hdinsight-storage-powershell]: /documentation/articles/hdinsight-hadoop-use-blob-storage#powershell
-[hdinsight-analyze-flight-delay-data]: hdinsight-analyze-flight-delay-data.md
-[hdinsight-storage]: ../hdinsight-use-blob-storage.md
-[hdinsight-use-sqoop]: hdinsight-use-sqoop.md
-[hdinsight-power-query]: hdinsight-connect-excel-power-query.md
-[hdinsight-hive-odbc]: hdinsight-connect-excel-hive-ODBC-driver.md
-[hdinsight-hbase-replication-dns]: hdinsight-hbase-geo-replication-configure-DNS.md
+[hdinsight-analyze-flight-delay-data]: /documentation/articles/hdinsight-analyze-flight-delay-data
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
+[hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop
+[hdinsight-power-query]: /documentation/articles/hdinsight-connect-excel-power-query
+[hdinsight-hive-odbc]: /documentation/articles/hdinsight-connect-excel-hive-ODBC-driver
+[hdinsight-hbase-replication-dns]: /documentation/articles/hdinsight-hbase-geo-replication-configure-DNS
 
 [img-dns-surffix]: ./media/hdinsight-hbase-provision-vnet-v1/DNSSuffix.png
 [img-primary-dns-suffix]: ./media/hdinsight-hbase-provision-vnet-v1/PrimaryDNSSuffix.png

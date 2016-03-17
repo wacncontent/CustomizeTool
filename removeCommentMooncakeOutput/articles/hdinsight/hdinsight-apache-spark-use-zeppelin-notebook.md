@@ -11,7 +11,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="01/15/2016"
+	ms.date="02/05/2016"
 	wacn.date=""/>
 
 
@@ -157,7 +157,7 @@ Use the following steps to create an SSH tunnel using PuTTY.
 
 	> [AZURE.NOTE] Selecting **Remote DNS** will resolve Domain Name System (DNS) requests by using the HDInsight cluster. If this is unselected, DNS will be resolved locally.
 
-2. Verify that traffic is being routed through the tunnel by vising a site such as [http://www.whatismyip.com/](http://www.whatismyip.com/) with the proxy settings enabled and disabled in Firefox. While the settings are enabled, the IP address will be for a machine in the Windows Azure datacenter.
+2. Verify that traffic is being routed through the tunnel by vising a site such as [http://www.whatismyip.com/](http://www.whatismyip.com/) with the proxy settings enabled and disabled in Firefox. While the settings are enabled, the IP address will be for a machine in the Azure datacenter.
 
 ### Browser extensions
 
@@ -210,7 +210,7 @@ Once you have SSH tunneling setup, you can use the following steps to access Zep
 		http://hn0-myspar:9995
 
 	* **hn0** denotes headnode0
-	* **myspar** is the first five letters of the Spark cluster.
+	* **myspar** is the first six letters of the Spark cluster name.
 	* **9995** is the port where Zeppelin notebook is accessible.
 
 2. Create a new notebook. From the header pane, click **Notebook**, and then click **Create New Note**.
@@ -309,7 +309,9 @@ Once you have SSH tunneling setup, you can use the following steps to access Zep
 
 * [Run jobs remotely on a Spark cluster using Livy](/documentation/articles/hdinsight-apache-spark-livy-rest-interface)
 
-### Extensions
+### Tools and extensions
+
+* [Use HDInsight Tools Plugin for IntelliJ IDEA to create and submit Spark Scala applicatons](/documentation/articles/hdinsight-apache-spark-intellij-tool-plugin)
 
 * [Kernels available for Jupyter notebook in Spark cluster for HDInsight](/documentation/articles/hdinsight-apache-spark-jupyter-notebook-kernels)
 

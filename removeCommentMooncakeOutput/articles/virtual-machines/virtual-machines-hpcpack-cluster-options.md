@@ -1,7 +1,7 @@
 <properties
- pageTitle="HPC Pack cluster options in the cloud | Windows Azure"
+ pageTitle="HPC Pack cluster options in the cloud | Azure"
  description="Learn about options with Microsoft HPC Pack to create and manage a high performance computing (HPC) cluster in the Azure cloud."
- services="virtual-machines,cloud-services"
+ services="virtual-machines,cloud-services,batch"
  documentationCenter=""
  authors="dlepow"
  manager="timlt"
@@ -9,7 +9,7 @@
  tags="azure-resource-manager,azure-service-management,hpc-pack"/>
 <tags
 	ms.service="virtual-machines"
-	ms.date="10/08/2015"
+	ms.date="02/04/2016"
 	wacn.date=""/>
 
 # Options to create and manage a high performance computing (HPC) cluster in Azure with Microsoft HPC Pack
@@ -17,27 +17,10 @@
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
 
 
-Take advantage of Microsoft HPC Pack and Azure compute and infrastructure services to create and manage a cloud-based high performance computing (HPC) cluster. [HPC Pack](https://technet.microsoft.com/zh-cn/library/jj899572.aspx) is Microsoft's free HPC solution built on Windows Azure and Windows Server technologies and supports both Windows and Linux HPC workloads. A cloud-based HPC Pack cluster provides a cluster administrator or independent software vendor (ISV) a flexible, scalable platform to run compute-intensive applications while reducing investment in an on-premises compute cluster infrastructure.
+Take advantage of Microsoft HPC Pack and Azure compute and infrastructure services to create and manage a cloud-based high performance computing (HPC) cluster. [HPC Pack](https://technet.microsoft.com/zh-cn/library/jj899572.aspx) is Microsoft's free HPC solution built on Azure and Windows Server technologies and supports both Windows and Linux HPC workloads. A cloud-based HPC Pack cluster provides a cluster administrator or independent software vendor (ISV) a flexible, scalable platform to run compute-intensive applications while reducing investment in an on-premises compute cluster infrastructure.
 
 
 ## Run an HPC Pack cluster in Azure VMs
-
-
-### Azure VM images
-
-* [HPC Pack on Windows Server 2012 R2](http://azure.microsoft.com/marketplace/partners/microsoft/hpcpack2012r2onwindowsserver2012r2/)
-
-* [HPC Pack compute node on Windows Server 2012 R2](http://azure.microsoft.com/marketplace/partners/microsoft/hpcpack2012r2computenodeonwindowsserver2012r2/)
-
-* [HPC Pack compute node with Excel on Windows Server 2012 R2](http://azure.microsoft.com/marketplace/partners/microsoft/hpcpack2012r2computenodewithexcelonwindowsserver2012r2/)
-
-### Azure quickstart templates
-
-* [Create an HPC cluster](https://azure.microsoft.com/documentation/templates/create-hpc-cluster/)
-
-* [Create an HPC cluster with Linux compute nodes](https://azure.microsoft.com/documentation/templates/create-hpc-cluster-linux-cn/)
-
-* [Create an HPC cluster with custom compute node image](https://azure.microsoft.com/documentation/templates/create-hpc-cluster-custom-image/)
 
 ### PowerShell deployment script
 
@@ -57,15 +40,12 @@ Take advantage of Microsoft HPC Pack and Azure compute and infrastructure servic
 
 ### Manual deployment with the Azure Management Portal
 
-
-
 * [Set up the head node of an HPC Pack cluster in an Azure VM](/documentation/articles/virtual-machines-hpcpack-cluster-headnode)
 
 ### Cluster management
 
 * [Manage compute nodes in an HPC Pack cluster in Azure](/documentation/articles/virtual-machines-hpcpack-cluster-node-manage)
 
-* [Add Azure "burst" nodes to an HPC Pack head node in Azure](/documentation/articles/virtual-machines-hpcpack-cluster-node-burst)
 
 * [Grow and shrink Azure compute resources in an HPC Pack cluster](/documentation/articles/virtual-machines-hpcpack-cluster-node-autogrowshrink)
 
@@ -93,4 +73,4 @@ Take advantage of Microsoft HPC Pack and Azure compute and infrastructure servic
 
 * [Tutorial: Run OpenFOAM with Microsoft HPC Pack on a Linux RDMA cluster in Azure](/documentation/articles/virtual-machines-linux-cluster-hpcpack-openfoam)
 
-<!-- * [Set up a Linux RDMA cluster to run MPI applications](/documentation/articles/virtual-machines-linux-hpcpack-cluster-rdma) -->
+* [Set up a Linux RDMA cluster to run MPI applications](/documentation/articles/virtual-machines-linux-cluster-rdma)

@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
 	pageTitle="How to Create an Azure Environment" 
 	description="Creation flow description for app service environments" 
@@ -9,12 +11,12 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="10/26/2015"
+	ms.date="01/14/2016"
 	wacn.date=""/>
 
 # How to Create an Azure Environment #
 
-Azure Environments (ASE) are a Premium service option of Azure that delivers an enhanced configuration capability that is not available in the multi-tenant stamps.  The ASE feature essentially deploys the Azure into a <!-- deleted by customization customerâs --><!-- keep by customization: begin --> customer's <!-- keep by customization: end --> virtual network.  To gain a greater understanding of the capabilities offered by Azure Environments read the [What is an Azure Environment][WhatisASE] documentation.
+Azure Environments (ASE) are a Premium service option of Azure that delivers an enhanced configuration capability that is not available in the multi-tenant stamps.  The ASE feature essentially deploys the Azure into a customer's virtual network.  To gain a greater understanding of the capabilities offered by Azure Environments read the [What is an Azure Environment][WhatisASE] documentation.
 
 ### Overview ###
 
@@ -49,8 +51,7 @@ The creation experience for an ASE does have a set of defaults to enable a quick
 - Worker pool with 2 P1 compute resources
 - single IP address to be used for IP SSL
 
-This is the minimum size for an ASE.  Front End pools require P2 or larger.  
-Be sure to select the subscription that you want the ASE to be in.  The only accounts that can use the ASE to host content must be in the subscription used to create it.  
+Front End pools require P2 or larger.  Be careful when selecting the subscription that you want the ASE to be in.  The only accounts that can use the ASE to host content must be in the subscription used to create it.  
 
 ![][1]
 
@@ -158,10 +159,5 @@ For more information about the Azure platform, see [Azure Web App][AzureAppServi
 [WhatisASE]: /documentation/articles/app-service-app-service-environment-intro/
 [ASEConfig]: /documentation/articles/app-service-web-configure-an-app-service-environment/
 [AppServicePricing]: /home/features/web-site/#price 
-<!-- deleted by customization
-[AzureAppService]: /documentation/articles/app-service-value-prop-what-is/ 
--->
-<!-- keep by customization: begin -->
 [AzureAppService]: /documentation/services/web-sites/ 
-<!-- keep by customization: end -->
 [ASEAutoscale]: /documentation/articles/app-service-environment-auto-scale/

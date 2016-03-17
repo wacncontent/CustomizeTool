@@ -412,7 +412,7 @@ you must provide a login name and password for the database server administrator
           "customEmails": [ ]
         }
       }
-    }
+    },
 
 
 ## Commands to run deployment

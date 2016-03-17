@@ -46,7 +46,7 @@ Troubleshooting can be divided into three distinct tasks, in sequential order:
 
 ####	Track Service health
 
-Windows Azure publicizes each time there is a service interruption or performance degradation. You can track the health of the service on the [Azure Management Portal](https://manage.windowsazure.cn/). For more information, see [Track service health](/documentation/articles/insights-service-health).
+Azure publicizes each time there is a service interruption or performance degradation. You can track the health of the service on the [Azure Management Portal](https://manage.windowsazure.cn/). For more information, see [Track service health](/documentation/articles/insights-service-health).
 
 ####	Monitor your web app
 

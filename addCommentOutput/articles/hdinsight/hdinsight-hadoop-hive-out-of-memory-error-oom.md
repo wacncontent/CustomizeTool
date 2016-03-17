@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Out of memory error (OOM) - Hive settings | Windows Azure"
+	pageTitle="Out of memory error (OOM) - Hive settings | Azure"
 	description="Fix an out of memory error (OOM) from a Hive query in Hadoop in HDInsight. The customer scenario is a query across many large tables."
 	keywords="out of memory error, OOM, Hive settings"
 	services="hdinsight"

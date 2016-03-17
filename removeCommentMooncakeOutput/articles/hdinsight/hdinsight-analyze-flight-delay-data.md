@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Analyze flight delay data with Hadoop in HDInsight | Windows Azure"
+	pageTitle="Analyze flight delay data with Hadoop in HDInsight | Azure"
 	description="Learn how to use one Windows PowerShell script to create an HDInsight cluster, run a Hive job, run a Sqoop job, and delete the cluster."
 	services="hdinsight"
 	documentationCenter=""
@@ -273,7 +273,7 @@ For more information on creating an HDInsight cluster and running Hive jobs, see
 		Write-Host "`tCurrent system time: " (get-date) -ForegroundColor Yellow
 
 		Use-AzureHDInsightCluster $HDInsightClusterName
-		$response = Invoke-Hive âFile $hqlScriptFile -StatusFolder $jobStatusFolder
+		$response = Invoke-Hive -File $hqlScriptFile -StatusFolder $jobStatusFolder
 
 		Write-Host "`nThe Hive job status" -ForegroundColor Cyan
 		Write-Host "---------------------------------------------------------" -ForegroundColor Cyan

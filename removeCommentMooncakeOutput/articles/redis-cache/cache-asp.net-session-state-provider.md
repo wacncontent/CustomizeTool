@@ -55,7 +55,7 @@ The NuGet package downloads and adds the required assembly references and adds t
 
 The commented section provides an example of the attributes and sample settings for each attribute.
 
-Configure the attributes with the values from your cache blade in the Windows Azure Management Portal, and configure the other values as desired. For instructions on accessing your cache properties, see [Configure Redis cache settings](/documentation/articles/cache-configure#configure-redis-cache-settings).
+You can configure Redis Cache through Azure PowerShell. For instructions on accessing your cache properties, see [Manage Azure Redis Cache with Azure PowerShell](/documentation/articles/cache-howto-manage-redis-cache-powershell).
 
 -	**host** - specify your cache endpoint.
 -	**port** - use either your non-SSL port or your SSL port, depending on the ssl settings.
@@ -66,8 +66,8 @@ Configure the attributes with the values from your cache blade in the Windows Az
 -	**retryTimeoutInMilliseconds** - Operations that fail are retried during this interval, specified in milliseconds. The first retry occurs after 20 milliseconds, and then retries occur every second until the retryTimeoutInMilliseconds interval expires. Immediately after this interval, the operation is retried one final time. If the operation still fails, the exception is thrown back to the caller, depending on the throwOnError setting. The default value is 0 which means no retries.
 -	**databaseId** - Specifies which database to use for cache output data. If not specified, the default value of 0 is used.
 -	**applicationName** - Keys are stored in redis as `{<Application Name>_<Session ID>}_Data`. This enables multiple applications to share the same key. This parameter is optional and if you do not provide it a default value is used.
--	**connectionTimeoutInMilliseconds** - This setting allows you to override the connectTimeout setting in the StackExchange.Redis client. If not specified, the default connectTimeout setting of 5000 is used. For more information, seeÂ [StackExchange.Redis configuration model](http://go.microsoft.com/fwlink/?LinkId=398705).
--	**operationTimeoutInMilliseconds** - This setting allows you to override the syncTimeout setting in the StackExchange.Redis client. If not specified, the default syncTimeout setting of 1000 is used. For more information, seeÂ [StackExchange.Redis configuration model](http://go.microsoft.com/fwlink/?LinkId=398705).
+-	**connectionTimeoutInMilliseconds** - This setting allows you to override the connectTimeout setting in the StackExchange.Redis client. If not specified, the default connectTimeout setting of 5000 is used. For more information, see [StackExchange.Redis configuration model](http://go.microsoft.com/fwlink/?LinkId=398705).
+-	**operationTimeoutInMilliseconds** - This setting allows you to override the syncTimeout setting in the StackExchange.Redis client. If not specified, the default syncTimeout setting of 1000 is used. For more information, see [StackExchange.Redis configuration model](http://go.microsoft.com/fwlink/?LinkId=398705).
 							
 For more information about these properties, see the original blog post announcement at [Announcing ASP.NET Session State Provider for Redis](http://blogs.msdn.com/b/webdev/archive/2014/05/12/announcing-asp-net-session-state-provider-for-redis-preview-release.aspx).
 
@@ -88,17 +88,17 @@ Once these steps are performed, your application is configured to use the Redis 
 
 >[AZURE.NOTE] Note that data stored in the cache must be serializable, unlike the data that can be stored in the default in-memory ASP.NET Session State Provider. When the Session State Provider for Redis is used, be sure that the data types that are being stored in session state are serializable.
 
-## ASP.NET Session State options
+##<a name="aspnet-session-state-options"></a> ASP.NET Session State options
 
-- In Memory Session State Provider - This provider stores the Session State in memory. The benefit of using this provider is it is simple and fast. However you cannot scale your web sites if you are using in memory provider since it is not distributed.
+- In Memory Session State Provider - This provider stores the Session State in memory. The benefit of using this provider is it is simple and fast. However you cannot scale your Web Apps if you are using in memory provider since it is not distributed.
 
-- Sql Server Session State Provider - This provider stores the Session State in Sql Server. You should use this provider if you want to persist the Session state in a persistent storage. You can scale your web site but using Sql Server for Session will have a performance impact on your web site.
+- Sql Server Session State Provider - This provider stores the Session State in Sql Server. You should use this provider if you want to persist the Session state in a persistent storage. You can scale your Web App but using Sql Server for Session will have a performance impact on your Web App.
 
-- Distributed In Memory Session State Provider such as Redis Cache Session State Provider - This provider gives you the best of both worlds. Your web site can have a simple, fast and scalable Session State Provider. However you have to keep in consideration that this provider stores the Session state in a Cache and your app has to take in consideration all the characteristics associated when talking to a Distributed In Memory Cache such as transient network failures. For best practices on using Cache, see [Caching guidance](https://github.com/mspnp/azure-guidance/blob/master/Caching.md) from Microsoft Patterns & Practices [Azure Cloud Application Design and Implementation Guidance](https://github.com/mspnp/azure-guidance).
+- Distributed In Memory Session State Provider such as Redis Cache Session State Provider - This provider gives you the best of both worlds. Your Web App can have a simple, fast and scalable Session State Provider. However you have to keep in consideration that this provider stores the Session state in a Cache and your app has to take in consideration all the characteristics associated when talking to a Distributed In Memory Cache such as transient network failures. For best practices on using Cache, see [Caching guidance](https://github.com/mspnp/azure-guidance/blob/master/Caching.md) from Microsoft Patterns & Practices [Azure Cloud Application Design and Implementation Guidance](https://github.com/mspnp/azure-guidance).
 
 For more information about session state and other best practices, see [Web Development Best Practices (Building Real-World Cloud Apps with Azure)](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/web-development-best-practices).
 
 ## Next steps
 
-Check out the [ASP.NET Output Cache Provider for Azure Redis Cache](cache-asp.net-output-cache-provider.md).
+Check out the [ASP.NET Output Cache Provider for Azure Redis Cache](/documentation/articles/cache-asp.net-output-cache-provider).
 

@@ -1,7 +1,7 @@
 <!-- not suitable for Mooncake -->
 
 <properties
-	pageTitle="Capture a Linux VM to use as a template | Windows Azure"
+	pageTitle="Capture a Linux VM to use as a template | Azure"
 	description="Learn how to capture an image of a Linux-based Azure virtual machine (VM) created with the Azure Resource Manager deployment model."
 	services="virtual-machines"
 	documentationCenter=""
@@ -191,7 +191,7 @@ Do the following before running **azure vm create** with the image:
 Then run a command similar to the following.
 
 	azure vm create -g <your-resource-group-name> -n <your-new-vm-name> -l chinaeast -y Linux -o <your-storage-account-name> -d "https://yourstorage.blob.core.chinacloudapi.cn/vhds/your-prefix-OsDisk.vhd" -z Standard_A1 -u <your-admin-name> -p <your-admin-password> -f <your-nic-name>
-	
+
 For additional command options, run `azure help vm create`.
 
 ## Next steps

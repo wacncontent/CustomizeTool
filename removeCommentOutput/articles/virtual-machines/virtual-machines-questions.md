@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Frequently asked questions for VMs | Windows Azure"
+	pageTitle="Frequently asked questions for VMs | Azure"
 	description="Provides answers to some of the common questions about Azure virtual machines created with the classic deployment model."
 	services="virtual-machines"
 	documentationCenter=""

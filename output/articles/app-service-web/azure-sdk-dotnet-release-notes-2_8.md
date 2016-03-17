@@ -52,7 +52,7 @@ The PowerShell script provided by the Azure Resource Group project has been upda
 
 Scripts from projects created in earlier versions of the SDK will not run from within Visual Studio when using the 2.8 SDK.  All scripts will continue to work outside of Visual Studio with the appropriate version of the Azure PowerShell cmdlets.  
 
-The 2.8 SDK requires version 1.0 of the Azure PowerShell cmdlets.  All other versions of the SDK require version 0.9.8 of the Azure PowerShell cmdlets.  For more information see [this](http://go.microsoft.com/fwlink/?LinkID=623011) blog.
+The 2.8 SDK requires version 1.0 of the Azure PowerShell cmdlets.  All other versions of the SDK require version 0.9.8 of the Azure PowerShell cmdlets.  For more information see [  For more information see [this](http://go.microsoft.com/fwlink/?LinkID=623011) blog. 
 
 ###Web Tools Extensions
 
@@ -60,8 +60,8 @@ The 2.8 SDK requires version 1.0 of the Azure PowerShell cmdlets.  All other ver
 
 The following known issues will be addressed in the following release.
 
-- Azure related Cloud and Server Explorer gesture for non-production environments (like Azure China or Azure Stack customers) do not work. For customers in these impacted areas, downloading the publish profile from the Azure Management Portal will enable publishing ability. A future release will repair gestures such as "Attach Debugger" and "View Streaming Logs" for Azure China and Stack customers. 
-- Customers may see errors during Azure creation when the App Insights instance to which they are deploying is in a region other than China East. In these scenarios, creating an Azure in the portal and downloading the publish profile will enable publishing scenarios. 
+- Azure  Web App  related Cloud and Server Explorer  related Cloud and Server Explorer gesture for non-production environments (like Azure China or Azure Stack customers) do not work. For customers in these impacted areas, downloading the publish profile from the Azure Management Portal will enable publishing ability. A future release will repair gestures such as "Attach Debugger" and "View Streaming Logs" for Azure China and Stack customers.
+- Customers may see errors during Azure  Web App  creation when the App Insights in  creation when the App Insights instance to which they are deploying is in a region other than China East. In these scenarios, creating an Azure in the portal and downloading the publish profile will enable publishing scenarios.
 
 ###Azure HDInsight Tools
 
@@ -78,7 +78,7 @@ For information, see [Azure SDK 2.8 for Visual Studio 2013 and Visual Studio 201
  
 1. Triggered WebJob publishes to slots will show and error and won't set a schedule, but it will push the WebJob to Azure. Customers who are in need of a Scheduled job can then use the Azure Management Portal to set up the schedule for the WebJob. 
 2. Python customers may experience debugger issues. Service team is rolling out a fix for this but if customers are affected, please let Microsoft know in the forums or on the announcement blog or release notes comments section. 
-3. Customers in certain regions (such as South India) will experience Azure provisioning errors. This is consistent with the portal, and customers who experience this issue can use the Azure Management Portal to request access to publish to these geo-regions. Once they request access to these regions using the Azure Management Portal provisioning should work. 
+3. Customers in certain regions (such as South India) will experience Azure  Web App  provisioning errors. This is cons  provisioning errors. This is consistent with the portal, and customers who experience this issue can use the Azure Management Portal to request access to publish to these geo-regions. Once they request access to these regions using the Azure Management Portal provisioning should work.
 
 ##Azure SDK for .NET 2.8.2
 

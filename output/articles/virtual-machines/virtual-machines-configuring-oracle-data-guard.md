@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Configuring Oracle Data Guard in VMs | Windows Azure"
+	pageTitle="Configuring Oracle Data Guard in VMs | Azure"
 	description="Step through a tutorial for setting up and implementing Oracle Data Guard on Azure virtual machines for high availability and disaster recovery."
 	services="virtual-machines"
 	authors="bbenz"
@@ -12,14 +12,14 @@
 
 #Configuring Oracle Data Guard for Azure
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]  Resource Manager model. 
 
 
 This tutorial demonstrates how to setup and implement Oracle Data Guard in Azure Virtual Machines environment for high availability and disaster recovery. The tutorial focuses on one way replication for non-RAC Oracle databases.
 
 Oracle Data Guard supports data protection and disaster recovery for Oracle Database. It is a simple, high-performance, drop-in solution for disaster recovery, data protection, and high availability for the entire Oracle database.
 
-This tutorial assumes that you already have theoretical and practical knowledge on Oracle Database High Availability and Disaster Recovery concepts. For information, see the [Oracle web site](http://www.oracle.com/technetwork/database/features/availability/index.html) and also the [Oracle Data Guard Concepts and Administration Guide](http://docs.oracle.com/cd/E11882_01/server.112/e17022/create_ps.htm).
+This tutorial assumes that you already have theoretical and practical knowledge on Oracle Database High Availability and Disaster Recovery concepts. For information, see the  [Oracle  Oracle  web site](http://www.oracle.com/technetwork/database/features/availability/index.html) and also the [Oracle Data Guard Concepts and Administration  Guide](http://docs.oracle.com/cd/E11882_01/server.112/e17022/create_ps.htm)  Guide .
 
 In addition, the tutorial assumes that you have already implemented the following prerequisites:
 
@@ -622,5 +622,7 @@ If you have not enabled flashback on the original primary database, it's recomme
 
 We recommend that you enable flashback database on the primary and the standby databases. When a failover happens, the primary database can be flashed back to the time before the failover and quickly converted to a standby database.
 
+
 ##Additional Resources
 [Oracle Virtual Machine images for Azure](/documentation/articles/virtual-machines-oracle-list-oracle-virtual-machine-images)
+

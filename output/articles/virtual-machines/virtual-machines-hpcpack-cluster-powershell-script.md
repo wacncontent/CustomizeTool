@@ -1,5 +1,5 @@
 <properties
-   pageTitle="PowerShell script to deploy HPC Pack cluster | Windows Azure"
+   pageTitle="PowerShell script to deploy HPC Pack cluster | Azure"
    description="Run a Windows PowerShell script to deploy a complete HPC Pack cluster in Azure infrastructure services"
    services="virtual-machines"
    documentationCenter=""
@@ -14,7 +14,7 @@
 
 # Create a high performance computing (HPC) cluster in Azure VMs with the HPC Pack IaaS deployment script
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]  Resource Manager model. 
 
 
 
@@ -28,8 +28,10 @@ Depending on your environment and choices, the script can create all the cluster
 
 For background information about planning an HPC Pack cluster, see the [Product Evaluation and Planning](https://technet.microsoft.com/zh-cn/library/jj899596.aspx) and [Getting Started](https://technet.microsoft.com/zh-cn/library/jj899590.aspx) content in the HPC Pack TechNet Library.
 
+
 >[AZURE.NOTE]You can also use an Azure Resource Manager template to deploy an HPC Pack cluster. For an example, see [Create an HPC cluster](https://azure.microsoft.com/documentation/templates/create-hpc-cluster/), [Create an HPC cluster with a custom compute node image](https://azure.microsoft.com/documentation/templates/create-hpc-cluster-custom-image/), or [Create an HPC cluster with Linux compute nodes](https://azure.microsoft.com/documentation/templates/create-hpc-cluster-linux-cn/).
 
+
 ## Prerequisites
 
 * **Azure subscription** - You can use a subscription in either the Azure Global or Azure China service. Your subscription limits will affect the number and type of cluster nodes you can deploy. For information, see [Azure subscription and service limits, quotas, and constraints](/documentation/articles/azure-subscription-service-limits).
@@ -45,9 +47,15 @@ For background information about planning an HPC Pack cluster, see the [Product 
 
 ## Syntax
 
+
 ```
 New-HPCIaaSCluster.ps1 [-ConfigFile] <String> [-AdminUserName]<String> [[-AdminPassword] <String>] [[-HPCImageName] <String>] [[-LogFile] <String>] [-Force] [-NoCleanOnFailure] [-PSSessionSkipCACheck] [<CommonParameters>]
 ```
+
+
+	New-HPCIaaSCluster.ps1 [-ConfigFile] <String> [-AdminUserName]<String> [[-AdminPassword] <String>] [[-HPCImageName] <String>] [[-LogFile] <String>] [-Force] [-NoCleanOnFailure] [-PSSessionSkipCACheck] [<CommonParameters>]
+
+
 >[AZURE.NOTE]You must run the script as an administrator.
 
 ### Parameters
@@ -78,9 +86,14 @@ The following example creates a new HPC Pack cluster using the
 configuration file *MyConfigFile.xml*, and specifies administrative
 credentials for installing the cluster.
 
+
 ```
 New-HPCIaaSCluster.ps1 -ConfigFile MyConfigFile.xml -AdminUserName <username> -AdminPassword <password>
 ```
+
+
+	New-HPCIaaSCluster.ps1 -ConfigFile MyConfigFile.xml -AdminUserName <username> -AdminPassword <password>
+
 
 ### Additional considerations
 
@@ -91,7 +104,12 @@ New-HPCIaaSCluster.ps1 -ConfigFile MyConfigFile.xml -AdminUserName <username> -A
 * The script can optionally run custom pre- and post-configuration scripts on the head node if you want to install additional software or configure other settings.
 
 
+
 ## Configuration file
+
+
+##<a name="Configuration-file"></a> Configuration file
+
 
 The configuration file for the deployment script is an XML
 file. The schema file HPCIaaSClusterConfig.xsd is in the HPC Pack IaaS
@@ -100,7 +118,12 @@ the configuration file, which contains the child elements described in
 detail in the file Manual.rtf in the deployment script folder. For example files for different scenarios, see
 [Example configuration files](#Example-configuration-files) in this article.
 
+
 ## Example configuration files
+
+
+##<a name="Example-configuration-files"></a> Example configuration files
+
 
 ### Example 1
 
@@ -115,8 +138,13 @@ _MyHPCCNService03_ and _mycnstorage03_). The compute nodes are created from
 an existing private image captured from a compute node. The auto grow
 and shrink service is enabled with default grow and shrink intervals.
 
+
 ```
 <?xml version="1.0" encoding="utf-8" ?>
+
+
+	<?xml version="1.0" encoding="utf-8" ?>
+
 <IaaSClusterConfig>
   <Subscription>
     <SubscriptionName>Subscription-1</SubscriptionName>
@@ -172,8 +200,10 @@ and shrink service is enabled with default grow and shrink intervals.
     <CertificateId>1</CertificateId>
   </AutoGrowShrink>
 </IaaSClusterConfig>
+
 
 ```
+
 
 ### Example 2
 
@@ -186,8 +216,13 @@ created in the affinity group *MyIBAffinityGroup*, and all the other cloud
 services are created in the affinity group *MyAffinityGroup*. The HPC Job
 Scheduler REST API and HPC web portal are enabled on the head node.
 
+
 ```
 <?xml version="1.0" encoding="utf-8" ?>
+
+
+	<?xml version="1.0" encoding="utf-8" ?>
+
 <IaaSClusterConfig>
   <Subscription>
     <SubscriptionName>Subscription-1</SubscriptionName>
@@ -234,7 +269,9 @@ Scheduler REST API and HPC web portal are enabled on the head node.
     <NodeCount>2</NodeCount>
   </BrokerNodes>
 </IaaSClusterConfig>
+
 ```
+
 
 ### Example 3
 
@@ -249,8 +286,13 @@ _MyLnxCN-0015_ in _MyLnxCNService03_ and _mylnxstorage03_, and _MyLnxCN-0016_ to
 _MyLnxCN-0020_ in _MyLnxCNService04_ and _mylnxstorage04_). The compute nodes
 are created from an OpenLogic CentOS version 7.0 Linux image.
 
+
 ```
 <?xml version="1.0" encoding="utf-8" ?>
+
+
+	<?xml version="1.0" encoding="utf-8" ?>
+
 <IaaSClusterConfig>
   <Subscription>
     <SubscriptionName>Subscription-1</SubscriptionName>
@@ -292,7 +334,9 @@ are created from an OpenLogic CentOS version 7.0 Linux image.
     </SSHKeyPairForRoot>
   </LinuxComputeNodes>
 </IaaSClusterConfig>
+
 ```
+
 
 
 ### Example 4
@@ -303,8 +347,13 @@ the Windows Server 2008 R2 operating system. All the cloud services are
 created directly in the China East location. The head node acts as domain
 controller of the domain forest.
 
+
 ```
 <?xml version="1.0" encoding="utf-8" ?>
+
+
+	<?xml version="1.0" encoding="utf-8" ?>
+
 <IaaSClusterConfig>
   <Subscription>
     <SubscriptionId>08701940-C02E-452F-B0B1-39D50119F267</SubscriptionId>
@@ -335,7 +384,9 @@ controller of the domain forest.
     <OSVersion>WindowsServer2008R2</OSVersion>
   </ComputeNodes>
 </IaaSClusterConfig>
+
 ```
+
 
 ### Example 5
 
@@ -345,8 +396,13 @@ databases, two Azure node templates are created, and 3 Medium size Azure
 nodes are created for Azure node template _AzureTemplate1_. A script file
 will run on the head node after the head node is configured.
 
+
 ```
 <?xml version="1.0" encoding="utf-8" ?>
+
+
+	<?xml version="1.0" encoding="utf-8" ?>
+
 <IaaSClusterConfig>
   <Subscription>
     <SubscriptionName>Subscription-1</SubscriptionName>
@@ -407,7 +463,7 @@ will run on the head node after the head node is configured.
     </AzureNodeTemplate>
   </AzureBurst>
 </IaaSClusterConfig>
-```
+ ``` 
 ## Known issues
 
 

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Use Hive with Hadoop for website log analysis| Windows Azure" 
+	pageTitle="Use Hive with Hadoop for website log analysis| Azure" 
 	description="Learn how to use Hive with HDInsight to analyze website logs. You'll use a log file as input into an HDInsight table, and use HiveQL to query the data." 
 	services="hdinsight" 
 	documentationCenter="" 

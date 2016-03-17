@@ -1,8 +1,8 @@
 <!-- not suitable for Mooncake -->
 
 <properties 
-   pageTitle="Deploy a VM with a static public IP using the preview portal in Resource Manager | Windows Azure"
-   description="Learn how to deploy VMs with a static public IP using the preview portal in Resource Manager"
+   pageTitle="Deploy a VM with a static public IP using the Azure Management Portal in Resource Manager | Azure"
+   description="Learn how to deploy VMs with a static public IP using the zure portal in Resource Manager"
    services="virtual-network"
    documentationCenter="na"
    authors="telmosampaio"
@@ -12,7 +12,7 @@
 />
 <tags
 	ms.service="virtual-network"
-	ms.date="01/08/2015"
+	ms.date="02/04/2016"
 	wacn.date=""/>
 
 # Deploy a VM with a static public IP using the Azure Management Portal
@@ -29,7 +29,7 @@
 
 To create a VM with a static public IP address in the Azure Management Portal, follow the steps below.
 
-1. From a browser, navigate to the [Azure Management Portal](http://manage.windowsazure.cn) and, if necessary, sign in with your Azure account.
+1. From a browser, navigate to the [Azure Management Portal](https://manage.windowsazure.cn) and, if necessary, sign in with your Azure account.
 2. On the top left hand corner of the portal, click **New**>>**Compute**>**Windows Server 2012 R2 Datacenter**.
 3. In the **Select a deployment model** list, select **Resource Manager** and click **Create**.
 4. In the **Basics** blade, enter the VM information as shown below, and then click **OK**.

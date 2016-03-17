@@ -1,5 +1,7 @@
+<!-- not suitable for Mooncake -->
+
 <properties
-   pageTitle="Tips for using Hadoop on Linux-based HDInsight | Windows Azure"
+   pageTitle="Tips for using Hadoop on Linux-based HDInsight | Azure"
    description="Get implementation tips for using Linux-based HDInsight (Hadoop) clusters on a familiar Linux environment running in the Azure cloud."
    services="hdinsight"
    documentationCenter=""

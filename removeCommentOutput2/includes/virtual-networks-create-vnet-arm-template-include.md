@@ -58,4 +58,3 @@ You can download the existing ARM template for creating a VNet and two subnets f
 		}
 
 11. Save the file.
-  

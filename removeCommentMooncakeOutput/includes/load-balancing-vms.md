@@ -66,4 +66,3 @@ The following figure shows an example of an internal load-balanced endpoint for 
 For more information, see [Internal load balancing](http://msdn.microsoft.com/zh-cn/library/azure/dn690121.aspx). For the steps to create a load-balanced set, see [Configure an internal load-balanced set](http://msdn.microsoft.com/zh-cn/library/azure/dn690125.aspx).
 
 <!-- LINKS -->
-

@@ -1,8 +1,8 @@
 <!-- not suitable for Mooncake -->
 
 <properties
-	pageTitle="Using the Windows Azure CLI for Mac, Linux, and Windows with Azure Resource Management | Windows Azure"
-	description="Using the Windows Azure CLI for Mac, Linux, and Windows with Azure Resource Manager."
+	pageTitle="CLI for Mac, Linux, and Windows | Azure"
+	description="Using the Azure CLI for Mac, Linux, and Windows with Azure Resource Manager."
 	editor="tysonn"
 	manager="timlt"
 	documentationCenter=""
@@ -18,7 +18,10 @@
 
 > [AZURE.SELECTOR]
 - [Azure PowerShell](/documentation/articles/powershell-azure-resource-manager)
-- [Azure CLI](/documentation/articles/xplat-cli-azure-resource-manager)
+
+<br>
+
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
 
 
 This article describes how to create, manage, and delete Azure resources and VMs using the Azure CLI for Mac, Linux, and Windows using the Azure Resource Manager mode.  
@@ -35,7 +38,7 @@ When a template is used to modify or create a group, a _deployment_ is created, 
 
 ## Authentication
 
-Working with the Azure Resource Manager through the Azure CLI requires that you authenticate to Windows Azure using a work or school account. Authenticating with a certificate installed through a .publishsettings file will not work.
+Working with the Azure Resource Manager through the Azure CLI requires that you authenticate to Azure using a work or school account. Authenticating with a certificate installed through a .publishsettings file will not work.
 
 For more information on authenticating using a work or school account, see [Connect to an Azure subscription from the Azure CLI](/documentation/articles/xplat-cli-connect).
 

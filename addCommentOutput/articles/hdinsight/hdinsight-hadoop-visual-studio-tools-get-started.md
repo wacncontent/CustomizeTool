@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Learn to use Visual Studio Hadoop tools for HDInsight | Windows Azure"
+	pageTitle="Learn to use Visual Studio Hadoop tools for HDInsight | Azure"
 	description="Learn how to install and use Visual Studio Hadoop tools for HDInsight to connect to a Hadoop cluster and run a Hive query."
 	keywords="hadoop tools,hive query,visual studio"
 	services="HDInsight"
@@ -11,7 +11,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="11/30/2015"
+	ms.date="01/27/2016"
 	wacn.date=""/>
 
 # Get started using Visual Studio Hadoop tools for HDInsight to run a Hive query
@@ -22,11 +22,11 @@ Learn how to use HDInsight Tools for Visual Studio to connect to HDInsight clust
 
 To complete this tutorial and use the Hadoop tools in Visual Studio, you'll need the following:
 
-- An Azure HDInsight cluster: <!-- deleted by customization Either a Linux-based or --> Windows-based cluster will work with the steps in this document. See one of the following for information on creating a cluster:
-<!-- deleted by customization
+- An Azure HDInsight cluster:  Either a Linux-based or  Windows-based cluster will work with the steps in this document. See one of the following for information on creating a cluster:
+
 
 	- [Get started using Linux-based HDInsight](/documentation/articles/hdinsight-hadoop-linux-tutorial-get-started)
--->
+
 	- [Get started using Windows-based HDInsight](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1)
 
 - A workstation with the following software:
@@ -39,26 +39,24 @@ To complete this tutorial and use the Hadoop tools in Visual Studio, you'll need
 	>[AZURE.NOTE] Currently, the HDInsight Tools for Visual Studio only come with the English version.
 
 
-<!-- deleted by customization
+
 ## Install HDInsight tools for Visual Studio
--->
-<!-- keep by customization: begin -->
+
+
 ##<a name="installation" id="install-hdinsight-tools-for-visual-studio"></a> Install HDInsight tools for Visual Studio
-<!-- keep by customization: end -->
+
 
-HDInsight Tools for Visual Studio and Microsoft Hive ODBC Driver are packaged with Windows Azure SDK for .NET version 2.5.1 or later. You can install it using the [Web Platform Installer](http://download.microsoft.com/download/F/4/2/F42AB12D-C935-4E65-9D98-4E56F9ACBC8E/wpilauncher.exe). You must choose the one that matches your version of Visual Studio. If you don't have Visual Studio installed, you can install the latest Visual Studio Community and Azure SDK using the [Web Platform Installer](http://download.microsoft.com/download/F/4/2/F42AB12D-C935-4E65-9D98-4E56F9ACBC8E/wpilauncher.exe) or using the following links:
+HDInsight Tools for Visual Studio and Microsoft Hive ODBC Driver are packaged with Azure SDK for .NET version 2.5.1 or later. You can install it using the [Web Platform Installer](http://download.microsoft.com/download/F/4/2/F42AB12D-C935-4E65-9D98-4E56F9ACBC8E/wpilauncher.exe). You must choose the one that matches your version of Visual Studio. If you don't have Visual Studio installed, you can install the latest Visual Studio Community and Azure SDK using the [Web Platform Installer](http://download.microsoft.com/download/F/4/2/F42AB12D-C935-4E65-9D98-4E56F9ACBC8E/wpilauncher.exe) or using the following links:
 
-- [Visual Studio Community 2015 with Windows Azure SDK](https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VS2015CommunityAzurePack.appids) 
-- [Visual Studio Community 2013 with Windows Azure SDK](https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VS2013CommunityAzurePack.appids) 
-- [Windows Azure SDK for .NET (VS 2015)](https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VWDOrVs2015AzurePack.appids) 
-- [Windows Azure SDK for .NET (VS 2013)](https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VWDOrVs2013AzurePack.appids) 
+- [Visual Studio Community 2015 with Azure SDK](https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VS2015CommunityAzurePack.appids) 
+- [Visual Studio Community 2013 with Azure SDK](https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VS2013CommunityAzurePack.appids) 
+- [Azure SDK for .NET (VS 2015)](https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VWDOrVs2015AzurePack.appids) 
+- [Azure SDK for .NET (VS 2013)](https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VWDOrVs2013AzurePack.appids) 
 
 ![Hadoop tools: HDinsight Tools for Visual Studio Web Platform installer.][1]
 
 ## Connect to Azure subscriptions
 The HDInsight Tools for Visual Studio allows you to connect to your HDInsight clusters, perform some basic management operations, and run Hive queries.
-
->[AZURE.NOTE] For information on connecting to HDInsight Emulator, see [Get started with the HDInsight Emulator](/documentation/articles/hdinsight-hadoop-emulator-get-started#vstools).
 
 >[AZURE.NOTE] For information on connecting to a generic Hadoop cluster (preview), see [Write and submit Hive queries using Visual Studio](http://blogs.msdn.com/b/xiaoyong/archive/2015/05/04/how-to-write-and-submit-hive-queries-using-visual-studio.aspx).
 
@@ -182,7 +180,7 @@ The most recent release of the tool allows you to see what's inside your Hive jo
 3. Click a job in the job list to select it, and then use the **Hive Job Summary** window to open **Job Query**, **Job Output**, **Job Log**, or **Yarn log**.
 
 	![Hadoop tools: HDInsight Visual Studio Tools view Hive jobs][12]
-<!-- deleted by customization
+
 
 ### Faster path Hive execution via HiveServer2
 
@@ -201,7 +199,7 @@ And you can see the logs streamed back in realtime and see the job graphs if the
 ![hdinsight visual studio tools fast path hive execution](./media/hdinsight-hadoop-visual-studio-tools-get-started/hdinsight.fast.path.hive.execution.png)
 
 **Difference between executing queries via HiveServer2 and Submitting Queries via WebHCat**
--->
+
 
 Even though executing queries via HiveServer2 has many performance benefits, it has several limitations. Some of the limitations are not suitable for production usage. The following table shows the differences:
 
@@ -217,12 +215,12 @@ Even though executing queries via HiveServer2 has many performance benefits, it 
 
 The HDInsight Visual Studio Tools support showing performance graphs for the Hive jobs ran by the Tez execution engine. For information on enabling Tez, see [use Hive in HDInsight][hdinsight.hive]. After you submit a Hive job in Visual Studio, Visual Studio shows you the graph when the job is completed.  You might need to click the **Refresh** button to get the latest job status.
 
-> [AZURE.NOTE] This feature is only available for HDInsight cluster version above 3.2.4.593, and can only work for completed jobs. This works for both Windows <!-- deleted by customization and Linux based --> clusters.
+> [AZURE.NOTE] This feature is only available for HDInsight cluster version above 3.2.4.593, and can only work for completed jobs. This works for both Windows  and Linux based  clusters.
 
 ![hadoop hive tez performance graph](./media/hdinsight-hadoop-visual-studio-tools-get-started/hdinsight.hive.tez.performance.graph.png)
 
 To help you understand your Hive query better, the tool add the Hive Operator view in this release. You just need to double click on the vertices of the job graph and you can see all the operators inside the vertex. You can also hover on a particular operator to view more details of this operator.
-<!-- deleted by customization
+
 
 ### Task execution view for Hive on Tez jobs
 
@@ -231,7 +229,7 @@ there are performance issues, you can use the view to get further details. For e
 (data read/write, schedule/start/end time, etc.), so that you can tune job configurations or system architecture based on the visualized information.
 
 ![hdinsight visual studio tools task execution view](./media/hdinsight-hadoop-visual-studio-tools-get-started/hdinsight.visual.studio.tools.task.execution.view.png)
--->
+
 
 ## Run Pig scripts
 
@@ -243,9 +241,9 @@ In this article, you learned how to connect to HDInsight clusters from Visual St
 - [Use Hadoop Hive in HDInsight][hdinsight.hive]
 - [Get started using Hadoop in HDInsight][hdinsight.get.started]
 - [Submit Hadoop jobs in HDInsight][hdinsight.submit.jobs]
-<!-- deleted by customization
+
 - [Analyze Twitter data with Hadoop in HDInsight][hdinsight.analyze.twitter.data]
--->
+
 
 
 <!--Anchors-->
@@ -271,24 +269,26 @@ In this article, you learned how to connect to HDInsight clusters from Visual St
 
 
 <!--Link references-->
-<!-- deleted by customization
-[hdinsight-provision]: ../hdinsight/hdinsight-provision-clusters-v1.md
-[hdinsight.introduction]: ../hdinsight-introduction.md
-[hdinsight.get.started]: ../hdinsight-get-started.md
-[hdinsight.hive]: ../hdinsight/hdinsight-use-hive.md
-[hdinsight.submit.jobs]: ../hdinsight/hdinsight-submit-hadoop-jobs-programmatically.md
-[hdinsight.analyze.twitter.data]: ../hdinsight/hdinsight-analyze-twitter-data.md
-[hdinsight.storm.visual.studio.tools]: ../hdinsight/hdinsight-storm-develop-csharp-visual-studio-topology.md
-[hdinsight.access.application.logs]: ../hdinsight/hdinsight-hadoop-access-yarn-app-logs.md
--->
-<!-- keep by customization: begin -->
+
 [hdinsight.submit.jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
+
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
+
+[hdinsight.introduction]: /documentation/articles/hdinsight-introduction
 [hdinsight.get.started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
+
+
+[hdinsight.get.started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
+
 [hdinsight.hive]: /documentation/articles/hdinsight-use-hive
 [hdinsight.submit.jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
+
+[hdinsight.analyze.twitter.data]: /documentation/articles/hdinsight-analyze-twitter-data
 [hdinsight.storm.visual.studio.tools]: /documentation/articles/hdinsight-storm-develop-csharp-visual-studio-topology
+
+
+[hdinsight.storm.visual.studio.tools]: /documentation/articles/hdinsight-storm-develop-csharp-visual-studio-topology
+
 [hdinsight.access.application.logs]: /documentation/articles/hdinsight-hadoop-access-yarn-app-logs
-<!-- keep by customization: end -->
 
 [apache.hive]: http://hive.apache.org

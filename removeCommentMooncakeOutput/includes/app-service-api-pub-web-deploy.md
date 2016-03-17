@@ -6,7 +6,7 @@
 
 	![Deploying the API App](./media/app-service-api-pub-web-deploy/26-5-deployment-success-v3.png)
 
-	The **Azure Web App Activity** window shows the deployment progress. 
+	The **Azure Web App Activity** window shows the deployment progress.
 
 	![Status notification of the Azure Web App Activity window](./media/app-service-api-pub-web-deploy/26-5-deployment-success-v4.png)
 

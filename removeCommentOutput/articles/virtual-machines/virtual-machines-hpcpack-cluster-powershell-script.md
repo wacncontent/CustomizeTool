@@ -1,5 +1,5 @@
 <properties
-   pageTitle="PowerShell script to deploy HPC Pack cluster | Windows Azure"
+   pageTitle="PowerShell script to deploy HPC Pack cluster | Azure"
    description="Run a Windows PowerShell script to deploy a complete HPC Pack cluster in Azure infrastructure services"
    services="virtual-machines"
    documentationCenter=""

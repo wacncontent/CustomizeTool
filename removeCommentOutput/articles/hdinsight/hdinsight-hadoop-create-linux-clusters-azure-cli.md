@@ -1,5 +1,5 @@
 <properties
-   	pageTitle="Create Hadoop, HBase, or Storm clusters on Linux in HDInsight using the cross-platform Azure CLI | Windows Azure"
+   	pageTitle="Create Hadoop, HBase, or Storm clusters on Linux in HDInsight using the cross-platform Azure CLI | Azure"
    	description="Learn how to create Linux-based HDInsight clusters using the cross-platform Azure CLI, Azure Resource Manager templates, and the Azure REST API. You can specify the cluster type (Hadoop, HBase, or Storm,) or use scripts to install custom components.."
    	services="hdinsight"
    	documentationCenter=""
@@ -108,7 +108,7 @@ Now that you have successfully created an HDInsight cluster, use the following t
 
 ###HBase clusters
 
-* [Get started with HBase on HDInsight](/documentation/articles/hdinsight-hbase-tutorial-get-started-v1-linux)
+* [Get started with HBase on HDInsight](/documentation/articles/hdinsight-hbase-tutorial-get-started-v1)
 * [Develop Java applications for HBase on HDInsight](/documentation/articles/hdinsight-hbase-build-java-maven-linux)
 
 ###Storm clusters

@@ -1,5 +1,7 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
-	pageTitle="Analyze flight delay data with Hive on Linux-based HDInsight | Windows Azure" 
+	pageTitle="Analyze flight delay data with Hive on Linux-based HDInsight | Azure" 
 	description="Learn how to use Hive to analyze flight data on Linux-based HDInsight, then export the data to SQL Database using Sqoop." 
 	services="hdinsight" 
 	documentationCenter="" 
@@ -286,16 +288,16 @@ Now you understand how to upload a file to Azure Blob storage, how to populate a
 [rita-website]: http://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236&DB_Short_Name=On-Time
 [cindygross-hive-tables]: http://blogs.msdn.com/b/cindygross/archive/2013/02/06/hdinsight-hive-internal-and-external-tables-intro.aspx
 
-[hdinsight-use-oozie]: hdinsight-use-oozie-linux-mac.md
-[hdinsight-use-hive]: hdinsight-use-hive.md
-[hdinsight-provision]: hdinsight-provision-clusters-v1.md
-[hdinsight-storage]: hdinsight-hadoop-use-blob-storage.md
-[hdinsight-upload-data]: hdinsight-upload-data.md
-[hdinsight-get-started]: hdinsight-hadoop-linux-tutorial-get-started.md
-[hdinsight-use-sqoop]: hdinsight-use-sqoop.md
-[hdinsight-use-pig]: hdinsight-use-pig.md
-[hdinsight-develop-streaming]: hdinsight-hadoop-streaming-python.md
-[hdinsight-develop-mapreduce]: hdinsight-develop-deploy-java-mapreduce-linux.md
+[hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie-linux-mac
+[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-linux-tutorial-get-started
+[hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop
+[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
+[hdinsight-develop-streaming]: /documentation/articles/hdinsight-hadoop-streaming-python
+[hdinsight-develop-mapreduce]: /documentation/articles/hdinsight-develop-deploy-java-mapreduce-linux
 
 [hadoop-hiveql]: https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DDL
 

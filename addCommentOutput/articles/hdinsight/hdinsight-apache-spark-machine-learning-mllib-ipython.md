@@ -1,5 +1,7 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
-	pageTitle="Use Apache Spark to build machine learning applications on HDInsight | Windows Azure" 
+	pageTitle="Use Apache Spark to build machine learning applications on HDInsight | Azure" 
 	description="Step-by-step instructions on how to use notebooks with Apache Spark to build machine learning applications" 
 	services="hdinsight" 
 	documentationCenter="" 
@@ -10,7 +12,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="01/04/2016"
+	ms.date="02/05/2016"
 	wacn.date=""/>
 
 
@@ -371,7 +373,9 @@ After you have finished running the application, you should shutdown the noteboo
 
 * [Run jobs remotely on a Spark cluster using Livy](/documentation/articles/hdinsight-apache-spark-livy-rest-interface)
 
-### Extensions
+### Tools and extensions
+
+* [Use HDInsight Tools Plugin for IntelliJ IDEA to create and submit Spark Scala applicatons](/documentation/articles/hdinsight-apache-spark-intellij-tool-plugin)
 
 * [Use Zeppelin notebooks with a Spark cluster on HDInsight](/documentation/articles/hdinsight-apache-spark-use-zeppelin-notebook)
 

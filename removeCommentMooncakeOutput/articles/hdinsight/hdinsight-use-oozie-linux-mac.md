@@ -1,7 +1,7 @@
 <!-- not suitable for Mooncake -->
 
 <properties
-	pageTitle="Use Hadoop Oozie workflows in Linux-based HDInsight | Windows Azure"
+	pageTitle="Use Hadoop Oozie workflows in Linux-based HDInsight | Azure"
 	description="Use Hadoop Oozie in Linux-based HDInsight. Learn how to define an Oozie workflow, and submit an Oozie job."
 	services="hdinsight"
 	documentationCenter=""
@@ -12,7 +12,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="12/04/2015"
+	ms.date="01/28/2016"
 	wacn.date=""/>
 
 
@@ -30,7 +30,7 @@ Apache Oozie is a workflow/coordination system that manages Hadoop jobs. It is i
 
 Before you begin this tutorial, you must have the following:
 
-- **An Azure subscription**: See [Get Azure trial](/documentation/articles/get-azure-free-trial-for-testing-hadoop-in-hdinsight).
+- **An Azure subscription**: See [Get Azure trial](/pricing/1rmb-trial/).
 
 - **Azure CLI**: See [Install and Configure the Azure CLI](/documentation/articles/xplat-cli-install)
 

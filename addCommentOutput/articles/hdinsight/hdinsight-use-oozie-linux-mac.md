@@ -1,5 +1,7 @@
+<!-- not suitable for Mooncake -->
+
 <properties
-	pageTitle="Use Hadoop Oozie workflows in Linux-based HDInsight | Windows Azure"
+	pageTitle="Use Hadoop Oozie workflows in Linux-based HDInsight | Azure"
 	description="Use Hadoop Oozie in Linux-based HDInsight. Learn how to define an Oozie workflow, and submit an Oozie job."
 	services="hdinsight"
 	documentationCenter=""
@@ -10,7 +12,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="12/04/2015"
+	ms.date="01/28/2016"
 	wacn.date=""/>
 
 
@@ -28,7 +30,7 @@ Apache Oozie is a workflow/coordination system that manages Hadoop jobs. It is i
 
 Before you begin this tutorial, you must have the following:
 
-- **An Azure subscription**: See [Get Azure trial](/documentation/articles/get-azure-free-trial-for-testing-hadoop-in-hdinsight).
+- **An Azure subscription**: See [Get Azure trial](/pricing/1rmb-trial/).
 
 - **Azure CLI**: See [Install and Configure the Azure CLI](/documentation/articles/xplat-cli-install)
 
@@ -675,6 +677,32 @@ In this tutorial, you learned how to define an Oozie workflow and how to run an 
 
 
 
+
+[azure-data-factory-pig-hive]: /documentation/articles/data-factory-pig-hive-activities
+[hdinsight-oozie-coordinator-time]: /documentation/articles/hdinsight-use-oozie-coordinator-time
+[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning-v1
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
+
+
+[hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
+[hdinsight-use-mapreduce]: /documentation/articles/hdinsight-use-mapreduce
+[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
+[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
+[hdinsight-get-started-emulator]: /documentation/articles/hdinsight-hadoop-emulator-get-started
+
+[hdinsight-develop-streaming-jobs]: /documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs
+[hdinsight-develop-mapreduce]: /documentation/articles/hdinsight-develop-deploy-java-mapreduce
+
+[sqldatabase-create-configue]: /documentation/articles/sql-database-get-started
+[sqldatabase-get-started]: /documentation/articles/sql-database-get-started
+
+[azure-create-storageaccount]: /documentation/articles/storage-create-storage-account
+
+
 [azure-data-factory-pig-hive]: data-factory-pig-hive-activities.md
 [hdinsight-oozie-coordinator-time]: hdinsight-use-oozie-coordinator-time.md
 [hdinsight-versions]:  hdinsight-component-versioning-v1.md
@@ -698,6 +726,7 @@ In this tutorial, you learned how to define an Oozie workflow and how to run an 
 [sqldatabase-get-started]: sql-database-get-started.md
 
 [azure-create-storageaccount]: storage-create-storage-account.md
+
 
 [apache-hadoop]: http://hadoop.apache.org/
 [apache-oozie-400]: http://oozie.apache.org/docs/4.0.0/
@@ -705,7 +734,12 @@ In this tutorial, you learned how to define an Oozie workflow and how to run an 
 
 [powershell-download]: /downloads/
 [powershell-about-profiles]: https://technet.microsoft.com/zh-cn/library/hh847857.aspx
+
+[powershell-install-configure]: /documentation/articles/powershell-install-configure
+
+
 [powershell-install-configure]: powershell-install-configure.md
+
 [powershell-start]: http://technet.microsoft.com/zh-cn/library/hh847889.aspx
 [powershell-script]: https://technet.microsoft.com/zh-cn/library/ee176961.aspx
 

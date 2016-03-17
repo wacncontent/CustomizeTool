@@ -66,13 +66,9 @@ To use storage operations, you need an Azure storage account. You can create a s
 
 1.  Log into the [Azure Management Portal](https://manage.windowsazure.cn/).
 
-2. Click the **New** icon on the bottom left of the portal, then click **DATA SERVICE** > **Storage**. Give the storage account a unique name and create a new [resource group](/documentation/articles/resource-group-overview) for it.
+2. Click the **New** icon on the bottom left of the portal, then click **DATA SERVICE** > **Storage** > **Quick Create**. Give the storage account a unique name.
 
-  	<!-- ![New Button](./media/web-sites-python-ptvs-flask-table-storage/PollsCommonAzurePlusNew.png) -->
-
-	When the storage account has been created, the **Notifications** button will flash a green **SUCCESS** and the storage account's blade is open to show that it belongs to the new resource group you created.
-
-5. Click the **Settings** part in the storage account's blade. Take note of the account name and the primary key.
+5. Click the **MANAGE ACCESS KEYS** in the storage account. Take note of the account name and the primary key.
 
 	We will need this information to configure your project in the next section.
 
@@ -113,7 +109,7 @@ In this section, we'll configure our application to use the storage account we j
 
 It's easy to view and edit storage tables using Server Explorer in Visual Studio. In this section we'll use Server Explorer to view the contents of the polls application tables.
 
-> [AZURE.NOTE] This requires Windows Azure Tools to be installed, which are available as part of the [Azure SDK for .NET].
+> [AZURE.NOTE] This requires Azure Tools to be installed, which are available as part of the [Azure SDK for .NET].
 
 1.  Open **Server Explorer**. Expand **Azure**, **Storage**, your storage account, then **Tables**.
 
@@ -174,7 +170,7 @@ Follow these links to learn more about Python Tools for Visual Studio, Flask and
 - [Python Tools for Visual Studio Documentation]
   - [Web Projects]
   - [Cloud Service Projects]
-  - [Remote Debugging on Windows Azure]
+  - [Remote Debugging on Azure]
 - [Flask Documentation]
 - [Azure Storage]
 - [Azure SDK for Python]
@@ -199,7 +195,7 @@ Follow these links to learn more about Python Tools for Visual Studio, Flask and
 [Python 3.4 32-bit]: http://go.microsoft.com/fwlink/?LinkId=517191
 [Python Tools for Visual Studio Documentation]: http://aka.ms/ptvsdocs
 [Flask Documentation]: http://flask.pocoo.org/
-[Remote Debugging on Windows Azure]: http://go.microsoft.com/fwlink/?LinkId=624026
+[Remote Debugging on Azure]: http://go.microsoft.com/fwlink/?LinkId=624026
 [Web Projects]: http://go.microsoft.com/fwlink/?LinkId=624027
 [Cloud Service Projects]: http://go.microsoft.com/fwlink/?LinkId=624028
 [Azure Storage]: /documentation/services/storage/

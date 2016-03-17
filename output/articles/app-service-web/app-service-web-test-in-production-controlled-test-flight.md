@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
 	pageTitle="Flighting deployment (beta testing) in Azure Web App"
 	description="Learn how to flight new features in your app or beta test your updates in this end-to-end tutorial. It brings together Azure features like continuous publishing, slots, traffic routing, and Application Insights integration."

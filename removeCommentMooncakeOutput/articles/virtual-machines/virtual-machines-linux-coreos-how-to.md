@@ -1,5 +1,5 @@
 <properties
-	pageTitle="How to Use CoreOS | Windows Azure"
+	pageTitle="How to Use CoreOS | Azure"
 	description="Describes CoreOS, how to create a CoreOS virtual machine cluster on Azure in the classic deployment model, and its basic usage."
 	services="virtual-machines"
 	documentationCenter=""
@@ -17,7 +17,7 @@
 
 This topic describes [CoreOS] and shows how to create a cluster of three CoreOS virtual machines on Azure as a quick start to understanding this operating system. It uses the very basic elements of CoreOS deployments and examples from [CoreOS with Azure], [Tim Park's CoreOS Tutorial], and [Patrick Chanezon's CoreOS Tutorial] to demonstrate the absolute minimum requirements to both understand the basic structure of a CoreOS deployment and get a cluster of three virtual machines running successfully.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] 
 
 
 ## CoreOS, clusters, and Linux containers
@@ -67,9 +67,9 @@ You should now have both a `myPrivateKey.key` and a `myCert.pem` file in your wo
 
 CoreOS's `etcd` daemon requires a discovery id to query for all nodes in the cluster automatically. To retrieve your discovery id and save it to an `etcdid` file, type
 
-```
-curl https://discovery.etcd.io/new | grep ^http.* > etcdid
-```
+	
+	curl https://discovery.etcd.io/new | grep ^http.* > etcdid
+	
 
 ### Create a cloud-config file
 
@@ -77,22 +77,22 @@ Still in the same working directory, create a file with your favorite text edito
 
 > [AZURE.NOTE] Remember to type `cat etcdid` to retrieve the etcd discovery id from the `etcdid` file you created above and replace `<token>` in the following `cloud-config.yaml` file with the generated number from your `etcdid` file. If you are unable to validate your cluster at the end, this may be one of the steps you overlooked!
 
-```
-#cloud-config
-
-coreos:
-  etcd:
-    # generate a new token for each unique cluster from https://discovery.etcd.io/new
-    discovery: https://discovery.etcd.io/<token>
-    # deployments across multiple cloud services will need to use $public_ipv4
-    addr: $private_ipv4:4001
-    peer-addr: $private_ipv4:7001
-  units:
-    - name: etcd.service
-      command: start
-    - name: fleet.service
-      command: start
-```
+	
+	#cloud-config
+	
+	coreos:
+	  etcd:
+	    # generate a new token for each unique cluster from https://discovery.etcd.io/new
+	    discovery: https://discovery.etcd.io/<token>
+	    # deployments across multiple cloud services will need to use $public_ipv4
+	    addr: $private_ipv4:4001
+	    peer-addr: $private_ipv4:7001
+	  units:
+	    - name: etcd.service
+	      command: start
+	    - name: fleet.service
+	      command: start
+	
 
 (For more complete information about the cloud-config file, see [Using Cloud-Config](https://coreos.com/docs/cluster-management/setup/cloudinit-cloud-config/) in the CoreOS documentation.)
 
@@ -107,23 +107,13 @@ coreos:
 3. Create a cloud service for your basic cluster by typing
 `azure service create <cloud-service-name>` where <*cloud-service-name*> is the name for your CoreOS cloud service. This sample uses the name **`coreos-cluster`**; you will need to reuse the name that you choose to create your CoreOS VM instances inside the cloud service.
 
-	One note: If you observe your work so far in the [preview portal](https://manage.windowsazure.cn), you'll find your cloud service name is both a resource group and domain, as the following image shows:
-
-	![][CloudServiceInNewPortal]
-
 4. Connect to your cloud service and create a new CoreOS VM inside by using the **azure vm create** command. You'll pass the location of your X.509 certificate in the **--ssh-cert** option. Create your first VM image by typing the following, remembering to replace **coreos-cluster** with the cloud service name that you created:
 
-	```
-azure vm create --custom-data=cloud-config.yaml --ssh=22 --ssh-cert=./myCert.pem --no-ssh-password --vm-name=node-1 --connect=coreos-cluster --location="China North" 2b171e93f07c4903bcad35bda10acf22__CoreOS-Stable-522.6.0 core
-```
+		azure vm create --custom-data=cloud-config.yaml --ssh=22 --ssh-cert=./myCert.pem --no-ssh-password --vm-name=node-1 --connect=coreos-cluster --location="China North" 2b171e93f07c4903bcad35bda10acf22__CoreOS-Stable-522.6.0 core
 
 5. Create the second node by repeating the command in step 4, replacing the **--vm-name** value with **node-2** and the **--ssh** port value with 2022.
 
 6. Create the third node by repeating the command in step 4, replacing the **--vm-name** value with **node-3** and the **--ssh** port value with 3022.
-
-You can see from the shot below how the CoreOS cluster appears in the portal.
-
-![][EmptyCoreOSCluster]
 
 ### Test your CoreOS cluster from an Azure VM
 
@@ -196,7 +186,7 @@ You should now have a running three-node CoreOS cluster on Azure. From here, you
 
 
 <!--Link references-->
-[Azure Command-line Interface (Azure CLI)]: ../xplat-cli-install.md
+[Azure Command-line Interface (Azure CLI)]: /documentation/articles/xplat-cli-install
 [CoreOS]: https://coreos.com/
 [CoreOS Overview]: https://coreos.com/using-coreos/
 [CoreOS with Azure]: https://coreos.com/docs/running-coreos/cloud-providers/azure/
@@ -204,4 +194,4 @@ You should now have a running three-node CoreOS cluster on Azure. From here, you
 [Patrick Chanezon's CoreOS Tutorial]: https://github.com/chanezon/azure-linux/tree/master/coreos/cloud-init
 [Docker]: http://docker.io
 [YAML]: http://yaml.org/
-[Get Started with Fleet on CoreOS on Azure]: virtual-machines-linux-coreos-fleet-get-started.md
+[Get Started with Fleet on CoreOS on Azure]: /documentation/articles/virtual-machines-linux-coreos-fleet-get-started

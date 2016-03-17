@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Use Hadoop Pig with Remote Desktop in HDInsight | Windows Azure"
+   pageTitle="Use Hadoop Pig with Remote Desktop in HDInsight | Azure"
    description="Learn how to use the Pig command to run Pig Latin statements from a Remote Desktop connection to a Windows-based Hadoop cluster in HDInsight."
    services="hdinsight"
    documentationCenter=""

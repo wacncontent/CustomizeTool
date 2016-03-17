@@ -1,7 +1,7 @@
 <!-- not suitable for Mooncake -->
 
 <properties
-	pageTitle="Create a VM with a template | Windows Azure"
+	pageTitle="Create a VM with a template | Azure"
 	description="Use a Resource Manager template to easily create a new Windows virtual machine with PowerShell."
 	services="virtual-machines"
 	documentationCenter=""

@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Create Windows-based Hadoop clusters in HDInsight using .NET SDK | Windows Azure"
+   pageTitle="Create Windows-based Hadoop clusters in HDInsight using .NET SDK | Azure"
    	description="Learn how to create HDInsight clusters for Azure HDInsight using .NET SDK."
    services="hdinsight"
    documentationCenter=""
@@ -31,7 +31,7 @@ Before you begin the instructions in this article, you must have the following:
 ## Create clusters
 The HDInsight .NET SDK provides .NET client libraries that make it easier to work with HDInsight from a .NET Framework application. Follow the instructions below to create a Visual Studio console application and paste the code for creating a cluster.
 
-The application requires and the default storage account.  The [Appendix A](#appx-a-create-dependent-components) provices a PowerShell script to create the dependent components.
+aThe application requires an Azure resource group, and the default storage account.  The [Appendix A](#appx-a-create-dependent-components) provices a PowerShell script to create the dependent components.
 
 **To create a Visual Studio console application**
 
@@ -93,6 +93,7 @@ The application requires and the default storage account.  The [Appendix A](#app
 						OSType = NewClusterOsType
 					};
 		
+
 					_hdiManagementClient.Clusters.Create(NewClusterName, parameters);
 
                     System.Console.WriteLine("The cluster has been created. Press ENTER to continue ...");
@@ -178,6 +179,7 @@ The following Azure PowerShell script can be use to create the dependent compone
     ####################################
     #region - Connect to Azure subscription
     Write-Host "`nConnecting to your Azure subscription ..." -ForegroundColor Green
+
     try{Get-AzureContext}
     catch{Add-AzureAccount -Environment AzureChinaCloud}
     #endregion
@@ -188,10 +190,12 @@ The following Azure PowerShell script can be use to create the dependent compone
     ####################################
 
     Write-Host "Creating the default storage account and default blob container ..."  -ForegroundColor Green
+
     New-AzureStorageAccount `
         -StorageAccountName $defaultStorageAccountName `
         -Location $location `
         -Type Standard_GRS
+
 
     $defaultStorageAccountKey = Get-AzureStorageKey `
                                     -StorageAccountName $defaultStorageAccountName |  %{ $_.Primary }

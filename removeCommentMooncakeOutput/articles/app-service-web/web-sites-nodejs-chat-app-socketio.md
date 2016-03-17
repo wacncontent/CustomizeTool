@@ -103,8 +103,8 @@ Follow these steps to create an Azure web app, enable Git publishing, and then e
 
 	>[AZURE.NOTE]
 	>The 'azure site set -w' command will work only with version 0.7.4 or higher of the Azure Command-Line Interface. You can also enable WebSocket support using the [Azure Management Portal](https://manage.windowsazure.cn).
-	>To enable WebSockets using the [Azure Management Portal](https://manage.windowsazure.cn), select the Configure page for your  Website, select 'ON' for the Web Sockets entry, and then click Save.
-	>![websockets](./media/web-sites-nodejs-chat-app-socketio/websockets.png)
+	><p>To enable WebSockets using the [Azure Management Portal](https://manage.windowsazure.cn), select the Configure page for your  Website, select 'ON' for the Web Sockets entry, and then click Save.
+	><p>![websockets](./media/web-sites-nodejs-chat-app-socketio/websockets.png)
 	
 5. To view the web app on Azure, use the following command to launch your web browser and navigate to the hosted web app:
 
@@ -116,7 +116,7 @@ Your app is now running on Azure, and can relay chat messages between different 
 
 Socket.IO applications can be scaled out by using an __adapter__ to distribute messages and events between multiple application instances. While there are several adapters available, the [socket.io-redis](https://github.com/automattic/socket.io-redis) adapter can be easily used with the Azure Redis Cache feature.
 
-> [AZURE.NOTE] An additional requirement for scaling out a Socket.IO solution is support for sticky sessions. Sticky sessions are enabled by default for Azure Web Apps through Azure Request Routing. For more information, see [Instance Affinity in Azure Web Sites](http://azure.microsoft.com/blog/2013/11/18/disabling-arrs-instance-affinity-in-windows-azure-web-sites/)
+> [AZURE.NOTE] An additional requirement for scaling out a Socket.IO solution is support for sticky sessions. Sticky sessions are enabled by default for Azure Web Apps through Azure Request Routing. For more information, see [Instance Affinity in Azure Web Sites](https://azure.microsoft.com/blog/2013/11/18/disabling-arrs-instance-affinity-in-windows-azure-web-sites/)
 
 ###Create a Redis cache
 
@@ -145,8 +145,7 @@ Perform the steps in [Create a cache in Azure Redis Cache](/documentation/articl
 	This will create a publish and subscribe client to the Redis cache created previously. The clients are then used with the adapter to configure Socket.IO to use the Redis cache for passing messages and events between instances of your application
 
 	> [AZURE.NOTE] While the __socket.io-redis__ adapter can communicate directly to Redis, the current version does not support the authentication required by Azure Redis cache. So the initial connection is created using the __redis__ module, then the client is passed to the __socket.io-redis__ adapter.
-	>
-	> While Azure Redis Cache supports secure connections using port 6380, the modules used in this example do not support secure connections as of 7/14/2014. The above code uses the default, unsecure port of 6379.
+	> <p>While Azure Redis Cache supports secure connections using port 6380, the modules used in this example do not support secure connections as of 7/14/2014. The above code uses the default, unsecure port of 6379.
 
 3. Save the modified __app.js__
 

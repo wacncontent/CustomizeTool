@@ -1,8 +1,8 @@
 <!-- not suitable for Mooncake -->
 
 <properties
-	pageTitle="Deploy Resources Using .NET Libraries | Windows Azure"
-	description="Learn to use the Compute, Storage, and Network .NET libraries to create and delete resources in Windows Azure using the Resource Manager."
+	pageTitle="Deploy Resources Using .NET Libraries | Azure"
+	description="Learn to use the Compute, Storage, and Network .NET libraries to create and delete resources in Azure using the Resource Manager."
 	services="virtual-machines,virtual-network,storage"
 	documentationCenter=""
 	authors="davidmu1"
@@ -12,14 +12,14 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="01/05/2016"
+	ms.date="01/20/2016"
 	wacn.date=""/>
 
 # Deploy Azure Resources Using the Compute, Network, and Storage .NET Libraries
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
 
-This tutorial shows you how to use the Compute, Storage, and Network .NET libraries to create and delete resources in Windows Azure. It also shows you how to authenticate the requests to Azure Resource Manager by using Azure Active Directory.
+This tutorial shows you how to use the Compute, Storage, and Network .NET libraries to create and delete resources in Azure. It also shows you how to authenticate the requests to Azure Resource Manager by using Azure Active Directory.
 
 [AZURE.INCLUDE [free-trial-note](../includes/free-trial-note.md)]
 
@@ -71,7 +71,7 @@ NuGet packages are the easiest way to install the libraries that you need to fin
 
 6. Type *Microsoft.Azure.Management.Network* in the search box, click **Install** for the Network .NET Libraries, and then follow the instructions to install the package.
 
-7. Type *Microsoft.Azure.Management.Storage* in the search box, click **Install** for the Network .NET Libraries, and then follow the instructions to install the package.
+7. Type *Microsoft.Azure.Management.Storage* in the search box, click **Install** for the Storage .NET Libraries, and then follow the instructions to install the package.
 
 8. Type *Microsoft.Azure.Management.Resources* in the search box, click **Install** for the Resource Management Libraries.
 

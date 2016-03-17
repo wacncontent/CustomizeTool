@@ -137,7 +137,7 @@ For more information about the Azure platform, see [Azure Web App][AzureAppServi
 [virtualnetwork]: /documentation/articles/virtual-networks-faq/
 [HowToCreateAnAppServiceEnvironment]: /documentation/articles/app-service-web-how-to-create-an-app-service-environment/
 [NetworkSecurityGroups]: /documentation/articles/virtual-networks-nsg/
-[AzureAppService]: /documentation/articles/app-service-value-prop-what-is/
+[AzureAppService]: /documentation/services/web-sites/
 [IntroToAppServiceEnvironment]:  /documentation/articles/app-service-app-service-environment-intro/
 [SecurelyConnecttoBackend]:  /documentation/articles/app-service-app-service-environment-securely-connecting-to-backend-resources/
 [NewPortal]:  https://manage.windowsazure.cn  

@@ -1,5 +1,7 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
-	pageTitle="Migrate an enterprise web app to Azure Web App" 
+	pageTitle="Migrate an enterprise web app to Azure" 
 	description="Shows how to use Web Apps Migration Assistant to quickly migrate existing IIS websites to Azure Web Apps" 
 	services="app-service" 
 	documentationCenter="" 
@@ -46,7 +48,7 @@ The Migration Assistant creates a readiness report to identify any potential cau
 			  </configSections>
 			</configuration>
 
-		For more examples of how to use XML Document Transformations with your website, see [Transform your Windows Azure Web Site](http://blogs.msdn.com/b/waws/archive/2014/06/17/transform-your-microsoft-azure-web-site.aspx).
+		For more examples of how to use XML Document Transformations with your website, see [Transform your Azure Web Site](http://blogs.msdn.com/b/waws/archive/2014/06/17/transform-your-microsoft-azure-web-site.aspx).
 
 -	Other components like SharePoint, front page server extensions (FPSE), FTP, SSL certificates will not be migrated.
 
@@ -128,5 +130,4 @@ This section steps through an example to to migrate a few websites that use a SQ
 >[AZURE.NOTE] If you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.
 
 ## What's changed
-* For a guide to the change from Websites to Azure see: [Azure and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
- 
+* For a guide to the change from Websites to Azure see: [Azure and Its Impact on Existing Azure Services](/documentation/services/web-sites/)

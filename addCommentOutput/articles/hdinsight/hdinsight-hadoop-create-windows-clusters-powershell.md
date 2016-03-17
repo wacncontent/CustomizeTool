@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Create Windows-based Hadoop clusters in HDInsight using Azure PowerShell| Windows Azure"
+   pageTitle="Create Windows-based Hadoop clusters in HDInsight using Azure PowerShell| Azure"
    	description="Learn how to create clusters for Azure HDInsight by using Azure PowerShell."
    services="hdinsight"
    documentationCenter=""
@@ -53,19 +53,19 @@ The following procedures are needed to create an HDInsight cluster by using Azur
     #region - service names
     $namePrefix = $nameToken.ToLower() + (Get-Date -Format "MMdd")
 
-<!-- deleted by customization
+
     $resourceGroupName = $namePrefix + "rg"
--->
+
     $hdinsightClusterName = $namePrefix + "hdi"
     $defaultStorageAccountName = $namePrefix + "store"
     $defaultBlobContainerName = $hdinsightClusterName
 
-<!-- deleted by customization
+
     $location = "China East 2"
--->
-<!-- keep by customization: begin -->
+
+
     $location = "China East"
-<!-- keep by customization: end -->
+
     $clusterSizeInNodes = 1
     #endregion
 
@@ -77,47 +77,47 @@ The following procedures are needed to create an HDInsight cluster by using Azur
     ###########################################
     #region - Connect to Azure subscription
     Write-Host "`nConnecting to your Azure subscription ..." -ForegroundColor Green
-<!-- deleted by customization
+
     try{Get-AzureRmContext}
     catch{Login-AzureRmAccount}
--->
-<!-- keep by customization: begin -->
+
+
     try{Get-AzureContext}
     catch{Add-AzureAccount -Environment AzureChinaCloud}
-<!-- keep by customization: end -->
+
     #endregion
-<!-- deleted by customization
+
 
     ###########################################
     # Create the resource group
     ###########################################
     New-AzureRmResourceGroup -Name $resourceGroupName -Location $location
--->
+
 
     ###########################################
     # Preapre default storage account and container
     ###########################################
-<!-- deleted by customization
+
     New-AzureRmStorageAccount `
         -ResourceGroupName $resourceGroupName `
         -Name $defaultStorageAccountName `
--->
-<!-- keep by customization: begin -->
+
+
     New-AzureStorageAccount `
         -StorageAccountName $defaultStorageAccountName `
-<!-- keep by customization: end -->
+
         -Type Standard_GRS `
         -Location $location
 
-<!-- deleted by customization
+
     $defaultStorageAccountKey = Get-AzureRmStorageAccountKey `
                                     -ResourceGroupName $resourceGroupName `
                                     -Name $defaultStorageAccountName |  %{ $_.Key1 }
--->
-<!-- keep by customization: begin -->
+
+
     $defaultStorageAccountKey = Get-AzureStorageKey `
                                     -StorageAccountName $defaultStorageAccountName |  %{ $_.Primary }
-<!-- keep by customization: end -->
+
     $defaultStorageContext = New-AzureStorageContext `
                                     -StorageAccountName $defaultStorageAccountName `
                                     -StorageAccountKey $defaultStorageAccountKey
@@ -132,50 +132,50 @@ The following procedures are needed to create an HDInsight cluster by using Azur
     $httpPW = ConvertTo-SecureString -String $httpPassword -AsPlainText -Force
     $httpCredential = New-Object System.Management.Automation.PSCredential($httpUserName,$httpPW)
 
-<!-- deleted by customization
+
     New-AzureRmHDInsightCluster `
         -ResourceGroupName $resourceGroupName `
         -ClusterName $hdinsightClusterName `
--->
-<!-- keep by customization: begin -->
+
+
     New-AzureHDInsightCluster `
         -Name $hdinsightClusterName `
-<!-- keep by customization: end -->
+
         -Location $location `
         -ClusterSizeInNodes $clusterSizeInNodes `
         -ClusterType Hadoop `
-<!-- deleted by customization
+
         -OSType Windows `
--->
+
         -Version "3.2" `
-<!-- deleted by customization
+
         -HttpCredential $httpCredential `
--->
-<!-- keep by customization: begin -->
+
+
         -Credential $httpCredential `
-<!-- keep by customization: end -->
+
         -DefaultStorageAccountName "$defaultStorageAccountName.blob.core.chinacloudapi.cn" `
         -DefaultStorageAccountKey $defaultStorageAccountKey `
-<!-- deleted by customization
+
         -DefaultStorageContainer $hdinsightClusterName 
--->
-<!-- keep by customization: begin -->
+
+
         -DefaultStorageContainerName $hdinsightClusterName 
-<!-- keep by customization: end -->
+
 
     ####################################
     # Verify the cluster
     ####################################
-<!-- deleted by customization
+
     Get-AzureRmHDInsightCluster -ClusterName $hdinsightClusterName 
 
 ## Create clusters using ARM template
 
 You can use Azure PowerShell to deploy an ARM template which creates an HDInsight cluster.  See [Call templates using Azure PowerShell](/documentation/articles/hdinsight-hadoop-create-windows-clusters-arm-templates#call-templates-using-powershell).
--->
-<!-- keep by customization: begin -->
+
+
     Get-AzureHDInsightCluster -Name $hdinsightClusterName 
-<!-- keep by customization: end -->
+
 
 ##Customize clusters
 

@@ -20,11 +20,11 @@
 
 ## Create from scratch or bring existing assets
 
-Quickly bring your existing web assets to Azure Web Apps from a variety of languages and frameworks.
+Quickly create new web apps from a b bring your existing web assets to Azure Web Apps from a variety of languages and frameworks.
 
-You can create a web app using your favorite CMS flavor. You can choose from various database backends to meet your needs, including [Azure SQL Database] and [MySQL].
+The Azure gallery provides Y You can create a web app using your favorite CMS flavor. You can choose from various database backends to meet your needs, including [Azure SQL Database] and [MySQL].
 
-Your existing web assets can run on Web Apps, whether they are .NET, PHP, Java, Node.js, or Python. You can move them to Web Apps using your familiar [FTP] tools. If you frequently create digital marketing campaigns, it is possible that you have existing web assets in a source control management system. You can deploy to Web Apps directly from popular source control options, such as [Visual Studio], and [Git] - local, GitHub, Mercurial, etc..
+Your existing web assets can run on Web Apps, whether they are .NET, PHP, Java, Node.js, or Python. You can move them to Web Apps using your familiar [FTP] tools. If you frequently create digital marketing campaigns, it is possible that you have existing web assets in a source control management system. You can deploy to Web Apps directly from popular source control options, such as [Visual Studio], [Visual Studio Team Servicea Mand [Git] - local, GitHub, BitBucket, DropBox, Mercurial, etc..
 
 ## Stay agile
 
@@ -46,7 +46,6 @@ Furthermore, each social media site typically provides information on other ways
 Enrich your digital marketing campaign with other Azure services, such as:
 
 -  Upload and stream videos globally with [Azure Media Services]
--  Send emails to users with [SendGrid service in Azure gallery]
 -  Establish presence on Windows, iOS, and Android devices with [Mobile Services]
 -  Send push notification to millions of devices with [Notification Hub]
 
@@ -81,25 +80,27 @@ In the **Standard** tier, monitor app responsiveness receive email notifications
 
 [Azure Web App]: /home/features/web-site/
 
+
 [MySQL]: /documentation/articles/web-sites-php-mysql-deploy-use-git
 [Azure SQL Database]: /documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database
 [FTP]: /documentation/articles/web-sites-deploy#ftp
 [Visual Studio]: /documentation/articles/web-sites-dotnet-get-started
+
 [Git]: /documentation/articles/web-sites-publish-source-control
 
 [deploying to a staging slot]: /documentation/articles/web-sites-staged-publishing
 [continuously publish]:http://rickrainey.com/2014/01/21/continuous-deployment-github-with-azure-web-sites-and-staged-publishing/
 [run A/B tests]:http://blogs.msdn.com/b/tomholl/archive/2014/11/10/a-b-testing-with-azure-websites.aspx
 
-[Create an ASP.NET MVC app with auth and SQL DB and deploy to Azure Web App]: /documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database 
+[Create an ASP.NET MVC app with auth and SQL DB and deploy to Azure Web App]: /documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database
 
 [Azure Media Services]:http://blogs.technet.com/b/cbernier/archive/2013/09/03/windows-azure-media-services-and-web-sites.aspx
-[SendGrid service in Azure gallery]: /documentation/articles/sendgrid-dotnet-how-to-send-email
+
 [Mobile Services]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users
 [Notification Hub]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users
 
 [Azure Traffic Manager]:http://www.hanselman.com/blog/CloudPowerHowToScaleAzureWebsitesGloballyWithTrafficManager.aspx
-[integrating your web site with Azure CDN]: /documentation/articles/cdn-websites-with-cdn
+[integrating your web app with Azure CDN]: /documentation/articles/cdn-websites-with-cdn
 [CDN node]:https://msdn.microsoft.com/zh-cn/library/azure/gg680302.aspx
 
 [scale up and out]:/manage/services/web-sites/how-to-scale-websites/

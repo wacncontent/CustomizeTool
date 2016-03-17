@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Learn Hadoop in HDInsight with the Sample Gallery | Windows Azure"
+   pageTitle="Learn Hadoop in HDInsight with the Sample Gallery | Azure"
    description="Quickly learn Hadoop by running sample applications from the HDInsight Getting Started Gallery. Use sample data or supply your own."
    services="hdinsight"
    documentationCenter=""
@@ -17,15 +17,15 @@
 The HDInsight Getting Started Gallery provides an easy and quick way learn Hadoop by running sample applications in HDInsight. Some of the samples come with sample data. You can supply your own data for the remaining samples. Currently, there are the following six samples (with more coming):
 
 - Solutions with your Azure data
-	- Windows Azure website log analysis
-	- Windows Azure storage analytics
+	- Azure website log analysis
+	- Azure storage analytics
 - Solutions with sample data
 	- Sensor data analysis
 	- Twitter trend analysis
 	- Website log analysis
 	- Mahout movie recommendation
 
-<!-- deleted by customization
+
 [AZURE.INCLUDE [hdinsight-azure-portal](../includes/hdinsight-azure-portal.md)]
 
 * [Learn Hadoop by using the HDInsight Getting Started Gallery](/documentation/articles/hdinsight-learn-hadoop-use-sample-gallery)
@@ -36,10 +36,10 @@ The HDInsight Getting Started Gallery provides an easy and quick way learn Hadoo
 The following video clip shows how to run the Twitter trend analysis sample:
 
 <center><a href="https://www.youtube.com/embed/7ePbHot1SN4">https://www.youtube.com/embed/7ePbHot1SN4></a></center>
--->
-<!-- keep by customization: begin -->
+
+
 ![HDInsight Hadoop, Storm, and HBase Getting Started Gallery solutions including sample data.][hdinsight.sample.gallery]
-<!-- keep by customization: end -->
+
 
 
 **To run a sample from the Getting Started Gallery**
@@ -65,11 +65,6 @@ Other ways to learn about HDInsight include:
 [hdinsight.twitter.sample]: ./media/hdinsight-learn-hadoop-use-sample-gallery/HDInsight-Twitter-Trend-Analysis-sample.png
 
 <!--Link references-->
-<!-- deleted by customization
-[hdinsight.learn.map]: hdinsight-learn-map.md
--->
-<!-- keep by customization: begin -->
 [hdinsight.learn.map]: /documentation/articles/hdinsight-learn-map
-<!-- keep by customization: end -->
 [hdinsight.infographic]: http://go.microsoft.com/fwlink/?linkid=523960
 [azure.portal]:https://manage.windowsazure.cn

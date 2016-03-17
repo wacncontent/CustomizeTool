@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Automated SQL Server Patching in VMs | Windows Azure"
+	pageTitle="Automated SQL Server Patching in VMs | Azure"
 	description="Explains the Automated Patching feature for SQL Server Virtual Machines running in Azure."
 	services="virtual-machines"
 	documentationCenter="na"
@@ -9,20 +9,21 @@
 	tags="azure-resource-manager" />
 <tags
 	ms.service="virtual-machines"
-	ms.date="11/12/2015"
+	ms.date="02/03/2016"
 	wacn.date=""/>
 
 # Automated Patching for SQL Server in Azure Virtual Machines
 
 Automated Patching establishes a maintenance window for an Azure Virtual Machine running SQL Server 2012 or 2014. Automated Updates can only be installed during this maintenance window. For SQL Server, this ensures that system updates and any associated restarts occur at the best possible time for the database. It depends on the SQL Server IaaS Agent.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]  Resource Manager model. 
+
 
 ## Configure Automated Patching in the Azure Management Portal
 
-You can use the [Azure Management <!-- deleted by customization Portal](https://portal.azure.com/) --><!-- keep by customization: begin --> Portal](https://manage.windowsazure.cn/) <!-- keep by customization: end --> to configure Automated Patching when you create a new SQL Server Virtual Machine.
+You can use the [Azure Management Portal](https://portal.azure.com/) to configure Automated Patching when you create a new SQL Server Virtual Machine.
 
->[AZURE.NOTE] Automated Patching relies on the SQL Server IaaS Agent. To install and configure the agent, you must have the Azure VM Agent running on the target virtual machine. Newer virtual machine gallery images have this option enabled by default, but the Azure VM Agent might be missing on existing VMs. If you are using your own VM image, you will also need to install the SQL Server IaaS Agent. For more information, see [VM Agent and Extensions](http://azure.microsoft.com/blog/2014/04/15/vm-agent-and-extensions-part-2/).
+>[AZURE.NOTE] Automated Patching relies on the SQL Server IaaS Agent. To install and configure the agent, you must have the Azure VM Agent running on the target virtual machine. Newer virtual machine gallery images have this option enabled by default, but the Azure VM Agent might be missing on existing VMs. If you are using your own VM image, you will also need to install the SQL Server IaaS Agent. For more information, see [VM Agent and Extensions](https://azure.microsoft.com/blog/2014/04/15/vm-agent-and-extensions-part-2/).
 
 The following Azure Management Portal screenshot shows these options under **OPTIONAL CONFIGURATION** | **SQL AUTOMATED PATCHING**.
 
@@ -33,6 +34,7 @@ For existing SQL Server 2012 or 2014 virtual machines, select the **Auto patchin
 ![Automated Patching Configuration in Azure Management Portal](./media/virtual-machines-sql-server-automated-patching/IC792132.jpg)
 
 >[AZURE.NOTE] When you enable Automated Patching for the first time, Azure configures the SQL Server IaaS Agent in the background. During this time, the Azure Management Portal will not show that Automated Patching is configured. Wait several minutes for the agent to be installed, configured. After that the Azure Management Portal will reflect the new settings.
+
 
 ## Configure Automated Patching with PowerShell
 
@@ -57,7 +59,7 @@ It could take several minutes to install and configure the SQL Server IaaS Agent
 
 To disable Automated Patching, run the same script without the -Enable parameter to the New-AzureVMSqlServerAutoPatchingConfig. As with installation, it can take several minutes to disable Automated Patching.
 
-## Disabling and Uninstalling the SQL Server IaaS Agent
+## Disabling and uninstalling the SQL Server IaaS Agent
 
 If you want to disable the SQL Server IaaS Agent for Automated Backup and Patching, use the following command:
 
@@ -73,7 +75,7 @@ You can also uninstall the extension using the **Remove-AzureVMSqlServerExtensio
 
 ## Compatibility
 
-The following products <!-- deleted by customization are compatible with the --><!-- keep by customization: begin --> areÂ compatible withÂ the <!-- keep by customization: end --> SQL Server IaaS Agent features for Automated Patching:
+The following products are compatible with the SQL Server IaaS Agent features for Automated Patching:
 
 - Windows Server 2012
 
@@ -83,7 +85,7 @@ The following products <!-- deleted by customization are compatible with the -
 
 - SQL Server 2014
 
-## Next Steps
+## Next steps
 
 A related feature for SQL Server VMs in Azure is [Automated Backup for SQL Server in Azure Virtual Machines](/documentation/articles/virtual-machines-sql-server-automated-backup).
 

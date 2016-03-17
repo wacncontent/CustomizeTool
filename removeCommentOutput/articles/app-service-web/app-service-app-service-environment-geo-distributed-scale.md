@@ -94,7 +94,7 @@ The end result of the Traffic Manager and DNS configuration is that requests for
 2. The CNAME entry at the domain registrar causes the DNS lookup to be redirected to Azure Traffic Manager.
 3. A DNS lookup is made for *scalable-ase-demo.trafficmanager.cn* against one of the Azure Traffic Manager DNS servers.
 4. Based on the load balancing policy (the *TrafficRoutingMethod* parameter used earlier when creating the Traffic Manager profile), Traffic Manager will select one of the configured endpoints and return the FQDN of that endpoint to the browser or device.
-5.  Since the FQDN of the endpoint is the Url of an app instance running on an Azure Environment, the browser or device will ask a Windows Azure DNS server to resolve the FQDN to an IP address. 
+5.  Since the FQDN of the endpoint is the Url of an app instance running on an Azure Environment, the browser or device will ask a Azure DNS server to resolve the FQDN to an IP address. 
 6. The browser or device will send the HTTP/S request to the IP address.  
 7. The request will arrive at one of the app instances running on one of the Azure Environments.
 

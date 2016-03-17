@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
 	pageTitle="Integrate an app with an Azure Virtual Network" 
 	description="Shows you how to connect an app in Azure to a new or existing Azure virtual network" 
@@ -104,7 +106,7 @@ Under the covers this feature builds on top of Point-to-Site VPN technology to c
 
 ![][4]
  
-If you havenât configured a DNS server with your virtual network you will need to use IP addresses.  While using IP addresses, remember that the major benefit of this feature is that it enables you to use the private addresses within your private network.  If you set your app up to use public IP addresses for one of your VMs then you aren't using the VNET Integration feature and are communicating over the internet.
+If you haven't configured a DNS server with your virtual network you will need to use IP addresses.  While using IP addresses, remember that the major benefit of this feature is that it enables you to use the private addresses within your private network.  If you set your app up to use public IP addresses for one of your VMs then you aren't using the VNET Integration feature and are communicating over the internet.
 
 
 
@@ -177,7 +179,7 @@ While the feature is easy to set up that doesn't mean that your experience will 
 
 ####Tools####
 
-The tools ping, nslookup and tracert wonât work through the console due to security constraints.  To fill the void there have been two separate tools added.  In order to test DNS functionality we added a tool named nameresolver.exe.  The syntax is:
+The tools ping, nslookup and tracert won't work through the console due to security constraints.  To fill the void there have been two separate tools added.  In order to test DNS functionality we added a tool named nameresolver.exe.  The syntax is:
 
     nameresolver.exe hostname [optional: DNS Server]
 

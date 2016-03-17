@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Create and upload a Windows Server VHD using Powershell | Windows Azure"
+	pageTitle="Create and upload a Windows Server VHD using Powershell | Azure"
 	description="Learn to create and upload a Windows Server based virtual hard disk (VHD)  using the classic deployment model and Azure Powershell."
 	services="virtual-machines"
 	documentationCenter=""
@@ -15,10 +15,10 @@
 
 # Create and upload a Windows Server VHD to Azure
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]  Resource Manager model. 
 
 
-This article shows you how to upload a virtual hard disk (VHD) with an operating system so you can use it as an image to create virtual machines based on that image. For more details about disks and VHDs in Windows Azure, see [About Disks and VHDs for Virtual Machines](/documentation/articles/virtual-machines-disks-vhds).
+This article shows you how to upload a virtual hard disk (VHD) with an operating system so you can use it as an image to create virtual machines based on that image. For more details about disks and VHDs in Azure, see [About Disks and VHDs for Virtual Machines](/documentation/articles/virtual-machines-disks-vhds).
 
 
 
@@ -28,11 +28,11 @@ This article assumes you have:
 
 1. **An Azure subscription** - If you don't have one, you can [open an Azure account for free](/pricing/1rmb-trial/?WT.mc_id=A261C142F): You get credits you can use to try out paid Azure services, and even after they're used up you can keep the account and use free Azure services, such as Websites. Your credit card won't be charged, unless you explicitly change your settings and ask to be charged. You also can [activate MSDN subscriber benefits](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F): Your MSDN subscription gives you credits every month that you can use for paid Azure services.
 
-2. **Windows Azure PowerShell** - You have the Windows Azure PowerShell module installed and configured to use your subscription. To download the module, see [Windows Azure Downloads](/downloads/). A tutorial to install and configure the module is available [here](/documentation/articles/powershell-install-configure). You'll use the [Add-AzureVHD](http://msdn.microsoft.com/zh-cn/library/azure/dn495173.aspx) cmdlet to upload the VHD.
+2. **Azure PowerShell** - You have the Azure PowerShell module installed and configured to use your subscription. To download the module, see [Azure Downloads](/downloads/). A tutorial to install and configure the module is available [here](/documentation/articles/powershell-install-configure). You'll use the [Add-AzureVHD](http://msdn.microsoft.com/zh-cn/library/azure/dn495173.aspx) cmdlet to upload the VHD.
 
-3. **A supported Windows operating system stored in a .vhd file and attached to a virtual machine** - Multiple tools exist to create .vhd files. For example, you can use Hyper-V to create a virtual machine and install the operating system. For instructions, see [Install the Hyper-V Role and configure a virtual machine](http://technet.microsoft.com/zh-cn/library/hh846766.aspx). For details about operating systems, see [Microsoft server software support for Windows Azure virtual machines](https://support.microsoft.com/zh-cn/kb/2721672).
+3. **A supported Windows operating system stored in a .vhd file and attached to a virtual machine** - Multiple tools exist to create .vhd files. For example, you can use Hyper-V to create a virtual machine and install the operating system. For instructions, see [Install the Hyper-V Role and configure a virtual machine](http://technet.microsoft.com/zh-cn/library/hh846766.aspx). For details about operating systems, see [Microsoft server software support for Azure virtual machines](https://support.microsoft.com/zh-cn/kb/2721672).
 
-> [AZURE.IMPORTANT] The VHDX format is not supported in Windows Azure. You can convert the disk to VHD format using Hyper-V Manager or the [Convert-VHD cmdlet](http://technet.microsoft.com/zh-cn/library/hh848454.aspx). For details, see this [blogpost](http://blogs.msdn.com/b/virtual_pc_guy/archive/2012/10/03/using-powershell-to-convert-a-vhd-to-a-vhdx.aspx).
+> [AZURE.IMPORTANT] The VHDX format is not supported in Azure. You can convert the disk to VHD format using Hyper-V Manager or the [Convert-VHD cmdlet](http://technet.microsoft.com/zh-cn/library/hh848454.aspx). For details, see this [blogpost](http://blogs.msdn.com/b/virtual_pc_guy/archive/2012/10/03/using-powershell-to-convert-a-vhd-to-a-vhdx.aspx).
 
 ## Step 1: Prep the VHD 
 
@@ -108,16 +108,21 @@ You need a storage account in Azure so you have a place to upload the .vhd file.
 
 ## Step 3: Connect to your subscription from Azure PowerShell
 
-Before you can upload a .vhd file, you need to establish a secure connection between your computer and your subscription in Azure. You can use the Windows Azure Active Directory method or the certificate method to do this.
+Before you can upload a .vhd file, you need to establish a secure connection between your computer and your subscription in Azure. You can use the Azure Active Directory method or the certificate method to do this.
 
-> [AZURE.TIP] To get started with Azure PowerShell, see [How to install and configure Windows Azure PowerShell](/documentation/articles/powershell-install-configure). For general information, see [Get Started with Windows Azure Cmdlets.](https://msdn.microsoft.com/zh-cn/library/azure/jj554332.aspx)
+> [AZURE.TIP] To get started with Azure PowerShell, see [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure). For general information, see [Get Started with Azure Cmdlets.](https://msdn.microsoft.com/zh-cn/library/azure/jj554332.aspx)
 
-### Option 1: Use Windows Azure AD
+### Option 1: Use Azure AD
 
 1. Open the Azure PowerShell console.
 
 2. Type:  
+
 	   `Add-AzureAccount`
+
+
+	   `Add-AzureAccount -Environment AzureChinaCloud`
+
 
 3.	In the sign-in windows, type the user name and password of your work or school account.
 
@@ -128,16 +133,26 @@ Before you can upload a .vhd file, you need to establish a secure connection bet
 1. Open the Azure PowerShell console.
 
 2.	Type:
+
 	      `Get-AzurePublishSettingsFile`.
+
+
+	      `Get-AzurePublishSettingsFile -Environment AzureChinaCloud`.
+
 
-3. A browser window opens and prompts you to download a .publishsettings file. It contains information and a certificate for your Windows Azure subscription.
+3. A browser window opens and prompts you to download a .publishsettings file. It contains information and a certificate for your Azure subscription.
 
 	![Browser download page](./media/virtual-machines-create-upload-vhd-windows-server/Browser_download_GetPublishSettingsFile.png)
 
 3. Save the .publishsettings file.
 
 4. Type:
+
 	   `Import-AzurePublishSettingsFile <PathToFile>`
+
+
+	   `Import-AzurePublishSettingsFile -Environment AzureChinaCloud <PathToFile>`
+
 
 	Where `<PathToFile>` is the full path to the .publishsettings file.
 

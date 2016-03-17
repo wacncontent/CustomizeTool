@@ -1,5 +1,5 @@
 <properties
-	pageTitle="About Azure Virtual Machines | Windows Azure"
+	pageTitle="About Azure Virtual Machines | Azure"
 	description="Learn about the basics of virtual machines in Azure using both deployment models."
 	services="virtual-machines"
 	documentationCenter=""
@@ -44,6 +44,6 @@ If you're just starting to learn about Azure virtual machines, be sure to also c
 
 
 <!--links-->
-[Azure Web App]: app-service-choose-me.md
+[Azure Web App]: /documentation/services/web-sites
 [Virtual Machines]: #tellmevm
-[Cloud Services]: cloud-services-choose-me.md
+[Cloud Services]: /documentation/articles/cloud-services-choose-me

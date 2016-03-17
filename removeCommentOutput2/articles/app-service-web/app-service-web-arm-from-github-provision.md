@@ -85,14 +85,14 @@ Instead of hard-coding the repository URL, you can add a parameter for the repos
            ],
            "properties":{
              "RepoUrl":"https://github.com/davidebbo-test/Mvc52Application.git",
-             "branch":"master", 
+             "branch":"master",
 			 "IsManualIntegration": true
            }
          }
        ]
      }
 
->[AZURE.NOTE] Since, The Ibiza Portal is not availible yet in Windows Azure China, it's not possible for us to setup GitHub credentials. `IsManualIntegration` must set to be true.
+>[AZURE.NOTE] Since, The Ibiza Portal is not availible yet in Azure China, it's not possible for us to setup GitHub credentials. `IsManualIntegration` must set to be true.
 
 ## Commands to run deployment
 

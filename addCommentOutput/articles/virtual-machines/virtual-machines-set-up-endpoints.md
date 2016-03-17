@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Set up endpoints on a classic virtual machine | Windows Azure"
+	pageTitle="Set up endpoints on a classic virtual machine | Azure"
 	description="Learn to set up endpoints in the Azure Management Portal to allow communication with a virtual machine in Azure."
 	services="virtual-machines"
 	documentationCenter=""
@@ -15,7 +15,7 @@
 
 # How to set up endpoints on a classic Azure virtual machine
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] <!-- deleted by customization Resource Manager model. For a Resource Manager deployment, see [Get started configuring an internet facing load balancer using Azure Resource Manager](/documentation/articles/load-balancer-arm-powershell) and [About network security groups](/documentation/articles/virtual-networks-nsg). -->
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]  Resource Manager model. 
 
 All virtual machines that you create in Azure using the classic deployment model can automatically communicate over a private network channel with other virtual machines in the same cloud service or virtual network. However, computers on the Internet or other virtual networks require endpoints to direct the inbound network traffic to a virtual machine.
 
@@ -58,7 +58,12 @@ The new endpoint will be listed on the **Endpoints** page.
 
 To use an Azure PowerShell cmdlet to set this up, see [Add-AzureEndpoint](https://msdn.microsoft.com/zh-cn/library/azure/dn495300.aspx). If you are using the Azure CLI in Service Management mode, use the **azure vm endpoint create** command.
 
+
 ## Manage the ACL on an endpoint
+
+
+##<a name="manage-the-acl-on-an-endpoint"></a> Manage the ACL on an endpoint
+
 
 To define the set of computers that can send traffic, the ACL on an endpoint can restrict traffic based upon source IP address. Follow these steps to add, modify, or remove an ACL on an endpoint.
 
@@ -86,4 +91,9 @@ To use an Azure PowerShell cmdlet to set this up, see [Managing access control l
 
 ## Additional resources
 
+
+[Get started creating an Internet facing load balancer in Resource Manager using PowerShell](/documentation/articles/load-balancer-get-started-internet-arm-ps)
+
+
 [Load balancing for Azure infrastructure services](/documentation/articles/virtual-machines-load-balance)
+

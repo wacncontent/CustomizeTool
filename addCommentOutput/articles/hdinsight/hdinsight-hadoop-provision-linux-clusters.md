@@ -1,5 +1,7 @@
+<!-- not suitable for Mooncake -->
+
 <properties
-   	pageTitle="Create Hadoop, HBase, Storm, or Spark clusters on Linux in HDInsight | Windows Azure"
+   	pageTitle="Create Hadoop, HBase, Storm, or Spark clusters on Linux in HDInsight | Azure"
    	description="Learn how to create Hadoop, HBase, Storm, or Spark clusters on Linux for HDInsight using a browser, the Azure CLI, Azure PowerShell, REST, or through an SDK."
    	services="hdinsight"
    	documentationCenter=""
@@ -10,7 +12,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="12/08/2015"
+	ms.date="01/28/2016"
 	wacn.date=""/>
 
 
@@ -118,7 +120,7 @@ If you have multiple Azure subscriptions, use this to select the one you want to
 
 ###Resource group
 
-Applications are typically made up of many components, for example a web <!-- deleted by customization app --><!-- keep by customization: begin --> site <!-- keep by customization: end -->, database, database server, storage, and 3rd party services. Azure Resource Manager (ARM) enables you to work with the resources in your application as a group, referred to as an Azure Resource Group. You can deploy, update, monitor or delete all of the resources for your application in a single, coordinated operation. You use a template for deployment and that template can work for different environments such as testing, staging and production. You can clarify billing for your organization by viewing the rolled-up costs for the entire group. For more information, see [Azure Resource Manager Overview](/documentation/articles/resource-group-overview).
+Applications are typically made up of many components, for example a web app, database, database server, storage, and 3rd party services. Azure Resource Manager (ARM) enables you to work with the resources in your application as a group, referred to as an Azure Resource Group. You can deploy, update, monitor or delete all of the resources for your application in a single, coordinated operation. You use a template for deployment and that template can work for different environments such as testing, staging and production. You can clarify billing for your organization by viewing the rolled-up costs for the entire group. For more information, see [Azure Resource Manager Overview](/documentation/articles/resource-group-overview).
 
 ###Credentials
 
@@ -159,9 +161,11 @@ By default, this container has the same name as the cluster. For more informatio
 
 You can select the size of compute resources used by the cluster. For example, if you know that you will be performing operations that need a lot of memory, you may want to select a compute resource with more memory.
 
+>[AZURE.NOTE] The nodes used by your cluster do not count as Virtual Machines, as the Virtual Machines images used for the nodes are an implementation detail of the HDInsight service; however, the compute cores used by the nodes do count against the total number of compute cores available to your subscription. You can see the number of cores that will be used by the cluster, as well as the number of cores available, in the summary section of the Node Pricing Tiers blade when creating an HDInsight cluster.
+
 Different cluster types have different node types, number of nodes, and node sizes. For example, a Hadoop cluster type has two _head nodes_ and a default of four _data nodes_, while a Storm cluster type has two _nimbus nodes_, three _zookeeper nodes_, and a default of four _supervisor nodes_.
 
-> [AZURE.IMPORTANT] If you plan on more than 32 worker nodes, either at cluster creation or by scaling the cluster after creation, then you must select a head node size with at least 8 cores and 14GB ram.
+> [AZURE.IMPORTANT] If you plan on more than 32 worker nodes, either at cluster creation or by scaling the cluster after creation, then you must select a head node size with at least 8 cores and 14GB RAM.
 
 When using the Azure preview portal to configure the cluster, the Node size is available through the __Node Pricing Tier__ blade, and will also display the cost associated with the different node sizes. 
 
@@ -220,29 +224,51 @@ In this article, you have learned basic information about creating a Linux-based
 | [Azure preview portal](/documentation/articles/hdinsight-hadoop-create-linux-clusters-portal) | ✔     | &nbsp; | &nbsp; | &nbsp; | ✔      | ✔ |
 | [Azure CLI](/documentation/articles/hdinsight-hadoop-create-linux-clusters-azure-cli)         | &nbsp; | ✔     | &nbsp; | &nbsp; | ✔      | ✔ |
 | [Azure PowerShell](/documentation/articles/hdinsight-hadoop-create-linux-clusters-azure-powershell) | &nbsp; | ✔     | &nbsp; | &nbsp; | &nbsp; | ✔ |
-| [cURL](/documentation/articles/hdinsight-hadoop-create-linux-clusters-curl) | &nbsp; | ✔     | ✔ | &nbsp; | ✔      | ✔ |
-| [.NET SDK](/documentation/articles/hdinsight-hadoop-create-linux-clusters-dotnet) | &nbsp; | &nbsp; | &nbsp; | ✔ | ✔      | ✔ |
+| [cURL](/documentation/articles/hdinsight-hadoop-create-linux-clusters-curl-rest) | &nbsp; | ✔     | ✔ | &nbsp; | ✔      | ✔ |
+| [.NET SDK](/documentation/articles/hdinsight-hadoop-create-linux-clusters-dotnet-sdk) | &nbsp; | &nbsp; | &nbsp; | ✔ | ✔      | ✔ |
 
 
-
+
+[hdinsight-use-mapreduce]: /documentation/articles/hdinsight-use-mapreduce
+[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
+[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
+
+
 [hdinsight-use-mapreduce]: ../hdinsight-use-mapreduce/
 [hdinsight-use-hive]: ../hdinsight-use-hive/
 [hdinsight-use-pig]: ../hdinsight-use-pig/
 [hdinsight-upload-data]: ../hdinsight-upload-data/
+
 [hdinsight-sdk-documentation]: http://msdn.microsoft.com/zh-cn/library/dn479185.aspx
 
 
+
+[hdinsight-customize-cluster]: /documentation/articles/hdinsight-hadoop-customize-cluster-v1
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
+[hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell
+
+[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
+
+
 [hdinsight-customize-cluster]: ../hdinsight-hadoop-customize-cluster-v1/
 [hdinsight-get-started]: ../hdinsight-get-started/
 [hdinsight-admin-powershell]: ../hdinsight-administer-use-powershell/
 
 [hdinsight-submit-jobs]: ../hdinsight-submit-hadoop-jobs-programmatically/
+
 [hdinsight-powershell-reference]: https://msdn.microsoft.com/zh-cn/library/dn858087.aspx
 
 [azure-management-portal]: https://manage.windowsazure.cn/
 
+
+[azure-command-line-tools]: /documentation/articles/xplat-cli-install
+[azure-create-storageaccount]: /documentation/articles/storage-create-storage-account
+
+
 [azure-command-line-tools]: ../xplat-cli/
 [azure-create-storageaccount]: ../storage-create-storage-account/
+
 
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: /pricing/member-offers/
@@ -250,7 +276,12 @@ In this article, you have learned basic information about creating a Linux-based
 [hdi-remote]: /documentation/articles/hdinsight-administer-use-management-portal-v1/#rdp
 
 
+
+[Powershell-install-configure]: /documentation/articles/powershell-install-configure
+
+
 [Powershell-install-configure]: ../install-configure-powershell/
+
 
 [image-hdi-customcreatecluster]: ./media/hdinsight-get-started/HDI.CustomCreateCluster.png
 [image-hdi-customcreatecluster-clusteruser]: ./media/hdinsight-get-started/HDI.CustomCreateCluster.ClusterUser.png

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Hybrid cloud test environment | Windows Azure" 
+	pageTitle="Hybrid cloud test environment | Azure" 
 	description="Learn how to create a hybrid cloud environment for IT pro or development testing, complete with a simplfied on-premises network." 
 	services="virtual-network" 
 	documentationCenter="" 
@@ -18,7 +18,7 @@
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
  
 
-This topic steps you through creating a hybrid cloud environment with Windows Azure for testing. Here is the resulting configuration.
+This topic steps you through creating a hybrid cloud environment with Azure for testing. Here is the resulting configuration.
 
 ![](./media/virtual-networks-setup-hybrid-cloud-environment-testing/CreateHybridCloudVNet_5.png)
 

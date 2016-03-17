@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 > [AZURE.SELECTOR]
 - [Azure Management Portal](/documentation/articles/virtual-networks-create-nsg-arm-pportal)
 - [PowerShell](/documentation/articles/virtual-networks-create-nsg-arm-ps)

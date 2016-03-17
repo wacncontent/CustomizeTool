@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Hive query with Hadoop tools for Visual Studio | Windows Azure"
+   pageTitle="Hive query with Hadoop tools for Visual Studio | Azure"
    description="Learn how to use Hive with Hadoop in HDInsight using Visual Studio Hadoop tools."
    services="hdinsight"
    documentationCenter=""
@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="12/04/2015"
+	ms.date="02/05/2016"
 	wacn.date=""/>
 
 #Run Hive queries using the HDInsight tools for Visual Studio
@@ -47,8 +47,7 @@ To complete the steps in this article, you will need the following.
     * **CREATE EXTERNAL TABLE**: Creates a new 'external' table in Hive. External tables only store the table definition in Hive (the data is left in the original location).
 
         > [AZURE.NOTE] External tables should be used when you expect the underlying data to be updated by an external source (such as an automated data upload process) or by another MapReduce operation, but you always want Hive queries to use the latest data.
-        >
-        > Dropping an external table does **not** delete the data, only the table definition.
+        > <p>Dropping an external table does **not** delete the data, only the table definition.
 
     * **ROW FORMAT**: Tells Hive how the data is formatted. In this case, the fields in each log are separated by a space.
     * **STORED AS TEXTFILE LOCATION**: Tells Hive where the data is stored (the example/data directory) and that it is stored as text.

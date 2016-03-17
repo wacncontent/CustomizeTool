@@ -1,5 +1,7 @@
+<!-- not suitable for Mooncake -->
+
 <properties
-   pageTitle="How to Tag a VM | Windows Azure"
+   pageTitle="How to Tag a VM | Azure"
    description="Learn about Tagging an Azure Virtual Machine created using the Resource Manager deployment model."
    services="virtual-machines"
    documentationCenter=""
@@ -173,15 +175,15 @@ By analyzing these tags along with usage, organizations will be able to gain new
 * [Azure Resource Manager Overview][]
 * [Using Tags to organize your Azure Resources][]
 * [Understanding your Azure Bill][]
-* [Gain insights into your Windows Azure resource consumption][]
+* [Gain insights into your Azure resource consumption][]
 
 
 
 
-[PowerShell environment with Azure Resource Manager]: ../powershell-azure-resource-manager.md
+[PowerShell environment with Azure Resource Manager]: /documentation/articles/powershell-azure-resource-manager
 [Azure Resource Cmdlets]: https://msdn.microsoft.com/zh-cn/library/azure/dn757692.aspx
 [Azure CLI environment]: /documentation/articles/xplat-cli-azure-resource-manager
-[Azure Resource Manager Overview]: ../documentation/articles/resource-group-overview
-[Using Tags to organize your Azure Resources]: ../resource-group-using-tags.md
-[Understanding your Azure Bill]: ../billing-understand-your-bill.md
-[Gain insights into your Windows Azure resource consumption]: ../billing-usage-rate-card-overview.md
+[Azure Resource Manager Overview]: /documentation/articles/resource-group-overview
+[Using Tags to organize your Azure Resources]: /documentation/articles/resource-group-using-tags
+[Understanding your Azure Bill]: /documentation/articles/billing-understand-your-bill
+[Gain insights into your Azure resource consumption]: /documentation/articles/billing-usage-rate-card-overview

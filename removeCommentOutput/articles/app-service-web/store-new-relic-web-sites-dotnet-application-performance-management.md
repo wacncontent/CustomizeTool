@@ -175,7 +175,7 @@ browsers to load your webpages, where they come from, and what browsers they use
 * For a guide to the change from Websites to Azure see: [Azure and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
 
 
-[vswebsite]: web-sites-dotnet-get-started.md
+[vswebsite]: /documentation/articles/web-sites-dotnet-get-started
 
 [wmnugetbutton]: ./media/store-new-relic-web-sites-dotnet-application-performce-management/nrwmnugetbutton.png
 [wmnugetgallery]: ./media/store-new-relic-web-sites-dotnet-application-performce-management/nrwmnugetgallery.png
@@ -184,4 +184,3 @@ browsers to load your webpages, where they come from, and what browsers they use
 [vslicensekey]: ./media/store-new-relic-web-sites-dotnet-application-performce-management/nrvslicensekey.png
 [add-on]: ./media/store-new-relic-web-sites-dotnet-application-performce-management/nraddon.png
 [custom]: ./media/store-new-relic-web-sites-dotnet-application-performce-management/nrcustom.png
- 

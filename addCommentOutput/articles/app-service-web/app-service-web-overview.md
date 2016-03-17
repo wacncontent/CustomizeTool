@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
 	pageTitle="Web Apps overview"
 	description="Learn more about Azure Web Apps"
@@ -9,7 +11,7 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="10/27/2015"
+	ms.date="01/09/2016"
 	wacn.date=""/>
 
 
@@ -37,7 +39,7 @@ Azure Web Apps is a fully managed platform that enables you to build, deploy and
 
 - **Web Apps Gallery** - Select from an ever-growing list of existing web application templates. Leverage the best of the OSS app community with one-click installation of packages such as Wordpress, Joomla and Drupal. Get your application development process started right by leveraging frameworks like .NET MVC, Django and CakePHP.
 - **Auto Scaling** - Web Apps enables you to quickly scale-up or out to handle any incoming customer load. Manually select the number and size of VMs or set up auto-scaling to scale your servers based on load or schedule.
-- **Continuous Integration** - Set up continuous integration and deployment workflows with VSTS, GitHub, TeamCity, Hudson or BitBucket â enabling you to automatically build, test and deploy your web app on each successful code check-in or integration tests.
+- **Continuous Integration** - Set up continuous integration and deployment workflows with VSTS, GitHub, TeamCity, Hudson or BitBucket - enabling you to automatically build, test and deploy your web app on each successful code check-in or integration tests.
 - **Deployment Slots** - Implement [Staged Deployment] [Slots] to verify your code in a pre-production environment which is identical to your production web app in Azure. When satisfied, release a new version of your App with zero downtime by performing a swap operation. 
 - **Testing in Production** - Take Staged Deployments to the next level and perform A/B testing to verify your new code with a configurable fraction of your live traffic. 
 - **Webjobs** - Run any program or script on Web Apps VMs. Run jobs continuously or on a schedule and scale to run on multiple VMs. Use the Azure [WebJobs SDK][Webjobs] to integrate with Azure Storage or Service Bus.
@@ -53,9 +55,17 @@ For more information on Azure platform, see [Azure Web App][appservice].
 ## What's changed
 * For a guide to the change from Websites to Azure see: [Azure and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
 
+
+[appservice]: /documentation/services/web-sites
+[create]: /documentation/articles/web-sites-dotnet-get-started
+[Webjobs]: /documentation/articles/websites-dotnet-webjobs-sdk-get-started
+[Slots]: /documentation/articles/web-sites-staged-publishing
+
+
 [appservice]: ../app-service/app-service-value-prop-what-is.md
 [create]: web-sites-dotnet-get-started.md
 [Webjobs]: websites-dotnet-webjobs-sdk-get-started.md
 [Slots]: web-sites-staged-publishing.md
+
 
  

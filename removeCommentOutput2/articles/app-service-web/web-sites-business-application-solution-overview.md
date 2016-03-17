@@ -26,6 +26,7 @@ There are major benefits of moving line-of-business applications to Azure Web Ap
 
 Below is an example of a line-of-business application running on Azure Web Apps. It demonstrates what you can do simply by composing Web Apps together with other services with minimal technical investments. **Click on an element in the topography to read more about it.** 
 
+
 <div style="display:none">
 ![svg](./media/web-sites-business-application-solution-overview/web-app-notitle.svg)
 </div>
@@ -38,7 +39,7 @@ Below is an example of a line-of-business application running on Azure Web Apps.
 
 Bring your existing web assets to Azure Web Apps from a variety of languages and frameworks.
 
-Your existing web assets can run on Azure Web Apps, whether they are .NET, PHP, Java, Node.js, or Python. You can move them to Web Apps using your familiar [FTP] tools or your source control management system. Web Apps supports direct publishing from popular source control options, such as [Visual Studio], and [Git] - local, GitHub, Mercurial, etc..
+Your existing web assets can run on Azure Web Apps, whether they are .NET, PHP, Java, Node.js, or Python. You can move them to Web Apps using your familiar [FTP] tools or your source control management system. Web Apps supports direct publishing from popular source control options, such as [Visual Studio], [Visual Studio Team Servicea Mand [Git] - local, GitHub, BitBucket, DropBox, Mercurial, etc..
 
 ## Secure your assets
 
@@ -46,7 +47,7 @@ Secure assets by encryption, authenticate corporate users whether they are on-si
 
 Protect internal assets against eavesdroppers with [HTTPS]. The **\*.chinacloudsites.cn** domain name already comes with an SSL certificate, and if you use your custom domain, you can bring your SSL certificate for it to Azure Web Apps. There is a monthly charge (prorated hourly) associated with each SSL certificate. For more information, see [Azure Pricing Details].
 
-[Authenticate users] against the corporate directory. Azure Web Apps can authenticate users with on-premises identity providers, such as Active Directory Federation Services (AD FS), or with an Azure Active Directory tenant that has been synchronized with your corporate Active Directory deployment. Users can access your web properties in Web Apps through single sign-on when they are on-site and when they are in the field. Existing services, such as Office 365 or Microsoft Intune, already use Azure Active Directory. 
+[Authenticate users] against the corporate directory. Azure Web Apps can authenticate users with on-premises identity providers, such as Active Directory Federation Services (AD FS), or with an Azure Active Directory tenant that has been synchronized with your corporate Active Directory deployment. Users can access your web properties in Web Apps through single sign-on when they are on-site and when they are in the field. Existing services, such as Office 365 or Microsoft Intune, already use Azure Active Directory. Through [Easy Auth], turnin
 
 [Authorize users] for their use of web properties. With minimal additional code, you can bring the same on-premises ASP.NET coding pattern to Azure Web Apps using the `[Authorize]` decoration, for example. You retain the same flexibility for fine-grain access control as the applications you maintain on-premises.
 
@@ -84,6 +85,7 @@ In the **Standard** tier, monitor app responsiveness receive email notifications
 
 [FTP]: /documentation/articles/web-sites-deploy#ftp
 [Visual Studio]: /documentation/articles/web-sites-dotnet-get-started
+
 [Visual Studio Online]: /documentation/articles/cloud-services-continuous-delivery-use-vso
 [Git]: /documentation/articles/web-sites-publish-source-control
 
@@ -96,6 +98,7 @@ In the **Standard** tier, monitor app responsiveness receive email notifications
 [Azure Trust Center]:/support/trust-center/
 [MySQL]: /documentation/articles/web-sites-php-mysql-deploy-use-git
 [Azure SQL Database]: /documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database
+
 [scale up and out]: /documentation/articles/web-sites-scale
 [Azure Management Portal]:http://manage.windowsazure.cn/
 [Service Management API]:http://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx

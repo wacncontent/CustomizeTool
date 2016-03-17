@@ -37,20 +37,27 @@ For more information, see the [StackExchange.Redis](https://github.com/StackExch
 
 [How to use Azure Redis Cache with Python](/documentation/articles/cache-python-get-started) shows how to get started with Azure Redis Cache using Python and the [redis-py](https://github.com/andymccurdy/redis-py) client.
 
+
 The [PHP example](https://msdn.microsoft.com/zh-cn/library/azure/dn690470.aspx#PHPExample) shows you how to get started using Azure Redis Cache with PHP and the [predis](https://github.com/nrk/predis) client.
 
 [Work with .NET objects in the cache](https://msdn.microsoft.com/zh-cn/library/azure/dn690521.aspx#Objects) shows you one way to serialize .NET objects so you can write them to and read them from an Azure Redis Cache instance. 
+
+
+[Work with .NET objects in the cache](/documentation/articles/cache-dotnet-how-to-use-azure-redis-cache#working-with-caches) shows you one way to serialize .NET objects so you can write them to and read them from an Azure Redis Cache instance. 
+
 
 ## Use Redis Cache as a Scale out Backplane for ASP.NET SignalR
 
 The [Use Redis Cache as a Scale out Backplane for ASP.NET SignalR](https://github.com/rustd/RedisSamples/tree/master/RedisAsSignalRBackplane) sample demonstrates how you can use Azure Redis Cache as a SignalR backplane. For more information about backplane, see [SignalR Scaleout with Redis](http://www.asp.net/signalr/overview/performance/scaleout-with-redis).
 
+
 ## Redis Cache customer query sample
 
 This sample demonstrates compares performance between accessing data from a cache and accessing data from persistence storage. This sample has two projects.
 
 -	[Demo how Redis Cache can improve performance by Caching data](https://github.com/rustd/RedisSamples/tree/master/RedisCacheCustomerQuerySample)
 -	[Seed the Database and Cache for the demo](https://github.com/rustd/RedisSamples/tree/master/SeedCacheForCustomerQuerySample)
+
 
 ## ASP.NET Session State and Output Caching
 
@@ -62,7 +69,7 @@ The [Manage Azure Redis Cache using Azure Management Libraries](https://github.c
 
 ## Custom monitoring sample
 
-The [Access Redis Cache Monitoring data](https://github.com/rustd/RedisSamples/tree/master/CustomMonitoring) sample demonstrates how you can access monitoring data for your Azure Redis Cache outside of the Azure Management Portal.
+The [Access Redis Cache Monitoring data](https://github.com/rustd/RedisSamples/tree/master/CustomMonitoring) sample demonstrates how you can access monitoring data for your Azure Redis Cache outside of the Azure Manage outside of the Azure Management Portal ..
 
 ## A Twitter-style clone written using PHP and Redis
 

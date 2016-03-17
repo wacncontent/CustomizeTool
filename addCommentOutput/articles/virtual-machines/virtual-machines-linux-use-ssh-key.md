@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Use SSH on Linux and Mac | Windows Azure" 
+	pageTitle="Use SSH on Linux and Mac | Azure" 
 	description="Generate and use SSH keys on Linux and Mac for the Resource Manager and classic deployment models on Azure." 
 	services="virtual-machines" 
 	documentationCenter="" 
@@ -19,26 +19,26 @@
 - [Windows](/documentation/articles/virtual-machines-windows-use-ssh-key)
 - [Linux/Mac](/documentation/articles/virtual-machines-linux-use-ssh-key)
 
-This topic describes how to use **ssh-keygen** and **openssl** on Linux and Mac to create and use **ssh-rsa** format and **.pem** format files to secure communication with Azure VMs based on Linux. <!-- deleted by customization Creating Linux-based Azure Virtual Machines using the Resource Manager deployment model is recommended for new deployments and takes an *ssh-rsa* type public key file or string (depending on the deployment client). The [preview portal](https://manage.windowsazure.cn) currently accepts only the **ssh-rsa** format strings, whether for classic or Resource Manager deployments. -->
+This topic describes how to use **ssh-keygen** and **openssl** on Linux and Mac to create and use **ssh-rsa** format and **.pem** format files to secure communication with Azure VMs based on Linux.  Creating Linux-based Azure Virtual Machines using the Resource Manager deployment model is recommended for new deployments and takes an *ssh-rsa* type public key file or string (depending on the deployment client). The [Azure Management Portal](https://manage.windowsazure.cn) currently accepts only the **ssh-rsa** format strings, whether for classic or Resource Manager deployments. 
 
 > [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
-<!-- deleted by customization
+
 To create these types of files for use on a Windows computer to communicate securely with Linux VMs in Azure, see [Use SSH keys on Windows](/documentation/articles/virtual-machines-windows-use-ssh-key). 
--->
+
 
 ## Which files do you need?
 
 A basic ssh setup for Azure includes an **ssh-rsa** public and private key pair of 2048 bits (by default, **ssh-keygen** stores these files as **~/.ssh/id_rsa** and **~/.ssh/id-rsa.pub** unless you change the defaults) as well as a `.pem` file generated from the **id_rsa** private key file for use with the classic deployment model of the Management Portal. 
 
-<!-- deleted by customization
+
 Here are the deployment scenarios, and the types of files you use in each:
 
-1. **ssh-rsa** keys are required for any deployment using the [preview portal](https://manage.windowsazure.cn), regardless of the deployment model.
+1. **ssh-rsa** keys are required for any deployment using the [Azure Management Portal](https://manage.windowsazure.cn), regardless of the deployment model.
 2. .pem file are required to create VMs using the [Management Portal](https://manage.windowsazure.cn). .pem files are also supported in classic deployments that use the [Azure CLI](/documentation/articles/xplat-cli-install). 
--->
-<!-- keep by customization: begin -->
+
+
 .pem file are required to create VMs using the [Management Portal](https://manage.windowsazure.cn). .pem files are also supported in classic deployments that use the [Azure CLI](/documentation/articles/xplat-cli-install). 
-<!-- keep by customization: end -->
+
 
 ## Create keys for use with SSH
 
@@ -84,11 +84,11 @@ To convert your .pem file into a DER encoded X509 certificate file.
 
 ## Use SSH keys you already have
 
-You can use ssh-rsa (`.pub`) keys for all new work <!-- deleted by customization, especially with the Resource Manager deployment model and the preview portal -->; you may need to create a `.pem` file from your keys if you need to use the Management Portal.
+You can use ssh-rsa (`.pub`) keys for all new work , especially with the Resource Manager deployment model and the preview portal ; you may need to create a `.pem` file from your keys if you need to use the Management Portal.
 
 ## Create a VM with your public key file
 
-Once you've created the files you need, there are many ways to create a VM to which you can securely connect using a public-private key exchange. In almost all situations, <!-- deleted by customization especially using Resource Manager deployments, --> pass the .pub file when prompted for an ssh key file path or the contents of a file as a string.
+Once you've created the files you need, there are many ways to create a VM to which you can securely connect using a public-private key exchange. In almost all situations,  especially using Resource Manager deployments,  pass the .pub file when prompted for an ssh key file path or the contents of a file as a string.
 
 ### Example: Creating a VM with the id_rsa.pub file
 
@@ -104,7 +104,7 @@ The most common usage is when imperatively creating a VM -- or uploading a templ
 	--username ops \
 	-ssh-publickey-file ~/.ssh/id_rsa.pub \
 	testrg testvm westeurope linux
-<!-- deleted by customization
+
 
 The next example shows the use of the **ssh-rsa** format with a Resource Manager template and the Azure CLI to create an Ubuntu VM that is secured by a username and the contents of the `~/.ssh/id_rsa.pub` as a string. (In this case, the public key string is shortened to be more readable.) 
 
@@ -143,7 +143,7 @@ The next example shows the use of the **ssh-rsa** format with a Resource Manager
 	data:    ubuntuOSVersion        String  14.04.2-LTS
 	info:    group deployment create command OK
 
--->
+
 
 ### Example: Creating a VM with a .pem file
 
@@ -170,12 +170,12 @@ You can then use the .pem file with either the Management Portal or with the cla
 ## Connect to your VM
 
 The **ssh** command takes a username to log on with, the network address of the computer, and the port at which to connect to the address -- as well as many other special variations. (For more information about **ssh**, you might start with this [article on Secure Shell](https://en.wikipedia.org/wiki/Secure_Shell)) 
-<!-- deleted by customization
+
 
 A typical usage with Resource Manager deployment might look like the following, if you've merely specified a subdomain and a deployment location:
 
 	ssh user@subdomain.chinanorth.chinacloudapp.cn -p 22
--->
+
 
 or, if you are connecting to a classic deployment cloud service the address you would use might look like this:
 
@@ -215,7 +215,7 @@ You can discover the address to use with a VM and the classic deployment model b
 	data:    Network Endpoints 0 enableDirectServerReturn false
 	info:    vm show command OK
 
-<!-- deleted by customization
+
 ### Discovering your Azure VM SSH address with Resource Manager deployments
 
 	azure vm show testrg testvm
@@ -224,13 +224,18 @@ You can discover the address to use with a VM and the classic deployment model b
 	+ Looking up the NIC "testnic"
 	+ Looking up the public ip "testpip"
 
--->
+
 Examine the network profile section:
 
 	data:    Network Profile:
 	data:      Network Interfaces:
 	data:        Network Interface #1:
-	data:          Id                        <!-- deleted by customization :/subscriptions/<guid>/resourceGroups/testrg/providers/Microsoft.Network/networkInterfaces/testnic --><!-- keep by customization: begin --> :/subscriptions/<guid>/providers/Microsoft.Network/networkInterfaces/testnic <!-- keep by customization: end -->
+
+	data:          Id                        :/subscriptions/<guid>/resourceGroups/testrg/providers/Microsoft.Network/networkInterfaces/testnic
+
+
+	data:          Id:/subscriptions/<guid>/providers/Microsoft.Network/networkInterfaces/testnic 
+
 	data:          Primary                   :true
 	data:          MAC Address               :00-0D-3A-21-8E-AE
 	data:          Provisioning State        :Succeeded
@@ -249,7 +254,7 @@ If you didn't use the default SSH port of 22 when you created the VM, you can di
 	azure network nsg show testrg testnsg
 	info:    Executing command network nsg show
 	+ Looking up the network security group "testnsg"
-	data:    Id                             : <!-- deleted by customization /subscriptions/<guid>/resourceGroups/testrg/providers/Microsoft.Network/networkSecurityGroups/testnsg --><!-- keep by customization: begin --> /subscriptions/<guid>/providers/Microsoft.Network/networkSecurityGroups/testnsg <!-- keep by customization: end -->
+	data:    Id                             :  /subscriptions/<guid>/resourceGroups/testrg/providers/Microsoft.Network/networkSecurityGroups/testnsg  /subscriptions/<guid>/providers/Microsoft.Network/networkSecurityGroups/testnsg 
 	data:    Name                            : testnsg
 	data:    Type                            : Microsoft.Network/networkSecurityGroups
 	data:    Location                        : westeurope

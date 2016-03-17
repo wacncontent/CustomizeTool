@@ -1,5 +1,7 @@
+<!-- not suitable for Mooncake -->
+
 <properties
-   pageTitle="Deploy and manage Apache Storm topologies on Linux-based HDInsight | Windows Azure"
+   pageTitle="Deploy and manage Apache Storm topologies on Linux-based HDInsight | Azure"
    description="Learn how to deploy, monitor and manage Apache Storm topologies using the Storm Dashboard on Linux-based HDInsight. Use Hadoop tools for Visual Studio."
    services="hdinsight"
    documentationCenter=""
@@ -9,7 +11,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="01/12/2016"
+	ms.date="01/28/2016"
 	wacn.date=""/>
 
 # Deploy and manage Apache Storm topologies on Linux-based HDInsight
@@ -20,7 +22,7 @@ In this document, learn the basics of managing and monitoring Storm topologies r
 
 ## Prerequisites
 
-- **A Linux-based Storm on HDInsight cluster**: see [Get started with Apache Storm on HDInsight](/documentation/articles/hdinsight-storm-get-started-linux) for steps on creating a cluster
+- **A Linux-based Storm on HDInsight cluster**: see [Get started with Apache Storm on HDInsight](/documentation/articles/hdinsight-apache-storm-tutorial-get-started) for steps on creating a cluster
 
 - **Familiarity with SSH and SCP**: For more information on using SSH and SCP with HDInsight, see the following:
     - **Linux, Unix or OS X clients**: See [Use SSH with Linux-based Hadoop on HDInsight from Linux, OS X or Unix](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix)

@@ -1,5 +1,7 @@
+<!-- not suitable for Mooncake -->
+
 <properties
-	pageTitle="Use Script Action to install Solr on Hadoop cluster | Windows Azure"
+	pageTitle="Use Script Action to install Solr on Hadoop cluster | Azure"
 	description="Learn how to customize HDInsight cluster with Solr using Script Action."
 	services="hdinsight"
 	documentationCenter=""
@@ -10,14 +12,14 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="10/02/2015"
+	ms.date="02/05/2016"
 	wacn.date=""/>
 
 # Install and use Solr on HDInsight Hadoop clusters
 
-Learn how to customize Windows based HDInsight cluster with Solr using Script Action, and how to use Solr to search data. <!-- deleted by customization For information on using Solr with a Linux-based cluster, see [Install and use Solr on HDinsight Hadoop clusters (Linux)](/documentation/articles/hdinsight-hadoop-solr-install-v1). -->
+Learn how to customize Windows based HDInsight cluster with Solr using Script Action, and how to use Solr to search data. For information on using Solr with a Linux-based cluster, see [Install and use Solr on HDinsight Hadoop clusters (Linux)](/documentation/articles/hdinsight-hadoop-solr-install-v1).
  
-You can install Solr on any type of cluster (Hadoop, Storm, <!-- deleted by customization HBase, Spark) --><!-- keep by customization: begin --> HBase) <!-- keep by customization: end --> on Azure HDInsight by using *Script Action*. A sample script to install Solr on an HDInsight cluster is available from a read-only Azure storage blob at [https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1](https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1).
+You can install Solr on any type of cluster (Hadoop, Storm, HBase, Spark) on Azure HDInsight by using *Script Action*. A sample script to install Solr on an HDInsight cluster is available from a read-only Azure storage blob at [https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1](https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1). 
 
 The sample script works only with HDInsight cluster version 3.1. For more information on HDInsight cluster versions, see [HDInsight cluster versions](/documentation/articles/hdinsight-component-versioning-v1).
 
@@ -25,31 +27,19 @@ The sample script used in this topic creates a Windows-based Solr cluster with a
 
 **Related articles**
 
-<!-- deleted by customization
 - [Install and use Solr on HDinsight Hadoop clusters (Linux)](/documentation/articles/hdinsight-hadoop-solr-install-v1)
--->
 - [Create Hadoop clusters in HDInsight](/documentation/articles/hdinsight-provision-clusters-v1): general information on creating HDInsight clusters.
 - [Customize HDInsight cluster using Script Action][hdinsight-cluster-customize]: general information on customizing HDInsight clusters using Script Action.
 - [Develop Script Action scripts for HDInsight](/documentation/articles/hdinsight-hadoop-script-actions).
 
 
-<!-- deleted by customization
 ## What is Solr?
--->
-<!-- keep by customization: begin -->
-##<a name="whatis"></a> What is Solr?
-<!-- keep by customization: end -->
 
 <a href="http://lucene.apache.org/solr/features.html" target="_blank">Apache Solr</a> is an enterprise search platform that enables powerful full-text search on data. While Hadoop enables storing and managing vast amounts of data, Apache Solr provides the search capabilities to quickly retrieve the data. 
 
-<!-- deleted by customization
 ## Install Solr using portal
 
 [AZURE.INCLUDE [hdinsight-azure-preview-portal](../includes/hdinsight-azure-preview-portal.md)]
--->
-<!-- keep by customization: begin -->
-##<a name="install"></a> Install Solr using portal
-<!-- keep by customization: end -->
 
 * [Install Solr on HDInsight clusters](/documentation/articles/hdinsight-hadoop-solr-install-v1)
 
@@ -73,16 +63,11 @@ The sample script used in this topic creates a Windows-based Solr cluster with a
 	You can add more than one script action to install multiple components on the cluster. After you have added the scripts, click the checkmark to start creating the cluster.
 
 
-<!-- deleted by customization
 ## Use Solr
--->
-<!-- keep by customization: begin -->
-##<a name="usesolr"></a> Use Solr
-<!-- keep by customization: end -->
 
 You must start with indexing Solr with some data files. You can then use Solr to run search queries on the indexed data. Perform the following steps to use Solr in an HDInsight cluster:
 
-1. **Use Remote Desktop Protocol (RDP) to remote into the HDInsight cluster with Solr installed**. From the Azure Management Portal, enable Remote Desktop for the cluster you created with Solr installed, and then remote into the cluster. For instructions, see <a href="/documentation/articles/hdinsight-administer-use-management-portal-v1/#rdp" target="_blank">Connect to HDInsight clusters using RDP</a>.
+1. **Use Remote Desktop Protocol (RDP) to remote into the HDInsight cluster with Solr installed**. From the Azure Management Portal, enable Remote Desktop for the cluster you created with Solr installed, and then remote into the cluster. For instructions, see [Connect to HDInsight clusters using RDP](/documentation/articles/hdinsight-administer-use-management-portal-v1#connect-to-clusters-using-rdp).
 
 2. **Index Solr by uploading data files**. When you index Solr, you put documents in it that you may need to search on. To index Solr, use RDP to remote into the cluster, navigate to the desktop, open the Hadoop command line, and navigate to **C:\apps\dist\solr-4.7.2\example\exampledocs**. Run the following command:
 
@@ -128,7 +113,7 @@ You must start with indexing Solr with some data files. You can then use Solr to
 			          "Comprehensive HTML Administration Interfaces",
 			          "Scalability - Efficient Replication to other Solr Search Servers",
 			          "Flexible and Adaptable with XML configuration and Schema",
-			          "Good unicode support: hĂŠllo (hello with an accent over the e)"
+			          "Good unicode support:  héllo  hĂŠllo  (hello with an accent over the e)"
 			        ],
 			        "price": 0,
 			        "price_c": "0,USD",
@@ -190,39 +175,25 @@ You must start with indexing Solr with some data files. You can then use Solr to
 
 See [Customize HDInsight clusters using Script Action](/documentation/articles/hdinsight-hadoop-customize-cluster-v1#call_scripts_using_powershell).  The sample demonstrates how to install Spark using Azure PowerShell. You need to customize the script to use [https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1](https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1).
 
-<!-- deleted by customization
 ## Install Sole using .NET SDK
 
 See [Customize HDInsight clusters using Script Action](/documentation/articles/hdinsight-hadoop-customize-cluster-v1#call_scripts_using_azure_powershell). The sample demonstrates how to install Spark using the .NET SDK. You need to customize the script to use [https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1](https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1).
 
 
 
--->
 ## See also
 
-<!-- deleted by customization
 - [Install and use Solr on HDinsight Hadoop clusters (Linux)](/documentation/articles/hdinsight-hadoop-solr-install-v1)
--->
 - [Create Hadoop clusters in HDInsight](/documentation/articles/hdinsight-provision-clusters-v1): general information on creating HDInsight clusters.
 - [Customize HDInsight cluster using Script Action][hdinsight-cluster-customize]: general information on customizing HDInsight clusters using Script Action.
 - [Develop Script Action scripts for HDInsight](/documentation/articles/hdinsight-hadoop-script-actions).
-<!-- deleted by customization
 - [Install and use Spark on HDInsight clusters][hdinsight-install-spark]: Script Action sample about installing Spark.
--->
 - [Install R on HDInsight clusters][hdinsight-install-r]: Script Action sample about installing R.
 - [Install Giraph on HDInsight clusters](/documentation/articles/hdinsight-hadoop-giraph-install-v1): Script Action sample about installing Giraph.
 
 
-<!-- deleted by customization
-[powershell-install-configure]: ../install-configure-powershell.md
-[hdinsight-provision]: hdinsight-provision-clusters-v1.md
-[hdinsight-install-r]: hdinsight-hadoop-r-scripts.md
-[hdinsight-install-spark]: hdinsight-hadoop-spark-install.md
-[hdinsight-cluster-customize]: hdinsight-hadoop-customize-cluster-v1.md
--->
-<!-- keep by customization: begin -->
 [powershell-install-configure]: /documentation/articles/powershell-install-configure
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
 [hdinsight-install-r]: /documentation/articles/hdinsight-hadoop-r-scripts
+[hdinsight-install-spark]: /documentation/articles/hdinsight-hadoop-spark-install
 [hdinsight-cluster-customize]: /documentation/articles/hdinsight-hadoop-customize-cluster-v1
-<!-- keep by customization: end -->

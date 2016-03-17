@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Install a replica domain controller in Azure  | Windows Azure"
+	pageTitle="Install a replica domain controller in Azure  | Azure"
 	description="A tutorial that explains how to install a domain controller from an on-premises Active Directory forest on an Azure virtual machine."
 	services="virtual-network"
 	documentationCenter=""
@@ -111,8 +111,8 @@ For more information about using Windows PowerShell, see [Get Started with Azure
 -  [How to upload existing on-premises Hyper-V domain controllers to Azure by using Azure PowerShell](http://support.microsoft.com/kb/2904015)
 -  [Install a new Active Directory forest on an Azure virtual network](/documentation/articles/active-directory-new-forest-virtual-machine)
 -  [Azure Virtual Network](/documentation/articles/virtual-networks-overview)
--  [Windows Azure IT Pro IaaS: (01) Virtual Machine Fundamentals](http://channel9.msdn.com/Series/Windows-Azure-IT-Pro-IaaS/01)
--  [Windows Azure IT Pro IaaS: (05) Creating Virtual Networks and Cross-Premises Connectivity](http://channel9.msdn.com/Series/Windows-Azure-IT-Pro-IaaS/05)
+-  [Azure IT Pro IaaS: (01) Virtual Machine Fundamentals](http://channel9.msdn.com/Series/Windows-Azure-IT-Pro-IaaS/01)
+-  [Azure IT Pro IaaS: (05) Creating Virtual Networks and Cross-Premises Connectivity](http://channel9.msdn.com/Series/Windows-Azure-IT-Pro-IaaS/05)
 -  [Azure PowerShell](https://msdn.microsoft.com/zh-cn/library/azure/jj156055.aspx)
 -  [Azure Management Cmdlets](https://msdn.microsoft.com/zh-cn/library/azure/jj152841)
 

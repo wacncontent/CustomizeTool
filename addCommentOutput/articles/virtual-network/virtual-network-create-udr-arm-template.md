@@ -1,5 +1,7 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
-   pageTitle="Control routing and use virtual appliances in Resource Manager using a template | Windows Azure"
+   pageTitle="Control routing and use virtual appliances in Resource Manager using a template | Azure"
    description="Learn how to control routing and use virtual appliances in Azure using templates"
    services="virtual-network"
    documentationCenter="na"

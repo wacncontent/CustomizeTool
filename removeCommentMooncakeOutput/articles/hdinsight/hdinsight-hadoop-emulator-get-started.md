@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Get started with a Hadoop emulator for HDInsight | Windows Azure"
+	pageTitle="Get started with a Hadoop emulator for HDInsight | Azure"
 	description="Use an installed emulator with a MapReduce tutorial and other samples to learn the Hadoop ecosystem. HDInsight emulator works like a Hadoop sandbox."
 	keywords="emulator,hadoop ecosystem,hadoop sandbox,mapreduce tutorial"
 	editor="cgronlun"

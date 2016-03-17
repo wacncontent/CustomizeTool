@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Virtual network using configuration tables | Windows Azure"
+	pageTitle="Virtual network using configuration tables | Azure"
 	description="Learn how to configure a cross-premises Azure virtual network with settings from a configuration table with pre-determined settings."
 	documentationCenter=""
 	services="virtual-machines"

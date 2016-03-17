@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Troubleshooting resource group deployments | Windows Azure"
+   pageTitle="Troubleshooting resource group deployments | Azure"
    description="Describes common problems deploying resources created using Resource Manager deployment model, and shows how to detect and fix these issues."
    services="azure-resource-manager,virtual-machines"
    documentationCenter=""
@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="azure-resource-manager"
-	ms.date="01/06/2016"
+	ms.date="01/28/2016"
 	wacn.date=""/>
 
 # Troubleshooting resource group deployments in Azure
@@ -158,7 +158,7 @@ The Resource Manager REST API provides URIs for retrieving information about a d
 
 Your deployment will fail if your Azure credentials have expired or if you have not signed into your Azure account. Your credentials can expire if your session is open too long. You can refresh your credentials with the following options:
 
-- For PowerShell, use the **Login-AzureRmAccount** cmdlet (or **Add-AzureAccount** for versions of PowerShell prior to 1.0 Preview). The credentials in a publish settings file are not sufficient for the cmdlets in the AzureResourceManager module.
+- For PowerShell, use the **Login-AzureRmAccount** cmdlet. The credentials in a publish settings file are not sufficient for the cmdlets in the AzureResourceManager module.
 - For Azure CLI, use **azure login**. For help with authentication errors, make sure that you have [configured the Azure CLI correctly](/documentation/articles/xplat-cli-connect).
 
 ## Checking the format of templates and parameters
@@ -167,7 +167,7 @@ If your template or parameter file is not in the correct format, your deployment
 
 ### PowerShell
 
-For PowerShell, use **Test-AzureRmResourceGroupDeployment** (or **Test-AzureResourceGroupTemplate** for versions of PowerShell prior to 1.0 Preview).
+For PowerShell, use **Test-AzureRmResourceGroupDeployment**.
 
     PS C:\> Test-AzureRmResourceGroupDeployment -ResourceGroupName ExampleGroup -TemplateFile c:\Azure\Templates\azuredeploy.json -TemplateParameterFile c:\Azure\Templates\azuredeploy.parameters.json
     VERBOSE: 12:55:32 PM - Template is valid.
@@ -199,7 +199,7 @@ When specifying a location for a resource, you must use one of the locations tha
 
 ### PowerShell
 
-For versions of PowerShell prior to 1.0 Preview, you can see the full list of resources and locations with the **Get-AzureLocation** command.
+For versions of PowerShell prior to 1.0, you can see the full list of resources and locations with the **Get-AzureLocation** command.
 
     PS C:\> Get-AzureLocation
 
@@ -285,7 +285,7 @@ Resources are managed by resource providers, and an account or subscription migh
 
 ### PowerShell
 
-To get a list of resource providers and your registration status, use **Get-AzureProvider** for versions of PowerShell prior to 1.0 Preview.
+To get a list of resource providers and your registration status, use **Get-AzureProvider** for versions of PowerShell prior to 1.0.
 
     PS C:\> Get-AzureProvider
 
@@ -298,7 +298,7 @@ To get a list of resource providers and your registration status, use **Get-Azur
 
 To register a provider, use **Register-AzureProvider**.
 
-For Powershell 1.0 Preview, use **Get-AzureRmResourceProvider**.
+For Powershell 1.0, use **Get-AzureRmResourceProvider**.
 
     PS C:\> Get-AzureRmResourceProvider -ListAvailable
 
@@ -316,9 +316,9 @@ To register a provider, use **Register-AzureRmResourceProvider**.
 To see whether the provider is registered for use using the Azure CLI, use the `azure provider list` command (the following is a truncated example of the output).
 
         azure provider list
-		info:    Executing command provider list
-		+ Getting ARM registered providers
-		data:    Namespace                  Registered
+        info:    Executing command provider list
+        + Getting ARM registered providers
+        data:    Namespace                        Registered
 		data:    -------------------------  -----------
 		data:    microsoft.backup           Registering
 		data:    Microsoft.Batch            Registered
@@ -329,14 +329,14 @@ To see whether the provider is registered for use using the Azure CLI, use the `
 		data:    Microsoft.Insights         Registered
 		data:    Microsoft.KeyVault         Registered
 		data:    Microsoft.SiteRecovery     Registered
-		data:    Microsoft.Sql              Registered
+        data:    Microsoft.Sql               Registered
 		data:    Microsoft.StreamAnalytics  Registered
 		data:    Microsoft.Web              Registered
 		data:    Microsoft.Authorization    Registered
 		data:    Microsoft.Features         Registered
 		data:    Microsoft.Resources        Registered
 		data:    Microsoft.Scheduler        Registered
-		info:    provider list command OK
+        info:    provider list command OK
 
 Again, if you want more information about providers, including their regional availability, type `azure provider list --json`. The following selects only the first one in the list to view:
 
@@ -375,9 +375,9 @@ If you are using templates that you created, it's important to understand that t
 
 Note however, that this does not necessarily mean that your resource group is "active and ready for your users". For example, most deployments request the deployment to download upgrades, wait on other, non-template resources, or to install complex scripts or some other executable activity that Azure does not know about because it is not an activity that a provider is tracking. In these cases, it can be some time before your resources are ready for real-world use. As a result, you should expect that the deployment status succeeds some time before your deployment can be used.
 
-You can prevent Azure from reporting deployment success, however, by creating a custom script for your custom template -- using the [CustomScriptExtension](http://azure.microsoft.com/blog/2014/08/20/automate-linux-vm-customization-tasks-using-customscript-extension/) for example -- that knows how to monitor the entire deployment for system-wide readiness and returns successfully only when users can interact with the entire deployment. If you want to ensure that your extension is the last to run, use the **dependsOn** property in your template. An example can be seen when [creating template deployments](https://msdn.microsoft.com/zh-cn/library/azure/dn790564.aspx).
+You can prevent Azure from reporting deployment success, however, by creating a custom script for your custom template -- using the [CustomScriptExtension](https://azure.microsoft.com/blog/2014/08/20/automate-linux-vm-customization-tasks-using-customscript-extension/) for example -- that knows how to monitor the entire deployment for system-wide readiness and returns successfully only when users can interact with the entire deployment. If you want to ensure that your extension is the last to run, use the **dependsOn** property in your template. An example can be seen when [creating template deployments](https://msdn.microsoft.com/zh-cn/library/azure/dn790564.aspx).
 
-## Useful tools to interact with Azure
+##<a name="useful-tools-to-interact-with-azure"></a> Useful tools to interact with Azure
 When you work with your Azure resources from the command-line, you will collect tools that help you do your work. Azure resource group templates are JSON documents, and the Azure Resource Manager API accepts and returns JSON, so JSON parsing tools are some of the first things you will use to help you navigate information about your resources and to design or interact with templates and template parameter files.
 
 ### Mac, Linux, and Windows tools

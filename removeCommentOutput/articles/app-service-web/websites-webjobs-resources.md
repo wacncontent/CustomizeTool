@@ -31,7 +31,7 @@ The WebJobs dashboard in the Azure Management Portal provides powerful managemen
 * [Azure WebJobs Features](/blog/2014/10/22/webjobs-goes-into-full-production/)
 * [What is the WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk)
 * [Background Jobs Guidance by Microsoft Patterns and Practices](/documentation/articles/best-practices-background-jobs/)
-* [Announcing the 1.1.0 RTM of Windows Azure WebJobs SDK](/blog/azure-webjobs-sdk-1-1-0-rtm/)
+* [Announcing the 1.1.0 RTM of Azure WebJobs SDK](/blog/azure-webjobs-sdk-1-1-0-rtm/)
 * [Get Started with the Azure WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk-get-started)
 * [How to use Azure queue storage with the WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk-storage-queues-how-to)
 * [How to use Azure blob storage with the WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk-storage-blobs-how-to)
@@ -78,7 +78,7 @@ See also the following sections on [Deploying WebJobs](#deploy) and [Testing and
 * [Who wrote that blob?](http://blogs.msdn.com/b/jmstall/archive/2014/02/19/who-wrote-that-blob.aspx) 
 * [Hosting interactive code in the Cloud](http://blogs.msdn.com/b/jmstall/archive/2014/04/26/hosting-interactive-code-in-the-cloud.aspx)
 * [Adding Trace to Azure WebJobs](http://blogs.msdn.com/b/mcsuksoldev/archive/2014/09/04/adding-trace-to-azure-web-sites-and-web-jobs.aspx)
-* [Monitor, diagnose, and troubleshoot Windows Azure Storage](/documentation/articles/storage-monitoring-diagnosing-troubleshooting)
+* [Monitor, diagnose, and troubleshoot Azure Storage](/documentation/articles/storage-monitoring-diagnosing-troubleshooting)
 * Videos
 	* [WebJobs Tooling and Remote Debugging](http://channel9.msdn.com/Shows/Web+Camps+TV/WebJobs-GA-Series-Episode-1-WebJobs-Tooling-with-Brady-Gaster) 
 

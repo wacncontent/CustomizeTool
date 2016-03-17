@@ -60,7 +60,7 @@ work:
 
 -   Browser Emulator in [Internet Explorer 11 F12 developer tools][EmulatorIE11] (used in all mobile
     browser screenshots). It has user agent string presets for Windows Phone 8, Windows Phone 7, and Apple iPad.
--	Browser Emulator in Google Chrome DevTools. It contains presets for numerous Android devices, as well as Apple iPhone, Apple iPad, and Amazon Kindle Fire. It also emulates touch events.
+-	Browser Emulator in [Google Chrome DevTools][EmulatorChrome]. It contains presets for numerous Android devices, as well as Apple iPhone, Apple iPad, and Amazon Kindle Fire. It also emulates touch events.
 -   [Opera Mobile Emulator][EmulatorOpera]
 
 Visual Studio projects with C\# source code are available to accompany
@@ -69,16 +69,6 @@ this topic:
 -   [Starter project download][StarterProject]
 -   [Completed project download][CompletedProject]
 
-<h2>Steps in this tutorial</h2>
-
-- [Deploy the starter project to a Windows Azure Website][]
-- [Bootstrap CSS Framework][]
-- [Override the Views, Layouts, and Partial Views][]
-- [Improve the Speakers List][]
-- [Improve the Tags List][]
-- [Improve the Dates List][]
-- [Improve the SessionsTable View][]
-- [Improve the SessionByCode View][]
 ##<a name="bkmk_DeployStarterProject"></a>Deploy the starter project to an Azure web app
 
 1.	Download the conference-listing application [starter project][StarterProject].
@@ -102,6 +92,7 @@ unzip the file.
 6.  In Solution Explorer, right-click the project and click **Publish**.
 
 	![][DeployClickPublish]
+
 
 7.	In Publish Web, click **Import**, and choose the publish profile downloaded above.
 
@@ -380,6 +371,7 @@ navigate the long list of speakers. Bootstrap doesn't provide a
 search filter functionality out-of-the-box, but you can add it with a
 few lines of code. You will first add a search box to the view, then
 hook up with the JavaScript code for the filter function. In
+
 *Views\\Home\\AllSpeakers.cshtml*, add a <form\> tag just after the <h2\> tag, as shown below:
 
     @model IEnumerable<string>

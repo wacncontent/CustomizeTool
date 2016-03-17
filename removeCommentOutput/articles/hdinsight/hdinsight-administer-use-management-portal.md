@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Manage Hadoop clusters in HDInsight using the Azure Management Portal | Windows Azure"
+	pageTitle="Manage Hadoop clusters in HDInsight using the Azure Management Portal | Azure"
 	description="Learn how to administer HDInsight Service. Create an HDInsight cluster, open the interactive JavaScript console, and open the Hadoop command console."
 	services="hdinsight"
 	documentationCenter=""

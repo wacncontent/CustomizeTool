@@ -1,5 +1,5 @@
 <properties
-	pageTitle="What's new in Hadoop cluster versions of HDInsight? | Windows Azure"
+	pageTitle="What's new in Hadoop cluster versions of HDInsight? | Azure"
 	description="HDInsight supports multiple deployable Hadoop cluster versions. See the Hadoop and HortonWorks Data Platform (HDP) distribution versions supported."
 	services="hdinsight"
 	editor="cgronlun"
@@ -145,7 +145,7 @@ The **Deprecation Date** is the date after which the cluster version cannot be c
 
 [wa-forums]: /support/forums/
 
-[connect-excel-with-hive-ODBC]: hdinsight-connect-excel-hive-ODBC-driver.md
+[connect-excel-with-hive-ODBC]: /documentation/articles/hdinsight-connect-excel-hive-ODBC-driver
 
 [hdp-2-2]: http://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.2.0/bk_HDP_RelNotes/content/ch_relnotes_v220.html
 

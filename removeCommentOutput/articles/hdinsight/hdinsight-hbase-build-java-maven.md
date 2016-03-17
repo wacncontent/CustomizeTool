@@ -1,5 +1,5 @@
 <properties
-pageTitle="Build an HBase application using Maven, and deploy to Windows-based HDInsight | Windows Azure"
+pageTitle="Build an HBase application using Maven, and deploy to Windows-based HDInsight | Azure"
 description="Learn how to use Apache Maven to build a Java-based Apache HBase application, then deploy it to a Windows-based Azure HDInsight cluster."
 services="hdinsight"
 documentationCenter=""

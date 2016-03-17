@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
 	pageTitle="How to Use Docker Quickly with Ubuntu-Docker VM Image"
 	description="Describes and demonstrates how to be using Docker on Ubuntu Server in minutes directly from the Azure Image Gallery"

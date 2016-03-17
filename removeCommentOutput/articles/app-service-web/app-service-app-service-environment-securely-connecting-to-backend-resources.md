@@ -104,7 +104,7 @@ For more information about the Azure platform, see [Azure Web App][AzureAppServi
 [NetworkAccessControlLists]: /documentation/articles/virtual-networks-acl/
 [NetworkSecurityGroups]: /documentation/articles/virtual-networks-nsg/
 [IntroToAppServiceEnvironment]:  /documentation/articles/app-service-app-service-environment-intro/
-[AzureAppService]: /documentation/articles/app-service-value-prop-what-is/ 
+[AzureAppService]: /documentation/services/web-sites/ 
 [ControlInboundASE]:  /documentation/articles/app-service-app-service-environment-control-inbound-traffic/ 
 
 <!-- IMAGES -->

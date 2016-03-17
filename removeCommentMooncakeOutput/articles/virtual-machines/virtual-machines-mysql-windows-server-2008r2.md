@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Create a VM running MySQL | Windows Azure"
+	pageTitle="Create a VM running MySQL | Azure"
 	description="Create an Azure virtual machine created with the classic deployment model running Windows Server 2012 R2, and then install and configure the MySQL database on it."
 	services="virtual-machines"
 	documentationCenter=""

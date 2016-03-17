@@ -1,5 +1,7 @@
+<!-- not suitable for Mooncake -->
+
 <properties
-   pageTitle="Sample configuration for Windows VM extensions | Windows Azure"
+   pageTitle="Sample configuration for Windows VM extensions | Azure"
    description="Sample configuration for authoring templates with extensions"
    services="virtual-machines"
    documentationCenter=""
@@ -251,7 +253,7 @@ Before deploying the extension please check the latest extension version and rep
             }
           }
 
-### Barracuda VPN Connectivity Agent for Windows Azure
+### Barracuda VPN Connectivity Agent for Azure
           {
             "publisher": "Barracuda.Azure.ConnectivityAgent",
             "type": "BarracudaConnectivityAgent",

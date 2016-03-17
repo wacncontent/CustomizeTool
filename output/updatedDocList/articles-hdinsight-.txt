@@ -1,15 +1,3 @@
 updated docs: 0
-articles/HDInsight/hdinsight-connect-excel-power-query.md
-articles/HDInsight/hdinsight-dotnet-avro-serialization.md
-articles/HDInsight/hdinsight-extend-hadoop-virtual-network.md
-articles/HDInsight/hdinsight-hadoop-access-yarn-app-logs.md
-articles/HDInsight/hdinsight-hadoop-introduction.md
-articles/HDInsight/hdinsight-hadoop-use-blob-storage.md
-articles/HDInsight/hdinsight-hbase-tutorial-get-started.md
-articles/HDInsight/hdinsight-high-availability.md
-articles/HDInsight/hdinsight-python.md
-articles/HDInsight/hdinsight-storm-deploy-monitor-topology.md
-articles/HDInsight/hdinsight-storm-develop-java-topology.md
-
 
 updated includes: 0

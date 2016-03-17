@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
 	pageTitle="How to Create an Azure Environment" 
 	description="Creation flow description for app service environments" 
@@ -14,7 +16,7 @@
 
 # How to Create an Azure Environment #
 
-Azure Environments (ASE) are a Premium service option of Azure that delivers an enhanced configuration capability that is not available in the multi-tenant stamps.  The ASE feature essentially deploys the Azure into a customerâs virtual network.  To gain a greater understanding of the capabilities offered by Azure Environments read the [What is an Azure Environment][WhatisASE] documentation.
+Azure Environments (ASE) are a Premium service option of Azure that delivers an enhanced configuration capability that is not available in the multi-tenant stamps.  The ASE feature essentially deploys the Azure into a customer's virtual network.  To gain a greater understanding of the capabilities offered by Azure Environments read the [What is an Azure Environment][WhatisASE] documentation.
 
 ### Overview ###
 
@@ -157,5 +159,5 @@ For more information about the Azure platform, see [Azure Web App][AzureAppServi
 [WhatisASE]: /documentation/articles/app-service-app-service-environment-intro/
 [ASEConfig]: /documentation/articles/app-service-web-configure-an-app-service-environment/
 [AppServicePricing]: /home/features/web-site/#price 
-[AzureAppService]: /documentation/articles/app-service-value-prop-what-is/ 
+[AzureAppService]: /documentation/services/web-sites/ 
 [ASEAutoscale]: /documentation/articles/app-service-environment-auto-scale/

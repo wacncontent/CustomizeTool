@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Use Script Action to install Solr on Hadoop cluster | Windows Azure" 
+	pageTitle="Use Script Action to install Solr on Hadoop cluster | Azure" 
 	description="Learn how to customize HDInsight cluster with Solr. You'll use a Script Action configuration option to use a script to install Solr." 
 	services="hdinsight" 
 	documentationCenter="" 
@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="10/02/2015"
+	ms.date="02/12/2016"
 	wacn.date=""/>
 
 # Install and use Solr on HDInsight Hadoop clusters
@@ -17,7 +17,7 @@
 
 Learn how to customize Windows based HDInsight cluster with Solr using Script Action, and how to use Solr to search data. 
  
-You can install Solr on any type of cluster (Hadoop, Storm, HBase) on Azure HDInsight by using *Script Action*. A sample script to install Solr on an HDInsight cluster is available from a read-only Azure storage blob at [https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1](https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1). 
+You can install Solr on any type of cluster (Hadoop, Storm, HBase) on Azure HDInsight by using *Script Action*. A sample script to install Solr on an HDInsight cluster is available from a read-only Azure storage blob at [https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1](https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1).
 
 The sample script works only with HDInsight cluster version 3.1. For more information on HDInsight cluster versions, see [HDInsight cluster versions](/documentation/articles/hdinsight-component-versioning-v1).
 
@@ -106,7 +106,7 @@ You must start with indexing Solr with some data files. You can then use Solr to
 			          "Comprehensive HTML Administration Interfaces",
 			          "Scalability - Efficient Replication to other Solr Search Servers",
 			          "Flexible and Adaptable with XML configuration and Schema",
-			          "Good unicode support: hĂŠllo (hello with an accent over the e)"
+			          "Good unicode support: héllo (hello with an accent over the e)"
 			        ],
 			        "price": 0,
 			        "price_c": "0,USD",

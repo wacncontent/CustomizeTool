@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 If you want a domain, you can buy domains on [Azure Management Portal](https://manage.windowsazure.cn) directly. Use the following steps to buy domain names and assign to your web app.
 
 1. In your browser, open the [Azure Management Portal](https://manage.windowsazure.cn).

@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
 	pageTitle="Create a web app in an Azure Environment"
 	description="Learn how to create web apps and app service plans in an Azure Environment"

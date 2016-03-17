@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Hybrid cloud test environment | Windows Azure" 
+	pageTitle="Hybrid cloud test environment | Azure" 
 	description="Learn how to create a hybrid cloud environment for IT pro or development testing, complete with a simplfied on-premises network." 
 	services="virtual-network" 
 	documentationCenter="" 
@@ -10,15 +10,15 @@
 
 <tags
 	ms.service="virtual-network"
-	ms.date="09/10/2015"
+	ms.date="01/28/2016"
 	wacn.date=""/>
 
 # Set up a hybrid cloud environment for testing
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] <!-- deleted by customization Resource Manager model. -->
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]  Resource Manager model. 
  
 
-This topic steps you through creating a hybrid cloud environment with Windows Azure for testing. Here is the resulting configuration.
+This topic steps you through creating a hybrid cloud environment with Azure for testing. Here is the resulting configuration.
 
 ![](./media/virtual-networks-setup-hybrid-cloud-environment-testing/CreateHybridCloudVNet_5.png)
 
@@ -42,7 +42,7 @@ There are five major phases to setting up this hybrid cloud test environment:
 4.	Create the site-to-site VPN connection.
 5.	Configure DC2. 
 
-If you don't already have an Azure subscription, you can sign up for a trial at [Try Azure](/pricing/1rmb-trial/). If you have an MSDN Subscription, see [Azure benefit for MSDN subscribers](/pricing/member-offers/msdn-benefits-details/).
+If you don't already have an Azure subscription, you can sign up for a trial at [Try Azure](/pricing/1rmb-trial/).  If you have an MSDN Subscription, see [Azure benefit for MSDN subscribers](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/). 
 
 >[AZURE.NOTE] Virtual machines and virtual network gateways in Azure incur an ongoing monetary cost when they are running. This cost is billed against your trial, MSDN subscription, or paid subscription. To reduce the costs of running this test environment when you are not using it, see [Minimizing the ongoing costs of this environment](#costs) in this topic for more information.
 
@@ -287,21 +287,12 @@ This is your current configuration.
  
 Your hybrid cloud environment is now ready for testing.
 
-## Additional resources
-
-[Set up a SharePoint intranet farm in a hybrid cloud for testing](/documentation/articles/virtual-networks-setup-sharepoint-hybrid-cloud-testing)
-
-[Set up a web-based LOB application in a hybrid cloud for testing](/documentation/articles/virtual-networks-setup-lobapp-hybrid-cloud-testing)
-
-[Set up Office 365 Directory Synchronization (DirSync) in a hybrid cloud for testing](/documentation/articles/virtual-networks-setup-dirsync-hybrid-cloud-testing)
-
-[Set up a simulated hybrid cloud environment for testing](/documentation/articles/virtual-networks-setup-simulated-hybrid-cloud-environment-testing)
-
-[Azure hybrid cloud test environments](/documentation/articles/virtual-machines-hybrid-cloud-test-environments)
-
-[Azure infrastructure services implementation guidelines](/documentation/articles/virtual-machines-infrastructure-services-implementation-guidelines)
-
+
 ## Minimizing the ongoing costs of this environment
+
+
+##<a id="costs"></a> Minimizing the ongoing costs of this environment
+
 
 To minimize the costs of running the virtual machines in this environment, perform your needed testing and demonstration as quickly as possible and then delete them or shut down the virtual machines when you are not using them. For example, you could use Azure automation and a runbook to automatically shut down the virtual machines in the Test_VNET virtual network at the end of each business day. For more information, see [Get started with Azure Automation](/documentation/articles/automation-create-runbook-from-samples). 
 
@@ -324,3 +315,6 @@ Next, log on to RRAS1 as the local administrator and run these commands at an ad
 
 Next, go to the Azure Management Portal on your local computer and wait until the TestVNET virtual network shows a connected status.
  
+## Next steps
+
+- Set up a [SharePoint intranet farm](/documentation/articles/virtual-networks-setup-sharepoint-hybrid-cloud-testing), a [web-based LOB application](/documentation/articles/virtual-networks-setup-lobapp-hybrid-cloud-testing), or an [Office 365 Directory Synchronization (DirSync) server](/documentation/articles/virtual-networks-setup-dirsync-hybrid-cloud-testing) in this environment.

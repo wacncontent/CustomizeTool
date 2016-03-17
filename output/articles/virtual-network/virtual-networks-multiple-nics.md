@@ -26,7 +26,7 @@ The figure above shows a VM with three NICs, each connected to a different subne
 At this time, multi NIC has the following requirements and constraints: 
 
 - Multi NIC VMs must be created in Azure virtual networks (VNets). Non-VNet VMs are not supported. 
-- Within a single cloud service (classic deployments) or resource group (Resource Manager deployment), only the following settings are allowed: 
+- Within a single cloud service (classic deployments) or re (classic deployments) or resource group (Resource Manager deployment) , , only the following settings are allowed:
 	- All VMs in that cloud service must be multi NIC enabled, or 
 	- All VMs in that cloud service must each have a single NIC 
 
@@ -49,10 +49,12 @@ At this time, multi NIC has the following requirements and constraints:
 |A5|1|
 |A6|2|
 |A7|4|
+
 |A8|2|
 |A9|4|
 |A10|2|
 |A11|4|
+
 |D1|1|
 |D2|2|
 |D3|4|
@@ -69,6 +71,7 @@ At this time, multi NIC has the following requirements and constraints:
 |DS12|4|
 |DS13|8|
 |DS14|8|
+
 |D1_v2|1|
 |D2_v2|2|
 |D3_v2|4|
@@ -94,6 +97,7 @@ If a subnet is associated with an NSG, and a NIC within that subnet is individua
 - **Outgoing traffic** whose source is the NIC in question flows first out from the NIC, triggering the NIC's NSG rules, before passing through the subnet, then triggering the subnet's NSG rules. 
 
 Learn more about [Network Security Groups](/documentation/articles/virtual-networks-nsg) and how they are applied based on associations to subnets, VMs, and NICs..
+
 
 ## How to Configure a multi NIC VM in a classic deployment
 
@@ -258,5 +262,7 @@ For Linux VMs, since the default behavior uses weak host routing, we recommend t
 
 ## Next steps
 
+
 - Deploy [MultiNIC VMs in a 2-tier application scenario in a Resource Manager deployment](/documentation/articles/virtual-network-deploy-multinic-arm-template).
+
 - Deploy [MultiNIC VMs in a 2-tier application scenario in a classic deployment](/documentation/articles/virtual-network-deploy-multinic-classic-ps).

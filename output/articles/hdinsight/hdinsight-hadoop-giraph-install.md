@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Install and use Giraph on Hadoop clusters in HDInsight | Windows Azure"
+	pageTitle="Install and use Giraph on Hadoop clusters in HDInsight | Azure"
 	description="Learn how to customize HDInsight cluster with Giraph, and how to use Giraph."
 	services="hdinsight"
 	documentationCenter=""
@@ -16,18 +16,25 @@
 # Install and use Giraph in HDInsight
 
 
-Learn how to customize Windows based HDInsight cluster with Giraph using Script Action, and how to use Giraph to process large-scale graphs. For information on using Giraph with a Linux-based cluster, see [Install Giraph on HDInsight Hadoop clusters (Linux)](/documentation/articles/hdinsight-hadoop-giraph-install-v1-linux).
+Learn how to customize Windows based HDInsight cluster with Giraph using Script Action, and how to use Giraph to process large-scale graphs. For information on using Gi For information on using Giraph with a Linux-based cluster, see [Install Giraph on HDInsight Hadoop clusters (Linux)](/documentation/articles/hdinsight-hadoop-giraph-install-v1-linux). 
  
-You can install Giraph on any type of cluster (Hadoop, Storm, HBase, Spark) on Azure HDInsight by using *Script Action*. A sample script to install Giraph on an HDInsight cluster is available from a read-only Azure storage blob at [https://hdiconfigactions.blob.core.windows.net/giraphconfigactionv01/giraph-installer-v01.ps1](https://hdiconfigactions.blob.core.windows.net/giraphconfigactionv01/giraph-installer-v01.ps1). The sample script works only with HDInsight cluster version 3.1. For more information on HDInsight cluster versions, see [HDInsight cluster versions](/documentation/articles/hdinsight-component-versioning-v1).
+ HBase, Spark)  You can install Giraph on any type of cluster (Hadoop, Storm, HBase, Spark) on Azure HDInsight by using *Script Action*. A sample script to install Giraph on an HDInsight cluster is available from a read-only Azure storage blob at [https://hdiconfigactions.blob.core.windows.net/giraphconfigactionv01/giraph-installer-v01.ps1](https://hdiconfigactions.blob.core.windows.net/giraphconfigactionv01/giraph-installer-v01.ps1). The sample script works only with HDInsight cluster version 3.1. For more information on HDInsight cluster versions, see [HDInsight cluster versions](/documentation/articles/hdinsight-component-versioning-v1).
 
 **Related articles**
 
+
 - [Install Giraph on HDInsight Hadoop clusters (Linux)](/documentation/articles/hdinsight-hadoop-giraph-install-v1-linux)
+
 - [Create Hadoop clusters in HDInsight](/documentation/articles/hdinsight-provision-clusters-v1): general information on creating HDInsight clusters.
 - [Customize HDInsight cluster using Script Action][hdinsight-cluster-customize]: general information on customizing HDInsight clusters using Script Action.
 - [Develop Script Action scripts for HDInsight](/documentation/articles/hdinsight-hadoop-script-actions).
 
+
 ## What is Giraph?
+
+
+##<a name="whatis"></a> What is Giraph?
+
 
 <a href="http://giraph.apache.org/" target="_blank">Apache Giraph</a> allows you to perform graph processing by using Hadoop, and can be used with Azure HDInsight. Graphs model relationships between objects, such as the connections between routers on a large network like the Internet, or relationships between people on social networks (sometimes referred to as a social graph). Graph processing allows you to reason about the relationships between objects in a graph, such as:
 
@@ -36,9 +43,14 @@ You can install Giraph on any type of cluster (Hadoop, Storm, HBase, Spark) on A
 - Calculating the page rank of webpages.
 
 
+
 ## Install Giraph using portal
 
 [AZURE.INCLUDE [hdinsight-azure-preview-portal](../includes/hdinsight-azure-preview-portal.md)]
+
+
+##<a name="install"></a> Install Giraph using portal
+
 
 * [Install Giraph on HDInsight clusters](/documentation/articles/hdinsight-hadoop-giraph-install-v1)
 
@@ -162,21 +174,30 @@ See [Customize HDInsight clusters using Script Action](/documentation/articles/h
 
 ## See also
 
+
 - [Install Giraph on HDInsight Hadoop clusters (Linux)](/documentation/articles/hdinsight-hadoop-giraph-install-v1-linux)
+
 - [Create Hadoop clusters in HDInsight](/documentation/articles/hdinsight-provision-clusters-v1): general information on creating HDInsight clusters.
 - [Customize HDInsight cluster using Script Action][hdinsight-cluster-customize]: general information on customizing HDInsight clusters using Script Action.
 - [Develop Script Action scripts for HDInsight](/documentation/articles/hdinsight-hadoop-script-actions).
+
 - [Install and use Spark on HDInsight clusters][hdinsight-install-spark]: Script Action sample about installing Spark.
+
 - [Install R on HDInsight clusters][hdinsight-install-r]: Script Action sample about installing R.
 - [Install Solr on HDInsight clusters](/documentation/articles/hdinsight-hadoop-solr-install-v1): Script Action sample about installing Solr.
 
 
 
 [tools]: https://github.com/Blackmist/hdinsight-tools
-[aps]: /documentation/articles/install-configure-powershell/
+[aps]: /documentation/articles/powershell-install-configure/
 
-[powershell-install]: ../powershell-install-configure.md
-[hdinsight-provision]: hdinsight-provision-clusters-v1.md
-[hdinsight-install-r]: hdinsight-hadoop-r-scripts.md
-[hdinsight-install-spark]: hdinsight-hadoop-spark-install.md
-[hdinsight-cluster-customize]: hdinsight-hadoop-customize-cluster-v1.md
+[powershell-install]: /documentation/articles/powershell-install-configure
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
+[hdinsight-install-r]: /documentation/articles/hdinsight-hadoop-r-scripts
+
+[hdinsight-install-spark]: /documentation/articles/hdinsight-hadoop-spark-install
+[hdinsight-cluster-customize]: /documentation/articles/hdinsight-hadoop-customize-cluster-v1
+
+
+[hdinsight-cluster-customize]: /documentation/articles/hdinsight-hadoop-customize-cluster-v1
+

@@ -1,5 +1,5 @@
 <properties
- pageTitle="Set up a Windows RDMA cluster to run MPI applications | Windows Azure"
+ pageTitle="Set up a Windows RDMA cluster to run MPI applications | Azure"
  description="Learn how to create a Windows HPC Pack cluster with size A8 or A9 VMs to use the Azure RDMA network to run MPI apps."
  services="virtual-machines"
  documentationCenter=""

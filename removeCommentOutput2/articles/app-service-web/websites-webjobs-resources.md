@@ -28,9 +28,11 @@ The WebJobs dashboard in the Azure Management Portal provides powerful managemen
 
 * [Introduction to Azure WebJobs](http://www.hanselman.com/blog/IntroducingWindowsAzureWebJobs.aspx)
 * [Azure WebJobs are awesome and you should start using them right now!](http://www.troyhunt.com/2015/01/azure-webjobs-are-awesome-and-you.html) (Blog post by Troy Hunt.)
-* [Azure WebJobs Features](/blog/2014/10/22/webjobs-goes-into-full-production/)
+
+* [Azure WebJobs Features](https://azure.microsoft.com/zh-cn/blog/webjobs-goes-into-full-production/)
 * [What is the WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk)
-* [Announcing the 1.1.0 RTM of Windows Azure WebJobs SDK](/blog/azure-webjobs-sdk-1-1-0-rtm/)
+
+* [Announcing the 1.1.0 RTM of Azure WebJobs SDK](https://azure.microsoft.com/zh-cn/blog/azure-webjobs-sdk-1-1-0-rtm/)
 * [Get Started with the Azure WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk-get-started)
 * [How to use Azure queue storage with the WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk-storage-queues-how-to)
 * [How to use Azure blob storage with the WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk-storage-blobs-how-to)
@@ -39,9 +41,11 @@ The WebJobs dashboard in the Azure Management Portal provides powerful managemen
 * [How to use WebHooks with the WebJobs SDK, with examples for GitHub, IFTTT, and HTTP](https://github.com/Azure/azure-webjobs-sdk-extensions/wiki/WebHooks-Walkthrough)
 * [Azure WebJobs SDK Quick Reference (PDF download)](http://download.microsoft.com/download/2/2/0/220DE2F1-8AB3-474D-8F8B-C998F7C56B5D/Azure%20WebJobs%20SDK%20Cheat%20Sheet%202014.pdf)
 * [WebJobs settings documentation in GitHub](https://github.com/projectkudu/kudu/wiki/Web-jobs).
+
 * [Azure WebJobs Update with Pranav Rastogi - Extensibility in Release 1.1](https://channel9.msdn.com/Shows/Cloud+Cover/Episode-183-Azure-WebJobs-Update-with-Pranav-Rastogi)
 
 See also the following sections on [Deploying WebJobs](#deploy) and [Testing and debugging WebJobs](#debug).
+
 
 ##<a name="deploy" id="deploying"></a>Deploying WebJobs
 
@@ -69,7 +73,7 @@ See also the following sections on [Deploying WebJobs](#deploy) and [Testing and
 * [Who wrote that blob?](http://blogs.msdn.com/b/jmstall/archive/2014/02/19/who-wrote-that-blob.aspx) 
 * [Hosting interactive code in the Cloud](http://blogs.msdn.com/b/jmstall/archive/2014/04/26/hosting-interactive-code-in-the-cloud.aspx)
 * [Adding Trace to Azure WebJobs](http://blogs.msdn.com/b/mcsuksoldev/archive/2014/09/04/adding-trace-to-azure-web-sites-and-web-jobs.aspx)
-* [Monitor, diagnose, and troubleshoot Windows Azure Storage](/documentation/articles/storage-monitoring-diagnosing-troubleshooting)
+* [Monitor, diagnose, and troubleshoot Azure Storage](/documentation/articles/storage-monitoring-diagnosing-troubleshooting)
 
 ##<a name="scale"></a>Scaling WebJobs
 
@@ -78,7 +82,7 @@ See also the following sections on [Deploying WebJobs](#deploy) and [Testing and
 
 ##<a name="additional"></a>Additional WebJobs resources
 
-* [Azure WebJobs GA blog post by Magnus MĂĽrtensson](http://magnusmartensson.com/azure-webjobs-ga) 
+* [Azure WebJobs GA blog post by Magnus Mårtensson](http://magnusmartensson.com/azure-webjobs-ga)
 * [Running Powershell Web Jobs on Azure Web App](http://blogs.msdn.com/b/nicktrog/archive/2014/01/22/running-powershell-web-jobs-on-azure-websites.aspx)
 * [Getting notified when your Azure triggered WebJobs completes](http://blog.amitapple.com/post/2014/03/webjobs-notification/)
 * [Simple Web App Backup retention policy with WebJobs](https://azure.microsoft.com/blog/2014/04/28/simple-web-site-backup-retention-policy-with-webjobs/)
@@ -105,12 +109,13 @@ See also the following sections on [Deploying WebJobs](#deploy) and [Testing and
 
 * [Azure blog](/blog)
 * [Amit Apple's blog](http://blog.amitapple.com/). Focuses on WebJobs (not the SDK).
-* [Magnus MĂĽrtensson's blog](http://magnusmartensson.com/)
+* [Magnus Mårtensson's blog](http://magnusmartensson.com/)
 
 ##<a name="gethelp"></a>Getting help with WebJobs
 
 * [Azure and ASP.NET forum](http://forums.asp.net/1247.aspx)
 * [Azure Web Apps forum](http://social.msdn.microsoft.com/Forums/zh-CN/home?forum=windowsazurezhchs)
-* [Azure Web Apps User Voice site](/product-feedback)
+
+* [Azure Product Feedback](/product-feedback)
 * [Report a WebJobs bug or issue](https://github.com/projectkudu/kudu/wiki/Reporting-WebJobs-issues)
 

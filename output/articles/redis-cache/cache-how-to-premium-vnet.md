@@ -23,6 +23,7 @@ For information on other premium cache features, see [How to configure persisten
 [Azure Virtual Network (VNET)](/home/features/networking/) deployment provides enhanced security and isolation for your Azure Redis Cache, as well as subnets, access control policies, and other features to further restrict access to Azure Redis Cache.
 
 ## Virtual network support
+
 Virtual Network (VNET) support is configured on the **New Redis Cache** blade during cache creation. To create a cache, sign-in to the [Azure Management Portal](https://manage.windowsazure.cn) and click **New** > **DATA SERVICE** > **Redis Cache**.
 
 ![Create a Redis Cache][redis-cache-new-cache-menu]
@@ -48,6 +49,30 @@ The **Static IP address** field is optional. If none is specified here, one will
 Once the cache is created, you can view the IP address and other information about the VNET by clicking **Virtual Network** from the **Settings** blade.
 
 ![Virtual network][redis-cache-vnet-info]
+
+
+
+In Azure China, Redis Cache can only be managed by Azure PowerShell or Azure CLI
+
+
+[AZURE.INCLUDE [azurerm-azurechinacloud-environment-parameter](../includes/azurerm-azurechinacloud-environment-parameter.md)]
+
+
+Use the following PowerShell Script to create a cache:
+
+	$VerbosePreference = "Continue"
+
+	# Create a new cache with date string to make name unique. 
+	$cacheName = "MovieCache" + $(Get-Date -Format ('ddhhmm')) 
+	$location = "China North"
+	$resourceGroupName = "Default-Web-ChinaNorth"
+	
+	$movieCache = New-AzureRmRedisCache -Location $location -Name $cacheName  -ResourceGroupName $resourceGroupName -Size 6GB -Sku Premium -VirtualNetwork /subscriptions/{subid}/Microsoft.ClassicNetwork/VirtualNetworks/vnet1 -Subnet Front -StaticIP 10.10.1.5
+
+The **-StaticIP** Parameter is optional. If the selected static IP is already use, an error message is displayed. If none is specified here, one will be chosen from the selected subnet.
+
+Once the cache is created, it can be accessed only by clients within the same VNET.
+
 
 >[AZURE.IMPORTANT] To access your Azure Redis cache instance when using a VNET, pass the static IP address of the cache in the VNET as the first parameter, and pass in an `sslhost` parameter with the endpoint of your cache. In the following example the static IP address is `172.160.0.99` and the cache endpoint is `contoso5.redis.cache.chinacloudapi.cn`.
 

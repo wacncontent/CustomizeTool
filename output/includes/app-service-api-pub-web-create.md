@@ -1,8 +1,10 @@
+<!-- not suitable for Mooncake -->
+
 1. In **Solution Explorer**, right-click the project (not the solution) and click **Publish**. 
 
 	![Project publish menu option](./media/app-service-api-pub-web-create/20-publish-gesture-v3.png)
 
-2. Click the **Profile** tab and click **Windows Azure API Apps (Preview)**. 
+2. Click the **Profile** tab and click **Azure API Apps (Preview)**. 
 
 	![Publish Web dialog](./media/app-service-api-pub-web-create/21-select-api-apps-for-deployment-v2.png)
 
@@ -19,7 +21,7 @@
 	- For **Access Level**, select **Available to Anyone**. You can restrict access later through the Azure preview portal.
 	- For **Region**, select a region close to you.  
 
-	![Configure Windows Azure Web App dialog](./media/app-service-api-pub-web-create/24-new-api-app-dialog-v3.png)
+	![Configure Azure Web App dialog](./media/app-service-api-pub-web-create/24-new-api-app-dialog-v3.png)
 
 5. Click **OK** to create the API App in your subscription. 
 

@@ -14,4 +14,3 @@ In this scenario you will create an NSG for each subnet in the **TestVNet** virt
 	- **web-rule**. This rule denies all internet bound traffic from the *BackEnd* subnet.
 
 The combination of these rules create a DMZ-like scenario, where the back end subnet can only receive incoming traffic for SQL traffic from the front end subnet, and has no access to the Internet, while the front end subnet can communicate with the Internet, and receive incoming HTTP requests only.
- 

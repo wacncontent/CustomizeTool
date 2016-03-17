@@ -1,5 +1,5 @@
 <properties
-	pageTitle="SharePoint Server 2013 farm in Azure | Windows Azure"
+	pageTitle="SharePoint Server 2013 farm in Azure | Azure"
 	description="Learn the value of a SharePoint Server 2013 farm in Azure, set up a test environment, and deploy a high-availability configuration."
 	services="virtual-machines"
 	documentationCenter=""
@@ -17,7 +17,7 @@
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
 
-Set up your first or next SharePoint farm in Windows Azure and take advantage of ease of configuration and the ability to quickly expand the farm to include new capacity or optimization of key functionality. Many SharePoint farms grow from a standard, highly-available, three-tier configuration to a farm with possibly a dozen or more servers optimized for performance or separate roles, such as distributed caching or search.
+Set up your first or next SharePoint farm in Azure and take advantage of ease of configuration and the ability to quickly expand the farm to include new capacity or optimization of key functionality. Many SharePoint farms grow from a standard, highly-available, three-tier configuration to a farm with possibly a dozen or more servers optimized for performance or separate roles, such as distributed caching or search.
 
 With the virtual machines and virtual network features of Azure infrastructure services, you can quickly deploy and run a SharePoint farm that is transparently connected to your on-premises network. For example, you can set up the following:
 
@@ -92,7 +92,7 @@ To deploy this configuration, use the following process:
 
 	Prepare the SharePoint databases, create an AlwaysOn Availability Group, and then add the SharePoint databases to it. For the detailed configuration steps, see [Phase 5](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase5).
 
-Once configured, you can expand this SharePoint farm with guidance from [Windows Azure architectures for SharePoint 2013](http://technet.microsoft.com/zh-cn/library/dn635309.aspx).
+Once configured, you can expand this SharePoint farm with guidance from [Azure architectures for SharePoint 2013](http://technet.microsoft.com/zh-cn/library/dn635309.aspx).
 
 ## Next step
 

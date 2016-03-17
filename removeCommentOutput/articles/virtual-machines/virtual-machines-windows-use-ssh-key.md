@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Use SSH on Windows to connect to Linux virtual machines | Windows Azure" 
+	pageTitle="Use SSH on Windows to connect to Linux virtual machines | Azure" 
 description="Learn how to generate and use SSH keys on a Windows computer to connect to a Linux virtual machine on Azure." 
 	services="virtual-machines" 
 	documentationCenter="" 

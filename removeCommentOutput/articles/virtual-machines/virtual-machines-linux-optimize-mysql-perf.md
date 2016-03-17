@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Optimize MySQL Performance on Linux VMs | Windows Azure"
+	pageTitle="Optimize MySQL Performance on Linux VMs | Azure"
 	description="Learn how to optimize MySQL running on an Azure virtual machine (VM) running Linux."
 	services="virtual-machines"
 	documentationCenter=""

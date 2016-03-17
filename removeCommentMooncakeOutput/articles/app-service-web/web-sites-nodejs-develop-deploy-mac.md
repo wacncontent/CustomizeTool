@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Create a Node.js web app in Azure | Windows Azure"
+	pageTitle="Create a Node.js web app in Azure | Azure"
 	description="Learn how to deploy a Node.js application to a web app in Azure."
 	services="app-service\web"
 	documentationCenter="nodejs"
@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="01/09/2016"
+	ms.date="02/04/2016"
 	wacn.date=""/>
 
 # Create a Node.js web app in Azure
@@ -36,7 +36,7 @@ The completed application writes a short "hello world" string to the browser.
 For tutorials and sample code with more complex Node.js applications, or for other topics about how to use Node.js in Azure, see the [Node.js Developer Center](/develop/nodejs/).
 
 > [AZURE.NOTE]
-> To complete this tutorial, you need a Windows Azure account. If you don't have an account, you can [sign up for a trial](/pricing/1rmb-trial/?WT.mc_id=A261C142F).
+> To complete this tutorial, you need a Azure account. If you don't have an account, you can [sign up for a trial](/pricing/1rmb-trial/?WT.mc_id=A261C142F).
 
 ## Create a web app and enable Git publishing
 
@@ -177,7 +177,7 @@ For more information about how to develop Node.js applications on Azure, see the
 [Azure Management Portal]: http://manage.windowsazure.cn
 [Azure Command-Line Tools for Mac and Linux]: /documentation/articles/xplat-cli-install
 [Azure PowerShell]: /documentation/articles/powershell-install-configure
-[portal-new- Website]: ./media/web-sites-nodejs-develop-deploy-mac/plus-new.png
+[portal-new-website]: ./media/web-sites-nodejs-develop-deploy-mac/plus-new.png
 [portal-git-username-password]: ./media/web-sites-nodejs-develop-deploy-mac/git-deployment-credentials.png
 [git-instructions]: ./media/web-sites-nodejs-develop-deploy-mac/git-instructions.png
 [git-deployments-first]: ./media/web-sites-nodejs-develop-deploy-mac/git_deployments_first.png

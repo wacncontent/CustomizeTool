@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Learn what is Hive and how to use HiveQL | Windows Azure"
+	pageTitle="Learn what is Hive and how to use HiveQL | Azure"
 	description="Learn about Apache Hive and how to use it with Hadoop in HDInsight. Choose how to run your Hive job, and use HiveQL to analyze a sample Apache log4j file."
 	keywords="hiveql,what is hive"
 	services="hdinsight"
@@ -11,7 +11,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="12/03/2015"
+	ms.date="01/28/2016"
 	wacn.date=""/>
 
 # Use Hive and HiveQL with Hadoop in HDInsight to analyze a sample Apache log4j file
@@ -88,8 +88,7 @@ In the previous example, the HiveQL statements perform the following actions:
 * **INPUT__FILE__NAME LIKE '%.log'** - Tells Hive that we should only return data from files ending in .log. This restricts the search to the sample.log file that contains the data, and keeps it from returning data from other example data files that do not match the schema we defined.
 
 > [AZURE.NOTE] External tables should be used when you expect the underlying data to be updated by an external source, such as an automated data upload process, or by another MapReduce operation, and you always want Hive queries to use the latest data.
->
-> Dropping an external table does **not** delete the data, it only deletes the table definition.
+> <p>Dropping an external table does **not** delete the data, it only deletes the table definition.
 
 After creating the external table, the following statements are used to create an **internal** table.
 
@@ -108,13 +107,11 @@ These statements perform the following actions:
 
 ##<a id="usetez"></a>Use Apache Tez for improved performance
 
-[Apache Tez](http://tez.apache.org) is a framework that allows data intensive applications, such as Hive, to run much more efficiently at scale. In the latest release of HDInsight, Hive supports running on Tez.
+[Apache Tez](http://tez.apache.org) is a framework that allows data intensive applications, such as Hive, to run much more efficiently at scale. In the latest release of HDInsight, Hive supports running on Tez. 
 
 > [AZURE.NOTE] Tez is currently off by default for Windows-based HDInsight clusters and it must be enabled. To take advantage of Tez, the following value must be set for a Hive query:
->
-> ```set hive.execution.engine=tez;```
->
->This can be submitted on a per-query basis by placing it at the beginning of your query. You can also set this to be on by default on a cluster by setting the configuration value when you create the cluster. You can find more details in [Provisioning HDInsight Clusters](/documentation/articles/hdinsight-provision-clusters-v1).
+> <p>```set hive.execution.engine=tez;```
+><p>This can be submitted on a per-query basis by placing it at the beginning of your query. You can also set this to be on by default on a cluster by setting the configuration value when you create the cluster. You can find more details in [Provisioning HDInsight Clusters](/documentation/articles/hdinsight-provision-clusters-v1).
 
 The [Hive on Tez design documents](https://cwiki.apache.org/confluence/display/Hive/Hive+on+Tez) contain a number of details about the implementation choices and tuning configurations.
 
@@ -155,7 +152,6 @@ Now that you've learned what Hive is and how to use it with Hadoop in HDInsight,
 [check]: ./media/hdinsight-use-hive/hdi.checkmark.png
 
 [1]: /documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started
-
 [hdinsight-sdk-documentation]: http://msdn.microsoft.com/zh-cn/library/dn479185.aspx
 
 [azure-purchase-options]: /pricing/overview/

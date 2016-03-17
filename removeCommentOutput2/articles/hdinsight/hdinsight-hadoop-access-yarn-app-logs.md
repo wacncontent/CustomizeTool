@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Access Hadoop YARN application logs programmatically | Windows Azure"
+	pageTitle="Access Hadoop YARN application logs programmatically | Azure"
 	description="Access application logs programmatically on a Hadoop cluster in HDInsight."
 	services="hdinsight"
 	documentationCenter=""
@@ -42,6 +42,7 @@ On your HDInsight clusters, this information will be stored by Azure Resource Ma
     GET on https://<cluster-dns-name>.azurehdinsight.cn/ws/v1/applicationhistory/apps
 
 
+
 ##<a name="YARNAppsAndLogs"></a> YARN applications and logs
 
 YARN supports multiple programming models (MapReduce being one of them) by decoupling resource management from application scheduling/monitoring. This is done through a global *ResourceManager* (RM), per-worker-node *NodeManagers* (NMs), and per-application *ApplicationMasters* (AMs). The per-application AM negotiates resources (CPU, memory, disk, network) for running your application with the RM. The RM works with NMs to grant these resources, which are granted as *containers*. The AM is responsible for tracking the progress of the containers assigned to it by the RM. An application may require many containers depending on the nature of the application.
@@ -58,6 +59,7 @@ The aggregated logs are not directly readable, as they are written in a [TFile][
 
 	yarn logs -applicationId <applicationId> -appOwner <user-who-started-the-application>
 	yarn logs -applicationId <applicationId> -appOwner <user-who-started-the-application> -containerId <containerId> -nodeAddress <worker-node-address>
+
 
 The next section talks about how you can access application-specific or container-specific logs programmatically, without having to use RDP to connect to your HDInsight clusters.
 

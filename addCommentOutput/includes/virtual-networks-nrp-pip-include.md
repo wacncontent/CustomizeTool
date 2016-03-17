@@ -1,4 +1,9 @@
+
 ## Public IP address
+
+
+##<a name="Public-IP-address"></a> Public IP address
+
 A public IP address resource provides either a reserved or dynamic Internet facing IP address. Although you can create a public IP address as a stand alone object, you need to associate it to another object to actually use the address. You can associate a public IP address to a load balancer, application  gateway, or a NIC to provide Internet access to those resources.  
 
 |Property|Description|Sample values|
@@ -7,7 +12,12 @@ A public IP address resource provides either a reserved or dynamic Internet faci
 |**idleTimeoutInMinutes**|Defines the idle time out, with a default value of 4 minutes. If no more packets for a given session is received within this time, the session is terminated.|any value between 4 and 30|
 |**ipAddress**|IP address assigned to object. This is a read-only property.|104.42.233.77|
 
+
 ### DNS settings
+
+
+###<a name="DNS-settings"></a> DNS settings
+
 Public IP addresses have a child object named **dnsSettings** containing the following properties:
 
 |Property|Description|Sample values|

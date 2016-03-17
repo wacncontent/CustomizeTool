@@ -11,7 +11,7 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="07/30/2015"
+	ms.date="01/21/2016"
 	wacn.date=""/>
 
 
@@ -55,7 +55,7 @@ To sign up for New Relic directly from the Azure gallery, follow these four easy
 
 ## Step 1. Create a New Relic account
 
-1. Log in to the [Azure Management Portal](https://manage.windowsazure.cn) and click **New** in the corner.
+1. Log in to the [Azure Management Portal](https://manage.windowsazure.cn/) and click **New** in the corner.
 3. Click **Developer services** > **New Relic APM**.
 4. Configure your New Relic account by specifying the following, then click **Create**.
 	- **Name**
@@ -71,7 +71,7 @@ To sign up for New Relic directly from the Azure gallery, follow these four easy
 
 ## Step 2: Configure New Relic integration for your web app
 
-1. Open your web app's blade in the [Azure Management Portal](https://manage.windowsazure.cn).
+1. Open your web app's blade in the [Azure Management Portal](https://manage.windowsazure.cn/).
 2. Click the "..." menu at the top of the blade and select **Add tiles**.
 3. On the **Monitoring** tab select **Application summary** and drag it to where you want the tile to appear on your web app's blade.
 4. Click Done to finish adding tiles.
@@ -92,7 +92,7 @@ Using Visual Studio, publish your web app. If you have previously published your
 
 To view your New Relic dashboard:
 
-2. Open your web app's blade in the [Azure Management Portal](https://manage.windowsazure.cn).
+2. Open your web app's blade in the [Azure Management Portal](https://manage.windowsazure.cn/).
 3. Click **Application monitoring** > **application name** > **View at New Relic**.
 
 	![](./media/store-new-relic-web-sites-dotnet-application-performance-management/view-new-relic-data.png)
@@ -162,7 +162,7 @@ Below is an example of the Applications Overview dashboard when you select the B
 
 Check out these additional resources for more information:
 
- * [Installing the .NET Agent for Azure Websites](https://docs.newrelic.com/docs/agents/net-agent/azure-installation/azure-websites#manual): New Relic .NET Agent installation procedures 
+ * [Installing the .NET Agent on Azure Web Apps](https://docs.newrelic.com/docs/agents/net-agent/azure-installation/azure-preview-portal#install-new-relic-azure-webapps): New Relic .NET Agent installation procedures 
  * [The New Relic User Interface](https://newrelic.com/docs/site/the-new-relic-ui): 
 Overview of the New Relic UI, setting user rights and profiles, using standard functions and dashboard drill-down details
  * [Applications Overview](https://newrelic.com/docs/site/applications-overview): Features and functions when using New Relic's Applications Overview dashboard

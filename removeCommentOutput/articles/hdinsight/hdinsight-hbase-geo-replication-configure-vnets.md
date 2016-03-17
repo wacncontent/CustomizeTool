@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Configure VPN connection between two virtual networks | Windows Azure" 
+   pageTitle="Configure VPN connection between two virtual networks | Azure" 
    description="Learn how to configure VPN connections and domain name resolution between two Azure virtual networks, and how to configure HBase geo-replication." 
    services="hdinsight,virtual-network" 
    documentationCenter="" 
@@ -133,7 +133,7 @@ Before you begin this tutorial, you must have the following:
 
 ###Create local networks
 
-When you create a VNet to VNet configuration, you need to configure each VNet to identify each other as a local network site. In this section, youâll configure each VNet as a local network. The local networks share the same IP address spaces with the corresponding VNet.
+When you create a VNet to VNet configuration, you need to configure each VNet to identify each other as a local network site. In this section, you'll configure each VNet as a local network. The local networks share the same IP address spaces with the corresponding VNet.
 
 ![Configure Azure VPN site-to-site configuration - azure local networks][img-vnet-lnet-diagram]
 
@@ -146,7 +146,7 @@ When you create a VNet to VNet configuration, you need to configure each VNet to
 	- **NAME**: Contoso-LNet-CN
 	- **VPN DEVICE IP ADDRESS**: 192.168.0.1 (this address will be updated later)
 
-		Typically, youâd use the actual external IP address for a VPN device. For VNet to VNet configurations, you will use the VPN gateway IP address. Given that you have not created the VPN gateways for the two VNets yet, you enter an arbitary IP address and come back to fix it.
+		Typically, you'd use the actual external IP address for a VPN device. For VNet to VNet configurations, you will use the VPN gateway IP address. Given that you have not created the VPN gateways for the two VNets yet, you enter an arbitary IP address and come back to fix it.
 4.	Enter:
 
 	- **ADDRESS SPACE STARTING IP:** 10.1.0.0
@@ -245,8 +245,8 @@ In this tutorial you have learned how to configure a VPN connection between two 
 
 
 
-[hdinsight-hbase-geo-replication-dns]: hdinsight-hbase-geo-replication-configure-dns.md
-[hdinsight-hbase-geo-replication]: hdinsight-hbase-geo-replication.md
+[hdinsight-hbase-geo-replication-dns]: /documentation/articles/hdinsight-hbase-geo-replication-configure-dns
+[hdinsight-hbase-geo-replication]: /documentation/articles/hdinsight-hbase-geo-replication
 
 
 [azure-purchase-options]: /pricing/overview/
@@ -254,12 +254,12 @@ In this tutorial you have learned how to configure a VPN connection between two 
 [azure-trial]: /pricing/1rmb-trial/
 [azure-portal]: https://manage.windowsazure.cn
 
-[powershell-install]: ../install-configure-powershell
+[powershell-install]: /documentation/articles/powershell-install-configure
 
 
 
-[hdinsight-hbase-replication]: ../hdinsight-hbase-geo-replication/
-[hdinsight-hbase-dns]: ../hdinsight-hbase-geo-replication-configure-DNS/
+[hdinsight-hbase-replication]: /documentation/articles/hdinsight-hbase-geo-replication
+[hdinsight-hbase-dns]: /documentation/articles/hdinsight-hbase-geo-replication-configure-DNS
 
 
 [img-vnet-diagram]: ./media/hdinsight-hbase-geo-replication-configure-VNets/HDInsight.HBase.VPN.diagram.png

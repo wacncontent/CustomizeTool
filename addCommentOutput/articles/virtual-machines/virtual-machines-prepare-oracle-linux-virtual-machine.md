@@ -1,8 +1,8 @@
-<properties 
-pageTitle="Prepare an Oracle Linux Virtual Machine for Azure | Windows Azure" 
-description="Step by Step configuration of an Oracle virtual machine running Linux in Windows Azure." 
-services="virtual-machines" 
-authors="bbenz" 
+<properties
+pageTitle="Prepare an Oracle Linux Virtual Machine for Azure | Azure"
+description="Step by Step configuration of an Oracle virtual machine running Linux in Azure."
+services="virtual-machines"
+authors="bbenz"
 documentationCenter="virtual-machines"
 tags="azure-service-management,azure-resource-manager"
 />
@@ -12,7 +12,7 @@ tags="azure-service-management,azure-resource-manager"
 	ms.date="06/22/2015"
 	wacn.date=""/>
 
-#Prepare an Oracle Linux virtual machine for Azure
+# Prepare an Oracle Linux virtual machine for Azure
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
 
@@ -21,7 +21,7 @@ tags="azure-service-management,azure-resource-manager"
 
 -   [Prepare an Oracle Linux 7.0+ virtual machine for Azure](/documentation/articles/virtual-machines-linux-create-upload-vhd-oracle)
 
-##Prerequisites
+## Prerequisites
 This article assumes that you have already installed an Oracle Linux operating system to a virtual hard disk. Multiple tools exist to create .vhd files, for example a virtualization solution such as Hyper-V. For instructions, see [Install Hyper-V and create a virtual machine](http://technet.microsoft.com/zh-cn/library/hh846766.aspx).
 
 **Oracle Linux installation notes**
@@ -40,10 +40,10 @@ This article assumes that you have already installed an Oracle Linux operating s
 
 - All of the VHDs must have sizes that are multiples of 1 MB.
 
-- Make sure the `Addons`repository is enabled. Edit the file `/etc/yum.repo.d/public-yum-ol6.repo`(Oracle Linux 6) or `/etc/yum.repo.d/public-yum-ol7.repo`(Oracle Linux ), and change the line `enabled=0` to `enabled=1` under **[ol6_addons]** or **[ol7_addons]** in this file.
+- Make sure that the `Addons` repository is enabled. Choose to edit the file `/etc/yum.repo.d/public-yum-ol6.repo`(Oracle Linux 6) or `/etc/yum.repo.d/public-yum-ol7.repo`(Oracle Linux ), and change the line `enabled=0` to `enabled=1` under **[ol6_addons]** or **[ol7_addons]** in this file.
 
 
-##Oracle Linux 6.4+
+## Oracle Linux 6.4+
 You must complete specific configuration steps in the operating system for the virtual machine to run in Azure.
 
 1. In the center pane of Hyper-V Manager, select the virtual machine.
@@ -129,7 +129,7 @@ You must complete specific configuration steps in the operating system for the v
 
 14.  Click **Action -\> Shut Down** in Hyper-V Manager. Your Linux VHD is now ready to be uploaded to Azure.
 
-##Oracle Linux 7.0+
+## Oracle Linux 7.0+
 **Changes in Oracle Linux 7**
 
 Preparing an Oracle Linux 7 virtual machine for Azure is very similar to the process for Oracle Linux 6. However, there are several important differences worth noting:
@@ -163,7 +163,7 @@ Preparing an Oracle Linux 7 virtual machine for Azure is very similar to the pro
 			PEERDNS=yes
 		IPV6INIT=no
 
-5.  Move (or remove) udev rules to avoid generating static rules for the Ethernet interface. These rules cause problems when you're cloning a virtual machine in Windows Azure or Hyper-V.
+5.  Move (or remove) udev rules to avoid generating static rules for the Ethernet interface. These rules cause problems when you're cloning a virtual machine in Azure or Hyper-V.
 
 		# sudo mkdir -m 0700 /var/lib/waagent
 		# sudo mv /lib/udev/rules.d/75-persistent-net-generator.rules /var/lib/waagent/ 2>/dev/null

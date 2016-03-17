@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Script Action development with HDInsight | Windows Azure"
+	pageTitle="Script Action development with HDInsight | Azure"
 	description="Learn how to customize Hadoop clusters with Script Action."
 	services="hdinsight"
 	documentationCenter=""
@@ -284,7 +284,7 @@ An easy way to check the logs is to use HDInsight Tools for Visual Studio. For i
 
 1. Open Visual Studio.
 2. Click **View**, and then click **Server Explorer**.
-3. Right-click "Azure", click Connect to **Windows Azure Subscriptions**, and then enter your credentials.
+3. Right-click "Azure", click Connect to **Azure Subscriptions**, and then enter your credentials.
 4. Expand **Storage**, expand the Azure storage account used as the default file system, expand **Tables**, and then double-click the table name.
 
 
@@ -341,11 +341,11 @@ In the event that an execution failure occurs, the output describing it will als
 - [Install and use Solr on HDInsight clusters](/documentation/articles/hdinsight-hadoop-solr-install-v1).
 - [Install and use Giraph on HDInsight clusters](/documentation/articles/hdinsight-hadoop-giraph-install-v1).
 
-[hdinsight-provision]: ../hdinsight-provision-clusters-v1/
-[hdinsight-cluster-customize]: ../hdinsight-hadoop-customize-cluster-v1
-[hdinsight-install-spark]: ../hdinsight-hadoop-spark-install/
-[hdinsight-r-scripts]: ../hdinsight-hadoop-r-scripts/
-[powershell-install-configure]: ../install-configure-powershell/
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
+[hdinsight-cluster-customize]: /documentation/articles/hdinsight-hadoop-customize-cluster-v1
+[hdinsight-install-spark]: /documentation/articles/hdinsight-hadoop-spark-install
+[hdinsight-r-scripts]: /documentation/articles/hdinsight-hadoop-r-scripts
+[powershell-install-configure]: /documentation/articles/powershell-install-configure
 
 <!--Reference links in article-->
 [1]: https://msdn.microsoft.com/zh-cn/library/96xafkes(v=vs.110).aspx

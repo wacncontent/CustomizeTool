@@ -1,7 +1,7 @@
 <!-- not suitable for Mooncake -->
 
 <properties
-	pageTitle="High availability features of Linux-based HDInsight (Hadoop) | Windows Azure"
+	pageTitle="High availability features of Linux-based HDInsight (Hadoop) | Azure"
 	description="Learn how Linux-based HDInsight clusters improve reliability and availability by using an additional head node. You will learn how this impacts Hadoop services such as Ambari and Hive, as well as how to individually connect to each head node using SSH."
 	services="hdinsight"
 	editor="cgronlun"

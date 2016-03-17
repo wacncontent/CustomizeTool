@@ -1,15 +1,3 @@
 updated docs: 0
 
-articles/app-service-web/azure-sdk-dotnet-release-notes-2_8.md
-articles/app-service-web/web-sites-dotnet-entity-framework-row-level-security.md
-articles/app-service-web/web-sites-enable-diagnostic-log.md
-articles/app-service-web/web-sites-hybrid-connection-get-started.md
-articles/app-service-web/web-sites-monitor.md
-articles/app-service-web/web-sites-nodejs-debug.md
-articles/app-service-web/web-sites-php-enterprise-wordpress.md
-articles/app-service-web/web-sites-php-web-site-gallery.md
-articles/app-service-web/web-sites-streaming-logs-and-console.md
-
-
 updated includes: 0
-includes/azure-websites-limits.md

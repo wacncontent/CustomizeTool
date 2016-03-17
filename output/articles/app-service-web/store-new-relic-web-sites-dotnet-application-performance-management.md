@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
 	pageTitle=".NET web app in Azure with New Relic application performance management" 
 	description="Learn how to use New Relic's performance monitoring for ASP.NET applications running on Azure Web App." 
@@ -175,7 +177,7 @@ browsers to load your webpages, where they come from, and what browsers they use
 * For a guide to the change from Websites to Azure see: [Azure and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
 
 
-[vswebsite]: web-sites-dotnet-get-started.md
+[vswebsite]: /documentation/articles/web-sites-dotnet-get-started
 
 [wmnugetbutton]: ./media/store-new-relic-web-sites-dotnet-application-performce-management/nrwmnugetbutton.png
 [wmnugetgallery]: ./media/store-new-relic-web-sites-dotnet-application-performce-management/nrwmnugetgallery.png

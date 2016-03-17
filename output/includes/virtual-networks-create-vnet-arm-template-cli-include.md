@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 ## Deploy the ARM template by using the Azure CLI
 
 To deploy the ARM template you downloaded by using Azure CLI, follow the steps below.

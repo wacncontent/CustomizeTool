@@ -1,12 +1,12 @@
 <properties 
-	pageTitle="Python web app with Django on Linux | Windows Azure" 
+	pageTitle="Python web app with Django on Linux | Azure" 
 	description="Learn how to host a Django-based web application on Azure using a Linux virtual machine." 
 	services="virtual-machines" 
 	documentationCenter="python" 
 	authors="huguesv" 
 	manager="wpickett" 
 	editor=""
-	tags=âazure-service-management"/>
+	tags="azure-service-management"/>
 
 <tags
 	ms.service="virtual-machines"

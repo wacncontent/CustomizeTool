@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Point a company Internet domain to a Traffic Manager domain | Windows Azure"
+   pageTitle="Point a company Internet domain to a Traffic Manager domain | Azure"
    description="This article will help you point your company domain name to a Traffic Manager domain name."
    services="traffic-manager"
    documentationCenter=""

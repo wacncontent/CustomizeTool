@@ -1,7 +1,7 @@
 <!-- not suitable for Mooncake -->
 
 <properties
-   pageTitle="How to Tag a VM | Windows Azure"
+   pageTitle="How to Tag a VM | Azure"
    description="Learn about Tagging an Azure Virtual Machine created using the Resource Manager deployment model."
    services="virtual-machines"
    documentationCenter=""
@@ -26,7 +26,7 @@ This article describes different ways to tag a virtual machine in Azure through 
 
 First, let's look at tagging through templates. [This template](https://github.com/Azure/azure-quickstart-templates/tree/master/101-tags-vm) places tags on the following resources: Compute (Virtual Machine), Storage (Storage Account), and Network (Public IP Address, Virtual Network, and Network Interface).
 
-Click the **Deploy to Azure** button from the [template link](https://github.com/Azure/azure-quickstart-templates/tree/master/101-tags-vm). This will navigate to the [Azure Management Portal](http://manage.windowsazure.cn/) where you can deploy this template.
+Click the **Deploy to Azure** button from the [template link](https://github.com/Azure/azure-quickstart-templates/tree/master/101-tags-vm). This will navigate to the [Azure Management Portal](https://manage.windowsazure.cn/) where you can deploy this template.
 
 ![Simple deployment with Tags](./media/virtual-machines-tagging-arm/deploy-to-azure-tags.png)
 
@@ -175,7 +175,7 @@ By analyzing these tags along with usage, organizations will be able to gain new
 * [Azure Resource Manager Overview][]
 * [Using Tags to organize your Azure Resources][]
 * [Understanding your Azure Bill][]
-* [Gain insights into your Windows Azure resource consumption][]
+* [Gain insights into your Azure resource consumption][]
 
 
 
@@ -186,4 +186,4 @@ By analyzing these tags along with usage, organizations will be able to gain new
 [Azure Resource Manager Overview]: ../documentation/articles/resource-group-overview
 [Using Tags to organize your Azure Resources]: ../resource-group-using-tags.md
 [Understanding your Azure Bill]: ../billing-understand-your-bill.md
-[Gain insights into your Windows Azure resource consumption]: ../billing-usage-rate-card-overview.md
+[Gain insights into your Azure resource consumption]: ../billing-usage-rate-card-overview.md

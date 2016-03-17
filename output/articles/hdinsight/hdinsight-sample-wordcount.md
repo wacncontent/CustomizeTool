@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Hadoop MapReduce word count example in HDInsight | Windows Azure"
+	pageTitle="Hadoop MapReduce word count example in HDInsight | Azure"
 	description="Run a MapReduce word count example on a Hadoop cluster in HDInsight. The program, written in Java, counts word occurrences in a text file."
 	editor="cgronlun"
 	manager="paulettm"
@@ -202,8 +202,13 @@ Note that the output files of a MapReduce job are immutable. So if you rerun thi
 [hdinsight-sample-10gb-graysort]: /documentation/articles/hdinsight-sample-10gb-graysort
 [hdinsight-sample-pi-estimator]: /documentation/articles/hdinsight-sample-pi-estimator
 [hdinsight-sample-cs-streaming]: /documentation/articles/hdinsight-sample-csharp-streaming
+
+
 [hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
 [hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
+
 [hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
+
 [powershell-install-configure]: /documentation/articles/powershell-install-configure
+
 [image-hdi-sample-wordcount-output]: ./media/hdinsight-sample-wordcount/HDI.Sample.WordCount.Output.png

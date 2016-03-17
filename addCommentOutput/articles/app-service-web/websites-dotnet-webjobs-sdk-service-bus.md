@@ -22,13 +22,13 @@ The guide assumes you know [how to create a WebJob project in Visual Studio with
 
 The code snippets only show functions, not the code that creates the `JobHost` object as in this example:
 
-<!-- deleted by customization
+
 ```
 public class Program
--->
-<!-- keep by customization: begin -->
+
+
 	public class Program
-<!-- keep by customization: end -->
+
 {
    public static void Main()
    {
@@ -38,17 +38,9 @@ public class Program
       host.RunAndBlock();
    }
 }
-<!-- deleted by customization ``` -->
-<!-- keep by customization: begin -->
-## Table of contents
-
--   [Prerequisites](#prerequisites)
--   [How to trigger a function when a queue message is received](#trigger)
--   [How to create queue messages](#create)
--   [How to work with Service Bus topics](#topics)
--   [Related topics covered by the storage queues article](#queues)
--   [Next steps](#nextsteps)
-<!-- keep by customization: end -->
+
+```
+
 
 A [complete Service Bus code example](https://github.com/Azure/azure-webjobs-sdk-samples/blob/master/BasicSamples/ServiceBus/Program.cs) is in the azure-webjobs-sdk-samples repository on GitHub.com.
 

@@ -1,5 +1,5 @@
 <properties
-   pageTitle="HDInsight article index for Azure Management Portal | Windows Azure"
+   pageTitle="HDInsight article index for Azure Management Portal | Azure"
    description="An index page with links to articles about HDInsight on the Azure Management Portal. Microsoft recommends the Azure Management Portal for new Hadoop clusters on HDInsight."
    services="hdinsight"
    documentationCenter="na"

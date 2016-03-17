@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Security Considerations for SQL Server in Azure | Windows Azure"
+	pageTitle="Security Considerations for SQL Server in Azure | Azure"
 	description="This topic refers to resources created with the classic deployment model, and provides general guidance for securing SQL Server running in an Azure Virtual Machine."
 	services="virtual-machines"
 	documentationCenter="na"

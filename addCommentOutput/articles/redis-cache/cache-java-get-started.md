@@ -1,5 +1,5 @@
 <properties
-   pageTitle="How to use Azure Redis Cache with Java | Windows Azure"
+   pageTitle="How to use Azure Redis Cache with Java | Azure"
 	description="Get started with Azure Redis Cache using Java"
 	services="redis-cache"
 	documentationCenter=""
@@ -20,7 +20,7 @@
 - [Java](/documentation/articles/cache-java-get-started)
 - [Python](/documentation/articles/cache-python-get-started)
 
-Azure Redis Cache gives you access to a dedicated Redis cache, managed by Microsoft. Your cache is accessible from any application within Windows Azure.
+Azure Redis Cache gives you access to a dedicated Redis cache, managed by Microsoft. Your cache is accessible from any application within Azure.
 
 This topic shows you how to get started with Azure Redis Cache using Java.
 
@@ -34,7 +34,7 @@ This tutorial uses Jedis, but you can use any Java client listed at [http://redi
 
 ## Create a Redis cache on Azure
 
-<!-- deleted by customization
+
 In the [Azure Management Portal](https://manage.windowsazure.cn/), click **New**, **DATA SERVICE**, and select **Redis Cache**.
 
   ![][1]
@@ -46,9 +46,9 @@ Enter a DNS hostname. It will have the form `<name>.redis.cache.chinacloudapi.cn
 Once you create the cache, click on it in the Azure Management Portal to view the cache settings. Click the link under **Keys** and copy the primary key. You need this to authenticate requests.
 
   ![][4]
--->
-<!-- keep by customization: begin -->
-In Windows Azure China, Redis Cache can only be managed by Azure PowerShell or Azure CLI
+
+
+In Azure China, Redis Cache can only be managed by Azure PowerShell or Azure CLI
 
 [AZURE.INCLUDE [azurerm-azurechinacloud-environment-parameter](../includes/azurerm-azurechinacloud-environment-parameter.md)]
 
@@ -62,22 +62,22 @@ Use the following PowerShell Script to create a cache:
 	$resourceGroupName = "Default-Web-ChinaNorth"
 	
 	$movieCache = New-AzureRmRedisCache -Location $location -Name $cacheName  -ResourceGroupName $resourceGroupName -Size 250MB -Sku Basic
-<!-- keep by customization: end -->
+
 
 
 ## Enable the non-SSL endpoint
 
-<!-- deleted by customization
+
 
 Click the link under **Ports**, and click **No** for "Allow access only via SSL". This enables the non-SSL port for the cache. The Jedis client currently does not support SSL.
 
   ![][3]
--->
-<!-- keep by customization: begin -->
+
+
 You can use the following PowerShell command to enable the non-SSL endpoint
 
 	Set-AzureRmRedisCache -Name "<your cache name>" -ResourceGroupName "<your resource group name>" -EnableNonSslPort $true
-<!-- keep by customization: end -->
+
 
 
 ## Add something to the cache and retrieve it
@@ -86,12 +86,12 @@ You can use the following PowerShell command to enable the non-SSL endpoint
 	import redis.clients.jedis.Jedis;
 	import redis.clients.jedis.JedisShardInfo;
 
-<!-- deleted by customization
+
 	/* Make sure you turn on non-SSL port in Azure Redis using the Configuration section in the Azure Management Portal */
--->
-<!-- keep by customization: begin -->
+
+
 	/* Make sure you turn on non-SSL port in Azure Redis using Azure PowerShell */
-<!-- keep by customization: end -->
+
 	public class App
 	{
 	  public static void main( String[] args )
@@ -108,7 +108,9 @@ You can use the following PowerShell command to enable the non-SSL endpoint
 
 ## Next steps
 
+
 - [Enable cache diagnostics](https://msdn.microsoft.com/zh-cn/library/azure/dn763945.aspx#EnableDiagnostics) so you can [monitor](https://msdn.microsoft.com/zh-cn/library/azure/dn763945.aspx) the health of your cache.
+
 - Read the official [Redis documentation](http://redis.io/documentation).
 
 

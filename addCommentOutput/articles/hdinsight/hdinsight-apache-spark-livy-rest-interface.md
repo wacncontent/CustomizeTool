@@ -1,5 +1,7 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
-	pageTitle="Submit Spark jobs remotely using Livy | Windows Azure" 
+	pageTitle="Submit Spark jobs remotely using Livy | Azure" 
 	description="Learn how to use Livy with HDInsight clusters to submit Spark jobs remotely." 
 	services="hdinsight" 
 	documentationCenter="" 
@@ -10,7 +12,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="01/16/2016"
+	ms.date="02/05/2016"
 	wacn.date=""/>
 
 
@@ -173,7 +175,9 @@ Perform the following steps.
 
 * [Create a standalone application using Scala](/documentation/articles/hdinsight-apache-spark-create-standalone-application)
 
-### Extensions
+### Tools and extensions
+
+* [Use HDInsight Tools Plugin for IntelliJ IDEA to create and submit Spark Scala applicatons](/documentation/articles/hdinsight-apache-spark-intellij-tool-plugin)
 
 * [Use Zeppelin notebooks with a Spark cluster on HDInsight](/documentation/articles/hdinsight-apache-spark-use-zeppelin-notebook)
 

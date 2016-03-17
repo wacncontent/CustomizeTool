@@ -7,6 +7,7 @@ import mdReader
 import re
 import os
 import sys
+import json
 from fileListGen import genFileList
 from fileCompare import compareWithMooncake, removeDeleteAndKeep, createComment, getDeletionAndReplacement, outputDeletionAndReplacement
 from codecs import open
@@ -24,7 +25,8 @@ class Core:
         # Get const dict and regex dict individually
         constDict = dict[0]
         regexDict = dict[1]
-        correctDict = dict[2]
+        semiDict = dict[2]
+        correctDict = dict[3]
 
         # Do the const string substitution
         if len(constDict) > 0:
@@ -38,44 +40,42 @@ class Core:
         for k, v in regexDict.items():
             text = re.sub(k,v,text)
 
+        if len(semiDict) > 0:
+            semiRegex = re.compile("(%s)" % "|".join(semiDict.keys()))
+            text = semiRegex.sub(lambda mo: self.match(semiDict, mo.string[mo.start():mo.end()]), text)
+
         if len(correctDict) > 0:
             correctRegex = re.compile("(%s)" % "|".join(map(re.escape, correctDict.keys())))
             text = correctRegex.sub(lambda mo: correctDict[mo.string[mo.start():mo.end()]], text)
-
         return text
 
+    def match(self,semiDict, mo):
+        results = [key for key in semiDict.keys() if re.match(key,mo)]
+        return semiDict[results[0]]
 
     def customize(self, pMdList, pRuleDict):
         # Create result directory
         # os.mkdir('Archive')
         # iterate the markdown file list and do the replacing
         links = []
+        file = open("fileEncoding.json")
+        encodingJson = file.read()
+        file.close()
+        encodings = json.loads(encodingJson)
         for mdFile in pMdList:
             result = ''
             print(mdFile)
-            if True:
-                file = open(mdFile, "rb")
-                contentBytes = file.read()
-                file.close()
-                d = detect(contentBytes)
-                print(d)
-                encoding = d["encoding"]
-            else:
-                encoding = "utf-8"
-            if setting["language"] == "zh-cn":
-                text = open(mdFile, "r", "utf8")
+            with open(mdFile, "rb") as text:
+                # for content in text.readlines():
+                contentBytes = text.read()
                 try:
-                    result = text.read()
-                except IOError:
-                    text.close()
-                    text = open(mdFile, "r", "gbk")
-                    result = text.read()
-                    text.close()
-            else:
-                with open(mdFile, "r", encoding) as text:
-                    # for content in text.readlines():
-                    result = text.read()
-                    # print(result)
+                    result = contentBytes.decode("utf8")
+                except:
+                    d = detect(contentBytes)
+                    print("update file encoding: "+str(d))
+                    encodings[mdFile] = d["encoding"]
+                    result = contentBytes.decode(d["encoding"])
+                # print(result)
             # Write result into Archive/mdFile
             if setting["updateLinks"]:
                 links.extend(checkLinks(result))
@@ -98,6 +98,7 @@ class Core:
                 else:
                     removeCommentFile = open(setting["removeComment"]["path"]+mdFile, 'w', "utf8")
                 removeCommentResult = removeDeleteAndKeep(result)
+                removeCommentResult = re.sub("[ \t]+(\n|$)",r"\1",removeCommentResult)
                 removeCommentFile.write(removeCommentResult)
                 removeCommentFile.close()
                 checkRelativeLink(removeCommentResult)
@@ -106,6 +107,10 @@ class Core:
             newLinkSet = set(links)
             oldLinkSet = set(getOldLinks())
             findRedirect(list(newLinkSet-oldLinkSet))
+        file = open("fileEncoding.json", "w", encoding="utf8")
+        encodingJson = json.dumps(encodings)
+        file.write(encodingJson)
+        file.close()
 
 def addComment(mdList):
     for mdFile in mdList:
@@ -114,7 +119,10 @@ def addComment(mdList):
         global_file = open(setting["addComment"]["globalPath"]+filename, "r", "utf8")
         mooncake_file = open(setting["addComment"]["mooncakePath"]+filename, "r", "utf8")
         output_file = open(setting["addComment"]["outputPath"]+filename, "w", "utf8")
-        result = createComment(global_file.read(), mooncake_file.read())
+        mooncake_text = mooncake_file.read()
+        result = createComment(global_file.read(), mooncake_text)
+        if mooncake_text.find("<!-- not suitable for Mooncake -->") != -1:
+            result = "<!-- not suitable for Mooncake -->\n\n" + result
         output_file.write(result)
         global_file.close()
         mooncake_file.close()

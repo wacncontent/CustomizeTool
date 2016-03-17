@@ -54,4 +54,3 @@ In this article you learned how to use io.js with Azure Web Apps, using both pro
 [io.js distribution]: https://iojs.org/dist/
 [io.js on GitHub]: https://github.com/iojs/io.js
 [io.js Deployment Script]: https://github.com/felixrieseberg/iojs-azure
- 

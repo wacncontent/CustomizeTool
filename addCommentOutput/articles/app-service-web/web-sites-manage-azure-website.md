@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="10/28/2015"
+	ms.date="01/12/2016"
 	wacn.date=""/>
 
 # Manage a web app in Azure
@@ -26,7 +26,9 @@ Many web app management tasks can be performed in the Azure Management Portal.
 
 Azure is offered in five tiers: Free, Shared, Basic, Standard, and Premium. For information about the features and pricing for each tier, see [Pricing details](/home/features/web-site/#price). 
 
+
 - [App Service plans](/documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview) let you group multiple web apps under the same tier.
+
 - You can always [switch tiers](/documentation/articles/web-sites-scale) after you create your web app.
 
 ### Configuration
@@ -56,14 +58,14 @@ While your web app is running, you want to make sure it is available, and that i
 ### Monitoring
 
 - Through the Azure Management Portal, you can [add performance metrics](/documentation/articles/web-sites-monitor) such as CPU usage and number of client requests.
-<!-- deleted by customization
+
 - For deeper insight, use New Relic to monitor and manage performance. See [.NET web app in Azure with New Relic application performance management](/documentation/articles/store-new-relic-web-sites-dotnet-application-performance-management).
--->
+
 - [Scale your web app](/documentation/articles/web-sites-scale) in response to traffic. Depending on your tier, you can scale the number of VMs and/or the size of the VM instances. In the Standard and Premium tiers, you can also set up autoscaling, so your web app scales automatically, either on a fixed schedule, or in response to load.  
  
 ### Backups
 
-- Set [automatic backups](/documentation/articles/web-sites-backup) of your web app. Learn more about backups in [this video](http://azure.microsoft.com/documentation/videos/azure-websites-automatic-and-easy-backup/).
+- Set [automatic backups](/documentation/articles/web-sites-backup) of your web app.  Learn more about backups in [this video](https://azure.microsoft.com/documentation/videos/azure-websites-automatic-and-easy-backup/). 
 - Learn about the options for [database recovery](/documentation/articles/sql-database-business-continuity) in Azure SQL Database.
 
 ### Troubleshooting
@@ -83,7 +85,7 @@ If you have not enabled automatic backups, you can create a [manual backup](/doc
 
 Consider using [staged deployment](/documentation/articles/web-sites-staged-publishing). This option lets you publish updates to a staging deployment that runs side-by-side with your production deployment. 
 
-<!-- deleted by customization
+
 If you use Visual Studio Team Services, you can set up continuous deployment from source control:
 
 - [Using Team Foundation Version Control (TFVC)](/documentation/articles/cloud-services-continuous-delivery-use-vso) 
@@ -93,7 +95,7 @@ If you use Visual Studio Team Services, you can set up continuous deployment fro
 
 [AZURE.INCLUDE [app-service-web-try-app-service](../includes/app-service-web-try-app-service.md)]
  
--->
+
 <!-- Anchors. -->
 
 

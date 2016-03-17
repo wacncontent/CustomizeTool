@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Public and private IP addressing (classic) in Azure | Windows Azure"
+   pageTitle="Public and private IP addressing (classic) in Azure | Azure"
    description="Learn about public and private IP addressing in Azure"
    services="virtual-network"
    documentationCenter="na"

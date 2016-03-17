@@ -1,7 +1,7 @@
 <!-- not suitable for Mooncake -->
 
 <properties
-	pageTitle="Develop Java MapReduce programs for Linux-based HDInsight | Windows Azure"
+	pageTitle="Develop Java MapReduce programs for Linux-based HDInsight | Azure"
 	description="Learn how to develop Java MapReduce programs and deploy them to Linux-based HDInsight."
 	services="hdinsight"
 	editor="cgronlun"
@@ -269,9 +269,10 @@ In this document, you have learned how to develop a Java MapReduce job. See the 
 - [Use MapReduce with HDInsight](/documentation/articles/hdinsight-use-mapreduce)
 
 For more information, see also the [Java Developer Center](/develop/java/).
-[azure-purchase-options]: http://www.windowsazure.cn/pricing/overview/
-[azure-trial]: http://www.windowsazure.cn/pricing/1rmb-trial/
 
+[azure-purchase-options]: /pricing/overview/
+[azure-member-offers]: /pricing/member-offers/
+[azure-trial]: /pricing/1rmb-trial/
 
 [hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop
 [hdinsight-ODBC]: /documentation/articles/hdinsight-connect-excel-hive-ODBC-driver
@@ -279,16 +280,13 @@ For more information, see also the [Java Developer Center](/develop/java/).
 
 [hdinsight-develop-streaming]: /documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs
 
-[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
-[hdinsight-emulator]: /documentation/articles/hdinsight-hadoop-emulator-get-started
+
+
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
-[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
 [hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell
 [hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
 [hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
 [hdinsight-power-query]: /documentation/articles/hdinsight-connect-excel-power-query
 
 [powershell-PSCredential]: http://social.technet.microsoft.com/wiki/contents/articles/4546.working-with-passwords-secure-strings-and-credentials-in-windows-powershell.aspx
-[powershell-install-configure]: /documentation/articles/powershell-install-configure
-
 

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="SQL Server Application Patterns on VMs | Windows Azure"
+	pageTitle="SQL Server Application Patterns on VMs | Azure"
 	description="This article covers application patterns for SQL Server on Azure VMs. It provides solution architects and developers a foundation for good application architecture and design."
 	services="virtual-machines"
 	documentationCenter="na"
@@ -57,7 +57,7 @@ This article describes several application patterns that can be suitable for you
 - You want to leverage the capabilities of the Azure environment but Azure SQL Database does not support all the features that your application requires. This could include the following areas:
 
 	- **Database size**: At the time this article was updated, SQL Database supports a database of up to 500 GB of data. If your application requires more than 500 GB of data and you don't want to implement custom sharding solutions, it's recommended that you use SQL Server in an Azure Virtual Machine. For the latest information, see [Scaling Out Azure SQL Databases](https://msdn.microsoft.com/zh-cn/library/azure/dn495641.aspx) and [Azure SQL Database Service Tiers and Performance Levels](/documentation/articles/sql-database-service-tiers).
-	- **HIPAA compliance**: Healthcare customers and Independent Software Vendors (ISVs) might choose [SQL Server in Azure Virtual Machines](/documentation/articles/virtual-machines-sql-server-infrastructure-services) instead of [Azure SQL Database](/documentation/articles/sql-database-technical-overview) because SQL Server in an Azure Virtual Machine is covered by HIPAA Business Associate Agreement (BAA). For information on compliance, see [Windows Azure Trust Center: Compliance](https://azure.microsoft.com/support/trust-center/compliance/).
+	- **HIPAA compliance**: Healthcare customers and Independent Software Vendors (ISVs) might choose [SQL Server in Azure Virtual Machines](/documentation/articles/virtual-machines-sql-server-infrastructure-services) instead of [Azure SQL Database](/documentation/articles/sql-database-technical-overview) because SQL Server in an Azure Virtual Machine is covered by HIPAA Business Associate Agreement (BAA). For information on compliance, see [Azure Trust Center: Compliance](https://azure.microsoft.com/support/trust-center/compliance/).
 	- **Instance-level features**: At this time, SQL Database doesn't support features that live outside of the database (such as Linked Servers, Agent jobs, FileStream, Service Broker, etc). For more information, see [Azure SQL Database Guidelines and Limitations](https://msdn.microsoft.com/zh-cn/library/azure/ff394102.aspx).
 
 ## 1-tier (simple): single virtual machine
@@ -226,7 +226,7 @@ Another approach to implement this application pattern is to use a consolidated 
 
 The primary goal of this application pattern is to show you how to combine Azure infrastructure as a service (IaaS) components with Azure platform-as-a-service components (PaaS) in your solution. This pattern is focused on Azure SQL Database for relational data storage. It does not include SQL Server in an Azure virtual machine, which is part of the Azure infrastructure as a service offering.
 
-In this application pattern, you deploy a database application to Azure by placing the presentation and business tiers in the same virtual machine and accessing a database in Azure SQL Database (SQL Database) servers. You can implement the presentation tier by using traditional IIS-based web solutions. Or, you can implement a combined presentation and business tier by using [Azure Web Apps](/documentation/services/web-sites/).
+In this application pattern, you deploy a database application to Azure by placing the presentation and business tiers in the same virtual machine and accessing a database in Azure SQL Database (SQL Database) servers. You can implement the presentation tier by using traditional IIS-based web solutions. Or, you can implement a combined presentation and business tier by using [Azure Web Apps](/documentation/services/web-sites/web/).
 
 This application pattern is useful when:
 

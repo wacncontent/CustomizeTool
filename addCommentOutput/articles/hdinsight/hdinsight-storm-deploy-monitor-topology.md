@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Deploy and manage Apache Storm topologies on HDInsight | Windows Azure"
+   pageTitle="Deploy and manage Apache Storm topologies on HDInsight | Azure"
    description="Learn how to deploy, monitor and manage Apache Storm topologies using the Storm Dashboard on HDInsight. Use Hadoop tools for Visual Studio."
    services="hdinsight"
    documentationCenter=""
@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="11/18/2015"
+	ms.date="01/22/2016"
 	wacn.date=""/>
 
 #Deploy and manage Apache Storm topologies on Windows-based HDInsight
@@ -18,10 +18,10 @@
 The Storm Dashboard allows you to easily deploy and run Apache Storm topologies to your HDInsight cluster by using your web browser. You can also use the dashboard to monitor and manage running topologies. If you use Visual Studio, the HDInsight Tools for Visual Studio provide similar features in Visual Studio.
 
 The Storm Dashboard and the Storm features in the HDInsight Tools rely on the Storm REST API, which can be used to create your own monitoring and management solutions.
-<!-- deleted by customization
+
 
 > [AZURE.IMPORTANT] The steps in this document require a Windows-based Storm on HDInsight cluster. For information on using a Linux-based cluster, see [Deploy and manage Apache Storm topologies on Linux-based HDInsight](/documentation/articles/hdinsight-storm-deploy-monitor-topology)
--->
+
 
 ##Prerequisites
 
@@ -137,7 +137,9 @@ Use the following steps to deploy a sample to your Storm on HDInsight cluster, t
 
 	> [AZURE.NOTE] You can also view **Storm Topologies** from **Server Explorer** by expanding **Azure** > **HDInsight**, and then right-clicking a Storm on HDInsight cluster, and selecting **View Storm Topologies**.
 
-	Use the links for the spouts or bolts to view information about these components. A new window will open for each item selected.
+	Select the shape for the spouts or bolts to view information about these components. A new window will open for each item selected.
+    
+    > [AZURE.NOTE] The name of the topology is the class name of the topology (in this case, `HelloWord`,) with a timestamp appended.
 
 4. From the **Topology Summary** view, select **Kill** to stop the topology.
 

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Deploy Azure Resources using a template | Windows Azure"
+	pageTitle="Deploy Azure Resources using a template | Azure"
 	description="Learn to use some of the available clients in the Azure Resource Management Library to deploy a virtual machine, virtual network, and storage account"
 	services="virtual-machines,virtual-networks,storage"
 	documentationCenter=""
@@ -337,7 +337,7 @@ NuGet packages are the easiest way to install the libraries that you need to fin
 
 2. Type *Active Directory* in the search box, click **Install** for the Active Directory Authentication Library package, and then follow the instructions to install the package.
 
-3. At the top of the page, select **Include Prerelease**. Type *Microsoft.Azure.Management.Resources* in the search box, click **Install** for the Windows Azure Resource Management Libraries, and then follow the instructions to install the package.
+3. At the top of the page, select **Include Prerelease**. Type *Microsoft.Azure.Management.Resources* in the search box, click **Install** for the Azure Resource Management Libraries, and then follow the instructions to install the package.
 
 You are now ready to start using the libraries to create your application.
 
@@ -475,7 +475,7 @@ Resources are always deployed from a template to a resource group. You use the [
 
 ##Step 6: Add the code to delete the resources
 
-Because you are charged for resources used in Azure, it is always a good practice to delete resources that are no longer needed. You donât need to delete each resource separately from a resource group. You can delete the resource group and all of its resources will automatically be deleted.
+Because you are charged for resources used in Azure, it is always a good practice to delete resources that are no longer needed. You don't need to delete each resource separately from a resource group. You can delete the resource group and all of its resources will automatically be deleted.
 
 1.	Add the following method to the Program class to delete the resource group:
 

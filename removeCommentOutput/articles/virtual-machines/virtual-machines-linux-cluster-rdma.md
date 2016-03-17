@@ -1,5 +1,5 @@
 <properties
- pageTitle="Linux RDMA cluster to run MPI applications | Windows Azure"
+ pageTitle="Linux RDMA cluster to run MPI applications | Azure"
  description="Create a Linux cluster of size A8 or A9 VMs to use RDMA to run MPI apps."
  services="virtual-machines"
  documentationCenter=""
@@ -98,7 +98,7 @@ where
 
 After the VM completes provisioning, SSH to the VM using the VM's external IP address (or DNS name) and the external port number you configured, and customize it. For connection details, see [How to Log on to a Virtual Machine Running Linux](/documentation/articles/virtual-machines-linux-how-to-log-on). You should perform commands as the user you configured on the VM, unless root access is required to complete a step.
 
->[AZURE.IMPORTANT]Windows Azure does not provide root access to Linux VMs. To gain administrative access when connected as a user to the VM, run commands using `sudo`.
+>[AZURE.IMPORTANT]Azure does not provide root access to Linux VMs. To gain administrative access when connected as a user to the VM, run commands using `sudo`.
 
 *   **Updates** - Install updates using **zypper**. You might also want to install NFS utilities.  
 

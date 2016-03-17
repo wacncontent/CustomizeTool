@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Create an Oracle WebLogic Server 12c VM | Windows Azure"
-	description="Create an Oracle WebLogic Server 12c virtual machine running Windows Server 2012 in Windows Azure, using the Resource Manager deployment model."
+	pageTitle="Create an Oracle WebLogic Server 12c VM | Azure"
+	description="Create an Oracle WebLogic Server 12c virtual machine running Windows Server 2012 in Azure, using the Resource Manager deployment model."
 	services="virtual-machines"
 	authors="bbenz"
 	documentationCenter=""
@@ -179,6 +179,6 @@ Now that you've set up your Virtual Machine running Oracle WebLogic Server, see 
 
 -	[Oracle WebLogic Server Product Documentation](http://www.oracle.com/technetwork/middleware/weblogic/documentation/index.html)
 
--	[Oracle WebLogic Server 12c using Linux on Windows Azure](http://www.oracle.com/technetwork/middleware/weblogic/learnmore/oracle-weblogic-on-azure-wp-2020930.pdf)
+-	[Oracle WebLogic Server 12c using Linux on Azure](http://www.oracle.com/technetwork/middleware/weblogic/learnmore/oracle-weblogic-on-azure-wp-2020930.pdf)
 
 -	[Oracle Virtual Machine images for Azure](/documentation/articles/virtual-machines-oracle-list-oracle-virtual-machine-images)

@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="01/07/2015"
+	ms.date="01/26/2016"
 	wacn.date=""/>
 
 # Back up a web app in Azure
@@ -18,25 +18,16 @@
 The Backup and Restore feature in [Azure Web Apps](/documentation/services/web-sites/) lets you easily create web app backups manually or automatically. You can restore your web app to a previous state, or create a new web app based on one of your original app's backups. 
 
 For information on restoring an Azure web app from backup, see [Restore a web app](/documentation/articles/web-sites-restore).
-<!-- deleted by customization
 
+
 [AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)] 
--->
-<!-- keep by customization: begin -->
-##In this article
-
-- [What Gets Backed Up](#whatsbackedup)
-- [Requirements and Restrictions](#requirements)
-- [To Create a Manual Backup](#manualbackup)
-- [To Configure Automated Backups](#automatedbackups)
-- [How Backups Are Stored](#aboutbackups)
-- [Notes](#notes)
-- [Next Steps](#nextsteps)
-	- [More about storage accounts](#moreaboutstorage)
-<!-- keep by customization: end -->
 
 <a name="whatsbackedup"></a>
 ## What gets backed up 
+
+
+##<a name="whatsbackedup"></a> What gets backed up 
+
 Web Apps can back up the following information:
 
 * Web app configuration
@@ -47,16 +38,25 @@ This information is backed up to the Azure storage account and container that yo
 
 > [AZURE.NOTE] Each backup is a complete offline copy of your app, not an incremental update.
 
+
 <a name="requirements"></a>
 ## Requirements and restrictions
 
-* The Backup and Restore feature requires the App Service plan to be in the Standard tier <!-- deleted by customization or higher -->. For more information about scaling your App Service plan to use a higher tier, see [Scale a web app in Azure](/documentation/articles/web-sites-scale). <!-- deleted by customization Note that Premium tier allows a greater number of daily backups than Standard tier. -->
+* The Backup and Restore feature requires the App Service plan to be in the Standard tier or higher . For more information about scaling your App Service plan to use a higher tier, see [Scale a web app in Azure](/documentation/articles/web-sites-scale).  Note that Premium tier allows a greater number of daily backups than Standard tier.
 
-* The Backup and Restore feature requires an Azure storage account and container that must belong to the same subscription as the web app that you are going to back up. If you do not yet have a storage account, you can create one by clicking the <!-- deleted by customization **Storage Account** --><!-- keep by customization: begin --> **Storage** button (grid icon) <!-- keep by customization: end --> in the <!-- deleted by customization **Backups** blade --><!-- keep by customization: begin --> left pane <!-- keep by customization: end --> of the <!-- deleted by customization [Azure --><!-- keep by customization: begin --> Azure <!-- keep by customization: end --> Management <!-- deleted by customization Portal](http://manage.windowsazure.cn) --><!-- keep by customization: begin --> Portal <!-- keep by customization: end -->, and then choosing <!-- keep by customization: begin --> **New** in <!-- keep by customization: end --> the <!-- deleted by customization **Storage Account** and --><!-- keep by customization: begin --> command bar at <!-- keep by customization: end --> the <!-- deleted by customization **Container** from the **Destination** blade --><!-- keep by customization: begin --> bottom <!-- keep by customization: end -->. For more information on Azure storage accounts, see the [links](#moreaboutstorage) at the end of this article.
+* The Backup and Restore feature requires an Azure storage account and container that must belong to the same subscription as the web app that you are going to back up. If you do not yet have a storage account, you can create one by clicking the **Storage Account**. For more information on Azure storage accounts, see the [links](#moreaboutstorage) at the end of this article.
+
+
+##<a name="requirements"></a> Requirements and restrictions
+
+* The Backup and Restore feature requires the App Service plan to be in the Standard tier 
+
+* The Backup and Restore feature requires an Azure storage account and container that must belong to the same subscription as the web app that you are going to back up. If you do not yet have a storage account, you can create one by clicking the bottom. For more information on Azure storage accounts, see the [links](#moreaboutstorage) at the end of this article.
+
 
 * The Backup and Restore feature supports up to 10GB of website and database content. An error will be indicated if the backup feature cannot proceed because the payload exceeds this limit. 
 
-<!-- deleted by customization
+
 <a name="manualbackup"></a>
 ## Create a manual backup
 
@@ -83,12 +83,38 @@ This information is backed up to the Azure storage account and container that yo
 	
 	![BackUpNow button][BackUpNow]
 	
-	You will see a progress message during the backup process <!-- deleted by customization. --><!-- keep by customization: begin -->: <!-- keep by customization: end -->
+	You will see a progress message during the backup process . : 
 	
+
 You can make a manual backup at any time.  
 
--->
-<!-- keep by customization: begin -->
+<a name="automatedbackups"></a>
+## Configure automated backups
+
+1. In the **Backups** blade, click **Schedule: Not configured**. 
+
+	![Choose storage account](./media/web-sites-backup/05ScheduleBackup.png)
+	
+1. On the **Backup Schedule Settings** blade, set **Scheduled Backup** to **On**, then configure the backup schedule as desired and click **OK**.
+	
+	![Enable automated backups][SetAutomatedBackupOn]
+	
+4. In the **Configure Backup Settings** blade that is still left open, click **Storage Settings**, then choose your backup destination by selecting a **Storage Account** and **Container**. The storage account must belong to the same subscription as the web app that you are going to back up. If you wish, you can create a new storage account or a new container in the respective blades. When you're done, click **Select**.
+	
+	![Choose storage account](./media/web-sites-backup/02ChooseStorageAccount1.png)
+	
+5. In the **Configure Backup Settings** blade, click **Database Settings**, then select the databases you want to include in the backups (SQL database or MySQL), then click **OK**.  
+
+	![Choose storage account](./media/web-sites-backup/03ConfigureDatabase.png)
+
+	> [AZURE.NOTE] 	For a database to appear in this list, its connection string must exist in the **Connection strings** section of the **Web app settings** blade in the Portal.
+
+6. In the **Configure Backup Settings** blade, click **Save**.	
+
+<a name="notes"></a>
+## Notes
+
+
 ##<a name="manualbackup" id="create-a-manual-backup"></a> Create a manual backup
 1. In the Azure Management Portal for your website, choose the **Backups** tab.
 	
@@ -108,34 +134,13 @@ You can make a manual backup at any time.
 	
 	![BackUpNow button][BackUpNow]
 	
-	You will see a progress message during the backup process <!-- deleted by customization. --><!-- keep by customization: begin -->: <!-- keep by customization: end -->
+	You will see a progress message during the backup process . : 
 	
 	![Backup progress message][BackupProgress]
 	
 You can make a manual backup at any time. During Preview, no more than 2 manual backups can be made in a 24-hour period (subject to change).  
-<!-- keep by customization: end -->
-<a name="automatedbackups"></a>
-## Configure automated backups
-<!-- deleted by customization
 
-1. In the **Backups** blade, click **Schedule: Not configured**. 
-
-	![Choose storage account](./media/web-sites-backup/05ScheduleBackup.png)
-	
-1. On the **Backup Schedule Settings** blade, set **Scheduled Backup** to **On**, then configure the backup schedule as desired and click **OK**.
-	
-	![Enable automated backups][SetAutomatedBackupOn]
-	
-4. In the **Configure Backup Settings** blade that is still left open, click **Storage Settings**, then choose your backup destination by selecting a **Storage Account** and **Container**. The storage account must belong to the same subscription as the web app that you are going to back up. If you wish, you can create a new storage account or a new container in the respective blades. When you're done, click **Select**.
-	
-	![Choose storage account](./media/web-sites-backup/02ChooseStorageAccount1.png)
-	
-5. In the **Configure Backup Settings** blade, click **Database Settings**, then select the databases you want to include in the backups (SQL database or MySQL), then click **OK**.  
-	![Choose storage account](./media/web-sites-backup/03ConfigureDatabase.png)
-	> [AZURE.NOTE] 	For a database to appear in this list, its connection string must exist in the **Connection strings** section of the **Web app settings** blade in the Portal.
-6. In the **Configure Backup Settings** blade, click **Save**.	
--->
-<!-- keep by customization: begin -->
+##<a name="automatedbackups" id="configure-automated-backups"></a> Configure automated backups
 1. On the Backups page, set **Automated Backup** to ON.
 	
 	![Enable automated backups][SetAutomatedBackupOn]
@@ -169,18 +174,22 @@ You can make a manual backup at any time. During Preview, no more than 2 manual 
 6. In the command bar, click the **Save** button to save your configuration changes (or choose **Discard** if you decide not to save them).
 	
 	![Save button][SaveIcon]
-<!-- keep by customization: end -->
-<a name="notes"></a>
-## Notes
+
+##<a name="notes"></a> Notes
+
 
 * Make sure that you set up the connection strings for each of your databases properly on the **Web app settings** blade within **Settings** of the web app so that the Backup and Restore feature can include your databases.
 
-<!-- deleted by customization
+
 >[AZURE.NOTE] If you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.
--->
 
 <a name="partialbackups"></a>
 ## Backup just part of your web app
+
+
+
+##<a name="partialbackups"></a> Backup just part of your web app
+
 
 Sometimes you don't want to backup everything on your web app. Here are a few examples:
 
@@ -192,16 +201,18 @@ Partial backups will let you choose exactly which files you want to back up.
 
 ### Exclude files from your backup
 
-To exclude files and folders from your backups, create a `_backup.filter` file in the wwwroot folder of your web app and specify the list of files and folders you want to exclude in there. An easy way to access this is through the [Kudu Console](https://github.com/projectkudu/kudu/wiki/Kudu-console). 
+To exclude files and folders from your backups, create a `_backup.filter` file in the wwwroot folder of your web app and specify the list of files and folders you want to exclude in there.  An easy way to access this is through the [Kudu Console](https://github.com/projectkudu/kudu/wiki/Kudu-console). 
 
 Suppose you have a web app that contains log files and static images from past years that are never going to change. You already have a full backup of the web app that includes the old images. Now you want to backup the web app every day, but you don't want to pay for storing log files or the static image files that never change.
 
+
 ![Logs Folder][LogsFolder]
 ![Images Folder][ImagesFolder]
 	
+
 The below steps show how you would exclude these files from the backup.
 
-1. Go to `http://{yourapp}.scm.chinacloudsites.cn/DebugConsole` and identify the folders that you want to exclude from your backups. In this example, you would want to exclude the following files and folders shown in that UI:
+1.  Go to `http://{yourapp}.scm.chinacloudsites.cn/DebugConsole` and  identify the folders that you want to exclude from your backups. In this example, you would want to exclude the following files and folders shown in that UI:
 
 		D:\home\site\wwwroot\Logs
 		D:\home\LogFiles
@@ -219,19 +230,27 @@ The below steps show how you would exclude these files from the backup.
     \site\wwwroot\Images\2014
     \site\wwwroot\Images\brand.png
 
-3. Upload this file to the `D:\home\site\wwwroot\` directory of your site using [ftp](/documentation/articles/web-sites-deploy#ftp) or any other method. If you wish, you can create the file directly in `http://{yourapp}.scm.chinacloudsites.cn/DebugConsole` and insert the content there.
+3. Upload this file to the `D:\home\site\wwwroot\` directory of your site using [ftp](/documentation/articles/web-sites-deploy#ftp) or any other method.  If you wish, you can create the file directly in `http://{yourapp}.scm.chinacloudsites.cn/DebugConsole` and insert the content there. 
 
 4. Run backups the same way you would normally do it, [manually](#create-a-manual-backup) or [automatically](#configure-automated-backups).
 
 Now, any files and folders that are specified in `_backup.filter` will be excluded from the backup. In this example, the log files and the 2013 and 2014 image files will no longer be backed up, as well as brand.png.
 
 >[AZURE.NOTE] You restore partial backups of your site the same way you would [restore a regular backup](/documentation/articles/web-sites-restore). The restore process will do the right thing.
+
 >
 >When a full backup is restored, all content on the site is replaced with whatever is in the backup. If a file is on the site but not in the backup it gets deleted. But when a partial backup is restored, any content that is located in one of the blacklisted directories, or any blacklisted file, is left as is.
 
 <a name="aboutbackups"></a>
 
 ## How backups are stored
+
+
+><p>When a full backup is restored, all content on the site is replaced with whatever is in the backup. If a file is on the site but not in the backup it gets deleted. But when a partial backup is restored, any content that is located in one of the blacklisted directories, or any blacklisted file, is left as is.
+
+
+##<a name="aboutbackups"></a> How backups are stored
+
 
 After you have made one or more backups for your web app, the backups will be visible on the **Containers** blade of your storage account, as well as your web app. In the storage account, each backup consists of a .zip file that contains the backup data and an .xml file that contains a manifest of the .zip file contents. You can unzip and browse these files if you want to access your backups without actually performing a web app restore.
 
@@ -239,17 +258,19 @@ The database backup for the web app is stored in the root of the .zip file. For 
 
 > [AZURE.WARNING] Altering any of the files in your **websitebackups** container can cause the backup to become invalid and therefore non-restorable.
 
-<a name="nextsteps"></a>
+ <a  ##<a  name="nextsteps"></a>  Next Steps 
+
 ## Next Steps
+
 For information on restoring web app from backup, see [Restore a web app in Azure](/documentation/articles/web-sites-restore). You can also backup and restore Azure Web Apps
 using REST API (see [Use REST to back up and restore Azure Web Apps](/documentation/articles/websites-csm-backup)).
 
-To get started with Azure, see [Windows Azure Trial](/pricing/1rmb-trial/).
+To get started with Azure, see [Azure Trial](/pricing/1rmb-trial/).
 
-<!-- deleted by customization
+
 ## What's changed
 * For a guide to the change from Websites to Azure see: [Azure and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
--->
+
 
 <!-- IMAGES -->
 [ChooseBackupsPage]: ./media/web-sites-backup/01ChooseBackupsPage.png
@@ -264,5 +285,4 @@ To get started with Azure, see [Windows Azure Trial](/pricing/1rmb-trial/).
 [SaveIcon]: ./media/web-sites-backup/10SaveIcon.png
 [ImagesFolder]: ./media/web-sites-backup/11Images.png
 [LogsFolder]: ./media/web-sites-backup/12Logs.png
-[GhostUpgradeWarning]: ./media/web-sites-backup/13GhostUpgradeWarning.png
- 
+[GhostUpgradeWarning]: ./media/web-sites-backup/13GhostUpgradeWarning.png

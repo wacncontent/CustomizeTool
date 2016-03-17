@@ -17,18 +17,6 @@
 In this article, you will learn how to create an ASP.NET MVC line-of-business application in [Azure Web Apps](/documentation/services/web-sites/) using an on-premises [Active Directory Federation Services](http://technet.microsoft.com/zh-cn/library/hh831502.aspx) as the identity provider. This scenario can work when you want to create line-of-business applications in Azure Web Apps but your organization requires all data to be stored on-site.
 
 >[AZURE.NOTE] For an overview of the different enterprise authentication and authorization options for Azure Web Apps, see [Use Active Directory for authentication in Azure Web App](/documentation/articles/web-sites-authentication-authorization).
-<!-- keep by customization: begin -->
-
-- [What you will build](#bkmk_build)
-- [What you will need](#bkmk_need)
-- [Use sample application for LOB template](#bkmk_sample)
-- [Set up the sample application](#bkmk_setup)
-- [Deploy the sample application to Azure Websites](#bkmk_deploy)
-- [Configure relying party trusts in AD FS Management](#bkmk_rptrusts)
-- [Authorize users for specific controllers or actions](#bkmk_authorize)
-- [Connect to on-premises data](#bkmk_data)
-- [Further resources](#bkmk_resources)
-<!-- keep by customization: end -->
 
 <a name="bkmk_build"></a>
 ## What you will build ##
@@ -42,15 +30,15 @@ You will build a basic ASP.NET application in Azure Web Apps with the following 
 <a name="bkmk_need"></a>
 ## What you will need ##
 
-<!-- deleted by customization
+
 [AZURE.INCLUDE [free-trial-note](../includes/free-trial-note.md)]
 
--->
+
 >[AZURE.NOTE] If you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.
 
 You need the following to complete this tutorial:
 
-- An on-premises AD FS deployment <!-- deleted by customization (for an end-to-end walkthrough of the test lab that I use, see [Test Lab: Standalone STS with AD FS in Azure VM (for test only)](/documentation/articles/TODO)) -->
+- An on-premises AD FS deployment  (for an end-to-end walkthrough of the test lab that I use, see [Test Lab: Standalone STS with AD FS in Azure VM (for test only)](/documentation/articles/TODO)) 
 - Permissions to create relying party trusts in AD FS Management
 - Visual Studio 2013
 - [Azure SDK 2.5.1](https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VWDOrVs2013AzurePack.appids) or later
@@ -91,29 +79,29 @@ The sample application in this tutorial, [WebApp-WSFederation-DotNet)](https://g
 
 5.	In App_Start\Startup.Auth.cs, change the static string definitions as highlighted below:  
 	<pre class="prettyprint">
-	private static string realm = <!-- deleted by customization ConfigurationManager.AppSettings["ida:<mark>RPIdentifier</mark>"]; --><!-- keep by customization: begin --> ConfigurationManager.AppSettings["ida:<mark>RPIdentifier</mark>"];<span>&#13;</span> <!-- keep by customization: end -->
-    <mark><del>private static string aadInstance = <!-- deleted by customization ConfigurationManager.AppSettings["ida:AADInstance"];</del></mark> --><!-- keep by customization: begin --> ConfigurationManager.AppSettings["ida:AADInstance"];</del></mark><span>&#13;</span> <!-- keep by customization: end -->
-    <mark><del>private static string tenant = <!-- deleted by customization ConfigurationManager.AppSettings["ida:Tenant"];</del></mark> --><!-- keep by customization: begin --> ConfigurationManager.AppSettings["ida:Tenant"];</del></mark><span>&#13;</span> <!-- keep by customization: end -->
-    <mark><del>private static string metadata = string.Format("{0}/{1}/federationmetadata/2007-06/federationmetadata.xml", aadInstance, <!-- deleted by customization tenant);</del></mark> --><!-- keep by customization: begin --> tenant);</del></mark><span>&#13;</span> <!-- keep by customization: end -->
-    <mark>private static string metadata = string.Format("https://{0}/federationmetadata/2007-06/federationmetadata.xml", <!-- deleted by customization ConfigurationManager.AppSettings["ida:ADFS"]);</mark> --><!-- keep by customization: begin --> ConfigurationManager.AppSettings["ida:ADFS"]);</mark><span>&#13;</span> <!-- keep by customization: end -->
+	private static string realm = ConfigurationManager.AppSettings["ida:<mark>RPIdentifier</mark>"];
+    <mark><del>private static string aadInstance = ConfigurationManager.AppSettings["ida:AADInstance"];</del></mark>
+    <mark><del>private static string tenant = ConfigurationManager.AppSettings["ida:Tenant"];</del></mark>
+    <mark><del>private static string metadata = string.Format("{0}/{1}/federationmetadata/2007-06/federationmetadata.xml", aadInstance, tenant);</del></mark>
+    <mark>private static string metadata = string.Format("https://{0}/federationmetadata/2007-06/federationmetadata.xml", ConfigurationManager.AppSettings["ida:ADFS"]);</mark>
 
     <mark><del>string authority = String.Format(CultureInfo.InvariantCulture, aadInstance, tenant);</del></mark>
     </pre>
 
 6.	You will now make the corresponding changes in Web.config. Open the Web.config and modify the app settings as highlighted below:  
 	<pre class="prettyprint">
-	<!-- deleted by customization &lt;appSettings&gt; --><!-- keep by customization: begin --> &lt;appSettings&gt;<span>&#13;</span> <!-- keep by customization: end -->
-	  &lt;add key="webpages:Version" value="3.0.0.0" <!-- deleted by customization /&gt; --><!-- keep by customization: begin --> /&gt;<span>&#13;</span> <!-- keep by customization: end -->
-	  &lt;add key="webpages:Enabled" value="false" <!-- deleted by customization /&gt; --><!-- keep by customization: begin --> /&gt;<span>&#13;</span> <!-- keep by customization: end -->
-	  &lt;add key="ClientValidationEnabled" value="true" <!-- deleted by customization /&gt; --><!-- keep by customization: begin --> /&gt;<span>&#13;</span> <!-- keep by customization: end -->
-	  &lt;add key="UnobtrusiveJavaScriptEnabled" value="true" <!-- deleted by customization /&gt; --><!-- keep by customization: begin --> /&gt;<span>&#13;</span> <!-- keep by customization: end -->
-	  <mark><del>&lt;add key="ida:Wtrealm" value="[Enter the App ID URI of WebApp-WSFederation-DotNet https://contoso.partner.onmschina.cn/WebApp-WSFederation-DotNet]" <!-- deleted by customization /&gt;</del></mark> --><!-- keep by customization: begin --> /&gt;</del></mark><span>&#13;</span> <!-- keep by customization: end -->
-	  <mark><del>&lt;add key="ida:AADInstance" value="https://login.chinacloudapi.cn" <!-- deleted by customization /&gt;</del></mark> --><!-- keep by customization: begin --> /&gt;</del></mark><span>&#13;</span> <!-- keep by customization: end -->
-	  <mark><del>&lt;add key="ida:Tenant" value="[Enter tenant name, e.g. contoso.partner.onmschina.cn]" <!-- deleted by customization /&gt;</del></mark> --><!-- keep by customization: begin --> /&gt;</del></mark><span>&#13;</span> <!-- keep by customization: end -->
-	  <mark>&lt;add key="ida:RPIdentifier" value="[Enter the relying party identifier as configured in AD FS, e.g. https://localhost:44320/]" <!-- deleted by customization /&gt;</mark> --><!-- keep by customization: begin --> /&gt;</mark><span>&#13;</span> <!-- keep by customization: end -->
-	  <mark>&lt;add key="ida:ADFS" value="[Enter the FQDN of AD FS service, e.g. adfs.contoso.com]" <!-- deleted by customization /&gt;</mark> --><!-- keep by customization: begin --> /&gt;</mark><span>&#13;</span> <!-- keep by customization: end -->
+	&lt;appSettings&gt;
+	  &lt;add key="webpages:Version" value="3.0.0.0" /&gt;
+	  &lt;add key="webpages:Enabled" value="false" /&gt;
+	  &lt;add key="ClientValidationEnabled" value="true" /&gt;
+	  &lt;add key="UnobtrusiveJavaScriptEnabled" value="true" /&gt;
+	  <mark><del>&lt;add key="ida:Wtrealm" value="[Enter the App ID URI of WebApp-WSFederation-DotNet https://contoso.partner.onmschina.cn/WebApp-WSFederation-DotNet]" /&gt;</del></mark>
+	  <mark><del>&lt;add key="ida:AADInstance" value="https://login.chinacloudapi.cn" /&gt;</del></mark>
+	  <mark><del>&lt;add key="ida:Tenant" value="[Enter tenant name, e.g. contoso.partner.onmschina.cn]" /&gt;</del></mark>
+	  <mark>&lt;add key="ida:RPIdentifier" value="[Enter the relying party identifier as configured in AD FS, e.g. https://localhost:44320/]" /&gt;</mark>
+	  <mark>&lt;add key="ida:ADFS" value="[Enter the FQDN of AD FS service, e.g. adfs.contoso.com]" /&gt;</mark>
 
-	<!-- deleted by customization &lt;/appSettings&gt; --><!-- keep by customization: begin --> &lt;/appSettings&gt;<span>&#13;</span> <!-- keep by customization: end -->
+	&lt;/appSettings&gt;
 	</pre>
 
 	Fill in the key values based on your respective environment.
@@ -131,8 +119,8 @@ Here, you will publish the application to a web app in Azure while preserving th
 
 	![](./media/web-sites-dotnet-lob-application-adfs/01-publish-website.png)
 
-<!-- deleted by customization
-2. Select **Windows Azure Web App**.
+
+2. Select **App Services**.
 3. If you haven't signed in to Azure, click **Sign In** and use the Microsoft account for your Azure subscription to sign in.
 4. Once signed in, click **New** to create a new web app.
 5. Fill in all required fields. You are going to connect to on-premise data later, so you won't create a database for this web app.
@@ -140,20 +128,20 @@ Here, you will publish the application to a web app in Azure while preserving th
 	![](./media/web-sites-dotnet-lob-application-adfs/02-create-website.png)
 
 6. Click **Create**. Once the web app is created, the Publish Web dialog is opened.
--->
-<!-- keep by customization: begin -->
+
+
 2. Select **Import**.
 3. If you haven't download the "publish profile", go to [Azure Management Portal](https://manage.windowsazure.cn) to download. If you haven't create a web app, create one. And, in **Dashboard** page of your web app, under **quick glance**, download the "publish profile".
 4. Choose the previous downloaded "publish profile", and click "OK".
-<!-- keep by customization: end -->
+
 7. In **Destination URL**, change **http** to **https**. Copy the entire URL to a text editor. You will use it later. Then, click **Publish**.
 
 	![](./media/web-sites-dotnet-lob-application-adfs/03-destination-url.png)
 
 11. In Visual Studio, open **Web.Release.config** in your project. Insert the following XML into the `<configuration>` tag, and replace the key value with your publish web app's URL.  
 	<pre class="prettyprint">
-<!-- deleted by customization &lt;appSettings&gt; --><!-- keep by customization: begin --> &lt;appSettings&gt;<span>&#13;</span> <!-- keep by customization: end -->
-   &lt;add key="ida:RPIdentifier" value="<mark>[e.g. https://mylobapp.chinacloudsites.cn/]</mark>" xdt:Transform="SetAttributes" xdt:Locator="Match(key)" <!-- deleted by customization /&gt; --><!-- keep by customization: begin --> /&gt;<span>&#13;</span> <!-- keep by customization: end -->
+&lt;appSettings&gt;
+   &lt;add key="ida:RPIdentifier" value="<mark>[e.g. https://mylobapp.chinacloudsites.cn/]</mark>" xdt:Transform="SetAttributes" xdt:Locator="Match(key)" /&gt;
 &lt;/appSettings&gt;</pre>
 
 When you're done, you have two RP identifiers configured in your project, one for your debug environment in Visual Studio, and one for the published web app in Azure. You will set up an RP trust for each of the two environments in AD FS. During debugging, the app settings in Web.config is used to make your **Debug** configuration work with AD FS, and when it's published (by default, the **Release** configuration is published), a transformed Web.config is uploaded that incorporates the app setting changes in Web.Release.config.
@@ -216,26 +204,17 @@ Now you need to configure an RP trust in AD FS Mangement before you can use your
 10.	Select **Send Claims Using a Custom Rule** and click **Next**.
 11.	Paste the following rule language into the **Custom rule** box, name the rule **Per Session Identifier** and click **Finish**.  
 	<pre class="prettyprint">
-	c1:[Type == "http://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccountname"] <!-- deleted by customization &amp;&amp; --><!-- keep by customization: begin --> &amp;&amp;<span>&#13;</span> <!-- keep by customization: end -->
-	c2:[Type == <!-- deleted by customization "http://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationinstant"] --><!-- keep by customization: begin --> "http://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationinstant"]<span>&#13;</span> <!-- keep by customization: end -->
-		=> <!-- deleted by customization add( --><!-- keep by customization: begin --> add(<span>&#13;</span> <!-- keep by customization: end -->
-			store = <!-- deleted by customization "_OpaqueIdStore", --><!-- keep by customization: begin --> "_OpaqueIdStore",<span>&#13;</span> <!-- keep by customization: end -->
-			types = <!-- deleted by customization ("<mark>http://contoso.com/internal/sessionid</mark>"), --><!-- keep by customization: begin --> ("<mark>http://contoso.com/internal/sessionid</mark>"),<span>&#13;</span> <!-- keep by customization: end -->
-			query = <!-- deleted by customization "{0};{1};{2};{3};{4}", --><!-- keep by customization: begin --> "{0};{1};{2};{3};{4}",<span>&#13;</span> <!-- keep by customization: end -->
-<!-- deleted by customization
+	c1:[Type == "http://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccountname"] &amp;&amp;
+	c2:[Type == "http://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationinstant"]
+		=> add(
+			store = "_OpaqueIdStore",
+			types = ("<mark>http://contoso.com/internal/sessionid</mark>"),
+			query = "{0};{1};{2};{3};{4}",
 			param = "useEntropy",
 			param = c1.Value,
-			param = c1.OriginalIssuer,<!-- keep by customization: begin --> c1.OriginalIssuer,<span>&#13;</span> <!-- keep by customization: end -->
+			param = c1.OriginalIssuer,
 			param = "",
 			param = c2.Value);
--->
-<!-- keep by customization: begin -->
-			param = "useEntropy",<span>&#13;</span>
-			param = c1.Value,<span>&#13;</span>
-			param = <!-- keep by customization: begin --> c1.OriginalIssuer,<span>&#13;</span> <!-- keep by customization: end -->
-			param = "",<span>&#13;</span>
-			param = c2.Value);<span>&#13;</span>
-<!-- keep by customization: end -->
 	</pre>
 
 	Your custom rule should look like this:
@@ -291,35 +270,21 @@ Since you have included group memberships as role claims in your RP trust config
 1. Open Controllers\HomeController.cs.
 2. Decorate the `About` and `Contact` action methods similar to below, using security group memberships that your authenticated user has.  
 	<pre class="prettyprint">
-    <mark>[Authorize(Roles="Test <!-- deleted by customization Group")]</mark> --><!-- keep by customization: begin --> Group")]</mark><span>&#13;</span> <!-- keep by customization: end -->
-    public ActionResult <!-- deleted by customization About() --><!-- keep by customization: begin --> About()<span>&#13;</span> <!-- keep by customization: end -->
-    <!-- deleted by customization { --><!-- keep by customization: begin --> {<span>&#13;</span> <!-- keep by customization: end -->
-        ViewBag.Message = "Your application description <!-- deleted by customization page."; --><!-- keep by customization: begin --> page.";<span>&#13;</span> <!-- keep by customization: end -->
-
-<!-- deleted by customization
-        return View();
-    }
-
-    <mark>[Authorize(Roles="Domain <!-- deleted by customization Admins")]</mark> --><!-- keep by customization: begin --> Admins")]</mark><span>&#13;</span> <!-- keep by customization: end -->
-    public ActionResult Contact()<!-- keep by customization: begin --> Contact()<span>&#13;</span> <!-- keep by customization: end -->
-    {<!-- keep by customization: begin --> {<span>&#13;</span> <!-- keep by customization: end -->
-        ViewBag.Message = "Your contact page.";<!-- keep by customization: begin --> page.";<span>&#13;</span> <!-- keep by customization: end -->
+    <mark>[Authorize(Roles="Test Group")]</mark>
+    public ActionResult About()
+    {
+        ViewBag.Message = "Your application description page.";
 
         return View();
     }
--->
-<!-- keep by customization: begin -->
-        return View();<span>&#13;</span>
-    }<span>&#13;</span>
 
-    <mark>[Authorize(Roles="Domain <!-- deleted by customization Admins")]</mark> --><!-- keep by customization: begin --> Admins")]</mark><span>&#13;</span> <!-- keep by customization: end -->
-    public ActionResult <!-- keep by customization: begin --> Contact()<span>&#13;</span> <!-- keep by customization: end -->
-    <!-- keep by customization: begin --> {<span>&#13;</span> <!-- keep by customization: end -->
-        ViewBag.Message = "Your contact <!-- keep by customization: begin --> page.";<span>&#13;</span> <!-- keep by customization: end -->
+    <mark>[Authorize(Roles="Domain Admins")]</mark>
+    public ActionResult Contact()
+    {
+        ViewBag.Message = "Your contact page.";
 
-        return View();<span>&#13;</span>
-    }<span>&#13;</span>
-<!-- keep by customization: end -->
+        return View();
+    }
 	</pre>
 
 	Since I added **Test User** to **Test Group** in my AD FS lab environment, I'll use Test Group to test authorization on `About`. For `Contact`, I'll test the negative case of **Domain Admins**, to which **Test User** doesn't belong.
@@ -331,11 +296,11 @@ Since you have included group memberships as role claims in your RP trust config
 
 	If you investigate this error in Event Viewer on the AD FS server, you will see this exception message:  
 	<pre class="prettyprint">
-	Microsoft.IdentityServer.Web.InvalidRequestException: MSIS7042: <mark>The same client browser session has made '6' requests in the last '11' seconds.</mark> Contact your administrator for <!-- deleted by customization details. --><!-- keep by customization: begin --> details.<span>&#13;</span> <!-- keep by customization: end -->
-	   at Microsoft.IdentityServer.Web.Protocols.PassiveProtocolHandler.UpdateLoopDetectionCookie(WrappedHttpListenerContext <!-- deleted by customization context) --><!-- keep by customization: begin --> context)<span>&#13;</span> <!-- keep by customization: end -->
-	   at Microsoft.IdentityServer.Web.Protocols.WSFederation.WSFederationProtocolHandler.SendSignInResponse(WSFederationContext context, MSISSignInResponse <!-- deleted by customization response) --><!-- keep by customization: begin --> response)<span>&#13;</span> <!-- keep by customization: end -->
-	   at Microsoft.IdentityServer.Web.PassiveProtocolListener.ProcessProtocolRequest(ProtocolContext protocolContext, PassiveProtocolHandler <!-- deleted by customization protocolHandler) --><!-- keep by customization: begin --> protocolHandler)<span>&#13;</span> <!-- keep by customization: end -->
-	   at Microsoft.IdentityServer.Web.PassiveProtocolListener.OnGetContext(WrappedHttpListenerContext <!-- deleted by customization context) --><!-- keep by customization: begin --> context)<span>&#13;</span> <!-- keep by customization: end -->
+	Microsoft.IdentityServer.Web.InvalidRequestException: MSIS7042: <mark>The same client browser session has made '6' requests in the last '11' seconds.</mark> Contact your administrator for details.
+	   at Microsoft.IdentityServer.Web.Protocols.PassiveProtocolHandler.UpdateLoopDetectionCookie(WrappedHttpListenerContext context)
+	   at Microsoft.IdentityServer.Web.Protocols.WSFederation.WSFederationProtocolHandler.SendSignInResponse(WSFederationContext context, MSISSignInResponse response)
+	   at Microsoft.IdentityServer.Web.PassiveProtocolListener.ProcessProtocolRequest(ProtocolContext protocolContext, PassiveProtocolHandler protocolHandler)
+	   at Microsoft.IdentityServer.Web.PassiveProtocolListener.OnGetContext(WrappedHttpListenerContext context)
 	</pre>
 
 	The reason this happens is that by default, MVC returns a 401 Unauthorized when a user's roles are not authorized. This triggers a reauthentication request to your identity provider (AD FS). Since the user is already authenticated, AD FS returns to the same page, which then issues another 401, creating a redirect loop. You will override AuthorizeAttribute's `HandleUnauthorizedRequest` method with simple logic to show something that makes sense instead of continuing the redirect loop.
@@ -378,10 +343,10 @@ Since you have included group memberships as role claims in your RP trust config
 
 A reason that you would want to implement your line-of-business application with AD FS instead of Azure Active Directory is compliance issues with keeping organization data off-premise. This may also mean that your web app in Azure must access on-premise databases, since you are not allowed to use [SQL Database](/home/features/sql-database/) as the data tier for your web apps.
 
-<!-- deleted by customization
-Azure Web Apps supports accessing on-premise databases with two approaches: [Hybrid Connections](/documentation/articles/integration-hybrid-connection-overview) and [Virtual Networks](/documentation/articles/web-sites-integrate-with-vnet). For more information, see [Using VNET integration and Hybrid connections with Azure Web Apps](http://azure.microsoft.com/blog/2014/10/30/using-vnet-or-hybrid-conn-with-websites/).
+
+Azure Web Apps supports accessing on-premise databases with two approaches: [Hybrid Connections](/documentation/articles/integration-hybrid-connection-overview) and [Virtual Networks](/documentation/articles/web-sites-integrate-with-vnet). For more information, see [Using VNET integration and Hybrid connections with Azure Web Apps](https://azure.microsoft.com/blog/2014/10/30/using-vnet-or-hybrid-conn-with-websites/).
 
--->
+
 <a name="bkmk_resources"></a>
 ## Further resources
 

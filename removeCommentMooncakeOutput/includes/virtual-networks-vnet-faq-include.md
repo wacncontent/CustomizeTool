@@ -193,7 +193,7 @@ No. You must not change any interface properties of VMs. Any changes may lead to
 
 Nothing. The IP addresses (both public VIP and internal IP address) will stay with your cloud service or VM. 
 
-> [AZURE.NOTE]Â If you want to simply shut down the VM, don't use the Management Portal to do so. Currently, the shutdown button will deallocate the virtual machine.
+> [AZURE.NOTE] If you want to simply shut down the VM, don't use the Management Portal to do so. Currently, the shutdown button will deallocate the virtual machine.
 
 ### Can I move VMs from one subnet to another subnet in a VNet without re-deploying?
 
@@ -217,9 +217,7 @@ Yes. All services deployed within a VNet can connect to the Internet. Additional
 
 You can only use compute services within VNets. Compute services are limited to Cloud Services (web and worker roles) and VMs.
 
-- [Using VNet Integration and Hybrid Connections with Web Apps](http://azure.microsoft.com/blog/2014/10/30/using-vnet-or-hybrid-conn-with-websites/)
-
-- [Integrate a web app with an Azure Virtual Network](/documentation/articles/web-sites-integrate-with-vnet)
+- [Using VNet Integration and Hybrid Connections with Web Apps](https://azure.microsoft.com/blog/2014/10/30/using-vnet-or-hybrid-conn-with-websites/)
 
 ### Can I deploy cloud services with web and worker roles (PaaS) in a VNet?
 

@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Provision Apache Spark clusters in HDInsight | Windows Azure"
+   pageTitle="Provision Apache Spark clusters in HDInsight | Azure"
    description="Learn how to provision Spark clusters for Azure HDInsight by using the Azure Management Portal, Azure PowerShell, a command line, or the HDInsight .NET SDK."
    services="hdinsight"
    documentationCenter=""
@@ -206,23 +206,23 @@ Specify the Spark cluster type:
 
 
 [hdinsight-sdk-documentation]: http://msdn.microsoft.com/zh-cn/library/dn479185.aspx
-[hdinsight-hbase-custom-provision]: /documentation/articles/hdinsight-hbase-get-started/
+[hdinsight-hbase-custom-provision]: /documentation/articles/hdinsight-hbase-tutorial-get-started-v1/
 
-[hdinsight-customize-cluster]: ../hdinsight-hadoop-customize-cluster-v1/
-[hdinsight-get-started]: ../hdinsight-get-started/
+[hdinsight-customize-cluster]: /documentation/articles/hdinsight-hadoop-customize-cluster-v1
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
 
-[hdinsight-admin-powershell]: ../hdinsight-administer-use-powershell/
-[hdinsight-admin-portal]: ../hdinsight-administer-use-management-portal-v1/
-[hadoop-hdinsight-intro]: ../hdinsight-hadoop-introduction/
-[hdinsight-submit-jobs]: ../hdinsight-submit-hadoop-jobs-programmatically/
+[hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell
+[hdinsight-admin-portal]: /documentation/articles/hdinsight-administer-use-management-portal-v1
+[hadoop-hdinsight-intro]: /documentation/articles/hdinsight-hadoop-introduction
+[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
 [hdinsight-powershell-reference]: https://msdn.microsoft.com/zh-cn/library/dn858087.aspx
-[hdinsight-storm-get-started]: ../hdinsight-storm-getting-started/
+[hdinsight-storm-get-started]: /documentation/articles/hdinsight-apache-storm-tutorial-get-started
 
 [azure-management-portal]: https://manage.windowsazure.cn/
 
-[azure-command-line-tools]: ../xplat-cli/
+[azure-command-line-tools]: /documentation/articles/xplat-cli-install
 
-[azure-create-storageaccount]: ../storage-create-storage-account/
+[azure-create-storageaccount]: /documentation/articles/storage-create-storage-account
 
 [apache-hadoop]: http://hadoop.apache.org/
 [azure-purchase-options]: /pricing/overview/
@@ -231,7 +231,7 @@ Specify the Spark cluster type:
 [hdi-remote]: /documentation/articles/hdinsight-administer-use-management-portal-v1/#rdp
 
 
-[powershell-install-configure]: ../install-configure-powershell/
+[powershell-install-configure]: /documentation/articles/powershell-install-configure
 
 
 [azure-preview-portal]: https://manage.windowsazure.cn

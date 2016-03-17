@@ -11,7 +11,7 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="10/26/2015"
+	ms.date="01/14/2016"
 	wacn.date=""/>
 
 # Scaling apps in an Azure Environment #

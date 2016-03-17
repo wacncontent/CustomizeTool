@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Analyze flight delay data with Hadoop in HDInsight | Windows Azure"
+	pageTitle="Analyze flight delay data with Hadoop in HDInsight | Azure"
 	description="Learn how to use one Windows PowerShell script to create an HDInsight cluster, run a Hive job, run a Sqoop job, and delete the cluster."
 	services="hdinsight"
 	documentationCenter=""
@@ -724,18 +724,18 @@ Now you understand how to upload a file to Azure Blob storage, how to populate a
 
 
 [rita-website]: http://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236&DB_Short_Name=On-Time
-[powershell-install-configure]: ../install-configure-powershell.md
+[powershell-install-configure]: /documentation/articles/powershell-install-configure
 
-[hdinsight-use-oozie]: hdinsight-use-oozie.md
-[hdinsight-use-hive]: hdinsight-use-hive.md
-[hdinsight-provision]: hdinsight-provision-clusters-v1.md
-[hdinsight-storage]: ../hdinsight-use-blob-storage.md
-[hdinsight-upload-data]: hdinsight-upload-data.md
-[hdinsight-get-started]: ../hdinsight-get-started.md
-[hdinsight-use-sqoop]: hdinsight-use-sqoop.md
-[hdinsight-use-pig]: hdinsight-use-pig.md
-[hdinsight-develop-streaming]: hdinsight-hadoop-develop-deploy-streaming-jobs.md
-[hdinsight-develop-mapreduce]: hdinsight-develop-deploy-java-mapreduce.md
+[hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie
+[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
+[hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop
+[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
+[hdinsight-develop-streaming]: /documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs
+[hdinsight-develop-mapreduce]: /documentation/articles/hdinsight-develop-deploy-java-mapreduce
 
 [hadoop-hiveql]: https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DDL
 [hadoop-shell-commands]: http://hadoop.apache.org/docs/r0.18.3/hdfs_shell.html

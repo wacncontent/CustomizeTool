@@ -1,0 +1,78 @@
+{
+    "customize": false,
+    "path": "E:/GitHub/azure-content-pr/",
+    "language": "en-us",
+    "folders": [
+        "articles/virtual-machines/",
+        "articles/app-service-web/",
+        "articles/hdinsight/",
+        "articles/redis-cache/",
+        "articles/traffic-manager/",
+        "articles/virtual-network/"
+    ],
+  "output_folder": "output/",
+  "compare": {
+    "compare": false,
+    "path": "addCommentOutput/"
+  },
+  "updateFileList": true,
+  "includes_search_keys": {
+    "articles/app-service-web/": [ "web", "publishing-with-git" ],
+    "articles/automation/": [ "automation" ],
+    "articles/hdinsight/": [ "hdinsight" ],
+    "articles/media-services/": [ "media" ],
+    "articles/redis-cache/": [ "cache" ],
+    "articles/traffic-manager/": [ "traffic" ],
+    "articles/virtual-network/": [ "virtual-network", "vnet" ],
+    "articles/active-directory/": [ "active-directory" ],
+    "articles/application-gateway/": [ "application-gateway" ],
+    "articles/backup/": [ "backup" ],
+    "articles/batch/": [ "batch" ],
+    "articles/cache/": [ "cache" ],
+    "articles/cdn/": [ "cdn" ],
+    "articles/cloud-services/": [ "cloud-services" ],
+    "articles/event-hubs/": [ "event-hubs" ],
+    "articles/expressroute/": [ "expressroute" ],
+    "articles/mobile-services/": [ "mobile-services" ],
+    "articles/notification-hubs/": [ "notification-hubs" ],
+    "articles/scheduler/": [ "scheduler" ],
+    "articles/service-bus/": [ "service-bus" ],
+    "articles/site-recovery/": [ "site-recovery" ],
+    "articles/sql-database/": [ "sql-database" ],
+    "articles/storage/": [ "storage" ],
+    "articles/virtual-machines/": [ "virtual-machines", "vm" ],
+    "articles/azure-portal/": [ "azure-portal" ],
+    "articles/biztalk-services/": [ "biztalk-service" ],
+    "articles/documentdb/": [ "documentdb" ],
+    "articles/Key-Vault/": [ "key-vault" ],
+    "articles/load-balancer/": [ "load-balancer" ],
+    "articles/multi-factor-authentication/": [ "multi-factor-authentication" ],
+    "articles/remoteapp/": [ "remoteapp" ],
+    "articles/search/": [ "search" ],
+    "articles/service-fabric/": [ "service-fabric" ],
+    "articles/sql-data-warehouse/": [ "sql-data-warehouse" ],
+    "articles/storsimple/": [ "storsimple" ],
+    "articles/stream-analytics/": [ "stream-analytics" ],
+    "articles/vpn-gateway/": [ "vpn-gateway" ],
+    "articles/": [ "" ]
+  },
+    "check_dates": false,
+    "815path": "E:/GitHub/techcontent/",
+    "removeComment": {
+        "remove": false,
+        "path": "removeCommentOutput2/"
+    },
+    "updateLinks": false,
+    "addComment": {
+        "add": true,
+        "globalPath": "removeCommentOutput/",
+        "mooncakePath": "removeCommentMooncakeOutput/",
+        "outputPath": "addCommentOutput/"
+    },
+    "wordCount": false,
+    "getDeletionAndReplacement": {
+        "get": false,
+        "input": "addCommentOutput/",
+        "path": "deletionAndReplacementOutput/"
+    }
+}

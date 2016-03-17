@@ -1,6 +1,3 @@
-<!-- not suitable for Mooncake -->
-<!-- ? -->
-
 <properties 
 	pageTitle="How To Configure TLS Mutual Authentication for Web App" 
 	description="Learn how to configure your web app to use client certificate authentication on TLS." 
@@ -25,16 +22,18 @@ To setup your web app to require client certificates you need to add the clientC
 
 You can use the [ARMClient tool](https://github.com/projectkudu/ARMClient) to make it easy to craft the REST API call. After you log in with the tool you will need to issue the following command:
 
+>[AZURE.NOTE] When using `ARMClient.exe login [environment name]` to login, `[environment name]` should be `MOONCAKE`. In other words, the command to log into China Azure is `ARMClient.exe login MOONCAKE`.
+
     ARMClient PUT subscriptions/{Subscription Id}/resourcegroups/{Resource Group Name}/providers/Microsoft.Web/sites/{Website Name}?api-version=2015-04-01 @enableclientcert.json -verbose
     
 replacing everything in {} with information for your web app and creating a file called enableclientcert.json with the following JSON content:
 
-> {
->   "location": "My Web App Location",   
->   "properties": 
->   {  
->     "clientCertEnabled": true
->   }
+{
+"location": "My Web App Location",
+"properties":
+{
+"clientCertEnabled": true
+}
 > }  
 
 

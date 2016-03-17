@@ -46,11 +46,11 @@ Troubleshooting can be divided into three distinct tasks, in sequential order:
 
 #### Track Service health
 
-Windows Azure publicizes each time there is a service interruption or performance degradation. You can track the health of the service on the [Azure Management Portal](https://manage.windowsazure.cn/). For more information, see [Track service health](/documentation/articles/insights-service-health).
+Azure publicizes each time there is a service interruption or performance degradation. You can track the health of the service on the [Azure Management Portal](https://manage.windowsazure.cn/). For more information, see [Track service health](/documentation/articles/insights-service-health).
 
 #### Monitor your web app
 
-This option enables you to find out if your application is having any issues. In your web appâs blade, click the **Requests and errors** tile. The **Metric** blade will show you all the metrics you can add.
+This option enables you to find out if your application is having any issues. In your web app's blade, click the **Requests and errors** tile. The **Metric** blade will show you all the metrics you can add.
 
 Some of the metrics that you might want to monitor for your web app are
 
@@ -177,7 +177,7 @@ For more information, see [Auto-Healing Azure Web Sites](/blog/auto-healing-wind
 
 ####	Restart the web app
 
-This is often the simplest way to recover from one-time issues. On the [Azure Management Portal](https://manage.windowsazure.cn/), on your web appâs blade, you have the options to stop or restart your app.
+This is often the simplest way to recover from one-time issues. On the [Azure Management Portal](https://manage.windowsazure.cn/), on your web app's blade, you have the options to stop or restart your app.
 
  ![](./media/app-service-web-troubleshoot-performance-degradation/2-restart.png)
 

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Reset the password or Remote Desktop on a Windows VM | Windows Azure"
+	pageTitle="Reset the password or Remote Desktop on a Windows VM | Azure"
 	description="Reset the administrator password or Remote Desktop services on a Windows VM created with the Resource Manager deployment model."
 	services="virtual-machines"
 	documentationCenter=""
@@ -94,10 +94,10 @@ The VMAccess extension runs these two commands on the virtual machine:
 
 If this did not solve your Remote Desktop access problem, run the [Azure IaaS (Windows) diagnostics package](https://home.diagnostics.support.microsoft.com/SelfHelp?knowledgebaseArticleFilter=2976864).
 
-1.	In the diagnostics package, click **Windows Azure IaaS (Windows) diagnostics package** to create a new diagnostics session.
+1.	In the diagnostics package, click **Azure IaaS (Windows) diagnostics package** to create a new diagnostics session.
 2.	On the **Which of the following issues are you experiencing with your Azure VM?** page, select the **RDP connectivity to an Azure VM (Reboot Required)** issue.
 
-For more information, see the [Windows Azure IaaS (Windows) diagnostics package](http://support.microsoft.com/kb/2976864) Knowledge Base article.
+For more information, see the [Azure IaaS (Windows) diagnostics package](http://support.microsoft.com/kb/2976864) Knowledge Base article.
 
 If you were unable to run the Azure IaaS (Windows) diagnostics package or running it did not solve your problem, see [Troubleshoot Remote Desktop connections to a Windows-based Azure virtual machine](/documentation/articles/virtual-machines-troubleshoot-remote-desktop-connections).
 

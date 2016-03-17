@@ -1,5 +1,5 @@
 <properties
-	pageTitle="How to Use CoreOS | Windows Azure"
+	pageTitle="How to Use CoreOS | Azure"
 	description="Describes CoreOS, how to create a CoreOS virtual machine cluster on Azure in the classic deployment model, and its basic usage."
 	services="virtual-machines"
 	documentationCenter=""
@@ -196,7 +196,7 @@ You should now have a running three-node CoreOS cluster on Azure. From here, you
 
 
 <!--Link references-->
-[Azure Command-line Interface (Azure CLI)]: ../xplat-cli-install.md
+[Azure Command-line Interface (Azure CLI)]: /documentation/articles/xplat-cli-install
 [CoreOS]: https://coreos.com/
 [CoreOS Overview]: https://coreos.com/using-coreos/
 [CoreOS with Azure]: https://coreos.com/docs/running-coreos/cloud-providers/azure/
@@ -204,4 +204,4 @@ You should now have a running three-node CoreOS cluster on Azure. From here, you
 [Patrick Chanezon's CoreOS Tutorial]: https://github.com/chanezon/azure-linux/tree/master/coreos/cloud-init
 [Docker]: http://docker.io
 [YAML]: http://yaml.org/
-[Get Started with Fleet on CoreOS on Azure]: virtual-machines-linux-coreos-fleet-get-started.md
+[Get Started with Fleet on CoreOS on Azure]: /documentation/articles/virtual-machines-linux-coreos-fleet-get-started

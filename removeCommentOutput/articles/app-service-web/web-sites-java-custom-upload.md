@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Upload a custom Java web app to Azure" 
-	description="This tutorial shows you how to upload a custom Java web app to Azure Web Apps." 
+	description="This tutorial shows you how to upload a custom Java web app to Azures." 
 	services="app-service\web" 
 	documentationCenter="java" 
 	authors="rmcmurray" 

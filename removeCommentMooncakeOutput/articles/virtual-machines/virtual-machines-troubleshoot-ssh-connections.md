@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Troubleshoot SSH connection to an Azure VM | Windows Azure"
+	pageTitle="Troubleshoot SSH connection to an Azure VM | Azure"
 	description="Troubleshoot and fix SSH errors like SSH connection failed or SSH connection refused for an Azure virtual machine running Linux."
 	keywords="ssh connection refused,ssh error,azure ssh,SSH connection failed"
 	services="virtual-machines"
@@ -11,7 +11,7 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="10/27/2015"
+	ms.date="01/22/2016"
 	wacn.date=""/>
 
 # Troubleshoot Secure Shell (SSH) connections to a Linux-based Azure virtual machine
@@ -22,16 +22,16 @@ There could be various causes of SSH errors while trying to connect to a Linux-b
 
 This article only applies to Azure virtual machines running Linux. For Azure virtual machines running Windows, see [Troubleshoot Remote Desktop connection to an Azure VM](/documentation/articles/virtual-machines-troubleshoot-remote-desktop-connections).
 
-## Contact Azure Customer Support
-
-If you need more help at any point in this article, you can contact the Azure experts on [the MSDN Azure and the Stack Overflow forums](/support/forums/).
-
-Alternatively, you can file an Azure support incident. Go to the [Azure Support site](/support/contact/) and click **Get support**. For information about using Azure Support, read the [Windows Azure Support FAQ](/support/faq/).
+If you need more help at any point in this article, you can contact the Azure experts on [the MSDN Azure and CSDN forums](/support/forums/). Alternatively, you can file an Azure support incident. Go to the [Azure Support site](/support/contact/) and click **Get support**. For information about using Azure Support, read the [Azure Support FAQ](/support/faq/).
 
 
-## Steps to fix common SSH errors in classic deployment model
+## Fix common SSH errors
 
-To resolve the more common SSH connection failures in virtual machines created using the classic deployment model, try these steps:
+This section lists quick fix steps for common SSH connection issues.
+
+### Virtual machines created using classic deployment model
+
+Try these steps to resolve the most common SSH connection failures:
 
 1. You can use Azure CLi to reset ssh connection.
 
@@ -47,16 +47,15 @@ To resolve the more common SSH connection failures in virtual machines created u
 	
 
 2. **Restart** the virtual machine. From the [Azure Management Portal](https://manage.windowsazure.cn), click **Virtual Machines** > your Windows virtual machine > **Restart**.
-
-3. [**Resize** the virtual machine](https://msdn.microsoft.com/zh-cn/library/dn168976.aspx).
+3. [Resize the virtual machine](https://msdn.microsoft.com/zh-cn/library/dn168976.aspx).
 
 4. Follow the instructions in [How to reset a password or SSH for Linux-based virtual machines](/documentation/articles/virtual-machines-linux-use-vmaccess-reset-password-or-ssh) on the virtual machine, to:
 
 	- Reset the password or SSH key.
-	- Create a new sudo user account.
+	- Create a new _sudo_ user account.
 	- Reset the SSH configuration.
 
-5. Check VM's Resource Health for any platform issues. 
+5. Check VM's Resource Health for any platform issues.<br>
 	Virtual Machines > your Linux virtual machine > **Monitor**
 
 
@@ -68,7 +67,7 @@ If the SSH client still cannot reach the SSH service on the virtual machine, it 
 
 The following sections will help you isolate the source of the failure and figure out solutions or workarounds.
 
-### Steps before troubleshooting
+### Preliminary steps
 
 First, check the status of virtual machine in the portal.
 
@@ -84,7 +83,7 @@ To verify network connectivity, check the configured endpoints and see if you ca
 After these steps, try the SSH connection again.
 
 
-### Troubleshooting steps
+### Find out source of the issue
 
 The SSH client on your computer could fail to reach the SSH service on the Azure virtual machine due to these possible sources of issues or misconfigurations:
 

@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Analyze sensor data with Apache Storm and HBase | Windows Azure"
+   pageTitle="Analyze sensor data with Apache Storm and HBase | Azure"
    description="Learn how to connect to Apache Storm with a virtual network. Use Storm with HBase to process sensor data from an event hub and visualize it with D3.js."
    services="hdinsight"
    documentationCenter=""
@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="12/04/2015"
+	ms.date="01/28/2016"
 	wacn.date=""/>
 
 # Analyze sensor data with Apache Storm, Event Hub, and HBase in HDInsight (Hadoop)
@@ -313,8 +313,7 @@ If you plan to use HBase with this example, you must create an Azure virtual net
 9. At the bottom of the page, the default subnet name is **Subnet-1**. Use the **add subnet** button to add **Subnet-2**. These subnets will house the Storm and HBase clusters.
 
 	> [AZURE.NOTE] In this article, we will be using clusters with only one node. If you are creating multinode clusters, you must verify the **CIDR(ADDRESS COUNT)** for the subnet that will be used for the cluster. The address count must be greater than the number of worker nodes plus seven (Gateway: 2, Headnode: 2, Zookeeper: 3). For example, if you need a 10 node HBase cluster, the address count for the subnet must be greater than 17 (10+7). Otherwise, the deployment will fail.
-	>
-	> It is highly recommended to designate a single subnet for one cluster.
+	> <p>It is highly recommended to designate a single subnet for one cluster.
 
 11. Click **Save** at the bottom of the page.
 

@@ -1,7 +1,7 @@
 <!-- not suitable for Mooncake -->
 
 <properties
-	pageTitle="Monitor Hadoop clusters in HDInsight using the Ambari API | Windows Azure"
+	pageTitle="Monitor Hadoop clusters in HDInsight using the Ambari API | Azure"
 	description="Use the Apache Ambari APIs for provisioning, managing, and monitoring Hadoop clusters. Intuitive operator tools and APIs hide the complexity of Hadoop."
 	services="hdinsight"
 	documentationCenter=""

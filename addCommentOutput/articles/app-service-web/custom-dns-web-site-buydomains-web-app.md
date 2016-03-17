@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 
 <properties
 	pageTitle="How to buy a custom domain name in Azure Web Apps"
@@ -37,12 +39,12 @@ For a production web app, you probably want users to see a custom domain name. T
 
 > [AZURE.NOTE] Please do not attempt to purchase a domain using a subscription that does not have an Active Credit Card associated with it. This could result in your subscription being disabled. 
 
-If you don't have a domain name for your web app, you can easily buy one on [Azure Management Portal](https://manage.windowsazure.cn). During the purchase process you can choose to have WWW and root domain's DNS records be mapped to your web app automatically. You also can manage your domain right inside Azure Management Portal.
+If you don't have a domain name for your web app, you can easily buy one on [Azure Management Portal](https://manage.windowsazure.cn/). During the purchase process you can choose to have WWW and root domain's DNS records be mapped to your web app automatically. You also can manage your domain right inside Azure Management Portal.
 
 
 Use the following steps to buy domain names and assign to your web app.
 
-1. In your browser, open the [Azure Management Portal](https://manage.windowsazure.cn).
+1. In your browser, open the [Azure Management Portal](https://manage.windowsazure.cn/).
 
 2. In the **Web Apps** tab, click the name of your web app, select **Settings**, and then select **Custom domains and SSL**
 

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="How to use Azure Redis Cache with Node.js | Windows Azure"
+	pageTitle="How to use Azure Redis Cache with Node.js | Azure"
 	description="Get started with Azure Redis Cache using Node.js and node_redis."
 	services="redis-cache"
 	documentationCenter=""
@@ -20,7 +20,7 @@
 - [Java](/documentation/articles/cache-java-get-started)
 - [Python](/documentation/articles/cache-python-get-started)
 
-Azure Redis Cache gives you access to a secure, dedicated Redis cache, managed by Microsoft. Your cache is accessible from any application within Windows Azure.
+Azure Redis Cache gives you access to a secure, dedicated Redis cache, managed by Microsoft. Your cache is accessible from any application within Azure.
 
 This topic shows you how to get started with Azure Redis Cache using Node.js. For another example of using Azure Redis Cache with Node.js, see [Build a Node.js Chat Application with Socket.IO on an Azure Website][].
 
@@ -83,4 +83,4 @@ Output:
 [3]: ./media/cache-nodejs-get-started/cache03.png
 [4]: ./media/cache-nodejs-get-started/cache04.png
 
-[Build a Node.js Chat Application with Socket.IO on an Azure Website]: ../app-service-web/web-sites-nodejs-chat-app-socketio.md
+[Build a Node.js Chat Application with Socket.IO on an Azure Website]: /documentation/articles/web-sites-nodejs-chat-app-socketio

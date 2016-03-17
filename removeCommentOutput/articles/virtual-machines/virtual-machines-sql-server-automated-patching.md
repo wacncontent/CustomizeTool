@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Automated SQL Server Patching in VMs | Windows Azure"
+	pageTitle="Automated SQL Server Patching in VMs | Azure"
 	description="Explains the Automated Patching feature for SQL Server Virtual Machines running in Azure."
 	services="virtual-machines"
 	documentationCenter="na"

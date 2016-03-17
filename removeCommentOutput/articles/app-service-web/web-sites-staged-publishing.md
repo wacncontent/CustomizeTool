@@ -158,7 +158,7 @@ In the blade for a deployment slot, click **Delete** in the command bar.
 
 Azure PowerShell is a module that provides cmdlets to manage Azure through Windows PowerShell, including support for managing web app deployment slots in Azure Web App.
 
-- For information on installing and configuring Azure PowerShell, and on authenticating Azure PowerShell with your Azure subscription, see [How to install and configure Windows Azure PowerShell](/documentation/articles/powershell-install-configure).  
+- For information on installing and configuring Azure PowerShell, and on authenticating Azure PowerShell with your Azure subscription, see [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure).  
 
 - In order to use the new Azure Resource Manager mode for PowerShell cmdlets start with the following: `Switch-AzureMode -Name AzureResourceManager`.
 
@@ -248,7 +248,7 @@ To delete a deployment slot that is no longer needed, use the **azure site delet
 ## Next Steps ##
 [Azure Web App - block web access to non-production deployment slots](http://ruslany.net/2014/04/azure-web-sites-block-web-access-to-non-production-deployment-slots/)
 
-[Windows Azure Trial](/pricing/1rmb-trial/)
+[Azure Trial](/pricing/1rmb-trial/)
 
 ## What's changed
 * For a guide to the change from Websites to Azure see: [Azure and Its Impact on Existing Azure Services](/documentation/services/web-sites/)

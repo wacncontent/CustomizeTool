@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Apache Storm tutorial: Get started with Storm | Windows Azure"
+	pageTitle="Apache Storm tutorial: Get started with Storm | Azure"
 	description="Get started with big data analytics using Apache Storm and the Storm Starter samples on HDInsight. Learn how to use Storm to process data real-time."
 	keywords="apache storm,apache storm tutorial,big data analytics,storm starter"
 	services="hdinsight"
@@ -17,7 +17,7 @@
 
 # Apache Storm tutorial: Get started with the Storm Starter samples for big data analytics on HDInsight
 
-Apache Storm is a scalable, fault-tolerant, distributed, real-time computation system for processing streams of data. With Storm on Windows Azure HDInsight, you can create a cloud-based Storm cluster that performs big data analytics in real time. 
+Apache Storm is a scalable, fault-tolerant, distributed, real-time computation system for processing streams of data. With Storm on Azure HDInsight, you can create a cloud-based Storm cluster that performs big data analytics in real time. 
 
 ## Prerequisites
 
@@ -28,6 +28,7 @@ You must have the following to successfully complete this Apache Storm tutorial:
 ## Create a Storm cluster
 
 Storm on HDInsight uses Azure Blob storage for storing log files and topologies submitted to the cluster. Use the following steps to create an Azure storage account for use with your cluster:
+
 1. Sign in to the [Azure Management Portal](http://manage.windowsazure.cn/).
 
 2. Click **NEW** in the lower-left corner, point to **DATA SERVICES**, point to **STORAGE**, and then click **QUICK CREATE**.
@@ -73,6 +74,7 @@ This Apache Storm tutorial introduces you to big data analytics using the Storm 
 Each Storm on HDInsight cluster comes with the Storm Dashboard, which can be used to upload and run Storm topologies on the cluster. Each cluster also comes with sample topologies that can be run directly from the Storm Dashboard.
 
 ### <a id="connect"></a>Connect to the dashboard
+
 The dashboard is located at **https://&lt;clustername>.azurehdinsight.cn//**, where **clustername** is the name of the cluster. You can also find a link to the dashboard at the bottom of the Azure Management Portal page for your cluster.
 
 ![Azure Management Portal with Storm Dashboard link](./media/hdinsight-apache-storm-tutorial-get-started/dashboard-link.png)
@@ -210,3 +212,4 @@ In this Apache Storm tutorial, you used the Storm Starter to learn how to create
 [stormjavadocs]: https://storm.incubator.apache.org/apidocs/
 [azureportal]: https://manage.windowsazure.cn/
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
+[preview-portal]: https://manage.windowsazure.cn/

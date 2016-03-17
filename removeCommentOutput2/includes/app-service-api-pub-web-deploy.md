@@ -6,9 +6,9 @@
 
 	![Deploying the API App](./media/app-service-api-pub-web-deploy/26-5-deployment-success-v3.png)
 
-	The **Azure Web App Activity** window shows the deployment progress.
+	The **Azure Activity** window shows the deployment progress. 
 
-	![Status notification of the Azure Web App Activity window](./media/app-service-api-pub-web-deploy/26-5-deployment-success-v4.png)
+	![Status notification of the Azure Activity window](./media/app-service-api-pub-web-deploy/26-5-deployment-success-v4.png)
 
 	During this deployment process, Visual Studio automatically tries to restart the *gateway*. The gateway is a web app that handles administrative functions for all API apps in a resource group, and it has to be restarted to recognize changes in an API app's API definition or *apiapp.json* file. 
  

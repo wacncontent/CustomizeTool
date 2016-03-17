@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Configure AlwaysOn Availability Groups in an Azure VM | Windows Azure"
+	pageTitle="Configure AlwaysOn Availability Groups in an Azure VM | Azure"
 	description="This tutorial uses resources created with  the classic deployment model, and uses PowerShell to create an AlwaysOn Availability Group in Azure."
 	services="virtual-machines"
 	documentationCenter="na"

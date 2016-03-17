@@ -117,7 +117,7 @@ Here, you will publish the application to a web app in Azure while preserving th
 
 	![](./media/web-sites-dotnet-lob-application-adfs/01-publish-website.png)
 
-2. Select **Windows Azure Web App**.
+2. Select **App Services**.
 3. If you haven't signed in to Azure, click **Sign In** and use the Microsoft account for your Azure subscription to sign in.
 4. Once signed in, click **New** to create a new web app.
 5. Fill in all required fields. You are going to connect to on-premise data later, so you won't create a database for this web app.

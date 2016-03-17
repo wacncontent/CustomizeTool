@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Line of business application Phase 1 | Windows Azure" 
+	pageTitle="Line of business application Phase 1 | Azure" 
 	description="Create the virtual network and other Azure infrastructure elements in Phase 1 of the line of business application in Azure." 
 	documentationCenter=""
 	services="virtual-machines" 

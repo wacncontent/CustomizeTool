@@ -1,6 +1,1 @@
-E:/GitHub/azure-content-mooncake-pr/articles/app-service-web/develop-wordpress-on-app-service-web-apps.md
-E:/GitHub/azure-content-mooncake-pr/includes/app-service-blueprint-webjobs.md
-E:/GitHub/azure-content-mooncake-pr/includes/app-service-blueprint-guide-for-wordpress.md
-E:/GitHub/azure-content-mooncake-pr/articles/HDInsight/hdinsight-apache-spark-intellij-tool-plugin.md
-E:/GitHub/azure-content-mooncake-pr/articles/virtual-network/virtual-networks-name-resolution-ddns.md
-E:/GitHub/azure-content-mooncake-pr/includes/vpn-gateway-table-vnet-to-vnet-include.md
+E:/GitHub/azure-content-pr/articles/virtual-machines/virtual-machines-linux-install-mysql.md

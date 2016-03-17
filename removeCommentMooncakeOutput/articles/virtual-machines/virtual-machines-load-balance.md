@@ -1,15 +1,15 @@
 <properties
-	pageTitle="Load balancing for infrastructure services | Windows Azure"
+	pageTitle="Load balancing for infrastructure services | Azure"
 	description="Describes the two different types of load balancing supported by Azure: Load balancer for cloud services and Azure Traffic Manager for client traffic."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="joaoma"
-	manager="adinah"
+	manager="carmonm"
 	editor=""/>
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="07/21/2015"
+	ms.date="02/02/2016"
 	wacn.date=""/>
 
 
@@ -59,8 +59,6 @@ The following diagram shows a load-balanced endpoint for standard (unencrypted) 
 
 ![loadbalancing](./media/virtual-machines-load-balance/LoadBalancing.png)
 
-For more information, see [Azure Load Balancer](/documentation/articles/load-balancer-overview). For the steps to create a load-balanced set, see [Configure a load-balanced set](/documentation/articles/load-balancer-internet-getstarted).
-
 Azure can also load balance within a cloud service or virtual network. This is known as internal load balancing and can be used in the following ways:
 
 - To load balance between servers in different tiers of a multi-tier application (for example, between web and database tiers).
@@ -73,10 +71,4 @@ The following diagram shows an example of an internal load-balanced endpoint for
 
 ![loadbalancing](./media/virtual-machines-load-balance/LOBServers.png)
 
-## Next steps
 
-For the steps to create a load-balanced set, see [Configure an internal load-balanced set](/documentation/articles/load-balancer-internal-getstarted).
-
-For more information about load balancer, see [Internal load balancing](/documentation/articles/load-balancer-internal-overview).
-
-<!-- LINKS -->

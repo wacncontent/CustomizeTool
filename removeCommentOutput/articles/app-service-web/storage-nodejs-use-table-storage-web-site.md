@@ -597,8 +597,8 @@ While the steps in this article describe using the Table Service to store inform
 
 <!-- URLs -->
 
-[Build and deploy a Node.js web app in Azure]: web-sites-nodejs-develop-deploy-mac.md
-[Continuous deployment using GIT in Azure Web App]: web-sites-publish-source-control.md
+[Build and deploy a Node.js web app in Azure]: /documentation/articles/web-sites-nodejs-develop-deploy-mac
+[Continuous deployment using GIT in Azure Web App]: /documentation/articles/web-sites-publish-source-control
 [Azure Developer Center]: /develop/nodejs/
 
 [node]: http://nodejs.org
@@ -607,10 +607,10 @@ While the steps in this article describe using the Table Service to store inform
 [for free]: http://windowsazure.cn
 [Git remote]: http://git-scm.com/docs/git-remote
 
-[Node.js web app with MongoDB]: web-sites-nodejs-store-data-mongodb.md
-[Azure CLI]: ../xplat-cli-install.md
+[Node.js web app with MongoDB]: /documentation/articles/web-sites-nodejs-store-data-mongodb
+[Azure CLI]: /documentation/articles/xplat-cli-install
 
-[Continuous deployment using GIT in Azure Web App]: web-sites-publish-source-control.md
+[Continuous deployment using GIT in Azure Web App]: /documentation/articles/web-sites-publish-source-control
 [azure]: https://github.com/Azure/azure-sdk-for-node
 [node-uuid]: https://www.npmjs.com/package/node-uuid
 [nconf]: https://www.npmjs.com/package/nconf
@@ -618,7 +618,7 @@ While the steps in this article describe using the Table Service to store inform
 
 [Azure Management Portal]: https://manage.windowsazure.cn
 
-[Create and deploy a Node.js application to an Azure Web Site]: web-sites-nodejs-develop-deploy-mac.md
+[Create and deploy a Node.js application to an Azure Web Site]: /documentation/articles/web-sites-nodejs-develop-deploy-mac
  
 <!-- Image References -->
 

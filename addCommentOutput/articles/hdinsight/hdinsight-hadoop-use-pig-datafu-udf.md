@@ -20,15 +20,15 @@ DataFu is a collection of Open Source libraries for use with Hadoop. In this doc
 
 * An Azure subscription.
 
-<!-- deleted by customization
+
 * An Azure HDInsight cluster (Linux or Windows based)
--->
-<!-- keep by customization: begin -->
+
+
 * An Azure HDInsight cluster (Windows based)
-<!-- keep by customization: end -->
+
 
 * A basic familiarity with [using Pig on HDInsight](/documentation/articles/hdinsight-use-pig)
-<!-- deleted by customization
+
 
 ##Install DataFu on Linux-based HDInsight
 
@@ -50,19 +50,19 @@ DataFu can be downloaded and installed from the Maven repository. Use the follow
         hdfs dfs -put datafu-1.2.0.jar /example/jars
     
     > [AZURE.NOTE] The above example stores the jar in `wasb:///example/jars` since this directory already exists on the cluster storage. You can use any location you wish on HDInsight cluster storage.
--->
+
 
 ##Use DataFu With Pig
 
 The steps in this section assume that you are familiar with using Pig on HDInsight, and only provide the Pig Latin statements, not the steps on how to use them with the cluster. For more information on using Pig with HDInsight, see [Use Pig with HDInsight](/documentation/articles/hdinsight-use-pig).
-<!-- deleted by customization
+
 
 > [AZURE.IMPORTANT] When using DataFu from Pig on a Linux-based HDInsight cluster, you must first register the jar file using the following Pig Latin statement:
 >
 > ```register wasb:///example/jars/datafu-1.2.0.jar```
 >
 > DataFu is registered by default on Windows-based HDInsight clusters.
--->
+
 
 You will usually define an alias for DataFu functions. For example:
 

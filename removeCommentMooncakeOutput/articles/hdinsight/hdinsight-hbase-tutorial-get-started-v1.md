@@ -1,5 +1,5 @@
 <properties
-	pageTitle="HBase tutorial: Get started with HBase in Hadoop | Windows Azure"
+	pageTitle="HBase tutorial: Get started with HBase in Hadoop | Azure"
 	description="Follow this HBase tutorial to get started using Apache HBase with Hadoop in HDInsight. Create tables from the HBase shell and query them using Hive."
 	keywords="apache hbase,hbase,hbase shell,hbase tutorial"
 	services="hdinsight"
@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="12/02/2015"
+	ms.date="01/29/2016"
 	wacn.date=""/>
 
 

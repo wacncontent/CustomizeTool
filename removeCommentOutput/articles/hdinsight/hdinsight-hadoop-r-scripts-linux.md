@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Install R on Linux-based HDInsight | Windows Azure"
+	pageTitle="Install R on Linux-based HDInsight | Azure"
 	description="Learn how to install and use R to customize Linux-based Hadoop clusters."
 	services="hdinsight"
 	documentationCenter=""
@@ -139,5 +139,5 @@ After the cluster has finished provisioning, use the following steps to use R to
 
 - [Install Hue on HDInsight clusters](/documentation/articles/hdinsight-hadoop-hue-linux). Use cluster customization to install Hue on HDInsight Hadoop clusters. Hue is a set of Web applications used to interact with a Hadoop cluster.
 
-[hdinsight-cluster-customize]: hdinsight-hadoop-customize-cluster-v1.md
-[hdinsight-install-spark]: hdinsight-hadoop-spark-install-linux.md
+[hdinsight-cluster-customize]: /documentation/articles/hdinsight-hadoop-customize-cluster-v1
+[hdinsight-install-spark]: /documentation/articles/hdinsight-hadoop-spark-install-linux

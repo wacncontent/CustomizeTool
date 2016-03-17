@@ -1,7 +1,7 @@
 <!-- not suitable for Mooncake -->
 
 <properties
-	pageTitle="DataStax Enterprise on Ubuntu with a Resource Manager Template | Windows Azure"
+	pageTitle="DataStax Enterprise on Ubuntu with a Resource Manager Template | Azure"
 	description="Learn to easily deploy a new DataStax Enterprise cluster on Ubuntu VMs using Azure PowerShell or the Azure CLI and a Resource Manager template"
 	services="virtual-machines"
 	documentationCenter=""
@@ -17,9 +17,10 @@
 
 # DataStax Enterprise on Ubuntu with a Resource Manager Template
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
 
-DataStax is a recognized industry leader in developing and delivering solutions based on Apache Cassandraâ˘ - the commercially-supported, enterprise-ready NoSQL distributed database technology that is widely-acknowledged as agile, always-on, and predictably scalable to any size. DataStax offers both the Enterprise (DSE) and Community (DSC) flavors. In addition to what the Community edition provides, Datastax Enterprise is Production-certified Cassandra with capabilities like in-memory computing, enterprise-level security, fast and powerful integrated analytics, and enterprise management.
+
+DataStax is a recognized industry leader in developing and delivering solutions based on Apache Cassandra™ - the commercially-supported, enterprise-ready NoSQL distributed database technology that is widely-acknowledged as agile, always-on, and predictably scalable to any size. DataStax offers both the Enterprise (DSE) and Community (DSC) flavors. In addition to what the Community edition provides, Datastax Enterprise is Production-certified Cassandra with capabilities like in-memory computing, enterprise-level security, fast and powerful integrated analytics, and enterprise management.
 
 >[AZURE.NOTE] Unlike the Community edition, in order to deploy DataStax Enterprise, you need to have a valid DataStax account (username and password) to pass in as parameters during template deployment. Visit the [Datastax](http://www.datastax.com) website to set up your account if you don't have one already.
 
@@ -344,7 +345,7 @@ In the previous example, you can see two different approaches. In the first frag
 	        "version": "latest"
 	      },
 
-	â
+	 
 In the second fragment, the "scripts" variable is a JSON array where each element will be calculated at runtime using a template language function (concat) and the value of another variable plus string constants.
 
 	      "scripts": [

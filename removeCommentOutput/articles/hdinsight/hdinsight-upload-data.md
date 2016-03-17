@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Upload data for Hadoop jobs in HDInsight | Windows Azure"
+	pageTitle="Upload data for Hadoop jobs in HDInsight | Azure"
 	description="Learn how to upload and access data for Hadoop jobs in HDInsight using the Azure CLI, Azure Storage Explorer, Azure PowerShell, the Hadoop command line, or Sqoop."
 	services="hdinsight,storage"
 	documentationCenter=""
@@ -253,27 +253,27 @@ Now that you understand how to get data into HDInsight, read the following artic
 [azure-powershell]: http://msdn.microsoft.com/zh-cn/library/azure/jj152841.aspx
 
 [azure-storage-client-library]: /documentation/articles/storage-dotnet-how-to-use-blobs/
-[azure-create-storage-account]: ../storage-create-storage-account.md
-[azure-azcopy-download]: ../storage-use-azcopy.md
-[azure-azcopy]: ../storage-use-azcopy.md
+[azure-create-storage-account]: /documentation/articles/storage-create-storage-account
+[azure-azcopy-download]: /documentation/articles/storage-use-azcopy
+[azure-azcopy]: /documentation/articles/storage-use-azcopy
 
-[hdinsight-use-sqoop]: hdinsight-use-sqoop.md
+[hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop
 
-[hdinsight-storage]: ../hdinsight-use-blob-storage.md
-[hdinsight-submit-jobs]: hdinsight-submit-hadoop-jobs-programmatically.md
-[hdinsight-get-started]: ../hdinsight-get-started.md
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
+[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
 
-[hdinsight-use-hive]: hdinsight-use-hive.md
-[hdinsight-use-pig]: hdinsight-use-pig.md
-[hdinsight-provision]: hdinsight-provision-clusters-v1.md
+[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
+[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
 
-[sqldatabase-create-configure]: ../sql-database-create-configure.md
+[sqldatabase-create-configure]: /documentation/articles/sql-database-get-started
 
 [apache-sqoop-guide]: http://sqoop.apache.org/docs/1.4.4/SqoopUserGuide.html
 
-[Powershell-install-configure]: ../powershell-install-configure.md
+[Powershell-install-configure]: /documentation/articles/powershell-install-configure
 
-[azurecli]: ../xplat-cli-install.md
+[azurecli]: /documentation/articles/xplat-cli-install
 
 
 [image-azure-storage-explorer]: ./media/hdinsight-upload-data/HDI.AzureStorageExplorer.png

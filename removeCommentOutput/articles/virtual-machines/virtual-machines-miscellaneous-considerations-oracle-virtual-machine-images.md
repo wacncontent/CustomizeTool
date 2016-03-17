@@ -1,5 +1,5 @@
 <properties
-pageTitle="Considerations for using Oracle VM images | Windows Azure"
+pageTitle="Considerations for using Oracle VM images | Azure"
 description="Learn about supported configurations and limitations for an Oracle VM on Windows Server in Azure before you deploy."
 services="virtual-machines"
 documentationCenter=""

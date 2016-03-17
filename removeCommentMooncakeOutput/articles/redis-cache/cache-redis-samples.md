@@ -37,9 +37,7 @@ For more information, see the [StackExchange.Redis](https://github.com/StackExch
 
 [How to use Azure Redis Cache with Python](/documentation/articles/cache-python-get-started) shows how to get started with Azure Redis Cache using Python and the [redis-py](https://github.com/andymccurdy/redis-py) client.
 
-The [PHP example](https://msdn.microsoft.com/zh-cn/library/azure/dn690470.aspx#PHPExample) shows you how to get started using Azure Redis Cache with PHP and the [predis](https://github.com/nrk/predis) client.
-
-[Work with .NET objects in the cache](https://msdn.microsoft.com/zh-cn/library/azure/dn690521.aspx#Objects) shows you one way to serialize .NET objects so you can write them to and read them from an Azure Redis Cache instance. 
+[Work with .NET objects in the cache](/documentation/articles/cache-dotnet-how-to-use-azure-redis-cache#working-with-caches) shows you one way to serialize .NET objects so you can write them to and read them from an Azure Redis Cache instance. 
 
 ## Use Redis Cache as a Scale out Backplane for ASP.NET SignalR
 

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Manage the availability of VMs | Windows Azure"
+	pageTitle="Manage the availability of VMs | Azure"
 	description="Learn how to use multiple virtual machines to ensure high availability for your Azure application."
 	services="virtual-machines"
 	documentationCenter=""
@@ -18,7 +18,7 @@
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
 
 ## Understand planned vs. unplanned maintenance
-There are two types of Windows Azure platform events that can affect the availability of your virtual machines: planned maintenance and unplanned maintenance.
+There are two types of Azure platform events that can affect the availability of your virtual machines: planned maintenance and unplanned maintenance.
 
 - **Planned maintenance events** are periodic updates made by 21vnet to the underlying Azure platform to improve overall reliability, performance, and security of the platform infrastructure that your virtual machines run on. The majority of these updates are performed without any impact upon your virtual machines or cloud services. However, there are instances where these updates require a reboot of your virtual machine to apply the required updates to the platform infrastructure.
 

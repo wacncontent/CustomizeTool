@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Access Hadoop YARN application logs programmatically | Windows Azure"
+	pageTitle="Access Hadoop YARN application logs programmatically | Azure"
 	description="Access application logs programmatically on a Hadoop cluster in HDInsight."
 	services="hdinsight"
 	documentationCenter=""
@@ -10,28 +10,19 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="10/02/2015"
+	ms.date="01/29/2016"
 	wacn.date=""/>
 
-# Access YARN application logs on Hadoop in HDInsight programmatically
+# Access YARN application logs on Windows-based HDInsight
 
-This topic explains how to programmatically enumerate the YARN (Yet Another Resource Negotiator) applications that have finished on a Hadoop cluster in Azure HDInsight, and how to programmatically access the application logs without having to connect to your clusters by using Remote Desktop Protocol (RDP). Specifically, a new component and a new API have been added:
+This topic explains how to access the logs for YARN (Yet Another Resource Negotiator) applications that have finished on a Hadoop cluster in Azure HDInsight
 
-  1. The generic application history server on HDInsight clusters is enabled. It is a component within the YARN Timeline Server that handles the storage and retrieval of generic information about completed applications.
-  2. APIs in the Azure HDInsight .NET SDK are available to programmatically enumerate applications that have run on your clusters and to download the relevant application-specific or container-specific logs (in plain text) to help with debugging any application problems that occur.
+### Prerequisites
 
-## Prerequisites
-
-The Azure HDInsight SDK is required to use the code presented in this topic in a .NET Framework application. The most recently published build of the SDK is available at [NuGet](http://nuget.codeplex.com/wikipage?title=Getting%20Started).
-
-To install the HDInsight SDK from a Visual Studio application, go the **Tools** menu, click **Nuget Package Manager**, and then click **Package Manager Console**. Run the following command in the console to install the packages:
-
-		Install-Package Microsoft.WindowsAzure.Management.HDInsight
-
-This command adds .NET libraries for HDInsight and adds references to them to the current Visual Studio project.
+- A Windows-based HDInsight cluster.  See [Create Windows-based Hadoop clusters in HDInsight](/documentation/articles/hdinsight-provision-clusters-v1).
 
 
-## <a name="YARNTimelineServer"></a>YARN Timeline Server
+## YARN Timeline Server
 
 The <a href="http://hadoop.apache.org/docs/r2.4.0/hadoop-yarn/hadoop-yarn-site/TimelineServer.html" target="_blank">YARN Timeline Server</a> provides generic information on completed applications as well as framework-specific application information through two different interfaces. Specifically:
 
@@ -50,9 +41,8 @@ On your HDInsight clusters, this information will be stored by Azure Resource Ma
 
     GET on https://<cluster-dns-name>.azurehdinsight.cn/ws/v1/applicationhistory/apps
 
-We have added new APIs to the HDInsight .NET SDK to make it easy to retrieve this data programmatically. Note that the generic data can also be retrieved by running YARN command-line interface (CLI) commands directly on your cluster nodes (after connecting to the cluster by using RDP).
 
-## <a name="YARNAppsAndLogs"></a>YARN applications and logs
+##<a name="YARNAppsAndLogs"></a> YARN applications and logs
 
 YARN supports multiple programming models (MapReduce being one of them) by decoupling resource management from application scheduling/monitoring. This is done through a global *ResourceManager* (RM), per-worker-node *NodeManagers* (NMs), and per-application *ApplicationMasters* (AMs). The per-application AM negotiates resources (CPU, memory, disk, network) for running your application with the RM. The RM works with NMs to grant these resources, which are granted as *containers*. The AM is responsible for tracking the progress of the containers assigned to it by the RM. An application may require many containers depending on the nature of the application.
 

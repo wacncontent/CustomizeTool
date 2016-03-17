@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Configuring Oracle GoldenGate in VMs | Windows Azure"
+	pageTitle="Configuring Oracle GoldenGate in VMs | Azure"
 	description="Step through a tutorial for setting up and implementing Oracle GoldenGate on Azure Windows Server VMs for high availability and disaster recovery."
 	services="virtual-machines"
 	authors="bbenz"
@@ -13,7 +13,7 @@
 
 #Configuring Oracle GoldenGate for Azure
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]  Resource Manager model. 
 
 
 This tutorial demonstrates how to setup Oracle GoldenGate for Azure Virtual Machines environment for high availability and disaster recovery. The tutorial focuses on [bi-directional replication](http://docs.oracle.com/goldengate/1212/gg-winux/GWUAD/wu_about_gg.htm) for non-RAC Oracle databases and requires that both sites are active.
@@ -612,6 +612,8 @@ Remote desktop to Site A and check if the replication has taken place:
 	———- ——————- ———— ———
 	100 TV 100 22-MAR-13
 	101 DVD 10 22-MAR-13
+
 
 ##Additional Resources
 [Oracle Virtual Machine images for Azure](/documentation/articles/virtual-machines-oracle-list-oracle-virtual-machine-images)
+

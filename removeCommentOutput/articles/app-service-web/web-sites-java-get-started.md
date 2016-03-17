@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Create a Java web app in Azure | Windows Azure"
-	description="This tutorial shows you how to deploy a Java web app to Azure Web App."
+	pageTitle="Create a Java web app in Azure | Azure"
+	description="This tutorial shows you how to deploy a Java web app to Azure."
 	services="app-service\web"
 	documentationCenter="java"
 	authors="rmcmurray"
@@ -23,7 +23,7 @@
 
 This tutorial shows how to create a Java [web app in Azure](/documentation/services/web-sites/) by using the [Azure Management Portal](https://manage.windowsazure.cn/). The Azure Management Portal is a web interface that you can use to manage Azure resources.
 
-> [AZURE.NOTE] To complete this tutorial, you need a Windows Azure account. If you don't have an account, you can [activate your Visual Studio subscriber benefits][] or [sign up for a trial][].
+> [AZURE.NOTE] To complete this tutorial, you need a Azure account. If you don't have an account, you can [activate your Visual Studio subscriber benefits][] or [sign up for a trial][].
 >
 > If you want to get started with Azure before you sign up for an Azure account, go to [Try Azure Web App][]. There, you can immediately create a short-lived starter web app in Azure—no credit card required, and no commitments.
 

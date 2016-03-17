@@ -48,7 +48,7 @@ Azure Managed Cache Service and Azure Redis Cache are similar but implement some
 
 ## Choose a Cache Offering
 
-Windows Azure Redis Cache is available in the following tiers:
+Azure Redis Cache is available in the following tiers:
 
 -	**Basic** - Single node. Multiple sizes up to 53 GB.
 -	**Standard** - Two-node Primary/Replica. Multiple sizes up to 53 GB. 99.9% SLA.
@@ -189,5 +189,5 @@ Azure Redis Cache has providers for both ASP.NET Session State and Page Output c
 
 ## Next steps
 
-Explore the [Azure Redis Cache documentation](/documentation/services/cache/) for tutorials, samples, videos, and more.
+Explore the [Azure Redis Cache documentation](/documentation/services/redis-cache/) for tutorials, samples, videos, and more.
 

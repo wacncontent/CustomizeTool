@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Upload data for Hadoop jobs in HDInsight | Windows Azure"
+	pageTitle="Upload data for Hadoop jobs in HDInsight | Azure"
 	description="Learn how to upload and access data for Hadoop jobs in HDInsight using the Azure CLI, Azure Storage Explorer, Azure PowerShell, the Hadoop command line, or Sqoop."
 	services="hdinsight,storage"
 	documentationCenter=""
@@ -62,7 +62,7 @@ The Azure CLI is a cross-platform tool that allows you to manage Azure services.
 
 2. Open a command prompt, bash, or other shell, and use the following to authenticate to your Azure subscription.
 
-		azure login -e AzureChinaCloud -u <your account>
+		azure login -e AzureChinaCloud -u <your account> 
 
 	When prompted, enter the user name and password for your subscription.
 
@@ -115,7 +115,7 @@ Azure PowerShell is a scripting environment that you can use to control and auto
 
 		Switch-AzureMode -Name AzureResourceManager
 
-		Add-AzureAccount
+		Add-AzureAccount -Environment AzureChinaCloud
 		Select-AzureSubscription $subscriptionName
 
 		# Get the storage account key

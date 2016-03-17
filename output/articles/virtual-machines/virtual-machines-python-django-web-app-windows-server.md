@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Python web app with Django | Windows Azure"
+	pageTitle="Python web app with Django | Azure"
 	description="This tutorial teaches you how to host a Django-based website on Azure using a Windows Server 2012 R2 Datacenter virtual machine using the classic deployment model."
 	services="virtual-machines"
 	documentationCenter="python"
@@ -23,7 +23,7 @@
 
 <br>
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+ Resource Manager model. [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
  
 
 This tutorial describes how to host a Django-based website on Microsoft

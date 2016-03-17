@@ -1,7 +1,7 @@
 <!-- not suitable for Mooncake -->
 
 <properties 
-	pageTitle="An overview of Apache Spark in HDInsight | Windows Azure" 
+	pageTitle="An overview of Apache Spark in HDInsight | Azure" 
 	description="An introduction to Apache Spark in HDInsight and scenarios in which to use Spark on HDInsight in your applications." 
 	services="hdinsight" 
 	documentationCenter="" 
@@ -94,4 +94,4 @@ Spark in HDInsight also provides an [ODBC driver](http://go.microsoft.com/fwlink
 * [Submit jobs remotely to an Apache Spark cluster on Azure HDInsight](/documentation/articles/hdinsight-apache-spark-job-server)
 
 
-[hdinsight-storage]: ../hdinsight-use-blob-storage/
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage

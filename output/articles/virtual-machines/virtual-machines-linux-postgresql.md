@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Set up PostgreSQL on a Linux VM | Windows Azure"
+	pageTitle="Set up PostgreSQL on a Linux VM | Azure"
 	description="Learn how to install and configure PostgreSQL on a Linux virtual machine in Azure"
 	services="virtual-machines"
 	documentationCenter=""
@@ -27,7 +27,12 @@ In this article, you will learn how to install and configure PostgreSQL on an Az
 ## Install PostgreSQL
 
 > [AZURE.NOTE] You must already have an Azure virtual machine running Linux in order to complete this tutorial. To create and set up a Linux VM before proceeding, see the
+
 [Azure Linux VM tutorial](/documentation/articles/virtual-machines-linux-tutorial).
+
+
+[Azure Linux VM tutorial](/documentation/articles/virtual-machines-linux-tutorial-portal-rm).
+
 
 In this case, use port 1999 as the PostgreSQL port.  
 

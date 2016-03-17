@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Process events from Event Hubs with Storm on HDInsight | Windows Azure"
+   pageTitle="Process events from Event Hubs with Storm on HDInsight | Azure"
    description="Learn how to process Event Hubs data with a C# Storm topology created in Visual Studio using the HDInsight Tools for Visual Studio."
    services="hdinsight,notification hubs"
    documentationCenter=""
@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="12/04/2015"
+	ms.date="01/28/2016"
 	wacn.date=""/>
 
 # Process events from Azure Event Hubs with Storm on HDInsight (C#)
@@ -21,10 +21,10 @@ In this tutorial, you will learn how to use the HDInsight Tools for Visual Studi
 * **EventHubWriter**: Randomly generates data and writes it to Event Hubs
 
 * **EventHubReader**: Reads data from Event Hubs and stores it in Azure Table storage
-<!-- deleted by customization
+
 
 [AZURE.NOTE] The steps in this document only work with a Windows-based HDInsight cluster. For a Java version of this project, which will work with either a Linux-based or Windows-based cluster, see [Process events from Azure Event Hubs with Storm on HDInsight (Java)](/documentation/articles/hdinsight-storm-develop-java-event-hub-topology).
--->
+
 
 ## Prerequisites
 

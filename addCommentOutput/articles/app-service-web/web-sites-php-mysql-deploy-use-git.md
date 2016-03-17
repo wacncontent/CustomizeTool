@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="11/19/2015"
+	ms.date="02/09/2016"
 	wacn.date=""/>
 
 #Create a PHP-MySQL web app in Azure and deploy using Git
@@ -44,7 +44,7 @@ This tutorial assumes you have [PHP][install-php], the MySQL Command-Line Tool (
 Follow these steps to create a web app and a MySQL database:
 
 1. Login to the [Azure Management Portal][management-portal].
-<!-- deleted by customization
+
 2. Click the **New** icon.
 3. Click **See All** next to **Marketplace**. 
 
@@ -77,8 +77,8 @@ Follow these steps to create a web app and a MySQL database:
 
 	![Create publishing credentials][credentials]
 
--->
-<!-- keep by customization: begin -->
+
+
 2. Click the **New** icon on the bottom left of the portal.
 
 	![Create New Azure  Website][new-website]
@@ -97,12 +97,12 @@ Follow these steps to create a web app and a MySQL database:
 
 	When the  Website has been created you will see the text **Creation of  Website "[SITENAME]" completed successfully**. Now, you can enable Git publishing.
 
-6. Click the name of the  Website displayed in the list of  Websites to open the  Website's **QuickStart** dashboard.
+6. Click the name of the  Website displayed in the list of Websites.
 
 	![Open  Website dashboard][go-to-dashboard]
 
 
-7. At the bottom of the **QuickStart** page, click **Set up Git publishing**. 
+7. Under the **Integrate source control**, click **Set up deployment from source control**, and choose **Local Git Repository**. 
 
 	![Set up Git publishing][setup-git-publishing]
 
@@ -115,13 +115,13 @@ Follow these steps to create a web app and a MySQL database:
 9. When your repository is ready, you will see instructions for pushing your application files to the repository. Make note of these instructions - they will be needed later.
 
 	![Git instructions][git-instructions]
-<!-- keep by customization: end -->
+
 
 ##Get remote MySQL connection information
 
 To connect to the MySQL database that is running in Web Apps, your will need the connection information. To get MySQL connection information, follow these steps:
 
-<!-- deleted by customization
+
 1. From your resource group, click the database:
 
 	![Select database][select-database]
@@ -133,8 +133,8 @@ To connect to the MySQL database that is running in Web Apps, your will need the
 2. Make note of the values for `Database`, `Host`, `User Id`, and `Password`.
 
     ![Note properties][note-properties]
--->
-<!-- keep by customization: begin -->
+
+
 1. In Azure Management Portal, click **MYSQL DATABASE ON AZURE**, and open your MYSQL database server. In **Dashboard** page, under **quick glance**, you can get your host and port.
 
 	![connection][connection-string-info]
@@ -144,7 +144,7 @@ To connect to the MySQL database that is running in Web Apps, your will need the
 3. in **Database** page, you can get all Database under this MYSQL Database Server.
 
 	The Data source would be `tcp:<your MYSQL server name>.database.chinacloudapi.cn,<port>`
-<!-- keep by customization: end -->
+
 
 ##Build and test your app locally
 
@@ -158,11 +158,11 @@ To build and run the application locally, follow the steps below. Note that thes
 
 1. Connect to the remote MySQL server, using the value for `Data Source`, `User Id`, `Password`, and `Database` that you retrieved earlier:
 
-		<!-- deleted by customization mysql --><!-- keep by customization: begin --> <pre><code class="prettyprint">mysql <!-- keep by customization: end --> -h{Data Source] -u[User Id] -p[Password] <!-- deleted by customization -D[Database] --><!-- keep by customization: begin --> -D[Database]</code></pre> <!-- keep by customization: end -->
+		mysql -h{Data Source] -u[User Id] -p[Password] -D[Database]
 
 2. The MySQL command prompt will appear:
 
-		<!-- deleted by customization mysql> --><!-- keep by customization: begin --> <pre><code class="prettyprint">mysql></code></pre> <!-- keep by customization: end -->
+		mysql>
 
 3. Paste in the following `CREATE TABLE` command to create the `registration_tbl` table in your database:
 
@@ -309,7 +309,7 @@ To publish changes to your app, follow these steps:
 3. Browse to **http://[site name].chinacloudsites.cn/index.php** to see your app and any changes you may have made:
 
 	![Azure PHP web site][running-app]
-<!-- deleted by customization
+
 >[AZURE.NOTE] If you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.
 
 ## Next steps
@@ -319,11 +319,11 @@ For more information, see the [PHP Developer Center](/develop/php/).
 ## What's changed
 * For a guide to the change from Websites to Azure see: [Azure and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
 
--->
-<!-- keep by customization: begin -->
+
+
 	
 [go-to-dashboard]: ./media/web-sites-php-mysql-deploy-use-git/go_to_dashboard.png
-<!-- keep by customization: end -->
+
 [install-php]: http://www.php.net/manual/en/install.php
 [install-SQLExpress]: http://www.microsoft.com/download/details.aspx?id=29062
 [install-Drivers]: http://www.microsoft.com/download/details.aspx?id=20098
@@ -332,21 +332,21 @@ For more information, see the [PHP Developer Center](/develop/php/).
 
 [pdo-mysql]: http://www.php.net/manual/en/ref.pdo-mysql.php
 [running-app]: ./media/web-sites-php-mysql-deploy-use-git/running_app_2.png
-<!-- deleted by customization
+
 [new-website]: ./media/web-sites-php-mysql-deploy-use-git/new_website2.png
 [custom-create]: ./media/web-sites-php-mysql-deploy-use-git/create_web_mysql.png
--->
-<!-- keep by customization: begin -->
+
+
 [new-website]: ./media/web-sites-php-mysql-deploy-use-git/new_website.jpg
 [custom-create]: ./media/web-sites-php-mysql-deploy-use-git/custom_create.png
-<!-- keep by customization: end -->
+
 [website-details]: ./media/web-sites-php-mysql-deploy-use-git/website_details.jpg
-<!-- deleted by customization
+
 [new-mysql-db]: ./media/web-sites-php-mysql-deploy-use-git/create_db.png
--->
-<!-- keep by customization: begin -->
+
+
 [new-mysql-db]: ./media/web-sites-php-mysql-deploy-use-git/new_mysql_db.jpg
-<!-- keep by customization: end -->
+
 [go-to-webapp]: ./media/web-sites-php-mysql-deploy-use-git/select_webapp.png
 [setup-git-publishing]: ./media/web-sites-php-mysql-deploy-use-git/setup_git_publishing.png
 [credentials]: ./media/web-sites-php-mysql-deploy-use-git/save_credentials.png

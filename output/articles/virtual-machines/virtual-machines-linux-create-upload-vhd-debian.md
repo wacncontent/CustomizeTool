@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Prepare Debian Linux VHD | Windows Azure"
+	pageTitle="Prepare Debian Linux VHD | Azure"
 	description="Learn how to create Debian 7 & 8 VHD files for deployment in Azure."
 	services="virtual-machines"
 	documentationCenter=""
@@ -58,7 +58,7 @@ This section assumes that you have already installed a Debian Linux operating sy
 
 8. Deprovision the virtual machine and prepare it for provisioning on Azure and run:
 
-        # sudo waagent âforce -deprovision
+        # sudo waagent -force -deprovision
         # export HISTSIZE=0
         # logout
 

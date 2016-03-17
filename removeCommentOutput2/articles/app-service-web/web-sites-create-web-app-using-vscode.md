@@ -131,6 +131,7 @@ Now that you have created the web app and retrieved all the NuGet packages for t
 
 ## Create a web app in the Azure Management Portal
 
+
 The first step in creating your app is to create the web site via the Azure Management Portal.  To do this, you will need to login to the portal and click the NEW button in the bottom left corner. A window will appear. Click **Quick Create**, enter a URL, and select **Create Web Site**.
 
 ![](./media/web-sites-python-create-deploy-django-app/django-ws-003.png)

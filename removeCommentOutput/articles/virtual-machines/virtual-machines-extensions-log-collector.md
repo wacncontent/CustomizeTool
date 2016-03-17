@@ -1,5 +1,5 @@
 <properties
-   pageTitle="AzureLogCollector VM Extension | Windows Azure"
+   pageTitle="AzureLogCollector VM Extension | Azure"
    description="Describes the AzureLogCollector VM extension, which collects all the log files and brings them together into one location in Azure Storage."
    services="virtual-machines"
    documentationCenter="virtual-machines"
@@ -15,7 +15,7 @@
 
 # AzureLogCollector Extension
 
-Diagnosing issues with an Windows Azure cloud service requires collecting the service's log files on virtual machines as the issues occur. You can use the AzureLogCollector extension on-demand to perfom one-time collection of logs from one or more Cloud Service VMs (from both web roles and worker roles) and transfer the collected files to an Azure storage account - all without remotely logging on to any of the VMs.
+Diagnosing issues with an Azure cloud service requires collecting the service's log files on virtual machines as the issues occur. You can use the AzureLogCollector extension on-demand to perfom one-time collection of logs from one or more Cloud Service VMs (from both web roles and worker roles) and transfer the collected files to an Azure storage account - all without remotely logging on to any of the VMs.
 > [AZURE.NOTE]Descriptions for most of the logged information can be found at http://blogs.msdn.com/b/kwill/archive/2013/08/09/windows-azure-paas-compute-diagnostics-data.asp.
 
 There are two modes of collection dependent on the types of files to be collected.
@@ -49,7 +49,7 @@ In both collection modes, additional data collection folders can be specified by
 
 ## Add the extension
 
-You can use [Windows Azure PowerShell](https://msdn.microsoft.com/zh-cn/library/dn495240.aspx) cmdlets or [Service Management REST APIs](https://msdn.microsoft.com/zh-cn/library/ee460799.aspx) to add the AzureLogCollector extension.
+You can use [Azure PowerShell](https://msdn.microsoft.com/zh-cn/library/dn495240.aspx) cmdlets or [Service Management REST APIs](https://msdn.microsoft.com/zh-cn/library/ee460799.aspx) to add the AzureLogCollector extension.
 
 For Cloud Services, the existing Azure Powershell cmdlet, **Set-AzureServiceExtension**, can be used to enable the extension on Cloud Service role instances. Every time this extension is enabled through this cmdlet, log collection is triggered on the selected role instances of selected roles.
 

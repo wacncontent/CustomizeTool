@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
 	pageTitle="How to monitor Azure Redis Cache" 
 	description="Learn how to monitor the health and performance your Azure Redis Cache instances" 

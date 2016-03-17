@@ -81,7 +81,7 @@ Timeouts happen in the client that you use to talk to Redis. For the most part R
 <a name="cache-monitor"></a>
 ## How do I monitor the health and performance of my cache?
 
-Windows Azure Redis Cache instances can be monitored in the [Azure Management Portal](https://manage.windowsazure.cn). You can view metrics, pin metrics charts to the Startboard, customize the date and time range of monitoring charts, add and remove metrics from the charts, and set alerts when certain conditions are met. These tools enable you to monitor the health of your Azure Redis Cache instances and help you manage your caching applications. For more information on monitoring your caches, see [Monitor Azure Redis Cache](https://msdn.microsoft.com/zh-cn/library/azure/dn763945.aspx).
+Azure Redis Cache instances can be monitored in the [Azure Management Portal](https://manage.windowsazure.cn). You can view metrics, pin metrics charts to the Startboard, customize the date and time range of monitoring charts, add and remove metrics from the charts, and set alerts when certain conditions are met. These tools enable you to monitor the health of your Azure Redis Cache instances and help you manage your caching applications. For more information on monitoring your caches, see [Monitor Azure Redis Cache](https://msdn.microsoft.com/zh-cn/library/azure/dn763945.aspx).
 
 <a name="cache-disconnect"></a>
 ## Why was my client disconnected from the cache?
@@ -233,7 +233,7 @@ You can use any of the commands listed at [Redis commands](http://redis.io/comma
 <a name="cache-reference"></a>
 ## Why doesn't Azure Redis Cache have an MSDN class library reference like some of the other Azure services?
 
-Windows Azure Redis Cache is based on the popular open source Redis Cache, giving you access to a secure, dedicated Redis cache, managed by Microsoft. A variety of [Redis clients](http://redis.io/clients) are available for many programming languages. Each client has its own API that makes calls to the Redis cache instance using [Redis commands](http://redis.io/commands).
+Azure Redis Cache is based on the popular open source Redis Cache, giving you access to a secure, dedicated Redis cache, managed by Microsoft. A variety of [Redis clients](http://redis.io/clients) are available for many programming languages. Each client has its own API that makes calls to the Redis cache instance using [Redis commands](http://redis.io/commands).
 
 Because each client is different, there is not one centralized class reference on MSDN; instead each client maintains its own reference documentation. In addition to the reference documentation, there are several tutorials on Azure.com showing how to get started with Azure Redis Cache using different languages and cache clients on the [Redis Cache documentation](/documentation/services/redis-cache/) page.
 

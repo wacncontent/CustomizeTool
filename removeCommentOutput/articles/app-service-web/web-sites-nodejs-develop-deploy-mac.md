@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Create a Node.js web app in Azure | Windows Azure"
+	pageTitle="Create a Node.js web app in Azure | Azure"
 	description="Learn how to deploy a Node.js application to a web app in Azure."
 	services="app-service\web"
 	documentationCenter="nodejs"
@@ -36,9 +36,9 @@ The completed application writes a short "hello world" string to the browser.
 For tutorials and sample code with more complex Node.js applications, or for other topics about how to use Node.js in Azure, see the [Node.js Developer Center](/develop/nodejs/).
 
 > [AZURE.NOTE]
-> To complete this tutorial, you need a Windows Azure account. If you don't have an account, you can [activate your Visual Studio subscriber benefits](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F) or [sign up for a trial](/pricing/1rmb-trial/?WT.mc_id=A261C142F).
+> To complete this tutorial, you need a Azure account. If you don't have an account, you can [activate your Visual Studio subscriber benefits](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F) or [sign up for a trial](/pricing/1rmb-trial/?WT.mc_id=A261C142F).
 >
-> If you want to get started with Azure before you sign up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/). There, you can immediately create a short-lived starter web app in Azureâno credit card required, and no commitments.
+> If you want to get started with Azure before you sign up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/). There, you can immediately create a short-lived starter web app in Azure—no credit card required, and no commitments.
 
 ## Create a web app and enable Git publishing
 

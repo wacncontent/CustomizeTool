@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Generate recommendations using Mahout and WIndows-based HDInsight | Windows Azure"
+	pageTitle="Generate recommendations using Mahout and WIndows-based HDInsight | Azure"
 	description="Learn how to use the Apache Mahout machine learning library to generate movie recommendations with Windows-based HDInsight (Hadoop)."
 	services="hdinsight"
 	documentationCenter=""
@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="01/08/2016"
+	ms.date="01/28/2016"
 	wacn.date=""/>
 
 #Generate movie recommendations by using Apache Mahout with Hadoop in HDInsight
@@ -41,8 +41,7 @@ Mahout is a [machine learning][ml] library for Apache Hadoop. Mahout contains al
 ##<a name="recommendations"></a>Generate recommendations by using Windows PowerShell
 
 > [AZURE.NOTE] Although the job used in this section works by using Windows PowerShell, many of the classes provided with Mahout do not currently work with Windows PowerShell, and they must be run by using the Hadoop command line. For a list of classes that do not work with Windows PowerShell, see the [Troubleshooting](#troubleshooting) section.
->
-> For an example of using the Hadoop command line to run Mahout jobs, see [Classify data by using the Hadoop command line](#classify).
+> <p>For an example of using the Hadoop command line to run Mahout jobs, see [Classify data by using the Hadoop command line](#classify).
 
 One of the functions that is provided by Mahout is a recommendation engine. This engine accepts data in the format of `userID`, `itemId`, and `prefValue` (the users preference for the item). Mahout can then perform co-occurance analysis to determine: _users who have a preference for an item also have a preference for these other items_. Mahout then determines users with like-item preferences, which can be used to make recommendations.
 
@@ -391,9 +390,9 @@ To run jobs that use these classes, connect to the HDInsight cluster, and run th
 
 Now that you have learned how to use Mahout, discover other ways of working with data on HDInsight:
 
-* [Hive with HDInsight](/documentation/articles/hdinsight-hadoop-use-hive-powershell)
-* [Pig with HDInsight](/documentation/articles/hdinsight-hadoop-use-pig-powershell)
-* [MapReduce with HDInsight](/documentation/articles/hdinsight-hadoop-use-mapreduce-powershell)
+* [Hive with HDInsight](/documentation/articles/hdinsight-use-hive)
+* [Pig with HDInsight](/documentation/articles/hdinsight-use-pig)
+* [MapReduce with HDInsight](/documentation/articles/hdinsight-use-mapreduce)
 
 [build]: http://mahout.apache.org/developers/buildingmahout.html
 [aps]: /documentation/articles/powershell-install-configure

@@ -21,15 +21,7 @@ You can run programs or scripts in WebJobs in your [Azure Web App](/documentatio
 This article shows how to deploy WebJobs by using the [Azure Management Portal](https://manage.windowsazure.cn). For information about how to deploy by using Visual Studio or a continuous delivery process, see [How to Deploy Azure WebJobs to Web Apps](/documentation/articles/websites-dotnet-deploy-webjobs).
 
 The Azure WebJobs SDK simplifies many WebJobs programming tasks. For more information, see [What is the WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk).
-## Table of Contents ##
-- [Acceptable File Types for Scripts](#acceptablefiles)
-- [Create an On Demand Task](#CreateOnDemand)
-- [Create a Continuously Running Task](#CreateContinuous)
-- [Create a Scheduled Task](#CreateScheduled)
-	- [Scheduled jobs and Azure Scheduler](#Scheduler)
-- [View the Job History](#ViewJobHistory)
-- [Notes](#WHPNotes)
-- [Next Steps](#NextSteps)
+
 ## <a name="acceptablefiles"></a>Acceptable file types for scripts or programs
 
 The following file types are accepted:
@@ -43,6 +35,7 @@ The following file types are accepted:
 * .jar (using java)
 
 ## <a name="CreateOnDemand"></a>Create an on demand WebJob in the portal
+
 1. In the command bar of the **WebJobs** page, click **Add**. The **New Job** dialog appears.
 	
 	![On Demand Task][OnDemandWebJob]
@@ -53,6 +46,7 @@ The following file types are accepted:
 	
 4. In the **How to Run** box, choose **Run on Demand**.
 	
+
 5. Check the check mark on the bottom right of the dialog to upload the script to your website. The name you specified for the task appears in the list:
 	
 	![Task List][WebJobsList]
@@ -69,7 +63,7 @@ The following file types are accepted:
 	
 2. To start or stop a continuously running task, select the task in the list and click **Start** or **Stop** in the command bar.
 
-> [AZURE.NOTE] If your website runs on more than one instance, a continuously running task will run on all of your instances. On-demand and scheduled tasks run on a single instance selected for load balancing by Windows Azure.
+> [AZURE.NOTE] If your website runs on more than one instance, a continuously running task will run on all of your instances. On-demand and scheduled tasks run on a single instance selected for load balancing by Azure.
 
 > [AZURE.NOTE]
 > For continuous tasks, it is recommended that you enable **Always On** on the Configure page for your website. The Always On feature, available in Basic and Standard mode, prevents websites from being unloaded, even if they have been idle for some time. If your website is always loaded, your continuously running task may run more reliably. 
@@ -141,7 +135,7 @@ Scheduled jobs can be further configured in the Azure Scheduler pages of the [Ma
 	
 ## <a name="ViewJobHistory"></a>View the job history
 
-1. To view the execution history of a job, including jobs created with the WebJobs SDK, click  its corresponding link under the **Logs** column of the WebJobs page. (You can use the clipboard icon to copy the URL of the log file page to the clipboard if you wish.)
+1. To view the execution history of a job, including jobs created with the WebJobs SDK, click  its corresponding link under the **Logs** column of the WebJobs blade. (You can use the clipboard icon to copy the URL of the log file page to the clipboard if you wish.)
 		
 2. Clicking the link opens the details page for the WebJob. This page shows you the name of the command run, the last times it ran, and its success or failure. Under **Recent job runs**, click a time to see further details.
 	

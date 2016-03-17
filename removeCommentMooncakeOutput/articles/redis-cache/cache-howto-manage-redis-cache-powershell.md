@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Manage Azure Redis Cache with Azure PowerShell | Windows Azure"
+	pageTitle="Manage Azure Redis Cache with Azure PowerShell | Azure"
 	description="Learn how to perform administrative tasks for Azure Redis Cache using Azure PowerShell."
 	services="redis-cache"
 	documentationCenter="" 
@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="cache"
-	ms.date="12/16/2015"
+	ms.date="02/05/2016"
 	wacn.date=""/>
 
 # Manage Azure Redis Cache with Azure PowerShell
@@ -32,11 +32,11 @@ If you have already installed Azure PowerShell, you must have Azure PowerShell v
 
 First, you must logon to Azure with this command.
 
-	$china = Get-AzureRmEnvironment -Name AzureChinaCloud; Login-AzureRmAccount -Environment $china
+	$china = Get-AzureRmEnvironment -Name AzureChinaCloud; Login-AzureRmAccount -Environment $china 
 
 [AZURE.INCLUDE [azurerm-azurechinacloud-environment-parameter](../includes/azurerm-azurechinacloud-environment-parameter.md)]
 
-Specify the email address of your Azure account and its password in the Windows Azure sign-in dialog.
+Specify the email address of your Azure account and its password in the Azure sign-in dialog.
 
 Next, if you have multiple Azure subscriptions, you need to set your Azure subscription. To see a list of your current subscriptions, run this command.
 
@@ -57,6 +57,23 @@ To get detailed help for any cmdlet you see in this tutorial, use the Get-Help c
 For example, to get help for the `New-AzureRmRedisCache` cmdlet, type:
 
 	Get-Help New-AzureRmRedisCache -Detailed
+
+### To connect to the Azure China Cloud
+
+To connect to the Azure China Cloud, use one of the following commands.
+
+	Add-AzureRMAccount -EnvironmentName AzureChinaCloud
+
+or
+
+	Add-AzureRmAccount -Environment (Get-AzureRmEnvironment -Name AzureChinaCloud)
+
+To create a cache in the Azure China Cloud, use one of the following locations.
+
+-	China East
+-	China North
+
+For more information about the Azure China Cloud, see [AzureChinaCloud for Azure operated by 21Vianet in China](http://www.windowsazure.cn/).
 
 ## Properties used for Azure Redis Cache PowerShell
 
@@ -142,7 +159,7 @@ To see a list of available parameters and their descriptions for `New-AzureRmRed
 	
 	    -VirtualNetwork <String>
 	        The exact ARM resource ID of the virtual network to deploy the redis cache in. Example format:
-	        /subscriptions/{subid}/resourceGroups/{resourceGroupName}/Microsoft.ClassicNetwork/VirtualNetworks/vnet1
+	        /subscriptions/{subid}/resourceGroups/{resourceGroupName}/providers/Microsoft.ClassicNetwork/VirtualNetworks/{vnetName}
 	
 	    -Subnet <String>
 	        Required when deploying a redis cache inside an existing Azure Virtual Network.
@@ -166,7 +183,7 @@ To create a premium cache, specify a size of P1 (6 GB - 60 GB), P2 (13 GB - 130 
 
 	New-AzureRmRedisCache -ResourceGroupName myGroup -Name mycache -Location "China North" -Sku Premium -Size P1 -ShardCount 3
 
-To specify values for the `RedisConfiuration` parameter, enclose the values inside `{}` as a key/value pairs like `@{"maxmemory-policy" = "allkeys-random", "notify-keyspace-events" = "KEA"}`. The following example creates a standard 1 GB cache with `allkeys-random` maxmemory policy and keyspace notifications configured with `KEA`. For more information see [Keyspace notifications (advanced settings)](/documentation/articles/cache-configure#keyspace-notifications-advanced-settings) and [Maxmemory-policy and maxmemory-reserved](/documentation/articles/cache-configure#maxmemory-policy-and-maxmemory-reserved).
+To specify values for the `RedisConfiuration` parameter, enclose the values inside `{}` as a key/value pairs like `@{"maxmemory-policy" = "allkeys-random", "notify-keyspace-events" = "KEA"}`. The following example creates a standard 1 GB cache with `allkeys-random` maxmemory policy and keyspace notifications configured with `KEA`.
 
 	New-AzureRmRedisCache -ResourceGroupName myGroup -Name mycache -Location "China North" -RedisConfiguration @{"maxmemory-policy" = "allkeys-random", "notify-keyspace-events" = "KEA"}
 
@@ -516,7 +533,7 @@ The following script demonstrates how to create, update and delete an Azure Redi
     	# Create a new cache with date string to make name unique.
 		$cacheName = "MovieCache" + $(Get-Date -Format ('ddhhmm'))
 		$location = "China North"
-		$resourceGroupName = "Default-Web-WestUS"
+		$resourceGroupName = "Default-Web-ChinaNorth"
 		
 		$movieCache = New-AzureRedisCache -Location $location -Name $cacheName  -ResourceGroupName $resourceGroupName -Size 250MB -Sku Basic
 		
@@ -558,6 +575,6 @@ To learn more about using Windows PowerShell with Azure, see the following resou
 
 - [Azure Redis Cache cmdlet documentation on MSDN](https://msdn.microsoft.com/zh-cn/library/azure/mt634513.aspx)
 - [Azure Resource Manager Cmdlets](https://msdn.microsoft.com/zh-cn/library/azure/mt125356.aspx): Learn to use the cmdlets in the AzureResourceManager module.
-- [Azure blog](http://blogs.msdn.com/windowsazure): Learn about new features in Azure.
+- [Azure blog](/blog/): Learn about new features in Azure.
 - [Windows PowerShell blog](http://blogs.msdn.com/powershell): Learn about new features in Windows PowerShell.
 - ["Hey, Scripting Guy!" Blog](http://blogs.technet.com/b/heyscriptingguy/): Get real-world tips and tricks from the Windows PowerShell community.

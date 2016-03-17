@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Capture an image of an Azure Windows VM | Windows Azure"
+	pageTitle="Capture an image of an Azure Windows VM | Azure"
 	description="Capture an image of an Azure Windows virtual machine created with the classic deployment model."
 	services="virtual-machines"
 	documentationCenter=""
@@ -31,7 +31,7 @@ These steps assume that you've already created an Azure virtual machine and conf
 
 > [AZURE.WARNING] This process deletes the original virtual machine after it's captured. 
 
-This is not intended as a way to back up a virtual machine. One possible way to do that is Azure Backup, which is available as a preview in certain regions. For details, see [Back up Azure virtual machines](/documentation/articles/backup-azure-vms). Other solutions are available from certified partners. To find out whatâs currently available, search the Azure gallery.
+Prior to caputuring an image of an Azure virtual machine, it is recommended the target virtual machine be backed up. Azure virtual machines can be backed up using Azure Backup. Other solutions are available from certified partners. To find out what's currently available, search the Azure gallery.
 
 
 ##Capture the virtual machine
@@ -76,7 +76,7 @@ The image is ready to be used to create virtual machines. To do this, you'll cre
 
 
 
-[How to sign in to a virtual machine running Windows Server]: virtual-machines-log-on-windows-server.md
+[How to sign in to a virtual machine running Windows Server]: /documentation/articles/virtual-machines-log-on-windows-server
 [How to Use Sysprep: An Introduction]: http://technet.microsoft.com/zh-cn/library/bb457073.aspx
 [Run Sysprep.exe]: ./media/virtual-machines-capture-image-windows-server/SysprepCommand.png
 [Enter Sysprep.exe options]: ./media/virtual-machines-capture-image-windows-server/SysprepGeneral.png

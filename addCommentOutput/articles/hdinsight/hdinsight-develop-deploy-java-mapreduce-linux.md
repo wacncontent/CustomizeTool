@@ -1,5 +1,7 @@
+<!-- not suitable for Mooncake -->
+
 <properties
-	pageTitle="Develop Java MapReduce programs for Linux-based HDInsight | Windows Azure"
+	pageTitle="Develop Java MapReduce programs for Linux-based HDInsight | Azure"
 	description="Learn how to develop Java MapReduce programs and deploy them to Linux-based HDInsight."
 	services="hdinsight"
 	editor="cgronlun"
@@ -10,7 +12,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="12/04/2015"
+	ms.date="02/05/2016"
 	wacn.date=""/>
 
 # Develop Java MapReduce programs for Hadoop on HDInsight
@@ -244,13 +246,13 @@ This copies the files from the local system to the head node.
 
 2. From the SSH session, use the following command to run the MapReduce application:
 
-		hadoop jar wordcountjava.jar org.apache.hadoop.examples.WordCount wasb:///example/data/gutenberg/davinci.txt wasb:///example/data/wordcountout
+		yarn jar wordcountjava.jar org.apache.hadoop.examples.WordCount wasb:///example/data/gutenberg/davinci.txt wasb:///example/data/wordcountout
 
 	This will use the WordCount MapReduce application to count the words in the davinci.txt file, and store the results to __wasb:///example/data/wordcountout__. Both the input file and output are stored to the default storage for the cluster.
 
 3. Once the job completes, use the following to view the results:
 
-		hadoop fs -cat wasb:///example/data/wordcountout/*
+		hdfs dfs -cat wasb:///example/data/wordcountout/*
 
 	You should receive a list of words and counts, with values similar to the following:
 
@@ -267,30 +269,10 @@ In this document, you have learned how to develop a Java MapReduce job. See the 
 - [Use MapReduce with HDInsight](/documentation/articles/hdinsight-use-mapreduce)
 
 For more information, see also the [Java Developer Center](/develop/java/).
-<!-- deleted by customization
 
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: /pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
-
-[hdinsight-use-sqoop]: hdinsight-use-sqoop.md
-[hdinsight-ODBC]: hdinsight-connect-excel-hive-ODBC-driver.md
-[hdinsight-power-query]: hdinsight-connect-excel-power-query.md
-
-[hdinsight-develop-streaming]: hdinsight-hadoop-develop-deploy-streaming-jobs.md
-
-
-
-[hdinsight-upload-data]: hdinsight-upload-data.md
-[hdinsight-admin-powershell]: hdinsight-administer-use-powershell.md
-[hdinsight-use-hive]: hdinsight-use-hive.md
-[hdinsight-use-pig]: hdinsight-use-pig.md
-[hdinsight-power-query]: hdinsight-connect-excel-power-query.md
--->
-<!-- keep by customization: begin -->
-[azure-purchase-options]: http://www.windowsazure.cn/pricing/overview/
-[azure-trial]: http://www.windowsazure.cn/pricing/1rmb-trial/
-
 
 [hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop
 [hdinsight-ODBC]: /documentation/articles/hdinsight-connect-excel-hive-ODBC-driver
@@ -298,19 +280,13 @@ For more information, see also the [Java Developer Center](/develop/java/).
 
 [hdinsight-develop-streaming]: /documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs
 
-[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
-[hdinsight-emulator]: /documentation/articles/hdinsight-hadoop-emulator-get-started
+
+
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
-[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
 [hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell
 [hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
 [hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
 [hdinsight-power-query]: /documentation/articles/hdinsight-connect-excel-power-query
-<!-- keep by customization: end -->
 
 [powershell-PSCredential]: http://social.technet.microsoft.com/wiki/contents/articles/4546.working-with-passwords-secure-strings-and-credentials-in-windows-powershell.aspx
-<!-- keep by customization: begin -->
-[powershell-install-configure]: /documentation/articles/powershell-install-configure
-
-<!-- keep by customization: end -->
 

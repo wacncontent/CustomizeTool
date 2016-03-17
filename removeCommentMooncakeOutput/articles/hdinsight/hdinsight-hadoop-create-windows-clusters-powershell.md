@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Create Windows-based Hadoop clusters in HDInsight using Azure PowerShell| Windows Azure"
+   pageTitle="Create Windows-based Hadoop clusters in HDInsight using Azure PowerShell| Azure"
    	description="Learn how to create clusters for Azure HDInsight by using Azure PowerShell."
    services="hdinsight"
    documentationCenter=""

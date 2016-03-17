@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Use the Azure CLI with Service Management | Windows Azure"
+	pageTitle="Use the Azure CLI with Service Management | Azure"
 	description="Learn about using the command-line tools for Mac, Linux, and Windows to manage Azure using the Azure CLI in classic (Azure Service Management) mode."
 	services="virtual-machines, mobile-services, cloud-services"
 	documentationCenter=""
@@ -1162,6 +1162,7 @@ This command lists geographic locations supported by Mobile Services.
 	~$ azure mobile locations
 	info:    Executing command mobile locations
 	info:    China East (default)
+	info:    China North
 	info:    China North
 
 **mobile create [options] [servicename] [sqlAdminUsername] [sqlAdminPassword]**

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Extend HDInsight with Virtual Network | Windows Azure"  
+	pageTitle="Extend HDInsight with Virtual Network | Azure"  
 	description="Learn how to use Azure Virtual Network to connect HDInsight to other cloud resources, or resources in your datacenter"
 	services="hdinsight"
 	documentationCenter=""

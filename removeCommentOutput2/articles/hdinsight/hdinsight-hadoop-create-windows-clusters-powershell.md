@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Create Windows-based Hadoop clusters in HDInsight using Azure PowerShell| Windows Azure"
+   pageTitle="Create Windows-based Hadoop clusters in HDInsight using Azure PowerShell| Azure"
    	description="Learn how to create clusters for Azure HDInsight by using Azure PowerShell."
    services="hdinsight"
    documentationCenter=""
@@ -57,6 +57,7 @@ The following procedures are needed to create an HDInsight cluster by using Azur
     $defaultStorageAccountName = $namePrefix + "store"
     $defaultBlobContainerName = $hdinsightClusterName
 
+
     $location = "China East"
     $clusterSizeInNodes = 1
     #endregion
@@ -69,6 +70,7 @@ The following procedures are needed to create an HDInsight cluster by using Azur
     ###########################################
     #region - Connect to Azure subscription
     Write-Host "`nConnecting to your Azure subscription ..." -ForegroundColor Green
+
     try{Get-AzureContext}
     catch{Add-AzureAccount -Environment AzureChinaCloud}
     #endregion
@@ -76,10 +78,12 @@ The following procedures are needed to create an HDInsight cluster by using Azur
     ###########################################
     # Preapre default storage account and container
     ###########################################
+
     New-AzureStorageAccount `
         -StorageAccountName $defaultStorageAccountName `
         -Type Standard_GRS `
         -Location $location
+
 
     $defaultStorageAccountKey = Get-AzureStorageKey `
                                     -StorageAccountName $defaultStorageAccountName |  %{ $_.Primary }
@@ -97,20 +101,24 @@ The following procedures are needed to create an HDInsight cluster by using Azur
     $httpPW = ConvertTo-SecureString -String $httpPassword -AsPlainText -Force
     $httpCredential = New-Object System.Management.Automation.PSCredential($httpUserName,$httpPW)
 
+
     New-AzureHDInsightCluster `
         -Name $hdinsightClusterName `
         -Location $location `
         -ClusterSizeInNodes $clusterSizeInNodes `
         -ClusterType Hadoop `
         -Version "3.2" `
+
         -Credential $httpCredential `
         -DefaultStorageAccountName "$defaultStorageAccountName.blob.core.chinacloudapi.cn" `
         -DefaultStorageAccountKey $defaultStorageAccountKey `
+
         -DefaultStorageContainerName $hdinsightClusterName 
 
     ####################################
     # Verify the cluster
     ####################################
+
     Get-AzureHDInsightCluster -Name $hdinsightClusterName 
 
 ##Customize clusters

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Use PowerShell to Create a VM With a Native Mode Report Server | Windows Azure"
+	pageTitle="Use PowerShell to Create a VM With a Native Mode Report Server | Azure"
 	description="This topic describes and walks you through the deployment and configuration of a SQL Server Reporting Services native mode report server in an Azure Virtual Machine. "
 	services="virtual-machines"
 	documentationCenter="na"
@@ -14,14 +14,19 @@
 
 # Use PowerShell to Create an Azure VM With a Native Mode Report Server
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+ Resource Manager model. [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
  
 
 This topic describes and walks you through the deployment and configuration of a SQL Server Reporting Services native mode report server in an Azure Virtual Machine. The steps in this document use a combination of manual steps to create the virtual machine and a Windows PowerShell script to configure Reporting Services on the VM. The configuration script includes opening a firewall port for HTTP or HTTPs.
 
 >[AZURE.NOTE] If you do not require **HTTPS** on the report server, **skip step 2**.
+
 >
 >After creating the VM in step 1, go to the section Use script to configure the report server and HTTP. After you run the script, the report server is ready to use.
+
+
+><p>After creating the VM in step 1, go to the section Use script to configure the report server and HTTP. After you run the script, the report server is ready to use.
+
 
 ## Prerequisites and Assumptions
 
@@ -29,7 +34,7 @@ This topic describes and walks you through the deployment and configuration of a
 	
 	- To verify the core limit of your subscription, in the Azure Management Portal, click SETTINGS in the left pane and then Click USAGE in the top menu.
 	
-	- To increase the core quota, contact [Azure Support](https://azure.microsoft.com/support/contact/). For VM size information, see [Virtual Machine Sizes for Azure](/documentation/articles/virtual-machines-size-specs).
+	- To increase the core quota, contact [Azure Support](https://azure.micr Support](https://azure.microsoft.com/support/contact/)  . For VM size information, see [Virtual Machine Sizes for Azure](/documentation/articles/virtual-machines-size-specs).
 
 - **Windows PowerShell Scripting**: The topic assumes that you have a basic working knowledge of Windows PowerShell. For more information about using Windows PowerShell, see the following:
 
@@ -649,9 +654,9 @@ After configuring and verifying the report server, a common administrative task 
 
 ## To Create and Publish Reports to the Azure Virtual Machine
 
-The following table summarizes some of the options available to publish existing reports from an on-premises computer to the report server hosted on the Windows Azure Virtual Machine:
+The following table summarizes some of the options available to publish existing reports from an on-premises computer to the report server hosted on the Azure Virtual Machine:
 
-- **RS.exe script**: Use RS.exe script to copy report items from and existing report server to your Windows Azure Virtual Machine. For more information, see the section "Native mode to Native Mode - Windows Azure Virtual Machine" in [Sample Reporting Services rs.exe Script to Migrate Content between Report Servers](https://msdn.microsoft.com/zh-cn/library/dn531017.aspx).
+- **RS.exe script**: Use RS.exe script to copy report items from and existing report server to your Azure Virtual Machine. For more information, see the section "Native mode to Native Mode - Azure Virtual Machine" in [Sample Reporting Services rs.exe Script to Migrate Content between Report Servers](https://msdn.microsoft.com/zh-cn/library/dn531017.aspx).
 
 - **Report Builder**: The virtual machine includes the click-once version of Microsoft SQL Server Report Builder. To start Report builder the first time on the virtual machine:
 
@@ -691,7 +696,7 @@ The following table summarizes some of the options available to publish existing
 
 - For General information related to deployments of SQL Server Business Intelligence in Azure Virtual Machines, see [SQL Server Business Intelligence in Azure Virtual Machines](/documentation/articles/virtual-machines-sql-server-business-intelligence).
 
-- For more information about the cost of Azure compute charges, see the Virtual Machines tab of [Azure pricing calculator](https://azure.microsoft.com/pricing/calculator/?scenario=virtual-machines).
+- For more information about the cost of Azure compute charges, see the Virtual Machines tab of [Azure pricing calculator](https://azure.m calculator](https://azure.microsoft.com/pricing/calculator/?scenario=virtual-machines)  .
 
 ### Community Content
 

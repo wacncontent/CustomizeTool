@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Configure an availability set for classic VMs | Windows Azure"
+	pageTitle="Configure an availability set for classic VMs | Azure"
 	description="Configure an availability set for a new or existing virtual machine in the classic deployment model using the Azure Management Portal and Azure PowerShell."
 	services="virtual-machines"
 	documentationCenter=""
@@ -103,8 +103,8 @@ To use Azure PowerShell commands, open an administrator-level Azure PowerShell s
 [Option 1: Create a virtual machine and an availability set at the same time]: #createset
 [Option 2: Add an existing virtual machine to an availability set]: #addmachine
 
-[Load balancing for Azure infrastructure services]: virtual-machines-load-balance.md
-[Manage the availability of virtual machines]: virtual-machines-manage-availability.md
-[Create a virtual machine running Windows]: virtual-machines-windows-tutorial.md
-[Virtual Network overview]: virtual-networks-overview.md
+[Load balancing for Azure infrastructure services]: /documentation/articles/virtual-machines-load-balance
+[Manage the availability of virtual machines]: /documentation/articles/virtual-machines-manage-availability
+[Create a virtual machine running Windows]: /documentation/articles/virtual-machines-windows-tutorial-classic-portal
+[Virtual Network overview]: /documentation/articles/virtual-networks-overview
 [Articles for virtual machines in Service Management]: /documentation/articles/?tag=azure-service-management&service=virtual-machines 

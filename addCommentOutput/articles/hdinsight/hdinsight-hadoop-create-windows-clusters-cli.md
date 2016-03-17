@@ -30,15 +30,15 @@ Before you begin the instructions in this article, you must have the following:
 
 Use the following command to connect to Azure:
 
-	azure login <!-- keep by customization: begin --> -e AzureChinaCloud -u <your account> <!-- keep by customization: end -->
+	azure login  -e AzureChinaCloud -u <your account> 
 
 For more information on authenticating using a work or school account, see [Connect to an Azure subscription from the Azure CLI](/documentation/articles/xplat-cli-connect).
-<!-- deleted by customization
+
 	
 Use the following command to switch to the ARM mode:
 
 	azure config mode arm
--->
+
 
 To get help, use the **-h** switch.  For example:
 
@@ -46,8 +46,8 @@ To get help, use the **-h** switch.  For example:
 	
 ##Create clusters
 
-You must have <!-- deleted by customization a Azure Resource Management (ARM), and --> a Azure Blob storage account before you can create an HDInsight cluster. To create an HDInsight cluster, you must specify the following:
-<!-- deleted by customization
+You must have  a Azure Resource Management (ARM), and  a Azure Blob storage account before you can create an HDInsight cluster. To create an HDInsight cluster, you must specify the following:
+
 
 - **Azure Resource Group**: A Data Lake Analytics account must be created within a Azure Resource group. Azure Resource Manager enables you to work with the resources in your application as a group. You can deploy, update or delete all of the resources for your application in a single, coordinated operation. 
 
@@ -58,7 +58,7 @@ You must have <!-- deleted by customization a Azure Resource Management (ARM), a
 	To create a new resource group:
 	
 		azure group create -n "<Resource Group Name>" -l "<Azure Location>"
--->
+
 
 - **HDInsight cluster name**
 
@@ -68,7 +68,7 @@ You must have <!-- deleted by customization a Azure Resource Management (ARM), a
 
 	To create a new Azure storage account:
 	
-		azure storage account create "<Azure Storage Account Name>" <!-- deleted by customization -g "<Resource Group Name>" --> -l "<Azure Location>" --type LRS
+		azure storage account create "<Azure Storage Account Name>"  -g "<Resource Group Name>"  -l "<Azure Location>" --type LRS
 
 	> [AZURE.NOTE] The Storage account must be collocated with HDInsight in the data center.
 	> The storage account type can't be ZRS, because ZRS doesn't support table.
@@ -82,7 +82,7 @@ You must have <!-- deleted by customization a Azure Resource Management (ARM), a
 		-- Shows a Storage account
 		azure storage account show "<Storage Account Name>"
 		-- Lists the keys for a Storage account
-		azure storage account keys list "<Storage Account Name>" <!-- deleted by customization -g "<Resource Group Name>" -->
+		azure storage account keys list "<Storage Account Name>"  -g "<Resource Group Name>" 
 
 	For details on getting the information by using the Azure Management Portal, see the "View, copy, and regenerate storage access keys" section of [Create, manage, or delete a Storage account][azure-create-storageaccount].
 
@@ -93,8 +93,8 @@ You must have <!-- deleted by customization a Azure Resource Management (ARM), a
 Once you have the Storage account prepared, you are ready to create a cluster:
 
     
-    azure hdinsight cluster create <!-- deleted by customization -g <Resource Group Name> --> -c <HDInsight Cluster Name> -l <Location> --osType <!-- deleted by customization <Windows | Linux> --><!-- keep by customization: begin --> Windows <!-- keep by customization: end --> --version <Cluster Version> --clusterType <Hadoop | HBase | Spark | Storm> --workerNodeCount 2 --headNodeSize Large --workerNodeSize Large --defaultStorageAccountName <Azure Storage Account Name>.blob.core.chinacloudapi.cn --defaultStorageAccountKey "<Default Storage Account Key>" --defaultStorageContainer <Default Blob Storage Container> --userName admin --password "<HTTP User Password>" --rdpUserName <RDP Username> --rdpPassword "<RDP User Password" --rdpAccessExpiry "03/01/2016"
-<!-- deleted by customization
+    azure hdinsight cluster create  -g <Resource Group Name>  -c <HDInsight Cluster Name> -l <Location> --osType  <Windows | Linux>  Windows  --version <Cluster Version> --clusterType <Hadoop | HBase | Spark | Storm> --workerNodeCount 2 --headNodeSize Large --workerNodeSize Large --defaultStorageAccountName <Azure Storage Account Name>.blob.core.chinacloudapi.cn --defaultStorageAccountKey "<Default Storage Account Key>" --defaultStorageContainer <Default Blob Storage Container> --userName admin --password "<HTTP User Password>" --rdpUserName <RDP Username> --rdpPassword "<RDP User Password" --rdpAccessExpiry "03/01/2016"
+
 
 
 ##Create clusters using configuration files
@@ -119,7 +119,7 @@ Create a configuration file that contains a script action to run when creating a
 
 Create a cluster with a script action
 
-	azure hdinsight cluster create -g myarmgroup01 -l chinanorth -y Windows --clusterType Hadoop --version 3.2 --defaultStorageAccountName mystorageaccount --defaultStorageAccountKey <defaultStorageAccountKey> --defaultStorageContainer mycontainer --userName admin --password <clusterPassword> --sshUserName sshuser --sshPassword <sshPassword> --workerNodeCount 1 âconfigurationPath "C:\myFiles\configFile.config" myNewCluster01
+	azure hdinsight cluster create -g myarmgroup01 -l chinanorth -y Windows --clusterType Hadoop --version 3.2 --defaultStorageAccountName mystorageaccount --defaultStorageAccountKey <defaultStorageAccountKey> --defaultStorageContainer mycontainer --userName admin --password <clusterPassword> --sshUserName sshuser --sshPassword <sshPassword> --workerNodeCount 1 -configurationPath "C:\myFiles\configFile.config" myNewCluster01
 	
 	
 For general script action information, see [Customize HDInsight clusters using Script Action (Linux)](/documentation/articles/hdinsight-hadoop-customize-cluster-v1).
@@ -128,7 +128,7 @@ For general script action information, see [Customize HDInsight clusters using S
 ## Create clusters using ARM templates
 
 You can use CLI to create clusters by calling ARM templates. See [Deploy with Azure CLI](/documentation/articles/hdinsight-hadoop-create-windows-clusters-arm-templates#deploy-with-azure-cli).
--->
+
 
 ## See also
 

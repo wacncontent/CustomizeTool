@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Create a SQL Server Virtual Machine in PowerShell | Windows Azure"
+	pageTitle="Create a SQL Server Virtual Machine in PowerShell | Azure"
 	description="Provides steps and PowerShell scripts for creating an Azure VM with SQL Server virtual machine gallery images."
 	services="virtual-machines"
 	documentationCenter="na"
@@ -17,14 +17,16 @@
 > [AZURE.SELECTOR]
 - [Management Portal](/documentation/articles/virtual-machines-provision-sql-server)
 - [PowerShell](/documentation/articles/virtual-machines-sql-server-create-vm-with-powershell)
+
 - [Azure Resource Manager portal](/documentation/articles/virtual-machines-sql-server-provision-resource-manager)
+
 
 
 ## Overview
 
 This article provides steps for how to create a SQL Server virtual machine in Azure by using the PowerShell cmdlets.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+ Resource Manager model. [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
 
 ## Install and configure PowerShell

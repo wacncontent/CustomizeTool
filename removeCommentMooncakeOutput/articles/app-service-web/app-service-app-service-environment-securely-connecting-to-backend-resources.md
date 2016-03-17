@@ -11,7 +11,7 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="12/08/2015"
+	ms.date="02/10/2016"
 	wacn.date=""/>	
 
 # Securely Connecting to Backend Resources from an Azure Environment #
@@ -26,6 +26,8 @@ For example, there may be a SQL Server running on a cluster of virtual machines 
 As another example, sensitive endpoints may run on-premises and be connected to Azure via either [Site-to-Site][SiteToSite] or [Azure ExpressRoute][ExpressRoute] connections.  As a result, only resources in virtual networks connected to the Site-to-Site or ExpressRoute tunnels will be able to access on-premises endpoints.
 
 For all of these scenarios, apps running on an Azure Environment will be able to securely connect to the various servers and resources.  Outbound traffic from apps running in an Azure Environment to private endpoints in the same virtual network (or connected to the same virtual network), will only flow over the virtual network.  Outbound traffic to private endpoints will not flow over the public Internet.
+
+One caveat applies to outbound traffic from an Azure Environment to endpoints within a virtual network.  Azure Environments cannot reach endpoints of virtual machines located in the **same** subnet as the Azure Environment.  This normally should not be a problem as long as Azure Environments are deployed into a subnet reserved for exclusive use by only the Azure Environment.
 
 [AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)] 
 

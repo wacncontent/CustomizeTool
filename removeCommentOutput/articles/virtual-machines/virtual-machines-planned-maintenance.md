@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Planned maintenance for Azure VMs | Windows Azure"
+	pageTitle="Planned maintenance for Azure VMs | Azure"
 	description="Understand what Azure planned maintenance is and how it affects your virtual machines running in Azure."
 	services="virtual-machines"
 	documentationCenter=""
@@ -20,15 +20,15 @@
 
 ## Why Azure performs planned maintenance
 
-Windows Azure periodically performs updates across the globe to improve the reliability, performance, and security of the host infrastructure that underlies virtual machines. Many of these updates are performed without any impact to your virtual machines or Cloud Services, including memory-preserving updates.
+Azure periodically performs updates across the globe to improve the reliability, performance, and security of the host infrastructure that underlies virtual machines. Many of these updates are performed without any impact to your virtual machines or Cloud Services, including memory-preserving updates.
 
 However, some updates do require a reboot to your virtual machines to apply the required updates to the infrastructure. The virtual machines are shut down while we patch the infrastructure, and then the virtual machines are restarted.
 
-Please note that there are two types of maintenance that can impact the availability of your virtual machines: planned and unplanned. This page describes how Windows Azure performs planned maintenance. For more information about unplanned maintenance, see [Understand planned versus unplanned maintenance](/documentation/articles/virtual-machines-manage-availability).
+Please note that there are two types of maintenance that can impact the availability of your virtual machines: planned and unplanned. This page describes how Azure performs planned maintenance. For more information about unplanned maintenance, see [Understand planned versus unplanned maintenance](/documentation/articles/virtual-machines-manage-availability).
 
 ## Memory-preserving updates
 
-For a class of updates in Windows Azure, customers will not see any impact to their running virtual machines. Many of these updates are to components or services that can be updated without interfering with the running instance. Some of these updates are platform infrastructure updates on the host operating system that can be applied without requiring a full reboot of the virtual machines.
+For a class of updates in Azure, customers will not see any impact to their running virtual machines. Many of these updates are to components or services that can be updated without interfering with the running instance. Some of these updates are platform infrastructure updates on the host operating system that can be applied without requiring a full reboot of the virtual machines.
 
 These updates are accomplished with technology that enables live migration (a "memory-preserving" update). When updating, the virtual machine is placed into a "paused" state, preserving the memory in RAM, while the underlying host operating system receives the necessary updates and patches. The virtual machine is resumed within 30 seconds of being paused. After resuming, the clock of the virtual machine is automatically synchronized.
 
@@ -117,5 +117,5 @@ US Gov Iowa | US Gov Virginia
 
 
 <!--Link references-->
-[Virtual Machines Manage Availability]: virtual-machines-windows-tutorial.md
-[Understand planned versus unplanned maintenance]: virtual-machines-manage-availability.md#Understand-planned-versus-unplanned-maintenance/
+[Virtual Machines Manage Availability]: /documentation/articles/virtual-machines-windows-tutorial-classic-portal
+[Understand planned versus unplanned maintenance]: /documentation/articles/virtual-machines-manage-availability#Understand-planned-versus-unplanned-maintenance

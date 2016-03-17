@@ -1,7 +1,7 @@
 <!-- not suitable for Mooncake -->
 
 <properties
-	pageTitle="Run Hadoop MapReduce samples on Linux-based HDInsight | Windows Azure"
+	pageTitle="Run Hadoop MapReduce samples on Linux-based HDInsight | Azure"
 	description="Get started using MapReduce samples with Linux-based HDInsight. Use SSH to connect to the cluster, then use the Hadoop command to run sample jobs."
 	services="hdinsight"
 	documentationCenter=""
@@ -160,7 +160,7 @@ The results should appear similar to the following:
     1 8 5 7 3 9 2 6 4
     2 6 3 1 4 5 9 7 8
 
-## Pi (ÄÂ)
+## Pi (π)
 
 The pi sample uses a statistical (quasi-Monte Carlo) method to estimate the value of pi. Points placed at random inside of a unit square also fall within a circle inscribed within that square with a probability equal to the area of the circle, pi/4. The value of pi can be estimated from the value of 4R, where R is the ratio of the number of points that are inside the circle to the total number of points that are within the square. The larger the sample of points used, the better the estimate is.
 
@@ -220,16 +220,16 @@ From this article, you learned how to run the samples included with the Linux-ba
 
 
 
-[hdinsight-errors]: hdinsight-debug-jobs.md
-[hdinsight-use-mapreduce]: hdinsight-use-mapreduce.md
+[hdinsight-errors]: /documentation/articles/hdinsight-debug-jobs
+[hdinsight-use-mapreduce]: /documentation/articles/hdinsight-use-mapreduce
 [hdinsight-sdk-documentation]: https://msdn.microsoft.com/zh-cn/library/azure/dn479185.aspx
 
-[hdinsight-submit-jobs]: hdinsight-submit-hadoop-jobs-programmatically.md
-[hdinsight-introduction]: hdinsight-hadoop-introduction.md
+[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
+[hdinsight-introduction]: /documentation/articles/hdinsight-hadoop-introduction
 
 
 
-[hdinsight-samples]: hdinsight-run-samples.md
+[hdinsight-samples]: /documentation/articles/hdinsight-run-samples
 
-[hdinsight-use-hive]: hdinsight-use-hive.md
-[hdinsight-use-pig]: hdinsight-use-pig.md
+[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
+[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig

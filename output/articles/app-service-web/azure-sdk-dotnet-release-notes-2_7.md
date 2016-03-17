@@ -24,7 +24,7 @@ The document also contain the release notes for the Azure SDK for .NET 2.7.1 rel
 
 Azure SDK 2.7 is only supported in Visual Studio 2015 and Visual Studio 2013. [Azure SDK 2.6](/downloads/) is the last supported SDK for Visual Studio 2012.
 
-For detailed information about this release, see [Azure SDK 2.7 announcement post](https://azure.microsoft.com/blog/2015/07/20/announcing-the-azure-sdk-2-7-for-net/) and [Azure SDK 2.7.1 announcement post](https://azure.microsoft.com/zh-cn/blog/announcing-the-azure-sdk-2-7-1-for-net/).
+For detailed information about this release, see [Azure SDK 2.7 announcement post](https://azure.microso post](https://azure.microsoft.com/blog/2015/07/20/announcing-the-azure-sdk-2-7-for-net/)   and [Azure SDK 2.7.1 announcement post](https://azure.microsoft.com/zh-cn/blog/announcing-the-azure-sdk-2-7-1-for-net/).
 
 ##Azure SDK for .NET 2.7
 
@@ -57,13 +57,25 @@ In this release the following updates were made. These updates are in preview. F
 - Old **Storm** project must be upgraded when using this version of the tools. For more information, see [this blog](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/).
 - Visual Studio Web Express is no longer supported. For more information, see [this blog](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/).
 
+
 ###Azure Tools
 
 In this release the following updates were made to Web Tools Extensions. For more information see [this](https://azure.microsoft.com/blog/2015/07/20/announcing-the-azure-sdk-2-7-for-net/)  blog. 
+
+
+###Azure Web App Tools
+
+In this release the following updates were made to Web Tools Extensions. For more information see [this](https://azure.microsoft.com/zh-cn/blog/2015/07/20/announcing-the-azure-sdk-2-7-for-net/)  blog.
+
 
 - Support for DreamSpark accounts added
 - Full change to Azure Tools made to support the new Azure Resource Management APIs
+
 - Support for Azure added to [Cloud Explorer](/documentation/articles/azure-sdk-dot-net-release-notes-2_7#cloud_explorer)
+
+
+- Support for Azure Web App added to [Cloud Explorer](#cloud_explorer)
+
 
 ####Known issues
 
@@ -83,7 +95,9 @@ Cloud explorer supports the following:
 - Integrated Properties panel which shows developer-focused properties commonly needed during dev/test 
 - Quick switching of the account to use when enumerating resources (use Settings command on toolbar) 
 - Filtering of subscriptions to use when enumerating resources (use Settings command on toolbar) 
+
 - Deep links to the Azure Management Portal for management of resources and resource groups 
+
  
  
 ###Azure Resource Manager Tools 
@@ -97,6 +111,7 @@ If you're using an Azure Resource Group project from a previous version of the S
 
 - Support for viewing Append Blobs. More info in [this blog post](http://blogs.msdn.com/b/windowsazurestorage/archive/2015/04/13/introducing-azure-storage-append-blob.aspx). 
 - Support for viewing Premium Storage accounts through Server Explorer. Server Explorer will only display page blobs for premium storage accounts as they are the only supported type for premium storage accounts.
+
 
 ###Azure Data Factory Tools for Visual Studio 
 
@@ -109,6 +124,7 @@ Introducing **Azure Data Factory Tools** for Visual Studio. Below are the enable
 - **JSON editing with schema validation and rich intellisense**: Efficiently configure and edit JSON documents of Data Factory entities with rich intellisense and schema validation 
 - **Multi-Environment publishing**: Publish authored pipelines to dev, test or Prod environment by creating separate config files for each environment.
 - **Pig, Hive and .Net based Data Processing Support**: Support for Pig and Hive Scripts in Data Factory project. Support for referencing C# Project for managing .Net Activity.
+
 
 ##Azure SDK for .NET 2.7.1
 
@@ -151,6 +167,11 @@ LightSwitch projects are not compatibile with this release. This issue will be r
 ##Also see
 [Azure SDK 2.7.1 announcement post](https://azure.microsoft.com/zh-cn/blog/announcing-the-azure-sdk-2-7-1-for-net/)
 
+
 [Azure SDK 2.7 announcement post](https://azure.microsoft.com/blog/2015/07/20/announcing-the-azure-sdk-2-7-for-net/)
+
+
+[Azure SDK 2.7 announcement post](https://azure.microsoft.com/zh-cn/blog/2015/07/20/announcing-the-azure-sdk-2-7-for-net/)
+
 
 [Support and Retirement Information for the Azure SDK for .NET and APIs](https://msdn.microsoft.com/zh-cn/library/azure/dn479282.aspx/)

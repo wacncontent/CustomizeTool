@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Apache Storm tutorial: Get started with Linux-based Storm on HDInsight | Windows Azure"
+	pageTitle="Apache Storm tutorial: Get started with Linux-based Storm on HDInsight | Azure"
 	description="Get started with big data analytics using Apache Storm and the Storm Starter samples on Linux-based HDInsight. Learn how to use Storm to process data real-time."
 	keywords="apache storm,apache storm tutorial,big data analytics,storm starter"
 	services="hdinsight"
@@ -226,5 +226,5 @@ In this Apache Storm tutorial, you used the Storm Starter to learn how to create
 [stormstarter]: https://github.com/apache/storm/tree/master/examples/storm-starter
 [stormjavadocs]: https://storm.incubator.apache.org/apidocs/
 [azureportal]: https://manage.windowsazure.cn/
-[hdinsight-provision]: hdinsight-provision-clusters-v1.md
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
 [preview-portal]: https://manage.windowsazure.cn/

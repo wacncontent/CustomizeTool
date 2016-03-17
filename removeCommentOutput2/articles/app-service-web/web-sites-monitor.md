@@ -14,14 +14,7 @@
 
 #<a name="howtomonitor"></a>Monitor Web Apps in Azure
 
-[Azure Web Apps](/documentation/services/web-sites/) provide monitoring functionality for Standard App Service plans via the Monitor management page. The Monitor management page provides performance statistics for a web app as described below.
-## Table of Contents ##
-- [How to: Add web site metrics](#websitemetrics)
-- [How to: Receive alerts from web site metrics](#howtoreceivealerts)
-- [How to: View usage quotas for a web site](#howtoviewusage)
-- [How to: Avoid exceeding your quotas](#resourceusage)
-- [How to: Configure diagnostics and download logs for a web site](#howtoconfigdiagnostics)
-- [How to: Monitor web endpoint status](#webendpointstatus)
+A[Azure Web Apps](/documentation/services/web-sites/) provide monitoring functionality for Standard and Premium App Service plans via the Monitor management page. The Monitor management page provides performance statistics for a web app as described below.
 
 ##Metrics Retention Policy
 
@@ -66,7 +59,7 @@ To determine the extent that a web app is impacting resource usage quotas, follo
 	-	**File System Storage** - when this quota is reached, file system storage remains accessible for read operations, but all write operations, including those required for normal web app activity, are blocked. Write operations will resume when you reduce file usage or move the web app to an App Service plan with a higher quota.
 	-	**Linked Resources** - quotas for any linked resources of the web app, such as database or storage, are displayed here as well.
 
-	Some quotas can be applied per web hosting plan, while others can be applied per site. 
+	Some quotas can be applied per web hosting plan, while others can be applied per site. For detailed information on
 
 ##<a name="resourceusage"></a> How to: Avoid exceeding your quotas
 
@@ -264,7 +257,7 @@ After you configure endpoint monitoring, you can drill down into the individual 
 7.	Optionally, repeat the previous steps to create a second endpoint.
 8.	Click **Save**. It may take some time for the web endpoint monitoring data to be available on the **Dashboard** and **Monitor** tabs.
 
-	To create an email rule, do the following:
+To create an email rule, do the following:
 
 9.	In the service bar at the far left, click **Management Services**.
 10.	Click **Add Rule** at the bottom.

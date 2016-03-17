@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Configure an external Listener for AlwaysOn Availability Groups | Windows Azure"
+	pageTitle="Configure an external Listener for AlwaysOn Availability Groups | Azure"
 	description="This tutorial walks you through steps of creating an AlwaysOn Availability Group Listener in Azure that is externally accessible by using the public Virtual IP address of the associated cloud service."
 	services="virtual-machines"
 	documentationCenter="na"

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Oracle WebLogic Server and Database VM | Windows Azure"
+	pageTitle="Oracle WebLogic Server and Database VM | Azure"
 	description="Create an Oracle WebLogic Server 12c and Oracle Database 12c Azure image running on Windows Server 2012, using Resource Manager deployment model."
 	services="virtual-machines"
 	authors="bbenz"
@@ -63,6 +63,6 @@ Follow the instructions in [Create an Oracle WebLogic Server 12c virtual machine
 
 [Connecting to Oracle Database from a Java Application](http://docs.oracle.com/cd/E11882_01/appdev.112/e12137/getconn.htm#TDPJD136)
 
-[Oracle WebLogic Server 12c using Linux on Windows Azure](http://www.oracle.com/technetwork/middleware/weblogic/learnmore/oracle-weblogic-on-azure-wp-2020930.pdf)
+[Oracle WebLogic Server 12c using Linux on Azure](http://www.oracle.com/technetwork/middleware/weblogic/learnmore/oracle-weblogic-on-azure-wp-2020930.pdf)
 
 [Oracle Database 2 Day DBA 12c Release 1](http://docs.oracle.com/cd/E16655_01/server.121/e17643/toc.htm)

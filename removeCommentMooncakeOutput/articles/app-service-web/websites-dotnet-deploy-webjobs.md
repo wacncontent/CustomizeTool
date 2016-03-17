@@ -16,12 +16,12 @@
 
 ## Overview
 
-This topic explains how to use Visual Studio to deploy a Console Application project to a web app in [Azure Web App](/documentation/services/web-sites/) as an [Azure WebJob](/documentation/articles/websites-webjobs-resources/). For information about how to deploy WebJobs by using the [Azure Management Portal](https://manage.windowsazure.cn), see [Run Background tasks with WebJobs](/documentation/articles/web-sites-create-web-jobs).
+This topic explains how to use Visual Studio to deploy a Console Application project to [Azure Web App](/documentation/services/web-sites/) as an [Azure WebJob](/documentation/articles/websites-webjobs-resources/). For information about how to deploy WebJobs by using the [Azure Management Portal](https://manage.windowsazure.cn), see [Run Background tasks with WebJobs](/documentation/articles/web-sites-create-web-jobs).
 
 When Visual Studio deploys a WebJobs-enabled Console Application project, it performs two tasks:
 
 * Copies runtime files to the appropriate folder in the web app (*App_Data/jobs/continuous* for continuous WebJobs, *App_Data/jobs/triggered* for scheduled and on-demand WebJobs).
-* Sets up [Azure Scheduler jobs](#scheduler) for WebJobs that are scheduled to run at particular times. (This is not needed for continuous WebJobs.)
+* Sets up Azure Scheduler jobs for WebJobs that are scheduled to run at particular times. (This is not needed for continuous WebJobs.)
 
 A WebJobs-enabled project has the following items added to it:
 
@@ -100,7 +100,7 @@ To create a new WebJobs-enabled project, you can use the Console Application pro
 
 ### <a id="createnolink"></a> Use the WebJobs new-project template for an independent WebJob
   
-1. Click **File** > **New Project**, and then in the **New Project** dialog box click **Cloud** > **Windows Azure WebJob**.
+1. Click **File** > **New Project**, and then in the **New Project** dialog box click **Cloud** > **Microsoft Azure WebJob**.
 
 	![New Project dialog showing WebJob template](./media/websites-dotnet-deploy-webjobs/np.png)
 	
@@ -130,6 +130,7 @@ For a scheduled WebJob (not for continuous WebJobs), Visual Studio creates an [A
 * The scheduler job is named *{webappname}-{webjobname}*. For example: MyWebApp-MyWebJob. 
  
 >[AZURE.NOTE]
+>
 >* If you configure a **Recurring Job** and set recurrence frequency to a number of minutes, the Azure Scheduler service is not free. Other frequencies (hours, days, and so forth) are free.
 >* If you deploy a WebJob and then decide you want to change the type of WebJob and redeploy, you'll need to delete the webjobs-publish-settings.json file. This will make Visual Studio show the publishing options again, so you can change the type of WebJob.
 >* If you deploy a WebJob and later change the run mode from continuous to non-continuous or vice versa, Visual Studio creates a new WebJob in Azure when you redeploy. If you change other scheduling settings but leave run mode the same or switch between Scheduled and On Demand, Visual Studio updates the existing job rather than create a new one.
@@ -185,4 +186,4 @@ For an independent WebJob, the same **Publish Web** wizard that is used for web 
 
 ## <a id="nextsteps"></a>Next Steps
 
-This article has explained how to deploy WebJobs by using Visual Studio. For information about how to deploy Azure WebJobs from Visual Studio and by using a continuous delivery process, see [Azure WebJobs - Recommended Resources - Deployment](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/azure-webjobs-recommended-resources#deploying).
+This article has explained how to deploy WebJobs by using Visual Studio. For information about how to deploy Azure WebJobs from Visual Studio and by using a continuous delivery process, see [Azure WebJobs - Recommended Resources - Deployment](/documentation/articles/websites-webjobs-resources#deploying).

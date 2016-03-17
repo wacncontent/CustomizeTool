@@ -18,16 +18,6 @@ In this article, you will learn how to create an ASP.NET MVC line-of-business ap
 
 >[AZURE.NOTE] For an overview of the different enterprise authentication and authorization options for Azure Web Apps, see [Use Active Directory for authentication in Azure Web App](/documentation/articles/web-sites-authentication-authorization).
 
-- [What you will build](#bkmk_build)
-- [What you will need](#bkmk_need)
-- [Use sample application for LOB template](#bkmk_sample)
-- [Set up the sample application](#bkmk_setup)
-- [Deploy the sample application to Azure Websites](#bkmk_deploy)
-- [Configure relying party trusts in AD FS Management](#bkmk_rptrusts)
-- [Authorize users for specific controllers or actions](#bkmk_authorize)
-- [Connect to on-premises data](#bkmk_data)
-- [Further resources](#bkmk_resources)
-
 <a name="bkmk_build"></a>
 ## What you will build ##
 
@@ -85,29 +75,29 @@ The sample application in this tutorial, [WebApp-WSFederation-DotNet)](https://g
 
 5.	In App_Start\Startup.Auth.cs, change the static string definitions as highlighted below:  
 	<pre class="prettyprint">
-	private static string realm = ConfigurationManager.AppSettings["ida:<mark>RPIdentifier</mark>"];<span>&#13;</span>
-    <mark><del>private static string aadInstance = ConfigurationManager.AppSettings["ida:AADInstance"];</del></mark><span>&#13;</span>
-    <mark><del>private static string tenant = ConfigurationManager.AppSettings["ida:Tenant"];</del></mark><span>&#13;</span>
-    <mark><del>private static string metadata = string.Format("{0}/{1}/federationmetadata/2007-06/federationmetadata.xml", aadInstance, tenant);</del></mark><span>&#13;</span>
-    <mark>private static string metadata = string.Format("https://{0}/federationmetadata/2007-06/federationmetadata.xml", ConfigurationManager.AppSettings["ida:ADFS"]);</mark><span>&#13;</span>
+	private static string realm = ConfigurationManager.AppSettings["ida:<mark>RPIdentifier</mark>"];
+    <mark><del>private static string aadInstance = ConfigurationManager.AppSettings["ida:AADInstance"];</del></mark>
+    <mark><del>private static string tenant = ConfigurationManager.AppSettings["ida:Tenant"];</del></mark>
+    <mark><del>private static string metadata = string.Format("{0}/{1}/federationmetadata/2007-06/federationmetadata.xml", aadInstance, tenant);</del></mark>
+    <mark>private static string metadata = string.Format("https://{0}/federationmetadata/2007-06/federationmetadata.xml", ConfigurationManager.AppSettings["ida:ADFS"]);</mark>
 
     <mark><del>string authority = String.Format(CultureInfo.InvariantCulture, aadInstance, tenant);</del></mark>
     </pre>
 
 6.	You will now make the corresponding changes in Web.config. Open the Web.config and modify the app settings as highlighted below:  
 	<pre class="prettyprint">
-	&lt;appSettings&gt;<span>&#13;</span>
-	  &lt;add key="webpages:Version" value="3.0.0.0" /&gt;<span>&#13;</span>
-	  &lt;add key="webpages:Enabled" value="false" /&gt;<span>&#13;</span>
-	  &lt;add key="ClientValidationEnabled" value="true" /&gt;<span>&#13;</span>
-	  &lt;add key="UnobtrusiveJavaScriptEnabled" value="true" /&gt;<span>&#13;</span>
-	  <mark><del>&lt;add key="ida:Wtrealm" value="[Enter the App ID URI of WebApp-WSFederation-DotNet https://contoso.partner.onmschina.cn/WebApp-WSFederation-DotNet]" /&gt;</del></mark><span>&#13;</span>
-	  <mark><del>&lt;add key="ida:AADInstance" value="https://login.chinacloudapi.cn" /&gt;</del></mark><span>&#13;</span>
-	  <mark><del>&lt;add key="ida:Tenant" value="[Enter tenant name, e.g. contoso.partner.onmschina.cn]" /&gt;</del></mark><span>&#13;</span>
-	  <mark>&lt;add key="ida:RPIdentifier" value="[Enter the relying party identifier as configured in AD FS, e.g. https://localhost:44320/]" /&gt;</mark><span>&#13;</span>
-	  <mark>&lt;add key="ida:ADFS" value="[Enter the FQDN of AD FS service, e.g. adfs.contoso.com]" /&gt;</mark><span>&#13;</span>
+	&lt;appSettings&gt;
+	  &lt;add key="webpages:Version" value="3.0.0.0" /&gt;
+	  &lt;add key="webpages:Enabled" value="false" /&gt;
+	  &lt;add key="ClientValidationEnabled" value="true" /&gt;
+	  &lt;add key="UnobtrusiveJavaScriptEnabled" value="true" /&gt;
+	  <mark><del>&lt;add key="ida:Wtrealm" value="[Enter the App ID URI of WebApp-WSFederation-DotNet https://contoso.partner.onmschina.cn/WebApp-WSFederation-DotNet]" /&gt;</del></mark>
+	  <mark><del>&lt;add key="ida:AADInstance" value="https://login.chinacloudapi.cn" /&gt;</del></mark>
+	  <mark><del>&lt;add key="ida:Tenant" value="[Enter tenant name, e.g. contoso.partner.onmschina.cn]" /&gt;</del></mark>
+	  <mark>&lt;add key="ida:RPIdentifier" value="[Enter the relying party identifier as configured in AD FS, e.g. https://localhost:44320/]" /&gt;</mark>
+	  <mark>&lt;add key="ida:ADFS" value="[Enter the FQDN of AD FS service, e.g. adfs.contoso.com]" /&gt;</mark>
 
-	&lt;/appSettings&gt;<span>&#13;</span>
+	&lt;/appSettings&gt;
 	</pre>
 
 	Fill in the key values based on your respective environment.
@@ -134,9 +124,9 @@ Here, you will publish the application to a web app in Azure while preserving th
 
 11. In Visual Studio, open **Web.Release.config** in your project. Insert the following XML into the `<configuration>` tag, and replace the key value with your publish web app's URL.  
 	<pre class="prettyprint">
-	&lt;appSettings&gt;<span>&#13;</span>
-		&lt;add key="ida:RPIdentifier" value="<mark>[e.g. https://mylobapp.chinacloudsites.cn/]</mark>" xdt:Transform="SetAttributes" xdt:Locator="Match(key)" /&gt;<span>&#13;</span>
-	&lt;/appSettings&gt;</pre>
+&lt;appSettings&gt;
+   &lt;add key="ida:RPIdentifier" value="<mark>[e.g. https://mylobapp.chinacloudsites.cn/]</mark>" xdt:Transform="SetAttributes" xdt:Locator="Match(key)" /&gt;
+&lt;/appSettings&gt;</pre>
 
 When you're done, you have two RP identifiers configured in your project, one for your debug environment in Visual Studio, and one for the published web app in Azure. You will set up an RP trust for each of the two environments in AD FS. During debugging, the app settings in Web.config is used to make your **Debug** configuration work with AD FS, and when it's published (by default, the **Release** configuration is published), a transformed Web.config is uploaded that incorporates the app setting changes in Web.Release.config.
 
@@ -198,17 +188,17 @@ Now you need to configure an RP trust in AD FS Mangement before you can use your
 10.	Select **Send Claims Using a Custom Rule** and click **Next**.
 11.	Paste the following rule language into the **Custom rule** box, name the rule **Per Session Identifier** and click **Finish**.  
 	<pre class="prettyprint">
-	c1:[Type == "http://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccountname"] &amp;&amp;<span>&#13;</span>
-	c2:[Type == "http://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationinstant"]<span>&#13;</span>
-		=> add(<span>&#13;</span>
-			store = "_OpaqueIdStore",<span>&#13;</span>
-			types = ("<mark>http://contoso.com/internal/sessionid</mark>"),<span>&#13;</span>
-			query = "{0};{1};{2};{3};{4}",<span>&#13;</span>
-			param = "useEntropy",<span>&#13;</span>
-			param = c1.Value,<span>&#13;</span>
-			param = c1.OriginalIssuer,<span>&#13;</span>
-			param = "",<span>&#13;</span>
-			param = c2.Value);<span>&#13;</span>
+	c1:[Type == "http://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccountname"] &amp;&amp;
+	c2:[Type == "http://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationinstant"]
+		=> add(
+			store = "_OpaqueIdStore",
+			types = ("<mark>http://contoso.com/internal/sessionid</mark>"),
+			query = "{0};{1};{2};{3};{4}",
+			param = "useEntropy",
+			param = c1.Value,
+			param = c1.OriginalIssuer,
+			param = "",
+			param = c2.Value);
 	</pre>
 
 	Your custom rule should look like this:
@@ -264,21 +254,21 @@ Since you have included group memberships as role claims in your RP trust config
 1. Open Controllers\HomeController.cs.
 2. Decorate the `About` and `Contact` action methods similar to below, using security group memberships that your authenticated user has.  
 	<pre class="prettyprint">
-    <mark>[Authorize(Roles="Test Group")]</mark><span>&#13;</span>
-    public ActionResult About()<span>&#13;</span>
-    {<span>&#13;</span>
-        ViewBag.Message = "Your application description page.";<span>&#13;</span>
+    <mark>[Authorize(Roles="Test Group")]</mark>
+    public ActionResult About()
+    {
+        ViewBag.Message = "Your application description page.";
 
-        return View();<span>&#13;</span>
-    }<span>&#13;</span>
+        return View();
+    }
 
-    <mark>[Authorize(Roles="Domain Admins")]</mark><span>&#13;</span>
-    public ActionResult Contact()<span>&#13;</span>
-    {<span>&#13;</span>
-        ViewBag.Message = "Your contact page.";<span>&#13;</span>
+    <mark>[Authorize(Roles="Domain Admins")]</mark>
+    public ActionResult Contact()
+    {
+        ViewBag.Message = "Your contact page.";
 
-        return View();<span>&#13;</span>
-    }<span>&#13;</span>
+        return View();
+    }
 	</pre>
 
 	Since I added **Test User** to **Test Group** in my AD FS lab environment, I'll use Test Group to test authorization on `About`. For `Contact`, I'll test the negative case of **Domain Admins**, to which **Test User** doesn't belong.
@@ -290,11 +280,11 @@ Since you have included group memberships as role claims in your RP trust config
 
 	If you investigate this error in Event Viewer on the AD FS server, you will see this exception message:  
 	<pre class="prettyprint">
-	Microsoft.IdentityServer.Web.InvalidRequestException: MSIS7042: <mark>The same client browser session has made '6' requests in the last '11' seconds.</mark> Contact your administrator for details.<span>&#13;</span>
-	   at Microsoft.IdentityServer.Web.Protocols.PassiveProtocolHandler.UpdateLoopDetectionCookie(WrappedHttpListenerContext context)<span>&#13;</span>
-	   at Microsoft.IdentityServer.Web.Protocols.WSFederation.WSFederationProtocolHandler.SendSignInResponse(WSFederationContext context, MSISSignInResponse response)<span>&#13;</span>
-	   at Microsoft.IdentityServer.Web.PassiveProtocolListener.ProcessProtocolRequest(ProtocolContext protocolContext, PassiveProtocolHandler protocolHandler)<span>&#13;</span>
-	   at Microsoft.IdentityServer.Web.PassiveProtocolListener.OnGetContext(WrappedHttpListenerContext context)<span>&#13;</span>
+	Microsoft.IdentityServer.Web.InvalidRequestException: MSIS7042: <mark>The same client browser session has made '6' requests in the last '11' seconds.</mark> Contact your administrator for details.
+	   at Microsoft.IdentityServer.Web.Protocols.PassiveProtocolHandler.UpdateLoopDetectionCookie(WrappedHttpListenerContext context)
+	   at Microsoft.IdentityServer.Web.Protocols.WSFederation.WSFederationProtocolHandler.SendSignInResponse(WSFederationContext context, MSISSignInResponse response)
+	   at Microsoft.IdentityServer.Web.PassiveProtocolListener.ProcessProtocolRequest(ProtocolContext protocolContext, PassiveProtocolHandler protocolHandler)
+	   at Microsoft.IdentityServer.Web.PassiveProtocolListener.OnGetContext(WrappedHttpListenerContext context)
 	</pre>
 
 	The reason this happens is that by default, MVC returns a 401 Unauthorized when a user's roles are not authorized. This triggers a reauthentication request to your identity provider (AD FS). Since the user is already authenticated, AD FS returns to the same page, which then issues another 401, creating a redirect loop. You will override AuthorizeAttribute's `HandleUnauthorizedRequest` method with simple logic to show something that makes sense instead of continuing the redirect loop.

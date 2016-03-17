@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Use R in HDInsight to customize clusters | Windows Azure"
+	pageTitle="Use R in HDInsight to customize clusters | Azure"
 	description="Learn how to install R using Script Action, and use R on HDInsight clusters."
 	services="hdinsight"
 	documentationCenter=""
@@ -106,7 +106,7 @@ See [Customize HDInsight clusters using Script Action](/documentation/articles/h
 - [Install Giraph on HDInsight clusters](/documentation/articles/hdinsight-hadoop-giraph-install-v1): Script Action sample about installing Giraph
 - [Install Solr on HDInsight clusters](/documentation/articles/hdinsight-hadoop-solr-install-v1): Script Action sample about installing Solr.
 
-[powershell-install-configure]: ../install-configure-powershell.md
-[hdinsight-provision]: ../hdinsight-provision-clusters-v1/
-[hdinsight-cluster-customize]: hdinsight-hadoop-customize-cluster-v1.md
-[hdinsight-install-spark]: hdinsight-hadoop-spark-install-linux.md
+[powershell-install-configure]: /documentation/articles/powershell-install-configure
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
+[hdinsight-cluster-customize]: /documentation/articles/hdinsight-hadoop-customize-cluster-v1
+[hdinsight-install-spark]: /documentation/articles/hdinsight-hadoop-spark-install-linux

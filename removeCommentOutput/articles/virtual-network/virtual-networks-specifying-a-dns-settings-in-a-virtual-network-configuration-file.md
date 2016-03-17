@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Specifying a DNS Settings in a Virtual Network Configuration File | Windows Azure"
+   pageTitle="Specifying a DNS Settings in a Virtual Network Configuration File | Azure"
    description="How to change DNS server settings in a virtual network using a virtual network configuration file"
    services="virtual-network"
    documentationCenter="na"
@@ -29,7 +29,7 @@ The network configuration file may contain the following elements. The title of 
       </DnsServers>
     </Dns>
 
->[AZURE.WARNING] The **name** attribute in the **DnsServer** element is used only as a reference for the **DnsServerRef** element. It does not represent the host name for the DNS server. Each **DnsServer** attribute value must be unique across the entire Windows Azure subscription
+>[AZURE.WARNING] The **name** attribute in the **DnsServer** element is used only as a reference for the **DnsServerRef** element. It does not represent the host name for the DNS server. Each **DnsServer** attribute value must be unique across the entire Azure subscription
 
 [Virtual Network Sites Element](https://msdn.microsoft.com/zh-cn/library/azure/jj157100)
 

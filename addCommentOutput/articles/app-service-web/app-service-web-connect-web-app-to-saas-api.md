@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
 	pageTitle="Connect a web app to an API app in Azure Web App" 
 	description="This tutorial shows you how to consume an API app from an ASP.NET web app hosted in Azure Web App." 
@@ -39,7 +41,7 @@ This tutorial builds upon the series from the API App tutorials:
 
 	![Add Azure API App Reference...](./media/app-service-web-connect-web-app-to-saas-api/3-Add-Azure-API-App-SDK.png)
 
-1. In the **Add REST API Client** select download from Windows Azure API App and click browse. select the API App you would like to connect to.
+1. In the **Add REST API Client** select download from Azure API App and click browse. select the API App you would like to connect to.
 
 	![Select Existing API App](./media/app-service-web-connect-web-app-to-saas-api/4-Add-Azure-API-App-SDK-Dialog.png)
 
@@ -81,8 +83,8 @@ Follow the instructions available at [How to Deploy an Azure web app](/documenta
 
 >[AZURE.NOTE] If you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.
 
-<!-- deleted by customization
+
 ## What's changed
 * For a guide to the change from Websites to Azure see: [Azure and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
--->
+
  

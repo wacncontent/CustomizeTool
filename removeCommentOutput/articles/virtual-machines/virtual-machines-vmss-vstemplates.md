@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Deploying Virtual Machine Scale Set Templates in Visual Studio | Windows Azure"
+	pageTitle="Deploying Virtual Machine Scale Set Templates in Visual Studio | Azure"
 	description="How to deploy Virtual Machine Scale Set using a Visual Studio Resource Group Deployment"
 	services="virtual-machines"
 	documentationCenter=""

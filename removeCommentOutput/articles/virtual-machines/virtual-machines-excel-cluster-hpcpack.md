@@ -1,5 +1,5 @@
 <properties
- pageTitle="HPC Pack cluster for Excel and SOA | Windows Azure"
+ pageTitle="HPC Pack cluster for Excel and SOA | Azure"
  description="Get started with an HPC Pack cluster to run Excel and SOA workloads, using the Resource Manager deployment model."
  services="virtual-machines"
  documentationCenter=""

@@ -1,5 +1,5 @@
 <properties
-   pageTitle="DMZ Example - Build a DMZ to protect applications with a Firewall and NSGs | Windows Azure"
+   pageTitle="DMZ Example - Build a DMZ to protect applications with a Firewall and NSGs | Azure"
    description="Build a DMZ with a Firewall and Network Security Groups (NSG)"
    services="virtual-network"
    documentationCenter="na"
@@ -559,6 +559,6 @@ If you wish to install a sample application for this, and other DMZ Examples, on
 [4]: ./media/virtual-networks-dmz-nsg-fw-asm/firewallruleactivate.png "Firewall Rule Activation"
 
 <!--Link References-->
-[HOME]: ../best-practices-network-security.md
-[SampleApp]: ./virtual-networks-sample-app.md
+[HOME]: /documentation/articles/best-practices-network-security
+[SampleApp]: /documentation/articles/virtual-networks-sample-app
 [Example1]: /documentation/articles/virtual-networks-dmz-nsg-asm

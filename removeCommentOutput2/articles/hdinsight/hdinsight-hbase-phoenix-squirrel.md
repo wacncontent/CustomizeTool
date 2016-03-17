@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Use Apache Phoenix and SQuirreL in HDInsight | Windows Azure" 
+   pageTitle="Use Apache Phoenix and SQuirreL in HDInsight | Azure" 
    description="Learn how to use Apache Phoenix in HDInsight, and how to install and configure SQuirreL on your workstation to connect to an HBase cluster in HDInsight." 
    services="hdinsight" 
    documentationCenter="" 
@@ -103,8 +103,8 @@ Before following the procedures, you must have the following:
 3. Click **Next** twice.
 4. Specify a path where you have the write permission, and then click **Next**.
 	>[AZURE.NOTE] The default installation folder is in the C:\Program Files\squirrel-sql-3.6 folder.  In order to write to this path, the installer must be granted the administrator privilege. You can open a command prompt as administrator, navigate to Java's bin folder, and then run 
-	>
-	>     java.exe -jar [the path of the SQuirreL jar file] 
+
+	><p>`java.ejava.exe -jar [the path of the SQuirreL jar file]`
 5. Click **OK** to confirm creating the target directory.
 6. The default setting is to install the Base and Standard packages.  Click **Next**.
 7. Click **Next** twice, and then click **Done**.
@@ -142,7 +142,7 @@ You need to copy it to your workstation under the [SQuirreL installation folder]
 	- **Name**: The name of the HBase cluster or any name you prefer.
 	- **Driver**: Phoenix.  This must match the driver name you created in the last procedure.
 	- **URL**: The URL is copied from your driver configuration. Make sure to user all lower case.
-	- **User name**: It can be any text.  
+	- **User name**: It can be any text.  Because you use VPN connec
 	- **Password**: It can be any text.
 
 	![HDInsight HBase Phoenix SQuirreL driver][img-squirrel-alias]

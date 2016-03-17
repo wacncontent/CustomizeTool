@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
 	pageTitle="Create a Spark cluster on HDInsight and use Spark SQL from Zeppelin and Jupyter for interactive analysis | Azure" 
 	description="Step-by-step instructions on how to quickly create an Apache Spark cluster in HDInsight and then use Spark SQL from Zeppelin and Jupyter notebooks to run interactive queries." 
@@ -42,7 +44,7 @@ When you create an HDInsight cluster in HDInsight, you specify an Azure Storage 
 
 >[AZURE.NOTE]  Make sure you create the storage account in a location that is supported for the cluster.
 
-Select the new storage account from the list and click **MANAGE ACCESS KEYS** at the bottom of the page. Make a note of the **PRIMARY ACCESS KEY** (or the **SECONDARY ACCESS <!-- deleted by customization KEY**âeither --><!-- keep by customization: begin --> KEY**-either <!-- keep by customization: end --> of the keys work).  You will need this later in the tutorial. For more information, see [How to Create a Storage Account][azure-create-storageaccount].
+Select the new storage account from the list and click **MANAGE ACCESS KEYS** at the bottom of the page. Make a note of the **PRIMARY ACCESS KEY** (or the **SECONDARY ACCESS  KEY**—either  KEY**-either  of the keys work).  You will need this later in the tutorial. For more information, see [How to Create a Storage Account][azure-create-storageaccount].
 	
 ##Create an HDInsight Spark cluster
 
@@ -242,27 +244,15 @@ In this section, you use a Jupyter notebook to run Spark SQL queries against a S
 * [Manage resources for the Apache Spark cluster in Azure HDInsight](/documentation/articles/hdinsight-apache-spark-resource-manager-v1)
 
 
-<!-- deleted by customization
-[hdinsight-versions]: ../hdinsight-component-versioning-v1/
-[hdinsight-upload-data]: ../hdinsight-upload-data/
-[hdinsight-storage]: ../hdinsight-use-blob-storage/
--->
-<!-- keep by customization: begin -->
 [hdinsight-versions]: /documentation/articles/hdinsight-component-versioning-v1
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
 [hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
-<!-- keep by customization: end -->
 
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: /pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
 [azure-management-portal]: https://manage.windowsazure.cn/
-<!-- deleted by customization
-[azure-create-storageaccount]: ../storage-create-storage-account/ 
--->
-<!-- keep by customization: begin -->
 [azure-create-storageaccount]: /documentation/articles/storage-create-storage-account
-<!-- keep by customization: end -->
 
 
 

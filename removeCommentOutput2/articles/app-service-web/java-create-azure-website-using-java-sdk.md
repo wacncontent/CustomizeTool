@@ -32,7 +32,7 @@ This walkthrough shows you how to create an Azure SDK for Java application that 
 
 The AzureWebDemo application code in this article was written using Azure Java SDK 0.7.0, which you can install using the [Web Platform Installer][] (WebPI). In addition, make sure to use the latest version of the [Azure Toolkit for Eclipse][]. After you install the SDK, update the dependencies in your Eclipse project by running **Update Index** in **Maven Repositories**, then re-add the latest version of each package in the **Dependencies** window. You can verify the version of your installed software in Eclipse by clicking **Help > Installation Details**; you should have at least the following versions:
 
-- Package for Windows Azure Libraries for Java 0.7.0.20150309
+- Package for Azure Libraries for Java 0.7.0.20150309
 - Eclipse IDE for Java EE Developers 4.4.2.20150219
 
 
@@ -151,7 +151,7 @@ In this section you create a workspace and a Maven project for the web app creat
 
     ![][1]
     
-    This step can take several minutes depending on the speed of your connection. When the index rebuilds, you should see the Windows Azure packages in the **central** Maven repository.
+    This step can take several minutes depending on the speed of your connection. When the index rebuilds, you should see the Azure packages in the **central** Maven repository.
 
 6. In **Dependencies**, click **Add**. In **Enter Group ID...** enter `azure-management`. Select the packages for base management and Azure Web Apps management:
 
@@ -197,7 +197,7 @@ In WebCreator.java, add the following imports; these imports provide access to c
     import com.microsoft.windowsazure.exception.ServiceException;
     import org.xml.sax.SAXException;
     
-    // Imports for Azure Web App management configuration
+    // Imports for Azure Web App management configuration  management configuration
     import com.microsoft.windowsazure.Configuration;
     import com.microsoft.windowsazure.management.configuration.ManagementConfiguration;
     
@@ -236,8 +236,6 @@ where:
 - `<certificate-password>` is the password you specified when you created your JKS certificate.
 - `webAppName` can be any name you choose; this procedure uses the name `WebDemoWebApp`. The full domain name is the `webAppName` with the `domainName` appended, so in this case the full domain is `webdemowebapp.chinacloudsites.cn`.
 - `domainName` should be specified as shown above.
-- `webSpaceName` should be one of the values defined in the [WebSpaceNames][] class.
-- `appServicePlanName` should be specified as shown above.
 
 > **Note:** Each time you run this application, you need to change the value 
 > of `webAppName` and `appServicePlanName` (or delete the web app on the Azure 
@@ -261,7 +259,7 @@ Next, define a method to create the web app. This method, `createWebApp`, specif
         );
 
         // Create the Azure Web Apps management client to call Azure APIs
-        // and pass it the Azure Web App management configuration object.
+        // and pass it the Azure Web App management configuration object.  management configuration object.
         WebSiteManagementClient webAppManagementClient = WebSiteManagementService.create(config);
 
         // Create an App Service plan for the web app with the specified parameters.
@@ -432,9 +430,9 @@ For more information on deploying WAR files, see [Add a Java application to Azur
 
 ### Deploying the Hello World Application Using FTP
 
-Select a third-party FTP client to publish the application. This procedure describes two options: the Kudu console built into Azure; and FileZilla, a popular tool with a convenient, graphical UI.
+Select a third-party FTP client to publish the application. This procedure describes two options: the Kudu consoF FileZilla, a popular tool with a convenient, graphical UI.
 
-> **Note:** The Azure Toolkit for Eclipse supports deployment to storage accounts and cloud services, but does not currently support deployment to web apps. You can deploy to storage accounts and cloud services using an Azure Deployment Project as described in [Creating a Hello World Application for Azure in Eclipse](/documentation/articles/azure-toolkit-for-eclipse-creating-a-hello-world-application), but not to web apps. Use other methods such as FTP or GitHub to transfer files to your web app.
+> **Note:** The Azure Toolkit for Eclipse supports deployment to storage accounts and cloud services, but does not currently support deployment to web apps. You can deploy to storage accounts and cloud services using an Azure Deployment Project as described in [Creating a, , but not to web apps. Use other methods such as FTP or GitHub to transfer files to your web app.
 
 > **Note:** We do not recommend using FTP from the Windows command prompt (the command-line FTP.EXE utility that ships with Windows). FTP clients that use active FTP, such as FTP.EXE, often fail to work over firewalls. Active FTP specifies an internal LAN-based address, to which an FTP server will likely fail to connect.
 
@@ -457,6 +455,7 @@ Make sure you have run the **AzureWebDemo** application to create a web app. You
 #### Get FTP connection information
 
 To use FTP to deploy application files to the newly created web app, you need to obtain connection information. There are two ways to obtain connection information. One way is to visit the web app's **Dashboard** page; the other way is to download the web app's publish profile. The publish profile is an XML file that provides information such as FTP host name and logon credentials for your web apps in Azure. You can use this username and password to deploy to any web app in all subscriptions associated with the Azure account, not only this one.
+
 
 To obtain FTP connection information from the website's **Dashboard** page:
 
@@ -499,42 +498,6 @@ Before you publish the application, you need to change a few configuration setti
 3. In **Default Documents**, add index.jsp and move it up to the top of the list. (The default file for web apps is hostingstart.html.)
 
 4. Click **Save**.
-
-
-#### Publish your application using Kudu
-
-One way to publish the application is to use the Kudu debug console built into Azure. Kudu is known to be stable and consistent with Azure Web Apps and Tomcat Server. You access the console for the web app by browsing to a URL of the following form:
-
-`https://<webappname>.scm.chinacloudsites.cn/DebugConsole`
-
-1. For this procedure, the Kudu console is located at the following URL; browse to this location:
-
-    `https://webdemowebapp.scm.chinacloudsites.cn/DebugConsole`
-
-2. From the top menu, select **Debug Console > CMD**.
-
-3. In the console command line, navigate to `/site/wwwroot` (or click `site`, then `wwwroot` in the directory view at the top of the page):
-
-    `cd /site/wwwroot`
-
-4. After you specify **Java version**, Tomcat server should create a webapps directory. In the console command line, navigate to the webapps directory:
-
-    `mkdir webapps`
-
-    `cd webapps`
-
-5. Drag JSPHello.war from `<project-path>/JSPHello/src/` and drop it into the Kudu directory view under `/site/wwwroot/webapps`. Do not drag it to the "Drag here to upload and zip" area, because Tomcat will unzip it.
-
-  ![][8]
-
-At first JSPHello.war appears in the directory area by itself:
-
-  ![][9]
-
-In a short time (probably less than 5 minutes) Tomcat Server will unzip the WAR file into an unpacked JSPHello directory. Click the ROOT directory to see whether index.jsp has been unzipped and copied there. If so, navigate back to the webapps directory to see whether the unpacked JSPHello directory has been created. If you do not see these items, wait and repeat.
-
-  ![][10]
-
 
 #### Publish your application using FileZilla (optional)
 

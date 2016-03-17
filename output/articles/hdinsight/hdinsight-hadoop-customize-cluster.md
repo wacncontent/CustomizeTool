@@ -1,5 +1,7 @@
+<!-- not suitable for Mooncake -->
+
 <properties
-	pageTitle="Customize HDInsight Clusters using script actions | Windows Azure"
+	pageTitle="Customize HDInsight Clusters using script actions | Azure"
 	description="Learn how to customize HDInsight clusters using Script Action."
 	services="hdinsight"
 	documentationCenter=""
@@ -293,7 +295,7 @@ The following sample demonstrates how to install Spark on Windows based HDInsigh
 
 
 ## Support for open-source software used on HDInsight clusters
-The Windows Azure HDInsight service is a flexible platform that enables you to build big-data applications in the cloud by using an ecosystem of open-source technologies formed around Hadoop. Windows Azure provides a general level of support for open-source technologies, as discussed in the **Support Scope** section of the <a href="/support/faq/" target="_blank">Azure Support FAQ website</a>. The HDInsight service provides an additional level of support for some of the components, as described below.
+The Azure HDInsight service is a flexible platform that enables you to build big-data applications in the cloud by using an ecosystem of open-source technologies formed around Hadoop. Azure provides a general level of support for open-source technologies, as discussed in the **Support Scope** section of the <a href="/support/faq/" target="_blank">Azure Support FAQ website</a>. The HDInsight service provides an additional level of support for some of the components, as described below.
 
 There are two types of open-source components that are available in the HDInsight service:
 
@@ -326,11 +328,11 @@ See [Develop Script Action scripts for HDInsight][hdinsight-write-script].
 - [Install and use Solr on HDInsight clusters](/documentation/articles/hdinsight-hadoop-solr-install-v1).
 - [Install and use Giraph on HDInsight clusters](/documentation/articles/hdinsight-hadoop-giraph-install-v1).
 
-[hdinsight-install-spark]: hdinsight-hadoop-spark-install.md
-[hdinsight-install-r]: hdinsight-hadoop-r-scripts.md
-[hdinsight-write-script]: hdinsight-hadoop-script-actions.md
-[hdinsight-provision-cluster]: hdinsight-provision-clusters-v1.md
-[powershell-install-configure]: ../install-configure-powershell.md
+[hdinsight-install-spark]: /documentation/articles/hdinsight-hadoop-spark-install
+[hdinsight-install-r]: /documentation/articles/hdinsight-hadoop-r-scripts
+[hdinsight-write-script]: /documentation/articles/hdinsight-hadoop-script-actions
+[hdinsight-provision-cluster]: /documentation/articles/hdinsight-provision-clusters-v1
+[powershell-install-configure]: /documentation/articles/powershell-install-configure
 
 
 [img-hdi-cluster-states]: ./media/hdinsight-hadoop-customize-cluster-v1/HDI-Cluster-state.png "Stages during cluster creation"

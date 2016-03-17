@@ -1,12 +1,12 @@
 <properties
-	pageTitle="Create an Jupyter/IPython Notebook | Windows Azure"
+	pageTitle="Create an Jupyter/IPython Notebook | Azure"
 	description="Learn how to deploy the Jupyter/IPython Notebook on a Linux virtual machine created with the resource manager deployment model in Azure."
 	services="virtual-machines"
 	documentationCenter="python"
 	authors="crwilcox"
 	manager="wpickett"
 	editor=""
-	tags=âazure-service-management,azure-resource-manager"/>
+	tags="azure-service-management,azure-resource-manager"/>
 
 <tags
 	ms.service="virtual-machines"
@@ -28,7 +28,7 @@ scalable computational resources with all the power of Python and its many
 libraries.  Since the installation is handled by the service, users can access these
 resources without the need for administration and configuration by the user.
 
-If the notebook service does not work for your scenario please continue to read this article which will will show you how to deploy the Jupyter Notebook on Windows Azure, using Linux virtual machines (VMs).
+If the notebook service does not work for your scenario please continue to read this article which will will show you how to deploy the Jupyter Notebook on Azure, using Linux virtual machines (VMs).
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
 

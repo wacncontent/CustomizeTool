@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Manage endpoints in Azure Traffic Manager | Windows Azure"
+   pageTitle="Manage endpoints in Azure Traffic Manager | Azure"
    description="This article will help you add, remove, enable and disable endpoints from Azure Traffic Manager."
    services="traffic-manager"
    documentationCenter=""

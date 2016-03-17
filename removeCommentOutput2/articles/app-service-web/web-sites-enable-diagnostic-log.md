@@ -19,14 +19,6 @@
 Azure provides built-in diagnostics to assist with debugging an [Azure web app](/documentation/services/web-sites/). In this article you'll learn how to enable diagnostic logging and add instrumentation to your application, as well as how to access the information logged by Azure.
 
 This article uses the [Azure Management Portal](https://manage.windowsazure.cn), Azure PowerShell, and the Azure Command-Line Interface (Azure CLI) to work with diagnostic logs. For information on working with diagnostic logs using Visual Studio, see [Troubleshooting Azure in Visual Studio](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio).
-##Table of Contents##
-
-- [What is: Web Site diagnostics?](#whatisdiag)
-- [How to: Enable diagnostics](#enablediag)
-- [How to: Download logs](#download)
-- [How to: Stream logs](#streamlogs)
-- [How to: Understand diagnostics logs](#understandlogs)
-- [Next Steps](#nextsteps)
 
 ## <a name="whatisdiag"></a>Web server diagnostics and application diagnostics
 
@@ -51,6 +43,7 @@ At runtime you can retrieve these logs to help with troubleshooting. For more in
 Azure web apps also log deployment information when you publish content to a web app. This happens automatically and there are no configuration settings for deployment logging. Deployment logging allows you to determine why a deployment failed. For example, if you are using a custom deployment script, you might use deployment logging to determine why the script is failing.
 
 ## <a name="enablediag"></a>How to enable diagnostics
+
 
 Diagnostics can be enabled by visiting the **Configure** page of your Azure  Website in the [Azure Management Portal](https://manage.windowsazure.cn). On the **Configure** page, use the **application diagnostics** and **site diagnostics** sections to enable logging.
 

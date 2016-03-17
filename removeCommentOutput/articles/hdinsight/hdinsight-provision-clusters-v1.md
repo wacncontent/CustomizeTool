@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Custom-provision Hadoop clusters in HDInsight | Windows Azure" 
+   pageTitle="Custom-provision Hadoop clusters in HDInsight | Azure" 
    description="Learn how to custom-provision clusters for Azure HDInsight by using the Azure Management Portal, Azure PowerShell, a command line, or a .NET SDK." 
    services="hdinsight" 
    documentationCenter="" 
@@ -63,7 +63,7 @@ Before you begin the instructions in this article, you must have the following:
 
 	![HDInsight clusters](./media/hdinsight-provision-clusters-v1/hdinsight.clusters.png)
  
-	> [AZURE.NOTE] *Azure HDInsight cluster* is also called *Hadoop clusters in HDInsight*, or *HDInsight cluster*. Sometimes, it is used interchangeably with *Hadoop cluster*. They all refer to the Hadoop clusters hosted in the Windows Azure environment. 	   
+	> [AZURE.NOTE] *Azure HDInsight cluster* is also called *Hadoop clusters in HDInsight*, or *HDInsight cluster*. Sometimes, it is used interchangeably with *Hadoop cluster*. They all refer to the Hadoop clusters hosted in the Azure environment. 	   
 
 	Within a given cluster type, there are different roles for the various nodes, which allow a customer to size those nodes in a given role appropriate to the details of their workload. For example, a Hadoop cluster can have its worker nodes provisioned with a large amount of memory if the type of analytics being performed are memory intensive.
 
@@ -96,7 +96,7 @@ Before you begin the instructions in this article, you must have the following:
 	- Worker node (at least 1 node)
 	- Zookeeper nodes (3 nodes) (Free for A1 Zookeepers)
 
-	Customers are billed for the usage of those nodes for the duration of the clusterâs life. Billing starts once a cluster is created and stops when the cluster is deleted (clusters canât be de-allocated or put on hold). The cluster size affects the cluster price. For learning purposes, it is recommended to use 1 data node. For more information about HDInsight pricing, see [HDInsight pricing](/home/features/hdinsight/#price).
+	Customers are billed for the usage of those nodes for the duration of the cluster's life. Billing starts once a cluster is created and stops when the cluster is deleted (clusters can't be de-allocated or put on hold). The cluster size affects the cluster price. For learning purposes, it is recommended to use 1 data node. For more information about HDInsight pricing, see [HDInsight pricing](/home/features/hdinsight/#price).
 
 
 	>[AZURE.NOTE] The cluster size limit varies among Azure subscriptions. Contact billing support to increase the limit.

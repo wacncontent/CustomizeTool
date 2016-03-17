@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Manage Hadoop clusters in HDInsight with PowerShell | Windows Azure"
+	pageTitle="Manage Hadoop clusters in HDInsight with PowerShell | Azure"
 	description="Learn how to perform administrative tasks for the Hadoop clusters in HDInsight using Azure PowerShell."
 	services="hdinsight"
 	editor="cgronlun"
@@ -309,21 +309,21 @@ See [Upload data to HDInsight][hdinsight-upload-data].
 [azure-member-offers]: /pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
 
-[hdinsight-get-started]: ../hdinsight-get-started.md
-[hdinsight-provision]: hdinsight-provision-clusters-v1.md
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
 [hdinsight-provision-custom-options]: /documentation/articles/hdinsight-provision-clusters-v1#configuration
-[hdinsight-submit-jobs]: hdinsight-submit-hadoop-jobs-programmatically.md
+[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
 
-[hdinsight-admin-cli]: hdinsight-administer-use-command-line.md
-[hdinsight-admin-portal]: hdinsight-administer-use-management-portal-v1
-[hdinsight-storage]: ../hdinsight-use-blob-storage.md
-[hdinsight-use-hive]: hdinsight-use-hive.md
-[hdinsight-use-mapreduce]: hdinsight-use-mapreduce.md
-[hdinsight-upload-data]: hdinsight-upload-data.md
-[hdinsight-flight]: hdinsight-analyze-flight-delay-data.md
+[hdinsight-admin-cli]: /documentation/articles/hdinsight-administer-use-command-line
+[hdinsight-admin-portal]: /documentation/articles/hdinsight-administer-use-management-portal-v1
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
+[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
+[hdinsight-use-mapreduce]: /documentation/articles/hdinsight-use-mapreduce
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
+[hdinsight-flight]: /documentation/articles/hdinsight-analyze-flight-delay-data
 
 [hdinsight-powershell-reference]: https://msdn.microsoft.com/zh-cn/library/dn858087.aspx
 
-[powershell-install-configure]: ../install-configure-powershell.md
+[powershell-install-configure]: /documentation/articles/powershell-install-configure
 
 [image-hdi-ps-provision]: ./media/hdinsight-administer-use-powershell/HDI.PS.Provision.png

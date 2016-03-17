@@ -1,5 +1,7 @@
+<!-- not suitable for Mooncake -->
+
 <properties
-   pageTitle="Create a virtual network using the Azure Management Portal | Windows Azure"
+   pageTitle="Create a virtual network using the Azure Management Portal | Azure"
    description="Learn how to create a virtual network using the Azure Management Portal in ARM | Resource Manager."
    services="virtual-network"
    documentationCenter=""

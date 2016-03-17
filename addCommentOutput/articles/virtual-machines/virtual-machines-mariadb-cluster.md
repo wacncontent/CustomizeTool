@@ -15,11 +15,11 @@
 
 # MariaDB (MySQL) cluster - Azure tutorial
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] <!-- deleted by customization Resource Manager model. -->
-<!-- deleted by customization
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]  Resource Manager model. 
+
 
 > [AZURE.NOTE]  MariaDB Enterprise cluster is now available in the Azure gallery.  The new offering will automatically deploy a MariaDB Galera cluster on ARM. You should use the new offering from  https://azure.microsoft.com/marketplace/partners/mariadb/cluster-maxscale/ 
--->
+
 
 We're creating a multi-Master [Galera](http://galeracluster.com/products/) cluster of [MariaDBs](https://mariadb.org/en/about/), a robust, scalable, and reliable drop-in replacement for MySQL, to work in a highly available environment on Azure Virtual Machines.
 
@@ -368,7 +368,12 @@ You may want to take a look at [another way to cluster MySQL on Linux] and ways 
 <!--Link references-->
 [Galera]: http://galeracluster.com/products/
 [MariaDBs]: https://mariadb.org/en/about/
+
+[Azure CLI]: /documentation/articles/xplat-cli/
+
+
 [Azure CLI]: /documentation/articles/xplat-cli-install/
+
 [Azure CLI command reference]: /documentation/articles/virtual-machines-command-line-tools/
 [create an SSH key for authentication]:http://www.jeff.wilcox.name/2013/06/secure-linux-vms-with-ssh-certificates/
 [performance tuning strategy]: /documentation/articles/virtual-machines-linux-optimize-mysql-perf/

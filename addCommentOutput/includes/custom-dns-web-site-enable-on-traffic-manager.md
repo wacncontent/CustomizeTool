@@ -18,10 +18,10 @@ If you have not already added your web app as a Traffic Manager endpoint, you mu
 
 4. Use the **DOMAIN NAMES** text boxes to enter the Traffic Manager domain name (contoso.trafficmanager.cn) to associate with this web app.
 
-<!-- deleted by customization
+
 	![](./media/custom-dns-web-site/dncmntask-cname-8.png)
 
--->
+
 5. Click **Save** to save the domain name configuration.
 
 	Once configuration has completed, the custom domain name will be listed in the **domain names** section of your web app.

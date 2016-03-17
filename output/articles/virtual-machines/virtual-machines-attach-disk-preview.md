@@ -1,5 +1,7 @@
+<!-- not suitable for Mooncake -->
+
 <properties
-	pageTitle="Attach a data disk | Windows Azure"
+	pageTitle="Attach a data disk | Azure"
 	description="How to attach new or existing data disk to a VM in the Azure Management Portal using the Resource Manager deployment model."
 	services="virtual-machines"
 	documentationCenter=""
@@ -80,4 +82,4 @@ After the disk is added, you need to prepare it for use in the virtual machine's
 
 <!--Link references-->
 
-[About Azure Storage Accounts]: ../storage-whatis-account/
+[About Azure Storage Accounts]: /documentation/articles/storage-whatis-account

@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Custom-provision Hadoop clusters in HDInsight | Windows Azure" 
+   pageTitle="Custom-provision Hadoop clusters in HDInsight | Azure" 
    description="Learn how to custom-provision clusters for Azure HDInsight by using the Azure Management Portal, Azure PowerShell, a command line, or a .NET SDK." 
    services="hdinsight" 
    documentationCenter="" 
@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="09/21/2015"
+	ms.date="01/28/2016"
 	wacn.date=""/>
 
 #Provision Hadoop clusters in HDInsight
@@ -61,7 +61,7 @@ Before you begin the instructions in this article, you must have the following:
 
 	![HDInsight clusters](./media/hdinsight-provision-clusters-v1/hdinsight.clusters.png)
  
-	> [AZURE.NOTE] *Azure HDInsight cluster* is also called *Hadoop clusters in HDInsight*, or *HDInsight cluster*. Sometimes, it is used interchangeably with *Hadoop cluster*. They all refer to the Hadoop clusters hosted in the Windows Azure environment. 	   
+	> [AZURE.NOTE] *Azure HDInsight cluster* is also called *Hadoop clusters in HDInsight*, or *HDInsight cluster*. Sometimes, it is used interchangeably with *Hadoop cluster*. They all refer to the Hadoop clusters hosted in the Azure environment. 	   
 
 	Within a given cluster type, there are different roles for the various nodes, which allow a customer to size those nodes in a given role appropriate to the details of their workload. For example, a Hadoop cluster can have its worker nodes provisioned with a large amount of memory if the type of analytics being performed are memory intensive.
 
@@ -228,7 +228,7 @@ For more information on Virtual Network features, benefits, and capabilities, se
 >
 > It is highly recommended to designate a single subnet for one cluster.
 
-## Provision tools
+##<a name="cluster-creation-methods"></a> Provision tools
 
 - The Azure Management Portal
 - Azure PowerShell

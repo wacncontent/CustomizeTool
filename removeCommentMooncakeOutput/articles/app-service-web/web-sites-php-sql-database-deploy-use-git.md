@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="11/19/2015"
+	ms.date="02/09/2016"
 	wacn.date=""/>
 
 # Create a PHP-SQL web app and deploy to Azure using Git
@@ -36,7 +36,8 @@ Follow these steps to create an Azure web app and a SQL Database:
 
 1. Login to the [Azure Management Portal][management-portal].
 2. Click the **New** icon on the bottom left of the portal.
-![Create New Azure  Website][new- Website]
+
+	![Create New Azure  Website][new- Website]
 
 3. Click ** Website**, then **Custom Create**.
 

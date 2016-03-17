@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Submit Spark jobs remotely using Livy | Windows Azure" 
+	pageTitle="Submit Spark jobs remotely using Livy | Azure" 
 	description="Learn how to use Livy with HDInsight clusters to submit Spark jobs remotely." 
 	services="hdinsight" 
 	documentationCenter="" 

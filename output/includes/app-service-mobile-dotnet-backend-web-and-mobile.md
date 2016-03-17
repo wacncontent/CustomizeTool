@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 This topic shows you how to create an app with both a mobile and web client. You will create a mobile app and a web app and use the same underlying database for both.
 
 First you will create both a new mobile app backend and a simple *To do list* app that stores app data in the new mobile app backend. The mobile app backend uses the supported .NET languages for server-side business logic. The client app can use any client platform supported by Mobile App, including iOS, Windows, Xamarin iOS, and Xamarin Android.
@@ -71,4 +73,4 @@ In this section, you will use a sample web client application implemented with A
 <!-- Links -->
 
 [MultiChannelToDo]: https://github.com/Azure/mobile-services-samples/tree/web-mobile/MultiChannelToDo
-[Create a mobile app]: ../article/app-service-mobile/app-service-mobile-xamarin-ios-get-started.md
+[Create a mobile app]: /documentation/articles/app-service-mobile-xamarin-ios-get-started

@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Sample Application for Use with Security Boundary Environments | Windows Azure"
+   pageTitle="Sample Application for Use with Security Boundary Environments | Azure"
    description="Deploy this simple web application after creating a DMZ to test traffic flow scenarios"
    services="virtual-network"
    documentationCenter="na"

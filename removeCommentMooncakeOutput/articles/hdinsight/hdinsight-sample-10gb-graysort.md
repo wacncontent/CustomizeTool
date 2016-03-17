@@ -1,6 +1,6 @@
 
 <properties
-	pageTitle="10GB GraySort Hadoop MapReduce sample | Windows Azure"
+	pageTitle="10GB GraySort Hadoop MapReduce sample | Azure"
 	description="Learn how to run a general purpose GraySort for very large amounts of data, usually a 100 TB minimum, on Hadoop with HDInsight using Azure PowerShell."
 	editor="cgronlun"
 	manager="paulettm"
@@ -420,10 +420,12 @@ For tutorials that guide you through running other samples and that provide inst
 [powershell-install-configure]: /documentation/articles/powershell-install-configure
 
 [hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
+
 [hdinsight-samples]: /documentation/articles/hdinsight-run-samples
 [hdinsight-sample-10gb-graysort]: /documentation/articles/hdinsight-sample-10gb-graysort
 [hdinsight-sample-csharp-streaming]: /documentation/articles/hdinsight-sample-csharp-streaming
 [hdinsight-sample-pi-estimator]: /documentation/articles/hdinsight-sample-pi-estimator
 [hdinsight-sample-wordcount]: /documentation/articles/hdinsight-sample-wordcount
+
 [hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
 [hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig

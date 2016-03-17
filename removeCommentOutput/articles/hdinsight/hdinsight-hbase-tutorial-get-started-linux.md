@@ -1,5 +1,5 @@
 <properties
-	pageTitle="HBase tutorial: Get started with Linux-based HBase clusters in Hadoop | Windows Azure"
+	pageTitle="HBase tutorial: Get started with Linux-based HBase clusters in Hadoop | Azure"
 	description="Follow this HBase tutorial to get started using Apache HBase with Hadoop in HDInsight. Create tables from the HBase shell and query them using Hive."
 	keywords="apache hbase,hbase,hbase shell,hbase tutorial"
 	services="hdinsight"
@@ -37,7 +37,7 @@ The following procedure use an Azure ARM template to create an HBase cluster. To
 
 1. Click the following image to open an ARM template in the Azure Management Portal. The ARM template is located in a public blob container. 
 
-    <a href="https://manage.windowsazure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fhditutorialdata.blob.core.windows.net%2Farmtemplates%2FHbase.json" target="_blank"><img src="https://acom.azurecomcdn.net/80C57D/cdn/mediahandler/docarticles/dpsmedia-prod/azure.microsoft.com/documentation/articles/hdinsight-hbase-tutorial-get-started-v1-linux/20160201111850/deploy-to-azure.png" alt="Deploy to Azure"></a>
+    <a href="https://manage.windowsazure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fhditutorialdata.blob.core.windows.net%2Farmtemplates%2FHbase.json" target="_blank"><img src="https://acom.azurecomcdn.net/80C57D/cdn/mediahandler/docarticles/dpsmedia-prod/azure.microsoft.com/documentation/articles/hdinsight-hbase-tutorial-get-started-v1/20160201111850/deploy-to-azure.png" alt="Deploy to Azure"></a>
 
 2. From the **Parameters** blade, enter the following:
 
@@ -258,8 +258,8 @@ To learn more, see:
 HBase is an Apache, open-source, NoSQL database built on Hadoop that provides random access and strong consistency for large amounts of unstructured and semistructured data.
 
 
-[hdinsight-manage-portal]: hdinsight-administer-use-management-portal-v1
-[hdinsight-upload-data]: hdinsight-upload-data.md
+[hdinsight-manage-portal]: /documentation/articles/hdinsight-administer-use-management-portal-v1
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
 [hbase-reference]: http://hbase.apache.org/book.html#importtsv
 [hbase-schema]: http://0b4af6cdc2f0c5998459-c0245c5c937c5dedcca3f1764ecc9b2f.r43.cf2.rackcdn.com/9353-login1210_khurana.pdf
 [hbase-quick-start]: http://hbase.apache.org/book.html#quickstart
@@ -268,19 +268,19 @@ HBase is an Apache, open-source, NoSQL database built on Hadoop that provides ra
 
 
 
-[hdinsight-hbase-overview]: hdinsight-hbase-overview.md
-[hdinsight-hbase-provision-vnet-v1]: hdinsight-hbase-provision-vnet-v1.md
-[hdinsight-versions]: hdinsight-component-versioning-v1.md
-[hbase-twitter-sentiment]: hdinsight-hbase-analyze-twitter-sentiment.md
+[hdinsight-hbase-overview]: /documentation/articles/hdinsight-hbase-overview
+[hdinsight-hbase-provision-vnet-v1]: /documentation/articles/hdinsight-hbase-provision-vnet-v1
+[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning-v1
+[hbase-twitter-sentiment]: /documentation/articles/hdinsight-hbase-analyze-twitter-sentiment
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: /pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
 [azure-portal]: https://manage.windowsazure.cn/
 [azure-create-storageaccount]: /documentation/articles/storage-create-storage-account/
 
-[img-hdinsight-hbase-cluster-quick-create]: ./media/hdinsight-hbase-tutorial-get-started-v1-linux/hdinsight-hbase-quick-create.png
-[img-hdinsight-hbase-hive-editor]: ./media/hdinsight-hbase-tutorial-get-started-v1-linux/hdinsight-hbase-hive-editor.png
-[img-hdinsight-hbase-file-browser]: ./media/hdinsight-hbase-tutorial-get-started-v1-linux/hdinsight-hbase-file-browser.png
-[img-hbase-shell]: ./media/hdinsight-hbase-tutorial-get-started-v1-linux/hdinsight-hbase-shell.png
-[img-hbase-sample-data-tabular]: ./media/hdinsight-hbase-tutorial-get-started-v1-linux/hdinsight-hbase-contacts-tabular.png
-[img-hbase-sample-data-bigtable]: ./media/hdinsight-hbase-tutorial-get-started-v1-linux/hdinsight-hbase-contacts-bigtable.png
+[img-hdinsight-hbase-cluster-quick-create]: ./media/hdinsight-hbase-tutorial-get-started-v1/hdinsight-hbase-quick-create.png
+[img-hdinsight-hbase-hive-editor]: ./media/hdinsight-hbase-tutorial-get-started-v1/hdinsight-hbase-hive-editor.png
+[img-hdinsight-hbase-file-browser]: ./media/hdinsight-hbase-tutorial-get-started-v1/hdinsight-hbase-file-browser.png
+[img-hbase-shell]: ./media/hdinsight-hbase-tutorial-get-started-v1/hdinsight-hbase-shell.png
+[img-hbase-sample-data-tabular]: ./media/hdinsight-hbase-tutorial-get-started-v1/hdinsight-hbase-contacts-tabular.png
+[img-hbase-sample-data-bigtable]: ./media/hdinsight-hbase-tutorial-get-started-v1/hdinsight-hbase-contacts-bigtable.png

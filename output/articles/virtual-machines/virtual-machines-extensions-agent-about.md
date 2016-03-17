@@ -1,5 +1,5 @@
 <properties
- pageTitle="Azure VM agent and extensions | Windows Azure"
+ pageTitle="Azure VM agent and extensions | Azure"
  description="Gives an overview of the agent and extensions, and how to install the agent, using the classic deployment model."
  services="virtual-machines"
  documentationCenter=""

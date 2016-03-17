@@ -21,15 +21,19 @@ For more information about creating templates, see [Authoring Azure Resource Man
 
 For the complete template, see [Web App Linked to GitHub template](https://github.com/Azure/azure-quickstart-templates/blob/master/201-web-app-github-deploy/azuredeploy.json).
 
+
 [AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)] 
 
+
 ## What you will deploy
 
 With this template, you will deploy a web app that contains the code from a project in GitHub.
+
 
 To run the deployment automatically, click the following button:
 
 [![Deploy to Azure](./media/app-service-web-arm-from-github-provision/deploybutton.png)](https://manage.windowsazure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F201-web-app-github-deploy%2Fazuredeploy.json)
+
 
 ## Parameters
 
@@ -91,11 +95,18 @@ Instead of hard-coding the repository URL, you can add a parameter for the repos
            ],
            "properties":{
              "RepoUrl":"https://github.com/davidebbo-test/Mvc52Application.git",
-             "branch":"master"
+             "branch":"master" ,   
+
+			 "IsManualIntegration": true
+
            }
          }
        ]
      }
+
+
+>[AZURE.NOTE] Since, The Ibiza Portal is not availible yet in Azure China, it's not possible for us to setup GitHub credentials. `IsManualIntegration` must set to be true.
+
 
 ## Commands to run deployment
 

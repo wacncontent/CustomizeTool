@@ -1,7 +1,9 @@
-<!-- keep by customization: begin -->
 <!-- not suitable for Mooncake -->
 
-<!-- keep by customization: end -->
+
+<!-- not suitable for Mooncake -->
+
+
 ### Configure a DNS Label for the public IP address
 
 To connect to the SQL Server Database Engine from the Internet, first configure a DNS Label for your public IP address. Note that this step is not necessary if you plan to only connect to the SQL Server instance within the same Virtual Network or only locally.

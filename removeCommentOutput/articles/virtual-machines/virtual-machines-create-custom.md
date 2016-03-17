@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Create a custom Windows virtual machine | Windows Azure"
+	pageTitle="Create a custom Windows virtual machine | Azure"
 	description="Learn how to create a custom Windows virtual machine from the Azure Management Portal using the classic deployment model."
 	services="virtual-machines"
 	documentationCenter=""

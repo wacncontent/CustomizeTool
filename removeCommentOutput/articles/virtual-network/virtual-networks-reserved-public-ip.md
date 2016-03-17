@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Reserved IP | Windows Azure"
+   pageTitle="Reserved IP | Azure"
    description="Understand reserved IPs and how to manage them"
    services="virtual-network"
    documentationCenter="na"

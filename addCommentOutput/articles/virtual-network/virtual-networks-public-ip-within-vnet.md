@@ -45,4 +45,4 @@ There are a few IP address ranges that are not allowed:
 
 [How to manage DNS servers used by a virtual network (VNet)](/documentation/articles/virtual-networks-manage-dns-in-vnet)
 
-[How to delete a Virtual Network (VNet)](/documentation/articles/virtual-networks-delete-vnet) 
+[How to delete a Virtual Network (VNet)](/documentation/articles/virtual-networks-delete-vnet)

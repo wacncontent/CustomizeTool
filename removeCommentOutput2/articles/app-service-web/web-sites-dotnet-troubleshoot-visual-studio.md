@@ -29,24 +29,6 @@ You'll learn:
 
 If you have Visual Studio Ultimate, you can also use [IntelliTrace](http://msdn.microsoft.com/zh-cn/library/vstudio/dd264915.aspx) for debugging. IntelliTrace is not covered in this tutorial.
 
-### Tutorial segments
-
-- [Prerequisites](#prerequisites)
-- [Site configuration and management](#sitemanagement)
-- [Access website files in Server Explorer](#remoteview)
-- [Remote debugging](#remotedebug)
-	- Remote debugging websites
-	- Remote debugging WebJobs
-	- Notes about remote debugging 
-- [Diagnostic logs overview](#logsoverview)
-- [Create and view application trace logs](#apptracelogs)
-- [View web server logs](#webserverlogs)
-- [View detailed error message logs](#detailederrorlogs)
-- [Download file system logs](#downloadlogs)
-- [View storage logs](#storagelogs)
-- [View failed request logs](#failedrequestlogs)
-- [Next steps](#nextsteps)
-
 ## <a name="prerequisites"></a>Prerequisites
 
 This tutorial works with the development environment, web project, and Azure web app that you set up in [Get started with Azure and ASP.NET][GetStarted]. For the WebJobs sections, you'll need the application that you create in [Get Started with the Azure WebJobs SDK][GetStartedWJ].
@@ -80,7 +62,7 @@ Visual Studio provides access to a subset of the web app management functions an
 
 	In this tutorial you'll be using the logging and tracing drop-downs. You'll also use remote debugging but you'll use a different method to enable it.
    
-	For information about the App Settings and Connection Strings boxes in this window, see [Azure Web Apps: How Application Strings and Connection Strings Work](https://azure.microsoft.com/zh-cn/blog/windows-azure-web-sites-how-application-strings-and-connection-strings-work).
+	For information about the App Settings and Connection Strings boxes in this window, see [Azure Web Apps: How Application Strings and Connection Strings Work](http://blogs.msdn.com.
 
 	If you want to perform a web app management task that can't be done in this window, click **Open in Management Portal** to open a browser window to the Azure Management Portal. For more information, see [How to Configure Web Apps](/documentation/articles/web-sites-configure/#howtochangeconfig).
 
@@ -166,6 +148,7 @@ This section shows how to debug remotely using the project you create in [Gettin
 	The browser automatically opens to your home page running in Azure. You might have to wait 20 seconds or so while Azure sets up the server for debugging. This delay only happens the first time you run in debug mode on a web app. Subsequent times within the next 48 hours when you start debugging again there won't be a delay.
 
 6. For Visual Studio 2012 with Update 4 or later:<a id="vs2012"></a>
+
 
 	* In the Azure Management Portal, go to the **Configure** tab for your website, and then scroll down to the **Site Diagnostics** section.
 
@@ -627,7 +610,7 @@ Storage accounts offer more storage and longer-lasting retention for logs compar
 
 	![Storage logs in table view](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-tracelogtableview.png)
 
-	This view shows additional fields you don't see in any other views. This view also enables you to filter logs by using special Query Builder UI for constructing a query. 
+	This view shows additional fields you don't see in any other views. This view also enables you to filter logs by using special Query Builder UI for constructing a query. For more information, see W
 
 7. To look at the details for a single row, double-click one of the rows.
 
@@ -652,6 +635,7 @@ You can view failed request tracing logs in a browser directly via FTP or locall
 	This causes a failed request tracing log to be created, and the following steps show how to view or download the log.
 
 2. In Visual Studio, in the **Configuration** tab of the **App Services** window, click **Open in Management Portal**.
+
 
 3. In the management portal, click **Dashboard**, and then click **Reset your deployment credentials** in the **Quick Glance** section.
 
@@ -711,11 +695,12 @@ For help with a specific troubleshooting question, start a thread in one of the 
 
 * [The Azure forum on the ASP.NET site](http://forums.asp.net/1247.aspx/1?Azure+and+ASP+NET).
 * [The Azure forum on MSDN](http://social.msdn.microsoft.com/Forums/zh-cn/home?forum=windowsazurezhchs).
+
 * [CSDN](http://azure.csdn.net/).
 
 ### Debugging in Visual Studio 
 
-For more information about how to use debug mode in Visual Studio, see the [Debugging in Visual Studio](http://msdn.microsoft.com/zh-cn/library/sc65sadd.aspx) MSDN topic and [Debugging Tips with Visual Studio 2010](http://weblogs.asp.net/scottgu/archive/2010/08/18/debugging-tips-with-visual-studio-2010.aspx).
+For more information about how to use debug mode in Visual Studio, see the [Debugging in Visual Studio](http://msdn.microsoMSDN topic and [Debugging Tips with Visual Studio 2010](http://weblogs.asp.net/scottgu/archive/2010/08/18/debugging-tips-with-visual-studio-2010.aspx).
 
 ### Tracing in ASP.NET applications
 
@@ -765,6 +750,7 @@ For more information about analyzing web server logs, see the following resource
 ### Analyzing failed request tracing logs
 
 The Microsoft TechNet website includes a [Using Failed Request Tracing](http://www.iis.net/learn/troubleshoot/using-failed-request-tracing) section which may be helpful for understanding how to use these logs. However, this documentation focuses mainly on configuring failed request tracing in IIS, which you can't do in Azure Web Apps.
+
 
 [GetStarted]: /documentation/articles/web-sites-dotnet-get-started
 [GetStartedWJ]: /documentation/articles/websites-dotnet-webjobs-sdk

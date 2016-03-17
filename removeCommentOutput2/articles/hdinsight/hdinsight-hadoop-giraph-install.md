@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Install and use Giraph on Hadoop clusters in HDInsight | Windows Azure"
+	pageTitle="Install and use Giraph on Hadoop clusters in HDInsight | Azure"
 	description="Learn how to customize HDInsight cluster with Giraph, and how to use Giraph."
 	services="hdinsight"
 	documentationCenter=""
@@ -16,15 +16,16 @@
 # Install and use Giraph in HDInsight
 
 
-Learn how to customize Windows based HDInsight cluster with Giraph using Script Action, and how to use Giraph to process large-scale graphs. 
+Learn how to customize Windows based HDInsight cluster with Giraph using Script Action, and how to use Giraph to process large-scale graphs. For information on using Gi
  
-You can install Giraph on any type of cluster (Hadoop, Storm, HBase) on Azure HDInsight by using *Script Action*. A sample script to install Giraph on an HDInsight cluster is available from a read-only Azure storage blob at [https://hdiconfigactions.blob.core.windows.net/giraphconfigactionv01/giraph-installer-v01.ps1](https://hdiconfigactions.blob.core.windows.net/giraphconfigactionv01/giraph-installer-v01.ps1). The sample script works only with HDInsight cluster version 3.1. For more information on HDInsight cluster versions, see [HDInsight cluster versions](/documentation/articles/hdinsight-component-versioning-v1).
+You can install Giraph on any type of cluster (Hadoop, Storm, HBase, Spark) on Azure HDInsight by using *Script Action*. A sample script to install Giraph on an HDInsight cluster is available from a read-only Azure storage blob at [https://hdiconfigactions.blob.core.windows.net/giraphconfigactionv01/giraph-installer-v01.ps1](https://hdiconfigactions.blob.core.windows.net/giraphconfigactionv01/giraph-installer-v01.ps1). The sample script works only with HDInsight cluster version 3.1. For more information on HDInsight cluster versions, see [HDInsight cluster versions](/documentation/articles/hdinsight-component-versioning-v1).
 
 **Related articles**
 
 - [Create Hadoop clusters in HDInsight](/documentation/articles/hdinsight-provision-clusters-v1): general information on creating HDInsight clusters.
 - [Customize HDInsight cluster using Script Action][hdinsight-cluster-customize]: general information on customizing HDInsight clusters using Script Action.
 - [Develop Script Action scripts for HDInsight](/documentation/articles/hdinsight-hadoop-script-actions).
+
 
 ##<a name="whatis"></a> What is Giraph?
 
@@ -33,6 +34,7 @@ You can install Giraph on any type of cluster (Hadoop, Storm, HBase) on Azure HD
 - Identifying potential friends based on your current relationships.
 - Identifying the shortest route between two computers in a network.
 - Calculating the page rank of webpages.
+
 
 
 ##<a name="install"></a> Install Giraph using portal
@@ -173,4 +175,5 @@ See [Customize HDInsight clusters using Script Action](/documentation/articles/h
 [powershell-install]: /documentation/articles/powershell-install-configure
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
 [hdinsight-install-r]: /documentation/articles/hdinsight-hadoop-r-scripts
+
 [hdinsight-cluster-customize]: /documentation/articles/hdinsight-hadoop-customize-cluster-v1

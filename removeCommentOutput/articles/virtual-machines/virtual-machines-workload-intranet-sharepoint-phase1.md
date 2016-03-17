@@ -1,5 +1,5 @@
 <properties
-	pageTitle="SharePoint Server 2013 farm Phase 1 | Windows Azure"
+	pageTitle="SharePoint Server 2013 farm Phase 1 | Azure"
 	description="Create the virtual network and other Azure infrastructure elements in Phase 1 of the SharePoint Server 2013 farm in Azure."
 	documentationCenter=""
 	services="virtual-machines"

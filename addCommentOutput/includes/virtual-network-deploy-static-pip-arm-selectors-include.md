@@ -1,7 +1,9 @@
-<!-- keep by customization: begin -->
 <!-- not suitable for Mooncake -->
 
-<!-- keep by customization: end -->
+
+<!-- not suitable for Mooncake -->
+
+
 > [AZURE.SELECTOR]
 [Azure Management Portal](/documentation/articles/virtual-network-deploy-static-pip-arm-portal)
 [PowerShell](/documentation/articles/virtual-network-deploy-static-pip-arm-ps)

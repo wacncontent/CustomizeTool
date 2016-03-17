@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="How to set a static private IP in classic mode ausing the CLI| Windows Azure"
+   pageTitle="How to set a static private IP in classic mode ausing the CLI| Azure"
    description="Understanding static private IPs (DIPs) and how to manage them in classic mode using the CLI"
    services="virtual-network"
    documentationCenter="na"

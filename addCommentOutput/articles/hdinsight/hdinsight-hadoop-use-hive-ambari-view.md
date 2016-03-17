@@ -1,5 +1,7 @@
+<!-- not suitable for Mooncake -->
+
 <properties
-   pageTitle="Use Ambari Views to work with Hive on HDInsight (Hadoop) | Windows Azure"
+   pageTitle="Use Ambari Views to work with Hive on HDInsight (Hadoop) | Azure"
    description="Learn how to use the Hive View from your web browser to submit Hive queries. The Hive View is part of the Ambari Web UI provided with your Linux-based HDInsight cluster."
    services="hdinsight"
    documentationCenter=""

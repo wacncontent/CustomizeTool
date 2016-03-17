@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Use Hadoop Hive with PowerShell in HDInsight | Windows Azure"
+   pageTitle="Use Hadoop Hive with PowerShell in HDInsight | Azure"
    description="Use PowerShell to run Hive queries in Hadoop on HDInsight."
    services="hdinsight"
    documentationCenter=""
@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="01/08/2016"
+	ms.date="01/28/2016"
 	wacn.date=""/>
 
 #Run Hive queries using PowerShell
@@ -34,6 +34,8 @@ Azure PowerShell provides *cmdlets* that allow you to remotely run Hive queries 
 The following cmdlets are used when running Hive queries in a remote HDInsight cluster:
 
 * **Add-AzureAccount**: Authenticates Azure PowerShell to your Azure subscription
+
+[AZURE.INCLUDE [automation-azurechinacloud-environment-parameter](../includes/automation-azurechinacloud-environment-parameter.md)]
 
 * **New-AzureHDInsightHiveJobDefinition**: Creates a new *job definition* by using the specified HiveQL statements
 
@@ -60,7 +62,7 @@ The following steps demonstrate how to use these cmdlets to run a job in your HD
 		$sub = Get-AzureSubscription -ErrorAction SilentlyContinue
 		if(-not($sub))
 		{
-		    Add-AzureAccount
+		    Add-AzureAccount -Environment AzureChinaCloud
 		}
 
 		#HiveQL
@@ -117,10 +119,8 @@ The following steps demonstrate how to use these cmdlets to run a job in your HD
 		2012-02-03	19:25:27	SampleClass4	[ERROR]	incorrect	id
 
 	> [AZURE.NOTE] For longer HiveQL queries, you can use the Azure PowerShell **Here-Strings** cmdlet or HiveQL script files. The following snippet shows how to use the **Invoke-Hive** cmdlet to run a HiveQL script file. The HiveQL script file must be uploaded to wasb://.
-	>
-	> `Invoke-Hive -File "wasb://<ContainerName>@<StorageAccountName>/<Path>/query.hql"`
-	>
-	> For more information about **Here-Strings**, see <a href="http://technet.microsoft.com/zh-cn/library/ee692792.aspx" target="_blank">Using Windows PowerShell Here-Strings</a>.
+	> <p>`Invoke-Hive -File "wasb://<ContainerName>@<StorageAccountName>/<Path>/query.hql"`
+	> <p>For more information about **Here-Strings**, see <a href="http://technet.microsoft.com/zh-cn/library/ee692792.aspx" target="_blank">Using Windows PowerShell Here-Strings</a>.
 
 ##<a id="troubleshooting"></a> Troubleshooting
 

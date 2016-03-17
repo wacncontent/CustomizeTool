@@ -82,7 +82,7 @@ To connect to the SQL Database instance that is linked to your web app, your wil
 
 	![View database properties](./media/web-sites-php-sql-database-deploy-use-git/view-database-properties.png)
 	
-3. From the **PHP** section of the resulting dialog, make note of the values for `Server`, `SQL Database`, and `User Name`. You will use these values later when publishing your PHP web app to Azure Web App.
+3. From the **PHP** section of the resulting dialog, make note of the values for `Server`, `SQL Database`, and `User Name`. You will use these values later when publishing your PHP web app to Azure.
 
 ##Build and test your application locally
 

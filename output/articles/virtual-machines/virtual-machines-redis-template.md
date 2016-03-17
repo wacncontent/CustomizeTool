@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
 	pageTitle="Redis Cluster Resource Manager Template"
 	description="Learn to easily deploy a new Redis cluster on Ubuntu VMs using Azure PowerShell or the Azure CLI and a Resource Manager template"
@@ -20,9 +22,9 @@
 
 Redis is an open-source key-value cache and store, where keys can contain data structures such as strings, hashes, lists, sets and sorted sets. Redis supports a set of atomic operations on these data types.  With the release of Redis version 3.0, Redis Cluster is now available in the latest stable version of Redis.  Redis Cluster is a distributed implementation of Redis where data is automatically sharded across multiple Redis nodes, with the ability to continue operations when a subset of nodes is experiencing failures.
 
-Windows Azure Redis Cache is a dedicated Redis cache service, managed by Microsoft, but not all Windows Azure customers want to use Azure Redis Cache.  Some want to keep their Redis cache behind a subnet within their own Azure deployments, while others are more comfortable hosting their own Redis servers on Linux virtual machines in order to fully take advantage of all Redis features.
+Azure Redis Cache is a dedicated Redis cache service, managed by Microsoft, but not all Azure customers want to use Azure Redis Cache.  Some want to keep their Redis cache behind a subnet within their own Azure deployments, while others are more comfortable hosting their own Redis servers on Linux virtual machines in order to fully take advantage of all Redis features.
 
-This tutorial will walk through using a sample Azure Resource Manager  template to deploy a Redis cluster on Ubuntu VMs within a subnet in a resource group in Windows Azure.  In addition to Redis 3.0 Cluster, this template also supports deploying Redis 2.8 with Redis Sentinel.  Note that this tutorial will focus on the Redis 3.0 Cluster implementation.
+This tutorial will walk through using a sample Azure Resource Manager  template to deploy a Redis cluster on Ubuntu VMs within a subnet in a resource group in Azure.  In addition to Redis 3.0 Cluster, this template also supports deploying Redis 2.8 with Redis Sentinel.  Note that this tutorial will focus on the Redis 3.0 Cluster implementation.
 
 The Redis cluster is created behind a subnet, so there is no public IP access to the Redis cluster.  As part of the deployment, an optional "jump box" can be deployed.  This "jump box" is an Ubuntu VM deployed in the subnet as well, but it *does* expose a public IP address with an open SSH port that you can SSH to.  Then from the "jump box", you can SSH to all the Redis VMs in the subnet.
 
@@ -258,7 +260,7 @@ Here is an example you can find in the azuredeploy-parameters.json file.  Note t
 }
 ```
 
->[AZURE.NOTE] The parameter `storageAccountName` must be a non-existent, unique Storage account name that satisfies the naming requirements for a Windows Azure Storage account (lowercase letters and numbers only).  This Storage account will be created as part of the deployment process.
+>[AZURE.NOTE] The parameter `storageAccountName` must be a non-existent, unique Storage account name that satisfies the naming requirements for a Azure Storage account (lowercase letters and numbers only).  This Storage account will be created as part of the deployment process.
 
 Fill in an Azure deployment name, resource group name, Azure location, and the folder of your saved JSON files. Then run these commands:
 

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Set up endpoints on a classic virtual machine | Windows Azure"
+	pageTitle="Set up endpoints on a classic virtual machine | Azure"
 	description="Learn to set up endpoints in the Azure Management Portal to allow communication with a virtual machine in Azure."
 	services="virtual-machines"
 	documentationCenter=""
@@ -58,7 +58,7 @@ The new endpoint will be listed on the **Endpoints** page.
 
 To use an Azure PowerShell cmdlet to set this up, see [Add-AzureEndpoint](https://msdn.microsoft.com/zh-cn/library/azure/dn495300.aspx). If you are using the Azure CLI in Service Management mode, use the **azure vm endpoint create** command.
 
-## Manage the ACL on an endpoint
+##<a name="manage-the-acl-on-an-endpoint"></a> Manage the ACL on an endpoint
 
 To define the set of computers that can send traffic, the ACL on an endpoint can restrict traffic based upon source IP address. Follow these steps to add, modify, or remove an ACL on an endpoint.
 

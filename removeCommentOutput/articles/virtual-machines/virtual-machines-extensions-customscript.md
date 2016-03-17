@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Custom Script extension on a Windows VM | Windows Azure"
+   pageTitle="Custom Script extension on a Windows VM | Azure"
    description="Automate Azure VM configuration tasks by using the Custom Script extension to run PowerShell scripts on a remote Windows VM"
    services="virtual-machines"
    documentationCenter=""

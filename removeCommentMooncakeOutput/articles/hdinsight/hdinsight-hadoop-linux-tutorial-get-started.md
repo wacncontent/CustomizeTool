@@ -1,7 +1,7 @@
 <!-- not suitable for Mooncake -->
 
 <properties
-   	pageTitle="Linux tutorial: Get started with Hadoop and Hive | Windows Azure"
+   	pageTitle="Linux tutorial: Get started with Hadoop and Hive | Azure"
    	description="Follow this Linux tutorial to get started using Hadoop in HDInsight. Learn how to provision Linux clusters, and query data with Hive."
    	services="hdinsight"
    	documentationCenter=""
@@ -12,7 +12,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="01/13/2016"
+	ms.date="01/21/2016"
 	wacn.date=""/>
 
 # Hadoop tutorial: Get started using Hadoop with Hive in HDInsight on Linux
@@ -184,9 +184,9 @@ Use the following steps from the Hive view to run a Hive query against data incl
     
     The other icons are as follows:
     
-        * Settings: The gear icon allows you to change Hive settings, such as setting `hive.execution.engine` or Tez parameters.
-        * Tez: Displays the Directed Acyclic Graph (DAG) that Tez used to perform the query. If you want to view the DAG for queries you've ran in the past, use the __Tez View__ instead.
-        * Notifications: Displays notifications, such as "Query has been submitted" or if an error occurs when running a query.
+    * **Settings**: The gear icon allows you to change Hive settings, such as setting `hive.execution.engine` or Tez parameters.
+    * **Tez**: Displays the Directed Acyclic Graph (DAG) that Tez used to perform the query. If you want to view the DAG for queries you've ran in the past, use the __Tez View__ instead.
+    * **Notifications**: Displays notifications, such as "Query has been submitted" or if an error occurs when running a query.
 
 5. Select the __SQL__ icon to switch back to the Query Editor, then create a new worksheet and enter the following query:
 

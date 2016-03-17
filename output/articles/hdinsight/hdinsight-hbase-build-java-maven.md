@@ -1,5 +1,5 @@
 <properties
-pageTitle="Build an HBase application using Maven, and deploy to Windows-based HDInsight | Windows Azure"
+pageTitle="Build an HBase application using Maven, and deploy to Windows-based HDInsight | Azure"
 description="Learn how to use Apache Maven to build a Java-based Apache HBase application, then deploy it to a Windows-based Azure HDInsight cluster."
 services="hdinsight"
 documentationCenter=""
@@ -148,6 +148,7 @@ Learn how to create and build an [Apache HBase](http://hbase.apache.org/) applic
             <name>hbase.zookeeper.property.clientPort</name>
             <value>2181</value>
           </property>
+
           <!-- Uncomment the following if you are using
                a Linux-based HDInsight cluster -->
           <!--
@@ -156,11 +157,12 @@ Learn how to create and build an [Apache HBase](http://hbase.apache.org/) applic
             <value>/hbase-unsecure</value>
           </property>
           -->
+
         </configuration>
 
     This file will be used to load the HBase configuration for an HDInsight cluster.
 
-    > [AZURE.NOTE] This is a very minimal hbase-site.xml file, and it contains the bare minimum settings for the HDInsight cluster. For Linux-based clusters, you must uncomment the entry for `zookeeper.znode.parent` to correctly set the root Zookeeper znode that is used by HBase.
+    > [AZURE.NOTE] This is a very minimal hbase-site.xml file, and it contains the bare minimum settings for the HDInsight cluster. For Linux-based clusters, y For Linux-based clusters, you must uncomment the entry for `zookeeper.znode.parent` to correctly set the root Zookeeper znode that is used by HBase. 
 
 3. Save the __hbase-site.xml__ file.
 
@@ -194,8 +196,10 @@ Learn how to create and build an [Apache HBase](http://hbase.apache.org/) applic
             //            "zookeepernode0,zookeepernode1,zookeepernode2");
             //config.set("hbase.zookeeper.property.clientPort", "2181");
             //config.set("hbase.cluster.distributed", "true");
+
             // The following sets the znode root for Linux-based HDInsight
             //config.set("zookeeper.znode.parent","/hbase-unsecure");
+
 
             // create an admin object using the config
             HBaseAdmin admin = new HBaseAdmin(config);

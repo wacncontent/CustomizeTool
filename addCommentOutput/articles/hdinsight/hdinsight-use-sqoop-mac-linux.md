@@ -1,5 +1,7 @@
+<!-- not suitable for Mooncake -->
+
 <properties
-	pageTitle="Use Hadoop Sqoop in Linux-based HDInsight | Windows Azure"
+	pageTitle="Use Hadoop Sqoop in Linux-based HDInsight | Azure"
 	description="Learn how to run Sqoop import and export between a Linux-based Hadoop on HDInsight cluster and an Azure SQL database."
 	editor="cgronlun"
 	manager="paulettm"
@@ -10,7 +12,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="12/04/2015"
+	ms.date="02/05/2016"
 	wacn.date=""/>
 
 #Use Sqoop with Hadoop in HDInsight (SSH)
@@ -83,13 +85,13 @@ You will first export **hivesampletable** to the Azure SQL database or to SQL Se
 
 2. Use the following command to create a database named **sqooptest** on the SQL Database server:
 
-        sql db create [options] <serverName> sqooptest <adminLogin> <adminPassword>
+        azure sql db create [options] <serverName> sqooptest <adminLogin> <adminPassword>
 
     This will return an "OK" message when it completes.
 
 	> [AZURE.NOTE] If you receive an error indicating that you do not have access, you may need to add your client workstation's IP address to the SQL Database firewall using the following command:
 	>
-	> `sql firewallrule create [options] <serverName> <ruleName> <startIPAddress> <endIPAddress>`
+	> `azure sql firewallrule create [options] <serverName> <ruleName> <startIPAddress> <endIPAddress>`
 
 ##Create a table
 
@@ -122,19 +124,19 @@ You will first export **hivesampletable** to the Azure SQL database or to SQL Se
 5. At the `1>` prompt, enter the following lines:
 
         CREATE TABLE [dbo].[mobiledata](
-		[clientid] [nvarchar](50),
-		[querytime] [nvarchar](50),
-		[market] [nvarchar](50),
-		[deviceplatform] [nvarchar](50),
-		[devicemake] [nvarchar](50),
-		[devicemodel] [nvarchar](50),
-		[state] [nvarchar](50),
-		[country] [nvarchar](50),
-		[querydwelltime] [float],
-		[sessionid] [bigint],
-		[sessionpagevieworder] [bigint])
+        [clientid] [nvarchar](50),
+        [querytime] [nvarchar](50),
+        [market] [nvarchar](50),
+        [deviceplatform] [nvarchar](50),
+        [devicemake] [nvarchar](50),
+        [devicemodel] [nvarchar](50),
+        [state] [nvarchar](50),
+        [country] [nvarchar](50),
+        [querydwelltime] [float],
+        [sessionid] [bigint],
+        [sessionpagevieworder] [bigint])
         GO
-		CREATE CLUSTERED INDEX mobiledata_clustered_index on mobiledata(clientid)
+        CREATE CLUSTERED INDEX mobiledata_clustered_index on mobiledata(clientid)
         GO
 
     When the `GO` statement is entered, the previous statements will be evaluated. First, the **mobiledata** table is created, then a clustered index is added to it (required by SQL Database.)
@@ -241,6 +243,20 @@ Now you have learned how to use Sqoop. To learn more, see:
 
 
 
+
+[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning-v1
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
+[hdinsight-analyze-flight-data]: /documentation/articles/hdinsight-analyze-flight-delay-data
+[hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
+[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
+
+[sqldatabase-get-started]: /documentation/articles/sql-database-get-started
+[sqldatabase-create-configue]: /documentation/articles/sql-database-get-started
+
+
 [hdinsight-versions]:  hdinsight-component-versioning-v1.md
 [hdinsight-provision]: hdinsight-provision-clusters-v1.md
 [hdinsight-get-started]: ../hdinsight-get-started.md
@@ -252,9 +268,15 @@ Now you have learned how to use Sqoop. To learn more, see:
 
 [sqldatabase-get-started]: ../sql-database-get-started.md
 [sqldatabase-create-configue]: ../sql-database-create-configure.md
+
 
 [powershell-start]: http://technet.microsoft.com/zh-cn/library/hh847889.aspx
+
+[powershell-install]: /documentation/articles/powershell-install-configure
+
+
 [powershell-install]: ../install-configure-powershell.md
+
 [powershell-script]: https://technet.microsoft.com/zh-cn/library/dn425048.aspx
 
 [sqoop-user-guide-1.4.4]: https://sqoop.apache.org/docs/1.4.4/SqoopUserGuide.html

@@ -34,7 +34,7 @@ Knowledge of the following is useful for this tutorial, though not required:
 
 - [Visual Studio Express 2013 for Web] [VSEWeb] or [Visual Studio 2013] [VSUlt]
 - [Azure SDK for .NET](https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VWDOrVs2013AzurePack.appids)
-- An active Windows Azure subscription
+- An active Azure subscription
 
 [AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
 
@@ -65,7 +65,7 @@ In this section you will create an ASP.NET application called "My Task List" by 
 
 	![Select MVC Template][VS2013SelectMVCTemplate]
 
-1. If you aren't already signed into Windows Azure, you will be prompted to sign in. Follow the prompts to sign into Azure.
+1. If you aren't already signed into Azure, you will be prompted to sign in. Follow the prompts to sign into Azure.
 2. Once you are signed in, you can start configuring your Azure web app. Specify the **Web App name**, **App Service plan**, **Resource group**, and **Region**, then click **Create**.
 
 	![](./media/web-sites-dotnet-store-data-mongodb-vm/VSConfigureWebAppSettings.png)
@@ -496,4 +496,3 @@ For more information on developing C# applications against MongoDB, see [CSharp 
 [Create and run the My Task List ASP.NET application on your development computer]: #createapp
 [Create an Azure web site]: #createwebsite
 [Deploy the ASP.NET application to the web site using Git]: #deployapp
- 

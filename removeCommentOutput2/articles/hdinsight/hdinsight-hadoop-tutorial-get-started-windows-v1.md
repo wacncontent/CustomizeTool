@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Hadoop tutorial: Get started with Hadoop on Windows | Windows Azure"
+   pageTitle="Hadoop tutorial: Get started with Hadoop on Windows | Azure"
    description="Get started with Hadoop in HDInsight. Learn how to provision Hadoop clusters on Windows, run a Hive query on data, and analyze output in Excel."
    keywords="hadoop tutorial,hadoop on windows,hadoop cluster,learn hadoop, hive query"
    services="hdinsight"
@@ -58,9 +58,9 @@ This tutorial uses only the default blob and the default storage account.
 
 	![Azure Management Portal where you can use Quick Create to set up a new storage account.][image-hdi-storageaccount-quickcreate]
 
->[AZURE.NOTE]  Make sure you create the storage account in a location that is supported for the cluster. These are:  **China North**, **China East**.
+>[AZURE.NOTE]  Make sure you create the storage account in a location that is supported for the cluster. These are:  **China East**, **China North**, **N North**, **China East**.
 
-Select the new storage account from the list and click **MANAGE ACCESS KEYS** at the bottom of the page. Make a note of the **PRIMARY ACCESS KEY** (or the **SECONDARY ACCESS KEY**-either of the keys work).  You will need this later in the tutorial. For more information, see [How to Create a Storage Account][azure-create-storageaccount] .
+Select the new storage account from the list and click **MANAGE ACCESS KEYS** at the bottom of the page. Make a note of the **PRIMARY ACCESS KEY** (or the **SECONDARY ACCESS KEY**—either of the keys work).  You will need this later in the tutorial. For more information, see [How to Create a Storage Account][azure-create-storageaccount] .
 
 ##<a name="provision"></a>Provision a Hadoop cluster
 
@@ -179,7 +179,7 @@ You must have Excel 2013 or 2010 installed to complete this part of the tutorial
 	![Excel PowerQuery Import menu open for Azure HDInsight.][image-hdi-gettingstarted-powerquery-importdata]
 
 3. Enter the **Account Name** of the Azure Blob Storage account that is associated with your cluster, and then click **OK**. (This is the storage account you created earlier in the tutorial.)
-4. Enter the **Account Key** for the Azure Blob Storage account, and then click **Save**. (For Windows Azure China, **Account Name** must be a full url, such as https://<your account name\>.blob.core.chinacloudapi.cn/) 
+4. Enter the **Account Key** for the Azure Blob Storage account, and then click **Save**. (For Azure China, **Account Name** must be a full url, such as https://<your account name\>.blob.core.chinacloudapi.cn/)
 5. In the right pane, double-click the blob name. By default the blob name is the same as the cluster name.
 
 6. Locate **stdout** in the **Name** column. Verify that the GUID in the corresponding **Folder Path** column matches the GUID you copied earlier. A match suggests that the output data corresponds to the job you submitted. Click **Binary** in the column left of **stdout**.
@@ -259,4 +259,3 @@ In this Hadoop tutorial, you learned how to provision a Hadoop cluster on Window
 
 [image-hdi-gettingstarted-powerquery-importdata]: ./media/hdinsight-hadoop-tutorial-get-started-windows-v1/HDI.GettingStarted.PowerQuery.ImportData.png
 [image-hdi-gettingstarted-powerquery-importdata2]: ./media/hdinsight-hadoop-tutorial-get-started-windows-v1/HDI.GettingStarted.PowerQuery.ImportData2.png
- 

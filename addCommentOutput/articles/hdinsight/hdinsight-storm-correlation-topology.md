@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="12/04/2015"
+	ms.date="02/01/2016"
 	wacn.date=""/>
 
 # Correlate events over time with Storm and HBase on HDInsight
@@ -18,10 +18,10 @@
 By using a persistent data store with Apache Storm, you can correlate data entries that arrive at different times. For example, linking login and logout events for a user session to calculate how long the session lasted.
 
 In this document, you will learn how to create a basic C# Storm topology that tracks login and logout events for user sessions, and calculates the duration of the session. The topology uses HBase as a persistent data store. HBase also allows you to perform batch queries on the historical data to produce additional insights, such as how many user sessions were started or ended during a specific time period.
-<!-- deleted by customization
+
 
 [AZURE.INCLUDE [windows-only](../includes/hdinsight-windows-only.md)]
--->
+
 
 ## Prerequisites
 
@@ -95,7 +95,7 @@ In HBase, the data is stored in a table with the following schema/settings:
 
 ## Download the project
 
-The sample project can be downloaded from [hdinsight-storm-eventcorrelation](https://github.com/Blackmist/hdinsight-storm-eventcorrelation).
+The sample project can be downloaded from [https://github.com/Azure-Samples/hdinsight-storm-dotnet-event-correlation](https://github.com/Azure-Samples/hdinsight-storm-dotnet-event-correlation).
 
 This download contains the following C# projects:
 
@@ -195,5 +195,4 @@ When you are ready to stop the topology, return to the **CorrelationTopology** p
 
 ##Next steps
 
-For more Storm examples, see [Example topologies for Storm on HDInsight](/documentation/articles/hdinsight-storm-example-topology).
- 
+For more Storm examples, see [Example topologies for Storm on HDInsight](/documentation/articles/hdinsight-storm-example-topology).

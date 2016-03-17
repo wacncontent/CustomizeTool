@@ -26,7 +26,12 @@ We'll learn how to create an Azure Storage account, how to configure the web app
 
 See the [Python Developer Center] for more articles that cover development of Azure Web Apps with PTVS using Bottle, Flask and Django web frameworks, with MongoDB, Azure Table Storage, MySQL and SQL Database services. While this article focuses on Azure Web App, the steps are similar when developing [Azure Cloud Services].
 
+
 ## Prerequisites
+
+
+##<a name="prerequisites"></a> Prerequisites
+
 
  - Visual Studio 2013 or 2015
  - [Python Tools 2.2 for Visual Studio]
@@ -35,8 +40,10 @@ See the [Python Developer Center] for more articles that cover development of Az
  - [Python 2.7 32-bit] or [Python 3.4 32-bit]
 
 [AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
+
 
 >[AZURE.NOTE] If you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.
+
 
 ## Create the Project
 
@@ -68,6 +75,7 @@ To use storage operations, you need an Azure storage account. You can create a s
 
 1.  Log into the [Azure Management Portal](https://manage.windowsazure.cn/).
 
+
 2. Click the **New** icon on the top left of the Portal, then click **DATA SERVICE** > **Storage Account**. Click on **Create**, then give the storage account a unique name and create a new [resource group](/documentation/articles/resource-group-overview) for it.
 
   	<!-- ![New Button](./media/web-sites-python-ptvs-flask-table-storage/PollsCommonAzurePlusNew.png) -->
@@ -75,6 +83,12 @@ To use storage operations, you need an Azure storage account. You can create a s
 	When the storage account has been created, the **Notifications** button will flash a green **SUCCESS** and the storage account's blade is open to show that it belongs to the new resource group you created.
 
 5. Click the **Settings** part in the storage account's blade. Take note of the account name and the primary key.
+
+
+2. Click the **New** icon on the bottom left of the portal, then click **DATA SERVICE** > **Storage** > **Quick Create**. Give the storage account a unique name.
+
+5. Click the **MANAGE ACCESS KEYS** in the storage account. Take note of the account name and the primary key.
+
 
 	We will need this information to configure your project in the next section.
 
@@ -82,6 +96,13 @@ To use storage operations, you need an Azure storage account. You can create a s
 
 In this section, we'll configure our application to use the storage account we just created. We'll see how to obtain connection settings from the Azure Management Portal. Then we'll run the application locally.
 
+
+1.  In [Azure Management Portal][], click on the storage account created in the previous section.
+
+1.  Click on **MANAGE ACCESS KEYS**.
+
+  	![Manage Access Keys Dialog](./media/web-sites-python-ptvs-flask-table-storage/PollsCommonAzureTableStorageManageKeys.png)
+
 1.  In Visual Studio, right-click on your project node in Solution Explorer and select **Properties**. Click on the **Debug** tab.
 
   	![Project Debug Settings](./media/web-sites-python-ptvs-flask-table-storage/PollsFlaskAzureTableStorageProjectDebugSettings.png)
@@ -110,7 +131,7 @@ In this section, we'll configure our application to use the storage account we j
 
 It's easy to view and edit storage tables using Server Explorer in Visual Studio. In this section we'll use Server Explorer to view the contents of the polls application tables.
 
-> [AZURE.NOTE] This requires Windows Azure Tools to be installed, which are available as part of the [Azure SDK for .NET].
+> [AZURE.NOTE] This requires Azure Tools to be installed, which are available as part of the [Azure SDK for .NET].
 
 1.  Open **Server Explorer**. Expand **Azure**, **Storage**, your storage account, then **Tables**.
 
@@ -120,11 +141,12 @@ It's easy to view and edit storage tables using Server Explorer in Visual Studio
 
   	<!-- ![Table Query Results](./media/web-sites-python-ptvs-flask-table-storage/PollsCommonServerExplorerTable.png) -->
 
+
 ## Publish the web app to Azure
 
-The Azure .NET SDK provides an easy way to deploy your web app to Azure Web App.
+The Azure .NET SDK provides an easy way to deploy your web app to Azure.
 
-1.  Click on **Windows Azure Web Apps**.
+1.  Click on **Azure Web Apps**.
 
 1.  Click on **New** to create a new web app.
 
@@ -135,7 +157,23 @@ The Azure .NET SDK provides an easy way to deploy your web app to Azure Web App.
 	-	**Region**
 	-	Leave **Database server** set to **No database**
 
-  	<!-- ![Create Site on Windows Azure Dialog](./media/web-sites-python-ptvs-flask-table-storage/PollsCommonCreateWebSite.png) -->
+  	<!-- ![Create Site on Azure Dialog](./media/web-sites-python-ptvs-flask-table-storage/PollsCommonCreateWebSite.png) -->
+
+
+##<a name="publish-to-an-azure-website"></a> Publish the web app to Azure
+
+The Azure .NET SDK provides an easy way to deploy your web app to Azure Web App.
+
+1.  In **Solution Explorer**, right-click on the project node and select **Publish**.
+
+  	![Publish Web Dialog](./media/web-sites-python-ptvs-flask-table-storage/PollsCommonPublishWebSiteDialog.png)
+
+1.  Click on **Import**.
+
+1.  Choose the previously downloaded "publish profile", and click "OK".
+
+	If you haven't downloaded the "publish profile", or have't created a web app, go to [Azure Management Portal](https://manage.windowsazure.cn) to create one. And in **Dashboard** of the web app, under **quick glance**, download the "publish profile".
+
 
 1.  Accept all other defaults and click **Publish**.
 
@@ -147,9 +185,9 @@ The Azure .NET SDK provides an easy way to deploy your web app to Azure Web App.
 
 In this section, we'll configure environment variables for the Web Apps instance.
 
-1.  In [Azure Management Portal](https://manage.windowsazure.cn), open the web app's blade by clicking **Browse** > **Web Apps** > your web app name.
+1.  In [Azure Management Portal](https://manage.wind Portal](https://manage.windowsazure.cn)   **Browse** >  *, open the web app's blade by clicking **Browse** > **Web Apps** > your web app name.
 
-1.  In your web app's blade, click **Configure**, then click **Application Settings**.
+1.  In your web app's blade, click **Configure**, then click **Application S, then click **Application Settings** ..
 
   	<!-- ![Top Menu](./media/web-sites-python-ptvs-flask-table-storage/PollsCommonWebSiteTopMenu.png) -->
 
@@ -174,21 +212,23 @@ Follow these links to learn more about Python Tools for Visual Studio, Flask and
 - [Python Tools for Visual Studio Documentation]
   - [Web Projects]
   - [Cloud Service Projects]
-  - [Remote Debugging on Windows Azure]
+  - [Remote Debugging on Azure]
 - [Flask Documentation]
 - [Azure Storage]
 - [Azure SDK for Python]
 - [How to Use the Table Storage Service from Python]
 
+
 ## What's changed
 * For a guide to the change from Websites to Azure see: [Azure and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
 
+
 
 <!--Link references-->
 [Python Developer Center]: /develop/python/
-[Azure Cloud Services]: ../cloud-services-python-ptvs.md
-[documentation]: ../storage-python-how-to-use-table-storage.md
-[How to Use the Table Storage Service from Python]: ../storage-python-how-to-use-table-storage.md
+[Azure Cloud Services]: /documentation/articles/cloud-services-python-ptvs
+[documentation]: /documentation/articles/storage-python-how-to-use-table-storage
+[How to Use the Table Storage Service from Python]: /documentation/articles/storage-python-how-to-use-table-storage
 
 <!--External Link references-->
 [Azure Management Portal]: https://manage.windowsazure.cn
@@ -202,7 +242,7 @@ Follow these links to learn more about Python Tools for Visual Studio, Flask and
 [Python 3.4 32-bit]: http://go.microsoft.com/fwlink/?LinkId=517191
 [Python Tools for Visual Studio Documentation]: http://aka.ms/ptvsdocs
 [Flask Documentation]: http://flask.pocoo.org/
-[Remote Debugging on Windows Azure]: http://go.microsoft.com/fwlink/?LinkId=624026
+[Remote Debugging on Azure]: http://go.microsoft.com/fwlink/?LinkId=624026
 [Web Projects]: http://go.microsoft.com/fwlink/?LinkId=624027
 [Cloud Service Projects]: http://go.microsoft.com/fwlink/?LinkId=624028
 [Azure Storage]: /documentation/services/storage/

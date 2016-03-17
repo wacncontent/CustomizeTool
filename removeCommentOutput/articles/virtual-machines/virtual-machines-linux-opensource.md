@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Linux and Open-Source Computing on Azure | Windows Azure"
+	pageTitle="Linux and Open-Source Computing on Azure | Azure"
 	description="Lists Linux and Open-Source Computing articles on Azure, including basic Linux usage, some fundamental concepts about running or uploading Linux images on Azure, and other content about specific technologies and optimizations."
 	services="virtual-machines"
 	documentationCenter=""
@@ -17,7 +17,7 @@
 
 # Linux and open-source computing on Azure
 
-This document attempts to list in one place all the topics written by Microsoft and its partners about running Linux-based Virtual Machines as well as other open-source compute environments and applications on Windows Azure. Articles that describe the classic deployment model only are noted, as are those that use the Resource Manager deployment model. Articles that lack a deployment model note describe both deployment models.
+This document attempts to list in one place all the topics written by Microsoft and its partners about running Linux-based Virtual Machines as well as other open-source compute environments and applications on Azure. Articles that describe the classic deployment model only are noted, as are those that use the Resource Manager deployment model. Articles that lack a deployment model note describe both deployment models.
 
 As both Azure and the open-source computing world are fast-moving targets, it is almost certain that this document is out of date, *despite* the fact that we shall do our best to continually add newer topics and remove out-of-date ones. If we've missed one, please let us know in the comments, or submit a pull request to our [GitHub repo](https://github.com/Azure/azure-content/).
 
@@ -216,7 +216,7 @@ This section contains information about several different storage approaches and
     - [How to: MySQL Clusters](/documentation/articles/virtual-machines-linux-mysql-cluster)
     - [How to: Create a MySQL Database using the Marketplace](/documentation/articles/store-php-create-mysql-database)
     - [How to: Django and MySQL on Azure Websites with Python and Visual Studio](/documentation/articles/web-sites-python-ptvs-django-mysql)
-    - [MySQL High Availability Architecture in Windows Azure](http://download.microsoft.com/download/6/1/C/61C0E37C-F252-4B33-9557-42B90BA3E472/MySQL_HADR_solution_in_Azure.pdf)
+    - [MySQL High Availability Architecture in Azure](http://download.microsoft.com/download/6/1/C/61C0E37C-F252-4B33-9557-42B90BA3E472/MySQL_HADR_solution_in_Azure.pdf)
 7. MariaDB
     - [How to: Create a Multi-Master cluster of MariaDbs](/documentation/articles/virtual-machines-mariadb-cluster)
 8. [Installing Postgres with corosync, pg_bouncer using ILB](https://github.com/chgeuer/postgres-azure)
@@ -283,7 +283,7 @@ This section starts with a blog entry containing a series of videos on [Video: A
 ## Support, troubleshooting, and "it just doesn't work"
 
 1. Microsoft support documentation
-	- [Support: Support for Linux Images on Windows Azure](http://support2.microsoft.com/kb/2941892)
+	- [Support: Support for Linux Images on Azure](http://support2.microsoft.com/kb/2941892)
 
 <!--Anchors-->
 [Distros]: #distros
@@ -296,5 +296,5 @@ This section starts with a blog entry containing a series of videos on [Video: A
 [Support, Troubleshooting, and "It Just Doesn't Work"]: #supportdebug
 
 <!--Link references--In actual articles, you only need a single period before the slash. -->
-[How to use docker-machine on Azure]: virtual-machines-docker-machine.md
-[How to use docker with swarm on Azure]: virtual-machines-docker-swarm.md
+[How to use docker-machine on Azure]: /documentation/articles/virtual-machines-docker-machine
+[How to use docker with swarm on Azure]: /documentation/articles/virtual-machines-docker-swarm

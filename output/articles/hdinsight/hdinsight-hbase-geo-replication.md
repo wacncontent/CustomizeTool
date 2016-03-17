@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Configure HBase replication between two datacenters | Windows Azure" 
+   pageTitle="Configure HBase replication between two datacenters | Azure" 
    description="Learn how to configure HBase replication across two data centers, and about the use cases for cluster replication." 
    services="hdinsight,virtual-network" 
    documentationCenter="" 
@@ -287,23 +287,39 @@ In this tutorial, you have learned how to configure HBase replication across two
 - [Get started with Apache HBase in HDInsight][hdinsight-hbase-get-started]
 - [HDInsight HBase overview][hdinsight-hbase-overview]
 - [Provision HBase clusters on Azure Virtual Network][hdinsight-hbase-provision-vnet-v1]
+
 - [Analyze real-time Twitter sentiment with HBase][hdinsight-hbase-twitter-sentiment]
+
 - [Analyzing sensor data with Storm and HBase in HDInsight (Hadoop)][hdinsight-sensor-data]
 
-[hdinsight-hbase-geo-replication-vnet]: hdinsight-hbase-geo-replication-configure-VNets.md
-[hdinsight-hbase-geo-replication-dns]: ../hdinsight-hbase-geo-replication-configure-VNet.md
+[hdinsight-hbase-geo-replication-vnet]: /documentation/articles/hdinsight-hbase-geo-replication-configure-VNets
+
+[hdinsight-hbase-geo-replication-dns]: /documentation/articles/hdinsight-hbase-geo-replication-configure-VNet
 
 
+
 [img-vnet-diagram]: ./media/hdinsight-hbase-geo-replication/HDInsight.HBase.Replication.Network.diagram.png
 
-[powershell-install]: ../install-configure-powershell.md
-[hdinsight-hbase-get-started]: ../hdinsight-hbase-get-started.md
-[hdinsight-manage-portal]: hdinsight-administer-use-management-portal-v1
-[hdinsight-provision]: hdinsight-provision-clusters-v1.md
-[hdinsight-hbase-replication-vnet]: hdinsight-hbase-geo-replication-configure-VNets.md
-[hdinsight-hbase-replication-dns]: hdinsight-hbase-geo-replication-configure-DNS.md
-[hdinsight-hbase-twitter-sentiment]: hdinsight-hbase-analyze-twitter-sentiment.md
-[hdinsight-sensor-data]: hdinsight-storm-sensor-data-analysis.md
-[hdinsight-hbase-overview]: hdinsight-hbase-overview.md
-[hdinsight-hbase-provision-vnet-v1]: hdinsight-hbase-provision-vnet-v1.md
+[powershell-install]: /documentation/articles/powershell-install-configure
+
 [hdinsight-hbase-get-started]: /documentation/articles/hdinsight-hbase-tutorial-get-started-v1
+[hdinsight-manage-portal]: /documentation/articles/hdinsight-administer-use-management-portal-v1
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
+[hdinsight-hbase-replication-vnet]: /documentation/articles/hdinsight-hbase-geo-replication-configure-VNets
+[hdinsight-hbase-replication-dns]: /documentation/articles/hdinsight-hbase-geo-replication-configure-DNS
+[hdinsight-sensor-data]: /documentation/articles/hdinsight-storm-sensor-data-analysis
+[hdinsight-hbase-overview]: /documentation/articles/hdinsight-hbase-overview
+[hdinsight-hbase-provision-vnet-v1]: /documentation/articles/hdinsight-hbase-provision-vnet-v1
+
+[hdinsight-hbase-get-started]: /documentation/articles/hdinsight-hbase-tutorial-get-started-v1
+
+[hdinsight-manage-portal]: /documentation/articles/hdinsight-administer-use-management-portal-v1
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
+[hdinsight-hbase-replication-vnet]: /documentation/articles/hdinsight-hbase-geo-replication-configure-VNets
+[hdinsight-hbase-replication-dns]: /documentation/articles/hdinsight-hbase-geo-replication-configure-DNS
+[hdinsight-hbase-twitter-sentiment]: /documentation/articles/hdinsight-hbase-analyze-twitter-sentiment
+[hdinsight-sensor-data]: /documentation/articles/hdinsight-storm-sensor-data-analysis
+[hdinsight-hbase-overview]: /documentation/articles/hdinsight-hbase-overview
+[hdinsight-hbase-provision-vnet-v1]: /documentation/articles/hdinsight-hbase-provision-vnet-v1
+[hdinsight-hbase-get-started]: /documentation/articles/hdinsight-hbase-tutorial-get-started-v1
+

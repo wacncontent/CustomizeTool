@@ -1,5 +1,5 @@
 <properties
- pageTitle="Manage HPC Pack cluster compute nodes | Windows Azure"
+ pageTitle="Manage HPC Pack cluster compute nodes | Azure"
  description="Learn about PowerShell script tools to add, remove, start, and stop HPC Pack cluster compute nodes in Azure"
  services="virtual-machines"
  documentationCenter=""
@@ -14,7 +14,7 @@
 
 # Manage the number and availability of compute nodes in an HPC Pack cluster in Azure
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]  Resource Manager model. 
 
 
 If you created an HPC Pack cluster in Azure VMs, you might want ways to easily add, remove,
@@ -34,29 +34,51 @@ run each of the scripts as an administrator.
 
     * **Import the Azure publish settings file**. To do this, run the following Azure PowerShell cmdlets on the head node:
 
+
     ```
     Get-AzurePublishSettingsFile
 
+
+
+	    Get-AzurePublishSettingsFile
+	
+
     Import-AzurePublishSettingsFile -PublishSettingsFile <publish settings file>
+
     ```
+
 
     * **Configure the Azure management certificate on the head node**. If you have the .cer file, import it in the CurrentUser\My certificate store and then run the following Azure PowerShell cmdlet for your Azure environment (either AzureCloud or AzureChinaCloud):
 
+
     ```
     Set-AzureSubscription -SubscriptionName <Sub Name> -SubscriptionId <Sub ID> -Certificate (Get-Item Cert:\CurrentUser\My\<Cert Thrumbprint>) -Environment <AzureCloud | AzureChinaCloud>
     ```
+
+
+    	Set-AzureSubscription -SubscriptionName <Sub Name> -SubscriptionId <Sub ID> -Certificate (Get-Item Cert:\CurrentUser\My\<Cert Thrumbprint>) -Environment <AzureCloud | AzureChinaCloud>
+
 
 ## Add compute node VMs
 
 Add compute nodes with the **Add-HpcIaaSNode.ps1** script.
 
 ### Syntax
+
 ```
 Add-HPCIaaSNode.ps1 [-ServiceName] <String> [-ImageName] <String>
  [-Quantity] <Int32> [-InstanceSize] <String> [-DomainUserName] <String> [[-DomainUserPassword] <String>]
  [[-NodeNameSeries] <String>] [<CommonParameters>]
 
 ```
+
+
+
+	Add-HPCIaaSNode.ps1 [-ServiceName] <String> [-ImageName] <String> `
+		[-Quantity] <Int32> [-InstanceSize] <String> [-DomainUserName] <String> `
+		[[-DomainUserPassword] <String>] [[-NodeNameSeries] <String>] [<CommonParameters>]
+
+
 ### Parameters
 
 * **ServiceName** - Name of the cloud service that new compute node VMs will be added to.
@@ -84,11 +106,19 @@ Add-HPCIaaSNode.ps1 [-ServiceName] <String> [-ImageName] <String>
 The following example adds 20 size Large compute node VMs in the cloud
 service *hpcservice1*, based on the VM image *hpccnimage1*.
 
+
 ```
 Add-HPCIaaSNode.ps1 -ServiceName hpcservice1 -ImageName hpccniamge1
 -Quantity 20 -InstanceSize Large -DomainUserName <username>
+
+
+	Add-HPCIaaSNode.ps1 -ServiceName hpcservice1 -ImageName hpccniamge1 `
+-Quantity 20 -InstanceSize Large -DomainUserName <username> `
+
 -DomainUserPassword <password>
+
 ```
+
 
 
 ## Remove compute node VMs
@@ -97,11 +127,19 @@ Remove compute nodes with the **Remove-HpcIaaSNode.ps1** script.
 
 ### Syntax
 
+
 ```
 Remove-HPCIaaSNode.ps1 -Name <String[]> [-DeleteVHD] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 
+
+
+	Remove-HPCIaaSNode.ps1 -Name <String[]> [-DeleteVHD] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
+		
+
 Remove-HPCIaaSNode.ps1 -Node <Object> [-DeleteVHD] [-Force] [-Confirm] [<CommonParameters>]
+
 ```
+
 
 ### Parameters
 
@@ -122,9 +160,14 @@ Remove-HPCIaaSNode.ps1 -Node <Object> [-DeleteVHD] [-Force] [-Confirm] [<CommonP
 The following example forces offline nodes with names beginning
 *HPCNode-CN-* and them removes the nodes and their associated disks.
 
+
 ```
 Remove-HPCIaaSNode.ps1 -Name HPCNodeCN-* -DeleteVHD -Force
 ```
+
+
+	Remove-HPCIaaSNode.ps1 -Name HPCNodeCN-* -DeleteVHD -Force
+
 
 ## Start compute node VMs
 
@@ -132,11 +175,19 @@ Start compute nodes with the **Start-HpcIaaSNode.ps1** script.
 
 ### Syntax
 
+
 ```
 Start-HPCIaaSNode.ps1 -Name <String[]> [<CommonParameters>]
 
 Start-HPCIaaSNode.ps1 -Node <Object> [<CommonParameters>]
 ```
+
+
+	Start-HPCIaaSNode.ps1 -Name <String[]> [<CommonParameters>]
+	
+	Start-HPCIaaSNode.ps1 -Node <Object> [<CommonParameters>]
+
+
 ### Parameters
 
 * **Name** - Names of the cluster nodes to be started. Wildcards are supported. The parameter set name is Name. You cannot specify both the **Name** and **Node** parameters.
@@ -147,9 +198,14 @@ Start-HPCIaaSNode.ps1 -Node <Object> [<CommonParameters>]
 
 The following example starts nodes with names beginning *HPCNode-CN-*.
 
+
 ```
 Start-HPCIaaSNode.ps1 -Name HPCNodeCN-*
 ```
+
+
+	Start-HPCIaaSNode.ps1 -Name HPCNodeCN-*
+
 
 ## Stop compute node VMs
 
@@ -157,11 +213,19 @@ Stop compute nodes with the **Stop-HpcIaaSNode.ps1** script.
 
 ### Syntax
 
+
 ```
 Stop-HPCIaaSNode.ps1 -Name <String[]> [-Force] [<CommonParameters>]
 
+
+
+	Stop-HPCIaaSNode.ps1 -Name <String[]> [-Force] [<CommonParameters>]
+	
+
 Stop-HPCIaaSNode.ps1 -Node <Object> [-Force] [<CommonParameters>]
+
 ```
+
 
 ### Parameters
 

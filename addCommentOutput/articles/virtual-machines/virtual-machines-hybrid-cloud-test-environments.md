@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Hybrid cloud test environments in Azure | Windows Azure"
+	pageTitle="Hybrid cloud test environments in Azure | Azure"
 	description="Find the articles that describe how to build dev/test or proof-of-concept IT pro environments for your Azure-based hybrid cloud."
 	documentationCenter=""
 	services="virtual-machines"
@@ -15,13 +15,13 @@
 
 # Azure hybrid cloud test environments
 
-<!-- deleted by customization
+
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
--->
-<!-- keep by customization: begin -->
+
+
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-include.md)]
-<!-- keep by customization: end -->
+
 
 For dev/test or a proof-of-concept, hybrid cloud test environments use your local Internet connection and one of your public IP addresses and step you through setting up a functioning, cross-premises Azure Virtual Network (VNet). When you are finished, you can develop and test applications, experiment with simplified IT workloads, and gauge the performance of a site-to-site virtual private network (VPN) connection relative to your location on the Internet.
 

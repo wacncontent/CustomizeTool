@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Use Python components in a Storm topology on HDinsight | Windows Azure"
+   pageTitle="Use Python components in a Storm topology on HDinsight | Azure"
    description="Learn how you can use Python components from with Apache Storm on Azure HDInsight. You will learn how to use Python components from both a Java based, and Clojure based Storm topology."
    services="hdinsight"
    documentationCenter=""
@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="12/04/2015"
+	ms.date="02/01/2016"
 	wacn.date=""/>
 
 #Develop Apache Storm topologies using Python on HDInsight
@@ -21,6 +21,8 @@ Apache Storm supports multiple languages, even allowing you to combine component
 * Python 2.7 or higher
 
 * Java JDK 1.7 or higher
+
+* [Leiningen](http://leiningen.org/)
 
 ##Storm multi-language support
 
@@ -39,11 +41,11 @@ This provides things like `storm.emit` to emit tuples, and `storm.logInfo` to wr
 Using the __storm.py__ module, you can create Python spouts that consume data, and bolts that process data, however the overall Storm topology definition that wires up communication between components is still written using Java or Clojure. Additionally, if you use Java, you must also create Java components that act as an interface to the Python components.
 
 Also, since Storm clusters run in a distributed fashion, you must ensure that any modules required by your Python components are available on all worker nodes in the cluster. Storm doesn't provide any easy way to accomplish this for multi-lang resources - you either have to include all dependencies as part of the jar file for the topology, or manually install dependencies on each worker node in the cluster.
-<!-- deleted by customization
 
+
 There are some projects that attempt to overcome these shortcomings, such as [Pyleus](https://github.com/Yelp/pyleus) and [Streamparse](https://github.com/Parsely/streamparse). While both of these can be ran on Linux-based HDInsight clusters, they are not the primary focus of this document as they require customizations during cluster setup and are not fully tested on HDInsight clusters. Notes on using these frameworks with HDInsight are included at the end of this document.
--->
 
+
 ###Java vs. Clojure topology definition
 
 Of the two methods of defining a topology, Clojure is by far the easiest/cleanest as you can directly referenc python components in the topology definition. For Java-based topology definitions, you must also define Java components that handle things like declaring the fields in the tuples returned from the Python components.
@@ -52,7 +54,7 @@ Both methods are described in this document, along with example projects.
 
 ##Python components with a Java topology
 
-> [AZURE.NOTE] This example is available at https://github.com/Blackmist/hdinsight-python-storm-wordcount in the __JavaTopology__ directory. This is a Maven based project. If you are unfamiliar with Maven, see [Develop Java-based topologies with Apache Storm on HDInsight](/documentation/articles/hdinsight-storm-develop-java-topology) for more information on creating a Maven project for a Storm topology.
+> [AZURE.NOTE] This example is available at [https://github.com/Azure-Samples/hdinsight-python-storm-wordcount](https://github.com/Azure-Samples/hdinsight-python-storm-wordcount) in the __JavaTopology__ directory. This is a Maven based project. If you are unfamiliar with Maven, see [Develop Java-based topologies with Apache Storm on HDInsight](/documentation/articles/hdinsight-storm-develop-java-topology) for more information on creating a Maven project for a Storm topology.
 
 A Java-based topology that uses Python (or other JVM language components,) initially appears to use Java components; but if you look in each of the Java spouts/bolts, you'll see code similar to the following:
 
@@ -74,8 +76,13 @@ The actual Python files are stored in the `/multilang/resources` directory in th
 This includes all the files in the `/multilang` folder in the jar that will be built from this project.
 
 > [AZURE.IMPORTANT] Note that this only specifies the `/multilang` directory and not `/multilang/resources`. Storm expects non-JVM resources in a `resources` directory, so it is looked for internally already. Placing components in this folder allows you to just reference by name in the Java code. For example, `super("python", "countbolt.py");`. Another way to think of it is that Storm sees the `resources` directory as the root (/) when accessing multi-lang resources.
+
 >
 > For this example project, the `storm.py` module is included in the `/multilang/resources` directory.
+
+
+> <p>For this example project, the `storm.py` module is included in the `/multilang/resources` directory.
+
 
 ###Build and run the project
 
@@ -95,12 +102,12 @@ To deploy the project to an HDInsight cluster running Apache Storm, use the foll
 
 2. Upload the jar file to the Hadoop cluster using one of the following methods:
 
-<!-- deleted by customization
+
     * For __Linux-based__ HDInsight clusters: Use `scp WordCount-1.0-SNAPSHOT.jar USERNAME@CLUSTERNAME-ssh.azurehdinsight.cn:WordCount-1.0-SNAPSHOT.jar` to copy the jar file to the cluster, replacing USERNAME with your SSH user name and CLUSTERNAME with the HDInsight cluster name.
 
         Once the file has finished uploading, connect to the cluster using SSH and start the topology using `storm jar WordCount-1.0-SNAPSHOT.jar com.microsoft.example.WordCount wordcount`
 
--->
+
     * For __Windows-based__ HDInsight clusters: Connect to the Storm Dashboard by going to HTTPS://CLUSTERNAME.azurehdinsight.cn/ in your browser. Replace CLUSTERNAME with your HDInsight cluster name and provide the admin name and password when prompted.
 
         Using the form, perform the following actions:
@@ -111,11 +118,11 @@ To deploy the project to an HDInsight cluster running Apache Storm, use the foll
 
         Finally, select __Submit__ to start the topology.
 
-> [AZURE.NOTE] Once started, a Storm topology runs until stopped (killed.) To stop the topology, use either the `storm kill TOPOLOGYNAME` command from the command-line <!-- deleted by customization (SSH session to a Linux cluster for example,) --> or by using the Storm UI, select the topology, and then select the __Kill__ button.
+> [AZURE.NOTE] Once started, a Storm topology runs until stopped (killed.) To stop the topology, use either the `storm kill TOPOLOGYNAME` command from the command-line  (SSH session to a Linux cluster for example,)  or by using the Storm UI, select the topology, and then select the __Kill__ button.
 
 ##Python components with a Clojure topology
 
-> [AZURE.NOTE] This example is available at https://github.com/Blackmist/hdinsight-python-storm-wordcount in the __ClojureTopology__ directory.
+> [AZURE.NOTE] This example is available at [https://github.com/Azure-Samples/hdinsight-python-storm-wordcount](https://github.com/Azure-Samples/hdinsight-python-storm-wordcount) in the __ClojureTopology__ directory.
 
 This topology was created by using [Leiningen](http://leiningen.org) to [create a new Clojure project](https://github.com/technomancy/leiningen/blob/stable/doc/TUTORIAL.md#creating-a-project). After that, the following modifications to the scaffolded project were made:
 
@@ -140,7 +147,7 @@ __To build an uberjar and deploy to HDInsight__, use the following steps:
     This will create a new file named `wordcount-1.0-SNAPSHOT.jar` in the `target\uberjar+uberjar` directory.
     
 2. Use one of the following methods to deploy and run the topology to an HDInsight cluster:
-<!-- deleted by customization
+
 
     * __Linux-based HDInsight__
     
@@ -158,7 +165,7 @@ __To build an uberjar and deploy to HDInsight__, use the following steps:
         3. Once connected, use the following to start the topology:
         
                 storm jar wordcount-1.0-SNAPSHOT.jar wordcount.core wordcount
--->
+
     
     * __Windows-based HDInsight__
     
@@ -172,8 +179,8 @@ __To build an uberjar and deploy to HDInsight__, use the following steps:
 
             Finally, select __Submit__ to start the topology.
 
-> [AZURE.NOTE] Once started, a Storm topology runs until stopped (killed.) To stop the topology, use either the `storm kill TOPOLOGYNAME` command from the command-line <!-- deleted by customization (SSH session to a Linux cluster,) --> or by using the Storm UI, select the topology, and then select the __Kill__ button.
-<!-- deleted by customization
+> [AZURE.NOTE] Once started, a Storm topology runs until stopped (killed.) To stop the topology, use either the `storm kill TOPOLOGYNAME` command from the command-line  (SSH session to a Linux cluster,)  or by using the Storm UI, select the topology, and then select the __Kill__ button.
+
 
 ##Pyleus framework
 
@@ -345,13 +352,13 @@ Once your Linux-based HDInsight cluster has been created, use the following step
         sparse submit
     
     This will connect to the HDInsight cluster, deploy the topology and any Python dependencies, then start the topology.
--->
+
 
 ##Next steps
 
 In this document, you learned how to use Python components from a Storm topology. See the following documents for other ways to use Python with HDInsight:
 
-<!-- deleted by customization
+
 * [How to use Python for streaming MapReduce jobs](/documentation/articles/hdinsight-hadoop-streaming-python)
--->
+
 * [How to use Python User Defined Functions (UDF) in Pig and Hive](/documentation/articles/hdinsight-python)

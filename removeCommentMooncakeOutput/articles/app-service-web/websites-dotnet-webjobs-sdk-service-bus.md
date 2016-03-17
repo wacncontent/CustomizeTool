@@ -33,15 +33,6 @@ The code snippets only show functions, not the code that creates the `JobHost` o
    		}
 	}
 
-## Table of contents
-
--   [Prerequisites](#prerequisites)
--   [How to trigger a function when a queue message is received](#trigger)
--   [How to create queue messages](#create)
--   [How to work with Service Bus topics](#topics)
--   [Related topics covered by the storage queues article](#queues)
--   [Next steps](#nextsteps)
-
 A [complete Service Bus code example](https://github.com/Azure/azure-webjobs-sdk-samples/blob/master/BasicSamples/ServiceBus/Program.cs) is in the azure-webjobs-sdk-samples repository on GitHub.com.
 
 ## <a id="prerequisites"></a> Prerequisites

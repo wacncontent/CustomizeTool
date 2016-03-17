@@ -20,9 +20,9 @@
 - [Java](/documentation/articles/cache-java-get-started)
 - [Python](/documentation/articles/cache-python-get-started)
 
-This guide shows you how to get started using **Azure Redis Cache**. Windows Azure Redis Cache is based on the popular open source Redis Cache. It gives you access to a secure, dedicated Redis cache, managed by Microsoft. A cache created using Azure Redis Cache is accessible from any application within Windows Azure.
+This guide shows you how to get started using **Azure Redis Cache**. Azure Redis Cache is based on the popular open source Redis Cache. It gives you access to a secure, dedicated Redis cache, managed by Microsoft. A cache created using Azure Redis Cache is accessible from any application within Azure.
 
-Windows Azure Redis Cache is available in the following tiers:
+Azure Redis Cache is available in the following tiers:
 
 -	**Basic** - Single node. Multiple sizes up to 53 GB.
 -	**Standard** - Two-node Primary/Replica. Multiple sizes up to 53 GB. 99.9% SLA.

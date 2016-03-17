@@ -1,11 +1,13 @@
-<!-- keep by customization: begin -->
 <!-- not suitable for Mooncake -->
 
-<!-- keep by customization: end -->
+
+<!-- not suitable for Mooncake -->
+
+
 > [AZURE.SELECTOR]
-<!-- deleted by customization
-- [Preview portal](/documentation/articles/virtual-networks-create-vnet-arm-pportal)
--->
+
+- [Azure Management Portal](/documentation/articles/virtual-networks-create-vnet-arm-pportal)
+
 - [PowerShell](/documentation/articles/virtual-networks-create-vnet-arm-ps)
 - [Azure CLI](/documentation/articles/virtual-networks-create-vnet-arm-cli)
 - [ARM template](/documentation/articles/virtual-networks-create-vnet-arm-template-click)

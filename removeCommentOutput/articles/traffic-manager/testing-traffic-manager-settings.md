@@ -68,4 +68,3 @@ There are free web-based DNS lookup and dig services available. Some of these gi
 
 [About Traffic Manager traffic routing methods](/documentation/articles/about-traffic-manager-balancing-methods)
 [Traffic Manager](/documentation/articles/traffic-manager)
- 

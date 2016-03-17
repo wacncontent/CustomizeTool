@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Use Hadoop Pig in HDInsight | Windows Azure"
+   pageTitle="Use Hadoop Pig in HDInsight | Azure"
    description="Learn how to use Pig with Hadoop on HDInsight."
    services="hdinsight"
    documentationCenter=""
@@ -122,18 +122,18 @@ Now that you have learned how to use Pig with HDInsight, use the following links
 [connectionmanager]: http://msdn.microsoft.com/zh-cn/library/mt146773(v=sql.120).aspx
 [ssispack]: http://msdn.microsoft.com/zh-cn/library/mt146770(v=sql.120).aspx
 
-[hdinsight-storage]: hdinsight-use-blob-storage.md
-[hdinsight-upload-data]: hdinsight-upload-data.md
-[hdinsight-get-started]: ../hdinsight-get-started.md
-[hdinsight-admin-powershell]: hdinsight-administer-use-powershell.md
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
+[hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell
 
-[hdinsight-use-hive]: hdinsight-use-hive.md
-[hdinsight-use-mapreduce]: hdinsight-use-mapreduce.md
+[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
+[hdinsight-use-mapreduce]: /documentation/articles/hdinsight-use-mapreduce
 
-[hdinsight-provision]: hdinsight-provision-clusters-v1.md
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
 [hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically#mapreduce-sdk
 
-[Powershell-install-configure]: ../install-configure-powershell.md
+[Powershell-install-configure]: /documentation/articles/powershell-install-configure
 
 [powershell-start]: http://technet.microsoft.com/zh-cn/library/hh847889.aspx
 

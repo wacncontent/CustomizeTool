@@ -1,5 +1,5 @@
 <properties 
-   pageTitle=" Traffic Manager - traffic routing methods | Windows Azure"
+   pageTitle=" Traffic Manager - traffic routing methods | Azure"
    description="This articles will help you understand the different traffic routing methods used by Traffic Manager"
    services="traffic-manager"
    documentationCenter=""
@@ -81,7 +81,7 @@ At this time, you cannot use the Azure Management Portal to configure weighted t
 
 For information about using the REST APIs, see [Operations on Traffic Manager (REST API Reference)](https://msdn.microsoft.com/zh-cn/library/hh758255.aspx).
 
-For information about using the Azure PowerShell cmdlets, see [Azure Traffic Manager Cmdlets](https://msdn.microsoft.com/zh-cn/library/dn690250.aspx). For an example configuration, see [Azure Traffic Manager External Endpoints and Weighted Round Robin via PowerShell](http://azure.microsoft.com/blog/2014/06/26/azure-traffic-manager-external-endpoints-and-weighted-round-robin-via-powershell/) in the Azure blog.
+For information about using the Azure PowerShell cmdlets, see [Azure Traffic Manager Cmdlets](https://msdn.microsoft.com/zh-cn/library/dn690250.aspx). For an example configuration, see [Azure Traffic Manager External Endpoints and Weighted Round Robin via PowerShell](https://azure.microsoft.com/blog/2014/06/26/azure-traffic-manager-external-endpoints-and-weighted-round-robin-via-powershell/) in the Azure blog.
 
 To test the profile from a single client and observe the equal or weighted round robin behavior, verify that the DNS name is resolved to the different IP addresses of the endpoints according to the equal or weighted values in the profile. When testing, you must either disable client-side DNS caching or clear the DNS cache between each attempt to ensure that a new DNS name query gets sent.
 
@@ -123,5 +123,4 @@ If you want the figures in this topic as PowerPoint sides for your own presentat
 
 [Create a profile](/documentation/articles/traffic-manager-manage-profiles)
 
-[Add an endpoint](/documentation/articles/traffic-manager-endpoints)
- 
+[Add an endpoint](/documentation/articles/traffic-manager-endpoints)

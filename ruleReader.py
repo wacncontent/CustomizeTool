@@ -17,6 +17,7 @@ class RuleReader:
         self.ruleDict = OrderedDict()
         # ruleDict just for regex substitution
         self.regexDict = OrderedDict()
+        self.semiDict = OrderedDict()
         self.correctDict = OrderedDict()
         self.lineNum = 0
         # Default area is const string's substitution
@@ -32,6 +33,7 @@ class RuleReader:
         DELETE_CONTENT = ''
         CONST_FLAG = '[CONST]'
         REGULAR_FLAG = '[REGEX]'
+        SEMIREGULAR_FLAG = '[SEMIREGEX]'
         CORRECTION_FLAG = '[CORRECTION]'
         try:
             with open(RULE_FILE, 'r', "utf8") as fRule:
@@ -48,6 +50,9 @@ class RuleReader:
                     # Add for check REGULAR EXPRESSION area, when find it just update the isRegex flag
                     if trimedLine == REGULAR_FLAG:
                         self.type = "regu"
+                        continue
+                    if trimedLine == SEMIREGULAR_FLAG:
+                        self.type = "semi"
                         continue
                     if trimedLine == CORRECTION_FLAG:
                         self.type = "corr"
@@ -71,11 +76,13 @@ class RuleReader:
                         self.ruleDict[key] = (DELETE_CONTENT if value == DELETE_FLAG else value)
                     elif self.type == "regu":
                         self.regexDict[key] = (DELETE_CONTENT if value == DELETE_FLAG else value)
+                    elif self.type == "semi":
+                        self.semiDict[key] = (DELETE_CONTENT if value == DELETE_FLAG else value)
                     else:
                         self.correctDict[key] = (DELETE_CONTENT if value == DELETE_FLAG else value)
                 # print(self.ruleDict, self.regexDict)
                 print('\033[1;32m Finish reading all rules, keep moving...\033[0m')
-                return self.ruleDict, self.regexDict, self.correctDict
+                return self.ruleDict, self.regexDict, self.semiDict, self.correctDict
         except IOError as e:
             print("\033[1;31m rules.md doesn't exists!\033[0m\n")
             # print(e)

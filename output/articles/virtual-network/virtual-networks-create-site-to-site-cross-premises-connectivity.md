@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
 	pageTitle="Tutorial: Create a Cross-Premises Virtual Network for Site-to-Site Connectivity" 
 	description="Learn how to create an Azure Virtual Network with cross-premises connectivity in this tutorial." 

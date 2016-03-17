@@ -1,5 +1,7 @@
+<!-- not suitable for Mooncake -->
+
 <properties
-	pageTitle="Create a Spark cluster on HDInsight Linux and use Spark SQL from Jupyter for interactive analysis | Windows Azure"
+	pageTitle="Create a Spark cluster on HDInsight Linux and use Spark SQL from Jupyter for interactive analysis | Azure"
 	description="Step-by-step instructions on how to quickly create an Apache Spark cluster in HDInsight and then use Spark SQL from Jupyter notebooks to run interactive queries."
 	services="hdinsight"
 	documentationCenter=""
@@ -10,7 +12,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="01/13/2016"
+	ms.date="02/05/2016"
 	wacn.date=""/>
 
 
@@ -219,7 +221,9 @@ In this section, you use a Jupyter notebook to run Spark SQL queries against a S
 
 * [Run jobs remotely on a Spark cluster using Livy](/documentation/articles/hdinsight-apache-spark-livy-rest-interface)
 
-### Extensions
+### Tools and extensions
+
+* [Use HDInsight Tools Plugin for IntelliJ IDEA to create and submit Spark Scala applicatons](/documentation/articles/hdinsight-apache-spark-intellij-tool-plugin)
 
 * [Use Zeppelin notebooks with a Spark cluster on HDInsight](/documentation/articles/hdinsight-apache-spark-use-zeppelin-notebook)
 
@@ -234,12 +238,24 @@ In this section, you use a Jupyter notebook to run Spark SQL queries against a S
 * [Known issues of Apache Spark in Azure HDInsight (Linux)](/documentation/articles/hdinsight-apache-spark-known-issues)
 
 
+
+[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning-v1
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
+
+
 [hdinsight-versions]: ../hdinsight-component-versioning-v1/
 [hdinsight-upload-data]: ../hdinsight-upload-data/
 [hdinsight-storage]: ../hdinsight-use-blob-storage/
+
 
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: /pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
 [azure-management-portal]: https://manage.windowsazure.cn/
+
+[azure-create-storageaccount]: /documentation/articles/storage-create-storage-account
+
+
 [azure-create-storageaccount]: ../storage-create-storage-account/
+

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Different ways to create a Windows VM | Windows Azure"
+	pageTitle="Different ways to create a Windows VM | Azure"
 	description="Lists the different ways to create a Windows virtual machine with Resource Manager."
 	services="virtual-machines"
 	documentationCenter=""
@@ -13,7 +13,7 @@
 	ms.date="10/22/2015"
 	wacn.date=""/>
 
-# Different ways to create a Windows virtual machine
+# Different ways to create a Windows virtual machine 
 
 Azure offers different ways to create a virtual machine because virtual machines are suited for different users and purposes. This means that you need to make some choices about the virtual machine and how to create it. This article gives you a summary of these choices and links to instructions.
 
@@ -48,3 +48,4 @@ Choose an image based on the operating system you want to run. Azure and its par
 [Create a virtual machine running Windows]: virtual-machines-windows-tutorial-classic-portal
 
 [Navigate and select Azure virtual machine images with Windows PowerShell and the Azure CLI]: /documentation/articles/resource-groups-vm-searching
+

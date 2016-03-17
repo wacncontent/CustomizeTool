@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Deploy multi NIC VMs using PowerShell in the classic deployment model | Windows Azure"
+   pageTitle="Deploy multi NIC VMs using PowerShell in the classic deployment model | Azure"
    description="Learn how to deploy multi NIC VMs using PowerShell in the classic deployment model"
    services="virtual-network"
    documentationCenter="na"

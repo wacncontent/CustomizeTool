@@ -29,7 +29,7 @@ Persistence can be configured from the **New Redis Cache** blade during cache cr
 
 ## Create a premium cache
 
-<!-- deleted by customization
+
 To create a cache and configure persistence, sign-in to the [Azure Management Portal](https://manage.windowsazure.cn) and click **New**->**DATA SERVICE**>**Redis Cache**.
 
 ![Create a Redis Cache][redis-cache-new-cache-menu]
@@ -43,9 +43,9 @@ Once a premium pricing tier is selected, click **Redis persistence**.
 ![Redis persistence][redis-cache-persistence]
 
 The steps in the following section describe how to configure Redis persistence on your new premium cache. Once Redis persistence is configured, click **Create** to create your new premium cache with Redis persistence.
--->
-<!-- keep by customization: begin -->
-In Windows Azure China, Redis Cache can only be managed by Azure PowerShell or Azure CLI
+
+
+In Azure China, Redis Cache can only be managed by Azure PowerShell or Azure CLI
 
 
 [AZURE.INCLUDE [azurerm-azurechinacloud-environment-parameter](../includes/azurerm-azurechinacloud-environment-parameter.md)]
@@ -63,11 +63,11 @@ Use the following PowerShell Script to create a premium cache with Redis persist
 	$movieCache = New-AzureRmRedisCache -Location $location -Name $cacheName  -ResourceGroupName $resourceGroupName -Size 6GB -Sku Premium -RedisConfiguration @{"rdb-backup-enabled"="true"; "rdb-backup-frequency"="60"; "rdb-backup-max-snapshot-count"="1"; "rdb-storage-connection-string"="DefaultEndpointsProtocol=[http|https];AccountName=myAccountName;AccountKey=myAccountKey;EndpointSuffix=core.chinacloudapi.cn"}
 
 The steps in the following section describe how to configure Redis persistence on your new premium cache.
-<!-- keep by customization: end -->
+
 
 ## Configure Redis persistence
 
-<!-- deleted by customization
+
 Redis persistence is configured on the **Redis data persistence** blade. For new caches, this blade is accessed during the cache creation process, as described in the previous section. For existing caches, the **Redis data persistence** blade is accessed from the **Settings** blade for your cache.
 
 ![Redis settings][redis-cache-settings]
@@ -83,8 +83,8 @@ Click **Storage Account** to select the storage account to use, and choose eithe
 ![Redis persistence][redis-cache-persistence-selected]
 
 Click **OK** to save the persistence configuration.
--->
-<!-- keep by customization: begin -->
+
+
 You can use **Set-AzureRmRedisCache** PowerShell command to configure Redis data persistence:
 
 	Set-AzureRmRedisCache -Name $cacheName  -ResourceGroupName $resourceGroupName -RedisConfiguration @{"rdb-backup-enabled"="true"; "rdb-backup-frequency"="60"; "rdb-backup-max-snapshot-count"="1"; "rdb-storage-connection-string"="DefaultEndpointsProtocol=[http|https];AccountName=myAccountName;AccountKey=myAccountKey;EndpointSuffix=core.chinacloudapi.cn"}
@@ -93,10 +93,10 @@ As you can see in this PowerShell command, for **-RedisConfiguration** parameter
 
 To configure the backup interval, you can set "rdb-backup-frequency" to 15 which means **15 Minutes**, 30 which means **30 minutes**, 60 which means **60 minutes**, 360 which means **6 hours**, 720 which means **12 hours**, 1440 which means and **24 hours**. This interval starts counting down after the previous backup operation successfully completes and when it elapses a new backup is initiated.
 
-To configure a Storage Account, you can "rdb-storage-connection-string" to a connection String in Windows Azure China. As you can see in the command above, you need to specify BlobEndpoint, QueueEndpoint, TableEndpoint in your connection string.
+To configure a Storage Account, you can "rdb-storage-connection-string" to a connection String in Azure China. As you can see in the command above, you need to specify BlobEndpoint, QueueEndpoint, TableEndpoint in your connection string.
 
 >[AZURE.IMPORTANT] If the storage key for your persistence account is regenerated, you must update your "rdb-backup-frequency".
-<!-- keep by customization: end -->
+
 
 The next backup (or first backup for new caches) is initiated once the backup frequency interval elapses.
 
@@ -112,7 +112,14 @@ Yes, Redis persistence can be configured both at cache creation and on existing 
 
 ## Can I change the backup frequency after I create the cache?
 
+
 Yes, you can change the backup frequency on the **Redis data persistence** blade. For instructions, see [Configure Redis persistence](#configure-redis-persistence).
+
+
+Yes, you can change the backup frequency with Azure PowerShell. The following is a sample command that changes backup frequency by modifying `rdb-backup-frequency`
+
+	Set-AzureRmRedisCache -Name $cacheName  -ResourceGroupName $resourceGroupName -RedisConfiguration @{"rdb-backup-enabled"="true"; "rdb-backup-frequency"="60"; "rdb-backup-max-snapshot-count"="1"; "rdb-storage-connection-string"="DefaultEndpointsProtocol=[http|https];AccountName=myAccountName;AccountKey=myAccountKey;EndpointSuffix=core.chinacloudapi.cn"}
+
 
 ## Why if I have a backup frequency of 60 minutes there is more than 60 minutes between backups?
 

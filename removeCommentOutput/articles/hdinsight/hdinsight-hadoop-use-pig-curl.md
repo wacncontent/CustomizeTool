@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Use Hadoop Pig with Curl in HDInsight | Windows Azure"
+   pageTitle="Use Hadoop Pig with Curl in HDInsight | Azure"
    description="Learn how to use Curl to run Pig Latin jobs on a Hadoop cluster in Azure HDInsight."
    services="hdinsight"
    documentationCenter=""

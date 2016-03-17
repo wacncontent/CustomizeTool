@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Debug and analyze Hadoop services with heap dumps | Windows Azure"
+	pageTitle="Debug and analyze Hadoop services with heap dumps | Azure"
 	description="Automatically collect heap dumps for Hadoop services and place inside the Azure Blob storage account for debugging and analysis."
 	services="hdinsight"
 	documentationCenter=""

@@ -1,7 +1,7 @@
 <!-- not suitable for Mooncake -->
 
 <properties
-	pageTitle="Automatically Scale Virtual Machine Scale Sets | Windows Azure"
+	pageTitle="Automatically Scale Virtual Machine Scale Sets | Azure"
 	description="Get started creating and managing your first Azure Virtual Machine Scale Sets using Azure CLI"
 	services="virtual-machines"
 	documentationCenter=""
@@ -37,7 +37,7 @@ Before you get started with the steps in this tutorial, [install the Azure CLI](
 
 ## Step 1: Create a resource group and a storage account
 
-1. **Sign in to Windows Azure** - In your command-line interface (Bash, Terminal, Command prompt), make sure you're in Resource Manager mode by typing `azure config mode arm`, and then [log in with your work or school id](/documentation/articles/xplat-cli-connect#use-the-log-in-method) by typing `azure login` and following the prompts for an interactive login experience to your Azure account.
+1. **Sign in to Azure** - In your command-line interface (Bash, Terminal, Command prompt), make sure you're in Resource Manager mode by typing `azure config mode arm`, and then [log in with your work or school id](/documentation/articles/xplat-cli-connect#use-the-log-in-method) by typing `azure login` and following the prompts for an interactive login experience to your Azure account.
 
 	> [AZURE.NOTE] If you have a work or school ID and you know you do not have two-factor authentication enabled, you can use `azure login -u` along with the work or school ID to log in without an interactive session. If you don't have a work or school ID, you can [create a work or school id from your personal Microsoft account](/documentation/articles/resource-group-create-work-id-from-personal).
 

@@ -44,6 +44,7 @@ This tutorial assumes you have [PHP][install-php], the MySQL Command-Line Tool (
 Follow these steps to create a web app and a MySQL database:
 
 1. Login to the [Azure Management Portal][management-portal].
+
 2. Click the **New** icon.
 
 3. Click **See All** next to **Marketplace**. 
@@ -77,11 +78,51 @@ Follow these steps to create a web app and a MySQL database:
 
 	![Create publishing credentials][credentials]
 
+
+
+2. Click the **New** icon on the bottom left of the portal.
+
+	![Create New Azure  Website][new-website]
+
+3. Click **Web Apps**, then **Custom Create**.
+
+	![Custom Create a new  Website][custom-create]
+	
+	Enter a value for **URL**, select **No Database** from the **Database** dropdown,  and select the data center for your  Website in the **Region** dropdown. Click ok to create the web site.
+
+	![Fill in  Website details][Website-details]
+
+4. Click **New** --> **Storage** --> **MYSQL DATABASE ON AZURE** --> **Quick Create**, to create a MYSQL Database for your web site.
+
+	![Create new MySQL database][new-mysql-db]
+
+	When the  Website has been created you will see the text **Creation of  Website "[SITENAME]" completed successfully**. Now, you can enable Git publishing.
+
+6. Click the name of the  Website displayed in the list of Websites.
+
+	![Open  Website dashboard][go-to-dashboard]
+
+
+7. Under the **Integrate source control**, click **Set up deployment from source control**, and choose **Local Git Repository**. 
+
+	![Set up Git publishing][setup-git-publishing]
+
+8. To enable Git publishing, you must provide a user name and password. Make a note of the user name and password you create. (If you have set up a Git repository before, this step will be skipped.)
+
+	![Create publishing credentials][credentials]
+
+	It will take a few seconds to set up your repository.
+
+9. When your repository is ready, you will see instructions for pushing your application files to the repository. Make note of these instructions - they will be needed later.
+
+	![Git instructions][git-instructions]
+
 
 ##Get remote MySQL connection information
 
 To connect to the MySQL database that is running in Web Apps, your will need the connection information. To get MySQL connection information, follow these steps:
 
+
 1. From your resource group, click the database:
 
 	![Select database][select-database]
@@ -93,6 +134,18 @@ To connect to the MySQL database that is running in Web Apps, your will need the
 2. Make note of the values for `Database`, `Host`, `User Id`, and `Password`.
 
     ![Note properties][note-properties]
+
+
+1. In Azure Management Portal, click **MYSQL DATABASE ON AZURE**, and open your MYSQL database server. In **Dashboard** page, under **quick glance**, you can get your host and port.
+
+	![connection][connection-string-info]
+
+2. In **Account** page, you can get all account name, and reset password.
+
+3. in **Database** page, you can get all Database under this MYSQL Database Server.
+
+	The Data source would be `tcp:<your MYSQL server name>.database.chinacloudapi.cn,<port>`
+
 
 ##Build and test your app locally
 
@@ -257,6 +310,7 @@ To publish changes to your app, follow these steps:
 3. Browse to **http://[site name].chinacloudsites.cn/index.php** to see your app and any changes you may have made:
 
 	![Azure PHP web site][running-app]
+
 
 >[AZURE.NOTE] If you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.
 
@@ -267,6 +321,11 @@ For more information, see the [PHP Developer Center](/develop/php/).
 ## What's changed
 * For a guide to the change from Websites to Azure see: [Azure and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
 
+
+
+	
+[go-to-dashboard]: ./media/web-sites-php-mysql-deploy-use-git/go_to_dashboard.png
+
 [install-php]: http://www.php.net/manual/en/install.php
 [install-SQLExpress]: http://www.microsoft.com/download/details.aspx?id=29062
 [install-Drivers]: http://www.microsoft.com/download/details.aspx?id=20098
@@ -275,10 +334,21 @@ For more information, see the [PHP Developer Center](/develop/php/).
 
 [pdo-mysql]: http://www.php.net/manual/en/ref.pdo-mysql.php
 [running-app]: ./media/web-sites-php-mysql-deploy-use-git/running_app_2.png
+
 [new-website]: ./media/web-sites-php-mysql-deploy-use-git/new_website2.png
 [custom-create]: ./media/web-sites-php-mysql-deploy-use-git/create_web_mysql.png
+
+
+[new-website]: ./media/web-sites-php-mysql-deploy-use-git/new_website.jpg
+[custom-create]: ./media/web-sites-php-mysql-deploy-use-git/custom_create.png
+
 [website-details]: ./media/web-sites-php-mysql-deploy-use-git/website_details.jpg
+
 [new-mysql-db]: ./media/web-sites-php-mysql-deploy-use-git/create_db.png
+
+
+[new-mysql-db]: ./media/web-sites-php-mysql-deploy-use-git/new_mysql_db.jpg
+
 [go-to-webapp]: ./media/web-sites-php-mysql-deploy-use-git/select_webapp.png
 [setup-git-publishing]: ./media/web-sites-php-mysql-deploy-use-git/setup_git_publishing.png
 [credentials]: ./media/web-sites-php-mysql-deploy-use-git/save_credentials.png

@@ -1,5 +1,7 @@
+<!-- not suitable for Mooncake -->
+
 <properties
-   pageTitle="Deploy a 3-node Deis cluster | Windows Azure"
+   pageTitle="Deploy a 3-node Deis cluster | Azure"
    description="This article describes how to create a 3-node Deis cluster on Azure using an Azure Resource Manager template"
    services="virtual-machines"
    documentationCenter=""
@@ -26,7 +28,7 @@ The following diagram shows the architecture of the deployed system. A system ad
 
 In order to run through the following steps, you'll need:
 
- * An active Azure subscription. If you don't have one, you can get a free trail on [azure.com](https://azure.microsoft.com).
+ * An active Azure subscription. If you don't have one, you can get a free trail on [azure.com](https://azure.microsoft.com/).
  * A work or school id to use Azure resource groups. If you have a personal account and log in with a Microsoft id, you need to [create a work id from your personal one](/documentation/articles/resource-group-create-work-id-from-personal).
  * Either -- depending on your client operating system -- the [Azure PowerShell](/documentation/articles/powershell-install-configure) or the [Azure CLI for Mac, Linux, and Windows](/documentation/articles/xplat-cli-install).
  * [OpenSSL](https://www.openssl.org/). OpenSSL is used to generate the necessary certificates.
@@ -108,7 +110,12 @@ You need **deisctl** to control your Deis cluster. Although deisctl is automatic
 
 3. Configure deisctl:
 
+
+        export DEISCTL_TUNNEL=[public ip of the load balancer]: 2223
+
+
         export DEISCTL_TUNNEL=[public ip of the load balancer]:2223
+
 
 The template defines inbound NAT rules that map 2223 to instance 1, 2224 to instance 2, and 2225 to instance 3. This provides redundancy for using the deisctl tool. You can examine these rules on Azure Management Portal:
 
@@ -255,6 +262,13 @@ This article walked you through all the steps to provision a new Deis cluster on
 [How to use the Azure CLI] [azure-command-line-tools]  
 [Using Azure PowerShell with Azure Resource Manager] [powershell-azure-resource-manager]  
 
+
+[azure-command-line-tools]: /documentation/articles/xplat-cli-install
+[resource-group-overview]: /documentation/articles/resource-group-overview
+[powershell-azure-resource-manager]: /documentation/articles/powershell-azure-resource-manager
+
+
 [azure-command-line-tools]: ../xplat-cli-install.md
 [resource-group-overview]: ../documentation/articles/resource-group-overview
 [powershell-azure-resource-manager]: ../powershell-azure-resource-manager.md
+

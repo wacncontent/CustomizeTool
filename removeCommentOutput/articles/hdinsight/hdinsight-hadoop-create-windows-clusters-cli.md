@@ -114,7 +114,7 @@ Create a configuration file that contains a script action to run when creating a
 
 Create a cluster with a script action
 
-	azure hdinsight cluster create -g myarmgroup01 -l chinanorth -y Windows --clusterType Hadoop --version 3.2 --defaultStorageAccountName mystorageaccount --defaultStorageAccountKey <defaultStorageAccountKey> --defaultStorageContainer mycontainer --userName admin --password <clusterPassword> --sshUserName sshuser --sshPassword <sshPassword> --workerNodeCount 1 âconfigurationPath "C:\myFiles\configFile.config" myNewCluster01
+	azure hdinsight cluster create -g myarmgroup01 -l chinanorth -y Windows --clusterType Hadoop --version 3.2 --defaultStorageAccountName mystorageaccount --defaultStorageAccountKey <defaultStorageAccountKey> --defaultStorageContainer mycontainer --userName admin --password <clusterPassword> --sshUserName sshuser --sshPassword <sshPassword> --workerNodeCount 1 -configurationPath "C:\myFiles\configFile.config" myNewCluster01
 	
 	
 For general script action information, see [Customize HDInsight clusters using Script Action (Linux)](/documentation/articles/hdinsight-hadoop-customize-cluster-v1).

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Release notes for Hadoop components on Azure HDInsight | Windows Azure"
+	pageTitle="Release notes for Hadoop components on Azure HDInsight | Azure"
 	description="Latest release notes and versions of Hadoop components for Azure HDInsight. Get development tips and details for Hadoop, Apache Storm, and HBase."
 	services="hdinsight"
 	documentationCenter=""
@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="12/01/2015"
+	ms.date="01/27/2016"
 	wacn.date=""/>
 
 

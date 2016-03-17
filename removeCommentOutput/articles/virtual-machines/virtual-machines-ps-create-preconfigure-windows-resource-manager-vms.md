@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Create and configure a VM | Windows Azure"
+	pageTitle="Create and configure a VM | Azure"
 	description="Create and configure an Azure virtual machine with the Powershell and the Resource Manager deployment model."
 	services="virtual-machines"
 	documentationCenter=""

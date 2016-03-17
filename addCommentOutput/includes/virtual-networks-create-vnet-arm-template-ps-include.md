@@ -1,14 +1,16 @@
-<!-- keep by customization: begin -->
 <!-- not suitable for Mooncake -->
 
-<!-- keep by customization: end -->
+
+<!-- not suitable for Mooncake -->
+
+
 ## Deploy the ARM template by using PowerShell
 
 To deploy the ARM template you downloaded by using PowerShell, follow the steps below.
 
 1. If you have never used Azure PowerShell, see [How to Install and Configure Azure PowerShell](/documentation/articles/powershell-install-configure) and follow the instructions all the way to the end to sign into Azure and select your subscription.
 
-3. If necessary, run the **New-AzureRmResourceGroup** cmdlet to create a new resource group. The command below creates a resource group named *TestRG* in the *China North* azure region. For more information about resource groups, visit [Azure Resource Manager Overview](/documentation/articles/resource-group-overview).
+3. If necessary, run the **`New-AzureRmResourceGroup`** cmdlet to create a new resource group. The command below creates a resource group named *TestRG* in the *China North* azure region. For more information about resource groups, visit [Azure Resource Manager Overview](/documentation/articles/resource-group-overview).
 
 		New-AzureRmResourceGroup -Name TestRG -Location centralus
 		
@@ -24,7 +26,7 @@ To deploy the ARM template you downloaded by using PowerShell, follow the steps 
 		                    *
 		ResourceId        : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/TestRG
 
-4. Run the **New-AzureRmResourceGroupDeployment** cmdlet to deploy the new VNet by using the template and parameter files you downloaded and modified above.
+4. Run the **`New-AzureRmResourceGroupDeployment`** cmdlet to deploy the new VNet by using the template and parameter files you downloaded and modified above.
 
 		New-AzureRmResourceGroupDeployment -Name TestVNetDeployment -ResourceGroupName TestRG `
 			-TemplateFile C:\ARM\azuredeploy.json -TemplateParameterFile C:\ARM\azuredeploy-parameters.json
@@ -50,7 +52,7 @@ To deploy the ARM template you downloaded by using PowerShell, follow the steps 
 		
 		Outputs           :
 
-5. Run the **Get-AzureRmVirtualNetwork** cmdlet to view the properties of the new VNet, as shown below.
+5. Run the **`Get-AzureRmVirtualNetwork`** cmdlet to view the properties of the new VNet, as shown below.
 
 
 		Get-AzureRmVirtualNetwork -ResourceGroupName TestRG -Name TestVNet

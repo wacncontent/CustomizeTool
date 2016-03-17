@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Troubleshooting resource group deployments | Windows Azure"
+   pageTitle="Troubleshooting resource group deployments | Azure"
    description="Describes common problems deploying resources created using Resource Manager deployment model, and shows how to detect and fix these issues."
    services="azure-resource-manager,virtual-machines"
    documentationCenter=""
@@ -21,7 +21,7 @@ issue and resume operations in your solution.
 
 This topic focuses primarily on using deployment commands to troubleshoot deployments. For information about using the audit logs to track all operations on your resources, see [Audit operations with Resource Manager](/documentation/articles/resource-group-audit).
 
-This topic shows how to retrieve troubleshooting information through Azure PowerShell, Azure CLI and REST API. For information about using the portal to troubleshoot deployments, see [Using the Azure Management Portal to manage your Azure resources](/documentation/articles/resource-group-portal).
+This topic shows how to retrieve troubleshooting information through Azure PowerShell, Azure CLI and REST API.  For information about using the portal to troubleshoot deployments, see [Using the Azure Management Portal to manage your Azure resources](/documentation/articles/resource-group-portal). 
 
 Solutions to common errors that users encounter are also described in this topic.
 
@@ -205,9 +205,15 @@ For versions of PowerShell prior to 1.0, you can see the full list of resources 
 
     Name                                    Locations                               LocationsString
     ----                                    ---------                               ---------------
+
     ResourceGroup                           {China East, South China East, China East... China East, South China East, China East,...
     Microsoft.ApiManagement/service         {China North, China East, China East 2, Nor... China North, China East, China East 2, Nort...
     Microsoft.AppService/apiapps            {China East, China North, China East,... China East, China North, China East, ...
+
+
+    ResourceGroup                           {China East, china North}				{China East, china North}
+    Microsoft.AppService/apiapps            {China East, china North}				{China East, china North}
+
     ...
 
 You can specify a particular type of resource with:
@@ -216,7 +222,8 @@ You can specify a particular type of resource with:
 
     Name                                                        LocationsString
     ----                                                        ---------------
-    Microsoft.Compute/virtualMachines                           China East, China East 2, China North, China North, China East,
+    Microsoft.Compute/virtualMachines                           China East, China  East 2, China  North, China North, China East, 
+
                                                                 China North, West Europe, China East, China North,
                                                                 Japan East, China East
 
@@ -246,6 +253,7 @@ You can specify a particular type of resource with:
     West Europe
     China North
     China North
+
 
 ### Azure CLI
 
@@ -254,7 +262,12 @@ For Azure CLI, you can use **azure location list**. Because the list of location
     azure location list --json | jq '.[] | select(.name == "Microsoft.Compute/virtualMachines")'
     {
       "name": "Microsoft.Compute/virtualMachines",
+
       "location": "China East,China East 2,China North,China North,China East,China North,West Europe,China East,China North,Japan East,China East"
+
+
+      "location": "China East,China North"
+
     }
 
 ### REST API
@@ -273,7 +286,7 @@ But Azure Active Directory enables you or your administrator to control which id
 
 You might also have issues when a deployment hits a default quota, which could be per resource group, subscriptions, accounts, and other scopes. Confirm to your satisfaction that you have the resources available to deploy correctly. For complete quota information, see [Azure subscription and service limits, quotas, and constraints](/documentation/articles/azure-subscription-service-limits).
 
-To examine your own subscription's quotas for cores, you should use the `azure vm list-usage` command in the Azure CLI and the **Get-AzureRmVMUsage** cmdlet in PowerShell. The following shows the command in the Azure CLI, and illustrates that the core quota for a trial account is 4:
+To examine your own subscription's quotas for cores, you should use the `azure vm list-usage` command in the Azure CLI and the  **Get-AzureRmVMUsage**  **Get-AzureVMUsage**  cmdlet in PowerShell. The following shows the command in the Azure CLI, and illustrates that the core quota for a trial account is 4:
 
     azure vm list-usage
     info:    Executing command vm list-usage
@@ -304,9 +317,11 @@ To be specific about cores, for example, you can check the regions for which you
           ],
           "locations": [
             "China East",
+
             "China North",
             "West Europe",
             "China East",
+
             "China North"
           ]
         }
@@ -335,11 +350,21 @@ For Powershell 1.0, use **Get-AzureRmResourceProvider**.
 
     PS C:\> Get-AzureRmResourceProvider -ListAvailable
 
+
     ProviderNamespace               RegistrationState ResourceTypes
     -----------------               ----------------- -------------
     Microsoft.ApiManagement         Unregistered      {service, validateServiceName, checkServiceNameAvailability}
     Microsoft.AppService            Registered        {apiapps, appIdentities, gateways, deploymenttemplates...}
     Microsoft.Batch                 Registered        {batchAccounts}
+
+
+	ProviderNamespace         RegistrationState ResourceTypes                                                                               Locations
+	-----------------         ----------------- -------------                                                                               ---------
+	microsoft.backup          Registering       {BackupVault}                                                                               {China East, China North}
+	Microsoft.Batch           Registered        {batchAccounts, locations, locations/quotas}                                                {China North, China East}
+	microsoft.cache           Registered        {Redis, checkNameAvailability, operations, RedisConfigDefinition...}                        {China North, China East}
+	...
+
 
 To register a provider, use **Register-AzureRmResourceProvider**.
 
@@ -351,6 +376,7 @@ To see whether the provider is registered for use using the Azure CLI, use the `
         info:    Executing command provider list
         + Getting ARM registered providers
         data:    Namespace                        Registered
+
         data:    -------------------------------  -------------
         data:    Microsoft.Compute                Registered
         data:    Microsoft.Network                Registered  
@@ -364,6 +390,26 @@ To see whether the provider is registered for use using the Azure CLI, use the `
         data:    Microsoft.Search                 NotRegistered
         data:    Microsoft.ServiceBus             NotRegistered
         data:    Microsoft.Sql                    Registered
+
+
+		data:    -------------------------  -----------
+		data:    microsoft.backup           Registering
+		data:    Microsoft.Batch            Registered
+		data:    microsoft.cache            Registered
+		data:    Microsoft.ClassicCompute   Registered
+		data:    Microsoft.ClassicNetwork   Registered
+		data:    Microsoft.ClassicStorage   Registered
+		data:    Microsoft.Insights         Registered
+		data:    Microsoft.KeyVault         Registered
+		data:    Microsoft.SiteRecovery     Registered
+        data:    Microsoft.Sql                Registered
+		data:    Microsoft.StreamAnalytics  Registered
+		data:    Microsoft.Web              Registered
+		data:    Microsoft.Authorization    Registered
+		data:    Microsoft.Features         Registered
+		data:    Microsoft.Resources        Registered
+		data:    Microsoft.Scheduler        Registered
+
         info:    provider list command OK
 
 Again, if you want more information about providers, including their regional availability, type `azure provider list --json`. The following selects only the first one in the list to view:
@@ -376,12 +422,16 @@ Again, if you want more information about providers, including their regional av
                 "2014-02-14"
               ],
               "locations": [
+
                 "China North",
+
                 "China East",
-                "China North",
+                "China North", 
+
                 "China North",
                 "West Europe",
                 "China East"
+
               ],
               "properties": {},
               "name": "service"
@@ -409,7 +459,12 @@ Note however, that this does not necessarily mean that your resource group is "a
 
 You can prevent Azure from reporting deployment success, however, by creating a custom script for your custom template -- using the [CustomScriptExtension](https://azure.microsoft.com/blog/2014/08/20/automate-linux-vm-customization-tasks-using-customscript-extension/) for example -- that knows how to monitor the entire deployment for system-wide readiness and returns successfully only when users can interact with the entire deployment. If you want to ensure that your extension is the last to run, use the **dependsOn** property in your template. An example can be seen when [creating template deployments](https://msdn.microsoft.com/zh-cn/library/azure/dn790564.aspx).
 
+
 ## Useful tools to interact with Azure
+
+
+##<a name="useful-tools-to-interact-with-azure"></a> Useful tools to interact with Azure
+
 When you work with your Azure resources from the command-line, you will collect tools that help you do your work. Azure resource group templates are JSON documents, and the Azure Resource Manager API accepts and returns JSON, so JSON parsing tools are some of the first things you will use to help you navigate information about your resources and to design or interact with templates and template parameter files.
 
 ### Mac, Linux, and Windows tools

@@ -10,7 +10,7 @@
 />
 <tags
 	ms.service="virtual-network"
-	ms.date="12/11/2015"
+	ms.date="02/02/2016"
 	wacn.date=""/>
 
 # Create a VM with multiple NICs
@@ -26,7 +26,7 @@ The figure above shows a VM with three NICs, each connected to a different subne
 At this time, multi NIC has the following requirements and constraints: 
 
 - Multi NIC VMs must be created in Azure virtual networks (VNets). Non-VNet VMs are not supported. 
-- Within a single cloud service (classic deployments), only the following settings are allowed: 
+- Within a single cloud service, only the following settings are allowed:
 	- All VMs in that cloud service must be multi NIC enabled, or 
 	- All VMs in that cloud service must each have a single NIC 
 
@@ -49,10 +49,6 @@ At this time, multi NIC has the following requirements and constraints:
 |A5|1|
 |A6|2|
 |A7|4|
-|A8|2|
-|A9|4|
-|A10|2|
-|A11|4|
 |D1|1|
 |D2|2|
 |D3|4|
@@ -69,21 +65,6 @@ At this time, multi NIC has the following requirements and constraints:
 |DS12|4|
 |DS13|8|
 |DS14|8|
-|D1_v2|1|
-|D2_v2|2|
-|D3_v2|4|
-|D4_v2|8|
-|D5_v2|8|
-|D11_v2|2|
-|D12_v2|4|
-|D13_v2|8|
-|D14_v2|8|
-|G1|1|
-|G2|2|
-|G3|4|
-|G4|8|
-|G5|8|
-|All Other Sizes|1|
 
 ## How to Configure a multi NIC VM in a classic deployment
 
@@ -107,7 +88,7 @@ The instructions below will help you create a multi NIC VM containing 3 NICs: a 
 	        <AddressPrefix>10.1.200.0/28</AddressPrefix>
 	      </Subnet>
 	    </Subnets>
-	âŚ Skip over the remainder section âŚ
+	… Skip over the remainder section …
 	</VirtualNetworkSite>
 
 

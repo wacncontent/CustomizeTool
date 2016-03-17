@@ -1,5 +1,5 @@
 <properties
- pageTitle="Run OpenFOAM with HPC Pack on Linux VMs | Windows Azure"
+ pageTitle="Run OpenFOAM with HPC Pack on Linux VMs | Azure"
  description="Deploy a Microsoft HPC Pack cluster on Azure and run an OpenFOAM job on multiple Linux compute nodes across an RDMA network."
  services="virtual-machines"
  documentationCenter=""
@@ -20,7 +20,7 @@ This article shows you how to deploy a Microsoft HPC Pack cluster on Azure and r
 
 OpenFOAM (for Open Field Operation and Manipulation) is a freely available open-source computational fluid dynamics (CFD) software package that is used widely in engineering and science, in both commercial and academic organizations. It includes tools for meshing, notably snappyHexMesh, a parallelized mesher for complex CAD geometries, and for pre- and post-processing. Almost all processes run in parallel, enabling users to take full advantage of computer hardware at their disposal.  
 
-Microsoft HPC Pack provides features to run a variety of large-scale HPC and parallel applications, including MPI applications, on clusters of Windows Azure virtual machines. Starting in Microsoft HPC Pack 2012 R2 Update 2, HPC Pack also supports running Linux HPC applications on Linux compute node VMs deployed in an HPC Pack cluster. See [Get started with Linux compute nodes in an HPC Pack cluster in Azure](/documentation/articles/virtual-machines-linux-cluster-hpcpack) for an introduction to using Linux compute nodes with HPC Pack.
+Microsoft HPC Pack provides features to run a variety of large-scale HPC and parallel applications, including MPI applications, on clusters of Azure virtual machines. Starting in Microsoft HPC Pack 2012 R2 Update 2, HPC Pack also supports running Linux HPC applications on Linux compute node VMs deployed in an HPC Pack cluster. See [Get started with Linux compute nodes in an HPC Pack cluster in Azure](/documentation/articles/virtual-machines-linux-cluster-hpcpack) for an introduction to using Linux compute nodes with HPC Pack.
 
 >[AZURE.NOTE] This article assumes you have some familiarity with Linux system administration and with running MPI workloads on Linux HPC clusters. 
 
@@ -32,41 +32,41 @@ Microsoft HPC Pack provides features to run a variety of large-scale HPC and par
 
     >[AZURE.NOTE]Currently, Linux RDMA networking in Azure is supported only on VMs created from the RDMA-enabled SUSE Linux Enterprise Server 12 image in the Azure gallery (b4590d9e3ed742e4a1d46e5424aa335e__suse-sles-12-hpc-v20150708).
 
-    ```
-    <?xml version="1.0" encoding="utf-8" ?>
-    <IaaSClusterConfig>
-      <Subscription>
-        <SubscriptionName>Subscription-1</SubscriptionName>
-        <StorageAccount>allvhdsje</StorageAccount>
-      </Subscription>
-      <Location>Japan East</Location>  
-      <VNet>
-        <VNetName>suse12rdmavnet</VNetName>
-        <SubnetName>SUSE12RDMACluster</SubnetName>
-      </VNet>
-      <Domain>
-        <DCOption>HeadNodeAsDC</DCOption>
-        <DomainFQDN>hpclab.local</DomainFQDN>
-      </Domain>
-      <Database>
-        <DBOption>LocalDB</DBOption>
-      </Database>
-      <HeadNode>
-        <VMName>SUSE12RDMA-HN</VMName>
-        <ServiceName>suse12rdma-je</ServiceName>
-        <VMSize>A8</VMSize>
-        <EnableRESTAPI />
-        <EnableWebPortal />
-      </HeadNode>
-      <LinuxComputeNodes>
-        <VMNamePattern>SUSE12RDMA-LN%1%</VMNamePattern>
-        <ServiceName>suse12rdma-je</ServiceName>
-        <VMSize>A8</VMSize>
-        <NodeCount>2</NodeCount>
-        <ImageName>b4590d9e3ed742e4a1d46e5424aa335e__suse-sles-12-hpc-v20150708</ImageName>
-      </LinuxComputeNodes>
-    </IaaSClusterConfig>
-```
+	
+	    <?xml version="1.0" encoding="utf-8" ?>
+	    <IaaSClusterConfig>
+	      <Subscription>
+	        <SubscriptionName>Subscription-1</SubscriptionName>
+	        <StorageAccount>allvhdsje</StorageAccount>
+	      </Subscription>
+	      <Location>Japan East</Location>  
+	      <VNet>
+	        <VNetName>suse12rdmavnet</VNetName>
+	        <SubnetName>SUSE12RDMACluster</SubnetName>
+	      </VNet>
+	      <Domain>
+	        <DCOption>HeadNodeAsDC</DCOption>
+	        <DomainFQDN>hpclab.local</DomainFQDN>
+	      </Domain>
+	      <Database>
+	        <DBOption>LocalDB</DBOption>
+	      </Database>
+	      <HeadNode>
+	        <VMName>SUSE12RDMA-HN</VMName>
+	        <ServiceName>suse12rdma-je</ServiceName>
+	        <VMSize>A8</VMSize>
+	        <EnableRESTAPI />
+	        <EnableWebPortal />
+	      </HeadNode>
+	      <LinuxComputeNodes>
+	        <VMNamePattern>SUSE12RDMA-LN%1%</VMNamePattern>
+	        <ServiceName>suse12rdma-je</ServiceName>
+	        <VMSize>A8</VMSize>
+	        <NodeCount>2</NodeCount>
+	        <ImageName>b4590d9e3ed742e4a1d46e5424aa335e__suse-sles-12-hpc-v20150708</ImageName>
+	      </LinuxComputeNodes>
+	    </IaaSClusterConfig>
+	
 
     **Additional things to know**
 
@@ -93,9 +93,9 @@ It's easy to generate an RSA key pair, which contains a public key and a private
 
 2.	Run the following command.
 
-    ```
-    ssh-keygen -t rsa
-    ```
+	
+	    ssh-keygen -t rsa
+	    
 
     >[AZURE.NOTE] Press **Enter** to use the default settings until the command is completed. Do not enter a passphrase here; when prompted for a password, just press **Enter**.
 
@@ -112,18 +112,18 @@ It's easy to generate an RSA key pair, which contains a public key and a private
 
 3.	Create a file named C:\cred.xml and copy the RSA key data into it. You can find an example of this file in the sample files at the end of this article.
 
-    ```
-    <ExtendedData>
-        <PrivateKey>Copy the contents of private key here</PrivateKey>
-        <PublicKey>Copy the contents of public key here</PublicKey>
-    </ExtendedData>
-    ```
+	
+	    <ExtendedData>
+	        <PrivateKey>Copy the contents of private key here</PrivateKey>
+	        <PublicKey>Copy the contents of public key here</PublicKey>
+	    </ExtendedData>
+	    
 
 4.	Open a Command Prompt and enter the following command to set the credentials data for the hpclab\hpcuser account. You use the **extendeddata** parameter to pass the name of C:\cred.xml file you created for the key data.
 
-    ```
-    hpccred setcreds /extendeddata:c:\cred.xml /user:hpclab\hpcuser /password:<UserPassword>
-    ```
+	
+	    hpccred setcreds /extendeddata:c:\cred.xml /user:hpclab\hpcuser /password:<UserPassword>
+	    
 
     This command completes successfully without output. After setting the credentials for the user accounts you need to run jobs, store the cred.xml file in a secure location, or delete it.
 
@@ -164,38 +164,38 @@ Save the downloaded installation package for Intel MPI (l_mpi_p_5.0.3.048.tgz in
 
 1.  The following commands copy the installation package and extract it to /opt/intel on each node.
 
-    ```
-    clusrun /nodegroup:LinuxNodes mkdir -p /opt/intel
-
-    clusrun /nodegroup:LinuxNodes cp /openfoam/l_mpi_p_5.0.3.048.tgz /opt/intel/
-
-    clusrun /nodegroup:LinuxNodes tar -xzf /opt/intel/l_mpi_p_5.0.3.048.tgz -C /opt/intel/
-    ```
+	
+	    clusrun /nodegroup:LinuxNodes mkdir -p /opt/intel
+	
+	    clusrun /nodegroup:LinuxNodes cp /openfoam/l_mpi_p_5.0.3.048.tgz /opt/intel/
+	
+	    clusrun /nodegroup:LinuxNodes tar -xzf /opt/intel/l_mpi_p_5.0.3.048.tgz -C /opt/intel/
+	    
 
 2.  To install Intel MPI Library silently, use a silent.cfg file. You can find an example in the sample files at the end of this article. Place this file in the shared folder /openfoam. For details about the silent.cfg file, see [Intel MPI Library for Linux Installation Guide - Silent Installation](http://scc.ustc.edu.cn/zlsc/tc4600/intel/impi/INSTALL.html#silentinstall).
 
     >[AZURE.TIP]Make sure that you save your silent.cfg file as a text file with Linux line endings (LF only, not CR LF). This ensures that it runs properly on the Linux nodes.
 
 3.  Install Intel MPI Library in silent mode.
- 
-    ```
-    clusrun /nodegroup:LinuxNodes bash /opt/intel/l_mpi_p_5.0.3.048/install.sh --silent /openfoam/silent.cfg
-    ```
+
+	
+	    clusrun /nodegroup:LinuxNodes bash /opt/intel/l_mpi_p_5.0.3.048/install.sh --silent /openfoam/silent.cfg
+	    
     
 ### Configure MPI
 
 For testing, you should add the following lines to the /etc/security/limits.conf on each of the Linux nodes:
 
-```
-*               hard    memlock         unlimited
-*               soft    memlock         unlimited
-```
+	
+	*               hard    memlock         unlimited
+	*               soft    memlock         unlimited
+	
 
 Restart the Linux nodes after you update the limits.conf file. For example, use the following **clusrun** command.
 
-```
-clusrun /nodegroup:LinuxNodes systemctl reboot
-```
+	
+	clusrun /nodegroup:LinuxNodes systemctl reboot
+	
 
 After restarting, ensure that the shared folder is mounted as /openfoam.
 
@@ -206,23 +206,23 @@ Save the downloaded installation package for the OpenFOAM Source Pack (OpenFOAM-
 
 1.  Create a folder /opt/OpenFOAM on each Linux node, copy the source package to this folder, and extract it there.
 
-    ```
-    clusrun /nodegroup:LinuxNodes mkdir -p /opt/OpenFOAM
-
-    clusrun /nodegroup:LinuxNodes cp /openfoam/OpenFOAM-2.3.1.tgz /opt/OpenFOAM/
-
-    clusrun /nodegroup:LinuxNodes tar -xzf /opt/OpenFOAM/OpenFOAM-2.3.1.tgz -C /opt/OpenFOAM/
-    ```
+	
+	    clusrun /nodegroup:LinuxNodes mkdir -p /opt/OpenFOAM
+	
+	    clusrun /nodegroup:LinuxNodes cp /openfoam/OpenFOAM-2.3.1.tgz /opt/OpenFOAM/
+	
+	    clusrun /nodegroup:LinuxNodes tar -xzf /opt/OpenFOAM/OpenFOAM-2.3.1.tgz -C /opt/OpenFOAM/
+	    
 
 2.  To compile OpenFOAM with the Intel MPI Library, first set up some environment variables for both Intel MPI and OpenFOAM. Use a bash script called settings.sh to do this. You can find an example in the sample files at the end of this article. Place this file (saved with Linux line endings) in the shared folder /openfoam. This file also contains settings for the MPI and OpenFOAM runtimes that you use later to run an OpenFOAM job.
 
 3. Install dependent packages needed to compile OpenFOAM. Depending on your Linux distribution, you might first need to add a repository. Run **clusrun** commands similar to the following:
 
-    ```
-    clusrun /nodegroup:LinuxNodes zypper ar http://download.opensuse.org/distribution/13.2/repo/oss/suse/ opensuse
-    
-    clusrun /nodegroup:LinuxNodes zypper -n --gpg-auto-import-keys install --repo opensuse --force-resolution -t pattern devel_C_C++
-    ```
+	
+	    clusrun /nodegroup:LinuxNodes zypper ar http://download.opensuse.org/distribution/13.2/repo/oss/suse/ opensuse
+	    
+	    clusrun /nodegroup:LinuxNodes zypper -n --gpg-auto-import-keys install --repo opensuse --force-resolution -t pattern devel_C_C++
+	    
     
     If necessary, ssh to each Linux node to run the commands to confirm that they run properly.
 
@@ -242,9 +242,9 @@ Now get ready to run an MPI job called sloshingTank3D, which is one of the OpenF
 
 Run the following command in a Windows PowerShell window on the head node to set up the runtime environments for MPI and OpenFOAM on all Linux nodes. (This command is valid for SUSE Linux only.)
 
-```
-clusrun /nodegroup:LinuxNodes cp /openfoam/settings.sh /etc/profile.d/
-```
+	
+	clusrun /nodegroup:LinuxNodes cp /openfoam/settings.sh /etc/profile.d/
+	
 
 ### Prepare sample data
 
@@ -254,17 +254,17 @@ Use the head node share you configured previously to share files among the Linux
 
 2.  Run the following command to set up the OpenFOAM runtime environment, if you haven't already done this.
 
-    ```
-    $ source /openfoam/settings.sh
-    ```
+	
+	    $ source /openfoam/settings.sh
+	    
     
 3.  Copy the sloshingTank3D sample to the shared folder and navigate to it.
 
-    ```
-    $ cp -r $FOAM_TUTORIALS/multiphase/interDyMFoam/ras/sloshingTank3D /openfoam/
-
-    $ cd /openfoam/sloshingTank3D
-    ```
+	
+	    $ cp -r $FOAM_TUTORIALS/multiphase/interDyMFoam/ras/sloshingTank3D /openfoam/
+	
+	    $ cd /openfoam/sloshingTank3D
+	    
 
 4.  When you use the default parameters of this sample, it can take tens of minutes or longer to run, so you might want to modify some parameters to make it run faster. One simple choice is to modify the time step variables deltaT and writeInterval in the system/controlDict file, which stores all input data relating to the control of time and reading and writing solution data. For example, you could change the value of deltaT from 0.05 to 0.5 and the value of writeInterval from 0.05 to 0.5.
 
@@ -276,17 +276,17 @@ Use the head node share you configured previously to share files among the Linux
 
 6.  Run the following commands from the sloshingTank3D directory to prepare the sample data.
 
-    ```
-    $ . $WM_PROJECT_DIR/bin/tools/RunFunctions
-
-    $ m4 constant/polyMesh/blockMeshDict.m4 > constant/polyMesh/blockMeshDict
-
-    $ runApplication blockMesh
-
-    $ cp 0/alpha.water.org 0/alpha.water
-
-    $ runApplication setFields  
-    ```
+	
+	    $ . $WM_PROJECT_DIR/bin/tools/RunFunctions
+	
+	    $ m4 constant/polyMesh/blockMeshDict.m4 > constant/polyMesh/blockMeshDict
+	
+	    $ runApplication blockMesh
+	
+	    $ cp 0/alpha.water.org 0/alpha.water
+	
+	    $ runApplication setFields  
+	    
     
 7.  On the head node, you should see the sample data files are copied into C:\OpenFoam\sloshingTank3D. (C:\OpenFoam is the shared folder on the head node.)
 
@@ -299,11 +299,11 @@ In this step you create a host file (a list of compute nodes) which the **mpirun
 1.	On one of the Linux nodes, create a new file named hostfile under /openfoam, so this file can be reached at /openfoam/hostfile on all Linux nodes.
 
 2.	Write your Linux node names into this file. In this example, the file looks like this:
-    
-    ```       
-    SUSE12RDMA-LN1
-    SUSE12RDMA-LN2
-    ```
+
+	       
+	    SUSE12RDMA-LN1
+	    SUSE12RDMA-LN2
+	    
     
     >[AZURE.TIP]You can also create this file at C:\OpenFoam\hostfile on the head node. If you do this, save it as a text file with Linux line endings (LF only, not CR LF). This ensures that it runs properly on the Linux nodes.
 
@@ -334,10 +334,10 @@ In this step you create a host file (a list of compute nodes) which the **mpirun
         * `<Cores of node_n_...>`: the number of cores on the node allocated to this job.
 
         For example, if the job needs 2 nodes to run, $CCP_NODES_CORES will be similar to
-        
-        ```
-        2 SUSE12RDMA-LN1 8 SUSE12RDMA-LN2 8
-        ```
+
+	
+	        2 SUSE12RDMA-LN1 8 SUSE12RDMA-LN2 8
+	        
         
     3.	Calls the **mpirun** command and appends 2 parameters to the command line.
 
@@ -416,9 +416,9 @@ Now you can submit a job in HPC Cluster Manager. You'll need to pass the script 
 
     Under some conditions HPC Pack remembers the user information you input before and won't show this dialog box. To make HPC Pack show it again, enter the following in a Command Prompt window and then submit the job.
 
-    ```
-    hpccred delcreds
-    ```
+	
+	    hpccred delcreds
+	    
 
 8.	The job takes from tens of minutes to several hours according to the parameters you have set for the sample. In the heat map you will see the job running on 2 Linux nodes. 
 
@@ -468,166 +468,166 @@ Optionally use [EnSight](https://www.ceisoftware.com/) to visualize and analyze 
 
 ### Sample cred.xml file
 
-```
-<ExtendedData>
-  <PrivateKey>-----BEGIN RSA PRIVATE KEY-----
-MIIEpQIBAAKCAQEAxJKBABhnOsE9eneGHvsjdoXKooHUxpTHI1JVunAJkVmFy8JC
-qFt1pV98QCtKEHTC6kQ7tj1UT2N6nx1EY9BBHpZacnXmknpKdX4Nu0cNlSphLpru
-lscKPR3XVzkTwEF00OMiNJVknq8qXJF1T3lYx3rW5EnItn6C3nQm3gQPXP0ckYCF
-Jdtu/6SSgzV9kaapctLGPNp1Vjf9KeDQMrJXsQNHxnQcfiICp21NiUCiXosDqJrR
-AfzePdl0XwsNngouy8t0fPlNSngZvsx+kPGh/AKakKIYS0cO9W3FmdYNW8Xehzkc
-VzrtJhU8x21hXGfSC7V0ZeD7dMeTL3tQCVxCmwIDAQABAoIBAQCve8Jh3Wc6koxZ
-qh43xicwhdwSGyliZisoozYZDC/ebDb/Ydq0BYIPMiDwADVMX5AqJuPPmwyLGtm6
-9hu5p46aycrQ5+QA299g6DlF+PZtNbowKuvX+rRvPxagrTmupkCswjglDUEYUHPW
-05wQaNoSqtzwS9Y85M/b24FfLeyxK0n8zjKFErJaHdhVxI6cxw7RdVlSmM9UHmah
-wTkW8HkblbOArilAHi6SlRTNZG4gTGeDzPb7fYZo3hzJyLbcaNfJscUuqnAJ+6pT
-iY6NNp1E8PQgjvHe21yv3DRoVRM4egqQvNZgUbYAMUgr30T1UoxnUXwk2vqJMfg2
-Nzw0ESGRAoGBAPkfXjjGfc4HryqPkdx0kjXs0bXC3js2g4IXItK9YUFeZzf+476y
-OTMQg/8DUbqd5rLv7PITIAqpGs39pkfnyohPjOe2zZzeoyaXurYIPV98hhH880uH
-ZUhOxJYnlqHGxGT7p2PmmnAlmY4TSJrp12VnuiQVVVsXWOGPqHx4S4f9AoGBAMn/
-vuea7hsCgwIE25MJJ55FYCJodLkioQy6aGP4NgB89Azzg527WsQ6H5xhgVMKHWyu
-Q1snp+q8LyzD0i1veEvWb8EYifsMyTIPXOUTwZgzaTTCeJNHdc4gw1U22vd7OBYy
-nZCU7Tn8Pe6eIMNztnVduiv+2QHuiNPgN7M73/x3AoGBAOL0IcmFgy0EsR8MBq0Z
-ge4gnniBXCYDptEINNBaeVStJUnNKzwab6PGwwm6w2VI3thbXbi3lbRAlMve7fKK
-B2ghWNPsJOtppKbPCek2Hnt0HUwb7qX7Zlj2cX/99uvRAjChVsDbYA0VJAxcIwQG
-TxXx5pFi4g0HexCa6LrkeKMdAoGAcvRIACX7OwPC6nM5QgQDt95jRzGKu5EpdcTf
-g4TNtplliblLPYhRrzokoyoaHteyxxak3ktDFCLj9eW6xoCZRQ9Tqd/9JhGwrfxw
-MS19DtCzHoNNewM/135tqyD8m7pTwM4tPQqDtmwGErWKj7BaNZARUlhFxwOoemsv
-R6DbZyECgYEAhjL2N3Pc+WW+8x2bbIBN3rJcMjBBIivB62AwgYZnA2D5wk5o0DKD
-eesGSKS5l22ZMXJNShgzPKmv3HpH22CSVpO0sNZ6R+iG8a3oq4QkU61MT1CfGoMI
-a8lxTKnZCsRXU1HexqZs+DSc+30tz50bNqLdido/l5B4EJnQP03ciO0=
------END RSA PRIVATE KEY-----</PrivateKey>
-  <PublicKey>ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDEkoEAGGc6wT16d4Ye+yN2hcqigdTGlMcjUlW6cAmRWYXLwkKoW3WlX3xAK0oQdMLqRDu2PVRPY3qfHURj0EEellpydeaSekp1fg27Rw2VKmEumu6Wxwo9HddXORPAQXTQ4yI0lWSerypckXVPeVjHetbkSci2foLedCbeBA9c/RyRgIUl227/pJKDNX2Rpqly0sY82nVWN/0p4NAyslexA0fGdBx+IgKnbU2JQKJeiwOomtEB/N492XRfCw2eCi7Ly3R8+U1KeBm+zH6Q8aH8ApqQohhLRw71bcWZ1g1bxd6HORxXOu0mFTzHbWFcZ9ILtXRl4Pt0x5Mve1AJXEKb username@servername;</PublicKey>
-</ExtendedData>
-```
+	
+	<ExtendedData>
+	  <PrivateKey>-----BEGIN RSA PRIVATE KEY-----
+	MIIEpQIBAAKCAQEAxJKBABhnOsE9eneGHvsjdoXKooHUxpTHI1JVunAJkVmFy8JC
+	qFt1pV98QCtKEHTC6kQ7tj1UT2N6nx1EY9BBHpZacnXmknpKdX4Nu0cNlSphLpru
+	lscKPR3XVzkTwEF00OMiNJVknq8qXJF1T3lYx3rW5EnItn6C3nQm3gQPXP0ckYCF
+	Jdtu/6SSgzV9kaapctLGPNp1Vjf9KeDQMrJXsQNHxnQcfiICp21NiUCiXosDqJrR
+	AfzePdl0XwsNngouy8t0fPlNSngZvsx+kPGh/AKakKIYS0cO9W3FmdYNW8Xehzkc
+	VzrtJhU8x21hXGfSC7V0ZeD7dMeTL3tQCVxCmwIDAQABAoIBAQCve8Jh3Wc6koxZ
+	qh43xicwhdwSGyliZisoozYZDC/ebDb/Ydq0BYIPMiDwADVMX5AqJuPPmwyLGtm6
+	9hu5p46aycrQ5+QA299g6DlF+PZtNbowKuvX+rRvPxagrTmupkCswjglDUEYUHPW
+	05wQaNoSqtzwS9Y85M/b24FfLeyxK0n8zjKFErJaHdhVxI6cxw7RdVlSmM9UHmah
+	wTkW8HkblbOArilAHi6SlRTNZG4gTGeDzPb7fYZo3hzJyLbcaNfJscUuqnAJ+6pT
+	iY6NNp1E8PQgjvHe21yv3DRoVRM4egqQvNZgUbYAMUgr30T1UoxnUXwk2vqJMfg2
+	Nzw0ESGRAoGBAPkfXjjGfc4HryqPkdx0kjXs0bXC3js2g4IXItK9YUFeZzf+476y
+	OTMQg/8DUbqd5rLv7PITIAqpGs39pkfnyohPjOe2zZzeoyaXurYIPV98hhH880uH
+	ZUhOxJYnlqHGxGT7p2PmmnAlmY4TSJrp12VnuiQVVVsXWOGPqHx4S4f9AoGBAMn/
+	vuea7hsCgwIE25MJJ55FYCJodLkioQy6aGP4NgB89Azzg527WsQ6H5xhgVMKHWyu
+	Q1snp+q8LyzD0i1veEvWb8EYifsMyTIPXOUTwZgzaTTCeJNHdc4gw1U22vd7OBYy
+	nZCU7Tn8Pe6eIMNztnVduiv+2QHuiNPgN7M73/x3AoGBAOL0IcmFgy0EsR8MBq0Z
+	ge4gnniBXCYDptEINNBaeVStJUnNKzwab6PGwwm6w2VI3thbXbi3lbRAlMve7fKK
+	B2ghWNPsJOtppKbPCek2Hnt0HUwb7qX7Zlj2cX/99uvRAjChVsDbYA0VJAxcIwQG
+	TxXx5pFi4g0HexCa6LrkeKMdAoGAcvRIACX7OwPC6nM5QgQDt95jRzGKu5EpdcTf
+	g4TNtplliblLPYhRrzokoyoaHteyxxak3ktDFCLj9eW6xoCZRQ9Tqd/9JhGwrfxw
+	MS19DtCzHoNNewM/135tqyD8m7pTwM4tPQqDtmwGErWKj7BaNZARUlhFxwOoemsv
+	R6DbZyECgYEAhjL2N3Pc+WW+8x2bbIBN3rJcMjBBIivB62AwgYZnA2D5wk5o0DKD
+	eesGSKS5l22ZMXJNShgzPKmv3HpH22CSVpO0sNZ6R+iG8a3oq4QkU61MT1CfGoMI
+	a8lxTKnZCsRXU1HexqZs+DSc+30tz50bNqLdido/l5B4EJnQP03ciO0=
+	-----END RSA PRIVATE KEY-----</PrivateKey>
+	  <PublicKey>ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDEkoEAGGc6wT16d4Ye+yN2hcqigdTGlMcjUlW6cAmRWYXLwkKoW3WlX3xAK0oQdMLqRDu2PVRPY3qfHURj0EEellpydeaSekp1fg27Rw2VKmEumu6Wxwo9HddXORPAQXTQ4yI0lWSerypckXVPeVjHetbkSci2foLedCbeBA9c/RyRgIUl227/pJKDNX2Rpqly0sY82nVWN/0p4NAyslexA0fGdBx+IgKnbU2JQKJeiwOomtEB/N492XRfCw2eCi7Ly3R8+U1KeBm+zH6Q8aH8ApqQohhLRw71bcWZ1g1bxd6HORxXOu0mFTzHbWFcZ9ILtXRl4Pt0x5Mve1AJXEKb username@servername;</PublicKey>
+	</ExtendedData>
+	
 ### Sample silent.cfg file
 
-```
-# Patterns used to check silent configuration file
-#
-# anythingpat - any string
-# filepat     - the file location pattern (/file/location/to/license.lic)
-# lspat       - the license server address pattern (0123@hostname)
-# snpat       - the serial number pattern (ABCD-01234567)
-
-# accept EULA, valid values are: {accept, decline}
-ACCEPT_EULA=accept
-
-# optional error behavior, valid values are: {yes, no}
-CONTINUE_WITH_OPTIONAL_ERROR=yes
-
-# install location, valid values are: {/opt/intel, filepat}
-PSET_INSTALL_DIR=/opt/intel
-
-# continue with overwrite of existing installation directory, valid values are: {yes, no}
-CONTINUE_WITH_INSTALLDIR_OVERWRITE=yes
-
-# list of components to install, valid values are: {ALL, DEFAULTS, anythingpat}
-COMPONENTS=DEFAULTS
-
-# installation mode, valid values are: {install, modify, repair, uninstall}
-PSET_MODE=install
-
-# directory for non-RPM database, valid values are: {filepat}
-#NONRPM_DB_DIR=filepat
-
-# Serial number, valid values are: {snpat}
-#ACTIVATION_SERIAL_NUMBER=snpat
-
-# License file or license server, valid values are: {lspat, filepat}
-#ACTIVATION_LICENSE_FILE=
-
-# Activation type, valid values are: {exist_lic, license_server, license_file, trial_lic, serial_number}
-ACTIVATION_TYPE=trial_lic
-
-# Path to the cluster description file, valid values are: {filepat}
-#CLUSTER_INSTALL_MACHINES_FILE=filepat
-
-# Intel(R) Software Improvement Program opt-in, valid values are: {yes, no}
-PHONEHOME_SEND_USAGE_DATA=no
-
-# Perform validation of digital signatures of RPM files, valid values are: {yes, no}
-SIGNING_ENABLED=yes
-
-# Select yes to enable mpi-selector integration, valid values are: {yes, no}
-ENVIRONMENT_REG_MPI_ENV=no
-
-# Select yes to update ld.so.conf, valid values are: {yes, no}
-ENVIRONMENT_LD_SO_CONF=no
-
-```
+	
+	# Patterns used to check silent configuration file
+	#
+	# anythingpat - any string
+	# filepat     - the file location pattern (/file/location/to/license.lic)
+	# lspat       - the license server address pattern (0123@hostname)
+	# snpat       - the serial number pattern (ABCD-01234567)
+	
+	# accept EULA, valid values are: {accept, decline}
+	ACCEPT_EULA=accept
+	
+	# optional error behavior, valid values are: {yes, no}
+	CONTINUE_WITH_OPTIONAL_ERROR=yes
+	
+	# install location, valid values are: {/opt/intel, filepat}
+	PSET_INSTALL_DIR=/opt/intel
+	
+	# continue with overwrite of existing installation directory, valid values are: {yes, no}
+	CONTINUE_WITH_INSTALLDIR_OVERWRITE=yes
+	
+	# list of components to install, valid values are: {ALL, DEFAULTS, anythingpat}
+	COMPONENTS=DEFAULTS
+	
+	# installation mode, valid values are: {install, modify, repair, uninstall}
+	PSET_MODE=install
+	
+	# directory for non-RPM database, valid values are: {filepat}
+	#NONRPM_DB_DIR=filepat
+	
+	# Serial number, valid values are: {snpat}
+	#ACTIVATION_SERIAL_NUMBER=snpat
+	
+	# License file or license server, valid values are: {lspat, filepat}
+	#ACTIVATION_LICENSE_FILE=
+	
+	# Activation type, valid values are: {exist_lic, license_server, license_file, trial_lic, serial_number}
+	ACTIVATION_TYPE=trial_lic
+	
+	# Path to the cluster description file, valid values are: {filepat}
+	#CLUSTER_INSTALL_MACHINES_FILE=filepat
+	
+	# Intel(R) Software Improvement Program opt-in, valid values are: {yes, no}
+	PHONEHOME_SEND_USAGE_DATA=no
+	
+	# Perform validation of digital signatures of RPM files, valid values are: {yes, no}
+	SIGNING_ENABLED=yes
+	
+	# Select yes to enable mpi-selector integration, valid values are: {yes, no}
+	ENVIRONMENT_REG_MPI_ENV=no
+	
+	# Select yes to update ld.so.conf, valid values are: {yes, no}
+	ENVIRONMENT_LD_SO_CONF=no
+	
+	
 
 ### Sample settings.sh script
 
-```
-#!/bin/bash
-
-# impi
-source /opt/intel/impi/5.0.3.048/bin64/mpivars.sh
-export MPI_ROOT=$I_MPI_ROOT
-export I_MPI_FABRICS=shm:dapl
-export I_MPI_DAPL_PROVIDER=ofa-v2-ib0
-export I_MPI_DYNAMIC_CONNECTION=0
-
-# openfoam
-export FOAM_INST_DIR=/opt/OpenFOAM
-source /opt/OpenFOAM/OpenFOAM-2.3.1/etc/bashrc
-export WM_MPLIB=INTELMPI
-```
+	
+	#!/bin/bash
+	
+	# impi
+	source /opt/intel/impi/5.0.3.048/bin64/mpivars.sh
+	export MPI_ROOT=$I_MPI_ROOT
+	export I_MPI_FABRICS=shm:dapl
+	export I_MPI_DAPL_PROVIDER=ofa-v2-ib0
+	export I_MPI_DYNAMIC_CONNECTION=0
+	
+	# openfoam
+	export FOAM_INST_DIR=/opt/OpenFOAM
+	source /opt/OpenFOAM/OpenFOAM-2.3.1/etc/bashrc
+	export WM_MPLIB=INTELMPI
+	
 
 
 ###Sample hpcimpirun.sh script
 
-```
-#!/bin/bash
-
-# The path of this script
-SCRIPT_PATH="$( dirname "${BASH_SOURCE[0]}" )"
-
-# Set mpirun runtime evironment
-source /opt/intel/impi/5.0.3.048/bin64/mpivars.sh
-export MPI_ROOT=$I_MPI_ROOT
-export I_MPI_FABRICS=shm:dapl
-export I_MPI_DAPL_PROVIDER=ofa-v2-ib0
-export I_MPI_DYNAMIC_CONNECTION=0
-
-# mpirun command
-MPIRUN=mpirun
-# Argument of "--hostfile"
-NODELIST_OPT="--hostfile"
-# Argument of "-np"
-NUMPROCESS_OPT="-np"
-
-# Get node information from ENVs
-NODESCORES=(${CCP_NODES_CORES})
-COUNT=${#NODESCORES[@]}
-
-if [ ${COUNT} -eq 0 ]
-then
-	# CCP_NODES_CORES is not found or is empty, just run the mpirun without hostfile arg.
-	${MPIRUN} $*
-else
-	# Create the hostfile file
-	NODELIST_PATH=${SCRIPT_PATH}/hostfile_$$
-
-	# Get every node name and write into the hostfile file
-	I=1
-	while [ ${I} -lt ${COUNT} ]
-	do
-		echo "${NODESCORES[${I}]}" >> ${NODELIST_PATH}
-		let "I=${I}+2"
-	done
-
-	# Run the mpirun with hostfile arg
-	${MPIRUN} ${NUMPROCESS_OPT} ${CCP_NUMCPUS} ${NODELIST_OPT} ${NODELIST_PATH} $*
-
-	RTNSTS=$?
-	rm -f ${NODELIST_PATH}
-fi
-
-exit ${RTNSTS}
-
-```
+	
+	#!/bin/bash
+	
+	# The path of this script
+	SCRIPT_PATH="$( dirname "${BASH_SOURCE[0]}" )"
+	
+	# Set mpirun runtime evironment
+	source /opt/intel/impi/5.0.3.048/bin64/mpivars.sh
+	export MPI_ROOT=$I_MPI_ROOT
+	export I_MPI_FABRICS=shm:dapl
+	export I_MPI_DAPL_PROVIDER=ofa-v2-ib0
+	export I_MPI_DYNAMIC_CONNECTION=0
+	
+	# mpirun command
+	MPIRUN=mpirun
+	# Argument of "--hostfile"
+	NODELIST_OPT="--hostfile"
+	# Argument of "-np"
+	NUMPROCESS_OPT="-np"
+	
+	# Get node information from ENVs
+	NODESCORES=(${CCP_NODES_CORES})
+	COUNT=${#NODESCORES[@]}
+	
+	if [ ${COUNT} -eq 0 ]
+	then
+		# CCP_NODES_CORES is not found or is empty, just run the mpirun without hostfile arg.
+		${MPIRUN} $*
+	else
+		# Create the hostfile file
+		NODELIST_PATH=${SCRIPT_PATH}/hostfile_$$
+	
+		# Get every node name and write into the hostfile file
+		I=1
+		while [ ${I} -lt ${COUNT} ]
+		do
+			echo "${NODESCORES[${I}]}" >> ${NODELIST_PATH}
+			let "I=${I}+2"
+		done
+	
+		# Run the mpirun with hostfile arg
+		${MPIRUN} ${NUMPROCESS_OPT} ${CCP_NUMCPUS} ${NODELIST_OPT} ${NODELIST_PATH} $*
+	
+		RTNSTS=$?
+		rm -f ${NODELIST_PATH}
+	fi
+	
+	exit ${RTNSTS}
+	
+	
 
 
 

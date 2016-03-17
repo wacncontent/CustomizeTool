@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Configure Performance traffic routing method | Windows Azure"
+   pageTitle="Configure Performance traffic routing method | Azure"
    description="This article will help you configure performance traffic routing method in Traffic Manager"
    services="traffic-manager"
    documentationCenter=""
@@ -13,7 +13,7 @@
 
 # Configure Performance traffic routing method
 
-In order to route traffic for cloud services and websites (endpoints) that are located in different datacenters across the globe (also known as regions), you can direct incoming traffic to the endpoint with the lowest latency from the requesting client. Typically, the datacenter with the lowest latency corresponds to the closest in geographic distance. The Performance traffic routing method will allow you to distribute based on lowest latency, but cannot take into account real-time changes in network configuration or load. For more information on the different traffic routing methods that Azure Traffic Manager provides, ses [About Traffic Manager traffic routing Methods](/documentation/articles/traffic-manager-load-balancing-methods).
+In order to route traffic for cloud services and websites (endpoints) that are located in different datacenters across the globe (also known as regions), you can direct incoming traffic to the endpoint with the lowest latency from the requesting client. Typically, the datacenter with the lowest latency corresponds to the closest in geographic distance. The Performance traffic routing method will allow you to distribute based on lowest latency, but cannot take into account real-time changes in network configuration or load. For more information on the different traffic routing methods that Azure Traffic Manager provides, see [About Traffic Manager traffic routing Methods](/documentation/articles/traffic-manager-load-balancing-methods).
 
 ## Route traffic based on lowest latency across a set of endpoints:
 

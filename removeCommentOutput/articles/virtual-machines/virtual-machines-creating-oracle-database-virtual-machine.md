@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Create an Oracle Database VM with the Azure Management Portal | Windows Azure"
+	pageTitle="Create an Oracle Database VM with the Azure Management Portal | Azure"
 	description="Learn how to create a virtual machine with an Oracle Database on it using the classic deployment model and the Azure Management Portal."
 	services="virtual-machines"
 	authors="bbenz"

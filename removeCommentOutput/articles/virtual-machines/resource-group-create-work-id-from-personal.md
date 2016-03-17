@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Create a Work or School identity in AAD | Windows Azure"
+   pageTitle="Create a Work or School identity in AAD | Azure"
    description="Learn how to create a work or school identity in Azure Active Directory to use with Resource Manager and classic deployment models."
    services="virtual-machines"
    documentationCenter=""

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="What's new in Hadoop cluster versions of HDInsight? | Windows Azure"
+	pageTitle="What's new in Hadoop cluster versions of HDInsight? | Azure"
 	description="HDInsight supports multiple deployable Hadoop cluster versions. See the Hadoop and HortonWorks Data Platform (HDP) distribution versions supported."
 	services="hdinsight"
 	editor="cgronlun"
@@ -48,7 +48,7 @@ See [HDInsight release notes](/documentation/articles/hdinsight-release-notes) f
 
 ### Select a version when creating an HDInsight cluster
 
-When creating a cluster through the HDInsight Windows PowerShell cmdlets or the HDInsight .NET SDK, you can choose the version for the HDInsight Hadoop cluster by using the **Version** drop-down on the **Optional Configuration** blade in the Azure Management Portal.
+When creating a cluster through the HDInsight Windows PowerShell cmdlets or the HDInsight .NET SDK, you can choose the version for the HDInsight Hadoop cluster by using the **Version** parameter.
 
 ##Feature highlights
 Some of the salient features of the HDInsight platform include:

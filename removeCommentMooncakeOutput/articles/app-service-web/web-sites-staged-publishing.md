@@ -107,7 +107,18 @@ Multi-phase swap is available to simplify validation in the context of configura
 
 <a name="Rollback"></a>
 ## To rollback a production app after swap ##
+
 If any errors are identified in production after a slot swap, roll the slots back to their pre-swap states by swapping the same two slots immediately.
+
+<a name="Warm-up"></a>
+## Custom warm-up before swap ##
+
+Some apps may require custom warm-up actions. The applicationInitialization configuration element in web.config allows you to specify custom initialization actions to be performed before a request is received. The swap operation will wait for this custom warm-up to complete. Here is a sample web.config fragment.
+
+    <applicationInitialization>
+        <add initializationPage="/" hostName="[web app hostname]" />
+        <add initializationPage="/Home/About" hostname="[web app hostname]" />
+    </applicationInitialization>
 
 <a name="Delete"></a>
 ## To delete a deployment slot##
@@ -121,11 +132,11 @@ In the blade for a deployment slot, click **Delete** in the command bar.
 <a name="PowerShell"></a>
 ## Azure PowerShell cmdlets for deployment slots
 
-[AZURE.INCLUDE [AzureRm PowerShell with Azure China Cloud](../includes/azurerm-azurechinacloud-environment-parameter.md)]
-
 Azure PowerShell is a module that provides cmdlets to manage Azure through Windows PowerShell, including support for managing web app deployment slots in Azure Web App.
 
-- For information on installing and configuring Azure PowerShell, and on authenticating Azure PowerShell with your Azure subscription, see [How to install and configure Windows Azure PowerShell](/documentation/articles/powershell-install-configure).  
+[AZURE.INCLUDE [AzureRm PowerShell with Azure China Cloud](../includes/azurerm-azurechinacloud-environment-parameter.md)]
+
+- For information on installing and configuring Azure PowerShell, and on authenticating Azure PowerShell with your Azure subscription, see [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure).  
 
 - In order to use the new Azure Resource Manager mode for PowerShell cmdlets start with the following: `Switch-AzureMode -Name AzureResourceManager`.
 
@@ -174,9 +185,9 @@ Azure PowerShell is a module that provides cmdlets to manage Azure through Windo
 <a name="CLI"></a>
 ## Azure Command-Line Interface (Azure CLI) commands for Deployment Slots
 
-[AZURE.INCLUDE [Azure CLI with Azure China Cloud](../includes/azure-cli-azurechinacloud-environment-parameter.md)]
-
 The Azure CLI provides cross-platform commands for working with Azure, including support for managing Web App deployment slots.
+
+[AZURE.INCLUDE [Azure CLI with Azure China Cloud](../includes/azure-cli-azurechinacloud-environment-parameter.md)]
 
 - For instructions on installing and configuring the Azure CLI, including information on how to connect Azure CLI to your Azure subscription, see [Install and Configure the Azure CLI](/documentation/articles/xplat-cli-install).
 
@@ -215,7 +226,7 @@ To delete a deployment slot that is no longer needed, use the **azure site delet
 ## Next Steps ##
 [Azure Web App - block web access to non-production deployment slots](http://ruslany.net/2014/04/azure-web-sites-block-web-access-to-non-production-deployment-slots/)
 
-[Windows Azure Trial](/pricing/1rmb-trial/)
+[Azure Trial](/pricing/1rmb-trial/)
 
 <!-- IMAGES -->
 [QGAddNewDeploymentSlot]:  ./media/web-sites-staged-publishing/QGAddNewDeploymentSlot.png

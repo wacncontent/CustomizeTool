@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Use Hadoop Hive with PowerShell in HDInsight | Windows Azure"
+   pageTitle="Use Hadoop Hive with PowerShell in HDInsight | Azure"
    description="Use PowerShell to run Hive queries in Hadoop on HDInsight."
    services="hdinsight"
    documentationCenter=""

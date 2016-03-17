@@ -69,16 +69,6 @@ this topic:
 -   [Starter project download][StarterProject]
 -   [Completed project download][CompletedProject]
 
-<h2>Steps in this tutorial</h2>
-
-- [Deploy the starter project to a Windows Azure Website][]
-- [Bootstrap CSS Framework][]
-- [Override the Views, Layouts, and Partial Views][]
-- [Improve the Speakers List][]
-- [Improve the Tags List][]
-- [Improve the Dates List][]
-- [Improve the SessionsTable View][]
-- [Improve the SessionByCode View][]
 ##<a name="bkmk_DeployStarterProject"></a>Deploy the starter project to an Azure web app
 
 1.	Download the conference-listing application [starter project][StarterProject].
@@ -540,7 +530,7 @@ Switch to the desktop browser. Again, note the consistent look.
 In this section, you'll make the *SessionsTable* view more
 mobile-friendly. This change is more extensive the previous changes.
 
-In the mobile browser, tap the **Tag** button, then enter `asp` in the
+In the mobile browser, tap the **Tag** button, then enter **asp** in the
 search box.
 
 ![][AllTagsFixedSearchByASP]
@@ -616,7 +606,7 @@ browser, you will see that the arrangement changes to three columns.
 
 Finally, you'll fix the *SessionByCode* view to make it mobile-friendly.
 
-In the mobile browser, tap the **Tag** button, then enter `asp` in the
+In the mobile browser, tap the **Tag** button, then enter **asp** in the
 search box.
 
 ![][AllTagsFixedSearchByASP]

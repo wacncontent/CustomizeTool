@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Monitor and manage HDInsight clusters using the Apache Ambari Web UI | Windows Azure"
+   pageTitle="Monitor and manage HDInsight clusters using the Apache Ambari Web UI | Azure"
    description="Learn how to use Ambari to monitor and manage Linux-based HDInsight clusters. In this document, you will learn how to use the Ambari Web UI included with HDInsight clusters."
    services="hdinsight"
    documentationCenter=""

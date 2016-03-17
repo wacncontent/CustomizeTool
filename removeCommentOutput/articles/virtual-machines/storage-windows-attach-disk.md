@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Attach a disk to a VM | Windows Azure"
+	pageTitle="Attach a disk to a VM | Azure"
 	description="Attach a data disk to a Windows virtual machine created with the classic deployment model and initialize it."
 	services="virtual-machines, storage"
 	documentationCenter=""
@@ -55,4 +55,4 @@ Here's a walkthrough of the steps in this tutorial.
 
 [About disks and VHDs for virtual machines](/documentation/articles/virtual-machines-disks-vhds)
 
-[logon]: virtual-machines-log-on-windows-server.md
+[logon]: /documentation/articles/virtual-machines-log-on-windows-server

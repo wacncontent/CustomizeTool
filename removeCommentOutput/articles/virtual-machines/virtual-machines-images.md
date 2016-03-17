@@ -1,5 +1,5 @@
 <properties
-	pageTitle="About images for virtual machines | Windows Azure"
+	pageTitle="About images for virtual machines | Azure"
 	description="Learn about how images are used with virtual machines in Azure."
 	services="virtual-machines"
 	documentationCenter=""

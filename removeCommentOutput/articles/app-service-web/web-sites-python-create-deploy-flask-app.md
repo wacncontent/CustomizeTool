@@ -384,7 +384,7 @@ For more information, see also the [Python Developer Center](/develop/python/).
 
 <!--Link references-->
 [Flask and MongoDB on Azure with Python Tools for Visual Studio]: https://github.com/microsoft/ptvs/wiki/Flask-and-MongoDB-on-Azure
-[Flask and Azure Table Storage on Azure with Python Tools for Visual Studio]: web-sites-python-ptvs-flask-table-storage.md
+[Flask and Azure Table Storage on Azure with Python Tools for Visual Studio]: /documentation/articles/web-sites-python-ptvs-flask-table-storage
 
 <!--External Link references-->
 [Azure SDK for Python 2.7]: http://go.microsoft.com/fwlink/?linkid=254281

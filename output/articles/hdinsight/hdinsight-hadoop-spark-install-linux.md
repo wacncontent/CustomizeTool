@@ -1,5 +1,7 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
-	pageTitle="Use Script Action to install Apache Spark on Linux-based HDInsight (Hadoop) | Windows Azure" 
+	pageTitle="Use Script Action to install Apache Spark on Linux-based HDInsight (Hadoop) | Azure" 
 	description="Learn how to install Spark on a Linux-based HDInsight cluster using Script Actions. Script Actions allow you to customize the cluster during creation, by changing cluster configuration or installing services and utilities." 
 	services="hdinsight" 
 	documentationCenter="" 
@@ -228,6 +230,6 @@ In this section, you will create a Scala application that counts the number of l
 
 
 
-[hdinsight-install-r]: hdinsight-hadoop-r-scripts-linux.md
-[hdinsight-cluster-customize]: hdinsight-hadoop-customize-cluster-v1.md
+[hdinsight-install-r]: /documentation/articles/hdinsight-hadoop-r-scripts-linux
+[hdinsight-cluster-customize]: /documentation/articles/hdinsight-hadoop-customize-cluster-v1
  

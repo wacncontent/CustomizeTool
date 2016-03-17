@@ -27,18 +27,11 @@ If you need more help at any point in this article, you can contact the Azure ex
 
 [AZURE.INCLUDE [introfooter](../includes/custom-dns-web-site-intro-notes.md)]
 
-In this article:
 
--   [Overview]
--   [DNS record types]
--   [Find the virtual IP address]
--   [Create the DNS records]
--   [Create an ćłwverify?record (A records only)](#awverify)
--   [Enable the domain name on your website]
 ##<a href="overview"></a> Overview
 
 
-If you have a domain name already, or you want reserve domain from other domain registrars, here are the general steps to bring a custom domain name for web site :
+If you have a domain name already, or you want reserve domain from other domain registrars, here are the general steps to bring a custom domain name for web site:
 
 1. Reserve your domain name. This article does not cover that process. There are many domain registrars to choose from. When you sign up, their site will walk you through the process.
 1. Create DNS records that map the domain to your Azure web app.
@@ -123,7 +116,7 @@ If you create an A record, web app also requires a special CNAME record, which i
 
 Visitors to your web app will not see the awverify subdomain; it's only for Azure to verify your domain.
 
-##<a name="enable-the-domain-name-on-your-website" /></a> Enable the domain name on your web site
+##<a name="enable-the-domain-name-on-your-website" /></a> Enable the domain name on your web app
 
 [AZURE.INCLUDE [modes](../includes/custom-dns-web-site-enable-on-web-site.md)]
 

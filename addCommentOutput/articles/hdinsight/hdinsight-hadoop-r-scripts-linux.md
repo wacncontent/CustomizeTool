@@ -1,5 +1,7 @@
+<!-- not suitable for Mooncake -->
+
 <properties
-	pageTitle="Install R on Linux-based HDInsight | Windows Azure"
+	pageTitle="Install R on Linux-based HDInsight | Azure"
 	description="Learn how to install and use R to customize Linux-based Hadoop clusters."
 	services="hdinsight"
 	documentationCenter=""
@@ -9,7 +11,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="12/04/2015"
+	ms.date="02/05/2016"
 	wacn.date=""/>
 
 # Install and use R on HDInsight Hadoop clusters
@@ -137,7 +139,13 @@ After the cluster has finished provisioning, use the following steps to use R to
 
 - [Install Solr on HDInsight clusters](/documentation/articles/hdinsight-hadoop-solr-install-v1). Use cluster customization to install Solr on HDInsight Hadoop clusters. Solr allows you to perform powerful search operations on stored data.
 
-- [Install Hue on HDInsight clusters](/documentation/articles/hdinsight-hadoop-hue-linux). Use cluster customization to install Hue on HDInsight Hadoop clusters. Hue is a set of <!-- deleted by customization Web applications --><!-- keep by customization: begin --> web sites <!-- keep by customization: end --> used to interact with a Hadoop cluster.
+- [Install Hue on HDInsight clusters](/documentation/articles/hdinsight-hadoop-hue-linux). Use cluster customization to install Hue on HDInsight Hadoop clusters. Hue is a set of Web applications used to interact with a Hadoop cluster.
 
+
+[hdinsight-cluster-customize]: /documentation/articles/hdinsight-hadoop-customize-cluster-v1
+[hdinsight-install-spark]: /documentation/articles/hdinsight-hadoop-spark-install-linux
+
+
 [hdinsight-cluster-customize]: hdinsight-hadoop-customize-cluster-v1.md
 [hdinsight-install-spark]: hdinsight-hadoop-spark-install-linux.md
+

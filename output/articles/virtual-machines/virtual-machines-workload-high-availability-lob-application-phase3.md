@@ -1,5 +1,7 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
-	pageTitle="Line of business application Phase 3 | Windows Azure" 
+	pageTitle="Line of business application Phase 3 | Azure" 
 	description="Create the computers and the SQL Server cluster and enable Availability Groups in Phase 3 of the line of business application in Azure." 
 	documentationCenter=""
 	services="virtual-machines" 

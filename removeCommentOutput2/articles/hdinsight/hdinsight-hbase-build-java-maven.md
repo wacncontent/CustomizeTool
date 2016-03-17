@@ -1,5 +1,5 @@
 <properties
-pageTitle="Build an HBase application using Maven, and deploy to Windows-based HDInsight | Windows Azure"
+pageTitle="Build an HBase application using Maven, and deploy to Windows-based HDInsight | Azure"
 description="Learn how to use Apache Maven to build a Java-based Apache HBase application, then deploy it to a Windows-based Azure HDInsight cluster."
 services="hdinsight"
 documentationCenter=""
@@ -152,7 +152,7 @@ Learn how to create and build an [Apache HBase](http://hbase.apache.org/) applic
 
     This file will be used to load the HBase configuration for an HDInsight cluster.
 
-    > [AZURE.NOTE] This is a very minimal hbase-site.xml file, and it contains the bare minimum settings for the HDInsight cluster.
+    > [AZURE.NOTE] This is a very minimal hbase-site.xml file, and it contains the bare minimum settings for the HDInsight cluster. For Linux-based clusters, y
 
 3. Save the __hbase-site.xml__ file.
 

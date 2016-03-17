@@ -18,7 +18,7 @@
 
 This tutorial describes how to get started running Python in Azure Web Apps. Web Apps provides limited free hosting and rapid deployment, and you can use Python! As your app grows, you can switch to paid hosting, and you can also integrate with all of the other Azure services.
 
-You will create a web app using the Bottle web framework (see alternate versions of this tutorial for [Django](/documentation/articles/web-sites-python-create-deploy-django-app) and [Flask](/documentation/articles/web-sites-python-create-deploy-flask-app)). You will create the web app from the Azure gallery, set up Git deployment, and clone the repository locally. Then you will run the web app locally, make changes, commit and push them to [Azure Web Apps](/documentation/services/web-sites/). The tutorial shows how to do this from Windows or Mac/Linux.
+You will create a web app using the Bottle web framework (see alternate versions of this tutorial for [Django](/documentation/articles/web-sites-python-create-deploy-django-app) and [Flask](/documentation/articles/web-sites-python-create-deploy-flask-app)). You will create the web app in Azure, set up Git deployment, and clone the repository locally. Then you will run the web app locally, make changes, commit and push them to [Azure Web Apps](/documentation/services/web-sites/). The tutorial shows how to do this from Windows or Mac/Linux.
 
 [AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
 
@@ -184,7 +184,7 @@ To trigger a deployment, click on **Sync** or **Push**. Sync does both a push an
 
 The first deployment will take some time, as it will create a virtual environment, install packages, etc.
 
-Visual Studio doesn't show the progress of the deployment.
+Visual Studio doesn't show the progress of the deployment. 
 
 Browse to the Azure URL to view your changes.
 

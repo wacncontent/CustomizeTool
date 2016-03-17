@@ -148,13 +148,13 @@ In this section, we'll configure our web app to use the MySQL database we just c
 
 ## Publish the web app to Azure
 
-The Azure .NET SDK provides an easy way to deploy your web app to Azure Web App.
+The Azure .NET SDK provides an easy way to deploy your web app to Azure.
 
 1.  In **Solution Explorer**, right-click on the project node and select **Publish**.
 
   	![Publish Web Dialog](./media/web-sites-python-ptvs-django-mysql/PollsCommonPublishWebSiteDialog.png)
 
-1.  Click on **Windows Azure Web Apps**.
+1.  Click on **Azure Web Apps**.
 
 1.  Click on **New** to create a new web app.
 
@@ -165,7 +165,7 @@ The Azure .NET SDK provides an easy way to deploy your web app to Azure Web App.
 	-	**Region**
 	-	Leave **Database server** set to **No database**
 
-  	<!-- ![Create Site on Windows Azure Dialog](./media/web-sites-python-ptvs-django-mysql/PollsCommonCreateWebSite.png) -->
+  	<!-- ![Create Site on Azure Dialog](./media/web-sites-python-ptvs-django-mysql/PollsCommonCreateWebSite.png) -->
 
 1.  Accept all other defaults and click **Publish**.
 
@@ -182,7 +182,7 @@ Follow these links to learn more about Python Tools for Visual Studio, Django an
 - [Python Tools for Visual Studio Documentation]
   - [Web Projects]
   - [Cloud Service Projects]
-  - [Remote Debugging on Windows Azure]
+  - [Remote Debugging on Azure]
 - [Django Documentation]
 - [MySQL]
 
@@ -194,7 +194,7 @@ For more information, see the [Python Developer Center](/develop/python/).
 
 <!--Link references-->
 [Python Developer Center]: /develop/python/
-[Azure Cloud Services]: ../cloud-services-python-ptvs.md
+[Azure Cloud Services]: /documentation/articles/cloud-services-python-ptvs
 
 <!--External Link references-->
 [Azure Management Portal]: https://manage.windowsazure.cn
@@ -205,7 +205,7 @@ For more information, see the [Python Developer Center](/develop/python/).
 [Azure SDK Tools for VS 2015]: http://go.microsoft.com/fwlink/?LinkId=518003
 [Python 2.7 32-bit]: http://go.microsoft.com/fwlink/?LinkId=517190 
 [Python Tools for Visual Studio Documentation]: http://aka.ms/ptvsdocs
-[Remote Debugging on Windows Azure]: http://go.microsoft.com/fwlink/?LinkId=624026
+[Remote Debugging on Azure]: http://go.microsoft.com/fwlink/?LinkId=624026
 [Web Projects]: http://go.microsoft.com/fwlink/?LinkId=624027
 [Cloud Service Projects]: http://go.microsoft.com/fwlink/?LinkId=624028
 [Django Documentation]: https://www.djangoproject.com/

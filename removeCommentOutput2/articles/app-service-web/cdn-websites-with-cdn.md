@@ -13,7 +13,7 @@
 	wacn.date=""/>
 
 
-# Use Azure CDN in Azure Web App 
+# Use Azure CDN in Azure Web App
 
 [Azure Web App](/documentation/services/web-sites/) can be integrated with [Azure CDN](/home/features/cdn/), adding to the global scaling capabilities inherent in [Azure Web Apps](/documentation/services/web-sites/) by serving your web app content globally from server nodes near your customers (an updated list of all current node locations can be found [here](http://msdn.microsoft.com/zh-cn/library/azure/gg680302.aspx)). In scenarios like serving static images, this integration can dramatically increase the performance of your Azure Web Apps and significantly improves your web app's user experience worldwide. 
 
@@ -34,11 +34,13 @@ You will deploy a web app to Azure using the default ASP.NET MVC template in Vis
 
 This tutorial has the following prerequisites:
 
--	An active [Windows Azure account](/account/)
+
+-	An active [Azure account](/pricing/1rmb-trial/)
 -	Visual Studio 2015 with the [Azure SDK for .NET](https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VWDOrVs2013AzurePack.appids). If you use Visual Studio, the steps may vary.
 
 > [AZURE.NOTE] You need an Azure account to complete this tutorial:
 > + You can [open an Azure account for free](/pricing/1rmb-trial/) - You get credits you can use to try out paid Azure services, and even after they're used up you can keep the account and use free Azure services, such as Web Apps.
+
 
 ##<a name="deploy-a-web-app-to-azure-with-an-integrated-cdn-endpoint"></a> Deploy a web app to Azure with an integrated CDN endpoint ##
 
@@ -48,11 +50,12 @@ In this section, you will deploy the default ASP.NET MVC application template in
 
 	![](./media/cdn-websites-with-cdn/1-new-project.png)
 
-3. Select **MVC** and click **OK**. Please make sure to uncheck **Host in the cloud** 
+3. Select **MVC** and click **OK**. Please make sure to uncheck **Host in the cloud**
 
 	![](./media/cdn-websites-with-cdn/2-webapp-template.png)
 
-	Windows Azure China currently does not support create or manage websits in Visual Studio. Hence, you need to go to the [Management Portal](https://manage.windowsazure.cn/) to create a new Azure website
+
+	Azure China currently does not support create or manage websits in Visual Studio. Hence, you need to go to the [Management Portal](https://manage.windowsazure.cn/) to create a new Azure website
 	
 3. After you create the website in the Managment Portal, click the **Dashboard** of the website. Under the **quick glance**, click **Download publish profile**.
 
@@ -516,9 +519,9 @@ The [Bundle](http://msdn.microsoft.com/zh-cn/library/system.web.optimization.bun
 
 4. Publish to your Azure web app again and access the home page. 
 5. View the HTML code for the page. You should find injected scripts similar to the following:    
-	
-	```
-	...
+
+
+		...
 	<link href="http://az673227.vo.msecnd.net/Content/css?v=1.0.0.25474" rel="stylesheet"/>
 <script>(function() {
                 var loadFallback,
@@ -548,7 +551,6 @@ The [Bundle](http://msdn.microsoft.com/zh-cn/library/system.web.optimization.bun
  	<script src="http://az673227.vo.msecnd.net/bundles/bootstrap?v=1.0.0.25474"></script>
  	<script>($.fn.modal)||document.write('<script src="/bundles/bootstrap"><\/script>');</script>
 	...
-	```
 
 	Note that injected script for the CSS bundle still contains the errant remnant from the `CdnFallbackExpression` property in the line:
 

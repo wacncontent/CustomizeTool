@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Create and upload a FreeBSD VM image | Windows Azure"
+   pageTitle="Create and upload a FreeBSD VM image | Azure"
    description="Learn to create and upload a virtual hard disk (VHD) that contains the FreeBSD operating system to create an Azure virtual machine"
    services="virtual-machines"
    documentationCenter=""
@@ -25,7 +25,7 @@ This article assumes that you have the following items:
 
 - **An Azure subscription** - If you don't have one, you can create an account in just a couple of minutes. see [create a trial account](/pricing/1rmb-trial/).
 
-- **Azure PowerShell tools** - You have the Windows Azure PowerShell module installed and configured to use your subscription. To download the module, see [Azure Downloads](/downloads/). A tutorial to install and configure the module is available here. You'll use the [Azure Downloads](/downloads/) cmdlet to upload the VHD.
+- **Azure PowerShell tools** - You have the Azure PowerShell module installed and configured to use your subscription. To download the module, see [Azure Downloads](/downloads/). A tutorial to install and configure the module is available here. You'll use the [Azure Downloads](/downloads/) cmdlet to upload the VHD.
 
 - **FreeBSD operating system installed in a .vhd file**  - You have installed a supported FreeBSD operating system to a virtual hard disk. Multiple tools exist to create .vhd files, for example you can use a virtualization solution such as Hyper-V to create the .vhd file and install the operating system. For instructions, see [Install the Hyper-V Role and Configure a Virtual Machine](http://technet.microsoft.com/zh-cn/library/hh846766.aspx).
 
@@ -139,16 +139,16 @@ You need a storage account in Azure to upload a .vhd file so it can be used in A
 
     > [AZURE.NOTE] By default, the container is private and can be accessed only by the account owner. To allow public read access to the blobs in the container, but not the container properties and metadata, use the "Public Blob" option. To allow full public read access for the container and blobs, use the "Public Container" option.
 
-## Step 3: Prepare the connection to Windows Azure ##
+## Step 3: Prepare the connection to Azure ##
 
-Before you can upload a .vhd file, you need to establish a secure connection between your computer and your subscription in Azure. You can use the Windows Azure Active Directory method or the certificate method to do this.
+Before you can upload a .vhd file, you need to establish a secure connection between your computer and your subscription in Azure. You can use the Azure Active Directory method or the certificate method to do this.
 
-###Use the Windows Azure AD method
+###Use the Azure AD method
 
 1. Open the Azure PowerShell console.
 
 2. Type the following command:  
-	`Add-AzureAccount`
+	`Add-AzureAccount -Environment AzureChinaCloud`
 
 	This command opens a sign-in window so you can sign with your work or school account.
 
@@ -161,22 +161,22 @@ Before you can upload a .vhd file, you need to establish a secure connection bet
 1. Open the Azure PowerShell console.
 
 2. Type:
-	`Get-AzurePublishSettingsFile`.
+	`Get-AzurePublishSettingsFile -Environment AzureChinaCloud`.
 
-3. A browser window opens and prompts you to download a .publishsettings file. It contains information and a certificate for your Windows Azure subscription.
+3. A browser window opens and prompts you to download a .publishsettings file. It contains information and a certificate for your Azure subscription.
 
 	![Browser download page](./media/virtual-machines-freebsd-create-upload-vhd/Browser_download_GetPublishSettingsFile.png)
 
 3. Save the .publishsettings file.
 
 4. Type:
-	`Import-AzurePublishSettingsFile <PathToFile>`
+	`Import-AzurePublishSettingsFile -Environment AzureChinaCloud <PathToFile>`
 
 	Where `<PathToFile>` is the full path to the .publishsettings file.
 
-   For more information, see [Get Started with Windows Azure Cmdlets](http://msdn.microsoft.com/zh-cn/library/azure/jj554332.aspx)
+   For more information, see [Get Started with Azure Cmdlets](http://msdn.microsoft.com/zh-cn/library/azure/jj554332.aspx)
 
-   For more information on installing and configuring PowerShell, see [How to install and configure Windows Azure PowerShell](/documentation/articles/powershell-install-configure).
+   For more information on installing and configuring PowerShell, see [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure).
 
 ## Step 4: Upload the .vhd file ##
 

@@ -1,7 +1,7 @@
 <!-- not suitable for Mooncake -->
 
 <properties
-	pageTitle="WordPress on Ubuntu with ARM template | Windows Azure"
+	pageTitle="WordPress on Ubuntu with ARM template | Azure"
 	description="Easily deploy a single WordPress server running Ubuntu using a Resource Manager Template and the Azure Management Portal, Azure PowerShell, or the Azure CLI."
 	services="virtual-machines"
 	documentationCenter=""

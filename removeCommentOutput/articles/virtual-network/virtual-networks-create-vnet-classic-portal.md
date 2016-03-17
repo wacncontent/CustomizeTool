@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Create a virtual network using the Azure Management Portal | Windows Azure"
+   pageTitle="Create a virtual network using the Azure Management Portal | Azure"
    description="Learn how to create a virtual network using the Azure Management Portal."
    services="virtual-network"
    documentationCenter=""

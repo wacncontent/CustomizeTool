@@ -1,7 +1,7 @@
 <!-- not suitable for Mooncake -->
 
 <properties
-	pageTitle="SQL Server AlwaysOn with Azure Resource Manager template | Windows Azure"
+	pageTitle="SQL Server AlwaysOn with Azure Resource Manager template | Azure"
 	description="Easily deploy five servers that support SQL Server AlwaysOn with a Resource Manager template and the Azure Management Portal, Azure PowerShell, or the Azure CLI."
 	services="virtual-machines"
 	documentationCenter=""
@@ -27,7 +27,7 @@ You can run the template with the Azure Management Portal, Azure PowerShell, or 
 
 ## Azure Management Portal
 
-To deploy this workload using an Azure Resource Manager template and the Azure Management Portal, click [here](https://manage.windowsazure.cn#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fsql-server-2014-alwayson-dsc%2Fazuredeploy.json).
+To deploy this workload using an Azure Resource Manager template and the Azure Management Portal, click [here](https://manage.windowsazure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fsql-server-2014-alwayson-dsc%2Fazuredeploy.json).
 
 ![](./media/virtual-machines-workload-template-sql-alwayson/azure-portal-template.png)
 

@@ -1,7 +1,5 @@
-<!-- not suitable for Mooncake -->
-
 <properties
-	pageTitle="Create a Linux virtual machine | Windows Azure"
+	pageTitle="Create a Linux virtual machine | Azure"
 	description="Learn to create a Linux virtual machine or Ubuntu virtual machine by using an image from Azure and the Azure Command-Line Interface."
 	keywords="linux virtual machine,virtual machine linux,ubuntu virtual machine" 
 	services="virtual-machines"
@@ -20,153 +18,144 @@
 
 > [AZURE.SELECTOR]
 - [Portal - Windows](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)
-- [PowerShell](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-resource-manager-vms)
-- [PowerShell - Template](/documentation/articles/virtual-machines-create-windows-powershell-resource-manager-template)
+- [PowerShell](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-vms)
 - [Portal - Linux](/documentation/articles/virtual-machines-linux-tutorial-portal-rm)
 - [CLI](/documentation/articles/virtual-machines-linux-tutorial)
 
 Creating a Linux virtual machine (VM) is easy to do from the command line or from the portal. This tutorial shows you how to use the Azure Command-Line Interface (CLI) for Mac, Linux, and Windows to quickly create an Ubuntu Server VM running in Azure, connect to it using **ssh**, and create and mount a new disk. This topic uses an Ubuntu Server VM, but you can also create Linux virtual machine using [your own images as templates](/documentation/articles/virtual-machines-linux-create-upload-vhd).
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
 
 [AZURE.INCLUDE [free-trial-note](../includes/free-trial-note.md)]
-
-## Video walkthrough
-
-Here's a walkthrough of this tutorial.
-
-[AZURE.VIDEO building-a-linux-virtual-machine-tutorial]
 
 ## Install the Azure CLI
 
 The first step is to [install the Azure CLI](/documentation/articles/xplat-cli-install).
 
-Good. Now make sure you're in the Resource Manager mode by typing `azure config mode arm`.
+Good. Now make sure you're in the Service Manager mode by typing `azure config mode asm`.
 
-Even better. Now [log in with your work or school id](/documentation/articles/xplat-cli-connect#use-the-log-in-method) by typing `azure login` and following the prompts for an interactive login experience to your Azure account.
-
-> [AZURE.NOTE] If you have a work or school ID and you know you do not have two-factor authentication enabled, you can use `azure login -u` along with the work or school ID to log in without an interactive session. If you don't have a work or school ID, you can [create a work or school id from your personal Microsoft account](/documentation/articles/resource-group-create-work-id-from-personal).
+Even better. Now [log in with your work or school id](/documentation/articles/xplat-cli-connect#use-the-log-in-method) by typing `azure login -e AzureChinaCloud -u <your account>` and following the prompts for an interactive login experience to your Azure account.
 
 ## Create the Linux virtual machine
 
-Type `azure group create <my-group-name> chinanorth` replacing _&lt;my-group-name&gt;_ with a group name that's unique to you (you can use a different region if you want). You should see something like the following:
+You can use `azure vm create-from <your-vm-name> example.json` to create a new virtual machine. If you are creating a new cloud service for your virtual machine, you need to use `-l` parameter to specify the location of your cloud service. For Example, `azure vm create-from <your-vm-name> example.json -l "China East"`. The following is a sample json file for the virtual machine creation.
 
-	azure group create myuniquegroupname chinanorth
-	info:    Executing command group create
-	+ Getting resource group myuniquegroupname
-	+ Creating resource group myuniquegroupname
-	info:    Created resource group myuniquegroupname
-	data:    Id:                  /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/myuniquegroupname
-	data:    Name:                myuniquegroupname
-	data:    Location:            chinanorth
-	data:    Provisioning State:  Succeeded
-	data:    Tags:
-	data:
-	info:    group create command OK
+	{
+	    "configurationSets": [
+	        {
+	            "inputEndpoints": [
+	                {
+	                    "localPort": 22,
+	                    "name": "SSH",
+	                    "port": 22,
+	                    "protocol": "tcp",
+	                    "virtualIPAddress": "",
+	                    "enableDirectServerReturn": false
+	                }
+	            ],
+	            "networkInterfaces": [],
+	            "publicIPs": [],
+	            "storedCertificateSettings": [],
+	            "subnetNames": [],
+	            "configurationSetType": "NetworkConfiguration"
+	        },
+	        {
+	            "configurationSetType":"LinuxProvisioningConfiguration",
+	            "hostName": "myubuntu",
+	            "userName": "<adminName>",
+	            "userPassword": "<adminPass>",
+                "disableSshPasswordAuthentication": "false",
+                "sSh":{
+                    "publicKeys": [
+                        {
+                            "fingerprint": "",
+                            "path": ""
+                        }
+                    ],
+                    "keyPairs": [
+                        {
+                            "fingerprint": "",
+                            "path": ""
+                        }
+                    ]
+                },
+                "customData": ""
+	        }
+	    ],
+	    "dataVirtualHardDisks": [],
+	    "resourceExtensionReferences": [],
+	    "roleName": "myubuntu",
+	    "oSVersion": "",
+	    "roleType": "PersistentVMRole",
+	    "oSVirtualHardDisk": {
+	        "hostCaching": "ReadWrite",
+	        "mediaLink": "https://<storageaccountname>.blob.core.chinacloudapi.cn/vhds/myubuntu-myubuntu-2016-02-19.vhd",
+	        "sourceImageName":"b549f4301d0b4295b8e76ceb65df47d4__Ubuntu-14_04-LTS-amd64-server-20140416.1-en-us-30GB",
+	        "operatingSystem": "Linux"
+	    },
+	    "roleSize": "Basic_A0",
+	    "provisionGuestAgent": true
+	}
 
-Now create your VM by typing `azure vm quick-create`, and you'll receive prompts to input the remaining parameters. Use the name of the resource group that you just created, above, and for the **ImageURN** value, use `canonical:ubuntuserver:14.04.2-LTS:latest`, so that your experience looks something like the following. Note that the `azure vm quick-create` command prompts for basic information it requires to create, host, and connect to a Linux VM, including:
+- configurationSets: Contains a collection of configuration sets that define system and application settings.
 
-- the resource group name and VM name
-- a deployment location
-- the operating system type and the image URN string
-- a username and password
+	* NetworkConfiguration: You can optionally specify a NetworkConfiguration set that contains the metadata required to create the virtual network configuration for a Virtual Machine.
+	* LinuxProvisioningConfiguration: You can configure Your VM host name, user name, password and SSH Public keys, and so on.
 
-and then creates the infrastructure necessary to host the VM. This includes:
+- dataVirtualHardDisks: Specify VHDs that are attached to your VM. If you are using Premium Storage, "roleSize" must be in DS-Series.
+- oSVirtualHardDisk: Specify a OS VHD for your vm.
 
-- An Azure storage account for VHD storage and extra disks
-- A NIC for the VM
-- a vnet with a subnet
-- a public IP address
-- a subdomain
+	* mediaLink: Specify the location of the VHD file that is created.
+	* sourceImageName: Specify the name of the image to use to create the Virtual Machine. You can get the image name by `azure vm image list`. For more information about image searching, see [Navigate and select VM images](/documentation/articles/resource-groups-vm-searching).
 
-		azure vm quick-create
-		info:    Executing command vm quick-create
-		Resource group name: myuniquegroupname
-		Virtual machine name: myuniquevmname
-		Location name: chinanorth
-		Operating system Type [Windows, Linux]: Linux
-		ImageURN (format: "publisherName:offer:skus:version"): canonical:ubuntuserver:14.04.2-LTS:latest
-		User name: ops
-		Password: *********
-		Confirm password: *********
-		+ Looking up the VM "myuniquevmname"
-		info:    Using the VM Size "Standard_D1"
-		info:    The [OS, Data] Disk or image configuration requires storage account
-		+ Retrieving storage accounts
-		info:    Could not find any storage accounts in the region "chinanorth", trying to create new one
-		+ Creating storage account "cli3c0464f24f1bf4f014323" in "chinanorth"
-		+ Looking up the storage account cli3c0464f24f1bf4f014323
-		+ Looking up the NIC "myuni-westu-1432328437727-nic"
-		info:    An nic with given name "myuni-westu-1432328437727-nic" not found, creating a new one
-		+ Looking up the virtual network "myuni-westu-1432328437727-vnet"
-		info:    Preparing to create new virtual network and subnet
-		/ Creating a new virtual network "myuni-westu-1432328437727-vnet" [address prefix: "10.0.0.0/16"] with subnet "myuni-westu-1432328437727-snet"+[address prefix: "10.0.1.0/24"]
-		+ Looking up the virtual network "myuni-westu-1432328437727-vnet"
-		+ Looking up the subnet "myuni-westu-1432328437727-snet" under the virtual network "myuni-westu-1432328437727-vnet"
-		info:    Found public ip parameters, trying to setup PublicIP profile
-		+ Looking up the public ip "myuni-westu-1432328437727-pip"
-		info:    PublicIP with given name "myuni-westu-1432328437727-pip" not found, creating a new one
-		+ Creating public ip "myuni-westu-1432328437727-pip"
-		+ Looking up the public ip "myuni-westu-1432328437727-pip"
-		+ Creating NIC "myuni-westu-1432328437727-nic"
-		+ Looking up the NIC "myuni-westu-1432328437727-nic"
-		+ Creating VM "myuniquevmname"
-		+ Looking up the VM "myuniquevmname"
-		+ Looking up the NIC "myuni-westu-1432328437727-nic"
-		+ Looking up the public ip "myuni-westu-1432328437727-pip"
-		data:    Id                              :/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/myuniquegroupname/providers/Microsoft.Compute/virtualMachines/myuniquevmname
-		data:    ProvisioningState               :Succeeded
-		data:    Name                            :myuniquevmname
-		data:    Location                        :chinanorth
-		data:    FQDN                            :myuni-westu-1432328437727-pip.chinanorth.chinacloudapp.cn
-		data:    Type                            :Microsoft.Compute/virtualMachines
-		data:
-		data:    Hardware Profile:
-		data:      Size                          :Standard_D1
-		data:
-		data:    Storage Profile:
-		data:      Image reference:
-		data:        Publisher                   :canonical
-		data:        Offer                       :ubuntuserver
-		data:        Sku                         :14.04.2-LTS
-		data:        Version                     :latest
-		data:
-		data:      OS Disk:
-		data:        OSType                      :Linux
-		data:        Name                        :cli3c0464f24f1bf4f0-os-1432328438224
-		data:        Caching                     :ReadWrite
-		data:        CreateOption                :FromImage
-		data:        Vhd:
-		data:          Uri                       :https://cli3c0464f24f1bf4f014323.blob.core.chinacloudapi.cn/vhds/cli3c0464f24f1bf4f0-os-1432328438224.vhd
-		data:
-		data:    OS Profile:
-		data:      Computer Name                 :myuniquevmname
-		data:      User Name                     :ops
-		data:      Linux Configuration:
-		data:        Disable Password Auth       :false
-		data:
-		data:    Network Profile:
-		data:      Network Interfaces:
-		data:        Network Interface #1:
-		data:          Id                        :/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/myuniquegroupname/providers/Microsoft.Network/networkInterfaces/myuni-westu-1432328437727-nic
-		data:          Primary                   :true
-		data:          MAC Address               :00-0D-3A-31-55-31
-		data:          Provisioning State        :Succeeded
-		data:          Name                      :myuni-westu-1432328437727-nic
-		data:          Location                  :chinanorth
-		data:            Private IP alloc-method :Dynamic
-		data:            Private IP address      :10.0.1.4
-		data:            Public IP address       :191.239.51.1
-		data:            FQDN                    :myuni-westu-1432328437727-pip.chinanorth.chinacloudapp.cn
-		info:    vm quick-create command OK
+- roleSize: Specify the size of the Virtual Machine. You can use `azure vm location list --json` to view the available "virtualMachinesRoleSizes".
 
-Your VM is up and running and waiting for you to connect.
+For more information about each field, Check the request body of the REST API for [Create Virtual Machine Deployment](https://msdn.microsoft.com/zh-cn/library/azure/jj157194.aspx). The structure of the json file is exactly the same as the request body, except that the request body is xml, and each field name starts with a uppercase letter, while `azure vm create-from` use a json file, and each field name starts with a lowercase letter.
+
+After a while you will see the following output:
+
+	info:    Executing command vm create-from
+	+ Looking up cloud service
+	info:    cloud service myubuntu not found.
+	+ Creating cloud service
+	+ Creating VM
+	info:    vm create-from command OK
+
+You can use `azure vm show <you-vm-name>` to get the status of your virtual machine. You will get output that looks like this:
+
+	info:    Executing command vm show
+	+ Getting virtual machines
+	data:    DNSName "myubuntu.chinacloudapp.cn"
+	data:    Location "China East"
+	data:    VMName "myubuntu"
+	data:    IPAddress "<private ip>"
+	data:    InstanceStatus "ReadyRole"
+	data:    InstanceSize "Basic_A0"
+	data:    Image "b549f4301d0b4295b8e76ceb65df47d4__Ubuntu-14_04-LTS-amd64-server-20140416.1-en-us-30GB"
+	data:    OSDisk hostCaching "ReadWrite"
+	data:    OSDisk name "myubuntu-myubuntu-0-201601070618550344"
+	data:    OSDisk mediaLink "https://<storageaccountname>.blob.core.chinacloudapi.cn/vhds/myubuntu-myubuntu-2016-02-19.vhd"
+	data:    OSDisk sourceImageName "b549f4301d0b4295b8e76ceb65df47d4__Ubuntu-14_04-LTS-amd64-server-20140416.1-en-us-30GB"
+	data:    OSDisk operatingSystem "Linux"
+	data:    OSDisk iOType "Standard"
+	data:    ReservedIPName ""
+	data:    VirtualIPAddresses 0 address "<public ip>"
+	data:    VirtualIPAddresses 0 name "myubuntuContractContract"
+	data:    VirtualIPAddresses 0 isDnsProgrammed true
+	data:    Network Endpoints 0 localPort 22
+	data:    Network Endpoints 0 name "SSH"
+	data:    Network Endpoints 0 port 22
+	data:    Network Endpoints 0 protocol "tcp"
+	data:    Network Endpoints 0 virtualIPAddress "<public ip>"
+	data:    Network Endpoints 0 enableDirectServerReturn false
+
+If you see `InstanceStatus "ReadyRole"`, your VM is up and running and waiting for you to connect.
 
 ## Connect to the Linux virtual machine
 
 With Linux virtual machines, you typically connect using **ssh**. 
 
-> [AZURE.NOTE] This topic connects to a VM using usernames and passwords; to use public and private key pairs to communicate with your VM, see [How to Use SSH with Linux on Azure](/documentation/articles/virtual-machines-linux-use-ssh-key). You can modify the **SSH** connectivity of VMs created with the `azure vm quick-create` command by using the `azure vm reset-access` command to reset **SSH** access completely, add or remove users, or add public key files to secure access. This article uses username and password with **SSH** for brevity.
+> [AZURE.NOTE] This topic connects to a VM using usernames and passwords; to use public and private key pairs to communicate with your VM, see [How to Use SSH with Linux on Azure](/documentation/articles/virtual-machines-linux-use-ssh-key).
 
 If you're not familiar with connecting with **ssh**, the command takes the form `ssh <username>@<publicdnsaddress> -p <the ssh port>`. In this case, we use the username and password from the previous step and port 22, which is the default **ssh** port.
 
@@ -209,13 +198,12 @@ Now that you're connected to your VM, you're ready to attach a disk.
 
 ## Attach and mount a disk
 
-Attaching a new disk is quick. Just type `azure vm disk attach-new <myuniquegroupname> <myuniquevmname> <size-in-GB>` to create and attach a new GB disk for your VM. It should look something like this:
+Attaching a new disk is quick. Just type `vm disk attach-new [options] <vm-name> <size-in-gb> [blob-url]` to create and attach a new GB disk for your VM. It should look something like this:
 
-	azure vm disk attach-new myuniquegroupname myuniquevmname 5
+	azure vm disk attach-new <you-vm-name> 5 https://<storageAccoutName>.blob.core.chinacloudapi.cn/vhds/temp.vhd
 	info:    Executing command vm disk attach-new
-	+ Looking up the VM "myuniquevmname"
-	info:    New data disk location: https://cliexxx.blob.core.chinacloudapi.cn/vhds/myuniquevmname-20150526-0xxxxxxx43.vhd
-	+ Updating VM "myuniquevmname"
+	+ Getting virtual machines
+	+ Adding Data-Disk
 	info:    vm disk attach-new command OK
 
 

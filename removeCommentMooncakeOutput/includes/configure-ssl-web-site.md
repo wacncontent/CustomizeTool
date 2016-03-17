@@ -22,7 +22,7 @@ If you need more help at any point in this article, you can contact the Azure ex
 
 Before requesting an SSL certificate you must first determine which domain names will be secured by the certificate. This will determine what type of certificate you must obtain. If you just need to secure a single domain name such as **contoso.com** or **www.contoso.com** a basic certificate is sufficient. If you need to secure multiple domain names, such as **contoso.com**, **www.contoso.com**, and **mail.contoso.com**, then you can get a [wildcard certificate](http://en.wikipedia.org/wiki/Wildcard_certificate), or a certificate with [Subject Alternate Name](http://en.wikipedia.org/wiki/SubjectAltName) (subjectAltName).
 
-SSL certificates used with Azure must be signed by a [Certificate Authority](http://en.wikipedia.org/wiki/证书颁发机构) (CA). If you do not already have one, you will need to obtain one from a company that issues SSL certificates. For a list of Certificate Authorities, see [Windows and Windows Phone 8 SSL Root Certificate Program (Members CAs)][cas] on the Microsoft TechNet Wiki.
+SSL certificates used with Azure must be signed by a [Certificate Authority](http://zh.wikipedia.org/wiki/证书颁发机构) (CA). If you do not already have one, you will need to obtain one from a company that issues SSL certificates. For a list of Certificate Authorities, see [Windows and Windows Phone 8 SSL Root Certificate Program (Members CAs)][cas] on the Microsoft TechNet Wiki.
 
 The certificate must meet the following requirements for SSL certificates in Azure:
 
@@ -170,13 +170,8 @@ You can now upload the exported PFX file to your app in Azure Web App.
 	When prompted, enter a password to secure the .pfx file.
 
 	> [AZURE.NOTE] If your CA uses intermediate certificates, you must install these certificates before exporting the certificate in the next step. Usually these certificates are provided as a separate download from your CA, and are provided in several formats for different web server types. Select the version that is provided as a PEM file (.pem file extension.)
-	>
-	> The follow command demonstrates how to create a .pfx file that includes intermediate certificates, which are contained in the **intermediate-cets.pem** file:  
-	>
-	>
-	`````
-	openssl pkcs12 -chain -export -out myserver.pfx -inkey myserver.key -in myserver.crt -certfile intermediate-cets.pem
-	`````
+	> <p>The follow command demonstrates how to create a .pfx file that includes intermediate certificates, which are contained in the **intermediate-cets.pem** file:  
+	> <p>`openssl pkcs12 -chain -export -out myserver.pfx -inkey myserver.key -in myserver.crt -certfile intermediate-cets.pem`
 
 	After running this command, you should have a **myserver.pfx** file suitable for use with Azure Web App.
 
@@ -290,13 +285,8 @@ OpenSSL can be used to create a certificate request that uses the SubjectAltName
 	When prompted, enter a password to secure the .pfx file.
 
 	> [AZURE.NOTE] If your CA uses intermediate certificates, you must install these certificates before exporting the certificate in the next step. Usually these certificates are provided as a separate download from your CA, and are provided in several formats for different web server types. Select the version that is provided as a PEM file (.pem file extension.)  
-	>
-	> The follow command demonstrates how to create a .pfx file that includes intermediate certificates, which are contained in the **intermediate-cets.pem** file:  
-	>
-	>
-	`````
-	openssl pkcs12 -chain -export -out myserver.pfx -inkey myserver.key -in myserver.crt -certfile intermediate-cets.pem
-	`````
+	> <p>The follow command demonstrates how to create a .pfx file that includes intermediate certificates, which are contained in the **intermediate-cets.pem** file:  
+	> <p>`openssl pkcs12 -chain -export -out myserver.pfx -inkey myserver.key -in myserver.crt -certfile intermediate-cets.pem`
 
 	After running this command, you should have a **myserver.pfx** file suitable for use with Azure Web App.
 
@@ -454,8 +444,7 @@ At this point, you should be able to visit your app using `HTTPS://` instead of 
 Azure do *not* enforce HTTPS. Visitors may still access your app using HTTP, which may compromise your app's security. If you want to enforce HTTPS for your app, you can use the **URL Rewrite** module. The URL Rewrite module is included with Azure Web App, and enables you to define rules that are applied to incoming requests before the requests are handed to your application. **It can be used for applications written in any programming language supported by Azure .**
 
 > [AZURE.NOTE] .NET MVC applications should use the [RequireHttps](http://msdn.microsoft.com/zh-cn/library/system.web.mvc.requirehttpsattribute.aspx) filter instead of URL Rewrite. For more information on using RequireHttps, see [Deploy a secure ASP.NET MVC 5 app to a web app](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database).
->
-> For information on programmatic redirection of requests using other programming languages and frameworks, consult the documentation for those technologies.
+> <p>For information on programmatic redirection of requests using other programming languages and frameworks, consult the documentation for those technologies.
 
 URL Rewrite rules are defined in a **web.config** file stored in the root of your application. The following example contains a basic URL Rewrite rule that forces all incoming traffic to use HTTPS.
 
@@ -519,7 +508,7 @@ Once you deploy a web.config with a rewrite rule to force HTTPS, it should take 
 For more information on the IIS URL Rewrite module, see the [URL Rewrite](http://www.iis.net/downloads/microsoft/url-rewrite) documentation.
 
 ## More Resources ##
-- [Windows Azure Trust Center](/support/trust-center/security/)
+- [Azure Trust Center](/support/trust-center/security/)
 - [Configuration options unlocked in Azure Web Sites](/blog/2014/01/28/more-to-explore-configuration-options-unlocked-in-windows-azure-web-sites/)
 - [Enable diagnostic logging](/documentation/articles/web-sites-enable-diagnostic-log)
 - [Configure web apps in Azure](/documentation/articles/web-sites-configure)

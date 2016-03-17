@@ -30,10 +30,12 @@ This topic contains links to Azure SDK for .NET Release Notes.
 ##Azure SDK for .NET 2.6 Release Notes
 
 [Azure SDK for .NET 2.6 Release Notes](/documentation/articles/azure-sdk-dotnet-release-notes-2_6)
+
 
 ##Azure SDK for .NET 2.5.1 Release Notes
 
 [Azure SDK for .NET 2.5.1 Release Notes](/documentation/articles/app-service-release-notes)
+
 
 ##Azure SDK for .NET 2.5 Release Notes
 
@@ -61,7 +63,12 @@ This topic contains links to Azure SDK for .NET Release Notes.
 
 ##Related topics
 
+
 [Azure SDK for .NET](/downloads/archive-net-downloads/)
+
+
+[Azure SDK for .NET](/downloads/)
+
 
 [Azure SDK Release Notes on MSDN](https://msdn.microsoft.com/zh-cn/library/azure/dn627519.aspx)
  

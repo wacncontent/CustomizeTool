@@ -108,5 +108,4 @@ The following table describes the behavior of Traffic Manager monitoring for chi
 
 [Add an endpoint](/documentation/articles/traffic-manager-endpoints)
 
-[Troubleshooting degraded status on Azure Traffic Manager](/documentation/articles/traffic-manager-troubleshooting-degraded)
- 
+[Troubleshooting degraded status on Azure Traffic Manager](/documentation/articles/traffic-manager-troubleshooting-degraded)

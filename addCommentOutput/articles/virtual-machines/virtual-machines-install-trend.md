@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Install Trend Micro Deep Security on a VM | Windows Azure"
+	pageTitle="Install Trend Micro Deep Security on a VM | Azure"
 	description="This article describes how to install and configure Trend Micro security on a VM created with the classic deployment model in Azure."
 	services="virtual-machines"
 	documentationCenter=""
@@ -16,14 +16,14 @@
 
 # How to install and configure Trend Micro Deep Security as a Service on a Windows VM
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] <!-- deleted by customization Resource Manager model. -->
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]  Resource Manager model. 
 
 
 This article shows you how to install and configure Trend Micro Deep Security as a Service on a new or existing virtual machine (VM) running Windows Server. Deep Security as a Service includes anti-malware protection, a firewall, an intrusion prevention system, and integrity monitoring.
 
 The client is installed as a security extension via the VM Agent. On a new virtual machine, you'll install the VM Agent along with the Deep Security Agent. On an existing virtual machine that doesn't have the VM Agent, you'll need to download and install it first. This article covers both situations.
 
-If you have existing subscription from Trend Micro for an on-premises solution, you can use it to help protect your Azure virtual machines. If you're not a customer yet, you can sign up for a trial subscription. For more information about this solution, see the Trend Micro blog post [Windows Azure VM Agent Extension For Deep Security](http://blog.trendmicro.com/microsoft-azure-vm-agent-extension-for-deep-security/).
+If you have existing subscription from Trend Micro for an on-premises solution, you can use it to help protect your Azure virtual machines. If you're not a customer yet, you can sign up for a trial subscription. For more information about this solution, see the Trend Micro blog post [Azure VM Agent Extension For Deep Security](http://blog.trendmicro.com/microsoft-azure-vm-agent-extension-for-deep-security/).
 
 ## Install the Deep Security Agent on a new virtual machine
 
@@ -62,20 +62,15 @@ If the VM Agent is installed, run these commands.
 
 	$Agent = Get-AzureVMAvailableExtension TrendMicro.DeepSecurity -ExtensionName TrendMicroDSA
 
-	Set-AzureVMExtension -Publisher TrendMicro.DeepSecurity âVersion $Agent.Version -ExtensionName TrendMicroDSA -VM $vm | Update-AzureVM
+	Set-AzureVMExtension -Publisher TrendMicro.DeepSecurity -Version $Agent.Version -ExtensionName TrendMicroDSA -VM $vm | Update-AzureVM
 
 ## Next steps
 
 It takes a few minutes for the agent to start running when it is installed. After that, you'll need to activate Deep Security on the virtual machine so it can be managed by a Deep Security Manager. See the following for additional instructions:
 
-- Trend's article about this solution, [Instant-On Cloud Security for Windows Azure](http://www.trendmicro.com/us/business/saas/deep-security-as-a-service/microsoft-azure-security/index.html?cm_mmc=VURL:www.trendmicro.com-_-VURL-_-%2Fazure%2Findex.html-_-1-1#how-it-works)
-- A [sample Windows PowerShell <!-- deleted by customization script](https://dsahandler.blob.core.windows.net/dsaas/ds-config.ps1) --><!-- keep by customization: begin --> script](https://dsahandler.blob.core.chinacloudapi.cn/dsaas/ds-config.ps1) <!-- keep by customization: end --> to configure the virtual machine
-<!-- deleted by customization
+- Trend's article about this solution, [Instant-On Cloud Security for Azure](http://www.trendmicro.com/us/business/saas/deep-security-as-a-service/microsoft-azure-security/index.html?cm_mmc=VURL:www.trendmicro.com-_-VURL-_-%2Fazure%2Findex.html-_-1-1#how-it-works)
+- A [sample Windows PowerShell script](https://dsahandler.blob.core.windows.net/dsaas/ds-config.ps1) to configure the virtual machine
 - [Instructions](https://dsahandler.blob.core.windows.net/dsaas/ds-config-README.txt)  for the sample
--->
-<!-- keep by customization: begin -->
-- [Instructions](https://dsahandler.blob.core.chinacloudapi.cn/dsaas/ds-config-README.txt)  for the sample
-<!-- keep by customization: end -->
 
 ## Additional resources
 
@@ -85,5 +80,10 @@ It takes a few minutes for the agent to start running when it is installed. Afte
 
 
 <!--Link references-->
-[How to log on to a virtual machine running Windows Server]: virtual-machines-log-on-windows-server.md
+[How to log on to a virtual machine running Windows Server]: /documentation/articles/virtual-machines-log-on-windows-server
+
 [Azure VM Extensions and features]: http://go.microsoft.com/fwlink/p/?linkid=390493&clcid=0x409
+
+
+[Azure VM Extensions and features]: http://msdn.microsoft.com/zh-cn/library/dn606311.aspx
+

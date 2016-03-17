@@ -1,5 +1,7 @@
+<!-- not suitable for Mooncake -->
+
 <properties
-	pageTitle="Hadoop stack trace error messages | Windows Azure"
+	pageTitle="Hadoop stack trace error messages | Azure"
 	description="Index of Hadoop stack trace error messages in HDInsight. Find the error in the list to see troubleshooting information."
 	keywords="stack trace, error messages"
 	services="hdinsight"

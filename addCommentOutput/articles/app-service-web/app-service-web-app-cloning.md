@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
 	pageTitle="Web App Cloning"
 	description="Learn how to clone your Web Apps to new Web Apps."
@@ -14,7 +16,7 @@
 
 # Azure Web App Cloning #
 
-With the release of Windows Azure PowerShell version 1.1.0 a new option has been added to New-AzureRMWebApp that would give the user the ability to clone an existing Web App to a newly created app in a different region or in the same region. This will enable customers to easily and quickly deploy a number of apps across different regions quickly and easily.
+With the release of Azure PowerShell version 1.1.0 a new option has been added to New-AzureRMWebApp that would give the user the ability to clone an existing Web App to a newly created app in a different region or in the same region. This will enable customers to easily and quickly deploy a number of apps across different regions quickly and easily.
 
 App cloning is currently only supported for premium tier app service plans. The new feature uses the same limitations as Web Apps Backup feature, see [Back up a web app in Azure](/documentation/articles/web-sites-backup).
 
@@ -31,7 +33,7 @@ Knowing the resource group name that contains the source web app, we can use the
 
 To create a new App Service Plan, we can use New-AzureRmAppServicePlan command as in the following example
 
-	New-AzureRmAppServicePlan -Location "China East" -ResourceGroupName DestinationAzureResourceGroup -Name NewAppServicePlan
+	New-AzureRmAppServicePlan -Location "China East" -ResourceGroupName DestinationAzureResourceGroup -Name NewAppServicePlan -Tier Premium
 
 Using the New-AzureRmWebApp command, we can create the new web app in the China North region, and tie it to an existing premium tier App Service Plan, moreover we can use the same resource group as the source web app, or define a new resource group, the following demonstrates that:
 
@@ -73,7 +75,7 @@ The following demonstrates creating a clone of the source web app to a new web a
 
 ## Configuring Traffic Manager while cloning a App ##
 
-Configuring Traffic manager with When creating a new Web App while cloning from an existing one, you have the option to connect both web apps to either a new traffic manager profile or an existing one - note that only ARM version of Traffic Manager is supported.
+Creating multi-region web apps and configuring Azure Traffic Manager to route traffic to all these web apps, is a n important scenario to insure that customers' apps are highly available, when cloning an existing web app you have the option to connect both web apps to either a new traffic manager profile or an existing one - note that only ARM version of Traffic Manager is supported.
 
 ### Creating a new Traffic Manager profile while cloning a App ###
 
@@ -83,7 +85,7 @@ Scenario: The user would like to clone an web app to another region, while confi
 
 ### Adding new cloned Web App to an existing Traffic Manager profile ###
 
-Scenario: The user already have an ARM traffic manager profile that he would like to add both web apps as endpoint s. To do so, we first need to assemble the existing traffic manager profile id, we will need the subscription id, resource group name and the existing traffic manager profile name.
+Scenario: The user already have an ARM traffic manager profile that he would like to add both web apps as endpoints. To do so, we first need to assemble the existing traffic manager profile id, we will need the subscription id, resource group name and the existing traffic manager profile name.
 
     $TMProfileID = "/subscriptions/<Your subscription ID goes here>/resourceGroups/<Your resource group name goes here>/providers/Microsoft.TrafficManagerProfiles/ExistingTrafficManagerProfileName"
 

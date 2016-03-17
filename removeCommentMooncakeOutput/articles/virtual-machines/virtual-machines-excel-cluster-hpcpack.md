@@ -1,5 +1,5 @@
 <properties
- pageTitle="HPC Pack cluster for Excel and SOA | Windows Azure"
+ pageTitle="HPC Pack cluster for Excel and SOA | Azure"
  description="Get started with an HPC Pack cluster to run Excel and SOA workloads, using the Resource Manager deployment model."
  services="virtual-machines"
  documentationCenter=""
@@ -30,7 +30,7 @@ At a high level the following diagram shows the HPC Pack cluster you'll create.
 
 * **Azure subscription** - If you don't have an account, you can create a trial account in just a couple of minutes. For details, see [Azure Trial](/pricing/1rmb-trial/).
 
-* **Cores quota** - You might need to increase the quota of cores, especially if you choose to deploy several cluster nodes with multicore VM sizes. If you are using an Azure quickstart template, be aware that the cores quota in Resource Manager is per Azure region, and you might need to increase the quota in a specific region. See [Azure subscription limits, quotas, and constraints](/documentation/articles/azure-subscription-service-limits). To increase a quota, you can [open an online customer support request](http://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/) at no charge.
+* **Cores quota** - You might need to increase the quota of cores, especially if you choose to deploy several cluster nodes with multicore VM sizes. If you are using an Azure quickstart template, be aware that the cores quota in Resource Manager is per Azure region, and you might need to increase the quota in a specific region. See [Azure subscription limits, quotas, and constraints](/documentation/articles/azure-subscription-service-limits).
 
 
 ## Step 1. Set up an HPC Pack cluster in Azure
@@ -89,7 +89,6 @@ The HPC Pack IaaS deployment script provides another versatile way to deploy an 
 	  </ComputeNodes>
 	</IaaSClusterConfig>
 
-
 **Notes about the configuration file**
 
 * The **VMName** of the head node **MUST** be exactly the same as the **ServiceName**, or the SOA job would fail to run.
@@ -134,7 +133,7 @@ The HPC Pack IaaS deployment script provides another versatile way to deploy an 
 
 4. Run the command below to deploy the HPC Pack cluster. This example assumes that the configuration file is located in E:\HPCDemoConfig.xml.
 
-    	.\New-HpcIaaSCluster.ps1 âConfigFile E:\HPCDemoConfig.xml âAdminUserName MyAdminName
+    	.\New-HpcIaaSCluster.ps1 -ConfigFile E:\HPCDemoConfig.xml -AdminUserName MyAdminName
 
 
 The HPC Pack deployment script will run for some time. One thing the script wil do is to export and download the cluster certificate and save it in the current user's Documents folder on the client computer. The script will generate a message similar to the following. In a following step you'll import the certificate in the appropriate certificate store.

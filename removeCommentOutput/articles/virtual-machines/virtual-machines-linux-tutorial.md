@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Create a Linux virtual machine | Windows Azure"
+	pageTitle="Create a Linux virtual machine | Azure"
 	description="Learn to create a Linux virtual machine or Ubuntu virtual machine by using an image from Azure and the Azure Command-Line Interface."
 	keywords="linux virtual machine,virtual machine linux,ubuntu virtual machine" 
 	services="virtual-machines"
@@ -82,7 +82,7 @@ and then creates the infrastructure necessary to host the VM. This includes:
 		Resource group name: myuniquegroupname
 		Virtual machine name: myuniquevmname
 		Location name: chinanorth
-		Operating system Type [Windows, Linux]: Linux
+		Operating system Type [Windows, Linux]: /documentation/articles/Linux
 		ImageURN (format: "publisherName:offer:skus:version"): canonical:ubuntuserver:14.04.2-LTS:latest
 		User name: ops
 		Password: *********

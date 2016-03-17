@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Automated Backup for SQL Server Virtual Machines | Windows Azure"
+	pageTitle="Automated Backup for SQL Server Virtual Machines | Azure"
 	description="Explains the Automated Backup feature for SQL Server running in Azure Virtual Machines using the Resource Manager deployment model."
 	services="virtual-machines"
 	documentationCenter="na"
@@ -9,18 +9,18 @@
 	tags="azure-resource-manager" />
 <tags
 	ms.service="virtual-machines"
-	ms.date="11/12/2015"
+	ms.date="02/03/2016"
 	wacn.date=""/>
 
 # Automated Backup for SQL Server in Azure Virtual Machines
 
-Automated Backup automatically configures [Managed Backup to Windows Azure](https://msdn.microsoft.com/zh-cn/library/dn449496.aspx) for all existing and new databases on an Azure VM running SQL Server 2014 Standard or Enterprise. This enables you to configure regular database backups that utilize durable Azure blob storage.
+Automated Backup automatically configures [Managed Backup to Azure](https://msdn.microsoft.com/zh-cn/library/dn449496.aspx) for all existing and new databases on an Azure VM running SQL Server 2014 Standard or Enterprise. This enables you to configure regular database backups that utilize durable Azure blob storage.
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
-## Automated Backup Settings
+## Automated Backup settings
 
-The following table describes the options that can be configured for Automated Backup. The actual configuration steps vary depending on whether you use the Azure Management Portal or Azure Windows PowerShell commands.
+The following table describes the options that can be configured for Automated Backup.  The actual configuration steps vary depending on whether you use the Azure Management Portal or Azure Windows PowerShell commands. 
 
 |Setting|Range (Default)|Description|
 |---|---|---|
@@ -30,11 +30,12 @@ The following table describes the options that can be configured for Automated B
 |**Encryption**|Enable/Disable (Disabled)|Enables or disables encryption. When encryption is enabled, the certificates used to restore the backup are located in the specified storage account in the same automaticbackup container using the same naming convention. If the password changes, a new certificate is generated with that password, but the old certificate remains to restore prior backups.|
 |**Password**|Password text (None)|A password for encryption keys. This is only required if encryption is enabled. In order to restore an encrypted backup, you must have the correct password and related certificate that was used at the time the backup was taken.|
 
+
 ## Configure Automated Backup in the Azure Management Portal
 
-You can use the Azure Management Portal to configure Automated Backup when you create a new SQL Server 2014 Virtual Machine. 
+You can use the Azure Management Portal to configure Automated Backup when you create a new SQL Server 2014 Virtual Machine.
 
->[AZURE.NOTE] Automated Backup relies on the SQL Server IaaS Agent. To install and configure the agent, you must have the Azure VM Agent running on the target virtual machine. Newer virtual machine gallery images have this option enabled by default, but the Azure VM Agent might be missing on existing VMs. If you are using your own VM image, you will also need to install the SQL Server IaaS Agent. For more information, see [VM Agent and Extensions](http://azure.microsoft.com/blog/2014/04/15/vm-agent-and-extensions-part-2/).
+>[AZURE.NOTE] Automated Backup relies on the SQL Server IaaS Agent. To install and configure the agent, you must have the Azure VM Agent running on the target virtual machine. Newer virtual machine gallery images have this option enabled by default, but the Azure VM Agent might be missing on existing VMs. If you are using your own VM image, you will also need to install the SQL Server IaaS Agent. For more information, see [VM Agent and Extensions](https://azure.microsoft.com/blog/2014/04/15/vm-agent-and-extensions-part-2/).
 
 The following Azure Management Portal screenshot shows these options under **OPTIONAL CONFIGURATION** | **SQL AUTOMATED BACKUP**.
 
@@ -46,13 +47,14 @@ For existing SQL Server 2014 virtual machines, select the **Auto backup** settin
 
 >[AZURE.NOTE] When you enable Automated Backup for the first time, Azure configures the SQL Server IaaS Agent in the background. During this time, the Azure Management Portal will not show that Automated Backup is configured. Wait several minutes for the agent to be installed, configured. After that the Azure Management Portal will reflect the new settings.
 
+
 ## Configure Automated Backup with PowerShell
 
 In the following PowerShell example, Automated Backup is configured for an existing SQL Server 2014 VM. The **New-AzureVMSqlServerAutoBackupConfig** command configures the Automated Backup settings to store backups in the Azure storage account specified by the $storageaccount variable. These backups will be retained for 10 days. The **Set-AzureVMSqlServerExtension** command updates the specified Azure VM with these settings.
 
     $storageaccount = "<storageaccountname>"
     $storageaccountkey = (Get-AzureStorageKey -StorageAccountName $storageaccount).Primary
-    $storagecontext = New-AzureStorageContext -StorageAccountName $storageaccount -StorageAccountKey $storageaccountkey
+    $storagecontext = New-AzureStorageContext  -Environment AzureChinaCloud  -StorageAccountName $storageaccount -StorageAccountKey $storageaccountkey
     $autobackupconfig = New-AzureVMSqlServerAutoBackupConfig -StorageContext $storagecontext -Enable -RetentionPeriod 10
 
     Get-AzureVM -ServiceName <vmservicename> -Name <vmname> | Set-AzureVMSqlServerExtension -AutoBackupSettings $autobackupconfig | Update-AzureVM
@@ -63,7 +65,7 @@ To enable encryption, modify the previous script to pass the EnableEncryption pa
 
     $storageaccount = "<storageaccountname>"
     $storageaccountkey = (Get-AzureStorageKey -StorageAccountName $storageaccount).Primary
-    $storagecontext = New-AzureStorageContext -StorageAccountName $storageaccount -StorageAccountKey $storageaccountkey
+    $storagecontext = New-AzureStorageContext  -Environment AzureChinaCloud  -StorageAccountName $storageaccount -StorageAccountKey $storageaccountkey
     $password = "P@ssw0rd"
     $encryptionpassword = $password | ConvertTo-SecureString -AsPlainText -Force  
     $autobackupconfig = New-AzureVMSqlServerAutoBackupConfig -StorageContext $storagecontext -Enable -RetentionPeriod 10 -EnableEncryption -CertificatePassword $encryptionpassword
@@ -72,7 +74,7 @@ To enable encryption, modify the previous script to pass the EnableEncryption pa
 
 To disable automatic backup, run the same script without the **-Enable** parameter to the **New-AzureVMSqlServerAutoBackupConfig**. As with installation, it can take several minutes to disable Automated Backup.
 
-## Disabling and Uninstalling the SQL Server IaaS Agent
+## Disabling and uninstalling the SQL Server IaaS Agent
 
 If you want to disable the SQL Server IaaS Agent for Automated Backup and Patching, use the following command:
 
@@ -90,7 +92,7 @@ You can also uninstall the extension using the **Remove-AzureVMSqlServerExtensio
 
 ## Compatibility
 
-The following products <!-- deleted by customization are compatible with the --><!-- keep by customization: begin --> areÂ compatible withÂ the <!-- keep by customization: end --> SQL Server IaaS Agent features for Automated Backup:
+The following products are compatible with the SQL Server IaaS Agent features for Automated Backup:
 
 - Windows Server 2012
 
@@ -100,7 +102,7 @@ The following products <!-- deleted by customization are compatible with the -
 
 - SQL Server 2014 Enterprise
 
-## Next Steps
+## Next steps
 
 Automated Backup configures Managed Backup on Azure VMs. So it is important to [review the documentation for Managed Backup](https://msdn.microsoft.com/zh-cn/library/dn449496.aspx) to understand the behavior and implications.
 

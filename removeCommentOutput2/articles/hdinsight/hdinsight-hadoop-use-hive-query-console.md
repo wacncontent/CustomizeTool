@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Use Hadoop Hive on the Query Console in HDInsight | Windows Azure"
+   pageTitle="Use Hadoop Hive on the Query Console in HDInsight | Azure"
    description="Learn how to use the web-based Query Console to run Hive queries on an HDInsight Hadoop cluster from your browser."
    services="hdinsight"
    documentationCenter=""
@@ -32,6 +32,7 @@ To complete the steps in this article, you will need the following.
 
 ##<a id="run"></a> Run Hive queries using the Query Console
 
+
 1. Open the <a href="https://manage.windowsazure.cn" target="_blank">Azure Management Portal</a> and select your HDInsight cluster. From the bottom of the page, select **Query Console**. When prompted, enter the username and password that you used when you created the cluster.
 
 2. From the links at the top of the page, select **Hive Editor**. This displays a form that can be used to enter the HiveQL statements that you want to run in the HDInsight cluster.
@@ -53,8 +54,8 @@ To complete the steps in this article, you will need the following.
     * **CREATE EXTERNAL TABLE**: Creates a new 'external' table in Hive. External tables store only the table definition in Hive; the data is left in the original location.
 
     > [AZURE.NOTE] External tables should be used when you expect the underlying data to be updated by an external source (such as an automated data upload process) or by another MapReduce operation, but you always want Hive queries to use the latest data.
-    >
-    > Dropping an external table does **not** delete the data, only the table definition.
+
+    > <p>Dropping an external table does **not** delete the data, only the table definition.
 
     * **ROW FORMAT**: Tells Hive how the data is formatted. In this case, the fields in each log are separated by a space.
     * **STORED AS TEXTFILE LOCATION**: Tells Hive where the data is stored (the example/data directory) and that it is stored as text

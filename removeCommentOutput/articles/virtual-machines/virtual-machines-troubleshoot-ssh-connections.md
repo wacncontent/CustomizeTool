@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Troubleshoot SSH connection to an Azure VM | Windows Azure"
+	pageTitle="Troubleshoot SSH connection to an Azure VM | Azure"
 	description="Troubleshoot and fix SSH errors like SSH connection failed or SSH connection refused for an Azure virtual machine running Linux."
 	keywords="ssh connection refused,ssh error,azure ssh,SSH connection failed"
 	services="virtual-machines"
@@ -22,7 +22,7 @@ There could be various causes of SSH errors while trying to connect to a Linux-b
 
 This article only applies to Azure virtual machines running Linux. For Azure virtual machines running Windows, see [Troubleshoot Remote Desktop connection to an Azure VM](/documentation/articles/virtual-machines-troubleshoot-remote-desktop-connections).
 
-If you need more help at any point in this article, you can contact the Azure experts on [the MSDN Azure and the Stack Overflow forums](/support/forums/). Alternatively, you can file an Azure support incident. Go to the [Azure Support site](/support/contact/) and click **Get support**. For information about using Azure Support, read the [Windows Azure Support FAQ](/support/faq/).
+If you need more help at any point in this article, you can contact the Azure experts on [the MSDN Azure and the Stack Overflow forums](/support/forums/). Alternatively, you can file an Azure support incident. Go to the [Azure Support site](/support/contact/) and click **Get support**. For information about using Azure Support, read the [Azure Support FAQ](/support/faq/).
 
 
 ## Fix common SSH errors
@@ -56,7 +56,7 @@ Try these steps to resolve the most common SSH connection failures:
 
 To resolve the common SSH issues for virtual machines created using the Resource Manager deployment model, try the following steps.
 
-1. _Reset the SSH connection_ to your Linux VM on the command line, using either the Azure CLI or Azure PowerShell. Make sure the [Windows Azure Linux Agent](/documentation/articles/virtual-machines-linux-agent-user-guide) version 2.0.5 or later is installed.
+1. _Reset the SSH connection_ to your Linux VM on the command line, using either the Azure CLI or Azure PowerShell. Make sure the [Azure Linux Agent](/documentation/articles/virtual-machines-linux-agent-user-guide) version 2.0.5 or later is installed.
 
 **Using Azure CLI**:
 
@@ -218,7 +218,7 @@ If you are using certificate authentication, verify that you have these permissi
 - Chmod 700 ~/.ssh
 - Chmod 644 ~/.ssh/\*.pub
 - Chmod 600 ~/.ssh/id_rsa (or any other files that have your private keys stored in)
-- Chmod 644 ~/.ssh/known_hosts (contains hosts youâve connected to via SSH)
+- Chmod 644 ~/.ssh/known_hosts (contains hosts you've connected to via SSH)
 
 #### Source 2: Organization edge device
 

@@ -47,6 +47,7 @@ Before following the instructions in this article, ensure that you have the foll
 
 Create an Azure storage account. The app will use this account to store the to-do items.
 
+
 1. Open your web browser and go to the [Azure Management Portal]. If prompted, login with your Azure subscription information.
 
 2. At the bottom of the portal, click **+ NEW** and then select **Storage Account**.
@@ -536,6 +537,7 @@ In this step, you will download a file containing information about your subscri
 
 	> [AZURE.NOTE] If this is the first Azure web app for your subscription, you will be instructed to use the Azure Management Portal to create the web app. For more information, see [Build and deploy a Node.js web app in Azure].
 
+
 ### Switch to an environment variable
 
 Earlier we implemented code that looks for a environment variables or loads the value from the **config.json** file. In the following steps you will create key/value pairs in your website configuration that the application real access through an environment variable.
@@ -601,8 +603,9 @@ To publish the app, commit the code files to Git and then push to azure/master.
 
 [Azure CLI]
 
-[Build and deploy a Node.js web site in Azure Websites]: /documentation/articles/web-sites-nodejs-develop-deploy-mac
-[Continuous deployment using GIT in Azure Websites]: /documentation/articles/web-sites-publish-source-control
+
+[Build and deploy a Node.js web app in Azure]: /documentation/articles/web-sites-nodejs-develop-deploy-mac
+[Continuous deployment using GIT in Azure Web App]: /documentation/articles/web-sites-publish-source-control
 [Azure Developer Center]: /develop/nodejs/
 
 [node]: http://nodejs.org
@@ -611,10 +614,10 @@ To publish the app, commit the code files to Git and then push to azure/master.
 [for free]: http://windowsazure.cn
 [Git remote]: http://git-scm.com/docs/git-remote
 
-[Node.js web site with MongoDB]: /documentation/articles/web-sites-nodejs-store-data-mongodb
+[Node.js web app with MongoDB]: /documentation/articles/web-sites-nodejs-store-data-mongodb
 [Azure CLI]: /documentation/articles/xplat-cli-install
 
-[Continuous deployment using GIT in Azure Websites]: /documentation/articles/web-sites-publish-source-control
+[Continuous deployment using GIT in Azure Web App]: /documentation/articles/web-sites-publish-source-control
 [azure]: https://github.com/Azure/azure-sdk-for-node
 [node-uuid]: https://www.npmjs.com/package/node-uuid
 [nconf]: https://www.npmjs.com/package/nconf
@@ -637,4 +640,3 @@ To publish the app, commit the code files to Git and then push to azure/master.
 [web-configure]: ./media/storage-nodejs-use-table-storage-web-site/sql-task-configure.png
 [app-settings-save]: ./media/storage-nodejs-use-table-storage-web-site/savebutton.png
 [app-settings]: ./media/storage-nodejs-use-table-storage-web-site/storage-tasks-appsettings.png
-

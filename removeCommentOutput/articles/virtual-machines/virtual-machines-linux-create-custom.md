@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Create a Linux VM | Windows Azure"
+	pageTitle="Create a Linux VM | Azure"
 	description="Learn how to create a custom virtual machine with the classic deployment model running the Linux operating system."
 	services="virtual-machines"
 	documentationCenter=""

@@ -1,7 +1,7 @@
 <!-- not suitable for Mooncake -->
 
 <properties
-   	pageTitle="Create Hadoop, HBase, or Storm clusters on Linux in HDInsight using cURL and the Azure REST API | Windows Azure"
+   	pageTitle="Create Hadoop, HBase, or Storm clusters on Linux in HDInsight using cURL and the Azure REST API | Azure"
    	description="Learn how to create Linux-based HDInsight clusters using cURL, Azure Resource Manager templates, and the Azure REST API. You can specify the cluster type (Hadoop, HBase, or Storm,) or use scripts to install custom components."
    	services="hdinsight"
    	documentationCenter=""
@@ -25,7 +25,7 @@ The Azure REST API allows you to perform management operations on services hoste
 >
 > For more information on node sizes and associated costs, see [HDInsight pricing](/home/features/hdinsight/#price).
 
-##Prerequisites 
+###Prerequisites
 
 - **An Azure subscription**. See [Get Azure trial](/pricing/1rmb-trial/).
 

@@ -1,6 +1,8 @@
-<!-- keep by customization: begin -->
 <!-- not suitable for Mooncake -->
 
-<!-- keep by customization: end -->
+
+<!-- not suitable for Mooncake -->
+
+
 ## What's changed
-* For a guide to the change from Websites to Azure <!-- keep by customization: begin --> Web App <!-- keep by customization: end --> see: [Azure <!-- keep by customization: begin --> Web App <!-- keep by customization: end --> and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
+* For a guide to the change from Websites to Azure  Web App  see: [Azure  Web App  and Its Impact on Existing Azure Services](/documentation/services/web-sites/)

@@ -196,6 +196,6 @@ For more information about the Azure platform, see [Azure Web App](/documentatio
 [ControlInbound]: /documentation/articles/app-service-app-service-environment-control-inbound-traffic/
 [virtualnetwork]: /documentation/articles/virtual-networks-faq/
 [AppServicePricing]: /home/features/web-site/#price 
-[AzureAppService]: /documentation/articles/app-service-value-prop-what-is/
+[AzureAppService]: /documentation/services/web-sites/
 [ASEAutoscale]: /documentation/articles/app-service-environment-auto-scale/
 [ExpressRoute]: /documentation/articles/app-service-app-service-environment-network-configuration-expressroute/

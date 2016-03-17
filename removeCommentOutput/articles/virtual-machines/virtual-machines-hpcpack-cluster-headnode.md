@@ -1,5 +1,5 @@
 <properties
- pageTitle="Create an HPC Pack head node in an Azure VM | Windows Azure"
+ pageTitle="Create an HPC Pack head node in an Azure VM | Azure"
  description="Learn how to use the Azure Management Portal and the Resource Manager deployment model to create a Microsoft HPC Pack head node in an Azure VM."
  services="virtual-machines"
  documentationCenter=""

@@ -1,5 +1,5 @@
 <properties
- pageTitle="Autoscale compute resources in HPC cluster | Windows Azure"
+ pageTitle="Autoscale compute resources in HPC cluster | Azure"
  description="Learn about ways to automatically grow and shrink compute resources in an HPC Pack cluster in Azure"
  services="virtual-machines"
  documentationCenter=""

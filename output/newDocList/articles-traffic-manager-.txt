@@ -1,4 +1,4 @@
-new docs: 20, word count: 21097
+new docs: 20, word count: {word_count_TODO}
 articles/traffic-manager/disable-enable-or-delete-a-profile.md
 articles/traffic-manager/disable-or-enable-an-endpoint.md
 articles/traffic-manager/testing-traffic-manager-settings.md

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Use Azure Event Hubs with Apache Spark in HDInsight to process streaming data | Windows Azure" 
+	pageTitle="Use Azure Event Hubs with Apache Spark in HDInsight to process streaming data | Azure" 
 	description="Step-by-step instructions on how to send a data stream to Azure Event Hub and then receive those events in Spark using a Zeppelin notebook" 
 	services="hdinsight" 
 	documentationCenter="" 
@@ -182,12 +182,12 @@ Instructions on how to perform these steps and a sample streaming application ca
 * [Manage resources for the Apache Spark cluster in Azure HDInsight](/documentation/articles/hdinsight-apache-spark-resource-manager-v1)
 
 
-[hdinsight-versions]: ../hdinsight-component-versioning-v1/
-[hdinsight-upload-data]: ../hdinsight-upload-data/
-[hdinsight-storage]: ../hdinsight-use-blob-storage/
+[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning-v1
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
 
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: /pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
 [azure-management-portal]: https://manage.windowsazure.cn/
-[azure-create-storageaccount]: ../storage-create-storage-account/ 
+[azure-create-storageaccount]: /documentation/articles/storage-create-storage-account

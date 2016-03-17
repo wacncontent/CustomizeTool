@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Query data from HDFS-compatible Blob storage | Windows Azure"
+	pageTitle="Query data from HDFS-compatible Blob storage | Azure"
 	description="HDInsight uses Azure Blob storage as the big data store for HDFS. Learn how to query data from Blob storage and store results of your analysis."
 	keywords="blob storage,hdfs,structured data,unstructured data"
 	services="hdinsight,storage"
@@ -93,6 +93,7 @@ The default Blob container stores cluster specific information such as job histo
 
 ### Using the Azure Management Portal
 
+
 When provisioning an HDInsight cluster from the Azure Management Portal, there are two options: **Quick Create** and **Custom Create**. The Quick Create option requires that the Azure Storage account is created beforehand. For instructions, see [How to Create a Storage Account][azure-storage-create].
 
 By using the Quick Create option, you can choose an existing storage account. The provision process creates a new container with the same name as the HDInsight cluster name. If a container with the same name already exists, <clusterName>-<x> will be used. For example, *myHDIcluster-1*. This container is used as the default file system.
@@ -116,6 +117,7 @@ To create a container, use the following command:
 ### Using Azure PowerShell
 
 If you [installed and configured Azure PowerShell][powershell-install], you can use the following from the Azure PowerShell prompt to create a storage account and container:
+
 
 	$subscriptionName = "<SubscriptionName>"	# Azure subscription name
 	$storageAccountName = "<AzureStorageAccountName>" # The storage account that you will create
@@ -203,11 +205,13 @@ See [Upload data to HDInsight][hdinsight-upload-data].
 
 The following scrip downloads a block blob to the current folder. Before running the script, change the directory to a folder where you have write permissions.
 
+
 	$storageAccountName = "<AzureStorageAccountName>"   # The storage account used for the default file system specified at provision.
 	$containerName = "<BlobStorageContainerName>"  # The default file system container has the same name as the cluster.
 	$blob = "example/data/sample.log" # The name of the blob to be downloaded.
 	
 	# Use Add-AzureAccount if you haven't connected to your Azure subscription
+
 	#Add-AzureAccount # The connection is good for 12 hours
 
 	# Use these two commands if you have multiple subscriptions
@@ -215,6 +219,7 @@ The following scrip downloads a block blob to the current folder. Before running
 	#Select-AzureSubscription $subscriptionName
 
 	Write-Host "Create a context object ... " -ForegroundColor Green
+
 	$storageAccountKey = Get-AzureStorageKey $storageAccountName | %{ $_.Primary }
 	$storageContext = New-AzureStorageContext -StorageAccountName $storageAccountName -StorageAccountKey $storageAccountKey  
 	
@@ -224,6 +229,7 @@ The following scrip downloads a block blob to the current folder. Before running
 	Write-Host "List the downloaded file ..." -ForegroundColor Green
 	cat "./$blob"
 
+
 ###Delete files
 
 The following script shows how to delete a file.
@@ -231,6 +237,7 @@ The following script shows how to delete a file.
 	$storageAccountName = "<AzureStorageAccountName>"   # The storage account used for the default file system specified at provision.
 	$containerName = "<BlobStorageContainerName>"  # The default file system container has the same name as the cluster.
 	$blob = "example/data/sample.log" # The name of the blob to be downloaded.
+
 
 	# Use Add-AzureAccount if you haven't connected to your Azure subscription
 	#Add-AzureAccount # The connection is good for 12 hours
@@ -247,6 +254,7 @@ The following script shows how to delete a file.
 	Remove-AzureStorageBlob -Container $containerName -Context $storageContext -blob $blob
 
 ###List files
+
 
 The following script shows how to list files inside a folder. (The next example shows how to use the **Invoke-Hive** cmdlet to execute the **dfs ls** command to list a folder.)
 
@@ -271,7 +279,6 @@ The following script shows how to list files inside a folder. (The next example 
 ###Run Hive queries using an undefined storage account
 
 This example shows how to list a folder from storage account that is not defined during the creating process.
-
 	$clusterName = "<HDInsightClusterName>"
 
 	$undefinedStorageAccount = "<UnboundedStorageAccountUnderTheSameSubscription>"
@@ -279,10 +286,12 @@ This example shows how to list a folder from storage account that is not defined
 
 	$undefinedStorageKey = Get-AzureStorageKey $undefinedStorageAccount | %{ $_.Primary }
 
+
 	Use-AzureHDInsightCluster $clusterName
 
 	$defines = @{}
 	$defines.Add("fs.azure.account.key.$undefinedStorageAccount.blob.core.chinacloudapi.cn", $undefinedStorageKey)
+
 
 	Invoke-Hive -Defines $defines -Query "dfs -ls wasb://$undefinedContainer@$undefinedStorageAccount.blob.core.chinacloudapi.cn/;"
 
@@ -298,6 +307,7 @@ For more information, see:
 * [Use Pig with HDInsight][hdinsight-use-pig]
 * [Use Azure Storage Shared Access Signatures to restrict access to data with HDInsight][hdinsight-use-sas]
 
+[hdinsight-use-sas]: /documentation/articles/hdinsight-storage-sharedaccesssignature-permissions
 [powershell-install]: /documentation/articles/powershell-install-configure
 [hdinsight-creation]: /documentation/articles/hdinsight-provision-clusters-v1
 [hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1

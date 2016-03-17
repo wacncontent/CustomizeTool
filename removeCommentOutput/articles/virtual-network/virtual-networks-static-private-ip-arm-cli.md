@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="How to set a static private IP in ARM mode using the CLI| Windows Azure"
+   pageTitle="How to set a static private IP in ARM mode using the CLI| Azure"
    description="Understanding static IPs (DIPs) and how to manage them in ARM mode using the CLI"
    services="virtual-network"
    documentationCenter="na"

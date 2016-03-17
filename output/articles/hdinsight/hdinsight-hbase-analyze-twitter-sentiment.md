@@ -1,5 +1,7 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
-	pageTitle="Analyze real-time Twitter sentiment with HBase | Windows Azure" 
+	pageTitle="Analyze real-time Twitter sentiment with HBase | Azure" 
 	description="Learn how to do real-time sentiment analysis of big data from Twitter using HBase in an HDInsight (Hadoop) cluster." 
 	services="hdinsight" 
 	documentationCenter="" 
@@ -462,12 +464,12 @@ In this section, you will create an ASP.NET MVC web application to read the real
 	- Location: **C:\Tutorials** 
 4. Click **OK**.
 5. In **Select a template**, click **MVC**. 
-6. In **Windows Azure**, click **Manage Subscriptions**.
-7. From **Manage Windows Azure Subscriptions**, click **Sign in**.
+6. In **Azure**, click **Manage Subscriptions**.
+7. From **Manage Azure Subscriptions**, click **Sign in**.
 8. Enter your Azure credentials. Your Azure subscription information will be shown on the **Accounts** tab.
-9. Click **Close** to close the **Manage Windows Azure Subscriptions** window.
+9. Click **Close** to close the **Manage Azure Subscriptions** window.
 10. From **New ASP.NET Project - TweetSentimentWeb**, click **OK**.
-11. From **Configure Windows Azure Site Settings**, select the **Region** that is closest to you. You don't need to specify a database server. 
+11. From **Configure Azure Site Settings**, select the **Region** that is closest to you. You don't need to specify a database server. 
 12. Click **OK**.
 
 **To install NuGet packages**
@@ -1233,8 +1235,8 @@ In this tutorial, you learned how to get tweets, analyze the sentiment of tweets
 - [Develop Java MapReduce programs for HDInsight][hdinsight-develop-mapreduce]
 
 
-[hbase-get-started]: ../hdinsight-hbase-get-started.md
-[website-get-started]: ../web-sites-dotnet-get-started.md
+[hbase-get-started]: /documentation/articles/hdinsight-hbase-tutorial-get-started-v1
+[website-get-started]: /documentation/articles/web-sites-dotnet-get-started
 
 
 
@@ -1245,10 +1247,10 @@ In this tutorial, you learned how to get tweets, analyze the sentiment of tweets
 
 
 
-[hdinsight-develop-streaming]: hdinsight-hadoop-develop-deploy-streaming-jobs.md
-[hdinsight-develop-mapreduce]: hdinsight-develop-deploy-java-mapreduce.md
-[hdinsight-analyze-twitter-data]: hdinsight-analyze-twitter-data.md
-[hdinsight-hbase-get-started]: ../hdinsight-hbase-get-started.md
+[hdinsight-develop-streaming]: /documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs
+[hdinsight-develop-mapreduce]: /documentation/articles/hdinsight-develop-deploy-java-mapreduce
+[hdinsight-analyze-twitter-data]: /documentation/articles/hdinsight-analyze-twitter-data
+[hdinsight-hbase-get-started]: /documentation/articles/hdinsight-hbase-tutorial-get-started-v1
 
 
 
@@ -1262,15 +1264,15 @@ In this tutorial, you learned how to get tweets, analyze the sentiment of tweets
 [twitter-statuses-filter]: https://dev.twitter.com/docs/api/1.1/post/statuses/filter
 
 [powershell-start]: http://technet.microsoft.com/zh-cn/library/hh847889.aspx
-[powershell-install]: ../install-configure-powershell.md
+[powershell-install]: /documentation/articles/powershell-install-configure
 [powershell-script]: https://technet.microsoft.com/zh-cn/library/dn425048.aspx
 
-[hdinsight-provision]: hdinsight-provision-clusters-v1.md
-[hdinsight-get-started]: ../hdinsight-get-started.md
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
 [hdinsight-storage-powershell]: /documentation/articles/hdinsight-hadoop-use-blob-storage#powershell
-[hdinsight-analyze-flight-delay-data]: hdinsight-analyze-flight-delay-data.md
-[hdinsight-storage]: ../hdinsight-use-blob-storage.md
-[hdinsight-use-sqoop]: hdinsight-use-sqoop.md
-[hdinsight-power-query]: hdinsight-connect-excel-power-query.md
-[hdinsight-hive-odbc]: hdinsight-connect-excel-hive-ODBC-driver.md
+[hdinsight-analyze-flight-delay-data]: /documentation/articles/hdinsight-analyze-flight-delay-data
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
+[hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop
+[hdinsight-power-query]: /documentation/articles/hdinsight-connect-excel-power-query
+[hdinsight-hive-odbc]: /documentation/articles/hdinsight-connect-excel-hive-ODBC-driver
  

@@ -1,5 +1,7 @@
+<!-- not suitable for Mooncake -->
+
 <properties
-	pageTitle="SharePoint Server 2013 farm Phase 2 | Windows Azure"
+	pageTitle="SharePoint Server 2013 farm Phase 2 | Azure"
 	description="Create and configure the two Active Directory replica domain controllers in Phase 2 of the SharePoint Server 2013 farm in Azure."
 	documentationCenter=""
 	services="virtual-machines"

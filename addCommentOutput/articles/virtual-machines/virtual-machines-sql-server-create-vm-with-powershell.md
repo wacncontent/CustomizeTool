@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Create a SQL Server Virtual Machine in PowerShell | Windows Azure"
+	pageTitle="Create a SQL Server Virtual Machine in PowerShell | Azure"
 	description="Provides steps and PowerShell scripts for creating an Azure VM with SQL Server virtual machine gallery images."
 	services="virtual-machines"
 	documentationCenter="na"
@@ -9,7 +9,7 @@
 	tags="azure-service-management" />
 <tags
 	ms.service="virtual-machines"
-	ms.date="01/06/2015"
+	ms.date="01/22/2016"
 	wacn.date=""/>
 
 # Create a SQL Server Virtual Machine in Azure (PowerShell)
@@ -17,19 +17,19 @@
 > [AZURE.SELECTOR]
 - [Management Portal](/documentation/articles/virtual-machines-provision-sql-server)
 - [PowerShell](/documentation/articles/virtual-machines-sql-server-create-vm-with-powershell)
-<!-- deleted by customization
+
 - [Azure Resource Manager portal](/documentation/articles/virtual-machines-sql-server-provision-resource-manager)
--->
+
 
 
 ## Overview
 
 This article provides steps for how to create a SQL Server virtual machine in Azure by using the PowerShell cmdlets.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] <!-- deleted by customization Resource Manager model. -->
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]  Resource Manager model. 
 
 
-## Install and Configure PowerShell
+## Install and configure PowerShell
 
 1. If you do not have an Azure account, visit [Azure trial](/pricing/1rmb-trial/).
 
@@ -163,7 +163,7 @@ The following script provides and example of a complete script that creates a **
 
 After logging onto the machine with remote desktop, configure SQL Server based on the instructions in [Steps for configuring SQL Server connectivity in an Azure VM](/documentation/articles/virtual-machines-sql-server-connectivity#steps-for-configuring-sql-server-connectivity-in-an-azure-vm).
 
-## Next Steps
+## Next steps
 
 You can find additional instructions for provisioning virtual machines with PowerShell in the [virtual machines documentation](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-vms). For additional scripts related to SQL Server and Premium Storage, see [Use Azure Premium Storage with SQL Server on Virtual Machines](/documentation/articles/virtual-machines-sql-server-use-premium-storage).
 

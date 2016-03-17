@@ -1,5 +1,7 @@
+<!-- not suitable for Mooncake -->
+
 <properties
-	pageTitle="Create a WordPress web app in Azure | Windows Azure"
+	pageTitle="Create a WordPress web app in Azure | Azure"
 	description="Learn how to create a new Azure web app for a WordPress blog using the Azure Management Portal."
 	services="app-service\web"
 	documentationCenter="php"
@@ -31,9 +33,9 @@ The Azure gallery makes available a wide range of popular web apps developed by 
 The WordPress site that you deploy in this tutorial uses MySQL for the database. If you wish to instead use SQL Database for the database, see [Project Nami](http://projectnami.org/). **Project Nami** is also available through the Marketplace.
 
 > [AZURE.NOTE]
-> To complete this tutorial, you need a Windows Azure account. If you don't have an account, you can [activate your Visual Studio subscriber benefits](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F) or [sign up for a trial](/pricing/1rmb-trial/?WT.mc_id=A261C142F).
+> To complete this tutorial, you need a Azure account. If you don't have an account, you can [activate your Visual Studio subscriber benefits](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F) or [sign up for a trial](/pricing/1rmb-trial/?WT.mc_id=A261C142F).
 >
-> If you want to get started with Azure before you sign up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/). There, you can immediately create a short-lived starter web app in Azureâno credit card required, and no commitments.
+> If you want to get started with Azure before you sign up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/). There, you can immediately create a short-lived starter web app in Azure—no credit card required, and no commitments.
 
 ## Select WordPress and configure for Azure
 

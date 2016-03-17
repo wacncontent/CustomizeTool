@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Line of business application in Azure | Windows Azure" 
+	pageTitle="Line of business application in Azure | Azure" 
 	description="Learn the value of a line of business application in Azure, set up a test environment, and deploy a high-availability configuration." 
 	services="virtual-machines" 
 	documentationCenter="" 
@@ -18,7 +18,7 @@
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
 
 
-Set up your first or next web-based, intranet-only line of business application in Windows Azure and take advantage of ease of configuration and the ability to quickly expand the application to include new capacity.
+Set up your first or next web-based, intranet-only line of business application in Azure and take advantage of ease of configuration and the ability to quickly expand the application to include new capacity.
  
 With the Virtual Machines and Virtual Network features of Azure infrastructure services, you can quickly deploy and run a line of business application that is accessible by your organization's users. For example, you can set this up.
 
@@ -36,7 +36,12 @@ A cross-premises virtual network is connected to an on-premises network with a s
 
 ![](./media/virtual-machines-workload-high-availability-LOB-application/CreateLOBAppHybridCloud_3.png)
  
-You can create this dev/test environment for <!-- deleted by customization free with your [MSDN subscription](/pricing/member-offers/msdn-benefits/) --> or an [Azure Trial Subscription](/pricing/1rmb-trial/).
+
+You can create this dev/test environment for free with your [MSDN subscription](https://azure.microsoft.com/pricing/member-offers/msdn-benefits/) or an [Azure Trial Subscription](/pricing/1rmb-trial/).
+
+
+You can create this dev/test environment with an [Azure Trial Subscription](/pricing/1rmb-trial/).
+
 
 Your next step is to create a high-availability line of business application in Azure.
 

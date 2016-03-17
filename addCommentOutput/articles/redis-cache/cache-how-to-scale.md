@@ -16,20 +16,20 @@
 
 >[AZURE.NOTE] The Azure Redis Cache scaling feature is currently in preview. During the preview period, you cannot scale to or from a premium tier cache, but you can change the pricing tier within a premium cache, and you can [change the cluster size](/documentation/articles/cache-how-to-premium-clustering#cluster-size) in a premium cache with clustering enabled.
 
-Azure Redis Cache has different cache offerings which provide flexibility in the choice of cache size and features. If the requirements of your application change after a cache is created, you can scale the size of the cache using <!-- deleted by customization the **Change pricing tier** blade in the [Azure Management Portal](https://manage.windowsazure.cn). --><!-- keep by customization: begin --> Azure PowerShell <!-- keep by customization: end -->
+Azure Redis Cache has different cache offerings which provide flexibility in the choice of cache size and features. If the requirements of your application change after a cache is created, you can scale the size of the cache using  the **Change pricing tier** blade in the [Azure Management Portal](https://manage.windowsazure.cn).  Azure PowerShell 
 
 ## When to scale
 
-<!-- deleted by customization
+
 You can use the [monitoring](/documentation/articles/cache-how-to-monitor) features of Azure Redis Cache to monitor the health and performance of your cache applications and to help determine if there is a need to scale the cache. 
 
 You can monitor the following metrics to help determine if you need to scale.
--->
-<!-- keep by customization: begin -->
+
+
 The [Access Redis Cache Monitoring data](https://github.com/rustd/RedisSamples/tree/master/CustomMonitoring) sample demonstrates how you can access monitoring data for your Azure Redis Cache.
 
 You can use the following metrics to help determine if you need to scale.
-<!-- keep by customization: end -->
+
 
 -	Redis Server Load
 -	Memory Usage
@@ -38,7 +38,7 @@ You can use the following metrics to help determine if you need to scale.
 
 If you determine that your cache is no longer meeting the requirements of your application, you can change to a larger or smaller cache pricing tier that is right for your application. For more information on determining which cache pricing tier to use, see [What Redis Cache offering and size should I use](/documentation/articles/cache-faq#what-redis-cache-offering-and-size-should-i-use).
 
-<!-- deleted by customization
+
 ## Scale a cache
 To scale your cache, [browse to the cache](/documentation/articles/cache-configure#configure-redis-cache-settings) in the [Azure Management Portal](https://manage.windowsazure.cn) and click **Settings**, **Pricing tier**.
 
@@ -63,10 +63,10 @@ While the cache is scaling to the new pricing tier, a **Scaling** status is disp
 
 When scaling is complete, the status changes from **Scaling** to **Running**.
 
--->
+
 ## How to automate a scaling operation
 
-<!-- deleted by customization In addition to scaling your Azure Redis Cache instances in the Azure Management Portal, --> you can scale using Azure Redis Cache PowerShell cmdlets, Azure CLI, and by using the Windows Azure Management Libraries (MAML).
+ In addition to scaling your Azure Redis Cache instances in the Azure Management Portal,  you can scale using Azure Redis Cache PowerShell cmdlets, Azure CLI, and by using the Azure Management Libraries (MAML).
 
 ### Scale using PowerShell
 
@@ -84,7 +84,7 @@ For more information on scaling with Azure CLI, see [Change settings of an exist
 
 ### Scale using MAML
 
-To scalue your Azure Redis Cache instances using the [Windows Azure Management Libraries (MAML)](http://azure.microsoft.com/updates/management-libraries-for-net-release-announcement/), call the `IRedisOperations.CreateOrUpdate` method and pass in the new size for the `RedisProperties.SKU.Capacity`.
+To scalue your Azure Redis Cache instances using the [Azure Management Libraries (MAML)](http://azure.microsoft.com/updates/management-libraries-for-net-release-announcement/), call the `IRedisOperations.CreateOrUpdate` method and pass in the new size for the `RedisProperties.SKU.Capacity`.
 
     static void Main(string[] args)
     {
@@ -165,16 +165,16 @@ Scaling takes approximately 20 minutes, depending on how much data is in the cac
 
 ## How can I tell when scaling is complete
 
-<!-- deleted by customization
+
 In the Azure Management Portal you can see the scaling operation in progress. When scaling is complete, the status of the cache changes to **Running**.
--->
-<!-- keep by customization: begin -->
-In Windows Azure China, Redis Cache currently cannot be managed in Management Portal, so you cannot check the scaling status in the Portal. However, you can use the following PowerShell command to get the status of you cache:
+
+
+In Azure China, Redis Cache currently cannot be managed in Management Portal, so you cannot check the scaling status in the Portal. However, you can use the following PowerShell command to get the status of you cache:
 
 	Get-AzureRmRedisCache -ResourceGroupName myGroup -Name myRedisCache
 
 In about 20 minutes, you can run this command to see whether the size of you cache is changed. 
-<!-- keep by customization: end -->
+
 
 ## Why is this feature in preview
 

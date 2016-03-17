@@ -27,6 +27,6 @@ Azure offers several options for anti-virus/antimalware solutions, but it's up t
 Network access control lists (ACLs) let you selectively permit or deny inbound traffic to a virtual machine endpoint. This packet filtering capability provides an additional layer of security. For details on how this works and links to instructions, see [About Network Access Control Lists (ACLs)](http://msdn.microsoft.com/zh-cn/library/azure/dn376541.aspx).
 
 ##Additional resources
-[Resources](/support/trust-center/resources) on the Windows Azure Trust Center
+[Resources](/support/trust-center/resources) on the Azure Trust Center
 
 

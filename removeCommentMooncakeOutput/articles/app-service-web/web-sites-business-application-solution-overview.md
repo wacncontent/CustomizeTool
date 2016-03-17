@@ -75,7 +75,7 @@ In the **Standard** tier, monitor app responsiveness receive email notifications
 ## More Resources
 
 - [Azure Web Apps Documentation](/home/features/web-site/)
-- [Azure Web Blog](/blog/tags/ç˝çŤ/)
+- [Azure Web Blog](/blog/tags/网站/)
 
 
 

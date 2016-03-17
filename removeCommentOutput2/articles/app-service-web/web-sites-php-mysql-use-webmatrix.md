@@ -164,7 +164,7 @@ Before publishing your application to Azure  Websites, the database connection i
 
 	![WebMatrix - Publish][edit_publish]
 
-3. Click **Choose an existing site from Windows Azure**.
+3. Click **Choose an existing site from Microsoft Azure**.
 
 3. Select the Azure Websites web app you created earlier.
 

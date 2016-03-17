@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Connect a web app in Azure to Redis Cache via the Memcache protocol | Windows Azure"
+	pageTitle="Connect a web app in Azure to Redis Cache via the Memcache protocol | Azure"
 	description="Connect a web app in Azure App service to Redis Cache using the Memcache protocol"
 	services="app-service\web"
 	documentationCenter="php"
@@ -14,7 +14,7 @@
 
 # Connect a web app in Azure to Redis Cache via the Memcache protocol
 
-In this article, you'll learn how to connect a WordPress web app in [Azure Web App](/documentation/services/web-sites/) to [Azure Redis Cache][12] using the [Memcache][13] protocol. If you have an existing web app that uses a Memcached server for in-memory caching, You can migrate it to Azure and use the first-party caching solution in Windows Azure with little or no change to your application code. Furthermore, you can use your existing Memcache expertise to create highly scalable, distributed apps in Azure with Azure Redis Cache for in-memory caching, while using popular application frameworks such as .NET, PHP, Node.js, Java, and Python.  
+In this article, you'll learn how to connect a WordPress web app in [Azure Web App](/documentation/services/web-sites/) to [Azure Redis Cache][12] using the [Memcache][13] protocol. If you have an existing web app that uses a Memcached server for in-memory caching, You can migrate it to Azure and use the first-party caching solution in Azure with little or no change to your application code. Furthermore, you can use your existing Memcache expertise to create highly scalable, distributed apps in Azure with Azure Redis Cache for in-memory caching, while using popular application frameworks such as .NET, PHP, Node.js, Java, and Python.  
 
 Azure Web Apps enables this application scenario with the Web Apps Memcache shim, which is a local Memcached server that acts as a Memcache proxy for caching calls to Azure Redis Cache. This enables any app that communicates using the Memcache protocol to cache data with Redis Cache. This Memcache shim works at the protocol level, so it can be used by any application or application framework as long as it communicates using the Memcache protocol.
 
@@ -182,7 +182,7 @@ Congratulations! The WordPress app now has a centralized in-memory cache to aid 
 [1]: http://bit.ly/1t0KxBQ
 [2]: http://manage.windowsazure.cn
 [3]: http://manage.windowsazure.cn
-[4]: ../powershell-install-configure.md
+[4]: /documentation/articles/powershell-install-configure
 [5]: /downloads
 [6]: http://pecl.php.net
 [7]: http://pecl.php.net/package/memcache

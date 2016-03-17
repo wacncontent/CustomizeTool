@@ -1,7 +1,7 @@
 <!-- not suitable for Mooncake -->
 
 <properties 
-   pageTitle="Deploy multi NIC VMs using the Azure CLI in Resource Manager | Windows Azure"
+   pageTitle="Deploy multi NIC VMs using the Azure CLI in Resource Manager | Azure"
    description="Learn how to deploy multi NIC VMs using the Azure CLI in Resource Manager"
    services="virtual-network"
    documentationCenter="na"
@@ -12,7 +12,7 @@
 />
 <tags
 	ms.service="virtual-network"
-	ms.date="11/12/2015"
+	ms.date="02/02/2016"
 	wacn.date=""/>
 
 #Deploy multi NIC VMs using the Azure CLI

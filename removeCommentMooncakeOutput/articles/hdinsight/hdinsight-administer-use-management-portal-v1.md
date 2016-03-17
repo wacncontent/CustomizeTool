@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Manage Hadoop clusters in HDInsight using Azure Management Portal | Windows Azure"
+	pageTitle="Manage Hadoop clusters in HDInsight using Azure Management Portal | Azure"
 	description="Learn how to administer HDInsight Service. Create an HDInsight cluster, open the interactive JavaScript console, and open the Hadoop command console."
 	services="hdinsight"
 	documentationCenter=""
@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="11/04/2015"
+	ms.date="02/04/2016"
 	wacn.date=""/>
 
 # Manage Hadoop clusters in HDInsight by using the Azure Management Portal
@@ -73,7 +73,7 @@ An HDInsight cluster can have two user accounts. The HDInsight cluster user acco
 8. Click **SAVE**.
 
 
-##<a id="connect-to-hdinsight-clusters-by-using-rdp" name="rdp"></a> Connect to HDInsight clusters by using RDP
+##<a id="connect-to-hdinsight-clusters-by-using-rdp" name="rdp"></a><a name="connect-to-clusters-using-rdp"></a> Connect to HDInsight clusters by using RDP
 
 The credentials for the cluster that you provided at its creation give access to the services on the cluster, but not to the cluster itself through Remote Desktop. Remote Desktop access is turned off by default, and so direct access to the cluster using it requires some additional, post-creation configuration.
 
@@ -171,9 +171,6 @@ In the previous screenshot, the folder name has the Hadoop version number embedd
 	cd %pig_home%
 	cd %sqoop_home%
 	cd %hcatalog_home%
-
-##Scale clusters
-See [Scale Hadoop clusters in HDInsight](/documentation/articles/hdinsight-hadoop-cluster-scaling).
 
 ##Next steps
 In this article, you have learned how to create an HDInsight cluster by using the Azure Management Portal, and how to open the Hadoop command-line tool. To learn more, see the following articles:

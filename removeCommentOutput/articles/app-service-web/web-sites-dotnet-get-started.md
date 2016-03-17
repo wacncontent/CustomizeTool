@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Create an ASP.NET web app in Azure | Windows Azure"
+	pageTitle="Create an ASP.NET web app in Azure | Azure"
 	description="This tutorial shows you how to create an ASP.NET web project in Visual Studio 2013 and deploy it to a web app in Azure."
 	services="app-service\web"
 	documentationCenter=".net"
@@ -42,16 +42,16 @@ You'll learn:
 > 
 > Help us shape the scope and approach of this tutorial -- if there are other topics you'd like to see covered here in a getting-started tutorial leave feedback in a [Disqus comment](#comments) at the end of the tutorial.
 
-##<a name="video"></a>Sign up for Windows Azure
+##<a name="video"></a>Sign up for Azure
 
 You need an Azure account to complete this tutorial. You can:
 
 * [Open an Azure account for free](/pricing/1rmb-trial/?WT.mc_id=A261C142F). You get credits that can be used to try out paid Azure services. Even after the credits are used up, you can keep the account and use free Azure services and features, such as the Web Apps feature in Azure Web App.
 * [Activate Visual Studio subscriber benefits](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F). Your Visual Studio subscription gives you credits every month that you can use for paid Azure services.
 
-If you want to get started with Azure before you sign up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/). There, you can immediately create a short-lived starter web app in Azureâno credit card required, and no commitments.
+If you want to get started with Azure before you sign up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/). There, you can immediately create a short-lived starter web app in Azure—no credit card required, and no commitments.
 
-In the following video, Scott Hanselman shows how easy it is to sign up for a trial of Windows Azure. (Duration: 1:58)
+In the following video, Scott Hanselman shows how easy it is to sign up for a trial of Azure. (Duration: 1:58)
 
 > [AZURE.VIDEO sign-up-for-microsoft-azure]
 
@@ -97,7 +97,7 @@ The diagram illustrates what you're doing in the create and deploy steps.
 
 	The sample application that you're creating won't enable users to log in. The [Next steps](#next-steps) section links to a tutorial that implements authentication and authorization.
 
-5. In the **New ASP.NET Project** dialog box, leave the settings under **Windows Azure** unchanged, and then click **OK**.
+5. In the **New ASP.NET Project** dialog box, leave the settings under **Azure** unchanged, and then click **OK**.
 
 	![New ASP.NET Project dialog box](./media/web-sites-dotnet-get-started/GS13newaspnetprojdb.png)
 

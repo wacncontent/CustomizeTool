@@ -1,6 +1,6 @@
 <properties
-pageTitle="Prepare an Oracle Linux Virtual Machine for Azure | Windows Azure"
-description="Step by Step configuration of an Oracle virtual machine running Linux in Windows Azure."
+pageTitle="Prepare an Oracle Linux Virtual Machine for Azure | Azure"
+description="Step by Step configuration of an Oracle virtual machine running Linux in Azure."
 services="virtual-machines"
 authors="bbenz"
 documentationCenter="virtual-machines"
@@ -163,7 +163,7 @@ Preparing an Oracle Linux 7 virtual machine for Azure is very similar to the pro
 			PEERDNS=yes
 		IPV6INIT=no
 
-5.  Move (or remove) udev rules to avoid generating static rules for the Ethernet interface. These rules cause problems when you're cloning a virtual machine in Windows Azure or Hyper-V.
+5.  Move (or remove) udev rules to avoid generating static rules for the Ethernet interface. These rules cause problems when you're cloning a virtual machine in Azure or Hyper-V.
 
 		# sudo mkdir -m 0700 /var/lib/waagent
 		# sudo mv /lib/udev/rules.d/75-persistent-net-generator.rules /var/lib/waagent/ 2>/dev/null

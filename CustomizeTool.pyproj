@@ -81,6 +81,10 @@
     <Content Include="output\test\active-directory-aadconnect-account-summary.md" />
     <Content Include="output\test\keyword_test.md" />
     <Content Include="README.md" />
+    <Content Include="setting-add-comment.json" />
+    <Content Include="setting-customization.json" />
+    <Content Include="setting-global.json" />
+    <Content Include="setting-mooncake.json" />
     <Content Include="zh-cn-rules.txt" />
     <Content Include="en-us-rules.txt" />
     <Content Include="setting.json" />

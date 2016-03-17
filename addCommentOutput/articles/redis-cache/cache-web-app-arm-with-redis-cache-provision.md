@@ -12,32 +12,27 @@
 	ms.date="12/16/2015"
 	wacn.date=""/>
 
-# Create a <!-- deleted by customization Web App --><!-- keep by customization: begin --> web site <!-- keep by customization: end --> plus Redis Cache using a template
+# Create a Web App plus Redis Cache using a template
 
-In this topic, you will learn how to create an Azure Resource Manager template that deploys an Azure <!-- deleted by customization Web App --><!-- keep by customization: begin --> web site <!-- keep by customization: end --> with Redis cache. You will learn how to define which resources are deployed and
+In this topic, you will learn how to create an Azure Resource Manager template that deploys an Azure Web App with Redis cache. You will learn how to define which resources are deployed and 
 how to define parameters that are specified when the deployment is executed. You can use this template for your own deployments, or customize it to meet your requirements.
 
 For more information about creating templates, see [Authoring Azure Resource Manager Templates](/documentation/articles/resource-group-authoring-templates).
 
-For the complete template, see <!-- deleted by customization [Web App --><!-- keep by customization: begin --> [web site <!-- keep by customization: end --> with Redis Cache template](https://github.com/Azure/azure-quickstart-templates/blob/master/201-web-app-with-redis-cache/azuredeploy.json).
+For the complete template, see [Web App with Redis Cache template](https://github.com/Azure/azure-quickstart-templates/blob/master/201-web-app-with-redis-cache/azuredeploy.json).
 
 ## What you will deploy
 
 In this template, you will deploy:
 
-<!-- deleted by customization
 - Azure Web App
--->
-<!-- keep by customization: begin -->
-- Azure web site
-<!-- keep by customization: end -->
 - Azure Redis Cache.
 
-<!-- deleted by customization
+
 To run the deployment automatically, click the following button:
 
 [![Deploy to Azure](./media/cache-web-app-arm-with-redis-cache-provision/deploybutton.png)](https://manage.windowsazure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F201-web-app-with-redis-cache%2Fazuredeploy.json)
--->
+
 
 ## Parameters to specify
 
@@ -53,9 +48,9 @@ To run the deployment automatically, click the following button:
 
 ### Redis Cache
 
-Creates the Azure Redis Cache that is used with the web <!-- deleted by customization app --><!-- keep by customization: begin --> site <!-- keep by customization: end -->. The name of the cache is specified in the **redisCacheName** parameter.
+Creates the Azure Redis Cache that is used with the web app. The name of the cache is specified in the **redisCacheName** parameter.
 
-The template creates the cache in the same location as the web <!-- deleted by customization app --><!-- keep by customization: begin --> site <!-- keep by customization: end -->, which is recommended for best performance.
+The template creates the cache in the same location as the web app, which is recommended for best performance. 
 
     {
       "apiVersion": "2014-04-01-preview",
@@ -73,20 +68,11 @@ The template creates the cache in the same location as the web <!-- deleted by c
       }
     }
 
-<!-- deleted by customization
 ### Web app
 
 Creates the web app with name specified in the **siteName** parameter.
 
 Notice that the web app is configured with app setting properties that enable it to work with the Redis Cache. This app settings are dynamically created based on values provided during deployment.
--->
-<!-- keep by customization: begin -->
-### web site
-
-Creates the web site with name specified in the **siteName** parameter.
-
-Notice that the web site is configured with app setting properties that enable it to work with the Redis Cache. This app settings are dynamically created based on values provided during deployment.
-<!-- keep by customization: end -->
         
     {
       "apiVersion": "2015-04-01",

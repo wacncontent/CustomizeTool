@@ -1,5 +1,7 @@
+<!-- not suitable for Mooncake -->
+
 <properties
-	pageTitle="Deploy and manage VM with templates | Windows Azure"
+	pageTitle="Deploy and manage VM with templates | Azure"
 	description="Deploy and manage the most common configurations for Azure virtual machines using Resource Manager templates and Azure CLI."
 	services="virtual-machines"
 	documentationCenter=""

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Frequently asked questions for VMs | Windows Azure"
+	pageTitle="Frequently asked questions for VMs | Azure"
 	description="Provides answers to some of the common questions about Azure virtual machines created with the classic deployment model."
 	services="virtual-machines"
 	documentationCenter=""
@@ -13,9 +13,10 @@
 	ms.date="11/16/2015"
 	wacn.date=""/>
 
+	
 # Frequently asked question about Azure Virtual Machines created with the classic deployment model
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] <!-- deleted by customization Resource Manager model. -->
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]  Resource Manager model. 
 
 
 This article addresses some common questions users ask about Azure virtual machines created with the classic deployment model.
@@ -24,11 +25,11 @@ This article addresses some common questions users ask about Azure virtual machi
 
 All subscribers can run server software on an Azure virtual machine. You can run recent versions of Windows Server, as well as a variety of Linux distributions. For support details, see:
 
-<!-- deleted by customization • --><!-- keep by customization: begin --> â˘ <!-- keep by customization: end --> For Windows VMs -- [Microsoft server software support for Azure Virtual Machines](https://support.microsoft.com/zh-cn/kb/2721672)
+• For Windows VMs -- [Microsoft server software support for Azure Virtual Machines](https://support.microsoft.com/zh-cn/kb/2721672)
 
-<!-- deleted by customization • --><!-- keep by customization: begin --> â˘ <!-- keep by customization: end --> For Linux VMs -- [Linux on Azure-Endorsed Distributions](/documentation/articles/virtual-machines-linux-endorsed-distributions/)
+• For Linux VMs -- [Linux on Azure-Endorsed Distributions](/documentation/articles/virtual-machines-linux-endorsed-distributions/)
 
-For Windows client images, certain versions of Windows 7 and Windows 8.1 are available to MSDN Azure benefit subscribers and MSDN Dev and Test Pay-As-You-Go subscribers, for development and test tasks. For details, including instructions and limitations, see [Windows Client images for MSDN subscribers](http://azure.microsoft.com/blog/2014/05/29/windows-client-images-on-azure/).
+For Windows client images, certain versions of Windows 7 and Windows 8.1 are available to MSDN Azure benefit subscribers and MSDN Dev and Test Pay-As-You-Go subscribers, for development and test tasks. For details, including instructions and limitations, see [Windows Client images for MSDN subscribers](https://azure.microsoft.com/blog/2014/05/29/windows-client-images-on-azure/).
 
 ## How much storage can I use with a virtual machine?
 
@@ -110,11 +111,13 @@ Additional details:
 
 ## Can Azure run anti-virus on my virtual machines?
 
-Azure offers several options for anti-virus solutions, but it's up to you to manage it. For example, you might need a separate subscription for antimalware software, and you'll need to decide when to run scans and install updates. You can add anti-virus support with a VM extension for Microsoft Antimalware, Symantec Endpoint Protection, or TrendMicro Deep Security Agent when you create a Windows virtual machine, or at a later point. The Symantec and TrendMicro extensions let you use a free limited-time trial subscription or an existing enterprise subscription. Microsoft Antimalware is free of charge. For details, see:
+Azure offers several options for anti-virus solutions, but it's up to you to manage it. For example, you might need a separate subscription for antimalware software, and you'll need to decide when to run scans and install updates. You can add anti-virus support with a VM extension for Microsoft Antimalware , Symantec Endpoint Protection,  or TrendMicro Deep Security Agent when you create a Windows virtual machine, or at a later point. The  Symantec and  TrendMicro extensions let you use a free limited-time trial subscription or an existing enterprise subscription. Microsoft Antimalware is free of charge. For details, see:
 
-- [How to install and configure Symantec Endpoint Protection on an Azure <!-- deleted by customization VM](https://azure.microsoft.com/zh-cn/documentation/articles/virtual-machines-install-symantec/) --><!-- keep by customization: begin --> VM](/documentation/articles/virtual-machines-install-symantec/) <!-- keep by customization: end -->
+
+- [How to install and configure Symantec Endpoint Protection on an Azure VM](https://azure.microsoft.com/zh-cn/documentation/articles/virtual-machines-install-symantec/)
+
 - [How to install and configure Trend Micro Deep Security as a Service on an Azure VM](/documentation/articles/virtual-machines-install-trend/)
-- [Deploying Antimalware Solutions on Azure Virtual Machines](http://azure.microsoft.com/blog/2014/05/13/deploying-antimalware-solutions-on-azure-virtual-machines/)
+- [Deploying Antimalware Solutions on Azure Virtual  Machines](https://azure.microsoft.com/blog/2014/05/13/deploying-antimalware-solutions-on-azure-virtual-machines/)  Machines](https://azure.microsoft.com/zh-cn/blog/2014/05/13/deploying-antimalware-solutions-on-azure-virtual-machines/) 
 
 ## What are my options for backup and recovery?
 
@@ -142,7 +145,7 @@ Unplanned maintenance events can occur when Azure detects a serious hardware pro
 
 For any standalone VM (meaning the VM isn't part of an availability set), Azure notifies the subscription's Service Administrator by email at least one week before planned maintenance because the VMs could be restarted during the update. Applications running on the VMs could experience downtime.
 
-You also can use the Azure Management Portal or Azure PowerShell to view the reboot logs when the reboot occurred due to planned maintenance. For details, see [Viewing VM Reboot Logs](http://azure.microsoft.com/blog/2015/04/01/viewing-vm-reboot-logs/).
+You also can use the Azure Management Portal or Azure PowerShell to view the reboot logs when the reboot occurred due to planned maintenance. For details, see [Viewing VM Reboot Logs](https://azure.microsoft.com/blog/2015/04/01/viewing-vm-reboot-logs/).
 
 To provide redundancy, put two or more similarly configured VMs in the same availability set. This helps ensure at least one VM is available during planned or unplanned maintenance. Azure guarantees certain levels of VM availability for this configuration. For details, see [Manage the availability of virtual machines](/documentation/articles/virtual-machines-manage-availability).
 

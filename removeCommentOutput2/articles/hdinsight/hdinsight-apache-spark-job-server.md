@@ -1,7 +1,7 @@
 <!-- not suitable for Mooncake -->
 
 <properties 
-	pageTitle="Apache Spark Job Server on HDInsight | Windows Azure" 
+	pageTitle="Apache Spark Job Server on HDInsight | Azure" 
 	description="Learn how to use the Spark Job Server to remotely submit and manage jobs on a Spark cluster." 
 	services="hdinsight" 
 	documentationCenter="" 

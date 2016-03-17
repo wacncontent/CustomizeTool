@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Azure Resource Manager support for Traffic Manager Preview | Windows Azure "
+   pageTitle="Azure Resource Manager support for Traffic Manager Preview | Azure "
    description="Using powershell for Traffic Manager with Azure Resource Manager (ARM) in preview"
    services="traffic-manager"
    documentationCenter="na"
@@ -45,7 +45,7 @@ There are currently a small number of limitations in the ARM support for Azure T
 
 ## Setting up Azure PowerShell
 
-These instructions use Windows Azure PowerShell, which needs to be configured using the steps below.
+These instructions use Azure PowerShell, which needs to be configured using the steps below.
 
 For non-PowerShell users, or non-Windows users, analogous operations can be executed via the Azure CLI.  All operations, with the exception of managing 'nested' Traffic Manager profiles, are also available via the Azure Management Portal.
 

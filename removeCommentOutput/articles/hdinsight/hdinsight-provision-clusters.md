@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Create Windows-based Hadoop clusters in HDInsight | Windows Azure"
+   pageTitle="Create Windows-based Hadoop clusters in HDInsight | Azure"
    	description="Learn how to create clusters for Azure HDInsight."
    services="hdinsight"
    documentationCenter=""
@@ -65,7 +65,7 @@ The following are the basic configuration options for creating an HDInsight clus
 
 	![HDInsight clusters](./media/hdinsight-provision-clusters-v1/hdinsight.clusters.png)
 
-	> [AZURE.NOTE] *Azure HDInsight cluster* is also called *Hadoop clusters in HDInsight*, or *HDInsight cluster*. Sometimes, it is used interchangeably with *Hadoop cluster*. They all refer to the Hadoop clusters hosted in the Windows Azure environment.
+	> [AZURE.NOTE] *Azure HDInsight cluster* is also called *Hadoop clusters in HDInsight*, or *HDInsight cluster*. Sometimes, it is used interchangeably with *Hadoop cluster*. They all refer to the Hadoop clusters hosted in the Azure environment.
 
 	Within a given cluster type, there are different roles for the various nodes, which allow a customer to size those nodes in a given role appropriate to the details of their workload. For example, a Hadoop cluster can have its worker nodes created with a large amount of memory if the type of analytics being performed are memory intensive.
 

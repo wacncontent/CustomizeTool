@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Update the Azure Linux Agent from GitHub | Windows Azure"
+	pageTitle="Update the Azure Linux Agent from GitHub | Azure"
 	description="Learn how to the update Azure Linux Agent for your Linux VM in Azure to the lateset version from Github"
 	services="virtual-machines"
 	documentationCenter=""

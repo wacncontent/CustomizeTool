@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Use the Azure CLI with Resource Manager | Windows Azure"
+	pageTitle="Use the Azure CLI with Resource Manager | Azure"
 	description="Learn about using the Azure CLI for Mac, Linux, and Windows to manage Azure resources using the CLI in Azure Resource Manager mode."
 	services="virtual-machines,virtual-network,mobile-services,cloud-services"
 	documentationCenter=""
@@ -222,7 +222,7 @@ Example: Create a Storm on Linux cluster
 
 Example: Create a cluster with a script action
 
-	azure hdinsight cluster create -g myarmgroup -l chinanorth -y Linux --clusterType Hadoop --version 3.2 --defaultStorageAccountName mystorageaccount --defaultStorageAccountKey <defaultStorageAccountKey> --defaultStorageContainer mycontainer --userName admin --password <clusterPassword> --sshUserName sshuser --sshPassword <sshPassword> --workerNodeCount 1 âconfigurationPath "C:\myFiles\configFile.config" myNewCluster01
+	azure hdinsight cluster create -g myarmgroup -l chinanorth -y Linux --clusterType Hadoop --version 3.2 --defaultStorageAccountName mystorageaccount --defaultStorageAccountKey <defaultStorageAccountKey> --defaultStorageContainer mycontainer --userName admin --password <clusterPassword> --sshUserName sshuser --sshPassword <sshPassword> --workerNodeCount 1 -configurationPath "C:\myFiles\configFile.config" myNewCluster01
 	
 	info:    Executing command hdinsight cluster create
 	+ Submitting the request to create cluster...

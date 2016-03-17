@@ -1,7 +1,7 @@
 <!-- not suitable for Mooncake -->
 
 <properties
-   pageTitle="Create Windows-based Hadoop clusters in HDInsight | Windows Azure"
+   pageTitle="Create Windows-based Hadoop clusters in HDInsight | Azure"
    	description="Learn how to create clusters for Azure HDInsight."
    services="hdinsight"
    documentationCenter=""
@@ -12,7 +12,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="01/06/2016"
+	ms.date="01/22/2016"
 	wacn.date=""/>
 
 # Create Windows-based Hadoop clusters in HDInsight
@@ -67,7 +67,7 @@ The following are the basic configuration options for creating an HDInsight clus
 
 	![HDInsight clusters](./media/hdinsight-provision-clusters-v1/hdinsight.clusters.png)
 
-	> [AZURE.NOTE] *Azure HDInsight cluster* is also called *Hadoop clusters in HDInsight*, or *HDInsight cluster*. Sometimes, it is used interchangeably with *Hadoop cluster*. They all refer to the Hadoop clusters hosted in the Windows Azure environment.
+	> [AZURE.NOTE] *Azure HDInsight cluster* is also called *Hadoop clusters in HDInsight*, or *HDInsight cluster*. Sometimes, it is used interchangeably with *Hadoop cluster*. They all refer to the Hadoop clusters hosted in the Azure environment.
 
 	Within a given cluster type, there are different roles for the various nodes, which allow a customer to size those nodes in a given role appropriate to the details of their workload. For example, a Hadoop cluster can have its worker nodes created with a large amount of memory if the type of analytics being performed are memory intensive.
 
@@ -122,9 +122,17 @@ The following are the basic configuration options for creating an HDInsight clus
 
 	![hdinsight vm node sizes](./media/hdinsight-provision-clusters-v1/hdinsight.node.sizes.png)
 
-	Select the VM size for the nodes. For more information, see [Sizes for Cloud Services](/documentation/articles/cloud-services-sizes-specs)
+	Select the VM size for the nodes. For more information, see [Sizes for Cloud Services](/documentation/articles/cloud-services-sizes-specs). You can select the size of compute resources used by the cluster. For example, if you know that you will be performing operations that need a lot of memory, you may want to select a compute resource with more memory.
 
-	Based on the choice of VMs, your cost might vary. HDInsight uses all standard-tier VMs for cluster nodes. For information on how VM sizes affect your prices, see <a href="/home/features/hdinsight/#price" target="_blank">HDInsight Pricing</a>.
+	>[AZURE.NOTE] The nodes used by your cluster do not count as Virtual Machines, as the Virtual Machines images used for the nodes are an implementation detail of the HDInsight service; however, the compute cores used by the nodes do count against the total number of compute cores available to your subscription. You can see the number of cores that will be used by the cluster, as well as the number of cores available, in the summary section of the Node Pricing Tiers blade when creating an HDInsight cluster.
+
+	Different cluster types have different node types, number of nodes, and node sizes. For example, a Hadoop cluster type has two _head nodes_ and a default of four _data nodes_, while a Storm cluster type has two _nimbus nodes_, three _zookeeper nodes_, and a default of four _supervisor nodes_.
+
+	> [AZURE.IMPORTANT] If you plan on more than 32 worker nodes, either at cluster creation or by scaling the cluster after creation, then you must select a head node size with at least 8 cores and 14GB RAM.
+
+	When using the Azure preview portal to configure the cluster, the Node size is available through the __Node Pricing Tier__ blade, and will also display the cost associated with the different node sizes. 
+
+	> [AZURE.IMPORTANT] Billing starts once a cluster is created, and only stops when the cluster is deleted. For more information on pricing, see [HDInsight pricing details](/home/features/hdinsight/#price).
 
 
 - **HDInsight users**

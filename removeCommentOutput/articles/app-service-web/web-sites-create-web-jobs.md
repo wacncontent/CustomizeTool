@@ -66,7 +66,7 @@ The following file types are accepted:
 
 2. To start or stop a continuous WebJob, right-click the WebJob in the list and click **Start** or **Stop**.
 	
-> [AZURE.NOTE] If your web app runs on more than one instance, a continuously running WebJob will run on all of your instances. On-demand and scheduled WebJobs run on a single instance selected for load balancing by Windows Azure.
+> [AZURE.NOTE] If your web app runs on more than one instance, a continuously running WebJob will run on all of your instances. On-demand and scheduled WebJobs run on a single instance selected for load balancing by Azure.
 	
 > For Continuous WebJobs to run reliably and on all instances, enable the Always On* configuration setting for the web app otherwise they can stop running when the SCM host site has been idle for too long.
 

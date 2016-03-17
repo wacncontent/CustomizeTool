@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Remote Desktop to a Linux VM | Windows Azure"
-	description="Learn how to install and configure Remote Desktop to connect to a Windows Azure Linux VM"
+	pageTitle="Remote Desktop to a Linux VM | Azure"
+	description="Learn how to install and configure Remote Desktop to connect to a Azure Linux VM"
 	services="virtual-machines"
 	documentationCenter=""
 	authors="SuperScottz"
@@ -10,25 +10,25 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="09/14/2015"
+	ms.date="02/01/2016"
 	wacn.date=""/>
 
 
-#Using Remote Desktop to connect to a Windows Azure Linux VM
+#Using Remote Desktop to connect to a Azure Linux VM
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] <!-- deleted by customization Resource Manager model. -->
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]  Resource Manager model. 
 
 
 ##Overview
 
 RDP (Remote Desktop Protocol) is a proprietary protocol used for Windows. How can we use RDP to connect to a Linux VM (virtual machine) remotely?
 
-This guidance will give you the answer! It will help you to install and config xrdp on your Windows Azure Linux VM, and you are able to connect it with Remote Desktop from a Windows machine. We will use Linux VM running Ubuntu or OpenSUSE as the example in this guidance.
+This guidance will give you the answer! It will help you to install and config xrdp on your Azure Linux VM, and you are able to connect it with Remote Desktop from a Windows machine. We will use Linux VM running Ubuntu or OpenSUSE as the example in this guidance.
 
-Xrdp is an open source RDP server, which allows you to connect your Linux server with Remote Desktop from a Windows machine. It performs much nicer than VNC (Virtual Network Computing). VNC has this streak of <!-- deleted by customization âJPEGâ --><!-- keep by customization: begin --> "JPEG" <!-- keep by customization: end --> quality and slow behavior, whereas RDP is fast and crystal clear.
+Xrdp is an open source RDP server, which allows you to connect your Linux server with Remote Desktop from a Windows machine. It performs much nicer than VNC (Virtual Network Computing). VNC has this streak of "JPEG" quality and slow behavior, whereas RDP is fast and crystal clear.
 
 
-> [AZURE.NOTE] You must already have an Windows Azure VM running Linux. To create and set up a Linux VM, see the [Azure Linux VM tutorial](/documentation/articles/virtual-machines-linux-tutorial).
+> [AZURE.NOTE] You must already have an Azure VM running Linux. To create and set up a Linux VM, see the [Azure Linux VM  tutorial](/documentation/articles/virtual-machines-linux-tutorial)  tutorial](/documentation/articles/virtual-machines-linux-tutorial-portal-rm) .
 
 
 ##Create endpoint for Remote Desktop
@@ -106,7 +106,7 @@ In a Windows machine, start the remote desktop client, input your Linux VM DNS n
 
 ![image](./media/virtual-machines-linux-remote-desktop/no2.png)
 
-Login with the `user` & `password` of your Linux VM, and enjoy the Remote Desktop from your Windows Azure Linux VM right now!
+Login with the `user` & `password` of your Linux VM, and enjoy the Remote Desktop from your Azure Linux VM right now!
 
 
 ##Next

@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="10/16/2015"
+	ms.date="01/07/2016"
 	wacn.date=""/>
 
 
@@ -34,7 +34,7 @@ You will walk through a typical dev-test-stage-production workflow in order to p
 
 To put the picture into words :
 
--	The deployment architecture is separated into three distinct environments (or [resource groups](/documentation/articles/resource-group-overview) in Azure), each with its own [App Service plan](/documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview), [scaling](/documentation/articles/web-sites-scale) settings, and SQL database. 
+-	The deployment architecture is separated into three distinct environments (or [resource groups](/documentation/articles/resource-group-overview) in Azure), each with its own App Service plan, [scaling](/documentation/articles/web-sites-scale) settings, and SQL database. 
 -	Each environment can be managed separately. They can even exist in different subscriptions.
 -	Staging and production are implemented as two slots of the same Azure Web App. 
 -	When a commit to master branch is verified on the staging slot (with production data), the verified staging app is swapped into the production slot [with no downtime](/documentation/articles/web-sites-staged-publishing).
@@ -61,12 +61,12 @@ You will also use the typical branching strategy, with code moving from the dev 
 	> 3. Decomposite `New-AzureResourceGroup` into `New-AzureRmResourceGroup` and `New-AzureRmResourceGroupDeployment`, i.e. `New-AzureRmResourceGroup -Name $RG_Name -Location $RG_Location` and `New-AzureRmResourceGroupDeployment -Verbose -name $RG_Name -ResourceGroupName $RG_Name -TemplateFile ".\$TemplateFile" -TemplateParameterFile ".\temp.json" -ErrorAction Stop`
 
 -	Basic understanding of the following:
-	-	[Azure Resource Manager](/documentation/articles/resource-group-overview) template deployment (also see [Deploy a complex application predictably in Azure](/documentation/articles/app-service-deploy-complex-application-predictably))
+	-	[Azure Resource Manager](/documentation/articles/resource-group-overview) template deployment
 	-	[Git](http://git-scm.com/documentation)
 	-	[PowerShell](https://technet.microsoft.com/zh-cn/library/bb978526.aspx)
 
 > [AZURE.NOTE] You need an Azure account to complete this tutorial:
-> + You can [open an trial Azure account](/pricing/1rmb-trial/?WT.mc_id=A261C142F) - You get credits you can use to try out paid Azure services, and even after they're used up you can keep the account and use free Azure services, such as Web Apps.
+> + You can [open an trial Azure account](/pricing/1rmb-trial/) - You get credits you can use to try out paid Azure services, and even after they're used up you can keep the account and use free Azure services, such as Web Apps.
 
 ## Set up your production environment ##
 
@@ -92,7 +92,7 @@ In a typical DevOps scenario, you have an application that's running live in Azu
 	> 2. Inside the block and fater `"branch": "[parameters('branch')]"`, add `"IsManualIntegration": true`
 	> 3. Replace "China North" or "China East" by "China East" or "China North" in both "ProdAndStage.json", and "deploy.ps1"
 
-	> Since, The Ibiza Portal is not availible yet in Windows Azure China, it's not possible for us to setup GitHub credentials.
+	> Since, The Ibiza Portal is not availible yet in Azure China, it's not possible for us to setup GitHub credentials.
 
 4.	When prompted, type in the desired username and password for database access.
 
@@ -112,7 +112,7 @@ In a typical DevOps scenario, you have an application that's running live in Azu
 
 7.	When the script finishes, go back to browse to the frontend's address (http://ToDoApp*&lt;unique_string>*master.chinacloudsites.cn/) to see the application running in production.
  
-5.	Log into the [Azure Management Portal](https://manage.windowsazure.cn) and take a look at what's created.
+5.	Log into the [Azure Management Portal](https://manage.windowsazure.cn/) and take a look at what's created.
 
 	You should be able to see two web apps, one with the `Api` suffix in the name. you will also see the SQL Database and server, the App Service plan, and the staging slots for the web apps. Browse through the different resources and compare them with *&lt;repository_root>*\ARMTemplates\ProdAndStage.json to see how they are configured in the template.
 
@@ -221,9 +221,8 @@ Because you have purposely architected your dev and test environments to be self
 	git push origin :Dev
 	git branch -d NewUpdate
 	git push origin :NewUpdate
-	Switch-AzureMode AzureResourceManager
-	Remove-AzureResourceGroup -Name ToDoApp<unique_string>dev-group -Force -Verbose
-	Remove-AzureResourceGroup -Name ToDoApp<unique_string>newupdate-group -Force -Verbose
+	Remove-AzureRmResourceGroup -Name ToDoApp<unique_string>dev-group -Force -Verbose
+	Remove-AzureRmResourceGroup -Name ToDoApp<unique_string>newupdate-group -Force -Verbose
 
 ## Summary ##
 
@@ -231,7 +230,6 @@ Agile software development is a must-have for many companies who want to adopt A
 
 ## More resources ##
 
--	[Deploy a complex application predictably in Azure](/documentation/articles/app-service-deploy-complex-application-predictably)
 -	[Agile Development in Practice: Tips and Tricks for Modernized Development Cycle](http://channel9.msdn.com/Events/Ignite/2015/BRK3707)
 -	[Advanced deployment strategies for Azure Web Apps using Resource Manager templates](http://channel9.msdn.com/Events/Build/2015/2-620)
 -	[Authoring Azure Resource Manager Templates](/documentation/articles/resource-group-authoring-templates)
@@ -242,4 +240,3 @@ Agile software development is a must-have for many companies who want to adopt A
 -	[Azure PowerShell](/documentation/articles/powershell-install-configure)
 -	[Azure Cross-Platform Command-Line Tools](/documentation/articles/xplat-cli-install)
 -	[Create or edit users in Azure AD](https://msdn.microsoft.com/zh-cn/library/azure/hh967632.aspx#BKMK_1)
--	[Project Kudu Wiki](https://github.com/projectkudu/kudu/wiki)

@@ -1,7 +1,7 @@
 <!-- not suitable for Mooncake -->
 
 <properties
-   pageTitle="Custom scripts on VMs using templates | Windows Azure"
+   pageTitle="Custom scripts on VMs using templates | Azure"
    description="Automate Windows and Linux Azure VM configuration tasks by using the Custom Script extension with Resource Manager templates"
    services="virtual-machines"
    documentationCenter=""
@@ -35,7 +35,7 @@ Azure Resource Manager template allow you to declaratively specify the Azure Iaa
 
 ### Prerequistes
 
-1. Install the latest Azure PowerShell Cmdlets or Azure CLI from [here](http://azure.microsoft.com/downloads).
+1. Install the latest Azure PowerShell Cmdlets or Azure CLI from [here](/downloads/).
 2. If the scripts will be run on an existing VM, make sure VM Agent is enabled on the VM, if not follow [this](/documentation/articles/virtual-machines-extensions-install) to install one.
 3. Upload the scripts that you want to run on the VM to Azure Storage. The scripts can come from a single or multiple storage containers.
 4. Alternatively the scripts can also be uploaded to a Github account.

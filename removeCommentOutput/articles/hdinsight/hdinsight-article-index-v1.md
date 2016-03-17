@@ -1,5 +1,5 @@
 <properties
-   pageTitle="HDInsight article index for Azure Management Portal | Windows Azure"
+   pageTitle="HDInsight article index for Azure Management Portal | Azure"
    description="An index page with links to articles about HDInsight on the Azure Management Portal. Microsoft recommends the Azure Management Portal for new Hadoop clusters on HDInsight."
    services="hdinsight"
    documentationCenter="na"
@@ -54,7 +54,7 @@ For a complete set of articles about using Linux and Linux clusters, go to the [
 * [Serialize data in Hadoop with the Microsoft Avro Library](/documentation/articles/hdinsight-dotnet-avro-serialization)
 * [Process and analyze JSON documents using Hive](/documentation/articles/hdinsight-using-json-in-hive)
 * [Use Python with Hive and Pig](/documentation/articles/hdinsight-python)
-* [Optimize Hive queries for Hadoop](hdinsight-hadoop-optimize-hive-query-v1âv1.md)
+* [Optimize Hive queries for Hadoop](/documentation/articles/hdinsight-hadoop-optimize-hive-query-v1)
 * [Run Pig jobs using the .NET SDK for Hadoop](hdinsight-hadoop-use-pig-dotnet-sdk-v1.md )
 * [Use C# user-defined functions with Hive and Pig streaming](/documentation/articles/hdinsight-hadoop-hive-pig-udf-dotnet-csharp)
 * [Develop C# Hadoop streaming programs](/documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs)

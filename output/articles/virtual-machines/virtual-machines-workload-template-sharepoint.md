@@ -1,7 +1,7 @@
 <!-- not suitable for Mooncake -->
 
 <properties
-	pageTitle="Deploy SharePoint farms with ARM templates | Windows Azure"
+	pageTitle="Deploy SharePoint farms with ARM templates | Azure"
 	description="Easily deploy 3-server or 9-server SharePoint farm with Resource Manager templates and the Azure Management Portal, Azure PowerShell, or the Azure CLI."
 	services="virtual-machines"
 	documentationCenter=""
@@ -160,7 +160,7 @@ Next, use the following command and specify the name of your new resource group 
 
 Here is an example.
 
-	azure group create sphaserverfarm chinaeast2
+	azure group create sphaserverfarm chinaeast
 	azure group deployment create --template-uri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/sharepoint-server-farm-ha/azuredeploy.json sphaserverfarm spdevtest
 
 When you run the **azure group deployment create** command, you will be prompted to supply the values for a series of parameters. When you have specified all the parameter values, Azure creates and configures the virtual machines.

@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Known issues of Apache Spark in HDInsight | Windows Azure" 
+	pageTitle="Known issues of Apache Spark in HDInsight | Azure" 
 	description="Known issues of Apache Spark in HDInsight." 
 	services="hdinsight" 
 	documentationCenter="" 

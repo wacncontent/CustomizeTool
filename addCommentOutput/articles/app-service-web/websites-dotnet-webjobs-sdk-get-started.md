@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Create a .NET WebJob in Azure | Windows Azure"
+	pageTitle="Create a .NET WebJob in Azure | Azure"
 	description="Create a multi-tier app using ASP.NET MVC and Azure. The front end runs in a web app in Azure, and the backend runs as a WebJob. The app uses Entity Framework, SQL Database, and Azure storage queues and blobs."
 	services="app-service"
 	documentationCenter=".net"
@@ -12,7 +12,7 @@
 	ms.date="12/14/2015"
 	wacn.date=""/>
 
-# Create a .NET WebJob in Azure <!-- keep by customization: begin --> Web App <!-- keep by customization: end -->
+# Create a .NET WebJob in Azure  Web App 
 
 This tutorial shows how to write code for a simple multi-tier ASP.NET MVC 5 application that uses the [WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk).
 
@@ -22,19 +22,7 @@ The sample application is an advertising bulletin board. Users can upload images
 
 ![Ad list](./media/websites-dotnet-webjobs-sdk-get-started/list.png)
 
-<!-- deleted by customization This sample application works with [Azure queues](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/queue-centric-work-pattern) and [Azure blobs](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/unstructured-blob-storage). The tutorial shows how to deploy the application to [Azure Web App](/documentation/services/web-sites/) and [Azure SQL Database](/documentation/articles/sql-database-technical-overview/). -->
-<!-- keep by customization: begin -->
-## Table of Contents
-
-- [Prerequisites](#prerequisites)
-- [What You'll Learn](#learn)
-- [Application architecture](#contosoads)
-- [Set up the development environment](#setupdevenv)
-- [Build, run, and deploy the application](#storage)
-- [Create the application from scratch](#create)
-- [Review the application code](#code)
-- [Next Steps](#next-steps)
-<!-- keep by customization: end -->
+This sample application works with [Azure queues](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/queue-centric-work-pattern) and [Azure blobs](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/unstructured-blob-storage). The tutorial shows how to deploy the application to [Azure Web App](/documentation/services/web-sites/) and [Azure SQL Database](/documentation/articles/sql-database-technical-overview/).
 
 ## <a id="prerequisites"></a>Prerequisites
 
@@ -81,25 +69,25 @@ In a real-world application, you typically create separate accounts for applicat
 
 1. Open the **Server Explorer** window in Visual Studio.
 
-2. Right-click the **Azure** node, and then click **Connect to Windows Azure**.
-<!-- deleted by customization
+2. Right-click the **Azure** node, and then click **Connect to  Microsoft  Azure**.
+
 ![Connect to Azure](./media/websites-dotnet-webjobs-sdk-get-started/connaz.png)
--->
-<!-- keep by customization: begin -->
+
+
 
 ![Connect to Azure](./media/websites-dotnet-webjobs-sdk-get-started/connaz.png)
-<!-- keep by customization: end -->
+
 
 3. Sign in using your Azure credentials.
 
 5. Right-click **Storage** under the Azure node, and then click **Create Storage Account**.
-<!-- deleted by customization
+
 ![Create Storage Account](./media/websites-dotnet-webjobs-sdk-get-started/createstor.png)
--->
-<!-- keep by customization: begin -->
+
+
 
 ![Create Storage Account](./media/websites-dotnet-webjobs-sdk-get-started/createstor.png)
-<!-- keep by customization: end -->
+
 
 3. In the **Create Storage Account** dialog, enter a name for the storage account.
 
@@ -133,7 +121,7 @@ In a real-world application, you typically create separate accounts for applicat
 
 5. In **Solution Explorer**, make sure that **ContosoAdsWeb** is selected as the startup project.
 
-## <a id="configurestorage"></a>Configure the application to use your storage account
+## <a  id="configurestorage"></a>Configure  name="configure-storage"></a><a name="configure-the-web-app-to-use-your-azure-sql-database-and-storage-account"></a>Configure  the application to use your storage account
 
 1. Open the application *Web.config* file in the ContosoAdsWeb project.
 
@@ -143,9 +131,9 @@ In a real-world application, you typically create separate accounts for applicat
 
 	The storage connection string is an example that has placeholders for the storage account name and access key. You'll replace this with a connection string that has the name and key of your storage account.  
 
-	<pre <!-- deleted by customization class="prettyprint">&lt;connectionStrings&gt; --><!-- keep by customization: begin --> class="prettyprint">&lt;connectionStrings&gt;<span>&#13;</span> <!-- keep by customization: end -->
-	  &lt;add name="ContosoAdsContext" connectionString="Data Source=(localdb)\v11.0; Initial Catalog=ContosoAds; Integrated Security=True; MultipleActiveResultSets=True;" providerName="System.Data.SqlClient" <!-- deleted by customization /&gt; --><!-- keep by customization: begin --> /&gt;<span>&#13;</span> <!-- keep by customization: end -->
-	  &lt;add name="AzureWebJobsStorage" <!-- deleted by customization connectionString="DefaultEndpointsProtocol=https;AccountName=<mark>[accountname]</mark>;AccountKey=<mark>[accesskey]</mark>"/&gt; --><!-- keep by customization: begin --> connectionString="DefaultEndpointsProtocol=https;AccountName=<mark>[accountname]</mark>;AccountKey=<mark>[accesskey]</mark>"/&gt;<span>&#13;</span> <!-- keep by customization: end -->
+	<pre class="prettyprint">&lt;connectionStrings&gt;
+	  &lt;add name="ContosoAdsContext" connectionString="Data Source=(localdb)\v11.0; Initial Catalog=ContosoAds; Integrated Security=True; MultipleActiveResultSets=True;" providerName="System.Data.SqlClient" /&gt;
+	  &lt;add name="AzureWebJobsStorage" connectionString="DefaultEndpointsProtocol=https;AccountName=<mark>[accountname]</mark>;AccountKey=<mark>[accesskey]</mark>"/&gt;
 	&lt;/connectionStrings&gt;</pre>
 
 	The storage connection string is named AzureWebJobsStorage because that's the name the WebJobs SDK uses by default. The same name is used here so you have to set only one connection string value in the Azure environment.
@@ -167,15 +155,15 @@ In a real-world application, you typically create separate accounts for applicat
 6. Open the *App.config* file in the ContosoAdsWebJob project.
 
 	This file has two storage connection strings, one for application data and one for logging. You can use separate storage accounts for application data and logging, and you can use [multiple storage accounts for data](https://github.com/Azure/azure-webjobs-sdk/blob/master/test/Microsoft.Azure.WebJobs.Host.EndToEndTests/MultipleStorageAccountsEndToEndTests.cs). For this tutorial you'll use a single storage account. The connection strings have placeholders for the storage account keys. 
-  	<pre <!-- deleted by customization class="prettyprint">&lt;configuration&gt; --><!-- keep by customization: begin --> class="prettyprint">&lt;configuration&gt;<span>&#13;</span> <!-- keep by customization: end -->
-    <!-- deleted by customization &lt;connectionStrings&gt; --><!-- keep by customization: begin --> &lt;connectionStrings&gt;<span>&#13;</span> <!-- keep by customization: end -->
-        &lt;add name="AzureWebJobsDashboard" <!-- deleted by customization connectionString="DefaultEndpointsProtocol=https;AccountName=<mark>[accountname]</mark>;AccountKey=<mark>[accesskey]</mark>"/&gt; --><!-- keep by customization: begin --> connectionString="DefaultEndpointsProtocol=https;AccountName=<mark>[accountname]</mark>;AccountKey=<mark>[accesskey]</mark>"/&gt;<span>&#13;</span> <!-- keep by customization: end -->
-        &lt;add name="AzureWebJobsStorage" <!-- deleted by customization connectionString="DefaultEndpointsProtocol=https;AccountName=<mark>[accountname]</mark>;AccountKey=<mark>[accesskey]</mark>"/&gt; --><!-- keep by customization: begin --> connectionString="DefaultEndpointsProtocol=https;AccountName=<mark>[accountname]</mark>;AccountKey=<mark>[accesskey]</mark>"/&gt;<span>&#13;</span> <!-- keep by customization: end -->
-        &lt;add name="ContosoAdsContext" connectionString="Data Source=(localdb)\v11.0; Initial Catalog=ContosoAds; Integrated Security=True; <!-- deleted by customization MultipleActiveResultSets=True;"/&gt; --><!-- keep by customization: begin --> MultipleActiveResultSets=True;"/&gt;<span>&#13;</span> <!-- keep by customization: end -->
-    <!-- deleted by customization &lt;/connectionStrings&gt; --><!-- keep by customization: begin --> &lt;/connectionStrings&gt;<span>&#13;</span> <!-- keep by customization: end -->
-        <!-- deleted by customization &lt;startup&gt; --><!-- keep by customization: begin --> &lt;startup&gt;<span>&#13;</span> <!-- keep by customization: end -->
-            &lt;supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5" <!-- deleted by customization /&gt; --><!-- keep by customization: begin --> /&gt;<span>&#13;</span> <!-- keep by customization: end -->
-    <!-- deleted by customization &lt;/startup&gt; --><!-- keep by customization: begin --> &lt;/startup&gt;<span>&#13;</span> <!-- keep by customization: end -->
+  	<pre class="prettyprint">&lt;configuration&gt;
+    &lt;connectionStrings&gt;
+        &lt;add name="AzureWebJobsDashboard" connectionString="DefaultEndpointsProtocol=https;AccountName=<mark>[accountname]</mark>;AccountKey=<mark>[accesskey]</mark>"/&gt;
+        &lt;add name="AzureWebJobsStorage" connectionString="DefaultEndpointsProtocol=https;AccountName=<mark>[accountname]</mark>;AccountKey=<mark>[accesskey]</mark>"/&gt;
+        &lt;add name="ContosoAdsContext" connectionString="Data Source=(localdb)\v11.0; Initial Catalog=ContosoAds; Integrated Security=True; MultipleActiveResultSets=True;"/&gt;
+    &lt;/connectionStrings&gt;
+        &lt;startup&gt;
+            &lt;supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5" /&gt;
+    &lt;/startup&gt;
 &lt;/configuration&gt;</pre>
 
 	By default, the WebJobs SDK looks for connection strings named AzureWebJobsStorage and AzureWebJobsDashboard. As an alternative, you can [store the connection string however you want and pass it in explicitly to the `JobHost` object](/documentation/articles/websites-dotnet-webjobs-sdk-storage-queues-how-to#config).
@@ -233,16 +221,16 @@ After you've created some ads while running in the cloud, you'll view the WebJob
 
 1. Close the browser and the console application window.
 
-<!-- keep by customization: begin -->
+
 2. Go to the [Azure Management Portal](http://manage.windowsazure.cn/), and click a web site with a database.
 
 3. Go to the **Dashboard** of the web site, download the publish profile
 
-<!-- keep by customization: end -->
+
 2. In **Solution Explorer**, right-click the ContosoAdsWeb project, and then click **Publish**.
 
-<!-- deleted by customization
-3. In the **Profile** step of the **Publish Web** wizard, click **Windows Azure web apps**.
+
+3. In the **Profile** step of the **Publish Web** wizard, click **Azure web apps**.
 
 	![Select Azure web app publish target](./media/websites-dotnet-webjobs-sdk-get-started/pubweb.png)
 
@@ -254,7 +242,7 @@ After you've created some ads while running in the cloud, you'll view the WebJob
 
 	![Click New](./media/websites-dotnet-webjobs-sdk-get-started/clicknew.png)
 
-6. In the **Create web app on Windows Azure** dialog box, enter a unique name in the **Web app name** box.
+6. In the **Create web app on Azure** dialog box, enter a unique name in the **Web app name** box.
 
 	The complete URL will consist of what you enter here plus .chinacloudsites.cn (as shown next to the **Web app name** text box). For example, if the web app name is ContosoAds, the URL will be ContosoAds.chinacloudsites.cn.
 
@@ -282,13 +270,13 @@ After you've created some ads while running in the cloud, you'll view the WebJob
 
 13. Click **Create**.
 
-	![Create web app on Windows Azure dialog](./media/websites-dotnet-webjobs-sdk-get-started/newdb.png)
+	![Create web app on Azure dialog](./media/websites-dotnet-webjobs-sdk-get-started/newdb.png)
 
 	Visual Studio creates the solution, the web project, the web app in Azure, and the Azure SQL Database instance.
--->
-<!-- keep by customization: begin -->
+
+
 3. In the **Profile** step of the **Publish Web** wizard, click **Import**. Choose the profile downloaded in the previous step.
-<!-- keep by customization: end -->
+
 
 14. In the **Connection** step of the **Publish Web** wizard, click **Next**.
 
@@ -364,7 +352,12 @@ In this section you use **Server Explorer** to set connection string values in A
 
 	If the thumbnail doesn't appear, you may have to wait a minute or so for the WebJob to restart. If after a a while you still don't see the thumbnail when you refresh the page, the WebJob may not have started automatically. In that case, go to the WebJobs tab in the [Management Portal](https://manage.windowsazure.cn) page for your web app, and then click **Start**.
 
+
 ### View the WebJobs SDK dashboard
+
+
+###<a name="view-the-webjobs-sdk-dashboard"></a> View the WebJobs SDK dashboard
+
 
 1. In the [Management Portal](https://manage.windowsazure.cn), select your web app.
 
@@ -408,7 +401,7 @@ In this section you'll do the following tasks:
 
 	![New Project](./media/websites-dotnet-webjobs-sdk-get-started/newproject.png)
 
-5. In the **New ASP.NET Project** dialog, choose the MVC template, and clear the **Host in the cloud** check box under **Windows Azure**.
+5. In the **New ASP.NET Project** dialog, choose the MVC template, and clear the **Host in the cloud** check box under  **Azure**  **Microsoft Azure** .
 
 	Selecting **Host in the cloud** enables Visual Studio to automatically create a new Azure web app and SQL Database. Since you already created these earlier, you don't need to do so now while creating the project. If you want to create a new one, select the check box. You can then configure the new web app and SQL database the same way you did earlier when you deployed the application.
 
@@ -646,12 +639,12 @@ The *Views\Home\Index.cshtml* file displays category links on the home page. The
 		<li>@Html.ActionLink("Free stuff", "Index", "Ad", new { category = (int)Category.FreeStuff }, null)</li>
 		<li>@Html.ActionLink("All", "Index", "Ad", null, null)</li>
 
-<!-- deleted by customization
+
 ### ContosoAdsWeb - AdController.cs
--->
-<!-- keep by customization: begin -->
+
+
 ###<a name="ResolveBlobName"></a> ContosoAdsWeb - AdController.cs
-<!-- keep by customization: end -->
+
 
 In the *AdController.cs* file the constructor calls the `InitializeStorage` method to create Azure Storage Client Library objects that provide an API for working with blobs and queues.
 
@@ -816,9 +809,13 @@ For more information about how to write functions that use  WebJobs SDK attribut
 > [AZURE.NOTE]
 >
 > * If your web app runs on multiple VMs, multiple WebJobs will be running simultaneously, and in some scenarios this can result in the same data getting processed multiple times. This is not a problem if you use the built-in queue, blob, and Service Bus triggers. The SDK ensures that your functions will be processed only once for each message or blob.
+
 >
+
 > * For information about how to implement graceful shutdown, see [Graceful Shutdown](/documentation/articles/websites-dotnet-webjobs-sdk-storage-queues-how-to#graceful).
+
 >
+
 > * The code in the `ConvertImageToThumbnailJPG` method (not shown) uses classes in the `System.Drawing` namespace for simplicity. However, the classes in this namespace were designed for use with Windows Forms. They are not supported for use in a Windows or ASP.NET service. For more information about image processing options, see [Dynamic Image Generation](http://www.hanselman.com/blog/BackToBasicsDynamicImageGenerationASPNETControllersRoutingIHttpHandlersAndRunAllManagedModulesForAllRequests.aspx) and [Deep Inside Image Resizing](http://www.hanselminutes.com/313/deep-inside-image-resizing-and-scaling-with-aspnet-and-iis-with-imageresizingnet-author-na).
 
 ## Next steps
@@ -840,6 +837,7 @@ For more information, see [Scaling WebJobs](/documentation/articles/websites-web
 ### Avoiding web app timeout shut-downs
 
 To make sure your WebJobs are always running, and running on all instances of your web app, you have to enable the [AlwaysOn](http://weblogs.asp.net/scottgu/archive/2014/01/16/windows-azure-staging-publishing-support-for-web-sites-monitoring-improvements-hyper-v-recovery-manager-ga-and-pci-compliance.aspx) feature.
+
 
 ### Using the WebJobs SDK outside of WebJobs
 
@@ -848,6 +846,7 @@ A program that uses the WebJobs SDK doesn't have to run in Azure in a WebJob. It
 https://{webappname}.scm.chinacloudsites.cn/azurejobs/#/functions
 
 For more information, see [Getting a dashboard for local development with the WebJobs SDK](http://blogs.msdn.com/b/jmstall/archive/2014/01/27/getting-a-dashboard-for-local-development-with-the-webjobs-sdk.aspx), but note that it shows an old connection string name.
+
 
 ### More WebJobs documentation
 

@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="10/28/2015"
+	ms.date="01/12/2016"
 	wacn.date=""/>
 
 # Manage a web app in Azure
@@ -26,7 +26,6 @@ Many web app management tasks can be performed in the Azure Management Portal.
 
 Azure is offered in five tiers: Free, Shared, Basic, Standard, and Premium. For information about the features and pricing for each tier, see [Pricing details](/home/features/web-site/#price). 
 
-- [App Service plans](/documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview) let you group multiple web apps under the same tier.
 - You can always [switch tiers](/documentation/articles/web-sites-scale) after you create your web app.
 
 ### Configuration
@@ -60,7 +59,7 @@ While your web app is running, you want to make sure it is available, and that i
  
 ### Backups
 
-- Set [automatic backups](/documentation/articles/web-sites-backup) of your web app. Learn more about backups in [this video](http://azure.microsoft.com/documentation/videos/azure-websites-automatic-and-easy-backup/).
+- Set [automatic backups](/documentation/articles/web-sites-backup) of your web app.
 - Learn about the options for [database recovery](/documentation/articles/sql-database-business-continuity) in Azure SQL Database.
 
 ### Troubleshooting

@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Create Windows-based Hadoop clusters in HDInsight using .NET SDK | Windows Azure"
+   pageTitle="Create Windows-based Hadoop clusters in HDInsight using .NET SDK | Azure"
    	description="Learn how to create HDInsight clusters for Azure HDInsight using .NET SDK."
    services="hdinsight"
    documentationCenter=""

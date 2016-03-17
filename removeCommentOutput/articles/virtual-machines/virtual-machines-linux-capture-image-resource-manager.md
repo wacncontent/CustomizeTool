@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Capture a Linux VM to use as a template | Windows Azure"
+	pageTitle="Capture a Linux VM to use as a template | Azure"
 	description="Learn how to capture an image of a Linux-based Azure virtual machine (VM) created with the Azure Resource Manager deployment model."
 	services="virtual-machines"
 	documentationCenter=""

@@ -1,6 +1,6 @@
 
 <properties
-		pageTitle="Monitoring a Linux VM with a VM extension | Windows Azure"
+		pageTitle="Monitoring a Linux VM with a VM extension | Azure"
 		description="Learn how to use the Linux Diagnostic Extension to monitor performance and diagnostic data of a Linux VM in Azure."
 		services="virtual-machines"
 		documentationCenter=""
@@ -19,7 +19,7 @@
 
 ## Introduction
 
-The Linux Diagnostic Extension helps a user monitor the Linux VMs running on Windows Azure, with the following functionalities:
+The Linux Diagnostic Extension helps a user monitor the Linux VMs running on Azure, with the following functionalities:
 
 - Collects and uploads Linux VM's system performance, diagnostic, and syslog data to user's storage table.
 - Enables user to customize the data metrics that will be collected and uploaded.
@@ -35,14 +35,14 @@ For version 2.0, the data includes:
 ## How to enable the extension
 The extension can be enabled through the [Azure Management Portal](https://manage.windowsazure.cn/#), Azure PowerShell, or Azure CLI scripts.
 
-To view and configure the system and performance data directly from the Azure Management Portal, follow these [steps](http://azure.microsoft.com/blog/2014/09/02/windows-azure-virtual-machine-monitoring-with-wad-extension/ "URL to the Windows blog").
+To view and configure the system and performance data directly from the Azure Management Portal, follow these [steps](https://azure.microsoft.com/blog/2014/09/02/windows-azure-virtual-machine-monitoring-with-wad-extension/ "URL to the Windows blog"/).
 
 
 This article focuses on enabling and configuring the extension through Azure CLI commands.This allows you to read and view the data from the storage table directly.
 
 
 ## Prerequisites
-- Windows Azure Linux Agent version 2.0.6 or later.
+- Azure Linux Agent version 2.0.6 or later.
 Note that most Azure VM Linux gallery images include version 2.0.6 or later. You can run **WAAgent -version** to confirm the version installed in the VM. If the VM is running a version earlier than 2.0.6 you can follow these [instructions](https://github.com/Azure/WALinuxAgent "instructions") to update it.
 - [Azure CLI](/documentation/articles/xplat-cli-install). Follow [this guidance](/documentation/articles/xplat-cli-install) to set up the Azure CLI environment on your machine. After the Azure CLI is installed, you can use the **azure** command from your command-line interface (Bash, Terminal, command prompt) to access the Azure CLI commands. For example, run **azure vm extension set --help** for detailed usage, run **azure login** to log in to Azure, run **azure vm list** to list all the virtual machines you have on Azure.
 - A storage account to store the data. You will need a previously created storage account name and access key to upload the data to your storage.

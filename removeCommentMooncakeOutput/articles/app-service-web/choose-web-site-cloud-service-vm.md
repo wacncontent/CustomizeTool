@@ -22,17 +22,12 @@ Azure Web App is the best choice for most web apps. Deployment and management ar
 
 If you need more control over the web server environment, such as the ability to remote into your server or configure server startup tasks, Azure Cloud Services is typically the best option.
 
-If you have an existing application that would require substantial modifications to run in Azure Web App or Azure Cloud Services, you could choose Azure Virtual Machines in order to simplify migrating to the cloud. However, correctly configuring, securing, and maintaining VMs requires much more time and IT expertise compared to Azure Web App and Cloud Services. If you are considering Azure Virtual Machines, make sure you take into account the ongoing maintenance effort required to patch, update, and manage your VM environment.  
+If you have an existing application that would require substantial modifications to run in Azure Web App or Azure Cloud Services, you could choose Azure Virtual Machines in order to simplify migrating to the cloud. However, correctly configuring, securing, and maintaining VMs requires much more time and IT expertise compared to Azure Web App and Cloud Services. If you are considering Azure Virtual Machines, make sure you take into account the ongoing maintenance effort required to patch, update, and manage your VM environment.
 
 The following diagram illustrates the relative degree of control versus ease of use for each of these web hosting options on Azure.
 
 ![ChoicesDiagram][ChoicesDiagram]
 
-## Table of contents
-
-- [Scenarios and recommendations](#scenarios)
-- [Feature comparison](#features)
-- [Next Steps](#nextsteps)
 ##<a name="scenarios"></a>Scenarios and recommendations
 
 Here are some common application scenarios with recommendations as to which Azure web hosting option might be most appropriate for each.
@@ -158,7 +153,6 @@ Support for SSL|X|X|X|For Azure web apps, SSL for custom domain names is only su
 Visual Studio integration|X|X|X|
 Remote Debugging|X|X|X|
 Deploy code with TFS|X|X|X|
-Network isolation with [Azure Virtual Network](/home/features/networking/)|X|X|X|See also [Azure Websites Virtual Network Integration](/blog/2014/09/15/azure-websites-virtual-network-integration/)
 Support for [Azure Traffic Manager](/home/features/traffic-manager/)|X|X|X|
 Integrated Endpoint Monitoring|X|X|X|
 Remote desktop access to servers||X|X|
@@ -166,16 +160,9 @@ Install any custom MSI||X|X|
 Ability to define/execute start-up tasks||X|X|
 Can listen to ETW events||X|X|
 
-
-> [AZURE.NOTE]
-> If you want to get started with Azure before signing up for an account, go to <a href="https://trywebsites.chinacloudsites.cn/">https://trywebsites.chinacloudsites.cn</a>, where you can immediately create a short-lived starter app in Azure for free. No credit card required, no commitments.
-
-
 ## <a id="nextsteps"></a> Next Steps
 
-For more information about the three web hosting options, see the following resources:
-
-* [Compute Hosting Options Provided by Azure](/documentation/articles/fundamentals-application-models)
+For more information about the three web hosting options, see [Compute Hosting Options Provided by Azure](/documentation/articles/fundamentals-application-models).
 
 To get started with the option(s) you choose for your application, see the following resources:
 

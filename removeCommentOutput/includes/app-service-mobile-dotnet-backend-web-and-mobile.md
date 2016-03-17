@@ -71,4 +71,4 @@ In this section, you will use a sample web client application implemented with A
 <!-- Links -->
 
 [MultiChannelToDo]: https://github.com/Azure/mobile-services-samples/tree/web-mobile/MultiChannelToDo
-[Create a mobile app]: ../article/app-service-mobile/app-service-mobile-xamarin-ios-get-started.md
+[Create a mobile app]: /documentation/articles/app-service-mobile-xamarin-ios-get-started

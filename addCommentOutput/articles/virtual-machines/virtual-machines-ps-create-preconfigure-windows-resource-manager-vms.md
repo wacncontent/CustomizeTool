@@ -1,5 +1,7 @@
+<!-- not suitable for Mooncake -->
+
 <properties
-	pageTitle="Create and configure a VM | Windows Azure"
+	pageTitle="Create and configure a VM | Azure"
 	description="Create and configure an Azure virtual machine with the Powershell and the Resource Manager deployment model."
 	services="virtual-machines"
 	documentationCenter=""
@@ -387,6 +389,8 @@ Here is the Azure PowerShell command set to create this virtual machine.
 
 [Deploy and Manage Azure Virtual Machines using Resource Manager Templates and PowerShell](/documentation/articles/virtual-machines-deploy-rmtemplates-powershell)
 
-[Create a Windows virtual machine with a Resource Manager template and PowerShell](/documentation/articles/virtual-machines-create-windows-powershell-resource-manager-template-simple)
+
+[Create a Windows virtual machine with a Resource Manager template and PowerShell](/documentation/articles/virtual-machines-create-windows-powershell-resource-manager-template)
 
+
 [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure)

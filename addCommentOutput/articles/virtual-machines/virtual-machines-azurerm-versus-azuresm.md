@@ -1,5 +1,7 @@
+<!-- not suitable for Mooncake -->
+
 <properties
-   pageTitle="Compute, Network, and Storage providers | Windows Azure"
+   pageTitle="Compute, Network, and Storage providers | Azure"
    description="Conceptual overview of the Compute, Network, and Storage Resource Providers (CRP, NRP, and SRP) in Azure Resource Manager"
    services="virtual-machines"
    documentationCenter=""
@@ -110,4 +112,4 @@ This is not supported at the moment. You cannot connect the Virtual Networks cre
 
 **Where can I find examples of Azure Resource Manager templates?**
 
-A comprehensive set of starter templates can be found on [Azure Resource Manager QuickStart Templates](http://azure.microsoft.com/documentation/templates/).
+A comprehensive set of starter templates can be found on [Azure Resource Manager QuickStart Templates](https://azure.microsoft.com/documentation/templates/).

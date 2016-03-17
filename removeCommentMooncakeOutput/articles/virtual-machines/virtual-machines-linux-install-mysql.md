@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Set up MySQL on a Linux VM | Windows Azure "
+	pageTitle="Set up MySQL on a Linux VM | Azure "
 	description="Learn how to install the MySQL stack on a Linux virtual machine (Ubuntu or RedHat family OS) in Azure"
 	services="virtual-machines"
 	documentationCenter=""
@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="08/10/2015"
+	ms.date="02/01/2016"
 	wacn.date=""/>
 
 
@@ -24,8 +24,8 @@ In this article, you will learn how to install and configure MySQL on an Azure v
 
 ##Install MySQL on your virtual machine
 
-> [AZURE.NOTE] You must already have a Windows Azure virtual machine running Linux in order to complete this tutorial. Please see the
-[Azure Linux VM tutorial](/documentation/articles/virtual-machines-linux-tutorial) to create and set up a Linux VM with `mysqlnode` as the VM name and `azureuser` as user before proceeding.
+> [AZURE.NOTE] You must already have a Azure virtual machine running Linux in order to complete this tutorial. Please see the
+[Azure Linux VM tutorial](/documentation/articles/virtual-machines-linux-tutorial-portal-rm) to create and set up a Linux VM with `mysqlnode` as the VM name and `azureuser` as user before proceeding.
 
 In this case, use 3306 port as the MySQL port.  
 
@@ -185,3 +185,5 @@ We will use Linux VM with OpenSUSE here.
 
 ###Next Step
 Find more usage and information regarding MySQL [Here](https://www.mysql.com/).
+
+

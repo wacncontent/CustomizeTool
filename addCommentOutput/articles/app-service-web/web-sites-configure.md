@@ -14,7 +14,7 @@
 
 
 # Configure web apps in Azure #
-<!-- deleted by customization
+
 
 This topic explains how to configure a web app using the [Azure Management Portal](https://manage.windowsazure.cn/).
 
@@ -22,7 +22,7 @@ This topic explains how to configure a web app using the [Azure Management Porta
 
 ## Application settings
 
-1. In the [Azure Management Portal](https://manage.windowsazure.cn), open the blade for the web app.
+1. In the [Azure Management Portal](https://manage.windowsazure.cn/), open the blade for the web app.
 2. Click **Configure**.
 3. Click **Application Settings**.
 
@@ -30,8 +30,8 @@ This topic explains how to configure a web app using the [Azure Management Porta
 
 The **Application settings** blade has settings grouped under several categories.
 
--->
-<!-- keep by customization: begin -->
+
+
 In the Azure Management Portal, you can change the configuration options for websites and link to other Azure resources, such as a database.
 
 ## Table of Contents ##
@@ -53,37 +53,37 @@ To set configuration options for a website:
 1. Click the **Configure** tab.
 
 The **Configure** tab has the following sections:
-<!-- keep by customization: end -->
+
 ### General settings
 
 **Framework versions**. Set these options if your app uses any these frameworks: 
 
-- **.NET <!-- deleted by customization Framework** --><!-- keep by customization: begin --> Framework Version** <!-- keep by customization: end -->: Set the .NET framework version.
-- <!-- deleted by customization **PHP** --><!-- keep by customization: begin --> **PHP Version** <!-- keep by customization: end -->: Set the PHP version, or **OFF **to disable PHP.
-<!-- deleted by customization
+- **.NET  Framework**  Framework Version** : Set the .NET framework version.
+-  **PHP**  **PHP Version** : Set the PHP version, or **OFF **to disable PHP.
+
 - **Java**: Select the Java version or **OFF** to disable Java. Use the **Web Container** option to choose between Tomcat and Jetty versions.
 - **Python**: Select the Python version, or **OFF** to disable Python.
--->
-<!-- keep by customization: begin -->
+
+
 - **Java Version**: Select the displayed version to enable Java, or **OFF** to disable Java. 
 - **Python Version**: Select the Python version, or **OFF** to disable Python.
-<!-- keep by customization: end -->
+
 
 For technical reasons, enabling Java for your app disables the .NET, PHP, and Python options.
 
-<!-- keep by customization: begin -->
+
 **Managed Pipeline Mode**. Sets the IIS [pipeline mode](http://www.iis.net/learn/get-started/introduction-to-iis/introduction-to-iis-architecture#Application). Leave this set to Integrated (the default) unless you have a legacy website that requires an older version of IIS.
 
-<!-- keep by customization: end -->
+
 <a name="platform"></a>
-**Platform**. Selects whether your <!-- deleted by customization web app --><!-- keep by customization: begin --> application <!-- keep by customization: end --> runs in a 32-bit or 64-bit environment. The 64-bit environment requires Basic or Standard mode. Free and Shared modes always run in a 32-bit environment.
+**Platform**. Selects whether your  web app  application  runs in a 32-bit or 64-bit environment. The 64-bit environment requires Basic or Standard mode. Free and Shared modes always run in a 32-bit environment.
 
-**Web Sockets**. Set **ON** to enable the WebSocket protocol; for example, if your <!-- deleted by customization web app --><!-- keep by customization: begin --> website <!-- keep by customization: end --> uses [ASP.NET SignalR](http://www.asp.net/signalr) or <!-- deleted by customization [socket.io](/documentation/articles/web-sites-nodejs-chat-app-socketio) --><!-- keep by customization: begin --> [socket.io](/documentation/articles/web-sites-nodejs-chat-app-socketio/) <!-- keep by customization: end -->.
+**Web Sockets**. Set **ON** to enable the WebSocket protocol; for example, if your  web app  website  uses [ASP.NET SignalR](http://www.asp.net/signalr) or  [socket.io](/documentation/articles/web-sites-nodejs-chat-app-socketio)  [socket.io](/documentation/articles/web-sites-nodejs-chat-app-socketio/) .
 
 <a name="alwayson"></a>
-**Always On**. By default, <!-- deleted by customization web apps --><!-- keep by customization: begin --> websites <!-- keep by customization: end --> are unloaded if they are idle for some period of time. This lets the system conserve resources. In Basic or Standard mode, you can enable **Always On** to keep the <!-- deleted by customization app --><!-- keep by customization: begin --> site <!-- keep by customization: end --> loaded all the time. If your <!-- deleted by customization app --><!-- keep by customization: begin --> site <!-- keep by customization: end --> runs continuous web jobs, you should enable **Always On**, or the web jobs may not run reliably <!-- deleted by customization. -->
+**Always On**. By default,  web apps  websites  are unloaded if they are idle for some period of time. This lets the system conserve resources. In Basic or Standard mode, you can enable **Always On** to keep the  app  site  loaded all the time. If your  app  site  runs continuous web jobs, you should enable **Always On**, or the web jobs may not run reliably . 
 
-<!-- deleted by customization
+
 **Managed Pipeline Version**. Sets the IIS [pipeline mode](http://www.iis.net/learn/get-started/introduction-to-iis/introduction-to-iis-architecture#Application). Leave this set to Integrated (the default) unless you have a legacy app that requires an older version of IIS.
 
 **Auto Swap**. If you enable Auto Swap for a deployment slot, Azure will automatically swap the web app into production when you push an update to that slot. For more information, see [Deploy to staging slots for web apps in Azure] (web-sites-staged-publishing.md).
@@ -91,10 +91,14 @@ For technical reasons, enabling Java for your app disables the .NET, PHP, and Py
 
 ### Debugging
 
-**Remote Debugging**.<!-- keep by customization: begin --> <strong>Remote Debugging</strong> <!-- keep by customization: end --> Enables remote debugging. When enabled, you can use the remote debugger in Visual Studio to connect directly to your web app. Remote debugging will remain enabled for 48 hours.
--->
-<!-- keep by customization: begin -->
+**Remote Debugging**. Enables remote debugging. When enabled, you can use the remote debugger in Visual Studio to connect directly to your web app. Remote debugging will remain enabled for 48 hours. 
+
+
+
 **Edit in Visual Studio Online**. Enables live code editing with Visual Studio Online. If enabled, the Dashboard tab will show a link called **Edit in Visual Studio Online**, under the **Quick Glance** section. Click this link to edit your website directly online. If you need to authenticate, you can use your basic deployment credentials.
+
+	>[AZURE.NOTE]
+	> This feature is on preview.
 
 Note: If you enable deployment from source control, it is possible for a deployment to overwrite changes you make in the Visual Studio Online editor. 
 
@@ -150,17 +154,14 @@ Options for gathering diagnostic information for your website.
 
 <strong>Failed Request Tracing</strong>. If enabled, failed requests are logged to XML files. To view the files, go to the FTP site listed under "FTP Diagnostic Logs" on the Dashboard page. The files are saved under /LogFiles/W3SVC*xxx*, where xxx is a unique identifier. This folder contains an XSL file and one or more XML files. Make sure to download the XSL file, because it provides functionality for formatting and filtering the contents of the XML files.
 
-<!-- keep by customization: begin --> <strong>Remote Debugging</strong> <!-- keep by customization: end --> Enables remote debugging. When enabled, you can use the remote debugger in Visual Studio to connect directly to your Azure website. Remote debugging will remain enabled for 48 hours.
+<strong>Remote Debugging</strong> Enables remote debugging. When enabled, you can use the remote debugger in Visual Studio to connect directly to your Azure website. Remote debugging will remain enabled for 48 hours.
 
 **Note**: Remote debugging will not work with a site name or user name that is longer than 20 characters. 
 
 ### Developer analytics
 
-Choose <strong>Add-on</strong> to select an analytics add-on from a list (Currently, Azure China does not support Azure gallery). Choose <strong>Custom</strong> to select an analytics provider such as New Relic from a list. If you use a custom provider, you must enter the license key in the<strong> Provider Key</strong> box. 
-
-For more information on using New Relic with Azure  Websites, see <a href="/documentation/articles/store-new-relic-web-sites-dotnet-application-performance-management/">New Relic Application Performance Management on Azure  Websites</a>.
-<!-- keep by customization: end -->
-
+Choose <strong>Add-on</strong> to select an analytics add-on from a list (Currently, Azure China does not support Azure Marketplace). Choose <strong>Custom</strong> to select an analytics provider such as New Relic from a list. If you use a custom provider, you must enter the license key in the<strong> Provider Key</strong> box. 
+
 
 ### App settings
 
@@ -204,7 +205,7 @@ Use this area to add custom script processors to handle requests for specific fi
  
 To configure virtual applications and directories, specify each virtual directory and its corresponding physical path relative to the website root. Optionally, you can select the **Application** checkbox to mark a virtual directory as an application.
 
-<!-- deleted by customization
+
 
 ## Enabling diagnostic logs
 
@@ -235,7 +236,7 @@ To view the log files, you must create FTP credentials, as follows:
 ![](./media/web-sites-configure/configure03.png)
 
 
-The full FTP user name is âapp\usernameâ where *app* is the name of your web app. The username is listed in the web app blade, under **Essentials**.  
+The full FTP user name is "app\username" where *app* is the name of your web app. The username is listed in the web app blade, under **Essentials**.  
 
 ![](./media/web-sites-configure/configure02.png)
 
@@ -269,16 +270,16 @@ For more information, see [How to: Monitor web endpoint status](/documentation/a
 
 >[AZURE.NOTE] If you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.
 
--->
+
 ## Next steps
 
 - [Configure a custom domain name](/documentation/articles/web-sites-custom-domain-name)
 - [Enable HTTPS](/documentation/articles/web-sites-configure-ssl-certificate)
 - [Scale a web app in Azure](/documentation/articles/web-sites-scale)
 - [Monitoring basics for Web Apps in Azure](/documentation/articles/web-sites-monitor)
-<!-- deleted by customization
+
 
 ## What's changed
 * For a guide to the change from Websites to Azure see: [Azure and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
--->
+
  

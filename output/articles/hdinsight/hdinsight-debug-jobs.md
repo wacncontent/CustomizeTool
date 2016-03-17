@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Debug Hadoop in HDInsight: View logs and interpret error messages | Windows Azure"
+	pageTitle="Debug Hadoop in HDInsight: View logs and interpret error messages | Azure"
 	description="Learn about the error messages you might receive when administering HDInsight using PowerShell, and steps you can take to recover."
 	services="hdinsight"
 	tags="azure-portal"
@@ -17,6 +17,7 @@
 
 The error messages itemized in this topic are provided to help the users of Hadoop in Azure HDInsight understand possible error conditions that they can encounter when administering the service using Azure PowerShell and to advise them on the steps which can be taken to recover from the error.
 
+
 Some of these error messages could also be seen in the Azure Management Portal when it is used to manage HDInsight clusters. But other error messages you might encounter there are less granular due to the constraints on the remedial actions possible in this context. Other error messages are provided in the contexts where the mitigation is obvious. 
 
 In situations where the error is specific to Azure HDInsight, it might be a good idea to understand what the error is about. Refer to [HDInsight error codes](#hdinsight-error-codes) to understand the different error codes, and how to fix those. In some situations, you might want to access the Hadoop logs itself. You can do so directly from the Azure Management Portal.
@@ -46,6 +47,10 @@ In situations where the error is specific to Azure HDInsight, it might be a good
 * **Access the HBase UI**. From the Azure Management Portal, click an HDInsight HBase cluster name to open the cluster blade. From the cluster blade, click **Dashboard**. When prompted, enter the cluster administrator credentials. In the Query Console that opens, click **HBase UI**
 
 ## HDInsight error codes
+
+
+##<a id="hdi-error-codes"></a> HDInsight error codes
+
 
 The errors a user can encounter in Azure PowerShell or in the Portal are listed alphabetically by name below:
 
@@ -55,7 +60,7 @@ The errors a user can encounter in Azure PowerShell or in the Portal are listed 
 
 ### <a id="AzureRegionNotSupported"></a>AzureRegionNotSupported
 - **Description**: Could not create cluster in region *nameOfYourRegion*. Use a valid HDInsight region and retry request.
-- **Mitigation**: Customer should create the cluster region that currently supports them: China North, West Europe, China North, China East, or China North.  
+ West Europe, China North,  C, or China North .- **Mitigation**: Customer should create the cluster region that currently supports them: China North, West Europe, China North, China East, or China North.
 
 ### <a id="ClusterContainerRecordNotFound"></a>ClusterContainerRecordNotFound
 - **Description**: The server could not find the requested cluster record.  
@@ -192,11 +197,11 @@ The errors a user can encounter in Azure PowerShell or in the Portal are listed 
 
 ### <a id="RegionCapabilityNotAvailable"></a>RegionCapabilityNotAvailable
 - **Description**: Region capability not available for region *yourRegionName* and Subscription ID *yourSubscriptionId*.  
-- **Mitigation**: Specify a region that supports HDInsight clusters. The publicly supported regions are: China North, West Europe, China North, China East, or China North.
+ West Europe, China North,  C, or China North .- **Mitigation**: Specify a region that supports HDInsight clusters. The publicly supported regions are: China North, West Europe, China North, China East, or China North.
 
 ### <a id="StorageAccountNotColocated"></a>StorageAccountNotColocated
 - **Description**: Storage account *yourStorageAccountName* is in region *currentRegionName*. It should be same as the cluster region *yourClusterRegionName*.  
-- **Mitigation**: Either specify a storage account in the same region that your cluster is in or if your data is already in the storage account, create a new cluster in the same region as the existing storage account. If you are using the Portal, the UI will notify them of this issue in advance.
+- **Mitigation**: Either specify a storage account in the same region that your cluster is in or if your data is already in the storage account, create a new cluster in the same region as the existing storage account. If you are using the Portal If you are using the Portal, the UI will notify them of this issue in advance. 
 
 ### <a id="SubscriptionIdNotActive"></a>SubscriptionIdNotActive
 - **Description**: Given Subscription ID *yourSubscriptionId* is not active.  

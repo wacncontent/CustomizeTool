@@ -18,11 +18,13 @@
 
 This tutorial describes how to get started running Python in [Azure Web Apps](/documentation/services/web-sites/).  Web Apps provides limited free hosting and rapid deployment, and you can use Python!  As your app grows, you can switch to paid hosting, and you can also integrate with all of the other Azure services.
 
-You will create an application using the Flask web framework (see alternate versions of this tutorial for [Django](/documentation/articles/web-sites-python-create-deploy-django-app) and [Bottle](/documentation/articles/web-sites-python-create-deploy-bottle-app)).  You will create the website from the Azure gallery, set up Git deployment, and clone the repository locally.  Then you will run the application locally, make changes, commit and push them to Azure.  The tutorial shows how to do this from Windows or Mac/Linux.
+ from the Azure gallery , You will create an application using the Flask web framework (see alternate versions of this tutorial for [Django](/documentation/articles/web-sites-python-create-deploy-django-app) and [Bottle](/documentation/articles/web-sites-python-create-deploy-bottle-app)).  You will create the website from the Azure gallery, set up Git deployment, and clone the repository locally.  Then you will run the application locally, make changes, commit and push them to Azure.  The tutorial shows how to do this from Windows or Mac/Linux.
 
 [AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
+
 
 >[AZURE.NOTE] If you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.
+
 
 ## Prerequisites
 
@@ -49,8 +51,9 @@ You should have Python and Git already installed, but make sure you have either 
 
 ## Web app create on the Azure Management Portal
 
-The first step in creating your app is to create the web app via the [Azure Management Portal](https://manage.windowsazure.cn). 
+The first step in creating your app is to create the web app via the [Azure Management Portal](https://manage.windowsazure.cn).  To do this, you will need to login to the portal and click the NEW button in the bottom left corner. A window will appear. Click **Quick Create**, enter a URL, and select **Create Web Site**.   
 
+
 1. Log into the Azure Management Portal and click the **NEW** button in the bottom left corner. 
 2. Click **Web + Mobile**.
 3. In the search box, type "python".
@@ -60,6 +63,28 @@ The first step in creating your app is to create the web app via the [Azure Mana
 
 
 ## Application Overview
+
+
+![](./media/web-sites-python-create-deploy-django-app/django-ws-003.png)
+
+The site will be quickly set up.  Next, you will add support for publishing via Git.  This can be done by choosing **Set up deployment from source control**.
+
+![](./media/web-sites-python-create-deploy-django-app/django-ws-004.png)
+
+From the **Set up deployment** dialog, scroll down and select the **Local Git** option. Click the right arrow to continue.
+
+![](./media/web-sites-python-create-deploy-django-app/django-ws-005.png)
+
+After setting up Git publishing, you will momentarily see a page informing you the repo is being created. When the repo is ready, you will be taken to the deployments tab. The deployments tab includes instructions on how to connect.  
+
+![](./media/web-sites-python-create-deploy-django-app/django-ws-006.png)
+
+We'll follow these instructions in the next sections.
+
+
+
+##<a name="application-overview"></a> Application Overview
+
 
 ### Git repository contents
 
@@ -142,7 +167,7 @@ Now we'll create a virtual environment for local development.  Right-click on **
 
 - Make sure the name of the environment is `env`.
 
-- Select the base interpreter.  Make sure to use the same version of Python that is selected for your web app (in runtime.txt or the **Application Settings** blade of your web app in the Azure Management Portal).
+- Select the base interpreter.  Make sure to use the same version of Python that is selected for your web app (in runtime.txt or the **Application Settings** bl **Application Settings** blade of your web  a app in the Azure Management Por in the Azure Management Portal)  .
 
 - Make sure the option to download and install packages is checked.
 
@@ -188,7 +213,7 @@ To trigger a deployment, click on **Sync** or **Push**.  Sync does both a push a
 
 The first deployment will take some time, as it will create a virtual environment, install packages, etc.
 
-Visual Studio doesn't show the progress of the deployment.  If you'd like to review the output, see the section on [Troubleshooting - Deployment](#troubleshooting-deployment).
+Visual Studio doesn't show the progress of the deployment.  If you'd like to review th  If you'd like to review the output, see the section on [Troubleshooting - Deployment](#troubleshooting-deployment). 
 
 Browse to the Azure URL to view your changes.
 
@@ -207,7 +232,7 @@ First, clone the repository using the URL provided on the Azure Management Porta
 
 We'll create a new virtual environment for development purposes (do not add it to the repository).  Virtual environments in Python are not relocatable, so every developer working on the application will create their own locally.
 
-Make sure to use the same version of Python that is selected for your web app (in runtime.txt or the **Application Settings** blade of your web app in the Azure Management Portal).
+Make sure to use the same version of Python that is selected for your web app (in runtime.txt or the **Application Settings** bl **Application Settings** blade of your web  a app in the Azure Management Por in the Azure Management Portal)  .
 
 For Python 2.7:
 
@@ -286,7 +311,7 @@ First, clone the repository using the URL provided on the Azure Management Porta
 
 We'll create a new virtual environment for development purposes (do not add it to the repository).  Virtual environments in Python are not relocatable, so every developer working on the application will create their own locally.
 
-Make sure to use the same version of Python that is selected for your web app (in runtime.txt or the **Application Settings** blade of your web app in the Azure Management Portal).
+Make sure to use the same version of Python that is selected for your web app (in runtime.txt or the **Application Settings** bl **Application Settings** blade of your web  a app in the Azure Management Por in the Azure Management Portal)  .
 
 For Python 2.7:
 
@@ -353,7 +378,12 @@ You will see the output of the deployment script, including virtual environment 
 Browse to the Azure URL to view your changes.
 
 
+
 ## Troubleshooting - Package Installation
+
+
+##<a name="troubleshooting-package-installation"></a> Troubleshooting - Package Installation
+
 
 [AZURE.INCLUDE [web-sites-python-troubleshooting-package-installation](../includes/web-sites-python-troubleshooting-package-installation.md)]
 
@@ -375,16 +405,18 @@ For information on using Azure Table Storage and MongoDB:
 - [Flask and MongoDB on Azure with Python Tools for Visual Studio]
 - [Flask and Azure Table Storage on Azure with Python Tools for Visual Studio]
 
+
 For more information, see also the [Python Developer Center](/develop/python/).
 
 ## What's changed
 * For a guide to the change from Websites to Azure see: [Azure and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
 * For a guide to the change of the Management Portal to the new portal see: [Reference for navigating the preview portal](https://manage.windowsazure.cn/)
 
+
 
 <!--Link references-->
 [Flask and MongoDB on Azure with Python Tools for Visual Studio]: https://github.com/microsoft/ptvs/wiki/Flask-and-MongoDB-on-Azure
-[Flask and Azure Table Storage on Azure with Python Tools for Visual Studio]: web-sites-python-ptvs-flask-table-storage.md
+[Flask and Azure Table Storage on Azure with Python Tools for Visual Studio]: /documentation/articles/web-sites-python-ptvs-flask-table-storage
 
 <!--External Link references-->
 [Azure SDK for Python 2.7]: http://go.microsoft.com/fwlink/?linkid=254281

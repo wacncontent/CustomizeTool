@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Control routing and use virtual appliances using the Azure CLI in the classic deployment model | Windows Azure"
+   pageTitle="Control routing and use virtual appliances using the Azure CLI in the classic deployment model | Azure"
    description="Learn how to control routing in VNets using the Azure CLI in the classic deployment model"
    services="virtual-network"
    documentationCenter="na"
@@ -18,8 +18,6 @@
 [AZURE.INCLUDE [virtual-network-create-udr-classic-selectors-include.md](../includes/virtual-network-create-udr-classic-selectors-include.md)]
 
 [AZURE.INCLUDE [virtual-network-create-udr-intro-include.md](../includes/virtual-network-create-udr-intro-include.md)]
-
-[AZURE.INCLUDE [azure-arm-classic-important-include](../includes/azure-arm-classic-important-include.md)]
 
 [AZURE.INCLUDE [virtual-network-create-udr-scenario-include.md](../includes/virtual-network-create-udr-scenario-include.md)]
 

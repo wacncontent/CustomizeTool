@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Deploy a line of business application | Windows Azure" 
+	pageTitle="Deploy a line of business application | Azure" 
 	description="Deploy a web-based, highly-available, line of business application with SQL Server AlwaysOn Availability Groups in Azure in five phases." 
 	documentationCenter=""
 	services="virtual-machines" 

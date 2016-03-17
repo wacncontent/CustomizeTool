@@ -1,7 +1,7 @@
 <!-- not suitable for Mooncake -->
 
 <properties
-	pageTitle="3-server SharePoint farm ARM template | Windows Azure"
+	pageTitle="3-server SharePoint farm ARM template | Azure"
 	description="Step through the structure of the Azure Resource Manager template for the three-server SharePoint farm."
 	services="virtual-machines"
 	documentationCenter=""
@@ -40,9 +40,6 @@ The **"parameters"** section specifies parameters that are used to input data in
 		"allowedValues": [
 			"China North",
 			"China East",
-			"West Europe",
-			"China East",
-			"China North"
 		],
 		"metadata": {
 			"Description": "The region to deploy the resources into"

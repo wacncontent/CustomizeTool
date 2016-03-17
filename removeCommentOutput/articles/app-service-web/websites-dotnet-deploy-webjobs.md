@@ -100,7 +100,7 @@ To create a new WebJobs-enabled project, you can use the Console Application pro
 
 ### <a id="createnolink"></a> Use the WebJobs new-project template for an independent WebJob
   
-1. Click **File** > **New Project**, and then in the **New Project** dialog box click **Cloud** > **Windows Azure WebJob**.
+1. Click **File** > **New Project**, and then in the **New Project** dialog box click **Cloud** > **Azure WebJob**.
 
 	![New Project dialog showing WebJob template](./media/websites-dotnet-deploy-webjobs/np.png)
 	

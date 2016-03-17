@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Detailed Remote Desktop troubleshooting | Windows Azure"
+	pageTitle="Detailed Remote Desktop troubleshooting | Azure"
 	description="Detailed troubleshooting steps for RDP connections to an Azure virtual machine running Windows."
 	services="virtual-machines"
 	documentationCenter=""
@@ -23,7 +23,7 @@ This article provides detailed troubleshooting steps to diagnose and fix complex
 
 If you get a Remote Desktop error message that does not resemble any of the specific error messages covered in [the basic Remote Desktop troubleshooting guide](/documentation/articles/virtual-machines-troubleshoot-remote-desktop-connections), you can follow these steps and try to figure out why the Remote Desktop (or [RDP](https://en.wikipedia.org/wiki/Remote_Desktop_Protocol)) client is unable to connect to the RDP service on the Azure VM.
 
-If you need more help at any point in this article, you can contact the Azure experts on [the MSDN Azure and the Stack Overflow forums](/support/forums/). Alternatively, you can also file an Azure support incident. Go to the [Azure Support site](/support/contact/) and click on **Get Support**. For information about using Azure Support, read the [Windows Azure Support FAQ](/support/faq/).
+If you need more help at any point in this article, you can contact the Azure experts on [the MSDN Azure and the CSDN Azure forums](/support/forums/). Alternatively, you can also file an Azure support incident. Go to the [Azure Support site](/support/contact/) and click on **Get Support**. For information about using Azure Support, read the [Azure Support FAQ](/support/faq/).
 
 
 ## Components of a Remote Desktop connection
@@ -35,7 +35,7 @@ These are the components involved in an RDP connection:
 Before proceeding, it might help to mentally review what has changed since the last successful Remote Desktop connection to the VM. For example:
 
 - If the public IP address of the VM or the cloud service containing the VM (also called the virtual IP address [VIP](https://en.wikipedia.org/wiki/Virtual_IP_address)) has changed, then the RDP failure could be because your DNS client cache still has the *old IP address* registered for the DNS name. Flush your DNS client cache and try connecting the VM again. Or try connecting directly with the new VIP.
-- If you are using a third party application to manage your Remote Desktop connections instead of using any of the Azure Management Portals, verify that the application configuration includes the correct TCP port for the Remote Desktop traffic. You can check this port for a classic virtual machine in the [Azure Management Portal](portal.azure.com), by clicking the VM's Settings > Endpoints.
+- If you are using a third party application to manage your Remote Desktop connections instead of using any of the Azure Management Portals, verify that the application configuration includes the correct TCP port for the Remote Desktop traffic. You can check this port for a classic virtual machine in the [Azure Management Portal](https://manage.windowsazure.cn), by clicking the VM's Settings > Endpoints.
 
 
 ## Preliminary steps

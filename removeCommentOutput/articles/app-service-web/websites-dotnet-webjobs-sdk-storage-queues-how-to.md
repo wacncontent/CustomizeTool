@@ -540,7 +540,7 @@ Console output appears in the Dashboard only if the program is running in an Azu
 Disable dashboard logging for high throughput scenarios. By default, the SDK writes logs to storage, and this activity could degrade performance when you are processing many messages. To disable logging, set the dashboard connection string to null as shown in the following example.
 
 		JobHostConfiguration config = new JobHostConfiguration();       
-		config.DashboardConnectionString = ââ;        
+		config.DashboardConnectionString = "";        
 		JobHost host = new JobHost(config);
 		host.RunAndBlock();
 

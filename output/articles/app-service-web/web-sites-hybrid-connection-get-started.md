@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
 	pageTitle="Access on-premises resources using hybrid connections in Azure Web App" 
 	description="Create a connection between a web app in Azure and an on-premises resource that uses a static TCP port" 

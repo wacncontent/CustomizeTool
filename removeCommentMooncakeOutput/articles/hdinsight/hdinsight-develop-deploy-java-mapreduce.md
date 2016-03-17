@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Develop Java MapReduce programs for Hadoop | Windows Azure"
+	pageTitle="Develop Java MapReduce programs for Hadoop | Azure"
 	description="Learn how to develop Java MapReduce programs on HDInsight emulator, how to deploy them to HDInsight."
 	services="hdinsight"
 	editor="cgronlun"

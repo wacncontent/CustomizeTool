@@ -1,5 +1,7 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
-	pageTitle="Line of business application Phase 2 | Windows Azure" 
+	pageTitle="Line of business application Phase 2 | Azure" 
 	description="Create and configure the two Active Directory replica domain controllers in Phase 2 of the line of business application in Azure." 
 	documentationCenter=""
 	services="virtual-machines" 

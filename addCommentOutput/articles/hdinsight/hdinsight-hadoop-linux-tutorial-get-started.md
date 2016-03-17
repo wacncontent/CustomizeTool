@@ -1,5 +1,7 @@
+<!-- not suitable for Mooncake -->
+
 <properties
-   	pageTitle="Linux tutorial: Get started with Hadoop and Hive | Windows Azure"
+   	pageTitle="Linux tutorial: Get started with Hadoop and Hive | Azure"
    	description="Follow this Linux tutorial to get started using Hadoop in HDInsight. Learn how to provision Linux clusters, and query data with Hive."
    	services="hdinsight"
    	documentationCenter=""
@@ -10,7 +12,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="01/13/2016"
+	ms.date="01/21/2016"
 	wacn.date=""/>
 
 # Hadoop tutorial: Get started using Hadoop with Hive in HDInsight on Linux
@@ -182,9 +184,9 @@ Use the following steps from the Hive view to run a Hive query against data incl
     
     The other icons are as follows:
     
-        * Settings: The gear icon allows you to change Hive settings, such as setting `hive.execution.engine` or Tez parameters.
-        * Tez: Displays the Directed Acyclic Graph (DAG) that Tez used to perform the query. If you want to view the DAG for queries you've ran in the past, use the __Tez View__ instead.
-        * Notifications: Displays notifications, such as "Query has been submitted" or if an error occurs when running a query.
+    * **Settings**: The gear icon allows you to change Hive settings, such as setting `hive.execution.engine` or Tez parameters.
+    * **Tez**: Displays the Directed Acyclic Graph (DAG) that Tez used to perform the query. If you want to view the DAG for queries you've ran in the past, use the __Tez View__ instead.
+    * **Notifications**: Displays notifications, such as "Query has been submitted" or if an error occurs when running a query.
 
 5. Select the __SQL__ icon to switch back to the Query Editor, then create a new worksheet and enter the following query:
 
@@ -234,17 +236,6 @@ If you'd like to learn more about creating or managing an HDInsight cluster, see
 	* The use of Azure Storage (WASB) instead of HDFS as the default data store
 
 
-<!-- deleted by customization
-[1]: ../HDInsight/hdinsight-hadoop-visual-studio-tools-get-started.md
-
-[hdinsight-provision]: hdinsight-provision-clusters-v1.md
-[hdinsight-admin-powershell]: hdinsight-administer-use-powershell.md
-[hdinsight-upload-data]: hdinsight-upload-data.md
-[hdinsight-use-mapreduce]: hdinsight-use-mapreduce.md
-[hdinsight-use-hive]: hdinsight-use-hive.md
-[hdinsight-use-pig]: hdinsight-use-pig.md
--->
-<!-- keep by customization: begin -->
 [1]: /documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started
 
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
@@ -253,15 +244,9 @@ If you'd like to learn more about creating or managing an HDInsight cluster, see
 [hdinsight-use-mapreduce]: /documentation/articles/hdinsight-use-mapreduce
 [hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
 [hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
-<!-- keep by customization: end -->
 
 [powershell-download]: http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409
-<!-- deleted by customization
-[powershell-install-configure]: ../install-configure-powershell.md
--->
-<!-- keep by customization: begin -->
 [powershell-install-configure]: /documentation/articles/powershell-install-configure
-<!-- keep by customization: end -->
 [powershell-open]: /documentation/articles/powershell-install-configure#Install
 
 [img-hdi-dashboard]: ./media/hdinsight-hadoop-tutorial-get-started-windows-v1/HDI.dashboard.png

@@ -21,7 +21,7 @@
 **Important**: The Azure platform SLA applies to virtual machines running the Linux OS only when one of the [endorsed distributions](/documentation/articles/virtual-machines-linux-endorsed-distributions) is used. All Linux distributions that are provided in the Azure image gallery are endorsed distributions with the required configuration.
 
 - [Linux on Azure - Endorsed Distributions](/documentation/articles/virtual-machines-linux-endorsed-distributions)
-- [Support for Linux images in Windows Azure](http://support2.microsoft.com/kb/2941892)
+- [Support for Linux images in Azure](http://support2.microsoft.com/kb/2941892)
 
 All distributions running on Azure will need to meet a number of prerequisites to have a chance to properly run on the platform.  This article is by no means comprehensive as every distribution is different; and it is quite possible that even if you meet all the criteria below you will still need to significantly tweak your Linux system to ensure that it properly runs on the platform.
 
@@ -70,7 +70,7 @@ Next, rebuild the initrd with the `hv_vmbus` and `hv_storvsc` kernel modules:
 
 VHD images on Azure must have a virtual size aligned to 1MB.  Typically, VHDs created using Hyper-V should already be aligned correctly.  If the VHD is not aligned correctly then you may receive an error message similar to the following when you attempt to create an *image* from your VHD:
 
-	"The VHD http://<mystorageaccount>.blob.core.chinacloudapi.cn/vhds/MyLinuxVM.vhd has an unsupported virtual size of 21475270656 bytes. The size must be a whole number (in MBs).â
+	"The VHD http://<mystorageaccount>.blob.core.chinacloudapi.cn/vhds/MyLinuxVM.vhd has an unsupported virtual size of 21475270656 bytes. The size must be a whole number (in MBs)."
 
 To remedy this you can resize the VM using either the Hyper-V Manager console or the [Resize-VHD](http://technet.microsoft.com/zh-cn/library/hh848535.aspx) Powershell cmdlet.  If you are not running in a Windows environment then it is recommended to use qemu-img to convert (if needed) and resize the VHD.
 

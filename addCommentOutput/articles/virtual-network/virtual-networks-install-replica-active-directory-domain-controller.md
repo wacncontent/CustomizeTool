@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Install a replica domain controller in Azure  | Windows Azure"
+	pageTitle="Install a replica domain controller in Azure  | Azure"
 	description="A tutorial that explains how to install a domain controller from an on-premises Active Directory forest on an Azure virtual machine."
 	services="virtual-network"
 	documentationCenter=""
@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="virtual-network"
-	ms.date="09/21/2015"
+	ms.date="02/01/2016"
 	wacn.date=""/>
 
 
@@ -27,7 +27,7 @@ You might also be interested in these related topics:
 
 In this scenario, external users need to access applications that run on domain-joined servers. The VMs that run the application servers and the replica DCs are installed in an Azure virtual network. The virtual network can be connected to the on-premises network by a [site-to-site VPN](/documentation/articles/vpn-gateway-site-to-site-create) connection, as shown in the following diagram, or you can use [ExpressRoute](/home/features/expressroute/) for a faster connection.
 
-The application servers and the DCs are deployed within separate [cloud services](/documentation/articles/cloud-services-what-is) to distribute compute processing and within [availability sets](/documentation/articles/virtual-machines-manage-availability) for improved fault tolerance.
+The application servers and the DCs are deployed within separate cloud services to distribute compute processing and within [availability sets](/documentation/articles/virtual-machines-manage-availability) for improved fault tolerance.
 The DCs replicate with each other and with on-premises DCs by using Active Directory replication. No synchronization tools are needed.
 
 ![][1]
@@ -51,10 +51,16 @@ It's a good idea to create a site in Active Directory that represents the networ
 	**Site-to-site connectivity**  | <p>Name: Type a name for the on-premises network.</p><p>VPN Device IP address: Specify the public IP address of the device that will connect to the virtual network. The VPN device cannot be located behind a NAT.</p><p>Address: Specify the address ranges for your on-premises network (such as 192.168.0.0/16 in the scenario diagram).</p>
 	**Virtual network address spaces**  | <p>Address Space: Specify the IP address range for VMs that you want to run in the Azure virtual network (such as 10.1.0.0/16 in the scenario diagram). This address range cannot overlap with the address ranges of the on-premises network.</p><p>Subnets: Specify a name and address for a subnet for the application servers (such as Frontend, 10.1.1.0/24) and for the DCs (such as Backend, 10.1.2.0/24).</p><p>Click **add gateway subnet**.</p>
 
+
 2. Next, you'll configure the virtual network gateway to create a secure site-to-site VPN connection. See [Configure a Virtual Network Gateway](/documentation/articles/vpn-gateway-configure-vpn-gateway-mp) for the instructions.
 3. Create the site-to-site VPN connection between the new virtual network and an on-premises VPN device. See [Configure a Virtual Network Gateway](/documentation/articles/vpn-gateway-configure-vpn-gateway-mp) for the instructions.
 
 
+
+
+2. Next, you'll configure the virtual network gateway to create a secure site-to-site VPN connection.
+3. Create the site-to-site VPN connection between the new virtual network and an on-premises VPN device.
+
 
 ## Create Azure VMs for the DC roles
 
@@ -111,8 +117,8 @@ For more information about using Windows PowerShell, see [Get Started with Azure
 -  [How to upload existing on-premises Hyper-V domain controllers to Azure by using Azure PowerShell](http://support.microsoft.com/kb/2904015)
 -  [Install a new Active Directory forest on an Azure virtual network](/documentation/articles/active-directory-new-forest-virtual-machine)
 -  [Azure Virtual Network](/documentation/articles/virtual-networks-overview)
--  [Windows Azure IT Pro IaaS: (01) Virtual Machine Fundamentals](http://channel9.msdn.com/Series/Windows-Azure-IT-Pro-IaaS/01)
--  [Windows Azure IT Pro IaaS: (05) Creating Virtual Networks and Cross-Premises Connectivity](http://channel9.msdn.com/Series/Windows-Azure-IT-Pro-IaaS/05)
+-  [Azure IT Pro IaaS: (01) Virtual Machine Fundamentals](http://channel9.msdn.com/Series/Windows-Azure-IT-Pro-IaaS/01)
+-  [Azure IT Pro IaaS: (05) Creating Virtual Networks and Cross-Premises Connectivity](http://channel9.msdn.com/Series/Windows-Azure-IT-Pro-IaaS/05)
 -  [Azure PowerShell](https://msdn.microsoft.com/zh-cn/library/azure/jj156055.aspx)
 -  [Azure Management Cmdlets](https://msdn.microsoft.com/zh-cn/library/azure/jj152841)
 

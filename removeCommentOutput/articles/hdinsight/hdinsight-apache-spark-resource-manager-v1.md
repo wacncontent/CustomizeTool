@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Use Resource Manager to allocate resources to the Apache Spark cluster in HDInsight| Windows Azure" 
+	pageTitle="Use Resource Manager to allocate resources to the Apache Spark cluster in HDInsight| Azure" 
 	description="Learn how to use the Resource Manager for Spark clusters on HDInsight for better performance." 
 	services="hdinsight" 
 	documentationCenter="" 
@@ -69,13 +69,13 @@ Specify thrift server core Count and thrift Server executor memory as 0. With no
 * [Use Spark in HDInsight for building real-time streaming applications](/documentation/articles/hdinsight-apache-spark-csharp-apache-zeppelin-eventhub-streaming)
 
 
-[hdinsight-versions]: ../hdinsight-component-versioning-v1/
-[hdinsight-upload-data]: ../hdinsight-upload-data/
-[hdinsight-storage]: ../hdinsight-use-blob-storage/
+[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning-v1
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
 
 
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: /pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
 [azure-management-portal]: https://manage.windowsazure.cn/
-[azure-create-storageaccount]: ../storage-create-storage-account/ 
+[azure-create-storageaccount]: /documentation/articles/storage-create-storage-account

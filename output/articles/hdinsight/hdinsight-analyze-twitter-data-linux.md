@@ -1,5 +1,7 @@
+<!-- not suitable for Mooncake -->
+
 <properties
-	pageTitle="Analyze Twitter data with Apache Hive on HDInsight | Windows Azure"
+	pageTitle="Analyze Twitter data with Apache Hive on HDInsight | Azure"
 	description="Learn how to use Python to store Tweets that contain specific keywords, then use Hive and Hadoop on HDInsight to transform the raw TWitter data into a searchable Hive table."
 	services="hdinsight"
 	documentationCenter=""

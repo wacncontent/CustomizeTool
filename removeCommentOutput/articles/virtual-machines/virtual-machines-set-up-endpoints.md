@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Set up endpoints on a classic virtual machine | Windows Azure"
+	pageTitle="Set up endpoints on a classic virtual machine | Azure"
 	description="Learn to set up endpoints in the Azure Management Portal to allow communication with a virtual machine in Azure."
 	services="virtual-machines"
 	documentationCenter=""

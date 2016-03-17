@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
 	pageTitle="How to Configure an Azure Environment" 
 	description="Configuration, management and monitoring of Azure Environments" 
@@ -35,7 +37,7 @@ Each ASE is configured with 500 Gb of storage.  This space is used across all th
 
 The database holds the information that defines the environment as well as details on the apps running within it.  This too is a part of the Azure held subscription and is not something that customers have a direct ability to manipulate. 
 
-The virtual network that is used with your ASE can be one that you made when creating the ASE or one that you had ahead of time.  If you want your ASE to be in a resource group that is separate from the one used for your ASE then you need to make your VNET separately from the ASE creation flow.  It is a good idea to create the subnet you want to use at the same time as creating the subnet during ASE creation will force the ASE to be in the same resource group as the VNET.  Currently there is only support for V1 "classic" VNETs.  
+The virtual network that is used with your ASE can be one that you made when creating the ASE or one that you had ahead of time.  If you want your VNET to be in a resource group that is separate from the one used for your ASE then you need to make your VNET separately from the ASE creation flow.  It is a good idea to create the subnet you want to use at the same time as creating the subnet during ASE creation will force the ASE to be in the same resource group as the VNET.  Currently there is only support for V1 "classic" VNETs.  
 
 The UI to manage and monitor your Azure Environment is available from the Azure Management Portal.  If you have an ASE then you are likely to see the Azure symbol on your sidebar.  This symbol is used to represent Azure Environments in the Azure Management Portal.
 
@@ -196,11 +198,6 @@ For more information about the Azure platform, see [Azure Web App](/documentatio
 [ControlInbound]: /documentation/articles/app-service-app-service-environment-control-inbound-traffic/
 [virtualnetwork]: /documentation/articles/virtual-networks-faq/
 [AppServicePricing]: /home/features/web-site/#price 
-<!-- deleted by customization
-[AzureAppService]: /documentation/articles/app-service-value-prop-what-is/
--->
-<!-- keep by customization: begin -->
 [AzureAppService]: /documentation/services/web-sites/
-<!-- keep by customization: end -->
 [ASEAutoscale]: /documentation/articles/app-service-environment-auto-scale/
 [ExpressRoute]: /documentation/articles/app-service-app-service-environment-network-configuration-expressroute/

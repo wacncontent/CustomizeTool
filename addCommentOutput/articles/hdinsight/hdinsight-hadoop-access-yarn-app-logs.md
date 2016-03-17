@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Access Hadoop YARN application logs programmatically | Windows Azure"
+	pageTitle="Access Hadoop YARN application logs programmatically | Azure"
 	description="Access application logs programmatically on a Hadoop cluster in HDInsight."
 	services="hdinsight"
 	documentationCenter=""
@@ -10,32 +10,23 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="10/02/2015"
+	ms.date="01/29/2016"
 	wacn.date=""/>
 
-# Access YARN application logs on Hadoop in HDInsight programmatically
+# Access YARN application logs on Windows-based HDInsight
 
-This topic explains how to programmatically enumerate the YARN (Yet Another Resource Negotiator) applications that have finished on a Hadoop cluster in Azure HDInsight, and how to programmatically access the application logs without having to connect to your clusters by using Remote Desktop Protocol (RDP). Specifically, a new component and a new API have been added:
-
-  1. The generic application history server on HDInsight clusters is enabled. It is a component within the YARN Timeline Server that handles the storage and retrieval of generic information about completed applications.
-  2. APIs in the Azure HDInsight .NET SDK are available to programmatically enumerate applications that have run on your clusters and to download the relevant application-specific or container-specific logs (in plain text) to help with debugging any application problems that occur.
-<!-- deleted by customization
+This topic explains how to access the logs for YARN (Yet Another Resource Negotiator) applications that have finished on a Hadoop cluster in Azure HDInsight
+
 
 > [AZURE.NOTE] The information in this document applies only to Windows-based HDInsight clusters. For information on accessing YARN logs on Linux-based HDInsight clusters, see [Access YARN application logs on Linux-based Hadoop on HDInsight](/documentation/articles/hdinsight-hadoop-access-yarn-app-logs-linux)
--->
+
 
-## Prerequisites
+### Prerequisites
 
-The Azure HDInsight SDK is required to use the code presented in this topic in a .NET Framework application. The most recently published build of the SDK is available at [NuGet](http://nuget.codeplex.com/wikipage?title=Getting%20Started).
-
-To install the HDInsight SDK from a Visual Studio application, go the **Tools** menu, click **Nuget Package Manager**, and then click **Package Manager Console**. Run the following command in the console to install the packages:
-
-		Install-Package Microsoft.WindowsAzure.Management.HDInsight
-
-This command adds .NET libraries for HDInsight and adds references to them to the current Visual Studio project.
+- A Windows-based HDInsight cluster.  See [Create Windows-based Hadoop clusters in HDInsight](/documentation/articles/hdinsight-provision-clusters-v1).
 
 
-## <a name="YARNTimelineServer"></a>YARN Timeline Server
+## YARN Timeline Server
 
 The <a href="http://hadoop.apache.org/docs/r2.4.0/hadoop-yarn/hadoop-yarn-site/TimelineServer.html" target="_blank">YARN Timeline Server</a> provides generic information on completed applications as well as framework-specific application information through two different interfaces. Specifically:
 
@@ -54,9 +45,13 @@ On your HDInsight clusters, this information will be stored by Azure Resource Ma
 
     GET on https://<cluster-dns-name>.azurehdinsight.cn/ws/v1/applicationhistory/apps
 
-We have added new APIs to the HDInsight .NET SDK to make it easy to retrieve this data programmatically. Note that the generic data can also be retrieved by running YARN command-line interface (CLI) commands directly on your cluster nodes (after connecting to the cluster by using RDP).
 
-## <a name="YARNAppsAndLogs"></a>YARN applications and logs
+
+## YARN applications and logs
+
+
+##<a name="YARNAppsAndLogs"></a> YARN applications and logs
+
 
 YARN supports multiple programming models (MapReduce being one of them) by decoupling resource management from application scheduling/monitoring. This is done through a global *ResourceManager* (RM), per-worker-node *NodeManagers* (NMs), and per-application *ApplicationMasters* (AMs). The per-application AM negotiates resources (CPU, memory, disk, network) for running your application with the RM. The RM works with NMs to grant these resources, which are granted as *containers*. The AM is responsible for tracking the progress of the containers assigned to it by the RM. An application may require many containers depending on the nature of the application.
 
@@ -73,6 +68,19 @@ The aggregated logs are not directly readable, as they are written in a [TFile][
 	yarn logs -applicationId <applicationId> -appOwner <user-who-started-the-application>
 	yarn logs -applicationId <applicationId> -appOwner <user-who-started-the-application> -containerId <containerId> -nodeAddress <worker-node-address>
 
+
+
+## YARN ResourceManager UI
+
+The YARN ResourceManager UI runs on the cluster headnode, and can be accessed through the Azure Management Portal dashboard: 
+
+1. Sign in to [Azure Management Portal](https://manage.windowsazure.cn/). 
+2. On the left menu, click **Browse**, click **HDInsight Clusters**, click a Windows-based cluster that you want to access the YARN application logs.
+3. On the top menu, click **Dashboard**. You will see a page opened on a new browser tab called **HDInsight Query Console**.
+4. From **HDInsight Query Console**, click **Yarn UI**.
+
+
+
 The next section talks about how you can access application-specific or container-specific logs programmatically, without having to use RDP to connect to your HDInsight clusters.
 
 ## <a name="enumerate-and-download"></a>Enumerating applications and downloading logs programmatically
@@ -163,6 +171,7 @@ If needed, you can also download logs for each container (or any specific contai
 	{
 	    appHistoryClient.DownloadApplicationLogs(container, downloadLocation);
 	}
+
 
 
 

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Detach a disk from a Linux VM | Windows Azure"
+	pageTitle="Detach a disk from a Linux VM | Azure"
 	description="Learn to detach a data disk from an Azure virtual machine created using the classic deployment model."
 	services="virtual-machines"
 	documentationCenter=""

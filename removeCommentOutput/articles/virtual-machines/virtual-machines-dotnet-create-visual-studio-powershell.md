@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Creating a VM for a web project using Visual Studio | Windows Azure"
+	pageTitle="Creating a VM for a web project using Visual Studio | Azure"
 	description="Create a virtual machine for a web application"
 	services="virtual-machines"
 	documentationCenter=""
@@ -26,7 +26,7 @@ To create a virtual machine when you create a web application, follow these step
 
 	![][0]
 
-3. For this example, in the drop-down list under Windows Azure, choose **Virtual Machine (v1)**, and then click the **OK** button.
+3. For this example, in the drop-down list under Azure, choose **Virtual Machine (v1)**, and then click the **OK** button.
 4. Sign in to Azure if you're prompted. The **Create Virtual Machine** dialog box appears.
 
 	![][2]

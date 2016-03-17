@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Create a Java web app in Azure | Windows Azure"
+	pageTitle="Create a Java web app in Azure | Azure"
 	description="This tutorial shows you how to deploy a Java web app to Azure."
 	services="app-service\web"
 	documentationCenter="java"
@@ -21,18 +21,19 @@
 - [PHP - FTP](/documentation/articles/web-sites-php-mysql-deploy-use-ftp)
 - [Python](/documentation/articles/web-sites-python-ptvs-django-mysql)
 
-This tutorial shows how to create a Java [web app in Azure](/documentation/services/web-sites/) by using the [Azure Management Portal](https://manage.windowsazure.cn/). 
+This tutorial shows how to create a Java [web app in Azure](/documentation/services/web-sites/) by using the [Azure Management Portal](https://manage.windowsazure.cn/). The Azure Management Portal
 
-> [AZURE.NOTE] To complete this tutorial, you need a Windows Azure account. If you don't have an account, you can [sign up for a trial][].
+> [AZURE.NOTE] To complete this tutorial, you need a Azure account. If you don't have an account, you can [activate your Visual Studi[ [sign up for a trial][].
 >
 
 ## Java application options
 
 There are several ways you can set up a Java application in an Azure web app. 
 
+
 1. Create an app and then use the Azure configuration UI.
 
-	Azure Websites provides several Tomcat and Jetty versions, with default configuration. If the application that you will be hosting will work with one of the built-in versions, this method of setting up a web container is the easiest but it lacks the configuration capabilities in other methods. For this method, you create an app in the Azure Management Portal, and then go to the app's **Configure** blade to choose your version of Java along with the desired Java web container. When you use this method the app runs from the local hard drive that is used by the worker to host the app, which does not take disk space away from the tenant. When you use this model, you don't have access to edit files in this part of the file system, which means you can't do things like configure the *server.xml* file or place library files in the */lib* folder.  For more information, see the [Create and configure a Java web site](#appsettings) section later in this tutorial.  
+	Azure Websites provides several Tomcat and Jetty versions, with default configuration. If the application that you will be hosting will work with one of the built-in versions, this method of setting up a web container is the easiest site](#appsettings) section later in this tutorial.
   
 3. Create an app and then manually copy and edit configuration files 
 
@@ -44,6 +45,7 @@ There are several ways you can set up a Java application in an Azure web app.
 	* You want to use a version of Java that isn't supported in Azure and want to upload it yourself.
 
 	For cases like these, you can create an app using the Azure Management Portal, and then provide the appropriate runtime files manually. In this case the files will be counted against your storage space quotas for your App Service plan. For more information, see [Upload a custom Java web app to Azure](/documentation/articles/web-sites-java-custom-upload/).
+
 
 This information shows how to use the Azure configuration UI to select a Java application container, either Apache Tomcat or Jetty, for your web site.
 

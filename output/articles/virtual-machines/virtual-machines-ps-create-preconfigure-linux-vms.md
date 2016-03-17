@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Create a Linux VM using Azure Powershell | Windows Azure"
+	pageTitle="Create a Linux VM using Azure Powershell | Azure"
 	description="Learn how to create and preconfigure a Linux VM using Azure PowerShell."
 	services="virtual-machines"
 	documentationCenter=""
@@ -21,7 +21,7 @@
 
 <br>
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+ Resource Manager model. [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
  
 These steps show you how to create a Linux virtual machine using a fill-in-the-blanks approach for creating Azure PowerShell command sets. This approach can be useful if you are new to Azure PowerShell or you just want to know what values to specify for successful configuration. 
 
@@ -46,7 +46,7 @@ Replace everything within the quotes, including the < and > characters, with the
 	$subscr="<subscription name>"
 	$staccount="<storage account name>"
 	Select-AzureSubscription -SubscriptionName $subscr -Current
-	Set-AzureSubscription -SubscriptionName $subscr -CurrentStorageAccountName $staccount
+	Set-AzureSubscription  -Environment AzureChinaCloud  -SubscriptionName $subscr -Curren  -SubscriptionName $subscr -CurrentStorageAccountName $staccount
 
 
 ## Find the image you want to use
@@ -266,9 +266,16 @@ Here is the corresponding Azure PowerShell command set to create this virtual ma
 
 [Virtual machines documentation](/documentation/services/virtual-machines/)
 
+
 [Azure virtual machines FAQ](http://msdn.microsoft.com/zh-cn/library/azure/dn683781.aspx)
 
 [Overview of Azure Virtual Machines](http://msdn.microsoft.com/zh-cn/library/azure/jj156143.aspx)
+
+
+[Azure virtual machines FAQ](/documentation/articles/virtual-machines-questions)
+
+[Overview of Azure Virtual Machines](/documentation/articles/virtual-machines-about/)
+
 
 [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure)
 

@@ -1,7 +1,7 @@
 <!-- not suitable for Mooncake -->
 
 <properties 
-	pageTitle="Create an Orchard CMS web app from the Azure gallery" 
+	pageTitle="Create an Orchard CMS web app from the Azure Marketplace" 
 	description="A tutorial that teaches you how to create a new web app in Azure. Also learn how to launch and manage your web app using the Azure Management Portal." 
 	tags="azure-portal"
 	services="app-service\web" 
@@ -15,11 +15,11 @@
 	ms.date="08/03/2015"
 	wacn.date=""/>
 
-# Create an Orchard CMS web app from the Azure gallery
+# Create an Orchard CMS web app from the Azure Marketplace
 
 ## Overview
 
-The Marketplace makes available a wide range of popular web applications developed by Microsoft, third party companies, and open source software initiatives. Web applications created from the Marketplace do not require installation of any software other than the browser used to connect to the [Azure preview portal](https://manage.windowsazure.cn/). For more information about the web applications in the Marketplace, see [Azure gallery](/marketplace/).
+The Marketplace makes available a wide range of popular web applications developed by Microsoft, third party companies, and open source software initiatives. Web applications created from the Marketplace do not require installation of any software other than the browser used to connect to the [Azure preview portal](https://manage.windowsazure.cn/). For more information about the web applications in the Marketplace, see [Azure Marketplace](/marketplace/).
 
 In this tutorial, you'll learn:
 
@@ -39,7 +39,7 @@ You'll build an Orchard CMS web app that uses a default template. [Orchard](http
 
 1. Login to the [Azure preview portal](http://manage.windowsazure.cn).
 
-2. Click **New** > **Web + Mobile** > **Azure gallery**.
+2. Click **New** > **Web + Mobile** > **Azure Marketplace**.
 	
 	![Create New][1]
 

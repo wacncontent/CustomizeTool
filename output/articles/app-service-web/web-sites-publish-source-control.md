@@ -12,9 +12,11 @@
 	ms.date="12/11/2015"
 	wacn.date=""/>
 
-# Continuous deployment using GIT in Azure
+# Continuous deployment using GIT in Azure  Web App   
+
 
 [AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)]
+
 
 [AZURE.INCLUDE [publishing-with-git](../includes/publishing-with-git.md)]
  

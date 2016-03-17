@@ -33,7 +33,7 @@ VMs can be managed using a browser-based portal, command-line tools with support
 Along with the OS, other configuration choices you have with VMs include:
 
 - The size, which determines factors such as how many disks you can attach and the processing power. Azure offers a wide variety of sizes to support many types of uses. For details, see [Sizes for Virtual Machines](/documentation/articles/virtual-machines-size-specs).  
-- The Azure region where your new VM will be hosted, such as in the China East or China North.
+- The Azure region where your new VM will be hosted, such as in the US, Europe, or Asia.
 - VM extensions, which give your virtual machine additional capabilities, such as running anti-virus or using the Desired State Configuration feature of Windows PowerShell.
 
 Other benefits to consider for VMs include:

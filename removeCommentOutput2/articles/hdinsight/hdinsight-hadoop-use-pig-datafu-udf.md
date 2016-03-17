@@ -20,6 +20,7 @@ DataFu is a collection of Open Source libraries for use with Hadoop. In this doc
 
 * An Azure subscription.
 
+
 * An Azure HDInsight cluster (Windows based)
 
 * A basic familiarity with [using Pig on HDInsight](/documentation/articles/hdinsight-use-pig)

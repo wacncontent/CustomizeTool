@@ -1,12 +1,12 @@
 <properties
-	pageTitle="Run a compute-intensive .NET app on a VM | Windows Azure"
+	pageTitle="Run a compute-intensive .NET app on a VM | Azure"
 	description="Learn how to deploy and run a compute-intensive .NET app on an Azure virtual machine and use Azure Service Bus queues to monitor progress remotely."
 	services="virtual-machines"
 	documentationCenter=".net"
-	authors="wadepickett"
-	manager="wpickett"
-	editor="mollybos"
-	tags=âazure-service-management"/>
+	authors="davidmu1"
+	manager="timlt"
+	editor=""
+	tags="azure-service-management"/>
 
 <tags
 	ms.service="virtual-machines"
@@ -17,7 +17,7 @@
 
 With Azure, you can use a virtual machine to handle compute-intensive tasks. For example, a virtual machine can handle tasks and deliver results to client machines or mobile applications. After completing the tutorial, you will understand how to create a virtual machine that runs a compute-intensive .NET application that can be monitored by another .NET application.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] 
 
 
 This tutorial assumes you know how to create .NET console applications. No knowledge of Azure is assumed.

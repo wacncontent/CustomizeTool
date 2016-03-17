@@ -1,7 +1,5 @@
-<!-- to be customized -->
-
 <properties
-   pageTitle="Navigate and select VM images | Windows Azure"
+   pageTitle="Navigate and select VM images | Azure"
    description="Learn how to determine the publisher, offer, and SKU for images when creating an Azure virtual machine with the Resource Manager deployment model."
    services="virtual-machines"
    documentationCenter=""
@@ -18,10 +16,12 @@
 
 # Navigate and select Azure virtual machine images with Windows PowerShell and the Azure CLI
 
+> [AZURE.NOTE] This article describes how to navigate and select virtual machine images, using a recent installation of either the Azure CLI or Azure PowerShell. As a prerequisite, you would need to change to the Service Manager mode. With the Azure CLI, enter that mode by typing `azure config mode asm`. For Azure PowerShell 0.9 or earlier, type `Switch-AzureMode AzureServiceManager`.
+
 ## Table of commonly used images
 
 
-| PublisherName | äş§ĺ | Name |
+| PublisherName | product | Name |
 |:---------------------------------|:-------------------------------------------|:---------------------------------|:--------------------|
 | OpenLogic | CentOS | f1179221e23b4dbb89e39d70e5bc9e72__OpenLogic-CentOS-70-20150904 |
 | OpenLogic | CentOS | f1179221e23b4dbb89e39d70e5bc9e72__OpenLogic-CentOS-71-20150731 |

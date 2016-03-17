@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Virtual Machines and Containers | Windows Azure" 
+	pageTitle="Virtual Machines and Containers | Azure" 
 	description="Describes Virtual Machines, Docker and Linux containers, and their usage in groups of each in Azure, including the benefits of each and scenarios in which each approach works very well." 
 	services="virtual-machines" 
 	documentationCenter="virtual-machines" 
@@ -177,7 +177,7 @@ Docker tools:
 	- [Docker installation instructions](https://docs.docker.com/installation/#installation)
 
 
-Docker on Windows Azure:
+Docker on Azure:
 
 - [Docker VM Extension for Linux on Azure](/documentation/articles/virtual-machines-docker-vm-extension)
 - [Azure Docker VM Extension User Guide](https://github.com/Azure/azure-docker-extension/blob/master/README.md)

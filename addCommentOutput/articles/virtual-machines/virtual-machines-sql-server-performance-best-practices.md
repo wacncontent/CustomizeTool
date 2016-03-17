@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Performance best practices for SQL Server | Windows Azure"
-	description="Provides best practices for optimizing SQL Server performance in Windows Azure VMs."
+	pageTitle="Performance best practices for SQL Server | Azure"
+	description="Provides best practices for optimizing SQL Server performance in Azure VMs."
 	services="virtual-machines"
 	documentationCenter="na"
 	authors="rothja"
@@ -17,9 +17,11 @@
 
 ## Overview
 
-This topic provides best practices for optimizing SQL Server performance in Windows Azure Virtual Machine. While running SQL Server in Azure Virtual Machines, we recommend that you continue using the same database performance tuning options that are applicable to SQL Server in on-premises server environment. However, the performance of a relational database in a public cloud depends on many factors such as the size of a virtual machine, and the configuration of the data disks.
+This topic provides best practices for optimizing SQL Server performance in Azure Virtual Machine. While running SQL Server in Azure Virtual Machines, we recommend that you continue using the same database performance tuning options that are applicable to SQL Server in on-premises server environment. However, the performance of a relational database in a public cloud depends on many factors such as the size of a virtual machine, and the configuration of the data disks.
+
 
 When creating SQL Server images, consider using the Azure Management Portal to take advantage of features, such as the default use of Premium Storage, and other options, such as Automated Patching, Automated Backup, and AlwaysOn configurations.
+
 
 This paper is focused on getting the best performance for SQL Server on Azure VMs. If your workload is less demanding, you might not require every optimization listed below. Consider your performance needs and workload patterns as you evaluate these recommendations.
 
@@ -49,7 +51,7 @@ For performance sensitive applications, it's recommended that you use the follow
 
 For up-to-date information on supported virtual machine sizes, see [Sizes for Virtual Machines](/documentation/articles/virtual-machines-size-specs).
 
-In addition, we recommend that you create your Azure storage account in the same data <!-- deleted by customization center as --><!-- keep by customization: begin --> centerÂ as <!-- keep by customization: end --> your SQL Server virtual machines to reduce transfer delays. When creating a storage account, disable <!-- deleted by customization geo-replication as --><!-- keep by customization: begin --> geo-replicationÂ as <!-- keep by customization: end --> consistent write order across multiple disks is not guaranteed. Instead, consider configuring a SQL Server disaster recovery technology between two Azure data centers. For more information, see [High Availability and Disaster Recovery for SQL Server in Azure Virtual Machines](/documentation/articles/virtual-machines-sql-server-high-availability-and-disaster-recovery-solutions).
+In addition, we recommend that you create your Azure storage account in the same data center as your SQL Server virtual machines to reduce transfer delays. When creating a storage account, disable geo-replication as consistent write order across multiple disks is not guaranteed. Instead, consider configuring a SQL Server disaster recovery technology between two Azure data centers. For more information, see [High Availability and Disaster Recovery for SQL Server in Azure Virtual Machines](/documentation/articles/virtual-machines-sql-server-high-availability-and-disaster-recovery-solutions).
 
 ## Disks and performance considerations
 

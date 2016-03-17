@@ -47,7 +47,7 @@ See the [Python Developer Center] for more articles that cover development of Az
 
 [AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
 
->[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](http://go.microsoft.com/fwlink/?LinkId=523751), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
+>[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
 
 ## Create the Project
 
@@ -159,7 +159,7 @@ PTVS provides an easy way to deploy your web app to Azure Websites.
 
 1.  In **Solution Explorer**, right-click on the project node and select **Publish**.
 
-1.  Click on **Windows Azure Web Apps**.
+1.  Click on **Microsoft Azure Web Apps**.
 
 3. If you haven't signed in to Azure, click **Sign In** and use the Microsoft account for your Azure subscription to sign in.
 
@@ -172,7 +172,7 @@ PTVS provides an easy way to deploy your web app to Azure Websites.
 	-	**Region**
 	-	Leave **Database server** set to **No database**
 
-  	<!-- ![Create Site on Windows Azure Dialog](./media/web-sites-python-ptvs-flask-mongodb/PollsCommonCreateWebSite.png) -->
+  	<!-- ![Create Site on Azure Dialog](./media/web-sites-python-ptvs-flask-mongodb/PollsCommonCreateWebSite.png) -->
 
 1.  Accept all other defaults and click **Publish**.
 
@@ -211,7 +211,7 @@ Follow these links to learn more about Python Tools for Visual Studio, Flask and
 - [Python Tools for Visual Studio Documentation]
   - [Web Projects]
   - [Cloud Service Projects]
-  - [Remote Debugging on Windows Azure]
+  - [Remote Debugging on Azure]
 - [Flask Documentation]
 - [MongoDB]
 - [PyMongo Documentation]
@@ -239,7 +239,7 @@ Follow these links to learn more about Python Tools for Visual Studio, Flask and
 [MongoDB]: http://www.mongodb.org/
 [PyMongo Documentation]: http://api.mongodb.org/python/current/
 [PyMongo]: https://github.com/mongodb/mongo-python-driver
-[Remote Debugging on Windows Azure]: http://pytools.codeplex.com/wikipage?title=Features%20Azure%20Remote%20Debugging
+[Remote Debugging on Azure]: http://pytools.codeplex.com/wikipage?title=Features%20Azure%20Remote%20Debugging
 [Web Projects]: http://pytools.codeplex.com/wikipage?title=Features%20Web%20Project
 [Cloud Service Projects]: http://pytools.codeplex.com/wikipage?title=Features%20Cloud%20Project
  

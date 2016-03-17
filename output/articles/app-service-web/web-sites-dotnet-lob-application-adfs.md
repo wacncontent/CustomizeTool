@@ -30,13 +30,15 @@ You will build a basic ASP.NET application in Azure Web Apps with the following 
 <a name="bkmk_need"></a>
 ## What you will need ##
 
+
 [AZURE.INCLUDE [free-trial-note](../includes/free-trial-note.md)]
 
+
 >[AZURE.NOTE] If you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.
 
 You need the following to complete this tutorial:
 
-- An on-premises AD FS deployment (for an end-to-end walkthrough of the test lab that I use, see [Test Lab: Standalone STS with AD FS in Azure VM (for test only)](/documentation/articles/TODO))
+- An on-premises AD FS deployment (for an end-to-end walkthro (for an end-to-end walkthrough of the test lab that I use, see [Test Lab: Standalone STS with AD FS in Azure VM (for test only)](/documentation/articles/TODO)) 
 - Permissions to create relying party trusts in AD FS Management
 - Visual Studio 2013
 - [Azure SDK 2.5.1](https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VWDOrVs2013AzurePack.appids) or later
@@ -117,7 +119,8 @@ Here, you will publish the application to a web app in Azure while preserving th
 
 	![](./media/web-sites-dotnet-lob-application-adfs/01-publish-website.png)
 
-2. Select **Windows Azure Web App**.
+
+2. Select **App Services**.
 3. If you haven't signed in to Azure, click **Sign In** and use the Microsoft account for your Azure subscription to sign in.
 4. Once signed in, click **New** to create a new web app.
 5. Fill in all required fields. You are going to connect to on-premise data later, so you won't create a database for this web app.
@@ -125,6 +128,12 @@ Here, you will publish the application to a web app in Azure while preserving th
 	![](./media/web-sites-dotnet-lob-application-adfs/02-create-website.png)
 
 6. Click **Create**. Once the web app is created, the Publish Web dialog is opened.
+
+
+2. Select **Import**.
+3. If you haven't download the "publish profile", go to [Azure Management Portal](https://manage.windowsazure.cn) to download. If you haven't create a web app, create one. And, in **Dashboard** page of your web app, under **quick glance**, download the "publish profile".
+4. Choose the previous downloaded "publish profile", and click "OK".
+
 7. In **Destination URL**, change **http** to **https**. Copy the entire URL to a text editor. You will use it later. Then, click **Publish**.
 
 	![](./media/web-sites-dotnet-lob-application-adfs/03-destination-url.png)
@@ -334,8 +343,10 @@ Since you have included group memberships as role claims in your RP trust config
 
 A reason that you would want to implement your line-of-business application with AD FS instead of Azure Active Directory is compliance issues with keeping organization data off-premise. This may also mean that your web app in Azure must access on-premise databases, since you are not allowed to use [SQL Database](/home/features/sql-database/) as the data tier for your web apps.
 
+
 Azure Web Apps supports accessing on-premise databases with two approaches: [Hybrid Connections](/documentation/articles/integration-hybrid-connection-overview) and [Virtual Networks](/documentation/articles/web-sites-integrate-with-vnet). For more information, see [Using VNET integration and Hybrid connections with Azure Web Apps](https://azure.microsoft.com/blog/2014/10/30/using-vnet-or-hybrid-conn-with-websites/).
 
+
 <a name="bkmk_resources"></a>
 ## Further resources
 

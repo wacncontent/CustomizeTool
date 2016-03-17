@@ -1,15 +1,15 @@
 <properties
-	pageTitle="Load balancing for infrastructure services | Windows Azure"
+	pageTitle="Load balancing for infrastructure services | Azure"
 	description="Describes the two different types of load balancing supported by Azure: Load balancer for cloud services and Azure Traffic Manager for client traffic."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="joaoma"
-	manager="adinah"
+	manager="carmonm"
 	editor=""/>
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="07/21/2015"
+	ms.date="02/02/2016"
 	wacn.date=""/>
 
 
@@ -59,8 +59,10 @@ The following diagram shows a load-balanced endpoint for standard (unencrypted) 
 
 ![loadbalancing](./media/virtual-machines-load-balance/LoadBalancing.png)
 
+
 For more information, see [Azure Load Balancer](/documentation/articles/load-balancer-overview). For the steps to create a load-balanced set, see [Configure a load-balanced set](/documentation/articles/load-balancer-internet-getstarted).
 
+
 Azure can also load balance within a cloud service or virtual network. This is known as internal load balancing and can be used in the following ways:
 
 - To load balance between servers in different tiers of a multi-tier application (for example, between web and database tiers).
@@ -73,10 +75,19 @@ The following diagram shows an example of an internal load-balanced endpoint for
 
 ![loadbalancing](./media/virtual-machines-load-balance/LOBServers.png)
 
+
+## Load balancer considerations
+
+A load balancer is configured by default to timeout an idle session in 4 minutes. If your application behind a load balancer leaves a connection idle for more than 4 minutes and it doesn't have a Keep-Alive configuration, the connection will be dropped. You can change the load balancer behavior to allow a [longer timeout setting for Azure load balancer](/documentation/articles/load-balancer-tcp-idle-timeout).
+
+Other consideration is the type of distribution mode supported by Azure Load Balancer. You can configure source IP affinity (source IP, destination IP) or source IP protocol (source IP , destination IP and protocol). Check out [Azure Load Balancer distribution mode (source IP affinity)](/documentation/articles/load-balancer-distribution-mode) for more information.
+
+
 ## Next steps
 
 For the steps to create a load-balanced set, see [Configure an internal load-balanced set](/documentation/articles/load-balancer-internal-getstarted).
 
 For more information about load balancer, see [Internal load balancing](/documentation/articles/load-balancer-internal-overview).
 
-<!-- LINKS -->
+
+

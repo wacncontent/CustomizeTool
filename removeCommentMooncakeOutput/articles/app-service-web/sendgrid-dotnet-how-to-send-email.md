@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="How to use the SendGrid email service (.NET) | Windows Azure" 
+	pageTitle="How to use the SendGrid email service (.NET) | Azure" 
 	description="Learn how send email with the SendGrid email service on Azure. Code samples written in C# and use the .NET API." 
 	services="app-service\web" 
 	documentationCenter=".net" 
@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="10/12/2015"
+	ms.date="01/14/2016"
 	wacn.date=""/>
 
 

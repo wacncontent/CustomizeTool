@@ -69,7 +69,7 @@ Maintain high availability of your web app using [Azure Traffic Manager]. Using 
 
 Stay up-to-date on your web app's performance with Azure or third-party tools. Receive alerts on critical web app events. Gain user insight easily with Application Insight or with web log analytics from HDInsight. 
 
-Get a [quick glance] of the web app's current performance metrics and resource quotas in the web app's blade in the [Azure Management Portal](https://manage.windowsazure.cn/). For a 360Â° view of your application across availability, performance and usage, use [Azure Application Insights] to give you fast & powerful troubleshooting, diagnostics and usage insights. Or, use a third-party tool like [New Relic] to provide advanced monitoring data for your web apps.
+Get a [quick glance] of the web app's current performance metrics and resource quotas in the web app's blade in the [Azure Management Portal](https://manage.windowsazure.cn/). For a 360° view of your application across availability, performance and usage, use [Azure Application Insights] to give you fast & powerful troubleshooting, diagnostics and usage insights. Or, use a third-party tool like [New Relic] to provide advanced monitoring data for your web apps.
 
 In the **Standard** tier, monitor app responsiveness receive email notifications whenever your app becomes unresponsive. For more information, see [How to: Receive Alert Notifications and Manage Alert Rules in Azure].
 
@@ -88,23 +88,23 @@ In the **Standard** tier, monitor app responsiveness receive email notifications
 [Azure Web App]: /home/features/web-site/
 
 [FTP]: /documentation/articles/web-sites-deploy#ftp
-[Visual Studio]:web-sites-dotnet-get-started.md
-[Visual Studio Team Services]:../cloud-services-continuous-delivery-use-vso.md
-[Git]:web-sites-publish-source-control.md
+[Visual Studio]: /documentation/articles/web-sites-dotnet-get-started
+[Visual Studio Team Services]: /documentation/articles/cloud-services-continuous-delivery-use-vso
+[Git]: /documentation/articles/web-sites-publish-source-control
 
-[HTTPS]:web-sites-configure-ssl-certificate.md
+[HTTPS]: /documentation/articles/web-sites-configure-ssl-certificate
 [Azure Pricing Details]: /home/features/web-site#price
-[Authenticate users]:web-sites-authentication-authorization.md
+[Authenticate users]: /documentation/articles/web-sites-authentication-authorization
 [Easy Auth]:/blog/2014/11/13/azure-websites-authentication-authorization/
-[Authorize users]:web-sites-authentication-authorization.md
+[Authorize users]: /documentation/articles/web-sites-authentication-authorization
 
 [Azure Trust Center]:/support/trust-center/
-[MySQL]:web-sites-php-mysql-deploy-use-git.md
-[Azure SQL Database]:web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database.md
-[hybrid connection]:web-sites-hybrid-connection-get-started.md
-[Azure Virtual Network]:web-sites-integrate-with-vnet.md
+[MySQL]: /documentation/articles/web-sites-php-mysql-deploy-use-git
+[Azure SQL Database]: /documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database
+[hybrid connection]: /documentation/articles/web-sites-hybrid-connection-get-started
+[Azure Virtual Network]: /documentation/articles/web-sites-integrate-with-vnet
 
-[scale up and out]:web-sites-scale.md
+[scale up and out]: /documentation/articles/web-sites-scale
 [Azure Management Portal]:http://manage.windowsazure.cn/
 [Service Management API]:http://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx
 [PowerShell scripting]:http://msdn.microsoft.com/zh-cn/library/azure/jj152841.aspx
@@ -114,9 +114,9 @@ In the **Standard** tier, monitor app responsiveness receive email notifications
 [ASP.NET session state]:https://msdn.microsoft.com/zh-cn/library/azure/dn690522.aspx
 [output cache]:https://msdn.microsoft.com/zh-cn/library/azure/dn798898.aspx
 
-[quick glance]:web-sites-monitor.md
+[quick glance]: /documentation/articles/web-sites-monitor
 [Azure Application Insights]:http://blogs.msdn.com/b/visualstudioalm/archive/2015/01/07/application-insights-and-azure-websites.aspx
-[New Relic]:../store-new-relic-cloud-services-dotnet-application-performance-management.md
+[New Relic]: /documentation/articles/store-new-relic-cloud-services-dotnet-application-performance-management
 [How to: Receive Alert Notifications and Manage Alert Rules in Azure]:http://msdn.microsoft.com/zh-cn/library/azure/dn306638.aspx
 
  

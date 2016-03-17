@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Deploy a VM with a static public IP using the Azure CLI in Resource Manager | Windows Azure"
+   pageTitle="Deploy a VM with a static public IP using the Azure CLI in Resource Manager | Azure"
    description="Learn how to deploy VMs with a static public IP using the Azure CLI in Resource Manager"
    services="virtual-network"
    documentationCenter="na"

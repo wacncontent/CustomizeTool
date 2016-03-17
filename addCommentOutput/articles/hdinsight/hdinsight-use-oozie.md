@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Use Hadoop Oozie in HDInsight | Windows Azure"
+	pageTitle="Use Hadoop Oozie in HDInsight | Azure"
 	description="Use Hadoop Oozie in HDInsight, a big data service. Learn how to define an Oozie workflow, and submit an Oozie job."
 	services="hdinsight"
 	documentationCenter=""
@@ -18,7 +18,7 @@
 
 [AZURE.INCLUDE [oozie-selector](../includes/hdinsight-oozie-selector.md)]
 
-Learn how to use Apache Oozie to define a workflow and run the workflow on HDInsight. To learn about the Oozie coordinator, see [Use time-based Hadoop Oozie Coordinator with HDInsight][hdinsight-oozie-coordinator-time]. <!-- deleted by customization To learn Azure Data Factory, see [Use Pig and Hive with Data Factory][azure-data-factory-pig-hive]. -->
+Learn how to use Apache Oozie to define a workflow and run the workflow on HDInsight. To learn about the Oozie coordinator, see [Use time-based Hadoop Oozie Coordinator with HDInsight][hdinsight-oozie-coordinator-time].  To learn Azure Data Factory, see [Use Pig and Hive with Data Factory][azure-data-factory-pig-hive]. 
 
 Apache Oozie is a workflow/coordination system that manages Hadoop jobs. It is integrated with the Hadoop stack, and it supports Hadoop jobs for Apache MapReduce, Apache Pig, Apache Hive, and Apache Sqoop. It can also be used to schedule jobs that are specific to a system, like Java programs or shell scripts.
 
@@ -48,12 +48,12 @@ The workflow you will implement by following the instructions in this tutorial c
 
 > [AZURE.NOTE] For supported Oozie versions on HDInsight clusters, see [What's new in the Hadoop cluster versions provided by HDInsight?][hdinsight-versions].
 
-<!-- deleted by customization
+
 ###Prerequisites
--->
-<!-- keep by customization: begin -->
+
+
 ###<a name="prerequisites"></a> Prerequisites
-<!-- keep by customization: end -->
+
 
 Before you begin this tutorial, you must have the following:
 
@@ -635,34 +635,14 @@ In this tutorial, you learned how to define an Oozie workflow and how to run an 
 [hdinsight-cmdlets-download]: http://go.microsoft.com/fwlink/?LinkID=325563
 
 
-<!-- deleted by customization
+
 
-[azure-data-factory-pig-hive]: ../data-factory/data-factory-pig-hive-activities.md
-[hdinsight-oozie-coordinator-time]: hdinsight-use-oozie-coordinator-time.md
-[hdinsight-versions]:  hdinsight-component-versioning-v1.md
-[hdinsight-storage]: ../hdinsight-use-blob-storage.md
-[hdinsight-get-started]: ../hdinsight-get-started.md
-[hdinsight-admin-portal]: hdinsight-administer-use-management-portal-v1
-
-
-[hdinsight-use-sqoop]: hdinsight-use-sqoop.md
-[hdinsight-provision]: hdinsight-provision-clusters-v1.md
-[hdinsight-admin-powershell]: hdinsight-administer-use-powershell.md
-[hdinsight-upload-data]: hdinsight-upload-data.md
-[hdinsight-use-mapreduce]: hdinsight-use-mapreduce.md
-[hdinsight-use-hive]: hdinsight-use-hive.md
-[hdinsight-use-pig]: hdinsight-use-pig.md
-[hdinsight-storage]: ../hdinsight-use-blob-storage.md
-[hdinsight-get-started-emulator]: ../hdinsight-get-started-emulator.md
-
-[hdinsight-develop-streaming-jobs]: hdinsight-hadoop-develop-deploy-streaming-jobs.md
-[hdinsight-develop-mapreduce]: hdinsight-develop-deploy-java-mapreduce.md
-
-[sqldatabase-create-configue]: ../sql-database-create-configure.md
-[sqldatabase-get-started]: ../sql-database-get-started.md
--->
-<!-- keep by customization: begin -->
+[azure-data-factory-pig-hive]: /documentation/articles/data-factory-pig-hive-activities
 [hdinsight-oozie-coordinator-time]: /documentation/articles/hdinsight-use-oozie-coordinator-time
+
+
+[hdinsight-oozie-coordinator-time]: /documentation/articles/hdinsight-use-oozie-coordinator-time
+
 [hdinsight-versions]: /documentation/articles/hdinsight-component-versioning-v1
 [hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
 [hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
@@ -684,15 +664,9 @@ In this tutorial, you learned how to define an Oozie workflow and how to run an 
 
 [sqldatabase-create-configue]: /documentation/articles/sql-database-get-started
 [sqldatabase-get-started]: /documentation/articles/sql-database-get-started
-<!-- keep by customization: end -->
 
 [azure-management-portal]: https://manage.windowsazure.cn/
-<!-- deleted by customization
-[azure-create-storageaccount]: ../storage-create-storage-account.md
--->
-<!-- keep by customization: begin -->
 [azure-create-storageaccount]: /documentation/articles/storage-create-storage-account
-<!-- keep by customization: end -->
 
 [apache-hadoop]: http://hadoop.apache.org/
 [apache-oozie-400]: http://oozie.apache.org/docs/4.0.0/
@@ -700,12 +674,7 @@ In this tutorial, you learned how to define an Oozie workflow and how to run an 
 
 [powershell-download]: /downloads/
 [powershell-about-profiles]: https://technet.microsoft.com/zh-cn/library/hh847857.aspx
-<!-- deleted by customization
-[powershell-install-configure]: ../powershell-install-configure.md
--->
-<!-- keep by customization: begin -->
 [powershell-install-configure]: /documentation/articles/powershell-install-configure
-<!-- keep by customization: end -->
 [powershell-start]: http://technet.microsoft.com/zh-cn/library/hh847889.aspx
 [powershell-script]: https://technet.microsoft.com/zh-cn/library/ee176961.aspx
 

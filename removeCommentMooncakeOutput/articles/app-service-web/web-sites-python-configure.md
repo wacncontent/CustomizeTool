@@ -24,7 +24,7 @@ It describes additional features of Git deployment, such as virtual environment 
 
 ##<a name="bottle-django-flask"></a> Bottle, Django or Flask?
 
-The Azure gallery contains templates for the Bottle, Django and Flask frameworks. If you are developing your first web app in Azure, or you are not familiar with Git, we recommend that you follow one of these tutorials, which include step-by-step instructions for building a working application from the gallery using Git deployment from Windows or Mac:
+If you are developing your first web app in Azure, or you are not familiar with Git, we recommend that you follow one of these tutorials, which include step-by-step instructions for building a working application from the gallery using Git deployment from Windows or Mac:
 
 - [Creating web apps with Bottle](/documentation/articles/web-sites-python-create-deploy-bottle-app)
 - [Creating web apps with Django](/documentation/articles/web-sites-python-create-deploy-django-app)

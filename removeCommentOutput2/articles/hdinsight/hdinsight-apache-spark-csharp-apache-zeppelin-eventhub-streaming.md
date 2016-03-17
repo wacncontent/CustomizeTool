@@ -1,7 +1,7 @@
 <!-- not suitable for Mooncake -->
 
 <properties 
-	pageTitle="Use Azure Event Hubs with Apache Spark in HDInsight to process streaming data | Windows Azure" 
+	pageTitle="Use Azure Event Hubs with Apache Spark in HDInsight to process streaming data | Azure" 
 	description="Step-by-step instructions on how to send a data stream to Azure Event Hub and then receive those events in Spark using a Zeppelin notebook" 
 	services="hdinsight" 
 	documentationCenter="" 

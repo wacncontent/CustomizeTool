@@ -1,6 +1,8 @@
+<!-- not suitable for Mooncake -->
+
 <properties
-   pageTitle="Create a virtual network using the Azure preview portal | Windows Azure"
-   description="Learn how to create a virtual network using the Azure preview portal in ARM | Resource Manager."
+   pageTitle="Create a virtual network using the Azure Management Portal | Azure"
+   description="Learn how to create a virtual network using the Azure Management Portal in ARM | Resource Manager."
    services="virtual-network"
    documentationCenter=""
    authors="telmosampaio"
@@ -10,10 +12,10 @@
 
 <tags
 	ms.service="virtual-network"
-	ms.date="12/07/2015"
+	ms.date="02/04/2016"
 	wacn.date=""/>
 
-# Create a virtual network using the Azure preview portal
+# Create a virtual network using the Azure Management Portal
 
 [AZURE.INCLUDE [virtual-networks-create-vnet-selectors-arm-include](../includes/virtual-networks-create-vnet-selectors-arm-include.md)]
 

@@ -1,5 +1,7 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
-	pageTitle="Apache Spark Job Server on HDInsight | Windows Azure" 
+	pageTitle="Apache Spark Job Server on HDInsight | Azure" 
 	description="Learn how to use the Spark Job Server to remotely submit and manage jobs on a Spark cluster." 
 	services="hdinsight" 
 	documentationCenter="" 
@@ -70,24 +72,12 @@ Example:
 * [Manage resources for the Apache Spark cluster in Azure HDInsight](/documentation/articles/hdinsight-apache-spark-resource-manager)
 
 
-<!-- deleted by customization
-[hdinsight-versions]: ../hdinsight-component-versioning-v1/
-[hdinsight-upload-data]: ../hdinsight-upload-data/
-[hdinsight-storage]: ../hdinsight-use-blob-storage/
--->
-<!-- keep by customization: begin -->
 [hdinsight-versions]: /documentation/articles/hdinsight-component-versioning-v1
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
 [hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
-<!-- keep by customization: end -->
 
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: /pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
 [azure-management-portal]: https://manage.windowsazure.cn/
-<!-- deleted by customization
-[azure-create-storageaccount]: ../storage-create-storage-account/ 
--->
-<!-- keep by customization: begin -->
 [azure-create-storageaccount]: /documentation/articles/storage-create-storage-account
-<!-- keep by customization: end -->

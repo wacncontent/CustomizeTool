@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Troubleshooting VM allocation failures | Windows Azure"
+	pageTitle="Troubleshooting VM allocation failures | Azure"
 	description="Troubleshoot allocation failures when you create, restart, or resize a VM in Azure"
 	services="virtual-machines, azure-resource-manager"
 	documentationCenter=""
@@ -17,7 +17,7 @@
 
 # Troubleshoot allocation failures when you create, restart, or resize VMs in Azure
 
-When you create a VM, restart stopped (deallocated) VMs, or resize a VM, Windows Azure allocates compute resources to your subscription. You may occasionally receive errors when performing these operations -- even before you reach the Azure subscription limits. This article explains the causes of some of the common allocation failures and suggests possible remediation. The information may also be useful when you plan the deployment of your services.
+When you create a VM, restart stopped (deallocated) VMs, or resize a VM, Azure allocates compute resources to your subscription. You may occasionally receive errors when performing these operations -- even before you reach the Azure subscription limits. This article explains the causes of some of the common allocation failures and suggests possible remediation. The information may also be useful when you plan the deployment of your services.
 
 The "General troubleshooting steps" section lists steps to address common issues. The "Detailed troubleshooting steps" section provides resolution steps by specific error message. Before you get started, here is some background information to understand how allocation works and why allocation failure happens.
 

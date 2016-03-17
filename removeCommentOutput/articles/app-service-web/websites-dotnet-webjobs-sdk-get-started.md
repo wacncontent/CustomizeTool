@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Create a .NET WebJob in Azure | Windows Azure"
+	pageTitle="Create a .NET WebJob in Azure | Azure"
 	description="Create a multi-tier app using ASP.NET MVC and Azure. The front end runs in a web app in Azure, and the backend runs as a WebJob. The app uses Entity Framework, SQL Database, and Azure storage queues and blobs."
 	services="app-service"
 	documentationCenter=".net"
@@ -69,7 +69,7 @@ In a real-world application, you typically create separate accounts for applicat
 
 1. Open the **Server Explorer** window in Visual Studio.
 
-2. Right-click the **Azure** node, and then click **Connect to Windows Azure**.
+2. Right-click the **Azure** node, and then click **Connect to Azure**.
 ![Connect to Azure](./media/websites-dotnet-webjobs-sdk-get-started/connaz.png)
 
 3. Sign in using your Azure credentials.
@@ -211,7 +211,7 @@ After you've created some ads while running in the cloud, you'll view the WebJob
 
 2. In **Solution Explorer**, right-click the ContosoAdsWeb project, and then click **Publish**.
 
-3. In the **Profile** step of the **Publish Web** wizard, click **Windows Azure web apps**.
+3. In the **Profile** step of the **Publish Web** wizard, click **Azure web apps**.
 
 	![Select Azure web app publish target](./media/websites-dotnet-webjobs-sdk-get-started/pubweb.png)
 
@@ -223,7 +223,7 @@ After you've created some ads while running in the cloud, you'll view the WebJob
 
 	![Click New](./media/websites-dotnet-webjobs-sdk-get-started/clicknew.png)
 
-6. In the **Create web app on Windows Azure** dialog box, enter a unique name in the **Web app name** box.
+6. In the **Create web app on Azure** dialog box, enter a unique name in the **Web app name** box.
 
 	The complete URL will consist of what you enter here plus .chinacloudsites.cn (as shown next to the **Web app name** text box). For example, if the web app name is ContosoAds, the URL will be ContosoAds.chinacloudsites.cn.
 
@@ -251,7 +251,7 @@ After you've created some ads while running in the cloud, you'll view the WebJob
 
 13. Click **Create**.
 
-	![Create web app on Windows Azure dialog](./media/websites-dotnet-webjobs-sdk-get-started/newdb.png)
+	![Create web app on Azure dialog](./media/websites-dotnet-webjobs-sdk-get-started/newdb.png)
 
 	Visual Studio creates the solution, the web project, the web app in Azure, and the Azure SQL Database instance.
 
@@ -373,7 +373,7 @@ In this section you'll do the following tasks:
 
 	![New Project](./media/websites-dotnet-webjobs-sdk-get-started/newproject.png)
 
-5. In the **New ASP.NET Project** dialog, choose the MVC template, and clear the **Host in the cloud** check box under **Windows Azure**.
+5. In the **New ASP.NET Project** dialog, choose the MVC template, and clear the **Host in the cloud** check box under **Azure**.
 
 	Selecting **Host in the cloud** enables Visual Studio to automatically create a new Azure web app and SQL Database. Since you already created these earlier, you don't need to do so now while creating the project. If you want to create a new one, select the check box. You can then configure the new web app and SQL database the same way you did earlier when you deployed the application.
 

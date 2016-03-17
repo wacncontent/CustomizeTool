@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Use time-based Hadoop Oozie coordinator in HDInsight | Windows Azure"
+	pageTitle="Use time-based Hadoop Oozie coordinator in HDInsight | Azure"
 	description="Use time-based Hadoop Oozie coordinator in HDInsight, a big data service. Learn how to define Oozie workflows and coordinators, and submit jobs."
 	services="hdinsight"
 	documentationCenter=""

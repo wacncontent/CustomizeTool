@@ -89,7 +89,7 @@ unzip the file.
 
 	![][DeployClickPublish]
 
-7.	In Publish Web, click **Windows Azure Web App**.
+7.	In Publish Web, click **App Services**.
 
 	![][DeployClickWebSites]
 

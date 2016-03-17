@@ -17,10 +17,10 @@
 ## Overview
 
 This tutorial shows you how to create an ASP.NET 5 web app using [Visual Studio Code (VS Code)](http://code.visualstudio.com//Docs/whyvscode) and deploy it to [Azure Web App](/documentation/services/web-sites). 
-<!-- deleted by customization
+
 
 > [AZURE.NOTE] Although this article refers to web apps, it also applies to API apps and mobile apps. 
--->
+
 
 ASP.NET 5 is a significant redesign of ASP.NET. ASP.NET 5 is a new open-source and cross-platform framework for building modern cloud-based web apps using .NET. For more information, see [Introduction to ASP.NET 5](http://docs.asp.net/en/latest/conceptual-overview/aspnet.html). For information about Azure web apps, see [Web Apps Overview](/home/features/web-site).
 
@@ -67,12 +67,7 @@ This tutorial is designed to get you started building applications with the late
 
 	If more than one DNX runtime is listed, you can choose to enter the following (or a more recent version) at the command prompt to set the active DNX runtime. Set it to the same version that is used by the ASP.NET 5 generator when you create your web app later in this tutorial. *You may not need to change the active runtime if it is set to the latest available.*
 
-<!-- deleted by customization
-		dnvm use 1.0.0-update1 âp
--->
-<!-- keep by customization: begin -->
 		dnvm use 1.0.0-update1 -p
-<!-- keep by customization: end -->
 
 > [AZURE.NOTE] For more detailed installation instructions for OS X, Linux, and Windows, see [Installing ASP.NET 5 and DNX](https://code.visualstudio.com/Docs/ASPnet5#_installing-aspnet-5-and-dnx). 
 
@@ -140,7 +135,7 @@ Now that you have created the web app and retrieved all the NuGet packages for t
 
 ## Create a web app in the Azure Management Portal
 
-<!-- deleted by customization
+
 The following steps will guide you through creating a web app in the Azure Management Portal.
 
 1. Log in to the [Azure Management Portal](https://manage.windowsazure.cn).
@@ -196,8 +191,8 @@ Git is a distributed version control system that you can use to deploy your Azur
 10. Copy the **GIT URL** value for later use in the tutorial.
 
 	![Azure Git URL](./media/web-sites-create-web-app-using-vscode/17-azure-giturl.png)
--->
-<!-- keep by customization: begin -->
+
+
 The first step in creating your app is to create the web site via the Azure Management Portal.  To do this, you will need to login to the portal and click the NEW button in the bottom left corner. A window will appear. Click **Quick Create**, enter a URL, and select **Create Web Site**.
 
 ![](./media/web-sites-python-create-deploy-django-app/django-ws-003.png)
@@ -213,7 +208,7 @@ From the **Set up deployment** dialog, scroll down and select the **Local Git** 
 After setting up Git publishing, you will momentarily see a page informing you the repo is being created. When the repo is ready, you will be taken to the deployments tab. The deployments tab includes instructions on how to connect.  
 
 ![](./media/web-sites-python-create-deploy-django-app/django-ws-006.png)
-<!-- keep by customization: end -->
+
 
 ## Publish your web app to Azure
 

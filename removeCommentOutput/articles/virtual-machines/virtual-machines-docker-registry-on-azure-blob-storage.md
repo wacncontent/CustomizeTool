@@ -1,5 +1,5 @@
 <properties 
-  pageTitle="Deploying Your Own Private Docker Registry on Azure | Windows Azure"
+  pageTitle="Deploying Your Own Private Docker Registry on Azure | Azure"
   description="Describes how you can use Docker Registry to host your container images on the Azure Blob Storage service."
   services="virtual-machines"
   documentationCenter="virtual-machines"
@@ -20,7 +20,7 @@
 
 
 This document describes what a Docker private registry is and shows how you can deploy a Docker Registry 2.0
-container image to a Docker private registry on Windows Azure using Azure Blob Storage.
+container image to a Docker private registry on Azure using Azure Blob Storage.
 
 This document assumes:
 
@@ -41,7 +41,7 @@ container images on the cloud and allows you to create containers
 anytime using those images.
 
 Although the [Docker Hub][docker-hub] is a paid service for storing
-your private application container images, Docker respects developersâ needs and
+your private application container images, Docker respects developers' needs and
 provides an open-source toolset to store your images in your own private Docker
 registry behind a firewall or on-premises without hitting the public Internet.
 Because Azure Blob storage is easy to secure, you can quickly use it to create
@@ -49,7 +49,7 @@ and use a private Docker registry in Azure that you control yourself.
 
 ## Why should you Host a Docker Registry on Azure?
 
-By hosting your Docker Registry instance on Windows Azure and storing your
+By hosting your Docker Registry instance on Azure and storing your
 images on Azure Blob Storage, you can have several benefits:
 
 **Security:** Your Docker images do not leave Azure datacenters, so they do
@@ -59,7 +59,7 @@ images on Azure Blob Storage, you can have several benefits:
 datacenter or region as your applications. This means the images will be
 pulled faster and more reliably compared to Docker Hub.
 
-**Reliability:** By using Windows Azure Blob Storage, you can make use
+**Reliability:** By using Azure Blob Storage, you can make use
 of many storage properties like high availability, redundancy, premium
 storage (SSDs), and so on.
 

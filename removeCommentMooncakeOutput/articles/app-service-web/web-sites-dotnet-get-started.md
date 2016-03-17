@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Create an ASP.NET web app in Azure | Windows Azure"
+	pageTitle="Create an ASP.NET web app in Azure | Azure"
 	description="This tutorial shows you how to create an ASP.NET web project in Visual Studio 2013 and deploy it to a web app in Azure."
 	services="app-service\web"
 	documentationCenter=".net"
@@ -39,10 +39,8 @@ You'll learn:
 * How to use the [Azure Management Portal](https://manage.windowsazure.cn) to monitor and manage your web app.
 
 > [AZURE.NOTE] This tutorial is about using ASP.NET with Azure Web App; it doesn't teach how to develop an ASP.NET web application. For an introduction to ASP.NET MVC 5, see [Getting Started with ASP.NET MVC 5](http://www.asp.net/mvc/overview/getting-started/introduction/getting-started) on the [ASP.NET](http://asp.net/) site. For links to other articles that go into more depth about how to use Azure Web App, see the [Next steps](#next-steps) section.
-> 
-> Help us shape the scope and approach of this tutorial -- if there are other topics you'd like to see covered here in a getting-started tutorial leave feedback in a [Disqus comment](#comments) at the end of the tutorial.
 
-##<a name="video"></a>Sign up for Windows Azure
+##<a name="video"></a>Sign up for Azure
 
 You need an Azure account to complete this tutorial. You can:
 
@@ -51,7 +49,7 @@ You need an Azure account to complete this tutorial. You can:
 <a name="set-up-the-development-environment"></a>
 [AZURE.INCLUDE [install-sdk-2015-2013](../includes/install-sdk-2015-2013.md)]
 
-##<a name="create-an-aspnet-web-application"></a> Create a project and a web site
+##<a name="create-an-aspnet-web-application"></a> Create a project and a web app
 
 Your first step is to create a web project in Visual Studio and a web app in Azure. When that's done, you'll deploy the project to the web app to make it available on the Internet. 
 
@@ -83,7 +81,7 @@ The diagram illustrates what you're doing in the create and deploy steps.
 
 	![New ASP.NET Project dialog box](./media/web-sites-dotnet-get-started/GS13newaspnetprojdb.png)
 
-	Windows Azure China currently does not support create or manage websits in Visual Studio. Hence, you need to go to the [Management Portal](https://manage.windowsazure.cn/) to create a new Azure website
+	Azure China currently does not support create or manage websits in Visual Studio. Hence, you need to go to the [Management Portal](https://manage.windowsazure.cn/) to create a new Azure website
 
 	The **Solution Explorer** window shows the files and folders in the new project.
 

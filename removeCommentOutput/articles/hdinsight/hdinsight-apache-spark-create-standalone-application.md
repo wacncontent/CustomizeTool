@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Create standalone scala applications to run on HDInsight Spark clusters | Windows Azure" 
+	pageTitle="Create standalone scala applications to run on HDInsight Spark clusters | Azure" 
 	description="Learn how to create a standalone Spark application to run on HDInsight Spark clusters." 
 	services="hdinsight" 
 	documentationCenter="" 

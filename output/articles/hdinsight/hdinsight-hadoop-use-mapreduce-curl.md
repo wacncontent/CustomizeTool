@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Use MapReduce and Curl with Hadoop in HDInsight | Windows Azure"
+   pageTitle="Use MapReduce and Curl with Hadoop in HDInsight | Azure"
    description="Learn how to remotely run MapReduce jobs with Hadoop on HDInsight using Curl."
    services="hdinsight"
    documentationCenter=""
@@ -21,13 +21,20 @@ In this document, you will learn how to use Curl to run MapReduce jobs on a Hado
 
 Curl is used to demonstrate how you can interact with HDInsight by using raw HTTP requests to run MapReduce jobs. This works by using the WebHCat REST API (formerly known as Templeton) provided by your HDInsight cluster.
 
+
 > [AZURE.NOTE] If you are already familiar with using Linux-based Hadoop servers, but you are new to HDInsight, see [What you need to know about Linux-based Hadoop on HDInsight](/documentation/articles/hdinsight-hadoop-linux-information).
 
+
 ##<a id="prereq"></a>Prerequisites
 
 To complete the steps in this article, you will need the following:
 
+
 * A Hadoop on HDInsight cluster (Linux or Windows-based)
+
+
+* A Hadoop on HDInsight cluster (Windows-based)
+
 
 * [Curl](http://curl.haxx.se/)
 
@@ -36,10 +43,16 @@ To complete the steps in this article, you will need the following:
 ##<a id="curl"></a>Run MapReduce jobs using Curl
 
 > [AZURE.NOTE] When you use Curl or any other REST communication with WebHCat, you must authenticate the requests by providing the HDInsight cluster administrator user name and password. You must also use the cluster name as part of the URI that is used to send the requests to the server.
+
 >
 > For the commands in this section, replace **USERNAME** with the user to authenticate to the cluster, and **PASSWORD** with the password for the user account. Replace **CLUSTERNAME** with the name of your cluster.
 >
 > The REST API is secured by using [basic access authentication](http://en.wikipedia.org/wiki/Basic_access_authentication). You should always make requests by using HTTPS to ensure that your credentials are securely sent to the server.
+
+
+> <p>For the commands in this section, replace **USERNAME** with the user to authenticate to the cluster, and **PASSWORD** with the password for the user account. Replace **CLUSTERNAME** with the name of your cluster.
+> <p>The REST API is secured by using [basic access authentication](http://en.wikipedia.org/wiki/Basic_access_authentication). You should always make requests by using HTTPS to ensure that your credentials are securely sent to the server.
+
 
 1. From a command-line, use the following command to verify that you can connect to your HDInsight cluster:
 

@@ -11,7 +11,7 @@ editor="cgronlun"/>
 
 <tags
 	ms.service="hdinsight"
-	ms.date="01/14/2016"
+	ms.date="01/28/2016"
 	wacn.date=""/>
 
 #Use Azure Data Lake Store with Apache Storm with HDInsight

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Submit Hadoop jobs in HDInsight | Windows Azure"
+	pageTitle="Submit Hadoop jobs in HDInsight | Azure"
 	description="Learn how to submit Hadoop jobs to Azure HDInsight Hadoop."
 	editor="cgronlun"
 	manager="paulettm"
@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="10/30/2015"
+	ms.date="02/04/2016"
 	wacn.date=""/>
 
 # Submit Hadoop jobs in HDInsight
@@ -22,7 +22,7 @@ Learn how to use Azure PowerShell to submit MapReduce and Hive jobs, and how to 
 > - [Use Pig with HDInsight](/documentation/articles/hdinsight-use-pig)
 > - [Use MapReduce with HDInsight](/documentation/articles/hdinsight-use-mapreduce)
 
-##Prerequisites
+###Prerequisites
 
 Before you begin this article, you must have the following:
 

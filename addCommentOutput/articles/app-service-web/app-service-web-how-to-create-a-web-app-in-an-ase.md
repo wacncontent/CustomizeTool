@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
 	pageTitle="Create a web app in an Azure Environment"
 	description="Learn how to create web apps and app service plans in an Azure Environment"
@@ -9,7 +11,7 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="10/26/2015"
+	ms.date="01/14/2016"
 	wacn.date=""/>
 
 # Create a web app in an Azure Environment

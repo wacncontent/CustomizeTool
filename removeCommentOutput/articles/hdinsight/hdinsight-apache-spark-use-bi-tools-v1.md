@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Use BI tools with Apache Spark on HDInsight | Windows Azure" 
+	pageTitle="Use BI tools with Apache Spark on HDInsight | Azure" 
 	description="Step-by-step instructions on how to use notebooks with Apache Spark to create schemas on raw data, save them as Hive tables, and then use BI tools on the Hive table for data analytics" 
 	services="hdinsight" 
 	documentationCenter="" 
@@ -199,13 +199,13 @@ Once you have saved the data as a Hive table, you can use Power BI to connect to
 * [Manage resources for the Apache Spark cluster in Azure HDInsight](/documentation/articles/hdinsight-apache-spark-resource-manager-v1)
 
 
-[hdinsight-versions]: ../hdinsight-component-versioning-v1/
-[hdinsight-upload-data]: ../hdinsight-upload-data/
-[hdinsight-storage]: ../hdinsight-use-blob-storage/
+[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning-v1
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
 
 
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: /pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
 [azure-management-portal]: https://manage.windowsazure.cn/
-[azure-create-storageaccount]: ../storage-create-storage-account/ 
+[azure-create-storageaccount]: /documentation/articles/storage-create-storage-account

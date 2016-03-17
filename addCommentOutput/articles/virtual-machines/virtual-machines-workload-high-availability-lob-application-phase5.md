@@ -1,5 +1,7 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
-	pageTitle="Line of business application Phase 5 | Windows Azure" 
+	pageTitle="Line of business application Phase 5 | Azure" 
 	description="Create an availability group and add your application databases to it in Phase 5 of the line of business application in Azure." 
 	documentationCenter=""
 	services="virtual-machines" 
@@ -10,7 +12,7 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="11/09/2015"
+	ms.date="01/28/2016"
 	wacn.date=""/>
 
 # Line of Business Application Workload Phase 5: Create the availability group and add the application databases
@@ -65,7 +67,7 @@ Use these steps to restore a database.
 2.	From the Start screen, type **SQL Studio**, and then click **SQL Server Management Studio**.
 3.	Click **Connect**.
 4.	In the left pane, right-click **Databases**, and then click **Restore Database**.
-5.	In the **Source** section, select **Device**, and click the ellipses (âŚ) button
+5.	In the **Source** section, select **Device**, and click the ellipses  (…)  (âŚ)  button
 6.	In **Select backup devices**, click **Add**.
 7.	In **Backup file location**, type **\\[machineName]\backup**, press **Enter**, select **[databaseName].bak**, and then click **OK** twice. You should now see the full backup and the log backup in the **Backup sets to restore** section.
 8.	Under **Select a page**, click **Options**. In the **Restore options** section, in **Recovery state**, select **RESTORE WITH NORECOVERY**, and then click **OK**. 

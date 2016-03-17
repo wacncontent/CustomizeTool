@@ -1,5 +1,7 @@
+<!-- not suitable for Mooncake -->
+
 <properties
-	pageTitle="Install Symantec Endpoint Protection on a VM | Windows Azure"
+	pageTitle="Install Symantec Endpoint Protection on a VM | Azure"
 	description="Learn how to install and configure the Symantec Endpoint Protection security extension on a new or existing Azure VM created with the classic deployment model."
 	services="virtual-machines"
 	documentationCenter=""
@@ -15,7 +17,8 @@
 
 # How to install and configure Symantec Endpoint Protection on a Windows VM
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] <!-- deleted by customization Resource Manager model. -->
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]  Resource Manager model. 
+
 
 This article shows you how to install and configure the Symantec Endpoint Protection client on a new or existing virtual machine (VM) running Windows Server. This is the full client, which includes services such as virus and spyware protection, firewall, and intrusion prevention.
 
@@ -63,7 +66,7 @@ If the VM Agent is installed, run these commands to install the Symantec Endpoin
 
 	$Agent = Get-AzureVMAvailableExtension -Publisher Symantec -ExtensionName SymantecEndpointProtection
 
-	Set-AzureVMExtension -Publisher Symantec <!-- deleted by customization âVersion --><!-- keep by customization: begin --> -Version <!-- keep by customization: end --> $Agent.Version -ExtensionName SymantecEndpointProtection -VM $vm | Update-AzureVM
+	Set-AzureVMExtension -Publisher Symantec -Version $Agent.Version -ExtensionName SymantecEndpointProtection -VM $vm | Update-AzureVM
 
 To verify that the Symantec security extension has been installed and is up-to-date:
 
@@ -83,12 +86,17 @@ To verify that the Symantec security extension has been installed and is up-to-d
 
 [Portal]: http://manage.windowsazure.cn
 
-[Create]: virtual-machines-windows-tutorial-classic-portal.md
+[Create]: /documentation/articles/virtual-machines-windows-tutorial-classic-portal
 
-[PS]: ../powershell-install-configure.md
+[PS]: /documentation/articles/powershell-install-configure
 
 [Agent]: https://azure.microsoft.com/zh-cn/blog/vm-agent-and-extensions-part-2/
 
-[Logon]: virtual-machines-log-on-windows-server.md
+[Logon]: /documentation/articles/virtual-machines-log-on-windows-server
 
+
 [Ext]: http://go.microsoft.com/fwlink/p/?linkid=390493
+
+
+[Ext]: https://msdn.microsoft.com/zh-cn/library/dn606311.aspx
+

@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="10/23/2015"
+	ms.date="01/13/2016"
 	wacn.date=""/>
 
 # Troubleshoot: web app unavailable due to HTTP 502/503
@@ -46,7 +46,7 @@ Troubleshooting can be divided into three distinct tasks, in sequential order:
 
 ####	Monitor your web app
 
-This option enables you to find out if your application is having any issues. In your web app's blade, click the **Requests and errors** tile. The **Metric** blade will show you all the metrics you can add.
+This page let you find out if your application is having any issues. In Azure Management Portal, click **Monitor** of your web app.
 
 Some of the metrics that you might want to monitor for your web app are
 
@@ -61,47 +61,13 @@ Some of the metrics that you might want to monitor for your web app are
 For more information, see:
 
 -	[Monitor Web Apps in Azure](/documentation/articles/web-sites-monitor)
--	[Receive alert notifications](/documentation/articles/insights-receive-alert-notifications)
 
 <a name="collect"></a>
 ### 2. Collect data
 
-####	Use the Azure Support Portal
+####	Use the FTP Diagnostic Logs
 
-Web Apps provides you with the ability to troubleshoot issues related to your web app by looking at HTTP logs, event logs, process dumps, and more. You can access all this information using our Support portal at **http://&lt;your app name>.scm.chinacloudsites.cn/Support**
-
-The Azure Support portal provides you with three separate tabs to support the three steps of a common troubleshooting scenario:
-
-1.	Observe current behavior
-2.	Analyze by collecting diagnostics information and running the built-in analyzers
-3.	Mitigate
-
-If the issue is happening right now, click **Analyze** > **Diagnostics** > **Diagnose Now** to create a diagnostic session for you, which will collect HTTP logs, event viewer logs, memory dumps, PHP error logs and PHP process report.
-
-Once the data is collected, it will also run an analysis on the data and provide you with an HTML report.
-
-In case you want to download the data, by default, it would be stored in the D:\home\data\DaaS folder.
-
-For more information on the Azure Support portal, see [New Updates to Support Site Extension for Azure Websites](/blog/new-updates-to-support-site-extension-for-azure-websites).
-
-####	Use the Kudu Debug Console
-
-Web Apps comes with a debug console that you can use for debugging, exploring, uploading files, as well as JSON endpoints for getting information about your environment. This is called the _Kudu Console_ or the _SCM Dashboard_ for your web app.
-
-You can access this dashboard by going to the link **https://&lt;Your app name>.scm.chinacloudsites.cn/**.
-
-Some of the things that Kudu provides are:
-
--	environment settings for your application
--	log stream
--	diagnostic dump
--	debug console in which you can run Powershell cmdlets and basic DOS commands.
-
-
-Another useful feature of Kudu is that, in case your application is throwing first-chance exceptions, you can use Kudu and the SysInternals tool Procdump to create memory dumps. These memory dumps are snapshots of the process and can often help you troubleshoot more complicated issues with your web app.
-
-For more information on features available in Kudu, see
-[Azure Websites online tools you should know about](/blog/windows-azure-websites-online-tools-you-should-know-about/).
+Find the FTP Diagnostic Logs link in your web app's **Dashboard** page, which usually looks like `ftp://********.ftp.chinacloudsites.chinacloudapi.cn/LogFiles`. Click to enter, and download **eventlog.xml**
 
 <a name="mitigate"></a>
 ### 3. Mitigate the issue
@@ -125,7 +91,7 @@ For more information, see [Auto-Healing Azure Web Sites](/blog/auto-healing-wind
 
 ####	Restart the web app
 
-This is often the simplest way to recover from one-time issues. On the [Azure Management Portal](https://manage.windowsazure.cn), on your web app's blade, you have the options to stop or restart your app.
+This is often the simplest way to recover from one-time issues. On the [Azure Management Portal](https://manage.windowsazure.cn/), on your web app's blade, you have the options to stop or restart your app.
 
  ![](./media/app-service-web-troubleshoot-HTTP-502-503/2-restart.png)
 

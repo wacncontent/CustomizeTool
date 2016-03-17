@@ -1,7 +1,7 @@
 <!-- not suitable for Mooncake -->
 
 <properties
-	pageTitle="DataStax on Ubuntu with a Resource Manager template | Windows Azure"
+	pageTitle="DataStax on Ubuntu with a Resource Manager template | Azure"
 	description="Learn to easily deploy a new DataStax cluster on Ubuntu VMs by using Azure PowerShell or the Azure CLI and a Resource Manager template"
 	services="virtual-machines"
 	documentationCenter=""
@@ -321,7 +321,7 @@ Drilling down into this example, you can see two different approaches. In this f
 	        "version": "latest"
 	      },
 
-	â
+	 
 In this second fragment, the **scripts** variable is a JSON array where each element will be calculated at run time through a template language function (concat) and the value of another variable plus string constants:
 
 	      "scripts": [

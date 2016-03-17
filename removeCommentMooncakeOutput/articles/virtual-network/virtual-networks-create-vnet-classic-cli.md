@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Create a virtual network using Azure CLI | Windows Azure"
+   pageTitle="Create a virtual network using Azure CLI | Azure"
    description="Learn how to create a virtual network using Azure CLI in ARM | Resource Manager."
    services="virtual-network"
    documentationCenter=""
@@ -18,8 +18,6 @@
 [AZURE.INCLUDE [virtual-networks-create-vnet-selectors-classic-include](../includes/virtual-networks-create-vnet-selectors-classic-include.md)]
 
 [AZURE.INCLUDE [virtual-networks-create-vnet-intro](../includes/virtual-networks-create-vnet-intro-include.md)]
-
-[AZURE.INCLUDE [azure-arm-classic-important-include](../includes/azure-arm-classic-important-include.md)]
 
 [AZURE.INCLUDE [virtual-networks-create-vnet-scenario-include](../includes/virtual-networks-create-vnet-scenario-include.md)]
 

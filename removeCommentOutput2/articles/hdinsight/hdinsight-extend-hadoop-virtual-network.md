@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Extend HDInsight with Virtual Network | Windows Azure"  
+	pageTitle="Extend HDInsight with Virtual Network | Azure"  
 	description="Learn how to use Azure Virtual Network to connect HDInsight to other cloud resources, or resources in your datacenter"
 	services="hdinsight"
 	documentationCenter=""
@@ -78,112 +78,9 @@ If you want to use HDInsight on a Virtual Network that blocks Internet traffic, 
 
 2. Create the HDInsight cluster. When configuring the Virtual Network settings for the cluster, select the subnet created in step 1.
 
-> [AZURE.NOTE] The above steps assume that you have not restricted communications to IP addresses _within the Virtual Network IP address range_. If you have, you may need to modify these restrictions to allow communication with the new subnet.
-
-If you are unsure whether you have applied restrictions to the subnet that you want to install HDInsight into, or want to remove restrictions from the subnet, use the following steps:
-
-1. Open the [Azure Management Portal](https://manage.windowsazure.cn).
-
-2. Selecting the Virtual Network.
-
-3. Select __Properties__.
-
-4. Select __Subnets__, and then select the specific subnet. On the blade for this subnet, the __Network security group__ and __Route table__ entries will be set to a value of __None__ if no restrictions have been applied.
-
-    If restrictions have been applied, you can remove the restriction by selecting the __Network security group__ or __Route table__ entry, and then selecting __None__. Finally, select __Save__ from the Subnet blade to save the changes.
-    
-![Image of the subnet blade and Network Security Group selection](./media/hdinsight-extend-hadoop-virtual-network/subnetnsg.png)
-            $vnet = Get-AzureVirtualNetwork -Name VIRTUALNETWORKNAME
-
-For more information on Network Security Groups, see [Network Security Groups overview](/documentation/articles/virtual-networks-nsg). For information on controlling routing in an Azure Virtual Network, see [User Defined Routes and IP forwarding](/documentation/articles/virtual-networks-udr-overview).
-
 ##<a id="tasks"></a>Tasks and information
 
 This section contains information on common tasks and information you may need when using HDInsight with a virtual network.
-
-###Determine the FQDN
-
-The HDInsight cluster will be assigned a specific fully qualified domain name (FQDN) for the Virtual Network interface. This is the address that you should use when connecting to the cluster from other resources on the virtual network. To determine the FQDN, use the following to URL to query the Ambari management service:
-
-	https://<clustername>.azurehdinsight.cn/ambari/api/v1/clusters/<clustername>.azurehdinsight.cn/services/<servicename>/components/<componentname>
-
-> [AZURE.NOTE] For more information on using Ambari with HDInsight, see [Monitor Hadoop clusters in HDInsight using the Ambari API](/documentation/articles/hdinsight-monitor-use-ambari-api).
-
-You must specify the cluster name and a service and component running on the cluster, such as the YARN resource manager.
-
-> [AZURE.NOTE] The data returned is a JavaScript Object Notation (JSON) document that contains a lot of information about the component. To extract just the FQDN, you should use a JSON parser to retrieve the `host_components[0].HostRoles.host_name` value.
-
-For example, to return the FQDN from an HDInsight Hadoop cluster, you can use one of the following methods to retrieve the data for the YARN resource manager:
-
-* [Azure PowerShell](/documentation/articles/powershell-install-configure)
-
-		$ClusterDnsName = <clustername>
-		$Username = <cluster admin username>
-		$Password = <cluster admin password>
-		$DnsSuffix = ".azurehdinsight.cn"
-		$ClusterFQDN = $ClusterDnsName + $DnsSuffix
-
-		$webclient = new-object System.Net.WebClient
-		$webclient.Credentials = new-object System.Net.NetworkCredential($Username, $Password)
-
-		$Url = "https://" + $ClusterFQDN + "/ambari/api/v1/clusters/" + $ClusterFQDN + "/services/yarn/		components/resourcemanager"
-		$Response = $webclient.DownloadString($Url)
-		$JsonObject = $Response | ConvertFrom-Json
-		$FQDN = $JsonObject.host_components[0].HostRoles.host_name
-		Write-host $FQDN
-
-* [cURL](http://curl.haxx.se/) and [jq](http://stedolan.github.io/jq/)
-
-		curl -G -u <username>:<password> https://<clustername>.azurehdinsight.cn/ambari/api/v1/clusters/<clustername>.azurehdinsight.cn/services/yarn/components/resourcemanager | jq .host_components[0].HostRoles.host_name
-
-###Connecting to HBase
-
-To connect to HBase remotely by using the Java API, you must determine the ZooKeeper quorum addresses for the HBase cluster and specify this in your application.
-
-To get the ZooKeeper quorum address, use one of the following methods to query the Ambari management service:
-
-* [Azure PowerShell](/documentation/articles/powershell-install-configure)
-
-		$ClusterDnsName = <clustername>
-		$Username = <cluster admin username>
-		$Password = <cluster admin password>
-		$DnsSuffix = ".azurehdinsight.cn"
-		$ClusterFQDN = $ClusterDnsName + $DnsSuffix
-
-		$webclient = new-object System.Net.WebClient
-		$webclient.Credentials = new-object System.Net.NetworkCredential($Username, $Password)
-
-		$Url = "https://" + $ClusterFQDN + "/ambari/api/v1/clusters/" + $ClusterFQDN + "/configurations?type=hbase-site&tag=default&fields=items/properties/hbase.zookeeper.quorum"
-        $Response = $webclient.DownloadString($Url)
-        $JsonObject = $Response | ConvertFrom-Json
-        Write-host $JsonObject.items[0].properties.'hbase.zookeeper.quorum'
-
-* [cURL](http://curl.haxx.se/) and [jq](http://stedolan.github.io/jq/)
-
-		curl -G -u <username>:<password> "https://<clustername>.azurehdinsight.cn/ambari/api/v1/clusters/<clustername>.azurehdinsight.cn/configurations?type=hbase-site&tag=default&fields=items/properties/hbase.zookeeper.quorum" | jq .items[0].properties[]
-
-> [AZURE.NOTE] For more information on using Ambari with HDInsight, see [Monitor Hadoop clusters in HDInsight using the Ambari API](/documentation/articles/hdinsight-monitor-use-ambari-api).
-
-Once you have the quorum information, use it in your client application.
-
-For example, for a Java application that uses the HBase API, you would add an **hbase-site.xml** file to the project and specify the quorum information in the file as follows:
-
-```
-<configuration>
-  <property>
-    <name>hbase.cluster.distributed</name>
-    <value>true</value>
-  </property>
-  <property>
-    <name>hbase.zookeeper.quorum</name>
-    <value>zookeeper0.address,zookeeper1.address,zookeeper2.address</value>
-  </property>
-  <property>
-    <name>hbase.zookeeper.property.clientPort</name>
-    <value>2181</value>
-  </property>
-</configuration>
-```
 
 ###Verify network connectivity
 

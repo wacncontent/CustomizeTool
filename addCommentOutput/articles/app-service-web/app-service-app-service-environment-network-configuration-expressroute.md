@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
 	pageTitle="Network Configuration Details for Working with Express Route" 
 	description="Network configuration details for running Azure Environments in a Virtual Networks connected to an ExpressRoute Circuit." 
@@ -54,7 +56,7 @@ The combined effect of these steps is that the subnet level UDR will take preced
 
 **IMPORTANT:**  The routes defined in a UDR **must** be specific enough to  take precedence over any routes advertised by the ExpressRoute configuration.  The example below uses the broad 0.0.0.0/0 address range, and as such can potentially be accidentally overridden by route advertisements using more specific address ranges.
 
-**VERY IMPORTANT:**  Azure Environments are not supported with ExpressRoute configurations that **incorrectly cross-advertise routes from the public peering path to the private peering path**.  ExpressRoute configurations that have public peering configured, will receive route advertisements from Microsoft for a large set of Windows Azure IP address ranges.  If these address ranges are incorrectly cross-advertised on the private peering path, the end result is that all outbound network packets from the Azure Environment's subnet will be incorrectly force-tunneled to a customer's on-premises network infrastructure.  This network flow will break Azure Environments.  The solution to this problem is to stop cross-advertising routes from the public peering path to the private peering path.
+**VERY IMPORTANT:**  Azure Environments are not supported with ExpressRoute configurations that **incorrectly cross-advertise routes from the public peering path to the private peering path**.  ExpressRoute configurations that have public peering configured, will receive route advertisements from Microsoft for a large set of Azure IP address ranges.  If these address ranges are incorrectly cross-advertised on the private peering path, the end result is that all outbound network packets from the Azure Environment's subnet will be incorrectly force-tunneled to a customer's on-premises network infrastructure.  This network flow will break Azure Environments.  The solution to this problem is to stop cross-advertising routes from the public peering path to the private peering path.
 
 Background information on user defined routes is available in this [overview][UDROverview].  
 
@@ -126,12 +128,7 @@ For more information about the Azure platform, see [Azure Web App][AzureAppServi
 [AzureDownloads]: /downloads/ 
 [DownloadCenterAddressRanges]: http://www.microsoft.com/download/details.aspx?id=41653  
 [NetworkSecurityGroups]: /documentation/articles/virtual-networks-nsg/
-<!-- deleted by customization
-[AzureAppService]: /documentation/articles/app-service-value-prop-what-is/
--->
-<!-- keep by customization: begin -->
 [AzureAppService]: /documentation/services/web-sites/
-<!-- keep by customization: end -->
 [IntroToAppServiceEnvironment]:  /documentation/articles/app-service-app-service-environment-intro/
 [NewPortal]:  https://manage.windowsazure.cn
  

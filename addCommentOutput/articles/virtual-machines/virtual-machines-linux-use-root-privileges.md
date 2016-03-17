@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Use root privileges on Linux virtual machines | Windows Azure" 
+	pageTitle="Use root privileges on Linux virtual machines | Azure" 
 	description="Learn how to use root privileges on a Linux virtual machine in Azure." 
 	services="virtual-machines" 
 	documentationCenter="" 

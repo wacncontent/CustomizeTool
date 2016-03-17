@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="How to set a static private IP in classic mode using the Azure Management Portal| Windows Azure"
+   pageTitle="How to set a static private IP in classic mode using the Azure Management Portal| Azure"
    description="Understanding static private IPs and how to manage them in classic mode using the Azure Management Portal"
    services="virtual-network"
    documentationCenter="na"

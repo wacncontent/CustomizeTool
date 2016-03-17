@@ -1,7 +1,7 @@
 <!-- not suitable for Mooncake -->
 
 <properties
-   pageTitle="Optimize your Hive queries for faster execution in HDInsight | Windows Azure"
+   pageTitle="Optimize your Hive queries for faster execution in HDInsight | Azure"
    description="Learn how to optimize your Hive queries for Hadoop in HDInsight."
    services="hdinsight"
    documentationCenter=""
@@ -20,6 +20,8 @@
 
 By default, Hadoop clusters are not optimized for performance. This article covers a few of the most common Hive performance optimization methods that you can apply to our queries.
 
+
+[AZURE.INCLUDE [preview-portal](../includes/hdinsight-azure-preview-portal.md)] 
 
 
 * [Optimize Hive queries for Hadoop in HDInsight](/documentation/articles/hdinsight-hadoop-optimize-hive-query-v1).
@@ -83,6 +85,8 @@ For Windows-based HDInsight clusters, Tez must be enabled at the provision time.
 	Add-AzureHDInsightConfigValues -Hive $hiveConfig |
 	New-AzureHDInsightCluster -Name $clusterName -Location $location -Credential $hdiCredential
 
+    
+> [AZURE.NOTE] Linux-based HDInsight clusters have Tez enabled by default.
     
 
 ## Hive partitioning
@@ -211,6 +215,7 @@ In this article, you have learned several common Hive query optimization methods
 
 - [Use Apache Hive in HDInsight](/documentation/articles/hdinsight-use-hive)
 - [Analyze flight delay data by using Hive in HDInsight](/documentation/articles/hdinsight-analyze-flight-delay-data)
+- [Analyze Twitter data using Hive in HDInsight](/documentation/articles/hdinsight-analyze-twitter-data)
 - [Analyze sensor data using the Hive Query Console on Hadoop in HDInsight](/documentation/articles/hdinsight-hive-analyze-sensor-data)
 - [Use Hive with HDInsight to analyze logs from websites](/documentation/articles/hdinsight-hive-analyze-website-log)
 

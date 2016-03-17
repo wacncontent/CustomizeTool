@@ -1,4 +1,4 @@
-<properties linkid="manage-scenarios-how-to-manage-websites" urlDisplayName="How to manage" pageTitle="How to manage  Websites - Windows Azure service management" metaKeywords="Azure Management Portal  Website management" description="A reference for the Portal  Website management pages in Windows Azure. Details are provided for each  Website management page." metaCanonical="" services="web-sites" documentationCenter="" title="How to Manage  Websites" authors="timamm"  solutions="" writer="timamm" manager="" editor=""  />
+<properties linkid="manage-scenarios-how-to-manage-websites" urlDisplayName="How to manage" pageTitle="How to manage  Websites - Azure service management" metaKeywords="Azure Management Portal  Website management" description="A reference for the Portal  Website management pages in Azure. Details are provided for each  Website management page." metaCanonical="" services="web-sites" documentationCenter="" title="How to Manage  Websites" authors="timamm"  solutions="" writer="timamm" manager="" editor=""  />
 
 
 
@@ -9,7 +9,7 @@ You manage your websites in the Azure Management Portal with a set of pages or "
 ## QuickStart ##
 The **QuickStart** management page includes the following sections:
 
-- **Get the tools** - Provides links to [Install WebMatrix][mswebmatrix] and the [Windows Azure SDK][azuresdk].
+- **Get the tools** - Provides links to [Install WebMatrix][mswebmatrix] and the [Azure SDK][azuresdk].
 - **Publish your app** - Provides links to download the website's publishing profile, reset deployment credentials for the website, add a staged publishing (deployment) slot to on a non-staged site, and learn about staged publishing.
 - **Integrate source control** - Set up and manage deployment from source control tools or websites like TFS, CodePlex, GitHub, Dropbox, Bitbucket, or Local Git.
 
@@ -32,7 +32,7 @@ A chart which summarizes website usage as measurements of certain metrics.
 
 **Usage Overview** - this section shows statistics for the website's CPU, file system, and memory usage.
 
-**Linked Resources** - this section that shows a list of resources such as a SQL or MySQL database, or a Windows Azure storage account, that are connected to your website. Click the name of the resource to manage the resource. If you have a MySQL database, clicking its name will take you to the ClearDB management page. There you can see your performance metrics, or go to the ClearDB dashboard, where you can upgrade your MySQL database if required. If no resources are listed , click **Manage Linked Resources** to go to the **Linked Resources** page, where you can add a link to a resource for your website.
+**Linked Resources** - this section that shows a list of resources such as a SQL or MySQL database, or a Azure storage account, that are connected to your website. Click the name of the resource to manage the resource. If you have a MySQL database, clicking its name will take you to the ClearDB management page. There you can see your performance metrics, or go to the ClearDB dashboard, where you can upgrade your MySQL database if required. If no resources are listed , click **Manage Linked Resources** to go to the **Linked Resources** page, where you can add a link to a resource for your website.
 
 A **Quick Glance** section which includes the following summary information and links (depending on your settings, some of the options listed below may not appear):
 
@@ -43,7 +43,7 @@ A **Quick Glance** section which includes the following summary information and 
  - **Reset your publish profile credentials** - Resets the publish profile for your website. Previously downloaded publish profiles will become invalid.
  - **Set up deployment from source control** - Displays a dialog box where you can set up continuous publishing from Team Foundation Service, CodePlex, GitHub, Dropbox, Bitbucket, or Local Git.
  - **Add a new deployment slot** - For sites in Standard mode, use this feature to create a staging slot for the site. The staging slot (staged site) lets you validate the site's content and configuration before swapping it into production. You can also use the staged version of the site to gradually add content updates, and then swap the site into production when the updates have been completed on the staging slot. (You cannot add a slot to a site that is already in staging.)
- - **Edit in Visual Studio Online** - Click this link to edit your website directly online by using Visual Studio Online from the Windows Azure Management Portal. This option will not appear unless you enable it on the **Configure** page.
+ - **Edit in Visual Studio Online** - Click this link to edit your website directly online by using Visual Studio Online from the Azure Management Portal. This option will not appear unless you enable it on the **Configure** page.
 
 <!--
  - **Disconnect from Dropbox** - If you have set up a connection to Dropbox for deployment purposes, this link allows you to disconnect it.
@@ -51,13 +51,13 @@ A **Quick Glance** section which includes the following summary information and 
  
  - **Delete Git repository** - If you have set up a Git repository, this link allows you to delete it.
  - **Status** - Indicates whether the website is running.
- - **Management Services** - Click the **Operation Logs** link to view operation logs for your website from the Windows Azure Management Services portal.
+ - **Management Services** - Click the **Operation Logs** link to view operation logs for your website from the Azure Management Services portal.
  - **Virtual IP Address** - Shows the virtual IP address of the website if you have configured an IP-based SSL binding for the website in the **SSL Bindings** section of the **Configure** tab. 
  - **Site URL** - Specifies the publicly accessible address of the website on the internet.
  - **Compute Mode** - Specifies whether the website is running in Free, Shared, Basic, or Standard mode. For more information about web scale group modes, see [How to Scale a Web Site][Scale].
  - **FTP Hostname** - Specifies the URL to use when publishing to the website over FTP (see [FTP Credentials]).
  - **FTPS Hostname** - Specifies the URL to use when publishing to the website over FTPS (see [FTP Credentials]). 
- - **Deployment User / FTP User** - Indicates the account used when deploying the website to Windows Azure over FTP or Git (see [FTP Credentials]).
+ - **Deployment User / FTP User** - Indicates the account used when deploying the website to Azure over FTP or Git (see [FTP Credentials]).
  - **FTP Diagnostic Logs** - Specifies the FTP location of the website's diagnostic logs if diagnostic logging is enabled on the **Configure** management page.
  - **FTPS Diagnostic Logs** - Specifies the FTPS location of the website's diagnostic logs if diagnostic logging is enabled on the **Configure** management page.
  - **Location** - Specifies the region of the datacenter that hosts the website.
@@ -72,7 +72,7 @@ A **Quick Glance** section which includes the following summary information and 
 The **Monitor** management page provides a chart that displays usage information for the website. By default this chart displays the same metrics as the chart on the **Dashboard** page as described above in the Dashboard section. The chart can also be configured to display the metrics HTTP Successes, HTTP Redirects, HTTP 401 errors, HTTP 403 errors, HTTP 404 errors and HTTP 406 errors. For more information about these metrics, see [How to Monitor Web Sites][Monitor].
 
 ##WebJobs##
-The WebJobs management page lets you create on demand, scheduled, or continuously running tasks for your website. For more information, see [How to Use the WebJobs feature in Windows Azure Web Sites](/documentation/articles/web-sites-create-web-jobs).
+The WebJobs management page lets you create on demand, scheduled, or continuously running tasks for your website. For more information, see [How to Use the WebJobs feature in Azure Web Sites](/documentation/articles/web-sites-create-web-jobs).
 
 ##Configure##
 The **Configure** management page is used to set application specific settings.
@@ -83,15 +83,15 @@ For details, see [How to Configure Web Sites][Configure].
 ##Scale##
 On the **Scale** management page, you can specify the web scale group mode (**Free**, **Shared**, **Basic**, or **Standard**). **Shared**, **Basic**, and **Standard** modes provide better throughput and performance. **Shared**, **Basic**, and **Standard** modes allow you to increase the **Instance Count**, which is the number of virtual machines used by your website and your other websites in the same web scale group.
  
-In **Standard** mode, you can also increase the core count and memory capacity of each instance by changing the **Instance Size**.  For greater cost effectiveness, you can choose the **Autoscale** option to have Windows Azure allocate resources for your website dynamically. 
+In **Standard** mode, you can also increase the core count and memory capacity of each instance by changing the **Instance Size**.  For greater cost effectiveness, you can choose the **Autoscale** option to have Azure allocate resources for your website dynamically. 
 
 For more information about configuring scale options for a website, see [How to Scale a Web Site][Scale].
 
 ##Linked Resources##
-The **Linked Resources** management page provides a list of Windows Azure resources that your website is using, including SQL databases, MySQL databases, and Azure storage accounts. Click the name of the resource to manage it.
+The **Linked Resources** management page provides a list of Azure resources that your website is using, including SQL databases, MySQL databases, and Azure storage accounts. Click the name of the resource to manage it.
 
 ##Backups##
-The **Backups** management page lets you create automated or manual backups of your website, restore your website to a previous state, or create a new website based on one of your backups. For more information, see [Windows Azure Web Sites Backups](http://www.windowsazure.cn/documentation/articles/web-sites-backup/) and [Restore a Windows Azure web site](http://www.windowsazure.cn/documentation/articles/web-sites-restore/).
+The **Backups** management page lets you create automated or manual backups of your website, restore your website to a previous state, or create a new website based on one of your backups. For more information, see [Azure Web Sites Backups](http://www.windowsazure.cn/documentation/articles/web-sites-backup/) and [Restore a Azure web site](http://www.windowsazure.cn/documentation/articles/web-sites-restore/).
 
 ##Management Page Icons##
 Icons are displayed at the bottom of each of the website's Management pages. Several of these icons appear on multiple pages, and a few icons are displayed only on specific pages.  The following icons are displayed at the bottom of the **Dashboard** management page:
@@ -101,7 +101,7 @@ Icons are displayed at the bottom of each of the website's Management pages. Sev
 - **Restart** - Restarts the website.
 - **Manage Domains** - Maps a domain to this website. Not available for sites in **Free** scaling mode.
 - **Delete** - Deletes the website.
-- **WebMatrix** - Opens supported websites in WebMatrix, allowing you to make changes to the website and publish those changes back to the website on Windows Azure.
+- **WebMatrix** - Opens supported websites in WebMatrix, allowing you to make changes to the website and publish those changes back to the website on Azure.
 
 The following icons are not displayed at the bottom of the **Dashboard** management page, but are on the bottom of other management pages to accomplish particular tasks:
 

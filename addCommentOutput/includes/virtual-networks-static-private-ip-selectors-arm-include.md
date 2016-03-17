@@ -1,10 +1,12 @@
-<!-- keep by customization: begin -->
 <!-- not suitable for Mooncake -->
 
-<!-- keep by customization: end -->
+
+<!-- not suitable for Mooncake -->
+
+
 > [AZURE.SELECTOR]
-<!-- deleted by customization
-- [Preview portal](/documentation/articles/virtual-networks-static-private-ip-arm-pportal)
--->
+
+- [Azure Management Portal](/documentation/articles/virtual-networks-static-private-ip-arm-pportal)
+
 - [PowerShell](/documentation/articles/virtual-networks-static-private-ip-arm-ps)
 - [Azure CLI](/documentation/articles/virtual-networks-static-private-ip-arm-cli)

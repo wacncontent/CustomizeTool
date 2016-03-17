@@ -84,7 +84,7 @@ To ensure that the name provides enough information to determine to which resour
 
 ### Computer names
 
-When administrators create a virtual machine, Windows Azure requires them to provide a virtual machine name of up to 15 characters. Azure uses the virtual machine name as the Azure virtual machine resource name. Azure uses the same name as the computer name for the operating system installed in the virtual machine. However, these names might not always be the same.
+When administrators create a virtual machine, Azure requires them to provide a virtual machine name of up to 15 characters. Azure uses the virtual machine name as the Azure virtual machine resource name. Azure uses the same name as the computer name for the operating system installed in the virtual machine. However, these names might not always be the same.
 
 In case a virtual machine is created from a .vhd image file that already contains an operating system, the virtual machine name in Azure can differ from the virtual machine's operating system computer name. This situation can add a degree of difficulty to virtual machine management, which we therefore do not recommend. Assign the Azure virtual machine resource the same name as the computer name that you assign to the operating system of that virtual machine.
 
@@ -157,7 +157,7 @@ Azure Storage is an integral part of many Azure solutions. Azure Storage provide
 
 There are two types of storage accounts available from Azure. A standard storage account gives you access to blob storage (used for storing Azure virtual machine disks), table storage, queue storage, and file storage. Premium storage is designed for high-performance applications, such as SQL Servers in an AlwaysOn cluster, and currently supports Azure virtual machine disks only.
 
-Storage accounts are bound to scalability targets. See [Windows Azure subscription and service limits, quotas, and constraints](/documentation/articles/azure-subscription-service-limits#storage-limits) to become familiar with current Azure storage limits. Also see [Azure storage scalability and performance targets](/documentation/articles/storage-scalability-targets).
+Storage accounts are bound to scalability targets. See [Azure subscription and service limits, quotas, and constraints](/documentation/articles/azure-subscription-service-limits#storage-limits) to become familiar with current Azure storage limits. Also see [Azure storage scalability and performance targets](/documentation/articles/storage-scalability-targets).
 
 Azure creates virtual machines with an operating system disk, a temporary disk, and zero or more optional data disks. The operating system disk and data disks are Azure page blobs, whereas the temporary disk is stored locally on the node where the machine lives. This makes the temporary disk unfit for data that must persist during a system recycle, because the machine might silently be migrated from one node to another, losing any data in that disk. Do not store anything on the temporary drive.
 
@@ -214,7 +214,7 @@ Cloud service names are especially important in IaaS because Azure uses them as 
 
 Azure exposes the cloud service names, because they are associated to the VIP, in the domain "chinacloudapp.cn". For a better user experience of the application, a vanity name should be configured as needed to replace the fully qualified cloud service name. This is typically done with a CNAME record in your public DNS that maps the public DNS name of your resource (for example, www.contoso.com) to the DNS name of the cloud service hosting the resource (for example, the cloud service hosting the web servers for www.contoso.com).
 
-In addition, the naming convention used for cloud services might need to tolerate exceptions because the cloud service names must be unique among all other Windows Azure cloud services, regardless of the Windows Azure tenant.
+In addition, the naming convention used for cloud services might need to tolerate exceptions because the cloud service names must be unique among all other Azure cloud services, regardless of the Azure tenant.
 
 One important limitation of cloud services to consider is that only one virtual machine management operation can be performed at a time for all the virtual machines in the cloud service. When you perform a virtual machine management operation on one virtual machine in the cloud service, you must wait until it is finished before you can perform a new management operation on another virtual machine. Therefore, you should keep the number of virtual machines in a cloud service low.
 
@@ -426,7 +426,7 @@ This configuration incorporates:
 
 ## Additional resources
 
-[Windows Azure subscription and service limits, quotas, and constraints](/documentation/articles/azure-subscription-service-limits#storage-limits)
+[Azure subscription and service limits, quotas, and constraints](/documentation/articles/azure-subscription-service-limits#storage-limits)
 
 [Sizes for virtual machines](/documentation/articles/virtual-machines-size-specs)
 

@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Use Hadoop Hive with Curl in HDInsight | Windows Azure"
+   pageTitle="Use Hadoop Hive with Curl in HDInsight | Azure"
    description="Learn how to remotely submit Pig jobs to HDInsight using Curl."
    services="hdinsight"
    documentationCenter=""
@@ -25,6 +25,7 @@ Curl is used to demonstrate how you can interact with HDInsight by using raw HTT
 
 To complete the steps in this article, you will need the following:
 
+
 * A Hadoop on HDInsight cluster ( Windows-based)
 
 * [Curl](http://curl.haxx.se/)
@@ -34,10 +35,9 @@ To complete the steps in this article, you will need the following:
 ##<a id="curl"></a>Run Hive queries by using Curl
 
 > [AZURE.NOTE] When using Curl or any other REST communication with WebHCat, you must authenticate the requests by providing the user name and password for the HDInsight cluster administrator. You must also use the cluster name as part of the Uniform Resource Identifier (URI) used to send the requests to the server.
->
-> For the commands in this section, replace **USERNAME** with the user to authenticate to the cluster, and replace **PASSWORD** with the password for the user account. Replace **CLUSTERNAME** with the name of your cluster.
->
-> The REST API is secured via [basic authentication](http://en.wikipedia.org/wiki/Basic_access_authentication). You should always make requests by using Secure HTTP (HTTPS) to help ensure that your credentials are securely sent to the server.
+
+> <p>For the commands in this section, replace **USERNAME** with the user to authenticate to the cluster, and replace **PASSWORD** with the password for the user account. Replace **CLUSTERNAME** with the name of your cluster.
+> <p>The REST API is secured via [basic authentication](http://en.wikipedia.org/wiki/Basic_access_authentication). You should always make requests by using Secure HTTP (HTTPS) to help ensure that your credentials are securely sent to the server.
 
 1. From a command line, use the following command to verify that you can connect to your HDInsight cluster:
 
@@ -81,8 +81,8 @@ To complete the steps in this article, you will need the following:
     * **CREATE EXTERNAL TABLE** - Creates a new 'external' table in Hive. External tables store only the table definition in Hive. The data is left in the original location.
 
 		> [AZURE.NOTE] External tables should be used when you expect the underlying data to be updated by an external source, such as an automated data upload process, or by another MapReduce operation, but always want Hive queries to use the latest data.
-		>
-		> Dropping an external table does **not** delete the data, only the table definition.
+
+		> <p>Dropping an external table does **not** delete the data, only the table definition.
 
     * **ROW FORMAT** - Tells Hive how the data is formatted. In this case, the fields in each log are separated by a space.
 

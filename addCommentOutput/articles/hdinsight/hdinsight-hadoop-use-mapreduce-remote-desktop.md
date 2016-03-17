@@ -1,5 +1,5 @@
 <properties
-   pageTitle="MapReduce and Remote Desktop with Hadoop in HDInsight | Windows Azure"
+   pageTitle="MapReduce and Remote Desktop with Hadoop in HDInsight | Azure"
    description="Learn how to use Remote Desktop to connect to Hadoop on HDInsight and run MapReduce jobs."
    services="hdinsight"
    documentationCenter=""
@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="12/04/2015"
+	ms.date="02/05/2016"
 	wacn.date=""/>
 
 # Use MapReduce in Hadoop on HDInsight with Remote Desktop

@@ -1,5 +1,7 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
-	pageTitle="Line of business application Phase 4 | Windows Azure" 
+	pageTitle="Line of business application Phase 4 | Azure" 
 	description="Create the web servers and load your line of business application on them in Phase 4 of the line of business application in Azure." 
 	documentationCenter=""
 	services="virtual-machines" 

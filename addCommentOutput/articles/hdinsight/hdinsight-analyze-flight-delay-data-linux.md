@@ -1,5 +1,7 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
-	pageTitle="Analyze flight delay data with Hive on Linux-based HDInsight | Windows Azure" 
+	pageTitle="Analyze flight delay data with Hive on Linux-based HDInsight | Azure" 
 	description="Learn how to use Hive to analyze flight data on Linux-based HDInsight, then export the data to SQL Database using Sqoop." 
 	services="hdinsight" 
 	documentationCenter="" 
@@ -10,7 +12,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="12/04/2015"
+	ms.date="02/03/2016"
 	wacn.date=""/>
 
 #Analyze flight delay data by using Hive in HDInsight
@@ -27,7 +29,7 @@ Before you begin this tutorial, you must have the following:
 
 - __An HDInsight cluster__. See [Get started using Hadoop with Hive in HDInsight on Linux](/documentation/articles/hdinsight-hadoop-linux-tutorial-get-started) for steps on creating a new Linux-based HDInsight cluster.
 
-- __Azure SQL Database__. You will use an Azure SQL database as a destination data store. If you do not have a SQL Database already, see [How to create an Azure SQL Database](/documentation/articles/sql-database-create)
+- __Azure SQL Database__. You will use an Azure SQL database as a destination data store. If you do not have a SQL Database already, see [SQL Database tutorial: Create a SQL database in minutes](/documentation/articles/sql-database-get-started).
 
 - __Azure CLI__. If you have not installed the Azure CLI, see [Install and Configure the Azure CLI](/documentation/articles/xplat-cli-install) for more steps.
 
@@ -285,21 +287,6 @@ Now you understand how to upload a file to Azure Blob storage, how to populate a
 
 [rita-website]: http://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236&DB_Short_Name=On-Time
 [cindygross-hive-tables]: http://blogs.msdn.com/b/cindygross/archive/2013/02/06/hdinsight-hive-internal-and-external-tables-intro.aspx
-<!-- deleted by customization
-
-[hdinsight-use-oozie]: hdinsight-use-oozie-linux-mac.md
-[hdinsight-use-hive]: hdinsight-use-hive.md
-[hdinsight-provision]: hdinsight-provision-clusters-v1.md
-[hdinsight-storage]: hdinsight-hadoop-use-blob-storage.md
-[hdinsight-upload-data]: hdinsight-upload-data.md
-[hdinsight-get-started]: hdinsight-hadoop-linux-tutorial-get-started.md
-[hdinsight-use-sqoop]: hdinsight-use-sqoop.md
-[hdinsight-use-pig]: hdinsight-use-pig.md
-[hdinsight-develop-streaming]: hdinsight-hadoop-streaming-python.md
-[hdinsight-develop-mapreduce]: hdinsight-develop-deploy-java-mapreduce-linux.md
--->
-<!-- keep by customization: begin -->
-[powershell-install-configure]: /documentation/articles/powershell-install-configure
 
 [hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie-linux-mac
 [hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
@@ -311,7 +298,6 @@ Now you understand how to upload a file to Azure Blob storage, how to populate a
 [hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
 [hdinsight-develop-streaming]: /documentation/articles/hdinsight-hadoop-streaming-python
 [hdinsight-develop-mapreduce]: /documentation/articles/hdinsight-develop-deploy-java-mapreduce-linux
-<!-- keep by customization: end -->
 
 [hadoop-hiveql]: https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DDL
 

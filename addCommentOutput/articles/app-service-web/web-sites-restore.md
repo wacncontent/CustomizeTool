@@ -9,38 +9,21 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="01/07/2015"
+	ms.date="01/26/2016"
 	wacn.date=""/>
 
-<!-- deleted by customization
 # Restore an app in Azure
 
-This article shows you how to restore an Azure Web App that you have previously backed up by using the [Azure Web App](/documentation/services/web-sites) Backup feature. For more information, see [Azure  Backups](/documentation/articles/web-sites-backup).
+This article shows you how to restore an Azure Web App that you have previously backed up by using the [Azure Web App](/documentation/services/web-sites) Backup feature. For more information, see [Azure  Web App  Backups](/documentation/articles/web-sites-backup).
 
-The Azure  Restore feature lets you restore your app with its linked databases (SQL Database or MySQL) on-demand to a previous state, or create a new app based on one of your original app's backup. Creating a new app that runs in parallel to the latest version can be useful for A/B testing.
+The Azure  web app  Restore feature lets you restore your app with its linked databases (SQL Database or MySQL) on-demand to a previous state, or create a new app based on one of your original app's backup. Creating a new app that runs in parallel to the latest version can be useful for A/B testing.
 
-The Azure Restore feature, available on the **Backups** blade in the [Azure Management Portal](http://manage.windowsazure.cn), is available only in Standard and Premium pricing tiers. For information about scaling your app using Standard or Premium tier, see [Scale an app in Azure Web App](/documentation/articles/web-sites-scale). Note that the Premium tier allows a greater number of daily backups to be performed over the Standard tier.
--->
-<!-- keep by customization: begin -->
-# Restore a web site in Azure Websites
-
-This article shows you how to restore an Azure Website that you have previously backed up by using the [Azure Websites](/documentation/services/web-sites) Backup feature. For more information, see [Azure Websites Backups](/documentation/articles/web-sites-backup).
-
-The Azure Websites Restore feature lets you restore your web site with its linked databases (SQL Database or MySQL) on-demand to a previous state, or create a new web site based on one of your original web site's backup. Creating a new web site that runs in parallel to the latest version can be useful for A/B testing.
-
-The Azure Websites Restore feature, available on the **Backups** blade in the [Azure Management Portal](http://manage.windowsazure.cn), is available only in Standard  pricing tiers. For information about scaling your app using Standard  tier, see [Scale a web site in Azure Websites](/documentation/articles/web-sites-scale). 
-
-##In this article
-- [To Restore an Azure  Website from a previously made backup](#PreviousBackup)
-- [To Restore an Azure  Website directly from a storage account](#StorageAccount)
-- [Choose Your  Website Restore Settings and Start the Restore Operation](#RestoreSettings)
-- [View the Operation Logs](#OperationLogs)
-<!-- keep by customization: end -->
+The Azure  web app  Restore feature, available on the **Backups** blade in the [Azure Management Portal](https://manage.windowsazure.cn), is available only in Standard  and Premium  pricing tiers. For information about scaling your app using Standard  or Premium  tier, see [Scale an app in Azure Web App](/documentation/articles/web-sites-scale).  Note that the Premium tier allows a greater number of daily backups to be performed over the Standard tier. 
 
 <a name="PreviousBackup"></a>
-<!-- deleted by customization
 ## To Restore an app from a previously made backup
 
+
 1. On the **Settings** blade of your app in the Azure Management Portal, click **Backups** to display the **Backups** blade. Then click **Restore Now** in the command bar. 
 	
 	![Choose restore now][ChooseRestoreNow]
@@ -66,10 +49,8 @@ The Azure Websites Restore feature, available on the **Backups** blade in the [A
 	
 5. Click **OK**.
 
--->
-<!-- keep by customization: begin -->
-## To Restore a web site from a previously made backup
-
+
+
 1. On the **Backups** tab, click **Restore Now** in the command bar at the bottom of the portal page. The **Restore Now** dialog box appears.
 	
 	![Choose backup source][ChooseBackupSource]
@@ -77,10 +58,10 @@ The Azure Websites Restore feature, available on the **Backups** blade in the [A
 2. Under **Choose backup source**, select **Previous Backup for this  Website**.
 3. Select the date of the backup that you want to restore, and then click the right arrow to continue.
 4. Follow the steps in the [Choose Your  Website Restore Settings](#RestoreSettings) section later in this article.
-<!-- keep by customization: end -->
+
 <a name="StorageAccount"></a>
 ## Download or delete a backup from a storage account
-<!-- deleted by customization
+
 	
 1. From the main **Browse** blade of the Azure Management Portal, select **Storage Accounts**.
 	
@@ -99,8 +80,8 @@ The Azure Websites Restore feature, available on the **Backups** blade in the [A
 4. In the list, select the container and display the blade that shows a list of file names, along with the size of each file.
 	
 5. By selecting a file, you can either choose to **Download** or **Delete** the file. Note that there are two primary file types, .zip files and .xml files. 
--->
-<!-- keep by customization: begin -->
+
+
 
 1. On the **Backups** tab, click **Restore Now** in the command bar at the bottom of the portal page. The **Restore Now** dialog box appears.
 	
@@ -158,15 +139,15 @@ The Azure Websites Restore feature, available on the **Backups** blade in the [A
 5. Click the check mark to start the restore operation. When it completes, the new  Website instance (if that is the restore option you chose) will be visible in the list of  Websites in the portal.
 	
 	![Restored Contoso  Website][RestoredContoso Website]
-<!-- keep by customization: end -->
+
 
 <a name="OperationLogs"></a>
 ## View the Audit Logs
-<!-- deleted by customization
+
 	
 1. To see details about the success or failure of the app restore operation, select the **Audit Log** part of the main **Browse** blade. 
 	
-	The **Audio log** blade displays all of your operations, along with level, status, resource, and time details.
+	The **Audit log** blade displays all of your operations, along with level, status, resource, and time details.
 	
 2. Scroll the blade to find operations related to your app.
 3. To view additional details about an operation, select the operation in the list.
@@ -179,8 +160,8 @@ You can also backup and restore Azure Web Apps using REST API (see [Use REST to 
 
 ## What's changed
 * For a guide to the change from Websites to Azure see: [Azure and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
--->
-<!-- keep by customization: begin -->
+
+
 
 1. To see details about the success or failure of the  Website restore operation, go to the  Website's Dashboard tab. In the **Quick Glance** section, under **Management Services**, click **Operation Logs**.
 	
@@ -197,12 +178,12 @@ You can also backup and restore Azure Web Apps using REST API (see [Use REST to 
 	When you do so, the **Operations Details** window opens and shows you the copiable contents of the log file:
 	
 	![Operation Details][OperationDetails]
-<!-- keep by customization: end -->
+
 
 <!-- IMAGES -->
-<!-- keep by customization: begin -->
+
 [RestoredContoso Website]: ./media/web-sites-restore/09RestoredContosoWebSite.png
-<!-- keep by customization: end -->
+
 [ChooseRestoreNow]: ./media/web-sites-restore/02ChooseRestoreNow.png
 [ViewContainers]: ./media/web-sites-restore/03ViewContainers.png
 [StorageAccountFile]: ./media/web-sites-restore/02StorageAccountFile.png
@@ -216,5 +197,4 @@ You can also backup and restore Azure Web Apps using REST API (see [Use REST to 
 [DashboardOperationLogsLink]: ./media/web-sites-restore/10DashboardOperationLogsLink.png
 [ManagementServicesOperationLogsList]: ./media/web-sites-restore/11ManagementServicesOperationLogsList.png
 [DetailsButton]: ./media/web-sites-restore/12DetailsButton.png
-[OperationDetails]: ./media/web-sites-restore/13OperationDetails.png
- 
+[OperationDetails]: ./media/web-sites-restore/13OperationDetails.png

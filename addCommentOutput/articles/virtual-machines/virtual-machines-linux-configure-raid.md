@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Configure software RAID on avirtual machine running Linux | Windows Azure" 
+	pageTitle="Configure software RAID on avirtual machine running Linux | Azure" 
 	description="Learn how to use mdadm to configure RAID on Linux in Azure." 
 	services="virtual-machines" 
 	documentationCenter="" 
@@ -23,9 +23,9 @@ It's a common scenario to use software RAID on Linux virtual machines in Azure t
  
 
 ## Attaching data disks
-Two or more empty data disks will typically be needed to configure a RAID device.  This article will not go into detail on how to attach data disks to a Linux virtual machine.  Please see the Windows Azure article [attach a disk](/documentation/articles/storage-windows-attach-disk#attachempty) for detailed instructions on how to attach an empty data disk to a Linux virtual machine on Azure.
+Two or more empty data disks will typically be needed to configure a RAID device.  This article will not go into detail on how to attach data disks to a Linux virtual machine.  Please see the Azure article [attach a disk](/documentation/articles/storage-windows-attach-disk#attachempty) for detailed instructions on how to attach an empty data disk to a Linux virtual machine on Azure.
 
->[AZURE.NOTE] The ExtraSmall VM size does not support more than one data disk attached to the virtual machine.  Please see [Virtual Machine and Cloud Service Sizes for Windows Azure](https://msdn.microsoft.com/zh-cn/library/azure/dn197896.aspx) for detailed information about VM sizes and the number of data disks supported.
+>[AZURE.NOTE] The ExtraSmall VM size does not support more than one data disk attached to the virtual machine.  Please see [Virtual Machine and Cloud Service Sizes for Azure](https://msdn.microsoft.com/zh-cn/library/azure/dn197896.aspx) for detailed information about VM sizes and the number of data disks supported.
 
 
 ## Install the mdadm utility
@@ -175,5 +175,4 @@ In this example, after running this command a new RAID device called **/dev/md12
 	In addition to the above parameters, the kernel parameter "`bootdegraded=true`" can allow the system to boot even if the RAID is perceived as damaged or degraded, for example if a data drive is inadvertently removed from the virtual machine. By default this could also result in a non-bootable system.
 
 	Please refer to your distribution's documentation on how to properly edit kernel parameters. For example, in many distributions (CentOS, Oracle Linux, SLES 11) these parameters may be added manually to the "`/boot/grub/menu.lst`" file.  On Ubuntu this parameter can be added to the `GRUB_CMDLINE_LINUX_DEFAULT` variable on "/etc/default/grub".
-
- 
+

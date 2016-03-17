@@ -17,7 +17,7 @@
 
 This article helps you troubleshoot HTTP 502/503 errors in your web app hosted in [Azure Web App](/documentation/services/web-sites/).
 
-If you need more help at any point in this article, you can contact the Azure experts on [the MSDN Azure and the Stack Overflow forums](https://azure.microsoft.com/support/forums/). Alternatively, you can also file an Azure support incident. Go to the [Azure Support site](https://azure.microsoft.com/support/contact/) and click on **Get Support**.
+If you need more help at any point in this article, you can contact the Azure experts on [the MSDN Azure and the Stack Overflow forums](http Stack Overflow forums](https://azure.microsoft.com/support/forums/)  . Alternatively, you can also file an Azure support incident. Go to the [Azure Support site](https://azure.microso site](https://azure.microsoft.com/support/contact/)   and click on **Get Support**.
 
 ## Symptom
 
@@ -41,16 +41,28 @@ Troubleshooting can be divided into three distinct tasks, in sequential order:
 
 [Azure Web Apps](/home/features/web-site/) gives you various options at each step.
 
+
 <a name="observe" />
+
+
+<a name="observe"></a>
+
 ### 1. Observe and monitor application behavior
+
 
 ####	Track Service health
 
-Windows Azure publicizes each time there is a service interruption or performance degradation. You can track the health of the service on the [Azure Management Portal](https://manage.windowsazure.cn/). For more information, see [Track service health](/documentation/articles/insights-service-health).
+Azure publicizes each time there is a service interruption or performance degradation. You can track the health of the service on the [Azure Management Portal](https://manage.windowsazure.cn/). For more information, see [Track service health](/documentation/articles/insights-service-health).
+
 
 ####	Monitor your web app
 
+
 This option enables you to find out if your application is having any issues. In your web app's blade, click the **Requests and errors** tile. The **Metric** blade will show you all the metrics you can add.
+
+
+This page let you find out if your application is having any issues. In Azure Management Portal, click **Monitor** of your web app.
+
 
 Some of the metrics that you might want to monitor for your web app are
 
@@ -65,11 +77,18 @@ Some of the metrics that you might want to monitor for your web app are
 For more information, see:
 
 -	[Monitor Web Apps in Azure](/documentation/articles/web-sites-monitor)
+
 -	[Receive alert notifications](/documentation/articles/insights-receive-alert-notifications)
 
 <a name="collect" />
+
+
+
+<a name="collect"></a>
+
 ### 2. Collect data
 
+
 ####	Use the Azure Support Portal
 
 Web Apps provides you with the ability to troubleshoot issues related to your web app by looking at HTTP logs, event logs, process dumps, and more. You can access all this information using our Support portal at **http://&lt;your app name>.scm.chinacloudsites.cn/Support**
@@ -108,6 +127,14 @@ For more information on features available in Kudu, see
 [Azure Websites online tools you should know about](/blog/windows-azure-websites-online-tools-you-should-know-about/).
 
 <a name="mitigate" />
+
+
+####	Use the FTP Diagnostic Logs
+
+Find the FTP Diagnostic Logs link in your web app's **Dashboard** page, which usually looks like `ftp://********.ftp.chinacloudsites.chinacloudapi.cn/LogFiles`. Click to enter, and download **eventlog.xml**
+
+<a name="mitigate"></a>
+
 ### 3. Mitigate the issue
 
 ####	Scale the web app

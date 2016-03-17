@@ -91,4 +91,4 @@ In certain scenarios, you might want to remove a Network ACL object from a virtu
 
 [What is a Network Access Control List (ACL)?](/documentation/articles/virtual-networks-acl)
 
-[How to Set Up Communication with a Virtual Machine](/documentation/articles/virtual-machines-set-up-endpoints) 
+[How to Set Up Communication with a Virtual Machine](/documentation/articles/virtual-machines-set-up-endpoints)

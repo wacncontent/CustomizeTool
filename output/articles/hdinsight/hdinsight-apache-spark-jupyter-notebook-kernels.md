@@ -1,5 +1,7 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
-	pageTitle="Kernels available with Jupyter notebooks on HDInsight Spark clusters on Linux| Windows Azure" 
+	pageTitle="Kernels available with Jupyter notebooks on HDInsight Spark clusters on Linux| Azure" 
 	description="Learn about the additional Jupyter notebook kernels available with Spark cluster on HDInsight Linux." 
 	services="hdinsight" 
 	documentationCenter="" 

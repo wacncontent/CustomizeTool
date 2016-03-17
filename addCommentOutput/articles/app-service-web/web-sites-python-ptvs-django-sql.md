@@ -18,18 +18,18 @@
 
 # Django and SQL Database on Azure with Python Tools 2.2 for Visual Studio 
 
-In this tutorial, we'll use [Python Tools for Visual Studio] to create a simple polls web app using one of the PTVS sample templates. <!-- deleted by customization This tutorial is also available as a [video](https://www.youtube.com/watch?v=ZwcoGcIeHF4). -->
+In this tutorial, we'll use [Python Tools for Visual Studio] to create a simple polls web app using one of the PTVS sample templates.  This tutorial is also available as a [video](https://www.youtube.com/watch?v=ZwcoGcIeHF4). 
 
 We'll learn how to use a SQL database hosted on Azure, how to configure the web app to use a SQL database, and how to publish the web app to [Azure Web Apps](/documentation/services/web-sites/).
 
 See the [Python Developer Center] for more articles that cover development of Azure Web Apps with PTVS using Bottle, Flask and Django web frameworks, with MongoDB, Azure Table Storage, MySQL and SQL Database services. While this article focuses on Azure Web App, the steps are similar when developing [Azure Cloud Services].
 
-<!-- deleted by customization
+
 ## Prerequisites
--->
-<!-- keep by customization: begin -->
+
+
 ##<a name="prerequisites"></a> Prerequisites
-<!-- keep by customization: end -->
+
 
  - Visual Studio 2013 or 2015
  - [Python Tools 2.2 for Visual Studio]
@@ -38,10 +38,10 @@ See the [Python Developer Center] for more articles that cover development of Az
  - [Python 2.7 32-bit]
 
 [AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
-<!-- deleted by customization
+
 
 >[AZURE.NOTE] If you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.
--->
+
 
 ## Create the Project
 
@@ -163,13 +163,13 @@ Edit the definition of `DATABASES` to use the values above.
 
 ## Publish the web app to Azure
 
-The Azure .NET SDK provides an easy way to deploy your web web app to Azure Web Apps.
+The Azure .NET SDK provides an easy way to deploy your web web app to  Azures  Azure Web Apps .
 
 1.  In **Solution Explorer**, right-click on the project node and select **Publish**.
 
   	<!-- ![Publish Web Dialog](./media/web-sites-python-ptvs-django-sql/PollsCommonPublishWebSiteDialog.png) -->
 
-1.  Click on **Windows Azure Web Apps**.
+1.  Click on  **Azure  **Microsoft Azure  Web Apps**.
 
 1.  Click on **New** to create a new web app.
 
@@ -180,7 +180,7 @@ The Azure .NET SDK provides an easy way to deploy your web web app to Azure Web 
 	-	**Region**
 	-	Leave **Database server** set to **No database**
 
-  	<!-- ![Create Site on Windows Azure Dialog](./media/web-sites-python-ptvs-django-sql/PollsCommonCreateWebSite.png) -->
+  	<!-- ![Create Site on Azure Dialog](./media/web-sites-python-ptvs-django-sql/PollsCommonCreateWebSite.png) -->
 
 1.  Accept all other defaults and click **Publish**.
 
@@ -197,24 +197,19 @@ Follow these links to learn more about Python Tools for Visual Studio, Django an
 - [Python Tools for Visual Studio Documentation]
   - [Web Projects]
   - [Cloud Service Projects]
-  - [Remote Debugging on Windows Azure]
+  - [Remote Debugging on Azure]
 - [Django Documentation]
 - [SQL Database]
 
-<!-- deleted by customization
+
 ## What's changed
 * For a guide to the change from Websites to Azure see: [Azure and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
 
--->
+
 
 <!--Link references-->
 [Python Developer Center]: /develop/python/
-<!-- deleted by customization
-[Azure Cloud Services]: ../cloud-services-python-ptvs.md
--->
-<!-- keep by customization: begin -->
 [Azure Cloud Services]: /documentation/articles/cloud-services-python-ptvs
-<!-- keep by customization: end -->
 
 <!--External Link references-->
 [Azure Management Portal]: https://manage.windowsazure.cn
@@ -225,7 +220,7 @@ Follow these links to learn more about Python Tools for Visual Studio, Django an
 [Azure SDK Tools for VS 2015]: http://go.microsoft.com/fwlink/?LinkId=518003
 [Python 2.7 32-bit]: http://go.microsoft.com/fwlink/?LinkId=517190 
 [Python Tools for Visual Studio Documentation]: http://aka.ms/ptvsdocs
-[Remote Debugging on Windows Azure]: http://go.microsoft.com/fwlink/?LinkId=624026
+[Remote Debugging on Azure]: http://go.microsoft.com/fwlink/?LinkId=624026
 [Web Projects]: http://go.microsoft.com/fwlink/?LinkId=624027
 [Cloud Service Projects]: http://go.microsoft.com/fwlink/?LinkId=624028
 [Django Documentation]: https://www.djangoproject.com/

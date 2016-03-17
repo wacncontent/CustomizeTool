@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Create Hadoop clusters in HDInsight | Windows Azure"
+   pageTitle="Create Hadoop clusters in HDInsight | Azure"
    	description="Learn how to create clusters for Azure HDInsight by using the Azure Management Portal."
    services="hdinsight"
    documentationCenter=""

@@ -20,18 +20,13 @@ This article helps you get started on securing your web app, mobile app backend,
 Security in Azure has two levels: 
 
 - **Infrastructure and platform security** - You trust Azure to have the services you need to actually run things securely in the cloud.
-<!- **Application security** - You need to design the app itself securely. This includes how you integrate with Azure Active Directory, how you manage certificates, and how you make sure that you can securely talk to different services.
-###Table of contents
-
-* [Secure communications](#https)
-* [Secure development](#develop)
-* [Next steps](#next)
+- **Application security** - You need to design the app itself securely. This includes how you integrate with Azure Active Directory, how you manage certificates, and how you make sure that you can securely talk to different services. 
 
 #### Infrastructure and platform security
 Because Azure maintains the Azure VMs, storage, network connections, web frameworks, management and integration features and much more, it is actively secured and hardened and goes 
 through vigorous compliance and checks on a continuous basis to make sure that:
 
-- Your Azure Web Apps are isolated from both the Internet from other customers' Azure resources.
+- Your Azure Web Apps are isolated from both the Internet and from the other customers' Azure resources.
 - Communication of secrets (e.g. connection strings) between your Azure Web App and other Azure resources (e.g. SQL Database) in a resource group stays within Azure and doesn't cross any network boundaries. Secrets are 
 always encrypted.
 - All communication between your Azure Web App and external resources, such as PowerShell management, command-line interface, Azure SDKs, REST APIs, and hybrid connections, are properly encrypted.
@@ -53,14 +48,6 @@ application code and content in a secure way. Without this, your application cod
 A full discussion of security considerations for web-based applications is beyond the scope of this document. As a starting point for further guidance on securing your application,
 see the [Open Web Application Security Project (OWASP)](https://www.owasp.org/index.php/Main_Page), specifically the [top 10 project.](https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project), 
 which lists the current top 10 critical web application security flaws, as determined by OWASP members.
-
-## Perform penetration testing on your app
-
-One of the easiest ways to yet started with testing for vulnerabilities on your Azure Web App is to use the [integration with Tinfoil Security](/blog/web-vulnerability-scanning-for-azure-app-service-powered-by-tinfoil-security/)
-to perform one-click vulnerability scanning on your app. You can view the test results in an easy-to-understand report, and learn how to fix each vulnerability with step-by-step instructions.
-
-If you prefer to perform your own penetration tests or want to use another scanner suite or provider, you must follow the [Azure penetration testing approval process](https://security-forms.azure.com/penetration-testing/terms) and 
-obtain prior approval to perform the desired penetration tests.
 
 ##<a name="https"></a> Secure communication with customers
 
@@ -108,13 +95,12 @@ exposing this information. A simple search on [GitHub](https://github.com), for 
 
 The best practice is to keep this information out of your app's configuration files. Azure lets you store configuration information as part of the runtime environment as **app settings** and **connection strings**. The values 
 are exposed to your application at runtime through *environment variables* for most programming languages. For .NET applications, these values are injected into your .NET configuration at runtime. Apart from these situations, these
-configuration settings will remain encrypted unless you view or configure them using the [Azure Management Portal](http://manage.windowsazure.cn) or utilities such as PowerShell or the Azure CLI. 
+configuration settings will remain encrypted unless you view or configure them using the [Azure Management Portal](https://manage.windowsazure.cn) or utilities such as PowerShell or the Azure CLI. 
 
 Storing configuration information in Azure makes it possible for the app's administrator to lock down sensitive information for the production apps. Developers can use a separate set of configuration settings
 for app development and the settings can be automatically superseded by the settings configured in Azure Web App. Not even the developers need to know the secrets configured for the production app. For more information on 
 configuring app settings and connection strings in Azure Web App, see [Configuring web apps](/documentation/articles/web-sites-configure).
 
-<!-- be to customize -->
 ### FTPS
 
 Azure provides secure FTP access to the file system for your app through **FTPS**. This allows you to securely access the application code on the web app as well as diagnostics logs. It is recommended that you
@@ -122,7 +108,7 @@ always use FTPS instead of FTP.
 
 The FTPS link for your app can be found with the following steps:
 
-1. Open the [Azure Management Portal](http://manage.windowsazure.cn).
+1. Open the [Azure Management Portal](https://manage.windowsazure.cn).
 2. Select **Web Apps**.
 4. Select the desired app.
 5. Click **Dashboard**
@@ -132,7 +118,7 @@ For more information on FTPS, see [File Transfer Protocol](http://en.wikipedia.o
 
 ##<a name="next"></a> Next steps
 
-For more information on the security of the Azure platform, information on reporting a **security incident or abuse**, or to inform Microsoft that you will be performing **penetration testing** of your site, see the security section of the [Windows Azure Trust Center](/support/trust-center/security/).
+For more information on the security of the Azure platform, information on reporting a **security incident or abuse**, or to inform Microsoft that you will be performing **penetration testing** of your site, see the security section of the [Azure Trust Center](/support/trust-center/security/).
 
 For more information on **web.config** or **applicationhost.config** files in Azure Web Apps, see [Configuration options unlocked in Azure web apps](/blog/2014/01/28/more-to-explore-configuration-options-unlocked-in-windows-azure-web-sites/).
 

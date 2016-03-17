@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
 	pageTitle="Azure web app advanced config and extensions"
 	description="Use XML Document Transformation(XDT) declarations to transform the ApplicationHost.config file in your Azure web app and to add private extensions to enable custom administration actions."

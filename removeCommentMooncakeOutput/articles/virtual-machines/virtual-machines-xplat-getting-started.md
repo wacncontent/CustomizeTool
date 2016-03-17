@@ -1,5 +1,5 @@
 <properties
-   pageTitle="How to Create an Azure Virtual Machine with the Azure CLI | Windows Azure"
+   pageTitle="How to Create an Azure Virtual Machine with the Azure CLI | Azure"
    description="This topic describes how to install the Azure CLI on any platform, how to use it to connect to your Azure account, and how to create a VM from the Azure CLI."
    services="virtual-machines"
    documentationCenter="virtual-machines"

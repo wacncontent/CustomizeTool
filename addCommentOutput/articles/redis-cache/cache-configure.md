@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
 	pageTitle="How to configure Azure Redis Cache"
 	description="Understand the default Redis configuration for Azure Redis Cache and learn how to configure your Azure Redis Cache instances"
@@ -14,10 +16,8 @@
 # How to configure Azure Redis Cache
 
 This topic describes how to review and update the configuration for your Azure Redis Cache instances, and covers the default Redis server configuration for Azure Redis Cache instances.
-<!-- deleted by customization
 
 >[AZURE.NOTE] For more information on configuring and using premium cache features, see [How to configure persistence for a Premium Azure Redis Cache](/documentation/articles/cache-how-to-premium-persistence), [How to configure clustering for a Premium Azure Redis Cache](/documentation/articles/cache-how-to-premium-clustering), and [How to configure Virtual Network support for a Premium Azure Redis Cache](/documentation/articles/cache-how-to-premium-vnet).
--->
 
 ## Configure Redis cache settings
 

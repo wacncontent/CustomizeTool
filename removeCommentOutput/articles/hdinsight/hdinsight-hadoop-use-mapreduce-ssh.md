@@ -1,5 +1,5 @@
 <properties
-   pageTitle="MapReduce and SSH connection with Hadoop in HDInsight | Windows Azure"
+   pageTitle="MapReduce and SSH connection with Hadoop in HDInsight | Azure"
    description="Learn how to use SSH to run MapReduce jobs using Hadoop on HDInsight."
    services="hdinsight"
    documentationCenter=""

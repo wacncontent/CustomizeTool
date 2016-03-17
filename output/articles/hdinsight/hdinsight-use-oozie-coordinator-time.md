@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Use time-based Hadoop Oozie coordinator in HDInsight | Windows Azure"
+	pageTitle="Use time-based Hadoop Oozie coordinator in HDInsight | Azure"
 	description="Use time-based Hadoop Oozie coordinator in HDInsight, a big data service. Learn how to define Oozie workflows and coordinators, and submit jobs."
 	services="hdinsight"
 	documentationCenter=""
@@ -16,9 +16,11 @@
 
 # Use time-based Oozie coordinator with Hadoop in HDInsight to define workflows and coordinate jobs
 
-In this article, you'll learn how to define workflows and coordinators, and how to trigger the coordinator jobs, based on time. It is helpful to go through [Use Oozie with HDInsight][hdinsight-use-oozie] before you read this article. To learn Azure Data Factory, see [Use Pig and Hive with Data Factory](/documentation/articles/data-factory-pig-hive-activities).
+In this article, you'll learn how to define workflows and coordinators, and how to trigger the coordinator jobs, based on time. It is helpful to go through [Use Oozie with HDInsight][hdinsight-use-oozie] before you read this article. To learn Azure Data Factory To learn Azure Data Factory, see [Use Pig and Hive with Data Factory](/documentation/articles/data-factory-pig-hive-activities). 
+
 
 > [AZURE.NOTE] This article requires a Windows-based HDInsight cluster. For information on using Oozie, including time-based jobs, on a Linux-based cluster, see [Use Oozie with Hadoop to define and run a workflow on Linux-based HDInsight](/documentation/articles/hdinsight-use-oozie-linux-mac)
+
 
 ##<a id="whatisoozie"></a>What is Oozie
 
@@ -642,7 +644,7 @@ Azure PowerShell currently doesn't provide any cmdlets for defining Oozie jobs. 
 
 **To check the job error log**
 
-To troubleshoot a workflow, the Oozie log file can be found at C:\apps\dist\oozie-3.3.2.1.3.2.0-05\oozie-win-distro\logs\Oozie.log from the cluster headnode. For information on RDP, see [Administering HDInsight clusters using the Azure preview portal][hdinsight-admin-portal].
+To troubleshoot a workflow, the Oozie log file can be found at C:\apps\dist\oozie-3.3.2.1.3.2.0-05\oozie-win-distro\logs\Oozie.log from the cluster headnode. For information on RDP, see [Administering HDInsight clusters using the Azure preview portal][hdinsight-a preview portal][hdinsight-admin-portal]  .
 
 **To rerun the tutorial**
 
@@ -699,29 +701,29 @@ In this tutorial, you learned how to define an Oozie workflow and an Oozie coord
 [hdinsight-cmdlets-download]: http://go.microsoft.com/fwlink/?LinkID=325563
 
 
-[hdinsight-versions]:  hdinsight-component-versioning-v1.md
-[hdinsight-storage]: ../hdinsight-use-blob-storage.md
-[hdinsight-get-started]: ../hdinsight-get-started.md
-[hdinsight-admin-portal]: hdinsight-administer-use-management-portal-v1
+[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning-v1
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
+[hdinsight-admin-portal]: /documentation/articles/hdinsight-administer-use-management-portal-v1
 
 
-[hdinsight-use-sqoop]: hdinsight-use-sqoop.md
-[hdinsight-provision]: hdinsight-provision-clusters-v1.md
-[hdinsight-admin-powershell]: hdinsight-administer-use-powershell.md
-[hdinsight-upload-data]: hdinsight-upload-data.md
-[hdinsight-use-hive]: hdinsight-use-hive.md
-[hdinsight-use-pig]: hdinsight-use-pig.md
-[hdinsight-storage]: ../hdinsight-use-blob-storage.md
-[hdinsight-get-started-emulator]: ../hdinsight-get-started-emulator.md
-[hdinsight-develop-streaming-jobs]: hdinsight-hadoop-develop-deploy-streaming-jobs.md
-[hdinsight-develop-java-mapreduce]: hdinsight-develop-deploy-java-mapreduce.md
-[hdinsight-use-oozie]: hdinsight-use-oozie.md
+[hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
+[hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
+[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
+[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
+[hdinsight-get-started-emulator]: /documentation/articles/hdinsight-hadoop-emulator-get-started
+[hdinsight-develop-streaming-jobs]: /documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs
+[hdinsight-develop-java-mapreduce]: /documentation/articles/hdinsight-develop-deploy-java-mapreduce
+[hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie
 
-[sqldatabase-create-configue]: ../sql-database-create-configure.md
-[sqldatabase-get-started]: ../sql-database-get-started.md
+[sqldatabase-create-configue]: /documentation/articles/sql-database-get-started
+[sqldatabase-get-started]: /documentation/articles/sql-database-get-started
 
 [azure-management-portal]: https://manage.windowsazure.cn/
-[azure-create-storageaccount]: ../storage-create-storage-account.md
+[azure-create-storageaccount]: /documentation/articles/storage-create-storage-account
 
 [apache-hadoop]: http://hadoop.apache.org/
 [apache-oozie-400]: http://oozie.apache.org/docs/4.0.0/
@@ -729,7 +731,7 @@ In this tutorial, you learned how to define an Oozie workflow and an Oozie coord
 
 [powershell-download]: /downloads/
 [powershell-about-profiles]: https://technet.microsoft.com/zh-cn/library/hh847857.aspx
-[powershell-install-configure]: ../powershell-install-configure.md
+[powershell-install-configure]: /documentation/articles/powershell-install-configure
 [powershell-start]: http://technet.microsoft.com/zh-cn/library/hh847889.aspx
 [powershell-script]: https://technet.microsoft.com/zh-cn/library/dn425048.aspx
 

@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Apache Storm topologies with Visual Studio and C#  | Windows Azure"
+   pageTitle="Apache Storm topologies with Visual Studio and C#  | Azure"
    description="Learn how to create Storm topologies in C# by creating a simple word count topology in Visual Studio using the HDInsight Tools for Visual Studio."
    services="hdinsight"
    documentationCenter=""

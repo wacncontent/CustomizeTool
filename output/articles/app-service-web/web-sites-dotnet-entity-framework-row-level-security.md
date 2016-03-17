@@ -33,8 +33,13 @@ We will add an [interceptor](https://msdn.microsoft.com/data/dn469464.aspx) (in 
 3.	Name the new class "SessionContextInterceptor.cs" and click Add.
 4.	Replace the contents of SessionContextInterceptor.cs with the following code.
 
+
 ```
 using System;
+
+
+		using System;
+
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -171,7 +176,9 @@ namespace ContactManager.Models
         }
     }
 }
+
 ```
+
 
 That's the only application change required. Go ahead and build and publish the application.
 
@@ -181,10 +188,17 @@ Next, we need to add a UserId column to the Contacts table to associate each row
 
 Connect to the database directly, using either SQL Server Management Studio or Visual Studio, and then execute the following T-SQL:
 
+
 ```
 ALTER TABLE Contacts ADD UserId nvarchar(128)
+
+
+	ALTER TABLE Contacts ADD UserId nvarchar(128)
+
     DEFAULT CAST(SESSION_CONTEXT(N'UserId') AS nvarchar(128))
+
 ```
+
 
 This adds a UserId column to the Contacts table. We use the nvarchar(128) data type to match the UserIds stored in the AspNetUsers table, and we create a DEFAULT constraint that will automatically set the UserId for newly inserted rows to be the UserId currently stored in SESSION_CONTEXT.
 
@@ -194,16 +208,23 @@ Now the table looks like this:
 
 When new contacts are created, they'll automatically be assigned the correct UserId. For demo purposes, however, let's assign a few of these existing contacts to an existing user.
 
-If you've created a few users in the application already (e.g., using local, Google, or Facebook accounts), you'll see them in the AspNetUsers table. In the screenshot below, there is only one user so far.
+, Google, or Facebook  aIf you've created a few users in the application already (e.g., using local, Google, or Facebook accounts), you'll see them in the AspNetUsers table. In the screenshot below, there is only one user so far.
 
 ![SSMS AspNetUsers table](./media/web-sites-dotnet-entity-framework-row-level-security/SSMS-AspNetUsers.png)
 
 Copy the Id for user1@contoso.com, and paste it into the T-SQL statement below. Execute this statement to associate three of the Contacts with this UserId.
 
+
 ```
 UPDATE Contacts SET UserId = '19bc9b0d-28dd-4510-bd5e-d6b6d445f511'
+
+
+	UPDATE Contacts SET UserId = '19bc9b0d-28dd-4510-bd5e-d6b6d445f511'
+
 WHERE ContactId IN (1, 2, 5)
+
 ```
+
 
 ## Step 3: Create a Row-Level Security policy in the database
 
@@ -211,8 +232,13 @@ The final step is to create a security policy that uses the UserId in SESSION_CO
 
 While still connected to the database, execute the following T-SQL:
 
+
 ```
 CREATE SCHEMA Security
+
+
+	CREATE SCHEMA Security
+
 go
 
 CREATE FUNCTION Security.userAccessPredicate(@UserId nvarchar(128))
@@ -228,7 +254,9 @@ CREATE SECURITY POLICY Security.userSecurityPolicy
 	ADD BLOCK PREDICATE Security.userAccessPredicate(UserId) ON dbo.Contacts
 go
 
+
 ```
+
 
 This code does three things. First, it creates a new schema as a best practice for centralizing and limiting access to the RLS objects. Next, it creates a predicate function that will return '1' when the UserId of a row matches the UserId in SESSION_CONTEXT. Finally, it creates a security policy that adds this function as both a filter and block predicate on the Contacts table. The filter predicate causes queries to return only rows that belong to the current user, and the block predicate acts as a safeguard to prevent the application from ever accidentally inserting a row for the wrong user.
 

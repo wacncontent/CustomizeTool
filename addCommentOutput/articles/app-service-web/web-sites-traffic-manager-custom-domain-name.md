@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="01/09/2016"
+	ms.date="02/04/2016"
 	wacn.date=""/>
 
 #Configuring a custom domain name for a web app in Azure using Traffic Manager
@@ -37,9 +37,9 @@ This article provides generic instructions for using a custom domain name with A
 <a name="bkmk_configurecname"></a>
 ## Add a DNS record for your custom domain
 
-<!-- deleted by customization
+
 > [AZURE.NOTE] If you have purchased domain through Azure Web Apps then skip following steps and refer to the final step of [Buy Domain for Web Apps](/documentation/articles/custom-dns-web-site-buydomains-web-app) article. 
--->
+
 
 To associate your custom domain with a web app in Azure, you must add a new entry in the DNS table for your custom domain by using tools provided by the domain registrar that you purchased your domain name from. Use the following steps to locate and use the DNS tools.
 
@@ -59,11 +59,9 @@ To associate your custom domain with a web app in Azure, you must add a new entr
 ## Enable Traffic Manager
 
 [AZURE.INCLUDE [modes](../includes/custom-dns-web-site-enable-on-traffic-manager.md)]
-<!-- deleted by customization
+
 
 [AZURE.INCLUDE [app-service-web-whats-changed](../includes/app-service-web-whats-changed.md)]
 
 [AZURE.INCLUDE [app-service-web-try-app-service](../includes/app-service-web-try-app-service.md)]
--->
- 
- 
+

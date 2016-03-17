@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Generate recommendations using Mahout and WIndows-based HDInsight | Windows Azure"
+	pageTitle="Generate recommendations using Mahout and WIndows-based HDInsight | Azure"
 	description="Learn how to use the Apache Mahout machine learning library to generate movie recommendations with Windows-based HDInsight (Hadoop)."
 	services="hdinsight"
 	documentationCenter=""
@@ -512,11 +512,11 @@ Now that you have learned how to use Mahout, discover other ways of working with
 * [MapReduce with HDInsight](/documentation/articles/hdinsight-use-mapreduce)
 
 [build]: http://mahout.apache.org/developers/buildingmahout.html
-[aps]: ../powershell-install-configure.md
+[aps]: /documentation/articles/powershell-install-configure
 [movielens]: http://grouplens.org/datasets/movielens/
 [100k]: http://files.grouplens.org/datasets/movielens/ml-100k.zip
-[getstarted]: ../hdinsight-get-started.md
-[upload]: hdinsight-upload-data.md
+[getstarted]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
+[upload]: /documentation/articles/hdinsight-upload-data
 [ml]: http://en.wikipedia.org/wiki/Machine_learning
 [forest]: http://en.wikipedia.org/wiki/Random_forest
 [management]: https://manage.windowsazure.cn/
@@ -524,4 +524,3 @@ Now that you have learned how to use Mahout, discover other ways of working with
 [connect]: ./media/hdinsight-mahout/connect.png
 [hadoopcli]: ./media/hdinsight-mahout/hadoopcli.png
 [tools]: https://github.com/Blackmist/hdinsight-tools
- 

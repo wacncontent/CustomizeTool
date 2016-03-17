@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Use the Azure CLI with Resource Manager | Windows Azure"
+	pageTitle="Use the Azure CLI with Resource Manager | Azure"
 	description="Learn about using the Azure CLI for Mac, Linux, and Windows to manage Azure resources using the CLI in Azure Resource Manager mode."
 	services="virtual-machines,virtual-network,mobile-services,cloud-services"
 	documentationCenter=""
@@ -15,7 +15,7 @@
 
 # Using the Azure CLI for Mac, Linux, and Windows with Azure Resource Manager
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] [classic deployment model](/documentation/articles/virtual-machines-command-line-tools)
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)]  [classic deployment model](/documentation/articles/virtual-machines-command-line-tools). 
 
 This article describes how to use the Azure Command-Line Interface (Azure CLI) in the Azure Resource Manager mode to create, manage, and delete services on the command line of Mac, Linux, and Windows computers. You can perform many of the same tasks using the various libraries of the Azure SDKs, with Azure PowerShell, and using the Azure Management Portal.
 
@@ -55,12 +55,12 @@ Your Azure subscription information is used by the tool to connect to your accou
 **List the imported subscriptions**
 
 	account list [options]
-<!-- deleted by customization
+
 
 **Show details about a subscription**  
 
 	account show [options] [subscriptionNameOrId]
--->
+
 
 **Set the current subscription**
 
@@ -128,19 +128,26 @@ Your Azure subscription information is used by the tool to connect to your accou
 
 **List Azure CLI configuration settings**
 
-	config list [options]
+	 config  conconfig  list [options]
 
 **Delete a config setting**
 
-	config delete [options] <name>
+	 config  conconfig  delete [options] <name>
 
 **Update a config setting**
 
-	config set <name> <value>
+	 config  conconfig  set <name> <value>
 
+
 **Sets the Azure CLI working mode to either `arm` or `asm`**
 
 	config mode [options] <modename>
+
+
+**Sets the Azure CLI working mode to either arm or asm**
+
+	conconfig mode [options] <modename>
+
 
 
 ## azure feature: commands to manage account features
@@ -197,6 +204,130 @@ Your Azure subscription information is used by the tool to connect to your accou
 	group template download [options] [name] [file]
 	group template validate [options] <resource-group>
 
+## azure hdinsight: Commands to manage your HDInsight clusters
+
+
+**Commands to create or add to a cluster configuration file**
+
+	hdinsight config create [options] <configFilePath> <overwrite>
+	hdinsight config add-config-values [options] <configFilePath>
+	hdinsight config add-script-action [options] <configFilePath>
+
+Example: Create a configuration file that contains a script action to run when creating a cluster.
+
+	hdinsight config create "C:\myFiles\configFile.config"
+	hdinsight config add-script-action --configFilePath "C:\myFiles\configFile.config" --nodeType HeadNode --uri <scriptActionURI> --name myScriptAction --parameters "-param value"
+
+**Command to create a cluster in a resource group**
+
+	hdinsight cluster create [options] <clusterName>
+	 
+Example: Create a Storm on Linux cluster
+
+	azure hdinsight cluster create -g myarmgroup -l chinanorth -y Linux --clusterType Storm --version 3.2 --defaultStorageAccountName mystorageaccount --defaultStorageAccountKey <defaultStorageAccountKey> --defaultStorageContainer mycontainer --userName admin --password <clusterPassword> --sshUserName sshuser --sshPassword <sshPassword> --workerNodeCount 1 myNewCluster01
+	
+	info:    Executing command hdinsight cluster create
+	+ Submitting the request to create cluster...
+	info:    hdinsight cluster create command OK
+
+Example: Create a cluster with a script action
+
+	azure hdinsight cluster create -g myarmgroup -l chinanorth -y Linux --clusterType Hadoop --version 3.2 --defaultStorageAccountName mystorageaccount --defaultStorageAccountKey <defaultStorageAccountKey> --defaultStorageContainer mycontainer --userName admin --password <clusterPassword> --sshUserName sshuser --sshPassword <sshPassword> --workerNodeCount 1 -configurationPath "C:\myFiles\configFile.config" myNewCluster01
+	
+	info:    Executing command hdinsight cluster create
+	+ Submitting the request to create cluster...
+	info:    hdinsight cluster create command OK
+	
+Parameter options:
+
+	-h, --help                                                 output usage information
+	-v, --verbose                                              use verbose output
+	-vv                                                        more verbose with debug output
+	--json                                                     use json output
+	-g --resource-group <resource-group>                       The name of the resource group
+	-c, --clusterName <clusterName>                            HDInsight cluster name
+	-l, --location <location>                                  Data center location for the cluster
+	-y, --osType <osType>                                      HDInsight cluster operating system
+	'Windows' or 'Linux'
+	--version <version>                                        HDInsight cluster version
+	--clusterType <clusterType>                                HDInsight cluster type.
+	Hadoop | HBase | Spark | Storm
+	--defaultStorageAccountName <storageAccountName>           Storage account url to use for default HDInsight storage
+	--defaultStorageAccountKey <storageAccountKey>             Key to the storage account to use for default HDInsight storage
+	--defaultStorageContainer <storageContainer>               Container in the storage account to use for HDInsight default storage
+	--headNodeSize <headNodeSize>                              (Optional) Head node size for the cluster
+	--workerNodeCount <workerNodeCount>                        Number of worker nodes to use for the cluster
+	--workerNodeSize <workerNodeSize>                          (Optional) Worker node size for the cluster)
+	--zookeeperNodeSize <zookeeperNodeSize>                    (Optional) Zookeeper node size for the cluster
+	--userName <userName>                                      Cluster username
+	--password <password>                                      Cluster password
+	--sshUserName <sshUserName>                                SSH username (only for Linux clusters)
+	--sshPassword <sshPassword>                                SSH password (only for Linux clusters)
+	--sshPublicKey <sshPublicKey>                              SSH public key (only for Linux clusters)
+	--rdpUserName <rdpUserName>                                RDP username (only for Windows clusters)
+	--rdpPassword <rdpPassword>                                RDP password (only for Windows clusters)
+	--rdpAccessExpiry <rdpAccessExpiry>                        RDP access expiry.
+	For example 12/12/2015 (only for Windows clusters)
+	--virtualNetworkId <virtualNetworkId>                      (Optional) Virtual network ID for the cluster. 
+	Value is a GUID for Windows cluster and ARM resource ID for Linux cluster)
+	--subnetName <subnetName>                                  (Optional) Subnet for the cluster
+	--additionalStorageAccounts <additionalStorageAccounts>    (Optional) Additional storage accounts.
+	Can be multiple.
+	In the format of 'accountName#accountKey'.
+	For example, --additionalStorageAccounts "acc1#key1;acc2#key2"
+	--hiveMetastoreServerName <hiveMetastoreServerName>        (Optional) SQL Server name for the external metastore for Hive
+	--hiveMetastoreDatabaseName <hiveMetastoreDatabaseName>    (Optional) Database name for the external metastore for Hive
+	--hiveMetastoreUserName <hiveMetastoreUserName>            (Optional) Database username for the external metastore for Hive
+	--hiveMetastorePassword <hiveMetastorePassword>            (Optional) Database password for the external metastore for Hive
+	--oozieMetastoreServerName <oozieMetastoreServerName>      (Optional) SQL Server name for the external metastore for Oozie
+	--oozieMetastoreDatabaseName <oozieMetastoreDatabaseName>  (Optional) Database name for the external metastore for Oozie
+	--oozieMetastoreUserName <oozieMetastoreUserName>          (Optional) Database username for the external metastore for Oozie
+	--oozieMetastorePassword <oozieMetastorePassword>          (Optional) Database password for the external metastore for Oozie
+	--configurationPath <configurationPath>                    (Optional) HDInsight cluster configuration file path
+	-s, --subscription <id>                                    The subscription id
+	--tags <tags>                                              Tags to set to the cluster.
+	Can be multiple.
+	In the format of 'name=value'.
+	Name is required and value is optional.
+	For example, --tags tag1=value1;tag2
+
+
+**Command to delete a cluster**
+
+	hdinsight cluster delete [options] <clusterName>
+
+**Command to show cluster details**
+
+	hdinsight cluster show [options] <clusterName>
+
+**Command to list all clusters (in a specific resource group, if provided)**
+
+	hdinsight cluster list [options]
+
+**Command to resize a cluster**
+
+	hdinsight cluster resize [options] <clusterName> <targetInstanceCount>
+
+**Command to enable HTTP access for a cluster**
+
+	hdinsight cluster enable-http-access [options] <clusterName> <userName> <password>
+
+**Command to disable HTTP access for a cluster**
+
+	hdinsight cluster disable-http-access [options] <clusterName>
+
+**Command to enable RDP access for a cluster**
+
+	hdinsight cluster enable-rdp-access [options] <clusterName> <rdpUserName> <rdpPassword> <rdpExpiryDate>
+
+**Command to disable HTTP access for a cluster**
+
+	hdinsight cluster disable-rdp-access [options] <clusterName>
+
+
+In Azure China, HDInsight is not manageable by ARM yet. For Azure CLI ASM commands of HDInsight, read [Create Windows-based Hadoop clusters in HDInsight using Azure CLI](/documentation/articles/hdinsight-hadoop-create-windows-clusters-cli) and [Create Windows-based Hadoop clusters in HDInsight using Azure CLI](/documentation/articles/hdinsight-hadoop-create-windows-clusters-cli)
+
+
 ## azure insights: Commands related to monitoring Insights (events, alert rules, autoscale settings, metrics)
 
 **Retrieve operation logs for a subscription, a correlationId, a resource group, resource, or resource provider**
@@ -211,7 +342,7 @@ Your Azure subscription information is used by the tool to connect to your accou
 
 ## azure network: Commands to manage network resources
 
-<!-- deleted by customization
+
 **Commands to manage virtual networks**
 
 	network vnet create [options] <resource-group> <name> <location>
@@ -1481,16 +1612,16 @@ Parameter options:
 **Commands to manage virtual network gateways**
 
 	network gateway list [options] <resource-group>
--->
-<!-- keep by customization: begin -->
-In Windows Azure China, VNet is not manageable by ARM yet. For Azure CLI ASM commands of VNet, read the following articles:
+
+
+In Azure China, VNet is not manageable by ARM yet. For Azure CLI ASM commands of VNet, read the following articles:
 
 - [Create a virtual network using Azure CLI](/documentation/articles/virtual-networks-create-vnet-classic-cli)
 - [How to create NSGs in classic mode using the Azure CLI](/documentation/articles/virtual-networks-create-nsg-classic-cli)
 - [Control routing and use virtual appliances using the Azure CLI in the classic deployment model](/documentation/articles/virtual-network-create-udr-classic-cli)
 - [Deploy multi NIC VMs using the Azure CLI in the classic deployment model](/documentation/articles/virtual-network-deploy-multinic-classic-cli)
 - [How to set a static private IP in classic mode ausing the CLI](/documentation/articles/virtual-networks-static-private-ip-classic-cli).
-<!-- keep by customization: end -->
+
 
 ## azure provider: Commands to manage resource provider registrations
 
@@ -1550,7 +1681,7 @@ In Windows Azure China, VNet is not manageable by ARM yet. For Azure CLI ASM com
 
 ## azure storage: Commands to manage your Storage objects
 
-<!-- deleted by customization
+
 **Commands to manage your Storage accounts**
 
 	storage account list [options]
@@ -1672,10 +1803,10 @@ In Windows Azure China, VNet is not manageable by ARM yet. For Azure CLI ASM com
 	storage table policy list [options] [table]
 	storage table policy set [options] [table] [name]
 	storage table policy delete [options] [table] [name]
--->
-<!-- keep by customization: begin -->
-In Windows Azure China, Storage is not manageable by ARM yet. For Azure CLI ASM commands of Storage, read [Using the Azure CLI with Azure Storage](/documentation/articles/storage-azure-cli)
-<!-- keep by customization: end -->
+
+
+In Azure China, Storage is not manageable by ARM yet. For Azure CLI ASM commands of Storage, read [Using the Azure CLI with Azure Storage](/documentation/articles/storage-azure-cli)
+
 
 ## azure tag: Commands to manage your resource manager tag
 
@@ -1697,7 +1828,7 @@ In Windows Azure China, Storage is not manageable by ARM yet. For Azure CLI ASM 
 
 ## azure vm: Commands to manage your Azure Virtual Machines
 
-<!-- deleted by customization
+
 **Create a VM**
 
 	vm create [options] <resource-group> <name> <location> <os-type>
@@ -1779,131 +1910,8 @@ In Windows Azure China, Storage is not manageable by ARM yet. For Azure CLI ASM 
 	vm image list-offers [options] <location> <publisher>
 	vm image list-skus [options] <location> <publisher> <offer>
 	vm image list [options] <location> <publisher> [offer] [sku]
--->
-<!-- keep by customization: begin -->
-In Windows Azure China, Virtual Machines is not manageable by ARM yet. For Azure CLI ASM commands of Virtual Machines, read [Equivalent Azure CLI commands for VM tasks](/documentation/articles/xplat-cli-azure-manage-vm-asm-arm)
-<!-- keep by customization: end -->
+
+
+In Azure China, Virtual Machines is not manageable by ARM yet. For Azure CLI ASM commands of Virtual Machines, read [Equivalent Azure CLI commands for VM tasks](/documentation/articles/xplat-cli-azure-manage-vm-asm-arm)
 
-## azure hdinsight: Commands to manage your HDInsight clusters
-
-<!-- deleted by customization
-**Commands to create or add to a cluster configuration file**
-
-	hdinsight config create [options] <configFilePath> <overwrite>
-	hdinsight config add-config-values [options] <configFilePath>
-	hdinsight config add-script-action [options] <configFilePath>
-
-Example: Create a configuration file that contains a script action to run when creating a cluster.
-
-	hdinsight config create "C:\myFiles\configFile.config"
-	hdinsight config add-script-action --configFilePath "C:\myFiles\configFile.config" --nodeType HeadNode --uri <scriptActionURI> --name myScriptAction --parameters "-param value"
-
-**Command to create a cluster in a resource group**
-
-	hdinsight cluster create [options] <clusterName>
-	 
-Example: Create a Storm on Linux cluster
-
-	azure hdinsight cluster create -g myarmgroup -l chinanorth -y Linux --clusterType Storm --version 3.2 --defaultStorageAccountName mystorageaccount --defaultStorageAccountKey <defaultStorageAccountKey> --defaultStorageContainer mycontainer --userName admin --password <clusterPassword> --sshUserName sshuser --sshPassword <sshPassword> --workerNodeCount 1 myNewCluster01
-	
-	info:    Executing command hdinsight cluster create
-	+ Submitting the request to create cluster...
-	info:    hdinsight cluster create command OK
-
-Example: Create a cluster with a script action
-
-	azure hdinsight cluster create -g myarmgroup -l chinanorth -y Linux --clusterType Hadoop --version 3.2 --defaultStorageAccountName mystorageaccount --defaultStorageAccountKey <defaultStorageAccountKey> --defaultStorageContainer mycontainer --userName admin --password <clusterPassword> --sshUserName sshuser --sshPassword <sshPassword> --workerNodeCount 1 âconfigurationPath "C:\myFiles\configFile.config" myNewCluster01
-	
-	info:    Executing command hdinsight cluster create
-	+ Submitting the request to create cluster...
-	info:    hdinsight cluster create command OK
-	
-Parameter options:
-
-	-h, --help                                                 output usage information
-	-v, --verbose                                              use verbose output
-	-vv                                                        more verbose with debug output
-	--json                                                     use json output
-	-g --resource-group <resource-group>                       The name of the resource group
-	-c, --clusterName <clusterName>                            HDInsight cluster name
-	-l, --location <location>                                  Data center location for the cluster
-	-y, --osType <osType>                                      HDInsight cluster operating system
-	'Windows' or 'Linux'
-	--version <version>                                        HDInsight cluster version
-	--clusterType <clusterType>                                HDInsight cluster type.
-	Hadoop | HBase | Spark | Storm
-	--defaultStorageAccountName <storageAccountName>           Storage account url to use for default HDInsight storage
-	--defaultStorageAccountKey <storageAccountKey>             Key to the storage account to use for default HDInsight storage
-	--defaultStorageContainer <storageContainer>               Container in the storage account to use for HDInsight default storage
-	--headNodeSize <headNodeSize>                              (Optional) Head node size for the cluster
-	--workerNodeCount <workerNodeCount>                        Number of worker nodes to use for the cluster
-	--workerNodeSize <workerNodeSize>                          (Optional) Worker node size for the cluster)
-	--zookeeperNodeSize <zookeeperNodeSize>                    (Optional) Zookeeper node size for the cluster
-	--userName <userName>                                      Cluster username
-	--password <password>                                      Cluster password
-	--sshUserName <sshUserName>                                SSH username (only for Linux clusters)
-	--sshPassword <sshPassword>                                SSH password (only for Linux clusters)
-	--sshPublicKey <sshPublicKey>                              SSH public key (only for Linux clusters)
-	--rdpUserName <rdpUserName>                                RDP username (only for Windows clusters)
-	--rdpPassword <rdpPassword>                                RDP password (only for Windows clusters)
-	--rdpAccessExpiry <rdpAccessExpiry>                        RDP access expiry.
-	For example 12/12/2015 (only for Windows clusters)
-	--virtualNetworkId <virtualNetworkId>                      (Optional) Virtual network ID for the cluster. 
-	Value is a GUID for Windows cluster and ARM resource ID for Linux cluster)
-	--subnetName <subnetName>                                  (Optional) Subnet for the cluster
-	--additionalStorageAccounts <additionalStorageAccounts>    (Optional) Additional storage accounts.
-	Can be multiple.
-	In the format of 'accountName#accountKey'.
-	For example, --additionalStorageAccounts "acc1#key1;acc2#key2"
-	--hiveMetastoreServerName <hiveMetastoreServerName>        (Optional) SQL Server name for the external metastore for Hive
-	--hiveMetastoreDatabaseName <hiveMetastoreDatabaseName>    (Optional) Database name for the external metastore for Hive
-	--hiveMetastoreUserName <hiveMetastoreUserName>            (Optional) Database username for the external metastore for Hive
-	--hiveMetastorePassword <hiveMetastorePassword>            (Optional) Database password for the external metastore for Hive
-	--oozieMetastoreServerName <oozieMetastoreServerName>      (Optional) SQL Server name for the external metastore for Oozie
-	--oozieMetastoreDatabaseName <oozieMetastoreDatabaseName>  (Optional) Database name for the external metastore for Oozie
-	--oozieMetastoreUserName <oozieMetastoreUserName>          (Optional) Database username for the external metastore for Oozie
-	--oozieMetastorePassword <oozieMetastorePassword>          (Optional) Database password for the external metastore for Oozie
-	--configurationPath <configurationPath>                    (Optional) HDInsight cluster configuration file path
-	-s, --subscription <id>                                    The subscription id
-	--tags <tags>                                              Tags to set to the cluster.
-	Can be multiple.
-	In the format of 'name=value'.
-	Name is required and value is optional.
-	For example, --tags tag1=value1;tag2
-
-
-**Command to delete a cluster**
-
-	hdinsight cluster delete [options] <clusterName>
-
-**Command to show cluster details**
-
-	hdinsight cluster show [options] <clusterName>
-
-**Command to list all clusters (in a specific resource group, if provided)**
-
-	hdinsight cluster list [options]
-
-**Command to resize a cluster**
-
-	hdinsight cluster resize [options] <clusterName> <targetInstanceCount>
-
-**Command to enable HTTP access for a cluster**
-
-	hdinsight cluster enable-http-access [options] <clusterName> <userName> <password>
-
-**Command to disable HTTP access for a cluster**
-
-	hdinsight cluster disable-http-access [options] <clusterName>
-
-**Command to enable RDP access for a cluster**
-
-	hdinsight cluster enable-rdp-access [options] <clusterName> <rdpUserName> <rdpPassword> <rdpExpiryDate>
-
-**Command to disable HTTP access for a cluster**
-
-	hdinsight cluster disable-rdp-access [options] <clusterName>
--->
-<!-- keep by customization: begin -->
-In Windows Azure China, HDInsight is not manageable by ARM yet. For Azure CLI ASM commands of HDInsight, read [Create Windows-based Hadoop clusters in HDInsight using Azure CLI](/documentation/articles/hdinsight-hadoop-create-windows-clusters-cli)
-<!-- keep by customization: end -->
+

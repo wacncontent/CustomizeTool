@@ -6,18 +6,18 @@ There are a few options to manage the existing virtual environment on Azure:
 
 ### Option 1: Use FTP
 
-With an FTP client, connect to the server and you'll be able to delete the env folder.  Note that some FTP clients (such as web browsers) may be read-only and won't allow you to delete folders, so you'll want to make sure to use an FTP client with that capability.  The FTP host name and user are displayed in <!-- keep by customization: begin --> the dashboard page for <!-- keep by customization: end --> your web app's blade on the [Azure Management Portal](https://manage.windowsazure.cn).
+With an FTP client, connect to the server and you'll be able to delete the env folder.  Note that some FTP clients (such as web browsers) may be read-only and won't allow you to delete folders, so you'll want to make sure to use an FTP client with that capability.  The FTP host name and user are displayed in  the dashboard page for  your web app's blade on the [Azure Management Portal](https://manage.windowsazure.cn).
 
 ### Option 2: Toggle runtime
 
 Here's an alternative that takes advantage of the fact that the deployment script will delete the env folder when it doesn't match the desired version of Python.  This will effectively delete the existing environment, and create a new one.
 
-<!-- deleted by customization
+
 1. Switch to a different version of Python (via runtime.txt or the **Application Settings** blade in the Azure Management Portal)
--->
-<!-- keep by customization: begin -->
+
+
 1. Switch to a different version of Python (via runtime.txt or website configure page)
-<!-- keep by customization: end -->
+
 1. git push some changes (ignore any pip install errors if any)
 1. Switch back to initial version of Python
 1. git push some changes again

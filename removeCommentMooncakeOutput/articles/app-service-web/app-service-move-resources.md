@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Move Web App Resources to another Resource Group"
-	description="Describes the scenarios where you can move Web Apps from one Resource Group to another."
+	description="Describes the scenarios where you can move Web Apps and Azure from one Resource Group to another."
 	services="app-service"
 	documentationCenter=""
 	authors="ZainRizvi"

@@ -1,5 +1,7 @@
+<!-- not suitable for Mooncake -->
+
 <properties
-	pageTitle="Manage Linux-based Hadoop clusters in HDInsight using Azure Management Portal | Windows Azure"
+	pageTitle="Manage Linux-based Hadoop clusters in HDInsight using Azure Management Portal | Azure"
 	description="Learn how to create and manage Linux-based HDInsight clusters using the Azure Management Portal."
 	services="hdinsight"
 	documentationCenter=""

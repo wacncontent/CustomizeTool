@@ -193,7 +193,7 @@ No. You must not change any interface properties of VMs. Any changes may lead to
 
 Nothing. The IP addresses (both public VIP and internal IP address) will stay with your cloud service or VM. 
 
-> [AZURE.NOTE]Â If you want to simply shut down the VM, don't use the Management Portal to do so. Currently, the shutdown button will deallocate the virtual machine.
+> [AZURE.NOTE] If you want to simply shut down the VM, don't use the Management Portal to do so. Currently, the shutdown button will deallocate the virtual machine.
 
 ### Can I move VMs from one subnet to another subnet in a VNet without re-deploying?
 

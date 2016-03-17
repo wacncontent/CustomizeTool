@@ -1,5 +1,7 @@
+<!-- not suitable for Mooncake -->
+
 <properties
-	pageTitle="Use Hue with Hadoop on HDInsight Linux clusters | Windows Azure"
+	pageTitle="Use Hue with Hadoop on HDInsight Linux clusters | Azure"
 	description="Learn how to install and use Hue with Hadoop clusters on HDInsight Linux."
 	services="hdinsight"
 	documentationCenter=""
@@ -126,7 +128,7 @@ SSH Tunneling is the only way to access Hue on the cluster once it is running. T
 
 - [Install R on HDInsight clusters](/documentation/articles/hdinsight-hadoop-r-scripts-linux). Use cluster customization to install R on HDInsight Hadoop clusters. R is an open-source language and environment for statistical computing. It provides hundreds of built-in statistical functions and its own programming language that combines aspects of functional and object-oriented programming. It also provides extensive graphical capabilities.
 
-[powershell-install-configure]: install-configure-powershell-linux.md
-[hdinsight-provision]: hdinsight-provision-clusters-v1-linux.md
-[hdinsight-cluster-customize]: hdinsight-hadoop-customize-cluster-v1.md
-[hdinsight-install-spark]: hdinsight-hadoop-spark-install-linux.md
+[powershell-install-configure]: /documentation/articles/powershell-install-configure-linux
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1-linux
+[hdinsight-cluster-customize]: /documentation/articles/hdinsight-hadoop-customize-cluster-v1
+[hdinsight-install-spark]: /documentation/articles/hdinsight-hadoop-spark-install-linux

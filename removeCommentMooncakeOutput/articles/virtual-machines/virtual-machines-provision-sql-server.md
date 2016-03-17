@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Provision a SQL Server virtual machine | Windows Azure"
+	pageTitle="Provision a SQL Server virtual machine | Azure"
 	description="This tutorial teaches you how to create and configure a SQL Server VM on Azure."
 	services="virtual-machines"
 	documentationCenter=""
@@ -32,7 +32,7 @@ In this tutorial, you will:
 * [Complete configuration steps to connect to the virtual machine using SQL Server Management Studio on another computer](#SSMS)
 * [Next steps](#Optional)
 
-##<a id="Provision">Provision a SQL Server virtual machine from the gallery</a>
+##<a id="Provision"></a>Provision a SQL Server virtual machine from the gallery
 
 1. Log in to the [Azure Management Portal](http://manage.windowsazure.cn) using your account. If you do not have an Azure account, visit [Azure trial](/pricing/1rmb-trial/).
 
@@ -90,7 +90,7 @@ For the most up-to-date information on the supported SQL Server images on Azure,
 	- **Running**
 
 
-##<a id="RemoteDesktop">Open the VM using Remote Desktop to complete setup</a>
+##<a id="RemoteDesktop"></a>Open the VM using Remote Desktop to complete setup
 
 1. When provisioning completes, click on the name of your virtual machine to go to the DASHBOARD page. At the bottom of the page, click **Connect**.
 
@@ -108,7 +108,7 @@ For the most up-to-date information on the supported SQL Server images on Azure,
 
 Once you are connected to the virtual machine with Windows Remote Desktop, the virtual machine works much like any other computer. Connect to the default instance of SQL Server with SQL Server Management Studio (running on the virtual machine) in the normal way.
 
-##<a id="SSMS">Connect to the SQL Server VM instance from SSMS on another computer</a>
+##<a id="SSMS"></a>Connect to the SQL Server VM instance from SSMS on another computer
 
 The following steps demonstrate how to connect to the SQL Server instance in over the internet using SQL Server Management Studio (SSMS). However, the same steps apply to making your SQL Server virtual machine accessible for your applications, running both on-premises and in Azure classic deployment model. If your virtual machine is deployed in resource manager model see [Connect to a SQL Server Virtual Machine on Azure (Resource Manager)](/documentation/articles/virtual-machines-sql-server-connectivity-resource-manager)
 
@@ -132,7 +132,7 @@ The connection path is summarized by the following diagram:
 
 [AZURE.INCLUDE [Connect to SQL Server in a VM Classic Steps](../includes/virtual-machines-sql-server-connection-steps-classic.md)]
 
-## <a id="cdea">Connect to the Database Engine from your application</a>
+## <a id="cdea"></a>Connect to the Database Engine from your application
 
 If you can connect to an instance of SQL Server running on an Azure virtual machine by using Management Studio, you should be able to connect by using a connection string similar to the following.
 
@@ -140,7 +140,7 @@ If you can connect to an instance of SQL Server running on an Azure virtual mach
 
 For more information, see [How to Troubleshoot Connecting to the SQL Server Database Engine](http://social.technet.microsoft.com/wiki/contents/articles/how-to-troubleshoot-connecting-to-the-sql-server-database-engine.aspx).
 
-##<a id="Optional">Next Steps</a>
+##<a id="Optional"></a>Next Steps
 
 You've seen how to create and configure a SQL Server on an Azure virtual machine using the platform image. In many cases, the next step is to migrate your databases to this new SQL Server VM. For database migration guidance, see [Migrating a Database to SQL Server on an Azure VM](/documentation/articles/virtual-machines-migrate-onpremises-database).
 

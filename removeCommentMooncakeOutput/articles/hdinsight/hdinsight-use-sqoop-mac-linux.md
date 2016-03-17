@@ -1,7 +1,7 @@
 <!-- not suitable for Mooncake -->
 
 <properties
-	pageTitle="Use Hadoop Sqoop in Linux-based HDInsight | Windows Azure"
+	pageTitle="Use Hadoop Sqoop in Linux-based HDInsight | Azure"
 	description="Learn how to run Sqoop import and export between a Linux-based Hadoop on HDInsight cluster and an Azure SQL database."
 	editor="cgronlun"
 	manager="paulettm"
@@ -12,7 +12,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="12/04/2015"
+	ms.date="02/05/2016"
 	wacn.date=""/>
 
 #Use Sqoop with Hadoop in HDInsight (SSH)
@@ -85,13 +85,13 @@ You will first export **hivesampletable** to the Azure SQL database or to SQL Se
 
 2. Use the following command to create a database named **sqooptest** on the SQL Database server:
 
-        sql db create [options] <serverName> sqooptest <adminLogin> <adminPassword>
+        azure sql db create [options] <serverName> sqooptest <adminLogin> <adminPassword>
 
     This will return an "OK" message when it completes.
 
 	> [AZURE.NOTE] If you receive an error indicating that you do not have access, you may need to add your client workstation's IP address to the SQL Database firewall using the following command:
 	>
-	> `sql firewallrule create [options] <serverName> <ruleName> <startIPAddress> <endIPAddress>`
+	> `azure sql firewallrule create [options] <serverName> <ruleName> <startIPAddress> <endIPAddress>`
 
 ##Create a table
 
@@ -124,19 +124,19 @@ You will first export **hivesampletable** to the Azure SQL database or to SQL Se
 5. At the `1>` prompt, enter the following lines:
 
         CREATE TABLE [dbo].[mobiledata](
-		[clientid] [nvarchar](50),
-		[querytime] [nvarchar](50),
-		[market] [nvarchar](50),
-		[deviceplatform] [nvarchar](50),
-		[devicemake] [nvarchar](50),
-		[devicemodel] [nvarchar](50),
-		[state] [nvarchar](50),
-		[country] [nvarchar](50),
-		[querydwelltime] [float],
-		[sessionid] [bigint],
-		[sessionpagevieworder] [bigint])
+        [clientid] [nvarchar](50),
+        [querytime] [nvarchar](50),
+        [market] [nvarchar](50),
+        [deviceplatform] [nvarchar](50),
+        [devicemake] [nvarchar](50),
+        [devicemodel] [nvarchar](50),
+        [state] [nvarchar](50),
+        [country] [nvarchar](50),
+        [querydwelltime] [float],
+        [sessionid] [bigint],
+        [sessionpagevieworder] [bigint])
         GO
-		CREATE CLUSTERED INDEX mobiledata_clustered_index on mobiledata(clientid)
+        CREATE CLUSTERED INDEX mobiledata_clustered_index on mobiledata(clientid)
         GO
 
     When the `GO` statement is entered, the previous statements will be evaluated. First, the **mobiledata** table is created, then a clustered index is added to it (required by SQL Database.)

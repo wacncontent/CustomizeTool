@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Run the Hadoop samples in HDInsight | Windows Azure"
+	pageTitle="Run the Hadoop samples in HDInsight | Azure"
 	description="Get started using the Azure HDInsight service with the samples provided. Use PowerShell scripts that run MapReduce programs on data clusters."
 	services="hdinsight"
 	documentationCenter=""
@@ -976,26 +976,26 @@ The code for the TeraSort MapReduce program is presented for inspection in this 
 
 
 
-[hdinsight-errors]: hdinsight-debug-jobs.md
+[hdinsight-errors]: /documentation/articles/hdinsight-debug-jobs
 
 [hdinsight-sdk-documentation]: https://msdn.microsoft.com/zh-cn/library/azure/dn479185.aspx
 
-[hdinsight-submit-jobs]: hdinsight-submit-hadoop-jobs-programmatically.md
-[hdinsight-introduction]: hdinsight-hadoop-introduction.md
+[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
+[hdinsight-introduction]: /documentation/articles/hdinsight-hadoop-introduction
 
 
-[powershell-install-configure]: ../install-configure-powershell.md
+[powershell-install-configure]: /documentation/articles/powershell-install-configure
 
-[hdinsight-get-started]: ../hdinsight-get-started.md
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
 
-[hdinsight-samples]: hdinsight-run-samples.md
+[hdinsight-samples]: /documentation/articles/hdinsight-run-samples
 [hdinsight-sample-10gb-graysort]: #hdinsight-sample-10gb-graysort
 [hdinsight-sample-csharp-streaming]: #hdinsight-sample-csharp-streaming
 [hdinsight-sample-pi-estimator]: #hdinsight-sample-pi-estimator
 [hdinsight-sample-wordcount]: #hdinsight-sample-wordcount
 
-[hdinsight-use-hive]: hdinsight-use-hive.md
-[hdinsight-use-pig]: hdinsight-use-pig.md
+[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
+[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
 
 [streamreader]: http://msdn.microsoft.com/zh-cn/library/system.io.streamreader.aspx
 [console-writeline]: http://msdn.microsoft.com/zh-cn/library/system.console.writeline

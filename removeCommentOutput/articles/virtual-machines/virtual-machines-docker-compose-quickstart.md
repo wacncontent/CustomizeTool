@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Docker and Compose on a virtual machine | Windows Azure"
+   pageTitle="Docker and Compose on a virtual machine | Azure"
    description="Quick introduction to working with Compose and Docker on Azure virtual machines."
    services="virtual-machines"
    documentationCenter=""

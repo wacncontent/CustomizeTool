@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Manage Hadoop clusters in HDInsight with PowerShell | Windows Azure"
+	pageTitle="Manage Hadoop clusters in HDInsight with PowerShell | Azure"
 	description="Learn how to perform administrative tasks for the Hadoop clusters in HDInsight using Azure PowerShell."
 	services="hdinsight"
 	editor="cgronlun"
@@ -27,7 +27,8 @@ Before you begin this article, you must have the following:
 
 - **An Azure subscription**. See [Get Azure trial](/pricing/1rmb-trial/).
 
-##Install Azure PowerShell 1.0 and greater
+
+##<a id="install-azure-powershell-10-and-greater"></a>Install Azure PowerShell 1.0 and greater
 
 First you must unintall the 0.9x versions.
 
@@ -55,13 +56,14 @@ WebPI will receive monthly updates. PowerShell Gallery will receive updates on a
 
 ##Create clusters
 
-HDInsight cluster requires a Blob container on an Azure Storage account:
+aHDInsight cluster requires an Azure Resource group and a Blob container on an Azure Storage account:
 
 - HDInsight uses a Blob container of an Azure Storage account as the default file system. An Azure Storage account and a storage container are required before you can create an HDInsight cluster. The default storage account and the HDInsight cluster have to be in the same location.
 
 [AZURE.INCLUDE [provisioningnote](../includes/hdinsight-provisioning.md)]
 
 **To connect to Azure**
+
 
 [AZURE.INCLUDE [automation-azurechinacloud-environment-parameter](../includes/automation-azurechinacloud-environment-parameter.md)]
 
@@ -73,7 +75,7 @@ HDInsight cluster requires a Blob container on an Azure Storage account:
 
 **To create an Azure Storage account**
 
-	New-AzureStorageAccount -StorageAccountName <Azure Storage Account Name> -Location "<Azure Location>" -Type <AccountType> # account type example: Standard_LRS for zero redundancy storage
+	New-AzureRmStorageAccount -<Azure Storage Account Name> -Location "<Azure Location>" -Type <AccountType> # account type example: Standard_LRS for zero redundancy storage
 	
 	Don't use **Standard_ZRS** because it deson't support Azure Table.  HDInsight uses Azure Table to logging. For a full list of the storage account types, see [https://msdn.microsoft.com/zh-cn/library/azure/hh264518.aspx](https://msdn.microsoft.com/zh-cn/library/azure/hh264518.aspx).
 
@@ -83,8 +85,10 @@ HDInsight cluster requires a Blob container on an Azure Storage account:
 If you have already had a Storage account but do not know the account name and account key, you can use the following commands to retrieve the information:
 
 	# List Storage accounts for the current subscription
+
 	Get-AzureStorageAccount
 	# List the keys for a Storage account
+
 	Get-AzureStorageKey -StorageAccountName <Azure Storage Account Name>
 
 For details on getting the information by using the Portal, see the "View, copy, and regenerate storage access keys" section of [About Azure storage accounts](/documentation/articles/storage-create-storage-account).
@@ -94,6 +98,7 @@ For details on getting the information by using the Portal, see the "View, copy,
 Azure PowerShell cannot create a Blob container during the HDInsight creation process. You can create one by using the following script:
 
 	$storageAccountName = "<Azure Storage Account Name>"
+
 	$storageAccountKey = Get-AzureStorageKey -StorageAccountName $storageAccountName |  %{ $_.Primary }
 	$containerName="<AzureBlobContainerName>"
 
@@ -115,18 +120,22 @@ Once you have the Storage account and the Blob container prepared, you are ready
 	$clusterNodes = <ClusterSizeInNodes>
 
 	# Get the Storage account key
+
 	$storageAccountKey = Get-AzureStorageKey -StorageAccountName $storageAccountName | %{ $_.Primary }
 
 	# Create a new HDInsight cluster
+
 	New-AzureHDInsightCluster -Name $clusterName `
 		-Location $location `
 		-DefaultStorageAccountName "$storageAccountName.blob.core.chinacloudapi.cn" `
 		-DefaultStorageAccountKey $storageAccountKey `
+
 		-DefaultStorageContainerName $containerName  `
 		-ClusterSizeInNodes $clusterNodes
 
 ##List clusters
 Use the following command to list all clusters in the current subscription:
+
 
 	Get-AzureHDInsightCluster
 
@@ -134,17 +143,19 @@ Use the following command to list all clusters in the current subscription:
 
 Use the following command to show details of a specific cluster in the current subscription:
 
+
 	Get-AzureHDInsightCluster -Name <Cluster Name>
 
 ##Delete clusters
 Use the following command to delete a cluster:
+
 
 	Remove-AzureHDInsightCluster -Name <Cluster Name>
 
 ##Scale clusters
 The cluster scaling feature allows you to change the number of worker nodes used by a cluster that is running in Azure HDInsight without having to re-create the cluster.
 
->[AZURE.NOTE] Only clusters with HDInsight version 3.1.3 or higher are supported. If you are unsure of the version of your cluster, you can check the Properties page.  See [Get familiar with the cluster portal interface](/documentation/articles/hdinsight-administer-use-management-portal-v1#Get-familiar-with-the-cluster-portal-interface).
+>[AZURE.NOTE] Only clusters with HDInsight version 3.1.3 or higher are supported. If you are unsure of the version of your cluster, you can check the Properties page.  See [Get familiar with the
 
 The impact of changing the number of data nodes for each type of cluster supported by HDInsight:
 
@@ -188,10 +199,11 @@ The impact of changing the number of data nodes for each type of cluster support
 
 To change the Hadoop cluster size by using Azure PowerShell, run the following command from a client machine:
 
-	Set-AzureHDInsightClusterSize -Name <Cluster Name> -ClusterSizeInNodes <NewSize>
+
+	Set-AzureHDInsightClusterSize -Cluster <Cluster Name> -ClusterSizeInNodes <NewSize>
 	
 
-##Grant/revoke access
+##<a name="grant/revoke-access"></a>Grant/revoke access
 
 HDInsight clusters have the following HTTP web services (all of these services have RESTful endpoints):
 
@@ -202,6 +214,7 @@ HDInsight clusters have the following HTTP web services (all of these services h
 
 
 By default, these services are granted for access. You can revoke/grant the access. To revoke:
+
 
 	Revoke-AzureHDInsightHttpServicesAccess -Name <Cluster Name>
 
@@ -218,6 +231,7 @@ To grant:
 	# Credential option 2
 	#$credential = Get-Credential -Message "Enter the HTTP username and password:" -UserName "admin"
 	
+
 	Grant-AzureHDInsightHttpServicesAccess -Name $clusterName -HttpCredential $credential
 
 >[AZURE.NOTE] By granting/revoking the access, you will reset the cluster user name and password.
@@ -235,9 +249,11 @@ The following Powershell script demonstrates how to get the default storage acco
 
 	$clusterName = "<HDInsight Cluster Name>"
 	
+
 	$cluster = Get-AzureHDInsightCluster -Name $clusterName
 	$defaultStorageAccountName = ($cluster.DefaultStorageAccount).Replace(".blob.core.chinacloudapi.cn", "")
 	$defaultBlobContainerName = $cluster.DefaultStorageContainer
+
 	$defaultStorageAccountKey = Get-AzureStorageKey -StorageAccountName $defaultStorageAccountName |  %{ $_.Primary }
 	$defaultStorageAccountContext = New-AzureStorageContext -StorageAccountName $defaultStorageAccountName -StorageAccountKey $defaultStorageAccountKey 
 

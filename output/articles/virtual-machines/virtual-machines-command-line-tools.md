@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Use the Azure CLI with Service Management | Windows Azure"
+	pageTitle="Use the Azure CLI with Service Management | Azure"
 	description="Learn about using the command-line tools for Mac, Linux, and Windows to manage Azure using the Azure CLI in classic (Azure Service Management) mode."
 	services="virtual-machines, mobile-services, cloud-services"
 	documentationCenter=""
@@ -15,7 +15,7 @@
 
 # Using the Azure CLI for Mac, Linux, and Windows with Azure Service Management
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] [Resource Manager model](/documentation/articles/azure-cli-arm-commands).
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]  [Resource Manager model](/documentation/articles/azure-cli-arm-commands). 
 
 This article describes how to use the Azure CLI in the Service Management mode (asm mode) to create, manage, and delete services on the command line of Mac, Linux, and Windows computers. You can perform many of the same tasks using the various libraries of the Azure SDKs, with Azure PowerShell, and using the Azure Management Portal. Using Azure services with the Service Management mode is conceptually similar to creating and managing individual Azure concepts and services like Websites, Virtual Machines, Virtual Networks, Storage, and so on.  
 
@@ -318,11 +318,11 @@ This command restarts an Azure virtual machine.
 
 This command shuts down an Azure virtual machine. You may use the -p option to specify that the compute resource not be released on shutdown.
 
-```
+ ``` 
 ~$ azure vm shutdown my-vm
 info:   Executing command vm shutdown
 info:   vm shutdown command OK  
-```
+ ``` 
 
 **vm capture &lt;vm-name> &lt;target-image-name>**
 
@@ -492,7 +492,7 @@ Some systems impose per-process file descriptor limits. If this limit is exceede
 	info:   http://myaccount.blob.core.azure.com/vm-images/Sample.vhd is uploaded successfully
 	info:   vm image create command OK
 
-## Commands to manage your Azure virtual machine data disks
+ ##  ##<a name="commands-to-manage-your-azure-virtual-machine-data-disks"></a>  Commands to manage your Azure virtual machine data disks
 
 Data disks are .vhd files in blob storage that can be used by a virtual machine. For more information about how data disks are deployed to blob storage, see the Azure technical diagram shown earlier.
 
@@ -610,12 +610,17 @@ This command creates a new cloud service
 	+ Getting locations
 	help:    Location:
 	  1) China East
-	  2) China North
+	  2) China  North  Nort 
+
 	  3) China North
 	  4) West Europe
 	  5) China East
 	  6) China North
 	  : 6
+
+
+	  : 2
+
 	+ Creating cloud service
 	data:    Cloud service name newservicemsopentech
 	info:    service create command OK
@@ -845,11 +850,15 @@ This command lists your web app locations.
 	+ Getting locations
 	data:    Name
 	data:    ----------------
+
 	data:    West Europe
+
 	data:    China North
+
 	data:    China North
 	data:    China North
 	data:    China East
+
 	data:    China East
 	info:    site location list command OK
 
@@ -1162,7 +1171,9 @@ This command lists geographic locations supported by Mobile Services.
 	~$ azure mobile locations
 	info:    Executing command mobile locations
 	info:    China East (default)
+
 	info:    China North
+
 	info:    China North
 
 **mobile create [options] [servicename] [sqlAdminUsername] [sqlAdminPassword]**
@@ -1823,13 +1834,17 @@ Display a list of all available namespace locations.
 	data:    Name              Code
 	data:    ----------------  ----------------
 	data:    China East         China East
+
 	data:    West Europe       West Europe
 	data:    China North      China North
 	data:    China East           China East
 	data:    China North    China North
+
 	data:    China North  China North
+
 	data:    China North           China North
 	data:    China East  China East
+
 	info:    sb namespace location list command OK
 
 **sb namespace show &lt;name>**
@@ -1894,7 +1909,7 @@ This command supports the following additional options:
 + **-d** or **--description** &lt;description>:  The description storage account.
 + **-l** or **--location** &lt;name>: The geographic region in which to create the storage account.
 + **-a** or **--affinity-group** &lt;name>: The affinity group with which to associate the storage account.
-+ **--type**:  Indicates the type of account to create: either Standard Storage with redundancy option (LRS/ZRS/GRS/RAGRS) or Premium Storage (PLRS).
++ **--type**:  Indicates the type of account to create: either Standard Storage with redundancy option  (LRS/ZRS/GRS/RAGRS)  (LRS/GRS/RAGRS)  or Premium Storage (PLRS).
 
 **storage account set [options] <name>**
 
@@ -1910,7 +1925,7 @@ This command supports the following additional options:
 + **-e** or **--label** &lt;label>: The label for the storage account.
 + **-d** or **--description** &lt;description>:  The description storage account.
 + **-l** or **--location** &lt;name>: The geographic region in which to create the storage account.
-+ **--type**:  Indicates the new type of account: either Standard Storage with redundancy option (LRS/ZRS/GRS/RAGRS) or Premium Storage (PLRS).
++ **--type**:  Indicates the new type of account: either Standard Storage with redundancy option  (LRS/ZRS/GRS/RAGRS)  (LRS/GRS/RAGRS)  or Premium Storage (PLRS).
 
 **storage account delete [options] <name>**
 

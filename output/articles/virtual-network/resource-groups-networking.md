@@ -1,5 +1,7 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
-   pageTitle="Network Resource Provider Overview | Windows Azure"
+   pageTitle="Network Resource Provider Overview | Azure"
    description="Learn about the new Network Resource Provider in Azure Resource Manager"
    services="virtual-network"
    documentationCenter="na"

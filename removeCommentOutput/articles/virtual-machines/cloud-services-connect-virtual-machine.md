@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Connect VMs in a cloud service | Windows Azure"
+	pageTitle="Connect VMs in a cloud service | Azure"
 	description="Connect a virtual machine created with the classic deployment model to an Azure cloud service or virtual network."
 	services="virtual-machines"
 	documentationCenter=""
@@ -21,7 +21,7 @@
 
 Virtual machines created with the classic deployment model are always placed in a cloud service. The cloud service acts as a container and provides a unique public DNS name, a public IP address, and a set of endpoints to access the virtual machine over the Internet. The cloud service can be in a virtual network, but that's not a requirement.
 
-If a cloud service isn't in a virtual network, it's called a *standalone* cloud service. The virtual machines in a standalone cloud service can only communicate with other virtual machines by using the other virtual machinesâ public DNS names, and the traffic travels over the Internet. If a cloud service is in a virtual network, the virtual machines in that cloud service can communicate with all other virtual machines in the virtual network without sending any traffic over the Internet.
+If a cloud service isn't in a virtual network, it's called a *standalone* cloud service. The virtual machines in a standalone cloud service can only communicate with other virtual machines by using the other virtual machines' public DNS names, and the traffic travels over the Internet. If a cloud service is in a virtual network, the virtual machines in that cloud service can communicate with all other virtual machines in the virtual network without sending any traffic over the Internet.
 
 If you place your virtual machines in the same standalone cloud service, you can still use load balancing and availability sets. For details, see [Load balancing virtual machines](/documentation/articles/load-balance-virtual-machines) and [Manage the availability of virtual machines](/documentation/articles/virtual-machines-manage-availability). However, you can't organize the virtual machines on subnets or connect a standalone cloud service to your on-premises network. Here's an example:
 

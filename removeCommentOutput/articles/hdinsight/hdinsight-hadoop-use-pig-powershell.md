@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Use Hadoop Pig with PowerShell in HDInsight | Windows Azure"
+   pageTitle="Use Hadoop Pig with PowerShell in HDInsight | Azure"
    description="Learn how to submit Pig jobs to a Hadoop cluster on HDInsight using Azure PowerShell."
    services="hdinsight"
    documentationCenter=""

@@ -1,5 +1,5 @@
 <properties
- pageTitle="Run OpenFOAM with HPC Pack on Linux VMs | Windows Azure"
+ pageTitle="Run OpenFOAM with HPC Pack on Linux VMs | Azure"
  description="Deploy a Microsoft HPC Pack cluster on Azure and run an OpenFOAM job on multiple Linux compute nodes across an RDMA network."
  services="virtual-machines"
  documentationCenter=""
@@ -20,7 +20,7 @@ This article shows you how to deploy a Microsoft HPC Pack cluster on Azure and r
 
 OpenFOAM (for Open Field Operation and Manipulation) is a freely available open-source computational fluid dynamics (CFD) software package that is used widely in engineering and science, in both commercial and academic organizations. It includes tools for meshing, notably snappyHexMesh, a parallelized mesher for complex CAD geometries, and for pre- and post-processing. Almost all processes run in parallel, enabling users to take full advantage of computer hardware at their disposal.  
 
-Microsoft HPC Pack provides features to run a variety of large-scale HPC and parallel applications, including MPI applications, on clusters of Windows Azure virtual machines. Starting in Microsoft HPC Pack 2012 R2 Update 2, HPC Pack also supports running Linux HPC applications on Linux compute node VMs deployed in an HPC Pack cluster. See [Get started with Linux compute nodes in an HPC Pack cluster in Azure](/documentation/articles/virtual-machines-linux-cluster-hpcpack) for an introduction to using Linux compute nodes with HPC Pack.
+Microsoft HPC Pack provides features to run a variety of large-scale HPC and parallel applications, including MPI applications, on clusters of Azure virtual machines. Starting in Microsoft HPC Pack 2012 R2 Update 2, HPC Pack also supports running Linux HPC applications on Linux compute node VMs deployed in an HPC Pack cluster. See [Get started with Linux compute nodes in an HPC Pack cluster in Azure](/documentation/articles/virtual-machines-linux-cluster-hpcpack) for an introduction to using Linux compute nodes with HPC Pack.
 
 >[AZURE.NOTE] This article assumes you have some familiarity with Linux system administration and with running MPI workloads on Linux HPC clusters. 
 

@@ -1,5 +1,5 @@
 <properties
- pageTitle="Create an HPC Pack head node in an Azure VM | Windows Azure"
+ pageTitle="Create an HPC Pack head node in an Azure VM | Azure"
  description="Learn how to use the Azure Management Portal and the Resource Manager deployment model to create a Microsoft HPC Pack head node in an Azure VM."
  services="virtual-machines"
  documentationCenter=""
@@ -14,6 +14,7 @@
 
 # Create the head node of an HPC Pack cluster in an Azure VM with a Marketplace image
 
+
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
 
 
@@ -27,17 +28,43 @@ Pack 2012 R2 Update 3 pre-installed. Use this head node for a proof of concept
 
 >[AZURE.TIP]For a production deployment of a complete HPC Pack cluster in Azure, we recommend that you use an automated  method, such as the [HPC Pack IaaS deployment
 script](/documentation/articles/virtual-machines-hpcpack-cluster-powershell-script) or a Resource Manager template such as the [HPC Pack cluster for Windows workloads](https://azure.microsoft.com/marketplace/partners/microsofthpc/newclusterwindowscn/) template. See [HPC Pack cluster options in Azure](/documentation/articles/virtual-machines-hpcpack-cluster-options) for additional templates. 
+
+
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] 
+
+The head node needs to be joined to an Active Directory domain in an Azure virtual network. You can use this head node for a proof of concept deployment of HPC Pack in Azure and add compute resources to the cluster to run HPC workloads.
+
+![HPC Pack head node][headnode]
+
+>[AZURE.NOTE] Currently the HPC Pack
+VM image is based on Windows Server 2012 R2 Datacenter with HPC
+Pack 2012 R2 Update 2 pre-installed. Microsoft SQL Server 2014 Express
+is also pre-installed.
+
+
+For a production deployment of an HPC Pack cluster in Azure, we recommend an automated deployment method, such as the [HPC Pack IaaS deployment
+script](/documentation/articles/virtual-machines-hpcpack-cluster-powershell-script) or an Azure Resource Manager [quickstart template](https://azure.microsoft.com/documentation/templates/).
+
 
 ## Planning considerations
 
+
 * **Active Directory domain** - The HPC Pack head node must be joined to an Active Directory domain in Azure before you start the HPC services on the VM. As shown in this article, for a proof of concept deployment, you can promote the VM you create for the head node as a domain controller before starting the HPC services. Another option is deploy a separate domain controller and forest in Azure to which you join the VM.
 
 * **Azure virtual network** - As shown in this article, when you deploy the HPC Pack head node by using the Resource Manager deployment model in the Azure Management Portal, you specify or create an Azure virtual network (VNet). You'll need to use the VNet later to add cluster compute node VMs to the HPC cluster, or if you join the head node to an existing Active Directory domain.
 
     
+
+
+* **Active Directory domain** - The HPC Pack head node must be joined to an Active Directory domain in Azure before you start the HPC services. One option is deploy a separate domain controller and forest deployed in Azure to which you can join the VM. For a proof of concept deployment, you can promote the VM you create for the head node as a domain controller before starting the HPC services.
+
+* **Azure virtual network** - If you plan to add cluster compute node VMs to the HPC cluster, or you create a separate domain controller for the cluster, you'll need to deploy the head node in an Azure virtual network (VNet). Without a VNet you can still add Azure "burst" nodes to the cluster.
+
+
 ## Steps to create the head node
 
-These are high level steps to create an Azure VM for the HPC
+ These  The following  are high level steps to create an Azure VM for the HPC
+
 Pack head node by using the Resource Manager deployment model in the Azure Management Portal. 
 
 
@@ -64,6 +91,43 @@ Pack head node by using the Resource Manager deployment model in the Azure Manag
     * If you created the VM in an Azure VNet with an existing domain forest, use standard Server Manager or Windows PowerShell tools to join it to the domain forest. Then restart.
 
     * If you created the VM in a VNet without an existing domain forest, then promote it as a domain controller. To do this, use standard Server Manager or Windows PowerShell tools to install and configure the Active Directory Domain Services role. For detailed steps, see [Install a New Windows Server 2012 Active Directory Forest](https://technet.microsoft.com/zh-cn/library/jj574166.aspx).
+
+
+Pack head node. You can use a variety of Azure tools to do these steps in the Azure classic (Service Management) deployment model.
+
+
+1. If you plan to create a VNet for the head node VM, see [Create a virtual nework (classic) by using the Azure Management Portal](/documentation/articles/virtual-networks-create-vnet-classic-pportal).
+
+    **Considerations**
+
+    * You can accept the default configuration of the virtual network address space and subnets.
+    
+2. If you need to create a new Active Directory forest on a separate VM, see [Install a new Active Directory forest on an Azure virtual network](/documentation/articles/active-directory-new-forest-virtual-machine).
+
+    **Considerations**
+
+    * For many test deployments you can create a single domain controller in Azure. To ensure high availability of the Active Directory domain, you can deploy an additional, backup domain controller.
+
+    * For a simple proof of concept deployment, you can omit this step and later promote the head node VM as a domain controller.
+
+3. In the Azure Management Portal, create a classic VM by selecting the HPC Pack 2012 R2 image from the Azure gallery. (See steps for the Azure Management Portal [here](/documentation/articles/virtual-machines-windows-tutorial-classic-portal).)
+
+    **Considerations**
+
+    * Select a VM size of at least A4.
+
+    * If you want to deploy the head node in a VNet, be sure to specify the VNet in the VM configuration.
+
+    * We recommend that you create a new cloud service for the VM.
+
+4. After you create the VM and the VM is running, join the VM to an existing domain forest, or create a new domain forest on the VM.
+
+    **Considerations**
+
+    * If you created the VM in an Azure VNet with an existing domain forest, connect to the VM. Then use standard Server Manager or Windows PowerShell tools to join it to the domain forest. Then restart.
+
+    * If . For detailed steps, see [Install a New Windows Server 2012 Active Directory Forest](https://technet.microsoft.com/zh-cn/library/jj574166.aspx).
+
 
 5. After the VM is running and is joined to an Active Directory forest, start the HPC Pack services on the head node. To do this:
 
@@ -71,9 +135,9 @@ Pack head node by using the Resource Manager deployment model in the Azure Manag
 
     b. For a default head node configuration, start Windows PowerShell as an administrator and type the following:
 
-    ```
+     ``` 
     & $env:CCP_HOME\bin\HPCHNPrepare.ps1 -DBServerInstance ".\ComputeCluster"
-    ```
+     ``` 
 
     It can take several minutes for the HPC Pack services to start.
 
@@ -82,12 +146,22 @@ Pack head node by using the Resource Manager deployment model in the Azure Manag
 
 ## Next steps
 
-* You can now work with the head node of your HPC Pack cluster. For
+* You can now work with the head node of your  Windows   HPC  Pack  cluster. For
+
 example, start HPC Cluster Manager, and complete the [Deployment To-do List](https://technet.microsoft.com/zh-cn/library/jj884141.aspx).
 * Add [Azure burst nodes](/documentation/articles/virtual-machines-hpcpack-cluster-node-burst) in a cloud service to increase the cluster compute capacity on-demand. 
+
+
+example, you can start HPC Cluster Manager, or start working with the
+HPC PowerShell cmdlets.
+
+* [Add compute node VMs](/documentation/articles/virtual-machines-hpcpack-cluster-node-manage) to your cluster, or add [Azure burst nodes](/documentation/articles/virtual-machines-hpcpack-cluster-node-burst) in a cloud service.
+
 
 * Try running a test workload on the cluster. For an example, see the HPC Pack [getting started guide](https://technet.microsoft.com/zh-cn/library/jj884144).
 
 <!--Image references-->
 [headnode]: ./media/virtual-machines-hpcpack-cluster-headnode/headnode.png
+
 [marketplace]: ./media/virtual-machines-hpcpack-cluster-headnode/marketplace.png
+

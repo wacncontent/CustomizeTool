@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="How to create NSGs in ARM mode using a template| Windows Azure"
+   pageTitle="How to create NSGs in ARM mode using a template| Azure"
    description="Learn how to create and deploy NSGs in ARM using a template"
    services="virtual-network"
    documentationCenter="na"

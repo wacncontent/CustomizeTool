@@ -1,7 +1,7 @@
 <!-- not suitable for Mooncake -->
 
 <properties 
-	pageTitle="Line of business application Phase 5 | Windows Azure" 
+	pageTitle="Line of business application Phase 5 | Azure" 
 	description="Create an availability group and add your application databases to it in Phase 5 of the line of business application in Azure." 
 	documentationCenter=""
 	services="virtual-machines" 
@@ -12,7 +12,7 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="11/09/2015"
+	ms.date="01/28/2016"
 	wacn.date=""/>
 
 # Line of Business Application Workload Phase 5: Create the availability group and add the application databases

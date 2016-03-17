@@ -496,10 +496,10 @@ For more information, see the [Python Developer Center](/develop/python/).
 
 
 <!--Link references-->
-[Django and MySQL on Azure with Python Tools for Visual Studio]: web-sites-python-ptvs-django-mysql.md
-[Django and SQL Database on Azure with Python Tools for Visual Studio]: web-sites-python-ptvs-django-sql.md
-[SQL Database]: web-sites-python-ptvs-django-sql.md
-[MySQL]: web-sites-python-ptvs-django-mysql.md
+[Django and MySQL on Azure with Python Tools for Visual Studio]: /documentation/articles/web-sites-python-ptvs-django-mysql
+[Django and SQL Database on Azure with Python Tools for Visual Studio]: /documentation/articles/web-sites-python-ptvs-django-sql
+[SQL Database]: /documentation/articles/web-sites-python-ptvs-django-sql
+[MySQL]: /documentation/articles/web-sites-python-ptvs-django-mysql
 
 <!--External Link references-->
 [Azure SDK for Python 2.7]: http://go.microsoft.com/fwlink/?linkid=254281

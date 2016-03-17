@@ -220,7 +220,7 @@ Visual Studio doesn't show the progress of the deployment. If you'd like to revi
 Browse to the Azure URL to view your changes.
 
 
-##<a name="website-development-windows-command-line"></a> Web Site development - Windows - command line
+##<a name="website-development-windows-command-line"></a> Web app development - Windows - command line
 
 ### Clone the repository
 
@@ -309,7 +309,7 @@ You will see the output of the deployment script, including virtual environment 
 Browse to the Azure URL to view your changes.
 
 
-##<a name="website-development-mac-linux-command-line"></a> Web Site development - Mac/Linux - command line
+##<a name="website-development-mac-linux-command-line"></a> Web app development - Mac/Linux - command line
 
 ### Clone the repository
 

@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
 	pageTitle="Reference for navigating the Azure Management Portal"
 	description="Learn the different user experiences for Azure Web between the management portal and the Azure Management Portal"
@@ -71,8 +73,6 @@ Other than the brand name, a few things in the portal have been renamed or group
 ![](./media/app-service-web-app-azure-portal/AppSettings.png)
 
 ## More Resources
-
-[The Azure cloud application platform](/documentation/articles/app-service-cloud-app-platform)
 
 [Azure Management Portal]: https://manage.windowsazure.cn
 [Azure gallery]: /marketplace/

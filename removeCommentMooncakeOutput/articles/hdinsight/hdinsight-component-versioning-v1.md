@@ -1,5 +1,5 @@
 <properties
-	pageTitle="What's new in Hadoop cluster versions of HDInsight? | Windows Azure"
+	pageTitle="What's new in Hadoop cluster versions of HDInsight? | Azure"
 	description="HDInsight supports multiple deployable Hadoop cluster versions. See the Hadoop and HortonWorks Data Platform (HDP) distribution versions supported."
 	services="hdinsight"
 	editor="cgronlun"
@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="11/09/2015"
+	ms.date="02/04/2016"
 	wacn.date=""/>
 
 

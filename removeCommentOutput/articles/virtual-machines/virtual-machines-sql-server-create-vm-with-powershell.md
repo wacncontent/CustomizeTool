@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Create a SQL Server Virtual Machine in PowerShell | Windows Azure"
+	pageTitle="Create a SQL Server Virtual Machine in PowerShell | Azure"
 	description="Provides steps and PowerShell scripts for creating an Azure VM with SQL Server virtual machine gallery images."
 	services="virtual-machines"
 	documentationCenter="na"

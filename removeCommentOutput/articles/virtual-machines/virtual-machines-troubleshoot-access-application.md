@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Troubleshoot application access on a VM | Windows Azure"
+	pageTitle="Troubleshoot application access on a VM | Azure"
 	description="If you can't access an application running on an Azure virtual machine, use these steps to isolate the source of the problem."
 	services="virtual-machines"
 	documentationCenter=""
@@ -89,7 +89,7 @@ If the virtual machine or endpoint is a member of a load-balanced set:
 
 - Verify that the probe protocol (TCP or UDP) and port number are correct.
 - If the probe protocol and port is different than the load-balanced set protocol and port:
-	- Verify that the application is listening on the probe protocol (TCP or UDP) and port number (use **netstat âa** on the target virtual machine).
+	- Verify that the application is listening on the probe protocol (TCP or UDP) and port number (use **netstat -a** on the target virtual machine).
 	- The host firewall on the target virtual machine is allowing the inbound probe request and outbound probe response traffic.
 
 If you can access the application, ensure that your Internet edge device is allowing:
@@ -113,7 +113,7 @@ For more information, see [Troubleshooting Endpoint Connectivity (RDP/SSH/HTTP, 
 
 If you have run the above steps in this article and need additional help to correct the problem, you can:
 
-- Get help from Azure experts across the world. Submit your issue to either the MSDN Azure or Stack Overflow forums. See [Windows Azure Forums](https://azure.microsoft.com/support/forums/) for more information.
+- Get help from Azure experts across the world. Submit your issue to either the MSDN Azure or Stack Overflow forums. See [Azure Forums](https://azure.microsoft.com/support/forums/) for more information.
 - File an Azure support incident. Go to the [Azure Support site](https://azure.microsoft.com/support/contact/) and click **Get support** under **Technical and billing support**.
 
 ## Additional resources

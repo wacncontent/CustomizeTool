@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Resetting Linux VM Passwords and adding Users from the Azure CLI | Windows Azure"
+	pageTitle="Resetting Linux VM Passwords and adding Users from the Azure CLI | Azure"
 	description="How to use VMAccess extension from the Azure Management Portal or CLI to reset Linux VM passwords and SSH keys, SSH configurations, add or delete user accounts, and check the consistency of disks."
 	services="virtual-machines"
 	documentationCenter=""
@@ -35,7 +35,7 @@ To reset the name and password of the user account with sudo privileges or the S
 
 You will need the following:
 
-- Windows Azure Linux Agent version 2.0.5 or later. Most Linux images in the Virtual Machine gallery include version 2.0.5. To find out which version is installed, run **waagent -version**. To update the agent, follow the instructions in the [Azure Linux Agent User Guide].
+- Azure Linux Agent version 2.0.5 or later. Most Linux images in the Virtual Machine gallery include version 2.0.5. To find out which version is installed, run **waagent -version**. To update the agent, follow the instructions in the [Azure Linux Agent User Guide].
 - Azure Command-Line Interface (CLI). For details on setting up the Azure CLI, see [Install and Configure the Azure Command-Line Interface](/documentation/articles/xplat-cli-install).
 - Azure PowerShell. You'll use commands in the Set-AzureVMExtension cmdlet to automatically load and configure the VMAccessForLinux extension. For details on setting up Azure PowerShell, see [How to install and configure Azure PowerShell].
 - A new password or set of SSH keys, if you want to reset either one. You don't need these if you want to reset the SSH configuration.
@@ -308,7 +308,7 @@ To repair disks with fsck utility, run these commands.
 
 
 <!--Link references-->
-[Azure Linux Agent User Guide]: virtual-machines-linux-agent-user-guide.md
-[How to install and configure Azure PowerShell]: ../install-configure-powershell.md
-[Azure VM Extensions and Features]: virtual-machines-extensions-features.md
+[Azure Linux Agent User Guide]: /documentation/articles/virtual-machines-linux-agent-user-guide
+[How to install and configure Azure PowerShell]: /documentation/articles/powershell-install-configure
+[Azure VM Extensions and Features]: /documentation/articles/virtual-machines-extensions-features
 [Connect to an Azure virtual machine with RDP or SSH]: http://msdn.microsoft.com/zh-cn/library/azure/dn535788.aspx

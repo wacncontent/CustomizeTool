@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Get Started with Fleet on CoreOS | Windows Azure"
+	pageTitle="Get Started with Fleet on CoreOS | Azure"
 	description="Provides basic examples of using Fleet and Docker on a CoreOS Linux VM cluster created with the classic deployment model on Azure."
 	services="virtual-machines"
 	documentationCenter=""
@@ -172,7 +172,7 @@ fleetctl --tunnel coreos-cluster.chinacloudapp.cn:22 unload nginx@{1,2,3}.servic
 * See [Linux and Open-Source Computing on Azure] for more on using open-source environments on Linux VMs in Azure.
 
 <!--Link references-->
-[Azure Command-Line Interface (Azure)]: ../xplat-cli-install.md
+[Azure Command-Line Interface (Azure)]: /documentation/articles/xplat-cli-install
 [CoreOS]: https://coreos.com/
 [CoreOS Overview]: https://coreos.com/using-coreos/
 [CoreOS with Azure]: https://coreos.com/docs/running-coreos/cloud-providers/azure/
@@ -180,10 +180,10 @@ fleetctl --tunnel coreos-cluster.chinacloudapp.cn:22 unload nginx@{1,2,3}.servic
 [Patrick Chanezon's CoreOS Tutorial]: https://github.com/chanezon/azure-linux/tree/master/coreos/cloud-init
 [Docker]: http://docker.io
 [YAML]: http://yaml.org/
-[How to Use CoreOS on Azure]: virtual-machines-linux-coreos-how-to.md
-[Configure a load-balanced set]: ../load-balancer/load-balancer-internet-getstarted.md
+[How to Use CoreOS on Azure]: /documentation/articles/virtual-machines-linux-coreos-how-to
+[Configure a load-balanced set]: /documentation/articles/load-balancer-internet-getstarted
 [Launching containers with fleet]: https://coreos.com/docs/launching-containers/launching/launching-containers-fleet/
 [Unit Files]: https://coreos.com/docs/launching-containers/launching/fleet-unit-files/
 [busybox Docker Hub image]: https://registry.hub.docker.com/_/busybox/
 [nginx Docker Hub image]: https://hub.docker.com/_/nginx/
-[Linux and Open-Source Computing on Azure]: virtual-machines-linux-opensource.md
+[Linux and Open-Source Computing on Azure]: /documentation/articles/virtual-machines-linux-opensource

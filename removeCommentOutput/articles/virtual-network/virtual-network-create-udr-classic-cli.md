@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Control routing and use virtual appliances using the Azure CLI in the classic deployment model | Windows Azure"
+   pageTitle="Control routing and use virtual appliances using the Azure CLI in the classic deployment model | Azure"
    description="Learn how to control routing in VNets using the Azure CLI in the classic deployment model"
    services="virtual-network"
    documentationCenter="na"

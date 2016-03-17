@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
 	pageTitle="Introduction to Azure Environment" 
 	description="Learn about the Azure Environment feature that provides secure, VNet-joined, dedicated scale units for running all of your apps." 
@@ -81,8 +83,8 @@ For details on using an Azure Environment with ExpressRoute, see the following a
 [MoreInfoOnVirtualNetworks]: /documentation/articles/virtual-networks-faq/
 [AppServicePlan]: /documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview/
 [HowToCreateAnAppServiceEnvironment]: /documentation/articles/app-service-web-how-to-create-an-app-service-environment/
-[AzureAppService]: /documentation/articles/app-service-value-prop-what-is/
-[WebApps]: /documentation/articles/app-service-web-overview/
+[AzureAppService]: /documentation/services/web-sites/
+[WebApps]: /home/features/web-site/
 [MobileApps]: /documentation/articles/app-service-mobile-value-prop-preview/
 [APIApps]: /documentation/articles/app-service-api-apps-why-best-platform/
 [LogicApps]: /documentation/articles/app-service-logic-what-are-logic-apps/

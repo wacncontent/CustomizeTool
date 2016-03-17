@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Linux Agent User Guide | Windows Azure" 
+	pageTitle="Linux Agent User Guide | Azure" 
 	description="Learn how to install and configure Linux Agent (waagent) to manage your virtual machine's interaction with Azure Fabric Controller." 
 	services="virtual-machines" 
 	documentationCenter="" 
@@ -65,7 +65,7 @@ You can get the Latest Linux Agent directly from:
 
 
 ## Requirements
-The following systems have been tested and are known to work with the Azure Linux Agent. **Please note that this list may differ from the official list of supported systems on the Windows Azure Platform**, as described here:
+The following systems have been tested and are known to work with the Azure Linux Agent. **Please note that this list may differ from the official list of supported systems on the Azure Platform**, as described here:
 [http://support.microsoft.com/kb/2805216](http://support.microsoft.com/kb/2805216)
 
 ###Supported Linux Distributions

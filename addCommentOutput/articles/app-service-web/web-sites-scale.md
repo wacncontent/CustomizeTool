@@ -14,34 +14,25 @@
 
 # Scale a web app in Azure #
 
-For increased performance and throughput for your web apps on Windows Azure, you can use the [Azure Management Portal](https://manage.windowsazure.cn/) to scale your [Azure Web App](/documentation/services/web-sites/) plan from **Free** mode to **Shared**, **Basic**, **Standard** <!-- deleted by customization, or **Premium** --> mode.
+For increased performance and throughput for your web apps on Azure, you can use the [Azure Management Portal](https://manage.windowsazure.cn/) to scale your [Azure Web App](/documentation/services/web-sites/) plan from **Free** mode to **Shared**, **Basic**, **Standard** , or **Premium**  mode.
 
-<!-- deleted by customization
+
 [AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)]
 
-Scaling up on Azure web apps involves two related actions: changing your App Service plan mode to a higher level of service, and configuring certain settings after you have switched to the higher level of service. Both topics are covered in this article. Higher service tiers like **Standard** and **Premium**modes offer greater robustness and flexibility in determining how your resources on Azure are used.
--->
-<!-- keep by customization: begin -->
+Scaling up on Azure web apps involves two related actions: changing your App Service plan mode to a higher level of service, and configuring certain settings after you have switched to the higher level of service. Both topics are covered in this article. Higher service tiers like **Standard** and **Premium** modes offer greater robustness and flexibility in determining how your resources on Azure are used.
+
+
 
-Scaling up on Azure web sites involves two related actions: changing your App Service plan mode to a higher level of service, and configuring certain settings after you have switched to the higher level of service. Both topics are covered in this article. Higher service tiers like **Standard** modes offer greater robustness and flexibility in determining how your resources on Azure are used.
-<!-- keep by customization: end -->
+Scaling up on Azure web apps involves two related actions: changing your App Service plan mode to a higher level of service, and configuring certain settings after you have switched to the higher level of service. Both topics are covered in this article. Higher service tiers like **Standard**  modes offer greater robustness and flexibility in determining how your resources on Azure are used.
+
 
 The scale settings take only seconds to apply and affect all web apps in your App Service plan. They do not require your code to be changed or your applications to be redeployed.
 
-<!-- deleted by customization For information about App Service plans, see [What is an App Service Plan?](/documentation/articles/web-sites-web-hosting-plan-overview) and [Azure App Service Plans In-Depth Overview](/documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview). --> For information the pricing and features of individual App Service plans, see [Azure Pricing Details](/home/features/web-site/#price).
+ For information about App Service plans, see [What is an App Service Plan?](/documentation/articles/web-sites-web-hosting-plan-overview) and [Azure App Service Plans In-Depth Overview](/documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview).  For information the pricing and features of individual App Service plans, see [Azure Pricing Details](/home/features/web-site/#price).
 
-<!-- deleted by customization
-> [AZURE.NOTE] Before switching a web app from the **Free** mode to **Basic**, **Standard**, or **Premium** mode, you must first remove the spending caps in place for your Azure subscription. To view or change options for your Windows Azure subscription, see [Windows Azure Subscriptions][azuresubscriptions].
--->
-<!-- keep by customization: begin -->
-In this article:
-
-- [Scaling to Shared or Basic Plan mode](#scalingsharedorbasic)
-- [Scaling to Standard Plan mode](#scalingstandard)
-- [Scaling a SQL Server Database connected to your site](#ScalingSQLServer)
-- [Developer Features](#devfeatures)
-- [Other Features](#OtherFeatures)
-<!-- keep by customization: end -->
+
+> [AZURE.NOTE] Before switching a web app from the **Free** mode to **Basic**, **Standard**, or **Premium** mode, you must first remove the spending caps in place for your Azure subscription. To view or change options for your Azure subscription, see [Azure Subscriptions][azuresubscriptions].
+
 
 <a name="scalingsharedorbasic"></a>
 <!-- ===================================== -->
@@ -50,7 +41,7 @@ In this article:
 
 1. In your browser, open the [Azure Management Portal][portal].
 	
-<!-- deleted by customization
+
 2. In your web app's blade, click **All settings**, then click **Scale**, then click **Upgrade from a Free plan to add instances and get better performance**.
 	
 	![Choose Plan][ChooseWHP]
@@ -59,12 +50,12 @@ In this article:
 	
 	The **Notifications** tab will flash a green **SUCCESS** once the operation is complete. 
 	
-5. Slide the **Instance** bar from left to right to increase the number of instances, then click **Save** in the command bar. The instance size option is not available in **Shared** mode. For more information about these instance sizes, see [Virtual Machine and Cloud Service Sizes for Windows Azure][vmsizes].
+5. Slide the **Instance** bar from left to right to increase the number of instances, then click **Save** in the command bar. The instance size option is not available in **Shared** mode. For more information about these instance sizes, see [Virtual Machine and Cloud Service Sizes for Azure][vmsizes].
 	
 	![Instance size for Basic mode][ChooseBasicInstances]
 	The **Notifications** tab will flash a green **SUCCESS** once the operation is complete. 
--->
-<!-- keep by customization: begin -->
+
+
 2. In the ** Websites** tab, select your  Website.
 	
 	![Selecting a  Website][Select Website]
@@ -79,7 +70,7 @@ In this article:
 	
 	The **App Service Plan Sites** section shows a short list of sites in the current plan. All sites in the current plan will be changed to the App Service plan tier that you select.
 	
-5. In the **Capacity** section, choose the **Instance Size**. The available options are **Small**, **Medium** or **Large**. The instance size option is not available in Shared mode. For more information about these instance sizes, see [Virtual Machine](/documentation/articles/virtual-machines-size-specs) and [Cloud Service](/documentation/articles/cloud-services-sizes-specs) Sizes for Windows Azure.
+5. In the **Capacity** section, choose the **Instance Size**. The available options are **Small**, **Medium** or **Large**. The instance size option is not available in Shared mode. For more information about these instance sizes, see [Virtual Machine](/documentation/articles/virtual-machines-size-specs) and [Cloud Service](/documentation/articles/cloud-services-sizes-specs) Sizes for Azure.
 	
 	![Instance size for Basic mode][ChooseBasicInstanceSize]
 	
@@ -99,14 +90,14 @@ In this article:
 	
 	![Plan change complete][BasicComplete]
 
-<!-- keep by customization: end -->
+
 <a name="scalingstandard"></a>
 <!-- ================================= -->
-## Scaling to Standard <!-- deleted by customization or Premium --> mode
+## Scaling to Standard  or Premium  mode
 <!-- ================================= -->
 
-> [AZURE.NOTE] Before switching an App Service plan to **Standard** <!-- deleted by customization or **Premium** --> mode, you should remove spending caps in place for your Windows Azure subscription. Otherwise, you risk your web app becoming unavailable if you reach your caps before the billing period ends. To view or change options for your Windows Azure subscription, see [Windows Azure Subscriptions][azuresubscriptions].
-<!-- deleted by customization
+> [AZURE.NOTE] Before switching an App Service plan to **Standard**  or **Premium**  mode, you should remove spending caps in place for your Azure subscription. Otherwise, you risk your web app becoming unavailable if you reach your caps before the billing period ends. To view or change options for your Azure subscription, see [Azure Subscriptions][azuresubscriptions].
+
 
 1. To scale to **Standard** or **Premium** mode, follow the same initial steps as when scaling to **Shared** or **Basic**, and then choose a **Standard** or **Premium** mode in **Choose your pricing tier**, then click **Select**. 
 	
@@ -154,8 +145,8 @@ In this article:
 7. Click **Save** in the command bar. Your autoscale rule should now be reflected in the **Scale** blade. 
 	
 	![Set Autoscale Rule Result][SetRulesFinal]
--->
-<!-- keep by customization: begin -->
+
+
 
 1. To scale to **Standard** mode, follow the same initial steps as when scaling to **Shared** or **Basic**, and then choose a **Standard** mode in **Choose your pricing tier**, then click **Select**. 
 	
@@ -171,7 +162,7 @@ In this article:
 	
 	![Choose instance size][ChooseInstanceSize]
 	
-	For more information about these instance sizes, see [Virtual Machine and Cloud Service Sizes for Windows Azure][vmsizes].
+	For more information about these instance sizes, see [Virtual Machine and Cloud Service Sizes for Azure][vmsizes].
 	
 4. If you want to automatically scale (autoscale) resources based on daytime versus nighttime,  weekday versus weekend, and/or specific dates and times, choose **Set up schedule times** in the **Edit Scale Settings for Schedule** option.
 	
@@ -207,19 +198,19 @@ In this article:
 	
 	![Instance count][InstanceCount]
 	
-13. **Scale by Metric** also enables the **Target CPU** option so that you can specify a target range for CPU usage. This range represents average CPU usage for your  Website. Windows Azure will add or remove Standard instances to keep your  Website in this range.
+13. **Scale by Metric** also enables the **Target CPU** option so that you can specify a target range for CPU usage. This range represents average CPU usage for your  Website. Azure will add or remove Standard instances to keep your  Website in this range.
 	
 	![Target CPU][TargetCPU]
 	
-	**Note**: When **Scale by Metric** is enabled, Windows Azure checks the CPU of your  Website once every five minutes and adds instances as needed at that point in time. If CPU usage is low, Windows Azure will remove instances once every two hours to ensure that your  Website remains performant. Generally, putting the minimum instance count at 1 is appropriate. However, if you have sudden usage spikes on your  Website, be sure that you have a sufficient minimum number of instances to handle the load. For example, if you have a sudden spike of traffic during the 5 minute interval before Windows Azure checks your CPU usage, your site might not be responsive during that time. If you expect sudden, large amounts of traffic, set the minimum instance count higher to anticipate these bursts. 
+	**Note**: When **Scale by Metric** is enabled, Azure checks the CPU of your  Website once every five minutes and adds instances as needed at that point in time. If CPU usage is low, Azure will remove instances once every two hours to ensure that your  Website remains performant. Generally, putting the minimum instance count at 1 is appropriate. However, if you have sudden usage spikes on your  Website, be sure that you have a sufficient minimum number of instances to handle the load. For example, if you have a sudden spike of traffic during the 5 minute interval before Azure checks your CPU usage, your site might not be responsive during that time. If you expect sudden, large amounts of traffic, set the minimum instance count higher to anticipate these bursts. 
 	
 14. After you have finished making changes to the items in the **Edit Scale Settings for Schedule** list, click the **Save** icon in the command bar at the bottom of the page to save all schedule settings at once (you do not have to save each schedule individually).
-<!-- keep by customization: end -->
+
 
 <a name="ScalingSQLServer"></a>
 ##Scaling a SQL Server Database connected to your web app
-<!-- deleted by customization If you have one or more SQL Server databases linked to your web app (regardless of App Service plan mode), you can quickly scale them based on your needs. -->
-<!-- deleted by customization
+
+If you have one or more SQL Server databases linked to your web app (regardless of App Service plan mode), you can quickly scale them based on your needs.
 1. To scale one of the linked databases, open your web app's blade in the [Azure Management Portal][portal]. In the **Essentials** collapsible dropdown, click the **Resource group** link. Then, in the **Summary** part of the resource group blade, clicked one of the linked databases.
 
 	![Linked database][ResourceGroup]
@@ -231,8 +222,8 @@ In this article:
 3. You can also set up geo-replication to increase the high availability and disaster recovery capabilities of your SQL Database. To do this, click the **Geo Replication** part.
 	
 	![Set up geo-replication for SQL Database][GeoReplication]
--->
-<!-- keep by customization: begin -->
+
+
 1. To scale one of the databases, in the **Linked Resources** section, click the **Manage scale for this database** link next to the name of the database.
 	
 	![Linked database][LinkedResources]
@@ -243,8 +234,8 @@ In this article:
 	
 	For **Edition**, choose **BASIC**, **STANDARD**  or **PREMIUM** depending on the storage capacity that you require. For the future of the **Web** and **BUSINESS** editions, see [Web and Business Edition Sunset FAQ](/documentation/articles/sql-database-web-business-sunset-faq/).
 	
-	The value you choose for **Max Size** specifies an upper limit for the database. Database charges are based on the amount of data that you actually store, so changing the **Max Size** property does not by itself affect your database charges. For more information, see [Accounts and Billing in Windows Azure SQL Database][SQLaccountsbilling].
-<!-- keep by customization: end -->
+	The value you choose for **Max Size** specifies an upper limit for the database. Database charges are based on the amount of data that you actually store, so changing the **Max Size** property does not by itself affect your database charges. For more information, see [Accounts and Billing in Azure SQL Database][SQLaccountsbilling].
+
 
 <a name="devfeatures"></a>
 ## Developer Features
@@ -252,46 +243,45 @@ Depending on the web app's mode, the following developer-oriented features are a
 
 ### Bitness ###
 
-- The **Basic**, **Standard** <!-- deleted by customization, and **Premium** --> modes support 64-bit and 32-bit applications.
+- The **Basic**, **Standard** , and **Premium**  modes support 64-bit and 32-bit applications.
 - The **Free** and **Shared** plan modes support 32-bit applications only.
 
 ### Debugger Support ###
 
 - Debugger support is available for the **Free**, **Shared**, and **Basic** modes at 1 concurrent connection per App Service plan.
-- Debugger support is available for the **Standard** <!-- deleted by customization and **Premium** --> modes at 5 concurrent connections per App Service plan.
+- Debugger support is available for the **Standard**  and **Premium**  modes at 5 concurrent connections per App Service plan.
 
 <a name="OtherFeatures"></a>
 ## Other Features
 
 ### Web Endpoint Monitoring ###
 
-- Web endpoint monitoring is available in the **Basic**, **Standard** <!-- deleted by customization, and **Premium** --> modes. For more information about web endpoint monitoring, see [How to Monitor Web Apps](/documentation/articles/web-sites-monitor).
+- Web endpoint monitoring is available in the **Basic**, **Standard** , and **Premium**  modes. For more information about web endpoint monitoring, see [How to Monitor Web Apps](/documentation/articles/web-sites-monitor).
 
 - For detailed information about all of the remaining features in the App Service plans, including pricing and features of interest to all users (including developers), see [Azure Pricing Details](/home/features/web-site/#price).
-<!-- deleted by customization
+
 
 >[AZURE.NOTE] If you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.
--->
+
 
 <a name="Next Steps"></a>	
 ## Next Steps
 
-- To get started with Azure, see [Windows Azure Trial](/pricing/1rmb-trial/).
+- To get started with Azure, see [Azure Trial](/pricing/1rmb-trial/).
 - For information on pricing, support, and SLA, visit the following links.
 	
 	[Data Transfers Pricing Details](/home/features/data-transfers/#price)
 	
-	[Windows Azure Support Plans](/support/plans/)
+	[Azure Support Plans](/support/plans/)
 	
 	[Service Level Agreements](/support/legal/sla/)
 	
 	[SQL Database Pricing Details](/home/features/sql-database/#price)
 	
-<!-- deleted by customization
-	[Virtual Machine and Cloud Service Sizes for Windows Azure][vmsizes]
+	[Virtual Machine and Cloud Service Sizes for Azure][vmsizes]
 	
+
 	[Azure Pricing Details](/home/features/web-site/#price)
-	
 	[Azure Pricing Details - SSL Connections](/home/features/web-site/#price)
 
 - For information on Azure best practices, including building a scalable and resilient architecture, see [Best Practices: Azure Web Apps](http://blogs.msdn.com/b/windowsazure/archive/2014/02/10/best-practices-windows-azure-websites-waws.aspx).
@@ -304,12 +294,12 @@ Depending on the web app's mode, the following developer-oriented features are a
 
 ## What's changed
 * For a guide to the change from Websites to Azure see: [Azure and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
--->
-<!-- keep by customization: begin -->
-	[Virtual Machine](/documentation/articles/virtual-machines-size-specs/) and [Cloud Service](/documentation/articles/cloud-services-sizes-specs/) Sizes for Windows Azure
-	
+
+
 	[Azure Web App Pricing Details](/home/features/web-site/#price)
-<!-- keep by customization: end -->
+
+- For information on Azure best practices, including building a scalable and resilient architecture, see [Best Practices: Azure Web Apps](https://azure.microsoft.com/zh-cn/blog/best-practices-windows-azure-websites-waws/).
+
 
 <!-- LINKS -->
 [vmsizes]:/documentation/articles/virtual-machines-size-specs/
@@ -318,10 +308,10 @@ Depending on the web app's mode, the following developer-oriented features are a
 [portal]: https://manage.windowsazure.cn/
 
 <!-- IMAGES -->
-<!-- deleted by customization
+
 [ChooseWHP]: ./media/web-sites-scale/scale1ChooseWHP.png
--->
-<!-- keep by customization: begin -->
+
+
 [Select Website]: ./media/web-sites-scale/01SelectWebsite.png
 [SelectScaleTab]: ./media/web-sites-scale/02SelectScaleTab.png
 [ChooseBasicInstanceSize]: ./media/web-sites-scale/03bChooseBasicInstanceSize.png
@@ -338,7 +328,7 @@ Depending on the web app's mode, the following developer-oriented features are a
 [LinkedResources]: ./media/web-sites-scale/16LinkedResources.png
 [ScaleDatabase]: ./media/web-sites-scale/17ScaleDatabase.png
 [ChooseWHP]: ./media/web-sites-scale/03aChooseWHP.png
-<!-- keep by customization: end -->
+
 [ChooseBasicInstances]: ./media/web-sites-scale/scale2InstancesBasic.png
 [SaveButton]: ./media/web-sites-scale/05SaveButton.png
 [BasicComplete]: ./media/web-sites-scale/06BasicComplete.png

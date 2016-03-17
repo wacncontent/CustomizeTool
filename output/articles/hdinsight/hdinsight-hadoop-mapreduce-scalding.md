@@ -1,5 +1,5 @@
 <properties
- pageTitle="Develop Scalding MapReduce jobs with Maven | Windows Azure"
+ pageTitle="Develop Scalding MapReduce jobs with Maven | Azure"
  description="Learn how to use Maven to create a Scalding MapReduce job, then deploy and run the job on a Hadoop on HDInsight cluster."
  services="hdinsight"
  documentationCenter=""
@@ -21,7 +21,7 @@ In this document, learn how to use Maven to create a basic word count MapReduce 
 ## Prerequisites
 
 - **An Azure subscription**. See [Get Azure trial](/pricing/1rmb-trial/).
-* **A Windows or Linux based Hadoop on HDInsight cluster**. See [Provision Linux-based Hadoop on HDInsight](/documentation/articles/hdinsight-provision-clusters-v1) or [Provision Windows-based Hadoop on HDInsight](/documentation/articles/hdinsight-provision-clusters-v1) for more information.
+ or Linux  b* **A Windows or Linux based Hadoop on HDInsight cluster**. See [Provision Linux-based Hado [Provision Linux-based Hadoop on HDInsight](/documentation/articles/hdinsight-provision-clusters-v1) or  [ [Provision Windows-based Hadoop on HDInsight](/documentation/articles/hdinsight-provision-clusters-v1) for more information.
 
 * **[Maven](http://maven.apache.org/)**
 
@@ -179,10 +179,11 @@ In this document, learn how to use Maven to create a basic word count MapReduce 
 
     Once this job completes, the package containing the WordCount application can be found at **target/scaldingwordcount-1.0-SNAPSHOT.jar**.
 
-## Run the job on a Linux-based cluster
+ Linux-based  ## Run the job on a Linux-based cluster
 
-> [AZURE.NOTE] The following steps use SSH and the Hadoop command. For other methods of running MapReduce jobs, see [Use MapReduce in Hadoop on HDInsight](/documentation/articles/hdinsight-use-mapreduce).
+ SSH and the Hadoop command  > [AZURE.NOTE] The following steps use SSH and the Hadoop command. For other methods of running MapReduce jobs, see [Use MapReduce in Hadoop on HDInsight](/documentation/articles/hdinsight-use-mapreduce).
 
+
 1. Use the following command to upload the package to your HDInsight cluster:
 
         scp target/scaldingwordcount-1.0-SNAPSHOT.jar username@clustername-ssh.azurehdinsight.cn:
@@ -208,6 +209,39 @@ In this document, learn how to use Maven to create a basic word count MapReduce 
         hadoop fs -text wasb:///example/wordcountout/part-00000
 
     This will display information similar to the following:
+
+
+1. [Install and configure Azure PowerShell](/documentation/articles/powershell-install-configure).
+
+2. Download [hdinsight-tools.psm1](https://github.com/Blackmist/hdinsight-tools/blob/master/hdinsight-tools.psm1) and save to a file named **hdinsight-tools.psm1**.
+
+3. Open a new **Azure PoweShell** session and enter the following command. If hdinsight-tools.psm1 isn't in the current directory, provide the path to the file:
+
+        import-module hdinsight-tools.psm1
+
+    This imports several functions for working with files in HDInsight.
+
+4. Use the following commands to upload the jar file containing the WordCount job. Replace `CLUSTERNAME` with the name of your HDInsight cluster:
+
+        $clusterName="CLUSTERNAME"
+        Add-HDInsightFile -clusterName $clusterName -localPath \path\to\scaldingwordcount-1.0-SNAPSHOT.jar -destinationPath example/jars/scaldingwordcount-1.0-SNAPSHOT.jar
+
+5. Once the upload has completed, use the following commands to run the job:
+
+        $jobDef=New-AzureHDInsightMapReduceJobDefinition -JobName ScaldingWordCount -JarFile wasb:///example/jars/scaldingwordcount-1.0-SNAPSHOT.jar -ClassName com.microsoft.example.WordCount -arguments "--hdfs", "--input", "wasb:///example/data/gutenberg/davinci.txt", "--output", "wasb:///example/wordcountout"
+        $job = start-azurehdinsightjob -cluster $clusterName -jobdefinition $jobDef
+        wait-azurehdinsightjob -Job $job -waittimeoutinseconds 3600
+
+6. Once the job completes, use the following to download the job output:
+
+        Get-HDInsightFile -clusterName $clusterName -remotePath example/wordcountout/part-00000 -localPath output.txt
+
+6. Once the job completes, the output will be downloaded to the file __output.txt__ in the current directory. Use the following command to display the results.
+
+        cat output.txt
+
+    The file should contain values similar to the following:
+
 
         writers 9
         writes  18
@@ -223,6 +257,7 @@ In this document, learn how to use Maven to create a basic word count MapReduce 
         wrotefootnote   1
         wrought 7
 
+
 ## Run the job on a Windows-based cluster
 
 > [AZURE.NOTE] The following steps use Windows PowerShell. For other methods of running MapReduce jobs, see [Use MapReduce in Hadoop on HDInsight](/documentation/articles/hdinsight-use-mapreduce).
@@ -330,6 +365,7 @@ In this document, learn how to use Maven to create a basic word count MapReduce 
         wrotefootnote   1
         wrought 7
 
+
 ## Next steps
 
 Now that you have learned how to use Scalding to create MapReduce jobs for HDInsight, use the following links to explore other ways to work with Azure HDInsight.

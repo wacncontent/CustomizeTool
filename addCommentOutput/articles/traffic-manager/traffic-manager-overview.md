@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="What is Traffic Manager | Windows Azure"
+   pageTitle="What is Traffic Manager | Azure"
    description="This article will help you understand what Traffic Manager is, and how it works"
    services="traffic-manager"
    documentationCenter=""
@@ -13,7 +13,7 @@
 
 # What is Traffic Manager?
 
-Windows Azure Traffic Manager allows you to control the distribution of user traffic to your specified endpoints, which can include Azure cloud services, websites, and other endpoints. Traffic Manager works by applying an intelligent policy engine to Domain Name System (DNS) queries for the domain names of your Internet resources. Your Azure cloud services or websites can be running in different datacenters across the world.
+Azure Traffic Manager allows you to control the distribution of user traffic to your specified endpoints, which can include Azure cloud services, websites, and other endpoints. Traffic Manager works by applying an intelligent policy engine to Domain Name System (DNS) queries for the domain names of your Internet resources. Your Azure cloud services or websites can be running in different datacenters across the world.
 
 Traffic Manager can help you:
 
@@ -57,7 +57,7 @@ Since the company domain and resolved IP address are cached on the client machin
    - **Create your Traffic Manager profile** - To create a profile by using Quick Create in the Azure Management Portal, see [Manage Traffic Manager Profiles](/documentation/articles/traffic-manager-manage-profiles).
    - **Configure traffic routing method settings** - While in Quick Create, you must select the traffic routing method for your profile. This setting can be changed at any time after completing the Quick Create steps. For configuration steps, see the topic that corresponds to your traffic routing method: [Configure Performance traffic routing method](/documentation/articles/traffic-manager-configure-performance-load-balancing), [Configure Failover traffic routing method](/documentation/articles/traffic-manager-configure-failover-load-balancing), [Configure Round Robin traffic routing method](/documentation/articles/traffic-manager-configure-round-robin-load-balancing).
    
-   >[AZURE.NOTE] The Round Robin method of traffic routing method now supports weighted distribution of network traffic. However, at this time you must use either REST APIs or Windows PowerShell to configure the weight. For more information and an example configuration, see [Azure Traffic Manager External Endpoints and Weighted Round Robin via PowerShell](http://azure.microsoft.com/blog/2014/06/26/azure-traffic-manager-external-endpoints-and-weighted-round-robin-via-powershell/) in the Azure blog.
+   >[AZURE.NOTE] The Round Robin method of traffic routing method now supports weighted distribution of network traffic. However, at this time you must use either REST APIs or Windows PowerShell to configure the weight. For more information and an example configuration, see [Azure Traffic Manager External Endpoints and Weighted Round Robin via PowerShell](https://azure.microsoft.com/blog/2014/06/26/azure-traffic-manager-external-endpoints-and-weighted-round-robin-via-powershell/) in the Azure blog.
 
    - **Configure endpoints** - Endpoints are not configured during Quick Create. After creating your profile and specifying your traffic routing method, you must then let Traffic Manager know the endpoints. For steps to configure endpoints, see [Manage Endpoints in Traffic Manager](/documentation/articles/traffic-manager-endpoints)
 
@@ -167,4 +167,4 @@ If you want the figures in this topic as PowerPoint sides for your own presentat
 
 [Create a profile](/documentation/articles/traffic-manager-manage-profiles)
 
-[Azure Traffic Manager Cmdlets](https://msdn.microsoft.com/zh-cn/library/dn690250.aspx) 
+[Azure Traffic Manager Cmdlets](https://msdn.microsoft.com/zh-cn/library/dn690250.aspx)

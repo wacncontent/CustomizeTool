@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Create a VM running Windows in the Management Portal | Windows Azure"
+	pageTitle="Create a VM running Windows in the Management Portal | Azure"
 	description="Create a Windows virtual machine in the Azure Management Portal."
 	services="virtual-machines"
 	documentationCenter=""
@@ -17,14 +17,13 @@
 
 > [AZURE.SELECTOR]
 - [Azure Management Portal](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)
-- [PowerShell: Resource Manager deployment](/documentation/articles/virtual-machines-deploy-rmtemplates-powershell)
 - [PowerShell: Classic deployment](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-vms)
 
 <!-- HHTML comment in to break between the selector and the note in the include below-->
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] 
 
-This tutorial shows you how easy it is to create an Azure virtual machine (VM) running Windows in the Azure Management Portal. We'll use a Windows Server image as an example, but that's just one of the many images Azure offers. Note that your image choices depend on your subscription. For example, Windows desktop images may be available to MSDN subscribers.
+This tutorial shows you how easy it is to create an Azure virtual machine (VM) running Windows in the Azure Management Portal. We'll use a Windows Server image as an example, but that's just one of the many images Azure offers.
 
 You can also create VMs using [your own images](/documentation/articles/virtual-machines-create-upload-vhd-windows-server). To learn about this and other methods, see [Different ways to create a Windows virtual machine](/documentation/articles/virtual-machines-windows-choices-create-vm).
 

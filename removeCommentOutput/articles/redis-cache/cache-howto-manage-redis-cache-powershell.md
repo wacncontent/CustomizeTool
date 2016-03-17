@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Manage Azure Redis Cache with Azure PowerShell | Windows Azure"
+	pageTitle="Manage Azure Redis Cache with Azure PowerShell | Azure"
 	description="Learn how to perform administrative tasks for Azure Redis Cache using Azure PowerShell."
 	services="redis-cache"
 	documentationCenter="" 
@@ -34,7 +34,7 @@ First, you must logon to Azure with this command.
 
 	Login-AzureRmAccount
 
-Specify the email address of your Azure account and its password in the Windows Azure sign-in dialog.
+Specify the email address of your Azure account and its password in the Azure sign-in dialog.
 
 Next, if you have multiple Azure subscriptions, you need to set your Azure subscription. To see a list of your current subscriptions, run this command.
 
@@ -77,7 +77,7 @@ To create a cache in the Azure Government Cloud, use one of the following locati
 -	USGov Virginia
 -	USGov Iowa
 
-For more information about the Azure Government Cloud, see [Windows Azure Government](https://azure.microsoft.com/features/gov/) and [Windows Azure Government Developer Guide](/documentation/articles/azure-government-developer-guide).
+For more information about the Azure Government Cloud, see [Azure Government](https://azure.microsoft.com/features/gov/) and [Azure Government Developer Guide](/documentation/articles/azure-government-developer-guide).
 
 ### To connect to the Azure China Cloud
 

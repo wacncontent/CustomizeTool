@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Automatically Scale Virtual Machine Scale Sets | Windows Azure"
+	pageTitle="Automatically Scale Virtual Machine Scale Sets | Azure"
 	description="Get started creating and managing your first Azure Virtual Machine Scale Sets using Azure PowerShell"
 	services="virtual-machines"
 	documentationCenter=""
@@ -35,7 +35,7 @@ The template that you build in this tutorial is similar to a template that can b
 
 ## Step 1: Create a resource group and a storage account
 
-1. **Sign in to Windows Azure**. Open the Windows Azure PowerShell window and run **Login-AzureRmAccount**.
+1. **Sign in to Azure**. Open the Azure PowerShell window and run **Login-AzureRmAccount**.
 
 2. **Create a resource group** - All resources must be deployed to a resource group. For this tutorial, name the resource group **vmsstestrg1**. See [New-AzureRmResourceGroup](https://msdn.microsoft.com/zh-cn/library/mt603739.aspx).
 
@@ -335,7 +335,7 @@ An Azure Resource Manager template makes it possible for you to deploy and manag
 						"uri":  "[concat('https://',parameters('resourcePrefix'),'saa.blob.core.chinacloudapi.cn/vhds/',parameters('resourcePrefix'),'osdisk1.vhd')]"
 					},
 					"caching": "ReadWrite",
-					"createOption": "FromImage"        
+					"createOption": "FromImage"
 				}
 			},
 			"networkProfile": {
@@ -523,13 +523,13 @@ An Azure Resource Manager template makes it possible for you to deploy and manag
 	}
 	```
 
-12.	Save the template file.    
+12.	Save the template file.
 
 ## Step 3: Upload the template to storage
 
-The template can be uploaded from the Windows Azure PowerShell window as long as you know the account name and the primary key of the storage account that you created in step 1.
+The template can be uploaded from the Azure PowerShell window as long as you know the account name and the primary key of the storage account that you created in step 1.
 
-1.	In the Windows Azure PowerShell window, set a variable that specifies the name of the storage account that you deployed in step 1.
+1.	In the Azure PowerShell window, set a variable that specifies the name of the storage account that you deployed in step 1.
 
 		$StorageAccountName = "vmstestsa"
 

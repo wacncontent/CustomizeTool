@@ -1,5 +1,5 @@
 <properties
-	pageTitle="How to use Azure Redis Cache with Node.js | Windows Azure"
+	pageTitle="How to use Azure Redis Cache with Node.js | Azure"
 	description="Get started with Azure Redis Cache using Node.js and node_redis."
 	services="redis-cache"
 	documentationCenter=""
@@ -20,7 +20,7 @@
 - [Java](/documentation/articles/cache-java-get-started)
 - [Python](/documentation/articles/cache-python-get-started)
 
-Azure Redis Cache gives you access to a secure, dedicated Redis cache, managed by Microsoft. Your cache is accessible from any application within Windows Azure.
+Azure Redis Cache gives you access to a secure, dedicated Redis cache, managed by Microsoft. Your cache is accessible from any application within Azure.
 
 This topic shows you how to get started with Azure Redis Cache using Node.js. For another example of using Azure Redis Cache with Node.js, see [Build a Node.js Chat Application with Socket.IO on an Azure Website][].
 
@@ -35,6 +35,7 @@ This tutorial uses [node_redis](https://github.com/mranney/node_redis), but you 
 
 ## Create a Redis cache on Azure
 
+
 In the [Azure Management Portal](https://manage.windowsazure.cn/), click **New**, **DATA SERVICE**, and select **Redis Cache**.
 
   ![][1]
@@ -47,14 +48,47 @@ Enter a DNS hostname. It will have the form `<name>.redis.cache.chinacloudapi.cn
   Once you create the cache, [browse to it](/documentation/articles/cache-configure#configure-redis-cache-settings) to view the cache settings. Click the link under **Keys** and copy the primary key. You need this to authenticate requests.
 
   ![][4]
+
+
+In Azure China, Redis Cache can only be managed by Azure PowerShell or Azure CLI
+
+[AZURE.INCLUDE [azurerm-azurechinacloud-environment-parameter](../includes/azurerm-azurechinacloud-environment-parameter.md)]
+
+Use the following PowerShell Script to create a cache:
+
+	$VerbosePreference = "Continue"
+
+	# Create a new cache with date string to make name unique. 
+	$cacheName = "MovieCache" + $(Get-Date -Format ('ddhhmm')) 
+	$location = "China North"
+	$resourceGroupName = "Default-Web-ChinaNorth"
+	
+	$movieCache = New-AzureRmRedisCache -Location $location -Name $cacheName  -ResourceGroupName $resourceGroupName -Size 250MB -Sku Basic
+
+## Enable the non-SSL endpoint
+
+You can use the following PowerShell command to enable the non-SSL endpoint
+
+	Set-AzureRmRedisCache -Name "<your cache name>" -ResourceGroupName "<your resource group name>" -EnableNonSslPort $true
+
 
 ## Add something to the cache and retrieve it
 
+
 ```js
 var redis = require("redis");
+
+
+	var redis = require("redis");
+
 
 // Add your cache name and access key.
+
 var client = redis.createClient(6380,'<name>.redis.cache.chinacloudapi.cn', {auth_pass: '<key>', tls: {servername: '<name>.redis.cache.chinacloudapi.cn'}});
+
+
+	var client = redis.createClient(6379,'<name>.redis.cache.chinacloudapi.cn', {auth_pass: '<key>' });
+
 
 client.set("foo", "bar", function(err, reply) {
   console.log(reply);
@@ -63,7 +97,7 @@ client.set("foo", "bar", function(err, reply) {
 client.get("foo",  function(err, reply) {
   console.log(reply);
 });
-```
+ ``` ```
 
 Output:
 
@@ -73,7 +107,9 @@ Output:
 
 ## Next steps
 
+
 - [Enable cache diagnostics](/documentation/articles/cache-how-to-monitor#enable-cache-diagnostics) so you can [monitor](/documentation/articles/cache-how-to-monitor) the health of your cache.
+
 - Read the official [Redis documentation](http://redis.io/documentation).
 
 
@@ -83,4 +119,4 @@ Output:
 [3]: ./media/cache-nodejs-get-started/cache03.png
 [4]: ./media/cache-nodejs-get-started/cache04.png
 
-[Build a Node.js Chat Application with Socket.IO on an Azure Website]: ../app-service-web/web-sites-nodejs-chat-app-socketio.md
+[Build a Node.js Chat Application with Socket.IO on an Azure Website]: /documentation/articles/web-sites-nodejs-chat-app-socketio

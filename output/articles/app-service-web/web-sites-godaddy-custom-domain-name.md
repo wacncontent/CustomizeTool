@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
 	pageTitle="Configure a custom domain name in Azure (GoDaddy)"
 	description="Learn how to use a domain name from GoDaddy with Azure Web Apps"

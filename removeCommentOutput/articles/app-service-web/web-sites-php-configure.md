@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Configure PHP in Azure Web Apps | Windows Azure"
+	pageTitle="Configure PHP in Azure Web Apps | Azure"
 	description="Learn how to configure the default PHP installation or add a custom PHP installation for Web Apps in Azure."
 	services="app-service"
 	documentationCenter="php"

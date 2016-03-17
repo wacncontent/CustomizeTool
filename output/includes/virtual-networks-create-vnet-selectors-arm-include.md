@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 > [AZURE.SELECTOR]
 - [Azure Management Portal](/documentation/articles/virtual-networks-create-vnet-arm-pportal)
 - [PowerShell](/documentation/articles/virtual-networks-create-vnet-arm-ps)

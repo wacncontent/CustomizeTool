@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Learn what is Hive and how to use HiveQL | Windows Azure"
+	pageTitle="Learn what is Hive and how to use HiveQL | Azure"
 	description="Learn about Apache Hive and how to use it with Hadoop in HDInsight. Choose how to run your Hive job, and use HiveQL to analyze a sample Apache log4j file."
 	keywords="hiveql,what is hive"
 	services="hdinsight"
@@ -172,20 +172,20 @@ Now that you've learned what Hive is and how to use it with Hadoop in HDInsight,
 [connectionmanager]: http://msdn.microsoft.com/zh-cn/library/mt146773(v=sql.120).aspx
 [ssispack]: http://msdn.microsoft.com/zh-cn/library/mt146770(v=sql.120).aspx
 
-[hdinsight-use-pig]: hdinsight-use-pig.md
-[hdinsight-use-oozie]: hdinsight-use-oozie.md
-[hdinsight-analyze-flight-data]: hdinsight-analyze-flight-delay-data.md
-[hdinsight-use-mapreduce]: hdinsight-use-mapreduce.md
+[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
+[hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie
+[hdinsight-analyze-flight-data]: /documentation/articles/hdinsight-analyze-flight-delay-data
+[hdinsight-use-mapreduce]: /documentation/articles/hdinsight-use-mapreduce
 
 
-[hdinsight-storage]: hdinsight-hadoop-use-blob-storage.md
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
 
-[hdinsight-provision]: hdinsight-provision-clusters-v1.md
-[hdinsight-submit-jobs]: hdinsight-submit-hadoop-jobs-programmatically.md
-[hdinsight-upload-data]: hdinsight-upload-data.md
-[hdinsight-get-started]: hdinsight-get-started.md
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
+[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
 
-[Powershell-install-configure]: ../install-configure-powershell.md
+[Powershell-install-configure]: /documentation/articles/powershell-install-configure
 [powershell-here-strings]: http://technet.microsoft.com/zh-cn/library/ee692792.aspx
 
 [image-hdi-hive-powershell]: ./media/hdinsight-use-hive/HDI.HIVE.PowerShell.png

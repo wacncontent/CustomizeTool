@@ -1,6 +1,8 @@
+<!-- not suitable for Mooncake -->
+
 <properties
 	pageTitle="Connect to on-premises SQL Server from a web app in Azure using Hybrid Connections"
-	description="Create a web app on Windows Azure and connect it to an on-premises SQL Server database"
+	description="Create a web app on Azure and connect it to an on-premises SQL Server database"
 	services="app-service\web"
 	documentationCenter=""
 	authors="cephalin"

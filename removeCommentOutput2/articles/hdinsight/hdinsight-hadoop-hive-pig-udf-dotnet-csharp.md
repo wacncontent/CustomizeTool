@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Use C# with Hive and Pig on Hadoop in HDInsight | Windows Azure"
+	pageTitle="Use C# with Hive and Pig on Hadoop in HDInsight | Azure"
 	description="Learn how to use C# user-defined functions (UDF) with Hive and Pig streaming in Azure HDInsight."
 	services="hdinsight"
 	documentationCenter=""

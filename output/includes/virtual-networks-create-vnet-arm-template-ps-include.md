@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 ## Deploy the ARM template by using PowerShell
 
 To deploy the ARM template you downloaded by using PowerShell, follow the steps below.

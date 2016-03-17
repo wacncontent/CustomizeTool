@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Apache Storm tutorial: Get started with Storm | Windows Azure"
+	pageTitle="Apache Storm tutorial: Get started with Storm | Azure"
 	description="Get started with big data analytics using Apache Storm and the Storm Starter samples on HDInsight. Learn how to use Storm to process data real-time."
 	keywords="apache storm,apache storm tutorial,big data analytics,storm starter"
 	services="hdinsight"
@@ -17,7 +17,7 @@
 
 # Apache Storm tutorial: Get started with the Storm Starter samples for big data analytics on HDInsight
 
-Apache Storm is a scalable, fault-tolerant, distributed, real-time computation system for processing streams of data. With Storm on Windows Azure HDInsight, you can create a cloud-based Storm cluster that performs big data analytics in real time. 
+Apache Storm is a scalable, fault-tolerant, distributed, real-time computation system for processing streams of data. With Storm on Azure HDInsight, you can create a cloud-based Storm cluster that performs big data analytics in real time. 
 
 > [AZURE.NOTE] The steps in this article create a Windows-based HDInsight cluster. For steps to create a Linux-based Storm on HDInsight cluster, see [Apache Storm tutorial: Get started with the Storm Starter sample using data analytics on HDInsight](/documentation/articles/hdinsight-apache-storm-tutorial-get-started)
 
@@ -232,5 +232,5 @@ In this Apache Storm tutorial, you used the Storm Starter to learn how to create
 [stormstarter]: https://github.com/apache/storm/tree/master/examples/storm-starter
 [stormjavadocs]: https://storm.incubator.apache.org/apidocs/
 [azureportal]: https://manage.windowsazure.cn/
-[hdinsight-provision]: hdinsight-provision-clusters-v1.md
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
 [preview-portal]: https://manage.windowsazure.cn/

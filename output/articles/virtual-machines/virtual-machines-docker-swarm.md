@@ -15,7 +15,7 @@
 
 # How to use docker with swarm
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]  Resource Manager model. 
 
 
 This topic shows a very simple way to use [docker](https://www.docker.com/) with [swarm](https://github.com/docker/swarm) to create a swarm-managed cluster on Azure. It creates four virtual machines in Azure, one to act as the swarm manager, and three as part of the cluster of docker hosts. When you are finished, you can use swarm to see the cluster and then begin to use docker on it. In addition, the Azure CLI calls in this topic use the service management (asm) mode. 
@@ -126,9 +126,9 @@ and then you can list out your nodes in your cluster:
 <!--Every topic should have next steps and links to the next logical set of content to keep the customer engaged-->
 ## Next steps
 
-Go run things on your swarm. To look for inspiration, see [https://github.com/docker/swarm/](https://github.com/docker/swarm/), or perhaps a [video](https://www.youtube.com/watch?v=EC25ARhZ5bI).
+Go run things on your swarm. To look for inspiration, see [https://github.com/docker/swarm/](https://github.com/docker/swarm/), or perhaps a [video](https://www.youtube.com/watch?v=EC25ARhZ5bI) .
 
 <!-- links -->
 
-[docker-machine-azure]: virtual-machines-docker-machine.md
+[docker-machine-azure]: /documentation/articles/virtual-machines-docker-machine
  

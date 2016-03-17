@@ -9,19 +9,12 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="10/14/2015"
+	ms.date="01/13/2016"
 	wacn.date=""/>
 
 #<a name="howtomonitor"></a>Monitor Web Apps in Azure
 
 [Azure Web Apps](/documentation/services/web-sites/) provide monitoring functionality for Standard App Service plans via the Monitor management page. The Monitor management page provides performance statistics for a web app as described below.
-## Table of Contents ##
-- [How to: Add web site metrics](#websitemetrics)
-- [How to: Receive alerts from web site metrics](#howtoreceivealerts)
-- [How to: View usage quotas for a web site](#howtoviewusage)
-- [How to: Avoid exceeding your quotas](#resourceusage)
-- [How to: Configure diagnostics and download logs for a web site](#howtoconfigdiagnostics)
-- [How to: Monitor web endpoint status](#webendpointstatus)
 
 ##Metrics Retention Policy
 
@@ -172,7 +165,7 @@ Log files can be downloaded using either FTP, Azure PowerShell, or the Azure CLI
 
 **Azure PowerShell**
 
-1. From the **Start Screen** or the **Start Menu**, search for **Azure PowerShell**. Right-click the **Azure PowerShell** entry and select **Run as Administrator**.
+1. From the **Start Screen** or the **Start Menu**, search for **Windows PowerShell**. Right-click the **Windows PowerShell** entry and select **Run as Administrator**.
 
 	> [AZURE.NOTE] If **Azure PowerShell** is not installed, see [Getting Started with Azure PowerShell Cmdlets](http://msdn.microsoft.com/zh-cn/library/azure/jj554332.aspx) for installation and configuration information.
 
@@ -264,7 +257,7 @@ After you configure endpoint monitoring, you can drill down into the individual 
 7.	Optionally, repeat the previous steps to create a second endpoint.
 8.	Click **Save**. It may take some time for the web endpoint monitoring data to be available on the **Dashboard** and **Monitor** tabs.
 
-	To create an email rule, do the following:
+To create an email rule, do the following:
 
 9.	In the service bar at the far left, click **Management Services**.
 10.	Click **Add Rule** at the bottom.

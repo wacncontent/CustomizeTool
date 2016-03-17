@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Should I Choose Azure VMs? | Windows Azure"
+	pageTitle="Should I Choose Azure VMs? | Azure"
 	description="Learn Azure VMs and how they compare to the different application hosting models on Azure."
 	headerExpose=""
 	footerExpose=""

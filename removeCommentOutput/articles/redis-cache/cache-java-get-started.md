@@ -1,5 +1,5 @@
 <properties
-   pageTitle="How to use Azure Redis Cache with Java | Windows Azure"
+   pageTitle="How to use Azure Redis Cache with Java | Azure"
 	description="Get started with Azure Redis Cache using Java"
 	services="redis-cache"
 	documentationCenter=""
@@ -20,7 +20,7 @@
 - [Java](/documentation/articles/cache-java-get-started)
 - [Python](/documentation/articles/cache-python-get-started)
 
-Azure Redis Cache gives you access to a dedicated Redis cache, managed by Microsoft. Your cache is accessible from any application within Windows Azure.
+Azure Redis Cache gives you access to a dedicated Redis cache, managed by Microsoft. Your cache is accessible from any application within Azure.
 
 This topic shows you how to get started with Azure Redis Cache using Java.
 

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Manage Hadoop clusters using Azure CLI | Windows Azure"
+	pageTitle="Manage Hadoop clusters using Azure CLI | Azure"
 	description="How to use the Azure CLI to manage Hadoop clusters in HDIsight"
 	services="hdinsight"
 	editor="cgronlun"
@@ -86,16 +86,16 @@ In this article, you have learned how to perform different HDInsight cluster adm
 * [How to use the Azure CLI] [azure-command-line-tools]
 
 
-[azure-command-line-tools]: ../xplat-cli.md
-[azure-create-storageaccount]: ../storage-create-storage-account.md
+[azure-command-line-tools]: /documentation/articles/xplat-cli-install
+[azure-create-storageaccount]: /documentation/articles/storage-create-storage-account
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: /pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
 
 
-[hdinsight-admin-portal]: hdinsight-administer-use-management-portal-v1
-[hdinsight-admin-powershell]: hdinsight-administer-use-powershell.md
-[hdinsight-get-started]: ../hdinsight-get-started.md
+[hdinsight-admin-portal]: /documentation/articles/hdinsight-administer-use-management-portal-v1
+[hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
 
 [image-cli-account-download-import]: ./media/hdinsight-administer-use-command-line/HDI.CLIAccountDownloadImport.png
 [image-cli-clustercreation]: ./media/hdinsight-administer-use-command-line/HDI.CLIClusterCreation.png

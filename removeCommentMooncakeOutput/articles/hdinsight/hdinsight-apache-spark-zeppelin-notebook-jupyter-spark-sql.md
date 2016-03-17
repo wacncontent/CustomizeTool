@@ -1,7 +1,7 @@
 <!-- not suitable for Mooncake -->
 
 <properties
-	pageTitle="Create a Spark cluster on Azure HDInsight and use Spark SQL from Zeppelin and Jupyter for interactive analysis | Windows Azure"
+	pageTitle="Create a Spark cluster on Azure HDInsight and use Spark SQL from Zeppelin and Jupyter for interactive analysis | Azure"
 	description="Step-by-step instructions on how to quickly create an Apache Spark cluster in HDInsight and then use Spark SQL from Zeppelin and Jupyter notebooks to run interactive queries."
 	services="hdinsight"
 	documentationCenter=""
@@ -45,7 +45,7 @@ In this section, you create an HDInsight version 3.2 cluster, which is based on 
 
     ![Creating a new cluster in the Azure Management Portal](./media/hdinsight-apache-spark-zeppelin-notebook-jupyter-spark-sql/hdispark.createcluster.1.png "Creating a new cluster in the Azure Management Portal")
 
-3. Enter a **Cluster Name**, select **Hadoop** for the **Cluster Type**, and from the **Cluster Operating System** drop-down menu, select **Windows Server 2012 R2 Datacenter**. A green check appears beside the cluster name if it is available.
+3. Enter a **Cluster Name**, select **Spark** for the **Cluster Type**, and from the **Cluster Operating System** drop-down menu, select **Windows Server 2012 R2 Datacenter**. A green check appears beside the cluster name if it is available.
 
 	![Enter cluster name and type](./media/hdinsight-apache-spark-zeppelin-notebook-jupyter-spark-sql/hdispark.createcluster.2.png "Enter cluster name and type")
 
@@ -281,7 +281,8 @@ In this section, you use a Jupyter notebook to run Spark SQL queries against a S
 [hdinsight-versions]: /documentation/articles/hdinsight-component-versioning-v1
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
 [hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
-[azure-purchase-options]: http://www.windowsazure.cn/pricing/overview/
-[azure-trial]: http://www.windowsazure.cn/pricing/1rmb-trial/
+[azure-purchase-options]: /pricing/overview/
+[azure-member-offers]: /pricing/member-offers/
+[azure-trial]: /pricing/1rmb-trial/
 [azure-management-portal]: https://manage.windowsazure.cn/
 [azure-create-storageaccount]: /documentation/articles/storage-create-storage-account

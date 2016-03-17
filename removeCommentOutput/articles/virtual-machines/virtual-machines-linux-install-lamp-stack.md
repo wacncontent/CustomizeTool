@@ -1,12 +1,12 @@
 <properties
-	pageTitle="Install the LAMP stack on a Linux virtual machine | Windows Azure"
+	pageTitle="Install the LAMP stack on a Linux virtual machine | Azure"
 	description="Learn how to install the LAMP stack on a Linux virtual machine (VM) in Azure."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="szarkos"
 	manager="timlt"
 	editor=""
-	tags=âazure-service-management,azure-resource-manager"/>
+	tags="azure-service-management,azure-resource-manager"/>
 
 <tags
 	ms.service="virtual-machines"
@@ -123,4 +123,3 @@ Suppose you want to automate these steps to deploy applications to remote Linux 
 There are many other resources for setting up a LAMP stack on Ubuntu.
 
 - [https://help.ubuntu.com/community/ApacheMySQLPHP](https://help.ubuntu.com/community/ApacheMySQLPHP)
- 

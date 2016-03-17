@@ -1,5 +1,5 @@
 <properties
-   	pageTitle="Create Hadoop, HBase, or Storm clusters on Linux in HDInsight using cURL and the Azure REST API | Windows Azure"
+   	pageTitle="Create Hadoop, HBase, or Storm clusters on Linux in HDInsight using cURL and the Azure REST API | Azure"
    	description="Learn how to create Linux-based HDInsight clusters using cURL, Azure Resource Manager templates, and the Azure REST API. You can specify the cluster type (Hadoop, HBase, or Storm,) or use scripts to install custom components."
    	services="hdinsight"
    	documentationCenter=""
@@ -302,7 +302,7 @@ Use the following to create a new resource group. You must create the group firs
         -H "Content-Type: application/json" \
         -d $'{
     "location": "DATACENTERLOCATION"
-    }â
+    }'
 
 If this request is successful, you will receive a 200 series response and the response body will contain a JSON document containing information about the group. The `"provisioningState"` element will contain a value of `"Succeeded"`.
 
@@ -352,7 +352,7 @@ Now that you have successfully created an HDInsight cluster, use the following t
 
 ###HBase clusters
 
-* [Get started with HBase on HDInsight](/documentation/articles/hdinsight-hbase-tutorial-get-started-v1-linux)
+* [Get started with HBase on HDInsight](/documentation/articles/hdinsight-hbase-tutorial-get-started-v1)
 * [Develop Java applications for HBase on HDInsight](/documentation/articles/hdinsight-hbase-build-java-maven-linux)
 
 ###Storm clusters

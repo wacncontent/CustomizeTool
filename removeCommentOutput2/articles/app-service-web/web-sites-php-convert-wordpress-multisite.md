@@ -75,6 +75,7 @@ The [WordPress MU Domain Mapping][wordpress-plugin-wordpress-mu-domain-mapping] 
 The **Free** [Azure Web App](/documentation/services/web-sites/) plan mode does not support adding custom domains to Web Apps. You will need to switch to **Shared** or **Standard** mode. To do this:
 
 * Log in to the Azure Management Portal and locate your web app. 
+
 * Click on the **Scale** tab in the main content area
 * Under **General**, select either *SHARED* or *STANDARD*
 * Click **Save**
@@ -95,9 +96,10 @@ It may take some time for the DNS changes to go into full effect, so if the foll
 
 ## Add the domain to the web app
 
+
 Return to your  Website through the Azure Management Portal, and this time click the **CONFIGURE** tab. The **MANAGE DOMAINS** button should be available. Click it.
 
-The *Manage custom domains* dialog show pop up. This is where you will input all the domains which you wish to assign to your  Website. If a domain is not listed here, it will not be available for mapping inside WordPress, regardless of how the domain DNS is setup.
+ Website. If a domain is not listed here, it will not be available for mapping inside WordPress, regardless of how the domain DNS is setup.
 
 ![Manage custom domains dialog][wordpress-manage-domains]
 

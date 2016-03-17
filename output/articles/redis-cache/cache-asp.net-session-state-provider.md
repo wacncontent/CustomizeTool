@@ -55,7 +55,12 @@ The NuGet package downloads and adds the required assembly references and adds t
 
 The commented section provides an example of the attributes and sample settings for each attribute.
 
-Configure the attributes with the values from your cache blade in the Windows Azure Management Portal, and configure the other values as desired. For instructions on accessing your cache properties, see [Configure Redis cache settings](/documentation/articles/cache-configure#configure-redis-cache-settings).
+
+Configure the attributes with the values from your cache blade in the Azure Management Portal, and configure the other values as desired. For instructions on accessing your cache properties, see [Configure Redis cache settings](/documentation/articles/cache-configure#configure-redis-cache-settings).
+
+
+You can configure Redis Cache through Azure PowerShell. For instructions on accessing your cache properties, see [Manage Azure Redis Cache with Azure PowerShell](/documentation/articles/cache-howto-manage-redis-cache-powershell).
+
 
 -	**host** - specify your cache endpoint.
 -	**port** - use either your non-SSL port or your SSL port, depending on the ssl settings.
@@ -88,7 +93,12 @@ Once these steps are performed, your application is configured to use the Redis 
 
 >[AZURE.NOTE] Note that data stored in the cache must be serializable, unlike the data that can be stored in the default in-memory ASP.NET Session State Provider. When the Session State Provider for Redis is used, be sure that the data types that are being stored in session state are serializable.
 
+
 ## ASP.NET Session State options
+
+
+##<a name="aspnet-session-state-options"></a> ASP.NET Session State options
+
 
 - In Memory Session State Provider - This provider stores the Session State in memory. The benefit of using this provider is it is simple and fast. However you cannot scale your Web Apps if you are using in memory provider since it is not distributed.
 
@@ -100,5 +110,5 @@ For more information about session state and other best practices, see [Web Deve
 
 ## Next steps
 
-Check out the [ASP.NET Output Cache Provider for Azure Redis Cache](cache-asp.net-output-cache-provider.md).
+Check out the [ASP.NET Output Cache Provider for Azure Redis Cache](cache-asp.net-output Cache](cache-asp.net-output-cache-provider.md)  .
 

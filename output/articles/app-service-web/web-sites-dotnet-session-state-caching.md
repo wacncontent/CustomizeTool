@@ -20,7 +20,9 @@ This topic explains how to use the Azure Redis Cache Service for session state.
 
 If your ASP.NET web app uses session state, you will need to configure an external session state provider (either the Redis Cache Service or a SQL Server session state provider). If you use session state, and don't use an external provider, you will be limited to one instance of your web app. The Redis Cache Service is the fastest and simplest to enable.
 
+
 [AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)] 
+
 
 ##<a id="createcache"></a>Create the Cache
 Follow [these directions](/documentation/articles/cache-dotnet-how-to-use-azure-redis-cache#create-cache) to create the cache.
@@ -84,6 +86,7 @@ The following code retrieves this value from session state.
 
 You can also use the Redis Cache to cache objects in your web app. For more info, see [MVC movie app with Azure Redis Cache in 15 minutes](https://azure.microsoft.com/blog/2014/06/05/mvc-movie-app-with-azure-redis-cache-in-15-minutes/).
 For more details about how to use ASP.NET session state, see [ASP.NET Session State Overview][].
+
 
 >[AZURE.NOTE] If you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.
 
@@ -91,6 +94,7 @@ For more details about how to use ASP.NET session state, see [ASP.NET Session St
 * For a guide to the change from Websites to Azure see: [Azure and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
 
   *By [Rick Anderson](https://twitter.com/RickAndMSFT)*
+
   
   [installed the latest]: /downloads/?sdk=net  
   [ASP.NET Session State Overview]: http://msdn.microsoft.com/zh-cn/library/ms178581.aspx

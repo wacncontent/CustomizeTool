@@ -44,7 +44,7 @@ You can find the IP address, as well as the **awverify** name and **.chinaclouds
 
 	![](./media/custom-dns-web-site/dncmntask-cname-6.png)
 
-<!-- deleted by customization
+
 3. In the **Custom Domains and SSL** blade, click **Bring external domains**.
 
 	![](./media/custom-dns-web-site/dncmntask-cname-7.png)
@@ -54,12 +54,12 @@ You can find the IP address, as well as the **awverify** name and **.chinaclouds
 6. In the **Bring external domains** blade, you will see the **awverify** information, the currently assigned **.chinacloudsites.cn** domain name, and the virtual IP address. Save this information, as it will be used when creating DNS records.
 
 	![](./media/custom-dns-web-site/dncmntask-cname-8.png)
--->
-<!-- keep by customization: begin -->
+
+
 	> [AZURE.NOTE] If **Manage Domains** is not enabled, you are using a **Free** web site. You cannot use custom domain names with a **Free** web site, and must upgrade the App Service plan to **Shared**, **Basic**, or **Standard** mode. For more information on the App Service plan modes, including how to change the mode of your web site, see [How to scale web sites](/documentation/articles/web-sites-scale).
 
 6. In the **MANAGE CUSTOM DOMAINS** dialog, you will see the **awverify** information, the currently assigned **.chinacloudsites.cn** domain name, and the virtual IP address. Save this information, as it will be used when creating DNS records.
 
 	![](./media/custom-dns-web-site/managecustomdomains.png)
 
-<!-- keep by customization: end -->
+

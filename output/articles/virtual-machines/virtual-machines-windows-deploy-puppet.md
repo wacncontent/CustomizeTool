@@ -9,7 +9,7 @@
 
 <p>Puppet Enterprise is automation software for building, deploying, and managing your infrastructure. You can use it to manage your IT infrastructure life-cycle, including discovery, provisioning, operating system and application configuration management, orchestration, and reporting.
 
-Puppet is a client-server system. Puppet Master and the Puppet Enterprise Agent are both available for installation through Windows Azure:
+Puppet is a client-server system. Puppet Master and the Puppet Enterprise Agent are both available for installation through Azure:
 
 - Puppet Master is available as a preconfigured image, installed on an Ubuntu server. You also can install Puppet Enterprise on an existing server, but using the image is the simplest way to get started. You'll need information about the server to set up the agent.
 
@@ -19,7 +19,7 @@ For instructions, download the "Getting Started Guide"  from the [Microsoft Wind
 
 
 ##Additional Resources
-[New Integrations with Windows Azure and Visual Studio]
+[New Integrations with Azure and Visual Studio]
 
 [How to Log on to a Virtual Machine Running Windows Server]
 
@@ -28,7 +28,7 @@ For instructions, download the "Getting Started Guide"  from the [Microsoft Wind
 [Manage Extensions]
 
 <!--Link references-->
-[New Integrations with Windows Azure and Visual Studio]: http://puppetlabs.com/blog/new-integrations-windows-azure-and-visual-studio
+[New Integrations with Azure and Visual Studio]: http://puppetlabs.com/blog/new-integrations-windows-azure-and-visual-studio
 [How to Log on to a Virtual Machine Running Windows Server]: /documentation/articles/virtual-machines-log-on-windows-server/
 [How to Log on to a Virtual Machine Running Linux]: /documentation/articles/virtual-machines-linux-how-to-log-on
 [Manage Extensions]: http://msdn.microsoft.com/zh-cn/library/dn606311.aspx

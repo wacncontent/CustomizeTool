@@ -20,14 +20,6 @@ The Azure Active Directory tenant that you use can be an Azure-only directory, o
 
 >[AZURE.NOTE] For Azure Web Apps you can configure authentication against an Azure Active Directory tenant with a few clicks of a button. For more information, see [Use Active Directory for authentication in Azure Web App](/documentation/articles/web-sites-authentication-authorization).
 
-- [What you will build](#bkmk_build)
-- [What you will need](#bkmk_need)
-- [Use sample application for LOB template](#bkmk_sample)
-- [Run the sample application](#bkmk_run)
-- [Deploy the sample application to Azure Websites](#bkmk_deploy)
-- [Add LOB functionality to the sample application](#bkmk_crud)
-- [Further resources](#bkmk_resources)
-
 <a name="bkmk_build"></a>
 ## What you will build ##
 
@@ -138,11 +130,11 @@ Here, you will publish the application to a web app in Azure. There are already 
 
 11. In Visual Studio, open **Web.Release.config** in your project. Insert the following XML into the `<configuration>` tag, and replace the value of each key with the information that you saved for your new Azure Active Directory application.  
 	<pre class="prettyprint">
-	&lt;appSettings&gt;<span>&#13;</span>
-	   &lt;add key="ida:ClientId" value="<mark>[e.g. 82692da5-a86f-44c9-9d53-2f88d52b478b]</mark>" xdt:Transform="SetAttributes" xdt:Locator="Match(key)" /&gt;<span>&#13;</span>
-	   &lt;add key="ida:AppKey" value="<mark>[e.g. rZJJ9bHSi/cYnYwmQFxLYDn/6EfnrnIfKoNzv9NKgbo=]</mark>" xdt:Transform="SetAttributes" xdt:Locator="Match(key)" /&gt;<span>&#13;</span>
-	   &lt;add key="ida:PostLogoutRedirectUri" value="<mark>[e.g. https://mylobapp.chinacloudsites.cn/]</mark>" xdt:Transform="SetAttributes" xdt:Locator="Match(key)" /&gt;<span>&#13;</span>
-	&lt;/appSettings&gt;</pre>
+&lt;appSettings&gt;
+   &lt;add key="ida:ClientId" value="<mark>[e.g. 82692da5-a86f-44c9-9d53-2f88d52b478b]</mark>" xdt:Transform="SetAttributes" xdt:Locator="Match(key)" /&gt;
+   &lt;add key="ida:AppKey" value="<mark>[e.g. rZJJ9bHSi/cYnYwmQFxLYDn/6EfnrnIfKoNzv9NKgbo=]</mark>" xdt:Transform="SetAttributes" xdt:Locator="Match(key)" /&gt;
+   &lt;add key="ida:PostLogoutRedirectUri" value="<mark>[e.g. https://mylobapp.chinacloudsites.cn/]</mark>" xdt:Transform="SetAttributes" xdt:Locator="Match(key)" /&gt;
+&lt;/appSettings&gt;</pre>
 
 	Make sure that the value of ida:PostLogoutRedirectUri ends with a slash "/".
 
@@ -186,13 +178,13 @@ In this part of the tutorial, you will learn how to build out the desired line-o
 
 6.	Open DAL\RoleClaimContext.cs and add the highlighted code:  
 	<pre class="prettyprint">
-    public class RoleClaimContext : DbContext<span>&#13;</span>
-    {<span>&#13;</span>
-        public RoleClaimContext() : base("RoleClaimContext") { }<span>&#13;</span>
+    public class RoleClaimContext : DbContext
+    {
+        public RoleClaimContext() : base("RoleClaimContext") { }
 
-        public DbSet&lt;Task&gt; Tasks { get; set; }<span>&#13;</span>
-        <mark>public DbSet&lt;WorkItem&gt; WorkItems { get; set; }</mark><span>&#13;</span>
-        public DbSet&lt;TokenCacheEntry&gt; TokenCacheEntries { get; set; }<span>&#13;</span>
+        public DbSet&lt;Task&gt; Tasks { get; set; }
+        <mark>public DbSet&lt;WorkItem&gt; WorkItems { get; set; }</mark>
+        public DbSet&lt;TokenCacheEntry&gt; TokenCacheEntries { get; set; }
     }</pre>
 
 7.	Build the project to make your new model accessible to the scaffolding logic in Visual Studio.
@@ -209,36 +201,36 @@ In this part of the tutorial, you will learn how to build out the desired line-o
 
 11. Add the highlighted [Authorize] decorations to the respective actions below.
 	<pre class="prettyprint">
-	...<span>&#13;</span>
+	...
 
-    <mark>[Authorize(Roles = "Admin, Observer, Writer, Approver")]</mark><span>&#13;</span>
-    public class WorkItemsController : Controller<span>&#13;</span>
-    {<span>&#13;</span>
-		...<span>&#13;</span>
+    <mark>[Authorize(Roles = "Admin, Observer, Writer, Approver")]</mark>
+    public class WorkItemsController : Controller
+    {
+		...
 
-        <mark>[Authorize(Roles = "Admin, Writer")]</mark><span>&#13;</span>
-        public ActionResult Create()<span>&#13;</span>
-        ...<span>&#13;</span>
+        <mark>[Authorize(Roles = "Admin, Writer")]</mark>
+        public ActionResult Create()
+        ...
 
-        <mark>[Authorize(Roles = "Admin, Writer")]</mark><span>&#13;</span>
-        public async Task&lt;ActionResult&gt; Create([Bind(Include = "ItemID,AssignedToID,AssignedToName,Description,Status")] WorkItem workItem)<span>&#13;</span>
-        ...<span>&#13;</span>
+        <mark>[Authorize(Roles = "Admin, Writer")]</mark>
+        public async Task&lt;ActionResult&gt; Create([Bind(Include = "ItemID,AssignedToID,AssignedToName,Description,Status")] WorkItem workItem)
+        ...
 
-        <mark>[Authorize(Roles = "Admin, Writer")]</mark><span>&#13;</span>
-        public async Task&lt;ActionResult&gt; Edit(int? id)<span>&#13;</span>
-        ...<span>&#13;</span>
+        <mark>[Authorize(Roles = "Admin, Writer")]</mark>
+        public async Task&lt;ActionResult&gt; Edit(int? id)
+        ...
 
-        <mark>[Authorize(Roles = "Admin, Writer")]</mark><span>&#13;</span>
-        public async Task&lt;ActionResult&gt; Edit([Bind(Include = "ItemID,AssignedToID,AssignedToName,Description,Status")] WorkItem workItem)<span>&#13;</span>
-        ...<span>&#13;</span>
+        <mark>[Authorize(Roles = "Admin, Writer")]</mark>
+        public async Task&lt;ActionResult&gt; Edit([Bind(Include = "ItemID,AssignedToID,AssignedToName,Description,Status")] WorkItem workItem)
+        ...
 
-        <mark>[Authorize(Roles = "Admin, Writer, Approver")]</mark><span>&#13;</span>
-        public async Task&lt;ActionResult&gt; Delete(int? id)<span>&#13;</span>
-        ...<span>&#13;</span>
+        <mark>[Authorize(Roles = "Admin, Writer, Approver")]</mark>
+        public async Task&lt;ActionResult&gt; Delete(int? id)
+        ...
 
-        <mark>[Authorize(Roles = "Admin, Writer, Approver")]</mark><span>&#13;</span>
-        public async Task&lt;ActionResult&gt; DeleteConfirmed(int id)<span>&#13;</span>
-        ...<span>&#13;</span>
+        <mark>[Authorize(Roles = "Admin, Writer, Approver")]</mark>
+        public async Task&lt;ActionResult&gt; DeleteConfirmed(int id)
+        ...
 	}</pre>
 
 	Since you take care of role mappings in the Azure Management Portal UI, all you need to do is make sure that each action authorizes the right roles.
@@ -271,69 +263,69 @@ In this part of the tutorial, you will learn how to build out the desired line-o
         }
 		
 14.	In Views\WorkItems\Create.cshtml (an automatically scaffolded item), find the `Html.BeginForm` helper method and modify it as follows:  
-	<pre class="prettyprint">@using (Html.BeginForm(<mark>"Create", "WorkItems", FormMethod.Post, new { id = "main-form" }</mark>))<span>&#13;</span>
-	{<span>&#13;</span>
-	    @Html.AntiForgeryToken()<span>&#13;</span>
+	<pre class="prettyprint">@using (Html.BeginForm(<mark>"Create", "WorkItems", FormMethod.Post, new { id = "main-form" }</mark>))
+	{
+	    @Html.AntiForgeryToken()
 	    
-	    &lt;div class="form-horizontal"&gt;<span>&#13;</span>
-	        &lt;h4&gt;WorkItem&lt;/h4&gt;<span>&#13;</span>
-	        &lt;hr /&gt;<span>&#13;</span>
-	        @Html.ValidationSummary(true, "", new { @class = "text-danger" })<span>&#13;</span>
+	    &lt;div class="form-horizontal"&gt;
+	        &lt;h4&gt;WorkItem&lt;/h4&gt;
+	        &lt;hr /&gt;
+	        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 	
-	        &lt;div class="form-group"&gt;<span>&#13;</span>
-	            &lt;div class="col-md-10"&gt;<span>&#13;</span>
-	                @Html.EditorFor(model =&gt; model.AssignedToID, new { htmlAttributes = new { @class = "form-control"<mark>, @type=&quot;hidden&quot;</mark> } })<span>&#13;</span>
-	                @Html.ValidationMessageFor(model =&gt; model.AssignedToID, "", new { @class = "text-danger" })<span>&#13;</span>
-	            &lt;/div&gt;<span>&#13;</span>
-	        &lt;/div&gt;<span>&#13;</span>
+	        &lt;div class="form-group"&gt;
+	            &lt;div class="col-md-10"&gt;
+	                @Html.EditorFor(model =&gt; model.AssignedToID, new { htmlAttributes = new { @class = "form-control"<mark>, @type=&quot;hidden&quot;</mark> } })
+	                @Html.ValidationMessageFor(model =&gt; model.AssignedToID, "", new { @class = "text-danger" })
+	            &lt;/div&gt;
+	        &lt;/div&gt;
 	
-	        &lt;div class="form-group"&gt;<span>&#13;</span>
-	            @Html.LabelFor(model =&gt; model.AssignedToName, htmlAttributes: new { @class = "control-label col-md-2" })<span>&#13;</span>
-	            &lt;div class="col-md-10"&gt;<span>&#13;</span>
-	                @Html.EditorFor(model =&gt; model.AssignedToName, new { htmlAttributes = new { @class = "form-control" } })<span>&#13;</span>
-	                @Html.ValidationMessageFor(model =&gt; model.AssignedToName, "", new { @class = "text-danger" })<span>&#13;</span>
-	            &lt;/div&gt;<span>&#13;</span>
-	        &lt;/div&gt;<span>&#13;</span>
+	        &lt;div class="form-group"&gt;
+	            @Html.LabelFor(model =&gt; model.AssignedToName, htmlAttributes: new { @class = "control-label col-md-2" })
+	            &lt;div class="col-md-10"&gt;
+	                @Html.EditorFor(model =&gt; model.AssignedToName, new { htmlAttributes = new { @class = "form-control" } })
+	                @Html.ValidationMessageFor(model =&gt; model.AssignedToName, "", new { @class = "text-danger" })
+	            &lt;/div&gt;
+	        &lt;/div&gt;
 	
-	        &lt;div class="form-group"&gt;<span>&#13;</span>
-	            @Html.LabelFor(model =&gt; model.Description, htmlAttributes: new { @class = "control-label col-md-2" })<span>&#13;</span>
-	            &lt;div class="col-md-10"&gt;<span>&#13;</span>
-	                @Html.EditorFor(model =&gt; model.Description, new { htmlAttributes = new { @class = "form-control" } })<span>&#13;</span>
-	                @Html.ValidationMessageFor(model =&gt; model.Description, "", new { @class = "text-danger" })<span>&#13;</span>
-	            &lt;/div&gt;<span>&#13;</span>
-	        &lt;/div&gt;<span>&#13;</span>
+	        &lt;div class="form-group"&gt;
+	            @Html.LabelFor(model =&gt; model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+	            &lt;div class="col-md-10"&gt;
+	                @Html.EditorFor(model =&gt; model.Description, new { htmlAttributes = new { @class = "form-control" } })
+	                @Html.ValidationMessageFor(model =&gt; model.Description, "", new { @class = "text-danger" })
+	            &lt;/div&gt;
+	        &lt;/div&gt;
 	
-	        &lt;div class="form-group"&gt;<span>&#13;</span>
-	            @Html.LabelFor(model =&gt; model.Status, htmlAttributes: new { @class = "control-label col-md-2" })<span>&#13;</span>
-	            &lt;div class="col-md-10"&gt;<span>&#13;</span>
-	                @Html.EnumDropDownListFor(model =&gt; model.Status, htmlAttributes: new { @class = "form-control" })<span>&#13;</span>
-	                @Html.ValidationMessageFor(model =&gt; model.Status, "", new { @class = "text-danger" })<span>&#13;</span>
-	            &lt;/div&gt;<span>&#13;</span>
-	        &lt;/div&gt;<span>&#13;</span>
+	        &lt;div class="form-group"&gt;
+	            @Html.LabelFor(model =&gt; model.Status, htmlAttributes: new { @class = "control-label col-md-2" })
+	            &lt;div class="col-md-10"&gt;
+	                @Html.EnumDropDownListFor(model =&gt; model.Status, htmlAttributes: new { @class = "form-control" })
+	                @Html.ValidationMessageFor(model =&gt; model.Status, "", new { @class = "text-danger" })
+	            &lt;/div&gt;
+	        &lt;/div&gt;
 	
-	        &lt;div class="form-group"&gt;<span>&#13;</span>
-	            &lt;div class="col-md-offset-2 col-md-10"&gt;<span>&#13;</span>
-	                &lt;input type="submit" value="Create" class="btn btn-default" <mark>id="submit-button"</mark> /&gt;<span>&#13;</span>
-	            &lt;/div&gt;<span>&#13;</span>
-	        &lt;/div&gt;<span>&#13;</span>
-	    &lt;/div&gt;<span>&#13;</span>
+	        &lt;div class="form-group"&gt;
+	            &lt;div class="col-md-offset-2 col-md-10"&gt;
+	                &lt;input type="submit" value="Create" class="btn btn-default" <mark>id="submit-button"</mark> /&gt;
+	            &lt;/div&gt;
+	        &lt;/div&gt;
+	    &lt;/div&gt;
 	
-	    <mark>&lt;script&gt;<span>&#13;</span>
-	            // People/Group Picker Code<span>&#13;</span>
-	            var maxResultsPerPage = 14;<span>&#13;</span>
-	            var input = document.getElementById("AssignedToName");<span>&#13;</span>
-	            var token = "@ViewData["token"]";<span>&#13;</span>
-	            var tenant = "@ViewData["tenant"]";<span>&#13;</span>
+	    <mark>&lt;script&gt;
+	            // People/Group Picker Code
+	            var maxResultsPerPage = 14;
+	            var input = document.getElementById("AssignedToName");
+	            var token = "@ViewData["token"]";
+	            var tenant = "@ViewData["tenant"]";
 	
-	            var picker = new AadPicker(maxResultsPerPage, input, token, tenant);<span>&#13;</span>
+	            var picker = new AadPicker(maxResultsPerPage, input, token, tenant);
 	
-	            // Submit the selected user/group to be asssigned.<span>&#13;</span>
-	            $("#submit-button").click({ picker: picker }, function () {<span>&#13;</span>
-	                if (!picker.Selected())<span>&#13;</span>
-	                    return;<span>&#13;</span>
-	                $("#main-form").get()[0].elements["AssignedToID"].value = picker.Selected().objectId;<span>&#13;</span>
-	            });<span>&#13;</span>
-	    &lt;/script&gt;</mark><span>&#13;</span>
+	            // Submit the selected user/group to be asssigned.
+	            $("#submit-button").click({ picker: picker }, function () {
+	                if (!picker.Selected())
+	                    return;
+	                $("#main-form").get()[0].elements["AssignedToID"].value = picker.Selected().objectId;
+	            });
+	    &lt;/script&gt;</mark>
 	
 	}</pre>
 
@@ -363,7 +355,7 @@ Now that you have configured the authorizations and line-of-business functionali
 - [Protect the Application with SSL and the Authorize Attribute](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database#protect-the-application-with-ssl-and-the-authorize-attribute)
 - [Use Active Directory for authentication in Azure Web App](/documentation/articles/web-sites-authentication-authorization)
 - [Create a .NET MVC web app in Azure with AD FS authentication](/documentation/articles/web-sites-dotnet-lob-application-adfs)
-- [Windows Azure Active Directory Samples and Documentation](https://github.com/AzureADSamples)
+- [Azure Active Directory Samples and Documentation](https://github.com/AzureADSamples)
 - [Vittorio Bertocci's blog](http://blogs.msdn.com/b/vbertocci/)
 - [Migrate a VS2013 Web Project From WIF to Katana](http://www.cloudidentity.com/blog/2014/09/15/MIGRATE-A-VS2013-WEB-PROJECT-FROM-WIF-TO-KATANA/)
 - [Azure's new Hybrid Connections not your father's #hybridCloud](/documentation/videos/new-hybrid-connections-not-your-fathers-hybridcloud/)

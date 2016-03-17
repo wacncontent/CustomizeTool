@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="01/12/2016"
+	ms.date="01/28/2016"
 	wacn.date=""/>
 
 # Process events from Azure Event Hubs with Storm on HDInsight (Java)
@@ -22,10 +22,10 @@ In this tutorial, you will learn how to use the Event Hubs spout and bolt to rea
 
 * An Apache Storm on HDInsight cluster. Use one of the following getting started articles to create a cluster:
 
-<!-- deleted by customization
+
     - A [Linux-based cluster](/documentation/articles/hdinsight-apache-storm-tutorial-get-started): Select this if you want to use SSH to work with the cluster from Linux, Unix, OS X, or Windows clients
 
--->
+
     - A [Windows-based cluster](/documentation/articles/hdinsight-apache-storm-tutorial-get-started): Select this if you want to use PowerShell to work with the cluster from a Windows client
 
     > [AZURE.NOTE] The only difference between the two cluster types is whether you use SSH to submit the topology to the cluster or a web form.
@@ -40,7 +40,7 @@ In this tutorial, you will learn how to use the Event Hubs spout and bolt to rea
 
 	> [AZURE.NOTE] Your editor or IDE may have specific functionality for working with Maven that is not addressed in this document. For information about the capabilities of your editing environment, see the documentation for the product you are using.
 
-<!-- deleted by customization
+
  * An SSH client. See one of the following articles for more information on using SSH with HDInsight:
 
     - [Use SSH with Linux-based Hadoop on HDInsight from Linux, Unix, or OS X](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix)
@@ -48,10 +48,10 @@ In this tutorial, you will learn how to use the Event Hubs spout and bolt to rea
     - [Use SSH with Linux-based Hadoop on HDInsight from Windows](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows)
 
 * An SCP client. This is provided with all Linux, Unix, and OS X systems. For Windows clients, we recommend PSCP, which is available from the [PuTTY download page](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html).
--->
-<!-- keep by customization: begin -->
+
+
 * An SCP client. For Windows clients, we recommend PSCP, which is available from the [PuTTY download page](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html).
-<!-- keep by customization: end -->
+
 
 ##Understanding the example
 
@@ -252,7 +252,7 @@ You must populate both of these with information about your Event Hub and HDInsi
 
 The following environment variables may be set when you install Java and the JDK on your development workstation. However, you should check that they exist and that they contain the correct values for your system.
 
-* **JAVA_HOME** - should point to the directory where the Java runtime environment (JRE) is installed. For example, <!-- deleted by customization in a Unix or Linux distribution, it should have a value similar to `/usr/lib/jvm/java-7-oracle`. --> In Windows, it would have a value similar to `c:\Program Files (x86)\Java\jre1.7`
+* **JAVA_HOME** - should point to the directory where the Java runtime environment (JRE) is installed. For example,  in a Unix or Linux distribution, it should have a value similar to `/usr/lib/jvm/java-7-oracle`.  In Windows, it would have a value similar to `c:\Program Files (x86)\Java\jre1.7`
 
 * **PATH** - should contain the following paths:
 
@@ -330,7 +330,7 @@ Event Hubs is the data source for this example. Use the following steps to creat
 
 The jar created by this project contains two topologies; __com.microsoft.example.EventHubWriter__ and __com.microsoft.example.EventHubReader__. The EventHubWriter topology should be started first, as it writes events in to Event Hub that are then read by the EventHubReader.
 
-<!-- deleted by customization
+
 ###If using a Linux-based cluster
 
 1. Use SCP to copy the jar package to your HDInsight cluster. Replace USERNAME with the SSH user for your cluster. Replace CLUSTERNAME with the name of your HDInsight cluster:
@@ -385,8 +385,8 @@ The jar created by this project contains two topologies; __com.microsoft.example
         hadoop fs -text /devicedata/*.txt
 
     This will return data similar to the following:
--->
-<!-- keep by customization: begin -->
+
+
 ###If using a Windows-based cluster
 
 1. Open your browser to https://CLUSTERNAME.azurehdinsight.cn. When prompted, enter the administrator credentials for your HDInsight cluster. You will arrive at the Storm Dashboard.
@@ -413,7 +413,7 @@ The jar created by this project contains two topologies; __com.microsoft.example
         select * from devicedata limit 10;
 
     Click __Select__ to run the query. This will return 10 rows from the data written to Azure Storage (WASB) by the EventHubReader. Once the query completes, you should see data similar to the following:
-<!-- keep by customization: end -->
+
 
         3409e622-c85d-4d64-8622-af45e30bf774,848981614
         c3305f7e-6948-4cce-89b0-d9fbc2330c36,-1638780537
@@ -423,7 +423,7 @@ The jar created by this project contains two topologies; __com.microsoft.example
         9a692795-e6aa-4946-98c1-2de381b37593,1857409996
         3c8d199b-0003-4a79-8d03-24e13bde7086,-1271260574
 
-<!-- deleted by customization
+
     The first column contains the device ID value and the second column is the device value.
 
 4. Use the following commands to stop the topologies:
@@ -466,7 +466,7 @@ The jar created by this project contains two topologies; __com.microsoft.example
         9a692795-e6aa-4946-98c1-2de381b37593,1857409996
         3c8d199b-0003-4a79-8d03-24e13bde7086,-1271260574
 
--->
+
 8. Select the __Storm Dashboard__ at the top of the page, then select __Storm UI__. From the __Storm UI__, select the link for the __reader__ topology and then use the __Kill__ button to stop the topology. Repeat the process for the __writer__ topology.
 
 
@@ -504,10 +504,10 @@ Export an import allows you to persist checkpoint data when you need to delete t
 If you do not see files being stored to the the /devicedata location (either using the `hadoop fs -ls /devicedata` command or the Hive commandd in the Query Console,) use the Storm UI to look for any errors returned by the topologies.
 
 For more information on using the Storm UI, see the following topics:
-<!-- deleted by customization
+
 
 * If you are using a __Linux-based__ Storm on HDInsight cluster, see [Deploy and manage Apache Storm topologies on Linux-based HDInsight](/documentation/articles/hdinsight-storm-deploy-monitor-topology)
--->
+
 
 * If you are using a __Windows-based__ Storm on HDInsight cluster, see [Deploy and manage Apache Storm topologies on Windows-based HDInsight](/documentation/articles/hdinsight-storm-deploy-monitor-topology)
 

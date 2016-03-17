@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
 	pageTitle="Get started with test in production for Web Apps"
 	description="Learn about the Test in Production (TiP) feature in Azure Web Apps."

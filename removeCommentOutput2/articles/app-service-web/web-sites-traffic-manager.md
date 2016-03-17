@@ -15,7 +15,7 @@
 
 # Controlling Azure web app traffic with Azure Traffic Manager
 
-> [AZURE.NOTE] This article provides summary information for Windows Azure Traffic Manager as it relates to Azure Web Apps. More information about Azure Traffic Manager itself can be found by visiting the links at the end of this article.
+> [AZURE.NOTE] This article provides summary information for Azure Traffic Manager as it relates to Azure Web Apps. More information about Azure Traffic Manager itself can be found by visiting the links at the end of this article.
 
 ## Introduction
 You can use Azure Traffic Manager to control how requests from web clients are distributed to web apps in Azure. When web app endpoints are added to a Azure Traffic Manager profile, Azure Traffic Manager keeps track of the status of your web apps (running, stopped or deleted) so that it can decide which of those endpoints should receive traffic.

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Upload a Windows VHD for Resource Manager | Windows Azure"
+	pageTitle="Upload a Windows VHD for Resource Manager | Azure"
 	description="Learn to upload a Windows based virtual machine image to use with the Resource Manager deployment model."
 	services="virtual-machines"
 	documentationCenter=""
@@ -13,12 +13,12 @@
 	ms.date="02/05/2016"
 	wacn.date=""/>
 
-# Upload a Windows VM image to Windows Azure for Resource Manager deployments
+# Upload a Windows VM image to Azure for Resource Manager deployments
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] [classic deployment model](/documentation/articles/virtual-machines-create-upload-vhd-windows-server).
 
 
-This article shows you how to upload a virtual hard disk (VHD) with a Windows based operating system, so you can use it to create new Windows virtual machines using the Resource Manager deployment model. For more details about disks and VHDs in Windows Azure, see [About Disks and VHDs for Virtual Machines](/documentation/articles/virtual-machines-disks-vhds).
+This article shows you how to upload a virtual hard disk (VHD) with a Windows based operating system, so you can use it to create new Windows virtual machines using the Resource Manager deployment model. For more details about disks and VHDs in Azure, see [About Disks and VHDs for Virtual Machines](/documentation/articles/virtual-machines-disks-vhds).
 
 
 
@@ -28,16 +28,16 @@ This article assumes you have:
 
 1. **An Azure subscription** - If you don't have one, [open an Azure account for free](/pricing/1rmb-trial/?WT.mc_id=A261C142F). You get credits to try out paid Azure services, and even after they're used up you can keep the account and use free Azure services, such as Websites. Your credit card won't be charged, unless you explicitly change your settings. You also can [activate MSDN subscriber benefits](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F). The MSDN subscription gives credits every month that you can use for paid Azure services.
 
-2. **Windows Azure PowerShell 1.0.x** - Make sure you have the Windows Azure PowerShell version 1.0.x installed. If you don't already have it installed, read [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure). We recommend using the versions 1.0 and above, since new Resource Manager features will not be added to older PowerShell versions. Read [Azure PowerShell 1.0](https://azure.microsoft.com/blog/azps-1-0/) to know more about the version differences. 
+2. **Azure PowerShell 1.0.x** - Make sure you have the Azure PowerShell version 1.0.x installed. If you don't already have it installed, read [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure). We recommend using the versions 1.0 and above, since new Resource Manager features will not be added to older PowerShell versions. Read [Azure PowerShell 1.0](https://azure.microsoft.com/blog/azps-1-0/) to know more about the version differences. 
 
-3. **A virtual machine running the Windows operating system** - There are many tools for creating virtual machines on premises. For example, you can use Hyper-V Manager to create a virtual machine and install the operating system. For instructions, see [Install the Hyper-V Role and configure a virtual machine](http://technet.microsoft.com/zh-cn/library/hh846766.aspx). For details about which Windows operating systems are supported, see [Microsoft server software support for Windows Azure virtual machines](https://support.microsoft.com/kb/2721672).
+3. **A virtual machine running the Windows operating system** - There are many tools for creating virtual machines on premises. For example, you can use Hyper-V Manager to create a virtual machine and install the operating system. For instructions, see [Install the Hyper-V Role and configure a virtual machine](http://technet.microsoft.com/zh-cn/library/hh846766.aspx). For details about which Windows operating systems are supported, see [Microsoft server software support for Azure virtual machines](https://support.microsoft.com/kb/2721672).
 
 
 ## Make sure the VM has the right file format
 
-Windows Azure can only accept images for [Generation 1 virtual machines](http://blogs.technet.com/b/ausoemteam/archive/2015/04/21/deciding-when-to-use-generation-1-or-generation-2-virtual-machines-with-hyper-v.aspx) saved in the VHD file format. The VHD size must be fixed and a whole number of MB. The maximum size allowed for the VHD is 1023GB.
+Azure can only accept images for [Generation 1 virtual machines](http://blogs.technet.com/b/ausoemteam/archive/2015/04/21/deciding-when-to-use-generation-1-or-generation-2-virtual-machines-with-hyper-v.aspx) saved in the VHD file format. The VHD size must be fixed and a whole number of MB. The maximum size allowed for the VHD is 1023GB.
 
-- The Hyper-V Manager will typically save your VM image in a VHDX format, which is not supported in Windows Azure. You can convert it to VHD format using either Hyper-V or the [Convert-VHD PowerShell cmdlet](http://technet.microsoft.com/zh-cn/library/hh848454.aspx). For steps using PowerShell, read [Converting Hyper-V .vhdx to .vhd file formats](https://blogs.technet.microsoft.com/cbernier/2013/08/29/converting-hyper-v-vhdx-to-vhd-file-formats-for-use-in-windows-azure/). Or in Hyper-V, select your local computer on the left and then in the menu above it, click **Actions** > **Edit Disk...**. Navigate through the screens by clicking **Next** and entering these options: Path for your VHDX file > **Convert** > **VHD** > **Fixed size** > Path for the new VHD file. Click **Finish** to close.
+- The Hyper-V Manager will typically save your VM image in a VHDX format, which is not supported in Azure. You can convert it to VHD format using either Hyper-V or the [Convert-VHD PowerShell cmdlet](http://technet.microsoft.com/zh-cn/library/hh848454.aspx). For steps using PowerShell, read [Converting Hyper-V .vhdx to .vhd file formats](https://blogs.technet.microsoft.com/cbernier/2013/08/29/converting-hyper-v-vhdx-to-vhd-file-formats-for-use-in-windows-azure/). Or in Hyper-V, select your local computer on the left and then in the menu above it, click **Actions** > **Edit Disk...**. Navigate through the screens by clicking **Next** and entering these options: Path for your VHDX file > **Convert** > **VHD** > **Fixed size** > Path for the new VHD file. Click **Finish** to close.
 
 - If you have a Windows VM image in [the VMDK file format](https://en.wikipedia.org/wiki/VMDK), you can convert it to a VHD format using the [Microsoft Virtual Machine Converter](https://www.microsoft.com/download/details.aspx?id=42497). Read the blog [How to Convert a VMWare VMDK to Hyper-V VHD](http://blogs.msdn.com/b/timomta/archive/2015/06/11/how-to-convert-a-vmware-vmdk-to-hyper-v-vhd.aspx) for more information.
 

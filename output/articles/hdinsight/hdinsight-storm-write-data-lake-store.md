@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <properties
 pageTitle="Use Azure Data Lake Store with Apache Storm on Azure HDInsight"
 description="Learn how to write data to Azure Data Lake Store from an Apache Storm topology on HDInsight. This document, and the associated example, demonstrate how the HdfsBolt component can be used to write to Data Lake Store."

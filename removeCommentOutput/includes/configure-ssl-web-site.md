@@ -525,7 +525,7 @@ Once you deploy a web.config with a rewrite rule to force HTTPS, it should take 
 For more information on the IIS URL Rewrite module, see the [URL Rewrite](http://www.iis.net/downloads/microsoft/url-rewrite) documentation.
 
 ## More Resources ##
-- [Windows Azure Trust Center](/support/trust-center/security/)
+- [Azure Trust Center](/support/trust-center/security/)
 - [Configuration options unlocked in Azure Web Sites](/blog/2014/01/28/more-to-explore-configuration-options-unlocked-in-windows-azure-web-sites/)
 - [Enable diagnostic logging](/documentation/articles/web-sites-enable-diagnostic-log)
 - [Configure web apps in Azure](/documentation/articles/web-sites-configure)
@@ -537,7 +537,7 @@ For more information on the IIS URL Rewrite module, see the [URL Rewrite](http:/
 * For a guide to the change from Websites to Azure see: [Azure and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
 * For a guide to the change of the Management Portal to the new portal see: [Reference for navigating the preview portal](https://manage.windowsazure.cn/)
 
-[customdomain]: ../articles/app-service-web/web-sites-custom-domain-name.md
+[customdomain]: /documentation/articles/web-sites-custom-domain-name
 [iiscsr]: http://technet.microsoft.com/zh-cn/library/cc732906(WS.10).aspx
 [cas]: http://go.microsoft.com/fwlink/?LinkID=269988
 [installcertiis]: http://technet.microsoft.com/zh-cn/library/cc771816(WS.10).aspx

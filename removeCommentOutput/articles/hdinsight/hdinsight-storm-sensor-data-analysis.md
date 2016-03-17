@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Analyze sensor data with Apache Storm and HBase | Windows Azure"
+   pageTitle="Analyze sensor data with Apache Storm and HBase | Azure"
    description="Learn how to connect to Apache Storm with a virtual network. Use Storm with HBase to process sensor data from an event hub and visualize it with D3.js."
    services="hdinsight"
    documentationCenter=""

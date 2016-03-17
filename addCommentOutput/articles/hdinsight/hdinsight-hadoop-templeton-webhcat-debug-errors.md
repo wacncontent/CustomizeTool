@@ -10,12 +10,12 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="12/04/2015"
+	ms.date="02/05/2016"
 	wacn.date=""/>
 
 #Understand and resolve errors received from WebHCat (Templeton,) on HDInsight
 
-When using WebHCat (formerly known as Templeton,) to work with HDInsight, you may receive errors. This document provides guidance on common errors <!-- deleted by customization â --><!-- keep by customization: begin --> - <!-- keep by customization: end --> why they occur and what you can do to resolve them.
+When using WebHCat (formerly known as Templeton,) to work with HDInsight, you may receive errors. This document provides guidance on common errors - why they occur and what you can do to resolve them.
 
 ##What is WebHCat?
 
@@ -26,10 +26,10 @@ When using WebHCat (formerly known as Templeton,) to work with HDInsight, you ma
 > [AZURE.IMPORTANT] Several of the errors listed in this document occur because a configured maximum has been exceeded. When the resolution step mentions that you can change a value, you must use one of the following to perform the change:
 
 * For **Windows** clusters: Use a script action to configure the value during cluster creation. For more information, see [Develop script actions](/documentation/articles/hdinsight-hadoop-script-actions).
-<!-- deleted by customization
+
 
 * For **Linux** clusters: Use Ambari (web or REST API) to modify the value. For more information, see [Manage HDInsight using Ambari](/documentation/articles/hdinsight-hadoop-manage-ambari)
--->
+
 
 ###Default configuration
 
@@ -81,5 +81,4 @@ The following are default configuration values that can impact WebHCat performan
 
 [maximum-applications]: http://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.1.3/bk_system-admin-guide/content/setting_application_limits.html
 [max-procs]: https://hive.apache.org/javadocs/hcat-r0.5.0/configuration.html
-[max-age-ms]: http://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.0.6.0/ds_Hadoop/hadoop-mapreduce-client/hadoop-mapreduce-client-core/mapred-default.xml
- 
+[max-age-ms]: http://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.0.6.0/ds_Hadoop/hadoop-mapreduce-client/hadoop-mapreduce-client-core/mapred-default.xml

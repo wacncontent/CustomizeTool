@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 7. Right-click the API app project in **Solution Explorer** and select **Publish** to open the publish dialog. The publish profile that you created earlier should be pre-selected. 
 
 9. Click **Publish** to begin the deployment process. 

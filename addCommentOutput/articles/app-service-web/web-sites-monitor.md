@@ -9,25 +9,16 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="10/14/2015"
+	ms.date="01/13/2016"
 	wacn.date=""/>
 
 #<a name="howtomonitor"></a>Monitor Web Apps in Azure
 
-[Azure Web Apps](/documentation/services/web-sites/) provide monitoring functionality for Standard <!-- deleted by customization and Premium --> App Service plans via the Monitor management page. The Monitor management page provides performance statistics for a web app as described below.
-<!-- deleted by customization
+[Azure Web Apps](/documentation/services/web-sites/) provide monitoring functionality for Standard  and Premium  App Service plans via the Monitor management page. The Monitor management page provides performance statistics for a web app as described below.
+
 
 [AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)]
--->
-<!-- keep by customization: begin -->
-## Table of Contents ##
-- [How to: Add web site metrics](#websitemetrics)
-- [How to: Receive alerts from web site metrics](#howtoreceivealerts)
-- [How to: View usage quotas for a web site](#howtoviewusage)
-- [How to: Avoid exceeding your quotas](#resourceusage)
-- [How to: Configure diagnostics and download logs for a web site](#howtoconfigdiagnostics)
-- [How to: Monitor web endpoint status](#webendpointstatus)
-<!-- keep by customization: end -->
+
 
 ##Metrics Retention Policy
 
@@ -72,7 +63,7 @@ To determine the extent that a web app is impacting resource usage quotas, follo
 	-	**File System Storage** - when this quota is reached, file system storage remains accessible for read operations, but all write operations, including those required for normal web app activity, are blocked. Write operations will resume when you reduce file usage or move the web app to an App Service plan with a higher quota.
 	-	**Linked Resources** - quotas for any linked resources of the web app, such as database or storage, are displayed here as well.
 
-	Some quotas can be applied per web hosting plan, while others can be applied per site. <!-- deleted by customization For detailed information on usage quotas for each Web hosting plan, see [Websites Limits](/documentation/articles/azure-subscription-service-limits#websiteslimits). -->
+	Some quotas can be applied per web hosting plan, while others can be applied per site.  For detailed information on usage quotas for each Web hosting plan, see [Websites Limits](/documentation/articles/azure-subscription-service-limits#websiteslimits). 
 
 ##<a name="resourceusage"></a> How to: Avoid exceeding your quotas
 
@@ -178,7 +169,7 @@ Log files can be downloaded using either FTP, Azure PowerShell, or the Azure CLI
 
 **Azure PowerShell**
 
-1. From the **Start Screen** or the **Start Menu**, search for **Azure PowerShell**. Right-click the **Azure PowerShell** entry and select **Run as Administrator**.
+1. From the **Start Screen** or the **Start Menu**, search for **Windows PowerShell**. Right-click the **Windows PowerShell** entry and select **Run as Administrator**.
 
 	> [AZURE.NOTE] If **Azure PowerShell** is not installed, see [Getting Started with Azure PowerShell Cmdlets](http://msdn.microsoft.com/zh-cn/library/azure/jj554332.aspx) for installation and configuration information.
 
@@ -270,7 +261,7 @@ After you configure endpoint monitoring, you can drill down into the individual 
 7.	Optionally, repeat the previous steps to create a second endpoint.
 8.	Click **Save**. It may take some time for the web endpoint monitoring data to be available on the **Dashboard** and **Monitor** tabs.
 
-	To create an email rule, do the following:
+To create an email rule, do the following:
 
 9.	In the service bar at the far left, click **Management Services**.
 10.	Click **Add Rule** at the bottom.
@@ -280,7 +271,7 @@ After you configure endpoint monitoring, you can drill down into the individual 
 
 	Azure will now actively monitor the endpoint and send an email alert when it takes more than 3 seconds to reply.
 
-<!-- deleted by customization
+
 For more on web app endpoint monitoring, see the following videos:
 
 - [Scott Guthrie introduces Azure Web Sites and sets up Endpoint Monitoring](/documentation/videos/websites-and-endpoint-monitoring-scottgu/)
@@ -293,7 +284,7 @@ For more on web app endpoint monitoring, see the following videos:
 * For a guide to the change from Websites to Azure see: [Azure and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
 * For a guide to the change of the Azure Management Portal to the Azure preview portal see: [Reference for navigating the preview portal](https://manage.windowsazure.cn/)
 
--->
+
 [fzilla]:http://go.microsoft.com/fwlink/?LinkId=247914
 [vmsizes]:http://go.microsoft.com/fwlink/?LinkID=309169
  

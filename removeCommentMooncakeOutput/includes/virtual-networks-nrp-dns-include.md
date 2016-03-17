@@ -1,6 +1,6 @@
 ## Azure DNS
 
-Azure DNS is a hosting service for DNS domains, providing name resolution using Windows Azure infrastructure.
+Azure DNS is a hosting service for DNS domains, providing name resolution using Azure infrastructure.
 
 
 | Property | Description | Sample Value |
@@ -85,4 +85,4 @@ Sample of DNS zone in Json format:
 
 Read the [REST API documentation for DNS zones ](https://msdn.microsoft.com/zh-cn/library/azure/mt130626.aspx) for more information.
 
-Read the [REST API documentation for DNS record sets](https://msdn.microsoft.com/zh-cn/library/azure/mt130626.aspx) for more information.
+Read the [REST API documentation for DNS record sets](https://msdn.microsoft.com/zh-cn/library/azure/mt130627.aspx) for more information.

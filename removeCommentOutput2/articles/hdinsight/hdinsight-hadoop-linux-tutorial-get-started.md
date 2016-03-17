@@ -1,7 +1,7 @@
 <!-- not suitable for Mooncake -->
 
 <properties
-   	pageTitle="Linux tutorial: Get started with Hadoop and Hive | Windows Azure"
+   	pageTitle="Linux tutorial: Get started with Hadoop and Hive | Azure"
    	description="Follow this Linux tutorial to get started using Hadoop in HDInsight. Learn how to provision Linux clusters, and query data with Hive."
    	services="hdinsight"
    	documentationCenter=""

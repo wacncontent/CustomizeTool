@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Configure AlwaysOn Availability Groups in an Azure VM | Windows Azure"
+	pageTitle="Configure AlwaysOn Availability Groups in an Azure VM | Azure"
 	description="This tutorial uses resources created with  the classic deployment model, and uses PowerShell to create an AlwaysOn Availability Group in Azure."
 	services="virtual-machines"
 	documentationCenter="na"
@@ -15,8 +15,15 @@
 # Configure AlwaysOn Availability Groups in Azure VM (PowerShell)
 
 > [AZURE.SELECTOR]
+
+- [Portal - Resource Manager](/documentation/articles/virtual-machines-sql-server-alwayson-availability-groups-gui-arm)
+- [Portal - Classic](/documentation/articles/virtual-machines-sql-server-alwayson-availability-groups-gui)
+- [PowerShell - Classic](/documentation/articles/virtual-machines-sql-server-alwayson-availability-groups-powershell)
+
+
 - [Azure Management Portal](/documentation/articles/virtual-machines-sql-server-alwayson-availability-groups-gui)
 - [PowerShell](/documentation/articles/virtual-machines-sql-server-alwayson-availability-groups-powershell)
+
 
 <br/>
 
@@ -52,8 +59,13 @@ This tutorial is intended to show you the steps required to set up the described
 1. In a PowerShell window on your local computer, import the Azure module, download a publishing settings file to your machine, and connect your PowerShell session to your Azure subscription by importing the downloaded publishing settings.
 
 		Import-Module "C:\Program Files (x86)\Microsoft SDKs\Azure\PowerShell\Azure\Azure.psd1"
-		Get-AzurePublishSettingsFile
+		Get-AzurePublishSettingsFile  -Environment AzureChinaCloud 
+
 		Import-AzurePublishSettingsFile <publishsettingsfilepath>
+
+
+		Import-AzurePublishSettingsFile -Environment AzureChinaCloud <publishsettingsfilepath>
+
 
 	The **Get-AzurePublishgSettingsFile** command automatically generates a management certificate with Azure downloads it to your machine. A browser will be automatically opened and you are prompted to enter the Microsoft account credentials for your Azure subscription. The downloaded **.publishsettings** file contains all the information you need to manage your Azure subscription. After saving this file to a local directory, import it using the **Import-AzurePublishSettingsFile** command.
 
@@ -131,7 +143,12 @@ This tutorial is intended to show you the steps required to set up the described
 			-StorageAccountName $storageAccountName `
 			-Label $storageAccountLabel `
 			-AffinityGroup $affinityGroupName
+
 		Set-AzureSubscription `
+
+
+		Set-AzureSubscription -Environment AzureChinaCloud `
+
 			-SubscriptionName (Get-AzureSubscription).SubscriptionName `
 			-CurrentStorageAccount $storageAccountName
 

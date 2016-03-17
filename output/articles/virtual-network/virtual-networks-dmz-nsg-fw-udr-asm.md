@@ -1,5 +1,5 @@
 <properties
-   pageTitle="DMZ Example - Build a DMZ to Protect Networks with a Firewall, UDR, and NSG | Windows Azure"
+   pageTitle="DMZ Example - Build a DMZ to Protect Networks with a Firewall, UDR, and NSG | Azure"
    description="Build a DMZ with a Firewall, User Defined Routing (UDR), and Network Security Groups (NSG)"
    services="virtual-network"
    documentationCenter="na"
@@ -13,8 +13,10 @@
 	wacn.date=""/>
 
 # Example 3 - Build a DMZ to Protect Networks with a Firewall, UDR, and NSG
+
 
 [Return to the Security Boundary Best Practices Page][HOME]
+
 
 This example will create a DMZ with a firewall, four windows servers, User Defined Routing, IP Forwarding, and Network Security Groups. It will also walk through each of the relevant commands to provide a deeper understanding of each step. There is a also a Traffic Scenario section to provide a in-depth step-by-step how traffic proceeds through the layers of defense in the DMZ. Finally, in the references section is the complete code and instruction to build this environment to test and experiment with various scenarios. 
 
@@ -939,5 +941,5 @@ If you wish to install a sample application for this, and other DMZ Examples, on
 [18]: ./media/virtual-networks-dmz-nsg-fw-udr-asm/firewallruleactivate.png "Firewall Rule Activation"
 
 <!--Link References-->
-[HOME]: ../best-practices-network-security.md
+[HOME]: /documentation/articles/best-practices-network-security
 [SampleApp]: /documentation/articles/virtual-networks-sample-app

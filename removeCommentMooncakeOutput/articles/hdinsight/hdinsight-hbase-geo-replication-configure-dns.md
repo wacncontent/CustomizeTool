@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Configure DNS between two Azure virtual networks | Windows Azure" 
+   pageTitle="Configure DNS between two Azure virtual networks | Azure" 
    description="Learn how to configure VPN connections and domain name resolution between two virtual networks, and how to configure HBase geo-replication." 
    services="hdinsight,virtual-network" 
    documentationCenter="" 

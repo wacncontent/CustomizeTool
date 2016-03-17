@@ -1,7 +1,7 @@
 <!-- not suitable for Mooncake -->
 
 <properties 
-   pageTitle="Control routing and use virtual appliances in Resource Manager using the Azure CLI | Windows Azure"
+   pageTitle="Control routing and use virtual appliances in Resource Manager using the Azure CLI | Azure"
    description="Learn how to control routing and use virtual appliances using the Azure CLI"
    services="virtual-network"
    documentationCenter="na"

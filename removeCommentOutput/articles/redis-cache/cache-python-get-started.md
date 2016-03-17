@@ -1,5 +1,5 @@
 <properties
-	pageTitle="How to use Azure Redis Cache with Python | Windows Azure"
+	pageTitle="How to use Azure Redis Cache with Python | Azure"
 	description="Get started with Azure Redis Cache using Python"
 	services="redis-cache"
 	documentationCenter=""

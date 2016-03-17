@@ -18,12 +18,6 @@
 
 Using Git, you can deploy an ASP.NET application to Azure Web Apps. In this tutorial, you will build a simple front-end ASP.NET MVC task list application that connects to a MongoDB database running on a virtual machine in Azure.  [MongoDB][MongoDB] is a popular open source, high performance NoSQL database. After running and testing the ASP.NET application on your development computer, you will upload the application to Azure Web Apps using Git.
 
-In this tutorial you will:
-
-- [Create a virtual machine and install MongoDB](#virtualmachine)
-- [Create and run the My Task List ASP.NET application on your development computer](#createapp)
-- [Create an Azure web site](#createwebsite)
-- [Deploy the ASP.NET application to the web site using Git](#deployapp)
 
 ## Background knowledge ##
 
@@ -38,7 +32,7 @@ Knowledge of the following is useful for this tutorial, though not required:
 
 - [Visual Studio Express 2013 for Web] [VSEWeb] or [Visual Studio 2013] [VSUlt]
 - [Azure SDK for .NET](https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VWDOrVs2013AzurePack.appids)
-- An active Windows Azure subscription
+- An active Azure subscription
 
 [AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
 
@@ -62,7 +56,7 @@ In this section you will create an ASP.NET application called "My Task List" by 
 
 	![New Project Dialog][NewProjectMyTaskListApp]
 
-1. In the **New ASP.NET Project** dialog box, select **MVC**, and then click **OK**. Make sure **Host in the cloud** is unchecked, and click **OK**.
+1. In the **New ASP.NET Project** dialog box, select **MVC**, and then click **OK**. Make sure **Host in the cloud** is unchecked, and click **OK**. 
 
 	If you haven't create a web app yet, go to [Azure Management Portal](https://manage.windowsazure.cn) to create one. And, in **Dashboard** of your web app, under **quick glance**, download the "publish profile".
 
@@ -493,6 +487,8 @@ For more information on developing C# applications against MongoDB, see [CSharp 
 [ASP.NET]: http://www.asp.net/
 [MongoConnectionStrings]: http://www.mongodb.org/display/DOCS/Connections
 [MongoDB]: http://www.mongodb.org
+[InstallMongoOnCentOSLinuxVM]: /manage/linux/common-tasks/mongodb-on-a-linux-vm/
+[InstallMongoOnWindowsVM]: /documentation/articles/virtual-machines-install-mongodb-windows-server-2008r2
 [VSEWeb]: http://www.visualstudio.com/zh-cn/downloads/download-visual-studio-vs#d-2013-express
 [VSUlt]: http://www.visualstudio.com/zh-cn/downloads/download-visual-studio-vs
 

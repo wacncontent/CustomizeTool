@@ -64,4 +64,3 @@ This topic contains links to Azure SDK for .NET Release Notes.
 [Azure SDK for .NET](/downloads/archive-net-downloads/)
 
 [Azure SDK Release Notes on MSDN](https://msdn.microsoft.com/zh-cn/library/azure/dn627519.aspx)
- 

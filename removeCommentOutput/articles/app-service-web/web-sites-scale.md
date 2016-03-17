@@ -14,7 +14,7 @@
 
 # Scale a web app in Azure #
 
-For increased performance and throughput for your web apps on Windows Azure, you can use the [Azure Management Portal](https://manage.windowsazure.cn/) to scale your [Azure Web App](/documentation/services/web-sites/) plan from **Free** mode to **Shared**, **Basic**, **Standard**, or **Premium** mode. 
+For increased performance and throughput for your web apps on Azure, you can use the [Azure Management Portal](https://manage.windowsazure.cn/) to scale your [Azure Web App](/documentation/services/web-sites/) plan from **Free** mode to **Shared**, **Basic**, **Standard**, or **Premium** mode. 
 
 [AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)]
 
@@ -24,7 +24,7 @@ The scale settings take only seconds to apply and affect all web apps in your Ap
 
 For information about App Service plans, see [What is an App Service Plan?](/documentation/articles/web-sites-web-hosting-plan-overview) and [Azure App Service Plans In-Depth Overview](/documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview). For information the pricing and features of individual App Service plans, see [Azure Pricing Details](/home/features/web-site/#price).  
 
-> [AZURE.NOTE] Before switching a web app from the **Free** mode to **Basic**, **Standard**, or **Premium** mode, you must first remove the spending caps in place for your Azure subscription. To view or change options for your Windows Azure subscription, see [Windows Azure Subscriptions][azuresubscriptions].
+> [AZURE.NOTE] Before switching a web app from the **Free** mode to **Basic**, **Standard**, or **Premium** mode, you must first remove the spending caps in place for your Azure subscription. To view or change options for your Azure subscription, see [Azure Subscriptions][azuresubscriptions].
 
 <a name="scalingsharedorbasic"></a>
 <!-- ===================================== -->
@@ -41,7 +41,7 @@ For information about App Service plans, see [What is an App Service Plan?](/doc
 	
 	The **Notifications** tab will flash a green **SUCCESS** once the operation is complete. 
 	
-5. Slide the **Instance** bar from left to right to increase the number of instances, then click **Save** in the command bar. The instance size option is not available in **Shared** mode. For more information about these instance sizes, see [Virtual Machine and Cloud Service Sizes for Windows Azure][vmsizes].
+5. Slide the **Instance** bar from left to right to increase the number of instances, then click **Save** in the command bar. The instance size option is not available in **Shared** mode. For more information about these instance sizes, see [Virtual Machine and Cloud Service Sizes for Azure][vmsizes].
 	
 	![Instance size for Basic mode][ChooseBasicInstances]
 	
@@ -52,7 +52,7 @@ For information about App Service plans, see [What is an App Service Plan?](/doc
 ## Scaling to Standard or Premium mode
 <!-- ================================= -->
 
-> [AZURE.NOTE] Before switching an App Service plan to **Standard** or **Premium** mode, you should remove spending caps in place for your Windows Azure subscription. Otherwise, you risk your web app becoming unavailable if you reach your caps before the billing period ends. To view or change options for your Windows Azure subscription, see [Windows Azure Subscriptions][azuresubscriptions].
+> [AZURE.NOTE] Before switching an App Service plan to **Standard** or **Premium** mode, you should remove spending caps in place for your Azure subscription. Otherwise, you risk your web app becoming unavailable if you reach your caps before the billing period ends. To view or change options for your Azure subscription, see [Azure Subscriptions][azuresubscriptions].
 
 1. To scale to **Standard** or **Premium** mode, follow the same initial steps as when scaling to **Shared** or **Basic**, and then choose a **Standard** or **Premium** mode in **Choose your pricing tier**, then click **Select**. 
 	
@@ -145,18 +145,18 @@ Depending on the web app's mode, the following developer-oriented features are a
 <a name="Next Steps"></a>	
 ## Next Steps
 
-- To get started with Azure, see [Windows Azure Trial](/pricing/1rmb-trial/).
+- To get started with Azure, see [Azure Trial](/pricing/1rmb-trial/).
 - For information on pricing, support, and SLA, visit the following links.
 	
 	[Data Transfers Pricing Details](/home/features/data-transfers/#price)
 	
-	[Windows Azure Support Plans](/support/plans/)
+	[Azure Support Plans](/support/plans/)
 	
 	[Service Level Agreements](/support/legal/sla/)
 	
 	[SQL Database Pricing Details](/home/features/sql-database/#price)
 	
-	[Virtual Machine and Cloud Service Sizes for Windows Azure][vmsizes]
+	[Virtual Machine and Cloud Service Sizes for Azure][vmsizes]
 	
 	[Azure Pricing Details](/home/features/web-site/#price)
 	

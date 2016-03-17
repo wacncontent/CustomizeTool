@@ -137,4 +137,4 @@ To view the status of IP forwarding on a VM named *FWAppliance1*, run the follow
 ```powershell
 Get-AzureVM -Name FWAppliance1 -ServiceName ProductionVMs `
 	| Get-AzureIPForwarding
-``` 
+```

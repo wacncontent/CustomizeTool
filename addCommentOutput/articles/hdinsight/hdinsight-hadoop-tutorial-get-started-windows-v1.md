@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Hadoop tutorial: Get started with Hadoop on Windows | Windows Azure"
+   pageTitle="Hadoop tutorial: Get started with Hadoop on Windows | Azure"
    description="Get started with Hadoop in HDInsight. Learn how to provision Hadoop clusters on Windows, run a Hive query on data, and analyze output in Excel."
    keywords="hadoop tutorial,hadoop on windows,hadoop cluster,learn hadoop, hive query"
    services="hdinsight"
@@ -16,33 +16,33 @@
 
 # Hadoop tutorial: Get started with Hadoop and a Hive query in HDInsight on Windows
 
-<!-- deleted by customization
+
 > [AZURE.SELECTOR]
 - [Windows](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1)
 - [Linux](/documentation/articles/hdinsight-hadoop-linux-get-started)
 
--->
+
 To help you learn Hadoop on Windows and start using HDInsight, this tutorial shows you how to run a Hive query on unstructured data in a Hadoop cluster and then analyze the results in Microsoft Excel.
 
-<!-- deleted by customization
+
 [AZURE.INCLUDE [hdinsight-azure-portal](../includes/hdinsight-azure-portal.md)]
 
 * [Get started with Hadoop in HDInsight on Windows](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1)
 
--->
+
 ## What does this Hadoop tutorial accomplish?
 
 Assume you have a large unstructured data set and you want to run a Hive query on it to extract some meaningful information. That's exactly what we are going to do in this tutorial. Here's how we achieve this:
 
    !["Hadoop tutorial: Create an account; provision a Hadoop cluster; submit a Hive query; analyze data in Excel.][image-hdi-getstarted-flow]
-<!-- deleted by customization
+
 
 Watch a demo video of this tutorial to learn Hadoop on HDInsight:
 
 ![Video of a first Hadoop tutorial: Submit a Hive query on a Hadoop cluster, and analyze results in Excel.][img-hdi-getstarted-video]
 
 **[Watch the Hadoop tutorial for HDInsight on YouTube](https://www.youtube.com/watch?v=Y4aNjnoeaHA&list=PLDrz-Fkcb9WWdY-Yp6D4fTC1ll_3lU-QS)**
--->
+
 
 
 In conjunction with the general availability of Azure HDInsight, Microsoft also provides HDInsight Emulator for Azure, formerly known as *Microsoft HDInsight Developer Preview*. The Emulator targets developer scenarios and only supports single-node deployments. For information about using HDInsight Emulator, see [Get Started with the HDInsight Emulator][hdinsight-emulator].
@@ -78,9 +78,9 @@ This tutorial uses only the default blob and the default storage account.
 
 	![Azure Management Portal where you can use Quick Create to set up a new storage account.][image-hdi-storageaccount-quickcreate]
 
->[AZURE.NOTE]  Make sure you create the storage account in a location that is supported for the cluster. These are:  **China <!-- deleted by customization East**, **China North**, **China North**, **West Europe**, **China East**, **China North**, **China --> North**, **China East**.
+>[AZURE.NOTE]  Make sure you create the storage account in a location that is supported for the cluster. These are:  **China  East**, **China North**, **China North**, **West Europe**, **China East**, **China North**, **China  North**, **China East**.
 
-Select the new storage account from the list and click **MANAGE ACCESS KEYS** at the bottom of the page. Make a note of the **PRIMARY ACCESS KEY** (or the **SECONDARY ACCESS <!-- deleted by customization KEY**âeither --><!-- keep by customization: begin --> KEY**-either <!-- keep by customization: end --> of the keys work).  You will need this later in the tutorial. For more information, see [How to Create a Storage Account][azure-create-storageaccount].
+Select the new storage account from the list and click **MANAGE ACCESS KEYS** at the bottom of the page. Make a note of the **PRIMARY ACCESS KEY** (or the **SECONDARY ACCESS  KEY**—either  KEY**-either  of the keys work).  You will need this later in the tutorial. For more information, see [How to Create a Storage Account][azure-create-storageaccount].
 
 ##<a name="provision"></a>Provision a Hadoop cluster
 
@@ -135,9 +135,9 @@ Sample | What does it do?
 ------ | ---------------
 [Sensor data analysis][hdinsight-sensor-data-sample] | Learn how to use HDInsight to process historical data that is produced by heating, ventilation, and air conditioning (HVAC) systems to identify systems that are not able to reliably maintain a set temperature.
 [Website log analysis][hdinsight-weblogs-sample] | Learn how to use HDInsight to analyze website log files to get insight into the frequency of visits to the website in a day from external websites, and a summary of website errors that the users experience.
-<!-- deleted by customization
+
 [Twitter trend analysis](/documentation/articles/hdinsight-analyze-twitter-data) | Learn how to use HDInsight to analyze trends in Twitter.
--->
+
 
 
 
@@ -202,7 +202,7 @@ You must have Excel 2013 or 2010 installed to complete this part of the tutorial
 	![Excel PowerQuery Import menu open for Azure HDInsight.][image-hdi-gettingstarted-powerquery-importdata]
 
 3. Enter the **Account Name** of the Azure Blob Storage account that is associated with your cluster, and then click **OK**. (This is the storage account you created earlier in the tutorial.)
-4. Enter the **Account Key** for the Azure Blob Storage account, and then click **Save**. <!-- keep by customization: begin --> (For Windows Azure China, **Account Name** must be a full url, such as https://<your account name\>.blob.core.chinacloudapi.cn/) <!-- keep by customization: end -->
+4. Enter the **Account Key** for the Azure Blob Storage account, and then click **Save**.  (For Azure China, **Account Name** must be a full url, such as https://<your account name\>.blob.core.chinacloudapi.cn/) 
 5. In the right pane, double-click the blob name. By default the blob name is the same as the cluster name.
 
 6. Locate **stdout** in the **Name** column. Verify that the GUID in the corresponding **Folder Path** column matches the GUID you copied earlier. A match suggests that the output data corresponds to the job you submitted. Click **Binary** in the column left of **stdout**.
@@ -228,28 +228,6 @@ In this Hadoop tutorial, you learned how to provision a Hadoop cluster on Window
 - [Develop Java MapReduce programs for HDInsight][hdinsight-develop-mapreduce]
 
 
-<!-- deleted by customization
-[1]: ../HDInsight/hdinsight-hadoop-visual-studio-tools-get-started.md
-
-[hdinsight-versions]: hdinsight-component-versioning-v1.md
-
-
-[hdinsight-provision]: hdinsight-provision-clusters-v1.md
-[hdinsight-admin-powershell]: hdinsight-administer-use-powershell.md
-[hdinsight-upload-data]: hdinsight-upload-data.md
-[hdinsight-use-mapreduce]: hdinsight-use-mapreduce.md
-[hdinsight-use-hive]: hdinsight-use-hive.md
-[hdinsight-use-pig]: hdinsight-use-pig.md
-[hdinsight-use-oozie]: hdinsight-use-oozie.md
-[hdinsight-storage]: hdinsight-hadoop-use-blob-storage.md
-[hdinsight-emulator]: hdinsight-hadoop-emulator-get-started.md
-[hdinsight-develop-streaming]: hdinsight-hadoop-develop-deploy-streaming-jobs.md
-[hdinsight-develop-mapreduce]: hdinsight-develop-deploy-java-mapreduce.md
-[hadoop-hdinsight-intro]: hdinsight-hadoop-introduction.md
-[hdinsight-weblogs-sample]: hdinsight-hive-analyze-website-log.md
-[hdinsight-sensor-data-sample]: hdinsight-hive-analyze-sensor-data.md
--->
-<!-- keep by customization: begin -->
 [1]: /documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started
 
 [hdinsight-versions]: /documentation/articles/hdinsight-component-versioning-v1
@@ -269,38 +247,22 @@ In this Hadoop tutorial, you learned how to provision a Hadoop cluster on Window
 [hadoop-hdinsight-intro]: /documentation/articles/hdinsight-hadoop-introduction
 [hdinsight-weblogs-sample]: /documentation/articles/hdinsight-hive-analyze-website-log
 [hdinsight-sensor-data-sample]: /documentation/articles/hdinsight-hive-analyze-sensor-data
-<!-- keep by customization: end -->
 
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: /pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
 [azure-management-portal]: https://manage.windowsazure.cn/
-<!-- deleted by customization
-[azure-create-storageaccount]: ../storage-create-storage-account.md
--->
-<!-- keep by customization: begin -->
 [azure-create-storageaccount]: /documentation/articles/storage-create-storage-account
-<!-- keep by customization: end -->
 
 [apache-hadoop]: http://hadoop.apache.org/
 [apache-hive]: https://cwiki.apache.org/confluence/display/Hive/Home%3bjsessionid=AF5B37E667D7DBA633313BB2280C9072
 [apache-mapreduce]: http://wiki.apache.org/hadoop/MapReduce
 [apache-hdfs]: http://hadoop.apache.org/docs/r1.0.4/hdfs_design.html
-<!-- deleted by customization
-[hdinsight-hbase-custom-provision]: hdinsight-hbase-tutorial-get-started-v1.md
--->
-<!-- keep by customization: begin -->
 [hdinsight-hbase-custom-provision]: /documentation/articles/hdinsight-hbase-tutorial-get-started-v1
-<!-- keep by customization: end -->
 
 
 [powershell-download]: http://go.microsoft.com/fwlink/p/?linkid=320376&clcid=0x409
-<!-- deleted by customization
-[powershell-install-configure]: ../install-configure-powershell.md
--->
-<!-- keep by customization: begin -->
 [powershell-install-configure]: /documentation/articles/powershell-install-configure
-<!-- keep by customization: end -->
 [powershell-open]: /documentation/articles/powershell-install-configure#Install
 
 
@@ -319,5 +281,4 @@ In this Hadoop tutorial, you learned how to provision a Hadoop cluster on Window
 [image-hdi-getstarted-flow]: ./media/hdinsight-hadoop-tutorial-get-started-windows-v1/HDI.GetStartedFlow.png
 
 [image-hdi-gettingstarted-powerquery-importdata]: ./media/hdinsight-hadoop-tutorial-get-started-windows-v1/HDI.GettingStarted.PowerQuery.ImportData.png
-[image-hdi-gettingstarted-powerquery-importdata2]: ./media/hdinsight-hadoop-tutorial-get-started-windows-v1/HDI.GettingStarted.PowerQuery.ImportData2.png
- 
+[image-hdi-gettingstarted-powerquery-importdata2]: ./media/hdinsight-hadoop-tutorial-get-started-windows-v1/HDI.GettingStarted.PowerQuery.ImportData2.png

@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="12/04/2015"
+	ms.date="02/01/2016"
 	wacn.date=""/>
 
 #Connect to Hive on Azure HDInsight using the Hive JDBC driver
@@ -23,7 +23,7 @@ In this document, you will learn how to use JDBC from a Java application to remo
 
 To complete the steps in this article, you will need the following:
 
-* A Hadoop on HDInsight cluster. <!-- deleted by customization Either Linux-based or --> Windows-based clusters will work.
+* A Hadoop on HDInsight cluster.  Either Linux-based or  Windows-based clusters will work.
 
 * The [Java Developer Kit (JDK) version 7](https://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) or higher.
 
@@ -57,12 +57,12 @@ Once the connection is established, you can run queries against Hive. For exampl
 
 ##Example Java project
 
-An example of using a Java client to query Hive on HDInsight is available at [https://github.com/Blackmist/hdinsight-hive-jdbc](https://github.com/Blackmist/hdinsight-hive-jdbc). Follow the instructions in the repository to build and run the sample.
-<!-- keep by customization: begin -->
+An example of using a Java client to query Hive on HDInsight is available at [https://github.com/Azure-Samples/hdinsight-java-hive-jdbc](https://github.com/Azure-Samples/hdinsight-java-hive-jdbc). Follow the instructions in the repository to build and run the sample.
 
->[AZURE.NOTE] This sample is written for Global Azure. For Azure china, you need to replace "azurehdinsight.cn" by "azurehdinsight.cn" in the connection String.
-<!-- keep by customization: end -->
+
+>[AZURE.NOTE] This sample is written for Global Azure. For Azure china, you need to replace "azurehdinsight.net" by "azurehdinsight.cn" in the connection String.
 
+
 ##Next steps
 
 Now that you have learned how to use JDBC to work with Hive, use the following links to explore other ways to work with Azure HDInsight.

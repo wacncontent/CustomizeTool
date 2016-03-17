@@ -9,7 +9,7 @@ editor="cgronlun"/>
 
 <tags
 	ms.service="hdinsight"
-	ms.date="01/15/2016"
+	ms.date="02/01/2016"
 	wacn.date=""/>
 
 #Use Azure Storage Shared Access Signatures to restrict access to data with HDInsight
@@ -30,7 +30,7 @@ Shared Access Signatures (SAS) are a feature of Azure storage accounts that allo
 
 * [Azure PowerShell][powershell] - you can use Azure PowerShell to create a new cluster and add a Shared Access Signature during cluster creation.
 
-* The example files from [https://github.com/Blackmist/hdinsight-azure-storage-sas](https://github.com/Blackmist/hdinsight-azure-storage-sas). This repository has the following:
+* The example files from [https://github.com/Azure-Samples/hdinsight-dotnet-python-azure-storage-shared-access-signature](https://github.com/Azure-Samples/hdinsight-dotnet-python-azure-storage-shared-access-signature). This repository has the following:
 
     * A Visual Studio project that can create a storage container, stored policy, and SAS for use with HDInsight
     
@@ -64,7 +64,7 @@ For more information on Shared Access Signatures, see [Understanding the SAS mod
 
 ##Create a stored policy and generate a SAS
 
-Currently you must create a stored policy programmatically. You can find both the C# and Python example of creating a stored policy and SAS at [https://github.com/Blackmist/hdinsight-azure-storage-sas](https://github.com/Blackmist/hdinsight-azure-storage-sas).
+Currently you must create a stored policy programmatically. You can find both the C# and Python example of creating a stored policy and SAS at [https://github.com/Azure-Samples/hdinsight-dotnet-python-azure-storage-shared-access-signature](https://github.com/Azure-Samples/hdinsight-dotnet-python-azure-storage-shared-access-signature).
 
 ###Create a stored policy and SAS using C\#
 

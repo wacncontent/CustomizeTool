@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Query data from HDFS-compatible Blob storage | Windows Azure"
+	pageTitle="Query data from HDFS-compatible Blob storage | Azure"
 	description="HDInsight uses Azure Blob storage as the big data store for HDFS. Learn how to query data from Blob storage and store results of your analysis."
 	keywords="blob storage,hdfs,structured data,unstructured data"
 	services="hdinsight,storage"
@@ -11,7 +11,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="10/23/2015"
+	ms.date="01/29/2016"
 	wacn.date=""/>
 
 
@@ -132,7 +132,6 @@ If you [installed and configured Azure PowerShell][powershell-install], you can 
 	# Create a Blob storage container
 	New-AzureStorageContainer -Name $containerName -Context $destContext
 
-
 ## Address files in Blob storage
 
 The URI scheme for accessing files in Blob storage from HDInsight is:
@@ -207,7 +206,7 @@ The following scrip downloads a block blob to the current folder. Before running
 	$storageAccountName = "<AzureStorageAccountName>"   # The storage account used for the default file system specified at provision.
 	$containerName = "<BlobStorageContainerName>"  # The default file system container has the same name as the cluster.
 	$blob = "example/data/sample.log" # The name of the blob to be downloaded.
-
+	
 	# Use Add-AzureAccount if you haven't connected to your Azure subscription
 	#Add-AzureAccount # The connection is good for 12 hours
 
@@ -218,10 +217,10 @@ The following scrip downloads a block blob to the current folder. Before running
 	Write-Host "Create a context object ... " -ForegroundColor Green
 	$storageAccountKey = Get-AzureStorageKey $storageAccountName | %{ $_.Primary }
 	$storageContext = New-AzureStorageContext -StorageAccountName $storageAccountName -StorageAccountKey $storageAccountKey  
-
+	
 	Write-Host "Download the blob ..." -ForegroundColor Green
 	Get-AzureStorageBlobContent -Container $ContainerName -Blob $blob -Context $storageContext -Force
-
+	
 	Write-Host "List the downloaded file ..." -ForegroundColor Green
 	cat "./$blob"
 
@@ -297,7 +296,9 @@ For more information, see:
 * [Upload data to HDInsight][hdinsight-upload-data]
 * [Use Hive with HDInsight][hdinsight-use-hive]
 * [Use Pig with HDInsight][hdinsight-use-pig]
+* [Use Azure Storage Shared Access Signatures to restrict access to data with HDInsight][hdinsight-use-sas]
 
+[hdinsight-use-sas]: /documentation/articles/hdinsight-storage-sharedaccesssignature-permissions
 [powershell-install]: /documentation/articles/powershell-install-configure
 [hdinsight-creation]: /documentation/articles/hdinsight-provision-clusters-v1
 [hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1

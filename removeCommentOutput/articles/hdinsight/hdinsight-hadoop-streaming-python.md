@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Develop Python MapReduce jobs with HDInsight | Windows Azure"
+   pageTitle="Develop Python MapReduce jobs with HDInsight | Azure"
    description="Learn how to create and run Python MapReduce jobs on Linux-based HDInsight clusters."
    services="hdinsight"
    documentationCenter=""

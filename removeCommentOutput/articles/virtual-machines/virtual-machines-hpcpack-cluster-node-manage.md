@@ -1,5 +1,5 @@
 <properties
- pageTitle="Manage HPC Pack cluster compute nodes | Windows Azure"
+ pageTitle="Manage HPC Pack cluster compute nodes | Azure"
  description="Learn about PowerShell script tools to add, remove, start, and stop HPC Pack cluster compute nodes in Azure"
  services="virtual-machines"
  documentationCenter=""

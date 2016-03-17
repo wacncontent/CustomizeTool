@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Release notes for Hadoop components on Azure HDInsight | Windows Azure"
+	pageTitle="Release notes for Hadoop components on Azure HDInsight | Azure"
 	description="Latest release notes and versions of Hadoop components for Azure HDInsight. Get development tips and details for Hadoop, Apache Storm, and HBase."
 	services="hdinsight"
 	documentationCenter=""
@@ -629,8 +629,8 @@ This release contains the following updates.
 </tr>
 
 <tr>
-<td>Upgrade to Azure Storage SDK for Java 2.0</td>
-<td>HDInsight version 3.2 is upgraded to use the latest version of the Azure Storage SDK for Java. This contains several important bug fixes over the current 0.6.0 version.</td>
+<td>Upgrade to Microsoft Azure Storage SDK for Java 2.0</td>
+<td>HDInsight version 3.2 is upgraded to use the latest version of the Microsoft Azure Storage SDK for Java. This contains several important bug fixes over the current 0.6.0 version.</td>
 <td>HDP</td>
 <td>All</td>
 <td>N/A</td>
@@ -1496,6 +1496,6 @@ Release notes for the Hortonworks Data Platforms (HDPs) that are used by HDInsig
 
 [webpi-link]: http://go.microsoft.com/?linkid=9811175&clcid=0x409
 
-[hdinsight-install-spark]: ../hdinsight-hadoop-spark-install/
-[hdinsight-r-scripts]: ../hdinsight-hadoop-r-scripts/
+[hdinsight-install-spark]: /documentation/articles/hdinsight-hadoop-spark-install
+[hdinsight-r-scripts]: /documentation/articles/hdinsight-hadoop-r-scripts
  

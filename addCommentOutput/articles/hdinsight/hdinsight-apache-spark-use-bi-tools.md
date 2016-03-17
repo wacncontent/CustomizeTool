@@ -1,5 +1,7 @@
+<!-- not suitable for Mooncake -->
+
 <properties 
-	pageTitle="Use BI tools with Apache Spark on HDInsight | Windows Azure" 
+	pageTitle="Use BI tools with Apache Spark on HDInsight | Azure" 
 	description="Step-by-step instructions on how to use notebooks with Apache Spark to create schemas on raw data, save them as Hive tables, and then use BI tools on the Hive table for data analytics" 
 	services="hdinsight" 
 	documentationCenter="" 
@@ -10,7 +12,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="12/22/2015"
+	ms.date="02/05/2016"
 	wacn.date=""/>
 
 
@@ -160,7 +162,7 @@ Once you have saved the data as a Hive table, you can use Power BI to connect to
 
 	![Connect to a Spark cluster](./media/hdinsight-apache-spark-use-bi-tools/hdispark.tableau.connect.png "Connect to a Spark cluster")
 
-	The authentication drop-down lists **Windows Azure HDInsight Service** as an option, only if you installed the [Microsoft Spark ODBC Driver](http://go.microsoft.com/fwlink/?LinkId=616229) on the computer.
+	The authentication drop-down lists  **Azure  **Microsoft Azure  HDInsight Service** as an option, only if you installed the [Microsoft Spark ODBC Driver](http://go.microsoft.com/fwlink/?LinkId=616229) on the computer.
 
 3. On the next screen, from the **Schema** drop-down, click the **Find** icon, and then click **default**.
 
@@ -212,7 +214,9 @@ Once you have saved the data as a Hive table, you can use Power BI to connect to
 
 * [Run jobs remotely on a Spark cluster using Livy](/documentation/articles/hdinsight-apache-spark-livy-rest-interface)
 
-### Extensions
+### Tools and extensions
+
+* [Use HDInsight Tools Plugin for IntelliJ IDEA to create and submit Spark Scala applicatons](/documentation/articles/hdinsight-apache-spark-intellij-tool-plugin)
 
 * [Use Zeppelin notebooks with a Spark cluster on HDInsight](/documentation/articles/hdinsight-apache-spark-use-zeppelin-notebook)
 
@@ -222,27 +226,11 @@ Once you have saved the data as a Hive table, you can use Power BI to connect to
 
 * [Manage resources for the Apache Spark cluster in Azure HDInsight](/documentation/articles/hdinsight-apache-spark-resource-manager)
 
-<!-- deleted by customization
-[hdinsight-versions]: ../hdinsight-component-versioning-v1/
-[hdinsight-upload-data]: ../hdinsight-upload-data/
-[hdinsight-storage]: ../hdinsight-use-blob-storage/
-
-
-[azure-purchase-options]: /pricing/overview/
-[azure-member-offers]: /pricing/member-offers/
-[azure-trial]: /pricing/1rmb-trial/
--->
-<!-- keep by customization: begin -->
 [hdinsight-versions]: /documentation/articles/hdinsight-component-versioning-v1
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
 [hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
-[azure-purchase-options]: http://www.windowsazure.cn/pricing/overview/
-[azure-trial]: http://www.windowsazure.cn/pricing/1rmb-trial/
-<!-- keep by customization: end -->
+[azure-purchase-options]: /pricing/overview/
+[azure-member-offers]: /pricing/member-offers/
+[azure-trial]: /pricing/1rmb-trial/
 [azure-management-portal]: https://manage.windowsazure.cn/
-<!-- deleted by customization
-[azure-create-storageaccount]: ../storage-create-storage-account/ 
--->
-<!-- keep by customization: begin -->
 [azure-create-storageaccount]: /documentation/articles/storage-create-storage-account
-<!-- keep by customization: end -->

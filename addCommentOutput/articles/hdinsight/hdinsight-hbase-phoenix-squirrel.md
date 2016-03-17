@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Use Apache Phoenix and SQuirreL in HDInsight | Windows Azure" 
+   pageTitle="Use Apache Phoenix and SQuirreL in HDInsight | Azure" 
    description="Learn how to use Apache Phoenix in HDInsight, and how to install and configure SQuirreL on your workstation to connect to an HBase cluster in HDInsight." 
    services="hdinsight" 
    documentationCenter="" 
@@ -79,9 +79,9 @@ For more information, see [SQLLine manual](http://sqlline.sourceforge.net/#manua
 
 [SQuirreL SQL Client](http://squirrel-sql.sourceforge.net/) is a graphical Java program that will allow you to view the structure of a JDBC compliant database, browse the data in tables, issue SQL commands etc. It can be used to connect to Apache Phoenix on HDInsight.
 
-<!-- deleted by customization
+
 This section shows you how to install and configure SQuirreL on your workstation to connect to an HBase cluster in HDInsight via VPN. 
--->
+
 
 ###Prerequisites
 
@@ -96,8 +96,8 @@ Before following the procedures, you must have the following:
 		myhbase.b7.internal.chinacloudapp.cn
 - Download and install [Microsoft Visual Studio Express 2013 for Windows Desktop](https://www.visualstudio.com/products/visual-studio-express-vs.aspx) on your workstation. You will need makecert from the package to create your certificate.  
 - Download and install [Java Runtime Environment](http://www.oracle.com/technetwork/java/javase/downloads/jre7-downloads-1880261.html) on your workstation.  SQuirreL SQL client version 3.0 and higher requires JRE version 1.6 or higher.  
-<!-- deleted by customization
 
+
 
 ###Configure a Point-to-Site VPN connection to the Azure virtual network
 
@@ -146,7 +146,7 @@ One way to create an X.509 certificate is by using the Certificate Creation Tool
 
 1. From your workstation, open a command prompt window.
 2. Navigate to the Visual Studio tools folder. 
-3. The following command in the example below will create and install a root certificate in the Personal certificate store on your workstation and also create a corresponding .cer file that youâll later upload to the Azure Management Portal. 
+3. The following command in the example below will create and install a root certificate in the Personal certificate store on your workstation and also create a corresponding .cer file that you'll later upload to the Azure Management Portal. 
 
 		makecert -sky exchange -r -n "CN=HBaseVnetVPNRootCertificate" -pe -a sha1 -len 2048 -ss My "C:\Users\JohnDole\Desktop\HBaseVNetVPNRootCertificate.cer"
 
@@ -206,8 +206,8 @@ One way to create an X.509 certificate is by using the Certificate Creation Tool
 		headnode0.myhbase.b7.internal.chinacloudapp.cn
 		headnode1.myhbase.b7.internal.chinacloudapp.cn
 		workernode0.myhbase.b7.internal.chinacloudapp.cn
--->
 
+
 ###Install and configure SQuirreL on your workstation
 
 **To install SQuirreL**
@@ -217,8 +217,13 @@ One way to create an X.509 certificate is by using the Certificate Creation Tool
 3. Click **Next** twice.
 4. Specify a path where you have the write permission, and then click **Next**.
 	>[AZURE.NOTE] The default installation folder is in the C:\Program Files\squirrel-sql-3.6 folder.  In order to write to this path, the installer must be granted the administrator privilege. You can open a command prompt as administrator, navigate to Java's bin folder, and then run 
+
 	>
 	>     java.exe -jar [the path of the SQuirreL jar file] 
+
+
+	><p>`java.ejava.exe -jar [the path of the SQuirreL jar file]`
+
 5. Click **OK** to confirm creating the target directory.
 6. The default setting is to install the Base and Standard packages.  Click **Next**.
 7. Click **Next** twice, and then click **Done**.
@@ -256,7 +261,7 @@ You need to copy it to your workstation under the [SQuirreL installation folder]
 	- **Name**: The name of the HBase cluster or any name you prefer.
 	- **Driver**: Phoenix.  This must match the driver name you created in the last procedure.
 	- **URL**: The URL is copied from your driver configuration. Make sure to user all lower case.
-	- **User name**: It can be any text. <!-- deleted by customization  Because you use VPN connectivity here, the user name is not used at all. -->
+	- **User name**: It can be any text.   Because you use VPN connectivity here, the user name is not used at all. 
 	- **Password**: It can be any text.
 
 	![HDInsight HBase Phoenix SQuirreL driver][img-squirrel-alias]
@@ -285,33 +290,23 @@ HBase is an Apache, open-source, NoSQL database built on Hadoop that provides ra
 - [Provision HBase clusters on Azure Virtual Network][hdinsight-hbase-provision-vnet-v1]:
 With virtual network integration, HBase clusters can be deployed to the same virtual network as your applications so that applications can communicate with HBase directly.
 - [Configure HBase replication in HDInsight](/documentation/articles/hdinsight-hbase-geo-replication): Learn how to configure HBase replication across two Azure datacenters. 
-<!-- deleted by customization
+
 - [Analyze Twitter sentiment with HBase in HDInsight][hbase-twitter-sentiment]:
 Learn how to do real-time [sentiment analysis](http://en.wikipedia.org/wiki/Sentiment_analysis) of big data by using HBase in a Hadoop cluster in HDInsight.
--->
+
 
 [azure-portal]: https://manage.windowsazure.cn
 [vnet-point-to-site-connectivity]: https://msdn.microsoft.com/zh-cn/library/azure/09926218-92ab-4f43-aa99-83ab4d355555#BKMK_VNETPT
 
-<!-- deleted by customization
-[hdinsight-versions]: hdinsight-component-versioning-v1.md
-[hdinsight-hbase-get-started]: ../hdinsight-hbase-get-started.md
--->
-<!-- keep by customization: begin -->
 [hdinsight-versions]: /documentation/articles/hdinsight-component-versioning-v1
 [hdinsight-hbase-get-started]: /documentation/articles/hdinsight-hbase-tutorial-get-started-v1
-<!-- keep by customization: end -->
 [hdinsight-manage-portal]: /documentation/articles/hdinsight-administer-use-management-portal-v1#connect-to-hdinsight-clusters-by-using-rdp
-<!-- deleted by customization
-[hdinsight-hbase-provision-vnet-v1]: hdinsight-hbase-provision-vnet-v1.md
-[hdinsight-hbase-overview]: hdinsight-hbase-overview.md
-[hbase-twitter-sentiment]: hdinsight-hbase-analyze-twitter-sentiment.md
-
--->
-<!-- keep by customization: begin -->
 [hdinsight-hbase-provision-vnet-v1]: /documentation/articles/hdinsight-hbase-provision-vnet-v1
 [hdinsight-hbase-overview]: /documentation/articles/hdinsight-hbase-overview
-<!-- keep by customization: end -->
+
+[hbase-twitter-sentiment]: /documentation/articles/hdinsight-hbase-analyze-twitter-sentiment
+
+
 [hdinsight-hbase-phoenix-sqlline]: ./media/hdinsight-hbase-phoenix-squirrel/hdinsight-hbase-phoenix-sqlline.png
 [img-certificate]: ./media/hdinsight-hbase-phoenix-squirrel/hdinsight-hbase-vpn-certificate.png
 [img-vnet-diagram]: ./media/hdinsight-hbase-phoenix-squirrel/hdinsight-hbase-vnet-point-to-site.png

@@ -65,7 +65,7 @@ This tutorial is designed to get you started building applications with the late
 
 	If more than one DNX runtime is listed, you can choose to enter the following (or a more recent version) at the command prompt to set the active DNX runtime. Set it to the same version that is used by the ASP.NET 5 generator when you create your web app later in this tutorial. *You may not need to change the active runtime if it is set to the latest available.*
 
-		dnvm use 1.0.0-update1 âp
+		dnvm use 1.0.0-update1 -p
 
 > [AZURE.NOTE] For more detailed installation instructions for OS X, Linux, and Windows, see [Installing ASP.NET 5 and DNX](https://code.visualstudio.com/Docs/ASPnet5#_installing-aspnet-5-and-dnx). 
 

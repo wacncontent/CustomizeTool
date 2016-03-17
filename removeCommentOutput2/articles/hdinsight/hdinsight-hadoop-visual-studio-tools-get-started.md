@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Learn to use Visual Studio Hadoop tools for HDInsight | Windows Azure"
+	pageTitle="Learn to use Visual Studio Hadoop tools for HDInsight | Azure"
 	description="Learn how to install and use Visual Studio Hadoop tools for HDInsight to connect to a Hadoop cluster and run a Hive query."
 	keywords="hadoop tools,hive query,visual studio"
 	services="HDInsight"
@@ -22,7 +22,7 @@ Learn how to use HDInsight Tools for Visual Studio to connect to HDInsight clust
 
 To complete this tutorial and use the Hadoop tools in Visual Studio, you'll need the following:
 
-- An Azure HDInsight cluster: Windows-based cluster will work with the steps in this document. See one of the following for information on creating a cluster:
+W- An Azure HDInsight cluster: Either a Linux-based or Windows-based cluster will work with the steps in this document. See one of the following for information on creating a cluster:
 	- [Get started using Windows-based HDInsight](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1)
 
 - A workstation with the following software:
@@ -35,14 +35,15 @@ To complete this tutorial and use the Hadoop tools in Visual Studio, you'll need
 	>[AZURE.NOTE] Currently, the HDInsight Tools for Visual Studio only come with the English version.
 
 
+
 ##<a name="installation" id="install-hdinsight-tools-for-visual-studio"></a> Install HDInsight tools for Visual Studio
 
-HDInsight Tools for Visual Studio and Microsoft Hive ODBC Driver are packaged with Windows Azure SDK for .NET version 2.5.1 or later. You can install it using the [Web Platform Installer](http://download.microsoft.com/download/F/4/2/F42AB12D-C935-4E65-9D98-4E56F9ACBC8E/wpilauncher.exe). You must choose the one that matches your version of Visual Studio. If you don't have Visual Studio installed, you can install the latest Visual Studio Community and Azure SDK using the [Web Platform Installer](http://download.microsoft.com/download/F/4/2/F42AB12D-C935-4E65-9D98-4E56F9ACBC8E/wpilauncher.exe) or using the following links:
+HDInsight Tools for Visual Studio and Microsoft Hive ODBC Driver are packaged with Azure SDK for .NET version 2.5.1 or later. You can install it using the [Web Platform Installer](http://download.microsoft.com/download/F/4/2/F42AB12D-C935-4E65-9D98-4E56F9ACBC8E/wpilauncher.exe). You must choose the one that matches your version of Visual Studio. If you don't have Visual Studio installed, you can install the latest Visual Studio Community and Azure SDK using the [Web Platform Installer](http://download.microsoft.com/download/F/4/2/F42AB12D-C935-4E65-9D98-4E56F9ACBC8E/wpilauncher.exe) or using the following links:
 
-- [Visual Studio Community 2015 with Windows Azure SDK](https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VS2015CommunityAzurePack.appids) 
-- [Visual Studio Community 2013 with Windows Azure SDK](https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VS2013CommunityAzurePack.appids) 
-- [Windows Azure SDK for .NET (VS 2015)](https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VWDOrVs2015AzurePack.appids) 
-- [Windows Azure SDK for .NET (VS 2013)](https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VWDOrVs2013AzurePack.appids) 
+- [Visual Studio Community 2015 with Azure SDK](https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VS2015CommunityAzurePack.appids) 
+- [Visual Studio Community 2013 with Azure SDK](https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VS2013CommunityAzurePack.appids) 
+- [Azure SDK for .NET (VS 2015)](https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VWDOrVs2015AzurePack.appids) 
+- [Azure SDK for .NET (VS 2013)](https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VWDOrVs2013AzurePack.appids) 
 
 ![Hadoop tools: HDinsight Tools for Visual Studio Web Platform installer.][1]
 
@@ -186,7 +187,7 @@ Even though executing queries via HiveServer2 has many performance benefits, it 
 
 The HDInsight Visual Studio Tools support showing performance graphs for the Hive jobs ran by the Tez execution engine. For information on enabling Tez, see [use Hive in HDInsight][hdinsight.hive]. After you submit a Hive job in Visual Studio, Visual Studio shows you the graph when the job is completed.  You might need to click the **Refresh** button to get the latest job status.
 
-> [AZURE.NOTE] This feature is only available for HDInsight cluster version above 3.2.4.593, and can only work for completed jobs. This works for both Windows clusters.
+c> [AZURE.NOTE] This feature is only available for HDInsight cluster version above 3.2.4.593, and can only work for completed jobs. This works for both Windows and Linux based clusters.
 
 ![hadoop hive tez performance graph](./media/hdinsight-hadoop-visual-studio-tools-get-started/hdinsight.hive.tez.performance.graph.png)
 
@@ -229,9 +230,11 @@ In this article, you learned how to connect to HDInsight clusters from Visual St
 <!--Link references-->
 [hdinsight.submit.jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
+
 [hdinsight.get.started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
 [hdinsight.hive]: /documentation/articles/hdinsight-use-hive
 [hdinsight.submit.jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
+
 [hdinsight.storm.visual.studio.tools]: /documentation/articles/hdinsight-storm-develop-csharp-visual-studio-topology
 [hdinsight.access.application.logs]: /documentation/articles/hdinsight-hadoop-access-yarn-app-logs
 

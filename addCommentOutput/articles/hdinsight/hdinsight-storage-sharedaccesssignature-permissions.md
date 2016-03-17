@@ -9,7 +9,7 @@ editor="cgronlun"/>
 
 <tags
 	ms.service="hdinsight"
-	ms.date="01/15/2016"
+	ms.date="02/01/2016"
 	wacn.date=""/>
 
 #Use Azure Storage Shared Access Signatures to restrict access to data with HDInsight
@@ -28,14 +28,14 @@ Shared Access Signatures (SAS) are a feature of Azure storage accounts that allo
     
     * Python must be version 2.7 or higher
 
-<!-- deleted by customization
+
 * A Linux-based HDInsight cluster OR [Azure PowerShell][powershell] - If you have an existing Linux-based cluster, you can use Ambari to add a Shared Access Signature to the cluster. If not, you can use Azure PowerShell to create a new cluster and add a Shared Access Signature during cluster creation.
--->
-<!-- keep by customization: begin -->
+
+
 * [Azure PowerShell][powershell] - you can use Azure PowerShell to create a new cluster and add a Shared Access Signature during cluster creation.
-<!-- keep by customization: end -->
+
 
-* The example files from [https://github.com/Blackmist/hdinsight-azure-storage-sas](https://github.com/Blackmist/hdinsight-azure-storage-sas). This repository has the following:
+* The example files from [https://github.com/Azure-Samples/hdinsight-dotnet-python-azure-storage-shared-access-signature](https://github.com/Azure-Samples/hdinsight-dotnet-python-azure-storage-shared-access-signature). This repository has the following:
 
     * A Visual Studio project that can create a storage container, stored policy, and SAS for use with HDInsight
     
@@ -69,7 +69,7 @@ For more information on Shared Access Signatures, see [Understanding the SAS mod
 
 ##Create a stored policy and generate a SAS
 
-Currently you must create a stored policy programmatically. You can find both the C# and Python example of creating a stored policy and SAS at [https://github.com/Blackmist/hdinsight-azure-storage-sas](https://github.com/Blackmist/hdinsight-azure-storage-sas).
+Currently you must create a stored policy programmatically. You can find both the C# and Python example of creating a stored policy and SAS at [https://github.com/Azure-Samples/hdinsight-dotnet-python-azure-storage-shared-access-signature](https://github.com/Azure-Samples/hdinsight-dotnet-python-azure-storage-shared-access-signature).
 
 ###Create a stored policy and SAS using C\#
 
@@ -119,11 +119,11 @@ When creating an HDInsight cluster, you must specify a primary storage account a
 
 In order to use a Shared Access Signature to limit access to a container, you must add a custom entry to the __core-site__ configuration for the cluster.
 
-* For __Windows-based__ <!-- deleted by customization or __Linux-based__ --> HDInsight clusters, you can do this during cluster creation using PowerShell.
-<!-- deleted by customization
+* For __Windows-based__  or __Linux-based__  HDInsight clusters, you can do this during cluster creation using PowerShell.
+
 
 * For __Linux-based__ HDInsight clusters, you change the configuration after cluster creation using Ambari.
--->
+
 
 ###Create a new cluster that uses the SAS
 
@@ -133,16 +133,16 @@ An example of creating an HDInsight cluster that uses the SAS is included in the
 
         # Replace 'mycluster' with the name of the cluster to be created
         $clusterName = 'mycluster'
-<!-- deleted by customization
+
         # Valid values are 'Linux' and 'Windows'
         $osType = 'Linux'
         # Replace 'myresourcegroup' with the name of the group to be created
         $resourceGroupName = 'myresourcegroup'
--->
-<!-- keep by customization: begin -->
+
+
         # Valid value is 'Windows'
         $osType = 'Windows'
-<!-- keep by customization: end -->
+
         # Replace with the Azure data center you want to the cluster to live in
         $location = 'China North'
         # Replace with the name of the default storage account to be created
@@ -164,32 +164,32 @@ An example of creating an HDInsight cluster that uses the SAS is included in the
 
 2. From the prompt, use the following to authenticate to your Azure subscription:
 
-<!-- deleted by customization
+
         Login-AzureRmAccount
--->
-<!-- keep by customization: begin -->
+
+
         Add-AzureAccount -Environment AzureChinaCloud
-<!-- keep by customization: end -->
+
     
     When prompted, login with the account for your Azure subscription.
     
-    If your login is associated with multiple Azure subscriptions, you may need to use <!-- deleted by customization `Select-AzureRmSubscription` --><!-- keep by customization: begin --> `Select-AzureSubscription` <!-- keep by customization: end --> to select the subscription you wish to use.
+    If your login is associated with multiple Azure subscriptions, you may need to use  `Select-AzureRmSubscription`  `Select-AzureSubscription`  to select the subscription you wish to use.
 
 2. From the prompt, change directories to the `CreateCluster` directory that contains the HDInsightSAS.ps1 file. Then use the following to run the script
         
         .\HDInsightSAS.ps1
     
-    As the script runs, it will log output to the PowerShell prompt as it creates <!-- deleted by customization the resource group and --> storage accounts. It will then prompt you to enter the HTTP user for the HDInsight cluster. This is the user account used to secure HTTP/s access to the cluster.
-<!-- deleted by customization
+    As the script runs, it will log output to the PowerShell prompt as it creates  the resource group and  storage accounts. It will then prompt you to enter the HTTP user for the HDInsight cluster. This is the user account used to secure HTTP/s access to the cluster.
+
     
     If you are creating a Linux-based cluster, you will also be prompted for an SSH user account name and password. This is used to remotely login to the cluster.
     
     > [AZURE.IMPORTANT] When prompted for the HTTP/s or SSH user name and password, you must provide a password that meets the following criteria:
--->
-<!-- keep by customization: begin -->
+
+
 
     > [AZURE.IMPORTANT] When prompted for the HTTP/s user name and password, you must provide a password that meets the following criteria:
-<!-- keep by customization: end -->
+
     >
     > - Must be at least 10 characters in length
     > - Must contain at least one digit
@@ -199,7 +199,7 @@ An example of creating an HDInsight cluster that uses the SAS is included in the
 
 It will take a while for this script to complete, usually around 15 minutes. When the script completes without any errors, the cluster has been created.
 
-<!-- deleted by customization
+
 ###Update an existing cluster to use the SAS
 
 If you have an existing Linux-based cluster, you can add the SAS to the __core-site__ configuration by using the following steps:
@@ -230,7 +230,7 @@ If you have an existing Linux-based cluster, you can add the SAS to the __core-s
 
 7. Once these have restarted, select each one and disable maintenance mode from the __Service Actions__ drop down.
 
--->
+
 ##Test restricted access
 
 To verify that you have restricted access, use the following methods:
@@ -239,13 +239,13 @@ To verify that you have restricted access, use the following methods:
 
     Once connected, use the __Hadoop Command Line__ icon on the desktop to open a command prompt.
 
-<!-- deleted by customization
+
 * For __Linux-based__ HDInsight clusters, use SSH to connect to the cluster. See one of the following for information on using SSH with Linux-based clusters:
 
     * [Use SSH with Linux-based Hadoop on HDInsight from Linux, OS X, and Unix](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix)
     * [Use SSH with Linux-based Hadoop on HDInsight from Windows](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows)
     
--->
+
 Once connected to the cluster, use the following steps to verify that you can only read and list items on the SAS storage account:
 
 1. From the prompt, type the following. Replace __SASCONTAINER__ with the name of the container created for the SAS storage account. Replace __SASACCOUNTNAME__ with the name of the storage account used for the SAS:
@@ -286,24 +286,24 @@ Once connected to the cluster, use the following steps to verify that you can on
 
 __Symptoms__: When creating a cluster using the PowerShell script, you may receive the following error message:
 
-<!-- deleted by customization
+
     New-AzureRmHDInsightCluster : A task was canceled.
--->
-<!-- keep by customization: begin -->
+
+
     New-AzureHDInsightCluster : A task was canceled.
-<!-- keep by customization: end -->
+
     At C:\Users\larryfr\Documents\GitHub\hdinsight-azure-storage-sas\CreateCluster\HDInsightSAS.ps1:62 char:5
-<!-- deleted by customization
+
     +     New-AzureRmHDInsightCluster `
--->
-<!-- keep by customization: begin -->
+
+
     +     New-AzureHDInsightCluster `
-<!-- keep by customization: end -->
+
     +     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-        + CategoryInfo         : NotSpecified: (:) <!-- deleted by customization [New-AzureRmHDInsightCluster] --><!-- keep by customization: begin --> [New-AzureHDInsightCluster] <!-- keep by customization: end -->, CloudException
+        + CategoryInfo         : NotSpecified: (:)  [New-AzureRmHDInsightCluster]  [New-AzureHDInsightCluster] , CloudException
         + FullyQualifiedErrorId : Hyak.Common.CloudException,Microsoft.Azure.Commands.HDInsight.NewAzureHDInsightClusterCommand
 
-__Cause__: This error can occur if you use a password for the admin/HTTP user for the cluster <!-- deleted by customization, or (for Linux-based clusters,) the SSH user -->.
+__Cause__: This error can occur if you use a password for the admin/HTTP user for the cluster , or (for Linux-based clusters,) the SSH user .
 
 __Resolution__: Use a password that meets the following criteria:
 

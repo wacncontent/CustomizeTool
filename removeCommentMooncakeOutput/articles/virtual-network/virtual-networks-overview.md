@@ -13,7 +13,7 @@
 
 # Virtual Network Overview
 
-An Azure virtual network (VNet) is a representation of your own network in the cloud.  It is a logical isolation of the Azure cloud dedicated to your subscription. You can fully control the IP address blocks, DNS settings, security policies, and route tables within this network. You can also further segment your VNet into subnets and launch Azure IaaS virtual machines (VMs) and/or [Cloud services (PaaS role instances)](/documentation/articles/cloud-services-choose-me). Additonally you can connect the virtual network to your on-premises network using one of the [connectivity options](/documentation/articles/vpn-gateway-cross-premises-options) available in Azure. In essence, you can expand your network to Azure, with complete control on IP address blocks with the benefit of enterprise scale Azure provides. 
+An Azure virtual network (VNet) is a representation of your own network in the cloud.  It is a logical isolation of the Azure cloud dedicated to your subscription. You can fully control the IP address blocks, DNS settings, security policies, and route tables within this network. You can also further segment your VNet into subnets and launch Azure IaaS virtual machines (VMs) and/or [Cloud services (PaaS role instances)](/documentation/articles/cloud-services-choose-me). In essence, you can expand your network to Azure, with complete control on IP address blocks with the benefit of enterprise scale Azure provides.
 
 To better understand VNets, take a look at the figure below, which shows a simplified on-premises network.
 
@@ -39,10 +39,10 @@ Notice how the Azure infrastructure takes on the role of the router, allowing ac
 
 - **Security**. Traffic entering and exiting the virtual machines and PaaS role instances in a VNet can be controlled using Network Security groups.
 
-- **Connectivity**. VNets can be connected to each other, and even to your on-premises datacenter, by using a site-to-site VPN connection, or ExpressRoute connection. To learn more about VPN gateways, visit [About VPN gateways](/documentation/articles/vpn-gateway-about-vpngateways). To learn more about ExpressRoute, visit [ExpressRoute technical overview](/documentation/articles/expressroute-introduction).
+- **Connectivity**. VNets can be connected to each other, and even to your on-premises datacenter, by using an ExpressRoute connection. To learn more about ExpressRoute, visit [ExpressRoute technical overview](/documentation/articles/expressroute-introduction).
 
     >[AZURE.NOTE] Make sure you create a VNet before deploying any IaaS VMs or PaaS role instances to your Azure environment. ARM based VMs require a VNet, and if you do not specify an existing VNet, Azure creates a default VNet that might have a CIDR address block clash with your on-premises network. Making it impossible for you to connect your VNet to your on-premises network.
-    
+
 ## Subnets
 
 Subnet is a range of IP addresses in the VNet, you can divide a VNet into multiple subnets for organization and security. VMs and PaaS role instances deployed to subnets (same or different) within a VNet can communicate with each other without any extra configuration. You can also configure route tables and NSGs to a subnet.
@@ -50,13 +50,13 @@ Subnet is a range of IP addresses in the VNet, you can divide a VNet into multip
 ## IP addresses
 
 
-There are two types of IP addresses assigned to resources in Azure: *public* and *private*. Public IP Addresses allow Azure resources to communicate with Internet and other Azure public-facing services like [Azure Redis Cache](/home/features/cache/), [Azure Event Hubs](/documentation/services/event-hubs/). Private IP Addresses allows communication between resources in a virtual network, along with those connected through a VPN, without using an Internet-routable IP addresses. 
+There are two types of IP addresses assigned to resources in Azure: *public* and *private*. Public IP Addresses allow Azure resources to communicate with Internet and other Azure public-facing services like [Azure Redis Cache](/home/features/cache/), [Azure Event Hubs](/documentation/services/event-hubs/). Private IP Addresses allows communication between resources in a virtual network without using an Internet-routable IP addresses.
 
-To learn more about IP addresses in Azure, visit [IP addresses in virtual network](/documentation/articles/virtual-network-ip-addresses-arm)
+To learn more about IP addresses in Azure, visit [IP addresses in virtual network](/documentation/articles/virtual-network-ip-addresses-overview-classic) 
 
 ## Azure load balancers
 
-Virtual machines and cloud services in a Virtual network can be exposed to Internet using Azure Load balancers. Line of Business applications that are internal facing only can be load balanced using Internal load balancer. 
+Virtual machines and cloud services in a Virtual network can be exposed to Internet using Azure Load balancers. Line of Business applications that are internal facing only can be load balanced using Internal load balancer.
 
 - **External load balancer**. You can use an external load balancer to provide high availability for IaaS VMs and PaaS role instances accessed from the public Internet.
 
@@ -80,15 +80,13 @@ Virtual appliances depend on [user defined routes and IP forwarding](/documentat
 There are limits on the number of Virtual Networks allowed in a subscription, please refer to [Azure Networking limits](/documentation/articles/azure-subscription-service-limits#networking-limits) for more information.
 
 ## Pricing
-There is no extra cost for using Virtual Networks in Azure. The compute instances launched within the Vnet will be charged the standard rates as described in [Azure VM Pricing](/home/features/virtual-machines/#price). The [VPN Gateways](/home/features/vpn-gateway/#price) and [Public IP Addresses] (/home/features/ip-addresses/#price) used in the VNet will also be charged standard rates. 
+There is no extra cost for using Virtual Networks in Azure. The compute instances launched within the Vnet will be charged the standard rates as described in [Azure VM Pricing](/home/features/virtual-machines/#price). The [Public IP Addresses] (/home/features/ip-addresses/#price) used in the VNet will also be charged standard rates.
 
 ## Next steps
 
 - [Create a VNet](/documentation/articles/virtual-networks-create-vnet-arm-pportal) and subnets.
 - [Create a VM in a VNet](/documentation/articles/virtual-machines-windows-tutorial-classic-portal).
 - Learn about [NSGs](/documentation/articles/virtual-networks-nsg).
-- Learn about [load balancers](/documentation/articles/load-balancer-overview).
 - [Reserve an internal IP address](/documentation/articles/virtual-networks-reserved-private-ip)
 - [Reserve a public IP address](/documentation/articles/virtual-networks-reserved-public-ip).
 - Learn about [user defined routes and IP forwarding](/documentation/articles/virtual-networks-udr-overview).
-

@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Capture an image of a Linux VM | Windows Azure"
+	pageTitle="Capture an image of a Linux VM | Azure"
 	description="Learn how to capture an image of a Linux-based Azure virtual machine (VM) created with the classic deployment model."
 	services="virtual-machines"
 	documentationCenter=""
@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="virtual-machines"
-	ms.date="10/14/2015"
+	ms.date="01/22/2016"
 	wacn.date=""/>
 
 
@@ -24,9 +24,7 @@ Azure stores the image under **Images**. This is also where any images you've up
 
 ## Before You begin
 
-These steps assume that you've already created an Azure virtual machine using the classic deployment model and configured the operating system, including attaching any data disks. If you haven't done this yet, see these instructions:
-
-- [How to Create a Virtual Machine Running Linux] []
+These steps assume that you've already created an Azure virtual machine using the classic deployment model and configured the operating system, including attaching any data disks. If you haven't done this yet, read [How to Create a Linux Virtual Machine] [].
 
 
 ## Capture the virtual machine
@@ -89,8 +87,8 @@ The image is ready to be used to create virtual machines. You can use the Azure 
 **See Also:** [Azure Linux Agent User Guide](/documentation/articles/virtual-machines-linux-agent-user-guide)
 
 [Azure Management Portal]: http://manage.windowsazure.cn
-[How to Log on to a Virtual Machine Running Linux]: virtual-machines-linux-how-to-log-on.md
-[About Virtual Machine Images in Azure]: virtual-machines-images.md
-[How to Create a Custom Virtual Machine]: virtual-machines-linux-create-custom.md
-[How to Attach a Data Disk to a Virtual Machine]: storage-windows-attach-disk.md
-[How to Create a Virtual Machine Running Linux]: virtual-machines-linux-tutorial.md
+[How to Log on to a Virtual Machine Running Linux]: /documentation/articles/virtual-machines-linux-how-to-log-on
+[About Virtual Machine Images in Azure]: /documentation/articles/virtual-machines-images
+[How to Create a Custom Virtual Machine]: /documentation/articles/virtual-machines-linux-create-custom
+[How to Attach a Data Disk to a Virtual Machine]: /documentation/articles/storage-windows-attach-disk
+[How to Create a Linux Virtual Machine]: /documentation/articles/virtual-machines-linux-create-custom

@@ -22,18 +22,21 @@ This tutorial describes options for authoring and configuring a basic Web Server
 
 It describes additional features of Git deployment, such as virtual environment and package installation using requirements.txt.
 
+
 ##<a name="bottle-django-flask"></a> Bottle, Django or Flask?
 
-The Azure gallery contains templates for the Bottle, Django and Flask frameworks. If you are developing your first web app in Azure, or you are not familiar with Git, we recommend that you follow one of these tutorials, which include step-by-step instructions for building a working application from the gallery using Git deployment from Windows or Mac:
+If you are developing your first web app in Azure, or you are not familiar with Git, we recommend that you follow one of these tutorials, which include step-by-step instructions for building a working application from the gallery using Git deployment from Windows or Mac:
 
 - [Creating web apps with Bottle](/documentation/articles/web-sites-python-create-deploy-bottle-app)
 - [Creating web apps with Django](/documentation/articles/web-sites-python-create-deploy-django-app)
 - [Creating web apps with Flask](/documentation/articles/web-sites-python-create-deploy-flask-app)
 
 
+
 ##<a name="website-creation-on-portal"></a> Web app creation on Azure Management Portal
 
 This tutorial assumes an existing Azure subscription and access to the Azure Management Portal.
+
 
 If you do not have an existing web app, you can create one from the [Azure Management Portal](https://manage.windowsazure.cn).  Click the NEW button in the bottom left corner. A window will appear. Click COMPUTE, WEB SITE, then QUICK CREATE.
 
@@ -46,6 +49,7 @@ Configure Git publishing for your newly created web app by following the instruc
 Once Git publishing is set up, a Git repository will be created and associated with your web app. The repository's URL will be displayed and can henceforth be used to push data from the local development environment to the cloud. To publish applications via Git, make sure a Git client is also installed and use the instructions provided to push your web app content to Azure Web App.
 
 
+
 ##<a name="application-overview"></a> Application Overview
 
 In the next sections, the following files are created. They should be placed in the root of the Git repository.
@@ -55,6 +59,7 @@ In the next sections, the following files are created. They should be placed in 
     runtime.txt
     web.config
     ptvs_virtualenv_proxy.py
+
 
 
 ##<a name="wsgi-handler"></a> WSGI Handler

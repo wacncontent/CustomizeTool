@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Script Action development with HDInsight | Windows Azure"
+	pageTitle="Script Action development with HDInsight | Azure"
 	description="Learn how to customize Hadoop clusters with Script Action."
 	services="hdinsight"
 	documentationCenter=""
@@ -10,23 +10,22 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="11/09/2015"
+	ms.date="02/04/2016"
 	wacn.date=""/>
 
 # Develop Script Action scripts for HDInsight
 
-Learn how to write Script Action scripts for HDInsight. For information on using Script Action scripts, see [Customize HDInsight clusters using Script Action](/documentation/articles/hdinsight-hadoop-customize-cluster-v1). 
+Learn how to write Script Action scripts for HDInsight. For information on using Script Action scripts, see [Customize HDInsight clusters using Script Action](/documentation/articles/hdinsight-hadoop-customize-cluster-v1).
 
 Script Action can be used to install additional software running on a Hadoop cluster or to change the configuration of applications installed on a cluster. Script actions are scripts that run on the cluster nodes when HDInsight clusters are deployed, and they are executed once nodes in the cluster complete HDInsight configuration. A script action is executed under system admin account privileges and provides full access rights to the cluster nodes. Each cluster can be provided with a list of script actions to be executed in the order in which they are specified. 
 
 > [AZURE.NOTE] If you experience the following error message: 
-> 
->     System.Management.Automation.CommandNotFoundException; ExceptionMessage : The term 'Save-HDIFile' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
-> It is because you didn't include the helper methods.  See [Helper methods for custom scripts](/documentation/articles/hdinsight-hadoop-script-actions#helper-methods-for-custom-scripts).
+> <p>`System.Management.Automation.CommandNotFoundException; ExceptionMessage : The term 'Save-HDIFile' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.`
+> <p>It is because you didn't include the helper methods.  See [Helper methods for custom scripts](/documentation/articles/hdinsight-hadoop-script-actions#helper-methods-for-custom-scripts).
 
 ## Sample scripts
 
-For provisioning HDInsight clusters on Windows operating system, the Script Action is Azure PowerShell script.The following is a sample script for configure the site configuration files:
+For creating HDInsight clusters on Windows operating system, the Script Action is Azure PowerShell script.The following is a sample script for configure the site configuration files:
 
 	param (
 	    [parameter(Mandatory)][string] $ConfigFileName,
@@ -209,7 +208,7 @@ or
 
 ### Throw exception for failed cluster deployment
 
-If you want to get accurately notified of the fact that cluster customization did not succeed as expected, it is important to throw an exception and fail the cluster provisioning. For instance, you might want to process a file if it exists and handle the error case where the file does not exist. This would ensure that the script exits gracefully and the state of the cluster is correctly known. The following snippet gives an example of how to achieve this:
+If you want to get accurately notified of the fact that cluster customization did not succeed as expected, it is important to throw an exception and fail the cluster creation. For instance, you might want to process a file if it exists and handle the error case where the file does not exist. This would ensure that the script exits gracefully and the state of the cluster is correctly known. The following snippet gives an example of how to achieve this:
 
 	If(Test-Path($SomePath)) {
 		#Process file in some way
@@ -282,7 +281,7 @@ An easy way to check the logs is to use HDInsight Tools for Visual Studio. For i
 
 1. Open Visual Studio.
 2. Click **View**, and then click **Server Explorer**.
-3. Right-click "Azure", click Connect to **Windows Azure Subscriptions**, and then enter your credentials.
+3. Right-click "Azure", click Connect to **Microsoft Azure Subscriptions**, and then enter your credentials.
 4. Expand **Storage**, expand the Azure storage account used as the default file system, expand **Tables**, and then double-click the table name.
 
 

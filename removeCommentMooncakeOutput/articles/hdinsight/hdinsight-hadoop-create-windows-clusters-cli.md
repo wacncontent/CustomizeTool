@@ -30,7 +30,7 @@ Before you begin the instructions in this article, you must have the following:
 
 Use the following command to connect to Azure:
 
-	azure login -e AzureChinaCloud -u <your account>
+	azure login -e AzureChinaCloud -u <your account> 
 
 For more information on authenticating using a work or school account, see [Connect to an Azure subscription from the Azure CLI](/documentation/articles/xplat-cli-connect).
 
@@ -64,7 +64,7 @@ You must have a Azure Blob storage account before you can create an HDInsight cl
 		-- Shows a Storage account
 		azure storage account show "<Storage Account Name>"
 		-- Lists the keys for a Storage account
-		azure storage account keys list "<Storage Account Name>"
+		azure storage account keys list "<Storage Account Name>" 
 
 	For details on getting the information by using the Azure Management Portal, see the "View, copy, and regenerate storage access keys" section of [Create, manage, or delete a Storage account][azure-create-storageaccount].
 

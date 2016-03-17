@@ -1,5 +1,7 @@
+<!-- not suitable for Mooncake -->
+
 <properties
-   pageTitle="Use the Hive shell in HDInsight (Hadoop) | Windows Azure"
+   pageTitle="Use the Hive shell in HDInsight (Hadoop) | Azure"
    description="Learn how to use the Hive shell with a Linux-based HDInsight cluster. You will learn how to connect to the HDInsight cluster using SSh, then use the Hive Shell to interactively run queries."
    services="hdinsight"
    documentationCenter=""
@@ -10,7 +12,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="12/04/2015"
+	ms.date="02/05/2016"
 	wacn.date=""/>
 
 #Use Hive with Hadoop in HDInsight with SSH
@@ -124,14 +126,27 @@ For information on other ways you can work with Hadoop on HDInsight:
 [import-to-excel]: /documentation/articles/hdinsight-connect-excel-power-query/
 
 
+
+[hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie
+[hdinsight-analyze-flight-data]: /documentation/articles/hdinsight-analyze-flight-delay-data
+
+
 [hdinsight-use-oozie]: hdinsight-use-oozie.md
 [hdinsight-analyze-flight-data]: hdinsight-analyze-flight-delay-data.md
+
 
 [putty]: http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html
 
+
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
+[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
+
+
 [hdinsight-provision]: hdinsight-provision-clusters-v1.md
 [hdinsight-submit-jobs]: hdinsight-submit-hadoop-jobs-programmatically.md
 [hdinsight-upload-data]: hdinsight-upload-data.md
+
 
 
 

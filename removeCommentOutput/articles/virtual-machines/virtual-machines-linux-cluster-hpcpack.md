@@ -1,5 +1,5 @@
 <properties
- pageTitle="Linux compute VMs in an HPC Pack cluster | Windows Azure"
+ pageTitle="Linux compute VMs in an HPC Pack cluster | Azure"
  description="Learn how to script the deployment of an HPC Pack cluster in Azure containing a head node running Windows Server with Linux compute nodes."
  services="virtual-machines"
  documentationCenter=""
@@ -180,7 +180,7 @@ You have several choices to move data among Linux nodes and the Windows head nod
 
 The [Azure File](/home/features/storage/files/) service exposes file shares using the standard SMB 2.1 protocol. Azure VMs and cloud services can share file data across application components via mounted shares, and on-premises applications can access file data in a share through the File storage API. For more information, see [How to use Azure File storage with PowerShell and .NET](/documentation/articles/storage-dotnet-how-to-use-files).
 
-To create an Azure File share, see the detailed steps in [Introducing Windows Azure File Service](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/12/introducing-microsoft-azure-file-service.aspx). To set up persisting connections, see [Persisting connections to Windows Azure Files](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/27/persisting-connections-to-microsoft-azure-files.aspx).
+To create an Azure File share, see the detailed steps in [Introducing Azure File Service](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/12/introducing-microsoft-azure-file-service.aspx). To set up persisting connections, see [Persisting connections to Azure Files](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/27/persisting-connections-to-microsoft-azure-files.aspx).
 
 In this example, we create an Azure File share named rdma on our storage account allvhdsje. To mount the share on the head node, open a Command window and enter the following commands:
 

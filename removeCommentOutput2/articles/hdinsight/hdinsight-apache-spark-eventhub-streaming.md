@@ -1,7 +1,7 @@
 <!-- not suitable for Mooncake -->
 
 <properties 
-	pageTitle="Use Azure Event Hubs with Apache Spark in HDInsight to process streaming data | Windows Azure" 
+	pageTitle="Use Azure Event Hubs with Apache Spark in HDInsight to process streaming data | Azure" 
 	description="Step-by-step instructions on how to send a data stream to Azure Event Hub and then receive those events in Spark using a scala application" 
 	services="hdinsight" 
 	documentationCenter="" 
@@ -362,9 +362,9 @@ You should see output similar to the following:
 * [Manage resources for the Apache Spark cluster in Azure HDInsight](/documentation/articles/hdinsight-apache-spark-resource-manager)
 
 
-[hdinsight-versions]: ../hdinsight-component-versioning-v1/
-[hdinsight-upload-data]: ../hdinsight-upload-data/
-[hdinsight-storage]: ../hdinsight-use-blob-storage/
+[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning-v1
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
 
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: /pricing/member-offers/

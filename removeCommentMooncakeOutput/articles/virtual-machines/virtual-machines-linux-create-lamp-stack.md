@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Create a LAMP Stack with Azure | Windows Azure"
-	description="Learn how to create a LAMP Stack with Windows Azure using Azure virtual machines (VMs) running Linux."
+	pageTitle="Create a LAMP Stack with Azure | Azure"
+	description="Learn how to create a LAMP Stack with Azure using Azure virtual machines (VMs) running Linux."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="NingKuang"
@@ -13,14 +13,14 @@
 	ms.date="12/15/2015"
 	wacn.date=""/>
 
-#How to create a LAMP Stack with Windows Azure
+#How to create a LAMP Stack with Azure
 
 A "LAMP" stack is a group of open source software that is typically installed together to enable a server to host dynamic websites and web applications. This term is actually an acronym that represents the Linux operating system with the Apache web server. The site data is stored in a MySQL database, and dynamic content is processed by PHP.  
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
 
 
-In this guide, we'll get a LAMP stack installed on a Linux image and deploy it on Windows Azure.  
+In this guide, we'll get a LAMP stack installed on a Linux image and deploy it on Azure.  
 
 You will learn:  
 

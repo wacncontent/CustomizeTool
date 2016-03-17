@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Troubleshoot Remote Desktop connection to an Azure VM | Windows Azure"
+	pageTitle="Troubleshoot Remote Desktop connection to an Azure VM | Azure"
 	description="Troubleshoot Remote Desktop connection errors for a Windows VM. Get quick mitigation steps, help by error message and detailed network troubleshooting."
 	keywords="Remote desktop error,remote desktop connection error,cannot connect to VM,remote desktop troubleshooting"
 	services="virtual-machines"
@@ -43,7 +43,7 @@ These steps may resolve most Remote Desktop connection failures in Azure virtual
 - Resize the VM to fix any host issues.<br>
 	Click **Browse** > **Virtual machines (classic)** > your Windows virtual machine > **Settings** > **Size**. For detailed steps, see [Resize the virtual machine](https://msdn.microsoft.com/zh-cn/library/dn168976.aspx).
 
-- Review your VMâs console log or screenshot to correct boot problems.<br>
+- Review your VM's console log or screenshot to correct boot problems.<br>
 	Click **Browse** > **Virtual machines (classic**) > your Windows virtual machine > **Settings** > **Boot diagnostics**.
 
 - Check VM's Resource Health for any platform issues.<br>

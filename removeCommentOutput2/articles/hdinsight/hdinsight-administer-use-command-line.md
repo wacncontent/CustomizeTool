@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Manage Hadoop clusters using Azure CLI | Windows Azure"
+	pageTitle="Manage Hadoop clusters using Azure CLI | Azure"
 	description="How to use the Azure CLI to manage Hadoop clusters in HDIsight"
 	services="hdinsight"
 	editor="cgronlun"
@@ -17,7 +17,7 @@
 
 [AZURE.INCLUDE [selector](../includes/hdinsight-portal-management-selector.md)]
 
-Learn how to use the [Azure Command-line Interface](/documentation/articles/xplat-cli-install) to manage Hadoop clusters in Azure HDInsight. The Azure CLI is implemented in Node.js. It can be used on any platform that supports Node.js.
+Learn how to use the [Azure Command-line Interface](/documentation/articles/xplat-cli-install) to manage Hadoop clusters in Azure HDInsight. The Azure CLI is implemented in Node.js. It can be used on any platform that supports Node.js, including Windows, Mac, and Linux.
 
 This article covers only using the Azure CLI with HDInsight. For a general guide on how to use Azure CLI, see [Install and configure Azure CLI][azure-command-line-tools].
 
@@ -29,7 +29,7 @@ Before you begin this article, you must have the following:
 - **Azure CLI** - See [Install and configure the Azure CLI](/documentation/articles/xplat-cli-install) for installation and configuration information.
 - **Connect to Azure**, using the following command:
 
-		azure login -e AzureChinaCloud -u <your account> 
+		azure login -e AzureChinaCloud -u <your account>
 
 	For more information on authenticating using a work or school account, see [Connect to an Azure subscription from the Azure CLI](/documentation/articles/xplat-cli-connect).
 	

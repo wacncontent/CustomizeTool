@@ -1,5 +1,7 @@
+<!-- not suitable for Mooncake -->
+
 <properties
-	pageTitle="SharePoint Server 2013 farm Phase 3 | Windows Azure"
+	pageTitle="SharePoint Server 2013 farm Phase 3 | Azure"
 	description="Create the computers and the SQL Server cluster and enable Availability Groups in Phase 3 of the SharePoint Server 2013 farm in Azure."
 	documentationCenter=""
 	services="virtual-machines"
@@ -140,12 +142,12 @@ Use the following procedure twice, once for each SQL server, to configure the SQ
 
 1.	On the Start screen, type **SQL Studio**, and then click **SQL Server 2014 Management Studio**.
 2.	In **Connect to Server**, click **Connect**.
-<!-- deleted by customization
+
 3.	In the left pane, right-click the top node—the default instance named after the machine—and then click **Properties**.
--->
-<!-- keep by customization: begin -->
-3.	In the left pane, right-click the top nodeâthe default instance named after the machineâand then click **Properties**.
-<!-- keep by customization: end -->
+
+
+3.	In the left pane, right-click the top node-the default instance named after the machine-and then click **Properties**.
+
 4.	In **Server Properties**, click **Database Settings**.
 5.	In **Database default locations**, set the following values:
 - For **Data**, set the path to **f:\Data**.

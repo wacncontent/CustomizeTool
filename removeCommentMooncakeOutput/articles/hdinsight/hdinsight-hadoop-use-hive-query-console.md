@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Use Hadoop Hive on the Query Console in HDInsight | Windows Azure"
+   pageTitle="Use Hadoop Hive on the Query Console in HDInsight | Azure"
    description="Learn how to use the web-based Query Console to run Hive queries on an HDInsight Hadoop cluster from your browser."
    services="hdinsight"
    documentationCenter=""
@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="12/04/2015"
+	ms.date="02/05/2016"
 	wacn.date=""/>
 
 # Run Hive queries using the Query Console
@@ -40,6 +40,7 @@ To complete the steps in this article, you will need the following.
 
 	Replace the text `Select * from hivesampletable` with the following HiveQL statements:
 
+        set hive.execution.engine=tez;
         DROP TABLE log4jLogs;
         CREATE EXTERNAL TABLE log4jLogs (t1 string, t2 string, t3 string, t4 string, t5 string, t6 string, t7 string)
         ROW FORMAT DELIMITED FIELDS TERMINATED BY ' '
@@ -52,8 +53,7 @@ To complete the steps in this article, you will need the following.
     * **CREATE EXTERNAL TABLE**: Creates a new 'external' table in Hive. External tables store only the table definition in Hive; the data is left in the original location.
 
     > [AZURE.NOTE] External tables should be used when you expect the underlying data to be updated by an external source (such as an automated data upload process) or by another MapReduce operation, but you always want Hive queries to use the latest data.
-    >
-    > Dropping an external table does **not** delete the data, only the table definition.
+    > <p>Dropping an external table does **not** delete the data, only the table definition.
 
     * **ROW FORMAT**: Tells Hive how the data is formatted. In this case, the fields in each log are separated by a space.
     * **STORED AS TEXTFILE LOCATION**: Tells Hive where the data is stored (the example/data directory) and that it is stored as text
