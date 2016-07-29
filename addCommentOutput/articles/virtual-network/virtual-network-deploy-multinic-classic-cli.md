@@ -1,4 +1,4 @@
-<properties 
+<properties
    pageTitle="Deploy multi NIC VMs using the Azure CLI in the classic deployment model | Azure"
    description="Learn how to deploy multi NIC VMs using the Azure CLI in the classic deployment model"
    services="virtual-network"
@@ -19,11 +19,16 @@
 
 [AZURE.INCLUDE [virtual-network-deploy-multinic-intro-include.md](../includes/virtual-network-deploy-multinic-intro-include.md)]
 
-[AZURE.INCLUDE [azure-arm-classic-important-include](../includes/learn-about-deployment-models-classic-include.md)]  [Resource Manager model](/documentation/articles/virtual-network-deploy-multinic-arm-cli). 
+
+[AZURE.INCLUDE [azure-arm-classic-important-include](../includes/learn-about-deployment-models-classic-include.md)] [Resource Manager model](/documentation/articles/virtual-network-deploy-multinic-arm-cli/).
+
+
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the [Resource Manager model](/documentation/articles/virtual-network-deploy-multinic-arm-cli/).
+
 
 [AZURE.INCLUDE [virtual-network-deploy-multinic-scenario-include.md](../includes/virtual-network-deploy-multinic-scenario-include.md)]
 
-Since at this point in time you cannot have VMs with a single NIC and VMs with multiple NICs in the same cloud service, you will implement the back end servers in a different cloud service than and all other components in the scenario. The steps below use a cloud service named *IaaSStory* for the main resources, and *IaaSStory-BackEnd* for the back end servers.
+Currently, you cannot have VMs with a single NIC and VMs with multiple NICs in the same cloud service. Therefore, you need to implement the back end servers in a different cloud service than and all other components in the scenario. The steps below use a cloud service named *IaaSStory* for the main resources, and *IaaSStory-BackEnd* for the back end servers.
 
 
 ## Prerequisites
@@ -32,7 +37,7 @@ Since at this point in time you cannot have VMs with a single NIC and VMs with m
 ##<a name="Prerequisites"></a> Prerequisites
 
 
-Before you can deploy the back end servers, you need to deploy the main cloud service with all the necessary resources for this scenario. At minimum, you need to create a virtual network with a subnet for the backend. Visit [Create a virtual network by using the Azure CLI](/documentation/articles/virtual-networks-create-vnet-classic-cli) to learn how to deploy a virtual network.
+Before you can deploy the back end servers, you need to deploy the main cloud service with all the necessary resources for this scenario. At minimum, you need to create a virtual network with a subnet for the backend. Visit [Create a virtual network by using the Azure CLI](/documentation/articles/virtual-networks-create-vnet-classic-cli/) to learn how to deploy a virtual network.
 
 [AZURE.INCLUDE [azure-cli-prerequisites-include.md](../includes/azure-cli-prerequisites-include.md)]
 
@@ -42,13 +47,13 @@ The backend VMs depend on the creation of the resources listed below.
 
 - **Storage account for data disks**. For better performance, the data disks on the database servers will use solid state drive (SSD) technology, which requires a premium storage account. Make sure the Azure location you deploy to support premium storage.
 - **NICs**. Each VM will have two NICs, one for database access, and one for management.
-- **Availability set**. All database servers will be added to a single availability set, to ensure at least one of the VMs is up and running during maintenance. 
+- **Availability set**. All database servers will be added to a single availability set, to ensure at least one of the VMs is up and running during maintenance.
 
 ### Step 1 - Start your script
 
 You can download the full bash script used [here](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/IaaS-Story/11-MultiNIC/classic/virtual-network-deploy-multinic-classic-cli.sh). Follow the steps below to change the script to work in your environment.
 
-1. Change the values of the variables below based on  your existing resource group  what you  deployed above in [Prerequisites](#Prerequisites).
+1. Change the values of the variables below based on your existing resource group deployed above in [Prerequisites](#Prerequisites).
 
 
 		location="useast2"
@@ -78,7 +83,7 @@ You can download the full bash script used [here](https://raw.githubusercontent.
 
 ### Step 2 - Create necessary resources for your VMs
 
-1. Create a new cloud service for all backend VMs. Notice the use of the `$backendCSName` variable for the  resource group  cloud service  name, and `$location` for the Azure region.
+1. Create a new cloud service for all backend VMs. Notice the use of the `$backendCSName` variable for the resource group name, and `$location` for the Azure region.
 
 		azure service create --serviceName $backendCSName \
 		    --location $location
@@ -87,7 +92,7 @@ You can download the full bash script used [here](https://raw.githubusercontent.
 
 		azure storage account create $prmStorageAccountName \
 		    --location $location \
-		    --type PLRS 
+		    --type PLRS
 
 ### Step 3 - Create VMs with multiple NICs
 
@@ -101,7 +106,7 @@ You can download the full bash script used [here](https://raw.githubusercontent.
 		    nic1Name=$vmNamePrefix$suffixNumber-DA
 		    x=$((suffixNumber+3))
 		    ipAddress1=$ipAddressPrefix$x
-		
+
 		    nic2Name=$vmNamePrefix$suffixNumber-RA
 		    x=$((suffixNumber+53))
 		    ipAddress2=$ipAddressPrefix$x
@@ -123,7 +128,7 @@ You can download the full bash script used [here](https://raw.githubusercontent.
 		    azure vm disk attach-new $vmNamePrefix$suffixNumber \
 		        $diskSize \
 		        vhds/$dataDiskPrefix$suffixNumber$dataDiskName-1.vhd
-		
+
 		    azure vm disk attach-new $vmNamePrefix$suffixNumber \
 		        $diskSize \
 		        vhds/$dataDiskPrefix$suffixNumber$dataDiskName-2.vhd

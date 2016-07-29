@@ -1,4 +1,3 @@
-
 <properties 
    pageTitle="Create a manual backup"
    description="Explains how to start a manual, on-demand backup job."
@@ -7,10 +6,14 @@
    authors="SharS"
    manager="adinah"
    edito**r="tysonn" />
-<tags
-	ms.service="storsimple"
-	ms.date="04/01/2015"
-	wacn.date=""/>
+<tags 
+   ms.service="storsimple"
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="TBD"
+   ms.date="04/01/2015"
+   ms.author="v-sharos" />
 
 ### To create a manual backup
 

@@ -1,3 +1,5 @@
+<!-- deleted in Global -->
+
 <properties writer="kathydav" editor="tysonn" manager="jeffreyg" /> 
 
 **Note**: This article creates a virtual machine that is not connected to a virtual network. If you want your virtual machine to use a virtual network so you can connect to your virtual machines directly by hostname or set up

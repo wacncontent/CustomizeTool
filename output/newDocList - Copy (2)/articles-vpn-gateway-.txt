@@ -1,0 +1,4 @@
+new docs: 0, word count: {word_count_TODO}
+
+new includes: 1
+includes/vpn-gateway-vnet-vnet-faq-include.md

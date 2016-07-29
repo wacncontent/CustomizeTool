@@ -16,7 +16,7 @@
 	wacn.date=""/>
 
 
-# Manage resources for the Apache Spark cluster in Azure HDInsight (Windows)
+# Manage resources for the Apache Spark cluster on HDInsight Windows (Preview)
 
 > [AZURE.NOTE] HDInsight now provides Spark clusters on Linux. For information on how to manage resources for a Spark cluster on HDInsight Linux, see [Manage resources for the Apache Spark cluster in Azure HDInsight (Linux)](/documentation/articles/hdinsight-apache-spark-resource-manager).
 
@@ -24,7 +24,7 @@ Resource manager is a component of the Spark cluster dashboard that enables you 
 
 ## <a name="launchrm"></a>How do I launch the Resource Manager?
 
-1. From the [Azure Preview Portal](https://manage.windowsazure.cn/), from the startboard, click the tile for your Spark cluster (if you pinned it to the startboard). You can also navigate to your cluster under **Browse All** > **HDInsight Clusters**. 
+1. From the [Azure Portal](https://portal.azure.cn/), from the startboard, click the tile for your Spark cluster (if you pinned it to the startboard). You can also navigate to your cluster under **Browse All** > **HDInsight Clusters**. 
  
 2. From the Spark cluster blade, click **Dashboard**. When prompted, enter the admin credentials for the Spark cluster.
 
@@ -71,25 +71,13 @@ Specify thrift server core Count and thrift Server executor memory as 0. With no
 * [Use Spark in HDInsight for building real-time streaming applications](/documentation/articles/hdinsight-apache-spark-csharp-apache-zeppelin-eventhub-streaming)
 
 
-
 [hdinsight-versions]: /documentation/articles/hdinsight-component-versioning-v1
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
 [hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
-
-
-[hdinsight-versions]: ../hdinsight-component-versioning-v1/
-[hdinsight-upload-data]: ../hdinsight-upload-data/
-[hdinsight-storage]: ../hdinsight-use-blob-storage/
-
 
 
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: /pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
 [azure-management-portal]: https://manage.windowsazure.cn/
-
 [azure-create-storageaccount]: /documentation/articles/storage-create-storage-account
-
-
-[azure-create-storageaccount]: ../storage-create-storage-account/ 
-

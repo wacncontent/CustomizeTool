@@ -20,26 +20,18 @@
 
 By default, Hadoop clusters are not optimized for performance. This article covers a few of the most common Hive performance optimization methods that you can apply to our queries.
 
-
-
-[AZURE.INCLUDE [preview-portal](../includes/hdinsight-azure-preview-portal.md)] 
-
-
-
-* [Optimize Hive queries for Hadoop in HDInsight](/documentation/articles/hdinsight-hadoop-optimize-hive-query-v1).
-
 ##Scale out worker nodes
 
 Increasing the number of worker nodes in a cluster can leverage more mappers and reducers to be run in parallel. There are two ways you can increase scale out in HDInsight:
 
-- At the provision time, you can specify the number of worker nodes using the Azure Management Portal, Azure PowerShell or Cross-platform command line interface.  For more information, see [Provision HDInsight clusters](/documentation/articles/hdinsight-provision-clusters-v1). The following screen show the worker node configuration on the Azure Management Portal:
+- At the provision time, you can specify the number of worker nodes using the Azure Portal, Azure PowerShell or Cross-platform command line interface.  For more information, see [Provision HDInsight clusters](/documentation/articles/hdinsight-provision-clusters-v1/). The following screen show the worker node configuration on the Azure Portal:
 
 	![scaleout_1][image-hdi-optimize-hive-scaleout_1]
 
 - At the run time, you can also scale out a cluster without recreating one. This is shown below.
 ![scaleout_1][image-hdi-optimize-hive-scaleout_2]
 
-For more details on the different virtual machines supported by HDInsight, see [HDInsight pricing](/home/features/hdinsight/#price).
+For more details on the different virtual machines supported by HDInsight, see [HDInsight pricing](/home/features/hdinsight/pricing/).
 
 ##Enable Tez
 
@@ -64,6 +56,7 @@ You can make any Hive query Tez enabled by prefixing the query with the setting 
 
 For Windows-based HDInsight clusters, Tez must be enabled at the provision time. The following is a sample Azure PowerShell script for provisioning a Hadoop cluster with Tez enabled:
 
+[AZURE.INCLUDE [upgrade-powershell](../includes/hdinsight-use-latest-powershell.md)]
 
 	$clusterName = "[HDInsightClusterName]"
 	$location = "[AzureDataCenter]" #i.e. China North
@@ -87,10 +80,8 @@ For Windows-based HDInsight clusters, Tez must be enabled at the provision time.
 	Add-AzureHDInsightConfigValues -Hive $hiveConfig |
 	New-AzureHDInsightCluster -Name $clusterName -Location $location -Credential $hdiCredential
 
-
     
 > [AZURE.NOTE] Linux-based HDInsight clusters have Tez enabled by default.
-
     
 
 ## Hive partitioning
@@ -217,13 +208,11 @@ There are more optimization methods that you can consider, for example:
 ##<a id="nextsteps"></a> Next steps
 In this article, you have learned several common Hive query optimization methods. To learn more, see the following articles:
 
-- [Use Apache Hive in HDInsight](/documentation/articles/hdinsight-use-hive)
-- [Analyze flight delay data by using Hive in HDInsight](/documentation/articles/hdinsight-analyze-flight-delay-data)
-
-- [Analyze Twitter data using Hive in HDInsight](/documentation/articles/hdinsight-analyze-twitter-data)
-
-- [Analyze sensor data using the Hive Query Console on Hadoop in HDInsight](/documentation/articles/hdinsight-hive-analyze-sensor-data)
-- [Use Hive with HDInsight to analyze logs from websites](/documentation/articles/hdinsight-hive-analyze-website-log)
+- [Use Apache Hive in HDInsight](/documentation/articles/hdinsight-use-hive/)
+- [Analyze flight delay data by using Hive in HDInsight](/documentation/articles/hdinsight-analyze-flight-delay-data/)
+- [Analyze Twitter data using Hive in HDInsight](/documentation/articles/hdinsight-analyze-twitter-data/)
+- [Analyze sensor data using the Hive Query Console on Hadoop in HDInsight](/documentation/articles/hdinsight-hive-analyze-sensor-data/)
+- [Use Hive with HDInsight to analyze logs from websites](/documentation/articles/hdinsight-hive-analyze-website-log/)
 
 
 [image-hdi-optimize-hive-scaleout_1]: ./media/hdinsight-hadoop-optimize-hive-query-v1/scaleout_1.png

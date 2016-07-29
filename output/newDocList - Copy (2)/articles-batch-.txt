@@ -1,0 +1,17 @@
+new docs: 13, word count: 29536
+articles/batch/batch-account-create-portal.md
+articles/batch/batch-api-basics.md
+articles/batch/batch-automatic-scaling.md
+articles/batch/batch-dotnet-get-started.md
+articles/batch/batch-efficient-list-queries.md
+articles/batch/batch-hpc-solutions.md
+articles/batch/batch-job-prep-release.md
+articles/batch/batch-management-dotnet.md
+articles/batch/batch-parallel-node-tasks.md
+articles/batch/batch-powershell-cmdlets-get-started.md
+articles/batch/batch-quota-limit.md
+articles/batch/batch-technical-overview.md
+articles/batch/big-compute-resources.md
+
+new includes: 1
+includes/azure-batch-limits.md

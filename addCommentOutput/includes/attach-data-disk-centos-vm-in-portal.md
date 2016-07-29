@@ -1,4 +1,4 @@
-1. In the Azure [Management Portal](http://manage.windowsazure.cn), click **Virtual Machines** and then select the virtual machine you just created (**testlinuxvm**).
+1. In the Azure  [Management  [Classic Management  Portal](http://manage.windowsazure.cn), click **Virtual Machines** and then select the virtual machine you just created (**testlinuxvm**).
 
 2. On the command bar click **Attach** and then click **Attach Empty Disk**.
 

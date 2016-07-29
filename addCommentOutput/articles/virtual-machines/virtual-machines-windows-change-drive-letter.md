@@ -15,7 +15,12 @@
 
 # Use the D drive as a data drive on a Windows VM 
 
+
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+
+
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the classic deployment model. Microsoft recommends that most new deployments use the Resource Manager model.
+
 
 
 If you need to use the D drive to store data, follow these instructions to use a different drive letter for the temporary disk. Never use the temporary disk to store data that you need to keep.
@@ -108,7 +113,6 @@ If you want to use an existing data disk, make sure you've also uploaded the VHD
 [About Azure Storage accounts][Storage]
 
 <!--Link references-->
-
 [Attach]: /documentation/articles/storage-windows-attach-disk
 
 [VHD]: /documentation/articles/virtual-machines-create-upload-vhd-windows-server
@@ -118,15 +122,3 @@ If you want to use an existing data disk, make sure you've also uploaded the VHD
 [Detach]: /documentation/articles/storage-windows-detach-disk
 
 [Storage]: /documentation/articles/storage-whatis-account
-
-
-[Attach]: storage-windows-attach-disk.md
-
-[VHD]: virtual-machines-create-upload-vhd-windows-server.md
-
-[Logon]: virtual-machines-log-on-windows-server.md
-
-[Detach]: storage-windows-detach-disk.md
-
-[Storage]: ../storage-whatis-account.md
-

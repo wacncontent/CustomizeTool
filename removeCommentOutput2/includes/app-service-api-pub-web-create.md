@@ -1,4 +1,4 @@
-<!-- not suitable for Mooncake -->
+<!-- deleted in Global -->
 
 1. In **Solution Explorer**, right-click the project (not the solution) and click **Publish**. 
 
@@ -31,4 +31,4 @@
  
 	The provisioning process creates the resource group and API App in your Azure subscription. Visual Studio shows the progress in the **Azure Activity** window. 
 
-	![Status notification via the Azure Activity window](./media/app-service-api-pub-web-create/26-provisioning-success-v3.png)
+	![Status notification via the Azure Web App Activity window](./media/app-service-api-pub-web-create/26-provisioning-success-v3.png)

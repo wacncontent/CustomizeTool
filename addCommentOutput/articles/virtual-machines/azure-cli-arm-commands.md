@@ -1,7 +1,7 @@
 <properties
-	pageTitle="Use the Azure CLI with Resource Manager | Azure"
-	description="Learn about using the Azure CLI for Mac, Linux, and Windows to manage Azure resources using the CLI in Azure Resource Manager mode."
-	services="virtual-machines,virtual-network,mobile-services,cloud-services"
+	pageTitle="Azure CLI commands in Resource Manager mode | Azure"
+	description="Azure command line interface (CLI) commands to manage resources in the Resource Manager deployment model"
+	services="virtual-machines-linux,virtual-machines-windows,virtual-network,mobile-services,cloud-services"
 	documentationCenter=""
 	authors="dlepow"
 	manager="timlt"
@@ -10,43 +10,38 @@
 
 <tags
 	ms.service="multiple"
-	ms.date="11/18/2015"
+	ms.date="05/05/2016"
 	wacn.date=""/>
 
-# Using the Azure CLI for Mac, Linux, and Windows with Azure Resource Manager
+# Azure CLI commands in Resource Manager mode
+
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)]  [classic deployment model](/documentation/articles/virtual-machines-command-line-tools). 
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the Resource Manager deployment model, which Azure recommends for most new deployments instead of the [classic deployment model](/documentation/articles/virtual-machines-command-line-tools/).
+
 
-This article describes how to use the Azure Command-Line Interface (Azure CLI) in the Azure Resource Manager mode to create, manage, and delete services on the command line of Mac, Linux, and Windows computers. You can perform many of the same tasks using the various libraries of the Azure SDKs, with Azure PowerShell, and using the Azure Management Portal.
+This article provides syntax and options for Azure command line interface (CLI) commands you'd commonly use to create and manage Azure resources in the Azure Resource Manager deployment model. You access these commands by running the CLI in Resource Manager (arm) mode. This is not a complete reference, and your CLI version may show slightly different commands or parameters.
 
-Azure Resource Manager enables you to create a group of resources -- virtual machines, websites, databases, and so on -- as a single deployable unit. You can then deploy, update, or delete all of the resources for your application in a single, coordinated operation. You describe your group resources in a JSON template for deployment and then can use that template for different environments such as testing, staging, and production.
+To get started, first [install the Azure CLI](/documentation/articles/xplat-cli-install/) and [connect to your Azure subscription](/documentation/articles/xplat-cli-connect/) by using a work or school account or a Microsoft account identity.
 
-## Scope of article
+For current command syntax and options at the command line in Resource Manager mode, type `azure help` or, to display help for a specific command, `azure help [command]`. You'll also find CLI examples in the documentation for creating and managing specific Azure services.
 
-This article provides syntax and options for commonly used Azure CLI commands for the Resource Manager deployment model. It is not a complete reference, and your CLI version may show some different commands or parameters. For current command syntax and options at the command line in Resource Manager mode, type `azure help` or, to display help for a specific command, `azure help [command]`. You'll also find CLI examples in the documentation for creating and managing specific Azure services.
+Optional parameters are shown in square brackets (for example, `[parameter]`). All other parameters are required.
 
-Optional parameters are shown in square brackets (for example, [parameter]). All other parameters are required.
+In addition to command-specific optional parameters documented here, there are three optional parameters that can be used to display detailed output such as request options and status codes. The `-v` parameter provides verbose output, and the `-vv` parameter provides even more detailed verbose output. The `--json` option will output the result in raw json format.
 
-In addition to command-specific optional parameters documented here, there are three optional parameters that can be used to display detailed output such as request options and status codes. The -v parameter provides verbose output, and the -vv parameter provides even more detailed verbose output. The --json option will output the result in raw json format. Usage with the --json switch is very common, and is an important part of both obtaining and understanding results from Azure CLI operations that return resource information, status, and logs and also using templates. You may want to install JSON parser tools such as **jq** or **jsawk** or use your favorite language library.
+## Setting the Resource Manager mode
+
+Use the following command to enable Azure CLI Resource Manager commands.
+
+	azure config mode arm
+
+>[AZURE.NOTE] The Azure Resource Manager mode and Azure Service Management mode are mutually exclusive. That is, resources created in one mode cannot be managed from the other mode.
 
 ## Imperative and declarative approaches
 
-As with the [Azure Service Management mode](/documentation/articles/virtual-machines-command-line-tools), the Resource Manager mode of the Azure CLI gives you commands that create resources imperatively on the command line. For example, if you type `azure group create <groupname> <location>` you are asking Azure to create a resource group, and with `azure group deployment create <resourcegroup> <deploymentname>` you are instructing Azure to create a deployment of any number of items and place them in a group. Because each type of resource has imperative commands, you can chain them together to create fairly complex deployments.
+As with the [Azure Service Management mode](/documentation/articles/virtual-machines-command-line-tools/), the Resource Manager mode of the Azure CLI gives you commands that create resources imperatively on the command line. For example, if you type `azure group create <groupname> <location>` you are asking Azure to create a resource group, and with `azure group deployment create <resourcegroup> <deploymentname>` you are instructing Azure to create a deployment of any number of items and place them in a group. Because each type of resource has imperative commands, you can chain them together to create fairly complex deployments.
 
-However, using resource group _templates_ that describe a resource group is a declarative approach that is far more powerful, allowing you to automate complex deployments of (almost) any number of resources for (almost) any purpose. When using templates, the only imperative command is to deploy one. For a general overview of templates, resources, and resource groups, see [Azure Resource Group Overview](/documentation/articles/resource-group-overview).  
-
-##Usage requirements
-
-The set-up requirements to use the Resource Manager mode with the Azure CLI are:
-
-- an Azure account ([get a trial here](/pricing/1rmb-trial/))
-- [installing the Azure CLI](/documentation/articles/xplat-cli-install)
-
-
-Once you have an account and have installed the Azure CLI, you must
-
-- [configure the Azure CLI](/documentation/articles/xplat-cli-connect) to use a work or school account or a Microsoft account identity
-- switch to the Resource Manager mode by typing `azure config mode arm`
+However, using resource group _templates_ that describe a resource group is a declarative approach that is far more powerful, allowing you to automate complex deployments of (almost) any number of resources for (almost) any purpose. When using templates, the only imperative command is to deploy one. For a general overview of templates, resources, and resource groups, see [Azure Resource Group Overview](/documentation/articles/resource-group-overview/).  
 
 
 ## azure account: Manage your account information
@@ -55,12 +50,10 @@ Your Azure subscription information is used by the tool to connect to your accou
 **List the imported subscriptions**
 
 	account list [options]
-
 
 **Show details about a subscription**  
 
 	account show [options] [subscriptionNameOrId]
-
 
 **Set the current subscription**
 
@@ -142,12 +135,6 @@ Your Azure subscription information is used by the tool to connect to your accou
 **Sets the Azure CLI working mode to either `arm` or `asm`**
 
 	config mode [options] <modename>
-
-
-**Sets the Azure CLI working mode to either arm or asm**
-
-	conconfig mode [options] <modename>
-
 
 
 ## azure feature: commands to manage account features
@@ -163,6 +150,12 @@ Your Azure subscription information is used by the tool to connect to your accou
 **Registers a previewed feature of a resource provider**
 
 	feature register [options] <providerName> <featureName>
+
+
+**Sets the Azure CLI working mode to either arm or asm**
+
+	conconfig mode [options] <modename>
+
 
 ## azure group: Commands to manage your resource groups
 
@@ -206,7 +199,6 @@ Your Azure subscription information is used by the tool to connect to your accou
 
 ## azure hdinsight: Commands to manage your HDInsight clusters
 
-
 **Commands to create or add to a cluster configuration file**
 
 	hdinsight config create [options] <configFilePath> <overwrite>
@@ -221,11 +213,11 @@ Example: Create a configuration file that contains a script action to run when c
 **Command to create a cluster in a resource group**
 
 	hdinsight cluster create [options] <clusterName>
-	 
+
 Example: Create a Storm on Linux cluster
 
 	azure hdinsight cluster create -g myarmgroup -l chinanorth -y Linux --clusterType Storm --version 3.2 --defaultStorageAccountName mystorageaccount --defaultStorageAccountKey <defaultStorageAccountKey> --defaultStorageContainer mycontainer --userName admin --password <clusterPassword> --sshUserName sshuser --sshPassword <sshPassword> --workerNodeCount 1 myNewCluster01
-	
+
 	info:    Executing command hdinsight cluster create
 	+ Submitting the request to create cluster...
 	info:    hdinsight cluster create command OK
@@ -233,11 +225,11 @@ Example: Create a Storm on Linux cluster
 Example: Create a cluster with a script action
 
 	azure hdinsight cluster create -g myarmgroup -l chinanorth -y Linux --clusterType Hadoop --version 3.2 --defaultStorageAccountName mystorageaccount --defaultStorageAccountKey <defaultStorageAccountKey> --defaultStorageContainer mycontainer --userName admin --password <clusterPassword> --sshUserName sshuser --sshPassword <sshPassword> --workerNodeCount 1 -configurationPath "C:\myFiles\configFile.config" myNewCluster01
-	
+
 	info:    Executing command hdinsight cluster create
 	+ Submitting the request to create cluster...
 	info:    hdinsight cluster create command OK
-	
+
 Parameter options:
 
 	-h, --help                                                 output usage information
@@ -268,7 +260,7 @@ Parameter options:
 	--rdpPassword <rdpPassword>                                RDP password (only for Windows clusters)
 	--rdpAccessExpiry <rdpAccessExpiry>                        RDP access expiry.
 	For example 12/12/2015 (only for Windows clusters)
-	--virtualNetworkId <virtualNetworkId>                      (Optional) Virtual network ID for the cluster. 
+	--virtualNetworkId <virtualNetworkId>                      (Optional) Virtual network ID for the cluster.
 	Value is a GUID for Windows cluster and ARM resource ID for Linux cluster)
 	--subnetName <subnetName>                                  (Optional) Subnet for the cluster
 	--additionalStorageAccounts <additionalStorageAccounts>    (Optional) Additional storage accounts.
@@ -323,10 +315,6 @@ Parameter options:
 **Command to disable HTTP access for a cluster**
 
 	hdinsight cluster disable-rdp-access [options] <clusterName>
-
-
-In Azure China, HDInsight is not manageable by ARM yet. For Azure CLI ASM commands of HDInsight, read [Create Windows-based Hadoop clusters in HDInsight using Azure CLI](/documentation/articles/hdinsight-hadoop-create-windows-clusters-cli) and [Create Windows-based Hadoop clusters in HDInsight using Azure CLI](/documentation/articles/hdinsight-hadoop-create-windows-clusters-cli)
-
 
 ## azure insights: Commands related to monitoring Insights (events, alert rules, autoscale settings, metrics)
 
@@ -342,7 +330,6 @@ In Azure China, HDInsight is not manageable by ARM yet. For Azure CLI ASM comman
 
 ## azure network: Commands to manage network resources
 
-
 **Commands to manage virtual networks**
 
 	network vnet create [options] <resource-group> <name> <location>
@@ -1612,16 +1599,6 @@ Parameter options:
 **Commands to manage virtual network gateways**
 
 	network gateway list [options] <resource-group>
-
-
-In Azure China, VNet is not manageable by ARM yet. For Azure CLI ASM commands of VNet, read the following articles:
-
-- [Create a virtual network using Azure CLI](/documentation/articles/virtual-networks-create-vnet-classic-cli)
-- [How to create NSGs in classic mode using the Azure CLI](/documentation/articles/virtual-networks-create-nsg-classic-cli)
-- [Control routing and use virtual appliances using the Azure CLI in the classic deployment model](/documentation/articles/virtual-network-create-udr-classic-cli)
-- [Deploy multi NIC VMs using the Azure CLI in the classic deployment model](/documentation/articles/virtual-network-deploy-multinic-classic-cli)
-- [How to set a static private IP in classic mode ausing the CLI](/documentation/articles/virtual-networks-static-private-ip-classic-cli).
-
 
 ## azure provider: Commands to manage resource provider registrations
 
@@ -1681,7 +1658,6 @@ In Azure China, VNet is not manageable by ARM yet. For Azure CLI ASM commands of
 
 ## azure storage: Commands to manage your Storage objects
 
-
 **Commands to manage your Storage accounts**
 
 	storage account list [options]
@@ -1803,10 +1779,6 @@ In Azure China, VNet is not manageable by ARM yet. For Azure CLI ASM commands of
 	storage table policy list [options] [table]
 	storage table policy set [options] [table] [name]
 	storage table policy delete [options] [table] [name]
-
-
-In Azure China, Storage is not manageable by ARM yet. For Azure CLI ASM commands of Storage, read [Using the Azure CLI with Azure Storage](/documentation/articles/storage-azure-cli)
-
 
 ## azure tag: Commands to manage your resource manager tag
 
@@ -1828,14 +1800,19 @@ In Azure China, Storage is not manageable by ARM yet. For Azure CLI ASM commands
 
 ## azure vm: Commands to manage your Azure Virtual Machines
 
-
+
+[AZURE.INCLUDE [arm-api-version-cli](../includes/arm-api-version-cli.md)]
+
+
 **Create a VM**
 
 	vm create [options] <resource-group> <name> <location> <os-type>
 
 **Create a VM with default resources**
 
-	vm quick-create [options] <resource-group> <name> <location> <os-type> <image-urn> <admin-username> <admin-password>
+    vm quick-create [options] <resource-group> <name> <location> <os-type> <image-urn> <admin-username>  <admin-password  <admin-password> 
+    
+>[AZURE.TIP]Starting with CLI version 0.10, you can provide a short alias such as "UbuntuLTS" or "Win2012R2Datacenter" as the `image-urn` for some popular Marketplace images. Run `azure help vm quick-create` for options. Additionally, starting with version 0.10, `azure vm quick-create` uses premium storage by default if it's available in the selected region.
 
 **List the virtual machines within an account**
 
@@ -1910,8 +1887,3 @@ In Azure China, Storage is not manageable by ARM yet. For Azure CLI ASM commands
 	vm image list-offers [options] <location> <publisher>
 	vm image list-skus [options] <location> <publisher> <offer>
 	vm image list [options] <location> <publisher> [offer] [sku]
-
-
-In Azure China, Virtual Machines is not manageable by ARM yet. For Azure CLI ASM commands of Virtual Machines, read [Equivalent Azure CLI commands for VM tasks](/documentation/articles/xplat-cli-azure-manage-vm-asm-arm)
-
-

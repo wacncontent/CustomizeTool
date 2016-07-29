@@ -20,13 +20,13 @@ Retry count for pipeline activity runs | 1000 | MaxInt (32 bit)
 
 **Resource** | **Default lower limit** | **Minimum limit**
 -------- | ------------------- | -------------
-Scheduling interval | 5 minutes | 15 minutes
+Scheduling interval | 15 minutes | 5 minutes
 Interval between retry attempts | 1 second | 1 second
 Retry timeout value | 1 second | 1 second
 
 
 ### Web service call limits
 
-Azure resource manager has limits for API calls. You can make API calls at a rate within the [Azure Resource Manager API limits](/documentation/articles/azure-subscription-service-limits#resource-group-limits). 
+Azure resource manager has limits for API calls. You can make API calls at a rate within the [Azure Resource Manager API limits](/documentation/articles/azure-subscription-service-limits/#resource-group-limits). 
 
 

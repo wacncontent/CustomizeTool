@@ -1,4 +1,4 @@
-<!-- not suitable for Mooncake -->
+<!-- deleted in Global -->
 
 <properties
 	pageTitle="Create an app with a mobile and web client in Azure | Azure"

@@ -20,11 +20,11 @@ Service Bus is a multi-tenant cloud service, which means that the service is sha
 
 Within a namespace, you can use one or more instances of three different communication mechanisms, each of which connects applications in a different way. The choices are:
 
-- *Queues*, which allow one-directional communication. Each queue acts as an intermediary (sometimes called a *broker*) that stores sent messages until they are received. 
-- *Topics*, which provide one-directional communication using *subscriptions* . Like a queue, a topic acts as a broker, but it allows each subscription to see only messages that match specific criteria.
+- *Queues*, which allow one-directional communication. Each queue acts as an intermediary (sometimes called a *broker*) that stores sent messages until they are received.
+- *Topics*, which provide one-directional communication using *subscriptions*. Like a queue, a topic acts as a broker, but it allows each subscription to see only messages that match specific criteria.
 - *Relays*, which provide bi-directional communication. Unlike queues and topics, a relay doesn't store in-flight messages-it's not a broker. Instead, it just passes them on to the destination application.
 
-When you create a queue, topic, or relay, you give it a name. Combined with whatever you called your namespace, this name creates a unique identifier for the object. Applications can provide this name to Service Bus, then use that queue, topic, or relay to communicate with one another.
+When you create a queue, topic, or relay, you give it a name. Combined with whatever you called your namespace, this name creates a unique identifier for the object. Applications can provide this name to Service Bus, then use that queue, topic, or relay to communicate with one another. 
 
 To use any of these objects, Windows applications can use Windows Communication Foundation (WCF). For queues and topics, Windows applications can also use a Service Bus-defined Messaging API. Queues and topics can be accessed via HTTP as well, and to make them easier to use from non-Windows applications, Microsoft provides SDKs for Java, Node.js, and other languages.
 
@@ -43,11 +43,11 @@ The process is simple: A sender sends a message to a Service Bus queue, and a re
 
 Each message has two parts: a set of properties, each a key/value pair, and a binary message body. How they're used depends on what an application is trying to do. For example, an application sending a message about a recent sale might include the properties *Seller="Ava"* and *Amount=10000*. The message body might contain a scanned image of the sale's signed contract or, if there isn't one, just remain empty.
 
-A receiver can read a message from a Service Bus queue in two different ways. The first option, called ReceiveAndDelete, removes a message from the queue and immediately deletes it. This is simple, but if the receiver crashes before it finishes processing the message, the message will be lost. Because it's been removed from the queue, no other receiver can access it.
+A receiver can read a message from a Service Bus queue in two different ways. The first option, called ReceiveAndDelete, removes a message from the queue and immediately deletes it. This is simple, but if the receiver crashes before it finishes processing the message, the message will be lost. Because it's been removed from the queue, no other receiver can access it. 
 
 The second option, PeekLock, is meant to help with this problem. Like ReceiveAndDelete, a PeekLock read removes a message from the queue. It doesn't delete the message, however. Instead, it locks the message, making it invisible to other receivers, then waits for one of three events:
 
-- If the receiver processes the message successfully, it calls Complete, and the queue deletes the message.
+- If the receiver processes the message successfully, it calls Complete, and the queue deletes the message. 
 - If the receiver decides that it can't process the message successfully, it calls Abandon. The queue then removes the lock from the message and makes it available to other receivers.
 - If the receiver calls neither of these within a configurable period of time (by default, 60 seconds), the queue assumes the receiver has failed. In this case, it behaves as if the receiver had called Abandon, making the message available to other receivers.
 
@@ -75,7 +75,7 @@ As with queues, subscribers to a topic can read messages using either ReceiveAnd
 
 ## <a name="relays"></a>Relays
 
-Both queues and topics provide one-way asynchronous communication through a broker. Traffic flows in just one direction, and there's no direct connection between senders and receivers. But what if you don't want this? Suppose your applications need to both send and receive , or perhaps you want a direct link between them"you don't need a place to store messages in between. To address problems like this, Service Bus provides relays, as [Figure 4](#Fig4) shows.
+Both queues and topics provide one-way asynchronous communication through a broker. Traffic flows in just one direction, and there's no direct connection between senders and receivers. But what if you don't want this? Suppose your applications need to both send and receive, or perhaps you want a direct link between them"you don't need a place to store messages in between. To address problems like this, Service Bus provides relays, as [Figure 4](#Fig4) shows.
 
 <a name="Fig4"></a>![Diagram of Service Bus Relay][relay]
  
@@ -85,7 +85,7 @@ The obvious question to ask about relays is this: Why would I use one? Even if I
 
 Suppose you want to connect two on-premises applications, both running inside corporate datacenters. Each of these applications sits behind a firewall, and each datacenter probably uses network address translation (NAT). The firewall blocks incoming data on all but a few ports, and NAT implies that the machine each application is running on probably doesn't have a fixed IP address. Without some extra help, connecting these applications over the public Internet is problematic.
 
-A Service Bus relay provides this help. To communicate bi-directionally through a relay, each application establishes an outbound TCP connection with Service Bus, then keeps it open. All communication between the two applications will travel over these connections. Because each connection was established from inside the datacenter, the firewall will allow incoming traffic to each application"data sent through the relay"without opening new ports. This approach also gets around the NAT problem, because each application has a consistent endpoint throughout the communication. By exchanging data through the relay, the applications can avoid the problems that would otherwise make communication difficult.
+A Service Bus relay provides this help. To communicate bi-directionally through a relay, each application establishes an outbound TCP connection with Service Bus, then keeps it open. All communication between the two applications will travel over these connections. Because each connection was established from inside the datacenter, the firewall will allow incoming traffic to each application"data sent through the relay"without opening new ports. This approach also gets around the NAT problem, because each application has a consistent endpoint throughout the communication. By exchanging data through the relay, the applications can avoid the problems that would otherwise make communication difficult. 
 
 To use Service Bus relays, applications rely on Windows Communication Foundation (WCF). Service Bus provides WCF bindings that make it straightforward for Windows applications to interact via relays. Applications that already use WCF can typically just specify one of these bindings, then talk to each other through a relay. Unlike queues and topics, however, using relays from non-Windows applications, while possible, requires some programming effort; no standard libraries are provided.
 

@@ -7,9 +7,13 @@
    manager="jwhit"
    editor="" />
 <tags
-	ms.service="operational-insights"
-	ms.date="07/01/2015"
-	wacn.date=""/>
+   ms.service="operational-insights"
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="TBD"
+   ms.date="07/01/2015"
+   ms.author="banders" />
 
 
 The following limits apply to Operational Insights subscriptions.

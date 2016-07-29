@@ -1,7 +1,7 @@
 
 ### To sign up for a Blitline account
 
-1. Log in to the [Azure Management Portal](https://manage.windowsazure.cn/).
+1. Log in to the [Azure Management Portal](https://manage.windowsazure.com/).
 
 2. In the lower pane of the management portal, click **New**.
 
@@ -19,7 +19,7 @@
 
 	![store-screen-1][store-screen-1]
 
-7. Choose a value for the region; for example, China North. 
+7. Choose a value for the region; for example, West US. 
 
 8. Click the right arrow.
 

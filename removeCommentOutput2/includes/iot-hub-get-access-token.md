@@ -6,10 +6,10 @@ Azure Active Directory must authenticate all the tasks that you perform on resou
 
     ```
     var authContext = new AuthenticationContext(string.Format  
-      ("https://login.chinacloudapi.cn/{0}", tenantId));
+      ("https://login.windows.net/{0}", tenantId));
     var credential = new ClientCredential(applicationId, password);
     AuthenticationResult token = authContext.AcquireTokenAsync
-      ("https://management.core.chinacloudapi.cn/", credential).Result;
+      ("https://management.core.windows.net/", credential).Result;
     
     if (token == null)
     {
@@ -21,17 +21,17 @@ Azure Active Directory must authenticate all the tasks that you perform on resou
 2. Create a **ResourceManagementClient** object that uses the token by adding the following code to the end of the **Main** method:
 
     ```
-    var creds = new TokenCloudCredentials(subscriptionId, token.AccessToken);
+    var creds = new TokenCredentials(token.AccessToken);
     var client = new ResourceManagementClient(creds);
+    client.SubscriptionId = subscriptionId;
     ```
 
 3. Create, or obtain a reference to, the resource group you are using:
 
     ```
-    var rgResponse = client.ResourceGroups.CreateOrUpdateAsync(rgName,
-        new ResourceGroup("China East")).Result;
-    if (rgResponse.StatusCode != HttpStatusCode.Created
-        && rgResponse.StatusCode != HttpStatusCode.OK)
+    var rgResponse = client.ResourceGroups.CreateOrUpdate(rgName,
+        new ResourceGroup("East US"));
+    if (rgResponse.Properties.ProvisioningState != "Succeeded")
     {
       Console.WriteLine("Problem creating resource group");
       return;

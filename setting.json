@@ -8,21 +8,24 @@
         "articles/hdinsight/",
         "articles/redis-cache/",
         "articles/traffic-manager/",
-        "articles/virtual-network/"
+        "articles/virtual-network/",
+      "articles/automation/",
+      "articles/vpn-gateway/",
+      "articles/application-gateway/"
     ],
   "output_folder": "output/",
   "compare": {
     "compare": false,
     "path": "addCommentOutput/"
   },
-  "updateFileList": false,
+  "updateFileList": true,
   "includes_search_keys": {
     "articles/app-service-web/": [ "web", "publishing-with-git" ],
     "articles/automation/": [ "automation" ],
     "articles/hdinsight/": [ "hdinsight" ],
     "articles/media-services/": [ "media" ],
     "articles/redis-cache/": [ "cache" ],
-    "articles/traffic-manager/": [ "traffic" ],
+    "articles/traffic-manager/": [ "traffic", "load-balancer-compare-tm-ag-lb-include" ],
     "articles/virtual-network/": [ "virtual-network", "vnet" ],
     "articles/active-directory/": [ "active-directory" ],
     "articles/application-gateway/": [ "application-gateway" ],
@@ -60,11 +63,13 @@
     "815path": "E:/GitHub/techcontent/",
     "removeComment": {
         "remove": false,
-        "path": "removeCommentOutput2/"
+        "path": "removeCommentOutput/",
+        "matchspace": false,
+    "mooncakepath": "E:/GitHub/azure-content-mooncake-pr/"
     },
     "updateLinks": false,
     "addComment": {
-        "add": true,
+        "add": false,
         "globalPath": "removeCommentOutput/",
         "mooncakePath": "removeCommentMooncakeOutput/",
         "outputPath": "addCommentOutput/"

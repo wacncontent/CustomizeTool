@@ -1,15 +1,19 @@
 <properties services="virtual-machines" title="Using Azure CLI with Azure Resource Manager" authors="squillace" solutions="" manager="timlt" editor="tysonn" />
 
 <tags
-	ms.service="virtual-machine"
-	ms.date="04/13/2015"
-	wacn.date=""/>
+   ms.service="virtual-machine"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="linux"
+   ms.workload="infrastructure"
+   ms.date="04/13/2015"
+   ms.author="rasquill" />
 
 ## Using Azure CLI with Azure Resource Manager (ARM)
 
-Before you can use the Azure CLI with Resource Manager commands and templates to deploy Azure resources and workloads using resource groups, you will need an account with Azure (of course). If you do not have an account, you can get a [free Azure trial here](/pricing/1rmb-trial/).
+Before you can use the Azure CLI with Resource Manager commands and templates to deploy Azure resources and workloads using resource groups, you will need an account with Azure (of course). If you do not have an account, you can get a [free Azure trial here](http://azure.microsoft.com/pricing/free-trial/).
 
-> [AZURE.NOTE] If you don't already have an Azure account but you do have a subscription to MSDN subscription, you can get free Azure credits by activating your [MSDN subscriber benefits here](/pricing/member-offers/msdn-benefits-details/) -- or you can use the free account. Either will work for Azure access.
+> [AZURE.NOTE] If you don't already have an Azure account but you do have a subscription to MSDN subscription, you can get free Azure credits by activating your [MSDN subscriber benefits here](http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) -- or you can use the free account. Either will work for Azure access.
 
 ### Step 1: Verify the Azure CLI version
 
@@ -22,7 +26,7 @@ If you need to update your version of Azure CLI, see [Azure CLI](https://github.
 
 ### Step 2: Verify you are using a work or school identity with Azure
 
-You can only use the ARM command mode if you are using an [Azure Active Directory tenant](https://msdn.microsoft.com/zh-cn/library/azure/jj573650.aspx#BKMK_WhatIsAnAzureADTenant) or a [Service Principal Name](https://msdn.microsoft.com/zh-cn/library/azure/dn132633.aspx). (These are also called *organizational ids*.)
+You can only use the ARM command mode if you are using an [Azure Active Directory tenant](https://msdn.microsoft.com/library/azure/jj573650.aspx#BKMK_WhatIsAnAzureADTenant) or a [Service Principal Name](https://msdn.microsoft.com/library/azure/dn132633.aspx). (These are also called *organizational ids*.)
 
 To see if you have one, log in by typing `azure login` and using your work or school username and password when prompted. If you do have one, you should see something like the following:
 
@@ -33,11 +37,11 @@ To see if you have one, log in by typing `azure login` and using your work or sc
     Password: *********
     |info:    Added subscription Visual Studio Ultimate with MSDN
     info:    Setting subscription Visual Studio Ultimate with MSDN as default
-    info:    Added subscription Azure Trial
+    info:    Added subscription Azure Free Trial
     +
     info:    login command OK
 
-If you do not see this, you must create a new tenant (or service principal) with your Microsoft account identity. (This is often the case with personal MSDN subscriptions or trial subscriptions.) To create a work or school id from your Azure account created with a Microsoft id, see [Associate an Azure AD Directory with a new Azure Subscription](https://msdn.microsoft.com/zh-cn/library/azure/jj573650.aspx#BKMK_WhatIsAnAzureADTenant). If you think you should have an organizational id already, you may need to talk with the person who created the account for you.
+If you do not see this, you must create a new tenant (or service principal) with your Microsoft account identity. (This is often the case with personal MSDN subscriptions or free trial subscriptions.) To create a work or school id from your Azure account created with a Microsoft id, see [Associate an Azure AD Directory with a new Azure Subscription](https://msdn.microsoft.com/library/azure/jj573650.aspx#BKMK_WhatIsAnAzureADTenant). If you think you should have an organizational id already, you may need to talk with the person who created the account for you.
 
 ### Step 3: Choose your Azure subscription
 
@@ -45,9 +49,9 @@ If you have only one subscription in your Azure account, Azure CLI associates it
 
 You should see something like the following:
 
-    $ azure account set "Azure Trial" true
+    $ azure account set "Azure Free Trial" true
     info:    Executing command account set
-    info:    Setting subscription to "Azure Trial" with id "2lskd82-434-4730-9df9-akd83lsk92sa".
+    info:    Setting subscription to "Azure Free Trial" with id "2lskd82-434-4730-9df9-akd83lsk92sa".
     info:    Changes saved
     info:    account set command OK
 

@@ -57,5 +57,4 @@ Within the `<version>` element, replace the version numbers in this example with
 
 [license]: http://www.apache.org/licenses/LICENSE-2.0.html
 [zip-download]: http://go.microsoft.com/fwlink/?LinkId=690320
-[maven-getting-started]: https://azure.microsoft.com/blog/getting-started-with-the-azure-java-management-libraries/
-
+[maven-getting-started]: https://azure.microsoft.com/en-us/blog/getting-started-with-the-azure-java-management-libraries/

@@ -9,7 +9,7 @@ import os
 import sys
 import json
 from fileListGen import genFileList
-from fileCompare import compareWithMooncake, removeDeleteAndKeep, createComment, getDeletionAndReplacement, outputDeletionAndReplacement
+from fileCompare import compareWithMooncake, removeDeleteAndKeep, createComment, getDeletionAndReplacement, outputDeletionAndReplacement, removeExtraSpace
 from codecs import open
 from setting import setting
 from linkChecker import checkLinks, getOldLinks, findRedirect
@@ -98,6 +98,21 @@ class Core:
                 else:
                     removeCommentFile = open(setting["removeComment"]["path"]+mdFile, 'w', "utf8")
                 removeCommentResult = removeDeleteAndKeep(result)
+                if setting["removeComment"]["matchspace"]:
+                    try:
+                        with open(setting["removeComment"]["mooncakepath"]+mdFile, "rb") as text:
+                            # for content in text.readlines():
+                            contentBytes = text.read()
+                            try:
+                                mooncakeresult = contentBytes.decode("utf8")
+                            except:
+                                d = detect(contentBytes)
+                                print("update file encoding: "+str(d))
+                                encodings[mdFile] = d["encoding"]
+                                mooncakeresult = contentBytes.decode(d["encoding"])
+                        removeCommentResult = removeExtraSpace(removeCommentResult, mooncakeresult)
+                    except:
+                        ""
                 removeCommentResult = re.sub("[ \t]+(\n|$)",r"\1",removeCommentResult)
                 removeCommentFile.write(removeCommentResult)
                 removeCommentFile.close()

@@ -26,7 +26,7 @@ The TodoItem class defines the data object, and you need to add the same propert
 
 	These properties are used to generate the SAS and to store image information. Note that the casing on these properties matches the JavaScript backend version. 
 
-	>[AZURE.NOTE] When using the default database initializer, Entity Framework will drop and recreate the database when it detects a data model change in the Code First definition. To make this data model change and maintain existing data in the database, you must use Code First Migrations. The default initializer cannot be used against a SQL Database in Azure. For more information, see [How to Use Code First Migrations to Update the Data Model](/documentation/articles/mobile-services-dotnet-backend-how-to-use-code-first-migrations).
+	>[AZURE.NOTE] When using the default database initializer, Entity Framework will drop and recreate the database when it detects a data model change in the Code First definition. To make this data model change and maintain existing data in the database, you must use Code First Migrations. The default initializer cannot be used against a SQL Database in Azure. For more information, see [How to Use Code First Migrations to Update the Data Model](/zh-cn/documentation/articles/mobile-services-dotnet-backend-how-to-use-code-first-migrations/).
 
 ##Update the TodoItem controller to generate a shared access signature 
 
@@ -34,7 +34,7 @@ The existing **TodoItemController** is updated so that the **PostTodoItem** meth
 
 0. If you haven't yet created your storage account, see [How To Create a Storage Account].
 
-1. In the [Azure Management Portal](https://manage.windowsazure.cn/), click **Storage**, click the storage account, then click **Manage Keys**. 
+1. In the [Azure classic portal](https://manage.windowsazure.cn/), click **Storage**, click the storage account, then click **Manage Keys**. 
 
 2. Make a note of the **Storage Account Name** and **Access Key**.
  
@@ -75,7 +75,7 @@ The existing **TodoItemController** is updated so that the **PostTodoItem** meth
             }
 
             // Set the URI for the Blob Storage service.
-            Uri blobEndpoint = new Uri(string.Format("https://{0}.blob.core.chinacloudapi.cn", storageAccountName));
+            Uri blobEndpoint = new Uri(string.Format("https://{0}.blob.core.windows.net", storageAccountName));
 
             // Create the BLOB service client.
             CloudBlobClient blobClient = new CloudBlobClient(blobEndpoint, 
@@ -120,7 +120,7 @@ The existing **TodoItemController** is updated so that the **PostTodoItem** meth
 
    	This POST method now generates a new SAS for the inserted item, which is valid for 5 minutes, and assigns the value of the generated SAS to the `sasQueryString` property of the returned item. The `imageUri` property is also set to the resource path of the new BLOB to enable image display during binding in the client UI.
 
-	>[AZURE.NOTE] This code creates an SAS for an individual BLOB. If you need to upload multiple blobs to a container using the same SAS, you can instead call the <a href="http://dl.windowsazure.com/nodedocs/BlobService.html#generateSharedAccessSignature" target="_blank">generateSharedAccessSignature method</a> with an empty blob resource name, like this: 
+	>[AZURE.NOTE] This code creates an SAS for an individual BLOB. If you need to upload multiple blobs to a container using the same SAS, you can instead call the <a href="http://go.microsoft.com/fwlink/?LinkId=390455" target="_blank">generateSharedAccessSignature method</a> with an empty blob resource name, like this: 
 	<pre><code>blobService.generateSharedAccessSignature(containerName, '', sharedAccessPolicy);</code></pre>
 
 Next, you will update the quickstart app to add image upload functionality by using the SAS generated on insert.
@@ -130,5 +130,5 @@ Next, you will update the quickstart app to add image upload functionality by us
 <!-- Images. -->
 
 <!-- URLs. -->
-[How To Create a Storage Account]: /documentation/articles/storage-create-storage-account 
-[App settings]: http://msdn.microsoft.com/zh-cn/library/azure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7
+[How To Create a Storage Account]: /zh-cn/documentation/articles/storage-create-storage-account
+[App settings]: http://msdn.microsoft.com/zh-cn/library/windowsazure/b6bb7d2d-35ae-47eb-a03f-6ee393e170f7

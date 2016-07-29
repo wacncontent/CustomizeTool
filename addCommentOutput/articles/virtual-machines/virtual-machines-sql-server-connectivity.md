@@ -13,12 +13,10 @@
 	wacn.date=""/>
 
 # Connect to a SQL Server Virtual Machine on Azure (Classic Deployment)
-
 
 > [AZURE.SELECTOR]
 - [Resource Manager](/documentation/articles/virtual-machines-sql-server-connectivity-resource-manager)
 - [Classic](/documentation/articles/virtual-machines-sql-server-connectivity)
-
 
 ## Overview
 
@@ -28,12 +26,14 @@ But there are some SQL Server connectivity aspects that are specific to Azure VM
 
 This article focuses on connectivity. For a full walk-through of both provisioning and connectivity, see [Provisioning a SQL Server Virtual Machine on Azure](/documentation/articles/virtual-machines-provision-sql-server).
 
+
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
-
 ## Connection scenarios
 
 
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the classic deployment model. Microsoft recommends that most new deployments use the Resource Manager model.
+
 ##<a name="connection-scenarios"></a> Connection scenarios
 
 

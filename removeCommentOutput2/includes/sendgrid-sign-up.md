@@ -20,7 +20,7 @@ Azure customers can unlock 25,000 free emails each month. These 25,000 free mont
 
 	![store-screen-2][store-screen-2]
 
-7. Choose a value for the region; for example, China North.
+7. Choose a value for the region; for example, West US.
 
 8. Click the right arrow.
 
@@ -50,7 +50,7 @@ Azure customers can unlock 25,000 free emails each month. These 25,000 free mont
 
 	![sendgrid-connection-info][sendgrid-connection-info]
 
-	To set your email deliverability settings, click the **Manage** button. This will open the Sendgrid.com web interface where you can login and open your SendGrid Control Panel.
+	To set your email deliverability settings, click the **Manage** button. This will open the Sendgrid.com web interface where you can login and open your SendGrid Control Panel. 
 
 	![sendgrid-control-panel][sendgrid-control-panel]
 
@@ -73,6 +73,6 @@ Azure customers can unlock 25,000 free emails each month. These 25,000 free mont
 [SendGrid Features]: http://sendgrid.com/features
 [Azure Management Portal]: https://manage.windowsazure.cn
 [SendGrid Getting Started]: http://sendgrid.com/docs
-[SendGrid Provisioning Process]: https://support.sendgrid.com/hc/articles/200181628-Why-is-my-account-being-provisioned-
+[SendGrid Provisioning Process]: https://support.sendgrid.com/hc/en-us/articles/200181628-Why-is-my-account-being-provisioned-
 [all APIs]: https://sendgrid.com/docs/API_Reference/index.html
 

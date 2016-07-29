@@ -1,4 +1,3 @@
-
 <properties 
    pageTitle="Take a backup"
    description="Describes how to define a StorSimple backup policy."
@@ -7,10 +6,14 @@
    authors="SharS"
    manager="adinah"
    editor="tysonn" />
-<tags
-	ms.service="storsimple"
-	ms.date="04/01/2015"
-	wacn.date=""/>
+<tags 
+   ms.service="storsimple"
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="TBD"
+   ms.date="04/01/2015"
+   ms.author="v-sharos" />
 
 ### To take a backup
 
@@ -36,4 +39,5 @@
      You now have a backup policy that will create scheduled backups of your volume data.
 
 You have completed the device configuration. 
+
 

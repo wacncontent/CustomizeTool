@@ -1,0 +1,9 @@
+new docs: 4, word count: {word_count_TODO}
+articles/app-service-web/app-service-environment-with-internal-load-balancer.md
+articles/app-service-web/app-service-web-debug-java-web-app-in-eclipse.md
+articles/app-service-web/app-service-web-debug-java-web-app-in-intellij.md
+articles/app-service-web/app-service-web-nodejs-best-practices-and-troubleshoot-guide.md
+
+new includes: 2
+includes/app-service-blueprint-app-service-environment.md
+includes/app-service-blueprint-scaling-app-service-applications.md

@@ -14,7 +14,12 @@
 
 # Set up a Windows RDMA cluster with HPC Pack  and A8 and A9  instances to run MPI applications
 
+
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+
+
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the classic deployment model. Microsoft recommends that most new deployments use the Resource Manager model.
+
 
 
 This article shows you how to set up a Windows RDMA cluster in Azure with [Microsoft HPC Pack](https://technet.microsoft.com/zh-cn/library/cc514029)  and [size A8 and A9 compute-intensive instances](/documentation/articles/virtual-machines-a8-a9-a10-a11-specs)  to run parallel Message Passing Interface (MPI) applications. When you set up  size A8 and A9  Windows Server-based instances to run in an HPC Pack cluster, MPI applications communicate efficiently over a low latency, high throughput network in Azure that is based on remote direct memory access (RDMA) technology.
@@ -52,13 +57,9 @@ Pack, supports a range of sizes for the worker role instances.  To use 
 
 the compute intensive instances, simply specify a size of A8 or A9 when
 adding the Azure nodes.
-
-The following are considerations and steps to burst to A8 or A9 Azure instances from an
 
-
 
-The following are considerations and steps to burst to  Azure instances from an
-
+The following are considerations and steps to burst to  A8 or A9  Azure instances from an
 existing (typically on-premises) cluster. Use similar procedures
 to add worker role instances to an HPC Pack head node that is deployed
 in an Azure VM.
@@ -85,7 +86,7 @@ in an Azure VM.
 
 6. **Create a new cloud service and a storage account**
 
-    Use the Azure Management Portal to create a cloud service and a storage account for the deployment in a region where the compute intensive instances are available.
+    Use the Azure classic portal to create a cloud service and a storage account for the deployment in a region where the compute intensive instances are available.
 
 7. **Create an Azure node template**
 
@@ -193,23 +194,38 @@ To run mpipingpong on the cluster:
 
 2. To estimate latency between pairs of nodes in an Azure burst deployment of 4 nodes, type the following command to submit a job to run mpipingpong with a small packet size and a large number of iterations:
 
-     ``` 
+
+    ```
     job submit /nodegroup:azurenodes /numnodes:4 mpiexec -c 1 -affinity mpipingpong -p 1:100000 -op -s nul
-     ``` 
+    ```
+
+
+	    job submit /nodegroup:azurenodes /numnodes:4 mpiexec -c 1 -affinity mpipingpong -p 1:100000 -op -s nul
+
 
     The command returns the ID of the job that is submitted.
 
     If you deployed the HPC Pack cluster deployed on Azure VMs, specify a node group that contains compute node VMs deployed in a single cloud service, and modify the **mpiexec** command as follows:
 
-     ``` 
+
+    ```
     job submit /nodegroup:vmcomputenodes /numnodes:4 mpiexec -c 1 -affinity -env MSMPI\_DISABLE\_SOCK 1 -env MSMPI\_PRECONNECT all -env MPICH\_NETMASK 172.16.0.0/255.255.0.0 mpipingpong -p 1:100000 -op -s nul
-     ``` 
+    ```
+
+
+	    job submit /nodegroup:vmcomputenodes /numnodes:4 mpiexec -c 1 -affinity -env MSMPI\_DISABLE\_SOCK 1 -env MSMPI\_PRECONNECT all -env MPICH\_NETMASK 172.16.0.0/255.255.0.0 mpipingpong -p 1:100000 -op -s nul
+
 
 3. When the job completes, to view the output (in this case, the output of task 1 of the job), type the following
 
-     ``` 
+
+    ```
     task view <JobID>.1
-     ``` 
+    ```
+
+
+	    task view <JobID>.1
+
 
     where &lt;*JobID*&gt; is the ID of the job that was submitted.
 
@@ -219,9 +235,14 @@ To run mpipingpong on the cluster:
 
 4. To estimate throughput between pairs of Azure burst nodes, type the following command to submit a job to run **mpipingpong** with a large packet size and a small number of iterations:
 
-     ``` 
+
+    ```
     job submit /nodegroup:azurenodes /numnodes:4 mpiexec -c 1 -affinity mpipingpong -p 4000000:1000 -op -s nul
-     ``` 
+    ```
+
+
+	    job submit /nodegroup:azurenodes /numnodes:4 mpiexec -c 1 -affinity mpipingpong -p 4000000:1000 -op -s nul
+
 
     The command returns the ID of the job that is submitted.
 
@@ -229,9 +250,14 @@ To run mpipingpong on the cluster:
 
 5. When the job completes, to view the output (in this case, the output of task 1 of the job), type the following:
 
-     ``` 
+
+    ```
     task view <JobID>.1
-     ``` 
+    ```
+
+
+	    task view <JobID>.1
+
 
   The output will include throughput results similar to the following.
 

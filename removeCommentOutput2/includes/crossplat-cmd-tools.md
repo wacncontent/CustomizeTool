@@ -46,7 +46,7 @@ To test the installation, type `azure` at the command prompt. If the installatio
 
 To use the Azure Command-Line Tools for Mac and Linux, you will need an Azure account.
 
-Open a web browser and browse to [http://azure.microsoft.com][windowsazuredotcom] and click **trial** in the upper right corner.
+Open a web browser and browse to [http://www.windowsazure.cn][windowsazuredotcom] and click **free trial** in the upper right corner.
 
 ![Azure Web Site][Azure Web Site]
 
@@ -75,21 +75,10 @@ To see a list of options for `account` commands, use the `-help` option:
 After importing your publish settings, you should delete the `.publishsettings` file for security reasons.
 
 > [AZURE.NOTE] When you import publish settings, credentials for accessing your Azure subscription are stored inside your `user` folder. Your `user` folder is protected by your operating system. However, it is recommended that you take additional steps to encrypt your `user` folder. You can do so in the following ways:    
-<!>
+> 
 > - On Windows, modify the folder properties or use BitLocker.
 > - On Mac, turn on FileVault for the folder.
 > - On Ubuntu, use the Encrypted Home directory feature. Other Linux distributions offer equivalent features.
-<div class="dev-callout"> 
-<b>Note</b> 
-<p>When you import publish settings, credentials for accessing your Azure subscription are stored inside your <code>user</code> folder. Your <code>user</code> folder is protected by your operating system. However, it is recommended that you take additional steps to encrypt your <code>user</code> folder. You can do so in the following ways:</p> 
-
-<ul>
-<li>On Windows, modify the folder properties or use BitLocker.</li>
-<li>On Mac, turn on FileVault for the folder.</li>
-<li>On Ubuntu, use the Encrypted Home directory feature. Other Linux distributions offer equivalent features.</li>
-</ul>
-
-</div>
 
 You are now ready to being creating and managing Azure Websites and Azure Virtual Machines.  
 
@@ -107,7 +96,7 @@ The output from this command will contain the default URL for the newly created 
 
 Note that you can execute the `azure site create` command with any of the following options:
 
-* `--location [location name]`. This option allows you to specify the location of the data center in which your website is created (e.g. "China North"). If you omit this option, you will be promted to choose a location.
+* `--location [location name]`. This option allows you to specify the location of the data center in which your website is created (e.g. "West US"). If you omit this option, you will be promted to choose a location.
 * `--hostname [custom host name]`. This option allows you to specify a custom hostname for your website.
 
 You can then add content to your website directory. Use the regular git flow (`git add`, `git commit`) to commit your content. Use the following git command to push your website content to Azure: 
@@ -182,13 +171,13 @@ an Azure Virtual Machine is created from a virtual machine image (a .vhd file) t
 
 You can provision and start a virtual machine from one of the available images with the `vm create` command. The following example shows how to create a Linux virtual machine (called `myVM`) from an image in the Image Gallery (CentOS 6.2). The root user name and password for the virtual machine are `myusername` and `Mypassw0rd` respectively. (Note that the `--location` parameter specifies the data center in which the virtual machine is created. If you omit the `--location` parameter, you will be prompted to choose a location.)
 
-	azure vm create myVM OpenLogic__OpenLogic-CentOS-62-20120509-en-us-30GB.vhd myusername --location "China North"
+	azure vm create myVM OpenLogic__OpenLogic-CentOS-62-20120509-en-us-30GB.vhd myusername --location "West US"
 
 You may consider passing the `--ssh` flag (Linux) or `--rdp` flag (Windows) to `vm create` to enable remote connections to the newly-created virtual machine.
 
 If you would rather provision a virtual machine from a custom image, you can create an image from a .vhd file with the `vm image create` command, then use the `vm create` command to provision the virtual machine. The following example shows how to create a Linux image (called `myImage`) from a local .vhd file. (The `--location` parameter specifies the data in which the image is stored.)
 
-	azure vm image create myImage /path/to/myImage.vhd --os linux --location "China North"
+	azure vm image create myImage /path/to/myImage.vhd --os linux --location "West US"
 
 Instead of creating an image from a local .vhd, you can create an image from a .vhd stored in Azure Blob Storage. You can do this with the `blob-url` parameter:
 
@@ -196,7 +185,7 @@ Instead of creating an image from a local .vhd, you can create an image from a .
 
 After creating an image, you can provision a virtual machine from the image by using `vm create`. The command below creates a virtual machine called `myVM` from the image created above (`myImage`).
 
-	azure vm create myVM myImage myusername --location "China North"
+	azure vm create myVM myImage myusername --location "China East"
 
 After you have provisioned a virtual machine, you may want to create endpoints to allow remote access to your virtual machine (for example). The following example uses the `vm create endpoint` command to open external port 22 and local port 22 on `myVM`:
 
@@ -226,8 +215,8 @@ For a complete list of commands for creating and managing virtual machines, use 
 <!-- LINKS -->
 [nodejs-org]: http://nodejs.org/
 [install-node-linux]: https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager
-[mac-installer]: http://azuresdkscu.blob.core.windows.net/downloads04/azure-cli.0.9.10.dmg
+[mac-installer]: http://go.microsoft.com/fwlink/?LinkId=252249
 [windows-installer]: http://go.microsoft.com/fwlink/?LinkID=275464
 [reference-docs]: http://go.microsoft.com/fwlink/?LinkId=252246
-[windowsazuredotcom]: http://azure.microsoft.com
+[windowsazuredotcom]: http://www.windowsazure.cn
 

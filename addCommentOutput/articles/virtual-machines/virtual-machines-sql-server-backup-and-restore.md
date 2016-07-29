@@ -19,12 +19,7 @@
 
 Backing up data in SQL Server databases is an important part of the strategy in protecting against data loss due to application or user errors. This is equally true for SQL Server running on Azure Virtual Machines (VMs).
 
-
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
-
-
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
-
 
 For SQL Server running in Azure VMs, you can use native backup and restore techniques using attached disks for the destination of the backup files. However, there is a limit to the number of disks you can attach to an Azure virtual machine, based on the [size of the virtual machine](/documentation/articles/virtual-machines-size-specs). There is also the overhead of disk management to consider.
 
@@ -87,7 +82,7 @@ For SQL Server Backup and Restore in SQL Server 2008, see [Backing up and Restor
 
 ## Next steps
 
-If you are still planning your deployment of SQL Server in an Azure VM, you can find provisioning guidance in the following tutorial: [Provisioning a SQL Server Virtual Machine on  Azure with Azure Resource Manager](/documentation/articles/virtual-machines-sql-server-provision-resource-manager)  Azure](/documentation/articles/virtual-machines-provision-sql-server) .
+If you are still planning your deployment of SQL Server in an Azure VM, you can find provisioning guidance in the following tutorial: [Provisioning a SQL Server Virtual Machine on Azure with Azure Resource Manager](/documentation/articles/virtual-machines-sql-server-provision-resource-manager).
 
 Although backup and restore can be used to migrate your data, there are potentially easier data migration paths to SQL Server on an Azure VM. For a full discussion of migration options and recommendations, see [Migrating a Database to SQL Server on an Azure VM](/documentation/articles/virtual-machines-migrate-onpremises-database).
 

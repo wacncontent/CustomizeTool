@@ -72,7 +72,7 @@
 		Context ctx;
 
 
-13. In the `MyHandler` class: add the following code to override the **onRegistered** method, which registers your device with the mobile service Notification Hub.
+13. In the `MyHandler` class, add the following code to override the **onRegistered** method: which registers your device with the mobile service Notification Hub.
 
 		@Override
 		public void onRegistered(Context context,  final String gcmRegistrationId) {

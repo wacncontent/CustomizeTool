@@ -4,11 +4,11 @@
    services="redis-cache"
    documentationCenter="na"
    authors="steved0x"
-   manager="dwrede"
+   manager="erikre"
    editor="tysonn" />
 <tags
 	ms.service="cache"
-	ms.date="12/17/2015"
+	ms.date="03/04/2016"
 	wacn.date=""/>
 
 # ASP.NET Session State Provider for Azure Redis Cache
@@ -55,12 +55,7 @@ The NuGet package downloads and adds the required assembly references and adds t
 
 The commented section provides an example of the attributes and sample settings for each attribute.
 
-
-Configure the attributes with the values from your cache blade in the Azure Management Portal, and configure the other values as desired. For instructions on accessing your cache properties, see [Configure Redis cache settings](/documentation/articles/cache-configure#configure-redis-cache-settings).
-
-
-You can configure Redis Cache through Azure PowerShell. For instructions on accessing your cache properties, see [Manage Azure Redis Cache with Azure PowerShell](/documentation/articles/cache-howto-manage-redis-cache-powershell).
-
+Configure the attributes with the values from your cache blade in the Azure Portal, and configure the other values as desired. For instructions on accessing your cache properties, see [Configure Redis cache settings](/documentation/articles/cache-configure#configure-redis-cache-settings).
 
 -	**host** - specify your cache endpoint.
 -	**port** - use either your non-SSL port or your SSL port, depending on the ssl settings.

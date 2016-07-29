@@ -1,3 +1,5 @@
+<!-- deleted in Global -->
+
 <properties 
 	pageTitle="Create a .NET web app on Azure with MongoDB using the MongoLab add-on" 
 	description="Learn how to create an ASP.NET web app on Azure Websites that stores data in MongoDB hosted by MongoLab." 
@@ -17,7 +19,7 @@
 
 # Create a .NET web app on Azure with MongoDB using the MongoLab add-on
 
-  	<!-- The MongoLab workflow is not yet supported in the Preview Portal -->
+  	<!-- The MongoLab workflow is not yet supported in the Portal Preview -->
 
 <p><em>By Eric Sedor, MongoLab</em></p>
 

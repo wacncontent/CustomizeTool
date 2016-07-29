@@ -1,0 +1,15 @@
+new docs: 12, word count: {word_count_TODO}
+articles/azure-portal/insights-create-web-tests.md
+articles/azure-portal/insights-debugging-with-events.md
+articles/azure-portal/insights-how-to-customize-monitoring.md
+articles/azure-portal/insights-how-to-scale.md
+articles/azure-portal/insights-how-to-use-diagnostics.md
+articles/azure-portal/insights-perf-analytics.md
+articles/azure-portal/insights-receive-alert-notifications.md
+articles/azure-portal/insights-service-health.md
+articles/azure-portal/insights-usage-analytics.md
+articles/azure-portal/insights-webhooks-alerts.md
+articles/azure-portal/resource-group-portal-linked-resources.md
+articles/azure-portal/resource-group-portal.md
+
+new includes: 0

@@ -28,9 +28,13 @@ azure-mobile.net = azure-mobile.cn
 #group 9
 azure.net = chinacloudapi.cn
 
+vault.azure.com = vault.chinacloudapi.cn
+
 cloudapp.azure.com = chinacloudapp.cn
 
+//manage.azure.com = //manage.windowsazure.cn
 
+EnvironmentName.AzureCloud = EnvironmentName.AzureChinaCloud
 
 # Terminology
 
@@ -72,7 +76,8 @@ Yankees = Guo An
 # Brand
 Microsoft Azure = Azure
 Microsoft dot com = WindowsAzure.cn
-Azure Marketplace = Azure gallery
+#Azure Marketplace = Azure gallery
+Microsoft recommend = Azure recommend
 
 # Others
 free trial =  trial
@@ -85,12 +90,17 @@ Data + Storage = DATA SERVICE
 **All Settings** = **Configure**
 #wacn.date{equal}"" = wacn.date{equal}"10/17/2015"
 – = -
+— = --
 ‘ = '
 ’ = '
 ” = "
 “ = "
 # SQL Database = SQL 数据库
 
+14.04.4 = 14.04.3
+14_04_4 = 14_04_3
+
+b39f27a8b8c64d52b05eac6a62ebad85 = b549f4301d0b4295b8e76ceb65df47d4
 
 # Redirect URL
 
@@ -98,7 +108,7 @@ Data + Storage = DATA SERVICE
 http://go.microsoft.com/fwlink/?LinkId{equal}511138 = /documentation/articles/hdinsight-administer-use-management-portal/#cert
 https://go.microsoft.com/fwLink/?LinkID{equal}320896&clcid{equal}0x409 = /documentation/articles/hdinsight-component-versioning-v1/
 http://go.microsoft.com/fwlink/?LinkID{equal}529540&clcid{equal}0x409 = /documentation/articles/hdinsight-hadoop-emulator-get-started/
-http://go.microsoft.com/fwlink/?LinkID{equal}532784 = /documentation/articles/vs-azure-tools-diagnostics-for-cloud-services-and-virtual-machines
+http://go.microsoft.com/fwlink/?LinkID{equal}532784 = /documentation/articles/vs-azure-tools-diagnostics-for-cloud-services-and-virtual-machines/
 http://go.microsoft.com/fwlink/?LinkID{equal}534086 = /documentation/articles/vs-azure-tools-resource-groups-deployment-projects-create-deploy
 http://go.microsoft.com/fwlink/?LinkId{equal}306052 = /documentation/services/cloud-services/
 http://go.microsoft.com/fwlink/?LinkID{equal}306053 = /documentation/services/virtual-machines/
@@ -107,7 +117,7 @@ http://go.microsoft.com/fwlink/?LinkId{equal}390226 = /documentation/articles/we
 http://go.microsoft.com/fwlink/?LinkId{equal}529715 = https://manage.windowsazure.cn/
 http://go.microsoft.com/fwlink/?LinkId{equal}529714 = /documentation/services/web-sites/
 http://go.microsoft.com/fwlink/?LinkID{equal}113729 = https://technet.microsoft.com/zh-cn/library/hh847857.aspx
-http://go.microsoft.com/fwlink/?LinkId{equal}275107 = /home/features/media-services/#price
+http://go.microsoft.com/fwlink/?LinkId{equal}275107 = /home/features/media-services/pricing/
 http://go.microsoft.com/fwlink/?LinkId{equal}256667 = https://msdn.microsoft.com/zh-cn/library/azure/hh360997.aspx
 http://go.microsoft.com/fwlink/?LinkId{equal}256668 = https://msdn.microsoft.com/zh-cn/library/azure/hh343258.aspx
 http://go.microsoft.com/fwlink/?LinkID{equal}256666&clcid{equal}0x409 = http://manage.windowsazure.cn
@@ -119,15 +129,15 @@ http://go.microsoft.com/fwlink/p/?LinkId{equal}313584 = https://msdn.microsoft.c
 http://go.microsoft.com/fwlink/p/?LinkID{equal}313584 = https://msdn.microsoft.com/zh-CN/library/hh758255.aspx
 http://go.microsoft.com/fwlink/p/?LinkId{equal}314074 = https://msdn.microsoft.com/zh-CN/library/jj155995.aspx
 http://go.microsoft.com/fwlink/?LinkId{equal}317721 = https://msdn.microsoft.com/zh-cn/library/azure/jj152841.aspx
-http://go.microsoft.com/fwlink/?LinkId{equal}303938 = /documentation/articles/virtual-machines-set-up-endpoints
-http://go.microsoft.com/fwlink/p/?LinkId{equal}296653 = /documentation/articles/vpn-gateway-point-to-site-create
-http://go.microsoft.com/fwlink/p/?LinkID{equal}294356 = /documentation/articles/virtual-machines-create-custom
-http://go.microsoft.com/fwlink/p/?LinkId{equal}299877 = /documentation/articles/virtual-networks-install-replica-active-directory-domain-controller
+http://go.microsoft.com/fwlink/?LinkId{equal}303938 = /documentation/articles/virtual-machines-windows-classic-setup-endpoints/
+http://go.microsoft.com/fwlink/p/?LinkId{equal}296653 = /documentation/articles/vpn-gateway-point-to-site-create/
+http://go.microsoft.com/fwlink/p/?LinkID{equal}294356 = /documentation/articles/virtual-machines-windows-classic-createportal/
+http://go.microsoft.com/fwlink/p/?LinkId{equal}299877 = /documentation/articles/virtual-networks-install-replica-active-directory-domain-controller/
 http://go.microsoft.com/fwlink/p/?LinkId{equal}296652 = /documentation/services/networking/
-http://go.microsoft.com/fwlink/p/?LinkID{equal}248098 = /documentation/articles/vpn-gateway-configure-vpn-gateway-mp/#how-to-view-gateway-traffic
-http://go.microsoft.com/fwlink/p/?LinkID{equal}248092 = /documentation/articles/virtual-networks-settings
-http://go.microsoft.com/fwlink/?LinkID{equal}248092 = /documentation/articles/virtual-networks-settings
-http://go.microsoft.com/fwlink/p/?LinkId{equal}248098 = /documentation/articles/vpn-gateway-configure-vpn-gateway-mp/#how-to-view-gateway-traffic
+http://go.microsoft.com/fwlink/p/?LinkID{equal}248098 = /documentation/articles/vpn-gateway-configure-vpn-gateway-mp/#how-to-view-gateway-traffic/
+http://go.microsoft.com/fwlink/p/?LinkID{equal}248092 = /documentation/articles/virtual-networks-settings/
+http://go.microsoft.com/fwlink/?LinkID{equal}248092 = /documentation/articles/virtual-networks-settings/
+http://go.microsoft.com/fwlink/p/?LinkId{equal}248098 = /documentation/articles/vpn-gateway-configure-vpn-gateway-mp/#how-to-view-gateway-traffic/
 http://go.microsoft.com/fwlink/p/?LinkId{equal}299878 = /documentation/articles/vpn-gateway-configure-vpn-gateway-mp/
 http://go.microsoft.com/fwlink/p/?LinkID{equal}299880 = /documentation/articles/virtual-networks-create-vnet-classic-portal/
 http://go.microsoft.com/fwlink/p/?LinkId{equal}248097 = /documentation/articles/virtual-networks-name-resolution-for-vms-and-role-instances/
@@ -140,8 +150,8 @@ http://go.microsoft.com/fwlink/?LinkId{equal}623901 = /pricing/1rmb-trial/
 http://go.microsoft.com/fwlink/p/?LinkId{equal}392860 = /documentation/services/automation/
 http://go.microsoft.com/fwlink/?LinkID{equal}286689 = http://www.microsoft.com/zh-cn/download/details.aspx?id{equal}39379
 http://go.microsoft.com/fwlink/?LinkID{equal}309796 = /documentation/articles/cloud-services-dotnet-install-dotnet/
-http://go.microsoft.com/fwlink/?LinkId{equal}309169 = /documentation/articles/virtual-machines-size-specs/
-http://go.microsoft.com/fwlink/?LinkId{equal}234930 = /home/features/sql-database/#price
+http://go.microsoft.com/fwlink/?LinkId{equal}309169 = /documentation/articles/cloud-services-sizes-specs/
+http://go.microsoft.com/fwlink/?LinkId{equal}234930 = /home/features/sql-database/pricing/
 http://go.microsoft.com/fwlink/?LinkID{equal}235288 = https://manage.windowsazure.cn
 http://go.microsoft.com/fwlink/?LinkID{equal}324844 = https://technet.microsoft.com/zh-cn/library/hh847780.aspx
 http://go.microsoft.com/fwlink/p/?LinkId{equal}390561 = https://social.msdn.microsoft.com/Forums/azure/zh-cn/home?forum{equal}azureautomation
@@ -172,7 +182,7 @@ http://go.microsoft.com/fwlink/?LinkID{equal}394765 = https://msdn.microsoft.com
 http://go.microsoft.com/fwlink/?LinkId{equal}618336 = https://msdn.microsoft.com/zh-cn/library/azure/mt269960.aspx
 http://aka.ms/websitesmigration = http://www.movemetothecloud.net/
 http://aka.ms/websitesmigrationresources = http://www.movemetothecloud.net/resources
-https://go.microsoft.com/fwLink/?LinkID{equal}282635&clcid{equal}0x409 = /home/features/hdinsight/#price
+https://go.microsoft.com/fwLink/?LinkID{equal}282635&clcid{equal}0x409 = /home/features/hdinsight/pricing/
 http://go.microsoft.com/fwlink/p/?LinkID{equal}397274 = /documentation/articles/integration-hybrid-connection-overview/
 http://go.microsoft.com/fwlink/?LinkId{equal}507720 = https://msdn.microsoft.com/zh-cn/library/azure/dn783467.aspx
 http://aka.ms/scriptcentergallery = https://gallery.technet.microsoft.com/scriptcenter/site/search?f%5B0%5D.Type{equal}RootCategory&f%5B0%5D.Value{equal}WindowsAzure&f%5B0%5D.Text{equal}Windows%20Azure&f%5B1%5D.Type{equal}SubCategory&f%5B1%5D.Value{equal}WindowsAzure_automation&f%5B1%5D.Text{equal}Automation
@@ -193,7 +203,7 @@ http://go.microsoft.com/fwlink/?LinkID{equal}533259 = https://msdn.microsoft.com
 http://go.microsoft.com/fwlink/?LinkID{equal}90561 = http://www.w3.org/TR/WD-logfile.html
 http://go.microsoft.com/fwlink/?LinkId{equal}617318 = https://msdn.microsoft.com/zh-cn/library/cc838192(v{equal}VS.95).aspx#Silverlight_Support_for_Output_Protection
 http://go.microsoft.com/fwlink/?LinkID{equal}397979 = /documentation/articles/web-sites-hybrid-connection-connect-on-premises-sql-server/
-http://aka.ms/dacpac = /documentation/articles/sql-database-cloud-migrate
+http://aka.ms/dacpac = /documentation/articles/sql-database-cloud-migrate/
 http://go.microsoft.com/fwlink/?LinkID{equal}256666 = https://manage.windowsazure.cn/
 http://go.microsoft.com/fwlink/?LinkId{equal}510237 = http://hbase.apache.org/book.html#architecture
 http://go.microsoft.com/fwlink/?LinkId{equal}517284 = http://download.microsoft.com/download/7/1/B/71BA74D8-B9A0-4E6C-9159-A8335D54437E/vs_community.exe
@@ -210,7 +220,7 @@ http://go.microsoft.com/fwlink/?LinkId{equal}521898 = /documentation/articles/st
 http://go.microsoft.com/FWLink/p/?LinkID{equal}390493 = https://msdn.microsoft.com/zh-cn/library/dn606311.aspx
 http://go.microsoft.com/fwlink/p/?LinkId{equal}512673 = https://msdn.microsoft.com/zh-cn/library/system.web.http.apicontroller(v{equal}vs.118).aspx
 http://go.microsoft.com/fwlink/?LinkId{equal}378268 = /pricing/details/site-recovery/
-http://go.microsoft.com/fwlink/p/?LinkId{equal}393551 = /documentation/articles/virtual-machines-linux-endorsed-distributions/
+http://go.microsoft.com/fwlink/p/?LinkId{equal}393551 = /documentation/articles/virtual-machines-linux-endorsed-distros/
 http://go.microsoft.com/fwlink/p/?LinkId{equal}298592 = https://msdn.microsoft.com/zh-cn/library/azure/jj193162.aspx
 http://go.microsoft.com/?linkid{equal}9888163 = https://code.msdn.microsoft.com/Elastic-DB-Tools-for-Azure-aea52c05
 http://go.microsoft.com/fwlink/?LinkId{equal}518669 = http://social.technet.microsoft.com/wiki/contents/articles/28317.deploying-azure-site-recovery-with-vmm-and-san-supported-storage-arrays.aspx
@@ -235,14 +245,14 @@ http://go.microsoft.com/fwlink/?LinkId{equal}526242 = https://msdn.microsoft.com
 http://go.microsoft.com/fwlink/?LinkId{equal}510867 = https://msdn.microsoft.com/zh-cn/library/dn782840.aspx
 http://go.microsoft.com/fwlink/?LinkId{equal}510868 = https://msdn.microsoft.com/zh-cn/library/dn782839.aspx
 http://go.microsoft.com/fwlink/?LinkID{equal}532955&clcid{equal}0x409 = https://wiki.ubuntu.com/AzureSwapPartitions
-http://go.microsoft.com/fwlink/p/?LinkId{equal}404206 = /documentation/articles/virtual-machines-install-trend/
+http://go.microsoft.com/fwlink/p/?LinkId{equal}404206 = /documentation/articles/virtual-machines-windows-classic-install-trend/
 http://go.microsoft.com/fwlink/p/?LinkId{equal}403945 = http://blog.trendmicro.com/microsoft-azure-vm-agent-extension-for-deep-security/
 http://aka.ms/AzCopy = /documentation/articles/storage-use-azcopy/
 http://go.microsoft.com/fwlink/p/?LinkId{equal}396940 = https://technet.microsoft.com/zh-cn/library/jj134039.aspx
 http://go.microsoft.com/fwlink/p/?LinkId{equal}268285 = https://www.facebook.com/
 http://azure.microsoft.com/develop/net/how-to-guides/blob-storage/ = /documentation/articles/storage-dotnet-how-to-use-blobs/
 http://go.microsoft.com/fwlink/?LinkId{equal}401521 = http://blogs.msdn.com/b/webdev/archive/2014/05/12/announcing-asp-net-session-state-provider-for-redis-preview-release.aspx
-http://www.windowsazure.com/manage/windows/how-to-guides/connect-to-a-cloud-service/ = /documentation/articles/cloud-services-connect-virtual-machine/
+http://www.windowsazure.com/manage/windows/how-to-guides/connect-to-a-cloud-service/ = /documentation/articles/virtual-machines-linux-classic-connect-vms/
 http://go.microsoft.com/fwlink/?LinkId{equal}615880 = http://developer.android.com/design/patterns/notifications.html
 http://aka.ms/axmybc = http://download.microsoft.com/download/A/8/C/A8CF712D-8A55-4152-84C1-3E562DACADB3/microsoft-azure-sql-database-saas-development-with-elastic-database-sec.pdf
 http://go.microsoft.com/fwlink/p/?linkid{equal}536445&clcid{equal}0x409 = https://azure.microsoft.com/zh-cn/documentation/templates/
@@ -316,7 +326,7 @@ http://go.microsoft.com/fwlink/?LinkId{equal}329033 = /pricing/details/storage-i
 http://go.microsoft.com/fwlink/?LinkId{equal}329032 = https://msdn.microsoft.com/zh-cn/library/dn529093.aspx
 https://go.microsoft.com/fwLink/p/?LinkID{equal}257546 = https://www.visualstudio.com/downloads/download-visual-studio-vs
 http://aka.ms/asr-rds = https://gallery.technet.microsoft.com/Remote-Desktop-DR-Solution-bdf6ddcb
-http://go.microsoft.com/fwlink/p/?LinkId{equal}262845 = https://azure.microsoft.com/zh-cn/documentation/articles/cloud-services-performance-testing-visual-studio-profiler/
+http://go.microsoft.com/fwlink/p/?LinkId{equal}262845 = /documentation/articles/cloud-services-performance-testing-visual-studio-profiler/
 http://go.microsoft.com/fwlink/?LinkId{equal}623031 = https://msdn.microsoft.com/zh-cn/library/azure/mt185741.aspx
 https://go.microsoft.com/fwLink/p/?LinkID{equal}280125 = http://developer.android.com/sdk/index.html
 http://go.microsoft.com/fwlink/?LinkId{equal}225110 = http://social.technet.microsoft.com/wiki/contents/articles/1884.getting-started-with-windows-azure-sql-database-using-the-windows-azure-management-portal.aspx
@@ -325,7 +335,7 @@ http://go.microsoft.com/fwlink/?LinkId{equal}400937 = https://technet.microsoft.
 http://aka.ms/asr-dynamics = https://gallery.technet.microsoft.com/Dynamics-AX-DR-Solution-b2a76281
 http://go.microsoft.com/fwlink/?LinkId{equal}513165 = http://www.nuget.org/packages/WindowsAzure.MobileServices.Backend/
 http://go.microsoft.com/fwlink/?LinkId{equal}214468 = https://msdn.microsoft.com/zh-cn/library/dd264915.aspx
-http://go.microsoft.com/fwlink/p/?LinkID{equal}311926 = https://azure.microsoft.com/zh-cn/documentation/articles/fundamentals-application-models/
+http://go.microsoft.com/fwlink/p/?LinkID{equal}311926 = /documentation/articles/fundamentals-application-models/
 http://go.microsoft.com/fwlink/?LinkId{equal}507682 = http://blogs.msdn.com/b/windowsazurestorage/archive/2014/08/08/azcopy-2-5-release.aspx
 http://go.microsoft.com/?linkid{equal}9862597 = /documentation/articles/sql-database-elastic-scale-multishard-querying/
 http://go.microsoft.com/?linkid{equal}9862596 = /documentation/articles/sql-database-elastic-scale-data-dependent-routing/
@@ -355,7 +365,7 @@ http://go.microsoft.com/fwlink/?LinkId{equal}518491 = https://technet.microsoft.
 http://go.microsoft.com/fwlink/?LinkId{equal}518490 = https://technet.microsoft.com/zh-cn/library/gg610624.aspx
 http://go.microsoft.com/fwlink/?LinkId{equal}518493 = https://technet.microsoft.com/zh-cn/library/gg610686.aspx
 http://go.microsoft.com/fwlink/?LinkId{equal}518492 = https://technet.microsoft.com/zh-cn/library/gg610635.aspx
-http://go.microsoft.com/fwlink/?LinkId{equal}398704 = https://azure.microsoft.com/zh-cn/documentation/articles/storage-introduction/
+http://go.microsoft.com/fwlink/?LinkId{equal}398704 = /documentation/articles/storage-introduction/
 http://go.microsoft.com/fwlink/?LinkId{equal}513017 = https://technet.microsoft.com/zh-cn/library/gg610692.aspx
 http://go.microsoft.com/fwlink/?LinkId{equal}511094 = https://msdn.microsoft.com/zh-cn/library/azure/dn175718.aspx
 http://go.microsoft.com/fwlink/p/?LinkId{equal}302030 = https://msdn.microsoft.com/zh-cn/library/azure/microsoft.windowsazure.mobileservices.mobileserviceclient.aspx
@@ -373,7 +383,7 @@ http://go.microsoft.com/fwlink/p/?LinkID{equal}402317&clcid{equal}0x409 = https:
 http://go.microsoft.com/fwlink/?LinkId{equal}623519 = http://download.microsoft.com/download/0/F/E/0FE64840-9806-4D3C-9C11-84B743162618/MicrosoftAzureLibsForNet-x64.msi
 http://go.microsoft.com/fwlink/?LinkId{equal}623518 = http://download.microsoft.com/download/0/F/E/0FE64840-9806-4D3C-9C11-84B743162618/MicrosoftAzureAuthoringTools-x64.msi
 http://go.microsoft.com/fwlink/?LinkId{equal}257546 = https://www.visualstudio.com/downloads/download-visual-studio-vs
-http://go.microsoft.com/fwlink/p/?LinkID{equal}623075 = https://azure.microsoft.com/zh-cn/documentation/articles/vs-azure-tools-configuring-an-azure-project/
+http://go.microsoft.com/fwlink/p/?LinkID{equal}623075 = /documentation/articles/vs-azure-tools-configuring-an-azure-project/
 http://aka.ms/tune/ = https://support.office.com/zh-cn/article/Network-planning-and-performance-tuning-for-Office-365-e5f1228c-da3c-4654-bf16-d163daee8848
 http://go.microsoft.com/fwlink/p/?LinkID{equal}623073 = /documentation/articles/vs-azure-tools-resource-groups-deployment-projects-create-deploy/
 http://go.microsoft.com/fwlink/p/?LinkId{equal}320212 = https://social.msdn.microsoft.com:443/forums/azure/zh-cn/home?category{equal}windowsazureplatform%2Cazuremarketplace%2Cwindowsazureplatformctp
@@ -406,18 +416,18 @@ http://go.microsoft.com/fwlink/?LinkId{equal}690250 = /documentation/articles/ac
 http://go.microsoft.com/fwlink/?LinkId{equal}389880 = /pricing/details/site-recovery/
 http://go.microsoft.com/fwlink/?LinkId{equal}320213 = http://stackoverflow.com/questions/tagged/azure
 http://go.microsoft.com/fwlink/?LinkID{equal}529757 = http://download.microsoft.com/download/7/E/D/7ED50614-1FE1-41F8-B4D2-25D73F623E9B/Microsoft-ASR_UA_8.4.0.0_RHEL6-64_GA_28Jul2015_release.tar.gz
-http://go.microsoft.com/fwlink/p/?linkid{equal}328042 = /documentation/articles/virtual-machines-a8-a9-a10-a11-specs/
+http://go.microsoft.com/fwlink/p/?linkid{equal}328042 = /documentation/articles/virtual-machines-windows-a8-a9-a10-a11-specs/
 http://go.microsoft.com/fwlink/?LinkID{equal}624384 = https://www.visualstudio.com/zh-cn/downloads/download-visual-studio-vs.aspx
 https://go.microsoft.com/fwLink/p/?LinkID{equal}391934 = https://www.visualstudio.com/downloads/download-visual-studio-vs
 http://go.microsoft.com/fwlink/p/?LinkId{equal}510474 = https://msdn.microsoft.com/library/ms253138.aspx
-http://go.microsoft.com/fwlink/p/?LinkId{equal}516965 = https://azure.microsoft.com/zh-cn/documentation/articles/vs-storage-cloud-services-getting-started-blobs/
+http://go.microsoft.com/fwlink/p/?LinkId{equal}516965 = /documentation/articles/vs-storage-cloud-services-getting-started-blobs/
 http://go.microsoft.com/fwlink/?LinkId{equal}536378 = http://download.microsoft.com/download/C/B/9/CB975B6B-F7C6-47CB-B962-1FC7750B6112/MS_Arch_Financial_Svcs_SEC.pdf
 http://go.microsoft.com/fwlink/?LinkID{equal}271615 = https://msdn.microsoft.com/zh-cn/library/jj720558.aspx
 http://aka.ms/lym3vk = /documentation/articles/service-bus-dotnet-advanced-message-queuing/
-http://go.microsoft.com/fwlink/?LinkID{equal}525040&clcid{equal}0x409 = https://portal.azure.com/
+http://go.microsoft.com/fwlink/?LinkID{equal}525040&clcid{equal}0x409 = https://portal.azure.cn/
 http://go.microsoft.com/fwlink/p/?LinkId{equal}623009 = https://msdn.microsoft.com/zh-cn/library/azure/dn186185.aspx
-http://go.microsoft.com/fwlink/p/?LinkId{equal}513116 = https://azure.microsoft.com/zh-cn/documentation/articles/vs-mobile-services-cordova-getting-started/
-http://go.microsoft.com/fwlink/p/?LinkId{equal}513119 = https://azure.microsoft.com/zh-cn/documentation/articles/vs-mobile-services-dotnet-getting-started/
+http://go.microsoft.com/fwlink/p/?LinkId{equal}513116 = /documentation/articles/vs-mobile-services-cordova-getting-started/
+http://go.microsoft.com/fwlink/p/?LinkId{equal}513119 = /documentation/articles/vs-mobile-services-dotnet-getting-started/
 http://go.microsoft.com/fwlink/?LinkId{equal}616025 = http://download.microsoft.com/download/0/6/4/06471151-0668-485E-8CD0-D7D8297EE357/SSMS_BurnInstaller_June2015/SSMS-Web-Setup.exe
 http://go.microsoft.com/fwlink/p?LinkId{equal}623012 = https://msdn.microsoft.com/zh-cn/library/azure/ff683672.aspx
 http://go.microsoft.com/fwlink/?LinkId{equal}404101 = http://www.trendmicro.com/us/business/saas/deep-security-as-a-service/microsoft-azure-security/index.html?cm_mmc{equal}VURL:www.trendmicro.com-_-VURL-_-%2Fazure%2Findex.html-_-1-1#how-it-works
@@ -432,14 +442,14 @@ http://go.microsoft.com/fwlink/?LinkId{equal}321295 = https://msdn.microsoft.com
 http://go.microsoft.com/fwlink/?LinkId{equal}321294 = https://msdn.microsoft.com/zh-cn/library/azure/dn469074.aspx
 http://go.microsoft.com/fwlink/?LinkId{equal}214561 = https://msdn.microsoft.com/zh-cn/IdentityTrainingCourse
 http://go.microsoft.com/fwlink/?LinkId{equal}214562 = https://msdn.microsoft.com/zh-cn/library/ff423674.aspx
-http://go.microsoft.com/fwlink/p/?linkid{equal}534868&clcid{equal}0x409 = /documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli/
+http://go.microsoft.com/fwlink/p/?linkid{equal}534868&clcid{equal}0x409 = /documentation/articles/virtual-machines-linux-cli-deploy-templates/
 https://go.microsoft.com/fwLink/?LinkID{equal}288905 = http://download.microsoft.com/download/4/3/7/4376BBCE-9123-46FD-AAE1-599EAB6D2BD2/MARSAgentInstaller.exe
 http://go.microsoft.com/fwlink/p/?LinkId{equal}513124 = /documentation/articles/vs-storage-aspnet5-getting-started-blobs/
 http://go.microsoft.com/fwlink/p/?LinkId{equal}513126 = /documentation/articles/vs-storage-aspnet-getting-started-blobs/
 http://go.microsoft.com/fwlink/p/?LinkId{equal}513120 = /documentation/articles/vs-mobile-services-javascript-getting-started/
 http://go.microsoft.com/fwlink/p/?LinkId{equal}400448 = https://msdn.microsoft.com/zh-cn/library/dd179338.aspx
 http://aka.ms/sql2016vm = https://azure.microsoft.com/zh-cn/marketplace/partners/microsoft/sqlserver2016ctp2evaluationwindowsserver2012r2/?wt.mc_id{equal}sqL16_vm
-http://www.windowsazure.com/documentation/articles/manage-availability-virtual-machines/ = /documentation/articles/virtual-machines-manage-availability/
+http://www.windowsazure.com/documentation/articles/manage-availability-virtual-machines/ = /documentation/articles/virtual-machines-windows-manage-availability/
 http://go.microsoft.com/fwlink/?LinkID{equal}301900&clcid{equal}0x409 = http://download.microsoft.com/download/0/C/D/0CD6ABA7-024F-4202-91A0-CE2656DCE413/WAImportExport.zip
 http://go.microsoft.com/fwlink/?LinkId{equal}512980 = https://www.visualstudio.com/get-started/setup/connect-to-visual-studio-online
 http://go.microsoft.com/fwlink/p/?LinkId{equal}296316 = /documentation/articles/mobile-services-android-get-started-users/
@@ -453,7 +463,7 @@ http://go.microsoft.com/fwlink/p/?LinkID{equal}390465 = https://www.visualstudio
 http://go.microsoft.com/fwlink/p/?linkid{equal}386630 = https://msdn.microsoft.com/zh-cn/library/dn530751.aspx
 http://aka.ms/asr-sharepoint = https://gallery.technet.microsoft.com/SharePoint-DR-Solution-f6b4aeae
 http://go.microsoft.com/fwlink/?LinkId{equal}386308 = https://technet.microsoft.com/zh-cn/library/jj721575.aspx
-http://go.microsoft.com/fwlink/p/?LinkId{equal}404207 = https://azure.microsoft.com/zh-cn/documentation/articles/virtual-machines-install-symantec/
+http://go.microsoft.com/fwlink/p/?LinkId{equal}404207 = /documentation/articles/virtual-machines-windows-classic-install-symantec/
 http://go.microsoft.com/fwlink/?LinkId{equal}386307 = https://technet.microsoft.com/zh-cn/library/jj721568.aspx
 http://go.microsoft.com/fwlink/p/?LinkID{equal}510826 = https://code.msdn.microsoft.com:443/Get-Started-with-Data-in-0e863e57
 http://go.microsoft.com/fwlink/p/?LinkId{equal}517803 = https://msdn.microsoft.com/zh-cn/library/azure/dn820158.aspx
@@ -464,7 +474,7 @@ http://go.microsoft.com/fwlink/?LinkId{equal}404012 = https://visualstudiogaller
 http://go.microsoft.com/fwlink/p/?linkid{equal}403947&clcid{equal}0x409 = https://azure.microsoft.com/zh-cn/blog/vm-agent-and-extensions-part-2/
 http://go.microsoft.com/fwlink/p/?LinkId{equal}398294 = https://msdn.microsoft.com/zh-cn/library/azure/dn535788.aspx
 http://go.microsoft.com/fwlink/p/?LinkId{equal}512979 = https://www.visualstudio.com/get-started/setup/sign-up-for-visual-studio-online
-http://go.microsoft.com/fwlink/?LinkID{equal}619338 = https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade
+http://go.microsoft.com/fwlink/?LinkID{equal}619338 = https://portal.azure.cn/#blade/Microsoft_Azure_Support/HelpAndSupportBlade
 http://go.microsoft.com/fwlink/?LinkId{equal}404100 = https://dsahandler.blob.core.windows.net/dsaas/ds-config.ps1
 http://go.microsoft.com/fwlink/p/?LinkId{equal}403947 = https://azure.microsoft.com/zh-cn/blog/vm-agent-and-extensions-part-2/
 http://go.microsoft.com/fwlink/?LinkId{equal}506733 = http://download.microsoft.com/download/D/8/D/D8D90BA1-977F-466B-A839-7823FF37FD02/03-Azure%20SQL%20DB%20Audit%20Logs%20Format%20Specification.docx
@@ -558,7 +568,7 @@ http://go.microsoft.com/fwlink/?LinkId{equal}526796 = https://social.msdn.micros
 http://go.microsoft.com/fwlink/?LinkId{equal}526793 = https://msdn.microsoft.com/zh-cn/library/azure/dn930809.aspx
 http://go.microsoft.com/fwlink/?LinkId{equal}526791 = https://social.msdn.microsoft.com/Forums/azure/zh-cn/8c51c471-5f54-444b-9c61-e91e75f7146e/tutorial-azure-ad-integration-with-bluejeans?forum{equal}WindowsAzureAD
 https://go.microsoft.com/fwLink/?LinkID{equal}510256&clcid{equal}0x409 = /documentation/articles/active-directory-saas-kudos-tutorial/
-https://go.microsoft.com/fwLink/?LinkID{equal}522560&clcid{equal}0x409 = https://azure.microsoft.com/zh-cn/documentation/articles/active-directory-saas-airwatch-tutorial/
+https://go.microsoft.com/fwLink/?LinkID{equal}522560&clcid{equal}0x409 = /documentation/articles/active-directory-saas-airwatch-tutorial/
 http://go.microsoft.com/fwlink/?LinkId{equal}528205 = https://social.msdn.microsoft.com/Forums/azure/zh-cn/08903982-2434-4877-9388-fa2ff55933d7/tutorial-azure-active-directory-integration-with-simplenexus?forum{equal}WindowsAzureAD
 http://aka.ms/aadshowb2b = https://channel9.msdn.com/Series/Azure-AD-Identity/AzureADB2B
 http://go.microsoft.com/fwlink/?LinkId{equal}259814 = https://code.msdn.microsoft.com:443/AAL-Native-Application-to-fd648dcf
@@ -581,7 +591,7 @@ http://go.microsoft.com/fwlink/?LinkId{equal}528575 = https://social.msdn.micros
 https://go.microsoft.com/fwLink/?LinkID{equal}522557&clcid{equal}0x409 = /documentation/articles/active-directory-saas-directions-microsoft-tutorial/
 http://go.microsoft.com/fwlink/?LinkId{equal}528571 = https://social.msdn.microsoft.com/Forums/azure/zh-cn/85e4edeb-897c-4085-ab5d-9b5eecaaa1ac/tutorial-azure-active-directory-integration-with-runmyprocess?forum{equal}WindowsAzureAD
 https://go.microsoft.com/fwLink/?LinkID{equal}521879 = /documentation/articles/active-directory-saas-salesforce-sandbox-tutorial/
-http://msdn.microsoft.com/zh-cn/library/windowsazure/hh690944.aspx = /documentation/articles/azure-toolkit-for-eclipse-creating-a-hello-world-application
+http://msdn.microsoft.com/zh-cn/library/windowsazure/hh690944.aspx = /documentation/articles/azure-toolkit-for-eclipse-creating-a-hello-world-application/
 http://go.microsoft.com/fwlink/?LinkId{equal}528188 = https://social.msdn.microsoft.com/Forums/azure/zh-cn/50962aa5-0212-4c0f-9324-bbd2f973f998/tutorial-azure-active-directory-integration-with-egnyte?forum{equal}WindowsAzureAD
 https://go.microsoft.com/fwLink/?LinkID{equal}530219&clcid{equal}0x409 = /documentation/articles/active-directory-saas-sap-hana-cloud-platform-tutorial/
 http://go.microsoft.com/fwlink/?LinkId{equal}532346 = https://social.msdn.microsoft.com/Forums/azure/zh-cn/f3e9d875-7623-4b04-80e4-8e4fe1bcca26/tutorial-azure-active-directory-integration-with-lucidchart?forum{equal}WindowsAzureAD
@@ -761,8 +771,9 @@ http://go.microsoft.com/fwlink/p/?LinkId{equal}275795 = /documentation/articles/
 http://go.microsoft.com/fwlink/p/?LinkId{equal}317339 = https://msdn.microsoft.com/zh-cn/library/jj927170.aspx#BKMK_NH7
 http://go.microsoft.com/fwlink/p/?LinkId{equal}314257 = /pricing/details/notification-hubs/
 http://go.microsoft.com/fwlink/?LinkID{equal}525671 = /develop/java/
-http://go.microsoft.com/fwlink/?LinkID{equal}252473 = /documentation/articles/php-download-sdk
-http://go.microsoft.com/fwlink/?LinkId{equal}296649 = /documentation/articles/virtual-networks-overview
+http://go.microsoft.com/fwlink/?LinkID{equal}252473 = /documentation/articles/php-download-sdk/
+http://go.microsoft.com/fwlink/?LinkId{equal}296649 = /documentation/articles/virtual-networks-overview/
+http://go.microsoft.com/fwlink/p/?linkid{equal}390493 = /documentation/articles/virtual-machines-windows-extensions-features/
 
 # aka.ms
 http://aka.ms/runbookauthor/azure/automationaccounts = /documentation/articles/automation-configuring/
@@ -772,9 +783,9 @@ http://aka.ms/runbookauthor/azure/runbookoutput = /documentation/articles/automa
 http://aka.ms/azureautomationauthentication = /documentation/articles/automation-configuring/
 http://aka.ms/runbookgallery = /documentation/articles/automation-runbook-gallery/
 http://aka.ms/try-azure = /price/1rmb-trial
-http://aka.ms/sspk = /documentation/articles/media-services-sspk
+http://aka.ms/sspk = /documentation/articles/media-services-sspk/
 
-http://msdn.microsoft.com/library/dn642480.aspx = /documentation/articles/vs-azure-tools-publishing-using-powershell-scripts
+http://msdn.microsoft.com/library/dn642480.aspx = /documentation/articles/vs-azure-tools-publishing-using-powershell-scripts/
 
 
 # msdn
@@ -794,7 +805,6 @@ microsoft.com/library = microsoft.com/zh-cn/library
 /manage/services/web-sites/how-to-manage-websites/ = /documentation/articles/web-sites-manage/
 /manage/services/storage/how-to-manage-a-storage-account/ = /documentation/articles/storage-create-storage-account/
 /manage/services/web-sites/choose-web-app-service/ = /documentation/articles/choose-web-site-cloud-service-vm/
-/manage/windows/common-tasks/install-mongodb/ = /documentation/articles/virtual-machines-install-mongodb-windows-server-2008r2
 /manage/services/web-sites/how-to-monitor-websites/ = /documentation/articles/web-sites-monitor/
 /manage/services/web-sites/how-to-configure-websites/ = /documentation/articles/web-sites-configure/
 /en-us/manage/services/web-sites/how-to-monitor-websites/ = /documentation/articles/web-sites-monitor/
@@ -811,13 +821,14 @@ microsoft.com/library = microsoft.com/zh-cn/library
 /en-us/develop/php/tutorials/website-w-mysql-and-git/ = /documentation/articles/web-sites-php-mysql-deploy-use-git/
 /en-us/documentation/articles/ = /documentation/articles/
 /zh-cn/documentation/articles/ = /documentation/articles/
+/develop/net/common-tasks/custom-dns-web-site = /documentation/articles/web-sites-custom-domain-name/
 /downloads/archive-net-downloads/ = /downloads/
 ../en-us/pricing/free-trial/?WT.mc_id{equal}A261C142F = /pricing/1rmb-trial/
 /en-us/pricing/free-trial/ = /pricing/1rmb-trial/
 /pricing/free-trial = /pricing/1rmb-trial
 http://azure.microsoft.com/pricing/free-trial = /pricing/1rmb-trial
 [Azure Free Trial](azure.microsoft.com) = [Azure Trial](/pricing/1rmb-trial/)
-/pricing/details/app-service/#ssl-connections = /home/features/web-site#price
+/pricing/details/app-service/#ssl-connections = /home/features/web-site/pricing/
 /marketplace/active-directory/ = /home/features/identity/
 /virtual-network/ = /networking/
 ../includes/free-trial-note2.md = ../includes/free-trial-note.md
@@ -825,16 +836,16 @@ http://azure.microsoft.com/pricing/free-trial = /pricing/1rmb-trial
 ../documentation/services/ = /documentation/services/
 
 # global site url
-://portal.azure.com = ://manage.windowsazure.cn
-://portal.Azure.com = ://manage.windowsazure.cn
-://porta.azure.com = ://manage.windowsazure.cn
-://ms.portal.azure.com = ://manage.windowsazure.cn
-://management.azure.com = ://manage.windowsazure.cn
-://www.azure.com = ://www.windowsazure.cn
-[Portal](portal.azure.com)  = [Management Portal](http://manage.windowsazure.cn)
+://portal.azure.com = ://portal.azure.cn
+://portal.Azure.com = ://portal.Azure.cn
+://porta.azure.com = ://portal.azure.cn
+://ms.portal.azure.com = ://portal.azure.cn
+://management.azure.com = ://management.chinacloudapi.cn
+://www.azure.com = ://www.azure.cn
+[Portal](portal.azure.com)  = [Portal](http://portal.azure.cn)
 portal.microsoftonline.com = portal.partner.microsoftonline.cn
 login.microsoftonline.com = login.chinacloudapi.cn
-/overview/preview-portal/ = https://manage.windowsazure.cn
+/overview/preview-portal/ = http://portal.azure.cn
 
 http://feedback.azure.com/forums/217298-storage = /product-feedback
 /manage/services/storage/how-to-monitor-a-storage-account/ = /documentation/articles/storage-monitor-storage-account/
@@ -863,31 +874,28 @@ hdinsight-hadoop-solr-install-linux = hdinsight-hadoop-solr-install-v1
 http://www.microsoft.com/windowsazure/offers/ = /pricing/overview/
 http://azure.microsoft.com/support/legal/sla/ = /support/legal/sla/
 
-..\virtual-machines\virtual-machines-linux-use-ssh-key.md = /documentation/articles/virtual-machines-linux-use-ssh-key
-..\virtual-network\virtual-networks-reserved-public-ip.md = /documentation/articles/virtual-networks-reserved-public-ip.md
-
 http://azure.microsoft.com/support/sla/ = /support/legal/sla
 /develop/nodejs/tutorials/website-using-socketio/ = /documentation/articles/web-sites-nodejs-chat-app-socketio/
-/develop/nodejs/tutorials/getting-started/ = /documentation/articles/cloud-services-nodejs-develop-deploy-app
+/develop/nodejs/tutorials/getting-started/ = /documentation/articles/cloud-services-nodejs-develop-deploy-app/
 /develop/php/tutorials/create-a-windows-azure-account/ = /pricing/1rmb-trial/
 http://azure.microsoft.com/support/forums/ = /support/forums/
 http://azure.microsoft.com/support/options/ = /support/contact/
 /support/options/ = /support/contact/
 https://azure.microsoft.com/downloads = /downloads
-/develop/mobile/tutorials/single-sign-on-windows-8-dotnet = /documentation/articles/mobile-services-dotnet-how-to-use-client-library#authentication
-/develop/mobile/tutorials/get-started-ios = /documentation/articles/mobile-services-ios-get-started
-/develop/mobile/tutorials/get-started-with-data-ios = /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-data-ios
-/develop/mobile/tutorials/get-started-with-users-ios = /documentation/articles/mobile-services-ios-get-started-users
-/develop/mobile/tutorials/get-started-with-push-ios = /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-ios
-/develop/mobile/tutorials/authorize-users-in-scripts-ios = /documentation/articles/mobile-services-javascript-backend-service-side-authorization
-/develop/mobile/tutorials/get-started = /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started
-/manage/services/notification-hubs/breaking-news-localized-dotnet/ = /documentation/articles/notification-hubs-windows-store-dotnet-send-localized-breaking-news
-/manage/services/notification-hubs/notify-users = /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users
-http://azure.microsoft.com/manage/services/notification-hubs/getting-started-windows-dotnet/ = /documentation/articles/notification-hubs-windows-store-dotnet-get-started
-http://azure.microsoft.com/manage/services/notification-hubs/breaking-news-dotnet/ = /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news
-http://azure.microsoft.com/manage/services/notification-hubs/breaking-news-localized-dotnet/ = /documentation/articles/notification-hubs-windows-store-dotnet-send-localized-breaking-news
-http://azure.microsoft.com/manage/services/notification-hubs/notify-users/ = /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users
-http://azure.microsoft.com/manage/services/notification-hubs/notify-users-xplat-mobile-services/ = /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-push-notifications-app-users
+/develop/mobile/tutorials/single-sign-on-windows-8-dotnet = /documentation/articles/mobile-services-dotnet-how-to-use-client-library#authentication/
+/develop/mobile/tutorials/get-started-ios = /documentation/articles/mobile-services-ios-get-started/
+/develop/mobile/tutorials/get-started-with-data-ios = /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-data-ios/
+/develop/mobile/tutorials/get-started-with-users-ios = /documentation/articles/mobile-services-ios-get-started-users/
+/develop/mobile/tutorials/get-started-with-push-ios = /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started-with-push-ios/
+/develop/mobile/tutorials/authorize-users-in-scripts-ios = /documentation/articles/mobile-services-javascript-backend-service-side-authorization/
+/develop/mobile/tutorials/get-started = /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started/
+/manage/services/notification-hubs/breaking-news-localized-dotnet/ = /documentation/articles/notification-hubs-windows-store-dotnet-send-localized-breaking-news/
+/manage/services/notification-hubs/notify-users = /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users/
+http://azure.microsoft.com/manage/services/notification-hubs/getting-started-windows-dotnet/ = /documentation/articles/notification-hubs-windows-store-dotnet-get-started/
+http://azure.microsoft.com/manage/services/notification-hubs/breaking-news-dotnet/ = /documentation/articles/notification-hubs-windows-store-dotnet-send-breaking-news/
+http://azure.microsoft.com/manage/services/notification-hubs/breaking-news-localized-dotnet/ = /documentation/articles/notification-hubs-windows-store-dotnet-send-localized-breaking-news/
+http://azure.microsoft.com/manage/services/notification-hubs/notify-users/ = /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users/
+http://azure.microsoft.com/manage/services/notification-hubs/notify-users-xplat-mobile-services/ = /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-push-notifications-app-users/
 http://azure.microsoft.com/pricing/ = /pricing/
 /develop/ruby/how-to-guides/queue-service/ = /documentation/articles/storage-ruby-how-to-use-queue-storage/
 https://azure.microsoft.com/zh-cn/documentation/articles/ = /documentation/articles/
@@ -898,23 +906,21 @@ http://azure.microsoft.com/services/sql-database = /documentation/services/sql-d
 http://azure.microsoft.com/support/legal/services-terms/ = /legal/services-terms/
 http://azure.microsoft.com/pricing/calculator/ = /pricing/calculator/
 
-virtual-machines-extensions-customscript%20-with%20template.md = /documentation/articles/virtual-machines-extensions-customscript%20-with%20template
-virtual-machines-extensions-customscript -with template.md = /documentation/articles/virtual-machines-extensions-customscript%20-with%20template
-http://virtual-machines-install-trend.md = /documentation/articles/virtual-machines-install-trend
-http://virtual-machines-install-symantec.md = /documentation/articles/virtual-machines-install-symantec
-virtual-machines-../linux-endorsed-distributions.md = /documentation/articles/virtual-machines-linux-endorsed-distributions
-virtual-machines-create-multi-vm-deployment-../xplat-cli-install.md = /documentation/articles/virtual-machines-create-multi-vm-deployment-xplat-cli
-virtual-machines-docker-with-../xplat-cli-install.md = /documentation/articles/virtual-machines-docker-with-xplat-cli
+http://virtual-machines-install-trend.md = /documentation/articles/virtual-machines-windows-classic-install-trend/
+http://virtual-machines-install-symantec.md = /documentation/articles/virtual-machines-windows-classic-install-symantec/
+virtual-machines-../linux-endorsed-distributions.md = /documentation/articles/virtual-machines-linux-endorsed-distros/
+virtual-machines-create-multi-vm-deployment-../xplat-cli-install.md = /documentation/articles/virtual-machines-create-multi-vm-deployment-xplat-cli/
+virtual-machines-docker-with-../xplat-cli-install.md = /documentation/articles/virtual-machines-linux-classic-cli-use-docker/
 ../../../support/legal/sla/ = /support/legal/sla/
-/manage/linux/tutorials/virtual-machine-from-gallery/ = /documentation/articles/virtual-machines-linux-tutorial/
+/manage/linux/tutorials/virtual-machine-from-gallery/ = /documentation/articles/virtual-machines-linux-quick-create-cli/
 https://azure.microsoft.com/zh-cn/documentation/articles = /documentation/articles
-..\powershell-install-configure.md = /documentation/articles/powershell-install-configure
-..\virtual-network\virtual-networks-overview.md = /documentation/articles/virtual-networks-overview
+..\powershell-install-configure.md = /documentation/articles/powershell-install-configure/
+..\virtual-network\virtual-networks-overview.md = /documentation/articles/virtual-networks-overview/
 http://azure.microsoft.com/pricing/license-mobility/ = /pricing/license-mobility/
 http://azure.microsoft.com/support/trust-center/ = /support/trust-center/
-./xplat-cli-azure-resource-manager.md = /documentation/articles/xplat-cli-azure-resource-manager
-/best-practices-resource-manager-examples.md = /documentation/articles/best-practices-resource-manager-examples
-/best-practices-resource-manager-design-templates.md = /documentation/articles/best-practices-resource-manager-design-templates
+./xplat-cli-azure-resource-manager.md = /documentation/articles/xplat-cli-azure-resource-manager/
+/best-practices-resource-manager-examples.md = /documentation/articles/best-practices-resource-manager-examples/
+/best-practices-resource-manager-design-templates.md = /documentation/articles/best-practices-resource-manager-design-templates/
 /resource-group-overview.md = /documentation/articles/resource-group-overview
 http://azure.microsoft.com/en-gb/support/legal/offer-details/ = /support/legal/offer-details/
 http://azure.microsoft.com/pricing/enterprise-agreement/ = /pricing/enterprise-agreement/
@@ -922,6 +928,9 @@ http://azure.microsoft.com/pricing/enterprise-agreement/ = /pricing/enterprise-a
 https://acom-sandbox.azurewebsites.net/en-us/documentation/articles/web-sites-java-custom-upload/ = /documentation/articles/web-sites-java-custom-upload/
 /IaaS-Story/11-MultiNIC/arm/multinic. = /IaaS-Story/11-MultiNIC/arm/virtual-network-deploy-multinic-arm-cli.
 /IaaS-Story/11-MultiNIC/classic/multinic. = /IaaS-Story/11-MultiNIC/classic/virtual-network-deploy-multinic-classic-cli.
+
+
+
 
 [REGEX]
 
@@ -948,11 +957,11 @@ https://acom-sandbox.azurewebsites.net/en-us/documentation/articles/web-sites-ja
 # [(Any | .NET)](mobile-services-dotnet-backend-service-side-authorization.md)
 # [Monitor and troubleshoot protection for VMware, VMM, Hyper-V and Physical sites](./site-recovery-monitoring-and-troubleshooting.md)
 # [Reaching out for Microsoft Support](./site-recovery-monitoring-and-troubleshooting.md#reaching-out-for-microsoft-support)
-\[([^\[|^\]]*)\]\((\.\./|\./)?(?!includes/|media/|services/)([\w|\-]+/)?(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(\.md)?/?\) = [\1](/documentation/articles/\5)
-\[([^\[|^\]]*)\]\((\.\./|\./)?(?!includes/|media/|services/)([\w|\-]+/)?(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(\.md)?/?(#[^\(|^\)|^/]*)/?\) = [\1](/documentation/articles/\5\7)
-\[([^\[|^\]]*)\]\((\.\./|\./)?(?!includes/|media/|services/)([\w|\-]+/)?(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(\.md)?/?\s*("[^"]*")\) = [\1](/documentation/articles/\5 \7)
-\[([^\[|^\]]*)\]\((\.\./|\./)?(?!includes/|media/|services/)([\w|\-]+/)?(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(\.md)?/?(#[^\(|^\)|^/]*)/?\s*("[^"]*")\) = [\1](/documentation/articles/\5\7 \8)
-\[(\(Any \|.+\))\]\(([\w|\-]+)(\.md)?/?\) = [\1](/documentation/articles/\2)
+\[([^\[|^\]]*)\]\((\.\./|\./)?(?!includes/|media/|services/)([\w|\-]+/)?(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(\.md)?/?\) = [\1](/documentation/articles/\5/)
+\[([^\[|^\]]*)\]\((\.\./|\./)?(?!includes/|media/|services/)([\w|\-]+/)?(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(\.md)?/?(#[^\(|^\)|^/]*)/?\) = [\1](/documentation/articles/\5/\7)
+\[([^\[|^\]]*)\]\((\.\./|\./)?(?!includes/|media/|services/)([\w|\-]+/)?(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(\.md)?/?\s*("[^"]*")\) = [\1](/documentation/articles/\5/ \7)
+\[([^\[|^\]]*)\]\((\.\./|\./)?(?!includes/|media/|services/)([\w|\-]+/)?(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(\.md)?/?(#[^\(|^\)|^/]*)/?\s*("[^"]*")\) = [\1](/documentation/articles/\5/\7 \8)
+\[(\(Any \|.+\))\]\(([\w|\-]+)(\.md)?/?\) = [\1](/documentation/articles/\2/)
 
 # Reference like [xxxx]: xxxx
 # [link text]: xxx-xxx-xxx.md
@@ -966,36 +975,36 @@ https://acom-sandbox.azurewebsites.net/en-us/documentation/articles/web-sites-ja
 # [link text]: xxx-xxx-xxx.md#xxx-xxx
 # [hdinsight-hbase-get-started]: ../hdinsight-hbase-get-started.md 
 # [2b8c3488]: ../hdinsight-storm-getting-started.md "Learn how to create a Storm on HDInsight cluster and use the Storm Dashboard to deploy example topologies."
-# [App Service Pricing Details]: /home/features/web-site/#price
+# [App Service Pricing Details]: /home/features/web-site/pricing/
 # [Visual Studio]:web-sites-dotnet-get-started.md
 # [execution model-vms]: fundamentals-application-models.md#VMachine
 # [execution model-cloud services]: fundamentals-application-models.md#CloudServices
 # [dotnet]: /develop/net/
-\[([^\[|^\]]*)\]:\s*(\.\./|\./)?(?!includes/|media/|services/)([\w|\-]+/)?(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(\.md)?/?[ \t\f\v\r]*\n = [\1]: /documentation/articles/\5\n
-\[([^\[|^\]]*)\]:\s*(\.\./|\./)?(?!includes/|media/|services/)([\w|\-]+/)?(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(\.md)?/?(#[^/]*)/?[ \t\f\v\r]*\n = [\1]: /documentation/articles/\5\7\n
-\[([^\[|^\]]*)\]:\s*(\.\./|\./)?(?!includes/|media/|services/)([\w|\-]+/)?(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(\.md)?/?\s*("[^"]*")[ \t\f\v\r]*\n = [\1]: /documentation/articles/\5 \7\n
-\[([^\[|^\]]*)\]:\s*(\.\./|\./)?(?!includes/|media/|services/)([\w|\-]+/)?(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(\.md)?/?(#[^/]*)/?\s*("[^"]*")[ \t\f\v\r]*\n = [\1]: /documentation/articles/\5\7 \8\n
-\[([^\[|^\]]*)\]:\s*(\.\./|\./)?(?!includes/|media/|services/)([\w|\-]+/)?(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(\.md)?/?[ \t\f\v]*$ = [\1]: /documentation/articles/\5
-\[([^\[|^\]]*)\]:\s*(\.\./|\./)?(?!includes/|media/|services/)([\w|\-]+/)?(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(\.md)?/?(#[^/]*)/?[ \t\f\v\r]*$ = [\1]: /documentation/articles/\5\7
-\[([^\[|^\]]*)\]:\s*(\.\./|\./)?(?!includes/|media/|services/)([\w|\-]+/)?(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(\.md)?/?\s*("[^"]*")[ \t\f\v\r]*$ = [\1]: /documentation/articles/\5 \7
-\[([^\[|^\]]*)\]:\s*(\.\./|\./)?(?!includes/|media/|services/)([\w|\-]+/)?(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(\.md)?/?(#[^/]*)/?\s*("[^"]*")[ \t\f\v\r]*$ = [\1]: /documentation/articles/\5\7 \8
+\[([^\[|^\]]*)\]:\s*(\.\./|\./)?(?!includes/|media/|services/)([\w|\-]+/)?(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(\.md)?/?[ \t\f\v\r]*\n = [\1]: /documentation/articles/\5/\n
+\[([^\[|^\]]*)\]:\s*(\.\./|\./)?(?!includes/|media/|services/)([\w|\-]+/)?(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(\.md)?/?(#[^/]*)/?[ \t\f\v\r]*\n = [\1]: /documentation/articles/\5/\7\n
+\[([^\[|^\]]*)\]:\s*(\.\./|\./)?(?!includes/|media/|services/)([\w|\-]+/)?(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(\.md)?/?\s*("[^"]*")[ \t\f\v\r]*\n = [\1]: /documentation/articles/\5/ \7\n
+\[([^\[|^\]]*)\]:\s*(\.\./|\./)?(?!includes/|media/|services/)([\w|\-]+/)?(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(\.md)?/?(#[^/]*)/?\s*("[^"]*")[ \t\f\v\r]*\n = [\1]: /documentation/articles/\5/\7 \8\n
+\[([^\[|^\]]*)\]:\s*(\.\./|\./)?(?!includes/|media/|services/)([\w|\-]+/)?(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(\.md)?/?[ \t\f\v]*$ = [\1]: /documentation/articles/\5/
+\[([^\[|^\]]*)\]:\s*(\.\./|\./)?(?!includes/|media/|services/)([\w|\-]+/)?(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(\.md)?/?(#[^/]*)/?[ \t\f\v\r]*$ = [\1]: /documentation/articles/\5/\7
+\[([^\[|^\]]*)\]:\s*(\.\./|\./)?(?!includes/|media/|services/)([\w|\-]+/)?(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(\.md)?/?\s*("[^"]*")[ \t\f\v\r]*$ = [\1]: /documentation/articles/\5/ \7
+\[([^\[|^\]]*)\]:\s*(\.\./|\./)?(?!includes/|media/|services/)([\w|\-]+/)?(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(\.md)?/?(#[^/]*)/?\s*("[^"]*")[ \t\f\v\r]*$ = [\1]: /documentation/articles/\5/\7 \8
 
 # [link text](/documentation/articles/xxx-xxx-xxx.md#xxx-xxx)
 # [link text](/documentation/articles/xxx-xxx-xxx.md)
-\[([^\[|^\]]*)\]\(/documentation/articles/([\w|\-]+)\.md/?\) = [\1](/documentation/articles/\2)
-\[([^\[|^\]]*)\]\(/documentation/articles/([\w|\-]+)\.md/?(#[^\(|^\)|^/]*)/?\) = [\1](/documentation/articles/\2\3)
+\[([^\[|^\]]*)\]\(/documentation/articles/([\w|\-]+)\.md/?\) = [\1](/documentation/articles/\2/)
+\[([^\[|^\]]*)\]\(/documentation/articles/([\w|\-]+)\.md/?(#[^\(|^\)|^/]*)/?\) = [\1](/documentation/articles/\2/\3)
 
 # [link text]: /documentation/articles/xxx-xxx-xxx.md#xxx-xxx
 # [link text]: /documentation/articles/xxx-xxx-xxx.md
-\[([^\[|^\]]*)\]:\s*/documentation/articles/([\w|\-]+)\.md/?[ \t\f\v\r]*\n = [\1]: /documentation/articles/\2\n
-\[([^\[|^\]]*)\]:\s*/documentation/articles/([\w|\-]+)\.md/?(#[^/]*)/[ \t\f\v\r]*\n? = [\1]: /documentation/articles/\2\3\n
+\[([^\[|^\]]*)\]:\s*/documentation/articles/([\w|\-]+)\.md/?[ \t\f\v\r]*\n = [\1]: /documentation/articles/\2/\n
+\[([^\[|^\]]*)\]:\s*/documentation/articles/([\w|\-]+)\.md/?(#[^/]*)/[ \t\f\v\r]*\n? = [\1]: /documentation/articles/\2/\3\n
 
 # href="hdinsight-use-mapreduce.md"
 # href="../hdinsight-hadoop-linux-use-ssh-unix/"
 # href="../active-directory-passwords-customize#password-management-behavior"
 href{equal}"([\w|\-]*)\.md" = href{equal}"/documentation/articles/\1"
-href{equal}"\.\./(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(.md)?/?" = href{equal}"/documentation/articles/\2"
-href{equal}"\.\./(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(.md)?/?#([\w|\-]+)" = href{equal}"/documentation/articles/\2#\4"
+href{equal}"\.\./(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(.md)?/?" = href{equal}"/documentation/articles/\2/"
+href{equal}"\.\./(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(.md)?/?#([\w|\-]+)" = href{equal}"/documentation/articles/\2/#\4"
 
 /documentation/articles/# = #
 # ../services/xxxx = /home/features/xxxx
@@ -1023,12 +1032,12 @@ href{equal}"\.\./(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(.md)?/?#([
 # /home/feature/
 \[(.+)\]: /pricing/details/ = [\1]: /pricing/overview/
 # http://azure.microsoft.com/pricing/details/sql-database
-(https?://azure.microsoft.com)?/pricing/details/([\w\-]+)/?(#[\w\-]*)? = /home/features/\2/#price
-(https?://azure.microsoft.com)?/pricing/details/?(#[\w\-]+) = /home/features/\2/#price
+(https?://azure.microsoft.com)?/pricing/details/([\w\-]+)/?(#[\w\-]*)? = /home/features/\2/pricing/
+(https?://azure.microsoft.com)?/pricing/details/?(#[\w\-]+) = /home/features/\2/pricing/
 \.\./services/([^\/]*)/ = /home/features/\1/
 ("|\()(https?://azure.microsoft.com)?/services/ = \1/home/features/
 (https?://azure.microsoft.com)?/pricing/purchase-options/ = /pricing/overview/
-/pricing/overview/([\w|\-]+)/ = /home/features/\1/#price
+/pricing/overview/([\w|\-]+)/ = /home/features/\1/pricing/
 
 
 # Terminology
@@ -1041,8 +1050,13 @@ href{equal}"\.\./(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(.md)?/?#([
 
 
 
-
 [SEMIREGEX]
+
+(C|c)lassic (P|p)ortal = Classic Management Portal
+
+(P|p)review (P|p)ortal = Portal Preview
+
+/documentation/articles/virtual-machines-linux-opensource(-links)?/ = /documentation/articles/virtual-machines-linux-opensource-links/
 
 # Landingpage
 (\.\.)?/documentation/services/app-service/(web/)? = /documentation/services/web-sites/
@@ -1054,14 +1068,14 @@ href{equal}"\.\./(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(.md)?/?#([
 
 # Portal
 #(P|p)review (P|p)ortal = Management Portal
-(C|c)lassic (P|p)ortal = Management Portal
-(C|c)lassic (P|p)ortal = Management Portal
-(O|o)ld (P|p)ortal = Management Portal
-(A|a)zure (P|p)ortal = Azure Management Portal
+#(C|c)lassic (P|p)ortal = Management Portal
+#(C|c)lassic (P|p)ortal = Management Portal
+#(O|o)ld (P|p)ortal = Management Portal
+#(A|a)zure (P|p)ortal = Azure Management Portal
 #preview\-portal = management-portal
 
 # Others
-https?://msdn.microsoft.com/(zh-cn/)?library/(windows)?azure/dd179354.aspx = /documentation/articles/storage-manage-access-to-resources
+https?://msdn.microsoft.com/(zh-cn/)?library/(windows)?azure/dd179354.aspx = /documentation/articles/storage-manage-access-to-resources/
 hdinsight-administer-use-management-portal(-v1)?(\.md)? = hdinsight-administer-use-management-portal-v1
 \[WindowsAzure\]: http://azure.microsoft.com = [WindowsAzure]: http://www.windowsazure.cn
 /en\-(us|US)/ = /
@@ -1069,7 +1083,7 @@ hdinsight-administer-use-management-portal(-v1)?(\.md)? = hdinsight-administer-u
 windowsazure.com(/en-us)? = windowsazure.cn
 (South)?East Asia = China East
 
-/documentation/articles/virtual-machines-windows-tutorial(-classic-portal)? = /documentation/articles/virtual-machines-windows-tutorial-classic-portal
+/documentation/articles/virtual-machines-windows-tutorial(-classic-portal)?/ = /documentation/articles/virtual-machines-windows-classic-tutorial/
 
 http://azure.microsoft.com/blog/topics/media-services/ = /blog/tags/媒体服务
 //en.wikipedia.org/wiki/Adaptive_bitrate_streaming = //zh.wikipedia.org/wiki/自适性串流
@@ -1077,7 +1091,7 @@ http://azure.microsoft.com/blog/topics/media-services/ = /blog/tags/媒体服务
 //en.wikipedia.org/wiki/BusyBox = //zh.wikipedia.org/wiki/BusyBox
 /blog/topics/web/ = /blog/tags/网站/
 
-/documentation/articles/hdinsight-get-started-emulator = /documentation/articles/hdinsight-hadoop-emulator-get-started
+/documentation/articles/hdinsight-get-started-emulator/ = /documentation/articles/hdinsight-hadoop-emulator-get-started/
 hdinsight-hadoop-customize-cluster(-v1)? = hdinsight-hadoop-customize-cluster-v1
 hdinsight-hadoop-optimize-hive-query(-v1)? = hdinsight-hadoop-optimize-hive-query-v1
 hdinsight-hadoop-solr-install(-v1)? = hdinsight-hadoop-solr-install-v1
@@ -1088,9 +1102,9 @@ hdinsight-hbase-tutorial-get-started(-v1|-linux)? = hdinsight-hbase-tutorial-get
 hdinsight-learn-hadoop-use-sample-gallery(-v1) = hdinsight-learn-hadoop-use-sample-gallery-v1
 hdinsight-provision-clusters(-v1)? = hdinsight-provision-clusters-v1
 hdinsight-component-versioning(-v1)? = hdinsight-component-versioning-v1
-hdinsight-hadoop-giraph-install(-v1)? = hdinsight-hadoop-giraph-install-v1
+hdinsight-hadoop-giraph-install(-v1|-linux)? = hdinsight-hadoop-giraph-install-v1
 /home/features/app-service/(web/)? = /home/features/web-site/
-/documentation/articles/xplat-cli(-install)? = /documentation/articles/xplat-cli-install
+/documentation/articles/xplat-cli(-install)?/ = /documentation/articles/xplat-cli-install/
 
 https?://azure.microsoft.com/(zh-cn/|en-us/)?support/faq/ = /support/faq/
 https?://azure.microsoft.com/services/active-directory/ = 	/home/features/identity/
@@ -1099,7 +1113,7 @@ https?://azure.microsoft.com/(zh-cn/|en-us/)?downloads/ = 	/downloads/
 https?://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/ = /pricing/1rmb-trial/
 https?://azure.microsoft.com/documentation/services/ = /documentation/services/
 https?://azure.microsoft.com/develop/ = /develop/
-https?://azure.microsoft.com/documentation/videos/install-and-use-azure-powershell/ = /documentation/articles/powershell-install-configure
+https?://azure.microsoft.com/documentation/videos/install-and-use-azure-powershell/ = /documentation/articles/powershell-install-configure/
 https?://azure.microsoft.com/overview/preview-portal/ = https://manage.windowsazure.cn
 https?://azure.microsoft.com/services/active-directory/ = 	/home/features/identity/
 https?://azure.microsoft.com/(zh-cn/|en-us/)?downloads/ = 	/downloads/
@@ -1107,6 +1121,7 @@ https?://azure.microsoft.com/documentation/articles/ = /documentation/articles/
 https?://azure.microsoft.com/pricing/1rmb-trial/ = /pricing/1rmb-trial/
 https?://azure.microsoft.com/home/features/identity/all/ = /home/features/identity/
 https?://azure.microsoft.com/home/features = /home/features
+web app to Azure Web Apps? = web app to Azure
 
 [CORRECTION]
 
@@ -1123,50 +1138,50 @@ Azure Storage SDK = Microsoft Azure Storage SDK
 Azure Tools for Microsoft Visual Studio = Microsoft Azure Tools for Microsoft Visual Studio
 /zh-cn/library/windowsazure/ = /zh-cn/library/azure/
 /home/features/active-directory/ = /home/features/identity/
-/documentation/articles/app-service-value-prop-what-is = /documentation/services/web-sites
-/documentation/articles/app-service-choose-me = /documentation/services/web-sites
-/documentation/articles/app-service-web-overview = /home/features/web-site
-/documentation/articles/Washington = Washington
-/documentation/articles/Redmond = Redmond
-/documentation/articles/Microsoft = Microsoft
-/documentation/articles/Azure = Azure
-/documentation/articles/US = US
-/documentation/articles/SNI = SNI
-/documentation/articles/TLS = TLS
-/documentation/articles/install-and-configure-cli = /documentation/articles/xplat-cli-install
-/documentation/articles/free-trial = /pricing/1rmb-trial/
-/documentation/articles/automation-creating-or-importing-a-runbook = /documentation/articles/automation-creating-importing-runbook
-/documentation/articles/hdinsight-adminster-use-management-portal = /documentation/articles/hdinsight-administer-use-management-portal-v1
-/documentation/articles/50 = 50
-/documentation/articles/256 = 256
-/documentation/articles/hdinsight-apache-storm-tutorial-get-started-v1 = /documentation/articles/hdinsight-apache-storm-tutorial-get-started
-/documentation/articles/hdinsight-high-availability-linux = /documentation/articles/hdinsight-high-availability
-/documentation/articles/master-status = master-status
-/documentation/articles/hadoop-use-pig = /documentation/articles/hdinsight-hadoop-use-pig-powershell
-/documentation/articles/hadoop-use-hive = /documentation/articles/hdinsight-hadoop-use-hive-powershell
-/documentation/articles/hadoop-use-mapreduce = /documentation/articles/hdinsight-hadoop-use-mapreduce-powershell
-/documentation/articles/line-by-line = line-by-line
-/documentation/articles/hdinsight-storm-deploy-monitor-topology-linux = /documentation/articles/hdinsight-storm-deploy-monitor-topology
-/documentation/articles/10 = 10
-/documentation/articles/PTVS = PTVS
-/documentation/articles/2223 = 2223
-/documentation/articles/PyPI = PyPi
-/documentation/articles/WebPI = WebPI
-[y/N]: /documentation/articles/y = [y/N]: y
-/documentation/articles/SNI = SNI
-[Windows, Linux]: /documentation/articles/linux = [Windows, Linux]: linux
-/documentation/articles/media-services-channels-overview = /documentation/articles/media-services-manage-channels-overview
-[AZURE.NOTE](/documentation/articles/optional) = [AZURE.NOTE]  optional
+/documentation/articles/app-service-value-prop-what-is/ = /documentation/services/web-sites/
+/documentation/articles/app-service-choose-me/ = /documentation/services/web-sites/
+/documentation/articles/app-service-web-overview/ = /home/features/web-site/
+/documentation/articles/Washington/ = Washington
+/documentation/articles/Redmond/ = Redmond
+/documentation/articles/Microsoft/ = Microsoft
+/documentation/articles/Azure/ = Azure
+/documentation/articles/US/ = US
+/documentation/articles/SNI/ = SNI
+/documentation/articles/TLS/ = TLS
+/documentation/articles/install-and-configure-cli/ = /documentation/articles/xplat-cli-install/
+/documentation/articles/free-trial/ = /pricing/1rmb-trial/
+/documentation/articles/automation-creating-or-importing-a-runbook/ = /documentation/articles/automation-creating-importing-runbook/
+/documentation/articles/hdinsight-adminster-use-management-portal/ = /documentation/articles/hdinsight-administer-use-management-portal-v1/
+/documentation/articles/50/ = 50
+/documentation/articles/256/ = 256
+/documentation/articles/hdinsight-apache-storm-tutorial-get-started-v1/ = /documentation/articles/hdinsight-apache-storm-tutorial-get-started/
+/documentation/articles/hdinsight-high-availability-linux/ = /documentation/articles/hdinsight-high-availability/
+/documentation/articles/master-status/ = master-status
+/documentation/articles/hadoop-use-pig/ = /documentation/articles/hdinsight-hadoop-use-pig-powershell/
+/documentation/articles/hadoop-use-hive/ = /documentation/articles/hdinsight-hadoop-use-hive-powershell/
+/documentation/articles/hadoop-use-mapreduce/ = /documentation/articles/hdinsight-hadoop-use-mapreduce-powershell/
+/documentation/articles/line-by-line/ = line-by-line
+/documentation/articles/hdinsight-storm-deploy-monitor-topology-linux/ = /documentation/articles/hdinsight-storm-deploy-monitor-topology/
+/documentation/articles/10/ = 10
+/documentation/articles/PTVS/ = PTVS
+/documentation/articles/2223/ = 2223
+/documentation/articles/PyPI/ = PyPi
+/documentation/articles/WebPI/ = WebPI
+[y/N]: /documentation/articles/y/ = [y/N]: y
+/documentation/articles/SNI/ = SNI
+[Windows, Linux]: /documentation/articles/linux/ = [Windows, Linux]: linux
+/documentation/articles/media-services-channels-overview/ = /documentation/articles/media-services-manage-channels-overview/
+[AZURE.NOTE](/documentation/articles/optional/) = [AZURE.NOTE]  optional
 Azure Active Directory Connect = Microsoft Azure Active Directory Connect
 ://technet.microsoft.com/library/ = ://technet.microsoft.com/zh-cn/library/
-/develop/mobile/how-to-guides/register-for-twitter-authentication = /documentation/articles/mobile-services-how-to-register-twitter-authentication
+/develop/mobile/how-to-guides/register-for-twitter-authentication = /documentation/articles/mobile-services-how-to-register-twitter-authentication/
 /documentation/services/sql-database/ = /documentation/services/sql-databases/
 dl.windowsazure.cn/javadoc/ = azure.github.io/azure-sdk-for-java/
 dl.windowsazure.cn/storage/javadoc/ = azure.github.io/azure-storage-java/
 dl.windowsazure.cn/androiddocs/ = azure.github.io/azure-storage-android/
 dl.windowsazure.cn/nodedocs/ = dl.windowsazure.com/nodedocs/
 dl.windowsazure.cn/nodestoragedocs/index.html = dl.windowsazure.com/nodestoragedocs/index.html
-[blob-name](/documentation/articles/snapshot-time) = [blob-name] (snapshot-time)
+[blob-name](/documentation/articles/snapshot-time/) = [blob-name] (snapshot-time)
 dastouri.chinacloudsites.cn = dastouri.azurewebsites.net
 auxmktplceprod.blob.core.chinacloudapi.cn = auxmktplceprod.blob.core.windows.net
 blitline.blob.core.chinacloudapi.cn = blitline.blob.core.windows.net
@@ -1174,98 +1189,100 @@ blitline.blob.core.chinacloudapi.cn = blitline.blob.core.windows.net
 zumo.blob.core.chinacloudapi.cn = zumo.blob.core.windows.net
 [AzureCloud for global Azure](https://manage.windowsazure.cn) = [AzureCloud for global Azure](https://manage.windowsazure.com)
 http://msdn.microsoft.com/zh-cn/library/azure/gg551722.aspx = /documentation/articles/cloud-services-certs-create/
-/develop/net/common-tasks/custom-dns-web-site = /documentation/articles/web-sites-custom-domain-name
 http://msdn.microsoft.com/zh-cn/library/azure/dn195587.aspx = /documentation/articles/active-directory-token-and-claims/
-http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/getting-started-with-windows-azure-webjobs = /documentation/articles/websites-dotnet-webjobs-sdk-get-started
-http://msdn.microsoft.com/zh-cn/library/azure/dn643637.aspx = /documentation/articles/automation-creating-importing-runbook
-http://msdn.microsoft.com/zh-cn/library/azure/dn940016.aspx = /documentation/articles/automation-schedules
+http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/getting-started-with-windows-azure-webjobs = /documentation/articles/websites-dotnet-webjobs-sdk-get-started/
+http://msdn.microsoft.com/zh-cn/library/azure/dn643637.aspx = /documentation/articles/automation-creating-importing-runbook/
+http://msdn.microsoft.com/zh-cn/library/azure/dn940016.aspx = /documentation/articles/automation-schedules/
 http://msdnstage.redmond.corp.microsoft.com/zh-cn/library/dn479185.aspx = http://msdn.microsoft.com/zh-cn/library/dn479185.aspx
 azuresdkscu.blob.core.chinacloudapi.cn = azuresdkscu.blob.core.windows.net
-http://msdn.microsoft.com/zh-cn/library/azure/dn781422.aspx = /documentation/articles/automation-runbook-gallery
-https://msdn.microsoft.com/zh-cn/library/azure/dn783459.aspx = /documentation/articles/media-services-playready-license-template-overview
-https://msdn.microsoft.com/zh-cn/library/dn643637.aspx = /documentation/articles/automation-creating-importing-runbook
-http://msdn.microsoft.com/zh-cn/library/dn643637.aspx = /documentation/articles/automation-creating-importing-runbook
-https://msdn.microsoft.com/zh-cn/library/dn940012.aspx = /documentation/articles/automation-variables
-https://msdn.microsoft.com/zh-cn/library/dn940015.aspx = /documentation/articles/automation-credentials
-http://msdn.microsoft.com/zh-cn/library/azure/dn857355.aspx = /documentation/articles/automation-child-runbooks
+http://msdn.microsoft.com/zh-cn/library/azure/dn781422.aspx = /documentation/articles/automation-runbook-gallery/
+https://msdn.microsoft.com/zh-cn/library/azure/dn783459.aspx = /documentation/articles/media-services-playready-license-template-overview/
+https://msdn.microsoft.com/zh-cn/library/dn643637.aspx = /documentation/articles/automation-creating-importing-runbook/
+http://msdn.microsoft.com/zh-cn/library/dn643637.aspx = /documentation/articles/automation-creating-importing-runbook/
+https://msdn.microsoft.com/zh-cn/library/dn940012.aspx = /documentation/articles/automation-variables/
+https://msdn.microsoft.com/zh-cn/library/dn940015.aspx = /documentation/articles/automation-credentials/
+http://msdn.microsoft.com/zh-cn/library/azure/dn857355.aspx = /documentation/articles/automation-child-runbooks/
 https://github.com/apache/storm/blob/master/STORM-UI-REST-API.md = https://github.com/apache/storm/blob/master/docs/documentation/ui-rest-api.md
 https://msdn.microsoft.com/zh-cn/library/dn931989.aspx = https://msdn.microsoft.com/zh-cn/library/mt186546.aspx
 http://technet.microsoft.com/zh-cn/library/ee176949.aspx = https://technet.microsoft.com/zh-cn/library/dn425048.aspx
 https://msdn.microsoft.com/zh-cn/library/azure/dn783464.aspx = https://azure.microsoft.com/zh-cn/blog/azure-media-services-rtmp-support-and-live-encoders/
-https://msdn.microsoft.com/zh-cn/library/azure/dn783467.aspx = /documentation/articles/media-services-protect-with-drm
-http://msdn.microsoft.com/zh-cn/library/azure/dn783467.aspx = /documentation/articles/media-services-protect-with-drm
-http://msdn.microsoft.com/zh-cn/library/azure/dn783466.aspx = /documentation/articles/media-services-manage-channels-overview
-http://msdn.microsoft.com/zh-cn/library/azure/jj129582.aspx = /documentation/articles/media-services-dotnet-encoding-units
-http://msdn.microsoft.com/zh-cn/library/azure/dn783455.aspx = /documentation/articles/media-services-index-content
-http://msdn.microsoft.com/zh-cn/library/azure/dn783457.aspx = /documentation/articles/media-services-protect-with-aes128
-http://msdn.microsoft.com/zh-cn/library/azure/dn783451.aspx = /documentation/articles/media-services-dotnet-configure-asset-delivery-policy
-http://msdn.microsoft.com/zh-cn/library/azure/jj889436.aspx = /documentation/articles/media-services-dynamic-packaging-overview
-http://msdn.microsoft.com/zh-cn/library/azure/dn189154.aspx = /documentation/articles/media-services-static-packaging
-http://msdn.microsoft.com/zh-cn/library/azure/dn303341.aspx = /documentation/articles/media-services-azure-media-customize-ame-presets
-http://msdn.microsoft.com/zh-cn/library/azure/dn640496.aspx = /documentation/articles/media-services-azure-media-customize-ame-presets
-http://msdn.microsoft.com/zh-cn/library/azure/dn640504.aspx = /documentation/articles/media-services-azure-media-customize-ame-presets
-http://msdn.microsoft.com/zh-cn/library/azure/jj129571.aspx = /documentation/articles/media-services-dotnet-connect_programmatically
-http://msdn.microsoft.com/zh-cn/library/azure/dn271889.aspx = /documentation/articles/meda-services-managing-multiple-storage-accounts
-http://msdn.microsoft.com/zh-cn/library/azure/dn261241.aspx = /documentation/articles/media-services-check-job-progress#check_progress_with_queues
-/documentation/articles/virtual-machines-windows-tutorial/ = /documentation/articles/virtual-machines-windows-tutorial-classic-portal/
-/home/features/app-service/#price = /home/features/web-site/#price
+https://msdn.microsoft.com/zh-cn/library/azure/dn783467.aspx = /documentation/articles/media-services-protect-with-drm/
+http://msdn.microsoft.com/zh-cn/library/azure/dn783467.aspx = /documentation/articles/media-services-protect-with-drm/
+http://msdn.microsoft.com/zh-cn/library/azure/dn783466.aspx = /documentation/articles/media-services-manage-channels-overview/
+http://msdn.microsoft.com/zh-cn/library/azure/jj129582.aspx = /documentation/articles/media-services-dotnet-encoding-units/
+http://msdn.microsoft.com/zh-cn/library/azure/dn783455.aspx = /documentation/articles/media-services-index-content/
+http://msdn.microsoft.com/zh-cn/library/azure/dn783457.aspx = /documentation/articles/media-services-protect-with-aes128/
+http://msdn.microsoft.com/zh-cn/library/azure/dn783451.aspx = /documentation/articles/media-services-dotnet-configure-asset-delivery-policy/
+http://msdn.microsoft.com/zh-cn/library/azure/jj889436.aspx = /documentation/articles/media-services-dynamic-packaging-overview/
+http://msdn.microsoft.com/zh-cn/library/azure/dn189154.aspx = /documentation/articles/media-services-static-packaging/
+http://msdn.microsoft.com/zh-cn/library/azure/dn303341.aspx = /documentation/articles/media-services-azure-media-customize-ame-presets/
+http://msdn.microsoft.com/zh-cn/library/azure/dn640496.aspx = /documentation/articles/media-services-azure-media-customize-ame-presets/
+http://msdn.microsoft.com/zh-cn/library/azure/dn640504.aspx = /documentation/articles/media-services-azure-media-customize-ame-presets/
+http://msdn.microsoft.com/zh-cn/library/azure/jj129571.aspx = /documentation/articles/media-services-dotnet-connect_programmatically/
+http://msdn.microsoft.com/zh-cn/library/azure/dn271889.aspx = /documentation/articles/meda-services-managing-multiple-storage-accounts/
+http://msdn.microsoft.com/zh-cn/library/azure/dn261241.aspx = /documentation/articles/media-services-check-job-progress#check_progress_with_queues/
+/documentation/articles/virtual-machines-windows-tutorial/ = /documentation/articles/virtual-machines-windows-classic-tutorial/
+/home/features/app-service/pricing/ = /home/features/web-site/pricing/
 http://msdn.microsoft.com/zh-cn/library/azure/ee336279 = /documentation/articles/sql-database-technical-overview/
 http://msdn.microsoft.com/zh-cn/library/azure/dn741330.aspx = /documentation/articles/sql-database-web-business-sunset-faq/
 http://git-scm.com/book/en/Getting-Started-Installing-Git = http://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%AE%89%E8%A3%85-Git
-http://msdn.microsoft.com/zh-cn/library/azure/dn879137.aspx = /documentation/articles/automation-edit-textual-runbook
+http://msdn.microsoft.com/zh-cn/library/azure/dn879137.aspx = /documentation/articles/automation-edit-textual-runbook/
 http://azure.microsoft.com/blog/2014/01/28/more-to-explore-configuration-options-unlocked-in-windows-azure-web-sites/ = /blog/2014/01/28/more-to-explore-configuration-options-unlocked-in-windows-azure-web-sites/
-https://msdn.microsoft.com/zh-cn/library/dn643628.aspx = /documentation/articles/automation-starting-a-runbook
+https://msdn.microsoft.com/zh-cn/library/dn643628.aspx = /documentation/articles/automation-starting-a-runbook/
 https://msdn.microsoft.com/zh-cn/library/azure/dn643629.aspx = /documentation/services/automation
-https://msdn.microsoft.com/zh-cn/library/azure/dn781422.aspx = /documentation/articles/automation-runbook-gallery
-https://msdn.microsoft.com/zh-cn/library/dn865019.aspx = /documentation/articles/automation-configuring
-https://msdn.microsoft.com/zh-cn/library/dn879137.aspx = /documentation/articles/automation-edit-textual-runbook
+https://msdn.microsoft.com/zh-cn/library/azure/dn781422.aspx = /documentation/articles/automation-runbook-gallery/
+https://msdn.microsoft.com/zh-cn/library/dn865019.aspx = /documentation/articles/automation-configuring/
+https://msdn.microsoft.com/zh-cn/library/dn879137.aspx = /documentation/articles/automation-edit-textual-runbook/
 http://feedback.azure.com/forums/246290-azure-automation = /product-feedback
-http://msdn.microsoft.com/zh-cn/library/azure/dn879147.aspx = /documentation/articles/automation-testing-runbook
-https://msdn.microsoft.com/zh-CN/library/dn781422.aspx = /documentation/articles/automation-runbook-gallery
-https://msdn.microsoft.com/zh-CN/library/dn879148.aspx = /documentation/articles/automation-runbook-output-and-messages
-https://msdn.microsoft.com/zh-CN/library/dn643637.aspx = /documentation/articles/automation-creating-importing-runbook
-/documentation/articles/hdinsight-use-blob-storage = /documentation/articles/hdinsight-hadoop-use-blob-storage
-/documentation/articles/hdinsight-get-started = /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
+http://msdn.microsoft.com/zh-cn/library/azure/dn879147.aspx = /documentation/articles/automation-testing-runbook/
+https://msdn.microsoft.com/zh-CN/library/dn781422.aspx = /documentation/articles/automation-runbook-gallery/
+https://msdn.microsoft.com/zh-CN/library/dn879148.aspx = /documentation/articles/automation-runbook-output-and-messages/
+https://msdn.microsoft.com/zh-CN/library/dn643637.aspx = /documentation/articles/automation-creating-importing-runbook/
+/documentation/articles/hdinsight-use-blob-storage/ = /documentation/articles/hdinsight-hadoop-use-blob-storage/
+/documentation/articles/hdinsight-get-started/ = /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1/
 http://social.msdn.microsoft.com/Forums/hdinsight = https://social.msdn.microsoft.com/Forums/zh-cn/home
-https://msdn.microsoft.com/zh-cn/library/azure/ee336279.aspx = /documentation/articles/sql-database-technical-overview
-https://msdn.microsoft.com/zh-cn/library/azure/dn771027.aspx = /documentation/articles/sql-database-manage-portal
-/documentation/articles/hdinsight-hbase-get-started = /documentation/articles/hdinsight-hbase-tutorial-get-started-v1
-/documentation/articles/hdinsight-storm-getting-started = /documentation/articles/hdinsight-apache-storm-tutorial-get-started
-/documentation/articles/service-bus-event-hubs-csharp-ephcs-getstarted = /documentation/articles/event-hubs-csharp-ephcs-getstarted
+https://msdn.microsoft.com/zh-cn/library/azure/ee336279.aspx = /documentation/articles/sql-database-technical-overview/
+https://msdn.microsoft.com/zh-cn/library/azure/dn771027.aspx = /documentation/articles/sql-database-manage-portal/
+/documentation/articles/hdinsight-hbase-get-started/ = /documentation/articles/hdinsight-hbase-tutorial-get-started-v1/
+/documentation/articles/hdinsight-storm-getting-started/ = /documentation/articles/hdinsight-apache-storm-tutorial-get-started/
+/documentation/articles/service-bus-event-hubs-csharp-ephcs-getstarted/ = /documentation/articles/event-hubs-csharp-ephcs-getstarted/
 http://en.wikipedia.org/wiki/Log4j = http://zh.wikipedia.org/wiki/Log4j
-/documentation/articles/sql-database-create-configure = /documentation/articles/sql-database-get-started
-/documentation/articles/install-and-configure-powershell = /documentation/articles/powershell-install-configure
-/documentation/articles/install-configure-powershell = /documentation/articles/powershell-install-configure
-http://msdn.microsoft.com/zh-cn/library/azure/dn189154.aspx = /documentation/articles/media-services-static-packaging
+/documentation/articles/sql-database-create-configure/ = /documentation/articles/sql-database-get-started/
+/documentation/articles/install-and-configure-powershell/ = /documentation/articles/powershell-install-configure/
+/documentation/articles/install-configure-powershell/ = /documentation/articles/powershell-install-configure/
+http://msdn.microsoft.com/zh-cn/library/azure/dn189154.aspx = /documentation/articles/media-services-static-packaging/
 //en.wikipedia.org/wiki/Theora = //zh.wikipedia.org/wiki/Theora
 //en.wikipedia.org/wiki/FLAC = //zh.wikipedia.org/wiki/FLAC
 //en.wikipedia.org/wiki/Opus_(audio_format) = //zh.wikipedia.org/wiki/Opus_codec
-https://msdn.microsoft.com/zh-cn/library/c49e0b4d-357e-4cca-95e5-2288924d1ff3#caption_ad = /documentation/articles/media-services-manage-channels-overview#closed-captioning-and-ad-insertion
-/documentation/articles/virtual-networks-create-a-vnet = /documentation/articles/virtual-networks-create-vnet-classic-portal
+https://msdn.microsoft.com/zh-cn/library/c49e0b4d-357e-4cca-95e5-2288924d1ff3#caption_ad = /documentation/articles/media-services-manage-channels-overview/#closed-captioning-and-ad-insertion
+/documentation/articles/virtual-networks-create-a-vnet/ = /documentation/articles/virtual-networks-create-vnet-classic-portal/
 //docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.2.0/HDP_2.2.0_Release_Notes_20141202_version/index.html = //docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.2.0/bk_HDP_RelNotes/content/ch_relnotes_v220.html
 http://nsl.cs.unb.ca/NSL-KDD/ = http://www.unb.ca/research/iscx/dataset/iscx-NSL-KDD-dataset.html
 http://nsl.cs.unb.ca/NSL-KDD/KDDTrain+.arff = A.Habibi.L@unb.ca
 http://nsl.cs.unb.ca/NSL-KDD/KDDTest+.arff = A.Habibi.L@unb.ca
 /home/features/websites = /home/features/web-site
-https://msdn.microsoft.com/zh-cn/library/azure/ee730904.aspx = /documentation/articles/sql-database-cloud-migrate
+https://msdn.microsoft.com/zh-cn/library/azure/ee730904.aspx = /documentation/articles/sql-database-cloud-migrate/
 /documentation/services/cache = /documentation/services/redis-cache
 http://msdn.microsoft.com/zh-cn/library/azure/dn690470.aspx = /documentation/services/redis-cache
 **Azure Websitess** = **App Services**
 //www.migratetochinacloudapi.cn = //www.migratetoazure.net
-http://msdn.microsoft.com/zh-cn/library/azure/dn606311.aspx = /documentation/articles/virtual-machines-extensions-features
+http://msdn.microsoft.com/zh-cn/library/azure/dn606311.aspx = /documentation/articles/virtual-machines-windows-extensions-features/
 //en.wikipedia.org/wiki/LXC = //zh.wikipedia.org/wiki/LXC
 //en.wikipedia.org/wiki/Hypervisor = //zh.wikipedia.org/wiki/Hypervisor
 //en.wikipedia.org/wiki/Certificate_authority = //zh.wikipedia.org/wiki/证书颁发机构
 //en.wikipedia.org/wiki/Transport_Layer_Security = //zh.wikipedia.org/wiki/Transport_Layer_Security
-http://msdn.microsoft.com/zh-cn/library/dn642480.aspx = /documentation/articles/vs-azure-tools-publishing-using-powershell-scripts
-https://msdn.microsoft.com/zh-cn/library/azure/hh690946.aspx = /documentation/articles/azure-toolkit-for-eclipse-installation
-/documentation/articles/storage-manage-storage-account = /documentation/articles/storage-create-storage-account
+http://msdn.microsoft.com/zh-cn/library/dn642480.aspx = /documentation/articles/vs-azure-tools-publishing-using-powershell-scripts/
+https://msdn.microsoft.com/zh-cn/library/azure/hh690946.aspx = /documentation/articles/azure-toolkit-for-eclipse-installation/
+/documentation/articles/storage-manage-storage-account/ = /documentation/articles/storage-create-storage-account/
 hdinsight-hadoop-customize-cluster-v1-bootstrap = hdinsight-hadoop-customize-cluster-bootstrap
-/documentation/articles/xplat-cli-install-connect = /documentation/articles/xplat-cli-connect
+/documentation/articles/xplat-cli-install-connect/ = /documentation/articles/xplat-cli-connect/
 xplat-cli-install-azure-resource-manager = xplat-cli-azure-resource-manager
 xplat-cli-install-azure-manage-vm-asm-arm = xplat-cli-azure-manage-vm-asm-arm
 //dsahandler.blob.core.chinacloudapi.cn = //dsahandler.blob.core.windows.net
 //en.wikipedia.org/wiki/RBAC = //zh.wikipedia.org/wiki/RBAC
-/home/features/reserved-ip-addresses/#price = /pricing/details/reserved-ip-addresses
+/home/features/reserved-ip-addresses/pricing/ = /pricing/details/reserved-ip-addresses
+/home/features/data-transfers/pricing/ = /pricing/details/data-transfer/
+/home/features/data-transfer/pricing/ = /pricing/details/data-transfer/
 /documentation/services/app-service = /documentation/services/web-sites
-web app to Azure Web App = web app to Azure
+/documentation/articles/hdinsight-hadoop-linux-tutorial-get-started/ = /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1/
+://en.wikipedia.org/wiki/Role-based_access_control = ://zh.wikipedia.org/wiki/RBAC

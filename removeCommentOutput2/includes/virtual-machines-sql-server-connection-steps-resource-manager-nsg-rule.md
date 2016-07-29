@@ -1,4 +1,4 @@
-<!-- not suitable for Mooncake -->
+<!-- Ibiza portal: tested -->
 
 ### Configure a Network Security Group inbound rule for the VM
 
@@ -6,9 +6,7 @@ If you want to be able to connect to SQL Server over the internet, you have to c
 
 1. In the portal, select **Virtual machines**, and then select your SQL Server VM.
 
-2. Click the **All settings** link.
-
-3. Expand **Nework interfaces**.
+3. Then select the **Nework interfaces**.
 
 	![network interface](./media/virtual-machines-sql-server-connection-steps/rm-network-interface.png)
 

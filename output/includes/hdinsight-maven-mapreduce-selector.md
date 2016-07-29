@@ -1,5 +1,3 @@
 > [AZURE.SELECTOR]
-- [Windows cluster](/documentation/articles/hdinsight-develop-deploy-java-mapreduce)
-
-- [Linux cluster](/documentation/articles/hdinsight-develop-deploy-java-mapreduce-linux)
-
+- [Windows cluster](/documentation/articles/hdinsight-develop-deploy-java-mapreduce/)
+- [Linux cluster](/documentation/articles/hdinsight-develop-deploy-java-mapreduce-linux/)

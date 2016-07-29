@@ -1,4 +1,3 @@
-
 #How to Create a MySQL Database in Azure
 
 This guide will show you how to use [ClearDB] to create a MySQL database from the [Azure Store] and  how to create a MySQL database as a linked resource when you create a [Azure Web Site][waws] . [ClearDB] is a fault-tolerant database-as-a-service provider that allows you to run and manage MySQL databases in Azure datacenters and connect to them from any application.  
@@ -35,7 +34,7 @@ To create a MySQL database from the [Azure Store], do the following:
 
 6. After your database has been created, you can manage it from the **ADD-ONS** tab in the management portal.
 
-	![Manage MySQL database in Azure Management Portal](./media/create-mysql-db/manage-mysql-add-on.png)
+	![Manage MySQL database in Azure portal](./media/create-mysql-db/manage-mysql-add-on.png)
 
 7. You can get the database connection information by clicking on **CONNECTION INFO** at the bottom of the page (shown above).
 
@@ -78,8 +77,7 @@ To create a MySQL database as a linked resource when you create a [Azure Web Sit
 > [WACOM.NOTE] Connection strings are accessible to your web site application by connection string name. In .NET applications, connection strings are availble in the **connectionStrings** object. In other programming languages, connection strings are accessible as environment variables. For more information, see [How to Configure Web Sites][configure].
 
 [ClearDB]: http://www.cleardb.com/
-[waws]: /documentation/services/web-sites/
-[Azure Store]: /gallery/store/
+[waws]: /en-us/documentation/services/web-sites/
+[Azure Store]: /en-us/gallery/store/
 [portal]: http://manage.windowsazure.cn
 [configure]: /documentation/articles/web-sites-configure
-

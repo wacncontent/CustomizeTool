@@ -65,7 +65,7 @@ In this release the following updates were made to Web Tools Extensions. For mor
 
 ###Azure Web App Tools
 
-In this release the following updates were made to Web Tools Extensions. For more information see [this](https://azure.microsoft.com/zh-cn/blog/2015/07/20/announcing-the-azure-sdk-2-7-for-net/)  blog.
+In this release the following updates were made to Web Tools Extensions. For more information see [this](https://azure.microsoft.com/zh-cn/blog/2015/07/20/announcing-the-azure-sdk-2-7-for-net/) blog.
 
 
 - Support for DreamSpark accounts added
@@ -95,9 +95,7 @@ Cloud explorer supports the following:
 - Integrated Properties panel which shows developer-focused properties commonly needed during dev/test 
 - Quick switching of the account to use when enumerating resources (use Settings command on toolbar) 
 - Filtering of subscriptions to use when enumerating resources (use Settings command on toolbar) 
-
-- Deep links to the Azure Management Portal for management of resources and resource groups 
-
+- Deep links to the Azure Portal for management of resources and resource groups 
  
  
 ###Azure Resource Manager Tools 
@@ -111,7 +109,6 @@ If you're using an Azure Resource Group project from a previous version of the S
 
 - Support for viewing Append Blobs. More info in [this blog post](http://blogs.msdn.com/b/windowsazurestorage/archive/2015/04/13/introducing-azure-storage-append-blob.aspx). 
 - Support for viewing Premium Storage accounts through Server Explorer. Server Explorer will only display page blobs for premium storage accounts as they are the only supported type for premium storage accounts.
-
 
 ###Azure Data Factory Tools for Visual Studio 
 
@@ -124,7 +121,6 @@ Introducing **Azure Data Factory Tools** for Visual Studio. Below are the enable
 - **JSON editing with schema validation and rich intellisense**: Efficiently configure and edit JSON documents of Data Factory entities with rich intellisense and schema validation 
 - **Multi-Environment publishing**: Publish authored pipelines to dev, test or Prod environment by creating separate config files for each environment.
 - **Pig, Hive and .Net based Data Processing Support**: Support for Pig and Hive Scripts in Data Factory project. Support for referencing C# Project for managing .Net Activity.
-
 
 ##Azure SDK for .NET 2.7.1
 
@@ -143,7 +139,7 @@ For more detailed explanation about HDInsight tools updates, see [this blog](htt
 
 	Visualizing is very important when you want to see if your topology is working as expected. In this release we added visualization for Storm graphs. You can visualize the important metrics for your topology (for example, a color indicates weather a certain Bolt is "busy" or not). You can also double click the Bolt/Spout to view more details.
 
-- Support for HDInsight clusters that were created in the Azure Management Portal (a bug fix)
+- Support for HDInsight clusters that were created in the Azure Portal (a bug fix)
 
 	You can now use Visual Studio to view and submit jobs to all your HDInsight clusters no matter where the cluster were created.
 

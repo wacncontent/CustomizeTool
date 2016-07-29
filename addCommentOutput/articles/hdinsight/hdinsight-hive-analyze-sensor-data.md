@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="02/05/2016"
+	ms.date="04/22/2016"
 	wacn.date=""/>
 
 #Analyze sensor data using the Hive Query Console on Hadoop in HDInsight
@@ -30,7 +30,7 @@ In this sample, you'll use Hive to process historical data produced by heating, 
 
 ##Prerequisites
 
-* An HDInsight (Hadoop) cluster: See [Provision Hadoop clusters in HDInsight](/documentation/articles/hdinsight-provision-clusters-v1) for information about creating a cluster.
+* An HDInsight (Hadoop) cluster: See [Provision Hadoop clusters in HDInsight](/documentation/articles/hdinsight-provision-clusters-v1/) for information about creating a cluster.
 
 * Microsoft Excel 2013
 

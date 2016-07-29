@@ -1,3 +1,3 @@
 > [AZURE.SELECTOR]
-<!--- [Azure Management Portal](/documentation/articles/storage-e2e-troubleshooting)-->
-- [Azure Management Portal](/documentation/articles/storage-e2e-troubleshooting-classic-portal)
+<!--- [Azure Portal](../articles/storage/storage-e2e-troubleshooting.md)-->
+- [Azure Classic Portal](/documentation/articles/storage-e2e-troubleshooting-classic-portal/)

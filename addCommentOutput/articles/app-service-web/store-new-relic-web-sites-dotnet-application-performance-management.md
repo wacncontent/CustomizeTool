@@ -40,22 +40,22 @@ alerting, tracks application exceptions, and a whole lot more.
 New Relic Standard is free to Azure users.
 New Relic Pro is offered in multiple packages based on which website mode you are using, and the instance size if you are using reserved mode.
 
-For pricing information see the [New Relic page in the Azure gallery](/marketplace/partners/newrelic/newrelic).
+For pricing information see the [New Relic page in the Azure  Marketplace](/marketplace/partners/newrelic/newrelic)  gallery](/marketplace/partners/newrelic/newrelic) .
 
 > [AZURE.NOTE] Pricing is only listed for up to 10 compute instances. For counts greater than 10 please contact New Relic (sales@newrelic.com) for volume pricing.
 
 Azure customers receive a 2 week trial subscription of New Relic Pro when they deploy the New Relic agent.
 
-Sign up for New Relic using the Azure gallery
+Sign up for New Relic using the Azure  Marketplace  gallery 
 --
 
 New Relic integrates seamlessly with Azure Web Roles, Worker roles and Azure Web App.
 
-To sign up for New Relic directly from the Azure gallery, follow these four easy steps.
+To sign up for New Relic directly from the Azure  Marketplace  gallery , follow these four easy steps.
 
 ## Step 1. Create a New Relic account
 
-1. Log in to the [Azure Management Portal](https://manage.windowsazure.cn/) and click **New** in the corner.
+1. Log in to the [Azure Portal](https://portal.azure.cn/) and click **New** in the corner.
 3. Click **Developer services** > **New Relic APM**.
 4. Configure your New Relic account by specifying the following, then click **Create**.
 	- **Name**
@@ -71,7 +71,7 @@ To sign up for New Relic directly from the Azure gallery, follow these four easy
 
 ## Step 2: Configure New Relic integration for your web app
 
-1. Open your web app's blade in the [Azure Management Portal](https://manage.windowsazure.cn/).
+1. Open your web app's blade in the [Azure Portal](https://portal.azure.cn/).
 2. Click the "..." menu at the top of the blade and select **Add tiles**.
 3. On the **Monitoring** tab select **Application summary** and drag it to where you want the tile to appear on your web app's blade.
 4. Click Done to finish adding tiles.
@@ -92,7 +92,7 @@ Using Visual Studio, publish your web app. If you have previously published your
 
 To view your New Relic dashboard:
 
-2. Open your web app's blade in the [Azure Management Portal](https://manage.windowsazure.cn/).
+2. Open your web app's blade in the [Azure Portal](https://portal.azure.cn/).
 3. Click **Application monitoring** > **application name** > **View at New Relic**.
 
 	![](./media/store-new-relic-web-sites-dotnet-application-performance-management/view-new-relic-data.png)
@@ -177,7 +177,7 @@ browsers to load your webpages, where they come from, and what browsers they use
 * For a guide to the change from Websites to Azure see: [Azure and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
 
 
-[vswebsite]: /documentation/articles/web-sites-dotnet-get-started
+[vswebsite]: /documentation/articles/web-sites-dotnet-get-started/
 
 [wmnugetbutton]: ./media/store-new-relic-web-sites-dotnet-application-performce-management/nrwmnugetbutton.png
 [wmnugetgallery]: ./media/store-new-relic-web-sites-dotnet-application-performce-management/nrwmnugetgallery.png
@@ -185,4 +185,4 @@ browsers to load your webpages, where they come from, and what browsers they use
 [newrelicconf]: ./media/store-new-relic-web-sites-dotnet-application-performce-management/nrwmlicensekey.png
 [vslicensekey]: ./media/store-new-relic-web-sites-dotnet-application-performce-management/nrvslicensekey.png
 [add-on]: ./media/store-new-relic-web-sites-dotnet-application-performce-management/nraddon.png
-[custom]: ./media/store-new-relic-web-sites-dotnet-application-performce-management/nrcustom.png
+[custom]: ./media/store-new-relic-web-sites-dotnet-application-performce-management/nrcustom.png

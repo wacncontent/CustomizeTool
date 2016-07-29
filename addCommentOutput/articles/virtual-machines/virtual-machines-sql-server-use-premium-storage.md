@@ -18,9 +18,14 @@
 
 ## Overview
 
-[Azure Premium Storage](/documentation/articles/storage-premium-storage-preview-portal) is the next generation of storage that provides low latency and high throughput IO. It works best for key IO intensive workloads, such as SQL Server on IaaS [Virtual Machines](/home/features/virtual-machines/).
+[Azure Premium Storage](/documentation/articles/storage-premium-storage) is the next generation of storage that provides low latency and high throughput IO. It works best for key IO intensive workloads, such as SQL Server on IaaS [Virtual Machines](/home/features/virtual-machines/).
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]  Resource Manager model. 
+
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+
+
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the classic deployment model. Microsoft recommends that most new deployments use the Resource Manager model.
+
 
 
 This article provides planning and guidance for migrating a Virtual Machine running SQL Server to use Premium Storage. This includes Azure infrastructure (networking, storage) and guest Windows VM steps. The example in the [Appendix](#appendix-migrating-a-multisite-alwayson-cluster-to-premium-storage) shows a full comphrensive end to end migration of how to move larger VMs to take advantage of improved local SSD storage with PowerShell.
@@ -95,7 +100,7 @@ The following **New-AzureStorageAccountPowerShell** command with the "Premium_LR
 
 The main difference between creating disks that are part of a Premium Storage account is the disk cache setting. For SQL Server Data volume disks it is recommended that you use '**Read Caching**'. For Transaction log volumes, the disk cache setting should be set to '**None**'. This is different from the recommendations for Standard Storage accounts.
 
-Once the VHDs have been attached, the cache setting cannot be altered. You would need to detach and reattach the VHD with an updated cahce setting.
+Once the VHDs have been attached, the cache setting cannot be altered. You would need to detach and reattach the VHD with an updated cache setting.
 
 ### Windows storage spaces
 
@@ -146,7 +151,7 @@ Once you have mapped VHDs to Physical Disks in Storage Pools you can then detach
 
 The amount of storage performance depends on the DS* VM size specified and the VHD sizes. The VMs have different allowances for the number of VHDs that can be attached and the maximum bandwidth they will support (MB/s). For the specific bandwidth numbers, see [Virtual Machine and Cloud Service Sizes for Azure](/documentation/articles/virtual-machines-size-specs).
 
-Increased IOPS are achieved with larger disk sizes. You should consider this when you think about your migration path. For details, [see the table for IOPS and Disk Types](/documentation/articles/storage-premium-storage-preview-portal#scalability-and-performance-targets-when-using-premium-storage).
+Increased IOPS are achieved with larger disk sizes. You should consider this when you think about your migration path. For details, [see the table for IOPS and Disk Types](/documentation/articles/storage-premium-storage#scalability-and-performance-targets-when-using-premium-storage).
 
 Finally, consider that VMs have different maximum disk bandwidths they will support for all disks attached. Under high load, you could saturate the maximum disk bandwidth available for that VM role size. For example a Standard_DS14 will support up to 512MB/s; therefore, with three P30 disks you could saturate the disk bandwidth of the VM. But in this example, the throughput limit could be exceeded depending on the mix of read and write IOs.
 
@@ -1134,7 +1139,7 @@ For information for individual blobs:
     Get-AzureVM -ServiceName $destcloudsvc -Name $vmNameToMigrate  | Add-AzureEndpoint -Name $epname -Protocol $prot -LocalPort $locport -PublicPort $pubport -ProbePort 59999 -ProbeIntervalInSeconds 5 -ProbeTimeoutInSeconds 11  -ProbeProtocol "TCP" -InternalLoadBalancerName $ilb -LBSetName $ilb -DirectServerReturn $true | Update-AzureVM
 
 
-    #STOP!!! CHECK in the Azure Management Portal or Machine Endpoints through powershell that these Endpoints are created!
+    #STOP!!! CHECK in the Azure classic portal or Machine Endpoints through powershell that these Endpoints are created!
 
     #SET ACLs or Azure Network Security Groups & Windows FWs
 
@@ -1168,7 +1173,7 @@ To add in IP Address, see the [Appendix](#appendix-migrating-a-multisite-alwayso
 	![Appendix15][25]
 
 ## Additional resources
-- [Azure Premium Storage](/documentation/articles/storage-premium-storage-preview-portal)
+- [Azure Premium Storage](/documentation/articles/storage-premium-storage)
 - [Virtual Machines](/home/features/virtual-machines/)
 - [SQL Server in Azure Virtual Machines](/documentation/articles/virtual-machines-sql-server-infrastructure-services)
 

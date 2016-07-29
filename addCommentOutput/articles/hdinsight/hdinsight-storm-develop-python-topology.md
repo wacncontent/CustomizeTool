@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="02/01/2016"
+	ms.date="04/19/2016"
 	wacn.date=""/>
 
 #Develop Apache Storm topologies using Python on HDInsight
@@ -54,7 +54,7 @@ Both methods are described in this document, along with example projects.
 
 ##Python components with a Java topology
 
-> [AZURE.NOTE] This example is available at [https://github.com/Azure-Samples/hdinsight-python-storm-wordcount](https://github.com/Azure-Samples/hdinsight-python-storm-wordcount) in the __JavaTopology__ directory. This is a Maven based project. If you are unfamiliar with Maven, see [Develop Java-based topologies with Apache Storm on HDInsight](/documentation/articles/hdinsight-storm-develop-java-topology) for more information on creating a Maven project for a Storm topology.
+> [AZURE.NOTE] This example is available at [https://github.com/Azure-Samples/hdinsight-python-storm-wordcount](https://github.com/Azure-Samples/hdinsight-python-storm-wordcount) in the __JavaTopology__ directory. This is a Maven based project. If you are unfamiliar with Maven, see [Develop Java-based topologies with Apache Storm on HDInsight](/documentation/articles/hdinsight-storm-develop-java-topology/) for more information on creating a Maven project for a Storm topology.
 
 A Java-based topology that uses Python (or other JVM language components,) initially appears to use Java components; but if you look in each of the Java spouts/bolts, you'll see code similar to the following:
 
@@ -159,8 +159,8 @@ __To build an uberjar and deploy to HDInsight__, use the following steps:
             
         2. Once the file has been copied to the cluster, use SSH to connect to the cluster and submit the job. For information on using SSH with HDInsight, see one of the following:
         
-            * [Use SSH with Linux-based HDInsight from Linux, Unix, or OS X](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix)
-            * [Use SSH with Linux-based HDInsight from Windows](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows)
+            * [Use SSH with Linux-based HDInsight from Linux, Unix, or OS X](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix/)
+            * [Use SSH with Linux-based HDInsight from Windows](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows/)
             
         3. Once connected, use the following to start the topology:
         
@@ -194,7 +194,7 @@ __To build an uberjar and deploy to HDInsight__, use the following steps:
 
 You can successfuly build the example Pyleus topologies, using the HDInsight head node as the build environment:
 
-1. When provisioning a new Storm on HDInsight cluster, you must ensure that Python Virtualenv is present on the cluster nodes. When creating a new Linux-based HDInsight cluster, use the following Script Action settings with [Cluster customization](/documentation/articles/hdinsight-hadoop-customize-cluster-v1):
+1. When provisioning a new Storm on HDInsight cluster, you must ensure that Python Virtualenv is present on the cluster nodes. When creating a new Linux-based HDInsight cluster, use the following Script Action settings with [Cluster customization](/documentation/articles/hdinsight-hadoop-customize-cluster-v1/):
 
     * __Name__: Just provide a friendly name here
     * __ Script URI__: Use `https://hditutorialdata.blob.core.windows.net/customizecluster/pythonvirtualenv.sh` as the value. This script will install Python Virtualenv on the nodes.
@@ -208,8 +208,8 @@ You can successfuly build the example Pyleus topologies, using the HDInsight hea
 
 1. Once the cluster has been created, connect using SSH:
 
-    * [Use SSH with Linux-based HDInsight from Linux, Unix, or OS X](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix)
-    * [Use SSH with Linux-based HDInsight from Windows](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows)
+    * [Use SSH with Linux-based HDInsight from Linux, Unix, or OS X](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix/)
+    * [Use SSH with Linux-based HDInsight from Windows](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows/)
 
 2. From the SSH connect, use the following to create a new virtual environment and install Pyleus:
 
@@ -247,7 +247,7 @@ You can successfuly build the example Pyleus topologies, using the HDInsight hea
 
 > [AZURE.IMPORTANT] Streamparse relies on components that expect [Unix signals](https://en.wikipedia.org/wiki/Unix_signal), which are not available on Windows. Your development environment must be Linux, Unix, or OS X, and the HDInsight cluster must be Linux-based.
 
-1. When provisioning a new Storm on HDInsight cluster, you must ensure that Python Virtualenv is present on the cluster nodes. When creating a new Linux-based HDInsight cluster, use the following Script Action settings with [Cluster customization](/documentation/articles/hdinsight-hadoop-customize-cluster-v1):
+1. When provisioning a new Storm on HDInsight cluster, you must ensure that Python Virtualenv is present on the cluster nodes. When creating a new Linux-based HDInsight cluster, use the following Script Action settings with [Cluster customization](/documentation/articles/hdinsight-hadoop-customize-cluster-v1/):
 
     * __Name__: Just provide a friendly name here
     * __ Script URI__: Use `https://hditutorialdata.blob.core.windows.net/customizecluster/pythonvirtualenv.sh` as the value. This script will install Python Virtualenv on the nodes, as well as create directories used by Streamparse
@@ -260,8 +260,8 @@ You can successfuly build the example Pyleus topologies, using the HDInsight hea
     >
     > For more information on using keys with SSH on HDInsight, see one of the following documents:
     >
-    > * [Use SSH with Linux-based HDInsight from Linux, Unix, or OS X](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix)
-    > * [Use SSH with Linux-based HDInsight from Windows](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows)
+    > * [Use SSH with Linux-based HDInsight from Linux, Unix, or OS X](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix/)
+    > * [Use SSH with Linux-based HDInsight from Windows](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows/)
 
 2. While the cluster is provisioning, install Streamparse on your development environment using the following command:
 
@@ -359,6 +359,6 @@ Once your Linux-based HDInsight cluster has been created, use the following step
 In this document, you learned how to use Python components from a Storm topology. See the following documents for other ways to use Python with HDInsight:
 
 
-* [How to use Python for streaming MapReduce jobs](/documentation/articles/hdinsight-hadoop-streaming-python)
+* [How to use Python for streaming MapReduce jobs](/documentation/articles/hdinsight-hadoop-streaming-python/)
 
-* [How to use Python User Defined Functions (UDF) in Pig and Hive](/documentation/articles/hdinsight-python)
+* [How to use Python User Defined Functions (UDF) in Pig and Hive](/documentation/articles/hdinsight-python/)

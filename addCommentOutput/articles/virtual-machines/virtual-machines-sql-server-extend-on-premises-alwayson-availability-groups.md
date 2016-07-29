@@ -26,12 +26,12 @@ This tutorial assumes you have the following:
 - An existing AlwaysOn Availability Group on-premises. For more information on Availability Groups, see [AlwaysOn Availability Groups](https://msdn.microsoft.com/zh-cn/library/hh510230.aspx).
 
 
-- Connectivity between the on-premises network and your Azure virtual network. For more information about creating this virtual network, see [Configure a Site-to-Site VPN in the Azure Management Portal](/documentation/articles/vpn-gateway-site-to-site-create).
+- Connectivity between the on-premises network and your Azure virtual network. For more information about creating this virtual network, see [Configure a Site-to-Site VPN in the Azure classic portal](/documentation/articles/vpn-gateway-site-to-site-create).
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the classic deployment model. Microsoft recommends that most new deployments use the Resource Manager model.
 
 
 ## Add Azure Replica Wizard

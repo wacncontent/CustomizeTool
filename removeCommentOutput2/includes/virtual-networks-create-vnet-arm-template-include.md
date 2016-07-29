@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 ## Download and understand the ARM template
 
 You can download the existing ARM template for creating a VNet and two subnets from github, make any changes you might want, and reuse it. To do so, follow the steps below.

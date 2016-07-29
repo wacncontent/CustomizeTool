@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
 	pageTitle="Base Configuration Test Environment with Azure Resource Manager"
 	description="Learn how to create a simple dev/test environment that simulates a simplified intranet in Azure using Resource Manager."
@@ -17,7 +15,12 @@
 
 # Base Configuration test environment with Azure Resource Manager
 
+
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] [classic deployment model](/documentation/articles/virtual-machines-base-configuration-test-environment).
+
+
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the Resource Manager deployment model, which Microsoft recommends for most new deployments instead of the [classic deployment model](/documentation/articles/virtual-machines-base-configuration-test-environment).
+
 
 This article provides you with step-by-step instructions to create the Base Configuration test environment in a Azure Virtual Network, using virtual machines created in Resource Manager.
 
@@ -129,7 +132,7 @@ First, fill in the name of your resource group, Azure location, and storage acco
 
 Next, connect to the DC1 virtual machine.
 
-1.	In the Azure Management Portal, click **Virtual machines**, and then click the **DC1** virtual machine.  
+1.	In the Azure portal, click **Virtual machines**, and then click the **DC1** virtual machine.  
 2.	In the **DC1** pane,, click **Connect**.
 3.	When prompted, open the DC1.rdp downloaded file.
 4.	When prompted with a Remote Desktop Connection message box, click **Connect**.
@@ -160,7 +163,7 @@ Note that these commands can take a few minutes to complete.
 
 After DC1 restarts, reconnect to the DC1 virtual machine.
 
-1.	In the Azure Management Portal, click **Virtual machines**, and then click the **DC1** virtual machine.
+1.	In the Azure portal, click **Virtual machines**, and then click the **DC1** virtual machine.
 2.	In the **DC1** pane, click** Connect**.
 3.	When prompted to open DC1.rdp, click **Open**.
 4.	When prompted with a Remote Desktop Connection message box, click **Connect**.
@@ -242,7 +245,7 @@ This is your current configuration.
 
 CLIENT1 acts as a typical laptop, tablet, or desktop computer on the Contoso intranet.
 
-> [AZURE.NOTE] The following command set creates CLIENT1 running Windows Server 2012 R2 Datacenter, which can be done for all types of Azure subscriptions. If you have an MSDN-based Azure subscription, you can create CLIENT1 running Windows 10, Windows 8, or Windows 7 using the [Azure Management Portal](/documentation/articles/virtual-machines-windows-tutorial-classic-portal).
+> [AZURE.NOTE] The following command set creates CLIENT1 running Windows Server 2012 R2 Datacenter, which can be done for all types of Azure subscriptions. If you have an MSDN-based Azure subscription, you can create CLIENT1 running Windows 10, Windows 8, or Windows 7 using the [Azure portal](/documentation/articles/virtual-machines-windows-tutorial-classic-portal).
 
 First, fill in the name of your resource group, Azure location, and storage account name and run these commands at the Azure PowerShell command prompt on your local computer to create an Azure Virtual Machine for CLIENT1.
 

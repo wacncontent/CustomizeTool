@@ -263,14 +263,20 @@ The following is the definition of the parameters passed to the script. (This is
 
       
 ```
-
       {
+
+
+
+	      {
+
         String Name,
         String Location,
         String SearchPattern,
         Bool   Recursive  
       }
- ``` 
+
+```
+
 
 ## Extention PowerShell Script files
 

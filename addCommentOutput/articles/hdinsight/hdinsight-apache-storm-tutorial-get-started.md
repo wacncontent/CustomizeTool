@@ -11,7 +11,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="02/05/2016"
+	ms.date="05/20/2016"
 	wacn.date=""/>
 
 
@@ -20,35 +20,42 @@
 Apache Storm is a scalable, fault-tolerant, distributed, real-time computation system for processing streams of data. With Storm on Azure HDInsight, you can create a cloud-based Storm cluster that performs big data analytics in real time. 
 
 
-> [AZURE.NOTE] The steps in this article create a Windows-based HDInsight cluster. For steps to create a Linux-based Storm on HDInsight cluster, see [Apache Storm tutorial: Get started with the Storm Starter sample using data analytics on HDInsight](/documentation/articles/hdinsight-apache-storm-tutorial-get-started)
+> [AZURE.NOTE] The steps in this article create a Windows-based HDInsight cluster. For steps to create a Linux-based Storm on HDInsight cluster, see [Apache Storm tutorial: Get started with the Storm Starter sample using data analytics on HDInsight](/documentation/articles/hdinsight-apache-storm-tutorial-get-started/)
 
 
-## Prerequisites
+## Before you begin
+
+[AZURE.INCLUDE [delete-cluster-warning](../includes/hdinsight-delete-cluster-warning.md)]
 
 You must have the following to successfully complete this Apache Storm tutorial:
 
 - **An Azure subscription**. See [Get Azure trial](/pricing/1rmb-trial/).
 
+
 ## Create a Storm cluster
+
+
+##<a name="create-a-storm-cluster"></a> Create a Storm cluster
+
 
 Storm on HDInsight uses Azure Blob storage for storing log files and topologies submitted to the cluster. Use the following steps to create an Azure storage account for use with your cluster:
-
 
-1. Sign in to the [Azure Management Portal][preview-portal].
+
+1. Sign in to the [Azure Portal][preview-portal].
 
 2. Select **NEW**, select __Data Analytics__, and then select __HDInsight__.
 
-	![Create a new cluster in the Azure Management Portal](./media/hdinsight-apache-storm-tutorial-get-started/new-cluster.png)
+	![Create a new cluster in the Azure Portal](./media/hdinsight-apache-storm-tutorial-get-started/new-cluster.png)
 
-3. Enter a __Cluster Name__, and then select __Storm__ for the __Cluster Type__. A green check appears beside the __Cluster Name__ if it is available.
-
-	![Cluster name, cluster type, and OS Type](./media/hdinsight-apache-storm-tutorial-get-started/clustername.png)
+3. Enter a __Cluster Name__. A green check appears beside the __Cluster Name__ if it is available.
 
 4. If you have more than one subscription, select the __Subscription__ entry to select the Azure subscription that will be used for the cluster.
 
-5. For __Resource Group__, you can select the entry to see a list of existing resource groups and then select the one to create the cluster in. Or you can select __Create New__ and then enter the name of the new resource group. A green check appears to indicate if the new group name is available.
+5.  Use __Select Cluster Type__ to select a __Storm__ cluster. For the __Operating System__, select Windows. For __Cluster Tier__, select STANDARD. Finally, use the select button to save these settings.
 
-	> [AZURE.NOTE] This entry defaults to one of your existing resource groups, if any are available.
+	![Cluster name, cluster type, and OS Type](./media/hdinsight-apache-storm-tutorial-get-started/clustertype.png)
+
+5. For __Resource Group__, you can us the drop down list to see a list of existing resource groups and then select the one to create the cluster in. Or you can select __New__ and then enter the name of the new resource group. A green check appears to indicate if the new group name is available.
 
 6. Select __Credentials__, and then enter a __Cluster Login Username__ and __Cluster Login Password__. Finally, use  __Select__ to set the credentials. Remote desktop will not be used in this document, so you can leave it disabled.
 
@@ -82,7 +89,7 @@ Storm on HDInsight uses Azure Blob storage for storing log files and topologies 
 
 	![Optional configuration blade](./media/hdinsight-apache-storm-tutorial-get-started/optionalconfiguration.png)
 
-9. Ensure that __Pin to Startboard__ is selected, and then select __Create__. This creates the cluster and adds a tile for it to the Startboard of your Azure Management Portal. The icon indicates that the cluster is provisioning, and changes to display the HDInsight icon once provisioning has completed.
+9. Ensure that __Pin to Startboard__ is selected, and then select __Create__. This creates the cluster and adds a tile for it to the Startboard of your Azure portal. The icon indicates that the cluster is provisioning, and changes to display the HDInsight icon once provisioning has completed.
 
 	| While provisioning | Provisioning complete |
 	| ------------------ | --------------------- |
@@ -90,11 +97,11 @@ Storm on HDInsight uses Azure Blob storage for storing log files and topologies 
 
 
 
-1. Sign in to the [Azure Management Portal](http://manage.windowsazure.cn/).
+1. Sign in to the [Azure Classic Management Portal](http://manage.windowsazure.cn/).
 
 2. Click **NEW** in the lower-left corner, point to **DATA SERVICES**, point to **STORAGE**, and then click **QUICK CREATE**.
 
-	![Azure Management Portal where you can use Quick Create to set up a new Storage account.](./media/hdinsight-apache-storm-tutorial-get-started/HDI.StorageAccount.QuickCreate.png)
+	![Azure Classic Management Portal where you can use Quick Create to set up a new Storage account.](./media/hdinsight-apache-storm-tutorial-get-started/HDI.StorageAccount.QuickCreate.png)
 
 3. Enter information for **URL**, **LOCATION** and **REPLICATION**, and then click **CREATE STORAGE ACCOUNT**. Do not select an affinity group when creating storage for HDInsight. You will see the new Storage account in the storage list.
 
@@ -105,13 +112,13 @@ Storm on HDInsight uses Azure Blob storage for storing log files and topologies 
 For more information on creating Storage accounts, see
 <a href="/documentation/articles/storage-create-storage-account/" target="_blank">How to Create a Storage Account</a>.
 
-##Provision a Storm cluster on the Azure Management Portal
+##Provision a Storm cluster on the Azure Classic Management Portal
 
-When you provision an HDInsight cluster, you provision Azure compute resources that contain Apache Storm and related applications. You can also create Hadoop clusters for other versions by using the Azure Management Portal, Azure PowerShell cmdlets for HDInsight, or the HDInsight .NET SDK. For instructions, see [Provision HDInsight clusters using custom options][hdinsight-provision]. For information about different HDInsight versions and their service level agreements (SLAs), see the [HDInsight component versioning](/documentation/articles/hdinsight-component-versioning-v1) page.
+When you provision an HDInsight cluster, you provision Azure compute resources that contain Apache Storm and related applications. You can also create Hadoop clusters for other versions by using the Azure Classic Management Portal, Azure PowerShell cmdlets for HDInsight, or the HDInsight .NET SDK. For instructions, see [Provision HDInsight clusters using custom options][hdinsight-provision]. For information about different HDInsight versions and their service level agreements (SLAs), see the [HDInsight component versioning](/documentation/articles/hdinsight-component-versioning-v1/) page.
 
 [AZURE.INCLUDE [provisioningnote](../includes/hdinsight-provisioning.md)]
 
-1. Sign in to the [Azure Management Portal][azureportal].
+1. Sign in to the [Azure Classic Management Portal][azureportal].
 
 2. Click **HDInsight** on the left, and then **+NEW** in the lower-left corner of the page.
 
@@ -136,17 +143,17 @@ This Apache Storm tutorial introduces you to big data analytics using the Storm 
 Each Storm on HDInsight cluster comes with the Storm Dashboard, which can be used to upload and run Storm topologies on the cluster. Each cluster also comes with sample topologies that can be run directly from the Storm Dashboard.
 
 ### <a id="connect"></a>Connect to the dashboard
-
 
+
 The dashboard is located at **https://&lt;clustername>.azurehdinsight.cn//**, where **clustername** is the name of the cluster. You can also find a link to the dashboard by selecting the cluster from the Startboard and selecting the __Dashboard__ link at the top of the blade.
 
-![Azure Management Portal with Storm Dashboard link](./media/hdinsight-apache-storm-tutorial-get-started/dashboard.png)
+![Azure portal with Storm Dashboard link](./media/hdinsight-apache-storm-tutorial-get-started/dashboard.png)
 
 
 
-The dashboard is located at **https://&lt;clustername>.azurehdinsight.cn//**, where **clustername** is the name of the cluster. You can also find a link to the dashboard at the bottom of the Azure Management Portal page for your cluster.
+The dashboard is located at **https://&lt;clustername>.azurehdinsight.cn//**, where **clustername** is the name of the cluster. You can also find a link to the dashboard at the bottom of the Azure Classic Management Portal page for your cluster.
 
-![Azure Management Portal with Storm Dashboard link](./media/hdinsight-apache-storm-tutorial-get-started/dashboard-link.png)
+![Azure Classic Management Portal with Storm Dashboard link](./media/hdinsight-apache-storm-tutorial-get-started/dashboard-link.png)
 
 > [AZURE.NOTE] When connecting to the dashboard, you are prompted to enter a user name and password. This is the administrator name (**admin**) and password used when you created the cluster.
 
@@ -248,6 +255,10 @@ The Storm UI can be used to monitor the topology.
 
 Return to the **Topology summary** page for the word-count topology, and then select **Kill** from the **Topology actions** section. When prompted, enter 10 for the seconds to wait before stopping the topology. After the timeout period, the topology no longer appears when you visit the **Storm UI** section of the dashboard.
 
+##Delete the cluster
+
+[AZURE.INCLUDE [delete-cluster-warning](../includes/hdinsight-delete-cluster-warning.md)]
+
 ## Summary
 
 In this Apache Storm tutorial, you used the Storm Starter to learn how to create a Storm on HDInsight cluster and use the Storm Dashboard to deploy, monitor, and manage Storm topologies.
@@ -256,7 +267,7 @@ In this Apache Storm tutorial, you used the Storm Starter to learn how to create
 
 * **HDInsight Tools for Visual Studio** - HDInsight Tools allows you to use Visual Studio to submit, monitor, and manage Storm topologies similar to the Storm Dashboard mentioned earlier. HDInsight Tools also provides the ability to create C# Storm topologies, and includes sample topologies that you can deploy and run on your cluster.
 
-	For more information, see [Get Started using the HDInsight Tools for Visual Studio](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started).
+	For more information, see [Get Started using the HDInsight Tools for Visual Studio](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/).
 
 * **Sample files** - The HDInsight Storm cluster provides several examples in the **%STORM_HOME%\contrib** directory. Each example should contain the following:
 
@@ -274,12 +285,18 @@ In this Apache Storm tutorial, you used the Storm Starter to learn how to create
 
 * The following document contains a list of other examples that can be used with Storm on HDInsight:
 
-	* [Example topologies for Storm on HDInsight](/documentation/articles/hdinsight-storm-example-topology)
+	* [Example topologies for Storm on HDInsight](/documentation/articles/hdinsight-storm-example-topology/)
 
 [apachestorm]: https://storm.incubator.apache.org
 [stormdocs]: http://storm.incubator.apache.org/documentation/Documentation.html
 [stormstarter]: https://github.com/apache/storm/tree/master/examples/storm-starter
 [stormjavadocs]: https://storm.incubator.apache.org/apidocs/
 [azureportal]: https://manage.windowsazure.cn/
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1/
+
+[preview-portal]: https://portal.azure.cn/
+
+
 [preview-portal]: https://manage.windowsazure.cn/
+
+

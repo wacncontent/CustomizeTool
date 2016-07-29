@@ -1,5 +1,5 @@
 
-1. In the [Azure Management Portal](https://manage.windowsazure.cn/), click the **Data** tab and then click the **TodoItem** table. 
+1. In the [Azure classic portal](https://manage.windowsazure.cn/), click the **Data** tab and then click the **TodoItem** table. 
  
 2. In **todoitem**, click the **Script** tab and select **Insert**.
    
@@ -35,4 +35,4 @@
 		  });
 		}
 
-   	This registers a new insert script, which uses the [gcm object](https://msdn.microsoft.com/zh-cn/library/dn126137.aspx) to send a push notification to all registered devices after the insert succeeds. 
+   	This registers a new insert script, which uses the [gcm object](https://msdn.microsoft.com/zh-CN/library/dn126137.aspx) to send a push notification to all registered devices after the insert succeeds. 

@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="11/13/2015"
+	ms.date="02/25/2016"
 	wacn.date=""/>
 
 
@@ -36,6 +36,7 @@ See the [Python Developer Center] for more articles that cover development of Az
  - [Python Tools 2.2 for Visual Studio Samples VSIX]
  - [Azure SDK Tools for VS 2013] or [Azure SDK Tools for VS 2015]
  - [Python 2.7 32-bit]
+ - Django 1.6 or earlier
 
 [AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
 
@@ -95,7 +96,7 @@ For the database, we'll create an Azure SQL database.
 
 You can create a database by following these steps.
 
-1.  Log into the [Azure Management Portal].
+1.  Log into the [Azure  Classic Management  Portal].
 
 1.  At the bottom of the navigation pane, click **NEW**. , click **DATA SERVICE** > **SQL Database**.
 
@@ -163,13 +164,14 @@ Edit the definition of `DATABASES` to use the values above.
 
 ## Publish the web app to Azure
 
-The Azure .NET SDK provides an easy way to deploy your web web app to  Azures  Azure Web Apps .
+The Azure .NET SDK provides an easy way to deploy your web web app to Azure.
 
 1.  In **Solution Explorer**, right-click on the project node and select **Publish**.
 
   	<!-- ![Publish Web Dialog](./media/web-sites-python-ptvs-django-sql/PollsCommonPublishWebSiteDialog.png) -->
 
-1.  Click on  **Azure  **Microsoft Azure  Web Apps**.
+
+1.  Click on **Azure Web Apps**.
 
 1.  Click on **New** to create a new web app.
 
@@ -181,6 +183,12 @@ The Azure .NET SDK provides an easy way to deploy your web web app to  Azures 
 	-	Leave **Database server** set to **No database**
 
   	<!-- ![Create Site on Azure Dialog](./media/web-sites-python-ptvs-django-sql/PollsCommonCreateWebSite.png) -->
+
+
+1.  Click on **Import**, and choose the downloaded "Publish Profile".
+
+	If you haven't create a web app yet, you can log into the [Azure Classic Management Portal](https://manage.windowsazure.cn/) to create one, and go to the **Dashboard** page, under the **quick glance**, download the "Publish Profile".
+
 
 1.  Accept all other defaults and click **Publish**.
 
@@ -209,10 +217,15 @@ Follow these links to learn more about Python Tools for Visual Studio, Django an
 
 <!--Link references-->
 [Python Developer Center]: /develop/python/
-[Azure Cloud Services]: /documentation/articles/cloud-services-python-ptvs
+[Azure Cloud Services]: /documentation/articles/cloud-services-python-ptvs/
 
 <!--External Link references-->
-[Azure Management Portal]: https://manage.windowsazure.cn
+
+[Azure Portal]: https://portal.azure.cn
+
+
+[Azure Classic Management Portal]: https://manage.windowsazure.cn
+
 [Python Tools for Visual Studio]: http://aka.ms/ptvs
 [Python Tools 2.2 for Visual Studio]: http://go.microsoft.com/fwlink/?LinkID=624025
 [Python Tools 2.2 for Visual Studio Samples VSIX]: http://go.microsoft.com/fwlink/?LinkID=624025

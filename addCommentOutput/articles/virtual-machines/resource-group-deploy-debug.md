@@ -21,11 +21,16 @@ issue and resume operations in your solution.
 
 This topic focuses primarily on using deployment commands to troubleshoot deployments. For information about using the audit logs to track all operations on your resources, see [Audit operations with Resource Manager](/documentation/articles/resource-group-audit).
 
-This topic shows how to retrieve troubleshooting information through Azure PowerShell, Azure CLI and REST API.  For information about using the portal to troubleshoot deployments, see [Using the Azure Management Portal to manage your Azure resources](/documentation/articles/resource-group-portal). 
+This topic shows how to retrieve troubleshooting information through Azure PowerShell, Azure CLI and REST API. For information about using the portal to troubleshoot deployments, see [Using the Azure portal to manage your Azure resources](/documentation/articles/resource-group-portal).
 
 Solutions to common errors that users encounter are also described in this topic.
 
+
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model. You can't create resource groups with the classic deployment model.
+
+
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the Resource Manager deployment model, which Microsoft recommends for most new deployments instead of the classic deployment model. You can't create resource groups with the classic deployment model.
+
 
 
 ## Troubleshoot with PowerShell
@@ -226,6 +231,7 @@ You can specify a particular type of resource with:
 
                                                                 China North, West Europe, China East, China North,
                                                                 Japan East, China East
+
 
 For PowerShell 1.0, use **Get-AzureRmResourceProvider** to get supported locations.
 
@@ -233,23 +239,26 @@ For PowerShell 1.0, use **Get-AzureRmResourceProvider** to get supported locatio
 
     ProviderNamespace RegistrationState ResourceTypes               Locations
     ----------------- ----------------- -------------               ---------
-    Microsoft.Web     Registered        {sites/extensions}          {Brazil South, ...
-    Microsoft.Web     Registered        {sites/slots/extensions}    {Brazil South, ...
-    Microsoft.Web     Registered        {sites/instances}           {Brazil South, ...
+    Microsoft.Web     Registered        {sites/extensions}           {Brazil South  {China North ,  ...  China East} 
+    Microsoft.Web     Registered        {sites/slots/extensions}     {Brazil South  {China North ,  ...  China East} 
+    Microsoft.Web     Registered        {sites/instances}            {Brazil South  {China North ,  ...  China East} 
     ...
 
 You can specify a particular type of resource with:
 
     PS C:\> ((Get-AzureRmResourceProvider -ProviderNamespace Microsoft.Web).ResourceTypes | Where-Object ResourceTypeName -eq sites).Locations
 
+
     Brazil South
     China East
     China East
     Japan East
     China East
     China North
+
     China North
     China East
+
     West Europe
     China North
     China North
@@ -286,7 +295,7 @@ But Azure Active Directory enables you or your administrator to control which id
 
 You might also have issues when a deployment hits a default quota, which could be per resource group, subscriptions, accounts, and other scopes. Confirm to your satisfaction that you have the resources available to deploy correctly. For complete quota information, see [Azure subscription and service limits, quotas, and constraints](/documentation/articles/azure-subscription-service-limits).
 
-To examine your own subscription's quotas for cores, you should use the `azure vm list-usage` command in the Azure CLI and the  **Get-AzureRmVMUsage**  **Get-AzureVMUsage**  cmdlet in PowerShell. The following shows the command in the Azure CLI, and illustrates that the core quota for a trial account is 4:
+To examine your own subscription's quotas for cores, you should use the `azure vm list-usage` command in the Azure CLI and the **Get-AzureRmVMUsage** cmdlet in PowerShell. The following shows the command in the Azure CLI, and illustrates that the core quota for a trial account is 4:
 
     azure vm list-usage
     info:    Executing command vm list-usage
@@ -329,7 +338,7 @@ To be specific about cores, for example, you can check the regions for which you
 
 ## Checking resource provider registration
 
-Resources are managed by resource providers, and an account or subscription might be enabled to use a particular provider. If you are enabled to use a provider, it must also be registered for use. Most providers are registered automatically by the Azure Management Portal or the command-line interface you are using, but not all.
+Resources are managed by resource providers, and an account or subscription might be enabled to use a particular provider. If you are enabled to use a provider, it must also be registered for use. Most providers are registered automatically by the Azure portal or the command-line interface you are using, but not all.
 
 ### PowerShell
 
@@ -389,12 +398,11 @@ To see whether the provider is registered for use using the Azure CLI, use the `
         data:    Microsoft.Features               Registered
         data:    Microsoft.Search                 NotRegistered
         data:    Microsoft.ServiceBus             NotRegistered
-        data:    Microsoft.Sql                    Registered
 
 
 		data:    -------------------------  -----------
 		data:    microsoft.backup           Registering
-		data:    Microsoft.Batch            Registered
+        data:    Microsoft.Batch            Registered
 		data:    microsoft.cache            Registered
 		data:    Microsoft.ClassicCompute   Registered
 		data:    Microsoft.ClassicNetwork   Registered
@@ -402,7 +410,9 @@ To see whether the provider is registered for use using the Azure CLI, use the `
 		data:    Microsoft.Insights         Registered
 		data:    Microsoft.KeyVault         Registered
 		data:    Microsoft.SiteRecovery     Registered
-        data:    Microsoft.Sql                Registered
+
+        data:    Microsoft.Sql                      Registered
+
 		data:    Microsoft.StreamAnalytics  Registered
 		data:    Microsoft.Web              Registered
 		data:    Microsoft.Authorization    Registered

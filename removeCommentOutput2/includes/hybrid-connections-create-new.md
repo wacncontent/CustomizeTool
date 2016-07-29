@@ -1,5 +1,5 @@
 
-1. On the on-premises machine, log on to the [Azure Management Portal](http://manager.windowsazure.cn) (this is the Management Portal).
+1. On the on-premises machine, log on to the [Azure Management Portal](http://manager.windowsazure.com) (this is the old portal).
 
 2. At the bottom of the navigation pane, select **+NEW** > **App Services** > **BizTalk Service** > **Custom Create**.
 

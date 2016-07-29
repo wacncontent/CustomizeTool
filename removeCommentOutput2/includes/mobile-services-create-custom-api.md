@@ -1,6 +1,6 @@
 
 
-1. Log into the [Azure Management Portal](https://manage.windowsazure.cn/), click **Mobile Services**, and then select your mobile service.
+1. Log into the [Azure classic portal](https://manage.windowsazure.cn/), click **Mobile Services**, and then select your mobile service.
 
 2. Click the **API** tab, and then click **Create**. This displays the **Create a new custom API** dialog.
 
@@ -15,22 +15,23 @@
 
 		exports.post = function(request, response) {
 			var mssql = request.service.mssql;
-			var sql = "UPDATE todoitem SET complete = 1 " +
+			var sql = "UPDATE todoitem SET complete = 1 " + 
                 "WHERE complete = 0; SELECT @@ROWCOUNT as count";
 			mssql.query(sql, {
-				success: function(results) {
-					if(results.length == 1)
-						response.send(200, results[0]);
+				success: function(results) {			
+					if(results.length == 1)							
+						response.send(200, results[0]);			
 				}
 			})
 		};
 
 
-> [AZURE.NOTE] The [request](http://msdn.microsoft.com/zh-cn/library/azure/jj554218.aspx) and [response](http://msdn.microsoft.com/zh-cn/library/azure/dn303373.aspx) object supplied to custom API functions are implemented by the [Express.js library](http://go.microsoft.com/fwlink/p/?LinkId=309046). 
+> [AZURE.NOTE] The [request](http://msdn.microsoft.com/zh-cn/library/windowsazure/jj554218.aspx) and [response](http://msdn.microsoft.com/zh-cn/library/windowsazure/dn303373.aspx) object supplied to custom API functions are implemented by the [Express.js library](http://go.microsoft.com/fwlink/p/?LinkId=309046). 
 
 <!-- Anchors. -->
 
 <!-- Images. -->
 
 <!-- URLs. -->
-[mssql object]: http://msdn.microsoft.com/zh-cn/library/azure/jj554212.aspx
+
+[mssql object]: http://msdn.microsoft.com/zh-cn/library/windowsazure/jj554212.aspx

@@ -1,4 +1,4 @@
-If you need to review the deployment output, including the custom deployment script output, navigate to the  **DEPLOYMENTS** page on the Azure Management Portal.
+If you need to review the deployment output, including the custom deployment script output, navigate to the  **DEPLOYMENTS** page on the Azure Classic Management Portal.
 
 Expand the desired deployment:
 

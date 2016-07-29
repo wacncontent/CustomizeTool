@@ -1,4 +1,4 @@
-1. In the [Azure Management Portal](https://manage.windowsazure.cn/), click your new Mobile Service or its cloud icon tab to go to the overview page.
+1. In the [Azure classic portal](https://manage.windowsazure.cn/), click your new Mobile Service or its cloud icon tab to go to the overview page.
 
     ![](./media/mobile-services-ios-download-service-locally/mobile-portal-quickstart-ios.png)
 
@@ -6,7 +6,7 @@
 
     ![](./media/mobile-services-ios-download-service-locally/download-service-project.png)
 
-3. If you haven't already done so, download and install [Visual Studio Professional 2013](https://www.visualstudio.com/downloads/download-visual-studio-vs), or a later version.
+3. If you haven't already done so, download and install [Visual Studio Professional 2013](https://go.microsoft.com/fwLink/p/?LinkID=391934), or a later version.
 
 4. Click **Download** under **Download and publish your service to the cloud**.
 

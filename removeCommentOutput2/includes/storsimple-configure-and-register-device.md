@@ -1,4 +1,3 @@
-
 <properties 
    pageTitle="Configure and register your device"
    description="Explains how to use Windows PowerShell for StorSimple to configure and register your device."
@@ -7,10 +6,14 @@
    authors="SharS"
    manager="adinah"
    editor="tysonn" />
-<tags
-	ms.service="storsimple"
-	ms.date="04/01/2015"
-	wacn.date=""/>
+<tags 
+   ms.service="storsimple"
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="TBD"
+   ms.date="04/01/2015"
+   ms.author="v-sharos" />
 
 
 ### To configure and register the device
@@ -40,9 +43,9 @@
    - IP address for Primary DNS server
    - IP address for Primary NTP server
    
-      > [AZURE.NOTE] You may have to wait for a few minutes for the subnet mask and the DNS settings to be applied. If you get a "The device is not ready." error message, check the physical network connection on the DATA 0 network interface of your active controller.
+    > [AZURE.NOTE] You may have to wait for a few minutes for the subnet mask and the DNS settings to be applied. If you get a "The device is not ready." error message, check the physical network connection on the DATA 0 network interface of your active controller.
 
-8. (Optional) configure your web proxy server. Although web proxy configuration is optional, **be aware that if you use a web proxy, you can only configure it here**. For more information, go to [Configure web proxy for your device](https://msdn.microsoft.com/zh-cn/library/azure/dn764937.aspx). 
+8. (Optional) configure your web proxy server. Although web proxy configuration is optional, **be aware that if you use a web proxy, you can only configure it here**. For more information, go to [Configure web proxy for your device](https://msdn.microsoft.com/library/azure/dn764937.aspx).
  
 9. For security reasons, the device administrator password expires after the first session, and you will need to change it for subsequent sessions. When prompted, provide a device administrator password. A valid device administrator password must be between 8 and 15 characters. The password must contain a combination of lowercase characters, uppercase characters, numbers, and special characters.
 
@@ -56,7 +59,7 @@
 
     > [AZURE.NOTE] You can press Ctrl + C at any time to exit the setup wizard. Any settings that you applied before you issued this command will be retained.
 
-12. After the device is registered, a Service Data Encryption key will appear. Copy this key and save it in a safe location. **This key will be required with the service registration key to register additional devices with the StorSimple Manager service.** Refer to [StorSimple security](/documentation/articles/storsimple-security) for more information about this key.
+12. After the device is registered, a Service Data Encryption key will appear. Copy this key and save it in a safe location. **This key will be required with the service registration key to register additional devices with the StorSimple Manager service.** Refer to [StorSimple security](/documentation/articles/storsimple-security/) for more information about this key.
 
      ![StorSimple register device 6](./media/storsimple-configure-and-register-device/HCS_RegisterYourDevice6-include.png)
 
@@ -67,11 +70,9 @@
 14. Return to the Management Portal, and complete the following steps:
   1. Double-click your StorSimple Manager service to access the **Quick Start** page.
   2. Click **View connected devices**.
-  3. On the **Devices** page, verify that the device has successfully connected to the service by looking up the status. The device status should be **Online**. 
+  3. On the **Devices** page, verify that the device has successfully connected to the service by looking up the status. The device status should be **Online**.
    
     ![StorSimple Devices page](./media/storsimple-configure-and-register-device/HCS_DevicesPageM-include.png) 
   
   > [AZURE.NOTE] If the device status is **Offline**, wait for a couple of minutes for the device to come online.
-
-
 

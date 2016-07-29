@@ -7,9 +7,13 @@
    manager="jwhit"
    editor="" />
 <tags
-	ms.service="backup"
-	ms.date="10/05/2015"
-	wacn.date=""/>
+   ms.service="backup"
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="TBD"
+   ms.date="10/05/2015"
+   ms.author="trinadhk";"jimpark"; "aashishr" />
 
 
 The following limits apply to Azure Backup.

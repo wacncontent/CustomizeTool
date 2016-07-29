@@ -1,7 +1,7 @@
 
 The final optional step of this tutorial is to check in the SQL Database associated with the mobile service an review the stored data. 
 
-1. In the [Azure Management Portal](https://manage.windowsazure.cn/), click manage for the database associated with your mobile service.
+1. In the [Azure classic portal](https://manage.windowsazure.cn/), click manage for the database associated with your mobile service.
  
 	![sign-in to manage SQL Database](./media/mobile-services-dotnet-backend-view-sql-data/manage-sql-azure-database.png)
 

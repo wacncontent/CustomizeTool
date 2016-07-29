@@ -64,7 +64,7 @@
 		
 ## Add an endpoint
 
-1. After MySQL is installed, you'll need to configure an endpoint to access MySQL remotely. Log in to the [Azure  Management Portal][AzurePortal]. Click **Virtual Machines**, click the name of your new virtual machine, and then click **Endpoints**.
+1. After MySQL is installed, you'll need to configure an endpoint to access MySQL remotely. Log in to the [Azure  Classic Management Portal][AzurePortal]. Click **Virtual Machines**, click the name of your new virtual machine, and then click **Endpoints**.
 
 2. Click **Add** at the bottom of the page.
 

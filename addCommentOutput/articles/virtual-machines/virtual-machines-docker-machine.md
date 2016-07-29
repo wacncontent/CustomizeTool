@@ -18,7 +18,12 @@
 This topic describes how to use [Docker](https://www.docker.com/) with [machine](https://github.com/docker/machine) and the [Azure CLI](https://github.com/Azure/azure-xplat-cli) to create an Azure Virtual Machine to quickly and easily manage Linux containers from a computer running Ubuntu. To demonstrate, the tutorial shows how to deploy both the [busybox Docker Hub image](https://registry.hub.docker.com/_/busybox/) image and also the [nginx Docker Hub image](https://registry.hub.docker.com/_/nginx/) and configures the container to route web requests to the nginx container. (The Docker **machine** documentation describes how to modify these instructions for other platforms.)
 
 
+
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+
+
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the classic deployment model. Microsoft recommends that most new deployments use the Resource Manager model.
+
 
 
 There are some prerequisites for completing this tutorial. You will need to install the following:
@@ -58,7 +63,7 @@ If you have experience with Linux distributions, you may already have these file
 
 		openssl x509 -inform pem -in mycert.pem -outform der -out mycert.cer
 
-2. Upload your certificate's .cer file to Azure. In the [Azure Management Portal](https://manage.windowsazure.cn), click **Settings** in the bottom left of the service area (shown below)
+2. Upload your certificate's .cer file to Azure. In the [Azure classic portal](https://manage.windowsazure.cn), click **Settings** in the bottom left of the service area (shown below)
 
 	![][portalsettingsitem]
 

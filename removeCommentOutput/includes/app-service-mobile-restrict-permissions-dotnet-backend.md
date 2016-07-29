@@ -20,5 +20,5 @@ By default, APIs in a Mobile App backend can be invoked anonymously. Next, you n
 
         table.access = 'authenticated';
 
-	For more details, refer to [How to: Require authentication for access to tables](/documentation/articles/app-service-mobile-node-backend-how-to-use-server-sdk#howto-tables-auth). To learn how to download the quickstart code project from your site, see [How to: Download the Node.js backend quickstart code project using Git](/documentation/articles/app-service-mobile-node-backend-how-to-use-server-sdk#download-quickstart).
+	For more details, refer to [How to: Require authentication for access to tables](/documentation/articles/app-service-mobile-node-backend-how-to-use-server-sdk/#howto-tables-auth). To learn how to download the quickstart code project from your site, see [How to: Download the Node.js backend quickstart code project using Git](/documentation/articles/app-service-mobile-node-backend-how-to-use-server-sdk/#download-quickstart).
 

@@ -38,28 +38,18 @@ This CNAME record is used to verify that you own the domain you are attempting t
 
 You can find the IP address, as well as the **awverify** name and **.chinacloudsites.cn** names for your web app by performing the following steps:
 
-1. In your browser, open the [Azure Management Portal](https://manage.windowsazure.cn).
+1. In your browser, open the [Azure Portal](https://portal.azure.cn).
 
 2. In the **Web Apps** blade, click the name of your web app, select **Configure**, and then select **Custom domains and SSL** from the bottom of the page.
 
 	![](./media/custom-dns-web-site/dncmntask-cname-6.png)
 
-
 3. In the **Custom Domains and SSL** blade, click **Bring external domains**.
 
 	![](./media/custom-dns-web-site/dncmntask-cname-7.png)
 
-	> [AZURE.NOTE] You cannot use custom domain names with a **Free** web app, and must upgrade the App Service plan to **Shared**, **Basic**, **Standard**, or **Premium** tier. For more information on the App Service plan's pricing tiers, including how to change the pricing tier of your web app, see [How to scale web apps](/documentation/articles/web-sites-scale).
+	> [AZURE.NOTE] You cannot use custom domain names with a **Free** web app, and must upgrade the App Service plan to **Shared**, **Basic**, **Standard**, or **Premium** tier. For more information on the App Service plan's pricing tiers, including how to change the pricing tier of your web app, see [How to scale web apps](/documentation/articles/web-sites-scale/).
 
 6. In the **Bring external domains** blade, you will see the **awverify** information, the currently assigned **.chinacloudsites.cn** domain name, and the virtual IP address. Save this information, as it will be used when creating DNS records.
 
 	![](./media/custom-dns-web-site/dncmntask-cname-8.png)
-
-
-	> [AZURE.NOTE] If **Manage Domains** is not enabled, you are using a **Free** web site. You cannot use custom domain names with a **Free** web site, and must upgrade the App Service plan to **Shared**, **Basic**, or **Standard** mode. For more information on the App Service plan modes, including how to change the mode of your web site, see [How to scale web sites](/documentation/articles/web-sites-scale).
-
-6. In the **MANAGE CUSTOM DOMAINS** dialog, you will see the **awverify** information, the currently assigned **.chinacloudsites.cn** domain name, and the virtual IP address. Save this information, as it will be used when creating DNS records.
-
-	![](./media/custom-dns-web-site/managecustomdomains.png)
-
-

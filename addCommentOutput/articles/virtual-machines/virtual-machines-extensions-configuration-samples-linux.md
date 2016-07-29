@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
    pageTitle="Sample configuration for Linux VM extensions | Azure"
    description="Sample configuration for authoring templates with extensions for Linux VMs"
@@ -26,7 +24,12 @@
 
 This article provides sample configuration for configuring Azure VM extensions for Linux VMs.
 
+
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
+
+
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the Resource Manager deployment model, which Microsoft recommends for most new deployments instead of the classic deployment model.
+
 
 
 To learn more about these extensions click here : [Azure VM Extensions Overview.](/documentation/articles/virtual-machines-extensions-features)

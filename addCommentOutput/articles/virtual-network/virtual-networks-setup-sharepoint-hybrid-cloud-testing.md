@@ -10,12 +10,17 @@
 
 <tags
 	ms.service="virtual-network"
-	ms.date="01/28/2016"
+	ms.date="03/28/2016"
 	wacn.date=""/>
 
 # Set up a SharePoint intranet farm in a hybrid cloud for testing
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]  Resource Manager model. 
+
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+
+
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the classic deployment model. Microsoft recommends that most new deployments use the Resource Manager model.
+
  
 
 This topic steps you through creating a hybrid cloud environment for testing an intranet SharePoint farm hosted in Azure. Here is the resulting configuration.
@@ -193,6 +198,6 @@ Your SharePoint intranet farm in a hybrid cloud environment is now ready for tes
 
 ## Next steps
 
-- Set up the [production workload](/documentation/articles/virtual-machines-workload-intranet-sharepoint-overview).
+- Set up the [production workload](/documentation/articles/virtual-machines-windows-sp-intranet-overview).
 
 

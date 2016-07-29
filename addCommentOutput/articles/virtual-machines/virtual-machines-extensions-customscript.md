@@ -20,12 +20,12 @@ This article gives an overview of using the Custom Script extension on Windows V
 Virtual machine (VM) extensions are built by Microsoft and trusted third-party publishers to extend the functionality of the VM. For an overview of VM extensions, see
 [Azure VM extensions and features](/documentation/articles/virtual-machines-extensions-features).
 
-
 Link:
+
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] [Resource Manager model](/documentation/articles/virtual-machines-extensions-customscript%20-with%20template).
 
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] 
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the classic deployment model. Microsoft recommends that most new deployments use the [Resource Manager model](/documentation/articles/virtual-machines-extensions-customscript%20-with%20template).
 
 
 
@@ -73,27 +73,23 @@ This scenario shows how to use a non-default storage either within the same subs
 
       Get-AzureVM -Name $name -ServiceName $servicename | Set-AzureVMCustomScriptExtension -StorageAccountName $storageaccount -StorageAccountKey $storagekey -ContainerName $container -FileUri $fileUrl1, $fileUrl2 -Run 'file.ps1' | Update-AzureVM
 
-
 
-### Add Custom Script extension from the Azure Management Portal
+### Add Custom Script extension from the Azure portal
 
-Browse to the VM in the <a href="https://manage.windowsazure.cn/ " target="_blank">Azure Management Portal </a> and add the extension by specifying the script file to run.
+Browse to the VM in the <a href="https://portal.azure.cn/ " target="_blank">Azure portal </a> and add the extension by specifying the script file to run.
 
   ![][5]
 
 
-
 ### Uninstalling Custom Script extension
 
 Custom Script Extension can be uninstalled from the VM using the following command.
 
       get-azureVM -ServiceName KPTRDemo -Name KPTRDemo | Set-AzureVMCustomScriptExtension -Uninstall | Update-AzureVM
 
-
 ### Using Custom Script extension with templates
 
 To learn about using Custom Script extension with Azure Resource Manager templates, see the documentation [here](/documentation/articles/virtual-machines-extensions-customscript%20-with%20template).
 
-
 <!--Image references-->
 [5]: ./media/virtual-machines-extensions-customscript/addcse.png

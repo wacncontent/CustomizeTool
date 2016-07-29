@@ -93,4 +93,4 @@ This script creates a symmetric key protected by the asymmetric key in the key v
 ## Additional resources
 For more information on how to use these encryption features, see [Using EKM with SQL Server Encryption Features](https://msdn.microsoft.com/zh-cn/library/dn198405.aspx#UsesOfEKM).
 
-Note that the steps in this article assume that you already have SQL Server running on an Azure virtual machine. If not, see [Provision a SQL Server virtual machine in Azure](/documentation/articles/virtual-machines-provision-sql-server). For other guidance on running SQL Server on Azure VMs, see [SQL Server on Azure Virtual Machines overview](/documentation/articles/virtual-machines-sql-server-infrastructure-services).
+Note that the steps in this article assume that you already have SQL Server running on an Azure virtual machine. If not, see [Provision a SQL Server virtual machine in Azure](/documentation/articles/virtual-machines-windows-portal-sql-server-provision/). For other guidance on running SQL Server on Azure VMs, see [SQL Server on Azure Virtual Machines overview](/documentation/articles/virtual-machines-windows-sql-server-iaas-overview/).

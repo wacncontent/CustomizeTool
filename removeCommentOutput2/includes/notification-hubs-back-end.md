@@ -1,6 +1,6 @@
 
 This section shows how to send notifications from a .NET console app and any other.
-If you are using Mobile Services please refer to the [Get Started with Push](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-push/) tutorials. If you want to use Java or PHP refer to [How to use Notification Hubs from Java/PHP](/documentation/articles/notification-hubs-java-backend-how-to/). You can send notifications from any backend using the [Notification Hubs REST interface].
+If you are using Mobile Services please refer to the [Get Started with Push](/zh-cn/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-push/) tutorials. If you want to use Java or PHP refer to [How to use Notification Hubs from Java/PHP](/zh-cn/documentation/articles/notification-hubs-java-backend-how-to/). You can send notifications from any backend using the [Notification Hubs REST interface].
 
 The following code sends notifications to Windows Store, Windows Phone, iOS, and Android devices. 
 
@@ -92,11 +92,11 @@ Skip steps 1-3 if you created a console app when you completed [Get started with
 [16]: ./media/notification-hubs-back-end/notification-hub-scheduler2.png
 
 <!-- URLs. -->
-[get-started]: /documentation/articles/notification-hubs-windows-store-dotnet-get-started/
-[Use Notification Hubs to send notifications to users]: /documentation/articles/tutorial-notify-users-mobileservices
-[Get started with Mobile Services]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started/#create-new-service
+[get-started]: /zh-cn/documentation/articles/notification-hubs-windows-store-dotnet-get-started/
+[Use Notification Hubs to send notifications to users]: /documentation/articles/tutorial-notify-users-mobileservices/
+[Get started with Mobile Services]: /develop/mobile/tutorials/get-started/#create-new-service
 [Azure Management Portal]: https://manage.windowsazure.cn/
 [wns object]: https://msdn.microsoft.com/zh-cn/library/azure/jj860484.aspx
 [Notification Hubs Guidance]: http://msdn.microsoft.com/zh-cn/library/jj927170.aspx
 [Notification Hubs How-To for Windows Store]: http://msdn.microsoft.com/zh-cn/library/jj927172.aspx
-[Notification Hubs REST interface]: http://msdn.microsoft.com/zh-cn/library/azure/dn223264.aspx
+[Notification Hubs REST interface]: http://msdn.microsoft.com/zh-cn/library/windowsazure/dn223264.aspx

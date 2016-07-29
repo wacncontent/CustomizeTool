@@ -5,7 +5,7 @@
 
 		using Gcm.Client;
 
-4. In the **ToDoActivity** class, add the following new code:
+4. In the **ToDoActivity** class, add the following new code: 
 
         // Create a new instance field for this activity.
         static ToDoActivity instance = new ToDoActivity();

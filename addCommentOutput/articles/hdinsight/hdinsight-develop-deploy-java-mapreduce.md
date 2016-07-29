@@ -300,7 +300,7 @@ You have now developed a word-counting MapReduce job and tested it successfully 
 
 
 ##<a id="upload"></a>Upload data and application to Azure Blob storage
-Azure HDInsight uses Azure Blob storage for data storage. When an HDInsight cluster is provisioned, an Azure Blob storage container is used to store the system files. You can use either this default container or a different container (either on the same Azure Storage account or on a different Storage account located in the same datacenter as the cluster) for storing the data files.
+Azure HDInsight uses Azure Blob storage for data storage. When an HDInsight cluster is provisioned, an Azure Blob storage container is used to store the system files. You can use either this default container or a different container (either on the same Azure Storage account or on a different Storage account located in the same region as the cluster) for storing the data files.
 
 In this tutorial, you will create a container on a separate Storage account for the data files and the MapReduce application. The data files are the text files in the **C:\hdp\hadoop-2.4.0.2.1.3.0-1981\share\doc\hadoop\common** directory on your emulator workstation.
 
@@ -312,7 +312,7 @@ In this tutorial, you will create a container on a separate Storage account for 
 		$subscriptionName = "<AzureSubscriptionName>"
 		$storageAccountName_Data = "<AzureStorageAccountName>"  
 		$containerName_Data = "<ContainerName>"
-		$location = "<MicrosoftDataCenter>"  # For example, "China East"
+		$location = "<Region>"  # For example, "China East"
 
 	The **$subscripionName** variable is associated with your Azure subscription. You must name **$storageAccountName\_Data** and **$containerName\_Data**. For the naming restrictions, see [Naming and Referencing Containers, Blobs, and Metadata](http://msdn.microsoft.com/zh-cn/library/azure/dd135715.aspx).
 
@@ -451,7 +451,7 @@ In this section, you will create an Azure PowerShell script that performs the fo
 		# The Storage account and the HDInsight cluster variables
 		$subscriptionName = "<AzureSubscriptionName>"
 		$stringPrefix = "<StringForPrefix>"
-		$location = "<MicrosoftDataCenter>"     ### Must match the data Storage account location
+		$location = "<Region>"     ### Must match the data Storage account location
 		$clusterNodes = <NumberOFNodesInTheCluster>
 
 		$storageAccountName_Data = "<TheDataStorageAccountName>"
@@ -567,7 +567,6 @@ After the job is completed, you have the option to export the data to SQL Server
 ##<a id="nextsteps"></a>Next steps
 In this tutorial, you have learned how to develop a Java MapReduce job, how to test the application on the HDInsight Emulator, and how to write an Azure PowerShell script to provision an HDInsight cluster and run a MapReduce job on the cluster. To learn more, see the following articles:
 
-- [Develop C# Hadoop streaming MapReduce programs for HDInsight][hdinsight-develop-streaming]
 - [Get started with Azure HDInsight][hdinsight-get-started]
 - [Get started with the HDInsight Emulator][hdinsight-emulator]
 - [Use Azure Blob storage with HDInsight][hdinsight-storage]
@@ -588,7 +587,6 @@ In this tutorial, you have learned how to develop a Java MapReduce job, how to t
 [hdinsight-ODBC]: /documentation/articles/hdinsight-connect-excel-hive-ODBC-driver
 [hdinsight-power-query]: /documentation/articles/hdinsight-connect-excel-power-query
 
-[hdinsight-develop-streaming]: /documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs
 
 [hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
 [hdinsight-emulator]: /documentation/articles/hdinsight-hadoop-emulator-get-started

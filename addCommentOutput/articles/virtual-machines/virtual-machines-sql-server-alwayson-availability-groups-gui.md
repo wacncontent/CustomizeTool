@@ -15,24 +15,23 @@
 # Configure AlwaysOn Availability Groups in Azure VM (GUI)
 
 > [AZURE.SELECTOR]
-
 - [Portal - Resource Manager](/documentation/articles/virtual-machines-sql-server-alwayson-availability-groups-gui-arm)
 - [Portal - Classic](/documentation/articles/virtual-machines-sql-server-alwayson-availability-groups-gui)
 - [PowerShell - Classic](/documentation/articles/virtual-machines-sql-server-alwayson-availability-groups-powershell)
-
-
-- [Azure Management Portal](/documentation/articles/virtual-machines-sql-server-alwayson-availability-groups-gui)
-- [PowerShell](/documentation/articles/virtual-machines-sql-server-alwayson-availability-groups-powershell)
-
 
 <br/>
 
+
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+
+
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the classic deployment model. Microsoft recommends that most new deployments use the Resource Manager model.
+
 
 
 This end-to-end tutorial shows you how to implement Availability Groups using SQL Server AlwaysOn running on Azure virtual machines.
 
->[AZURE.NOTE] In the Azure Management Portal, there is a new gallery setup for AlwaysOn Availability Groups with a Listener. This configures everything you need for AlwaysOn Availability Groups automatically. For more information, see [SQL Server AlwaysOn Offering in Azure Management Portal Gallery](http://blogs.technet.com/b/dataplatforminsider/archive/2014/08/25/sql-server-alwayson-offering-in-microsoft-azure-portal-gallery.aspx). To use PowerShell, see the tutorial of the same scenario at [Configure AlwaysOn Availability Groups in Azure with PowerShell](/documentation/articles/virtual-machines-sql-server-alwayson-availability-groups-powershell).
+>[AZURE.NOTE] In the Azure Management Portal, there is a new gallery setup for AlwaysOn Availability Groups with a Listener. This configures everything you need for AlwaysOn Availability Groups automatically. For more information, see [SQL Server AlwaysOn Offering in Azure classic portal Gallery](http://blogs.technet.com/b/dataplatforminsider/archive/2014/08/25/sql-server-alwayson-offering-in-microsoft-azure-portal-gallery.aspx). To use PowerShell, see the tutorial of the same scenario at [Configure AlwaysOn Availability Groups in Azure with PowerShell](/documentation/articles/virtual-machines-sql-server-alwayson-availability-groups-powershell).
 
 At the end of the tutorial, your SQL Server AlwaysOn solution in Azure will consist of the following elements:
 
@@ -64,7 +63,7 @@ This tutorial assumes the following:
 
 ## Create the Virtual Network and Domain Controller Server
 
-You begin with a new Azure trial account. Once you have finished your account setup, you should be in the home screen of the Azure Management Portal.
+You begin with a new Azure trial account. Once you have finished your account setup, you should be in the home screen of the Azure classic portal.
 
 1. Click the **New** button at the lower-left corner of the page, as shown below.
 
@@ -95,7 +94,7 @@ You begin with a new Azure trial account. Once you have finished your account se
 |Virtual machine configuration|**CLOUD SERVICE** = Create a new cloud service<br/>**CLOUD SERVICE DNS NAME** = A unique cloud service name<br/>**DNS NAME** = A unique name (ex: ContosoDC123)<br/>**REGION/AFFINITY GROUP/VIRTUAL NETWORK** = ContosoNET<br/>**VIRTUAL NETWORK SUBNETS** = Back(10.10.2.0/24)<br/>**STORAGE ACCOUNT** = Use an automatically generated storage account<br/>**AVAILABILITY SET** = (None)|
 |Virtual machine options|Use defaults|
 
-Once you finish configuring the new VM, wait for the VM to be provsioned. This process takes some time to complete, and if you click to the **Virtual Machine** tab in the Azure Management Portal, you can see ContosoDC cycling states from **Starting (Provisioning)** to **Stopped**, **Starting**, **Running (Provisioning)**, and finally **Running**.
+Once you finish configuring the new VM, wait for the VM to be provsioned. This process takes some time to complete, and if you click to the **Virtual Machine** tab in the Azure classic portal, you can see ContosoDC cycling states from **Starting (Provisioning)** to **Stopped**, **Starting**, **Running (Provisioning)**, and finally **Running**.
 
 The DC server is now successfully provisioned. Next, you will configure the Active Directory domain on this DC server.
 
@@ -195,7 +194,7 @@ Now that you have finished configuring Active Directory and the user objects, yo
 
 ## Create the SQL Server VMs
 
-Next, create three VMs, including a WSFC cluster node and two SQL Server VMs. To create each of the VMs, go back to the Azure Management Portal, click **New**, **Compute**, **Virtual Machine**, and then **From Gallery**. Then use the templates in the following table to help you create the VMs.
+Next, create three VMs, including a WSFC cluster node and two SQL Server VMs. To create each of the VMs, go back to the Azure classic portal, click **New**, **Compute**, **Virtual Machine**, and then **From Gallery**. Then use the templates in the following table to help you create the VMs.
 
 |Page|VM1|VM2|VM3|
 |---|---|---|---|

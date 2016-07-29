@@ -1,6 +1,4 @@
-<!-- not suitable for Mooncake -->
-
-<properties 
+<properties
    pageTitle="How to create NSGs in ARM mode using a template| Azure"
    description="Learn how to create and deploy NSGs in ARM using a template"
    services="virtual-network"
@@ -21,7 +19,12 @@
 
 [AZURE.INCLUDE [virtual-networks-create-nsg-intro-include](../includes/virtual-networks-create-nsg-intro-include.md)]
 
-[AZURE.INCLUDE [azure-arm-classic-important-include](../includes/azure-arm-classic-important-include.md)] This article covers the Resource Manager deployment model. You can also [create NSGs in the classic deployment model](/documentation/articles/virtual-networks-create-nsg-classic-ps).
+
+[AZURE.INCLUDE [azure-arm-classic-important-include](../includes/azure-arm-classic-important-include.md)] This article covers the Resource Manager deployment model. You can also [create NSGs in the classic deployment model](/documentation/articles/virtual-networks-create-nsg-classic-ps/).
+
+
+>[AZURE.IMPORTANT]Before you work with Azure resources, it's important to understand that Azure currently has two deployment models: Resource Manager, and classic. Make sure you understand [deployment models and tools](/documentation/articles/azure-classic-rm/) before working with any Azure resource. You can view the documentation for different tools by clicking the tabs at the top of this article. This article covers the Resource Manager deployment model. You can also [create NSGs in the classic deployment model](/documentation/articles/virtual-networks-create-nsg-classic-ps/).
+
 
 [AZURE.INCLUDE [virtual-networks-create-nsg-scenario-include](../includes/virtual-networks-create-nsg-scenario-include.md)]
 
@@ -85,10 +88,12 @@ To associate the NSG to the front end subnet, you have to change the subnet defi
           }, ...
 
 Notice the same being done for the back end NSG and the back end subnet in the template.
+
 
 ## Deploy the ARM template by using click to deploy
 
 The sample template available in the public repository uses a parameter file containing the default values used to generate the scenario described above. To deploy this template using click to deploy, follow [this link](http://github.com/telmosampaio/azure-templates/tree/master/201-IaaS-WebFrontEnd-SQLBackEnd-NSG), click **Deploy to Azure**, replace the default parameter values if necessary, and follow the instructions in the portal.
+
 
 ## Deploy the ARM template by using PowerShell
 
@@ -96,26 +101,26 @@ To deploy the ARM template you downloaded by using PowerShell, follow the steps 
 
 [AZURE.INCLUDE [powershell-preview-include.md](../includes/powershell-preview-include.md)]
 
-1. If you have never used Azure PowerShell, see [How to Install and Configure Azure PowerShell](/documentation/articles/powershell-install-configure) and follow the instructions all the way to the end to sign into Azure and select your subscription.
+1. If you have never used Azure PowerShell, see [How to Install and Configure Azure PowerShell](/documentation/articles/powershell-install-configure/) and follow the instructions all the way to the end to sign into Azure and select your subscription.
 
 3. Run the **`New-AzureRmResourceGroup`** cmdlet to create a resource group using the template.
 
 		New-AzureRmResourceGroup -Name TestRG -Location uswest `
 		    -TemplateFile 'https://raw.githubusercontent.com/telmosampaio/azure-templates/master/201-IaaS-WebFrontEnd-SQLBackEnd/azuredeploy.json' `
-		    -TemplateParameterFile 'https://raw.githubusercontent.com/telmosampaio/azure-templates/master/201-IaaS-WebFrontEnd-SQLBackEnd/azuredeploy.parameters.json'	
+		    -TemplateParameterFile 'https://raw.githubusercontent.com/telmosampaio/azure-templates/master/201-IaaS-WebFrontEnd-SQLBackEnd/azuredeploy.parameters.json'
 
 	Expected output:
 
 		ResourceGroupName : TestRG
 		Location          : chinanorth
 		ProvisioningState : Succeeded
-		Tags              : 
-		Permissions       : 
+		Tags              :
+		Permissions       :
 		                    Actions  NotActions
 		                    =======  ==========
 		                    *                  
-		                    
-		Resources         : 
+
+		Resources         :
 		                    Name                Type                                     Location
 		                    ==================  =======================================  ========
 		                    sqlAvSet            Microsoft.Compute/availabilitySets       chinanorth  
@@ -137,14 +142,14 @@ To deploy the ARM template you downloaded by using PowerShell, follow the steps 
 		                    TestVNet            Microsoft.Network/virtualNetworks        chinanorth  
 		                    testvnetstorageprm  Microsoft.Storage/storageAccounts        chinanorth  
 		                    testvnetstoragestd  Microsoft.Storage/storageAccounts        chinanorth  
-		                    
+
 		ResourceId        : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/TestRG
 
 ## Deploy the ARM template by using the Azure CLI
 
 To deploy the ARM template by using the Azure CLI, follow the steps below.
 
-1. If you have never used Azure CLI, see [Install and Configure the Azure CLI](/documentation/articles/xplat-cli-install) and follow the instructions up to the point where you select your Azure account and subscription.
+1. If you have never used Azure CLI, see [Install and Configure the Azure CLI](/documentation/articles/xplat-cli-install/) and follow the instructions up to the point where you select your Azure account and subscription.
 2. Run the **`azure config mode`** command to switch to Resource Manager mode, as shown below.
 
 		azure config mode arm
@@ -178,4 +183,3 @@ To deploy the ARM template by using the Azure CLI, follow the steps below.
 	- **-l (or --location)**. Azure region where the resource group will be created.
 	- **-f (or --template-file)**. Path to your ARM template file.
 	- **-e (or --parameters-file)**. Path to your ARM parameters file.
-

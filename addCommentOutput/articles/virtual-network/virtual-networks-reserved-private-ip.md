@@ -8,7 +8,7 @@
    editor="tysonn" />
 <tags
 	ms.service="virtual-network"
-	ms.date="12/07/2015"
+	ms.date="03/22/2016"
 	wacn.date=""/>
 
 # How to Set a Static Internal Private IP
@@ -27,7 +27,7 @@ To verify if the IP address *10.0.0.7* is available in a vnet named *TestVnet*, 
 	OperationId          : fd3097e1-5f4b-9cac-8afa-bba1e3492609
 	OperationStatus      : Succeeded
 
->[AZURE.NOTE] If you want to test the command above in a safe environment follow the guidelines in [Create a Virtual Network](/documentation/articles/virtual-networks-create-vnet) to create a vnet named *TestVnet* and ensure it uses the *10.0.0.0/8* address space.
+>[AZURE.NOTE] If you want to test the command above in a safe environment follow the guidelines in [Create a Virtual Network](/documentation/articles/virtual-networks-create-vnet-classic-portal/) to create a vnet named *TestVnet* and ensure it uses the *10.0.0.0/8* address space.
 
 ## How to specify a static internal IP when creating a VM
 The PowerShell script below creates a new cloud service named *TestService*, then retrieves an image from Azure, then creates a VM named *TestVM* in the new cloud service using the retrieved image, sets the VM to be in a subnet named *Subnet-1*, and sets *10.0.0.7* as a static internal IP for the VM:
@@ -88,9 +88,9 @@ To add a static internal IP to the VM created using the script above, runt he fo
 
 ## Next steps
 
-[Reserved IP](/documentation/articles/virtual-networks-reserved-public-ip)
+[Reserved IP](/documentation/articles/virtual-networks-reserved-public-ip/)
 
-[Instance-Level Public IP (ILPIP)](/documentation/articles/virtual-networks-instance-level-public-ip)
+[Instance-Level Public IP (ILPIP)](/documentation/articles/virtual-networks-instance-level-public-ip/)
 
 [Reserved IP REST APIs](https://msdn.microsoft.com/zh-cn/library/azure/dn722420.aspx)
  

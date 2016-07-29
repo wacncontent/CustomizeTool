@@ -1,15 +1,15 @@
-<properties 
-	pageTitle="Configure a custom domain name for a web app in Azure that uses Traffic Manager"wpickett"Use a custom domain name for an a web app in Azure that includes Traffic Manager for load balancing." 
-    description="Use a custom domain name for an a web app in Azure that includes Traffic Manager for load balancing." 
-	services="app-service\web" 
-	documentationCenter="" 
-	authors="rmcmurray" 
-	manager="wpickett" 
+<properties
+	pageTitle="Configure a custom domain name for a web app in Azure that uses Traffic Manager for load balancing."
+    description="Use a custom domain name for an a web app in Azure that includes Traffic Manager for load balancing."
+	services="app-service\web"
+	documentationCenter=""
+	authors="rmcmurray"
+	manager="wpickett"
 	editor=""/>
 
 <tags
 	ms.service="app-service-web"
-	ms.date="02/04/2016"
+	ms.date="04/08/2016"
 	wacn.date=""/>
 
 #Configuring a custom domain name for a web app in Azure using Traffic Manager
@@ -38,12 +38,12 @@ This article provides generic instructions for using a custom domain name with A
 ## Add a DNS record for your custom domain
 
 
-> [AZURE.NOTE] If you have purchased domain through Azure Web Apps then skip following steps and refer to the final step of [Buy Domain for Web Apps](/documentation/articles/custom-dns-web-site-buydomains-web-app) article. 
+> [AZURE.NOTE] If you have purchased domain through Azure Web Apps then skip following steps and refer to the final step of [Buy Domain for Web Apps](/documentation/articles/custom-dns-web-site-buydomains-web-app/) article.
 
 
 To associate your custom domain with a web app in Azure, you must add a new entry in the DNS table for your custom domain by using tools provided by the domain registrar that you purchased your domain name from. Use the following steps to locate and use the DNS tools.
 
-1. Log on to your account at your domain registrar, and look for a page for managing DNS records. Look for links or areas of the site labeled as **Domain Name**, **DNS**, or **Name Server Management**. Often a link to this page can be found be viewing your account information, and then looking for a link such as **My domains**.
+1. Sign in to your account at your domain registrar, and look for a page for managing DNS records. Look for links or areas of the site labeled as **Domain Name**, **DNS**, or **Name Server Management**. Often a link to this page can be found be viewing your account information, and then looking for a link such as **My domains**.
 
 4. Once you have found the management page for your domain name, look for a link that allows you to edit the DNS records. This might be listed as a **Zone file**, **DNS Records**, or as an **Advanced** configuration link.
 
@@ -64,4 +64,5 @@ To associate your custom domain with a web app in Azure, you must add a new entr
 [AZURE.INCLUDE [app-service-web-whats-changed](../includes/app-service-web-whats-changed.md)]
 
 [AZURE.INCLUDE [app-service-web-try-app-service](../includes/app-service-web-try-app-service.md)]
+
 

@@ -15,7 +15,12 @@
 
 # Migrate a SQL Server database to SQL Server in an Azure VM
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]  Resource Manager model. 
+
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+
+
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the classic deployment model. Microsoft recommends that most new deployments use the Resource Manager model.
+
 
 
 There are a number of methods for migrating an on-premises SQL Server user database to SQL Server in an Azure VM. This article will briefly discuss various methods, recommend the best method for various scenarios, and include a [tutorial](#azure-vm-deployment-wizard-tutorial) to guide you through the use of the **Deploy a SQL Server Database to a Azure VM** wizard.
@@ -71,7 +76,7 @@ Use the **Deploy a SQL Server Database to a Azure VM** wizard in Microsoft SQL S
 
 ### Get Latest Version of the Deploy a SQL Server Database to a Azure VM wizard
 
-Use the latest version of Microsoft SQL Server Management Studio for SQL Server to ensure that you have the latest version of the **Deploy a SQL Server Database to a Azure VM** wizard. The latest version of this wizard incorporates the most recent updates to the Azure Management Portal and supports the newest Azure VM images in the gallery (older versions of the wizard may not work). To get the latest version of Microsoft SQL Server Management Studio for SQL Server, [download it](http://download.microsoft.com/download/0/6/4/06471151-0668-485E-8CD0-D7D8297EE357/SSMS_BurnInstaller_June2015/SSMS-Web-Setup.exe) and install it on a client computer with connectivity to the database that you plan to migrating and to the internet.
+Use the latest version of Microsoft SQL Server Management Studio for SQL Server to ensure that you have the latest version of the **Deploy a SQL Server Database to a Azure VM** wizard. The latest version of this wizard incorporates the most recent updates to the Azure classic portal and supports the newest Azure VM images in the gallery (older versions of the wizard may not work). To get the latest version of Microsoft SQL Server Management Studio for SQL Server, [download it](http://download.microsoft.com/download/0/6/4/06471151-0668-485E-8CD0-D7D8297EE357/SSMS_BurnInstaller_June2015/SSMS-Web-Setup.exe) and install it on a client computer with connectivity to the database that you plan to migrating and to the internet.
 
 ### Configure the existing Azure virtual machine and SQL Server instance (if applicable)
 
@@ -149,18 +154,14 @@ Use this method when you cannot use the Deploy a SQL Server Database to a Azure 
 
 
 ## Backup to URL and restore
-
-Use the [backup to URL](https://msdn.microsoft.com/zh-cn/library/dn435916.aspx) method when you cannot use the Deploy a SQL Server Database to a Azure VM wizard because your backup file is larger than 1 TB and you are migrating from and to SQL Server 2016. For databases smaller than 1 TB or running a version of SQL Server prior to SQL Server 2016, use of the wizard is recommended. With SQL Server 2016, striped backup sets are supported, are recommended for performance, and required to exceed the size limits per blob. For very large databases, the use of the [Windows Import/Export Service](/documentation/articles/storage-import-export-service) is recommended.
-
-## ##<a name="detach-and-copy-to-url-and-attach-from-url"></a>  Detach and copy to URL and attach from URL
 
 
 ##<a name="backup-to-url-and-restore"></a> Backup to URL and restore
-
-Use the [backup to URL](https://msdn.microsoft.com/zh-cn/library/dn435916.aspx) method when you cannot use the Deploy a SQL Server Database to a Azure VM wizard because your backup file is larger than 1 TB and you are migrating from and to SQL Server 2016. For databases smaller than 1 TB or running a version of SQL Server prior to SQL Server 2016, use of the wizard is recommended. With SQL Server 2016, striped backup sets are supported, are recommended for performance, and required to exceed the size limits per blob. 
-
- ##<a name="detach-and-copy-to-url-and-attach-from-url"></a>  Detach and copy to URL and attach from URL
 
+
+Use the [backup to URL](https://msdn.microsoft.com/zh-cn/library/dn435916.aspx) method when you cannot use the Deploy a SQL Server Database to a Azure VM wizard because your backup file is larger than 1 TB and you are migrating from and to SQL Server 2016. For databases smaller than 1 TB or running a version of SQL Server prior to SQL Server 2016, use of the wizard is recommended. With SQL Server 2016, striped backup sets are supported, are recommended for performance, and required to exceed the size limits per blob.  For very large databases, the use of the [Windows Import/Export Service](/documentation/articles/storage-import-export-service) is recommended. 
+
+ ##  ##<a name="detach-and-copy-to-url-and-attach-from-url"></a>  Detach and copy to URL and attach from URL
 
 Use this method when you plan to [store these files using the Azure Blob storage service](https://msdn.microsoft.com/zh-cn/library/dn385720.aspx) and attach them to SQL Server running in an Azure VM, particularly with very large databases. Use the following general steps to migrate a user database using this manual method:
 

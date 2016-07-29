@@ -13,12 +13,10 @@
 	wacn.date=""/>
 
 # Example 2 - Build a DMZ to protect applications with a Firewall and NSGs
-
 
 [Return to the Security Boundary Best Practices Page][HOME]
-
 
-This example will create a DMZ with a firewall, four windows servers, and Network Security Groups. It will also walk through each of the relevant commands to provide a deeper understanding of each step. There is a also a Traffic Scenario section to provide a in-depth step-by-step how traffic proceeds through the layers of defense in the DMZ. Finally, in the references section is the complete code and instruction to build this environment to test and experiment with various scenarios. 
+This example will create a DMZ with a firewall, four windows servers, and Network Security Groups. It will also walk through each of the relevant commands to provide a deeper understanding of each step. There is also a Traffic Scenario section to provide an in-depth step-by-step how traffic proceeds through the layers of defense in the DMZ. Finally, in the references section is the complete code and instruction to build this environment to test and experiment with various scenarios. 
 
 ![Inbound DMZ with NVA and NSG][1]
 
@@ -26,7 +24,7 @@ This example will create a DMZ with a firewall, four windows servers, and Networ
 In this example there is a subscription that contains the following:
 
 - Two cloud services: "FrontEnd001" and "BackEnd001"
-- A Virtual Network, "CorpNetwork", with two subnets; "FrontEnd" and "BackEnd"
+- A Virtual Network "CorpNetwork", with two subnets: "FrontEnd" and "BackEnd"
 - A single Network Security Group that is applied to both subnets
 - A network virtual appliance, in this example a Barracuda NextGen Firewall, connected to the Frontend subnet
 - A Windows Server that represents an application web server ("IIS01")
@@ -37,7 +35,7 @@ In this example there is a subscription that contains the following:
 
 In the references section below there is a PowerShell script that will build most of the environment described above. Building the VMs and Virtual Networks, although are done by the example script, are not described in detail in this document.
  
-To build the environment;
+To build the environment:
 
   1.	Save the network config xml file included in the references section (updated with names, location, and IP addresses to match the given scenario)
   2.	Update the user variables in the script to match the environment the script is to be run against (subscriptions, service names, etc)
@@ -45,7 +43,7 @@ To build the environment;
 
 **Note**: The region signified in the PowerShell script must match the region signified in the network configuration xml file.
 
-Once the script runs successfully the following post-script steps may be taken;
+Once the script runs successfully the following post-script steps may be taken:
 
 1.	Set up the firewall rules, this is covered in the section below titled: Firewall Rules.
 2.	Optionally in the references section are two scripts to set up the web server and app server with a simple web application to allow testing with this DMZ configuration.
@@ -68,12 +66,12 @@ Declaratively, the following rules are being built for inbound traffic:
 
 With these rules bound to each subnet, if a HTTP request was inbound from the Internet to the web server, both rules 3 (allow) and 5 (deny) would apply, but since rule 3 has a higher priority only it would apply and rule 5 would not come into play. Thus the HTTP request would be allowed to the firewall. If that same traffic was trying to reach the DNS01 server, rule 5 (Deny) would be the first to apply and the traffic would not be allowed to pass to the server. Rule 6 (Deny) blocks the Frontend subnet from talking to the Backend subnet (except for allowed traffic in rules 1 and 4), this protects the Backend network in case an attacker compromises the web application on the Frontend, the attacker would have limited access to the Backend "protected" network (only to resources exposed on the AppVM01 server).
 
-There is a default outbound rule that allows traffic out to the internet. For this example, we're allowing outbound traffic and not modifying any outbound rules. To lock down traffic in both directions, User Defined Routing is required , this is explored in a different example that can found in the [main security boundary document][HOME] .
+There is a default outbound rule that allows traffic out to the internet. For this example, we're allowing outbound traffic and not modifying any outbound rules. To lock down traffic in both directions, User Defined Routing is required, this is explored in a different example that can found in the [main security boundary document][HOME].
 
 The above discussed NSG rules are very similar to the NSG rules in [Example 1 - Build a Simple DMZ with NSGs][Example1]. Please review the NSG Description in that document for a detailed look at each NSG rule and it's attributes.
 
 ## Firewall Rules
-A management client will need to be installed on a PC to manage the firewall and create the configurations needed. See the documentation from your firewall (or other NVA) vendor on how to manage the device. The remainder of this section will describe the configuration of the firewall itself, through the vendors management client (i.e. not the Azure Management Portal or PowerShell).
+A management client will need to be installed on a PC to manage the firewall and create the configurations needed. See the documentation from your firewall (or other NVA) vendor on how to manage the device. The remainder of this section will describe the configuration of the firewall itself, through the vendors management client (i.e. not the Azure portal  Preview  or PowerShell).
 
 Instructions for client download and connecting to the Barracuda used in this example can be found here: [Barracuda NG Admin](https://techlib.barracuda.com/NG61/NGAdmin)
 
@@ -138,7 +136,7 @@ With the activation of the firewall ruleset this example environment build is co
 16.	Since there are no outbound rules on the Frontend subnet the response is allowed, and the Internet User receives the web page requested.
 
 #### (Allowed) RDP to Backend
-1.	Server Admin on internet requests RDP session to AppVM01 on BackEnd001.CloudApp.Net:xxxxx where xxxxx is the randomly assigned port number for RDP to AppVM01 (the assigned port can be found on the Azure Management Portal or via PowerShell)
+1.	Server Admin on internet requests RDP session to AppVM01 on BackEnd001.CloudApp.Net:xxxxx where xxxxx is the randomly assigned port number for RDP to AppVM01 (the assigned port can be found on the Azure Portal  Preview  or via PowerShell)
 2.	Since the Firewall is only listening on the FrontEnd001.CloudApp.Net address, it is not involved with this traffic flow
 3.	Backend subnet begins inbound rule processing:
   1.	NSG Rule 1 (DNS) doesn't apply, move to next rule
@@ -204,10 +202,8 @@ Since the Web Server, IIS01, and the Firewall are in the same Cloud Service they
 
 ## Conclusion
 This is a relatively straight forward way of protecting your application with a firewall and isolating the back end subnet from inbound traffic.
-
 
 More examples and an overview of network security boundaries can be found [here][HOME].
-
 
 ## References
 ### Main Script and Network Config
@@ -215,7 +211,7 @@ Save the Full Script in a PowerShell script file. Save the Network Config into a
 Modify the user defined variables as needed. Run the script, then follow the Firewall rule setup instruction above.
 
 #### Full Script
-This script will, based on the user defined variables;
+This script will, based on the user defined variables:
 
 1.	Connect to an Azure subscription
 2.	Create a new storage account
@@ -563,6 +559,6 @@ If you wish to install a sample application for this, and other DMZ Examples, on
 [4]: ./media/virtual-networks-dmz-nsg-fw-asm/firewallruleactivate.png "Firewall Rule Activation"
 
 <!--Link References-->
-[HOME]: /documentation/articles/best-practices-network-security
-[SampleApp]: /documentation/articles/virtual-networks-sample-app
-[Example1]: /documentation/articles/virtual-networks-dmz-nsg-asm
+[HOME]: /documentation/articles/best-practices-network-security/
+[SampleApp]: /documentation/articles/virtual-networks-sample-app/
+[Example1]:  /documentation/articles/virtual-networks-dmz-nsg-asm/  /documentation/articles/virtual-networks-dmz-nsg-asm 

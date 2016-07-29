@@ -1,9 +1,8 @@
-
 # Azure Identity
 
 Managing identity is just as important in the public cloud is it is on premises. To help with this, Azure supports several different cloud identity technologies. They include these:
 
-- You can run Windows Server Active Directory (commonly called just AD) in the cloud using virtual Machines created with Azure Virtual machines. This approach makes sense when you're using Azure to extend your on-premises datacenter into the cloud.
+- You can run Windows Server Active Directory (commonly called just AD) in the cloud using virtual machines created with Azure Virtual Machines. This approach makes sense when you're using Azure to extend your on-premises datacenter into the cloud.
 
 - You can use Azure Active Directory to give your users single sign-on to Software as a Service (SaaS) applications. Microsoft's Office 365 uses this technology, for example, and applications running on Azure or other cloud platforms can also use it.
 
@@ -21,7 +20,7 @@ This article describes all three of these options.
 - [Using Azure Active Directory Access Control](#ac)
 
 
-## <a name="adinvm"></a>Running Windows Server Active Directory in VMs 
+## <a name="adinvm"></a>Running Windows Server Active Directory in VMs
 
 Running Windows Server AD in Azure VMs is much like running it on premises. [Figure 1](#fig1) shows a typical example of how this looks.
 
@@ -102,7 +101,7 @@ But while every identity provider issues some kind of token, those tokens aren't
 
 But why do this? Why not instead create an intermediary that can generate a single token format with a common representation of identity information? This approach would make life simpler for the developers who create applications, since they now need to handle only one kind of token. Azure Active Directory Access Control does exactly this, providing an intermediary in the cloud for working with diverse tokens. [Figure 4](#fig4) shows how it works
 
-![Azure Active Directory in Virtual Machine](./media/identity/identity_04_IdentityProviders.png)
+![Azure Active Directory in Virtual Machine](./media/identity/identity_04_IdentityProviders.png) 
 <a id="fig4"></a>Figure 4: Azure Active Directory Access Control makes it easier for applications to accept identity tokens issued by different identity providers.
 
 The process begins when a user attempts to access the application from a browser. The application redirects her to an IdP of her choice (and that the application also trusts). She authenticates herself to this IdP, such as by entering a username and password (step 1), and the IdP returns a token containing information about her (step 2).
@@ -121,4 +120,4 @@ Working with identity is important in nearly every application. The goal of Acce
 
 ##About the Author
 
-David Chappell is Principal of Chappell & Associates [www.davidchappell.com](http://www.davidchappell.com) in San Francisco, California. Through his speaking, writing, and consulting, 
+David Chappell is Principal of Chappell & Associates [www.davidchappell.com](http://www.davidchappell.com) in San Francisco, California. Through his speaking, writing, and consulting,

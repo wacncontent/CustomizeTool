@@ -1,4 +1,3 @@
-
 <properties 
    pageTitle="Create a volume"
    description="Explains how to add a volume on a StorSimple device."
@@ -7,10 +6,14 @@
    authors="SharS"
    manager="adinah"
    editor="tysonn" />
-<tags
-	ms.service="storsimple"
-	ms.date="04/01/15"
-	wacn.date=""/>
+<tags 
+   ms.service="storsimple"
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="TBD"
+   ms.date="04/01/15"
+   ms.author="v-sharos" />
 
 ### To create a volume
 
@@ -29,10 +32,11 @@
    2. Under **iSCSI Initiator Name**, provide the iSCSI Qualified Name (IQN) of your Windows host. If you don't have the IQN, follow the steps in [Get the IQN of a Windows Server host](#storsimple-get-iqn.md).
    3. Under **Default backup for this volume?**, select the **Enable** check box. The default backup will create a policy that executes at 22:30 each day (device time) and creates a cloud snapshot of this volume.
 
-        > [AZURE.NOTE] After the backup is enabled here, it cannot be reverted. You will need to edit the volume to modify this setting.
+     > [AZURE.NOTE] After the backup is enabled here, it cannot be reverted. You will need to edit the volume to modify this setting.
 
      ![Add volume](./media/storsimple-create-volume/HCs_AddVolume2M-include.png)
 
 4. Click the check icon ![check icon](./media/storsimple-create-volume/HCS_CheckIcon-include.png). A volume will be created with the specified settings.
+
 
 

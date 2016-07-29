@@ -23,7 +23,7 @@
 
 4. If you do not have an existing resource group, create a new resource group. Provide the name of the resource group and location that you need for your solution.
 
-        azure group create -n ExampleResourceGroup -l "China North"
+        azure group create -n ExampleResourceGroup -l "West US"
 
    A summary of the new resource group is returned.
 
@@ -33,7 +33,7 @@
         info:    Created resource group ExampleResourceGroup
         data:    Id:                  /subscriptions/####/resourceGroups/ExampleResourceGroup
         data:    Name:                ExampleResourceGroup
-        data:    Location:            China North 
+        data:    Location:            China North
         data:    Provisioning State:  Succeeded
         data:    Tags:
         data:

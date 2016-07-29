@@ -68,10 +68,10 @@ Sample NSG in JSON format:
 	}
 
 ### Default security rules
-Default security rules have the same properties available in security rules. They exist to provide basic connectivity between resources that have NSGs applied to them. Make sure you know which [default security rules](/documentation/articles/virtual-networks-nsg#Default-Rules) exist. 
+Default security rules have the same properties available in security rules. They exist to provide basic connectivity between resources that have NSGs applied to them. Make sure you know which [default security rules](/documentation/articles/virtual-networks-nsg/#Default-Rules) exist. 
 
 ### Additional resources
 
-- Get more information about [NSGs](/documentation/articles/virtual-networks-nsg).
+- Get more information about [NSGs](/documentation/articles/virtual-networks-nsg/).
 - Read the [REST API reference documentation](https://msdn.microsoft.com/zh-cn/library/azure/mt163615.aspx) for NSGs.
 - Read the [REST API reference documentation](https://msdn.microsoft.com/zh-cn/library/azure/mt163580.aspx) for security rules.

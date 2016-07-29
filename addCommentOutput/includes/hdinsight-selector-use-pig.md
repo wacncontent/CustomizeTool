@@ -1,9 +1,9 @@
 > [AZURE.SELECTOR]
-- [Overview](/documentation/articles/hdinsight-use-pig)
-- [PowerShell](/documentation/articles/hdinsight-hadoop-use-pig-powershell)
+- [Overview](/documentation/articles/hdinsight-use-pig/)
 
-- [SSH](/documentation/articles/hdinsight-hadoop-use-pig-ssh)
+- [SSH](/documentation/articles/hdinsight-hadoop-use-pig-ssh/)
 
-- [Remote Desktop](/documentation/articles/hdinsight-hadoop-use-pig-remote-desktop)
-- [.NET](/documentation/articles/hdinsight-hadoop-use-pig-dotnet-sdk-v1)
-- [Curl](/documentation/articles/hdinsight-hadoop-use-pig-curl)
+- [Curl](/documentation/articles/hdinsight-hadoop-use-pig-curl/)
+- [PowerShell](/documentation/articles/hdinsight-hadoop-use-pig-powershell/)
+- [.NET](/documentation/articles/hdinsight-hadoop-use-pig-dotnet-sdk-v1/)
+- [Remote Desktop](/documentation/articles/hdinsight-hadoop-use-pig-remote-desktop/)

@@ -1,15 +1,19 @@
-new docs: 11, word count: 13157
+new docs: 15, word count: {word_count_TODO}
 articles/application-gateway/application-gateway-create-gateway-arm-template.md
 articles/application-gateway/application-gateway-create-gateway-arm.md
 articles/application-gateway/application-gateway-create-gateway.md
 articles/application-gateway/application-gateway-create-probe-classic-ps.md
 articles/application-gateway/application-gateway-create-probe-ps.md
+articles/application-gateway/application-gateway-create-url-route-arm-ps.md
+articles/application-gateway/application-gateway-diagnostics.md
 articles/application-gateway/application-gateway-ilb-arm.md
 articles/application-gateway/application-gateway-ilb.md
 articles/application-gateway/application-gateway-introduction.md
 articles/application-gateway/application-gateway-probe-overview.md
 articles/application-gateway/application-gateway-ssl-arm.md
 articles/application-gateway/application-gateway-ssl.md
+articles/application-gateway/application-gateway-troubleshooting-502.md
+articles/application-gateway/application-gateway-url-route-overview.md
 
 new includes: 1
 includes/application-gateway-create-probe-intro-include.md

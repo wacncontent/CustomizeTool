@@ -26,11 +26,9 @@ Example of load balancer template in Json format:
 	    "location": {
 	      "type": "string",
 	      "allowedValues": [
-
 	        "China East",
 	        "China North",
 	        "West Europe",
-
 	        "China East",
 	        "China North"
 	      ],

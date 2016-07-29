@@ -16,7 +16,12 @@
 
 #How to Log on to a Virtual Machine Running Linux #
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]  [Resource Manager deployment model](/documentation/articles/virtual-machines-linux-tutorial-portal-rm). 
+
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] [Resource Manager deployment model](/documentation/articles/virtual-machines-linux-tutorial-portal-rm).
+
+
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the classic deployment model. Microsoft recommends that most new deployments use the [Resource Manager deployment model](/documentation/articles/virtual-machines-linux-tutorial-portal-rm).
+
 
 You'll need to install an SSH client on the computer you want to use to log on to the virtual machine. There are many SSH client programs that you can choose from. The following are possible choices:
 
@@ -47,4 +52,4 @@ This procedure shows you how to use the PuTTY program to access the virtual mach
 You can now work with the virtual machine just as you would with any other server.
 
 <!-- LINKS -->
-[How to Reset a Password or SSH for Linux Virtual Machines]:  http://go.microsoft.com/fwlink/p/?LinkId=512138  /documentation/articles/virtual-machines-linux-use-vmaccess-reset-password-or-ssh 
+[How to Reset a Password or SSH for Linux Virtual Machines]:  http://go.microsoft.com/fwlink/p/?LinkId=512138  /documentation/articles/virtual-machines-linux-classic-reset-access 

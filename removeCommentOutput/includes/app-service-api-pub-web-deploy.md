@@ -1,3 +1,5 @@
+<!-- deleted in Global -->
+
 7. Right-click the API app project in **Solution Explorer** and select **Publish** to open the publish dialog. The publish profile that you created earlier should be pre-selected. 
 
 9. Click **Publish** to begin the deployment process. 
@@ -12,7 +14,7 @@
  
 	If you use another method to deploy an API app, or if Visual Studio fails to restart the gateway, you might have to restart the gateway manually. The following steps explain how to do that.
 
-1. In your browser, go to the [Azure preview portal](https://manage.windowsazure.cn). 
+1. In your browser, go to the [Azure preview portal](https://portal.azure.cn). 
 
 2. Navigate to the **API app** blade for the API app that you deployed.
 

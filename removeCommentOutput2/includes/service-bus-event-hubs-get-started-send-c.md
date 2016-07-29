@@ -1,7 +1,7 @@
 ## Send messages to Event Hubs
 In this section we will write a C app to send events to your Event Hub. We will use the Proton AMQP library from the [Apache Qpid project](http://qpid.apache.org/). This is analogous to using Service Bus queues and topics with AMQP from C as shown [here](https://code.msdn.microsoft.com/WindowsAzure/Using-Apache-Qpid-Proton-C-afd76504). For more information, see [Qpid Proton documentation](http://qpid.apache.org/proton/index.html).
 
-1. From the [Qpid AMQP Messenger page](http://qpid.apache.org/components/messenger/index.html), click the **Installing Qpid Proton** link and follow the instructions depending on your environment. We will assume a Linux environment; for example, an [Azure Linux VM](/documentation/articles/virtual-machines-linux-tutorial) with Ubuntu 14.04.
+1. From the [Qpid AMQP Messenger page](http://qpid.apache.org/components/messenger/index.html), click the **Installing Qpid Proton** link and follow the instructions depending on your environment. We will assume a Linux environment; for example, an [Azure Linux VM](/documentation/articles/virtual-machines-linux-quick-create-cli/) with Ubuntu 14.04.
 
 2. To compile the Proton library, install the following packages:
 
@@ -12,7 +12,7 @@ In this section we will write a C app to send events to your Event Hub. We will 
 3. Download the [Qpid Proton library](http://qpid.apache.org/proton/index.html) library, and extract it, e.g.:
 
 	```
-	wget http://apache.fastbull.org/qpid/proton/0.7/qpid-proton-0.7.tar.gz
+	wget http://archive.apache.org/dist/qpid/proton/0.7/qpid-proton-0.7.tar.gz
 	tar xvfz qpid-proton-0.7.tar.gz
 	```
 
@@ -65,7 +65,7 @@ In this section we will write a C app to send events to your Event Hub. We will 
 	}
 	
 	int sendMessage(pn_messenger_t * messenger) {
-		char * address = (char *) "amqps://SendRule:{Send Rule key}@{namespace name}.servicebus.chinacloudapi.cn/{event hub name}";
+		char * address = (char *) "amqps://SendRule:{Send Rule key}@{namespace name}.servicebus.windows.net/{event hub name}";
 		char * msgtext = (char *) "Hello from C!";
 	
 		pn_message_t * message;

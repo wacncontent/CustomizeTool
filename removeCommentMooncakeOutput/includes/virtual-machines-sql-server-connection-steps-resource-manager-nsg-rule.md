@@ -1,4 +1,4 @@
-<!-- not suitable for Mooncake -->
+<!-- Ibiza portal: tested -->
 
 ### Configure a Network Security Group inbound rule for the VM
 

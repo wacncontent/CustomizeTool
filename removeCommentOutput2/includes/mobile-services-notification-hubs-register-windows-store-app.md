@@ -42,19 +42,19 @@
 
     > [AZURE.NOTE] The client secret and package SID are important security credentials. Do not share these secrets with anyone or distribute them with your app.
 
-11. Log on to the [Azure Management Portal](https://manage.windowsazure.cn/), click **Mobile Services**, and then click your app.
+11. Log on to the [Azure classic portal](https://manage.windowsazure.cn/), click **Mobile Services**, and then click your app.
 
    	![](./media/mobile-services-notification-hubs-register-windows-store-app/mobile-services-selection.png)
 
 12. Click the **Push** tab and enter the **Client secret** and **Package SID** values obtained from WNS, then click **Save**.
 
-	>[AZURE.NOTE]When you are completing this tutorial using an older mobile service, you might see a link at the bottom of the **Push** tab that says **Enable Enhanced Push**. Click this now to upgrade your mobile service to integrate with Notification Hubs. This change cannot be reverted. For details on how to enable enhanced push notifications in a production mobile service, see <a href="https://msdn.microsoft.com/zh-cn/library/azure/dn635173.aspx">this guidance</a>. 
+	>[AZURE.NOTE]When you are completing this tutorial using an older mobile service, you might see a link at the bottom of the **Push** tab that says **Enable Enhanced Push**. Click this now to upgrade your mobile service to integrate with Notification Hubs. This change cannot be reverted. For details on how to enable enhanced push notifications in a production mobile service, see <a href="http://go.microsoft.com/fwlink/p/?LinkId=391951">this guidance</a>. 
 
    	![](./media/mobile-services-notification-hubs-register-windows-store-app/mobile-push-tab.png)
 
 	>[AZURE.NOTE]When you set your WNS credentials for enhanced push notifications in the **Push** tab in the portal, they are shared with Notification Hubs to configure the notification hub for your app.
 
 <!-- URLs. -->
-[Get started with Mobile Services]: /documentation/articles/mobile-services-windows-store-get-started/
+[Get started with Mobile Services]: /zh-cn/documentation/articles/mobile-services-windows-store-get-started/
 [Submit an app page]: http://go.microsoft.com/fwlink/p/?LinkID=266582
 [Azure Management Portal]: https://manage.windowsazure.cn/

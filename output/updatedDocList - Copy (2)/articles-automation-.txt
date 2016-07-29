@@ -1,0 +1,9 @@
+updated docs: 6
+articles/automation/automation-integration-modules.md
+articles/automation/automation-powershell-workflow.md
+articles/automation/automation-role-based-access-control.md
+articles/automation/automation-scheduling-a-runbook.md
+articles/automation/automation-solution-startstopvm-psworkflow.md
+articles/automation/automation-troubleshooting-automation-errors.md
+
+updated includes: 0

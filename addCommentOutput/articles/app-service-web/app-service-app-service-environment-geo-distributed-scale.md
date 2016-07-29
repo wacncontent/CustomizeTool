@@ -11,7 +11,7 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="01/09/2016"
+	ms.date="06/21/2016"
 	wacn.date=""/>	
 
 # Geo Distributed Scale with Azure Environments
@@ -105,6 +105,8 @@ The console picture below shows a DNS lookup for the sample app's custom domain 
 ![DNS Lookup][DNSLookup] 
 
 ## Additional Links and Information ##
+All articles and How-To's for Azure Environments are available in the [README for Application Service Environments](/documentation/articles/app-service-app-service-environments-readme/).
+
 Documentation on the preview Powershell [Azure Resource Manager (ARM) Traffic Manager support][ARMTrafficManager].  
 
 [AZURE.INCLUDE [app-service-web-whats-changed](../includes/app-service-web-whats-changed.md)]

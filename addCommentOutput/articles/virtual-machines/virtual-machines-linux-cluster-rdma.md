@@ -14,7 +14,12 @@
 
 # Set up a Linux RDMA cluster to run MPI applications
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]  Resource Manager model. 
+
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+
+
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the classic deployment model. Microsoft recommends that most new deployments use the Resource Manager model.
+
 
 
 This article shows you how to set up a Linux RDMA cluster in Azure  with [size A8 and A9 virtual machines](/documentation/articles/virtual-machines-a8-a9-a10-a11-specs)  to run parallel Message Passing Interface (MPI) applications. When you configure  size A8 and A9  Linux-based VMs to run a supported MPI implementation, MPI applications communicate efficiently over a low latency, high throughput network in Azure that is based on remote direct memory access (RDMA) technology.
@@ -34,10 +39,8 @@ Following are methods you can use to create a Linux RDMA cluster either with or 
 
 * **Azure CLI scripts** - As shown in the steps in the rest of this article, use the [Azure Command Line Interface](/documentation/articles/xplat-cli-install) (CLI) for Mac, Linux, and Windows to script the deployment of a virtual network and the other necessary components to create a Linux cluster. The CLI in the classic (Service Management) deployment mode creates the cluster nodes serially, so if you are deploying many compute nodes it might take several minutes to complete the deployment.
 
-
-* **Azure Resource Manager templates** - Use the Azure Resource Manager deployment model to deploy multiple A8 and A9 Linux VMs as well as define virtual networks, static IP addresses, DNS settings, and other resources for a compute cluster that can take advantage of the RDMA network to run MPI workloads. You can [create your own template](/documentation/articles/resource-group-authoring-templates), or check the [Azure Quickstart Templates page](https://azure.microsoft.com/documentation/templates/) for templates contributed by Microsoft or the community to deploy the solution you want. Resource Manager templates can provide a fast and reliable way to deploy a Linux cluster.
+* **Azure Resource Manager templates** - Use the Azure Resource Manager deployment model to deploy multiple A8 and A9 Linux VMs as well as define virtual networks, static IP addresses, DNS settings, and other resources for a compute cluster that can take advantage of the RDMA network to run MPI workloads. You can [create your own template](/documentation/articles/resource-group-authoring-templates) , or check the [Azure Quickstart Templates page](https://azure.microsoft.com/documentation/templates/) for templates contributed by Microsoft or the community to deploy the solution you want . Resource Manager templates can provide a fast and reliable way to deploy a Linux cluster.
 
-
 ## Deployment in Azure Service Management with Azure CLI scripts
 
 The following steps will help you use the Azure CLI to deploy a SUSE Linux Enterprise Server 12 VM, install Intel MPI Library and other customizations, create a custom VM image, and then script the deployment of a cluster  of A8 or A9 VMs .
@@ -106,12 +109,11 @@ Now provision a  size A9  VM with an available SLES 12 HPC image by running a 
 
 
 ```
-azure vm create -g <username> -p <password> -c <cloud-service-name> -l <location> -z A9 -n <vm-name> -e 22 b4590d9e3ed742e4a1d46e5424aa335e__suse-sles-12-hpc-v20150708
+
+azure vm create -g <username> -p <password> -c <cloud-service-name> -l <location> -z  A9  A7  -n <vm-name> -e 22 b4590d9e3ed742e4a1d46e5424aa335e__suse-sles-12-hpc-v20150708
+
 ```
 
-
-	azure vm create -g <username> -p <password> -c <cloud-service-name> -l <location> -z A7 -n <vm-name> -e 22 b4590d9e3ed742e4a1d46e5424aa335e__suse-sles-12-hpc-v20150708
-
 
 where
 
@@ -279,35 +281,20 @@ Modify the following Bash script with appropriate values for your environment, a
 # Replace <network-name> with your network identifier
 
 # Select a region where A8 and A9 VMs are available, such as China North
-# See Azure Pricing pages for prices and availability of A8 and A9 VMs
 
 
 	# Select a region, such as China North
-# See Azure Pricing pages for prices and availability of  VMs
-	
 
+# See Azure Pricing pages for prices and availability of  A8 and A9  VMs
 azure network vnet create -l "China North" -e 10.32.0.0 -i 16 <network-name>
-
-# Create a cloud service. All the A8 and A9 instances need to be in the same cloud service for Linux RDMA to work across InfiniBand.
-
-
-	
-# Create a cloud service. All the  instances need to be in the same cloud service for Linux RDMA to work across InfiniBand.
-
+# Create a cloud service. All the  A8 and A9  instances need to be in the same cloud service for Linux RDMA to work across InfiniBand.
 # Note: The current maximum number of VMs in a cloud service is 50. If you need to provision more than 50 VMs in the same cloud service in your cluster, contact Azure Support.
 azure service create <cloud-service-name> --location "China North" -s <subscription-ID>
 # Define a prefix naming scheme for compute nodes, e.g., cluster11, cluster12, etc.
 vmname=cluster
 # Define a prefix for external port numbers. If you want to turn off external ports and use only internal ports to communicate between compute nodes via port 22, don't use this option. Since port numbers up to 10000 are reserved, use numbers after 10000. Leave external port on for rank 0 and head node.
 portnumber=101
-
-# In this cluster there will be 8 size A9 nodes, named cluster11 to cluster18. Specify your captured image in <image-name>. Specify the username and password you used when creating the SSH keys.
-
-
-	
-# In this cluster there will be 8  nodes, named cluster11 to cluster18. Specify your captured image in <image-name>. Specify the username and password you used when creating the SSH keys.
-	
-
+# In this cluster there will be 8  size A9  nodes, named cluster11 to cluster18. Specify your captured image in <image-name>. Specify the username and password you used when creating the SSH keys.
 for (( i=11; i<19; i++ )); do
         azure vm create -g <username> -p <password> -c <cloud-service-name> -z  A9  A7  -n $vmname$i -e $portnumber$i -w <network-name> -b Subnet-1 <image-name>
 done
@@ -340,16 +327,23 @@ azure config mode asm
 azure vm extension set <vm-name> RDMAUpdateForLinux Microsoft.OSTCExtensions 0.1
 
 ```
+
 
 **For a VM provisioned in Azure Resource Manager**
+
 
 ```
 azure config mode arm
+
+
+	azure config mode arm
+
 
 azure vm extension set <resource-group> <vm-name> RDMAUpdateForLinux Microsoft.OSTCExtensions 0.1
+
 ```
-
 
+
 >[AZURE.NOTE]It might take some time to install the drivers, and the command will return without output. After the update, your VM will restart and should be ready for use in several minutes.
 
 You can script the driver update across all the nodes in your cluster. For example, the following script updates the drivers in the 8-node cluster created by the script in the previous step.
@@ -375,18 +369,15 @@ for (( i=11; i<19; i++ )); do
 
 azure vm extension set $vmname$i RDMAUpdateForLinux Microsoft.OSTCExtensions 0.1
 
-
 # For ARM VMs use the following command in your script.
 
 # azure vm extension set <resource-group> $vmname$i RDMAUpdateForLinux Microsoft.OSTCExtensions 0.1
 
 done
+
 
 ```
 
-
-	done
-
 
 ## Configure and run Intel MPI
 
@@ -450,12 +441,11 @@ Run a simple MPI command on one of the compute nodes to show that MPI is install
 
 ```
 /opt/intel/impi_latest/bin64/mpirun -ppn 1 -n 2 -hosts <host1>,<host2> -env I_MPI_FABRICS=shm:dapl -env I_MPI_DAPL_PROVIDER=ofa-v2-ib0 -env I_MPI_DYNAMIC_CONNECTION=0 hostname
-```
 
 
 	/opt/intel/impi_latest/bin64/mpirun -ppn 1 -n 2 -hosts <host1>,<host2> -env I_MPI_FABRICS=shm:dapl -env I_MPI_DAPL_PROVIDER=ofa-v2-ib0 -env I_MPI_DYNAMIC_CONNECTION=0 hostname
-
 
+ ``` 
 Your output should list the names of all the nodes that you passed as input for `-hosts`. For example, an **mpirun** command with two nodes will return an output similar to the following:
 
 

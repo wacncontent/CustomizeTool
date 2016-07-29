@@ -14,7 +14,12 @@
 
 # Use ReportViewer in a Web Site Hosted in Azure
 
+
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+
+
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the classic deployment model. Microsoft recommends that most new deployments use the Resource Manager model.
+
 
 
 You can build a Azure Web site with the Visual Studio ReportViewer control that displays a report stored on an Azure Virtual Machine. The ReportViewer control is in a Web application that you build using the ASP.NET Web application template.
@@ -37,12 +42,12 @@ Review the "General recommendation and best practices" section in [SQL Server Bu
 
 >
 >ReportViewer configured in local processing mode is not supported in Azure.
-
-Review the white paper [Reporting Services report viewer control and Azure virtual machine based report servers](http://download.microsoft.com/download/2/2/0/220DE2F1-8AB3-474D-8F8B-C998F7C56B5D/Reporting%20Services%20report%20viewer%20control%20and%20Azure%20VM%20based%20report%20servers.docx).
 
 
 ><p>ReportViewer configured in local processing mode is not supported in Azure.
 
+
+Review the white paper [Reporting Services report viewer control and Azure virtual machine based report servers](http://download.microsoft.com/download/2/2/0/220DE2F1-8AB3-474D-8F8B-C998F7C56B5D/Reporting%20Services%20report%20viewer%20control%20and%20Azure%20VM%20based%20report%20servers.docx).
 
 ## Adding Assemblies to the Deployment Package
 
@@ -94,7 +99,7 @@ The ReportViewer needs to use proper credentials to authenticate with the report
 
 ## Publish the ASP.NET Web application to Azure
 
-For instructions on publishing an ASP.NET Web application to Azure, see  [How to: Migrate and Publish a Web Application to Azure from Visual Studio](/documentation/articles/vs-azure-tools-migrate-publish-web-app-to-cloud-service) and  [Get started with Web Apps and ASP.NET](/documentation/articles/web-sites-dotnet-get-started).
+For instructions on publishing an ASP.NET Web application to Azure, see [How to: Migrate and Publish a Web Application to Azure from Visual Studio](/documentation/articles/vs-azure-tools-migrate-publish-web-app-to-cloud-service) and [Get started with Web Apps and ASP.NET](/documentation/articles/web-sites-dotnet-get-started).
 
 >[AZURE.IMPORTANT] If the Add Azure Deployment Project or Add Azure Cloud Service Project command does not appear in the shortcut menu in Solution Explorer, you may need to change the Target framework for the project to .NET Framework 4.
 

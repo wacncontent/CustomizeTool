@@ -1,8 +1,6 @@
-<!-- not suitable for Mooncake -->
-
 <properties
-   pageTitle="Create FQDN for a VM in Azure Management Portal | Azure"
-   description="Learn how to create a Fully Qualified Domain Name or FQDN for a Resource Manager based virtual machine in the Azure Management Portal."
+   pageTitle="Create FQDN for a VM in Azure portal | Azure"
+   description="Learn how to create a Fully Qualified Domain Name or FQDN for a Resource Manager based virtual machine in the Azure portal."
    services="virtual-machines"
    documentationCenter=""
    authors="dsk-2015"
@@ -15,12 +13,17 @@
 	ms.date="01/19/2016"
 	wacn.date=""/>
 
-# Create a Fully Qualified Domain Name in the Azure Management Portal
+# Create a Fully Qualified Domain Name in the Azure portal
 
+
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
+
+
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the Resource Manager deployment model, which Microsoft recommends for most new deployments instead of the classic deployment model.
+
 
 
-When you create a virtual machine in the [Azure Management Portal](https://manage.windowsazure.cn) using the **Resource Manager** deployment model, the portal creates a public IP resource for the virtual machine. You can use this IP address to remotely access the virtual machine. Although the portal does not create a [fully qualified domain name](https://en.wikipedia.org/wiki/Fully_qualified_domain_name) or FQDN, by default, it is extremely easy to create one once the virtual machine is created. This article demonstrates the steps to create a DNS name or FQDN.
+When you create a virtual machine in the [Azure portal](https://portal.azure.cn) using the **Resource Manager** deployment model, the portal creates a public IP resource for the virtual machine. You can use this IP address to remotely access the virtual machine. Although the portal does not create a [fully qualified domain name](https://en.wikipedia.org/wiki/Fully_qualified_domain_name) or FQDN, by default, it is extremely easy to create one once the virtual machine is created. This article demonstrates the steps to create a DNS name or FQDN.
 
 The article assumes that you have logged in to your subscription in the portal, and created a virtual machine with the available images, using the **Resource Manager**. Follow these steps once your virtual machine starts running.
 

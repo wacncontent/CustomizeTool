@@ -68,12 +68,10 @@ After a virtual machine is restored, here is an example of what your Windows Eve
 <!--Image reference-->
 ![][image2]
 
-Use the viewer to determine which virtual machines are configured in a multi-instance configuration using the Azure Management Portal, Azure PowerShell, or Azure CLI. For example, to determine which virtual machines are in a multi-instance configuration, you can browse the list of virtual machines with the Availability Set column added to the virtual machines browse dialog.  In the following example, the Example-VM1 and Example-VM2 virtual machines are in a muilti-instance configuration: 
-
+Use the viewer to determine which virtual machines are configured in a multi-instance configuration using the Azure portal, Azure PowerShell, or Azure CLI. For example, to determine which virtual machines are in a multi-instance configuration, you can browse the list of virtual machines with the Availability Set column added to the virtual machines browse dialog. In the following example, the Example-VM1 and Example-VM2 virtual machines are in a muilti-instance configuration:
 
 <!--Image reference-->
 ![][image4]
-
 
 ## Single-instance configuration updates
 
@@ -87,8 +85,7 @@ This planned maintenance event will impact the availability of your application 
 
 ### Email notification
 
-For single-instance and multi-instance virtual machine configurations only, Azure sends email communication in advance to alert you of the upcoming planned maintenance (1-week in advance). This email will be sent to the account administrator and co-administrator email accounts provided in the subscription.  Here is an example of this type of email: 
-
+For single-instance and multi-instance virtual machine configurations only, Azure sends email communication in advance to alert you of the upcoming planned maintenance (1-week in advance). This email will be sent to the account administrator and co-administrator email accounts provided in the subscription. Here is an example of this type of email:
 
 <!--Image reference-->
 ![][image1]
@@ -103,6 +100,7 @@ Region 1 | Region 2
 :----- | ------:
 China North | China East
 China East | China North
+
 China East 2 | China North
 China North | West Europe
 South China East | China East
@@ -122,4 +120,4 @@ US Gov Iowa | US Gov Virginia
 
 <!--Link references-->
 [Virtual Machines Manage Availability]: /documentation/articles/virtual-machines-windows-tutorial-classic-portal
-[Understand planned versus unplanned maintenance]:  /documentation/articles/virtual-machines-manage-availability#Understand-planned-versus-unplanned-maintenance  /documentation/articles/virtual-machines-manage-availability#Understand-planned-versus-unplanned-maintenance/ 
+[Understand planned versus unplanned maintenance]: /documentation/articles/virtual-machines-manage-availability#Understand-planned-versus-unplanned-maintenance

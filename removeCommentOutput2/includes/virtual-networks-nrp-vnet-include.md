@@ -10,7 +10,7 @@ VNets contain the following properties.
 |Property|Description|Sample values|
 |---|---|---|
 |**addressSpace**|Collection of address prefixes that make up the VNet in CIDR notation|192.168.0.0/16|
-|**subnets**|Collection of subnets that make up the VNet|see [subnets](#Subnets) below.|
+|**subnets**|Collection of subnets that make up the VNet| |
 |**ipAddress**|IP address assigned to object. This is a read-only property.|104.42.233.77|
 
 ### Subnets
@@ -72,6 +72,6 @@ Sample VNet in JSON format:
 
 ### Additional resources
 
-- Get more information about [VNet](/documentation/articles/virtual-networks-overview).
+- Get more information about [VNet](/documentation/articles/virtual-networks-overview/).
 - Read the [REST API reference documentation](https://msdn.microsoft.com/zh-cn/library/azure/mt163650.aspx) for VNets.
 - Read the [REST API reference documentation](https://msdn.microsoft.com/zh-cn/library/azure/mt163618.aspx) for Subnets.

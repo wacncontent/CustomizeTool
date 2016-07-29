@@ -1,0 +1,5 @@
+updated docs: 2
+articles/application-gateway/application-gateway-create-gateway-arm.md
+articles/application-gateway/application-gateway-create-gateway.md
+
+updated includes: 0

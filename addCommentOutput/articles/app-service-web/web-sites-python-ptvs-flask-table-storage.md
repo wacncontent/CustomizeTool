@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="11/18/2015"
+	ms.date="02/20/2016"
 	wacn.date=""/>
 
 
@@ -73,10 +73,10 @@ In this section, we'll create a Visual Studio project using a sample template. W
 
 To use storage operations, you need an Azure storage account. You can create a storage account by following these steps.
 
-1.  Log into the [Azure Management Portal](https://manage.windowsazure.cn/).
-
 
-2. Click the **New** icon on the top left of the Portal, then click **DATA SERVICE** > **Storage Account**. Click on **Create**, then give the storage account a unique name and create a new [resource group](/documentation/articles/resource-group-overview) for it.
+1.  Log into the [Azure Portal](https://portal.azure.cn/).
+
+2. Click the **New** icon on the top left of the Portal, then click **DATA SERVICE** > **Storage Account**. Click on **Create**, then give the storage account a unique name and create a new [resource group](/documentation/articles/resource-group-overview/) for it.
 
   	<!-- ![New Button](./media/web-sites-python-ptvs-flask-table-storage/PollsCommonAzurePlusNew.png) -->
 
@@ -85,6 +85,8 @@ To use storage operations, you need an Azure storage account. You can create a s
 5. Click the **Settings** part in the storage account's blade. Take note of the account name and the primary key.
 
 
+1.  Log into the [Azure Classic Management Portal](https://manage.windowsazure.cn/).
+
 2. Click the **New** icon on the bottom left of the portal, then click **DATA SERVICE** > **Storage** > **Quick Create**. Give the storage account a unique name.
 
 5. Click the **MANAGE ACCESS KEYS** in the storage account. Take note of the account name and the primary key.
@@ -94,10 +96,10 @@ To use storage operations, you need an Azure storage account. You can create a s
 
 ## Configure the Project
 
-In this section, we'll configure our application to use the storage account we just created. We'll see how to obtain connection settings from the Azure Management Portal. Then we'll run the application locally.
+In this section, we'll configure our application to use the storage account we just created. We'll see how to obtain connection settings from the Azure  Classic Management  Portal. Then we'll run the application locally.
 
 
-1.  In [Azure Management Portal][], click on the storage account created in the previous section.
+1.  In [Azure Classic Management Portal][], click on the storage account created in the previous section.
 
 1.  Click on **MANAGE ACCESS KEYS**.
 
@@ -143,9 +145,14 @@ It's easy to view and edit storage tables using Server Explorer in Visual Studio
 
 
 ## Publish the web app to Azure
+
+
+##<a name="publish-to-an-azure-website"></a> Publish the web app to Azure
+
 
-The Azure .NET SDK provides an easy way to deploy your web app to Azure .
+The Azure .NET SDK provides an easy way to deploy your web app to Azure.
 
+
 1.  Click on **Azure Web Apps**.
 
 1.  Click on **New** to create a new web app.
@@ -160,10 +167,6 @@ The Azure .NET SDK provides an easy way to deploy your web app to Azure .
   	<!-- ![Create Site on Azure Dialog](./media/web-sites-python-ptvs-flask-table-storage/PollsCommonCreateWebSite.png) -->
 
 
-##<a name="publish-to-an-azure-website"></a> Publish the web app to Azure
-
-The Azure .NET SDK provides an easy way to deploy your web app to Azure Web App.
-
 1.  In **Solution Explorer**, right-click on the project node and select **Publish**.
 
   	![Publish Web Dialog](./media/web-sites-python-ptvs-flask-table-storage/PollsCommonPublishWebSiteDialog.png)
@@ -172,7 +175,7 @@ The Azure .NET SDK provides an easy way to deploy your web app to Azure Web App.
 
 1.  Choose the previously downloaded "publish profile", and click "OK".
 
-	If you haven't downloaded the "publish profile", or have't created a web app, go to [Azure Management Portal](https://manage.windowsazure.cn) to create one. And in **Dashboard** of the web app, under **quick glance**, download the "publish profile".
+	If you haven't downloaded the "publish profile", or have't created a web app, go to [Azure Classic Management Portal](https://manage.windowsazure.cn) to create one. And in **Dashboard** of the web app, under **quick glance**, download the "publish profile".
 
 
 1.  Accept all other defaults and click **Publish**.
@@ -185,7 +188,7 @@ The Azure .NET SDK provides an easy way to deploy your web app to Azure Web App.
 
 In this section, we'll configure environment variables for the Web Apps instance.
 
-1.  In [Azure Management  Portal](https://manage.windowsazure.cn)  Portal] , open the web app's blade by clicking  **Browse** >  **Web Apps** > your web app name.
+1.  In [Azure  Portal](https://portal.azure.cn)  Classic Management Portal] , open the web app's blade by clicking  **Browse** >  **Web Apps** > your web app name.
 
 1.  In your web app's blade, click **Configure** , then click **Application Settings** .
 
@@ -226,12 +229,17 @@ Follow these links to learn more about Python Tools for Visual Studio, Flask and
 
 <!--Link references-->
 [Python Developer Center]: /develop/python/
-[Azure Cloud Services]: /documentation/articles/cloud-services-python-ptvs
-[documentation]: /documentation/articles/storage-python-how-to-use-table-storage
-[How to Use the Table Storage Service from Python]: /documentation/articles/storage-python-how-to-use-table-storage
+[Azure Cloud Services]: /documentation/articles/cloud-services-python-ptvs/
+[documentation]: /documentation/articles/storage-python-how-to-use-table-storage/
+[How to Use the Table Storage Service from Python]: /documentation/articles/storage-python-how-to-use-table-storage/
 
 <!--External Link references-->
-[Azure Management Portal]: https://manage.windowsazure.cn
+
+[Azure Portal]: https://portal.azure.cn
+
+
+[Azure Classic Management Portal]: https://manage.windowsazure.cn
+
 [Azure SDK for .NET]: /downloads/
 [Python Tools for Visual Studio]: http://aka.ms/ptvs
 [Python Tools 2.2 for Visual Studio]: http://go.microsoft.com/fwlink/?LinkID=624025

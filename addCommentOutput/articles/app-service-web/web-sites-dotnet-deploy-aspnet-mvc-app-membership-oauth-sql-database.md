@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="12/07/2015"
+	ms.date="03/21/2016"
 	wacn.date=""/> 
 
 # Create an ASP.NET MVC app with auth and SQL DB and deploy to Azure
@@ -31,7 +31,7 @@ You'll learn:
 * How to store relational data in the cloud by using Azure SQL Database.
 * How to deploy a web project that uses a database to a [web app](/documentation/services/web-sites/) in Azure Web App.
 
->[AZURE.NOTE] This is a long tutorial. If you want a quick introduction to Azure and Visual Studio web projects, see [Create an ASP.NET web app in Azure](/documentation/articles/web-sites-dotnet-get-started). For troubleshooting info, see the [Troubleshooting](#troubleshooting) section.
+>[AZURE.NOTE] This is a long tutorial. If you want a quick introduction to Azure and Visual Studio web projects, see [Create an ASP.NET web app in Azure](/documentation/articles/web-sites-dotnet-get-started/). For troubleshooting info, see the [Troubleshooting](#troubleshooting) section.
 >
 
 >Or if you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.
@@ -51,9 +51,7 @@ To set up your development environment, you must install [Visual Studio 2013 Upd
 
 	![New Project in File menu](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/gs13newproj.png)
 
-1. In the **New Project** dialog box, expand **C#** and select **Web** under **Installed Templates**, and then select **ASP.NET Web Application**.
-
-1. Name the application **ContactManager**, and then click **OK**.
+1. In the **New Project** dialog box, expand **C#** and select **Web** under **Installed Templates**, and then select **ASP.NET Web Application**. Name the application **ContactManager**, and then click **OK**.
 
 	![New Project dialog box](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/GS13newprojdb.png)
  
@@ -71,29 +69,35 @@ To set up your development environment, you must install [Visual Studio 2013 Upd
 1. Click **OK**.
 
 
-3. When the **Configure Azure Web App Settings** dialog appears, make sure that you are signed in to Azure:  sign in if you have not already done so, or reenter your credentials if your login is expired.
+1. The **Configure Azure Web App Settings** dialog appears. You may need to sign in if you have not already done so, or reenter your credentials if your login is expired.
 
-	![Reenter credentials](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/reentercredentials.png)
-
-2. If you want to specify a name for your web app, change the value in the **Web App name** box.
+1. Optional - change the value in the **Web App name** box (see image below).
 
 	The URL of the web app will be {name}.chinacloudsites.cn, so the name has to be unique in the chinacloudsites.cn domain. The configuration wizard suggests a unique name by appending a number to the project name "ContactManager", and that's fine for this tutorial.
 
-5. In the **App Service plan** drop-down select **Create new App Service plan** and enter a name, such as "StandardWeb" as shown in the illustration.
+5. In the **Resource group** drop-down select an existing group or **Create new resource group**(see image below). 
 
-	If you prefer, you can select an App Service plan that you already have. For information about App Service plans, see [Azure App Service plans in-depth overview](/documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview). 
+	If you prefer, you can select a resource group that you already have. But if you create a new resource group and only use it for this tutorial, it will be easy to delete all Azure resources you created for the tutorial when you're done with them. For information about resource groups, see [Azure Resource Manager overview](/documentation/articles/resource-group-overview/). 
 
-5. In the **Resource group** drop-down select **Create new resource group** and enter a name, such as "ExampleMVC", as shown in the illustration.
+5. In the **App Service plan** drop-down select select an existing plan or **Create new App Service plan**(see image below).
 
-	If you prefer, you can select a resource group that you already have. But if you create a new resource group and only use it for this tutorial, it will be easy to delete all Azure resources you created for the tutorial when you're done with them. For information about resource groups, see [Azure Resource Manager overview](/documentation/articles/resource-group-overview). 
+	If you prefer, you can select an App Service plan that you already have. For information about App Service plans, see [Azure App Service plans in-depth overview](/documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview/). 
 
-7. Select a region near you. 
+1. Tap **Explore additional Azure services** to add a SQL database.
 
-	Don't click **OK** yet. In the next step, you'll configure the database resource. The dialog box now looks like the following illustration. 
+	![Add new services](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/n2.png)
 
-	![New plan and resource group](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/newplanandgroup.png)
- 
-2. Select **Create new server**, enter a server name, user name, and password. 
+1. Tap the **+** icon to add a SQL database.
+
+	![New SQL DB](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/nsql.png)
+
+1. Tap **New** on the  **Configure SQL Database** dialog:
+
+	![SQL admin name and pw](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/nc.png)
+
+1. Enter a name for the administrator and a strong password.
+
+	![New SQL DB](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/np.png)
 
 	The server name must be unique. It can contain lower-case letters, numeric digits, and hyphens. It cannot contain a trailing hyphen. The user name and password are new credentials you're creating for the new server. 
 
@@ -103,12 +107,12 @@ To set up your development environment, you must install [Visual Studio 2013 Upd
 
 	![Use new database](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/newdb.png)
 
-4. Click **OK**.
+4. Tap **Create**.
 
 	Visual Studio creates the ContactManager web project, creates the resource group and App Service plan that you specified, and creates a web app in Azure with the name you specified.
 
 
-If you haven't create a Web App yet, go to [Azure Management Portal](https://manage.windowsazure.cn) to create on. And in **Dashboard** page of your web app, under **quick glance**, download the "publish profile".
+If you haven't create a Web App yet, go to [Azure Classic Management Portal](https://manage.windowsazure.cn) to create on. And in **Dashboard** page of your web app, under **quick glance**, download the "publish profile".
 
 
 ### Set the page header and footer
@@ -117,54 +121,13 @@ If you haven't create a Web App yet, go to [Azure Management Portal](https://man
 
 	![_Layout.cshtml in Solution Explorer][newapp004]
 
-1. Replace the contents of the *Layout.cshtml* file with the following code.
+1. Replace the ActionLink in the *Layout.cshtml* file with the following code.
 
-		<!DOCTYPE html>
-		<html>
-		<head>
-		    <meta charset="utf-8" />
-		    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-		    <title>@ViewBag.Title - Contact Manager</title>
-		    @Styles.Render("~/Content/css")
-		    @Scripts.Render("~/bundles/modernizr")
-		
-		</head>
-		<body>
-		    <div class="navbar navbar-inverse navbar-fixed-top">
-		        <div class="container">
-		            <div class="navbar-header">
-		                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-		                    <span class="icon-bar"></span>
-		                    <span class="icon-bar"></span>
-		                    <span class="icon-bar"></span>
-		                </button>
-		                @Html.ActionLink("CM Demo", "Index", "Cm", new { area = "" }, new { @class = "navbar-brand" })
-		            </div>
-		            <div class="navbar-collapse collapse">
-		                <ul class="nav navbar-nav">
-		                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-		                    <li>@Html.ActionLink("About", "About", "Home")</li>
-		                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-		                </ul>
-		                @Html.Partial("_LoginPartial")
-		            </div>
-		        </div>
-		    </div>
-		    <div class="container body-content">
-		        @RenderBody()
-		        <hr />
-		        <footer>
-		            <p>&copy; @DateTime.Now.Year - Contact Manager</p>
-		        </footer>
-		    </div>
-		
-		    @Scripts.Render("~/bundles/jquery")
-		    @Scripts.Render("~/bundles/bootstrap")
-		    @RenderSection("scripts", required: false)
-		</body>
-		</html>
 
-	This code changes the application name in the header and the footer from "My ASP.NET Application" and "Application name" to "Contact Manager" and "CM Demo". 
+	@Html.ActionLink("CM Demo", "Index", "Contacts", new { area = "" }, new { @class = "navbar-brand" })
+		           
+
+	Make sure you change the third parameter from "Home" to "Contacts". The markup above will create a "Contacts" link on each page to the Index method of the Contacts controller. Change the application name in the header and the footer from "My ASP.NET Application" and "Application name" to "Contact Manager" and "CM Demo". 
  
 ### Run the application locally
 
@@ -304,7 +267,6 @@ The ASP.NET MVC scaffolding feature can automatically generate code that perform
 
 1. In the **Data context class**, select **ApplicationDbContext (ContactManager.Models)**. The **ApplicationDbContext** will be used for both the membership DB and our contact data.
 
-1. In the **Controller name** text entry box, enter "CmController" for the controller name. 
 
 	![New data ctx dlg](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/ss5.PNG)
 
@@ -394,7 +356,7 @@ The next task is to enable the [Code First Migrations](http://msdn.microsoft.com
                 );
         }
 
-	This code initializes (seeds) the database with contact information. For more information on seeding the database, see [Seeding and Debugging Entity Framework (EF) DBs](http://blogs.msdn.com/b/rickandy/archive/2013/02/12/seeding-and-debugging-entity-framework-ef-dbs.aspx).
+	This code initializes (seeds) the database with contact information. For more information on seeding the database, see [Seeding and Debugging Entity Framework (EF) DBs](http://blogs.msdn.com/b/rickandy/archive/2013/02/12/seeding-and-debugging-entity-framework-ef-dbs.aspx). Build the project to verify there are no compile errors.
 
 6. In the **Package Manager Console** enter the command:
 
@@ -621,6 +583,9 @@ In this section you apply the [Authorize](http://msdn.microsoft.com/zh-cn/librar
 1. Click an edit link on the page, you will be redirected to the login page (because a new local user is not added to the *canEdit* role).
 
 1. Log in as *user1@contoso.com* with password of "P_assw0rd1" (the "0" in "word" is a zero). You are redirected to the edit page you previously selected. 
+
+2. 
+
 
 	If you can't log in with that account and password, try copying the password from the source code and pasting it. If you still can't log in, check the **UserName** column of the **AspNetUsers** table to verify *user1@contoso.com* was added. 
 
@@ -641,13 +606,12 @@ In this section you apply the [Authorize](http://msdn.microsoft.com/zh-cn/librar
 
 1. Click the **Settings** tab on the left side of the **Publish Web** dialog box. 
 
-2. Click the **v** icon to select the **Remote connection string** for **ApplicationDbContext** and select the database that you created when you created the project.
+2. Under **ApplicationDbContext**  select the database that you created when you created the project.
    
-	![settings](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/rrc2.png)
 
 1. Under **ContactManagerContext**, select **Execute Code First Migrations**.
 
-	![settings](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/rrc3.png)
+	![settings](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/rrc2.png)
 
 1. Click **Publish**.
 
@@ -661,19 +625,19 @@ In this section you apply the [Authorize](http://msdn.microsoft.com/zh-cn/librar
 
 ### Stop the web app to prevent other people from registering  
 
-1. In **Server Explorer**, navigate to **Azure > Azure  Web App  > {your resource group} > {your web app}**.
+1. In **Server Explorer**, navigate to **Azure > Azure > {your resource group} > {your web app}**.
 
 4. Right-click the web app and select **Stop**. 
 
 
-	Alternatively, from the [Azure Management Portal](https://manage.windowsazure.cn/), you can go to the web app's blade, then click the **Stop** icon at the top of the blade.
+	Alternatively, from the [Azure Portal](https://portal.azure.cn/), you can go to the web app's blade, then click the **Stop** icon at the top of the blade.
 
 	![stop web app portal](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/stopweb.png)
 
 
-	Alternatively, from the [Azure Management Portal](https://manage.windowsazure.cn), you can go to the web site's blade, then click the **Stop** icon at the bottom of the page.
+	Alternatively, from the [Azure Classic Management Portal](https://manage.windowsazure.cn), you can go to the web app, then click the **Stop** icon at the bottom of the page.
 
-	![stop web site portal](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/stopweb.png)
+	![stop web app portal](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/stopweb.png)
 
 
 ### Remove AddToRoleAsync, Publish, and Test
@@ -752,13 +716,18 @@ In this section you apply the [Authorize](http://msdn.microsoft.com/zh-cn/librar
  
 3. Verify that the **UserId** is from *user1@contoso.com* and the Google account you registered. 
 
+
 ## Troubleshooting
+
+
+##<a name="troubleshooting"></a> Troubleshooting
+
 
 If you run into problems, here are some suggestions for what to try.
 
 * Errors provisioning SQL Database - Make sure you have the current SDK installed. Versions before 2.8.1 have a bug that in some scenarios causes errors when VS tries to create the database server or the database.
 * Error message "operation is not supported for your subscription offer type" when creating Azure resources - Same as above.
-* Errors when deploying - Consider going through the [basic ASP.NET deployment](/documentation/articles/web-sites-dotnet-get-started) article. That deployment scenario is simpler and if you have the same problem there it may be easier to isolate. For example, in some enterprise environments a corporate firewall may prevent Web Deploy from making the kinds of connections to Azure that it requires.
+* Errors when deploying - Consider going through the [basic ASP.NET deployment](/documentation/articles/web-sites-dotnet-get-started/) article. That deployment scenario is simpler and if you have the same problem there it may be easier to isolate. For example, in some enterprise environments a corporate firewall may prevent Web Deploy from making the kinds of connections to Azure that it requires.
 * No option to select connection string in the Publish Web wizard when you deploy - If you used a different method to create your Azure resources (for example, you are trying to deploy to  a web app and a SQL database created in the Portal), the SQL database may not be associated with the web app. The easiest solution is to create a new web app and database by using VS as shown in the tutorial. You don't have to start the tutorial over -- in the Publish Web wizard you can opt to create a new web app and you get the same Azure resource creation dialog that you get when you create the project.
 * Directions for Google or Facebook developer portal are out of date - See the featured Disqus comment at the end of this tutorial.
 

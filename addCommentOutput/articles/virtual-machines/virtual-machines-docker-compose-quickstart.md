@@ -24,7 +24,7 @@ This article shows you how to get started using Docker and [Compose](http://gith
 If you're new to Docker and containers, see the [Docker high level whiteboard](https://azure.microsoft.com/documentation/videos/docker-high-level-whiteboard/).
 
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)].
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the classic deployment model. Microsoft recommends that most new deployments use the Resource Manager model.
 
 
 ## Step 1: Set up a Linux VM as a Docker host
@@ -46,9 +46,14 @@ $ chmod +x /usr/local/bin/docker-compose
 
 To test your installation of Compose, run the following command.
 
- ``` 
+
+```
 $ docker-compose --version
- ``` 
+```
+
+
+	$ docker-compose --version
+
 
 You will see output similar to `docker-compose 1.4.1`.
 
@@ -59,8 +64,13 @@ Next you'll create a `docker-compose.yml` file, which is just a text configurati
 
 Create a working directory on your VM, and use your favorite text editor to create `docker-compose.yml`. To try a simple example, copy the following text to the file. This configuration uses images from the [DockerHub Registry](https://registry.hub.docker.com/_/wordpress/) to install WordPress (the open source blogging and content management system) and a linked backend MariaDB database.
 
-  ``` 
+
+ ```
  wordpress:
+
+
+	 wordpress:
+
   image: wordpress
   links:
     - db:mysql
@@ -78,40 +88,62 @@ db:
 
 In the working directory on your VM, simply run the following command.
 
- ``` 
-$ docker-compose up -d
 
 ```
+$ docker-compose up -d
+```
 
+
+	$ docker-compose up -d
+	
+
 
 This starts the Docker containers specified in `docker-compose.yml`. You'll see output similar to:
 
- ``` 
+
+```
 Creating wordpress_db_1...
+
+
+	Creating wordpress_db_1...
+
 Creating wordpress_wordpress_1...
- ``` 
+
+```
+
 
 >[AZURE.NOTE] Be sure to use the **-d** option on start-up so that the containers run in the background continuously.
 
 To verify that the containers are up, type `docker-compose ps`. You should see something like:
 
- ``` 
+
+```
 Name             Command             State              Ports
+
+
+	Name             Command             State              Ports
+
 -------------------------------------------------------------------------
 wordpress_db_1     /docker-           Up                 3306/tcp
              entrypoint.sh
              mysqld
 wordpress_wordpr   /entrypoint.sh     Up                 0.0.0.0:8080->80
 ess_1              apache2-for ...                       /tcp
- ``` 
-
-You can now connect to WordPress directly on the VM by browsing to `http://localhost:8080`. If you want to connect to the VM over the Internet, first configure an HTTP endpoint on the VM that maps public port 80 to private port 8080. For example, in an Azure Service Management deployment, run the following Azure CLI command:
-
- ``` 
-$ azure vm endpoint create <machine-name> 80 8080
 
 ```
 
+
+You can now connect to WordPress directly on the VM by browsing to `http://localhost:8080`. If you want to connect to the VM over the Internet, first configure an HTTP endpoint on the VM that maps public port 80 to private port 8080. For example, in an Azure Service Management deployment, run the following Azure CLI command:
+
+
+```
+$ azure vm endpoint create <machine-name> 80 8080
+```
+
+
+	$ azure vm endpoint create <machine-name> 80 8080
+	
+
 
 You should now see the WordPress start screen, where you can complete the installation and get started with the application.
 

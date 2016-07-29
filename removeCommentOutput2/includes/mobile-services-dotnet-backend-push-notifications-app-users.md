@@ -27,15 +27,15 @@
 	    {
 	        public Task Register(ApiServices services, HttpRequestContext context,
             NotificationRegistration registration)
-	        {
-	            try
-	            {
-	                // Perform a check here for user ID tags, which are not allowed.
-	                if(!ValidateTags(registration))
-	                {
-	                    throw new InvalidOperationException(
-	                        "You cannot supply a tag that is a user ID.");                    
-	                }
+        {
+            try
+            {
+                // Perform a check here for user ID tags, which are not allowed.
+                if(!ValidateTags(registration))
+                {
+                    throw new InvalidOperationException(
+                        "You cannot supply a tag that is a user ID.");                    
+                }
 
                 // Get the logged-in user.
                 var currentUser = context.Principal as ServiceUser;
@@ -70,12 +70,12 @@
         }
 	
         public Task Unregister(ApiServices services, HttpRequestContext context, 
-	            string deviceId)
-	        {
-	            // This is where you can hook into registration deletion.
-	            return Task.FromResult(true);
-	        }
-	    }
+            string deviceId)
+        {
+            // This is where you can hook into registration deletion.
+            return Task.FromResult(true);
+        }
+    }
 
 	The **Register** method is called during registration. This lets you add a tag to the registration that is the ID of the logged-in user. The supplied tags are validated to prevent a user from registering for another user's ID. When a notification is sent to this user, it is received on this and any other device registered by the user. 
 

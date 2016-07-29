@@ -1,3 +1,5 @@
+<!-- rename to app-service-web-troubleshoot-http-502-http-503 -->
+
 <properties
 	pageTitle="Troubleshoot: web app unavailable due to HTTP 502/503"
 	description="This article helps you troubleshoot HTTP 502/503 errors in your web app hosted in Azure Web App."
@@ -17,7 +19,7 @@
 
 This article helps you troubleshoot HTTP 502/503 errors in your web app hosted in [Azure Web App](/documentation/services/web-sites/).
 
-If you need more help at any point in this article, you can contact the Azure experts on [the MSDN Azure and the Stack Overflow forums](http Stack Overflow forums](https://azure.microsoft.com/support/forums/)  . Alternatively, you can also file an Azure support incident. Go to the [Azure Support site](https://azure.microso site](https://azure.microsoft.com/support/contact/)   and click on **Get Support**.
+If you need more help at any point in this article, you can contact the Azure experts on [the MSDN Azure and the CSDN Azure](/support/forums/). Alternatively, you can also file an Azure support incident. Go to the [Azure Support site](/support/contact/) and click on **Get Support**.
 
 ## Symptom
 
@@ -41,28 +43,12 @@ Troubleshooting can be divided into three distinct tasks, in sequential order:
 
 [Azure Web Apps](/home/features/web-site/) gives you various options at each step.
 
-
-<a name="observe" />
-
-
 <a name="observe"></a>
-
 ### 1. Observe and monitor application behavior
-
-
-####	Track Service health
-
-Azure publicizes each time there is a service interruption or performance degradation. You can track the health of the service on the [Azure Management Portal](https://manage.windowsazure.cn/). For more information, see [Track service health](/documentation/articles/insights-service-health).
-
 
 ####	Monitor your web app
 
-
-This option enables you to find out if your application is having any issues. In your web app's blade, click the **Requests and errors** tile. The **Metric** blade will show you all the metrics you can add.
-
-
 This page let you find out if your application is having any issues. In Azure Management Portal, click **Monitor** of your web app.
-
 
 Some of the metrics that you might want to monitor for your web app are
 
@@ -76,72 +62,23 @@ Some of the metrics that you might want to monitor for your web app are
 
 For more information, see:
 
--	[Monitor Web Apps in Azure](/documentation/articles/web-sites-monitor)
-
--	[Receive alert notifications](/documentation/articles/insights-receive-alert-notifications)
-
-<a name="collect" />
-
-
+-	[Monitor Web Apps in Azure](/documentation/articles/web-sites-monitor/)
 
 <a name="collect"></a>
-
 ### 2. Collect data
 
-
-####	Use the Azure Support Portal
-
-Web Apps provides you with the ability to troubleshoot issues related to your web app by looking at HTTP logs, event logs, process dumps, and more. You can access all this information using our Support portal at **http://&lt;your app name>.scm.chinacloudsites.cn/Support**
-
-The Azure Support portal provides you with three separate tabs to support the three steps of a common troubleshooting scenario:
-
-1.	Observe current behavior
-2.	Analyze by collecting diagnostics information and running the built-in analyzers
-3.	Mitigate
-
-If the issue is happening right now, click **Analyze** > **Diagnostics** > **Diagnose Now** to create a diagnostic session for you, which will collect HTTP logs, event viewer logs, memory dumps, PHP error logs and PHP process report.
-
-Once the data is collected, it will also run an analysis on the data and provide you with an HTML report.
-
-In case you want to download the data, by default, it would be stored in the D:\home\data\DaaS folder.
-
-For more information on the Azure Support portal, see [New Updates to Support Site Extension for Azure Websites](/blog/new-updates-to-support-site-extension-for-azure-websites).
-
-####	Use the Kudu Debug Console
-
-Web Apps comes with a debug console that you can use for debugging, exploring, uploading files, as well as JSON endpoints for getting information about your environment. This is called the _Kudu Console_ or the _SCM Dashboard_ for your web app.
-
-You can access this dashboard by going to the link **https://&lt;Your app name>.scm.chinacloudsites.cn/**.
-
-Some of the things that Kudu provides are:
-
--	environment settings for your application
--	log stream
--	diagnostic dump
--	debug console in which you can run Powershell cmdlets and basic DOS commands.
-
-
-Another useful feature of Kudu is that, in case your application is throwing first-chance exceptions, you can use Kudu and the SysInternals tool Procdump to create memory dumps. These memory dumps are snapshots of the process and can often help you troubleshoot more complicated issues with your web app.
-
-For more information on features available in Kudu, see
-[Azure Websites online tools you should know about](/blog/windows-azure-websites-online-tools-you-should-know-about/).
-
-<a name="mitigate" />
-
-
 ####	Use the FTP Diagnostic Logs
 
 Find the FTP Diagnostic Logs link in your web app's **Dashboard** page, which usually looks like `ftp://********.ftp.chinacloudsites.chinacloudapi.cn/LogFiles`. Click to enter, and download **eventlog.xml**
 
 <a name="mitigate"></a>
-
 ### 3. Mitigate the issue
 
 ####	Scale the web app
 
 In Azure Web App, for increased performance and throughput,  you can adjust the scale at which you are running your application. Scaling up a web app involves two related actions: changing your App Service plan to a higher pricing tier, and configuring certain settings after you have switched to the higher pricing tier.
 
-For more information on scaling, see [Scale a web app in Azure](/documentation/articles/web-sites-scale).
+For more information on scaling, see [Scale a web app in Azure](/documentation/articles/web-sites-scale/).
 
 Additionally, you can choose to run your application on more than one instance . This not only provides you with more processing capability, but also gives you some amount of fault tolerance. If the process goes down on one instance, the other instance will still continue serving requests.
 
@@ -161,4 +98,4 @@ This is often the simplest way to recover from one-time issues. On the [Azure Ma
  ![](./media/app-service-web-troubleshoot-HTTP-502-503/2-restart.png)
 
 You can also manage your web app using Azure Powershell. For more information, see
-[Using Azure PowerShell with Azure Resource Manager](/documentation/articles/powershell-azure-resource-manager).
+[Using Azure PowerShell with Azure Resource Manager](/documentation/articles/powershell-azure-resource-manager/).

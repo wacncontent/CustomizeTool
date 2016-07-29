@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="02/01/2016"
+	ms.date="04/19/2016"
 	wacn.date=""/>
 
 # Correlate events over time with Storm and HBase on HDInsight
@@ -25,7 +25,7 @@ In this document, you will learn how to create a basic C# Storm topology that tr
 
 ## Prerequisites
 
--	HDInsight tools for Visual Studio: See [Get started using the HDInsight tools for Visual Studio](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started) for installation information.
+-	HDInsight tools for Visual Studio: See [Get started using the HDInsight tools for Visual Studio](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/) for installation information.
 
 -	Apache Storm on HDInsight cluster
 
@@ -193,6 +193,10 @@ Searching for END events works the same as START events. However, END events are
 
 When you are ready to stop the topology, return to the **CorrelationTopology** project in Visual Studio. In the **Storm Topology View**, select the topology and then use the **Kill** button at the top of the topology view.
 
+##Delete your cluster
+
+[AZURE.INCLUDE [delete-cluster-warning](../includes/hdinsight-delete-cluster-warning.md)]
+
 ##Next steps
 
-For more Storm examples, see [Example topologies for Storm on HDInsight](/documentation/articles/hdinsight-storm-example-topology).
+For more Storm examples, see [Example topologies for Storm on HDInsight](/documentation/articles/hdinsight-storm-example-topology/).

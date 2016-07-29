@@ -21,7 +21,12 @@
 
 <br>
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)]  Resource Manager model. 
+
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] Resource Manager model.
+
+
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the Resource Manager deployment model, which Microsoft recommends for most new deployments instead of the Resource Manager model.
+
 
 
 This tutorial describes how to host a Django-based website on Microsoft 
@@ -43,23 +48,11 @@ A screenshot of the completed application is below:
 
 ## Creating and configuring an Azure virtual machine to host Django
 
-1. Follow the instructions given [here](/documentation/articles/virtual-machines-linux-tutorial-portal-rm) to create an Azure virtual machine of the *Ubuntu Server 14.04 LTS* distribution.   If you prefer, you can choose password authentication instead of SSH public key. 
+1. Follow the instructions given [here](/documentation/articles/virtual-machines-linux-tutorial-portal-rm) to create an Azure virtual machine of the *Ubuntu Server 14.04 LTS* distribution.  If you prefer, you can choose password authentication instead of SSH public key.
 
-
 1. Edit the network security group to allow incoming http traffic to port 80 using the instructions [here](/documentation/articles/virtual-networks-create-nsg-arm-pportal).
 
 1. By default, your new virtual machine doesn't have a fully qualified domain name (FQDN).  You can create one by following the instructions [here](/documentation/articles/virtual-machines-create-fqdn-on-portal).  This step is optional to complete this tutorial.
-
-
-	**Note:** you *only* need to create the virtual machine. Stop at the section titled *How to log on to the virtual machine after you create it*.
-
-1. Instruct Azure to direct port **80** traffic from the web to port **80** on the virtual machine:
-	* Navigate to your newly created virtual machine in the Azure Management Portal and click the *ENDPOINTS* tab.
-	* Click the *ADD* button at the bottom of the screen.
-	![add endpoint](./media/virtual-machines-python-django-web-app-linux/mac-linux-django-helloworld-add-endpoint.png)
-	* Open up the *TCP* protocol's *PUBLIC PORT 80* as *PRIVATE PORT 80*.
-	![port80](./media/virtual-machines-python-django-web-app-linux/mac-linux-django-helloworld-port80.png)
-
 
 ## <a id="setup"> </a>Setting up the development environment
 
@@ -69,7 +62,7 @@ The Ubuntu Linux VM already comes with Python 2.7 pre-installed, but it doesn't 
 
 1.  Launch a new **Terminal** window.
     
-1.  Enter the following command to connect to the Azure VM.  If you didn't create a FQDN, you can connect using the public IP address displayed in the virtual machine summary in the Azure Management Portal.
+1.  Enter the following command to connect to the Azure VM.  If you didn't create a FQDN, you can connect using the public IP address displayed in the virtual machine summary in the Azure classic portal.
 
 		$ ssh yourusername@yourVmUrl
 

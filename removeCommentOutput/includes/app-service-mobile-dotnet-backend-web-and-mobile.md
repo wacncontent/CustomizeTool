@@ -18,7 +18,7 @@ In this section, you will create a new web app using a sample Web Application so
 
 >[AZURE.NOTE] Before completing these steps, ensure that you've initialized your mobile app backend database by connecting a client to it. Otherwise, the web app will not be able to connect to the same database.
 
-1. In the [Azure Management Portal](https://manage.windowsazure.cn/), create a new web app, using the same Resource Group and Hosting Plan as your mobile app.
+1. In the [Azure Portal](https://portal.azure.cn/), create a new web app, using the same Resource Group and Hosting Plan as your mobile app.
 
 2. Download the sample solution [MultiChannelToDo] and open in Visual Studio. The solution contains both a Web API project and a Web Application Project for the web client UI.
 
@@ -26,7 +26,7 @@ In this section, you will create a new web app using a sample Web Application so
 
         modelBuilder.HasDefaultSchema("your_mobile_app"); // your service name, replacing dashes with underscore
 
-4. Next we will get the mobile app connection string from the Azure Management Portal:
+4. Next we will get the mobile app connection string from the Azure Portal:
 
     - Select your mobile app in the portal and click the part labeled **User Code**.
 
@@ -66,7 +66,7 @@ In this section, you will use a sample web client application implemented with A
 
 ## What's changed
 * For a guide to the change from Websites to Azure see: [Azure and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
-* For a guide to the change of the Management Portal to the new portal see: [Reference for navigating the Azure Management Portal](https://manage.windowsazure.cn/)
+* For a guide to the change of the old portal to the new portal see: [Reference for navigating the Azure portal](https://manage.windowsazure.cn/)
 
 <!-- Links -->
 

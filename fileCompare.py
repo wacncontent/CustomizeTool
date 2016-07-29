@@ -137,13 +137,15 @@ def deleteCompare(new, old):
     if k == -1:
         return new
     old_part = old[i+j+1:]
-    print i, ", ", j
-    print old_part
     kept=old[i:i+j+1]
     if old_part[:1] == "\x10":
         end = old_part.find("\x11")
+        if re.match("[,.?!:;]",kept[1]) and not re.match("[,.?!:;]", old_part[1:3].strip()[0]):
+            kept = " "+kept
         kept = kept+old_part[:end+1]
         old_part = old_part[end+1:]
+    elif (len(kept)<2 or re.match("[,.?!:;]",kept[1])) and (len(old_part.strip())==0 or not re.match("[,.?!:;]", old_part[0:].strip()[0])):
+        kept = " "+kept
     new_part = new[k+len(deleted):]
     if "\x0e" not in old_part and "\x10" not in old_part:
         delta_str = new_part
@@ -180,6 +182,7 @@ def keepCompare(new, old):
             count+=1
     old_part = old[j+1:]
     new_part = " "+" ".join(newList[count:])
+    new_part = new_part.replace(" \x08","")
     if "\x0e" not in old_part and "\x10" not in old_part:
         delta_str = new_part
     elif "\x0e" in old_part and "\x10" in old_part:
@@ -204,7 +207,75 @@ def removeDeleteAndKeep(old):
     old = re.sub("\n[ \t\r\f\v]*(\x10|\x11|\x0e[^\x0f]+\x0f)[ \t\r\f\v]*\n", "\n", old)
     old = re.sub(r"[ \t\r\f\v]*(\x10|\x11|\x0e[^\x0f]+\x0f)[ \t\r\f\v]*([,.?!:;])", r"\2", old)
     old = re.sub("(\x10|\x11|\x0e[^\x0f]+\x0f)[ \t\r\f\v]*", "", old)
+    old = old.replace(" \x08", "")
     return old
+
+def removeExtraSpace(old, mooncake):
+    differ = Differ()
+    old = re.sub("(\r(\n)?|(\r)?\n)", "\r\n", old)
+    mooncake = re.sub("(\r(\n)?|(\r)?\n)", "\r\n", mooncake)
+    linesold = [x+"\n" for x in old.split("\n")]
+    linesmooncake = [x+"\n" for x in mooncake.split("\n")]
+    diff = list(differ.compare(linesold, linesmooncake))
+    lines = []
+    i = 0
+    while i<len(diff):
+        if diff[i][0] == " ":
+            lines.append(diff[i][2:])
+            i+=1
+        elif diff[i][0] == "-":
+            if i+1<len(diff) and diff[i+1][0] != " " and diff[i+1][0] != "-":                    
+                if diff[i+1][0] == "+":
+                    if diff[i+1][2:].strip() == diff[i][2:].strip():
+                        lines.append(diff[i+1][2:])
+                    else:
+                        lines.append(diff[i][2:])
+                    if i+2<len(diff) and diff[i+2][0] == "?":
+                        i+=3
+                    else:
+                        i+=2
+                elif diff[i+1][0] == "?":
+                    if i+2<len(diff) and diff[i+2][0] == "+":
+                        if diff[i+2][2:].strip() == diff[i][2:].strip():
+                            lines.append(diff[i+2][2:])
+                        else:
+                            lines.append(diff[i][2:])
+                        i+=3
+                    else:
+                        i+=2
+            else:
+                if diff[i][2:].strip() != "":
+                    lines.append(diff[i][2:])
+                i+=1
+        elif diff[i][0] == "+":
+            if i+1<len(diff) and diff[i+1][0] != " " and diff[i+1][0] != "+":                    
+                if diff[i+1][0] == "-":
+                    if diff[i+1][2:].strip() == diff[i][2:].strip():
+                        lines.append(diff[i][2:])
+                    else:
+                        lines.append(diff[i+1][2:])
+                    if i+2<len(diff) and diff[i+2][0] == "?":
+                        i+=3
+                    else:
+                        i+=2
+                elif diff[i+1][0] == "?":
+                    if i+2<len(diff) and diff[i+2][0] == "-":
+                        if diff[i+2][2:].strip() == diff[i][2:].strip():
+                            lines.append(diff[i][2:])
+                        else:
+                            lines.append(diff[i+2][2:])
+                        i+=3
+                    else:
+                        i+=2
+            else:
+                if diff[i][2:].strip() == "":
+                    lines.append(diff[i][2:])
+                i+=1
+        else:
+            i+=1
+    result = "".join(lines)
+    result = result[:len(result)-1]
+    return result
 
 def handleDeletion(diff, i):
     delta_i=1
@@ -253,12 +324,11 @@ def createComment(globalText, mooncakeText):
         globalText = globalText[globalTags.span()[1]:]
         mooncakeText = mooncakeText[mooncakeTags.span()[1]:]
         
+    globalText = re.sub("\r\n?","\r\n",globalText)
+    mooncakeText = re.sub("\r\n?","\r\n",mooncakeText)
     globalLines = [line+"\n" for line in globalText.split("\n")]
     mooncakeLines = [line+"\n" for line in mooncakeText.split("\n")]
-    print globalLines
-    print mooncakeLines
     diff = list(differ.compare(globalLines, mooncakeLines))
-    print "\n".join(diff)
     if len(diff) == 0:
         return ""
     i = 0
@@ -277,8 +347,11 @@ def createComment(globalText, mooncakeText):
             else:
                 result.append("\x0e\n")
                 while i < len(diff) and diff[i][0] == "-":
-                    result.append(diff[i][2:])
-                    i += 1
+                    if i+1 == len(diff) or diff[i+1][0] != "?":
+                        result.append(diff[i][2:])
+                        i += 1
+                    else:
+                        break
                 result.append("\x0f\n")
         elif diff[i][0] == "+":
             
@@ -448,6 +521,9 @@ def mergeDeleteAndKeep(lines):
                     e += 1
                     j += 1
             while j < length and lines[j] != "\x0e\n" and lines[j] != "\x10\n" and (lines[j].find("\x0e") != -1 or lines[j].find("\x10") != -1 or re.match("\s*\!\[.*\]\s*(\[.+\]|\(.+\))\s*",lines[j])) != None:
+                if lines[j].find("\x0e") != -1 or lines[j].find("\x10") != -1:
+                    if lines[j].find("\x0e")+lines[j].find("\x10")<=2 or getDiffPercentage(lines[j]) < 0.3:
+                        break
                 j += 1
                 e = 0
                 while j < length and lines[j].strip() == "":
@@ -472,6 +548,14 @@ def mergeDeleteAndKeep(lines):
     if len(result[l-1]) != 0 and result[l-1][len(result[l-1])-1] == "\n":
         result[l-1] = result[l-1][:len(result[l-1])-1]
     return "".join(result)
+
+def getDiffPercentage(line):
+    delReg = "(\x0e[^\x0f]+\x0f)"
+    addReg = "(\x10[^\x11]+\x11)"
+    delmatch = [len(a) for a in re.findall(delReg, line)]
+    addmatch = [len(a) for a in re.findall(addReg, line)]
+    change = sum(delmatch) + sum(addmatch) - 3*(len(delmatch) - len(addmatch))
+    return float(change)/float(len(line) - len(delmatch) - len(addmatch))
 
 def handleMerge(lines, i, j):
     k = i
@@ -499,13 +583,15 @@ def handleMerge(lines, i, j):
     return deletes, keeps
 
 def removeKeeps(line):
-    result = re.sub("\x10 [^<]* \x11","",line)
-    result = re.sub("\x0e ([^<]*) \x0f",r"\1",result)
+    result = re.sub("\x10 [^\x11]* \x11","",line)
+    result = re.sub("\x0e ([^\x0f]*) \x0f",r"\1",result)
+    result = re.sub(" ([,.?!:;])",r"\1",result)
     return result
 
 def removeDeletes(line):
-    result = re.sub("\x0e [^<]* \x0f","",line)
-    result = re.sub("\x10 ([^<]*) \x11",r"\1",result)
+    result = re.sub("\x0e [^\x0f]* \x0f","",line)
+    result = re.sub("\x10 ([^\x11]*) \x11",r"\1",result)
+    result = re.sub(" ([,.?!:;])",r"\1",result)
     return result
 
 def getDeletionAndReplacement(result):

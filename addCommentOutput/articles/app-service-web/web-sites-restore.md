@@ -14,17 +14,22 @@
 
 # Restore an app in Azure
 
-This article shows you how to restore an Azure Web App that you have previously backed up by using the [Azure Web App](/documentation/services/web-sites) Backup feature. For more information, see [Azure  Web App  Backups](/documentation/articles/web-sites-backup).
+This article shows you how to restore an Azure Web App that you have previously backed up by using the [Azure Web  App](/documentation/services/web-sites/)  App](/documentation/services/web-sites)  Backup feature. For more information, see [Azure  Web App  Backups](/documentation/articles/web-sites-backup/).
 
 The Azure  web app  Restore feature lets you restore your app with its linked databases (SQL Database or MySQL) on-demand to a previous state, or create a new app based on one of your original app's backup. Creating a new app that runs in parallel to the latest version can be useful for A/B testing.
 
-The Azure  web app  Restore feature, available on the **Backups** blade in the [Azure Management Portal](https://manage.windowsazure.cn), is available only in Standard  and Premium  pricing tiers. For information about scaling your app using Standard  or Premium  tier, see [Scale an app in Azure Web App](/documentation/articles/web-sites-scale).  Note that the Premium tier allows a greater number of daily backups to be performed over the Standard tier. 
+
+The Azure Restore feature, available on the **Backups** blade in the [Azure Portal](https://portal.azure.cn), is available only in Standard and Premium pricing tiers. For information about scaling your app using Standard or Premium tier, see [Scale an app in Azure Web App](/documentation/articles/web-sites-scale/). Note that the Premium tier allows a greater number of daily backups to be performed over the Standard tier.
+
+
+The Azure web app Restore feature, available on the **Backups** blade in the [Azure Classic Management Portal](https://manage.windowsazure.cn), is available only in Standard pricing tiers. For information about scaling your app using Standard tier, see [Scale an app in Azure Web App](/documentation/articles/web-sites-scale/).
+
 
 <a name="PreviousBackup"></a>
 ## To Restore an app from a previously made backup
 
 
-1. On the **Settings** blade of your app in the Azure Management Portal, click **Backups** to display the **Backups** blade. Then click **Restore Now** in the command bar. 
+1. On the **Settings** blade of your app in the Azure Portal, click **Backups** to display the **Backups** blade. Then click **Restore Now** in the command bar. 
 	
 	![Choose restore now][ChooseRestoreNow]
 
@@ -63,7 +68,7 @@ The Azure  web app  Restore feature, available on the **Backups** blade in the
 ## Download or delete a backup from a storage account
 
 	
-1. From the main **Browse** blade of the Azure Management Portal, select **Storage Accounts**.
+1. From the main **Browse** blade of the Azure Portal, select **Storage Accounts**.
 	
 	A list of your existing storage accounts will be displayed. 
 	
@@ -156,7 +161,7 @@ The details blade will display the available information related to the operatio
 	
 >[AZURE.NOTE] If you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.
 ## Next Steps
-You can also backup and restore Azure Web Apps using REST API (see [Use REST to back up and restore Azure Web Apps](/documentation/articles/websites-csm-backup)).
+You can also backup and restore Azure Web Apps using REST API (see [Use REST to back up and restore Azure Web Apps](/documentation/articles/websites-csm-backup/)).
 
 ## What's changed
 * For a guide to the change from Websites to Azure see: [Azure and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
@@ -197,4 +202,4 @@ You can also backup and restore Azure Web Apps using REST API (see [Use REST to 
 [DashboardOperationLogsLink]: ./media/web-sites-restore/10DashboardOperationLogsLink.png
 [ManagementServicesOperationLogsList]: ./media/web-sites-restore/11ManagementServicesOperationLogsList.png
 [DetailsButton]: ./media/web-sites-restore/12DetailsButton.png
-[OperationDetails]: ./media/web-sites-restore/13OperationDetails.png
+[OperationDetails]: ./media/web-sites-restore/13OperationDetails.png

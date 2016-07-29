@@ -16,7 +16,12 @@
 
 This article shows you how to use an Azure PowerShell script to set up a Microsoft HPC Pack cluster in Azure which contains a head node running Windows Server and several compute nodes running a Linux distribution. We also show several ways to move data files to the Linux compute nodes. You can use this cluster to run Linux HPC workloads in Azure.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]  Resource Manager model. 
+
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+
+
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the classic deployment model. Microsoft recommends that most new deployments use the Resource Manager model.
+
 
 
 At a high level the following diagram shows the HPC Pack cluster you'll create.
@@ -45,8 +50,13 @@ For an overview of HPC Pack cluster deployment options, see the [Getting started
 
 The HPC Pack IaaS deployment script uses an XML configuration file as input which describes the infrastructure of the HPC cluster. To deploy a small cluster consisting of a head node and 2 Linux compute nodes, substitute values for your environment into the following sample configuration file. For more information about the configuration file, see the Manual.rtf file in the script folder and [Create an HPC cluster with the HPC Pack IaaS deployment script](/documentation/articles/virtual-machines-hpcpack-cluster-powershell-script).
 
- ``` 
+
+```
 <?xml version="1.0" encoding="utf-8" ?>
+
+
+	<?xml version="1.0" encoding="utf-8" ?>
+
 <IaaSClusterConfig>
   <Subscription>
     <SubscriptionName>Subscription-1</SubscriptionName>
@@ -79,7 +89,9 @@ The HPC Pack IaaS deployment script uses an XML configuration file as input whic
     <ImageName>5112500ae3b842c8b9c604889f8753c3__OpenLogic-CentOS-70-20150325</ImageName>
   </LinuxComputeNodes>
 </IaaSClusterConfig>
- ``` 
+
+```
+
 
 Here are brief descriptions of the elements in the configuration file.
 
@@ -87,9 +99,14 @@ Here are brief descriptions of the elements in the configuration file.
 
 * **Subscription** - Azure subscription used to deploy the HPC Pack cluster. Use the command below to make sure the Azure subscription name is configured and unique in your client computer. In this sample, we use the Azure subscription "Subscription-1".
 
-     ``` 
+
+    ```
     PS > Get-AzureSubscription -SubscriptionName <SubscriptionName>
-     ``` 
+    ```
+
+
+	    PS > Get-AzureSubscription -SubscriptionName <SubscriptionName>
+
 
     >[AZURE.NOTE]Alternatively, use the subscription ID to specify the subscription you want to use. See the Manual.rtf file in the script folder.
 
@@ -113,9 +130,14 @@ Here are brief descriptions of the elements in the configuration file.
 
 * The example in this article uses a specific CentOS version available in the Azure gallery to create the cluster. If you want to use other images available, use the **get-azurevmimage** Azure PowerShell cmdlet  to find the one you need. For example, to list all the CentOS 7.0 images, run the following command:
 
-     ``` 
+
+    ```
     get-azurevmimage | ?{$_.Label -eq "OpenLogic 7.0"}
-     ``` 
+    ```
+
+
+	    get-azurevmimage | ?{$_.Label -eq "OpenLogic 7.0"}
+
 
     Find the one you need and replace the **ImageName** value in the configuration file.
 
@@ -132,15 +154,25 @@ Here are brief descriptions of the elements in the configuration file.
 
 2. Change directory to the script folder (E:\IaaSClusterScript in this example).
 
-     ``` 
+
+    ```
     cd E:\IaaSClusterScript
-     ``` 
+    ```
+
+
+	    cd E:\IaaSClusterScript
+
 
 3. Run the command below to deploy the HPC Pack cluster. This example assumes that the configuration file is located in E:\HPCDemoConfig.xml.
 
-     ``` 
+
+    ```
     .\New-HpcIaaSCluster.ps1 -ConfigFile E:\HPCDemoConfig.xml -AdminUserName MyAdminName
-     ``` 
+    ```
+
+
+	    .\New-HpcIaaSCluster.ps1 -ConfigFile E:\HPCDemoConfig.xml -AdminUserName MyAdminName
+
 
     The script generates a log file automatically since  the **-LogFile** parameter isn't specified. The logs aren't written in real time, but collected at the end of the validation and the deployment, so if the PowerShell process is stopped while the script is running, some logs will be lost.
 
@@ -184,10 +216,17 @@ To create an Azure File share, see the detailed steps in [Introducing Azure File
 
 In this example, we create an Azure File share named rdma on our storage account allvhdsje. To mount the share on the head node, open a Command window and enter the following commands:
 
- ``` 
+
+```
 > cmdkey /add:allvhdsje.file.core.chinacloudapi.cn /user:allvhdsje /pass:<storageaccountkey>
+
+
+	> cmdkey /add:allvhdsje.file.core.chinacloudapi.cn /user:allvhdsje /pass:<storageaccountkey>
+
 > net use Z: \\allvhdje.file.core.chinacloudapi.cn\rdma /persistent:yes
- ``` 
+
+```
+
 
 In this example, allvhdsje is the storage account name, storageaccountkey is the storage account key, and rdma is the Azure File share name. The Azure File share will be mounted onto Z: on your head node.
 
@@ -246,10 +285,17 @@ The NFS service enables users to share and migrate files between computers runni
 
 2. Open a Windows PowerShell window and run the following command to mount the NFS share.
 
-   ``` 
+
+  ```
   PS > clusrun /nodegroup:LinuxNodes mkdir -p /nfsshare
+
+
+	  PS > clusrun /nodegroup:LinuxNodes mkdir -p /nfsshare
+
   PS > clusrun /nodegroup:LinuxNodes mount CentOS7RDMA-HN:/nfs /nfsshared
-   ``` 
+
+  ```
+
 
   The first command creates a folder named /nfsshared on all nodes in the LinuxNodes group. The second command mounts the NFS share CentOS7RDMA-HN:/nfs onto the folder. Here CentOS7RDMA-HN:/nfs is the remote path of your NFS share.
 
@@ -272,21 +318,36 @@ The HPC Pack **clusrun** tool can be used to execute commands on Linux nodes eit
 
 * Show current user names on all nodes in the cluster.
 
-     ``` 
+
+    ```
     > clusrun whoami
-     ``` 
+    ```
+
+
+	    > clusrun whoami
+
 
 * Install the **gdb** debugger tool with **yum** on all nodes in the linuxnodes group and then restart the nodes after 10 minutes.
 
-     ``` 
+
+    ```
     > clusrun /nodegroup:linuxnodes yum install gdb -y; shutdown -r 10
-     ``` 
+    ```
+
+
+	    > clusrun /nodegroup:linuxnodes yum install gdb -y; shutdown -r 10
+
 
 * Create a shell script displaying each number 1 through 10 for one second on each Linux node in the cluster, run it, and show output from the nodes immediately.
 
-     ``` 
+
+    ```
     > clusrun /interleaved /nodegroup:linuxnodes echo \"for i in {1..10}; do echo \\\"\$i\\\"; sleep 1; done\" ^> script.sh; chmod +x script.sh; ./script.sh
-     ``` 
+    ```
+
+
+	    > clusrun /interleaved /nodegroup:linuxnodes echo \"for i in {1..10}; do echo \\\"\$i\\\"; sleep 1; done\" ^> script.sh; chmod +x script.sh; ./script.sh
+
 
 >[AZURE.NOTE] You might need to use certain escape characters in **clusrun** commands. As shown in this example, use ^ in a Command window to escape the ">" symbol.
 

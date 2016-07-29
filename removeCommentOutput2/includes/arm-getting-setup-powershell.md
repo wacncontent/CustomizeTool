@@ -25,7 +25,7 @@ Verify that the value of **PSVersion** is 3.0 or 4.0. If not, see [Windows Manag
 
 ### Set your Azure account and subscription
 
-If you don't already have an Azure subscription, you can activate your [MSDN subscriber benefits](/pricing/member-offers/msdn-benefits-details/) or sign up for a [trial](/pricing/1rmb-trial/).
+If you don't already have an Azure subscription, you can activate your [MSDN subscriber benefits](http://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) or sign up for a [free trial](http://azure.microsoft.com/pricing/free-trial/).
 
 Open an Azure PowerShell command prompt and log on to Azure with this command.
 
@@ -53,4 +53,4 @@ You can set the current Azure subscription by running these commands at the Azur
 	$subscr="<SubscriptionName from the display of Get-AzureRmSubscription>"
 	Select-AzureRmSubscription -SubscriptionName $subscr -Current
 
-For more information about Azure subscriptions and accounts, see [How to: Connect to your subscription](/documentation/articles/powershell-install-configure#Connect).
+For more information about Azure subscriptions and accounts, see [How to: Connect to your subscription](/documentation/articles/powershell-install-configure/#Connect).

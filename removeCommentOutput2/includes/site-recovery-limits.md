@@ -7,9 +7,13 @@
    manager="jwhit"
    editor="" />
 <tags
-	ms.service="site recovery"
-	ms.date="07/06/2015"
-	wacn.date=""/>
+   ms.service="site recovery"
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="TBD"
+   ms.date="07/06/2015"
+   ms.author="lauraa" />
 
 
 The following limits apply to Azure Site Recovery:

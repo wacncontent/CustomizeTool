@@ -9,20 +9,20 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="12/17/2015"
+	ms.date="02/26/2016"
 	wacn.date=""/>
 
 # Create an ASP.NET 5 web app in Visual Studio Code
 
 ## Overview
 
-This tutorial shows you how to create an ASP.NET 5 web app using [Visual Studio Code (VS Code)](http://code.visualstudio.com//Docs/whyvscode) and deploy it to [Azure Web App](/documentation/services/web-sites). 
+This tutorial shows you how to create an ASP.NET 5 web app using [Visual Studio Code (VS Code)](http://code.visualstudio.com//Docs/whyvscode) and deploy it to [Azure Web  App](/documentation/services/web-sites/)  App](/documentation/services/web-sites) .
+
 
-
 > [AZURE.NOTE] Although this article refers to web apps, it also applies to API apps and mobile apps. 
-
 
-ASP.NET 5 is a significant redesign of ASP.NET. ASP.NET 5 is a new open-source and cross-platform framework for building modern cloud-based web apps using .NET. For more information, see [Introduction to ASP.NET 5](http://docs.asp.net/en/latest/conceptual-overview/aspnet.html). For information about Azure web apps, see [Web Apps Overview](/home/features/web-site).
+
+ASP.NET 5 is a significant redesign of ASP.NET. ASP.NET 5 is a new open-source and cross-platform framework for building modern cloud-based web apps using .NET. For more information, see [Introduction to ASP.NET 5](http://docs.asp.net/en/latest/conceptual-overview/aspnet.html). For information about Azure web apps, see [Web Apps  Overview](/home/features/web-site/)  Overview](/home/features/web-site) .
 
 [AZURE.INCLUDE [app-service-web-try-app-service.md](../includes/app-service-web-try-app-service.md)]
 
@@ -53,7 +53,7 @@ This tutorial is designed to get you started building applications with the late
 
 	![dnvm location](./media/web-sites-create-web-app-using-vscode/00-where-dnvm.png)
 
-3. Now that you have DNVM, you must to use it to download DNX to run your applications. Run the following at the command prompt:
+3. Now that you have DNVM, you must use it to download DNX to run your applications. Run the following at the command prompt:
 
 		dnvm upgrade
 
@@ -133,12 +133,12 @@ Now that you have created the web app and retrieved all the NuGet packages for t
 
 3. Close your browser. In the **Command Window**, press **Ctrl+C** to shut down the application and close the **Command Window**. 
 
-## Create a web app in the Azure Management Portal
+## Create a web app in the Azure  Classic Management  Portal
 
 
-The following steps will guide you through creating a web app in the Azure Management Portal.
+The following steps will guide you through creating a web app in the Azure Portal.
 
-1. Log in to the [Azure Management Portal](https://manage.windowsazure.cn).
+1. Log in to the [Azure Portal](https://portal.azure.cn).
 
 2. Click **NEW** at the top left of the Portal.
 
@@ -148,7 +148,7 @@ The following steps will guide you through creating a web app in the Azure Manag
 
 4. Enter a value for **Name**, such as **SampleWebAppDemo**. Note that this name needs to be unique, and the portal will enforce that when you attempt to enter the name. Therefore, if you select a enter a different value, you'll need to substitute that value for each occurrence of **SampleWebAppDemo** that you see in this tutorial. 
 
-5. Select an existing **App Service Plan** or create a new one. If you create a new plan, select the pricing tier, location, and other options. For more information on App Service plans, see the article, [Azure App Service plans in-depth overview](/documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview).
+5. Select an existing **App Service Plan** or create a new one. If you create a new plan, select the pricing tier, location, and other options. For more information on App Service plans, see the article, [Azure App Service plans in-depth overview](/documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview/).
 
 	![Azure new web app blade](./media/web-sites-create-web-app-using-vscode/10-azure-newappblade.png)
 
@@ -160,7 +160,7 @@ The following steps will guide you through creating a web app in the Azure Manag
 
 Git is a distributed version control system that you can use to deploy your Azure web app. You'll store the code you write for your web app in a local Git repository, and you'll deploy your code to Azure by pushing to a remote repository.   
 
-1. Log into the [Azure Management Portal](https://manage.windowsazure.cn).
+1. Log into the [Azure Portal](https://portal.azure.cn).
 
 2. Click **Browse**.
 
@@ -168,7 +168,7 @@ Git is a distributed version control system that you can use to deploy your Azur
 
 4. Select the web app you created in this tutorial.
 
-5. In the web app blade, scroll down to locate the **Deployment** section, and click **Set up continuous deployment**. 
+5. In the web app blade, click **Settings** > **Continuous deployment**. 
 
 	![Azure web app host](./media/web-sites-create-web-app-using-vscode/14-azure-deployment.png)
 
@@ -193,7 +193,7 @@ Git is a distributed version control system that you can use to deploy your Azur
 	![Azure Git URL](./media/web-sites-create-web-app-using-vscode/17-azure-giturl.png)
 
 
-The first step in creating your app is to create the web site via the Azure Management Portal.  To do this, you will need to login to the portal and click the NEW button in the bottom left corner. A window will appear. Click **Quick Create**, enter a URL, and select **Create Web Site**.
+The first step in creating your app is to create the web site via the Azure Classic Management Portal.  To do this, you will need to login to the portal and click the NEW button in the bottom left corner. A window will appear. Click **Quick Create**, enter a URL, and select **Create Web Site**.
 
 ![](./media/web-sites-python-create-deploy-django-app/django-ws-003.png)
 
@@ -271,10 +271,10 @@ This can be done in two ways:
 
 		http://SampleWebAppDemo.chinacloudsites.cn
  
-* In the Azure Management Portal, locate the web app blade for your web app, and click **Browse** to view your app 
+* In the Azure  Classic Management  Portal, locate the web app blade for your web app, and click **Browse** to view your app
 * in your default browser.
 
 ![Azure web app](./media/web-sites-create-web-app-using-vscode/21-azurewebapp.png)
 
 ## Summary
-In this tutorial, you learned how to create a web app in VS Code and deploy it to Azure. For more information about VS Code, see the article, [Why Visual Studio Code?](https://code.visualstudio.com/Docs/) For information about Azure web apps, see [Web Apps Overview](/home/features/web-site). 
+In this tutorial, you learned how to create a web app in VS Code and deploy it to Azure. For more information about VS Code, see the article, [Why Visual Studio Code?](https://code.visualstudio.com/Docs/) For information about Azure web apps, see [Web Apps  Overview](/home/features/web-site/)  Overview](/home/features/web-site) .

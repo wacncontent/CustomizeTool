@@ -1,9 +1,4 @@
-
 ## Route tables
-
-
-##<a name="Route-table"></a> Route tables
-
 Route table resources contains routes used to define how traffic flows within your Azure infrastructure. You can use user defined routes (UDR) to send all traffic from a given subnet to a virtual appliance, such as a firewall or intrusion detection system (IDS). You can associate a route table to subnets. 
 
 Route tables contain the following properties.
@@ -14,12 +9,7 @@ Route tables contain the following properties.
 |**subnets**|Collection of subnets the route table is applied to|see [subnets](#Subnets)|
 
 
-
 ### User defined routes
-
-
-###<a name="User-defined-routes"></a> User defined routes
-
 You can create UDRs to specify where traffic should be sent to, based on its destination address. You can think of a route as the default gateway definition based on the destination address of a network packet.
 
 UDRs contain the following properties. 
@@ -64,6 +54,6 @@ Sample route table in JSON format:
 
 ### Additional resources
 
-- Get more information about [UDRs](/documentation/articles/virtual-networks-udr-overview).
+- Get more information about [UDRs](/documentation/articles/virtual-networks-udr-overview/).
 - Read the [REST API reference documentation](https://msdn.microsoft.com/zh-cn/library/azure/mt502549.aspx) for route tables.
 - Read the [REST API reference documentation](https://msdn.microsoft.com/zh-cn/library/azure/mt502539.aspx) for user defined routes (UDRs).

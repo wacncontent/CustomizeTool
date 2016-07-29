@@ -15,12 +15,17 @@
 
 #Deploy a LAMP app using the Azure CustomScript Extension for Linux#
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]  Resource Manager model. 
+
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+
+
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the classic deployment model. Microsoft recommends that most new deployments use the Resource Manager model.
+
 
 
 The Azure CustomScript Extension for Linux provides a way to customize your virtual machines (VMs) by running arbitrary code written in any scripting language supported by the VM (for example, Python, and Bash). This provides a very flexible way to automate application deployment to multiple machines.
 
-You can deploy the CustomScript Extension using the Azure Management Portal, Windows PowerShell, or the Azure Command-Line Interface (Azure CLI).
+You can deploy the CustomScript Extension using the Azure classic portal, Windows PowerShell, or the Azure Command-Line Interface (Azure CLI).
 
 In this article we'll use the Azure CLI to deploy a simple LAMP application to an Ubuntu VM created using the classic deployment model.
 
@@ -28,9 +33,9 @@ In this article we'll use the Azure CLI to deploy a simple LAMP application to a
 
 For this example, first create two Azure VMs running Ubuntu 14.04 or later. The VMs are called *script-vm* and *lamp-vm*. Use unique names when you create the VMs. One is used to run the CLI commands and one is used to deploy the LAMP app.
 
-You also need an Azure Storage account and a key to access it (you can get this from the Azure Management Portal).
+You also need an Azure Storage account and a key to access it (you can get this from the Azure classic portal).
 
-If you need help creating Linux VMs on Azure refer to [Create a Virtual Machine Running  Linux](/documentation/articles/virtual-machines-linux-tutorial)  Linux](/documentation/articles/virtual-machines-linux-tutorial-portal-rm) .
+If you need help creating Linux VMs on Azure refer to [Create a Virtual Machine Running Linux](/documentation/articles/virtual-machines-linux-tutorial).
 
 The install commands assume Ubuntu, but you can adapt the installation for any supported Linux distro.
 
@@ -66,16 +71,11 @@ The script example installs a LAMP stack to Ubuntu (including setting up a silen
 
 Save the script as a text file, for example *lamp_install.sh*, and then upload it to Azure Storage. You can do this easily with Azure CLI. The following example uploads the file to a storage container named "scripts". If the container doesn't exist you'll need to create it first.
 
-    azure storage blob upload -a <yourStorageAccountName> -k <yourStorageKey> --container scripts  ./install_lamp.sh  ./lamp_install.sh 
+    azure storage blob upload -a <yourStorageAccountName> -k <yourStorageKey> --container scripts ./install_lamp.sh
 
 Also create a JSON file that describes how to download the script from Azure Storage. Save this as *public_config.json* (replacing "mystorage" with the name of your storage account):
 
-
     {"fileUris":["https://mystorage.blob.core.chinacloudapi.cn/scripts/install_lamp.sh"], "commandToExecute":"sh install_lamp.sh" }
-
-
-    {"fileUris":["https://mystorage.blob.core.chinacloudapi.cn/scripts/lamp_install.sh"], "commandToExecute":"sudo sh lamp_install.sh" }
-
 
 
 ## Deploy the extension

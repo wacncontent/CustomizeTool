@@ -1,4 +1,3 @@
-
 <properties 
    pageTitle="Mount, initialize, and format a volume"
    description="Explains how to configure a volume on a StorSimple device."
@@ -45,4 +44,4 @@
   4. Perform a quick format.
 
 <!--Link references-->
-[1]: https://technet.microsoft.com/zh-cn/library/ee338480(WS.10).aspx
+[1]: https://technet.microsoft.com/library/ee338480(WS.10).aspx

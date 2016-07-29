@@ -46,6 +46,6 @@ Sample public IP address in JSON format:
 
 ### Additional resources
 
-- Get more information about [public IP addresses](/documentation/articles/virtual-networks-reserved-public-ip).
-- Learn about [instance level public IP addresses](/documentation/articles/virtual-networks-instance-level-public-ip).
+- Get more information about [public IP addresses](/documentation/articles/virtual-networks-reserved-public-ip/).
+- Learn about [instance level public IP addresses](/documentation/articles/virtual-networks-instance-level-public-ip/).
 - Read the [REST API reference documentation](https://msdn.microsoft.com/zh-cn/library/azure/mt163638.aspx) for public IP addresses.

@@ -1,3 +1,3 @@
 > [AZURE.SELECTOR]
-<!--- [Azure Management Portal](/documentation/articles/storage-import-export-service)-->
-- [Azure Management Portal](/documentation/articles/storage-import-export-service-classic-portal)
+<!--- [Azure Portal](../articles/storage/storage-import-export-service.md)-->
+- [Azure Classic Portal](/documentation/articles/storage-import-export-service-classic-portal/)

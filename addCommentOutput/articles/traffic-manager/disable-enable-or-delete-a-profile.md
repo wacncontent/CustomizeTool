@@ -1,4 +1,4 @@
-<properties
+﻿<properties
    pageTitle="Disable, enable, or delete a Traffic Manager profile | Azure"
    description="This article will help you work with your Traffic Manager profiles."
    services="traffic-manager"
@@ -8,13 +8,13 @@
    editor="tysonn" />
 <tags
 	ms.service="traffic-manager"
-	ms.date="12/02/2015"
+	ms.date="06/10/2016"
 	wacn.date=""/>
 
 # Disable, Enable, or Delete a Profile
 
 
-You can disable an existing Traffic Manager profile so that it will not refer user requests to its configured endpoints. When you disable a Traffic Manager profile, the profile itself and the information contained in the profile will remain intact and can be edited in the Traffic Manager interface. When you want to re-enable the profile, you can easily do so in the Azure Management Portal and referrals will resume. When you create a Traffic Manager profile in the Azure Management Portal, it's automatically enabled.
+You can disable an existing Traffic Manager profile so that it will not refer user requests to its configured endpoints. When you disable a Traffic Manager profile, the profile itself and the information contained in the profile will remain intact and can be edited in the Traffic Manager interface. When you want to re-enable the profile, you can easily do so in the Azure portal and referrals will resume. When you create a Traffic Manager profile in the Azure portal, it's automatically enabled.
 
 ## To disable a profile
 
@@ -27,7 +27,7 @@ You can disable an existing Traffic Manager profile so that it will not refer us
 
 1. Select the profile that you want to enable. To select the profile, on the Traffic Manager page, highlight the profile by clicking the column next to the profile name. Do not click the name of the profile or the arrow next to the name, as this will take you to the settings page for the profile.
 1. After selecting the profile, click Enable at the bottom of the page.
-1. Modify the DNS resource record on your Internet DNS server to use the CNAME record type, which maps your company domain name to the domain name of your Traffic Manager profile. For more information, see [Point a Company Internet Domain to a Traffic Manager Domain](/documentation/articles/traffic-manager-point-internet-domain).
+1. Modify the DNS resource record on your Internet DNS server to use the CNAME record type, which maps your company domain name to the domain name of your Traffic Manager profile. For more information, see [Point a Company Internet Domain to a Traffic Manager Domain](/documentation/articles/traffic-manager-point-internet-domain/).
 1. Traffic will start being directed to the endpoints again.
 
 ## Delete a profile
@@ -40,13 +40,13 @@ You can disable an existing Traffic Manager profile so that it will not refer us
 
 ## Next Steps
 
-[Traffic Manager - Disable or enable an endpoint](/documentation/articles/disable-or-enable-an-endpoint)
+[Traffic Manager - Disable or enable an endpoint](/documentation/articles/disable-or-enable-an-endpoint/)
 
-[Configure failover routing method](/documentation/articles/traffic-manager-configure-failover-routing-method)
+[Configure failover routing method](/documentation/articles/traffic-manager-configure-failover-routing-method/)
 
-[Configure round robin routing method](/documentation/articles/traffic-manager-configure-round-robin-routing-method)
+[Configure round robin routing method](/documentation/articles/traffic-manager-configure-round-robin-routing-method/)
 
-[Configure performance routing method](/documentation/articles/traffic-manager-configure-performance-routing-method)
+[Configure performance routing method](/documentation/articles/traffic-manager-configure-performance-routing-method/)
 
-[Troubleshooting Traffic Manager degraded state](/documentation/articles/traffic-manager-troubleshooting-degraded)
+[Troubleshooting Traffic Manager degraded state](/documentation/articles/traffic-manager-troubleshooting-degraded/)
 

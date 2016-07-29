@@ -1,4 +1,3 @@
-
 <properties 
    pageTitle="Complete minimum device setup"
    description="Describes how to complete the minimum StorSimple device configuration."
@@ -7,10 +6,14 @@
    authors="SharS"
    manager="adinah"
    editor="tysonn" />
-<tags
-	ms.service="storsimple"
-	ms.date="04/01/2015"
-	wacn.date=""/>
+<tags 
+   ms.service="storsimple"
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="TBD"
+   ms.date="04/01/2015"
+   ms.author="v-sharos" />
 
 ### To complete the minimum StorSimple device setup
 
@@ -27,7 +30,7 @@
 
 3. Click the arrow icon. ![StorSimple arrow icon](./media/storsimple-complete-minimum-device-setup/HCS_ArrowIcon-include.png)
 
-4. In the **Network Interfaces** dialog box , provide the fixed IP addresses for Controller 0 and Controller 1. **The controller fixed IP addresses need to be free IPs within the subnet accessible by the device IP address.** If the DATA 0 interface was configured for IPv4, the fixed IP addresses need to be provided in the IPv4 format. If you provided a prefix for IPv6 configuration, the fixed IP addresses will be populated automatically in these fields.
+4. In the **Network Interfaces** dialog box, provide the fixed IP addresses for Controller 0 and Controller 1. **The controller fixed IP addresses need to be free IPs within the subnet accessible by the device IP address.** If the DATA 0 interface was configured for IPv4, the fixed IP addresses need to be provided in the IPv4 format. If you provided a prefix for IPv6 configuration, the fixed IP addresses will be populated automatically in these fields.
 
     The fixed IP addresses for the controller are used for servicing the updates to the device, and therefore the fixed IPs must be routable and able to connect to the Internet.
 

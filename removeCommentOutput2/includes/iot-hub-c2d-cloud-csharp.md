@@ -10,7 +10,7 @@ In this section, you'll write a Windows console app that sends cloud-to-device m
 
 	This displays the Manage NuGet Packages window.
 
-3. Search for `Windows Azure Devices`, click **Install**, and accept the terms of use. 
+3. Search for `Microsoft Azure Devices`, click **Install**, and accept the terms of use. 
 
 	This downloads, installs, and adds a reference to the [Azure IoT - Service SDK NuGet package].
 
@@ -84,7 +84,7 @@ In this section, you will modify the **SendCloudToDevice** app to request feedba
 
         commandMessage.Ack = DeliveryAcknowledgement.Full;
 
-4.  Run the apps by pressing **F5**, and you should see all three application start. Select the **SendCloudToDevice** windows and press **Enter**: you should see the message being received by the simulated app, and after a few seconds, the feedback message being received by your **SendCloudToDevice** app.
+4.  Run the apps by pressing **F5**, and you should see all three application start. Select the **SendCloudToDevice** windows and press **Enter**: you should see the message being received by the simulated app, and after a few seconds, the feedback message being received by your **SendCloudToDevice** application.
 
     ![][22]
 
@@ -92,10 +92,10 @@ In this section, you will modify the **SendCloudToDevice** app to request feedba
 
 <!-- Links -->
 
-[IoT Hub Developer Guide - C2D]: /documentation/articles/iot-hub-devguide#c2d
+[IoT Hub Developer Guide - C2D]: /documentation/articles/iot-hub-devguide/#c2d
 [Azure IoT - Service SDK NuGet package]: https://www.nuget.org/packages/Microsoft.Azure.Devices/
 [Transient Fault Handling]: https://msdn.microsoft.com/zh-cn/library/hh680901(v=pandp.50).aspx
-[Get started with IoT Hub]: iot-hub-csharp-csharp-getstarted.md
+[Get started with IoT Hub]: /documentation/articles/iot-hub-csharp-csharp-getstarted/
 
 <!-- Images -->
 [20]: ./media/iot-hub-c2d-cloud-csharp/create-identity-csharp1.png

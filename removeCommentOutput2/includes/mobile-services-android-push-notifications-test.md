@@ -23,3 +23,4 @@ When you run this app in the emulator, make sure that you use an Android Virtual
 2. Swipe down from the top of the screen to open the device's Notification Center to see the notification.
 
 	![View notification in the Notification Center](./media/mobile-services-android-push-notifications-test/notification-area-received.png)
+	

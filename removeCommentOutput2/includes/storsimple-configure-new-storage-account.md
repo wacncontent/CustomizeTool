@@ -1,4 +1,3 @@
-
 <properties 
    pageTitle="Optional: Configure a new storage account for the service"
    description="Explains how to configure a storage account for th StorSimple service."
@@ -7,10 +6,14 @@
    authors="SharS"
    manager="adinah"
    editor="tysonn" />
-<tags
-	ms.service="storsimple"
-	ms.date="04/01/2015"
-	wacn.date=""/>
+<tags 
+   ms.service="storsimple"
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="TBD"
+   ms.date="04/01/2015"
+   ms.author="v-sharos" />
 
 ### To configure a new storage account
 
@@ -22,7 +25,7 @@
 
   1. Click **Add new**.
   2. Provide a name for your storage account.
-  3. Supply the primary **Access Key** for your Windows Azure storage account.
+  3. Supply the primary **Access Key** for your Microsoft Azure storage account.
   4. Select **Enable SSL Mode** to create a secure channel for network communication between your device and the cloud. Clear the **Enable SSL Mode** check box only if you are operating within a private cloud.
   5. Click the check icon ![check icon](./media/storsimple-configure-new-storage-account/HCS_CheckIcon-include.png). You will be notified after the storage account is successfully created.
 

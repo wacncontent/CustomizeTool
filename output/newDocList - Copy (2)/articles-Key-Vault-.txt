@@ -1,0 +1,13 @@
+new docs: 9, word count: 11744
+articles/Key-Vault/automation-manage-key-vault.md
+articles/Key-Vault/key-vault-developers-guide.md
+articles/Key-Vault/key-vault-get-started.md
+articles/Key-Vault/key-vault-hsm-protected-keys.md
+articles/Key-Vault/key-vault-logging.md
+articles/Key-Vault/key-vault-manage-with-cli.md
+articles/Key-Vault/key-vault-service-limits.md
+articles/Key-Vault/key-vault-use-from-web-application.md
+articles/Key-Vault/key-vault-whatis.md
+
+new includes: 1
+includes/key-vault-limits.md

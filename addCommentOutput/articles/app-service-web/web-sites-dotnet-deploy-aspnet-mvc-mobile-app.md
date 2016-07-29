@@ -86,7 +86,7 @@ unzip the file.
 5. 	In Visual Studio, open the *C#\Mvc5Mobile.sln* file.
 
 
-6.	Log into the [Management Portal](https://manage.windowsazure.cn/), and click an exited website or create a new website.
+6.	Log into the [Classic Management Portal](https://manage.windowsazure.cn/), and click an exited website or create a new website.
 
 7.	In the **Dashboard**, under ther **Quick Glance**, *Download the publish profile*
 
@@ -122,7 +122,7 @@ unzip the file.
 
     ![](./media/web-sites-dotnet-deploy-aspnet-mvc-mobile-app/deploy-to-azure-website-7b.png) 
 
-13.	After the Azure resources are created, the Publish Web dialog will be filled with the settings for your new app. Click **Publish**.
+13.	After the Azure resources are created, the Publish Web dialog will be filled with the settings for your new  app. Click **Publish**.
 
 	![][DeployPublishSite]
 

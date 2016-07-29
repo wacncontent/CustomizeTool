@@ -11,14 +11,19 @@
 	ms.date="02/10/2016"
 	wacn.date=""/>
 
-# Instance Level Public IP Overview
-An Instance Level Public IP (ILPIP) is a public IP address that you can assign directly to your VM or role instance, rather than to the cloud service that your VM or role instance reside in. This doesn't take the place of the VIP (Virtual IP) that is assigned to your cloud service. Rather, it's an additional IP address that you can use to connect directly to your VM or role instance.
+# Instance level public IP overview
+An instance level public IP (ILPIP) is a public IP address that you can assign directly to your VM or role instance, rather than to the cloud service that your VM or role instance reside in. This doesn't take the place of the VIP (virtual IP) that is assigned to your cloud service. Rather, it's an additional IP address that you can use to connect directly to your VM or role instance.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]  [Resource Manager model](/documentation/articles/virtual-network-ip-addresses-overview-arm). 
+
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] [Resource Manager model](/documentation/articles/virtual-network-ip-addresses-overview-arm/). 
+
+
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the [Resource Manager model](/documentation/articles/virtual-network-ip-addresses-overview-arm/). 
+
 
-Make sure you understand how [IP addresses](/documentation/articles/virtual-network-ip-addresses-overview-classic) work in Azure.
+Make sure you understand how [IP addresses](/documentation/articles/virtual-network-ip-addresses-overview-classic/) work in Azure.
 
->[AZURE.NOTE] In the past, an ILPIP was referred to as a PIP, which stands for Public IP. 
+>[AZURE.NOTE] In the past, an ILPIP was referred to as a PIP, which stands for public IP. 
 
 ![Difference between ILPIP and VIP](./media/virtual-networks-instance-level-public-ip/Figure1.png)
 
@@ -85,14 +90,14 @@ To remove the ILPIP added to the VM in the script above, run the following Power
 	| Update-AzureVM
 
 ## How to add an ILPIP to an existing VM
-To add an ILPIP to the VM created using the script above, runt he following command:
+To add an ILPIP to the VM created using the script above, run the following command:
 
 	Get-AzureVM -ServiceName FTPService -Name FTPInstance `
 	| Set-AzurePublicIP -PublicIPName ftpip2 `
 	| Update-AzureVM
 
 ## How to associate an ILPIP to a VM by using a service configuration file
-You can also associate an ILPIP to a VM by using a service configuration (CSCFG) file. The sample xml below shows how to configure a cloud service to use a reserved IP named *MyReservedIP* as an ILPIP for a role instance: 
+You can also associate an ILPIP to a VM by using a service configuration (CSCFG) file. The sample xml below shows how to configure a cloud service to use an ILPIP named *MyPublicIP* for a role instance: 
 	
 	<?xml version="1.0" encoding="utf-8"?>
 	<ServiceConfiguration serviceName="ReservedIPSample" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration" osFamily="4" osVersion="*" schemaVersion="2014-01.2.3">
@@ -111,7 +116,7 @@ You can also associate an ILPIP to a VM by using a service configuration (CSCFG)
 	          <Subnet name="Subnet2"/>
 	        </Subnets>
 	        <PublicIPs>
-	          <PublicIP name="MyReservedIP" domainNameLabel="MyReservedIP" />
+	          <PublicIP name="MyPublicIP" domainNameLabel="MyPublicIP" />
 	        </PublicIPs>
 	      </InstanceAddress>
 	    </AddressAssignments>
@@ -120,6 +125,6 @@ You can also associate an ILPIP to a VM by using a service configuration (CSCFG)
 
 ## Next steps
 
-- Understand how [IP addressing](/documentation/articles/virtual-network-ip-addresses-overview-classic) works in the classic deployment model.
+- Understand how [IP addressing](/documentation/articles/virtual-network-ip-addresses-overview-classic/) works in the classic deployment model.
 
-- Learn about [Reserved IPs](/documentation/articles/virtual-networks-reserved-public-ip).
+- Learn about [Reserved IPs](/documentation/articles/virtual-networks-reserved-public-ip/).

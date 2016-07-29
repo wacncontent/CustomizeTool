@@ -1,4 +1,4 @@
-<!-- not suitable for Mooncake -->
+<!-- deleted in Global -->
 
 1. In **Solution Explorer**, right-click the project (not the solution) and click **Publish**. 
 
@@ -18,7 +18,7 @@
 	- If you have multiple Azure subscriptions, select the one you want to use.
 	- For **App Service Plan**, select from your existing App Service plans, or select **Create new App Service plan** and enter the name of a new plan. 
 	- For **Resource Group**, select from your existing resource groups, or select **Create new resource group** and enter a name. 
-	- For **Access Level**, select **Available to Anyone**. You can restrict access later through the Azure preview portal.
+	- For **Access Level**, select **Available to Anyone**. You can restrict access later through the Azure Portal Preview.
 	- For **Region**, select a region close to you.  
 
 	![Configure Azure Web App dialog](./media/app-service-api-pub-web-create/24-new-api-app-dialog-v3.png)

@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="02/04/2016"
+	ms.date="05/18/2016"
 	wacn.date=""/>
 
 #Run Hive queries with Hadoop on HDInsight using PowerShell
@@ -30,7 +30,9 @@ To complete the steps in this article, you will need the following:
 - **An Azure HDInsight (Hadoop on HDInsight) cluster (Windows-based)** 
 
 
-- **A workstation with Azure PowerShell**. See [Install and Configure Azure PowerShell](/documentation/articles/powershell-install-configure)
+- **A workstation with Azure PowerShell**.
+
+    [AZURE.INCLUDE [upgrade-powershell](../includes/hdinsight-use-latest-powershell.md)]
 
 ##<a id="powershell"></a>Run a MapReduce job using Azure PowerShell
 
@@ -81,28 +83,26 @@ The following steps demonstrate how to use these cmdlets to run a job in your HD
         $resourceGroup = $clusterInfo.ResourceGroup
         $storageAccountName=$clusterInfo.DefaultStorageAccount.split('.')[0]
         $container=$clusterInfo.DefaultStorageContainer
-        $storageAccountKey=Get-AzureRmStorageAccountKey `
+        $storageAccountKey=(Get-AzureRmStorageAccountKey `
             -Name $storageAccountName `
-            -ResourceGroupName $resourceGroup `
-            | %{ $_.Key1 }
+        -ResourceGroupName $resourceGroup)[0].Value
 
         #Create a storage content and upload the file
         $context = New-AzureStorageContext `
             -StorageAccountName $storageAccountName `
             -StorageAccountKey $storageAccountKey
             
-        #Define the MapReduce job
 
 
 		{
-		    Add-AzureAccount
+		    Add-AzureAccount -Environment AzureChinaCloud
 		}
 
 		#Specify the cluster name
 		$clusterName = "CLUSTERNAME"
 
-		#Define the MapReduce job
 
+        #Define the MapReduce job
         #NOTE: If using an HDInsight 2.0 cluster, use hadoop-examples.jar instead.
         # -JarFile = the JAR containing the MapReduce application
         # -ClassName = the class of the application
@@ -146,7 +146,13 @@ The following steps demonstrate how to use these cmdlets to run a job in your HD
             -Container $container `
             -Destination output.txt `
             -Context $context
+
+
+		Wait-AzureHDInsightJob -Job $wordCountJob -WaitTimeoutInSeconds 3600
+
+
         # Print the output
+
         Get-AzureRmHDInsightJobOutput `
             -Clustername $clusterName `
             -JobId $wordCountJob.JobId `
@@ -157,9 +163,6 @@ The following steps demonstrate how to use these cmdlets to run a job in your HD
             
 
 
-		Wait-AzureHDInsightJob -Job $wordCountJob -WaitTimeoutInSeconds 3600
-
-		# Print the output
 		Write-Host "Display the standard output..." -ForegroundColor Green
 		Get-AzureHDInsightJobOutput -Cluster $clusterName -JobId $wordCountJob.JobId -StandardOutput
 
@@ -269,10 +272,10 @@ As you can see, Azure PowerShell provides an easy way to run MapReduce jobs on a
 
 For general information about MapReduce jobs in HDInsight:
 
-* [Use MapReduce on HDInsight Hadoop](/documentation/articles/hdinsight-use-mapreduce)
+* [Use MapReduce on HDInsight Hadoop](/documentation/articles/hdinsight-use-mapreduce/)
 
 For information about other ways you can work with Hadoop on HDInsight:
 
-* [Use Hive with Hadoop on HDInsight](/documentation/articles/hdinsight-use-hive)
+* [Use Hive with Hadoop on HDInsight](/documentation/articles/hdinsight-use-hive/)
 
-* [Use Pig with Hadoop on HDInsight](/documentation/articles/hdinsight-use-pig)
+* [Use Pig with Hadoop on HDInsight](/documentation/articles/hdinsight-use-pig/)

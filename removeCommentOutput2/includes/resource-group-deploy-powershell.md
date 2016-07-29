@@ -20,12 +20,12 @@
 
 4. If you do not have an existing resource group, create a new resource group. Provide the name of the resource group and location that you need for your solution.
 
-        New-AzureResourceGroup -Name ExampleResourceGroup -Location "China North"
+        New-AzureResourceGroup -Name ExampleResourceGroup -Location "West US"
 
    A summary of the new resource group is returned.
 
         ResourceGroupName : ExampleResourceGroup
-        Location          : China North 
+        Location          : China North
         ProvisioningState : Succeeded
         Tags              :
         Permissions       :

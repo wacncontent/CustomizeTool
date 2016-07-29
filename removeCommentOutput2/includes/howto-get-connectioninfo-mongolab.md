@@ -2,7 +2,7 @@ When you provision a MongoLab database, MongoLab transmits a connection URI to A
 
 **This URI contains your database user name and password.  Treat it as sensitive information and do not share it.**
 
-You can retrieve this URI in the Azure Management Portal using the following steps:
+You can retrieve this URI in the Azure Portal using the following steps:
 
 1. Select **Add-ons**.  
 ![AddonsButton][button-addons]

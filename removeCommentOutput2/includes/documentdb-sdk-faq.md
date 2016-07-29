@@ -1,6 +1,6 @@
 **1. How will customers be notified of the retiring SDK?**
 
-Microsoft will provide 12 month advance notification to the end of support of the retiring SDK in order to facilitate a smooth transition to a supported SDK. Further, customers will be notified through various communication channels â Azure Management Portal, Developer Center, blog post, and direct communication to assigned service administrators.
+Microsoft will provide 12 month advance notification to the end of support of the retiring SDK in order to facilitate a smooth transition to a supported SDK. Further, customers will be notified through various communication channels – Azure Management Portal, Developer Center, blog post, and direct communication to assigned service administrators.
 
 **2. Can customers author applications using a "to-be" retired DocumentDB SDK during the 12 month period?** 
 
@@ -10,7 +10,7 @@ Yes, customers will have full access to author, deploy and modify applications u
 
 After the 12 month notification period, the SDK will be retired. Any access to DocumentDB by an applications using a retired SDK will not be permitted by the DocumentDB platform. Further, Microsoft will not provide customer support on the retired SDK.
 
-**4. What happens to Customerâs running applications that are using unsupported DocumentDB SDK version?**
+**4. What happens to Customer’s running applications that are using unsupported DocumentDB SDK version?**
 
 Any attempts made to connect to the DocumentDB service with a retired SDK version will be rejected. 
 

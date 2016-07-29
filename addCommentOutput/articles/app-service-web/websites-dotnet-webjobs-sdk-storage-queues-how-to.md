@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="12/14/2015"
+	ms.date="06/01/2016"
 	wacn.date=""/>
 
 # How to use Azure queue storage with the WebJobs SDK
@@ -18,7 +18,7 @@
 
 This guide provides C# code samples that show how to use the Azure WebJobs SDK version 1.x with the Azure queue storage service.
 
-The guide assumes you know [how to create a WebJob project in Visual Studio with connection strings that point to your storage account](/documentation/articles/websites-dotnet-webjobs-sdk-get-started#configure-storage) or to [multiple storage accounts](https://github.com/Azure/azure-webjobs-sdk/blob/master/test/Microsoft.Azure.WebJobs.Host.EndToEndTests/MultipleStorageAccountsEndToEndTests.cs).
+The guide assumes you know [how to create a WebJob project in Visual Studio with connection strings that point to your storage account](/documentation/articles/websites-dotnet-webjobs-sdk-get-started/#configure-storage) or to [multiple storage accounts](https://github.com/Azure/azure-webjobs-sdk/blob/master/test/Microsoft.Azure.WebJobs.Host.EndToEndTests/MultipleStorageAccountsEndToEndTests.cs).
 
 Most of the code snippets only show functions, not the code that creates the `JobHost` object as in this example:
 
@@ -295,7 +295,7 @@ The `IBinder` interface can also be used with the `Table` and `Blob` attributes.
 
 ## <a id="blobs"></a> How to read and write blobs and tables while processing a queue message
 
-The `Blob` and `Table` attributes enable you to read and write blobs and tables. The samples in this section apply to blobs. For code samples that show how to trigger processes when blobs are created or updated, see [How to use Azure blob storage with the WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk-storage-blobs-how-to), and for code samples that read and write tables, see [How to use Azure table storage with the WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk-storage-tables-how-to).
+The `Blob` and `Table` attributes enable you to read and write blobs and tables. The samples in this section apply to blobs. For code samples that show how to trigger processes when blobs are created or updated, see [How to use Azure blob storage with the WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk-storage-blobs-how-to/), and for code samples that read and write tables, see [How to use Azure table storage with the WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk-storage-tables-how-to/).
 
 ### String queue messages triggering blob operations
 
@@ -311,7 +311,7 @@ The following example uses `Stream` objects to read and write blobs. The queue m
 		    blobInput.CopyTo(blobOutput, 4096);
 		}
 
-The `Blob` attribute constructor takes a `blobPath` parameter that specifies the container and blob name. For more information about this placeholder, see [How to use Azure blob storage with the WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk-storage-blobs-how-to), 
+The `Blob` attribute constructor takes a `blobPath` parameter that specifies the container and blob name. For more information about this placeholder, see [How to use Azure blob storage with the WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk-storage-blobs-how-to/), 
 
 When the attribute decorates a `Stream` object, another constructor parameter specifies the `FileAccess` mode as read, write, or read/write. 
 
@@ -533,7 +533,7 @@ Output from Console methods that you call in a function or in the `Main()` metho
 
 Console output can't be linked to a particular method invocation because the Console is single-threaded, while many job functions may be running at the same time. That's why the  SDK provides each function invocation with its own unique log writer object.
 
-To write [application tracing logs](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio#logsoverview), use `Console.Out` (creates logs marked as INFO) and `Console.Error` (creates logs marked as ERROR). An alternative is to use [Trace or TraceSource](http://blogs.msdn.com/b/mcsuksoldev/archive/2014/09/04/adding-trace-to-azure-web-sites-and-web-jobs.aspx), which provides Verbose, Warning, and Critical levels in addition to Info and Error. Application tracing logs appear in the web app log files, Azure tables, or Azure blobs depending on how you configure your Azure web app. As is true of all Console output, the most recent 100 application logs also appear in the Dashboard page for the WebJob, not the page for a function invocation. 
+To write [application tracing logs](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/#logsoverview), use `Console.Out` (creates logs marked as INFO) and `Console.Error` (creates logs marked as ERROR). An alternative is to use [Trace or TraceSource](http://blogs.msdn.com/b/mcsuksoldev/archive/2014/09/04/adding-trace-to-azure-web-sites-and-web-jobs.aspx), which provides Verbose, Warning, and Critical levels in addition to Info and Error. Application tracing logs appear in the web app log files, Azure tables, or Azure blobs depending on how you configure your Azure web app. As is true of all Console output, the most recent 100 application logs also appear in the Dashboard page for the WebJob, not the page for a function invocation. 
 
 Console output appears in the Dashboard only if the program is running in an Azure WebJob, not if the program is running locally or in some other environment.
 
@@ -589,8 +589,13 @@ If you want to plug in your own logger, see [this example](http://github.com/Azu
 
 The WebJobs SDK also includes a [Timeout](http://github.com/Azure/azure-webjobs-sdk-samples/blob/master/BasicSamples/MiscOperations/Functions.cs) attribute that you can use to cause a function to be canceled if doesn't complete within a specified amount of time. And if you want to raise an alert when too many errors happen within a specified period of time, you can use the `ErrorTrigger` attribute. Here is an [ErrorTrigger example](https://github.com/Azure/azure-webjobs-sdk-extensions/wiki/Error-Monitoring).
 
- ``` 
+
+```
 public static void ErrorMonitor(
+
+
+	public static void ErrorMonitor(
+
 [ErrorTrigger("00:01:00", 1)] TraceFilter filter, TextWriter log,
 [SendGrid(
     To = "admin@emailaddress.com",
@@ -601,7 +606,9 @@ public static void ErrorMonitor(
    log.WriteLine(filter.GetDetailedMessage(5));
    message.Text = filter.GetDetailedMessage(1);
 }
- ``` 
+
+```
+
 
 You can also dynamically disable and enable functions to control whether they can be triggered, by using a configuration switch that could be an app setting or environment variable name. For sample code, see the `Disable` attribute in [the WebJobs SDK samples repository](https://github.com/Azure/azure-webjobs-sdk-samples/blob/master/BasicSamples/MiscOperations/Functions.cs).
 

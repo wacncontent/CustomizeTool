@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="01/29/2016"
+	ms.date="04/28/2016"
 	wacn.date=""/>
 
 # Access YARN application logs on Windows-based HDInsight
@@ -18,12 +18,12 @@
 This topic explains how to access the logs for YARN (Yet Another Resource Negotiator) applications that have finished on a Hadoop cluster in Azure HDInsight
 
 
-> [AZURE.NOTE] The information in this document applies only to Windows-based HDInsight clusters. For information on accessing YARN logs on Linux-based HDInsight clusters, see [Access YARN application logs on Linux-based Hadoop on HDInsight](/documentation/articles/hdinsight-hadoop-access-yarn-app-logs-linux)
+> [AZURE.NOTE] The information in this document applies only to Windows-based HDInsight clusters. For information on accessing YARN logs on Linux-based HDInsight clusters, see [Access YARN application logs on Linux-based Hadoop on HDInsight](/documentation/articles/hdinsight-hadoop-access-yarn-app-logs-linux/)
 
 
 ### Prerequisites
 
-- A Windows-based HDInsight cluster.  See [Create Windows-based Hadoop clusters in HDInsight](/documentation/articles/hdinsight-provision-clusters-v1).
+- A Windows-based HDInsight cluster.  See [Create Windows-based Hadoop clusters in HDInsight](/documentation/articles/hdinsight-provision-clusters-v1/).
 
 
 ## YARN Timeline Server
@@ -72,9 +72,9 @@ The aggregated logs are not directly readable, as they are written in a [TFile][
 
 ## YARN ResourceManager UI
 
-The YARN ResourceManager UI runs on the cluster headnode, and can be accessed through the Azure Management Portal dashboard: 
+The YARN ResourceManager UI runs on the cluster headnode, and can be accessed through the Azure portal dashboard: 
 
-1. Sign in to [Azure Management Portal](https://manage.windowsazure.cn/). 
+1. Sign in to [Azure portal](https://portal.azure.cn/). 
 2. On the left menu, click **Browse**, click **HDInsight Clusters**, click a Windows-based cluster that you want to access the YARN application logs.
 3. On the top menu, click **Dashboard**. You will see a page opened on a new browser tab called **HDInsight Query Console**.
 4. From **HDInsight Query Console**, click **Yarn UI**.

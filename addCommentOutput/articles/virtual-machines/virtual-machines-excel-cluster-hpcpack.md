@@ -17,7 +17,12 @@
 
 This article shows you how to deploy an HPC Pack cluster on Azure infrastructure services (IaaS) using an Azure quickstart template or an Azure PowerShell deployment script. You'll use Azure gallery VM images designed to run Microsoft Excel or service-oriented architecture (SOA) workloads with HPC Pack. You can use the cluster to run simple Excel HPC and SOA services from an on-premises client computer. The Excel HPC services include Excel workbook offloading and Excel user-defined functions, or UDFs.
 
+
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
+
+
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the Resource Manager deployment model, which Microsoft recommends for most new deployments instead of the classic deployment model.
+
 
 
 At a high level the following diagram shows the HPC Pack cluster you'll create.
@@ -30,21 +35,20 @@ At a high level the following diagram shows the HPC Pack cluster you'll create.
 
 * **Azure subscription** - If you don't have an account, you can create a trial account in just a couple of minutes. For details, see [Azure Trial](/pricing/1rmb-trial/).
 
-* **Cores quota** - You might need to increase the quota of cores, especially if you choose to deploy several cluster nodes with multicore VM sizes. If you are using an Azure quickstart template, be aware that the cores quota in Resource Manager is per Azure region, and you might need to increase the quota in a specific region. See [Azure subscription limits, quotas, and constraints](/documentation/articles/azure-subscription-service-limits).  To increase a quota, you can [open an online customer support request](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/) at no charge. 
+* **Cores quota** - You might need to increase the quota of cores, especially if you choose to deploy several cluster nodes with multicore VM sizes. If you are using an Azure quickstart template, be aware that the cores quota in Resource Manager is per Azure region, and you might need to increase the quota in a specific region. See [Azure subscription limits, quotas, and constraints](/documentation/articles/azure-subscription-service-limits). To increase a quota, you can [open an online customer support request](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/) at no charge.
 
 
 ## Step 1. Set up an HPC Pack cluster in Azure
 
-
-We'll show you two ways to set up the cluster: first, using an Azure quickstart template and the Azure Management Portal; and second, using an Azure PowerShell deployment script.
+We'll show you two ways to set up the cluster: first, using an Azure quickstart template and the Azure portal; and second, using an Azure PowerShell deployment script.
 
 
 ### Use a quickstart template
-Use an Azure quickstart template to quickly and easily deploy an HPC Pack cluster in the Azure Management Portal. When you open the template in the preview portal, you get a simple UI where you enter the settings for your cluster. Here are the steps.
+Use an Azure quickstart template to quickly and easily deploy an HPC Pack cluster in the Azure portal. When you open the template in the preview portal, you get a simple UI where you enter the settings for your cluster. Here are the steps.
 
 1. Visit the [Create HPC Cluster template page on GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/create-hpc-cluster). If you want, review information about the template and the source code.
 
-2. Click **Deploy to Azure** to start a deployment with the template in the Azure Management Portal.
+2. Click **Deploy to Azure** to start a deployment with the template in the Azure portal.
 
     ![Deploy template to Azure][github]
 
@@ -78,7 +82,7 @@ Use an Azure quickstart template to quickly and easily deploy an HPC Pack cluste
 
 3.	When the deployment completes (it typically takes around 30 minutes), export the cluster certificate file from the cluster head node. In a later step this public certificate will be imported on the client computer to provide the server-side authentication for secure HTTP binding.
 
-    a. Connect to the head node by Remote Desktop from the Azure Management Portal.
+    a. Connect to the head node by Remote Desktop from the Azure portal.
 
      ![Connect to the head node][connect]
 
@@ -86,7 +90,6 @@ Use an Azure quickstart template to quickly and easily deploy an HPC Pack cluste
 
     ![Export the certificate][cert]
 
-
 ### Use the HPC Pack IaaS Deployment script
 
 The HPC Pack IaaS deployment script provides another versatile way to deploy an HPC Pack cluster. It runs in Azure Service Management (ASM) mode, whereas the template runs in Azure Resource Manager (ARM) mode. Also, the script is compatible with a subscription in either the Azure Global or Azure China service.
@@ -212,7 +215,6 @@ The HPC Pack IaaS deployment script provides another versatile way to deploy an 
 
 
     	.\New-HpcIaaSCluster.ps1 -ConfigFile E:\HPCDemoConfig.xml -AdminUserName MyAdminName
-
 
 
 The HPC Pack deployment script will run for some time. One thing the script wil do is to export and download the cluster certificate and save it in the current user's Documents folder on the client computer. The script will generate a message similar to the following. In a following step you'll import the certificate in the appropriate certificate store.
@@ -418,7 +420,7 @@ To do this, explicitly set UseAzureQueue flag to false in the SessionStartInfo.
 
 ### Use NetTcp binding
 
-To use NetTcp binding, the configuration is like connecting to an on-premises cluster. You'll need to open a few endpoints on the head node VM. In the Azure Management Portal do the following.
+To use NetTcp binding, the configuration is like connecting to an on-premises cluster. You'll need to open a few endpoints on the head node VM. In the Azure classic portal do the following.
 
 
 1. Stop the VM.

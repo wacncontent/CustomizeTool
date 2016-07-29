@@ -19,12 +19,7 @@
 # How to Send Email Using SendGrid with Azure
 
 
-
 ## Overview
-
-
-##<a name="overview"></a> Overview
-
 
 This guide demonstrates how to perform common programming tasks with the
 SendGrid email service on Azure. The samples are written in C\#
@@ -33,12 +28,7 @@ email**, **sending email**, **adding attachments**, and **using
 filters**. For more information on SendGrid and sending email, see the
 [Next steps][] section.
 
-
 ## What is the SendGrid email service?
-
-
-##<a name="whatis"></a> What is the SendGrid email service?
-
 
 SendGrid is a [cloud-based email service] that provides reliable
 [transactional email delivery], scalability, and real-time analytics along with flexible APIs
@@ -56,21 +46,11 @@ include:
 
 For more information, see [https://sendgrid.com](https://sendgrid.com) or our [C# library][sendgrid-csharp]
 
-
 ## Create a SendGrid account
-
-
-##<a name="createaccount"></a> Create a SendGrid account
-
 
 [AZURE.INCLUDE [sendgrid-sign-up](../includes/sendgrid-sign-up.md)]
 
-
 ## Reference the SendGrid .NET class library
-
-
-##<a name="reference"></a> Reference the SendGrid .NET class library
-
 
 The [SendGrid NuGet package](https://www.nuget.org/packages/Sendgrid) is the easiest way to get the SendGrid API
 and to configure your application with all dependencies. NuGet is a
@@ -118,12 +98,7 @@ the SendGrid APIs.
     using System.Net.Mail;
     using SendGrid;
 
-
 ## How to: Create an email
-
-
-##<a name="createemail"></a> How to: Create an email
-
 
 Use the **SendGridMessage** object to create an email
 message. Once the message object is created, you
@@ -159,12 +134,7 @@ object:
 For more information on all properties and methods supported by the
 **SendGrid** type, see [sendgrid-csharp][] on GitHub.
 
-
 ## How to: Send an email
-
-
-##<a name="sendemail"></a> How to: Send an email
-
 
 After creating an email message, you can send it using
 the Web API provided by SendGrid. Alternatively, you may [use .NET's built in library](https://sendgrid.com/docs/Code_Examples/csharp.html).
@@ -172,7 +142,7 @@ the Web API provided by SendGrid. Alternatively, you may [use .NET's built in li
 Sending email requires that you supply your
 SendGrid account credentials (username and password) or SendGrid API Key. API Key is the preferred method. If you need details about how to configure API keys, please visit our [documentation](https://sendgrid.com/docs/Classroom/Send/api_keys.html)
 
-You may store these credentials via your Azure Management Portal
+You may store these credentials via your Azure Portal
 by clicking CONFIGURE and adding the key/value pairs under "app settings".
 
  ![Azure app settings][azure_app_settings]
@@ -251,7 +221,7 @@ You can also add attachments from the data's **Stream**. It can be done by calli
     }
 
 
- ##  ## How to: Use apps to enable footers, tracking, and analytics
+## How to: Use apps to enable footers, tracking, and analytics
 
 SendGrid provides additional email functionality through the use of
 apps. These are settings that can be added to an email message to
@@ -291,23 +261,13 @@ filters:
     // should also be overwritten for link tracking purposes. 
     myMessage.EnableClickTracking(true);
 
-
 ## How to: Use additional SendGrid services
-
-
-##<a name="useservices"></a> How to: Use additional SendGrid services
-
 
 SendGrid offers web-based APIs and webhooks that you can use to leverage additional
 SendGrid functionality from your Azure application. For full
 details, see the [SendGrid API documentation][].
 
-
 ## Next steps
-
-
-##<a name="nextsteps" id="next-steps"></a> Next steps
-
 
 Now that you've learned the basics of the SendGrid Email service, follow
 these links to learn more.

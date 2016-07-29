@@ -1,4 +1,4 @@
-## How to create a VNet in the Azure Management Portal
+## How to create a VNet in the Azure  portal  Classic Management Portal 
 
 To create a VNet based on the scenario above, follow the steps below.
 

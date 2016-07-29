@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="02/05/2016"
+	ms.date="05/17/2016"
 	wacn.date=""/>
 
 # Develop C# topologies for Apache Storm on HDInsight using Hadoop tools for Visual Studio
@@ -35,11 +35,11 @@ You will also learn how to create hybrid topologies that use C# and Java compone
 
 -	Azure SDK 2.5.1 or later
 
--	HDInsight Tools for Visual Studio: See [Get started using HDInsight Tools for Visual Studio](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started) to install and configure the HDInsight tools for Visual Studio.
+-	HDInsight Tools for Visual Studio: See [Get started using HDInsight Tools for Visual Studio](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/) to install and configure the HDInsight tools for Visual Studio.
 
     > [AZURE.NOTE] HDInsight Tools for Visual Studio are not supported on Visual Studio Express
 
--	Apache Storm on HDInsight cluster: See [Getting started with Apache Storm on HDInsight](/documentation/articles/hdinsight-apache-storm-tutorial-get-started) for steps to create a cluster.
+-	Apache Storm on HDInsight cluster: See [Getting started with Apache Storm on HDInsight](/documentation/articles/hdinsight-apache-storm-tutorial-get-started/) for steps to create a cluster.
 
 	> [AZURE.NOTE] Currently, the HDInsight Tools for Visual Studio only support Storm on HDInsight versions 3.2 clusters.
 
@@ -66,7 +66,7 @@ In the steps in this document, you will use the basic Storm Application project 
 
 ##Create a C# topology
 
-1.	If you have not already installed the latest version of the HDInsight Tools for Visual Studio, see [Get started using HDInsight Tools for Visual Studio](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started).
+1.	If you have not already installed the latest version of the HDInsight Tools for Visual Studio, see [Get started using HDInsight Tools for Visual Studio](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/).
 
 2.	Open Visual Studio, select **File** > **New**, and then **Project**.
 
@@ -98,8 +98,13 @@ In the next sections, you will modify this project into a basic WordCount applic
 
 2.	Replace the contents of the **Spout** class with the following. This creates a spout that randomly emits a sentence into the topology.
 
-	 ``` 
+
+	```
 	private Context ctx;
+
+
+		private Context ctx;
+
 	private Random r = new Random();
 	string[] sentences = new string[] {
 	    "the cow jumped over the moon",
@@ -145,7 +150,9 @@ In the next sections, you will modify this project into a basic WordCount applic
 	{
 	    // Only used for transactional topologies
 	}
-	 ``` 
+
+	```
+
 
 	Take a moment to read through the comments to understand what this code does.
 
@@ -165,8 +172,15 @@ In the next sections, you will modify this project into a basic WordCount applic
 
 4.	Replace the contents of the **Splitter** class with the following code:
 
-	 ``` 
+
+	```
 	private Context ctx;
+
+
+		private Context ctx;
+	
+	
+
 	// Constructor
 	public Splitter(Context ctx)
 	{
@@ -487,7 +501,9 @@ Open **Program.cs**. The important method is **ITopologyBuilder**, which is used
 
     });
     return topologyBuilder;
- ``` 
+
+```
+
 
 Take a moment to read through the comments to understand what this code does.
 
@@ -523,9 +539,14 @@ Transactional topologies implement the following to support replay of data:
 
 -	**Sequence ID**: When emitting a tuple, a sequence ID can be specified. This should be a value that identifies the tuple for replay (Ack and Fail) processing. For example, the spout in the **Storm Sample** project uses the following when emitting data:
 
-	 ``` 
+
+	```
 	this.ctx.Emit(Constants.DEFAULT_STREAM_ID, new Values(sentence), lastSeqId);
-	 ``` 
+	```
+
+
+		this.ctx.Emit(Constants.DEFAULT_STREAM_ID, new Values(sentence), lastSeqId);
+
 
 	This emits a new tuple that contains a sentence to the default stream, with the sequence ID value contained in **lastSeqId**. For this example, **lastSeqId** is simply incremented for every tuple emitted.
 
@@ -600,14 +621,24 @@ Although it is easy to deploy a topology to a cluster, in some cases, you may ne
 
 3.	Open **LocalTest.cs** and add the following **using** statement at the top:
 
-	 ``` 
+
+	```
 	using Microsoft.SCP;
-	 ``` 
+	```
+
+
+		using Microsoft.SCP;
+
 
 4.	Use the following as the contents of the **LocalTest** class:
 
-	 ``` 
+
+	```
 	// Drives the topology components
+
+
+		// Drives the topology components
+
 	public void RunTestCase()
 	{
 	    // An empty dictionary for use when creating components
@@ -675,14 +706,21 @@ Although it is easy to deploy a topology to a cluster, in some cases, you may ne
 	    }
 	    #endregion
 	}
-	 ``` 
+
+	```
+
 
 	Take a moment to read through the code comments. This code uses **LocalContext** to run the components in the development environment, and it persists the data stream between components to text files on the local drive.
 
 5.	Open **Program.cs** and add the following to the **Main** method:
 
-	 ``` 
+
+	```
 	Console.WriteLine("Starting tests");
+
+
+		Console.WriteLine("Starting tests");
+
 	System.Environment.SetEnvironmentVariable("microsoft.scp.logPrefix", "WordCount-LocalTest");
 	// Initialize the runtime
 	SCPRuntime.Initialize();
@@ -697,7 +735,9 @@ Although it is easy to deploy a topology to a cluster, in some cases, you may ne
 	tests.RunTestCase();
 	Console.WriteLine("Tests finished");
 	Console.ReadKey();
-	 ``` 
+
+	```
+
 
 6.	Save the changes, then click **F5** or select **Debug** > **Start Debugging** to start the project. A console window should appear, and log status as the tests progress. When **Tests finished** appears, press any key to close the window.
 
@@ -713,9 +753,14 @@ Although testing a basic word count application locally is pretty trivial, the r
 
 You can easily log information from your topology components by using `Context.Logger`. For example, the following will create an informational log entry:
 
- ``` 
+
+```
 Context.Logger.Info("Component started");
- ``` 
+```
+
+
+	Context.Logger.Info("Component started");
+
 
 Logged information can be viewed from the **Hadoop Service Log**, which is found in **Server Explorer**. Expand the entry for your Storm on HDInsight cluster, then expand **Hadoop Service Log**. Finally, select the log file to view.
 
@@ -735,7 +780,7 @@ To view errors that have occurred in a running topology, use the following steps
 
 ##Next steps
 
-Now that you have learned how to develop and deploy Storm topologies from the HDInsight tools for Visual Studio, learn how to [Process events from Azure Event Hub with Storm on HDInsight](/documentation/articles/hdinsight-storm-develop-csharp-event-hub-topology).
+Now that you have learned how to develop and deploy Storm topologies from the HDInsight tools for Visual Studio, learn how to [Process events from Azure Event Hub with Storm on HDInsight](/documentation/articles/hdinsight-storm-develop-csharp-event-hub-topology/).
 
 For an example of a C# topology that splits stream data into multiple streams, see [C# Storm example](https://github.com/Blackmist/csharp-storm-example).
 
@@ -743,20 +788,24 @@ To discover more information about creating C# topologies, visit [SCP.NET Gettin
 
 For more ways to work with HDInsight and more Storm on HDinsight samples, see the following:
 
+**Microsoft SCP.NET**
+
+* [SCP programming guide](/documentation/articles/hdinsight-storm-scp-programming-guide/)
+
 **Apache Storm on HDInsight**
 
--	[Deploy and monitor topologies with Apache Storm on HDInsight](/documentation/articles/hdinsight-storm-deploy-monitor-topology)
+-	[Deploy and monitor topologies with Apache Storm on HDInsight](/documentation/articles/hdinsight-storm-deploy-monitor-topology/)
 
--	[Example topologies for Storm on HDInsight](/documentation/articles/hdinsight-storm-example-topology)
+-	[Example topologies for Storm on HDInsight](/documentation/articles/hdinsight-storm-example-topology/)
 
 **Apache Hadoop on HDInsight**
 
--	[Use Hive with Hadoop on HDInsight](/documentation/articles/hdinsight-use-hive)
+-	[Use Hive with Hadoop on HDInsight](/documentation/articles/hdinsight-use-hive/)
 
--	[Use Pig with Hadoop on HDInsight](/documentation/articles/hdinsight-use-pig)
+-	[Use Pig with Hadoop on HDInsight](/documentation/articles/hdinsight-use-pig/)
 
--	[Use MapReduce with Hadoop on HDInsight](/documentation/articles/hdinsight-use-mapreduce)
+-	[Use MapReduce with Hadoop on HDInsight](/documentation/articles/hdinsight-use-mapreduce/)
 
 **Apache HBase on HDInsight**
 
--	[Getting started with HBase on HDInsight](/documentation/articles/hdinsight-hbase-tutorial-get-started-v1)
+-	[Getting started with HBase on HDInsight](/documentation/articles/hdinsight-hbase-tutorial-get-started-v1/)

@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="12/01/2015"
+	ms.date="05/18/2016"
 	wacn.date=""/>
 
 #Analyze flight delay data by using Hive in HDInsight
@@ -17,7 +17,7 @@
 Hive provides a means of running Hadoop MapReduce jobs through an SQL-like scripting language called *[HiveQL][hadoop-hiveql]*, which can be applied towards summarizing, querying, and analyzing large volumes of data.
 
 
-> [AZURE.NOTE] The steps in this document require a Windows-based HDInsight cluster. For steps that work with a Linux-based cluster, see [Analyze flight delay data by using Hive in HDInsight (Linux)](/documentation/articles/hdinsight-analyze-flight-delay-data-linux).
+> [AZURE.NOTE] The steps in this document require a Windows-based HDInsight cluster. For steps that work with a Linux-based cluster, see [Analyze flight delay data by using Hive in HDInsight (Linux)](/documentation/articles/hdinsight-analyze-flight-delay-data-linux/).
 
 
 One of the major benefits of Azure HDInsight is the separation of data storage and compute. HDInsight uses Azure Blob storage for data storage. A typical job involves 3 parts:
@@ -42,7 +42,7 @@ The main portion of the tutorial shows you how to use one Windows PowerShell scr
 In the appendixes, you can find the instructions for uploading flight delay data, creating/uploading a Hive query string, and preparing the Azure SQL database for the Sqoop job.
 
 
-> [AZURE.NOTE] The steps in this document are specific to Windows-based HDInsight clusters. For steps that will work with a Linux-based cluster, see [Analyze flight delay data using Hive in HDInsight (Linux)](/documentation/articles/hdinsight-analyze-flight-delay-data-linux)
+> [AZURE.NOTE] The steps in this document are specific to Windows-based HDInsight clusters. For steps that will work with a Linux-based cluster, see [Analyze flight delay data using Hive in HDInsight (Linux)](/documentation/articles/hdinsight-analyze-flight-delay-data-linux/)
 
 ###Prerequisites
 
@@ -54,7 +54,9 @@ Before you begin this tutorial, you must have the following:
 
 - **An Azure subscription**. See [Get Azure trial](/pricing/1rmb-trial/).
 
-- **A workstation with Azure PowerShell**. See [Install Azure PowerShell 1.0 and greater](/documentation/articles/hdinsight-administer-use-powershell#install-azure-powershell-10-and-greater).
+- **A workstation with Azure PowerShell**.
+
+    [AZURE.INCLUDE [upgrade-powershell](../includes/hdinsight-use-latest-powershell.md)]
 
 **Files used in this tutorial**
 
@@ -81,7 +83,6 @@ The following table lists the files used in this tutorial:
 
 
 ##<a name="runjob"></a> Create cluster and run Hive/Sqoop jobs
-
 
 
 Hadoop MapReduce is batch processing. The most cost-effective way to run a Hive job is to create a cluster for the job, 
@@ -322,7 +323,7 @@ For more information on creating an HDInsight cluster and running Hive jobs, see
 		New-AzureRmStorageAccount -ResourceGroupName $resourceGroupName -Name $defaultStorageAccountName -Location $location -Type Standard_LRS
 		
 		# Create the default Blob container
-		$defaultStorageAccountKey = Get-AzureRmStorageAccountKey -ResourceGroupName $resourceGroupName -Name $defaultStorageAccountName |  %{ $_.Key1 }
+		$defaultStorageAccountKey = (Get-AzureRmStorageAccountKey -ResourceGroupName $resourceGroupName -Name $defaultStorageAccountName)[0].Value
 		$defaultStorageAccountContext = New-AzureStorageContext -StorageAccountName $defaultStorageAccountName -StorageAccountKey $defaultStorageAccountKey 
 		New-AzureStorageContainer -Name $defaultBlobContainerName -Context $defaultStorageAccountContext 
 		
@@ -558,51 +559,46 @@ Uploading the data file and the HiveQL script files (see [Appendix B](#appendix-
 		)
 
 		#Region - Variables
-		$localFolder =  "C:\Tutorials\FlightDelay\2013Data"  "C:\Tutorials\FlightDelays\Data"   # The source folder
-		$destFolder =  "tutorials/flightdelay/2013data"  "tutorials/flightdelays/data"      #The blob name prefix for the files to be uploaded
-		#EndRegion
-		#Region - Connect to Azure subscription
-		Write-Host "`nConnecting to your Azure subscription ..." -ForegroundColor Green
 
-		try{Get-AzureRmContext}
-		catch{Login-AzureRmAccount}
+		$localFolder = "C:\Tutorials\FlightDelay\2013Data"  # The source folder
+		$destFolder = "tutorials/flightdelay/2013data"     #The blob name prefix for the files to be uploaded
 
 
-		if (-not (Get-AzureAccount)){ Add-AzureAccount -Environment AzureChinaCloud}
+		$localFolder = "C:\Tutorials\FlightDelays\Data" # The source folder
+		$destFolder = "tutorials/flightdelays/data" #The blob name prefix for the files to be uploaded
 
 		#EndRegion
+
+		
+		#Region - Connect to Azure subscription
+		Write-Host "`nConnecting to your Azure subscription ..." -ForegroundColor Green
+		try{Get-AzureRmContext}
+		catch{Login-AzureRmAccount}
+		#EndRegion
+		
 		#Region - Validate user input
-
 		Write-Host "`nValidating the Azure Storage account and the Blob container..." -ForegroundColor Green
-
 		# Validate the Storage account
-
 		if (-not (Get-AzureRmStorageAccount|Where-Object{$_.StorageAccountName -eq $storageAccountName}))
 
 
+
+		if (-not (Get-AzureAccount)){ Add-AzureAccount -Environment AzureChinaCloud}
+
+
 		if (-not (Get-AzureStorageAccount|Where-Object{$_.Label -eq $storageAccountName}))
 
-		{
+		 { 
+
 			Write-Host "The storage account, $storageAccountName, doesn't exist." -ForegroundColor Red
 			exit
-
 		}
 		else{
 			$resourceGroupName = (Get-AzureRmStorageAccount|Where-Object{$_.StorageAccountName -eq $storageAccountName}).ResourceGroupName
 		}
 		
-
-
-		}
-
-
 		# Validate the container
-
-		$storageAccountKey = Get-AzureRmStorageAccountKey -StorageAccountName $storageAccountName -ResourceGroupName $resourceGroupName | %{$_.Key1}
-
-
-		$storageAccountKey = get-azurestoragekey -StorageAccountName $storageAccountName | %{$_.Primary}
-
+		$storageAccountKey = (Get-AzureRmStorageAccountKey -StorageAccountName $storageAccountName -ResourceGroupName $resourceGroupName)[0].Value
 		$storageContext = New-AzureStorageContext -StorageAccountName $storageAccountName -StorageAccountKey $storageAccountKey
 		if (-not (Get-AzureStorageContainer -Context $storageContext |Where-Object{$_.Name -eq $blobContainerName}))
 		{
@@ -610,27 +606,40 @@ Uploading the data file and the HiveQL script files (see [Appendix B](#appendix-
 			Exit
 		}
 		#EngRegion
+
+
+
+		}
+
+
+		$storageAccountKey = get-azurestoragekey -StorageAccountName $storageAccountName | %{$_.Primary}
+
+		}
+
+		$hqlLocalFileName = "C:\tutorials\flightdelays\flightdelays.hql"
+		$hqlBlobName = "tutorials/flightdelays/flightdelays.hql"
+		#$srcDataFolder = "tutorials/flightdelays/data"
+		$dstDataFolder = "/tutorials/flightdelays/output"
+		#endregion
+
+		
 		#Region - Copy the file from local workstation to Azure Blob storage  
 		if (test-path -Path $localFolder)
 		{
 			foreach ($item in Get-ChildItem -Path $localFolder){
 				$fileName = "$localFolder\$item"
 				$blobName = "$destFolder/$item"
+		
 				Write-Host "Copying $fileName to $blobName" -ForegroundColor Green
+		
 				Set-AzureStorageBlobContent -File $fileName -Container $blobContainerName -Blob $blobName -Context $storageContext
 			}
 		}
 		else
 		{
 			Write-Host "The source folder on the workstation doesn't exist" -ForegroundColor Red
-
 		}
 		
-
-
-		}
-
-
 		# List the uploaded files on HDInsight
 		Get-AzureStorageBlob -Container $blobContainerName  -Context $storageContext -Prefix $destFolder
 		#EndRegion
@@ -694,24 +703,14 @@ For a full list of the HiveQL commands, see [Hive Data Definition Language][hado
 		#region - Define variables
 		# Treat all errors as terminating
 		$ErrorActionPreference = "Stop"
+		
 		# The HiveQL script file is exported as this file before it's uploaded to Blob storage
-
 		$hqlLocalFileName = "e:\tutorials\flightdelay\flightdelays.hql"
-
-
-		$hqlLocalFileName = "C:\tutorials\flightdelays\flightdelays.hql"
-
-
+		
 		# The HiveQL script file will be uploaded to Blob storage as this blob name
-
 		$hqlBlobName = "tutorials/flightdelay/flightdelays.hql"
-
-
-		$hqlBlobName = "tutorials/flightdelays/flightdelays.hql"
-
-
+		
 		# These two constants are used by the HiveQL script file
-
 		#$srcDataFolder = "tutorials/flightdelay/data"
 		$dstDataFolder = "/tutorials/flightdelay/output"
 		#endregion
@@ -735,7 +734,7 @@ For a full list of the HiveQL commands, see [Hive Data Definition Language][hado
 		}
 		
 		# Validate the container
-		$storageAccountKey = Get-AzureRmStorageAccountKey -StorageAccountName $storageAccountName -ResourceGroupName $resourceGroupName | %{$_.Key1}
+		$storageAccountKey = (Get-AzureRmStorageAccountKey -StorageAccountName $storageAccountName -ResourceGroupName $resourceGroupName)[0].Value
 		$storageContext = New-AzureStorageContext -StorageAccountName $storageAccountName -StorageAccountKey $storageAccountKey
 		
 		if (-not (Get-AzureStorageContainer -Context $storageContext |Where-Object{$_.Name -eq $blobContainerName}))
@@ -745,57 +744,36 @@ For a full list of the HiveQL commands, see [Hive Data Definition Language][hado
 		}
 		#EngRegion
 		
-
-
-		#$srcDataFolder = "tutorials/flightdelays/data"
-		$dstDataFolder = "/tutorials/flightdelays/output"
-		#endregion
-
-
 		#region - Validate the file and file path
+		
 		# Check if a file with the same file name already exists on the workstation
 		Write-Host "`nvalidating the folder structure on the workstation for saving the HQL script file ..."  -ForegroundColor Green
 		if (test-path $hqlLocalFileName){
+		
 			$isDelete = Read-Host 'The file, ' $hqlLocalFileName ', exists.  Do you want to overwirte it? (Y/N)'
+		
 			if ($isDelete.ToLower() -ne "y")
-
 			{
 				Exit
-
-
-		    {
-		        Exit
-		    }
-
 			}
-
 		}
 		
-
 		# Create the folder if it doesn't exist
 		$folder = split-path $hqlLocalFileName
 		if (-not (test-path $folder))
 		{
 			Write-Host "`nCreating folder, $folder ..." -ForegroundColor Green
+		
 			new-item $folder -ItemType directory  
 		}
 		#end region
-
-
-		#region - Add the Azure account
-		Write-Host "`nConnecting to your Azure subscription ..." -ForegroundColor Green
-		$azureAccounts= Get-AzureAccount
-		if (! $azureAccounts)
-		{
-		    Add-AzureAccount -Environment AzureChinaCloud
-		}
-		#endregion
-
-
+		
 		#region - Write the Hive script into a local file
 		Write-Host "`nWriting the Hive script into a file on your workstation ..." `
 					-ForegroundColor Green
+		
 		$hqlDropDelaysRaw = "DROP TABLE delays_raw;"
+		
 		$hqlCreateDelaysRaw = "CREATE EXTERNAL TABLE delays_raw (" +
 				"YEAR string, " +
 				"FL_DATE string, " +
@@ -823,7 +801,9 @@ For a full list of the HiveQL commands, see [Hive Data Definition Language][hado
 			"LINES TERMINATED BY '\n' " +
 			"STORED AS TEXTFILE " +
 			"LOCATION 'wasb://flightdelay@hditutorialdata.blob.core.windows.net/2013Data';"
+		
 		$hqlDropDelays = "DROP TABLE delays;"
+		
 		$hqlCreateDelays = "CREATE TABLE delays AS " +
 			"SELECT YEAR AS year, " +
 				"FL_DATE AS flight_date, " +
@@ -846,28 +826,35 @@ For a full list of the HiveQL commands, see [Hive Data Definition Language][hado
 				"SECURITY_DELAY AS security_delay, " +
 				"LATE_AIRCRAFT_DELAY AS late_aircraft_delay " +
 			"FROM delays_raw;"
+		
 		$hqlInsertLocal = "INSERT OVERWRITE DIRECTORY '$dstDataFolder' " +
 			"SELECT regexp_replace(origin_city_name, '''', ''), " +
 				"avg(weather_delay) " +
 			"FROM delays " +
 			"WHERE weather_delay IS NOT NULL " +
 			"GROUP BY origin_city_name;"
+		
 		$hqlScript = $hqlDropDelaysRaw + $hqlCreateDelaysRaw + $hqlDropDelays + $hqlCreateDelays + $hqlInsertLocal
+		
 		$hqlScript | Out-File $hqlLocalFileName -Encoding ascii -Force
 		#endregion
+		
 		#region - Upload the Hive script to the default Blob container
 		Write-Host "`nUploading the Hive script to the default Blob container ..." -ForegroundColor Green
+		
 		# Create a storage context object
 
-		$storageAccountKey = Get-AzureRmStorageAccountKey -StorageAccountName $storageAccountName -ResourceGroupName $resourceGroupName | %{$_.Key1}
+		$storageAccountKey = (Get-AzureRmStorageAccountKey -StorageAccountName $storageAccountName -ResourceGroupName $resourceGroupName)[0].Value
 
 
 		$storageAccountKey = get-azurestoragekey $storageAccountName | %{$_.Primary}
 
 		$destContext = New-AzureStorageContext -StorageAccountName $storageAccountName -StorageAccountKey $storageAccountKey
+		
 		# Upload the file from local workstation to Blob storage
 		Set-AzureStorageBlobContent -File $hqlLocalFileName -Container $blobContainerName -Blob $hqlBlobName -Context $destContext
 		#endregion
+		
 		Write-host "`nEnd of the PowerShell script" -ForegroundColor Green
 
 	Here are the variables used in the script:
@@ -904,12 +891,8 @@ For a full list of the HiveQL commands, see [Hive Data Definition Language][hado
 					HelpMessage="Enter the Azure resource group name. It will be created if it doesn't exist.")]
 			[String]$resourceGroupName,
 		
-			# SQL database server variables
 
-
-
-		    # SQL database server variables
-
+			# SQL database server variables
 			[Parameter(Mandatory=$True,
 
 					HelpMessage="Enter the Azure SQL Database Server Name. It will be created if it doesn't exist.")]
@@ -917,6 +900,7 @@ For a full list of the HiveQL commands, see [Hive Data Definition Language][hado
 		
 
 
+
 		               HelpMessage="Enter the Azure SQL Database Server Name to use an existing one. Enter nothing to create a new one.")]
 		    [AllowEmptyString()]
 		    [String]$sqlDatabaseServer,  # Specify the Azure SQL database server name if you have one created. Otherwise use "".
@@ -1026,13 +1010,11 @@ For a full list of the HiveQL commands, see [Hive Data Definition Language][hado
 			$credential = New-Object System.Management.Automation.PSCredential($sqlDatabaseLogin,$sqlDatabasePW)
 		
 			$sqlDatabaseServer = (New-AzureRmSqlServer -ResourceGroupName $resourceGroupName -ServerName $sqlDatabaseServer -SqlAdministratorCredentials $credential -Location $sqlDatabaseLocation).ServerName
-			Write-Host "`tThe new SQL database server name is $sqlDatabaseServer." -ForegroundColor Cyan
 
 
 			$sqlDatabaseServer = (New-AzureSqlDatabaseServer -AdministratorLogin $sqlDatabaseUsername -AdministratorLoginPassword $sqlDatabasePassword -Location $sqlDatabaseLocation).ServerName
-		    Write-Host "`tThe new SQL database server name is $sqlDatabaseServer." -ForegroundColor Cyan
-
 
+			Write-Host "`tThe new SQL database server name is $sqlDatabaseServer." -ForegroundColor Cyan
 			Write-Host "`nCreating firewall rule, $fireWallRuleName ..." -ForegroundColor Green
 			$workstationIPAddress = Invoke-RestMethod $ipAddressRestService
 
@@ -1068,7 +1050,7 @@ For a full list of the HiveQL commands, see [Hive Data Definition Language][hado
 			Get-AzureRmSqlDatabase -ResourceGroupName $resourceGroupName -ServerName $sqlDatabaseServer -DatabaseName $sqlDatabaseName
 		}
 		catch {
-			Write-Host "`nCreating SQL Database, $sqlDatabaseName ..."  -ForegroundColor Green
+			Write-Host "`nCreating SQL Database, $sqlDatabaseName..."  -ForegroundColor Green
 			New-AzureRMSqlDatabase -ResourceGroupName $resourceGroupName -ServerName $sqlDatabaseServer -DatabaseName $sqlDatabaseName -Edition "Standard" -RequestedServiceObjectiveName "S1"
 		}
 		#endregion
@@ -1076,7 +1058,7 @@ For a full list of the HiveQL commands, see [Hive Data Definition Language][hado
 
 		if ([string]::IsNullOrEmpty($sqlDatabaseName))
 		{
-			Write-Host "`nCreating SQL Database, HDISqoop ..."  -ForegroundColor Green
+			Write-Host "`nCreating SQL Database, HDISqoop..."  -ForegroundColor Green
 
 			$sqlDatabaseName = "HDISqoop"
 			$sqlDatabaseServerCredential = new-object System.Management.Automation.PSCredential($sqlDatabaseUsername, ($sqlDatabasePassword  | ConvertTo-SecureString -asPlainText -Force))
@@ -1138,7 +1120,6 @@ Now you understand how to upload a file to Azure Blob storage, how to populate a
 * [Use Sqoop with HDInsight][hdinsight-use-sqoop]
 * [Use Pig with HDInsight][hdinsight-use-pig]
 * [Develop Java MapReduce programs for HDInsight][hdinsight-develop-mapreduce]
-* [Develop C# Hadoop streaming programs for HDInsight][hdinsight-develop-streaming]
 
 
 
@@ -1148,18 +1129,23 @@ Now you understand how to upload a file to Azure Blob storage, how to populate a
 
 
 [rita-website]: http://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236&DB_Short_Name=On-Time
-[powershell-install-configure]: /documentation/articles/powershell-install-configure
+[powershell-install-configure]: /documentation/articles/powershell-install-configure/
 
-[hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie
-[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
-[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
-[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
-[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
-[hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop
-[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
-[hdinsight-develop-streaming]: /documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs
-[hdinsight-develop-mapreduce]: /documentation/articles/hdinsight-develop-deploy-java-mapreduce
+[hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie/
+[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive/
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1/
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage/
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data/
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1/
+[hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop/
+[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig/
+
+[hdinsight-develop-mapreduce]: /documentation/articles/hdinsight-develop-deploy-java-mapreduce-linux/
+
+
+[hdinsight-develop-streaming]: /documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs/
+[hdinsight-develop-mapreduce]: /documentation/articles/hdinsight-develop-deploy-java-mapreduce/
+
 
 [hadoop-hiveql]: https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DDL
 [hadoop-shell-commands]: http://hadoop.apache.org/docs/r0.18.3/hdfs_shell.html

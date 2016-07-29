@@ -17,7 +17,7 @@
 
 # Linux and open-source computing on Azure
 
-This document attempts to list in one place all the topics written by Microsoft and its partners about running Linux-based Virtual Machines as well as other open-source compute environments and applications on Azure.  Articles that describe the classic deployment model only are noted, as are those that use the Resource Manager deployment model. Articles that lack a deployment model note describe both deployment models. 
+This document attempts to list in one place all the topics written by Microsoft and its partners about running Linux-based Virtual Machines as well as other open-source compute environments and applications on Azure. Articles that describe the classic deployment model only are noted, as are those that use the Resource Manager deployment model. Articles that lack a deployment model note describe both deployment models.
 
 As both Azure and the open-source computing world are fast-moving targets, it is almost certain that this document is out of date, *despite* the fact that we shall do our best to continually add newer topics and remove out-of-date ones. If we've missed one, please let us know in the comments, or submit a pull request to our [GitHub  repo](https://github.com/Azure/azure-content/)  repo](https://github.com/wacn/techcontent/) .
 
@@ -66,16 +66,14 @@ Ubuntu is a very popular and Azure-endorsed Linux distribution based on dpkg and
 2. [How to: Ubuntu LAMP Stack](/documentation/articles/virtual-machines-linux-install-lamp-stack)
 3. \[Classic Deployment]: [How to: MySQL Clusters](/documentation/articles/virtual-machines-linux-mysql-cluster)
 4. \[Classic Deployment]: [How to: Node.js and Cassandra](/documentation/articles/virtual-machines-linux-nodejs-running-cassandra)
-
 5. \[Resource Manager Deployment]: [How to: IPython Notebook](/documentation/articles/virtual-machines-python-ipython-notebook)
-
 6. \[Classic Deployment]: [Geeking out: Running ASP.NET 5 on Linux using Docker Containers](http://blogs.msdn.com/b/webdev/archive/2015/01/14/running-asp-net-5-applications-in-linux-containers-with-docker.aspx)
 
 7. [Images: Redis Server](https://azure.microsoft.com/marketplace/partners/cognosys/redisserver269ubuntu1204lts/)
 8. [Images: Minecraft Server](https://azure.microsoft.com/marketplace/partners/bitnami/craftbukkitminecraft179r030ubuntu1210/)
 11. [Images: Mono as a Service](https://azure.microsoft.com/marketplace/partners/aegis/monoasaserviceubuntu1204/)
-
 
+
 
 ### [Debian](https://vmdepot.msopentech.com/List/Index?sort=Featured&search=Debian)
 
@@ -144,7 +142,7 @@ CoreOS is a small, optimized distro for pure compute scale with a high degree of
 <!-- 4. [The basics: Certificate Use and Management](http://msdn.microsoft.com/zh-cn/library/azure/gg981929.aspx)-->
 
 5. [The basics: Selecting Linux Usernames](/documentation/articles/virtual-machines-linux-usernames)
-6. \[Classic Deployment]: [The basics: Log on to a Linux VM Using the Azure Management Portal](/documentation/articles/virtual-machines-linux-how-to-log-on)
+6. \[Classic Deployment]: [The basics: Log on to a Linux VM Using the Azure classic portal](/documentation/articles/virtual-machines-linux-how-to-log-on)
 7. [The basics: SSH](/documentation/articles/virtual-machines-linux-use-ssh-key)
 8. \[Classic Deployment]: [The basics: How to Reset a Password or SSH Properties for Linux](/documentation/articles/virtual-machines-linux-use-vmaccess-reset-password-or-ssh)
 9. [The basics: Using Root](/documentation/articles/virtual-machines-linux-use-root-privileges)
@@ -172,7 +170,7 @@ CoreOS is a small, optimized distro for pure compute scale with a high degree of
 
 1. [Images](https://vmdepot.msopentech.com/List/Index?sort=Featured&search=java)
 2. [How to: Use Service Bus from Java with AMQP  1.0](http://msdn.microsoft.com/zh-cn/library/azure/jj841073.aspx)  1.0](/documentation/articles/service-bus-amqp-java) 
-3. [How to: Set up Tomcat7 on Linux Using the Azure Management Portal](/documentation/articles/virtual-machines-linux-setup-tomcat7-linux)
+3. [How to: Set up Tomcat7 on Linux Using the Azure classic portal](/documentation/articles/virtual-machines-linux-setup-tomcat7-linux)
 4. [Video: Azure Java SDK for Service Management](http://channel9.msdn.com/Shows/Cloud+Cover/Episode-157-The-Java-SDK-for-Azure-Management-with-Brady-Gaster)
 5. [Blog: Getting Started with Azure Management Libraries for Java](https://azure.microsoft.com/blog/2014/09/15/getting-started-with-the-azure-java-management-libraries/)
 5. [GitHub repo: Azure Toolkit for Eclipse with Java](https://github.com/MSOpenTech/WindowsAzureToolkitForEclipseWithJava)
@@ -250,9 +248,7 @@ This section contains information about several different storage approaches and
     - [How to: Install and Run MySQL](/documentation/articles/virtual-machines-linux-mysql-use-opensuse)
     - [How to: Optimize Performance of MySQL on Azure](/documentation/articles/virtual-machines-linux-optimize-mysql-perf)
     - [How to: MySQL Clusters](/documentation/articles/virtual-machines-linux-mysql-cluster)
-
     - [How to: Create a MySQL Database using the Marketplace](/documentation/articles/store-php-create-mysql-database)
-
     - [How to: Django and MySQL on Azure Websites with Python and Visual Studio](/documentation/articles/web-sites-python-ptvs-django-mysql)
     - [MySQL High Availability Architecture in Azure](http://download.microsoft.com/download/6/1/C/61C0E37C-F252-4B33-9557-42B90BA3E472/MySQL_HADR_solution_in_Azure.pdf)
 7. MariaDB
@@ -293,10 +289,8 @@ This section starts with a blog entry containing a series of videos on [Video: A
 1. Docker
 	- [Docker VM Extension for Linux on Azure](/documentation/articles/virtual-machines-docker-vm-extension)
 	- [Using the Docker VM Extension from the Azure Command-line Interface (Azure CLI)](/documentation/articles/virtual-machines-docker-with-xplat-cli)
-
-	- [Using the Docker VM Extension from the Azure Management Portal](/documentation/articles/virtual-machines-docker-with-portal)
+	- [Using the Docker VM Extension from the Azure portal](/documentation/articles/virtual-machines-docker-with-portal)
 	- [Getting Started Quickly with Docker in the Azure gallery](/documentation/articles/virtual-machines-docker-ubuntu-quickstart)
-
 	- [How to use docker-machine on Azure](/documentation/articles/virtual-machines-docker-machine)
 	- [How to use docker with swarm on Azure](/documentation/articles/virtual-machines-docker-swarm)
 	- [Get Started with Docker and Compose on Azure](/documentation/articles/virtual-machines-docker-compose-quickstart)

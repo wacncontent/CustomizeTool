@@ -37,7 +37,7 @@ administrator or a co-administrator for the associated subscription.
 <div class="dev-callout">
 <strong>Note</strong>
 <p>For information about performing this operation by using the
-Azure Service Management API, see the <a href="http://msdn.microsoft.com/zh-cn/library/azure/hh264518.aspx">Create Storage Account</a> reference topic.</p>
+Azure Service Management API, see the <a href="http://msdn.microsoft.com/en-us/library/windowsazure/hh264518.aspx">Create Storage Account</a> reference topic.</p>
 </div>
 
 **To create a storage account for an Azure subscription**
@@ -58,7 +58,7 @@ Azure Service Management API, see the <a href="http://msdn.microsoft.com/zh-cn/l
     URI in the following format, where *&lt;StorageAccountLabel&gt;* refers
     to the value you typed in **Enter a URL**:
 
-    http://*&lt;StorageAcountLabel&gt;*.blob.core.chinacloudapi.cn/*&lt;mycontainer&gt;*
+    http://*&lt;StorageAcountLabel&gt;*.blob.core.windows.net/*&lt;mycontainer&gt;*
 
     **Important:** The URL label forms the subdomain of the storage
     account URI and must be unique among all hosted services in 
@@ -66,9 +66,9 @@ Azure Service Management API, see the <a href="http://msdn.microsoft.com/zh-cn/l
 
 	This value is also used as the name of this storage account in the portal, or when accessing this account programmatically.
 
-5.  From the **Region/Affinity Group** drop-down list, select a region or affinity group for the storage account. Select an affinity group instead of a region if you want your storage services to be in the same data center with other Windows Azure services that you are using. This can improve performance, and no charges are incurred for egress.  
+5.  From the **Region/Affinity Group** drop-down list, select a region or affinity group for the storage account. Select an affinity group instead of a region if you want your storage services to be in the same data center with other Microsoft Azure services that you are using. This can improve performance, and no charges are incurred for egress.  
 
-    **Note:** To create an affinity group, open the **Settings** area of the Management Portal, click **Affinity Groups**, and then click either **Add an affinity group** or **Add**. You can also create and manage affinity groups using the Windows Azure Service Management API. For more information, see [Operations on Affinity Groups].
+    **Note:** To create an affinity group, open the **Settings** area of the Management Portal, click **Affinity Groups**, and then click either **Add an affinity group** or **Add**. You can also create and manage affinity groups using the Microsoft Azure Service Management API. For more information, see [Operations on Affinity Groups].
 
 6. From the **Subscription** drop-down list, select the subscription that the storage account will be used with.
 7.  Click **Create Storage Account**. The process of creating the storage account might take several minutes to complete.
@@ -96,7 +96,7 @@ when the cached content time-to-live period expires.
 5. Once the endpoint is created, it appears in a list of endpoints for the subscription. The list view shows the URL to use to access cached content, as well as the origin domain. 
 
 	The origin domain is the location from which the CDN caches
-    content. The origin domain can be either a storage account or a cloud service; a storage account is used for the purposes of this example. Storage content is cached to edge servers according either to a cache-control setting that you specify, or to the default heuristics of the caching network. See [How to Manage Expiration of Blob Content](http://msdn.microsoft.com/zh-cn/library/gg680306.aspx) for more information. 
+    content. The origin domain can be either a storage account or a cloud service; a storage account is used for the purposes of this example. Storage content is cached to edge servers according either to a cache-control setting that you specify, or to the default heuristics of the caching network. See [How to Manage Expiration of Blob Content](http://msdn.microsoft.com/en-us/library/gg680306.aspx) for more information. 
 
 
     <div class="dev-callout">
@@ -105,7 +105,7 @@ when the cached content time-to-live period expires.
     immediately be available; it can take up to 60 minutes for the
     registration to propagate through the CDN network. Users who try to
     use the CDN domain name immediately may receive status code 400
-    (Bad Request) until the content is available via the CDN.</p> 
+    (Bad Request) until the content is available via the CDN.</p>
     </div>
 
 <a id="Step3"> </a>
@@ -123,7 +123,7 @@ Delivery Network (CDN), you can take one of the following steps:
 
 -   For an Azure blob, you can delete the blob from the public
     container.
--   You can make the container private instead of public. See [Restrict Access to Containers and Blobs](http://msdn.microsoft.com/zh-cn/library/dd179354.aspx) for more information.
+-   You can make the container private instead of public. See [Restrict Access to Containers and Blobs](http://msdn.microsoft.com/en-us/library/dd179354.aspx) for more information.
 -   You can disable or delete the CDN endpoint using the Management
     Portal.
 -   You can modify your hosted service to no longer respond to requests for the
@@ -145,16 +145,16 @@ CDN.
 -   [About the Service Management API]
 -   [How to Map CDN Content to a Custom Domain]
 
-  [Create Storage Account]: http://msdn.microsoft.com/zh-cn/library/azure/hh264518.aspx
-  [Azure CDN Node Locations]: http://msdn.microsoft.com/zh-cn/library/azure/gg680302.aspx
-  [Azure Management Portal]: https://manage.windowsazure.cn/
-  [billing plan]: /pricing/calculator/?scenario=full
-  [How to Register a Custom Subdomain Name for Accessing Blobs in Azure]: http://msdn.microsoft.com/zh-cn/library/azure/ee795179.aspx
-  [Operations on Affinity Groups]: http://msdn.microsoft.com/zh-cn/library/azure/ee460798.aspx
-  [Overview of the Azure CDN]: http://msdn.microsoft.com/zh-cn/library/azure/ff919703.aspx
-  [How to: Manage Storage Accounts for an Azure Subscription]: http://msdn.microsoft.com/zh-cn/library/azure/hh531567.aspx
-  [About the Service Management API]: http://msdn.microsoft.com/zh-cn/library/azure/ee460807.aspx
-  [How to Map CDN Content to a Custom Domain]: http://msdn.microsoft.com/zh-cn/library/azure/gg680307.aspx
+  [Create Storage Account]: http://msdn.microsoft.com/en-us/library/windowsazure/hh264518.aspx
+  [Azure CDN Node Locations]: http://msdn.microsoft.com/en-us/library/windowsazure/gg680302.aspx
+  [Azure Management Portal]: https://manage.windowsazure.com/
+  [billing plan]: /en-us/pricing/calculator/?scenario=full
+  [How to Register a Custom Subdomain Name for Accessing Blobs in Azure]: http://msdn.microsoft.com/en-us/library/windowsazure/ee795179.aspx
+  [Operations on Affinity Groups]: http://msdn.microsoft.com/library/azure/ee460798.aspx
+  [Overview of the Azure CDN]: http://msdn.microsoft.com/en-us/library/windowsazure/ff919703.aspx
+  [How to: Manage Storage Accounts for an Azure Subscription]: http://msdn.microsoft.com/en-us/library/windowsazure/hh531567.aspx
+  [About the Service Management API]: http://msdn.microsoft.com/en-us/library/windowsazure/ee460807.aspx
+  [How to Map CDN Content to a Custom Domain]: http://msdn.microsoft.com/en-us/library/windowsazure/gg680307.aspx
 
 
 [create-new-storage-account]: ./media/cdn/CDN_CreateNewStorageAcct.png

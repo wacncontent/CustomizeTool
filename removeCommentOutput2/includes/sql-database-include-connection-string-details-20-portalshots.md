@@ -1,5 +1,5 @@
 <!--
-../includes/sql-database-include-connection-string-20-portalshots.md 
+../includes/sql-database-include-connection-string-20-portalshots.md
 
 Latest Freshness check:  2015-09-02 , GeneMi.
 
@@ -7,7 +7,7 @@ Latest Freshness check:  2015-09-02 , GeneMi.
 -->
 
 
-### Obtain the connection string from the Azure Management Portal
+### Obtain the connection string from the Azure portal
 
 
 Use the [Azure classical portal](http://manage.windowsazure.cn/) to obtain the connection string necessary for your client program to interact with Azure SQL Database:
@@ -15,11 +15,11 @@ Use the [Azure classical portal](http://manage.windowsazure.cn/) to obtain the c
 
 1. Click **BROWSE** > **SQL databases**.
 
-    
+
 
 2. Enter the name of your database into the filter text box near the upper-left of the **SQL databases** blade.
 
-    
+  
 
 3. Click the row for your database.
 
@@ -27,7 +27,7 @@ Use the [Azure classical portal](http://manage.windowsazure.cn/) to obtain the c
 
 5. Make note of the **SQL database** name and the **Server name**.  The username will be yourusername@yourserver.
 
-	
+
 
 7.  Paste the connection details into your client program code.  You will need to replace the {your_password_here} with your real password.
 
@@ -51,7 +51,7 @@ For more information, see:<br/>[Connection Strings and Configuration Files](http
 <!--
 These three includes/ files are a sequenced set, but you can pick and choose:
 
-includes/sql-database-include-connection-string-20-portalshots.md
-includes/sql-database-include-connection-string-30-compare.md
-includes/sql-database-include-connection-string-40-config.md
+../includes/sql-database-include-connection-string-20-portalshots.md
+../includes/sql-database-include-connection-string-30-compare.md
+../includes/sql-database-include-connection-string-40-config.md
 -->

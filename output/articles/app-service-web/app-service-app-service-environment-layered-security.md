@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties 
 	pageTitle="Layered Security Architecture with Azure Environments" 
 	description="Implementing a layered security architecture with Azure Environments." 
@@ -11,7 +9,7 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="01/05/2016"
+	ms.date="06/14/2016"
 	wacn.date=""/>	
 
 # Implementing a Layered Security Architecture with Azure Environments
@@ -87,7 +85,9 @@ With the NSG applied to the subnet, only the three upstream Azure Environments, 
 
 
 ## Additional Links and Information ##
-Configuration [network security groups][NetworkSecurityGroupsClassic] on classic virtual networks. 
+All articles and How-To's for Azure Environments are available in the [README for Application Service Environments](/documentation/articles/app-service-app-service-environments-readme/).
+
+Configuring [network security groups][NetworkSecurityGroupsClassic] on classic virtual networks. 
 
 Understanding [outbound IP addresses][NetworkArchitecture] and Azure Environments.
 

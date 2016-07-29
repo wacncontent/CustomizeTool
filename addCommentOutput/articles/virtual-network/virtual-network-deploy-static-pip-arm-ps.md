@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties 
    pageTitle="Deploy a VM with a static public IP using PowerShell in Resource Manager | Azure"
    description="Learn how to deploy VMs with a static public IP using PowerShell in Resource Manager"
@@ -12,16 +10,25 @@
 />
 <tags
 	ms.service="virtual-network"
-	ms.date="12/15/2015"
+	ms.date="03/15/2016"
 	wacn.date=""/>
 
 # Deploy a VM with a static public IP using PowerShell
 
 [AZURE.INCLUDE [virtual-network-deploy-static-pip-arm-selectors-include.md](../includes/virtual-network-deploy-static-pip-arm-selectors-include.md)]
 
+
+[AZURE.INCLUDE [arm-api-version-powershell](../includes/arm-api-version-powershell.md)]
+
+
 [AZURE.INCLUDE [virtual-network-deploy-static-pip-intro-include.md](../includes/virtual-network-deploy-static-pip-intro-include.md)]
 
+
 [AZURE.INCLUDE [azure-arm-classic-important-include](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
+
+
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the Resource Manager deployment model, which Azure recommends for most new deployments instead of the classic deployment model.
+
 
 [AZURE.INCLUDE [virtual-network-deploy-static-pip-scenario-include.md](../includes/virtual-network-deploy-static-pip-scenario-include.md)]
 
@@ -211,4 +218,4 @@ After making any necessary changes, and understanding the script show above, run
 		EndTime             : 1/12/2016 12:59:13 PM -08:00
 		Error               : 
 		ErrorText           : 
-
+

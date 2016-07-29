@@ -55,7 +55,7 @@ The instructions below apply to updating a Windows Store client app but, you can
                 {
                     message = "You must log in. Login Required";
                 }
-
+                
                 var dialog = new MessageDialog(message);
                 dialog.Commands.Add(new UICommand("OK"));
                 await dialog.ShowAsync();

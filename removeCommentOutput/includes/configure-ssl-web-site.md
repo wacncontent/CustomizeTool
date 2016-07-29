@@ -1,5 +1,5 @@
 
-This article shows you how to configure HTTPS for a web app in Azure. It does not cover client certificate authentication; for information about that, see [How To Configure TLS Mutual Authentication for Web Apps](/documentation/articles/app-service-web-configure-tls-mutual-auth).
+This article shows you how to configure HTTPS for a web app in Azure. It does not cover client certificate authentication; for information about that, see [How To Configure TLS Mutual Authentication for Web Apps](/documentation/articles/app-service-web-configure-tls-mutual-auth/).
 
 By default, Azure already enables HTTPS for your app with a wildcard certificate for  the \*.chinacloudsites.cn domain. If you don't plan to configure a custom domain, then you can benefit from the default HTTPS certificate. However, like [all wildcard domains](https://casecurity.org/2014/02/26/pros-and-cons-of-single-domain-multi-domain-and-wildcard-certificates/), it is not as secure as using a custom domain with your own certificate.   
 
@@ -8,7 +8,7 @@ The rest of this document provides details on enabling HTTPS for custom domains,
 <a name="bkmk_domainname"></a>
 ## Enable SSL for your custom domain
 
-To enable HTTPS for a custom domain, such as **contoso.com**, you must first [configure a custom domain name in Azure Web App](/documentation/articles/web-sites-custom-domain-name). Then, you do the following:
+To enable HTTPS for a custom domain, such as **contoso.com**, you must first [configure a custom domain name in Azure Web App](/documentation/articles/web-sites-custom-domain-name/). Then, you do the following:
 
 1. [Get an SSL certificate](#bkmk_getcert)
 2. [Configure Standard or Premium pricing tier](#bkmk_standardmode)
@@ -44,7 +44,11 @@ To get an SSL certificate for use with Azure Web App, you submit a Certificate S
 >
 > Elliptic Curve Cryptography (ECC) certificates are supported with Azure Web App; however, they are relatively new and you should work with your CA on the exact steps to create the CSR.
 
-You may also need to obtain **[intermediate certificates](http://en.wikipedia.org/wiki/Intermediate_certificate_authorities)** (also known as chain certificates), if these are used by your CA. The use of intermediate certificates is considered more secure than 'unchained certificates', so it is common for a CA to use them. Intermediate certificates are often provided as a separate download from the CAs website. The steps in this article provide steps to ensure that any intermediate certificates are merged with the certificate uploaded to your apps.
+You may also need to obtain **[intermediate certificates](http://en.wikipedia.org/wiki/Intermediate_certificate_authorities)** (also known as chain certificates), if these are used by your CA. The use of intermediate certificates is considered more secure than 'unchained certificates', so it is common for a CA to use them. Intermediate certificates are often provided as a separate download from the CAs website. This article provides steps to ensure that any intermediate certificates are merged with the certificate uploaded to your apps.
+
+> [AZURE.NOTE]
+>
+> In case your CA uses intermediate certificates each of them must be installed along with the certificate issued for your domain. Failing to install any of the intermediate certificates may cause hard to reproduce interoperability problems for some clients.
 
 <a name="bkmk_certreq"></a>
 ### Get a certificate using Certreq.exe (Windows only)
@@ -199,7 +203,7 @@ If you are familiar with IIS Manager, you can use it to generate a certificate t
 
 	> [AZURE.NOTE] During the export process, be sure to select the option <strong>Yes, export the private key</strong>. This will include the private key in the exported certificate.
 
-	> [AZURE.NOTE] During the export process, be sure to select the option **include all certs in the certification path** and **Export all extended properties**. This will include any intermediate certificates in the exported certificate.
+	> During the export process, be sure to select the option **include all certs in the certification path** and **Export all extended properties**. This will include any intermediate certificates in the exported certificate.
 
 <a name="bkmk_subjectaltname"></a>
 ### Get a SubjectAltName certificate using OpenSSL
@@ -392,7 +396,7 @@ Enabling HTTPS for a custom domain is only available for the **Standard** and **
 
 > [AZURE.NOTE] Before switching an app from the **Free** tier to **Standard** tier, you should remove spending caps in place for your subscription, otherwise you risk your app becoming unavailable if you reach your caps before the billing period ends. For more information on shared and **Standard** tier, see [Pricing Details][pricing].
 
-1.	In your browser, open the [Azure Management Portal](https://manage.windowsazure.cn).
+1.	In your browser, open the [Azure Portal](https://portal.azure.cn).
 	
 2.	Click the **App Services** option on the left side of the page.
 
@@ -413,7 +417,7 @@ Enabling HTTPS for a custom domain is only available for the **Standard** and **
 
 Before performing the steps in this section, you must have associated a custom domain name with your app. For more information, see [Configuring a custom domain name for a web app][customdomain].
 
-1.	In your browser, open the [Azure Management Portal](https://manage.windowsazure.cn).
+1.	In your browser, open the [Azure Portal](https://portal.azure.cn).
 
 2.	Click the **App Services** option on the left side of the page.
 
@@ -451,6 +455,10 @@ Before performing the steps in this section, you must have associated a custom d
 >
 > 2. Using the tools provided by your domain name registrar, modify the A record for your custom domain name to point to the IP address from the previous step.
 
+<br>
+If you add an **IP based SSL** to a Web App that already had an **SNI binding** with a different certificate, as soon as IP SSL is enabled for the Web App, we'll remap the site's hostname to that IP address, so if any other hostname is CNAME'd to that site's hostname it will also get traffic on IP SSL address. 
+
+For such cases we created one more DNS entry: sni.&lt;nameofyourWebApp&gt;.chinacloudsites.cn where &lt;nameofyourWebApp&gt; is the name of your Azure Web App. So, you should change your DNS records pointing to the name used in your SNI binding so that it points to sni.&lt;nameofyourWebApp&gt;.chinacloudsites.cn instead.
 
 At this point, you should be able to visit your app using `HTTPS://` instead of `HTTP://` to verify that the certificate has been configured correctly.
 
@@ -459,7 +467,7 @@ At this point, you should be able to visit your app using `HTTPS://` instead of 
 
 Azure do *not* enforce HTTPS. Visitors may still access your app using HTTP, which may compromise your app's security. If you want to enforce HTTPS for your app, you can use the **URL Rewrite** module. The URL Rewrite module is included with Azure Web App, and enables you to define rules that are applied to incoming requests before the requests are handed to your application. **It can be used for applications written in any programming language supported by Azure .**
 
-> [AZURE.NOTE] .NET MVC applications should use the [RequireHttps](http://msdn.microsoft.com/zh-cn/library/system.web.mvc.requirehttpsattribute.aspx) filter instead of URL Rewrite. For more information on using RequireHttps, see [Deploy a secure ASP.NET MVC 5 app to a web app](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database).
+> [AZURE.NOTE] .NET MVC applications should use the [RequireHttps](http://msdn.microsoft.com/zh-cn/library/system.web.mvc.requirehttpsattribute.aspx) filter instead of URL Rewrite. For more information on using RequireHttps, see [Deploy a secure ASP.NET MVC 5 app to a web app](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/).
 >
 > For information on programmatic redirection of requests using other programming languages and frameworks, consult the documentation for those technologies.
 
@@ -498,9 +506,9 @@ If your web.config file already includes a **&lt;rewrite>** section, add the **&
 
 For PHP applications, simply save the [example](#example) as a web.config file in the root of your application, then re-deploy the application to your app.
 
-###Node.js, Python Django, and Java
+###Node.js, Python Django & Java
 
-A web.config file is automatically created for Node.js, Python Django, and Java apps if they don't already provide one, but it only exists on the server since it is created during deployment. The automatically generated file contains settings that tell Azure how to host your application.
+A web.config file is automatically created for Node.js, Python Django & Java apps if they don't already provide one, but it only exists on the server since it is created during deployment. The automatically generated file contains settings that tell Azure how to host your application.
 
 To retrieve and modify the auto-generated file from the app, use the following steps.
 
@@ -518,7 +526,7 @@ To retrieve and modify the auto-generated file from the app, use the following s
 
 		The web.config file for Java applications using Apache Tomcat do not contain a **&lt;rewrite>** section, so you must add the **&lt;rewrite>** section from the example into the **&lt;system.webServer>** section.
 
-4. Redeploy the project (including the updated web.config,) to Azure
+4. Put it back to the folder /site/wwwroot
 
 Once you deploy a web.config with a rewrite rule to force HTTPS, it should take effect immediately and redirect all requests to HTTPS.
 
@@ -527,17 +535,16 @@ For more information on the IIS URL Rewrite module, see the [URL Rewrite](http:/
 ## More Resources ##
 - [Azure Trust Center](/support/trust-center/security/)
 - [Configuration options unlocked in Azure Web Sites](/blog/2014/01/28/more-to-explore-configuration-options-unlocked-in-windows-azure-web-sites/)
-- [Enable diagnostic logging](/documentation/articles/web-sites-enable-diagnostic-log)
-- [Configure web apps in Azure](/documentation/articles/web-sites-configure)
+- [Enable diagnostic logging](/documentation/articles/web-sites-enable-diagnostic-log/)
+- [Configure web apps in Azure](/documentation/articles/web-sites-configure/)
 - [Azure Management Portal](https://manage.windowsazure.cn)
 
 >[AZURE.NOTE] If you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter app in Azure Web App. No credit cards required; no commitments.
 
 ## What's changed
 * For a guide to the change from Websites to Azure see: [Azure and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
-* For a guide to the change of the Management Portal to the new portal see: [Reference for navigating the preview portal](https://manage.windowsazure.cn/)
 
-[customdomain]: /documentation/articles/web-sites-custom-domain-name
+[customdomain]: /documentation/articles/web-sites-custom-domain-name/
 [iiscsr]: http://technet.microsoft.com/zh-cn/library/cc732906(WS.10).aspx
 [cas]: http://go.microsoft.com/fwlink/?LinkID=269988
 [installcertiis]: http://technet.microsoft.com/zh-cn/library/cc771816(WS.10).aspx

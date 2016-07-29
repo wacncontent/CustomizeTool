@@ -26,9 +26,9 @@
             return CreatedAtRoute("Tables", new { id = current.Id }, current);
         }
 
-    This code sends a push notification (with the text of the inserted item) after inserting a todo item. In the event of an error, the code will add an error log entry which is viewable on the **Logs** tab of the mobile service in the [Azure Management Portal](https://manage.windowsazure.cn/).
+    This code sends a push notification (with the text of the inserted item) after inserting a todo item. In the event of an error, the code will add an error log entry which is viewable on the **Logs** tab of the mobile service in the [Azure classic portal](https://manage.windowsazure.cn/).
 
-	>[AZURE.NOTE] You can use template notifications to send a single push notification to clients on multiple platforms. For more information, see [Supporting multiple device platforms from a single mobile service](/documentation/articles/mobile-services-how-to-use-multiple-clients-single-service/#push).
+	>[AZURE.NOTE] You can use template notifications to send a single push notification to clients on multiple platforms. For more information, see [Supporting multiple device platforms from a single mobile service](/zh-cn/documentation/articles/mobile-services-how-to-use-multiple-clients-single-service/#push).
 
 2. Republish the mobile service project to Azure.
 

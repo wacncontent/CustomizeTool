@@ -11,13 +11,16 @@ Route tables contain the following properties.
 |Property|Description|Sample values|
 |---|---|---|
 |**routes**|Collection of user defined routes in the route table|see [user defined routes](#User-defined-routes)|
+
 |**subnets**|Collection of subnets the route table is applied to|see [subnets](#Subnets)|
 
 
-
 ### User defined routes
 
 
+|**subnets**|Collection of subnets the route table is applied to| |
+
+
 ###<a name="User-defined-routes"></a> User defined routes
 
 You can create UDRs to specify where traffic should be sent to, based on its destination address. You can think of a route as the default gateway definition based on the destination address of a network packet.
@@ -64,6 +67,6 @@ Sample route table in JSON format:
 
 ### Additional resources
 
-- Get more information about [UDRs](/documentation/articles/virtual-networks-udr-overview).
+- Get more information about [UDRs](/documentation/articles/virtual-networks-udr-overview/).
 - Read the [REST API reference documentation](https://msdn.microsoft.com/zh-cn/library/azure/mt502549.aspx) for route tables.
 - Read the [REST API reference documentation](https://msdn.microsoft.com/zh-cn/library/azure/mt502539.aspx) for user defined routes (UDRs).

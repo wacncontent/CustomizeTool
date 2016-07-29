@@ -8,7 +8,7 @@ The following steps create a new mobile service in Azure and add code to your pr
 
 	![create service manage subscriptions](./media/mobile-services-dotnet-backend-create-new-service-vs2013/mobile-create-service-from-vs2013.png)
 
-3. In Manage Windows Azure Subscriptions, click **Sign In...** to sign in to your Azure account (if required), select an available subscription, then click **Close**.
+3. In Manage Microsoft Azure Subscriptions, click **Sign In...** to sign in to your Azure account (if required), select an available subscription, then click **Close**.
 
 	When your subscription already has one or more existing mobile services, the service names are displayed. 
 

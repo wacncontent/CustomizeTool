@@ -1,4 +1,3 @@
-
 ##<a name="Public-IP-address"></a> Public IP address
 A public IP address resource provides either a reserved or dynamic Internet facing IP address. Although you can create a public IP address as a stand alone object, you need to associate it to another object to actually use the address. You can associate a public IP address to a load balancer, application  gateway, or a NIC to provide Internet access to those resources.  
 
@@ -7,7 +6,6 @@ A public IP address resource provides either a reserved or dynamic Internet faci
 |**publicIPAllocationMethod**|Defines if the IP address is *static* or *dynamic*.|static, dynamic|
 |**idleTimeoutInMinutes**|Defines the idle time out, with a default value of 4 minutes. If no more packets for a given session is received within this time, the session is terminated.|any value between 4 and 30|
 |**ipAddress**|IP address assigned to object. This is a read-only property.|104.42.233.77|
-
 
 ###<a name="DNS-settings"></a> DNS settings
 Public IP addresses have a child object named **dnsSettings** containing the following properties:
@@ -38,6 +36,6 @@ Sample public IP address in JSON format:
 
 ### Additional resources
 
-- Get more information about [public IP addresses](/documentation/articles/virtual-networks-reserved-public-ip).
-- Learn about [instance level public IP addresses](/documentation/articles/virtual-networks-instance-level-public-ip).
+- Get more information about [public IP addresses](/documentation/articles/virtual-networks-reserved-public-ip/).
+- Learn about [instance level public IP addresses](/documentation/articles/virtual-networks-instance-level-public-ip/).
 - Read the [REST API reference documentation](https://msdn.microsoft.com/zh-cn/library/azure/mt163638.aspx) for public IP addresses.

@@ -1,0 +1,5 @@
+updated docs: 1
+articles/vpn-gateway/vpn-gateway-about-vpn-devices.md
+
+
+updated includes: 0

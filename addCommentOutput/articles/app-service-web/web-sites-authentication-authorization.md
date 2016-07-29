@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="12/10/2015"
+	ms.date="02/26/2016"
 	wacn.date=""/>
 
 # Use Active Directory for authentication in  Azure #  Azure Web App# 
@@ -28,7 +28,7 @@ With a few clicks of a button, you can enable authentication and authorization f
 
 In many scenarios, you want to customize the authentication and authorization behavior of the application, such as a login and logout page, custom authorization logic, mult-tenant application behavior, and so on. In these cases, it may be better to configure authentication and authorization manually for greater flexibility of its features. Below are two main options  
 
--	[Azure AD](/documentation/articles/web-sites-dotnet-lob-application-azure-ad) - You can implement authentication and authorization for your web app with Azure AD. Using Azure AD as the identity provider has the following characteristics:
+-	[Azure AD](/documentation/articles/web-sites-dotnet-lob-application-azure-ad/) - You can implement authentication and authorization for your web app with Azure AD. Using Azure AD as the identity provider has the following characteristics:
 	-	Supports popular authentication protocols, such as [OAuth 2.0](http://oauth.net/2/), [OpenID Connect](http://openid.net/connect/), and [SAML 2.0](http://en.wikipedia.org/wiki/SAML_2.0). For the complete list of supported protocols, see [Azure Active Directory Authentication Protocols](http://msdn.microsoft.com/zh-cn/library/azure/dn151124.aspx).
 	-	Can use an Azure-only identity provider without any on-premises infrastructure.
 	-	Can also configure directory sync with an on-premises AD (managed on-premises).
@@ -37,7 +37,7 @@ In many scenarios, you want to customize the authentication and authorization be
 	-	Azure AD delegates management of [relying party](http://en.wikipedia.org/wiki/Relying_party) applications to non-administrator roles, while application access to sensitive directory data must still be configured by global administrators.
 	-	Sends a general-purpose set of claim types for all relying party applications. For the list of claim types, see [Supported Token and Claim Types](/documentation/articles/active-directory-token-and-claims/). Claims are not customizable.
 	-	[Azure AD Graph API](http://msdn.microsoft.com/zh-cn/library/azure/hh974476.aspx) enables application access to directory data in Azure AD.
--	[On-premises secure token service (STS), such as AD FS](/documentation/articles/web-sites-dotnet-lob-application-adfs) - You can implement authentication and authorization for your web app with an on-premises STS like AD FS. Using on-premises AD FS has the following characteristics:
+-	[On-premises secure token service (STS), such as AD FS](/documentation/articles/web-sites-dotnet-lob-application-adfs/) - You can implement authentication and authorization for your web app with an on-premises STS like AD FS. Using on-premises AD FS has the following characteristics:
 	-	AD FS topology must be deployed on-premises, with cost and management overhead.
 	-	Best when company policy demands that AD data be stored on-premises.
 	-	Only AD FS administrators can configure [relying party trusts and claim rules](http://technet.microsoft.com/zh-cn/library/dd807108.aspx).
@@ -49,5 +49,5 @@ In many scenarios, you want to customize the authentication and authorization be
 
 ## What's changed
 * For a guide to the change from Websites to Azure see: [Azure and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
-
  
+

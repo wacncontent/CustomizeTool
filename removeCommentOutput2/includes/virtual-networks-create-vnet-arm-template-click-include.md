@@ -1,4 +1,4 @@
-<!-- not suitable for Mooncake -->
+<!-- Ibiza portal: not suitable for Mooncake -->
 
 ## Deploy the ARM template by using click to deploy
 
@@ -14,7 +14,7 @@ You can reuse pre-defined ARM templates upload to a github repository maintained
 
 	![ARM template parameters](./media/virtual-networks-create-vnet-arm-template-click-include/figure2.png)
 
-4. Click **Resource group** and select a resource group to add the VNet to, or click **Create new** to add the VNet to a new resource group. To learn more about resource groups, see [](). The figure below shows the resource group settings for a new resource group called **TestRG**.
+4. Click **Resource group** and select a resource group to add the VNet to, or click **Create new** to add the VNet to a new resource group. The figure below shows the resource group settings for a new resource group called **TestRG**.
 
 	![Resource group](./media/virtual-networks-create-vnet-arm-template-click-include/figure3.png)
 
@@ -23,8 +23,8 @@ You can reuse pre-defined ARM templates upload to a github repository maintained
 5. Click **Leagl terms**, read the terms, and click **Buy** to agree. 
 6. Click **Create** to create the VNet.
 
-	![Submitting deployment tile in preview portal](./media/virtual-networks-create-vnet-arm-template-click-include/figure4.png)
+	![Submitting deployment tile in Portal Preview](./media/virtual-networks-create-vnet-arm-template-click-include/figure4.png)
 
 7. Once the deployment is done, click **TestVNet** > **All settings** > **Subnets** to see the subnet properties, as shown below.
 
-	![Create VNet in preview portal](./media/virtual-networks-create-vnet-arm-template-click-include/figure5.gif)
+	![Create VNet in Portal Preview](./media/virtual-networks-create-vnet-arm-template-click-include/figure5.gif)

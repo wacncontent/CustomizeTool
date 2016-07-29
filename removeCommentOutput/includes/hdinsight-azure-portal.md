@@ -1,5 +1,5 @@
-##Azure Management Portal and Azure preview portal
+##Azure portal and Azure Portal Preview
 
-> [AZURE.IMPORTANT] The steps in this document use the Azure Management Portal. Microsoft recommends using the Azure preview portal when creating new services. For an explanation of the advantages of the preview portal, see [DevOps just got a whole lot more awesome](https://azure.microsoft.comhttps://manage.windowsazure.cn). 
+> [AZURE.IMPORTANT] The steps in this document use the Azure Classic Management Portal. Microsoft does not recommend using the Classic Management Portal when creating new services. For an explanation of the advantages of the Azure portal, see [Azure Portal](https://azure.microsoft.com/features/azure-portal/). 
 
-For a version of this document that uses the Azure preview portal, see the following link:
+For a version of this document that uses the Azure portal, see the following link:

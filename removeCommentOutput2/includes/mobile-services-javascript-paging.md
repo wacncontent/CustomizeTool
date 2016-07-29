@@ -25,7 +25,7 @@
 
   	Notice that only the first three results from the TodoItem table are displayed. 
 
-6. (Optional) View the URI of the request sent to the mobile service by using message inspection software, such as browser developer tools or [Fiddler].
+6. (Optional) View the URI of the request sent to the mobile service by using message inspection software, such as browser developer tools or [Fiddler]. 
 
    	Notice that the **take(3)** method was translated into the query option **$top=3** in the query URI.
 
@@ -48,7 +48,7 @@
 
     > [AZURE.NOTE] This tutorial uses a simplified scenario by passing hard-coded paging values to the **Take** and **Skip** methods. In a real-world app, you can use queries similar to the above with a pager control or comparable UI to let users navigate to previous and next pages.  You can also call the  **includeTotalCount** method to get the total count of items available on the server, along with the paged data.
 
-8. (Optional) Again view the URI of the request sent to the mobile service.
+8. (Optional) Again view the URI of the request sent to the mobile service. 
 
    	Notice that the **skip(3)** method was translated into the query option **$skip=3** in the query URI.
 

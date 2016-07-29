@@ -16,7 +16,12 @@
 
 This article shows you how to deploy a Microsoft HPC Pack cluster on Azure with multiple Linux compute nodes and run a [NAMD](http://www.ks.uiuc.edu/Research/namd/) job with **charmrun** to calculate and visualize the structure of a large biomolecular system.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]  Resource Manager model. 
+
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+
+
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the classic deployment model. Microsoft recommends that most new deployments use the Resource Manager model.
+
 
 
 
@@ -31,8 +36,13 @@ Microsoft HPC Pack provides features to run a variety of large-scale HPC and par
 
     Following is a sample XML configuration file you can use with the script to deploy an Azure-based HPC Pack cluster consisting of a Windows Server 2012 R2 head node and 4 size Large (A3) CentOS 6.6 compute nodes. Substitute appropriate values for your subscription and service names.
 
-     ``` 
+
+    ```
     <?xml version="1.0" encoding="utf-8" ?>
+
+
+	    <?xml version="1.0" encoding="utf-8" ?>
+
     <IaaSClusterConfig>
       <Subscription>
         <SubscriptionName>Subscription-1</SubscriptionName>
@@ -65,7 +75,9 @@ Microsoft HPC Pack provides features to run a variety of large-scale HPC and par
         <ImageName>5112500ae3b842c8b9c604889f8753c3__OpenLogic-CentOS-66-20150325</ImageName>
       </LinuxComputeNodes>
     </IaaSClusterConfig>    
- ``` 
+
+```
+
 
 
 * **NAMD software and tutorial files** - Download NAMD software for Linux from the [NAMD](http://www.ks.uiuc.edu/Research/namd/) site. This article is based on NAMD version 2.10, and uses the [Linux-x86_64 (64-bit Intel/AMD with Ethernet)](http://www.ks.uiuc.edu/Development/Download/download.cgi?UserID=&AccessCode=&ArchiveID=1310) archive, which you'll use to run NAMD on multiple Linux compute nodes in a cluster network. Also download the [NAMD tutorial files](http://www.ks.uiuc.edu/Training/Tutorials/#namd). Follow the instructions later in this article to extract the archive and the tutorial samples on the cluster head node.
@@ -83,9 +95,14 @@ It's easy to generate an RSA key pair, which contains a public key and a private
 
 2.	Run the following command.
 
-     ``` 
+
+    ```
     ssh-keygen -t rsa
-     ``` 
+    ```
+
+
+	    ssh-keygen -t rsa
+
 
     >[AZURE.NOTE] Press **Enter** to use the default settings until the command is completed. Do not enter a passphrase here; when prompted for a password, just press **Enter**.
 
@@ -102,18 +119,30 @@ It's easy to generate an RSA key pair, which contains a public key and a private
 
 2.	Create a file named C:\cred.xml and copy the RSA key data into it. You can find an example in the sample files at the end of this article.
 
-     ``` 
+
+    ```
     <ExtendedData>
+
+
+	    <ExtendedData>
+
         <PrivateKey>Copy the contents of private key here</PrivateKey>
         <PublicKey>Copy the contents of public key here</PublicKey>
     </ExtendedData>
-     ``` 
+
+    ```
+
 
 3.	Open a Command Prompt and enter the following command to set the credentials data for the hpclab\hpcuser account. You use the **extendeddata** parameter to pass the name of C:\cred.xml file you created for the key data.
 
-     ``` 
+
+    ```
     hpccred setcreds /extendeddata:c:\cred.xml /user:hpclab\hpcuser /password:<UserPassword>
-     ``` 
+    ```
+
+
+	    hpccred setcreds /extendeddata:c:\cred.xml /user:hpclab\hpcuser /password:<UserPassword>
+
 
     This command completes successfully without output. After setting the credentials for the user accounts you need to run jobs, store the cred.xml file in a secure location, or delete it.
 
@@ -149,29 +178,51 @@ The first command creates a folder named /namd2 on all nodes in the LinuxNodes g
 ### Environment variables and nodelist file
 Information about nodes and cores is in the $CCP_NODES_CORES environment variable, which is automatically set by the HPC Pack head node when the job is activated. The format for the $CCP_NODES_CORES variable is as follows:
 
- ``` 
+
+```
 <Number of nodes> <Name of node1> <Cores of node1> <Name of node2> <Cores of node2>…
- ``` 
+```
+
+
+	<Number of nodes> <Name of node1> <Cores of node1> <Name of node2> <Cores of node2>…
+
 
 This lists the total number of nodes, node names, and number of cores on each node that are allocated to the job. For example, if the job needs 10 cores to run, the value of $CCP_NODES_CORES will be similar to:
 
- ``` 
+
+```
 3 CENTOS66LN-00 4 CENTOS66LN-01 4 CENTOS66LN-03 2
- ``` 
+```
+
+
+	3 CENTOS66LN-00 4 CENTOS66LN-01 4 CENTOS66LN-03 2
+
 
 Following is the information in the nodelist file, which the script will generate:
 
- ``` 
+
+```
 group main
+
+
+	group main
+
 host <Name of node1> ++cpus <Cores of node1>
 host <Name of node2> ++cpus <Cores of node2>
 …
- ``` 
+
+```
+
 
 For example:
 
- ``` 
+
+```
 group main
+
+
+	group main
+
 host CENTOS66LN-00 ++cpus 4
 host CENTOS66LN-01 ++cpus 4
 host CENTOS66LN-03 ++cpus 2
@@ -184,8 +235,14 @@ Using a text editor of your choice, create the following Bash script in the fold
 
 1.	Define some variables.
 
-     ``` 
+
+    ```
     #!/bin/bash
+
+
+	    #!/bin/bash
+	
+
     # The path of this script
     SCRIPT_PATH="$( dirname "${BASH_SOURCE[0]}" )"
     # Charmrun command
@@ -194,31 +251,52 @@ Using a text editor of your choice, create the following Bash script in the fold
     NODELIST_OPT="++nodelist"
     # Argument of ++p
     NUMPROCESS="+p"
-     ``` 
+
+    ```
+
 
 2.	Get node information from the environment variables. $NODESCORES stores a list of split words from $CCP_NODES_CORES. $COUNT is the size of $NODESCORES.
 
-     ``` 
+
+    ```
     # Get node information from the environment variables
+
+
+	    # Get node information from the environment variables
+
     # CCP_NODES_CORES=3 CENTOS66LN-00 4 CENTOS66LN-01 4 CENTOS66LN-03 4
     NODESCORES=(${CCP_NODES_CORES})
     COUNT=${#NODESCORES[@]}
-     ``` 
+
+    ```
+
 
 3.	If the $CCP_NODES_CORES variable is not set, just start **charmrun** directly. (This should only occur when you run this script directly on your Linux nodes.)
 
-     ``` 
+
+    ```
     if [ ${COUNT} -eq 0 ]
+
+
+	    if [ ${COUNT} -eq 0 ]
+
     then
     	# CCP_NODES is_CORES is not found or is empty, so just run charmrun without nodelist arg.
     	#echo ${CHARMRUN} $*
     	${CHARMRUN} $*
-     ``` 
+
+    ```
+
 
 4.	Or create a nodelist file for **charmrun**.
 
-     ``` 
+
+    ```
     else
+
+
+	    else
+
     	# Create the nodelist file
     	NODELIST_PATH=${SCRIPT_PATH}/nodelist_$$
     	# Write the head line
@@ -235,21 +313,32 @@ Using a text editor of your choice, create the following Bash script in the fold
 
     ${CCP_NUMCPUS} is another environment variable set by the HPC Pack head node. It stores the number of total cores allocated to this job. We use it to specify the number of processes for charmrun.
 
-     ``` 
+
+    ```
 	# Run charmrun with nodelist arg
+
+
+		# Run charmrun with nodelist arg
+
 	#echo ${CHARMRUN} ${NUMPROCESS}${CCP_NUMCPUS} ${NODELIST_OPT} ${NODELIST_PATH} $*
 	${CHARMRUN} ${NUMPROCESS}${CCP_NUMCPUS} ${NODELIST_OPT} ${NODELIST_PATH} $*
 	RTNSTS=$?
 	rm -f ${NODELIST_PATH}
     fi
 
+
     ```
 
 6.	Exit with the **charmrun** return status.
 
-     ``` 
+
+    ```
     exit ${RTNSTS}
-     ``` 
+    ```
+
+
+	    exit ${RTNSTS}
+
 
 ## Submit a NAMD job
 
@@ -291,9 +380,14 @@ Now you are ready to submit a NAMD job in HPC Cluster Manager.
 
     Under some conditions HPC Pack remembers the user information you input before and won't show this dialog box. To make HPC Pack show it again, enter the following in a Command window and then submit the job.
 
-     ``` 
+
+    ```
     hpccred delcreds
-     ``` 
+    ```
+
+
+	    hpccred delcreds
+
 
 6.	The job takes several minutes to finish.
 
@@ -307,8 +401,14 @@ Now you are ready to submit a NAMD job in HPC Cluster Manager.
 
 ### Sample hpccharmrun.sh script
 
- ``` 
+
+```
 #!/bin/bash
+
+
+	#!/bin/bash
+	
+
 # The path of this script
 SCRIPT_PATH="$( dirname "${BASH_SOURCE[0]}" )"
 # Charmrun command
@@ -345,13 +445,20 @@ else
 	rm -f ${NODELIST_PATH}
 fi
 exit ${RTNSTS}
- ``` 
+
+```
+
 
  
 ### Sample cred.xml file
 
- ``` 
+
+```
 <ExtendedData>
+
+
+	<ExtendedData>
+
   <PrivateKey>-----BEGIN RSA PRIVATE KEY-----
 MIIEpQIBAAKCAQEAxJKBABhnOsE9eneGHvsjdoXKooHUxpTHI1JVunAJkVmFy8JC
 qFt1pV98QCtKEHTC6kQ7tj1UT2N6nx1EY9BBHpZacnXmknpKdX4Nu0cNlSphLpru
@@ -381,7 +488,9 @@ a8lxTKnZCsRXU1HexqZs+DSc+30tz50bNqLdido/l5B4EJnQP03ciO0=
 -----END RSA PRIVATE KEY-----</PrivateKey>
   <PublicKey>ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDEkoEAGGc6wT16d4Ye+yN2hcqigdTGlMcjUlW6cAmRWYXLwkKoW3WlX3xAK0oQdMLqRDu2PVRPY3qfHURj0EEellpydeaSekp1fg27Rw2VKmEumu6Wxwo9HddXORPAQXTQ4yI0lWSerypckXVPeVjHetbkSci2foLedCbeBA9c/RyRgIUl227/pJKDNX2Rpqly0sY82nVWN/0p4NAyslexA0fGdBx+IgKnbU2JQKJeiwOomtEB/N492XRfCw2eCi7Ly3R8+U1KeBm+zH6Q8aH8ApqQohhLRw71bcWZ1g1bxd6HORxXOu0mFTzHbWFcZ9ILtXRl4Pt0x5Mve1AJXEKb username@servername;</PublicKey>
 </ExtendedData>
- ``` 
+
+```
+
 
 
 

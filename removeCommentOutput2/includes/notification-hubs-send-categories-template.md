@@ -1,9 +1,9 @@
 
 This section shows how to send breaking news as tagged template notifications from a .NET console app.
 
-If you are using Mobile Services please refer to the [Get Started with Push](/documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-get-started-push) tutorials. 
+If you are using Mobile Apps please refer to the [Add push notifications for Mobile Apps](../articles/app-service-mobile/app-service-mobile-windows-store-dotnet-get-started-push.md) tutorial and select your platform at the top. 
 
-If you want to use Java or PHP refer to [How to use Notification Hubs from Java/PHP](/documentation/articles/notification-hubs-java-backend-how-to). You can send notifications from any backend using the [Notification Hub REST interface](http://msdn.microsoft.com/zh-cn/library/azure/dn223264.aspx).
+If you want to use Java or PHP refer to [How to use Notification Hubs from Java/PHP](../articles/notification-hubs/notification-hubs-java-backend-how-to.md). You can send notifications from any backend using the [Notification Hub REST interface](http://msdn.microsoft.com/library/windowsazure/dn223264.aspx).
 
 Skip steps 1-3 if you created the console app for sending notifications when you completed [Get started with Notification Hubs][get-started].
 
@@ -72,8 +72,8 @@ Skip steps 1-3 if you created the console app for sending notifications when you
 <!-- URLs. -->
 [get-started]: ../articles/notification-hubs/notification-hubs-windows-store-dotnet-get-started.md
 [Use Notification Hubs to send notifications to users]: ../articles/tutorial-notify-users-mobileservices.md
-[Get started with Mobile Services]: /documentation/articles/mobile-services-javascript-backend-windows-store-dotnet-get-started/#create-new-service
-[wns object]: https://msdn.microsoft.com/zh-cn/library/azure/jj860484.aspx
-[Notification Hubs Guidance]: http://msdn.microsoft.com/zh-cn/library/jj927170.aspx
-[Notification Hubs How-To for Windows Store]: http://msdn.microsoft.com/zh-cn/library/jj927172.aspx
-[Notification Hubs REST interface]: http://msdn.microsoft.com/zh-cn/library/azure/dn223264.aspx
+[Get started with Mobile Services]: /develop/mobile/tutorials/get-started/#create-new-service
+[wns object]: http://go.microsoft.com/fwlink/p/?LinkId=260591
+[Notification Hubs Guidance]: http://msdn.microsoft.com/library/jj927170.aspx
+[Notification Hubs How-To for Windows Store]: http://msdn.microsoft.com/library/jj927172.aspx
+[Notification Hubs REST interface]: http://msdn.microsoft.com/library/windowsazure/dn223264.aspx

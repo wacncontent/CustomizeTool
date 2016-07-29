@@ -24,7 +24,7 @@ Azure Traffic Manager uses three load-balancing methods to distribute traffic:
 - **Performance**:  Use this method when you have endpoints in different geographic locations and you want requesting clients to use the "closest" endpoint in terms of the lowest latency.
 - **Round Robin:**  Use this method when you want to distribute load across a set of cloud services in the same datacenter or across cloud services or websites in different datacenters.
 
-For more information, see [About Traffic Manager Load Balancing Methods](/documentation/articles/traffic-manager-load-balancing-methods).
+For more information, see [About Traffic Manager Load Balancing Methods](/documentation/articles/traffic-manager-load-balancing-methods/).
 
 The following figure shows an example of the Round Robin load balancing method for distributing traffic between different cloud services.
 
@@ -47,7 +47,7 @@ The following figure shows a load-balanced endpoint for standard (unencrypted) w
 
 ![loadbalancing](./media/load-balancing-vms/LoadBalancing.png)
 
-For more information, see [Azure Load Balancer](/documentation/articles/load-balancer-overview). For the steps to create a load-balanced set, see [Configure a load-balanced set](/documentation/articles/load-balancer-overview).
+For more information, see [Azure Load Balancer](/documentation/articles/load-balancer-overview/). For the steps to create a load-balanced set, see [Configure a load-balanced set](/documentation/articles/load-balancer-overview/).
 
 Azure can also load balance within a cloud service or virtual network. This is known as internal load balancing and can be used in the following ways:
 
@@ -61,6 +61,6 @@ The following figure shows an example of an internal load-balanced endpoint for 
 
 ![loadbalancing](./media/load-balancing-vms/LOBServers.png)
 
-For more information, see [Internal load balancing](/documentation/articles/load-balancer-internal-overview). For the steps to create a load-balanced set, see [Configure an internal load-balanced set](/documentation/articles/load-balancer-internal-getstarted).
+For more information, see [Internal load balancing](/documentation/articles/load-balancer-internal-overview/). For the steps to create a load-balanced set, see [Configure an internal load-balanced set](/documentation/articles/load-balancer-internal-getstarted/).
 
 <!-- LINKS -->

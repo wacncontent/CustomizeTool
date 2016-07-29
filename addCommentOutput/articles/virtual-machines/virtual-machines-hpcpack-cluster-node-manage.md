@@ -14,7 +14,12 @@
 
 # Manage the number and availability of compute nodes in an HPC Pack cluster in Azure
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]  Resource Manager model. 
+
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+
+
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the classic deployment model. Microsoft recommends that most new deployments use the Resource Manager model.
+
 
 
 If you created an HPC Pack cluster in Azure VMs, you might want ways to easily add, remove,
@@ -82,7 +87,7 @@ Add-HPCIaaSNode.ps1 [-ServiceName] <String> [-ImageName] <String>
 
 * **ServiceName** - Name of the cloud service that new compute node VMs will be added to.
 
-* **ImageName** - Azure VM image name, which can be obtained through the Azure Management Portal or Azure PowerShell cmdlet **Get-AzureVMImage**. The image must meet the following requirements:
+* **ImageName** - Azure VM image name, which can be obtained through the Azure classic portal or Azure PowerShell cmdlet **Get-AzureVMImage**. The image must meet the following requirements:
 
     1. A Windows operating system must be installed.
 
@@ -108,12 +113,11 @@ service *hpcservice1*, based on the VM image *hpccnimage1*.
 
 ```
 Add-HPCIaaSNode.ps1 -ServiceName hpcservice1 -ImageName hpccniamge1
--Quantity 20 -InstanceSize Large -DomainUserName <username> 
 
 
 	Add-HPCIaaSNode.ps1 -ServiceName hpcservice1 -ImageName hpccniamge1 `
--Quantity 20 -InstanceSize Large -DomainUserName <username> `
 
+-Quantity 20 -InstanceSize Large -DomainUserName <username>  ` 
 -DomainUserPassword <password>
 
 ```

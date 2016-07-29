@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="12/10/2015"
+	ms.date="02/26/2016"
 	wacn.date=""/>
 
 
@@ -36,13 +36,13 @@ Below is an example of a .COM website running on Azure Web Apps. It demonstrates
 
 
 > [AZURE.NOTE]
-> This guide presents some of the most common areas and tasks that are aligned with running a public-facing .COM site in Azure Web Apps. However, there are other common solutions that you can implement in Azure Web Apps. To review these solutions, see the other guides on [Digital Marketing Campaigns](/documentation/articles/web-sites-digital-marketing-application-solution-overview) and [Business Applications](/documentation/articles/web-sites-business-application-solution-overview).
+> This guide presents some of the most common areas and tasks that are aligned with running a public-facing .COM site in Azure Web Apps. However, there are other common solutions that you can implement in Azure Web Apps. To review these solutions, see the other guides on [Digital Marketing Campaigns](/documentation/articles/web-sites-digital-marketing-application-solution-overview/) and [Business Applications](/documentation/articles/web-sites-business-application-solution-overview/).
 
 ## Create from scratch or bring existing assets
 
 Quickly create new sites from a popular CMS in the gallery or bring your existing web assets to Azure Web Apps from a variety of languages and frameworks.
 
- The Azure gallery provides templates from the popular website content management systems (CMS), such as Orchard, Umbraco, Drupal, and [WordPress].  You can create a web app using your favorite CMS flavor. You can choose from various database backends to meet your needs, including [Azure SQL Database] and [MySQL].
+ The Azure Marketplace provides templates from the popular website content management systems (CMS), such as Orchard, Umbraco, Drupal, and [WordPress].  You can create a web app using your favorite CMS flavor. You can choose from various database backends to meet your needs, including [Azure SQL Database] and [MySQL].
 
 Your existing web assets can run on Azure Web Apps, whether they are .NET, PHP, Java, Node.js, or Python. You can move them to Web Apps using your familiar [FTP] tools or your source control management system. Web Apps supports direct publishing from popular source control options, such as [Visual Studio] , [Visual Studio Team Services],  and [Git] - local, GitHub, BitBucket, DropBox, Mercurial, etc..
 
@@ -74,7 +74,7 @@ Deliver your static content lightning fast to users globally by [integrating you
 
 Optimize your .COM site by scaling automatically with Autoscale, caching with Azure Redis Cache, running background tasks with WebJobs, and maintaining high availability with Azure Traffic Manager.
 
-The ability of Azure Web Apps to [scale up and out] meets the need of your .COM site, regardless of the size of your workload. Scale out your website manually through the [Azure Management Portal](https://manage.windowsazure.cn), programmatically through the [Service Management API] or [PowerShell scripting], or automatically through the Autoscale feature. In **Standard** hosting plan, Autoscale enables you to scale out a website automatically based on CPU utilization. For best practices, see [Troy Hunt]'s [10 things I learned about rapidly scaling web apps with Azure].
+The ability of Azure Web Apps to [scale up and out] meets the need of your .COM site, regardless of the size of your workload. Scale out your website manually through the [Azure  Portal](https://portal.azure.cn)  Classic Management Portal](https://manage.windowsazure.cn) , programmatically through the [Service Management API] or [PowerShell scripting], or automatically through the Autoscale feature. In **Standard** hosting plan, Autoscale enables you to scale out a website automatically based on CPU utilization. For best practices, see [Troy Hunt]'s [10 things I learned about rapidly scaling web apps with Azure].
 
 Make your website more responsive with the [Azure Redis Cache]. Use it to cache data from backend databases and other things such as the [ASP.NET session state] and [output cache].
 
@@ -84,7 +84,7 @@ Maintain high availability of your website using [Azure Traffic Manager]. Using 
 
 Stay up-to-date on your website's performance with Azure or third-party tools. Receive alerts on critical website events. Gain user insight easily with Application Insight or with web log analytics from HDInsight. 
 
-Get a [quick glance] of the website's current performance metrics and resource quotas in the web app's blade in the [Azure Management Portal](https://manage.windowsazure.cn). For a 360° view of your application across availability, performance and usage, use [Azure Application Insights] to give you fast & powerful troubleshooting, diagnostics and usage insights. Or, use a third-party tool  like [New Relic]  to provide advanced monitoring data for your websites.
+Get a [quick glance] of the website's current performance metrics and resource quotas in the web app's blade in the [Azure  Portal](https://portal.azure.cn)  Classic Management Portal](https://manage.windowsazure.cn) . For a 360° view of your application across availability, performance and usage, use [Azure Application Insights] to give you fast & powerful troubleshooting, diagnostics and usage insights. Or, use a third-party tool  like [New Relic]  to provide advanced monitoring data for your websites.
 
 In the **Standard** hosting plan, monitor site responsiveness receive email notifications whenever your site becomes unresponsive. For more information, see [How to: Receive Alert Notifications and Manage Alert Rules in Azure].
 
@@ -94,7 +94,7 @@ Make your .COM site attractive with rich media, such as:
 
 -  Upload and stream videos globally with [Azure Media Services]
 
--  Send emails to users with [SendGrid service in Azure gallery]
+-  Send emails to users with [SendGrid service in Azure Marketplace]
 
 
 ## More Resources
@@ -111,37 +111,42 @@ Make your .COM site attractive with rich media, such as:
 [Azure Web App]: /home/features/web-site/
 
 
-[WordPress]: /documentation/articles/web-sites-php-web-site-gallery
-[MySQL]: /documentation/articles/web-sites-php-mysql-deploy-use-git
+[WordPress]: /documentation/articles/web-sites-php-web-site-gallery/
+[MySQL]: /documentation/articles/web-sites-php-mysql-deploy-use-git/
 
 
-[MySQL]: /documentation/articles/web-sites-php-mysql-deploy-use-git
+[MySQL]: /documentation/articles/web-sites-php-mysql-deploy-use-git/
 
-[Azure SQL Database]: /documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database
-[FTP]: /documentation/articles/web-sites-deploy#ftp
-[Visual Studio]: /documentation/articles/web-sites-dotnet-get-started
+[Azure SQL Database]: /documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/
+[FTP]: /documentation/articles/web-sites-deploy/#ftp
+[Visual Studio]: /documentation/articles/web-sites-dotnet-get-started/
 
-[Visual Studio Team Services]: /documentation/articles/cloud-services-continuous-delivery-use-vso
-[Git]: /documentation/articles/web-sites-publish-source-control
+[Visual Studio Team Services]: /documentation/articles/cloud-services-continuous-delivery-use-vso/
+[Git]: /documentation/articles/web-sites-publish-source-control/
 
 
-[Git]: /documentation/articles/web-sites-publish-source-control
+[Git]: /documentation/articles/web-sites-publish-source-control/
 
 
-[deploying to a staging slot]: /documentation/articles/web-sites-staged-publishing
+[deploying to a staging slot]: /documentation/articles/web-sites-staged-publishing/
 [continuously publish]:http://rickrainey.com/2014/01/21/continuous-deployment-github-with-azure-web-sites-and-staged-publishing/
 [run A/B tests]:http://blogs.msdn.com/b/tomholl/archive/2014/11/10/a-b-testing-with-azure-websites.aspx
 
-[custom domain]: /documentation/articles/web-sites-custom-domain-name
-[HTTPS]: /documentation/articles/web-sites-configure-ssl-certificate
-[Azure  Web App  Pricing Details]: /home/features/web-site#price
+[custom domain]: /documentation/articles/web-sites-custom-domain-name/
+[HTTPS]: /documentation/articles/web-sites-configure-ssl-certificate/
+[Azure  Web App  Pricing Details]: /home/features/web-site/pricing/
 
 [Azure Traffic Manager]:http://www.hanselman.com/blog/CloudPowerHowToScaleAzureWebsitesGloballyWithTrafficManager.aspx
-[integrating your web  app  site  with Azure CDN]: /documentation/articles/cdn-websites-with-cdn
+[integrating your web app with Azure CDN]: /documentation/articles/cdn-websites-with-cdn/
 [CDN node]:https://msdn.microsoft.com/zh-cn/library/azure/gg680302.aspx
 
-[scale up and out]: /documentation/articles/web-sites-scale
+[scale up and out]: /documentation/articles/web-sites-scale/
+
 [Azure Management Portal]:http://manage.windowsazure.cn/
+
+
+[Azure Classic Management Portal]:http://manage.windowsazure.cn/
+
 [Service Management API]:https://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx
 [PowerShell scripting]:https://msdn.microsoft.com/zh-cn/library/azure/jj152841.aspx
 [Troy Hunt]:https://twitter.com/troyhunt
@@ -150,16 +155,16 @@ Make your .COM site attractive with rich media, such as:
 [ASP.NET session state]:https://msdn.microsoft.com/zh-cn/library/azure/dn690522.aspx
 [output cache]:https://msdn.microsoft.com/zh-cn/library/azure/dn798898.aspx
 
-[quick glance]: /documentation/articles/web-sites-monitor
+[quick glance]: /documentation/articles/web-sites-monitor/
 [Azure Application Insights]:http://blogs.msdn.com/b/visualstudioalm/archive/2015/01/07/application-insights-and-azure-websites.aspx
 
-[New Relic]: /documentation/articles/store-new-relic-cloud-services-dotnet-application-performance-management
+[New Relic]: /documentation/articles/store-new-relic-cloud-services-dotnet-application-performance-management/
 
 [How to: Receive Alert Notifications and Manage Alert Rules in Azure]:http://msdn.microsoft.com/zh-cn/library/azure/dn306638.aspx
 
 [Azure Media Services]:http://blogs.technet.com/b/cbernier/archive/2013/09/03/windows-azure-media-services-and-web-sites.aspx
 
-[SendGrid service in Azure gallery]: /documentation/articles/sendgrid-dotnet-how-to-send-email
+[SendGrid service in Azure Marketplace]: /documentation/articles/sendgrid-dotnet-how-to-send-email/
 
 
  

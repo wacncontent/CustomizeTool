@@ -20,7 +20,7 @@ Your first step is to create a new account to use for the tutorial. You can use 
 
 	![store-screen-1][store-screen-1]
 
-8. Choose a value for the region; for example, China North. 
+8. Choose a value for the region; for example, West US. 
 
 9. Click the right arrow.
 
@@ -65,6 +65,6 @@ For more information on getting started with Pusher, see [Understanding Pusher][
 
 <!--Links-->
 
-[Azure Management Portal]: https://manage.windowsazure.cn
+[Azure Management Portal]: https://manage.windowsazure.com
 [Understanding Pusher]: http://pusher.com/docs
 

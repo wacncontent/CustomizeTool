@@ -21,10 +21,10 @@ This topic provides an overview of some aspects of using Linux virtual machines 
 
 ## Authentication: Usernames, Passwords and SSH Keys
 
-When creating a Linux virtual machine using the Azure Management Portal, you are asked to provide a username, password or an SSH public key. The choice of a username for deploying a Linux virtual machine on Azure is subject to the following constraint: names of system accounts (UID <100) already present in the virtual machine are not allowed, 'root' for example.
+When creating a Linux virtual machine using the Azure classic portal, you are asked to provide a username, password or an SSH public key. The choice of a username for deploying a Linux virtual machine on Azure is subject to the following constraint: names of system accounts (UID <100) already present in the virtual machine are not allowed, 'root' for example.
 
 
- - See [Create a Virtual Machine Running  Linux](/documentation/articles/virtual-machines-linux-tutorial)  Linux](/documentation/articles/virtual-machines-linux-tutorial-portal-rm) 
+ - See [Create a Virtual Machine Running Linux](/documentation/articles/virtual-machines-linux-tutorial)
  - See [How to Use SSH with Linux on Azure](/documentation/articles/virtual-machines-linux-use-ssh-key)
 
 
@@ -41,7 +41,7 @@ You can optionally obtain a root shell using **sudo -s**.
 
 ## Firewall Configuration
 
-Azure provides an inbound packet filter that restricts connectivity to ports specified in the Azure Management Portal. By default, the only allowed port is SSH. You may open up access to additional ports on your Linux virtual machine by configuring endpoints in the Azure Management Portal:
+Azure provides an inbound packet filter that restricts connectivity to ports specified in the Azure classic portal. By default, the only allowed port is SSH. You may open up access to additional ports on your Linux virtual machine by configuring endpoints in the Azure classic portal:
 
  - See: [How to Set Up Endpoints to a Virtual Machine](/documentation/articles/virtual-machines-set-up-endpoints)
 
@@ -77,7 +77,7 @@ Azure provides the ability to capture the state of an existing virtual machine i
 
 2. Shut down/power off the virtual machine.
 
-3. Click *Capture* in the Azure Management Portal or use the Powershell or CLI tools to capture the virtual machine as an image.
+3. Click *Capture* in the Azure classic portal or use the Powershell or CLI tools to capture the virtual machine as an image.
 
  - See: [How to Capture a Linux Virtual Machine to Use as a Template](/documentation/articles/virtual-machines-linux-capture-image)
 

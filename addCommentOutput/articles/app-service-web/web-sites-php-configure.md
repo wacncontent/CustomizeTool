@@ -3,13 +3,13 @@
 	description="Learn how to configure the default PHP installation or add a custom PHP installation for Web Apps in Azure."
 	services="app-service"
 	documentationCenter="php"
-	authors="tfitzmac"
+	authors="rmcmurray"
 	manager="wpickett"
 	editor=""/>
 
 <tags
 	ms.service="app-service"
-	ms.date="12/16/2015"
+	ms.date="06/03/2016"
 	wacn.date=""/>
 
 #Configure PHP in Azure Web Apps
@@ -35,10 +35,10 @@ By default, PHP 5.4 is installed and immediately available for use when you crea
 
 PHP 5.5 and PHP 5.6 versions are also available, but not enabled by default. To update the PHP version, follow one of these methods:
 
-### Azure Management Portal
-
 
-1. Browse to your web app in the [Azure Management Portal](https://manage.windowsazure.cn) and click on the **Settings** button.
+### Azure Portal
+
+1. Browse to your web app in the [Azure Portal](https://portal.azure.cn) and click on the **Settings** button.
 
 	![Web App Settings][settings-button]
 
@@ -51,9 +51,11 @@ PHP 5.5 and PHP 5.6 versions are also available, but not enabled by default. To 
 	![Save configuration settings][save-button]
 
 
-1. Browse to your  Website's dashboard in the Azure Management Portal, click on **Configure**.
+### Azure Classic Management Portal
 
-	![Configure tab on  Websites dashboard][configure]
+1. Browse to your  Web App's dashboard in the Azure Classic Management Portal, click on **Configure**.
+
+	![Configure tab on  Web Apps dashboard][configure]
 
 1. Click PHP 5.5.
 
@@ -115,12 +117,11 @@ As an alternative to using a `.user.ini` file, you can use the [ini_set()] funct
 
 ### Changing PHP\_INI\_SYSTEM configuration settings
 
+1. Add an App Setting to your Web App with the key `PHP_INI_SCAN_DIR` and value  `d:\home\site\ini`  **d:\home\site\ini** 
 
-1. Add an App Setting to your Web App with the key `PHP_INI_SCAN_DIR` and value `d:\home\site\ini`
 2. Create an `settings.ini` file using Kudu Console (http://&lt;site-name&gt;.scm.azurewebsite.net) in the `d:\home\site\ini` directory.
 
 
-1. Add an App Setting to your Web Site with the key `PHP_INI_SCAN_DIR` and value **d:\home\site\ini**
 2. Create an `settings.ini` file using FTP in the **d:\home\site\ini** directory.
 
 3. Add configuration settings to the `settings.ini` file using the same syntax you would use in a php.ini file. For example, if you wanted to point the `curl.cainfo` setting to a `*.crt` file and set 'wincache.maxfilesize' setting to 512K, your `settings.ini` file would contain this text:
@@ -142,7 +143,7 @@ As noted in the previous section, the best way to see the default PHP version, i
 4. Create an `ini` file in `d:\home\site\ini` called `extensions.ini`.
 
 
-3. Add an App Setting to your Web Site with the key **PHP_INI_SCAN_DIR** and value **d:\home\site\ini**
+3. Add an App Setting to your Web App with the key **PHP_INI_SCAN_DIR** and value **d:\home\site\ini**
 4. Create an **ini** file in **d:\home\site\ini** called `extensions.ini`.
 
 5. Add configuration settings to the `extensions.ini` file using the same syntax you would use in a php.ini file. For example, if you wanted to enable the MongoDB and XDebug extensions, your `extensions.ini` file would contain this text:
@@ -158,7 +159,7 @@ As noted in the previous section, the best way to see the default PHP version, i
 2. Put `.dll` extension files in the `bin` directory (for example,  `php_mongo.dll`)  **php_mongo.dll**) . Make sure that the extensions are compatible with default version of PHP (which is, as of this writing, PHP 5.4) and are VC9 and non-thread-safe (nts) compatible.
 3. Deploy your web app.
 
-4. Browse to your web app in the Azure Management Portal and click on the **Settings** button.
+4. Browse to your web app in the Azure Portal and click on the **Settings** button.
 
 	![Web App Settings][settings-button]
 
@@ -173,9 +174,9 @@ As noted in the previous section, the best way to see the default PHP version, i
 
 
 
-1. Navigate to your site's dashboard in the Azure Management Portal, and click on **Configure**.
+1. Navigate to your app's dashboard in the Azure Classic Management Portal, and click on **Configure**.
 
-	![Configure tab on  Websites dashboard][configure]
+	![Configure tab on  Web Apps dashboard][configure]
 
 1. In the **app settings** section, create a key **PHP_EXTENSIONS** and a value **bin\your-ext-file**. To enable multiple extensions, incude a comma-separated list of `.dll` files.
 
@@ -198,7 +199,7 @@ Instead of the default PHP runtime, Azure Web Apps can use a PHP runtime that yo
 4. Add a `bin` directory to your root directory, and put the directory that contains your PHP runtime in it (for example, `bin\php`).
 5. Deploy your web app.
 
-4. Browse to your web app in the Azure Management Portal and click on the **Settings** button.
+4. Browse to your web app in the Azure Portal and click on the **Settings** button.
 
 	![Web App Settings][settings-button]
 
@@ -209,11 +210,38 @@ Instead of the default PHP runtime, Azure Web Apps can use a PHP runtime that yo
 8. Click the **Save** button at the top of the **Web app settings** blade.
 
 	![Save configuration settings][save-button]
+
+<a name="composer" />
+## How to: Enable Composer automation in Azure
+
+By default, Azure doesn't do anything with composer.json, if you have one in your PHP
+project. If you use [Git deployment](/documentation/articles/app-service-web-php-get-started/), you can enable composer.json 
+processing during `git push` by enabling the Composer extension.
+
+>[AZURE.NOTE] You can [vote for first-class Composer support in Azure here](https://feedback.azure.com/forums/169385-web-apps-formerly-websites/suggestions/6477437-first-class-support-for-composer-and-pip)!
+
+1. In your PHP web app's blade in the [Azure portal](https://portal.azure.cn), click **Tools** > **Extensions**.
+
+    ![Azure Portal settings blade to enable Composer automation in Azure](./media/web-sites-php-configure/composer-extension-settings.png)
+
+2. Click **Add**, then click **Composer**.
+
+    ![Add Composer extension to enable Composer automation in Azure](./media/web-sites-php-configure/composer-extension-add.png)
+    
+3. Click **OK** to accept legal terms. Click **OK** again to add the extension.
+
+    The **Installed extensions** blade will now show the Composer extension.  
+    ![Accept legal terms to enable Composer automation in Azure](./media/web-sites-php-configure/composer-extension-view.png)
+    
+4. Now, perform `git add`, `git commit`, and `git push` like in the previous section. You'll now see that Composer
+is installing dependencies defined in composer.json.
+
+    ![Git deployment with Composer automation in Azure](./media/web-sites-php-configure/composer-extension-success.png)
 
 
-1. Navigate to your site's dashboard in the Azure Management Portal, and click on **Configure**.
+1. Navigate to your app's dashboard in the Azure Classic Management Portal, and click on **Configure**.
 
-	![Configure tab on  Websites dashboard][configure]
+	![Configure tab on  Web Apps dashboard][configure]
 
 1. In the **handler mappings** section, add `*.php` to EXTENSION and add the path to the **php-cgi.exe** executable. If your put your PHP runtime in the `bin` directory in the root of you application, the path will be `D:\home\site\wwwroot\bin\php\php-cgi.exe`.
 
@@ -231,17 +259,14 @@ For more information, see the [PHP Developer Center](/develop/php/).
 
 >[AZURE.NOTE] If you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.
 
-## What's changed
-* For a guide to the change from Websites to Azure see: [Azure and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
-
 
 
 [PHP Developer Center Tutorials]: /develop/php/
-[How to Configure  Websites]: /documentation/articles/web-sites-configure
+[How to Configure  Web Apps]: /documentation/articles/web-sites-configure/
 [configure]: ./media/web-sites-php-configure/configure.png
 [app-settings]: ./media/web-sites-php-configure/app-settings.png
 [handler-mappings]: ./media/web-sites-php-configure/handler-mappings.png
-[Configure, monitor, and scale your  Websites in Azure]: /zh-cn/documentation/services/web-sites
+[Configure, monitor, and scale your  Web Apps in Azure]: /zh-cn/documentation/services/web-sites
 [Download the Azure SDK for PHP]: /zh-cn/downloads/?sdk=php
 
 [trial]: /pricing/1rmb-trial/

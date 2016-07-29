@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
  pageTitle="About the A8, A9, A10, and A11 instances | Azure"
  description="Get background information and considerations for using the Azure A8, A9, A10, and A11 compute-intensive sizes for virtual machines and cloud services."

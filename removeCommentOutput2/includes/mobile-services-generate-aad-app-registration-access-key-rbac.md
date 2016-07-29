@@ -1,4 +1,4 @@
-1. Click **Applications** tab on your directory page in the [Azure Management Portal](https://manage.windowsazure.cn/).
+1. Click **Applications** tab on your directory page in the [Azure classic portal](https://manage.windowsazure.cn/).
   
 2. Click your integrated application registration.
 
@@ -13,7 +13,7 @@
     ![](./media/mobile-services-generate-aad-app-registration-access-key-rbac/app-perms.png)
 
 
-7. In the [Azure Management Portal](https://manage.windowsazure.cn/), navigate back to your mobile service and click the **Configure** tab. Scroll down to the **app settings** section and add the following app settings and click **Save**. 
+7. In the [Azure classic portal](https://manage.windowsazure.cn/), navigate back to your mobile service and click the **Configure** tab. Scroll down to the **app settings** section and add the following app settings and click **Save**. 
 
     <table border="1">
     <tr>
@@ -26,7 +26,7 @@
     <td>AAD_CLIENT_KEY</td><td>The app key you generated in your AAD integrated app in the steps above.</td>
     </tr>
     <tr>
-    <td>AAD_TENANT_DOMAIN</td><td>Your AAD domain name. Should be similar to "mydomain.partner.onmschina.cn"</td>
+    <td>AAD_TENANT_DOMAIN</td><td>Your AAD domain name. Should be similar to "mydomain.onmicrosoft.com"</td>
     </tr>
     <tr>
     <td>AAD_GROUP_ID</td><td>The group id you noted for the Sales group in the previous section</td>

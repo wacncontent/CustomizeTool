@@ -14,7 +14,12 @@
 
 # Automatically scale Azure compute resources up and down in an HPC Pack cluster according to the cluster workload
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]  Resource Manager model. 
+
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+
+
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the classic deployment model. Microsoft recommends that most new deployments use the Resource Manager model.
+
 
 
 If you deploy Azure "burst" nodes in your HPC Pack cluster, or you
@@ -114,13 +119,12 @@ consecutive idle times, it is stopped.
 ```
 .\AzureAutoGrowShrink.ps1 -NodeTemplates @('Default AzureNode
  Template') -NodeType AzureNodes -NumOfQueuedJobsPerNodeToGrow 5
- -NumOfQueuedJobsToGrowThreshold 8 -NumOfInitialNodesToGrow 3 
 
 
 	.\AzureAutoGrowShrink.ps1 -NodeTemplates @('Default AzureNode Template') `
 				-NodeType AzureNodes -NumOfQueuedJobsPerNodeToGrow 5 `
- -NumOfQueuedJobsToGrowThreshold 8 -NumOfInitialNodesToGrow 3 `
 
+ -NumOfQueuedJobsToGrowThreshold 8 -NumOfInitialNodesToGrow 3  ` 
  -GrowCheckIntervalMins 1 -ShrinkCheckIntervalMins 1 -ShrinkCheckIdleTimes 3
 
 ```

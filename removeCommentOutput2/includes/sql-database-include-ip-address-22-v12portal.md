@@ -1,27 +1,25 @@
 
 <!--
-../includes/sql-database-include-ip-address-22-v12portal.md 
+../includes/sql-database-include-ip-address-22-v12portal.md
 
-Latest Freshness check:  2015-09-04 , GeneMi.
+Latest Freshness check:  2016-03-21 , daleche.
 
 As of circa 2015-09-04, the following topics might include this include:
-/documentation/articles/sql-database-configure-firewall-settings
+/documentation/articles/sql-database-configure-firewall-settings/
 /documentation/articles/sql-database-connect-query
 
 
 ## Server-level firewall rules
 
-### Manage server-level firewall rules through the new Azure Management Portal
+### Add a server-level firewall rule through the new Azure portal
 -->
 
 
-1. Log in to the [Azure Management Portal](http://manage.windowsazure.cn/) at http://manage.windowsazure.cn/.
+1. Log in to the [Azure portal](https://manage.windowsazure.cn) at http://manage.windowsazure.cn/.
 
 2. In the left banner, click **BROWSE ALL**. The **Browse** blade is displayed.
 
-3. Scroll and click **SQL servers**. The **SQL servers** blade is displayed. 
-
-	
+3. Scroll and click **SQL servers**. The **SQL servers** blade is displayed.
 
 4. For convenience, click the minimize control on the earlier **Browse** blade.
 
@@ -31,16 +29,12 @@ As of circa 2015-09-04, the following topics might include this include:
 
 7. On your server blade, click **Settings**. The **Settings** blade is displayed.
 
-8. Click **Firewall**. The **Firewall Settings** blade is displayed. 
-
-	
+8. Click **Firewall**. The **Firewall Settings** blade is displayed.
 
 9. Click **Add Client IP**. Type in a name for your new rule into the first text box.
 
 10. Type in the low and high IP address values for the range you want to enable.
- - It can be handy to have the low value end with **.0** and the high with **.255**. 
-
-	
+	- It can be handy to have the low value end with **.0** and the high with **.255**.
 
 11. Click **Save**.
 
@@ -59,6 +53,6 @@ As of circa 2015-09-04, the following topics might include this include:
 <!--
 These includes/ files are a sequenced set, but you can pick and choose:
 
-../includes/sql-database-include-ip-address-22-v12portal.md 
+../includes/sql-database-include-ip-address-22-v12portal.md
 ? ../includes/sql-database-include-ip-address-*.md
 -->

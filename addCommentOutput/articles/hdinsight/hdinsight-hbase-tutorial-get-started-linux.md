@@ -12,7 +12,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="02/04/2016"
+	ms.date="05/04/2016"
 	wacn.date=""/>
 
 
@@ -25,34 +25,34 @@ Learn how to create an HBase cluster in HDInsight, create HBase tables, and quer
 
 The information in this document is specific to Linux-based HDInsight clusters. For information on Windows-based clusters, use the tab selector on the top of the page to switch.
 
+[AZURE.INCLUDE [delete-cluster-warning](../includes/hdinsight-delete-cluster-warning.md)]
+
 ###Prerequisites
 
 Before you begin this HBase tutorial, you must have the following:
 
 - **An Azure subscription**. See [Get Azure trial](/pricing/1rmb-trial/).
-- [Secure Shell(SSU)](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unixl). 
+- [Secure Shell(SSU)](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix/). 
 - [curl](http://curl.haxx.se/download.html).
 
 ## Create HBase cluster
 
-The following procedure use an Azure ARM template to create an HBase cluster. To understand the parameters used in the procedure and other cluster creation methods, see [Create Linux-based Hadoop clusters in HDInsight](/documentation/articles/hdinsight-provision-clusters-v1).
+The following procedure use an Azure ARM template to create an HBase cluster. To understand the parameters used in the procedure and other cluster creation methods, see [Create Linux-based Hadoop clusters in HDInsight](/documentation/articles/hdinsight-provision-clusters-v1/).
 
-1. Click the following image to open an ARM template in the Azure Management Portal. The ARM template is located in a public blob container. 
+1. Click the following image to open an ARM template in the Azure Portal. The ARM template is located in a public blob container. 
 
-
-    <a href="https://manage.windowsazure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fhditutorialdata.blob.core.windows.net%2Farmtemplates%2FHbase.json" target="_blank"><img src="https://acom.azurecomcdn.net/80C57D/cdn/mediahandler/docarticles/dpsmedia-prod/azure.microsoft.com/documentation/articles/hdinsight-hbase-tutorial-get-started-v1/20160201111850/deploy-to-azure.png" alt="Deploy to Azure"></a>
-
-
-    <a href="https://manage.windowsazure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fhditutorialdata.blob.core.windows.net%2Farmtemplates%2FHbase.json" target="_blank"><img src="https://acom.azurecomcdn.net/80C57D/cdn/mediahandler/docarticles/dpsmedia-prod/azure.microsoft.com/documentation/articles/hdinsight-hbase-tutorial-get-started-v1-linux/20160201111850/deploy-to-azure.png" alt="Deploy to Azure"></a>
-
+    <a href="https://portal.azure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fhditutorialdata.blob.core.windows.net%2Farmtemplates%2Fcreate-linux-based-hbase-cluster-in-hdinsight.json" target="_blank"><img src="https://acom.azurecomcdn.net/80C57D/cdn/mediahandler/docarticles/dpsmedia-prod/azure.microsoft.com/documentation/articles/hdinsight-hbase-tutorial-get-started-v1/20160201111850/deploy-to-azure.png" alt="Deploy to Azure"></a>
 
 2. From the **Parameters** blade, enter the following:
 
     - **ClusterName**: Enter a name for the HBase cluster that you will create.
-    - **ClusterStorageAccountName**: Each cluster has an Azure Blob storage account dependency. After you delete a cluster, the data retains in the storage account.
     - **Cluster login name and password**: The default login name is **admin**.
-    - **SSH username and password**: The default username is **sshuser**.  You can rename it. 
+    - **SSH username and password**: The default username is **sshuser**.  You can rename it.
+     
     Other parameters are optional.  
+    
+    Each cluster has an Azure Blob storage account dependency. After you delete a cluster, the data retains in the storage account. The cluster default storage account name is the cluster name with "store" appended. It is hardcoded in the template variables section.
+        
 3. Click **OK** to save the parameters.
 4. From the **Custom deployment** blade, click **Resource group** dropdown box, and then click **New** to create a new resource group.  The resource group is a container that groups the cluster, the dependent storage account and other linked resource.
 5. Click **Legal terms**, and then click **Create**.
@@ -63,7 +63,7 @@ The following procedure use an Azure ARM template to create an HBase cluster. To
 
 ## Create tables and insert data
 
-You can use SSH to connect to HBase clusters and use HBase Shell to create HBase tables, insert data and query data. For information on using SSH from Linux, Unix, OS X and Windows, see [Use SSH with Linux-based Hadoop on HDInsight from Linux, Unix, or OS X](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix) and [Use SSH with Linux-based Hadoop on HDInsight from Windows](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows).
+You can use SSH to connect to HBase clusters and use HBase Shell to create HBase tables, insert data and query data. For information on using SSH from Linux, Unix, OS X and Windows, see [Use SSH with Linux-based Hadoop on HDInsight from Linux, Unix, or OS X](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix/) and [Use SSH with Linux-based Hadoop on HDInsight from Windows](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows/).
  
 
 For most people, data appears in the tabular format:
@@ -205,7 +205,7 @@ You can query data in HBase tables by using Hive. This section creates a Hive ta
 
 HBase in HDInsight ships with a Web UI for monitoring clusters. Using the Web UI, you can request statistics or information about regions.
 
-SSH can also be used to tunnel local requests, such as web requests, to the HDInsight cluster. The request will then be routed to the requested resource as if it had originated on the HDInsight cluster head node. For more information, see [Use SSH with Linux-based Hadoop on HDInsight from Windows (preview)](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows#tunnel).
+SSH can also be used to tunnel local requests, such as web requests, to the HDInsight cluster. The request will then be routed to the requested resource as if it had originated on the HDInsight cluster head node. For more information, see [Use SSH with Linux-based Hadoop on HDInsight from Windows](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows/#tunnel).
 
 **To establish an SSH tunneling session**
 
@@ -254,7 +254,9 @@ SSH can also be used to tunnel local requests, such as web requests, to the HDIn
 
 In a high availability cluster, you will find a link to the current active HBase master node that is hosting the Web UI.
 
+##Delete the cluster
 
+[AZURE.INCLUDE [delete-cluster-warning](../includes/hdinsight-delete-cluster-warning.md)]
 
 ## Next steps?
 In this HBase tutorial for HDInsight, you learned how to create an HBase cluster and how to create tables and view the data in those tables from the HBase shell. You also learned how use a Hive query on data in HBase tables and how to use the HBase C# REST APIs to create an HBase table and retrieve data from the table.
@@ -265,14 +267,8 @@ To learn more, see:
 HBase is an Apache, open-source, NoSQL database built on Hadoop that provides random access and strong consistency for large amounts of unstructured and semistructured data.
 
 
-
-[hdinsight-manage-portal]: /documentation/articles/hdinsight-administer-use-management-portal-v1
-[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
-
-
-[hdinsight-manage-portal]: hdinsight-administer-use-management-portal-v1
-[hdinsight-upload-data]: hdinsight-upload-data.md
-
+[hdinsight-manage-portal]: /documentation/articles/hdinsight-administer-use-management-portal-v1/
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data/
 [hbase-reference]: http://hbase.apache.org/book.html#importtsv
 [hbase-schema]: http://0b4af6cdc2f0c5998459-c0245c5c937c5dedcca3f1764ecc9b2f.r43.cf2.rackcdn.com/9353-login1210_khurana.pdf
 [hbase-quick-start]: http://hbase.apache.org/book.html#quickstart
@@ -281,37 +277,19 @@ HBase is an Apache, open-source, NoSQL database built on Hadoop that provides ra
 
 
 
-
-[hdinsight-hbase-overview]: /documentation/articles/hdinsight-hbase-overview
-[hdinsight-hbase-provision-vnet-v1]: /documentation/articles/hdinsight-hbase-provision-vnet-v1
-[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning-v1
-[hbase-twitter-sentiment]: /documentation/articles/hdinsight-hbase-analyze-twitter-sentiment
-
-
-[hdinsight-hbase-overview]: hdinsight-hbase-overview.md
-[hdinsight-hbase-provision-vnet-v1]: hdinsight-hbase-provision-vnet-v1.md
-[hdinsight-versions]: hdinsight-component-versioning-v1.md
-[hbase-twitter-sentiment]: hdinsight-hbase-analyze-twitter-sentiment.md
-
+[hdinsight-hbase-overview]: /documentation/articles/hdinsight-hbase-overview/
+[hdinsight-hbase-provision-vnet-v1]: /documentation/articles/hdinsight-hbase-provision-vnet-v1/
+[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning-v1/
+[hbase-twitter-sentiment]: /documentation/articles/hdinsight-hbase-analyze-twitter-sentiment/
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: /pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
-[azure-portal]: https://manage.windowsazure.cn/
+[azure-portal]: https://portal.azure.cn/
 [azure-create-storageaccount]: /documentation/articles/storage-create-storage-account/
 
-
 [img-hdinsight-hbase-cluster-quick-create]: ./media/hdinsight-hbase-tutorial-get-started-v1/hdinsight-hbase-quick-create.png
 [img-hdinsight-hbase-hive-editor]: ./media/hdinsight-hbase-tutorial-get-started-v1/hdinsight-hbase-hive-editor.png
 [img-hdinsight-hbase-file-browser]: ./media/hdinsight-hbase-tutorial-get-started-v1/hdinsight-hbase-file-browser.png
 [img-hbase-shell]: ./media/hdinsight-hbase-tutorial-get-started-v1/hdinsight-hbase-shell.png
 [img-hbase-sample-data-tabular]: ./media/hdinsight-hbase-tutorial-get-started-v1/hdinsight-hbase-contacts-tabular.png
 [img-hbase-sample-data-bigtable]: ./media/hdinsight-hbase-tutorial-get-started-v1/hdinsight-hbase-contacts-bigtable.png
-
-
-[img-hdinsight-hbase-cluster-quick-create]: ./media/hdinsight-hbase-tutorial-get-started-v1-linux/hdinsight-hbase-quick-create.png
-[img-hdinsight-hbase-hive-editor]: ./media/hdinsight-hbase-tutorial-get-started-v1-linux/hdinsight-hbase-hive-editor.png
-[img-hdinsight-hbase-file-browser]: ./media/hdinsight-hbase-tutorial-get-started-v1-linux/hdinsight-hbase-file-browser.png
-[img-hbase-shell]: ./media/hdinsight-hbase-tutorial-get-started-v1-linux/hdinsight-hbase-shell.png
-[img-hbase-sample-data-tabular]: ./media/hdinsight-hbase-tutorial-get-started-v1-linux/hdinsight-hbase-contacts-tabular.png
-[img-hbase-sample-data-bigtable]: ./media/hdinsight-hbase-tutorial-get-started-v1-linux/hdinsight-hbase-contacts-bigtable.png
-

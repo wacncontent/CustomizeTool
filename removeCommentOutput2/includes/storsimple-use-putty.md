@@ -1,4 +1,3 @@
-
 <properties 
    pageTitle="Use PuTTY to connect to the device serial console"
    description="Explains how to use PuTTY terminal emulation software to connect to the StorSimple device."
@@ -7,10 +6,14 @@
    authors="SharS"
    manager="adinah"
    editor="tysonn" />
-<tags
-	ms.service="storsimple"
-	ms.date="04/01/2015"
-	wacn.date=""/>
+<tags 
+   ms.service="storsimple"
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="TBD"
+   ms.date="04/01/2015"
+   ms.author="v-sharos" />
 
 ### To connect through the serial console
 

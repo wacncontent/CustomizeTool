@@ -30,7 +30,12 @@ resources without the need for administration and configuration by the user.
 
 If the notebook service does not work for your scenario please continue to read this article which will will show you how to deploy the Jupyter Notebook on Azure, using Linux virtual machines (VMs).
 
+
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
+
+
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the Resource Manager deployment model, which Microsoft recommends for most new deployments instead of the classic deployment model.
+
 
 [AZURE.INCLUDE [create-account-and-vms-note](../includes/create-account-and-vms-note.md)]
 
@@ -45,31 +50,12 @@ virtual machines, and we will cover the setup of Jupyter on both types of virtua
 
 Follow the instructions given [here][portal-vm-linux] to create a virtual machine of the *Ubuntu* distribution. This tutorial uses Ubuntu Server 14.04 LTS. We'll assume the user name *azureuser*.
 
-
-After the virtual machine deploys we need to open up a security rule on the network security group.  From the Azure Management Portal, go to **Network Security Groups** and open the tab for the Security Group corresponding to your VM. You need to add an Inbound Security rule with the following settings:
+After the virtual machine deploys we need to open up a security rule on the network security group.  From the Azure portal, go to **Network Security Groups** and open the tab for the Security Group corresponding to your VM. You need to add an Inbound Security rule with the following settings:
 **TCP** for the protocol, **\*** for the source (public) port and **9999** for the destination (private) port.
 
 ![Screenshot](./media/virtual-machines-python-ipython-notebook/azure-add-endpoint.png)
 
 While in your Network Security Group, click on **Network Interfaces** and note the **Public IP Address** as it will be needed to connect to your VM in the next step.
-
-
-This step applies to both the Linux and Windows VM. Later on we will configure
-Jupyter to run its notebook server on port 9999. To make this port publicly
-available, we must create an endpoint in the Azure Management Portal. This
-endpoint opens up a port in the Azure firewall and maps the public port (HTTPS,
-443) to the private port on the VM (9999).
-
-To create an endpoint, go to the VM dashboard, click **Endpoints**, then click **Add
-Endpoint** and create a new endpoint (called `ipython_nb` in this example). Pick
-**TCP** for the protocol, **443** for the public port and **9999** for the private port.
-
-![Screenshot](./media/virtual-machines-python-ipython-notebook/ipy-azure-linux-005.png)
-
-After this step, the **Endpoints** Dashboard tab will look like the next screenshot.
-
-![Screenshot](./media/virtual-machines-python-ipython-notebook/ipy-azure-linux-006.png)
-
 
 ## Install required software on the VM
 

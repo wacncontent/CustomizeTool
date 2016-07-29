@@ -1,0 +1,33 @@
+updated docs: 29
+articles/hdinsight/hdinsight-analyze-flight-delay-data-linux.md
+articles/hdinsight/hdinsight-analyze-twitter-data-linux.md
+articles/hdinsight/hdinsight-apache-spark-intellij-tool-plugin-debug-jobs-remotely.md
+articles/hdinsight/hdinsight-apache-spark-intellij-tool-plugin.md
+articles/hdinsight/hdinsight-apps-install-custom-applications.md
+articles/hdinsight/hdinsight-apps-publish-applications.md
+articles/hdinsight/hdinsight-extend-hadoop-virtual-network.md
+articles/hdinsight/hdinsight-hadoop-create-linux-clusters-azure-powershell.md
+articles/hdinsight/hdinsight-hadoop-create-linux-clusters-portal.md
+articles/hdinsight/hdinsight-hadoop-create-windows-clusters-portal.md
+articles/hdinsight/hdinsight-hadoop-giraph-install-linux.md
+articles/hdinsight/hdinsight-hadoop-hue-linux.md
+articles/hdinsight/hdinsight-hadoop-provision-linux-clusters.md
+articles/hdinsight/hdinsight-hadoop-r-server-compute-contexts.md
+articles/hdinsight/hdinsight-hadoop-r-server-get-started.md
+articles/hdinsight/hdinsight-hadoop-r-server-overview.md
+articles/hdinsight/hdinsight-hadoop-r-server-storage.md
+articles/hdinsight/hdinsight-hadoop-script-actions-linux.md
+articles/hdinsight/hdinsight-hadoop-solr-install-linux.md
+articles/hdinsight/hdinsight-hadoop-stack-trace-error-messages.md
+articles/hdinsight/hdinsight-hadoop-use-hive-beeline.md
+articles/hdinsight/hdinsight-hbase-build-java-maven-linux.md
+articles/hdinsight/hdinsight-hbase-build-java-maven.md
+articles/hdinsight/hdinsight-hbase-provision-vnet.md
+articles/hdinsight/hdinsight-hbase-tutorial-get-started-linux.md
+articles/hdinsight/hdinsight-provision-clusters.md
+articles/hdinsight/hdinsight-release-notes.md
+articles/hdinsight/hdinsight-storm-correlation-topology.md
+articles/hdinsight/hdinsight-storm-deploy-monitor-topology-linux.md
+
+
+updated includes: 0

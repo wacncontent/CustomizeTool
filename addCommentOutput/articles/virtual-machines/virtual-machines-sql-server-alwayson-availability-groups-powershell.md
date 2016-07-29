@@ -15,19 +15,18 @@
 # Configure AlwaysOn Availability Groups in Azure VM (PowerShell)
 
 > [AZURE.SELECTOR]
-
 - [Portal - Resource Manager](/documentation/articles/virtual-machines-sql-server-alwayson-availability-groups-gui-arm)
 - [Portal - Classic](/documentation/articles/virtual-machines-sql-server-alwayson-availability-groups-gui)
 - [PowerShell - Classic](/documentation/articles/virtual-machines-sql-server-alwayson-availability-groups-powershell)
-
-
-- [Azure Management Portal](/documentation/articles/virtual-machines-sql-server-alwayson-availability-groups-gui)
-- [PowerShell](/documentation/articles/virtual-machines-sql-server-alwayson-availability-groups-powershell)
-
 
 <br/>
 
+
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+
+
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the classic deployment model. Microsoft recommends that most new deployments use the Resource Manager model.
+
 
 
 Azure virtual machines (VMs) can help database administrators to implement lower the cost of a high availability SQL Server system. This tutorial shows you how to implement an availability group using SQL Server AlwaysOn end-to-end inside an Azure environment. At the end of the tutorial, your SQL Server AlwaysOn solution in Azure will consist of the following elements:

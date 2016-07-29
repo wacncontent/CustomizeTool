@@ -1,18 +1,18 @@
 <properties
-   pageTitle="Azure Resource Manager support for Traffic Manager Preview | Azure "
-   description="Using powershell for Traffic Manager with Azure Resource Manager (ARM) in preview"
+   pageTitle="Azure Resource Manager support for Traffic Manager | Azure "
+   description="Using powershell for Traffic Manager with Azure Resource Manager (ARM)"
    services="traffic-manager"
    documentationCenter="na"
-   authors="joaoma"
+   authors="jtuliani"
    manager="carmonm"
    editor="tysonn" />
 <tags
 	ms.service="traffic-manager"
-	ms.date="02/02/2016"
+	ms.date="03/17/2016"
 	wacn.date=""/>
 
-# Azure Resource Manager support for Azure Traffic Manager Preview
-Azure Resource Manager (ARM) is the new management framework for services in Azure.  Azure Traffic Manager profiles can now be managed using Azure Resource Manager-based APIs and tools. To learn more about Azure Resource Manager, see [Using Resource groups to manage your Azure resources](/documentation/articles/azure-preview-portal-using-resource-groups).
+# Azure Resource Manager support for Azure Traffic Manager
+Azure Resource Manager (ARM) is the new management framework for services in Azure.  Azure Traffic Manager profiles can now be managed using Azure Resource Manager-based APIs and tools. 
 
 ## Resource model
 
@@ -20,7 +20,7 @@ Azure Traffic Manager is configured using a collection of settings called a Traf
 
 In ARM, each Traffic Manager profile is represented by an ARM resource, of type 'TrafficManagerProfiles', managed by the 'Microsoft.Network' resource provider.  At the REST API level, the URI for each profile is as follows:
 
-	https://manage.windowsazure.cn/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Network/trafficManagerProfiles/{profile-name}?api-version={api-version}
+	https://management.chinacloudapi.cn/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Network/trafficManagerProfiles/{profile-name}?api-version={api-version}
 
 ## Comparison with the Azure Traffic Manager Service Management API
 
@@ -37,17 +37,15 @@ However, whilst the features remain the same, some terminology has changed:
 ## Limitations
 There are currently a small number of limitations in the ARM support for Azure Traffic Manager:
 
-- Traffic Manager profiles created using the existing (non-ARM) Azure Service Management (ASM) API, tools and 'classic' portal are not available via ARM, and vice versa. Migration of profiles from ASM to ARM APIs is not currently supported, other than by deleting and re-creating the profile.
+- Traffic Manager profiles created using the existing (non-ARM) Azure Service Management (ASM) API, tools and  'classic'  Classic   portal  Management Portal  are not available via ARM, and vice versa. Migration of profiles from ASM to ARM APIs is not currently supported, other than by deleting and re-creating the profile.
 
-- 'Nested' Traffic Manager endpoints are supported via the ARM API, ARM PowerShell and ARM-mode Azure CLI.  They are not currently supported in the Azure Management Portal (which also uses the ARM API).
-
-- Traffic Manager endpoints of type 'AzureEndpoints', when referencing a Web App, can only reference the default (production) [Web App slot](/documentation/articles/web-sites-staged-publishing).  Custom slots are not yet supported.  As a workaround, custom slots can be configured using the 'ExternalEndpoints' type. 
+- Traffic Manager endpoints of type 'AzureEndpoints', when referencing a Web App, can only reference the default (production) [Web App slot](/documentation/articles/web-sites-staged-publishing/).  Custom slots are not yet supported.  As a workaround, custom slots can be configured using the 'ExternalEndpoints' type. 
 
 ## Setting up Azure PowerShell
 
 These instructions use Azure PowerShell, which needs to be configured using the steps below.
 
-For non-PowerShell users, or non-Windows users, analogous operations can be executed via the Azure CLI.  All operations, with the exception of managing 'nested' Traffic Manager profiles, are also available via the Azure Management Portal.
+For non-PowerShell users, or non-Windows users, analogous operations can be executed via the Azure CLI.  All operations, with the exception of managing 'nested' Traffic Manager profiles, are also available via the Azure portal.
 
 ### Step 1
 Install the latest Azure PowerShell, available from the Azure downloads page.
@@ -103,7 +101,7 @@ The parameters are as follows:
 
 - MonitorPath: Specifies the path relative to the endpoint domain name used to probe for endpoint health.
 
-The cmdlet creates a Traffic Manager profile in Azure Traffic Manager and returns a corresponding profile object.  At this point, the profile does not contain any  endpoints—see  endpoints-see  [Adding Traffic Manager Endpoints](#adding-traffic-manager-endpoints) for details of how to add endpoints to a Traffic Manager profile.
+The cmdlet creates a Traffic Manager profile in Azure Traffic Manager and returns a corresponding profile object.  At this point, the profile does not contain any endpoints--see [Adding Traffic Manager Endpoints](#adding-traffic-manager-endpoints) for details of how to add endpoints to a Traffic Manager profile.
 
 ## Get a Traffic Manager Profile
 
@@ -132,9 +130,9 @@ All profile properties can be changed, with the exception that the profile Relat
 
 For example, to change the profile TTL:
 
-	PS C:\> $profile = Get-AzureTrafficManagerProfile -Name MyProfile -ResourceGroupName MyRG
+	PS C:\> $profile = Get-AzureRmTrafficManagerProfile -Name MyProfile -ResourceGroupName MyRG
 	PS C:\> $profile.Ttl = 300
-	PS C:\> Set-AzureTrafficManagerProfile -TrafficManagerProfile $profile
+	PS C:\> Set-AzureRmTrafficManagerProfile -TrafficManagerProfile $profile
 
 
 ## Add Traffic Manager Endpoints
@@ -219,7 +217,7 @@ Nesting Traffic Manager enable you to create more flexible and powerful traffic-
 
 Nested endpoints are configured at the parent profile, using a specific endpoint type, 'NestedEndpoints'.  When specifying nested endpoints:
  - The endpoint (i.e. child profile) must be specified using the 'targetResourceId' parameter <BR>
- - The 'EndpointLocation' is required if the 'Performance' traffic-routing method is used, otherwise it is optional.  The value must be a [valid Azure region name](http://azure.microsoft.com/regions/).<BR>
+ - The 'EndpointLocation' is required if the 'Performance' traffic-routing method is used, otherwise it is optional.  The value must be a  [valid  valid  Azure region  name](http://azure.microsoft.com/regions/).<BR>  name.<BR> 
  - The 'Weight' and 'Priority' are optional, as for Azure endpoints.<BR>
  - The 'MinChildEndpoints' parameter is optional, default '1'.  If the number of available endpoints in the child profile falls below this threshold, the parent profile will consider the child profile 'degraded' and divert traffic to the other parent profile endpoints.<BR>
 
@@ -305,16 +303,16 @@ To delete a Traffic Manager profile, use the Remove-AzureRmTrafficManagerProfile
 This cmdlet will prompt for confirmation.  The optional '-Force' switch can be used to suppress this prompt.
 The profile to be deleted can also be specified using a profile object:
 
-	PS C:\> $profile = Get-AzureTrafficManagerProfile -Name MyProfile -ResourceGroupName MyRG
-	PS C:\> Remove-AzureTrafficManagerProfile -TrafficManagerProfile $profile [-Force]
+	PS C:\> $profile = Get-AzureRmTrafficManagerProfile -Name MyProfile -ResourceGroupName MyRG
+	PS C:\> Remove-AzureRmTrafficManagerProfile -TrafficManagerProfile $profile [-Force]
 
 This sequence can also be piped:
 
-	PS C:\> Get-AzureTrafficManagerProfile -Name MyProfile -ResourceGroupName MyRG | Remove-AzureTrafficManagerProfile [-Force]
+	PS C:\> Get-AzureRmTrafficManagerProfile -Name MyProfile -ResourceGroupName MyRG | Remove-AzureRmTrafficManagerProfile [-Force]
 
 ## Next steps
 
-[Traffic Manager monitoring](/documentation/articles/traffic-manager-monitoring)
+[Traffic Manager monitoring](/documentation/articles/traffic-manager-monitoring/)
 
-[Traffic Manager performance considerations](/documentation/articles/traffic-manager-performance-considerations)
+[Traffic Manager performance considerations](/documentation/articles/traffic-manager-performance-considerations/)
  

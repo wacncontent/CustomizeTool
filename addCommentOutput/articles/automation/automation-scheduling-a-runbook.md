@@ -8,7 +8,7 @@
    editor="tysonn" />
 <tags
 	ms.service="automation"
-	ms.date="10/01/2015"
+	ms.date="02/03/2016"
 	wacn.date=""/>
 
 # Scheduling a runbook in Azure Automation
@@ -17,11 +17,11 @@ To schedule a runbook in Azure Automation to start at a specified time, you link
 
 ## Creating a schedule
 
-You can either create a new schedule with the Azure Management Portal or with Windows PowerShell. You also have the option of creating a new schedule when you link a runbook to a schedule using the Azure Management Portal.
+You can either create a new schedule with the Azure  Classic  Management Portal or with Windows PowerShell. You also have the option of creating a new schedule when you link a runbook to a schedule using the Azure  Classic  Management Portal.
 
-### To create a new schedule with the Azure Management Portal
+### To create a new schedule with the Azure  Classic  Management Portal
 
-1. In the Azure Management Portal, select Automation and then then click the name of an automation account.
+1. In the Azure  Classic  Management Portal, select Automation and then then click the name of an automation account.
 1. Select the **Assets** tab.
 1. At the bottom of the window, click **Add Setting**.
 1. Click **Add Schedule**.
@@ -43,9 +43,9 @@ The following sample commands show how to create a new schedule that runs each d
 
 A runbook can be linked to multiple schedules, and a schedule can have multiple runbooks linked to it. If a runbook has parameters, then you can provide values for them. You must provide values for any mandatory parameters and may provide values for any optional parameters.  These values will be used each time the runbook is started by this schedule.  You can attach the same runbook to another schedule and specify different parameter values.
 
-### To link a schedule to a runbook with the Azure Management Portal
+### To link a schedule to a runbook with the Azure  Classic  Management Portal
 
-1. In the Azure Management Portal, select **Automation** and then then click the name of an automation account.
+1. In the Azure  Classic  Management Portal, select **Automation** and then then click the name of an automation account.
 1. Select the **Runbooks** tab.
 1. Click on the name of the runbook to schedule.
 1. Click the **Schedule** tab.
@@ -54,7 +54,7 @@ A runbook can be linked to multiple schedules, and a schedule can have multiple 
 
 ### To link a schedule to a runbook with Windows PowerShell
 
-You can use the [Register-AzureAutomationScheduledRunbook](http://msdn.microsoft.com/zh-cn/library/azure/dn690265.aspx) to link a schedule to a runbook. You can specify values for the runbook's parameters with the Parameters parameter. See [Starting a Runbook in Azure Automation](/documentation/articles/automation-starting-a-runbook) for more information on specifying parameter values.
+You can use the [Register-AzureAutomationScheduledRunbook](http://msdn.microsoft.com/zh-cn/library/azure/dn690265.aspx) to link a schedule to a runbook. You can specify values for the runbook's parameters with the Parameters parameter. See [Starting a Runbook in Azure Automation](/documentation/articles/automation-starting-a-runbook/) for more information on specifying parameter values.
 
 The following sample commands show how to link a schedule to a runbook with parameters.
 
@@ -68,11 +68,11 @@ The following sample commands show how to link a schedule to a runbook with para
 
 When you disable a schedule, any runbooks linked to it will no longer run on that schedule. You can manually disable a schedule or set an expiration time for Hourly and Daily schedules when you create them. When the expiration time is reached, the schedule will be disabled.
 
-### To disable a schedule with the Azure Management Portal
+### To disable a schedule with the Azure  Classic  Management Portal
 
-You can disable a schedule in the Azure Management Portal from the Schedule Details page for the schedule.
+You can disable a schedule in the Azure  Classic  Management Portal from the Schedule Details page for the schedule.
 
-1. In the Azure Management Portal, select Automation and then then click the name of an automation account.
+1. In the Azure  Classic  Management Portal, select Automation and then then click the name of an automation account.
 1. Select the Assets tab.
 1. Click the name of a schedule to open its detail page.
 2. Change **Enabled** to **No**.
@@ -89,5 +89,5 @@ The following sample commands show how to disable a schedule.
 
 ## Related articles
 
-- [Schedule Assets in Azure Automation](/documentation/articles/automation-schedules)
-- [Starting a Runbook in Azure Automation](/documentation/articles/automation-starting-a-runbook) 
+- [Schedule Assets in Azure Automation](/documentation/articles/automation-schedules/)
+- [Starting a Runbook in Azure Automation](/documentation/articles/automation-starting-a-runbook/)

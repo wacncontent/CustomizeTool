@@ -11,7 +11,7 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="01/14/2016"
+	ms.date="06/20/2016"
 	wacn.date=""/>
 
 # How to Create an Azure Environment #
@@ -29,23 +29,27 @@ ASE creation requires customers to provide the following pieces of information:
 - ASE resource pool definition
 
 There are some important details to each of those items.
+
 - The name of the ASE will be used in the subdomain for any apps made in that ASE
 - All apps made in an ASE will be in the same subscription as the ASE itself
 - If you do not have access to the subscription used to make the ASE you cannot use the ASE to create apps
 - VNETs used to host an ASE must be Regional classic "v1" VNETs 
-- The subnet used to host the ASE must not contain any other compute resources
+- **The subnet used to host the ASE must not contain any other compute resources**
 - Only one ASE can exist in a subnet
+- With a recent change made in June 2016, ASEs can now be deployed into virtual networks that use *either* public address ranges, *or*
+RFC1918 address spaces (i.e. private addresses).  In order to use a virtual network with a public address range, you will
+need to create the subnet ahead of time, and then select the subnet in the ASE creation UX.
 
 Each ASE deployment is a Hosted Service that Azure manages and maintains.  The compute resources hosting the ASE system roles are not accessible to the customer though the customer does manage the quantity of instances and their sizes.  
 
-There are two ways to access the ASE creation UI.  It can be found by searching in the Azure gallery for ***Azure Environment*** or by going through New -> Web + Mobile.  
+There are two ways to access the ASE creation UI.  It can be found by searching in the Azure  Marketplace  gallery  for ***Azure Environment*** or by going through New -> Web + Mobile.
 
 If you want the VNET to have a separate resource group from the ASE then you need to first create the VNET separately and then select it during ASE creation.  Also, if you want to create a subnet in an existing VNET during ASE creation, the ASE has to then be in the same resource group as the VNET.
 
 ### Quick create ###
 The creation experience for an ASE does have a set of defaults to enable a quick creation experience.  You can quickly create an ASE by simply entering a name for the deployment.  This will in turn create an ASE in the region closest to you with a:
 
-- VNET with 512 addresses 
+- VNET with 512 addresses using an RFC1918 private address space
 - subnet with 256 addresses
 - Front End pool with 2 P2 compute resources
 - Worker pool with 2 P1 compute resources
@@ -60,7 +64,11 @@ The name that is specified for the ASE will be used for the apps created in the 
 Having the defaults is very useful for a certain number of situations but often you will need to adjust something.  The next few sections walk through each of the ASE related configuration sections.
 
 ### Virtual Network ###
-While there is a quick create capability that will automatically create a new VNET, the feature also supports selection of an existing VNET and manual creation of a VNET.  You can select an existing VNET (only classic "v1" virtual networks are supported at this time) if it is large enough to support an Azure Environment deployment.  The VNET must have at least 8 addresses or more.  
+While there is a quick create capability that will automatically create a new VNET, the feature also supports selection of an existing VNET and manual creation of a VNET.  You can select an existing VNET (only classic "v1" virtual networks are supported at this time) if it is large enough to support an Azure Environment deployment.  The VNET must have at least 8 addresses or more. 
+
+With a recent change made in June 2016, ASEs can now be deployed into virtual networks that use *either* public address ranges, *or*
+RFC1918 address spaces (i.e. private addresses).  In order to use a virtual network with a public address range, you will
+need to create the subnet ahead of time, and then select the subnet in the ASE creation UX. 
 
 If you do select a pre-existing VNET you will also have to specify a subnet to use or create a new one.  The subnet needs to have 8 addresses or more and cannot have any other resources already in it.  ASE creation will fail if you try to use a subnet that already has VMs allocated into it.  
 
@@ -140,6 +148,7 @@ There are additional dependencies that are not available for customization such 
 
 
 ## Getting started
+All articles and How-To's for Azure Environments are available in the [README for Application Service Environments](/documentation/articles/app-service-app-service-environments-readme/).
 
 To get started with Azure Environments, see [Introduction to Azure Environments][WhatisASE]
 
@@ -158,6 +167,6 @@ For more information about the Azure platform, see [Azure Web App][AzureAppServi
 <!--Links-->
 [WhatisASE]: /documentation/articles/app-service-app-service-environment-intro/
 [ASEConfig]: /documentation/articles/app-service-web-configure-an-app-service-environment/
-[AppServicePricing]: /home/features/web-site/#price 
+[AppServicePricing]: /home/features/web-site/pricing/ 
 [AzureAppService]: /documentation/services/web-sites/ 
 [ASEAutoscale]: /documentation/articles/app-service-environment-auto-scale/

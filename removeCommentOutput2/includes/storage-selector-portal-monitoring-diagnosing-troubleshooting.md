@@ -1,3 +1,3 @@
 > [AZURE.SELECTOR]
-<!--- [Azure Management Portal](/documentation/articles/storage-monitoring-diagnosing-troubleshooting)-->
-- [Azure Management Portal](/documentation/articles/storage-monitoring-diagnosing-troubleshooting-classic-portal)
+<!--- [Azure Portal](../articles/storage/storage-monitoring-diagnosing-troubleshooting.md)-->
+- [Azure Classic Portal](/documentation/articles/storage-monitoring-diagnosing-troubleshooting-classic-portal/)

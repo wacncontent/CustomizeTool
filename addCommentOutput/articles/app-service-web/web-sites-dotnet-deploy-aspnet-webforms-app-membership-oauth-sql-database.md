@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="12/10/2015"
+	ms.date="02/29/2016"
 	wacn.date=""/>
 
 
@@ -80,7 +80,7 @@ In this tutorial your web app will run in a shared hosting environment, which me
 
 Azure SQL Database is a cloud-based relational database service that is built on SQL Server technologies. The tools and applications that work with SQL Server also work with SQL Database.
 
-1. In the [Azure Management Portal](https://manage.windowsazure.cn/), click **Web Apps** in the left tab, and then click **New**.  
+1. In the [Azure classic portal](https://manage.windowsazure.cn/), click **Web Apps** in the left tab, and then click **New**.  
 	![Web Platform Installer](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/Intro-SecureWebForms-02.png)
 2. Click **Web App**, and then click **Custom Create**.  
 	![Custom Create](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/Intro-SecureWebForms-03.png)  
@@ -102,10 +102,8 @@ Alternatively, if you previously created a SQL Server database, you can select t
 If you selected **New SQL Database server** you aren't entering an existing name and password here, you're entering a new name and password that you're defining now to use later when you access the database. If you selected a SQL Server you've created previously, you'll be prompted for the password to the previous SQL Server account name you created. For this tutorial, you won't check the **Advanced** box.
 12. Click the check mark at the bottom right of the box to indicate you're finished.
 
-The **Azure Management Portal** returns to the **Web Apps** page, and the **Status** column shows that the site is being created. Shortly after (typically less than a minute), the **Status** column shows that the site was successfully created. In the navigation bar at the left, the number of sites you have in your account appears next to the **Web App** icon, and the number of databases appears next to the **SQL Databases** icon.
-
-##Create an ASP.NET Web Forms Application 
-
+The **Azure classic portal** returns to the **Web Apps** page, and the **Status** column shows that the site is being created. Shortly after (typically less than a minute), the **Status** column shows that the site was successfully created. In the navigation bar at the left, the number of sites you have in your account appears next to the **Web App** icon, and the number of databases appears next to the **SQL Databases** icon.
+ ##Create an ASP.NET Web Forms Application 
 
 ##<a name="Create-an-ASP.NET-Web-Forms-Application"></a>Create an ASP.NET Web Forms Application 
 
@@ -774,8 +772,6 @@ Now that the web application is complete, you can publish it to Azure.
 5. Select the existing web app that you created earlier in this tutorial from the **Existing Web Apps** dropdown box and click the **OK** button.  
 	![Select Existing Web Site dialog box](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms25.png)  
 	If you are asked to save changes make to the profile, select **Yes**.
-6. Click the **Settings** tab.  
-	![Select Existing Web Site dialog box](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms26.png)  
 
 
 
@@ -783,7 +779,12 @@ Now that the web application is complete, you can publish it to Azure.
 
 3. From the **Profile** tab, select **Import**, if not imported yet. and choose the previously downloaded "publish profile" 
 
-6. Click the **Settings** tab. 
+
+6. Click the **Settings** tab.  
+
+	![Select Existing Web Site dialog box](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms26.png)  
+
+
 
 	![Select Existing Web Site dialog box](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms26.png)  
 
@@ -832,7 +833,7 @@ In order to prevent other people from registering and using your sample applicat
 3. Right click on each web app instance and select **Stop Web App**.  
 	![Stop Web Site menu item](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms26a.png)  
 
-	Alternatively, from the Azure Management Portal, you can select the web app, then click the **stop** icon at the bottom of the page.  
+	Alternatively, from the Azure classic portal, you can select the web app, then click the **stop** icon at the bottom of the page.  
 	![Add New Contact Page](./media/web-sites-dotnet-deploy-aspnet-webforms-app-membership-oauth-sql-database/SecureWebForms26b.png)  
 
 ##Review the Database 

@@ -16,7 +16,7 @@ The following table compares the connection strings that your C# program needs t
 
 | Connection string for<br/>Azure SQL Database | Connection string for<br/>Microsoft SQL Server |
 | :-- | :-- |
-| Server=**tcp:**{your_serverName_here}**.database.chinacloudapi.cn,1433**;<br/>User ID={your_loginName_here}**@{your_serverName_here}**;<br/>Password={your_password_here};<br/>**Database={your_databaseName_here};**<br/>**Connection Timeout=30**;<br/>**Encrypt=True**;<br/>**TrustServerCertificate=False**; | Server={your_serverName_here};<br/>User ID={your_loginName_here};<br/>Password={your_password_here}; |
+| Server=**tcp:**{your_serverName_here}**.database.windows.net,1433**;<br/>User ID={your_loginName_here}**@{your_serverName_here}**;<br/>Password={your_password_here};<br/>**Database={your_databaseName_here};**<br/>**Connection Timeout=30**;<br/>**Encrypt=True**;<br/>**TrustServerCertificate=False**; | Server={your_serverName_here};<br/>User ID={your_loginName_here};<br/>Password={your_password_here}; |
 
 
 The **Database=** is optional for SQL Server, but is required for SQL Database.

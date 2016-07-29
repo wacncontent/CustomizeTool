@@ -1,14 +1,14 @@
 <properties 
    pageTitle="Learning PowerShell Workflow"
-   description="Runbooks in Azure Automation are based on Windows PowerShell Workflow.  This article is intended as a quick lesson for authors familiar with PowerShell to understand the specific differences between PowerShell and PowerShell Workflow."
+   description="This article is intended as a quick lesson for authors familiar with PowerShell to understand the specific differences between PowerShell and PowerShell Workflow."
    services="automation"
    documentationCenter=""
-   authors="bwren"
-   manager="stevenka"
+   authors="mgoedtel"
+   manager="jwhit"
    editor="tysonn" />
 <tags
 	ms.service="automation"
-	ms.date="10/01/2015"
+	ms.date="05/26/2016"
 	wacn.date=""/>
 
 # Learning Windows PowerShell Workflow
@@ -21,16 +21,16 @@ For complete details on the topics in this article, see [Getting Started with Wi
 
 ## Types of runbook
 
-<!-- deleted by customization
-There are two types of runbook in Azure Automation, *textual* and *graphical*.  You define the runbook type when you create the runbook, and you can't convert a runbook to the other type once it's been created.
+
+There are three types of runbook in Azure Automation, *PowerShell Workflow*, *PowerShell* and *graphical*.  You define the runbook type when you create the runbook, and you can't convert a runbook to the other type once it's been created.
 
-Textual runbooks are for users who prefer to work directly with the PowerShell workflow code either using the textual editor in Azure Automation or an offline editor such as PowerShell ISE. You should understand the information in this article if you are creating a textual runbook. 
+PowerShell workflow runbooks and PowerShell runbooks are for users who prefer to work directly with the PowerShell code either using the textual editor in Azure Automation or an offline editor such as PowerShell ISE. You should understand the information in this article if you are creating a PowerShell Workflow runbook. 
 
 Graphical runbooks allow you to create a runbook using the same activities and cmdlets but using a graphical interface that hides the complexities of the underlying PowerShell workflow.  Concepts in this article such as checkpoints and parallel execution still apply to graphical runbooks, but you won't have to worry about the detailed syntax. 
--->
-<!-- keep by customization: begin -->
-Windows Azure China currently only supports textual Runbook.
-<!-- keep by customization: end -->
+
+
+Azure China currently only supports textual PowerShell Workflow Runbook.
+
 
 ## Basic structure of a workflow
 
@@ -98,10 +98,12 @@ Another option is to use another cmdlet that performs the same functionality as 
 	}
 
 
+
 ## InlineScript
-<!-- keep by customization: begin -->
-<a name="inlinescript"></a>
-<!-- keep by customization: end -->
+
+
+##<a name="InlineScript"></a> InlineScript
+
 
 The **InlineScript** activity is useful when you need to run one or more commands as traditional PowerShell script instead of PowerShell workflow.  While commands in a workflow are sent to Windows Workflow Foundation for processing, commands in an InlineScript block are processed by Windows PowerShell. 
 
@@ -133,7 +135,7 @@ You can pass values into an InlineScript block, but you must use **$Using** scop
 		$ServiceName = "MyService"
 	
 		$Output = InlineScript {
-			$Service = Get-Service -Name $Using:MyService
+			$Service = Get-Service -Name $Using:ServiceName
 			$Service.Stop()
 			$Service
 		}
@@ -151,10 +153,12 @@ While InlineScript activities may be critical in certain workflows, they do not 
 For further details on using InlineScript, see [Running Windows PowerShell Commands in a Workflow](http://technet.microsoft.com/zh-cn/library/jj574197.aspx) and [about_InlineScript](http://technet.microsoft.com/zh-cn/library/jj649082.aspx).
 
 
+
 ## Parallel processing
-<!-- keep by customization: begin -->
-<a name="parallel-execution"></a>
-<!-- keep by customization: end -->
+
+
+##<a name="parallel-processing" id="parallel-execution"></a> Parallel processing
+
 
 One advantage of Windows PowerShell Workflows is the ability to perform a set of commands in parallel instead of sequentially as with a typical script. 
 
@@ -216,16 +220,14 @@ The following example is similar to the previous example copying files in parall
 > [AZURE.NOTE]  We do not recommend running child runbooks in parallel since this has been shown to give unreliable results.  The output from the child runbook sometimes will not show up, and settings in one child runbook can affect the other parallel child runbooks 
 
 
+
 ## Checkpoints
-<!-- deleted by customization
-
-A *checkpoint* is a snapshot of the current state of the workflow that includes the current value for variables and any output generated to that point. If a workflow ends in error or is [suspended](/documentation/articles/suspending-a-workflow), then the next time it is run it will start from its last checkpoint instead of the start of the worfklow.  You can set a checkpoint in a workflow with the **Checkpoint-Workflow** activity.
--->
-<!-- keep by customization: begin -->
-<a name="Checkpoints"></a>
+
+
+##<a name="Checkpoints"></a> Checkpoints
+
 
 A *checkpoint* is a snapshot of the current state of the workflow that includes the current value for variables and any output generated to that point. If a workflow ends in error or is suspended, then the next time it is run it will start from its last checkpoint instead of the start of the worfklow.  You can set a checkpoint in a workflow with the **Checkpoint-Workflow** activity.
-<!-- keep by customization: end -->
 
 In the following sample code, an exception occurs after Activity2 causing the workflow to end. When the workflow is run again, it starts by running Activity2 since this was just after the last checkpoint set.
 
@@ -254,11 +256,9 @@ The following example copies multiple files to a network location and sets a che
 	}
 
 
-
 For more information about checkpoints, see [Adding Checkpoints to a Script Workflow](http://technet.microsoft.com/zh-cn/library/jj574114.aspx).
 
 
+## Next Steps
 
-## Related articles
-
-- [Getting Started with Windows PowerShell Workflow](http://technet.microsoft.com/zh-cn/library/jj134242.aspx) 
+- To get started with PowerShell workflow runbooks, see [My first PowerShell workflow runbook](/documentation/articles/automation-first-runbook-textual/) 

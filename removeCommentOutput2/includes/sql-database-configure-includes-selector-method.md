@@ -1,6 +1,6 @@
 > [AZURE.SELECTOR-LIST (Method)]
-- [Azure Management Portal](/documentation/articles/sql-database-configure-firewall-settings)
-- [Transact-SQL](/documentation/articles/sql-database-configure-firewall-settings-tsql)
-- [PowerShell](/documentation/articles/sql-database-configure-firewall-settings-powershell)
-- [REST API](/documentation/articles/sql-database-configure-firewall-settings-rest)
+- [Azure Portal](sql-database-configure-firewall-settings.md)
+- [Transact-SQL](sql-database-configure-firewall-settings-tsql.md)
+- [PowerShell](sql-database-configure-firewall-settings-powershell.md)
+- [REST API](sql-database-configure-firewall-settings-rest.md)
 

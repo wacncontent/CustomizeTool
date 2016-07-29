@@ -9,26 +9,22 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="12/10/2015"
+	ms.date="02/25/2016"
 	wacn.date=""/>
 
 # Scale a web app in Azure #
 
-For increased performance and throughput for your web apps on Azure, you can use the [Azure Management Portal](https://manage.windowsazure.cn/) to scale your [Azure Web App](/documentation/services/web-sites/) plan from **Free** mode to **Shared**, **Basic**, **Standard** , or **Premium**  mode.
+For increased performance and throughput for your web apps on Azure, you can use the [Azure  Portal](http://portal.azure.cn)  Classic Management Portal](http://manage.windowsazure.cn)  to scale your [Azure Web App](/documentation/services/web-sites/) plan from **Free** mode to **Shared**, **Basic**,  or  **Standard** , or **Premium**  mode.
 
 
 [AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)]
-
-Scaling up on Azure web apps involves two related actions: changing your App Service plan mode to a higher level of service, and configuring certain settings after you have switched to the higher level of service. Both topics are covered in this article. Higher service tiers like **Standard** and **Premium** modes offer greater robustness and flexibility in determining how your resources on Azure are used.
 
-
 
-Scaling up on Azure web apps involves two related actions: changing your App Service plan mode to a higher level of service, and configuring certain settings after you have switched to the higher level of service. Both topics are covered in this article. Higher service tiers like **Standard**  modes offer greater robustness and flexibility in determining how your resources on Azure are used.
-
+Scaling up on Azure web apps involves two related actions: changing your App Service plan mode to a higher level of service, and configuring certain settings after you have switched to the higher level of service. Both topics are covered in this article. Higher service tiers like **Standard**  and **Premium** modes  mode  offer greater robustness and flexibility in determining how your resources on Azure are used.
 
 The scale settings take only seconds to apply and affect all web apps in your App Service plan. They do not require your code to be changed or your applications to be redeployed.
 
- For information about App Service plans, see [What is an App Service Plan?](/documentation/articles/web-sites-web-hosting-plan-overview) and [Azure App Service Plans In-Depth Overview](/documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview).  For information the pricing and features of individual App Service plans, see [Azure Pricing Details](/home/features/web-site/#price).
+ For information about App Service plans, see [What is an App Service Plan?](/documentation/articles/app-service-how-works-readme/) and [Azure App Service Plans In-Depth Overview](/documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview/).  For information the pricing and features of individual App Service plans, see [Azure Pricing Details](/home/features/web-site/pricing/).
 
 
 > [AZURE.NOTE] Before switching a web app from the **Free** mode to **Basic**, **Standard**, or **Premium** mode, you must first remove the spending caps in place for your Azure subscription. To view or change options for your Azure subscription, see [Azure Subscriptions][azuresubscriptions].
@@ -39,10 +35,10 @@ The scale settings take only seconds to apply and affect all web apps in your Ap
 ## Scaling to Shared or Basic mode
 <!-- ===================================== -->
 
-1. In your browser, open the [Azure Management Portal][portal].
+1. In your browser, open the [Azure  Classic Management  Portal][portal].
 	
 
-2. In your web app's blade, click **All settings**, then click **Scale**, then click **Upgrade from a Free plan to add instances and get better performance**.
+2. In your web app's blade, click **All settings**, then click **Scale Up**.
 	
 	![Choose Plan][ChooseWHP]
 	
@@ -50,7 +46,7 @@ The scale settings take only seconds to apply and affect all web apps in your Ap
 	
 	The **Notifications** tab will flash a green **SUCCESS** once the operation is complete. 
 	
-5. Slide the **Instance** bar from left to right to increase the number of instances, then click **Save** in the command bar. The instance size option is not available in **Shared** mode. For more information about these instance sizes, see [Virtual Machine and Cloud Service Sizes for Azure][vmsizes].
+5. In settings click on **Scale out**, select *instance count that I choose manually* in the drop down, slide the **Instance** bar from left to right to increase the number of instances, then click **Save** in the command bar. The instance size option is not available in **Shared** mode. For more information about these instance sizes, see [Azure Pricing][vmsizes].
 	
 	![Instance size for Basic mode][ChooseBasicInstances]
 	The **Notifications** tab will flash a green **SUCCESS** once the operation is complete. 
@@ -70,7 +66,7 @@ The scale settings take only seconds to apply and affect all web apps in your Ap
 	
 	The **App Service Plan Sites** section shows a short list of sites in the current plan. All sites in the current plan will be changed to the App Service plan tier that you select.
 	
-5. In the **Capacity** section, choose the **Instance Size**. The available options are **Small**, **Medium** or **Large**. The instance size option is not available in Shared mode. For more information about these instance sizes, see [Virtual Machine](/documentation/articles/virtual-machines-size-specs) and [Cloud Service](/documentation/articles/cloud-services-sizes-specs) Sizes for Azure.
+5. In the **Capacity** section, choose the **Instance Size**. The available options are **Small**, **Medium** or **Large**. The instance size option is not available in Shared mode. For more information about these instance sizes, see [Virtual Machine](/documentation/articles/virtual-machines-linux-sizes/) and [Cloud Service](/documentation/articles/cloud-services-sizes-specs/) Sizes for Azure.
 	
 	![Instance size for Basic mode][ChooseBasicInstanceSize]
 	
@@ -100,49 +96,50 @@ The scale settings take only seconds to apply and affect all web apps in your Ap
 
 
 1. To scale to **Standard** or **Premium** mode, follow the same initial steps as when scaling to **Shared** or **Basic**, and then choose a **Standard** or **Premium** mode in **Choose your pricing tier**, then click **Select**. 
-	
-	The **Notifications** tab will flash a green **SUCCESS** once the operation is complete, and **Autoscale Mode** will be enabled.
+	The **Notifications** tab will flash a green **SUCCESS** once the operation is complete, and **Autoscale** will be enabled.
 	
 	![Scale in Standard or Premium Mode][ScaleStandard]
 	
-	You can still slide the **Instance** bar to manually scale to more instances, just like in **Basic** mode as shown above. However, here you will learn how to use **Autoscale Mode**. 
+	You can still slide the **Instance** bar to manually scale to more instances, just like in **Basic** mode as shown above. However, here you will learn how to autoscale your app. 
 	
-2. In **Autoscale Mode**, select **Performance** to autoscale based on performance metrics.
+2. In **Scale by**, select **schedule and performance rules** to autoscale your app.
 	
 	![Autoscale Mode set to Performance][Autoscale]
 	
-3. In **Instance Range**, move the two sliders to define the minimum and maximum number of instances to scale automatically for the App Service plan. For this tutorial, move the maximum slider to **6** instances.
+3. In **Settings**, click on **Default, scale 1-1**, move the two sliders to define the minimum and maximum number of instances to scale automatically for the App Service plan. For this tutorial, move the maximum slider to **6** instances.
 	
-4. Click **Save** in the command bar.
+4. Click **OK**.
 	
-4. Under **Target Metrics**, click **>** to configure autoscaling rules for the default metric.  
+4. In **Settings**, click **CPU Percentage > 80(increase count by 1)** to configure autoscaling rules for the default metric.  
 	
 	![Set Target Metrics][SetTargetMetrics]
 	
 	You can configure autoscaling rules for different performance metrics, including CPU, memory, disk queue, HTTP queue, and data flow. Here, you will configure autoscaling for CPU percentage that does the following:
 	
-	- Scale up by 1 instance if CPU is above 70% in the last 10 minutes
+	- Scale up by 1 instance if CPU is above 80% in the last 10 minutes
 	- Scale up by 3 instances if CPU is above 90% in the last 5 minutes
 	- Scale down by 1 instance if CPU is below 50% in the last 30 minutes 
 	
 	
-4. Leave **Metric** dropdown as **CPU Percentage**.
+4. Leave **Metric name** dropdown as **CPU Percentage**.
 	
-5. In **Scale up rules**, configure the first rule by setting **Condition** to **Greater**, **Threshold** to **70** (%), **Over past** to **10** (minutes), **Scale up by** to **1** (instance), and **Cool down** to **10** (minutes). 
+5. In **Scale up rules**, configure the first rule by setting **Operator** to **Greater than**, **Threshold** to **70** (%), **Duration** to **10** (minutes), **Time aggregation** to Average, **Action** to **increase count by** to **1** (instance), and **Cool down** to **10** (minutes). 
 	
 	![Set First Autoscale Rule][SetFirstRule]
 	
 	>[AZURE.NOTE] The **Cool down** setting specifies how long this rule should wait after the previous scale action to scale again.
 	
-6. Click **Add Scale Up Rule**, then configure the second rule by setting **Condition** to **Greater**, **Threshold** to **90** (%), **Over past** to **1** (minutes), **Scale up by** to **3** (instance), and **Cool down** to **1** (minutes).
+6. Click **Add Rule**, then configure the second rule by setting **Operator** to **Greater than**, **Threshold** to **90** (%), **Duration** to **1** (minutes), **Time aggregation** to Average, **Action** to **increase count by**, **Value** to **3** (instance), and **Cool down** to **1** (minutes).
+
+7. Click **OK**.
 	
 	![Set Second Autoscale Rule][SetSecondRule]
 	
-5. In **Scale down rules**, configure the third rule by setting **Condition** to **Less**, **Threshold** to **50** (%), **Over past** to **30** (minutes), **Scale down by** to **1** (instance), and **Cool down** to **60** (minutes). 
+5. In **Settings**, click on **Add rule** to configure the third rule by setting **Operator** to **Less than**, **Threshold** to **50** (%), **Duration** to **30** (minutes), **Time aggregation** to **Average**,  **Action** to **decrease count by**,**Value** to **1** (instance), and **Cool down** to **60** (minutes). 
 	
 	![Set Third Autoscale Rule][SetThirdRule]
 	
-7. Click **Save** in the command bar. Your autoscale rule should now be reflected in the **Scale** blade. 
+7. Click **OK**. Your autoscale rule should now be reflected in the **Scale setting** blade. 
 	
 	![Set Autoscale Rule Result][SetRulesFinal]
 
@@ -211,11 +208,11 @@ The scale settings take only seconds to apply and affect all web apps in your Ap
 ##Scaling a SQL Server Database connected to your web app
 
 If you have one or more SQL Server databases linked to your web app (regardless of App Service plan mode), you can quickly scale them based on your needs.
-1. To scale one of the linked databases, open your web app's blade in the [Azure Management Portal][portal]. In the **Essentials** collapsible dropdown, click the **Resource group** link. Then, in the **Summary** part of the resource group blade, clicked one of the linked databases.
+1. To scale one of the linked databases, open your web app's blade in the [Azure portal][portal]. In the **Essentials** collapsible dropdown, click the **Resource group** link. Then, in the **Summary** part of the resource group blade, clicked one of the linked databases.
 
 	![Linked database][ResourceGroup]
 	
-2. In your linked SQL Database blade, click the **Pricing tier** part, select one of the tiers based on your performance requirement, and click **Select**. 
+2. In your linked SQL Database blade, click the **Settings** > **Pricing tier** part, select one of the tiers based on your performance requirement, and click **Select**. 
 	
 	![Scale your SQL Database][ScaleDatabase]
 	
@@ -228,7 +225,7 @@ If you have one or more SQL Server databases linked to your web app (regardless 
 	
 	![Linked database][LinkedResources]
 	
-2. The link takes you to the SQL Server tab of the Azure Management Portal, where you can configure the **Edition** and **Maximum Size** of the database:
+2. The link takes you to the SQL Server tab of the Azure Classic Management Portal, where you can configure the **Edition** and **Maximum Size** of the database:
 	
 	![Scale your SQL Server database][ScaleDatabase]
 	
@@ -256,9 +253,9 @@ Depending on the web app's mode, the following developer-oriented features are a
 
 ### Web Endpoint Monitoring ###
 
-- Web endpoint monitoring is available in the **Basic**, **Standard** , and **Premium**  modes. For more information about web endpoint monitoring, see [How to Monitor Web Apps](/documentation/articles/web-sites-monitor).
+- Web endpoint monitoring is available in the **Basic**, **Standard** , and **Premium**  modes. For more information about web endpoint monitoring, see [How to Monitor Web Apps](/documentation/articles/web-sites-monitor/).
 
-- For detailed information about all of the remaining features in the App Service plans, including pricing and features of interest to all users (including developers), see [Azure Pricing Details](/home/features/web-site/#price).
+- For detailed information about all of the remaining features in the App Service plans, including pricing and features of interest to all users (including developers), see [Azure Pricing Details](/home/features/web-site/pricing/).
 
 
 >[AZURE.NOTE] If you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.
@@ -270,19 +267,19 @@ Depending on the web app's mode, the following developer-oriented features are a
 - To get started with Azure, see [Azure Trial](/pricing/1rmb-trial/).
 - For information on pricing, support, and SLA, visit the following links.
 	
-	[Data Transfers Pricing Details](/home/features/data-transfers/#price)
+	[Data Transfers Pricing Details](/pricing/details/data-transfer/)
 	
 	[Azure Support Plans](/support/plans/)
 	
 	[Service Level Agreements](/support/legal/sla/)
 	
-	[SQL Database Pricing Details](/home/features/sql-database/#price)
+	[SQL Database Pricing Details](/home/features/sql-database/pricing/)
 	
 	[Virtual Machine and Cloud Service Sizes for Azure][vmsizes]
 	
 
-	[Azure Pricing Details](/home/features/web-site/#price)
-	[Azure Pricing Details - SSL Connections](/home/features/web-site/#price)
+	[Azure Pricing Details](/home/features/web-site/pricing/)
+	[Azure Pricing Details - SSL Connections](/home/features/web-site/pricing/)
 
 - For information on Azure best practices, including building a scalable and resilient architecture, see [Best Practices: Azure Web Apps](http://blogs.msdn.com/b/windowsazure/archive/2014/02/10/best-practices-windows-azure-websites-waws.aspx).
 
@@ -296,16 +293,26 @@ Depending on the web app's mode, the following developer-oriented features are a
 * For a guide to the change from Websites to Azure see: [Azure and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
 
 
-	[Azure Web App Pricing Details](/home/features/web-site/#price)
+	[Azure Web App Pricing Details](/home/features/web-site/pricing/)
 
 - For information on Azure best practices, including building a scalable and resilient architecture, see [Best Practices: Azure Web Apps](https://azure.microsoft.com/zh-cn/blog/best-practices-windows-azure-websites-waws/).
 
 
 <!-- LINKS -->
-[vmsizes]:/documentation/articles/virtual-machines-size-specs/
-[SQLaccountsbilling]:/home/features/sql-database/#price
+
+[vmsizes]:/home/features/web-site/pricing/
+
+
+[vmsizes]:/documentation/articles/virtual-machines-linux-sizes/
+
+[SQLaccountsbilling]:/home/features/sql-database/pricing/
 [azuresubscriptions]:https://manage.windowsazure.cn
+
+[portal]: https://portal.azure.cn/
+
+
 [portal]: https://manage.windowsazure.cn/
+
 
 <!-- IMAGES -->
 

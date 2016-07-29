@@ -1,65 +1,53 @@
 <properties 
 	pageTitle="Configure web apps in Azure" 
 	description="How to configure a web app in Azure" 
-	services="app-service" 
+	services="app-service\web" 
 	documentationCenter="" 
-	authors="erikre" 
+	authors="rmcmurray" 
 	manager="wpickett" 
-	editor="jimbe"/>
+	editor=""/>
 
 <tags
 	ms.service="app-service"
-	ms.date="12/08/2015"
+	ms.date="06/02/2016"
 	wacn.date=""/>
 
-
 # Configure web apps in Azure #
+
+This topic explains how to configure a web app using the [Azure  Portal]  Classic Management Portal](https://manage.windowsazure.cn/) .
+
 
-
-This topic explains how to configure a web app using the [Azure Management Portal](https://manage.windowsazure.cn/).
-
 [AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)] 
 
 ## Application settings
 
-1. In the [Azure Management Portal](https://manage.windowsazure.cn/), open the blade for the web app.
+1. In the [Azure Portal], open the blade for the web app.
 2. Click **Configure**.
 3. Click **Application Settings**.
 
-![](./media/web-sites-configure/configure01.png)
+![Application Settings][configure01]
 
 The **Application settings** blade has settings grouped under several categories.
-
 
 
-In the Azure Management Portal, you can change the configuration options for websites and link to other Azure resources, such as a database.
-
-## Table of Contents ##
-- [How to: Change configuration options for a web site](#howtochangeconfig)
-- [How to: Configure a web site to use a SQL database](#howtoconfigSQL)
-- [How to: Configure a web site to use a MySQL database](#howtoconfigMySQL)
-- [How to: Configure a custom domain name](#howtodomain)
-- [How to: Configure a web site to use SSL](#howtoconfigSSL)
-- [Next steps](#next)
-
-
 ##<a name="howtochangeconfig"></a>How to: Change configuration options for a website
 
 <!-- HOW TO: CHANGE CONFIGURATION OPTIONS FOR A WEBSITE -->
 
 To set configuration options for a website:
 
-1. In the [Management Portal](https://manage.windowsazure.cn/), open the Website's management pages.
+1. In the [Classic Management Portal](https://manage.windowsazure.cn/), open the Website's management pages.
 1. Click the **Configure** tab.
 
 The **Configure** tab has the following sections:
 
+
 ### General settings
 
 **Framework versions**. Set these options if your app uses any these frameworks: 
 
 - **.NET  Framework**  Framework Version** : Set the .NET framework version.
--  **PHP**  **PHP Version** : Set the PHP version, or **OFF **to disable PHP.
+-  **PHP**  **PHP Version** : Set the PHP version, or **OFF** to disable PHP.
 
 - **Java**: Select the Java version or **OFF** to disable Java. Use the **Web Container** option to choose between Tomcat and Jetty versions.
 - **Python**: Select the Python version, or **OFF** to disable Python.
@@ -71,50 +59,44 @@ The **Configure** tab has the following sections:
 
 For technical reasons, enabling Java for your app disables the .NET, PHP, and Python options.
 
-
-**Managed Pipeline Mode**. Sets the IIS [pipeline mode](http://www.iis.net/learn/get-started/introduction-to-iis/introduction-to-iis-architecture#Application). Leave this set to Integrated (the default) unless you have a legacy website that requires an older version of IIS.
-
-
 <a name="platform"></a>
-**Platform**. Selects whether your  web app  application  runs in a 32-bit or 64-bit environment. The 64-bit environment requires Basic or Standard mode. Free and Shared modes always run in a 32-bit environment.
+**Platform**. Selects whether your web app runs in a 32-bit or 64-bit environment. The 64-bit environment requires Basic or Standard mode. Free and Shared modes always run in a 32-bit environment.
 
-**Web Sockets**. Set **ON** to enable the WebSocket protocol; for example, if your  web app  website  uses [ASP.NET SignalR](http://www.asp.net/signalr) or  [socket.io](/documentation/articles/web-sites-nodejs-chat-app-socketio)  [socket.io](/documentation/articles/web-sites-nodejs-chat-app-socketio/) .
+**Web Sockets**. Set **ON** to enable the WebSocket protocol; for example, if your web app uses [ASP.NET SignalR] or [socket.io].
 
 <a name="alwayson"></a>
-**Always On**. By default,  web apps  websites  are unloaded if they are idle for some period of time. This lets the system conserve resources. In Basic or Standard mode, you can enable **Always On** to keep the  app  site  loaded all the time. If your  app  site  runs continuous web jobs, you should enable **Always On**, or the web jobs may not run reliably . 
+**Always On**. By default, web apps are unloaded if they are idle for some period of time. This lets the system conserve resources. In Basic or Standard mode, you can enable **Always On** to keep the app loaded all the time. If your app runs continuous web jobs, you should enable **Always On**, or the web jobs may not run reliably.
 
 
-**Managed Pipeline Version**. Sets the IIS [pipeline mode](http://www.iis.net/learn/get-started/introduction-to-iis/introduction-to-iis-architecture#Application). Leave this set to Integrated (the default) unless you have a legacy app that requires an older version of IIS.
+**Managed Pipeline Version**. Sets the IIS [pipeline mode]. Leave this set to Integrated (the default) unless you have a legacy app that requires an older version of IIS.
 
 **Auto Swap**. If you enable Auto Swap for a deployment slot, Azure will automatically swap the web app into production when you push an update to that slot. For more information, see [Deploy to staging slots for web apps in Azure] (web-sites-staged-publishing.md).
 
-
 ### Debugging
 
-**Remote Debugging**. Enables remote debugging. When enabled, you can use the remote debugger in Visual Studio to connect directly to your web app. Remote debugging will remain enabled for 48 hours. 
-
+**Remote Debugging**. Enables remote debugging. When enabled, you can use the remote debugger in Visual Studio to connect directly to your web app. Remote debugging will remain enabled for 48 hours.
 
 
 **Edit in Visual Studio Online**. Enables live code editing with Visual Studio Online. If enabled, the Dashboard tab will show a link called **Edit in Visual Studio Online**, under the **Quick Glance** section. Click this link to edit your website directly online. If you need to authenticate, you can use your basic deployment credentials.
 
-	>[AZURE.NOTE]
-	> This feature is on preview.
+>[AZURE.NOTE]
+> This feature is on preview.
 
 Note: If you enable deployment from source control, it is possible for a deployment to overwrite changes you make in the Visual Studio Online editor. 
 
 ### Certificates
 
-In Basic or Standard mode, you can upload SSL certificates for a custom domain. For more information,, see [Enable HTTPS for an Azure website](href="/documentation/articles/web-sites-configure-ssl-certificate/). 
+In Basic or Standard mode, you can upload SSL certificates for a custom domain. For more information,, see [Enable HTTPS for an Azure website](/documentation/articles/web-sites-configure-ssl-certificate/). 
 
 Your uploaded certificates are listed here. After you upload a certificate, you can assign it to any website in your subscription and region. Wildcard certificates can be used for any site within the domain for which it is valid. A certificate can be deleted only if there are no active bindings for that certificate.
 
 ### Domain names
 
-View or add additional domain names for the  Website. For more information, see [Configuring a custom domain name for an Azure Website](/zh-cm/documentation/articles/web-sites-custom-domain-name/).
+View or add additional domain names for the  Website. For more information, see [Configuring a custom domain name for an Azure Website](/documentation/articles/web-sites-custom-domain-name/).
 
 ### SSL Bindings
 
-If you uploaded SSL certificates, you can bind them to custom domain names. For more information,, see [Enable HTTPS for an Azure Website](href="/documentation/articles/web-sites-configure-ssl-certificate/)
+If you uploaded SSL certificates, you can bind them to custom domain names. For more information,, see [Enable HTTPS for an Azure Website](/documentation/articles/web-sites-configure-ssl-certificate/)
 
 ### Deployments
 
@@ -175,14 +157,14 @@ This section contains name/value pairs that you web app will load on start up.
 
 Connection strings for linked resources. 
 
-For .NET apps, these connection strings are be injected into your .NET configuration `connectionStrings` settings at runtime, overriding existing entries where the key equals the linked database name. 
+For .NET apps, these connection strings are injected into your .NET configuration `connectionStrings` settings at runtime, overriding existing entries where the key equals the linked database name. 
 
 For PHP, Python, Java and Node applications, these settings will be available as environment variables at runtime, prefixed with the connection type. The environment variable prefixes are as follows: 
 
-- SQL Server: SQLCONNSTR_
-- MySQL: MYSQLCONNSTR_
-- SQL Database: SQLAZURECONNSTR_
-- Custom: CUSTOMCONNSTR_
+- SQL Server: `SQLCONNSTR_`
+- MySQL: `MYSQLCONNSTR_`
+- SQL Database: `SQLAZURECONNSTR_`
+- Custom: `CUSTOMCONNSTR_`
 
 For example, if a MySql connection string were named `connectionstring1`, it would be accessed through the environment variable `MYSQLCONNSTR_connectionString1`.
 
@@ -233,53 +215,66 @@ To view the log files, you must create FTP credentials, as follows:
 3. Enter a user name and password.
 4. Click **Save**.
 
-![](./media/web-sites-configure/configure03.png)
-
+![Set deployment credentials][configure03]
 
 The full FTP user name is "app\username" where *app* is the name of your web app. The username is listed in the web app blade, under **Essentials**.  
 
-![](./media/web-sites-configure/configure02.png)
+![FTP deployment credentials][configure02]
 
 ## Other configuration tasks
 
 ### SSL 
 
-In Basic or Standard mode, you can upload SSL certificates for a custom domain. For more information, see [Enable HTTPS for a web app](/documentation/articles/web-sites-configure-ssl-certificate). 
+In Basic or Standard mode, you can upload SSL certificates for a custom domain. For more information, see [Enable HTTPS for a web app]. 
 
 To view your uploaded certificates, click **Configure** > **Custom domains and SSL**.
 
 ### Domain names
 
-Add custom domain names for your web app. For more information, see [Configure a custom domain name for a web app in Azure](/documentation/articles/web-sites-custom-domain-name).
+Add custom domain names for your web app. For more information, see [Configure a custom domain name for a web app in Azure].
 
 To view your domain names, click **Configure** > **Custom domains and SSL**.
 
 ### Deployments
 
-- Set up continuous deployment. See [Using Git to deploy Web Apps in Azure](/documentation/articles/web-sites-publish-source-control)
-- Deployment slots. See [Deploy to Staging Environments for Web Apps in Azure](/documentation/articles/web-sites-staged-publishing)
+- Set up continuous deployment. See [Using Git to deploy Web Apps in Azure]
+- Deployment slots. See [Deploy to Staging Environments for Web Apps in Azure].
 
 To view your deployment slots, click **Configure** > **Deployment slots**.
-
 
 ### Monitoring
 
 In Basic or Standard mode, you can  test the availability of HTTP or HTTPS endpoints, from up to three geo-distributed locations. A monitoring test fails if the HTTP response code is an error (4xx or 5xx) or the response takes more than 30 seconds. An endpoint is considered available if the monitoring tests succeed from all the specified locations. 
 
-For more information, see [How to: Monitor web endpoint status](/documentation/articles/web-sites-monitor/).
+For more information, see [How to: Monitor web endpoint status].
 
->[AZURE.NOTE] If you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.
+>[AZURE.NOTE] If you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App], where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.
 
 
 ## Next steps
 
-- [Configure a custom domain name](/documentation/articles/web-sites-custom-domain-name)
-- [Enable HTTPS](/documentation/articles/web-sites-configure-ssl-certificate)
-- [Scale a web app in Azure](/documentation/articles/web-sites-scale)
-- [Monitoring basics for Web Apps in Azure](/documentation/articles/web-sites-monitor)
-
+- [Configure a custom domain name in Azure Web App]
+- [Enable HTTPS for an app in Azure Web App]
+- [Scale a web app in Azure]
+- [Monitoring basics for Web Apps in Azure]
 
-## What's changed
-* For a guide to the change from Websites to Azure see: [Azure and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
-
- 
+<!-- URL List -->
+
+[ASP.NET SignalR]: http://www.asp.net/signalr
+[Azure Portal]: https://portal.azure.cn/
+[Configure a custom domain name in Azure Web App]: /documentation/articles/web-sites-custom-domain-name/
+[Deploy to Staging Environments for Web Apps in Azure]: /documentation/articles/web-sites-staged-publishing/
+[Enable HTTPS for an app in Azure Web App]: /documentation/articles/web-sites-configure-ssl-certificate/
+[How to: Monitor web endpoint status]: http://go.microsoft.com/fwLink/?LinkID=279906
+[Monitoring basics for Web Apps in Azure]: /documentation/articles/web-sites-monitor/
+[pipeline mode]: http://www.iis.net/learn/get-started/introduction-to-iis/introduction-to-iis-architecture#Application
+[Scale a web app in Azure]: /documentation/articles/web-sites-scale/
+[socket.io]: /documentation/articles/web-sites-nodejs-chat-app-socketio/
+[Try Azure Web App]: https://tryappservice.azure.com/
+[Using Git to deploy Web Apps in Azure]: /documentation/articles/web-sites-publish-source-control/
+
+<!-- IMG List -->
+
+[configure01]: ./media/web-sites-configure/configure01.png
+[configure02]: ./media/web-sites-configure/configure02.png
+[configure03]: ./media/web-sites-configure/configure03.png

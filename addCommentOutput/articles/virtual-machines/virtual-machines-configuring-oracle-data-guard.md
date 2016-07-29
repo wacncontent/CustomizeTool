@@ -12,7 +12,12 @@
 
 #Configuring Oracle Data Guard for Azure
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]  Resource Manager model. 
+
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+
+
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the classic deployment model. Microsoft recommends that most new deployments use the Resource Manager model.
+
 
 
 This tutorial demonstrates how to setup and implement Oracle Data Guard in Azure Virtual Machines environment for high availability and disaster recovery. The tutorial focuses on one way replication for non-RAC Oracle databases.
@@ -27,7 +32,7 @@ In addition, the tutorial assumes that you have already implemented the followin
 
 - You have created two Virtual Machines (VMs) in Azure using the same platform provided Oracle Enterprise Edition image on Windows Server. For information, see [Creating an Oracle Database 12c Virtual Machine in Azure](/documentation/articles/virtual-machines-creating-oracle-webLogic-server-12c-virtual-machine) and [Azure Virtual Machines](/documentation/services/virtual-machines/). Make sure that the Virtual Machines are in the [same cloud service](/documentation/articles/virtual-machines-load-balance) and in the same [Virtual Network](azure.microsoft.com/documentation/services/networking/) to ensure they can access each other over the persistent private IP address. Additionally, it is recommended to place the VMs in the same [availability set](/documentation/articles/virtual-machines-manage-availability) to allow Azure to place them into separate fault domains and upgrade domains. Note that Oracle Data Guard is only available with Oracle Database Enterprise Edition. Each machine must have at least 2 GB of memory and 5 GB of disk space. For the most up-to-date information on the platform provided VM sizes, see [Virtual Machine Sizes for Azure](http://msdn.microsoft.com/zh-cn/library/dn197896.aspx). If you need additional disk volume for your VMs, you can attach additional disks. For information, see [How to Attach a Data Disk to a Virtual Machine](/documentation/articles/storage-windows-attach-disk).
 
-- You've set the Virtual Machine names as "Machine1" for the primary VM and "Machine2" for the standby VM at the Azure Management Portal.
+- You've set the Virtual Machine names as "Machine1" for the primary VM and "Machine2" for the standby VM at the Azure classic portal.
 
 - You've set the **ORACLE_HOME** environment variable to point to the same oracle root installation path in the primary and standby Virtual Machines, such as `C:\OracleDatabase\product\11.2.0\dbhome_1\database`.
 
@@ -312,7 +317,7 @@ Then, use the startup command to start an instance:
 ##Create a physical standby database
 This section focuses on the steps that you must perform in Machine2 to prepare the physical standby database.
 
-First, you need to remote desktop to Machine2 via the Azure Management Portal.
+First, you need to remote desktop to Machine2 via the Azure classic portal.
 
 Then, on the Standby Server (Machine2), create all the necessary folders for the standby database, such as C:\\\<YourLocalFolder\>\\TEST. While following this tutorial, make sure that the folder structure matches the folder structure on Machine1 to keep all the necessary files, such as controlfile, datafiles, redologfiles, udump, bdump and cdump files. In addition, define the ORACLE\_HOME and ORACLE\_BASE environment variables in Machine2. If not, define them as an environment variable using the Environment Variables dialog box. To access this dialog box, start the **System** utility by double-clicking the System icon in the **Control Panel**; then click the **Advanced** tab and choose **Environment Variables**. Click the **New** button under the **System Variables** to set the environment variables. After setting up the environment variables, you need to close the existing Windows command prompt and open up a new one to see the changes.
 
@@ -622,7 +627,5 @@ If you have not enabled flashback on the original primary database, it's recomme
 
 We recommend that you enable flashback database on the primary and the standby databases. When a failover happens, the primary database can be flashed back to the time before the failover and quickly converted to a standby database.
 
-
 ##Additional Resources
 [Oracle Virtual Machine images for Azure](/documentation/articles/virtual-machines-oracle-list-oracle-virtual-machine-images)
-

@@ -15,7 +15,12 @@
 
 # Running Cassandra with Linux on Azure and Accessing it from Node.js 
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]  [Resource Manager model](https://azure.microsoft.com/documentation/templates/datastax-on-ubuntu/). 
+
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] [Resource Manager model](https://azure.microsoft.com/documentation/templates/datastax-on-ubuntu/).
+
+
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the classic deployment model. Microsoft recommends that most new deployments use the [Resource Manager model](https://azure.microsoft.com/documentation/templates/datastax-on-ubuntu/).
+
 
 ## Overview
 Azure is an open cloud platform that runs both Microsoft as well as non-Microsoft software which  includes operating systems, application servers, messaging middleware as well as SQL and NoSQL databases from both commercial and open source models. Building resilient services on public clouds including Azure requires careful planning and deliberate architecture for both applications servers as well storage layers. Cassandra's distributed storage architecture naturally helps in building highly available systems that are fault tolerant for cluster failures. Cassandra is a cloud scale NoSQL database maintained by Apache Software Foundation at cassandra.apache.org; Cassandra is written in Java and hence runs on both on Windows as well as Linux platforms. 
@@ -114,12 +119,7 @@ The following software versions are used during the deployment:
 <tr><td>JRE	</td><td>[JRE 8](http://www.oracle.com/technetwork/java/javase/downloads/server-jre8-downloads-2133154.html) </td><td>8U5</td></tr>
 <tr><td>JNA	</td><td>[JNA](https://github.com/twall/jna) </td><td> 3.2.7</td></tr>
 <tr><td>Cassandra</td><td>[Apache Cassandra 2.0.8](http://www.apache.org/dist/cassandra/2.0.8/apache-cassandra-2.0.8-bin.tar.gz)</td><td> 2.0.8</td></tr>
-
 <tr><td>Ubuntu	</td><td>[Azure](https://azure.microsoft.com/) </td><td>14.04 LTS</td></tr>
-
-
-<tr><td>Ubuntu	</td><td>[Azure Management Portal](http://www.windowsazure.cn) </td><td>14.04 LTS</td></tr>
-
 </table>
 
 Since downloading of JRE requires manual acceptance of Oracle license, to simplify the deployment, download all the required software to the desktop for later uploading into the Ubuntu template image we will be creating as a precursor to the cluster deployment. 
@@ -132,7 +132,7 @@ In this step of the process we will create Ubuntu image with the pre-requisite s
 Azure needs an X509 public key that is either PEM or DER encoded at the provisioning time. Generate a public/private key pair using the instructions located at How to Use SSH with Linux on Azure. If you plan to use putty.exe as an SSH client either on Windows or Linux, you have to convert the PEM encoded RSA private key to PPK format using puttygen.exe; the instructions for this can be found in the above web page. 
 
 ####STEP 2: Create Ubuntu template VM
-To create the template VM, log into the Azure Management Portal and use the following sequence: Click NEW, COMPUTE, VIRTUAL MACHINE, FROM GALLERY, UBUNTU, Ubuntu Server 14.04 LTS, and then click the right arrow. For a tutorial that describes how to create a Linux VM, see Create a Virtual Machine Running Linux.
+To create the template VM, log into the Azure classic portal and use the following sequence: Click NEW, COMPUTE, VIRTUAL MACHINE, FROM GALLERY, UBUNTU, Ubuntu Server 14.04 LTS, and then click the right arrow. For a tutorial that describes how to create a Linux VM, see Create a Virtual Machine Running Linux.
 
 Enter the following information on the "Virtual machine configuration" screen #1: 
 
@@ -304,7 +304,7 @@ This will take a few seconds and the image should be available in MY IMAGES sect
 
 ##Single Region Deployment Process
 **Step 1: Create the Virtual Network**
-Log into the Azure Management Portal and create a Virtual Network with the attributes show in the table. See [Configure a Cloud-Only Virtual Network in the Azure Management Portal](/documentation/articles/virtual-networks-create-vnet-classic-portal) for detailed steps of the process.      
+Log into the Azure classic portal and create a Virtual Network with the attributes show in the table. See [Configure a Cloud-Only Virtual Network in the Azure classic portal](/documentation/articles/virtual-networks-create-vnet-classic-portal) for detailed steps of the process.      
 
 <table>
 <tr><th>VM Attribute Name</th><th>Value</th><th>Remarks</th></tr>
@@ -352,7 +352,7 @@ Creation of the above list of VMs requires the following process:
 3.	Add an internal load balancer to the cloud service and attach it to the "data" subnet
 4.	For each VM created previously, add a load balanced endpoint for thrift traffic through a load balanced set connected to the previously created internal load balancer
 
-The above process can be executed using Azure Management Portal; use a Windows machine (use a VM on Azure if you don't have access to a Windows machine), use the following PowerShell script to provision all 8 VMs automatically.
+The above process can be executed using Azure classic portal; use a Windows machine (use a VM on Azure if you don't have access to a Windows machine), use the following PowerShell script to provision all 8 VMs automatically.
 
 **List 1: PowerShell script for provisioning virtual machines**
 		
@@ -471,7 +471,7 @@ Please note that the keyspace created in step 4 uses SimpleStrategy with a  repl
 Will leverage the single region deployment completed and repeat the same process for installing the second region. The key difference between the single and multiple region deployment is the VPN tunnel setup for inter-region communication; we will start with the network installation, provision the VMs and configure Cassandra. 
 
 ###Step 1: Create the Virtual Network at the 2nd Region
-Log into the Azure Management Portal and create a Virtual Network with the attributes show in the table. See [Configure a Cloud-Only Virtual Network in the Azure Management  Portal](/documentation/articles/virtual-networks-create-vnet)  Portal](/documentation/articles/virtual-networks-create-vnet-classic-portal)  for detailed steps of the process.
+Log into the Azure classic portal and create a Virtual Network with the attributes show in the table. See [Configure a Cloud-Only Virtual Network in the Azure classic portal](/documentation/articles/virtual-networks-create-vnet) for detailed steps of the process.      
 
 <table>
 <tr><th>Attribute Name    </th><th>Value	</th><th>Remarks</th></tr>
@@ -505,7 +505,7 @@ Create two local networks per the following details:
 
 
 ###Step 3: Map "Local" network to the respective VNETs
-From the Azure Management Portal, select each vnet, click "Configure", check "Connect to the local network", and select the Local Networks per the following details: 
+From the Azure classic portal, select each vnet, click "Configure", check "Connect to the local network", and select the Local Networks per the following details: 
 
 
 | Virtual Network | Local Network |
@@ -532,7 +532,7 @@ Set-AzureVNetGatewayKey -VNetName hk-vnet-east-us -LocalNetworkSiteName hk-lnet-
 Set-AzureVNetGatewayKey -VNetName hk-vnet-west-us -LocalNetworkSiteName hk-lnet-map-to-east-us -SharedKey D9E76BKK 
 
 ###Step 7: Establish the VNET-to-VNET connection
-From the Azure Management Portal, use the "DASHBOARD" menu of both the virtual networks to establish gateway-to-gateway connection. Use the "CONNECT" menu items in the bottom toolbar. After a few minutes the dashboard should display the connection details graphically.
+From the Azure classic portal, use the "DASHBOARD" menu of both the virtual networks to establish gateway-to-gateway connection. Use the "CONNECT" menu items in the bottom toolbar. After a few minutes the dashboard should display the connection details graphically.
 
 ###Step 8: Create the virtual machines in region #2 
 Create the Ubuntu image as described in region #1 deployment by following the same steps or copy the image VHD file to the Azure storage account located in region #2 and create the image. Use this image and create the following list of virtual machines into a new cloud service hk-c-svc-east-us: 

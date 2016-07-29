@@ -16,7 +16,7 @@
 # Create Windows virtual machines with Powershell and the classic deployment model 
 
 > [AZURE.SELECTOR]
-- [Azure Management Portal - Windows](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)
+- [Azure classic portal - Windows](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)
 - [Powershell - Windows](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-vms)
 - [PowerShell - Linux](/documentation/articles/virtual-machines-ps-create-preconfigure-linux-vms)
 
@@ -25,11 +25,11 @@
 
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] [Resource Manager model](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-resource-manager-vms).
-
 
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] 
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the classic deployment model. Microsoft recommends that most new deployments use the [Resource Manager model](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-resource-manager-vms).
 
+
 
 These steps show you how to customize a set of Azure PowerShell commands that create and preconfigure a Windows-based Azure virtual machine by using a building block approach. You can use this process to quickly create a command set for a new Windows-based virtual machine and expand an existing deployment or to create multiple command sets that quickly build out a custom dev/test or IT pro environment.
 
@@ -158,7 +158,7 @@ Option 1: Create the virtual machine in an existing cloud service.
 
 	New-AzureVM -ServiceName "<short name of the cloud service>" -VMs $vm1
 
-The short name of the cloud service is the name that appears in the list of Cloud Services in the Azure Management Portal or in the list of Resource Groups in the Azure Management Portal.
+The short name of the cloud service is the name that appears in the list of Cloud Services in the Azure classic portal or in the list of Resource Groups in the Azure portal.
 
 Option 2: Create the virtual machine in an existing cloud service and virtual network.
 
@@ -175,7 +175,7 @@ If you are using a text editor, copy the command set to the clipboard and then r
 If you will be creating this virtual machine again or a similar one, you can:
 
 - Save this command set as a PowerShell script file (*.ps1).
-- Save this command set as an Azure automation runbook in the **Automation** section of the Azure Management Portal.
+- Save this command set as an Azure automation runbook in the **Automation** section of the Azure classic portal.
 
 ## <a id="examples"></a>Examples
 

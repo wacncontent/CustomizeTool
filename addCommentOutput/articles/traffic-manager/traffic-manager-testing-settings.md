@@ -8,7 +8,7 @@
    editor="tysonn" />
 <tags
 	ms.service="traffic-manager"
-	ms.date="12/02/2015"
+	ms.date="03/17/2016"
 	wacn.date=""/>
 
 # Test your Traffic Manager settings
@@ -61,10 +61,10 @@ There are free web-based DNS lookup and dig services available. Some of these gi
 
 ## Next steps
 
-[Traffic Manager performance considerations](/documentation/articles/traffic-manager-performance-considerations)
+[Traffic Manager performance considerations](/documentation/articles/traffic-manager-performance-considerations/)
 
-[Troubleshooting Traffic Manager degraded state](/documentation/articles/traffic-manager-troubleshooting-degraded)
+[Troubleshooting Traffic Manager degraded state](/documentation/articles/traffic-manager-troubleshooting-degraded/)
 
 
 
-
+

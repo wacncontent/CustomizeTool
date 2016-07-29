@@ -16,7 +16,12 @@
 
 #Using Remote Desktop to connect to a Azure Linux VM
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]  Resource Manager model. 
+
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+
+
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the classic deployment model. Microsoft recommends that most new deployments use the Resource Manager model.
+
 
 
 ##Overview
@@ -28,7 +33,7 @@ This guidance will give you the answer! It will help you to install and config x
 Xrdp is an open source RDP server, which allows you to connect your Linux server with Remote Desktop from a Windows machine. It performs much nicer than VNC (Virtual Network Computing). VNC has this streak of "JPEG" quality and slow behavior, whereas RDP is fast and crystal clear.
 
 
-> [AZURE.NOTE] You must already have an Azure VM running Linux. To create and set up a Linux VM, see the [Azure Linux VM  tutorial](/documentation/articles/virtual-machines-linux-tutorial)  tutorial](/documentation/articles/virtual-machines-linux-tutorial-portal-rm) .
+> [AZURE.NOTE] You must already have an Azure VM running Linux. To create and set up a Linux VM, see the [Azure Linux VM tutorial](/documentation/articles/virtual-machines-linux-tutorial).
 
 
 ##Create endpoint for Remote Desktop
@@ -102,7 +107,7 @@ Restart xrdp service, use:
 
 
 ##Connect your Linux VM from a Windows machine
-In a Windows machine, start the remote desktop client, input your Linux VM DNS name, or go to `Dashboard` of your VM in Azure Management Portal and click `Connect` to connect your Linux VM, you will see below login window:
+In a Windows machine, start the remote desktop client, input your Linux VM DNS name, or go to `Dashboard` of your VM in Azure classic portal and click `Connect` to connect your Linux VM, you will see below login window:
 
 ![image](./media/virtual-machines-linux-remote-desktop/no2.png)
 

@@ -8,7 +8,7 @@
    editor="tysonn" />
 <tags
 	ms.service="virtual-network"
-	ms.date="12/11/2015"
+	ms.date="03/15/2016"
 	wacn.date=""/>
 
 # How to migrate from Affinity Groups to a Regional Virtual Network (VNet)
@@ -21,7 +21,7 @@ Additionally, we recommend that you don't use affinity groups in general. Aside 
 
 ## Creating and migrating to regional VNets
 
-Going forward, when creating new VNets, use *Region*. You'll see this as an option in the Management Portal. Note that in the network configuration file, this shows as *Location*.
+Going forward, when creating new VNets, use *Region*. You'll see this as an option in the  Classic  Management Portal. Note that in the network configuration file, this shows as *Location*.
 
 >[AZURE.IMPORTANT] Although it is still technically possible to create a virtual network that is associated with an affinity group, there is no compelling reason to do so. Many new features, such as Network Security Groups, are only available when using a regional VNet and are not available for virtual networks that are associated with affinity groups.
 
@@ -29,7 +29,7 @@ Going forward, when creating new VNets, use *Region*. You'll see this as an opti
 
 VNets that are currently associated with affinity groups are enabled for migration to regional VNets. To migrate to a regional VNet, follow these steps:
 
-1. Export the network configuration file. You can use PowerShell or the Management Portal. For instructions using the Management Portal, see [Configure your VNet using a Network Configuration File](/documentation/articles/virtual-networks-using-network-configuration-file).
+1. Export the network configuration file. You can use PowerShell or the  Classic  Management Portal. For instructions using the  Classic  Management Portal, see [Configure your VNet using a Network Configuration File](/documentation/articles/virtual-networks-using-network-configuration-file/).
 
 1. Edit your network configuration file, replacing the old values with the new values. 
 
@@ -41,9 +41,9 @@ VNets that are currently associated with affinity groups are enabled for migrati
 
 	**New value:** \<VirtualNetworkSitename="VNetChinsNorth" Location="China North"\>
 
-1. Save your changes and [import](/documentation/articles/virtual-networks-using-network-configuration-file) the network configuration to Azure.
+1. Save your changes and [import](/documentation/articles/virtual-networks-using-network-configuration-file/) the network configuration to Azure.
 
->[AZURE.INFO] This migration does NOT cause any downtime to your services.
+>[AZURE.NOTE] This migration does NOT cause any downtime to your services.
 
 ## Affinity groups and VMs
 

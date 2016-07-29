@@ -38,7 +38,7 @@ You must edit real names in for the placeholders:
 		        providerName="System.Data.ProviderName"
 		
 		        connectionString=
-				"Server=tcp:{your_serverName_here}.database.chinacloudapi.cn,1433;
+				"Server=tcp:{your_serverName_here}.database.windows.net,1433;
 				Database={your_databaseName_here};
 				Connection Timeout=30;
 				Encrypt=True;

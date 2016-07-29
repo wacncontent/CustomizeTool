@@ -1,0 +1,95 @@
+<properties
+ pageTitle="Windows HPC Pack cluster options in the cloud | Azure"
+ description="Learn about options with Microsoft HPC Pack to create and manage a Windows high performance computing (HPC) cluster in the Azure cloud"
+ services="virtual-machines-windows,cloud-services,batch"
+ documentationCenter=""
+ authors="dlepow"
+ manager="timlt"
+ editor=""
+ tags="azure-resource-manager,azure-service-management,hpc-pack"/>
+<tags
+	ms.service="virtual-machines-windows"
+	ms.date="06/17/2016"
+	wacn.date=""/>
+
+# Options to create and manage a Windows high performance computing (HPC) cluster in Azure with Microsoft HPC Pack
+
+[AZURE.INCLUDE [virtual-machines-common-hpcpack-cluster-options](../includes/virtual-machines-common-hpcpack-cluster-options.md)]
+
+
+This article focuses on options to use HPC Pack to run Windows workloads. There are also options for running [Linux HPC workloads with HPC Pack](/documentation/articles/virtual-machines-linux-hpcpack-cluster-options/).
+
+
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
+
+## Run an HPC Pack cluster in Azure VMs
+
+### Azure templates
+
+
+* (Marketplace) [HPC Pack cluster for Windows workloads](https://azure.microsoft.com/marketplace/partners/microsofthpc/newclusterwindowscn/)
+
+* (Marketplace) [HPC Pack cluster for Excel workloads](https://azure.microsoft.com/marketplace/partners/microsofthpc/newclusterexcelcn/)
+
+
+>[AZURE.NOTE] Templates you downloaded from the GitHub Repo "azure-quickstart-templates" must be modified in order to fit in the Azure China Cloud Environment. For example, replace some endpoints -- "blob.core.chinacloudapi.cn" by "blob.core.chinacloudapi.cn", "chinacloudapp.cn" by "chinacloudapp.cn"; change some unsupported VM images; and, changes some unsupported VM sizes.
+
+
+* (Quickstart) [Create an HPC cluster](https://github.com/Azure/azure-quickstart-templates/tree/master/create-hpc-cluster)
+
+* (Quickstart) [Create an HPC cluster with custom compute node image](https://github.com/Azure/azure-quickstart-templates/tree/master/create-hpc-cluster-custom-image)
+
+
+### Azure VM images
+
+* [HPC Pack on Windows Server 2012 R2](https://azure.microsoft.com/marketplace/partners/microsoft/hpcpack2012r2onwindowsserver2012r2/)
+
+* [HPC Pack compute node on Windows Server 2012 R2](https://azure.microsoft.com/marketplace/partners/microsoft/hpcpack2012r2computenodeonwindowsserver2012r2/)
+
+* [HPC Pack compute node with Excel on Windows Server 2012 R2](https://azure.microsoft.com/marketplace/partners/microsoft/hpcpack2012r2computenodewithexcelonwindowsserver2012r2/)
+
+
+
+
+### PowerShell deployment script
+
+* [Create an HPC cluster with the HPC Pack IaaS deployment script](/documentation/articles/virtual-machines-windows-classic-hpcpack-cluster-powershell-script/)
+
+### Tutorials
+
+* [Tutorial: Get started with an HPC Pack cluster in Azure to run Excel and SOA workloads](/documentation/articles/virtual-machines-windows-excel-cluster-hpcpack/)
+
+
+
+### Manual deployment with the Azure portal  Preview 
+
+* [Set up the head node of an HPC Pack cluster in an Azure VM](/documentation/articles/virtual-machines-windows-hpcpack-cluster-headnode/)
+
+### Cluster management
+
+* [Manage compute nodes in an HPC Pack cluster in Azure](/documentation/articles/virtual-machines-windows-classic-hpcpack-cluster-node-manage/)
+
+
+* [Grow and shrink Azure compute resources in an HPC Pack cluster](/documentation/articles/virtual-machines-windows-classic-hpcpack-cluster-node-autogrowshrink/)
+
+* [Submit jobs to an HPC Pack cluster in Azure](/documentation/articles/virtual-machines-windows-hpcpack-cluster-submit-jobs/)
+
+
+## Add worker role nodes to an HPC Pack cluster
+
+
+* [Burst to Azure worker instances with HPC Pack](https://technet.microsoft.com/zh-cn/library/gg481749.aspx)
+
+* [Tutorial: Set up a hybrid cluster with HPC Pack in Azure](/documentation/articles/cloud-services-setup-hybrid-hpcpack-cluster/)
+
+* [Add Azure "burst" nodes to an HPC Pack head node in Azure](/documentation/articles/virtual-machines-windows-classic-hpcpack-cluster-node-burst/)
+
+* [Grow and shrink Azure compute resources in an HPC Pack cluster](/documentation/articles/virtual-machines-windows-classic-hpcpack-cluster-node-autogrowshrink/)
+
+## Integrate with Azure Batch 
+
+* [Burst to Azure Batch with HPC Pack](https://technet.microsoft.com/zh-cn/library/mt612877.aspx)
+
+## Create RDMA clusters for MPI workloads
+
+* [Set up a Windows RDMA cluster with HPC Pack to run MPI applications](/documentation/articles/virtual-machines-windows-classic-hpcpack-rdma-cluster/)

@@ -1,14 +1,11 @@
-<!-- not suitable for Mooncake -->
-
 <properties
 	pageTitle="Azure and its impact on existing Azure services"
 	description="Explains how the new Azure and its features impact existing services in Azure."
-	authors="yochayk"
-	writer="yochayk"
-	editor="yochayk"
-	manager="nirma"
 	services="app-service"
-	documentationCenter=""/>
+    documentationCenter=""
+	authors="yochay"
+	manager="nirma"
+	editor=""/>
 
 <tags
 	ms.service="app-service"
@@ -49,7 +46,7 @@ The following table explains how existing Azure services map to Azure and the ap
 <td align="left">Web Apps</td>
 <td align="left"><li>For Azure Websites, Azure is strictly limited to changing the name  Websites to Web Apps.
 <p><li>All your existing instances of Websites are now Web Apps in Azure.</p>
-<p><li>You can access your existing websites via the <a href="https://manage.windowsazure.cn/">Azure Management Portal</a>, where you will find all your existing sites under <em>Web Apps</em>.</p>
+<p><li>You can access your existing websites via the <a href="https://manage.windowsazure.cn/">Azure Portal</a>, where you will find all your existing sites under <em>Web Apps</em>.</p>
 <p><li><em>Web Hosting Plan</em> is now <em>App Service Plan</em>. An <em>App Service Plan</em> can host any app type of Azure Web App, such as Web, Mobile, Logic, or API apps.</p>
 <p><li>Azure Web Apps is in General Availability.</p>
 <p><li><a href="/home/features/web-site/">Learn more about Web Apps</a>.</p></td>

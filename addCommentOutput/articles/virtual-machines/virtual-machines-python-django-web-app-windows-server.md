@@ -23,7 +23,12 @@
 
 <br>
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]  Resource Manager model. 
+
+[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+
+
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the classic deployment model. Microsoft recommends that most new deployments use the Resource Manager model.
+
  
 
 This tutorial describes how to host a Django-based website on Microsoft
@@ -48,7 +53,7 @@ A screenshot of the completed application appears next.
 1. Follow the instructions given [here](/documentation/articles/virtual-machines-windows-tutorial-classic-portal) to create an Azure virtual machine of the Windows Server 2012 R2 Datacenter distribution.
 
 1. Instruct Azure to direct port 80 traffic from the web to port 80 on the virtual machine:
- - Navigate to your newly created virtual machine in the Azure Management Portal and click the **ENDPOINTS** tab.
+ - Navigate to your newly created virtual machine in the Azure classic portal and click the **ENDPOINTS** tab.
  - Click the **ADD** button at the bottom of the screen.
 	![add endpoint](./media/virtual-machines-python-django-web-app-windows-server/django-helloworld-addendpoint.png)
 

@@ -2,7 +2,7 @@ There are a couple of different ways to install the modules: the PowerShell Gall
 
 When you install from the PowerShell Gallery, your files will be located by default in *%ProgramFiles%\WindowsPowerShell\Modules*. When you install from the Web Platform Installer, your files will be located by default in *%ProgramFiles%\Microsoft SDKs\Azure\PowerShell\*. Because of this, you'll want to stick with one or the other in order to avoid errors when you update your cmdlets in the future. The Web Platform Installer will receive updated cmdlets monthly. The Gallery receives updated versions of the cmdlets at the time they are released. For that reason, some people prefer to use the Gallery. 
 
-For additional information about installing Azure PowerShell, see [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure). 
+For additional information about installing Azure PowerShell, see [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure/). 
 
 **To install modules from the PowerShell Gallery**
 
@@ -19,7 +19,7 @@ For additional information about installing Azure PowerShell, see [How to instal
 
 - You can install modules using the [Web Platform Installer](http://aka.ms/webpi-azps). When you click the link, it will launch the installer.
 
-- If you get errors when using the Web Platform Installer, it may be because you have already installed a previous version of the cmdlets using the Gallery. See this [Blog Post](https://azure.microsoft.com/blog/azps-1-0/), which can help you remove older versions of the modules and get you back up and running. Typically errors result when you have used the Web Platform Installer and are switching to the Gallery, or the other way around. Removing the modules that were installed earlier clears this issue, and you can then install from the new location.
+- If you get errors when using the Web Platform Installer, it may be because you have already installed a previous version of the cmdlets using the Gallery. See this [Blog Post](https://azure.microsoft.com/blog/azps-1-0), which can help you remove older versions of the modules and get you back up and running. Typically errors result when you have used the Web Platform Installer and are switching to the Gallery, or the other way around. Removing the modules that were installed earlier clears this issue, and you can then install from the new location.
 
 
 

@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties 
 	pageTitle="Line of business application Phase 3 | Azure" 
 	description="Create the computers and the SQL Server cluster and enable Availability Groups in Phase 3 of the line of business application in Azure." 
@@ -17,7 +15,12 @@
 
 # Line of Business Application Workload Phase 3: Configure SQL Server infrastructure
 
+
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
+
+
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the Resource Manager deployment model, which Microsoft recommends for most new deployments instead of the classic deployment model.
+
 
 In this phase of deploying a high-availability line of business application in Azure infrastructure services, you configure the two computers running SQL Server and the cluster majority node computer, and then combine them into a Windows Server cluster. 
 
@@ -111,7 +114,7 @@ When you have supplied all the proper values, run the resulting block at the Azu
 	$vm=Set-AzureRMVMOSDisk -VM $vm -Name "OSDisk" -VhdUri $osDiskUri -CreateOption fromImage
 	New-AzureRMVM -ResourceGroupName $rgName -Location $locName -VM $vm
 
-> [AZURE.NOTE] Because these virtual machines are for an intranet application, they are not assigned a public IP address or a DNS domain name label and exposed to the Internet. However, this also means that you cannot connect to them from the Azure Management Portal. The **Connect** button will be unavailable when you view the properties of the virtual machine. Use the Remote Desktop Connection accessory or another Remote Desktop tool to connect to the virtual machine using its private IP address or intranet DNS name.
+> [AZURE.NOTE] Because these virtual machines are for an intranet application, they are not assigned a public IP address or a DNS domain name label and exposed to the Internet. However, this also means that you cannot connect to them from the Azure portal. The **Connect** button will be unavailable when you view the properties of the virtual machine. Use the Remote Desktop Connection accessory or another Remote Desktop tool to connect to the virtual machine using its private IP address or intranet DNS name.
 
 ## Configure the computers running SQL Server
 
@@ -151,7 +154,7 @@ Use the following procedure twice, once for each virtual machine running SQL Ser
 
 1. On the Start screen, type **SQL Studio**, and then click **SQL Server 2014 Management Studio**.
 2. In **Connect to Server**, click **Connect**.
-3. In the left pane, right-click the top  node—the  node-the  default instance named after the  machine—and  machine-and  then click **Properties**.
+3. In the left pane, right-click the top node--the default instance named after the machine--and then click **Properties**.
 4.	In **Server Properties**, click **Database Settings**.
 5.	In **Database default locations**, set the following values: 
 	- For **Data**, set the path to **f:\Data**.

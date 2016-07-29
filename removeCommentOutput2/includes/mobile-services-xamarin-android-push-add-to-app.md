@@ -49,7 +49,7 @@
 
 	>[AZURE.NOTE]The **GcmServiceBase** class implements the **OnRegistered()**, **OnUnRegistered()**, **OnMessage()** and **OnError()** methods. You must override these methods in the **PushHandlerService** class.
 
-6. Add the following code to the **PushHandlerService** class that overrides the **OnRegistered** event handler.
+6. Add the following code to the **PushHandlerService** class that overrides the **OnRegistered** event handler. 
 
         protected override void OnRegistered(Context context, string registrationId)
         {

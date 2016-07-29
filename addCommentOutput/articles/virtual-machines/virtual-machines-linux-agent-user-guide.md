@@ -1,7 +1,7 @@
 <properties 
 	pageTitle="Linux Agent User Guide | Azure" 
 	description="Learn how to install and configure Linux Agent (waagent) to manage your virtual machine's interaction with Azure Fabric Controller." 
-	services="virtual-machines" 
+	services="virtual-machines-linux" 
 	documentationCenter="" 
 	authors="szarkos" 
 	manager="timlt" 
@@ -9,8 +9,8 @@
 	tags="azure-service-management,azure-resource-manager" />
 
 <tags
-	ms.service="virtual-machines"
-	ms.date="12/14/2015"
+	ms.service="virtual-machines-linux"
+	ms.date="03/14/2016"
 	wacn.date=""/>
 
 
@@ -22,6 +22,8 @@
 ##Introduction
 
 The Azure Linux Agent (/usr/sbin/waagent) manages interaction between a virtual machine and the Azure Fabric Controller. It does the following:
+
+> [AZURE.NOTE] Please see the Azure Linux agent [README](https://github.com/Azure/WALinuxAgent/blob/2.0/README) for the latest version of this guide.
 
 * **Image Provisioning**
   - Create a user account
@@ -60,13 +62,18 @@ The information flow from the platform to the agent occurs via two channels:
 ###Getting the Linux Agent
 You can get the Latest Linux Agent directly from:
 
-- [The different Distribution providers endorsing Linux on Azure](http://support.microsoft.com/kb/2805216)
+- [The different Distribution providers endorsing Linux on  Azure](http://support.microsoft.com/kb/2805216)  Azure](/documentation/articles/virtual-machines-linux-endorsed-distros/) 
 - or from the [GitHub Open Source Repository for the Azure Linux Agent](https://github.com/Azure/WALinuxAgent)
 
 
 ## Requirements
 The following systems have been tested and are known to work with the Azure Linux Agent. **Please note that this list may differ from the official list of supported systems on the Azure Platform**, as described here:
+
 [http://support.microsoft.com/kb/2805216](http://support.microsoft.com/kb/2805216)
+
+
+[http://support.microsoft.com/kb/2805216](/documentation/articles/virtual-machines-linux-endorsed-distros/)
+
 
 ###Supported Linux Distributions
 
@@ -204,14 +211,14 @@ If a path to an executable program is specified, it is invoked when waagent has 
 Type: String  
 Default: None
 
-If a path to an executable program is specified, the program is invoked when the Fabric indicates that a configuration file is available for the virtual machine. The path to the XML configuration file is provided as an argument to the executable. This may be invoked multiple times whenever the configuration file changes. A sample file is provided in the Appendix. The current path of this file is /var/lib/waagent/HostingEnvironmentConfig.xml.
+If a path to an executable program is specified, the program is invoked when the Fabric indicates that a configuration file is available for the virtual machine. The path to the XML configuration file is provided as an argument to the executable. This may be invoked multiple times whenever the configuration file changes. The current path of this file is /var/lib/waagent/HostingEnvironmentConfig.xml.
 
 **Role.TopologyConsumer:**
 
 Type: String  
 Default: None
 
-If a path to an executable program is specified, the program is invoked when the Fabric indicates that a new network topology layout is available for the virtual machine.The path to the XML configuration file is provided as an argument to the executable. This may be invoked multiple times whenever the network topology changes (due to service healing for example). A sample file is provided in the Appendix. The current location of this file is /var/lib/waagent/SharedConfig.xml.
+If a path to an executable program is specified, the program is invoked when the Fabric indicates that a new network topology layout is available for the virtual machine.The path to the XML configuration file is provided as an argument to the executable. This may be invoked multiple times whenever the network topology changes (due to service healing for example). The current location of this file is /var/lib/waagent/SharedConfig.xml.
 
 **Provisioning.Enabled:**
 
@@ -335,5 +342,5 @@ Note that Ubuntu Cloud Images utilize [cloud-init](https://launchpad.net/ubuntu/
 - Please see the following resources to configure the resource disk mount point and swap space on Ubuntu Cloud Images during provisioning:
 
  - [Ubuntu Wiki: Configure Swap Partitions](https://wiki.ubuntu.com/AzureSwapPartitions)
- - [Injecting Custom Data into an Azure Virtual Machine](/documentation/articles/virtual-machines-how-to-inject-custom-data)
-
+ - [Injecting Custom Data into an Azure Virtual  Machine](/documentation/articles/virtual-machines-windows-classic-inject-custom-data/)  Machine](/documentation/articles/virtual-machines-linux-classic-inject-custom-data/) 
+

@@ -52,7 +52,7 @@
 
 + **Node.js backend** : 
    
-	1. If you haven't already done so, [download the quickstart project](/documentation/articles/app-service-mobile-node-backend-how-to-use-server-sdk#download-quickstart) or else use the [online editor in the Azure Management Portal](/documentation/articles/app-service-mobile-node-backend-how-to-use-server-sdk#online-editor).	
+	1. If you haven't already done so, [download the quickstart project](/documentation/articles/app-service-mobile-node-backend-how-to-use-server-sdk/#download-quickstart) or else use the [online editor in the Azure portal](/documentation/articles/app-service-mobile-node-backend-how-to-use-server-sdk/#online-editor).	
 	
 	2. Replace the todoitem.js table script with the following code:
 
@@ -98,4 +98,3 @@
 	        module.exports = table;
 
 	2. When editing the file on your local computer, republish the server project.
-

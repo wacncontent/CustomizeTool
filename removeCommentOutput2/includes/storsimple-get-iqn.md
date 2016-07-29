@@ -1,4 +1,3 @@
-
 <properties 
    pageTitle="Get the IQN of a Windows host"
    description="Explains how to get the iSCSI Qualified Name (IQN) of a computer running Windows Server 2012."
@@ -7,10 +6,14 @@
    authors="SharS"
    manager="adinah"
    editor="tysonn" />
-<tags
-	ms.service="storsimple"
-	ms.date="04/01/2015"
-	wacn.date=""/>
+<tags 
+   ms.service="storsimple"
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="NA"
+   ms.workload="TBD"
+   ms.date="04/01/2015"
+   ms.author="v-sharos" />
 
 ### To get the IQN of a Windows host
 

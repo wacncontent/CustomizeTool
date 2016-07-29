@@ -73,6 +73,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="all-services-setting.json" />
+    <Content Include="en-gl-rules.txt" />
     <Content Include="en-us-setting.json" />
     <Content Include="mdFile.md" />
     <Content Include="modified.txt" />
@@ -81,6 +82,9 @@
     <Content Include="output\test\active-directory-aadconnect-account-summary.md" />
     <Content Include="output\test\keyword_test.md" />
     <Content Include="README.md" />
+    <Content Include="setting-add-comment-gl.json" />
+    <Content Include="setting-gl.json" />
+    <Content Include="setting-wordcount.json" />
     <Content Include="setting-add-comment.json" />
     <Content Include="setting-customization.json" />
     <Content Include="setting-global.json" />

@@ -1,9 +1,9 @@
 <properties services="virtual-machines" title="Setting up PowerShell" authors="JoeDavies-MSFT" solutions="" manager="timlt" editor="tysonn" />
 
 <tags
-	ms.service="virtual-machines"
-	ms.date="05/12/2015"
-	wacn.date=""/>
+   ms.service="virtual-machines"
+   ms.date="05/12/2015"
+   wacn.date=""/>
 
 ## Setting up PowerShell
 
@@ -39,7 +39,7 @@ You should see something like this.
 	-------
 	0.8.16.1
 
-For instructions and a link to the latest version, see [How to Install and Configure Azure PowerShell](/documentation/articles/powershell-install-configure).
+For instructions and a link to the latest version, see [How to Install and Configure Azure PowerShell](/documentation/articles/powershell-install-configure/).
 
 
 ### Set your Azure account and subscription
@@ -72,4 +72,4 @@ You can set the current Azure subscription by running these commands at the Azur
 	$subscr="<SubscriptionName from the display of Get-AzureSubscription>"
 	Select-AzureSubscription -SubscriptionName $subscr -Current	
 
-For more information about Azure subscriptions and accounts, see [How to: Connect to your subscription](/documentation/articles/powershell-install-configure#Connect).
+For more information about Azure subscriptions and accounts, see [How to: Connect to your subscription](/documentation/articles/powershell-install-configure/#Connect).

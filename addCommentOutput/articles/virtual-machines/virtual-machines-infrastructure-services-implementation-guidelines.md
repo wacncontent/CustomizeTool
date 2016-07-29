@@ -35,7 +35,7 @@ You should agree on a set of naming conventions up front. There are some conside
 
 ### Affixes
 
-When creating certain resources, Azure uses some defaults to simplify management of the resources that are associated with these resources. For example, when creating the first virtual machine for a new cloud service, the Azure Management Portal attempts to use the virtual machine's name for the name of a new cloud service for the virtual machine.
+When creating certain resources, Azure uses some defaults to simplify management of the resources that are associated with these resources. For example, when creating the first virtual machine for a new cloud service, the Azure classic portal attempts to use the virtual machine's name for the name of a new cloud service for the virtual machine.
 
 Therefore, it is beneficial to identify types of resources that need an affix to identify that type. In addition, clearly specify whether the affix will be at:
 
@@ -205,7 +205,7 @@ Decisions:
 
 Task:
 
-- Create the set of storage accounts using your naming convention. You can use the Azure Management Portal , the Azure Management Portal,  or the **New-AzureStorageAccount** PowerShell cmdlet.
+- Create the set of storage accounts using your naming convention. You can use the Azure portal, the Azure classic portal, or the **New-AzureStorageAccount** PowerShell cmdlet.
 
 ## 4. Cloud services
 
@@ -213,7 +213,7 @@ Cloud services are a fundamental building block in Azure service management, bot
 
 In the case of IaaS, cloud services offer similar functionality, although in most cases, the load balancer functionality is used to forward traffic to specific TCP or UDP ports from the Internet to the many virtual machines within that cloud service.
 
-> [AZURE.NOTE] Cloud services do not exist in Azure Resource Manager.  For an introduction to the advantages of Resource Manager, see [Azure compute, network and storage providers under Azure Resource Manager](/documentation/articles/virtual-machines-azurerm-versus-azuresm). 
+> [AZURE.NOTE] Cloud services do not exist in Azure Resource Manager. For an introduction to the advantages of Resource Manager, see [Azure compute, network and storage providers under Azure Resource Manager](/documentation/articles/virtual-machines-azurerm-versus-azuresm).
 
 Cloud service names are especially important in IaaS because Azure uses them as part of the default naming convention for disks. The cloud service name can contain only letters, numbers, and hyphens. The first and last character in the field must be a letter or number.
 
@@ -233,7 +233,7 @@ Decision:
 
 Task:
 
-- Create the set of cloud services using your naming convention. You can use the Azure Management Portal or the **New-AzureService** PowerShell cmdlet.
+- Create the set of cloud services using your naming convention. You can use the Azure classic portal or the **New-AzureService** PowerShell cmdlet.
 
 ## 5. Virtual networks
 
@@ -291,7 +291,7 @@ Tasks:
 - Define the address space for the virtual network.
 - Define the set of subnets and the address space for each.
 - For cross-premises virtual networks, define the set of local network address spaces for the on-premises locations that the virtual machines in the virtual network need to reach.
-- Create the virtual network using your naming convention. You can use the Azure Management Portal  or the Azure Management Portal .
+- Create the virtual network using your naming convention. You can use the Azure portal or the Azure classic portal.
 
 ## 6. Availability sets
 
@@ -315,7 +315,7 @@ Task:
 
 In Azure PaaS, Azure manages virtual machines and their associated disks. You must create and name cloud services and roles, and then Azure creates instances associated to those roles. In the case of Azure IaaS, it is up to you to provide names for the cloud services, virtual machines, and associated disks.
 
-To reduce administrative burden, the Azure Management Portal uses the computer name as a suggestion for the default name for the associated cloud service (in the case the customer chooses to create a new cloud service as part of the virtual machine creation wizard).
+To reduce administrative burden, the Azure classic portal uses the computer name as a suggestion for the default name for the associated cloud service (in the case the customer chooses to create a new cloud service as part of the virtual machine creation wizard).
 
 In addition, Azure names disks and their supporting VHD blobs using a combination of the cloud service name, the computer name, and the creation date.
 
@@ -330,7 +330,7 @@ Decision:
 Tasks:
 
 - Define each virtual machine name using your naming convention.
-- Create your virtual machines with the Azure Management Portal, the  Azure Management Portal, the  **New-AzureVM** PowerShell cmdlet,  or  the Azure CLI , or with Resource Manager templates .
+- Create your virtual machines with the Azure portal, the Azure classic portal, the **New-AzureVM** PowerShell cmdlet, the Azure CLI, or with Resource Manager templates.
 
 ## Example of an IT workload: The Contoso financial analysis engine
 
@@ -378,7 +378,7 @@ Contoso determined that they needed two storage accounts:
 
 Because the virtual network does not need ongoing connectivity to the Contoso on-premises network, Contoso decided on a cloud-only virtual network.
 
-They created a cloud-only virtual network with the following settings using the Azure Management Portal:
+They created a cloud-only virtual network with the following settings using the Azure portal:
 
 - Name: AZFAE-USE-VN01
 - Location: China East  2 
@@ -437,10 +437,6 @@ This configuration incorporates:
 
 [Azure storage scalability and performance targets](/documentation/articles/storage-scalability-targets)
 
-[Cloud Platform integration framework (Azure architecture patterns)](/documentation/articles/azure-architectures-cpif-overview)
-
 [Datacenter extension reference architecture diagram](https://gallery.technet.microsoft.com/Datacenter-extension-687b1d84)
-
 
 [Azure compute, network, and storage providers under Azure Resource Manager](/documentation/articles/virtual-machines-azurerm-versus-azuresm)
-
