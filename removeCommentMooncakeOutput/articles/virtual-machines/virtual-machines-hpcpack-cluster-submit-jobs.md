@@ -1,3 +1,5 @@
+<!-- rename to virtual-machines-windows-hpcpack-cluster-submit-jobs -->
+
 <properties
  pageTitle="Submit jobs to an HPC Pack cluster in Azure | Azure"
  description="Learn how to set up an on-premises computer to submit jobs to an HPC Pack cluster in Azure"
@@ -24,7 +26,7 @@ run job submission tools.
 ## Prerequisites
 
 * **HPC Pack head node deployed in an Azure VM** - We recommend that you use
-automated tools such as an an [Azure PowerShell script](/documentation/articles/virtual-machines-hpcpack-cluster-powershell-script)
+automated tools such as an an [Azure PowerShell script](/documentation/articles/virtual-machines-linux-classic-hpcpack-cluster-powershell-script/)
 to deploy the head node and cluster. You will need the DNS
 name of the head node and the credentials of a cluster administrator to
 complete the steps in this article.
@@ -51,7 +53,7 @@ configure the components by running the HPC PowerShell script
 For detailed procedures, see [Install the Microsoft HPC Pack Web
 Components](http://technet.microsoft.com/zh-cn/library/hh314627.aspx).
 
->[AZURE.TIP] If you use the [HPC Pack IaaS deployment script](/documentation/articles/virtual-machines-hpcpack-cluster-powershell-script) to create the cluster,
+>[AZURE.TIP] If you use the [HPC Pack IaaS deployment script](/documentation/articles/virtual-machines-linux-classic-hpcpack-cluster-powershell-script/) to create the cluster,
 you can optionally install and configure the web web components as part of the deployment.
 
 **To install the web components**
@@ -68,14 +70,11 @@ you can optionally install and configure the web web components as part of the d
 
 2. To change directory to the location of the configuration script, type the following command:
 
-	
 	    cd $env:CCP_HOME\bin
 	    
 3. To configure the REST interface and start the HPC Web Service, type the following command:
 
-	
-	    .\Set-HPCWebComponents.ps1 -Service REST -enable
-	    
+	    .\Set-HPCWebComponents.ps1 -Service REST -enable 
 
 4. When prompted to select a certificate, choose the certificate that corresponds to the public DNS name of the head node. For example, if you use the HPC Pack IaaS deployment script to create the cluster, the certificate name is of the form CN=&lt;*HeadNodeDnsName*&gt;.chinacloudapp.cn.
 
@@ -83,15 +82,12 @@ you can optionally install and configure the web web components as part of the d
 
 5. To configure the web portal for job submission, type the following command:
 
-	
 	    .\Set-HPCWebComponents.ps1 -Service Portal -enable
 	    
 6. After the script completes, stop and restart the HPC Job Scheduler Service by typing the following:
 
-	
 	    net stop hpcscheduler
 	    net start hpcscheduler
-	    
 
 ## Step 2: Install the HPC Pack client utilities on an on-premises computer
 
@@ -146,11 +142,9 @@ utilities. For example, you can use HPC Pack GUI tools or command-line commands 
 
 2. Type a sample command. For example, to list all jobs on the cluster, type a command similar to one of the following, depending on the full DNS name of the head node:
 
-	
 	    job list /scheduler:https://<HeadNodeDnsName>.chinacloudapp.cn /all
 	
 	    job list /scheduler:https://<HeadNodeDnsName>.<region>.chinacloudapp.cn /all
-	    
 
     >[AZURE.TIP] Use the full DNS name of the head node, not the IP address, in the scheduler URL. If you specify the IP address, you'll see an error similar to "The server certificate needs to either have a valid chain of trust or to be placed in the trusted root store".
 
@@ -179,7 +173,6 @@ utilities. For example, you can use HPC Pack GUI tools or command-line commands 
 
 1. Start a web browser on the client computer, and type one of the following, depending on the full DNS name of the head node:
 
-	
 	    https://<HeadNodeDnsName>.chinacloudapp.cn/HpcPortal
 	
 	    https://<HeadNodeDnsName>.<region>chinacloudapp.cn/HpcPortal

@@ -1,3 +1,5 @@
+<!-- rename to virtual-machines-windows-classic-ps-sql-keyvault -->
+
 <properties 
 	pageTitle="Configure Azure Key Vault Integration for SQL Server on Azure VMs (Classic Deployment)"
 	description="Learn how to automate the configuration of SQL Server encryption for use with Azure Key Vault. This topic explains how to use Azure Key Vault Integration with SQL Server virtual machines create in the classic deployment model." 
@@ -15,10 +17,14 @@
 
 # Configure Azure Key Vault Integration for SQL Server on Azure VMs (Classic Deployment)
 
+> [AZURE.SELECTOR]
+- [Resource Manager](/documentation/articles/virtual-machines-sql-server-azure-key-vault-integration-resource-manager)
+- [Classic](/documentation/articles/virtual-machines-sql-server-azure-key-vault-integration)
+
 ## Overview
 There are multiple SQL Server encryption features, such as [transparent data encryption (TDE)](https://msdn.microsoft.com/zh-cn/library/bb934049.aspx), [column level encryption (CLE)](https://msdn.microsoft.com/zh-cn/library/ms173744.aspx), and [backup encryption](https://msdn.microsoft.com/zh-cn/library/dn449489.aspx). These forms of encryption require you to manage and store the cryptographic keys you use for encryption. The Azure Key Vault (AKV) service is designed to improve the security and management of these keys in a secure and highly available location. The [SQL Server Connector](http://www.microsoft.com/download/details.aspx?id=45344) enables SQL Server to use these keys from Azure Key Vault.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the classic deployment model. Microsoft recommends that most new deployments use the Resource Manager model.
 
 If you running SQL Server with on-premises machines, there are [steps you can follow to access Azure Key Vault from your on-premises SQL Server machine](https://msdn.microsoft.com/zh-cn/library/dn198405.aspx). But for SQL Server in Azure VMs, you can save time by using the *Azure Key Vault Integration* feature. With a few Azure PowerShell cmdlets to enable this feature, you can automate the configuration necessary for a SQL VM to access your key vault.
 

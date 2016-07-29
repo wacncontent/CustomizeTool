@@ -1,3 +1,5 @@
+<!-- rename to virtual-machines-windows-allocation-failure -->
+
 <properties
 	pageTitle="Troubleshooting VM allocation failures | Azure"
 	description="Troubleshoot allocation failures when you create, restart, or resize a VM in Azure"
@@ -34,20 +36,27 @@ When an allocation request is pinned to a cluster, there's a higher chance of fa
 ![Pinned Allocation Failure](./media/virtual-machines-allocation-failure/Allocation2.png)
 
 ## General troubleshooting steps
-### Troubleshoot common allocation failures
+### Troubleshoot common allocation failures in the classic deployment model
 
 These steps can help resolve many allocation failures in virtual machines:
 
 - Resize the VM to a different VM size.<br>
-
-	Click **Virtual machines** > your virtual machine > **Configure** > **Size**. For detailed steps, see [Resize the virtual machine](https://msdn.microsoft.com/zh-cn/library/dn168976.aspx).
+	Click **Browse all** > **Virtual machines (classic)** > your virtual machine > **Settings** > **Size**. For detailed steps, see [Resize the virtual machine](https://msdn.microsoft.com/zh-cn/library/dn168976.aspx).
 
 - Delete all VMs from the cloud service and re-create VMs.<br>
+	Click **Browse all** > **Virtual machines (classic)** > your virtual machine > **Delete**. Then, click **New** > **Compute** > [virtual machine image].
 
-	Click **Virtual machines** > your virtual machine > **Delete**. Then, click **New** > **Compute** > **From gellary** > **My Disks**.
+### Troubleshoot common allocation failures in the Azure Resource Manager deployment model
+
+These steps can help resolve many allocation failures in virtual machines:
+
+- Stop (deallocate) all VMs in the same availability set, then restart each one.<br>
+	To stop: Click **Resource groups** > your resource group > **Resources** > your availability set > **Virtual Machines** > your virtual machine > **Stop**.
+
+	After all VMs stop, select the first VM and click **Start**.
 
 ## Detailed troubleshooting steps
-### Troubleshoot specific allocation failure scenarios
+### Troubleshoot specific allocation failure scenarios in the classic deployment model
 Here are common allocation scenarios that cause an allocation request to be pinned. We'll dive into each scenario later in this article.
 
 - Resize a VM or add VMs or role instances to an existing cloud service
@@ -143,7 +152,7 @@ If an affinity group is not necessary, do not use an affinity group, or group yo
 
 New_General* or New_VMSizeNotSupported*
 
-<**Cause of cluster pinning**
+**Cause of cluster pinning**
 
 Before regional virtual networks were introduced, you were required to associate a virtual network with an affinity group. As a result, compute resources placed into an affinity group are bound by the same constraints as described in the "Allocation scenario: Affinity group (VM/service proximity)" section above. The compute resources are tied to one cluster.
 

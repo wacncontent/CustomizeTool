@@ -17,14 +17,14 @@
 
 The Backup and Restore feature in [Azure Web Apps](/documentation/services/web-sites/) lets you easily create web app backups manually or automatically. You can restore your web app to a previous state, or create a new web app based on one of your original app's backups. 
 
-For information on restoring an Azure web app from backup, see [Restore a web app](/documentation/articles/web-sites-restore).
+For information on restoring an Azure web app from backup, see [Restore a web app](/documentation/articles/web-sites-restore/).
 
 ##<a name="whatsbackedup"></a> What gets backed up 
 Web Apps can back up the following information:
 
 * Web app configuration
 * Web app file content
-* Any Azure SQL atabases or MySQL databases connected to your app (you can choose which ones to include in the backup)
+* Any Azure SQL databases or MySQL databases connected to your app (you can choose which ones to include in the backup)
 
 This information is backed up to the Azure storage account and container that you specify. 
 
@@ -32,14 +32,14 @@ This information is backed up to the Azure storage account and container that yo
 
 ##<a name="requirements"></a> Requirements and restrictions
 
-* The Backup and Restore feature requires the App Service plan to be in the Standard tier. For more information about scaling your App Service plan to use a higher tier, see [Scale a web app in Azure](/documentation/articles/web-sites-scale). 
+* The Backup and Restore feature requires the App Service plan to be in the Standard tier. For more information about scaling your App Service plan to use a higher tier, see [Scale a web app in Azure](/documentation/articles/web-sites-scale/).
 
-* The Backup and Restore feature requires an Azure storage account and container that must belong to the same subscription as the web app that you are going to back up. If you do not yet have a storage account, you can create one by clicking the **Storage** button (grid icon) in the left pane of the Azure Management Portal, and then choosing **New** in the command bar at the bottom. For more information on Azure storage accounts, see the [links](#moreaboutstorage) at the end of this article.
+* The Backup and Restore feature requires an Azure storage account and container that must belong to the same subscription as the web app that you are going to back up. If you do not yet have a storage account, you can create one by clicking the **Storage** button (grid icon) in the left pane of the Azure Classic Management Portal, and then choosing **New** in the command bar at the bottom. For more information on Azure storage accounts, see the [links](#moreaboutstorage) at the end of this article.
 
 * The Backup and Restore feature supports up to 10GB of website and database content. An error will be indicated if the backup feature cannot proceed because the payload exceeds this limit. 
 
 ##<a name="manualbackup" id="create-a-manual-backup"></a> Create a manual backup
-1. In the Azure Management Portal for your website, choose the **Backups** tab.
+1. In the Azure Classic Management Portal for your website, choose the **Backups** tab.
 	
 	![Backups page][ChooseBackupsPage]
 	
@@ -57,7 +57,7 @@ This information is backed up to the Azure storage account and container that yo
 	
 	![BackUpNow button][BackUpNow]
 	
-	You will see a progress message during the backup process: 
+	You will see a progress message during the backup process:
 	
 	![Backup progress message][BackupProgress]
 	
@@ -107,7 +107,7 @@ You can make a manual backup at any time. During Preview, no more than 2 manual 
 
 Sometimes you don't want to backup everything on your web app. Here are a few examples:
 
--	You [set up weekly backups](/documentation/articles/web-sites-backup#configure-automated-backups) of your web app that contains static content that never changes, such as old blog posts or images.
+-	You [set up weekly backups](/documentation/articles/web-sites-backup/#configure-automated-backups) of your web app that contains static content that never changes, such as old blog posts or images.
 -	Your web app has over 10GB of content (that's the max amount you can backup at a time).
 -	You don't want to back up the log files.
 
@@ -139,13 +139,13 @@ The below steps show how you would exclude these files from the backup.
 	    \site\wwwroot\Images\2014
 	    \site\wwwroot\Images\brand.png
 
-3. Upload this file to the `D:\home\site\wwwroot\` directory of your site using [ftp](/documentation/articles/web-sites-deploy#ftp) or any other method.
+3. Upload this file to the `D:\home\site\wwwroot\` directory of your site using [ftp](/documentation/articles/web-sites-deploy/#ftp) or any other method.
 
 4. Run backups the same way you would normally do it, [manually](#create-a-manual-backup) or [automatically](#configure-automated-backups).
 
 Now, any files and folders that are specified in `_backup.filter` will be excluded from the backup. In this example, the log files and the 2013 and 2014 image files will no longer be backed up, as well as brand.png.
 
->[AZURE.NOTE] You restore partial backups of your site the same way you would [restore a regular backup](/documentation/articles/web-sites-restore). The restore process will do the right thing.
+>[AZURE.NOTE] You restore partial backups of your site the same way you would [restore a regular backup](/documentation/articles/web-sites-restore/). The restore process will do the right thing.
 ><p>When a full backup is restored, all content on the site is replaced with whatever is in the backup. If a file is on the site but not in the backup it gets deleted. But when a partial backup is restored, any content that is located in one of the blacklisted directories, or any blacklisted file, is left as is.
 
 
@@ -158,8 +158,8 @@ The database backup for the web app is stored in the root of the .zip file. For 
 > [AZURE.WARNING] Altering any of the files in your **websitebackups** container can cause the backup to become invalid and therefore non-restorable.
 
 ##<a name="nextsteps"></a> Next Steps
-For information on restoring web app from backup, see [Restore a web app in Azure](/documentation/articles/web-sites-restore). You can also backup and restore Azure Web Apps
-using REST API (see [Use REST to back up and restore Azure Web Apps](/documentation/articles/websites-csm-backup)).
+For information on restoring web app from backup, see [Restore a web app in Azure](/documentation/articles/web-sites-restore/). You can also backup and restore Azure Web Apps
+using REST API (see [Use REST to back up and restore Azure Web Apps](/documentation/articles/websites-csm-backup/)).
 
 To get started with Azure, see [Azure Trial](/pricing/1rmb-trial/).
 
@@ -178,4 +178,3 @@ To get started with Azure, see [Azure Trial](/pricing/1rmb-trial/).
 [ImagesFolder]: ./media/web-sites-backup/11Images.png
 [LogsFolder]: ./media/web-sites-backup/12Logs.png
 [GhostUpgradeWarning]: ./media/web-sites-backup/13GhostUpgradeWarning.png
- 

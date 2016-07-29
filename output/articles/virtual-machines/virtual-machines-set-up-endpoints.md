@@ -1,6 +1,8 @@
+<!-- rename to virtual-machines-windows-classic-setup-endpoints -->
+
 <properties
 	pageTitle="Set up endpoints on a classic virtual machine | Azure"
-	description="Learn to set up endpoints in the Azure Management Portal to allow communication with a virtual machine in Azure."
+	description="Learn to set up endpoints in the Azure Classic Management Portal to allow communication with a virtual machine in Azure."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="cynthn"
@@ -15,27 +17,27 @@
 
 # How to set up endpoints on a classic Azure virtual machine
 
- Resource Manager model. [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager model. 
 
 
 All virtual machines that you create in Azure using the classic deployment model can automatically communicate over a private network channel with other virtual machines in the same cloud service or virtual network. However, computers on the Internet or other virtual networks require endpoints to direct the inbound network traffic to a virtual machine.
 
-When you create a virtual machine in the Azure Management Portal, common endpoints like those for Remote Desktop, Windows PowerShell Remoting, and Secure Shell (SSH) are typically created for you automatically, depending on the operating system you choose. You can configure additional endpoints while creating the virtual machine or afterwards as needed.
+When you create a virtual machine in the Azure Classic Management Portal, common endpoints like those for Remote Desktop, Windows PowerShell Remoting, and Secure Shell (SSH) are typically created for you automatically, depending on the operating system you choose. You can configure additional endpoints while creating the virtual machine or afterwards as needed.
 
 Each endpoint has a *public port* and a *private port*:
 
 - The public port is used by the Azure load balancer to listen for incoming traffic to the virtual machine from the Internet.
 - The private port is used by the virtual machine to listen for incoming traffic, typically destined to an application or service running on the virtual machine.
 
-Default values for the IP protocol and TCP or UDP ports for well-known network protocols are provided when you create endpoints with the Azure Management Portal. For custom endpoints, you'll need to specify the correct IP protocol (TCP or UDP) and the public and private ports. To distribute incoming traffic randomly across multiple virtual machines, you'll need to create a load-balanced set consisting of multiple endpoints.
+Default values for the IP protocol and TCP or UDP ports for well-known network protocols are provided when you create endpoints with the Azure Classic Management Portal. For custom endpoints, you'll need to specify the correct IP protocol (TCP or UDP) and the public and private ports. To distribute incoming traffic randomly across multiple virtual machines, you'll need to create a load-balanced set consisting of multiple endpoints.
 
-After you create an endpoint, you can use an access control list (ACL) to define rules that permit or deny the incoming traffic to the public port of the endpoint based on its source IP address. However, if the virtual machine is in an Azure virtual network, you should use network security groups instead. For details, see [About network security groups](/documentation/articles/virtual-networks-nsg).
+After you create an endpoint, you can use an access control list (ACL) to define rules that permit or deny the incoming traffic to the public port of the endpoint based on its source IP address. However, if the virtual machine is in an Azure virtual network, you should use network security groups instead. For details, see [About network security groups](/documentation/articles/virtual-networks-nsg/).
 
 > [AZURE.NOTE]: Firewall configuration for Azure virtual machines is done automatically for ports associated with Remote Desktop and Secure Shell (SSH), and in most cases for Windows PowerShell Remoting. For ports specified for all other endpoints, no configuration is done automatically to the firewall of the virtual machine. When you create an endpoint for the virtual machine, you'll need to ensure that the firewall of the virtual machine also allows the traffic for the protocol and private port corresponding to the endpoint configuration.
 
 ## Create an endpoint
 
-1.	If you haven't already done so, sign in to the Azure Management Portal.
+1.	If you haven't already done so, sign in to the Azure Classic Management Portal.
 2.	Click **Virtual Machines**, and then click the name of the virtual machine that you want to configure.
 3.	Click **Endpoints**. The **Endpoints** page lists all the current endpoints for the virtual machine.
 
@@ -59,20 +61,15 @@ The new endpoint will be listed on the **Endpoints** page.
 
 To use an Azure PowerShell cmdlet to set this up, see [Add-AzureEndpoint](https://msdn.microsoft.com/zh-cn/library/azure/dn495300.aspx). If you are using the Azure CLI in Service Management mode, use the **azure vm endpoint create** command.
 
-
-## Manage the ACL on an endpoint
-
-
 ##<a name="manage-the-acl-on-an-endpoint"></a> Manage the ACL on an endpoint
-
 
 To define the set of computers that can send traffic, the ACL on an endpoint can restrict traffic based upon source IP address. Follow these steps to add, modify, or remove an ACL on an endpoint.
 
 > [AZURE.NOTE] If the endpoint is part of a load-balanced set, any changes you make to the ACL on an endpoint are applied to all endpoints in the set.
 
-If the virtual machine is in an Azure virtual network, we recommend network security groups instead of ACLs. For details, see [About network security groups](/documentation/articles/virtual-networks-nsg).
+If the virtual machine is in an Azure virtual network, we recommend network security groups instead of ACLs. For details, see [About network security groups](/documentation/articles/virtual-networks-nsg/).
 
-1.	If you haven't already done so, sign in to the Azure Management Portal.
+1.	If you haven't already done so, sign in to the Azure Classic Management Portal.
 2.	Click **Virtual Machines**, and then click the name of the virtual machine that you want to configure.
 3.	Click **Endpoints**. From the list, select the appropriate endpoint.
 
@@ -86,16 +83,11 @@ If the virtual machine is in an Azure virtual network, we recommend network secu
 
 You can use rules to allow only traffic from specific computers corresponding to your computers on the Internet or to deny traffic from specific, known address ranges.
 
-The rules are evaluated in order starting with the first rule and ending with the last rule. This means that rules should be ordered from least restrictive to most restrictive. For examples and more information, see [What is a Network Access Control List?](/documentation/articles/virtual-networks-acl).
+The rules are evaluated in order starting with the first rule and ending with the last rule. This means that rules should be ordered from least restrictive to most restrictive. For examples and more information, see [What is a Network Access Control List?](/documentation/articles/virtual-networks-acl/).
 
-To use an Azure PowerShell cmdlet to set this up, see [Managing access control lists (ACLs) for endpoints by using PowerShell](/documentation/articles/virtual-networks-acl-powershell).
+To use an Azure PowerShell cmdlet to set this up, see [Managing access control lists (ACLs) for endpoints by using PowerShell](/documentation/articles/virtual-networks-acl-powershell/).
 
 
 ## Additional resources
 
-
-[Get started creating an Internet facing load balancer in Resource Manager using PowerShell](/documentation/articles/load-balancer-get-started-internet-arm-ps)
-
-
-[Load balancing for Azure infrastructure services](/documentation/articles/virtual-machines-load-balance)
-
+[Get started creating an Internet facing load balancer in Resource Manager using PowerShell](/documentation/articles/load-balancer-get-started-internet-arm-ps/)

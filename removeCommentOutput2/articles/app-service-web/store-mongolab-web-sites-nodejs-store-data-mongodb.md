@@ -1,3 +1,5 @@
+<!-- deleted in Global -->
+
 <properties
 	pageTitle="Create a Node.js web app on Azure with MongoDB using the MongoLab add-on"
 	description="Learn how to create a Node.js web app in Azure Websites that connects to a MongoDB instance hosted on MongoLab."

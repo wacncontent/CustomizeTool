@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="12/02/2015"
+	ms.date="05/18/2016"
 	wacn.date=""/>
 
 
@@ -18,7 +18,7 @@
 
 [AZURE.INCLUDE [oozie-selector](../includes/hdinsight-oozie-selector.md)]
 
-Learn how to use Apache Oozie to define a workflow and run the workflow on HDInsight. To learn about the Oozie coordinator, see [Use time-based Hadoop Oozie Coordinator with HDInsight][hdinsight-oozie-coordinator-time]. To learn Azure Data Factory To learn Azure Data Factory, see [Use Pig and Hive with Data Factory][azure-data-factory-pig-hive]. 
+Learn how to use Apache Oozie to define a workflow and run the workflow on HDInsight. To learn about the Oozie coordinator, see [Use time-based Hadoop Oozie Coordinator with HDInsight][hdinsight-oozie-coordinator-time]. To learn Azure Data Factory, see [Use Pig and Hive with Data Factory][azure-data-factory-pig-hive].
 
 Apache Oozie is a workflow/coordination system that manages Hadoop jobs. It is integrated with the Hadoop stack, and it supports Hadoop jobs for Apache MapReduce, Apache Pig, Apache Hive, and Apache Sqoop. It can also be used to schedule jobs that are specific to a system, like Java programs or shell scripts.
 
@@ -48,16 +48,15 @@ The workflow you will implement by following the instructions in this tutorial c
 
 > [AZURE.NOTE] For supported Oozie versions on HDInsight clusters, see [What's new in the Hadoop cluster versions provided by HDInsight?][hdinsight-versions].
 
-
 ###Prerequisites
-
-
-###<a name="prerequisites"></a> Prerequisites
-
 
 Before you begin this tutorial, you must have the following:
 
-- **A workstation with Azure PowerShell**. See [Install and use Azure PowerShell](/documentation/articles/powershell-install-configure). To execute Windows PowerShell scripts, you must run as an administrator and set the execution policy to *RemoteSigned*. For more information, see [Run Windows PowerShell scripts][powershell-script].
+- **A workstation with Azure PowerShell**. 
+
+    [AZURE.INCLUDE [upgrade-powershell](../includes/hdinsight-use-latest-powershell.md)]
+    
+    To execute Windows PowerShell scripts, you must run as an administrator and set the execution policy to *RemoteSigned*. For more information, see [Run Windows PowerShell scripts][powershell-script].
 
 ##Define Oozie workflow and the related HiveQL script
 
@@ -174,14 +173,14 @@ Azure PowerShell currently doesn't provide any cmdlets for defining Oozie jobs. 
 The PowerShell script in this section performs the following steps:
 
 1. Connect to Azure.
-2. Create an Azure resource group. For more information, see [Use Azure PowerShell with Azure Resource Manager](/documentation/articles/powershell-azure-resource-manager).
+2. Create an Azure resource group. For more information, see [Use Azure PowerShell with Azure Resource Manager](/documentation/articles/powershell-azure-resource-manager/).
 3. Create an Azure SQL Database server, an Azure SQL database, and two tables. These are used by the Sqoop action in the workflow.
 
 	The table name is *log4jLogCount*.
 
 4. Create an HDInsight cluster used to run Oozie jobs.
 
-	To examine the cluster, you can use the Azure Management Portal or Azure PowerShell.
+	To examine the cluster, you can use the Azure portal or Azure PowerShell.
 
 5. Copy the oozie workflow file and the HiveQL script file to the default file system.
 
@@ -352,9 +351,9 @@ Here is the script.  You can run the script from Windows PowerShell ISE. You onl
 		-Type Standard_LRS
 	
 	# Create the default Blob container
-	$defaultStorageAccountKey = Get-AzureRmStorageAccountKey `
+	$defaultStorageAccountKey = (Get-AzureRmStorageAccountKey `
 									-ResourceGroupName $resourceGroupName `
-									-Name $defaultStorageAccountName |  %{ $_.Key1 }
+									-Name $defaultStorageAccountName)[0].Value
 	$defaultStorageAccountContext = New-AzureStorageContext `
 										-StorageAccountName $defaultStorageAccountName `
 										-StorageAccountKey $defaultStorageAccountKey 
@@ -599,9 +598,9 @@ Here is a sample PowerShell script that you can use:
 	$sqlDatabaseTableName = "log4jLogsCount"
 
 	Write-host "Delete the Hive script output file ..." -ForegroundColor Green
-	$defaultStorageAccountKey = Get-AzureRmStorageAccountKey `
+	$defaultStorageAccountKey = (Get-AzureRmStorageAccountKey `
                                 -ResourceGroupName $resourceGroupName `
-                                -Name $defaultStorageAccountName |  %{ $_.Key1 }
+                                -Name $defaultStorageAccountName)[0].Value
 	$destContext = New-AzureStorageContext -StorageAccountName $defaultStorageAccountName -StorageAccountKey $defaultStorageAccountKey
 	Remove-AzureStorageBlob -Context $destContext -Blob "tutorials/useoozie/output/000000_0" -Container $defaultBlobContainerName
 
@@ -621,52 +620,43 @@ In this tutorial, you learned how to define an Oozie workflow and how to run an 
 
 - [Use time-based Oozie Coordinator with HDInsight][hdinsight-oozie-coordinator-time]
 - [Get started using Hadoop with Hive in HDInsight to analyze mobile handset use][hdinsight-get-started]
-- [Get started with the HDInsight Emulator][hdinsight-get-started-emulator]
 - [Use Azure Blob storage with HDInsight][hdinsight-storage]
 - [Administer HDInsight using PowerShell][hdinsight-admin-powershell]
 - [Upload data for Hadoop jobs in HDInsight][hdinsight-upload-data]
 - [Use Sqoop with Hadoop in HDInsight][hdinsight-use-sqoop]
 - [Use Hive with Hadoop on HDInsight][hdinsight-use-hive]
 - [Use Pig with Hadoop on HDInsight][hdinsight-use-pig]
-- [Develop C# Hadoop streaming jobs for HDInsight][hdinsight-develop-streaming-jobs]
 - [Develop Java MapReduce programs for HDInsight][hdinsight-develop-mapreduce]
 
 
 [hdinsight-cmdlets-download]: http://go.microsoft.com/fwlink/?LinkID=325563
 
 
-
 
-[azure-data-factory-pig-hive]: /documentation/articles/data-factory-pig-hive-activities
-[hdinsight-oozie-coordinator-time]: /documentation/articles/hdinsight-use-oozie-coordinator-time
-
-
-[hdinsight-oozie-coordinator-time]: /documentation/articles/hdinsight-use-oozie-coordinator-time
-
-[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning-v1
-[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
-[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
-[hdinsight-admin-portal]: /documentation/articles/hdinsight-administer-use-management-portal-v1
+[azure-data-factory-pig-hive]: /documentation/articles/data-factory-data-transformation-activities/
+[hdinsight-oozie-coordinator-time]: /documentation/articles/hdinsight-use-oozie-coordinator-time/
+[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning-v1/
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage/
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1/
+[hdinsight-admin-portal]: /documentation/articles/hdinsight-administer-use-management-portal-v1/
 
 
-[hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
-[hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell
-[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
-[hdinsight-use-mapreduce]: /documentation/articles/hdinsight-use-mapreduce
-[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
-[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
-[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
-[hdinsight-get-started-emulator]: /documentation/articles/hdinsight-hadoop-emulator-get-started
+[hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop/
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1/
+[hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell/
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data/
+[hdinsight-use-mapreduce]: /documentation/articles/hdinsight-use-mapreduce/
+[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive/
+[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig/
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage/
 
-[hdinsight-develop-streaming-jobs]: /documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs
-[hdinsight-develop-mapreduce]: /documentation/articles/hdinsight-develop-deploy-java-mapreduce
+[hdinsight-develop-mapreduce]: /documentation/articles/hdinsight-develop-deploy-java-mapreduce-linux/
 
-[sqldatabase-create-configue]: /documentation/articles/sql-database-get-started
-[sqldatabase-get-started]: /documentation/articles/sql-database-get-started
+[sqldatabase-create-configue]: /documentation/articles/sql-database-get-started/
+[sqldatabase-get-started]: /documentation/articles/sql-database-get-started/
 
-[azure-management-portal]: https://manage.windowsazure.cn/
-[azure-create-storageaccount]: /documentation/articles/storage-create-storage-account
+[azure-management-portal]: https://portal.azure.cn/
+[azure-create-storageaccount]: /documentation/articles/storage-create-storage-account/
 
 [apache-hadoop]: http://hadoop.apache.org/
 [apache-oozie-400]: http://oozie.apache.org/docs/4.0.0/
@@ -674,7 +664,7 @@ In this tutorial, you learned how to define an Oozie workflow and how to run an 
 
 [powershell-download]: /downloads/
 [powershell-about-profiles]: https://technet.microsoft.com/zh-cn/library/hh847857.aspx
-[powershell-install-configure]: /documentation/articles/powershell-install-configure
+[powershell-install-configure]: /documentation/articles/powershell-install-configure/
 [powershell-start]: http://technet.microsoft.com/zh-cn/library/hh847889.aspx
 [powershell-script]: https://technet.microsoft.com/zh-cn/library/ee176961.aspx
 

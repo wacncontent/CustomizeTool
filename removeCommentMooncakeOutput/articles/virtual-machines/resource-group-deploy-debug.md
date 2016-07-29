@@ -1,3 +1,5 @@
+<!-- deleted in Global -->
+
 <properties
    pageTitle="Troubleshooting resource group deployments | Azure"
    description="Describes common problems deploying resources created using Resource Manager deployment model, and shows how to detect and fix these issues."
@@ -19,13 +21,13 @@ When you encounter a problem during deployment, you need to discover what went w
 particular deployments for a resource group. Or, you can use the audit logs to retrieve information about all operations performed on a resource group.  With this information, you can fix the
 issue and resume operations in your solution.
 
-This topic focuses primarily on using deployment commands to troubleshoot deployments. For information about using the audit logs to track all operations on your resources, see [Audit operations with Resource Manager](/documentation/articles/resource-group-audit).
+This topic focuses primarily on using deployment commands to troubleshoot deployments. For information about using the audit logs to track all operations on your resources, see [Audit operations with Resource Manager](/documentation/articles/resource-group-audit/).
 
-This topic shows how to retrieve troubleshooting information through Azure PowerShell, Azure CLI and REST API.
+This topic shows how to retrieve troubleshooting information through Azure PowerShell, Azure CLI and REST API. For information about using the portal to troubleshoot deployments, see [Using the Azure portal to manage your Azure resources](/documentation/articles/resource-group-portal/).
 
 Solutions to common errors that users encounter are also described in this topic.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model. You can't create resource groups with the classic deployment model.
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the Resource Manager deployment model, which Azure recommends for most new deployments instead of the classic deployment model. You can't create resource groups with the classic deployment model.
 
 
 ## Troubleshoot with PowerShell
@@ -159,7 +161,7 @@ The Resource Manager REST API provides URIs for retrieving information about a d
 Your deployment will fail if your Azure credentials have expired or if you have not signed into your Azure account. Your credentials can expire if your session is open too long. You can refresh your credentials with the following options:
 
 - For PowerShell, use the **Login-AzureRmAccount** cmdlet. The credentials in a publish settings file are not sufficient for the cmdlets in the AzureResourceManager module.
-- For Azure CLI, use **azure login**. For help with authentication errors, make sure that you have [configured the Azure CLI correctly](/documentation/articles/xplat-cli-connect).
+- For Azure CLI, use **azure login**. For help with authentication errors, make sure that you have [configured the Azure CLI correctly](/documentation/articles/xplat-cli-connect/).
 
 ## Checking the format of templates and parameters
 
@@ -217,6 +219,24 @@ You can specify a particular type of resource with:
     ----                                                        ---------------
     Microsoft.Compute/virtualMachines                           China East, China North
 
+For PowerShell 1.0, use **Get-AzureRmResourceProvider** to get supported locations.
+
+    PS C:\> Get-AzureRmResourceProvider -ProviderNamespace Microsoft.Web
+
+    ProviderNamespace RegistrationState ResourceTypes               Locations
+    ----------------- ----------------- -------------               ---------
+    Microsoft.Web     Registered        {sites/extensions}          {China North, China East}
+    Microsoft.Web     Registered        {sites/slots/extensions}    {China North, China East}
+    Microsoft.Web     Registered        {sites/instances}           {China North, China East}
+    ...
+
+You can specify a particular type of resource with:
+
+    PS C:\> ((Get-AzureRmResourceProvider -ProviderNamespace Microsoft.Web).ResourceTypes | Where-Object ResourceTypeName -eq sites).Locations
+
+    China North
+    China East
+
 ### Azure CLI
 
 For Azure CLI, you can use **azure location list**. Because the list of locations can be long, and there are many providers, you can use tools to examine providers and locations before you use a location that isn't available yet. The following script uses **jq** to discover the locations where the resource provider for Azure virtual machines is available.
@@ -239,11 +259,11 @@ For some resources, most notably Storage accounts, database servers, and web sit
 
 There can be one or more of several issues preventing successful deployment involving authentication and authorization and Azure Active Directory. Regardless how you manage your Azure resource groups, the identity you use to sign in to your account must be an Azure Active Directory object. This identity can be a work or school account that you created or was assigned to you, or you can create a Service Principal for applications.
 
-But Azure Active Directory enables you or your administrator to control which identities can access what resources with a great degree of precision. If your deployments are failing, examine the requests themselves for signs of authentication or authorization issues, and examine the deployment logs for your resource group. You might find that while you have permissions for some resources, you do not have permissions for others. Using the Azure CLI, you can examine Azure Active Directory tenants and users using the `azure ad` commands. (For a complete list of Azure CLI commands, see [Using the Azure CLI for Mac, Linux, and Windows with Azure Resource Manager](/documentation/articles/azure-cli-arm-commands).)
+But Azure Active Directory enables you or your administrator to control which identities can access what resources with a great degree of precision. If your deployments are failing, examine the requests themselves for signs of authentication or authorization issues, and examine the deployment logs for your resource group. You might find that while you have permissions for some resources, you do not have permissions for others. Using the Azure CLI, you can examine Azure Active Directory tenants and users using the `azure ad` commands. (For a complete list of Azure CLI commands, see [Using the Azure CLI for Mac, Linux, and Windows with Azure Resource Manager](/documentation/articles/azure-cli-arm-commands/).)
 
-You might also have issues when a deployment hits a default quota, which could be per resource group, subscriptions, accounts, and other scopes. Confirm to your satisfaction that you have the resources available to deploy correctly. For complete quota information, see [Azure subscription and service limits, quotas, and constraints](/documentation/articles/azure-subscription-service-limits).
+You might also have issues when a deployment hits a default quota, which could be per resource group, subscriptions, accounts, and other scopes. Confirm to your satisfaction that you have the resources available to deploy correctly. For complete quota information, see [Azure subscription and service limits, quotas, and constraints](/documentation/articles/azure-subscription-service-limits/).
 
-To examine your own subscription's quotas for cores, you should use the `azure vm list-usage` command in the Azure CLI and the **Get-AzureVMUsage** cmdlet in PowerShell. The following shows the command in the Azure CLI, and illustrates that the core quota for a trial account is 4:
+To examine your own subscription's quotas for cores, you should use the `azure vm list-usage` command in the Azure CLI and the **Get-AzureRmVMUsage** cmdlet in PowerShell. The following shows the command in the Azure CLI, and illustrates that the core quota for a trial account is 4:
 
     azure vm list-usage
     info:    Executing command vm list-usage
@@ -281,7 +301,7 @@ To be specific about cores, for example, you can check the regions for which you
 
 ## Checking resource provider registration
 
-Resources are managed by resource providers, and an account or subscription might be enabled to use a particular provider. If you are enabled to use a provider, it must also be registered for use. Most providers are registered automatically by the Azure Management Portal or the command-line interface you are using, but not all.
+Resources are managed by resource providers, and an account or subscription might be enabled to use a particular provider. If you are enabled to use a provider, it must also be registered for use. Most providers are registered automatically by the Azure portal or the command-line interface you are using, but not all.
 
 ### PowerShell
 
@@ -329,7 +349,7 @@ To see whether the provider is registered for use using the Azure CLI, use the `
 		data:    Microsoft.Insights         Registered
 		data:    Microsoft.KeyVault         Registered
 		data:    Microsoft.SiteRecovery     Registered
-        data:    Microsoft.Sql               Registered
+		data:    Microsoft.Sql               Registered
 		data:    Microsoft.StreamAnalytics  Registered
 		data:    Microsoft.Web              Registered
 		data:    Microsoft.Authorization    Registered
@@ -395,7 +415,7 @@ PowerShell has several basic commands to perform the same procedures.
 
 ## Next steps
 
-To master the creation of templates, read through the [Authoring Azure Resource Manager templates](/documentation/articles/resource-group-authoring-templates), and walk through the [Azure quickstart templates repository](https://github.com/Azure/azure-quickstart-templates) for deployable examples. An examples of the **dependsOn** property is the [Create a VM with multiple NICs and RDP accessible](https://github.com/Azure/azure-quickstart-templates/tree/master/201-1-vm-loadbalancer-2-nics).
+To master the creation of templates, read through the [Authoring Azure Resource Manager templates](/documentation/articles/resource-group-authoring-templates/), and walk through the [Azure quickstart templates repository](https://github.com/Azure/azure-quickstart-templates) for deployable examples. An examples of the **dependsOn** property is the [Create a VM with multiple NICs and RDP accessible](https://github.com/Azure/azure-quickstart-templates/tree/master/201-1-vm-loadbalancer-2-nics).
 
 <!--Image references-->
 

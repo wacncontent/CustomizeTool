@@ -14,7 +14,7 @@
 	wacn.date=""/>
 
 
-# Build Machine Learning applications using Apache Spark on Azure HDInsight (Windows)
+# Build Machine Learning applications using Apache Spark on HDInsight Windows (Preview)
 
 > [AZURE.NOTE] HDInsight now provides Spark clusters on Linux. For information on how to create a machine learning application on HDInsight Spark Linux clusters, see [Build Machine Learning applications using Apache Spark on Azure HDInsight (Linux)](/documentation/articles/hdinsight-apache-spark-ipython-notebook-machine-learning).
 
@@ -41,7 +41,7 @@ We use this data to predict whether a building will be hotter or colder based on
 
 ##<a name="app"></a>Write a machine learning application using Spark MLlib
 
-1. From the [Azure Preview Portal](https://manage.windowsazure.cn/), from the startboard, click the tile for your Spark cluster (if you pinned it to the startboard). You can also navigate to your cluster under **Browse All** > **HDInsight Clusters**.   
+1. From the [Azure Portal](https://portal.azure.cn/), from the startboard, click the tile for your Spark cluster (if you pinned it to the startboard). You can also navigate to your cluster under **Browse All** > **HDInsight Clusters**.   
 
 2. From the Spark cluster blade, click **Quick Links**, and then from the **Cluster Dashboard** blade, click **Jupyter Notebook**. If prompted, enter the admin credentials for the cluster.
 
@@ -230,12 +230,8 @@ Apache Spark clusters on HDInsight include Anaconda libraries. This also include
 
 
 [hdinsight-versions]: /documentation/articles/hdinsight-component-versioning-v1
-
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
-
 [hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
-
-
 [hdinsight-weblogs-sample]: /documentation/articles/hdinsight-hive-analyze-website-log
 [hdinsight-sensor-data-sample]: /documentation/articles/hdinsight-hive-analyze-sensor-data
 

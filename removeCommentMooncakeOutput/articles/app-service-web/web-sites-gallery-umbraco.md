@@ -1,4 +1,4 @@
-<!-- not suitable for Mooncake -->
+<!-- deleted in Global -->
 
 <properties 
 	pageTitle="Create an Umbraco web app from the Marketplace in Azure" 
@@ -19,16 +19,16 @@
 
 Umbraco CMS is a fully-featured open source content management system that can be used to create a variety of applications from small to complex. The Azure Marketplace provides a wide range of popular web applications developed by Microsoft, third party companies, and open source software initiatives. The gallery allows you to create an Umbraco CMS app in just a few minutes by either applying the starter kits or by integrating your own design. 
 
-This article showcases the Azure preview portal, which greatly simplifies resource management. The Azure preview portal is designed to speed your software delivery process by placing cross-platform tools, technologies, and services from Microsoft and its partners in a single workspace. Instead of using standalone resources like [Azure Websites](/documentation/services/web-sites/) Web Apps, Visual Studio Projects, or databases, you can create, manage, and analyze your entire application as a single resource group. 
+This article showcases the Azure Portal Preview, which greatly simplifies resource management. The Azure Portal Preview is designed to speed your software delivery process by placing cross-platform tools, technologies, and services from Microsoft and its partners in a single workspace. Instead of using standalone resources like [Azure Websites](/documentation/services/web-sites/) Web Apps, Visual Studio Projects, or databases, you can create, manage, and analyze your entire application as a single resource group. 
 
 In this tutorial, you'll learn:
 
-- How to create a new web app through the Markeplace using the Azure preview portal
+- How to create a new web app through the Markeplace using the Azure Portal Preview
 - How to build a blog website by using Umbraco CMS 
 
-##Create a web app from the Marketplace in the Azure preview portal
+##Create a web app from the Marketplace in the Azure Portal Preview
 
-1. Login to the [Azure preview portal](https://manage.windowsazure.cn/).
+1. Login to the [Azure Portal Preview](https://manage.windowsazure.cn/).
 
 2. Choose the **Marketplace** icon.
 	
@@ -93,7 +93,7 @@ That's it! You've successfully created a blog web app using Umbraco CMS, in just
 
 [Umbraco Video Tutorials](https://umbraco.com/help-and-support/video-tutorials.aspx)
 
-[Azure Management Portal Documentation](/documentation/articles/preview-portal)
+[Azure Management Portal Documentation](/documentation/articles/preview-portal/)
 
 [Azure Management Portal (Channel 9)](http://channel9.msdn.com/Blogs/Windows-Azure/Azure-Preview-portal) 
 
@@ -101,7 +101,7 @@ That's it! You've successfully created a blog web app using Umbraco CMS, in just
 
 ## What's changed
 * For a guide to the change from Websites to Azure Websites see: [Azure Websites and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
-* For a guide to the change of the portal to the preview portal see: [Reference for navigating the preview portal](https://manage.windowsazure.cn/)
+* For a guide to the change of the portal to the Portal Preview see: [Reference for navigating the Portal Preview](https://manage.windowsazure.cn/)
 
 >[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
 

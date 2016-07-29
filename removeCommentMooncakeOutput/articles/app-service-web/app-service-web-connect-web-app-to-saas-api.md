@@ -11,7 +11,7 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="12/24/2015"
+	ms.date="02/26/2016"
 	wacn.date=""/>
 
 # Connect a web app to an API app in Azure
@@ -20,12 +20,7 @@ This tutorial shows how to consume an API app from an ASP.NET web app hosted in 
 
 ## Prerequisites
 
-This tutorial builds upon the series from the API App tutorials:
-
-1. [Create an Azure API App](/documentation/articles/app-service-dotnet-create-api-app)
-3. [Deploy an Azure API App](/documentation/articles/app-service-dotnet-deploy-api-app)
-4. [Debug an Azure API App](/documentation/articles/app-service-dotnet-remotely-debug-api-app)
-
+This tutorial builds upon [Create an Azure API App](/documentation/articles/app-service-api-dotnet-get-started/).
 
 ## Create an ASP.NET MVC Application in Visual Studio
 
@@ -79,8 +74,10 @@ This tutorial builds upon the series from the API App tutorials:
 
 ## Deploy the web application to Web Apps in Azure
 
-Follow the instructions available at [How to Deploy an Azure web app](/documentation/articles/web-sites-deploy).
+Follow the instructions available at [How to Deploy an Azure web app](/documentation/articles/web-sites-deploy/).
 
 >[AZURE.NOTE] If you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.
 
+## What's changed
+* For a guide to the change from Websites to Azure see: [Azure and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
  

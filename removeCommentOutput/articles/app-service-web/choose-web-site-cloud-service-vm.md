@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Azure Web App, Cloud Services and Virtual Machines comparison"
-	description="Learn when to use Azure Web App, Cloud Services, and Virtual Machines for hosting web applications."
+	pageTitle="Azure Web App, Virtual Machines, Service Fabric, and Cloud Services comparison | Azure"
+	description="Learn how to choose between Azure Web App, Virtual Machines, Service Fabric, and Cloud Services for hosting web applications."
 	services="app-service\web, virtual-machines, cloud-services"
 	documentationCenter=""
 	authors="tdykstra"
@@ -9,24 +9,20 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="11/19/2015"
+	ms.date="06/06/2016"
 	wacn.date=""/>
 
-# Azure Web App, Cloud Services, and Virtual Machines comparison
+# Azure Web App, Virtual Machines, Service Fabric, and Cloud Services comparison
 
 ## Overview
 
-Azure offers several ways to host web sites: [Azure Web App][], [Cloud Services][], and [Virtual Machines][]. This article helps you understand the options and make the right choice for your web application.
+Azure offers several ways to host web sites: [Azure Web App][], [Virtual Machines][], [Service Fabric][], and [Cloud Services][]. This article helps you understand the options and make the right choice for your web application.
 
 Azure is the best choice for most web apps. Deployment and management are integrated into the platform, sites can scale quickly to handle high traffic loads, and the built-in load balancing and traffic manager provide high availability. You can move existing sites to Azure easily with an [online migration tool](https://www.migratetoazure.net/), use an open-source app from the Web Application Gallery, or create a new site using the framework and tools of your choice. The [WebJobs][] feature makes it easy to add background job processing to your Azure web app.
 
-If you need more control over the web server environment, such as the ability to remote into your server or configure server startup tasks, Azure Cloud Services is typically the best option.
+Service Fabric is a good choice if you're creating a new app or re-writing an existing app to use a microservice architecture. Apps, which run on a shared pool of machines, can start small and grow to massive scale with hundreds or thousands of machines as needed. Stateful services make it easy to consistently and reliably store app state, and Service Fabric automatically manages service partitioning, scaling, and availability for you.  Service Fabric also supports WebAPI with Open Web Interface for .NET (OWIN) and ASP.NET Core.  Compared to Azure Web App, Service Fabric also provides more control over, or direct access to, the underlying infrastructure. You can remote into your servers or configure server startup tasks. Cloud Services is similar to Service Fabric in degree of control versus ease of use, but it's now a legacy service and Service Fabric is recommended for new development.
 
-If you have an existing application that would require substantial modifications to run in Azure or Azure Cloud Services, you could choose Azure Virtual Machines in order to simplify migrating to the cloud. However, correctly configuring, securing, and maintaining VMs requires much more time and IT expertise compared to Azure and Cloud Services. If you are considering Azure Virtual Machines, make sure you take into account the ongoing maintenance effort required to patch, update, and manage your VM environment.  
-
-The following diagram illustrates the relative degree of control versus ease of use for each of these web hosting options on Azure.
-
-![ChoicesDiagram][ChoicesDiagram]
+If you have an existing application that would require substantial modifications to run in Azure or Service Fabric, you could choose Virtual Machines in order to simplify migrating to the cloud. However, correctly configuring, securing, and maintaining VMs requires much more time and IT expertise compared to Azure and Service Fabric. If you are considering Azure Virtual Machines, make sure you take into account the ongoing maintenance effort required to patch, update, and manage your VM environment.  
 
 ##<a name="scenarios"></a>Scenarios and recommendations
 
@@ -96,9 +92,9 @@ For web developers and designers, Azure integrates easily with a variety of fram
 
 If you're running a multi-tier application, such as a web server that connects to a database, Azure is a good option that offers tight integration with Azure SQL Database. And you can use the WebJobs feature for running backend processes.
 
-Choose Cloud Service for one or more of your tiers if you need more control over the server environment, such as the ability to remote into your server or configure server startup tasks.
+Choose Service Fabric for one or more of your tiers if you need more control over the server environment, such as the ability to remote into your server or configure server startup tasks.
 
-Choose Virtual Machines for one or more of your tiers if you want to use your own machine image or run server software or services that you can't configure on Cloud Services.
+Choose Virtual Machines for one or more of your tiers if you want to use your own machine image or run server software or services that you can't configure on Service Fabric.
 
 ### <a id="custom"></a>My application depends on highly customized Windows or Linux environments and I want to move it to the cloud.
 
@@ -115,55 +111,53 @@ If your open source framework is supported on Azure Web App, the languages and f
 - Set up WordPress, Drupal, Umbraco, DNN, and many other third-party web applications.
 - Migrate an existing application or create a new one from the Application Gallery.
 
-If your open source framework is not supported on Azure Web App, you can run it on either of the other two Azure web hosting options. With Cloud Services, you use startup tasks to install and configure any required open source software that runs on Windows. With Virtual Machines, you install and configure the software on the machine image, which can be Windows or Linux-based.
+If your open source framework is not supported on Azure Web App, you can run it on one of the other Azure web hosting options. With Virtual Machines, you install and configure the software on the machine image, which can be Windows or Linux-based.
 
 ### <a id="lob"></a>I have a line-of-business application that needs to connect to the corporate network
 
-If you want to create a line-of-business application, your website might require direct access to services or data on the corporate network. This is possible on Azure Web App, Cloud Services, and Virtual Machines using the [Azure Virtual Network service](/home/features/networking/). On Azure you can use the [VNET integration feature](https://azure.microsoft.com/blog/2014/09/15/azure-websites-virtual-network-integration/), which allows your Azure applications to run as if they were on your corporate network.
+If you want to create a line-of-business application, your website might require direct access to services or data on the corporate network. This is possible on Azure Web App, Service Fabric, and Virtual Machines using the [Azure Virtual Network service](/home/features/networking/). On Azure you can use the [VNET integration feature](https://azure.microsoft.com/blog/2014/09/15/azure-websites-virtual-network-integration/), which allows your Azure applications to run as if they were on your corporate network.
 
 ### <a id="mobile"></a>I want to host a REST API or web service for mobile clients
 
 HTTP-based web services enable you to support a wide variety of clients, including mobile clients. Frameworks like ASP.NET Web API integrate with Visual Studio to make it easier to create and consume REST services.  These services are exposed from a web endpoint, so it is possible to use any web hosting technique on Azure to support this scenario. However, Azure is a great choice for hosting REST APIs. With Azure Web App, you can:
 
-- Quickly create a web app to host the HTTP web service in one of Azure's globally distributed datacenters.
+- Quickly create a [mobile app](/documentation/articles/app-service-mobile-value-prop/) or [API app](/documentation/articles/app-service-api-apps-why-best-platform/) to host the HTTP web service in one of Azure's globally distributed datacenters.
 - Migrate existing services or create new ones.
 - Achieve SLA for availability with a single instance, or scale out to multiple dedicated machines.
 - Use the published site to provide REST APIs to any HTTP clients, including mobile clients.
 
-In addition, Azure has a new preview feature for REST APIs:  API apps.  For more information about API apps, see [What are API apps](/documentation/articles/app-service-api-apps-why-best-platform).
-
 ##<a name="features"></a>Feature Comparison
 
-The following table compares the capabilities of Azure Web App, Cloud Services, and Virtual Machines to help you make the best choice. For current information about the SLA for each option, see [Azure Service Level Agreements](/support/legal/sla/).
+The following table compares the capabilities of Azure Web App, Cloud Services, Virtual Machines, and Service Fabric to help you make the best choice. For current information about the SLA for each option, see [Azure Service Level Agreements](/support/legal/sla/).
 
-Feature|Azure (web apps)|Cloud Services (web roles)|Virtual Machines|Notes
----|---|---|---|---
-Near-instant deployment|X|||Deploying an application or an application update to a Cloud Service, or creating a VM, takes several minutes at least; deploying an application to a web app takes seconds.
-Scale up to larger machines without redeploy|X|||
-Web server instances share content and configuration, which means you don't have to redeploy or reconfigure as you scale.|X|||
-Multiple deployment environments (production and staging)|X|X||
-Automatic OS update management|X|X||
-Seamless platform switching (easily move between 32 bit and 64 bit)|X|X||
-Deploy code with GIT, FTP|X||X|
-Deploy code with Web Deploy|X||X|Cloud Services supports the use of Web Deploy to deploy updates to individual role instances. However, you can't use it for initial deployment of a role, and if you use Web Deploy for an update you have to deploy separately to each instance of a role. Multiple instances are required in order to qualify for the Cloud Service SLA for production environments.
-WebMatrix support|X||X|
-Access to services like Service Bus, Storage, SQL Database|X|X|X|
-Host web or web services tier of a multi-tier architecture|X|X|X|
-Host middle tier of a multi-tier architecture|X|X|X|Azure web apps can easily host a REST API middle tier, and the [WebJobs](/documentation/articles/websites-webjobs-resources/) feature can host background processing jobs. You can run WebJobs in a dedicated website to achieve independent scalability for the tier. The preview [API apps](/documentation/articles/app-service-api-apps-why-best-platform) feature provides even more features for hosting REST services.
-Integrated MySQL-as-a-service support|X|X|X|Cloud Services can integrate MySQL-as-a-service through ClearDB's offerings, but not as part of the Azure Management Portal workflow.
-Support for ASP.NET, classic ASP, Node.js, PHP, Python|X|X|X|
-Scale out to multiple instances without redeploy|X|X|X|Virtual Machines can scale out to multiple instances, but the services running on them must be written to handle this scale-out. You have to configure a load balancer to route requests across the machines, and create an Affinity Group to prevent simultaneous restarts of all instances due to maintenance or hardware failures.
-Support for SSL|X|X|X|For Azure web apps, SSL for custom domain names is only supported for Basic and Standard mode. For information about using SSL with web apps, see [Configuring an SSL certificate for an Azure Website](/documentation/articles/web-sites-configure-ssl-certificate).
-Visual Studio integration|X|X|X|
-Remote Debugging|X|X|X|
-Deploy code with TFS|X|X|X|
-Network isolation with [Azure Virtual Network](/home/features/networking/)|X|X|X|See also [Azure Websites Virtual Network Integration](/blog/2014/09/15/azure-websites-virtual-network-integration/)
-Support for [Azure Traffic Manager](/home/features/traffic-manager/)|X|X|X|
-Integrated Endpoint Monitoring|X|X|X|
-Remote desktop access to servers||X|X|
-Install any custom MSI||X|X|
-Ability to define/execute start-up tasks||X|X|
-Can listen to ETW events||X|X|
+Feature|Azure (web apps)|Cloud Services (web roles)|Virtual Machines|Service Fabric|Notes
+---|---|---|---|---|---
+Near-instant deployment|X|||X|Deploying an application or an application update to a Cloud Service, or creating a VM, takes several minutes at least; deploying an application to a web app takes seconds.
+Scale up to larger machines without redeploy|X|||X|
+Web server instances share content and configuration, which means you don't have to redeploy or reconfigure as you scale.|X|||X|
+Multiple deployment environments (production and staging)|X|X||X|Service Fabric allows you to have multiple environments for your apps or to deploy different versions of your app side-by-side.
+Automatic OS update management|X|X|||Automatic OS updates are planned for a future Service Fabric release.
+Seamless platform switching (easily move between 32 bit and 64 bit)|X|X|||
+Deploy code with GIT, FTP|X||X||
+Deploy code with Web Deploy|X||X||Cloud Services supports the use of Web Deploy to deploy updates to individual role instances. However, you can't use it for initial deployment of a role, and if you use Web Deploy for an update you have to deploy separately to each instance of a role. Multiple instances are required in order to qualify for the Cloud Service SLA for production environments.
+WebMatrix support|X||X||
+Access to services like Service Bus, Storage, SQL Database|X|X|X|X|
+Host web or web services tier of a multi-tier architecture|X|X|X|X|
+Host middle tier of a multi-tier architecture|X|X|X|X|Azure web apps can easily host a REST API middle tier, and the [WebJobs](/documentation/articles/websites-webjobs-resources/) feature can host background processing jobs. You can run WebJobs in a dedicated website to achieve independent scalability for the tier. The preview [API apps](/documentation/articles/app-service-api-apps-why-best-platform/) feature provides even more features for hosting REST services.
+Integrated MySQL-as-a-service support|X|X|X||Cloud Services can integrate MySQL-as-a-service through ClearDB's offerings, but not as part of the Azure Portal workflow.
+Support for ASP.NET, classic ASP, Node.js, PHP, Python|X|X|X|X|Service Fabric supports the creation of a web front-end using [ASP.NET 5](/documentation/articles/service-fabric-add-a-web-frontend/) or you can deploy any type of application (Node.js, Java, etc) as a [guest executable](/documentation/articles/service-fabric-deploy-existing-app/).
+Scale out to multiple instances without redeploy|X|X|X|X|Virtual Machines can scale out to multiple instances, but the services running on them must be written to handle this scale-out. You have to configure a load balancer to route requests across the machines, and create an Affinity Group to prevent simultaneous restarts of all instances due to maintenance or hardware failures.
+Support for SSL|X|X|X|X|For Azure web apps, SSL for custom domain names is only supported for Basic and Standard mode. For information about using SSL with web apps, see [Configuring an SSL certificate for an Azure Website](/documentation/articles/web-sites-configure-ssl-certificate/).
+Visual Studio integration|X|X|X|X|
+Remote Debugging|X|X|X||
+Deploy code with TFS|X|X|X|X|
+Network isolation with [Azure Virtual Network](/home/features/networking/)|X|X|X|X|See also [Azure Websites Virtual Network Integration](/blog/2014/09/15/azure-websites-virtual-network-integration/)
+Support for [Azure Traffic Manager](/home/features/traffic-manager/)|X|X|X|X|
+Integrated Endpoint Monitoring|X|X|X||
+Remote desktop access to servers||X|X|X|
+Install any custom MSI||X|X|X|Service Fabric allows you to host any executable file as a [guest executable](/documentation/articles/service-fabric-deploy-existing-app/) or you can install any app on the VMs.
+Ability to define/execute start-up tasks||X|X|X|
+Can listen to ETW events||X|X|X|
 
 
 > [AZURE.NOTE]
@@ -172,18 +166,20 @@ Can listen to ETW events||X|X|
 
 ## <a id="nextsteps"></a> Next Steps
 
-For more information about the three web hosting options, see [Introducing Azure](/documentation/articles/fundamentals-introduction-to-azure).
+For more information about the three web hosting options, see [Introducing Azure](/documentation/articles/fundamentals-introduction-to-azure/).
 
 To get started with the option(s) you choose for your application, see the following resources:
 
 * [Azure Web App](/documentation/services/web-sites/)
 * [Azure Cloud Services](/documentation/services/cloud-services/)
 * [Azure Virtual Machines](/documentation/services/virtual-machines/)
+* [Service Fabric](/documentation/services/service-fabric)
 
   [ChoicesDiagram]: ./media/choose-web-site-cloud-service-vm/Websites_CloudServices_VMs_3.png
   [Azure Web App]: /home/features/web-site/
   [Cloud Services]: /documentation/services/cloud-services/
   [Virtual Machines]: /documentation/services/virtual-machines/
+  [Service Fabric]: /services/service-fabric
   [ClearDB]: http://www.cleardb.com/
   [WebJobs]: /documentation/articles/websites-webjobs-resources/
   [Configuring an SSL certificate for an Azure Website]: /documentation/articles/web-sites-configure-ssl-certificate/
@@ -196,4 +192,3 @@ To get started with the option(s) you choose for your application, see the follo
   [servicebus]: /documentation/services/service-bus/
   [sqldatabase]: /documentation/services/sql-databases/
   [Storage]: /documentation/services/storage/
- 

@@ -1,3 +1,5 @@
+<!-- rename to virtual-machines-windows-classic-create-powershell -->
+
 <properties
 	pageTitle="Create a Windows VM with Powershell | Azure"
 	description="Create Windows virtual machines using Azure PowerShell and the classic deploment model."
@@ -16,31 +18,26 @@
 # Create Windows virtual machines with Powershell and the classic deployment model 
 
 > [AZURE.SELECTOR]
-- [Azure Management Portal - Windows](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)
-- [Powershell - Windows](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-vms)
-- [PowerShell - Linux](/documentation/articles/virtual-machines-ps-create-preconfigure-linux-vms)
+- [Azure Classic Management Portal - Windows](/documentation/articles/virtual-machines-windows-classic-tutorial/)
+- [Powershell - Windows](/documentation/articles/virtual-machines-windows-classic-create-powershell/)
+- [PowerShell - Linux](/documentation/articles/virtual-machines-linux-classic-createpowershell/)
 
 <br>
 
 
-
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] [Resource Manager model](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-resource-manager-vms).
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the [Resource Manager model](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-resource-manager-vms/).
 
-
-
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] 
-
 
 These steps show you how to customize a set of Azure PowerShell commands that create and preconfigure a Windows-based Azure virtual machine by using a building block approach. You can use this process to quickly create a command set for a new Windows-based virtual machine and expand an existing deployment or to create multiple command sets that quickly build out a custom dev/test or IT pro environment.
 
 These steps follow a fill-in-the-blanks approach for creating Azure PowerShell command sets. This approach can be useful if you are new to PowerShell or you just want to know what values to specify for successful configuration. Advanced PowerShell users can take the commands and substitute their own values for the variables (the lines beginning with "$").
 
-For the companion topic to configure Linux-based virtual machines, see [Use Azure PowerShell to create and preconfigure Linux-based Virtual Machines](/documentation/articles/virtual-machines-ps-create-preconfigure-linux-vms).
+For the companion topic to configure Linux-based virtual machines, see [Use Azure PowerShell to create and preconfigure Linux-based Virtual Machines](/documentation/articles/virtual-machines-linux-classic-createpowershell/).
 
 
 ## Step 1: Install Azure PowerShell
 
-If you haven't done so already, use the instructions in [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure) to install Azure PowerShell on your local computer. Then, open an Azure PowerShell command prompt.
+If you haven't done so already, use the instructions in [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure/) to install Azure PowerShell on your local computer. Then, open an Azure PowerShell command prompt.
 
 ## Step 2: Set your subscription and storage account
 
@@ -49,7 +46,7 @@ Set your Azure subscription and storage account by running these commands at the
 	$subscr="<subscription name>"
 	$staccount="<storage account name>"
 	Select-AzureSubscription -SubscriptionName $subscr -Current
-	Set-AzureSubscription  -Environment AzureChinaCloud  -SubscriptionName $subscr -Curren  -SubscriptionName $subscr -CurrentStorageAccountName $staccount
+	Set-AzureSubscription -Environment AzureChinaCloud -SubscriptionName $subscr -CurrentStorageAccountName $staccount
 
 You can get the correct subscription name from the SubscriptionName property of the output of the **Get-AzureSubscription** command. You can get the correct storage account name from the Label property of the output of the **Get-AzureStorageAccount** command after you run the **Select-AzureSubscription** command.
 
@@ -158,7 +155,7 @@ Option 1: Create the virtual machine in an existing cloud service.
 
 	New-AzureVM -ServiceName "<short name of the cloud service>" -VMs $vm1
 
-The short name of the cloud service is the name that appears in the list of Cloud Services in the Azure Management Portal or in the list of Resource Groups in the Azure Management Portal.
+The short name of the cloud service is the name that appears in the list of Cloud Services in the Azure Classic Management Portal or in the list of Resource Groups in the Azure portal.
 
 Option 2: Create the virtual machine in an existing cloud service and virtual network.
 
@@ -175,7 +172,7 @@ If you are using a text editor, copy the command set to the clipboard and then r
 If you will be creating this virtual machine again or a similar one, you can:
 
 - Save this command set as a PowerShell script file (*.ps1).
-- Save this command set as an Azure automation runbook in the **Automation** section of the Azure Management Portal.
+- Save this command set as an Azure automation runbook in the **Automation** section of the Azure Classic Management Portal.
 
 ## <a id="examples"></a>Examples
 
@@ -260,18 +257,11 @@ Here is the corresponding Azure PowerShell command set to create this virtual ma
 
 [Virtual machines documentation](/documentation/services/virtual-machines/)
 
-
-[Azure virtual machines FAQ](http://msdn.microsoft.com/zh-cn/library/azure/dn683781.aspx)
+[Azure virtual machines FAQ](/documentation/articles/virtual-machines-linux-classic-faq/)
 
-[Overview of Azure Virtual Machines](http://msdn.microsoft.com/zh-cn/library/azure/jj156143.aspx)
-
-
-[Azure virtual machines FAQ](/documentation/articles/virtual-machines-questions/)
+[Overview of Azure Virtual Machines](/documentation/articles/virtual-machines-linux-about/)
 
-[Overview of Azure Virtual Machines](/documentation/articles/virtual-machines-about/)
-
-
-[How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure)
+[How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure/)
 
 
 

@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="02/05/2016"
+	ms.date="04/22/2016"
 	wacn.date=""/>
 
 #Run MapReduce jobs with Hadoop on HDInsight using Curl
@@ -79,7 +79,7 @@ To complete the steps in this article, you will need the following:
 
 4. When the state of the job has changed to **SUCCEEDED**, you can retrieve the results of the job from Azure Blob storage. The `statusdir` parameter that is passed with the query contains the location of the output file; in this case, **wasb:///example/curl**. This address stores the output of the job in the **example/curl** directory in the default storage container used by your HDInsight cluster.
 
-You can list and download these files by using the [Azure CLI for Mac, Linux and Windows](/documentation/articles/xplat-cli-install). For example, to list files in the **example/curl**, use the following command:
+You can list and download these files by using the [Azure CLI](/documentation/articles/xplat-cli-install/). For example, to list files in the **example/curl**, use the following command:
 
 	azure storage blob list <container-name> example/curl
 
@@ -87,7 +87,7 @@ To download a file, use the following:
 
 	azure storage blob download <container-name> <blob-name> <destination-file>
 
-> [AZURE.NOTE] You must specify the storage account name that contains the blob by using the `-a` and `-k` parameters, or set the **AZURE\_STORAGE\_ACCOUNT** and **AZURE\_STORAGE\_ACCESS\_KEY** environment variables. See [how to upload data to HDInsight](/documentation/articles/hdinsight-upload-data) for more information.
+> [AZURE.NOTE] You must specify the storage account name that contains the blob by using the `-a` and `-k` parameters, or set the **AZURE\_STORAGE\_ACCOUNT** and **AZURE\_STORAGE\_ACCESS\_KEY** environment variables. See [how to upload data to HDInsight](/documentation/articles/hdinsight-upload-data/) for more information.
 
 ##<a id="summary"></a>Summary
 
@@ -99,10 +99,10 @@ For more information about the REST interface that is used in this article, see 
 
 For general information about MapReduce jobs in HDInsight:
 
-* [Use MapReduce with Hadoop on HDInsight](/documentation/articles/hdinsight-use-mapreduce)
+* [Use MapReduce with Hadoop on HDInsight](/documentation/articles/hdinsight-use-mapreduce/)
 
 For information about other ways you can work with Hadoop on HDInsight:
 
-* [Use Hive with Hadoop on HDInsight](/documentation/articles/hdinsight-use-hive)
+* [Use Hive with Hadoop on HDInsight](/documentation/articles/hdinsight-use-hive/)
 
-* [Use Pig with Hadoop on HDInsight](/documentation/articles/hdinsight-use-pig)
+* [Use Pig with Hadoop on HDInsight](/documentation/articles/hdinsight-use-pig/)

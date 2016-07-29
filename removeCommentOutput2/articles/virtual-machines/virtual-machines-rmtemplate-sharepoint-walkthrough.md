@@ -1,7 +1,7 @@
-<!-- not suitable for Mooncake -->
+<!-- deleted in Global -->
 
 <properties
-	pageTitle="3-server SharePoint farm ARM template | Windows Azure"
+	pageTitle="3-server SharePoint farm ARM template | Azure"
 	description="Step through the structure of the Azure Resource Manager template for the three-server SharePoint farm."
 	services="virtual-machines"
 	documentationCenter=""
@@ -16,6 +16,8 @@
 	wacn.date=""/>
 
 # The three-server SharePoint farm Resource Manager template
+
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the Resource Manager deployment model, which Microsoft recommends for most new deployments instead of the classic deployment model. You can't create this resource with the classic deployment model.
 
 This topic steps you through the structure of the azuredeploy.json template file for the three-server SharePoint farm. You can see the contents of this template in your browser from [here](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/sharepoint-three-vm/azuredeploy.json).
 
@@ -362,11 +364,5 @@ Your own JSON template to build a multi-tier infrastructure in Azure should foll
 
 ## Next step
 
-[Azure Compute, Network and Storage Providers under Azure Resource Manager](/documentation/articles/virtual-machines-azurerm-versus-azuresm)
-
-[Azure Resource Manager Overview](/documentation/articles/resource-group-overview)
-
-[Authoring Azure Resource Manager Templates](/documentation/articles/resource-group-authoring-templates)
-
-[Virtual machines documentation](/home/features/virtual-machines/)
+- Learn about the [Azure Resource Manager template language](/documentation/articles/resource-group-authoring-templates) and build your own.
 

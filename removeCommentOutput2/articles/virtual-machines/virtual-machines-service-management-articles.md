@@ -1,5 +1,7 @@
+<!-- deleted in Global -->
+
 <properties
-	pageTitle="Articles for Virtual Machines in Service Management | Windows Azure"
+	pageTitle="Articles for Virtual Machines in Service Management | Azure"
 	description="This article lists resources to help you create and manage virtual machines in Azure Service Management."
 	services="virtual-machines"
 	documentationCenter=""
@@ -15,7 +17,7 @@
 
 # Articles for virtual machines in Service Management
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] 
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the classic deployment model. Microsoft recommends that most new deployments use the 
 
 
 ## Get started
@@ -37,8 +39,6 @@
 [Create Windows virtual machines with Powershell and the classic deployment model](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-vms)
 
 [Creating a custom VM running Linux by using the Azure Command-Line Interface (Azure CLI)](/documentation/articles/virtual-machines-linux-create-custom)
-
-[Create a multi-VM deployment by using the Azure CLI](/documentation/articles/virtual-machines-create-multi-vm-deployment-xplat-cli-install)
 
 ## Plan
 
@@ -78,10 +78,6 @@
 
 [How to configure an availability set for virtual machines](/documentation/articles/virtual-machines-how-to-configure-availability)
 
-[Get started configuring an internal load balancer](/documentation/articles/load-balancer-internal-getstarted)
-
-[Get started configuring your Internet-facing load balancer](/documentation/articles/load-balancer-internet-getstarted)
-
 [How to set up endpoints to a virtual machine](/documentation/articles/virtual-machines-set-up-endpoints)
 
 ## Create workloads
@@ -91,8 +87,6 @@
 <!-- [BizTalk Server](https://msdn.microsoft.com/zh-cn/library/azure/jj248689) -->
 
 [Cassandra](/documentation/articles/virtual-machines-linux-nodejs-running-cassandra)
-
-[Docker](/documentation/articles/virtual-machines-docker-with-xplat-cli-install)
 
 [Exchange Server](https://technet.microsoft.com/zh-cn/library/jj619301.aspx)
 
@@ -114,8 +108,6 @@
 
 <!-- [SAP](https://msdn.microsoft.com/zh-cn/library/azure/dn745892.aspx) -->
 
-[SharePoint Server](/documentation/articles/virtual-machines-workload-intranet-sharepoint-farm)
-
 [SQL Server](/documentation/articles/virtual-machines-sql-server-infrastructure-services)
 
 [System Center App Controller](https://technet.microsoft.com/zh-cn/library/dn249764.aspx)
@@ -129,10 +121,6 @@
 ## Monitor
 
 [Enabling diagnostics in Azure cloud services and virtual machines](/documentation/articles/cloud-services-dotnet-diagnostics)
-
-<!-- [Debugging a cloud service or virtual machine in Visual Studio](https://msdn.microsoft.com/zh-cn/library/azure/ff683670.aspx) -->
-
-[Using Windows PowerShell scripts to publish to dev and test environments](https://msdn.microsoft.com/zh-cn/library/azure/dn642480.aspx)
 
 ## Troubleshoot
 

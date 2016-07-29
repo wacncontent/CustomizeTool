@@ -3,18 +3,18 @@
    description="Describes the details of how a runbook in Azure Automation is processed."
    services="automation"
    documentationCenter=""
-   authors="bwren"
+   authors="mgoedtel"
    manager="stevenka"
    editor="tysonn" />
 <tags
 	ms.service="automation"
-	ms.date="11/10/2015"
+	ms.date="03/21/2016"
 	wacn.date=""/>
 
 # Runbook execution in Azure Automation
 
 
-When you start a runbook in Azure Automation, a job is created. A job is a single execution instance of a runbook. An Azure Automation worker is assigned to run each job. While workers are shared by multiple Azure accounts, jobs from different Automation accounts are isolated from one another. You do not have control over which worker will service the request for your job.  A single runbook can have multiple jobs running at one time. When you view the list of runbooks in the Azure Management Portal, it will list the status of the last job that was started for each runbook. You can view the list of jobs for each runbook in order to track the status of each. For a description of the different job statuses, see [Job Statuses](#job-statuses).
+When you start a runbook in Azure Automation, a job is created. A job is a single execution instance of a runbook. An Azure Automation worker is assigned to run each job. While workers are shared by multiple Azure accounts, jobs from different Automation accounts are isolated from one another. You do not have control over which worker will service the request for your job.  A single runbook can have multiple jobs running at one time. When you view the list of runbooks in the Azure Classic Management Portal, it will list the status of the last job that was started for each runbook. You can view the list of jobs for each runbook in order to track the status of each. For a description of the different job statuses, see [Job Statuses](#job-statuses).
 
 The following diagram shows the lifecycle of a runbook job for PowerShell Workflow runbooks.
 
@@ -38,10 +38,10 @@ The following table describes the different statuses that are possible for a job
 |Running, waiting for resources|The job has been unloaded because it reached the [fair share](#fairshare) limit. It will resume shortly from its last checkpoint.|
 |Stopped|The job was stopped by the user before it was completed.|
 |Stopping|The system is in the process of stopping the job.|
-|Suspended|The job was suspended by the user, by the system, or by a command in the runbook. A job that is suspended can be started again and will resume from its last checkpoint or from the beginning of the runbook if it has no checkpoints. The runbook will only be suspended by the system in the case of an exception. By default, ErrorActionPreference is set to **Continue** meaning that the job will keep running on an error. If this preference variable is set to **Stop** then the job will suspend on an error.  Applies to PowerShell Workflow runbooks only.|
-|Suspending|The system is attempting to suspend the job at the request of the user. The runbook must reach its next checkpoint before it can be suspended. If it has already passed its last checkpoint, then it will complete before it can be suspended.| 
+|Suspended|The job was suspended by the user, by the system, or by a command in the runbook. A job that is suspended can be started again and will resume from its last checkpoint or from the beginning of the runbook if it has no checkpoints. The runbook will only be suspended by the system in the case of an exception. By default, ErrorActionPreference is set to **Continue** meaning that the job will keep running on an error. If this preference variable is set to **Stop** then the job will suspend on an error.|
+|Suspending|The system is attempting to suspend the job at the request of the user. The runbook must reach its next checkpoint before it can be suspended. If it has already passed its last checkpoint, then it will complete before it can be suspended.|
 
-## Viewing job status using the Azure Management Portal
+## Viewing job status using the Azure Classic Management Portal
 
 ### Automation Dashboard
 
@@ -49,7 +49,7 @@ The Automation Dashboard shows a summary of all of the runbooks for a particular
 
 You can use the following steps to display the Automation Dashboard.
 
-1. In the Azure Management Portal, select **Automation** and then then click the name of an automation account.
+1. In the Azure Classic Management Portal, select **Automation** and then then click the name of an automation account.
 1. Select the **Dashboard** tab.
 
 ### Runbook Dashboard
@@ -58,7 +58,7 @@ The Runbook Dashboard shows a summary for a single runbook. The summary graph sh
 
 You can use the following steps to display the Runbook Dashboard.
 
-1. In the Azure Management Portal, select **Automation** and then then click the name of an automation account.
+1. In the Azure Classic Management Portal, select **Automation** and then then click the name of an automation account.
 1. Click the name of a runbook.
 1. Select the **Dashboard** tab.
 
@@ -68,7 +68,7 @@ You can view a list of all of the jobs that have been created for a particular r
 
 You can use the following steps to view the jobs for a runbook.
 
-1. In the Azure Management Portal, select **Automation** and then then click the name of an automation account.
+1. In the Azure Classic Management Portal, select **Automation** and then then click the name of an automation account.
 1. Click the name of a runbook.
 1. Select the **Jobs** tab.
 1. Click on the **Job Created** column for a job to view its detail and output.
@@ -86,7 +86,7 @@ The following sample commands retrieves the last job for a sample runbook and di
 
 ## Fair share
 
-In order to share resources among all runbooks in the cloud, Azure Automation will temporarily unload any job after it has been running for 3 hours.  PowerShell Workflow runbooks will be resumed from their last [checkpoint](http://technet.microsoft.com/zh-cn/library/dn469257.aspx#bk_Checkpoints). During this time, the job will show a status of Running, Waiting for Resources. If the runbook has no checkpoints or the job had not reached the first checkpoint before being unloaded, then it will restart from the beginning.  
+In order to share resources among all runbooks in the cloud, Azure Automation will temporarily unload any job after it has been running for 3 hours.    PowerShell Workflow runbooks will be resumed from their last [checkpoint](http://technet.microsoft.com/zh-cn/library/dn469257.aspx#bk_Checkpoints). During this time, the job will show a status of Running, Waiting for Resources. If the runbook has no checkpoints or the job had not reached the first checkpoint before being unloaded, then it will restart from the beginning.  
 
 If the runbook restarts from the same checkpoint or from the beginning of the runbook three consecutive times, it will be terminated with a status of Failed, waiting for resources. This is to protect from runbooks running indefinitely without completing, as they are not able to make it to the next checkpoint without being unloaded again. In this case, you will receive the following exception with the failure.
 
@@ -96,6 +96,6 @@ When you create a runbook, you should ensure that the time to run any activities
 
 
 
-## Related articles
+## Next Steps
 
-- [Starting a runbook in Azure Automation](/documentation/articles/automation-starting-a-runbook)
+- [Starting a runbook in Azure Automation](/documentation/articles/automation-starting-a-runbook/)

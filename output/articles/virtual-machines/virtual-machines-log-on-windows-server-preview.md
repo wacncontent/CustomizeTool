@@ -1,8 +1,8 @@
-<!-- not suitable for Mooncake -->
+<!-- rename to virtual-machines-windows-connect-logon -->
 
 <properties
 	pageTitle="Log on to a Windows Server VM | Azure"
-	description="Learn how to log on to a Windows Server VM using the Azure Management Portal and the Resource Manager deployment model."
+	description="Learn how to log on to a Windows Server VM using the Azure portal and the Resource Manager deployment model."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="cynthn"
@@ -17,13 +17,13 @@
 
 # How to log on to a virtual machine running Windows Server 
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] [classic deployment model](/documentation/articles/virtual-machines-log-on-windows-server).
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the Resource Manager deployment model, which Azure recommends for most new deployments instead of the [classic deployment model](/documentation/articles/virtual-machines-windows-classic-connect-logon/).
 
-You'll use the **Connect** button in the Azure Management Portal to start a Remote Desktop session. First you'll connect to the virtual machine, then you'll log on.
+You'll use the **Connect** button in the Azure portal to start a Remote Desktop session. First you'll connect to the virtual machine, then you'll log on.
 
 ## Connect to the virtual machine
 
-1. If you haven't already done so, sign in to the [Azure Management Portal](https://manage.windowsazure.cn/).
+1. If you haven't already done so, sign in to the [Azure portal](https://portal.azure.cn/).
 
 2.	On the Hub menu, click **Virtual Machines**.
 
@@ -39,4 +39,4 @@ You'll use the **Connect** button in the Azure Management Portal to start a Remo
 
 ## Troubleshooting
 
-If the tips about logging on don't help or aren't what you need, see [Troubleshoot Remote Desktop connections to a Windows-based Azure Virtual Machine](/documentation/articles/virtual-machines-troubleshoot-remote-desktop-connections). This article walks you through diagnosing and resolving common problems.
+If the tips about logging on don't help or aren't what you need, see [Troubleshoot Remote Desktop connections to a Windows-based Azure Virtual Machine](/documentation/articles/virtual-machines-windows-troubleshoot-rdp-connection/). This article walks you through diagnosing and resolving common problems.

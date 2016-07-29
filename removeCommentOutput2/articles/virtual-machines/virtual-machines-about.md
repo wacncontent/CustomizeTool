@@ -1,3 +1,5 @@
+<!-- rename to virtual-machines-linux-about -->
+
 <properties
 	pageTitle="About Azure Virtual Machines | Azure"
 	description="Learn about the basics of virtual machines in Azure using both deployment models."
@@ -32,7 +34,7 @@ Try out a virtual machine by creating a simple virtual machine quickly. For inst
 
 [Create a virtual machine running Linux](/documentation/articles/virtual-machines-linux-tutorial)
 
-[Create a virtual machine running Windows in the Azure Management Portal](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)
+[Create a virtual machine running Windows in the Azure portal](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)
 
 Because those tutorials help you create a virtual machine quickly, they show you only one way to do it instead of describing the various tools you can use to create virtual machines. For a summary of these tools and links to instructions, see:
 

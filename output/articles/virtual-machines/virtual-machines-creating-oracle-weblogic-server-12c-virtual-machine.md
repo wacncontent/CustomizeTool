@@ -1,3 +1,5 @@
+<!-- rename to virtual-machines-windows-create-oracle-weblogic-server-12c -->
+
 <properties
 	pageTitle="Create an Oracle WebLogic Server 12c VM | Azure"
 	description="Create an Oracle WebLogic Server 12c virtual machine running Windows Server 2012 in Azure, using the Resource Manager deployment model."
@@ -14,15 +16,14 @@
 #Creating an Oracle WebLogic Server 12c Virtual Machine in Azure
 The following example shows you how you can create a Virtual Machine based on a Microsoft-provided Oracle WebLogic Server 12c image running on Windows Server 2012 in Azure.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)]  classic deployment model. 
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the Resource Manager deployment model, which Azure recommends for most new deployments instead of the classic deployment model.
 
 
 
 ##To create an Oracle WebLogic Server 12c Virtual Machine in Azure
 
-1. Log in to the [Azure Management Portal](https://manage.windowsazure.cn/).
+1. Log in to the [Azure portal](https://portal.azure.cn/).
 
-
 2. Click on the **Marketplace**, click **Compute**, then type **Oracle** into the search box.
 
 3.	Select the **Oracle WebLogic Server 12c Standard Edition on Windows Server 2012** or **Oracle WebLogic Server 12c Enterprise Edition on Windows Server 2012** image.  Review the information about this image (such as minimum recommended size), and then click **Next**.
@@ -34,48 +35,22 @@ The following example shows you how you can create a Virtual Machine based on a 
 6.	Specify and confirm a password for the VM, or provide a SSH Public Key.
 
 7.	Choose a **Pricing Tier**.  Note that Recommended Pricing Tiers are displayed by default, to see all configuration options, click **View all** on the top right.
-
-
-2. Click **New** > **Compute** > **From Gallery**.
-
-3.	Select the **Windows Server 2012 R2 Datacenter (en-us)** or **Windows Server 2012 R2 Datacenter (zh-cn)** image.  Review the information about this image (such as minimum recommended size), and then click **Next**.
-
-4.	Specify a **Virtual Machine Name** for the VM.
-
-7.	Choose a **Tier** and **Size**. If you need a DS-Series VM, please create is through Azure PowerShell. For more information, see [Create Windows virtual machines with Powershell and the classic deployment model](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-vms).
-
-5.	Specify a **New User Name** for the VM. Note that this user is for remotely logging into the VM; this is not the Oracle database user name.
-
-6.	Specify and confirm a password for the VM and click next.
-
 
 8.	Set the optional configuration as needed, with these considerations:
-
-	1. Create a new cloud service or choose an existed cloud service
-	2. Choose a **Location**
-
 	1. Leave **Storage Account** as-is to create a new storage account with the VM name.
-
 	2. Leave **Availability Set** as "Not Configured".
 	3. Do not add any **endpoints** at this time.
 
-9.	Choose or Create a [Resource Group](/documentation/articles/resource-group-portal)
+9.	Choose or Create a [Resource Group](/documentation/articles/resource-group-portal/)
 
 10. Choose a **Subscription**
 
 11. Choose a **Location**
-
-
-	2. Leave **Availability Set** as "(None)".
-	3. Do not add any **endpoints** at this time. Click **Next**
-	
-10. Choose whether to install **Configuration extensions** and **Security extensions**, and click **Complete**.
-
 
 
 ##To configure your Oracle WebLogic Server 12c Virtual Machine in Azure
 
-1. Log in to the [Azure Management Portal](https://manage.windowsazure.cn/).
+1. Log in to the [Azure portal](https://portal.azure.cn/).
 
 2.	Click **Virtual Machines**.
 
@@ -84,16 +59,6 @@ The following example shows you how you can create a Virtual Machine based on a 
 4.	Click **Connect**.
 
 5.	Respond to the prompts as needed to connect to the Virtual Machine. When prompted for the administrator name and password, use the values that you provided when you created the Virtual Machine.
-
-
-6. Download [Java JDK 1.8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) and install it. Setup the **JAVA_HOME** Environment variable and add `%JAVA_HOME%\bin\` to your path. 
-
-	> [AZURE.NOTE] By default, a Jave JRE is installed in the server, so when adding `%JAVA_HOME%\bin\` to your path, you should remeve `C:\ProgramData\Oracle\Java\javapath`. Otherwise, the system will use JRE instead of the JDK.
-
-7. Download [Oracle WebLogic Server quite Installers](http://www.oracle.com/technetwork/middleware/weblogic/downloads/wls-main-097127.html), and follow [the document](http://download.oracle.com/otn/nt/middleware/12c/1221/wls_1221_QuickInstaller_README.txt) to install it.
-
-8. Run the configuration Wizard -- `<path of your Weblogic Server>\oracle_common\common\bin\config.cmd`.
-
 
 6.	Within the **WebLogic Platform QuickStart** dialog, click **Getting Started with WebLogic Server**. (If the **WebLogic Platform QuickStart** dialog is not already opened, open it by clicking **Windows Start**, typing **Start Admin Server for WebLogic Server Domain**, and then clicking the **Start Admin Server for WebLogic Server Domain** icon.)
 
@@ -162,7 +127,7 @@ The following example shows you how you can create a Virtual Machine based on a 
 
 10.	Create an endpoint for your Virtual Machine:
 
-	1. Log in to the [Azure Management Portal](https://manage.windowsazure.cn/).
+	1. Log in to the [Azure portal](https://portal.azure.cn/).
 
 	2.	Click **Browse**
 
@@ -206,16 +171,16 @@ The following example shows you how you can create a Virtual Machine based on a 
 
 	8.	Specify a name for the rule and optionally a description, and then click **Finish**.
 
-12.	To see the shopping cart application running on the Internet, open a browser to the URL in the form of `http://<<unique_domain_name>>/shoppingcart`. (You can determine the value for <<*unique_domain_name*>> within the [Azure Management Portal](https://manage.windowsazure.cn/) by clicking **Virtual Machines** and then selecting the Virtual Machine that you are using to run Oracle WebLogic Server).
+12.	To see the shopping cart application running on the Internet, open a browser to the URL in the form of `http://<<unique_domain_name>>/shoppingcart`. (You can determine the value for <<*unique_domain_name*>> within the [Azure portal](https://portal.azure.cn/) by clicking **Virtual Machines** and then selecting the Virtual Machine that you are using to run Oracle WebLogic Server).
 
 
 ##Additional resources
 Now that you've set up your Virtual Machine running Oracle WebLogic Server, see the following topics for additional information.
 
--	[Oracle Virtual Machine images - Miscellaneous Considerations](/documentation/articles/virtual-machines-miscellaneous-considerations-oracle-virtual-machine-images)
+-	[Oracle Virtual Machine images - Miscellaneous Considerations](/documentation/articles/virtual-machines-windows-classic-oracle-considerations/)
 
 -	[Oracle WebLogic Server Product Documentation](http://www.oracle.com/technetwork/middleware/weblogic/documentation/index.html)
 
 -	[Oracle WebLogic Server 12c using Linux on Azure](http://www.oracle.com/technetwork/middleware/weblogic/learnmore/oracle-weblogic-on-azure-wp-2020930.pdf)
 
--	[Oracle Virtual Machine images for Azure](/documentation/articles/virtual-machines-oracle-list-oracle-virtual-machine-images)
+-	[Oracle Virtual Machine images for Azure](/documentation/articles/virtual-machines-oracle-list-oracle-virtual-machine-images/)

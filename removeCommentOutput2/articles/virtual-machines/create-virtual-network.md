@@ -1,5 +1,7 @@
+<!-- deleted in Global -->
+
 <properties 
-	pageTitle="Create a cloud-only virtual network | Windows Azure" 
+	pageTitle="Create a cloud-only virtual network | Azure" 
 	description="Learn how to create an example cloud-only Azure Virtual Network in this tutorial." 
 	services="virtual-machines, virtual-network" 
 	documentationCenter="" 
@@ -14,6 +16,9 @@
 	wacn.date=""/>
 
 # Tutorial: Create a Cloud-Only Virtual Network in Azure
+
+
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the Resource Manager deployment model, which Microsoft recommends for most new deployments instead of the
 
 
 This tutorial walks you through the steps in the Azure Management Portal to create an example cloud-only Azure Virtual Network that contains two subnets. The resulting virtual network will look like the following:
@@ -34,7 +39,7 @@ In this tutorial you will learn how to set up a basic Azure cloud-only virtual n
 
 ##  Prerequisites
 
-*  A Microsoft account with at least one valid, active Azure subscription. If you do not already have an Azure subscription, you can sign up for a trial at [Try Azure](/pricing/1rmb-trial/). If you have an MSDN Subscription, see [Windows Azure Special Pricing: MSDN, MPN, and Bizspark Benefits](/pricing/member-offers/msdn-benefits-details/).
+*  A Microsoft account with at least one valid, active Azure subscription. If you do not already have an Azure subscription, you can sign up for a trial at [Try Azure](/pricing/1rmb-trial/). If you have an MSDN Subscription, see [Azure Special Pricing: MSDN, MPN, and Bizspark Benefits](/pricing/member-offers/msdn-benefits-details/).
 
 ##  Create the Virtual Network for this tutorial
 

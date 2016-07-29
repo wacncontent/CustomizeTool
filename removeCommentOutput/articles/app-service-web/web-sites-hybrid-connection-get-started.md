@@ -16,7 +16,7 @@
 
 You can connect an Azure Web App to any on-premises resource that uses a static TCP port, such as SQL Server, MySQL, HTTP Web APIs, and most custom Web Services. This article shows you how to create a hybrid connection between Azure and an on-premises SQL Server database.
 
-> [AZURE.NOTE] The Web Apps portion of the Hybrid Connections feature is available only in the [Azure Management Portal](https://manage.windowsazure.cn). To create a connection in BizTalk Services, see [Hybrid Connections](/documentation/articles/integration-hybrid-connection-overview/). 
+> [AZURE.NOTE] The Web Apps portion of the Hybrid Connections feature is available only in the [Azure Portal](https://portal.azure.cn). To create a connection in BizTalk Services, see [Hybrid Connections](/documentation/articles/integration-hybrid-connection-overview/). 
 > 
 > This content also applies to Mobile Apps in Azure Web App. 
 
@@ -35,11 +35,11 @@ You can connect an Azure Web App to any on-premises resource that uses a static 
 > [AZURE.NOTE] The steps in this article assume that you are using the browser from the computer that will host the on-premises hybrid connection agent.
 
 
-## Create a web app in the Azure Management Portal ##
+## Create a web app in the Azure Portal ##
 
-> [AZURE.NOTE] If you have already created a web app or Mobile App backend in the Azure Management Portal that you want to use for this tutorial, you can skip ahead to [Create a Hybrid Connection and a BizTalk Service](#CreateHC) and start from there.
+> [AZURE.NOTE] If you have already created a web app or Mobile App backend in the Azure Portal that you want to use for this tutorial, you can skip ahead to [Create a Hybrid Connection and a BizTalk Service](#CreateHC) and start from there.
 
-1. In the upper left corner of the [Azure Management Portal](https://manage.windowsazure.cn), click **New** > **Web + Mobile** > **Web App**.
+1. In the upper left corner of the [Azure Portal](https://portal.azure.cn), click **New** > **Web + Mobile** > **Web App**.
 	
 	![New web app][NewWebsite]
 	
@@ -95,7 +95,7 @@ Next, you will create a hybrid connection and a BizTalk service for the web app.
 6. When the process completes, the notifications area in the Portal informs you that the connection has been successfully created.
 	<!--- TODO
 
-    Everything fails at this step. I can't create a BizTalk service in the dogfood portal. I switch to the Management Portal
+    Everything fails at this step. I can't create a BizTalk service in the dogfood portal. I switch to the Classic Management Portal
 	(full portal) and created the BizTalk service but it doesn't seem to let you connnect them - When you finish the
 	Create hybrid conn step, you get the following error
 	Failed to create hybrid connection RelecIoudHC. The 
@@ -160,7 +160,7 @@ Now that the hybrid connection infrastructure is complete, you can create a hybr
 
 ## Configure the Mobile App .NET backend project to connect to the SQL Server database
 
-In Azure Web App, a Mobile Apps .NET backend project is just an ASP.NET web app with an additional Mobile Apps SDK installed and initialized. To use your web app as a Mobile Apps backend, you must [download and initialize the Mobile Apps .NET backend SDK](/documentation/articles/app-service-mobile-dotnet-backend-how-to-use-server-sdk#install-sdk).  
+In Azure Web App, a Mobile Apps .NET backend project is just an ASP.NET web app with an additional Mobile Apps SDK installed and initialized. To use your web app as a Mobile Apps backend, you must [download and initialize the Mobile Apps .NET backend SDK](/documentation/articles/app-service-mobile-dotnet-backend-how-to-use-server-sdk/#install-sdk).  
 
 For Mobile Apps, you also need to define a connection string for the on-premises database and modify the backend to use this connection. 
 
@@ -198,7 +198,7 @@ For Mobile Apps, you also need to define a connection string for the on-premises
 
 Next, you need to add an app setting for this new connection string so that it can be used from Azure.  
 
-1. Back in the [Azure Management Portal](https://manage.windowsazure.cn) in the web app backend code for your Mobile App, click **All settings**, then **Application settings**.
+1. Back in the [Azure portal](https://portal.azure.cn) in the web app backend code for your Mobile App, click **All settings**, then **Application settings**.
 
 3. In the **Web app settings** blade, scroll down to **Connection strings** and add an new **SQL Server** connection string named `OnPremisesDBConnection` with a value like `Server=OnPremisesServer,1433;Database=OnPremisesDB;User ID=HybridConnectionsLogin;Password=<**secure_password**>`.
 
@@ -213,7 +213,7 @@ At this point you can republish the server project and test the new connection w
 <a name="NextSteps"></a>
 ## Next Steps ##
 
-- For information on creating an ASP.NET web application that uses a hybrid connection, see [Connect to an on-premises SQL Server from an Azure web site using Hybrid Connections](/documentation/articles/web-sites-hybrid-connection-connect-on-premises-sql-server/).
+- For information on creating an ASP.NET web application that uses a hybrid connection, see [Connect to an on-premises SQL Server from an Azure web site using Hybrid Connections](/documentation/articles/web-sites-hybrid-connection-connect-on-premises-sql-server/). 
 
 ### Additional Resources
 
@@ -223,7 +223,7 @@ At this point you can republish the server project and test the new connection w
 
 [Hybrid Connections web site](/home/features/biztalk-services/)
 
-[BizTalk Services: Dashboard, Monitor, Scale, Configure, and Hybrid Connection tabs](/documentation/articles/biztalk-dashboard-monitor-scale-tabs)
+[BizTalk Services: Dashboard, Monitor, Scale, Configure, and Hybrid Connection tabs](/documentation/articles/biztalk-dashboard-monitor-scale-tabs/)
 
 [Building a Real-World Hybrid Cloud with Seamless Application Portability (Channel 9 video)](http://channel9.msdn.com/events/TechEd/NorthAmerica/2014/DCIM-B323#fbid=)
 

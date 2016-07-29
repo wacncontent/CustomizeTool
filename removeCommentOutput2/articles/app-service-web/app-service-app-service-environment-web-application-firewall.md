@@ -11,13 +11,13 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="12/24/2015"
+	ms.date="07/18/2016"
 	wacn.date=""/>	
 
 # Configuring a Web Application Firewall (WAF) for Azure Environment
 
 ## Overview ##
-Web application firewalls like the [Barracuda WAF for Azure](https://www.barracuda.com/programs/azure) that is available on the [Azure gallery](https://azure.microsoft.com/marketplace/partners/barracudanetworks/waf-byol/) helps secure your web applications by inspecting inbound web traffic to block SQL injections, Cross-Site Scripting, malware uploads & application DDoS and other attacks. It also inspects the responses from the back-end web servers for Data Loss Prevention (DLP). Combined with the isolation and additional scaling provided by Azure Environments, this provides an ideal environment to host business critical web applications that need to withstand malicious requests and high volume traffic.
+Web application firewalls like the [Barracuda WAF for Azure](https://www.barracuda.com/programs/azure) that is available on the [Azure Marketplace](https://azure.microsoft.com/marketplace/partners/barracudanetworks/waf-byol/) helps secure your web applications by inspecting inbound web traffic to block SQL injections, Cross-Site Scripting, malware uploads & application DDoS and other attacks. It also inspects the responses from the back-end web servers for Data Loss Prevention (DLP). Combined with the isolation and additional scaling provided by Azure Environments, this provides an ideal environment to host business critical web applications that need to withstand malicious requests and high volume traffic.
 
 +[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)] 
 
@@ -27,13 +27,13 @@ For this document we will configure our Azure Environment behind multiple load b
 ![Architecture][Architecture] 
 
 ## Configuring your Azure Environment ##
-To configure an Azure Environment refer to [our documentation](/documentation/articles/app-service-web-how-to-create-an-app-service-environment) on the subject. Once you have an Azure Environment created, you can create [Web Apps](/home/features/web-site), [API Apps](/documentation/articles/app-service-api-apps-why-best-platform) and [Mobile Apps](/documentation/articles/app-service-mobile-value-prop) in this environment that will all be protected behind the WAF we configure in the next section.
+To configure an Azure Environment refer to [our documentation](/documentation/articles/app-service-web-how-to-create-an-app-service-environment/) on the subject. Once you have an Azure Environment created, you can create [Web Apps](/home/features/web-site/), [API Apps](/documentation/articles/app-service-api-apps-why-best-platform/) and [Mobile Apps](/documentation/articles/app-service-mobile-value-prop/) in this environment that will all be protected behind the WAF we configure in the next section.
 
 ## Configuring your Barracuda WAF Cloud Service ##
 Barracuda has a [detailed article](https://techlib.barracuda.com/WAF/AzureDeploy) on deploying its WAF on a virtual machine in Azure. But because we want redundancy and not introduce a single point of failure, you want to deploy at least 2 WAF instance VMs into the same Cloud Service when following these instructions.
 
 ### Adding Endpoints to Cloud Service ###
-Once you have 2 or more WAF VM instances in your Cloud Service you can use the [Azure Management Portal](https://manage.windowsazure.cn/) to add HTTP and HTTPS endpoints that are used by your application as shown in the image below.
+Once you have 2 or more WAF VM instances in your Cloud Service you can use the [Azure Portal](https://portal.azure.cn/) to add HTTP and HTTPS endpoints that are used by your application as shown in the image below.
 
 ![Configure Endpoint][ConfigureEndpoint]
 
@@ -61,14 +61,14 @@ Clicking on the Services tab will let you configure your WAF for services it is 
 
 ![Management Add Services][ManagementAddServices]
 
-> Note: Depending on how your applications are configured and what features are being used in your Azure Environment, you will need to forward traffic for TCP ports other than 80 and 443, e.g. if you have IP SSL setup for a Web App. For a list of network ports used in Azure Environments, please refer to [Control Inbound Traffic documentation's](/documentation/articles/app-service-app-service-environment-control-inbound-traffic) Network Ports section.
+> Note: Depending on how your applications are configured and what features are being used in your Azure Environment, you will need to forward traffic for TCP ports other than 80 and 443, e.g. if you have IP SSL setup for a Web App. For a list of network ports used in Azure Environments, please refer to [Control Inbound Traffic documentation's](/documentation/articles/app-service-app-service-environment-control-inbound-traffic/) Network Ports section.
 
 ## Configuring Azure Traffic Manager (OPTIONAL) ##
-If your application is available in multiple regions, then you would want to load balance them behind [Azure Traffic Manager](/documentation/articles/traffic-manager-overview). To do so you can add an endpoint in the [Azure Management Portal](https://manage.azure.com) using the Cloud Service name for your WAF in the Traffic Manager profile as shown in the image below. 
+If your application is available in multiple regions, then you would want to load balance them behind [Azure Traffic Manager](/documentation/articles/traffic-manager-overview/). To do so you can add an endpoint in the [Azure Classic Management Portal](https://manage.windowsazure.cn) using the Cloud Service name for your WAF in the Traffic Manager profile as shown in the image below. 
 
 ![Traffic Manager Endpoint][TrafficManagerEndpoint]
 
-If your application requires authentication, ensure you have some resource that doesn't require any authentication for Traffic Manager to ping for the availability of your application. You can configure the URL under the Configure section on the [Azure Management Portal](https://manage.azure.com) as shown below.
+If your application requires authentication, ensure you have some resource that doesn't require any authentication for Traffic Manager to ping for the availability of your application. You can configure the URL under the Configure section on the [Azure Classic Management Portal](https://manage.windowsazure.cn) as shown below.
 
 ![Configure Traffic Manager][ConfigureTrafficManager]
 
@@ -76,8 +76,8 @@ To forward the Traffic Manager pings from your WAF to your application, you need
 
 ![Website Translations][WebsiteTranslations]
 
-## Securing Traffic to Azure Environment Using Network Resource Groups##
-Follow the [Control Inbound Traffic documentation](/documentation/articles/app-service-app-service-environment-control-inbound-traffic) for details on restricting traffic to your Azure Environment from the WAF only by using the VIP address of your Cloud Service. Here's a sample Powershell command for performing this task for TCP port 80.
+## Securing Traffic to Azure Environment Using Network Security Groups (NSG)##
+Follow the [Control Inbound Traffic documentation](/documentation/articles/app-service-app-service-environment-control-inbound-traffic/) for details on restricting traffic to your Azure Environment from the WAF only by using the VIP address of your Cloud Service. Here's a sample Powershell command for performing this task for TCP port 80.
 
 
     Get-AzureNetworkSecurityGroup -Name "RestrictWestUSAppAccess" | Set-AzureNetworkSecurityRule -Name "ALLOW HTTP Barracuda" -Type Inbound -Priority 201 -Action Allow -SourceAddressPrefix '191.0.0.1'  -SourcePortRange '*' -DestinationAddressPrefix '*' -DestinationPortRange '80' -Protocol TCP

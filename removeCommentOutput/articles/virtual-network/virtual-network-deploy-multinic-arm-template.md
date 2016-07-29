@@ -1,4 +1,4 @@
-<properties 
+<properties
    pageTitle="Deploy multi NIC VMs using a template in Resource Manager | Azure"
    description="Learn how to deploy multi NIC VMs using a template in Resource Manager"
    services="virtual-network"
@@ -19,7 +19,7 @@
 
 [AZURE.INCLUDE [virtual-network-deploy-multinic-intro-include.md](../includes/virtual-network-deploy-multinic-intro-include.md)]
 
-[AZURE.INCLUDE [azure-arm-classic-important-include](../includes/learn-about-deployment-models-rm-include.md)] [classic deployment model](/documentation/articles/virtual-network-deploy-multinic-classic-ps).
+[AZURE.INCLUDE [azure-arm-classic-important-include](../includes/learn-about-deployment-models-rm-include.md)] [classic deployment model](/documentation/articles/virtual-network-deploy-multinic-classic-ps/).
 
 [AZURE.INCLUDE [virtual-network-deploy-multinic-scenario-include.md](../includes/virtual-network-deploy-multinic-scenario-include.md)]
 
@@ -31,9 +31,9 @@ Before you can deploy the back end servers, you need to deploy the main resource
 
 1. Navigate to [the template page](https://github.com/Azure/azure-quickstart-templates/tree/master/IaaS-Story/11-MultiNIC).
 2. In the template page, to the right of **Parent resource group**, click **Deploy to Azure**.
-3. If needed, change the parameter values, then follow the steps in the Azure preview portal to deploy the resource group.
+3. If needed, change the parameter values, then follow the steps in the Azure Portal Preview to deploy the resource group.
 
-> [AZURE.IMPORTANT] Make sure your storage account names are unique. You cannot have duplicate storage account names in Azure. 
+> [AZURE.IMPORTANT] Make sure your storage account names are unique. You cannot have duplicate storage account names in Azure.
 
 ## Understand the deployment template
 
@@ -78,7 +78,7 @@ Before you deploy the template provided with this documentation, make sure you u
 	        "dbPort": 1433
 	      },
 
-6. Notice the **vmSize** contains the value *Standard_DS3*. Only certain VM sizes allow for the use of multiple NICs. You can verify which VM sizes are multi NIC enabled by visiting the [multi NIC overview](/documentation/articles/virtual-networks-multiple-nics).
+6. Notice the **vmSize** contains the value *Standard_DS3*. Only certain VM sizes allow for the use of multiple NICs. You can verify which VM sizes are multi NIC enabled by visiting the [multi NIC overview](/documentation/articles/virtual-networks-multiple-nics/).
 7. Scroll down to **resources** and notice the first element. It describes a storage account. This storage account will be used to maintain the data disks used by each database VM. In this scenario, each database VM has an OS disk stored in regular storage, and two data disks stored in SSD (premium) storage.
 
 	    {
@@ -225,20 +225,20 @@ To deploy the template you downloaded by using PowerShell, follow the steps belo
 
 		New-AzureRmResourceGroup -Name IaaSStory-Backend -Location uswest `
 		    -TemplateFile 'https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/IaaS-Story/11-MultiNIC/azuredeploy.json' `
-		    -TemplateParameterFile 'https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/IaaS-Story/11-MultiNIC/azuredeploy.parameters.json'	
+		    -TemplateParameterFile 'https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/IaaS-Story/11-MultiNIC/azuredeploy.parameters.json'
 
 	Expected output:
 
 		ResourceGroupName : IaaSStory-Backend
 		Location          : chinanorth
 		ProvisioningState : Succeeded
-		Tags              : 
-		Permissions       : 
+		Tags              :
+		Permissions       :
 		                    Actions  NotActions
 		                    =======  ==========
 		                    *                  
-		                    
-		Resources         : 
+
+		Resources         :
 		                    Name                 Type                                 Location
 		                    ===================  ===================================  ========
 		                    ASDB                 Microsoft.Compute/availabilitySets   chinanorth  
@@ -249,14 +249,14 @@ To deploy the template you downloaded by using PowerShell, follow the steps belo
 		                    NICDB-RA-1           Microsoft.Network/networkInterfaces  chinanorth  
 		                    NICDB-RA-2           Microsoft.Network/networkInterfaces  chinanorth  
 		                    wtestvnetstorageprm  Microsoft.Storage/storageAccounts    chinanorth  
-		                    
+
 		ResourceId        : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/IaaSStory-Backend
 
 ## Deploy the template by using the Azure CLI
 
 To deploy the template by using the Azure CLI, follow the steps below.
 
-1. If you have never used Azure CLI, see [Install and Configure the Azure CLI](/documentation/articles/xplat-cli-install) and follow the instructions up to the point where you select your Azure account and subscription.
+1. If you have never used Azure CLI, see [Install and Configure the Azure CLI](/documentation/articles/xplat-cli-install/) and follow the instructions up to the point where you select your Azure account and subscription.
 2. Run the **`azure config mode`** command to switch to Resource Manager mode, as shown below.
 
 		azure config mode arm

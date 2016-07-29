@@ -1,3 +1,5 @@
+<!-- rename to virtual-machines-linux-classic-about-images -->
+
 <properties
 	pageTitle="About images for virtual machines | Azure"
 	description="Learn about how images are used with virtual machines in Azure."
@@ -15,7 +17,7 @@
 
 # About images for virtual machines
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] 
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager model.
 
 Images are used in Azure to provide a new virtual machine with an operating system. An image might also have one or more data disks. Images are available from several sources:
 
@@ -31,14 +33,14 @@ You can create your own images, based on a virtual machine in Azure, or a virtua
 
 ## Working with images
 
-You can use the Azure Command-Line Interface (CLI) for Mac, Linux, and Windows or Azure PowerShell module to manage the images available to your Azure subscription. You also can use the Azure Management Portal for some image tasks, but the command line gives you more options.
+You can use the Azure Command-Line Interface (CLI) for Mac, Linux, and Windows or Azure PowerShell module to manage the images available to your Azure subscription. You also can use the Azure Classic Management Portal for some image tasks, but the command line gives you more options.
 
-For information about using these tools, see [Navigating and Selecting Azure Virtual Machine images with PowerShell and the Azure CLI](/documentation/articles/resource-groups-vm-searching).
+For information about using these tools with Resource Manager deployments, see [Navigating and Selecting Azure Virtual Machine images with PowerShell and the Azure CLI](/documentation/articles/virtual-machines-linux-cli-ps-findimage/).
 
 For examples of using the tools in a classic deployment:
 
-- For CLI, see "Commands to manage your Azure virtual machine images" in [Using the Azure CLI for Mac, Linux, and Windows with Azure Service Management](/documentation/articles/virtual-machines-command-line-tools)
-- For Azure PowerShell, see the following list of commands. For an example of finding an image to create a VM, see "Step 3: Determine the ImageFamily" in [Use Azure PowerShell to create and preconfigure Windows-based Virtual Machines](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-vms)
+- For CLI, see "Commands to manage your Azure virtual machine images" in [Using the Azure CLI for Mac, Linux, and Windows with Azure Service Management](/documentation/articles/virtual-machines-command-line-tools/)
+- For Azure PowerShell, see the following list of commands. For an example of finding an image to create a VM, see "Step 3: Determine the ImageFamily" in [Use Azure PowerShell to create and preconfigure Windows-based Virtual Machines](/documentation/articles/virtual-machines-windows-classic-create-powershell/)
 
 -	**Get all images**:`Get-AzureVMImage`returns a list of all the images available in your current subscription: your images as well as those provided by Azure or partners. This means you might get a large list. The next examples show how to get a shorter list.
 -	**Get image families**:`Get-AzureVMImage | select ImageFamily` gets a list of image families by showing strings **ImageFamily** property.
@@ -52,6 +54,6 @@ For examples of using the tools in a classic deployment:
 
 ## Additional resources
 
-[Different Ways to Create a Linux Virtual Machine](/documentation/articles/virtual-machines-linux-choices-create-vm)
+[Different Ways to Create a Linux Virtual Machine](/documentation/articles/virtual-machines-linux-creation-choices/)
 
-[Different ways to create a Windows virtual machine](/documentation/articles/virtual-machines-windows-choices-create-vm)
+[Different ways to create a Windows virtual machine](/documentation/articles/virtual-machines-windows-creation-choices/)

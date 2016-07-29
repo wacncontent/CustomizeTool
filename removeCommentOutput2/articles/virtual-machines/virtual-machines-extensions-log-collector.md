@@ -1,3 +1,5 @@
+<!-- rename to virtual-machines-windows-log-collector-extension -->
+
 <properties
    pageTitle="AzureLogCollector VM Extension | Azure"
    description="Describes the AzureLogCollector VM extension, which collects all the log files and brings them together into one location in Azure Storage."
@@ -260,12 +262,13 @@ The following is the definition of the parameters passed to the script. (This is
 - StorageAccountKey: Name of Azure storage account key.
 
 - AdditionalDataLocationList: A list of the following structure:
-      {
-        String Name,
-        String Location,
-        String SearchPattern,
-        Bool   Recursive  
-      }
+
+	      {
+	        String Name,
+	        String Location,
+	        String SearchPattern,
+	        Bool   Recursive  
+	      }
 
 ## Extention PowerShell Script files
 

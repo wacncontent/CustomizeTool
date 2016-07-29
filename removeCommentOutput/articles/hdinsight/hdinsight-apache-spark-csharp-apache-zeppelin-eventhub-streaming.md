@@ -14,7 +14,7 @@
 	wacn.date=""/>
 
 
-# Spark Streaming: Process events from Azure Event Hubs with Apache Spark on HDInsight (Windows)
+# Spark Streaming: Process events from Azure Event Hubs with Apache Spark on HDInsight Windows (Preview)
 
 > [AZURE.NOTE] HDInsight now provides Spark clusters on Linux. For information on how to run a streaming application on HDInsight Spark Linux clusters, see [Spark Streaming: Process events from Azure Event Hubs with Apache Spark on HDInsight (Linux)](/documentation/articles/hdinsight-apache-spark-eventhub-streaming).
 
@@ -22,7 +22,7 @@ Spark Streaming extends the core Spark API to build scalable, high-throughput, f
 
 In this tutorial, you will learn how to create an Azure Event Hub, how to ingest messages into an Event Hub using a console application in C#, and to retrieve them in parallel using a Zeppelin notebook configured for Apache Spark in HDInsight.
 
-> [AZURE.NOTE] To follow the instructions in this article, you will have to use both versions of the Azure Management Portal. To create an Event Hub you will use the [Azure Management Portal](https://manage.windowsazure.cn). To work with the HDInsight Spark cluster, you will use the [Azure Preview Portal](https://manage.windowsazure.cn/).  
+> [AZURE.NOTE] To follow the instructions in this article, you will have to use both versions of the Azure portal. To create an Event Hub you will use the [Azure Classic portal](https://manage.windowsazure.cn). To work with the HDInsight Spark cluster, you will use the [Azure portal](https://portal.azure.cn/).  
 
 **Prerequisites:**
 
@@ -35,7 +35,7 @@ You must have the following:
 
 ##<a name="createeventhub"></a>Create Azure Event Hub
 
-1. From the [Azure Management Portal](https://manage.windowsazure.cn), select **NEW** > **Service Bus** > **Event Hub** > **Custom Create**.
+1. From the [Azure portal](https://manage.windowsazure.cn), select **NEW** > **Service Bus** > **Event Hub** > **Custom Create**.
 
 2. On the **Add a new Event Hub** screen, enter an **Event Hub Name**, select the **Region** to create the hub in, and create a new namespace or select an existing one. Click the **Arrow** to continue.
 
@@ -90,7 +90,7 @@ For instructions on how to allocate resources in a Spark cluster, see [Manage re
 
 ### Create a streaming application using Zeppelin
 
-1. From the [Azure Preview Portal](https://manage.windowsazure.cn/), from the startboard, click the tile for your Spark cluster (if you pinned it to the startboard). You can also navigate to your cluster under **Browse All** > **HDInsight Clusters**.   
+1. From the [Azure Portal](https://portal.azure.cn/), from the startboard, click the tile for your Spark cluster (if you pinned it to the startboard). You can also navigate to your cluster under **Browse All** > **HDInsight Clusters**.   
 
 2. From the Spark cluster blade, click **Quick Links**, and then from the **Cluster Dashboard** blade, click **Zeppelin Notebook**. If prompted, enter the admin credentials for the cluster.
 

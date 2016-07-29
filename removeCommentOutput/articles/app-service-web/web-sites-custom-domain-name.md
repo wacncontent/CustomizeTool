@@ -10,16 +10,16 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="10/23/2015"
+	ms.date="02/16/2016"
 	wacn.date=""/>
 
 # Configure a custom domain name in Azure
 
 > [AZURE.SELECTOR]
-- [Buy Domain for Web Apps](/documentation/articles/custom-dns-web-site-buydomains-web-app)
-- [Web Apps with External Domains](/documentation/articles/web-sites-custom-domain-name)
-- [Web Apps with Traffic Manager](/documentation/articles/web-sites-traffic-manager-custom-domain-name)
-- [GoDaddy](/documentation/articles/web-sites-godaddy-custom-domain-name)
+- [Buy Domain for Web Apps](/documentation/articles/custom-dns-web-site-buydomains-web-app/)
+- [Web Apps with External Domains](/documentation/articles/web-sites-custom-domain-name/)
+- [Web Apps with Traffic Manager](/documentation/articles/web-sites-traffic-manager-custom-domain-name/)
+- [GoDaddy](/documentation/articles/web-sites-godaddy-custom-domain-name/)
 
 When you create a web app, Azure assigns it to a subdomain of chinacloudsites.cn. For example, if your web app is named **contoso**, the URL is **contoso.chinacloudsites.cn**. Azure also assigns a virtual IP address.
 
@@ -31,13 +31,13 @@ If you need more help at any point in this article, you can contact the Azure ex
 
 ## Overview
 
-If you haven't already registered for an external domain name (i.e. not *.chinacloudsites.cn) already, the easiest way to set up a custom domain is to buy one directly in the [Azure Management Portal](https://manage.windowsazure.cn). The process enables you to manage your web app's domain name directly in the Portal instead of going to a third-party site like GoDaddy to manage it. Likewise, configuring the domain name in your web app is greatly simplified, whether your web app uses [Azure Traffic Manager](/documentation/articles/web-sites-traffic-manager-custom-domain-name) or not. For more information, see [Buy and Configure a custom domain name in Azure Web App](/documentation/articles/custom-dns-web-site-buydomains-web-app).
+If you haven't already registered for an external domain name (i.e. not *.chinacloudsites.cn) already, the easiest way to set up a custom domain is to buy one directly in the [Azure Portal](https://portal.azure.cn). The process enables you to manage your web app's domain name directly in the Portal instead of going to a third-party site like GoDaddy to manage it. Likewise, configuring the domain name in your web app is greatly simplified, whether your web app uses [Azure Traffic Manager](/documentation/articles/web-sites-traffic-manager-custom-domain-name/) or not. For more information, see [Buy and Configure a custom domain name in Azure Web App](/documentation/articles/custom-dns-web-site-buydomains-web-app/).
 
-If you have a domain name already, or you want reserve domain from other domain registrars, here are the general steps to bring a custom domain name for web app (see [specific instructions for GoDaddy.com](/documentation/articles/web-sites-godaddy-custom-domain-name)):
+If you have a domain name already, or you want reserve domain from other domain registrars, here are the general steps to bring a custom domain name for web app (see [specific instructions for GoDaddy.com](/documentation/articles/web-sites-godaddy-custom-domain-name/)):
 
 1. Reserve your domain name. This article does not cover that process. There are many domain registrars to choose from. When you sign up, their site will walk you through the process.
 1. Create DNS records that map the domain to your Azure web app.
-1. Add the domain name inside the [Azure Management Portal](https://manage.windowsazure.cn).
+1. Add the domain name inside the [Azure Portal](https://portal.azure.cn).
 
 Within this basic outline, there are specific cases to consider:
 
@@ -64,7 +64,7 @@ If the IP address changes, a CNAME entry is still valid, whereas an A record mus
 
 Skip this step if you are creating a CNAME record. To create an A record, you need the virtual IP address of your web app. To get the IP address:
 
-1.	In your browser, open the [Azure Management Portal](https://manage.windowsazure.cn).
+1.	In your browser, open the [Azure Portal](https://portal.azure.cn).
 2.	Click the **Browse** option on the left side of the page.
 3.	Click the **Web Apps** blade.
 4.	Click the name of your web app.
@@ -108,7 +108,7 @@ Assuming the custom domain name is 'contoso.com', this would create the followin
 - **contoso.com** mapped to 168.62.48.183.
 - **www.contoso.com** mapped to **contoso.chinacloudsites.cn**.
 
->[AZURE.NOTE] You can use Azure DNS to host the necessary domain records for your web app. To configure your custom domain, and create your records, in Azure DNS, see [Create custom DNS records for a web app](/documentation/articles/dns-web-sites-custom-domain).
+>[AZURE.NOTE] You can use Azure DNS to host the necessary domain records for your web app. To configure your custom domain, and create your records, in Azure DNS, see [Create custom DNS records for a web app](/documentation/articles/dns-web-sites-custom-domain/).
 
 <a name="awverify" />
 ## Create an awverify record (A records only)
@@ -136,7 +136,7 @@ After you finish the configuration steps, it can take some time for the changes 
 
 ## Next steps
 
-For more information please see: [Get started with Azure DNS](/documentation/articles/dns-getstarted-create-dnszone) and [Delegate Domain to Azure DNS](/documentation/articles/dns-domain-delegation)
+For more information please see: [Get started with Azure DNS](/documentation/articles/dns-getstarted-create-dnszone/) and [Delegate Domain to Azure DNS](/documentation/articles/dns-domain-delegation/)
 
 ## What's changed
 * For a guide to the change from Websites to Azure see: [Azure and Its Impact on Existing Azure Services](/documentation/services/web-sites/)

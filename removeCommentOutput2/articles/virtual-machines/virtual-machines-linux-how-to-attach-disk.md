@@ -1,3 +1,5 @@
+<!-- rename to virtual-machines-linux-classic-attach-disk -->
+
 <properties
 	pageTitle="Attach a disk to a Linux VM | Azure"
 	description="Learn how to attach a data disk to an Azure virtual machine running Linux and initialize it so it's ready for use."
@@ -15,7 +17,7 @@
 
 # How to Attach a Data Disk to a Linux Virtual Machine
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the classic deployment model. Microsoft recommends that most new deployments use the Resource Manager model.
 
 
 You can attach both empty disks and disks that contain data. In both cases, the disks are actually .vhd files that reside in an Azure storage account. Also in both cases, after you attach the disk, you'll need to initialize it so it's ready for use.

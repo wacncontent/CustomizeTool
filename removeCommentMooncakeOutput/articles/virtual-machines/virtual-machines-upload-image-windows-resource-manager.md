@@ -1,4 +1,4 @@
-<!-- not suitable for Mooncake -->
+<!-- rename to virtual-machines-windows-upload-image -->
 
 <properties
 	pageTitle="Upload a Windows VHD for Resource Manager | Azure"
@@ -17,10 +17,10 @@
 
 # Upload a Windows VM image to Azure for Resource Manager deployments
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] [classic deployment model](/documentation/articles/virtual-machines-create-upload-vhd-windows-server).
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the Resource Manager deployment model, which Azure recommends for most new deployments instead of the [classic deployment model](/documentation/articles/virtual-machines-windows-classic-createupload-vhd/).
 
 
-This article shows you how to upload a virtual hard disk (VHD) with a Windows based operating system, so you can use it to create new Windows virtual machines using the Resource Manager deployment model. For more details about disks and VHDs in Azure, see [About Disks and VHDs for Virtual Machines](/documentation/articles/virtual-machines-disks-vhds).
+This article shows you how to upload a virtual hard disk (VHD) with a Windows based operating system, so you can use it to create new Windows virtual machines using the Resource Manager deployment model. For more details about disks and VHDs in Azure, see [About Disks and VHDs for Virtual Machines](/documentation/articles/virtual-machines-linux-about-disks-vhds/).
 
 
 
@@ -30,7 +30,7 @@ This article assumes you have:
 
 1. **An Azure subscription** - If you don't have one, [open an Azure account for free](/pricing/1rmb-trial/?WT.mc_id=A261C142F). You get credits to try out paid Azure services, and even after they're used up you can keep the account and use free Azure services, such as Websites. Your credit card won't be charged, unless you explicitly change your settings. You also can [activate MSDN subscriber benefits](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F). The MSDN subscription gives credits every month that you can use for paid Azure services.
 
-2. **Azure PowerShell 1.0.x** - Make sure you have the Azure PowerShell version 1.0.x installed. If you don't already have it installed, read [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure). We recommend using the versions 1.0 and above, since new Resource Manager features will not be added to older PowerShell versions. Read [Azure PowerShell 1.0](https://azure.microsoft.com/blog/azps-1-0/) to know more about the version differences. 
+2. **Azure PowerShell 1.0.x** - Make sure you have the Azure PowerShell version 1.0.x installed. If you don't already have it installed, read [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure/). We recommend using the versions 1.0 and above, since new Resource Manager features will not be added to older PowerShell versions. Read [Azure PowerShell 1.0](https://azure.microsoft.com/blog/azps-1-0/) to know more about the version differences. 
 
 3. **A virtual machine running the Windows operating system** - There are many tools for creating virtual machines on premises. For example, you can use Hyper-V Manager to create a virtual machine and install the operating system. For instructions, see [Install the Hyper-V Role and configure a virtual machine](http://technet.microsoft.com/zh-cn/library/hh846766.aspx). For details about which Windows operating systems are supported, see [Microsoft server software support for Azure virtual machines](https://support.microsoft.com/kb/2721672).
 
@@ -69,7 +69,7 @@ You will need a storage account in Azure to upload the VM image. You can either 
 
 ### Using the portal
 
-1. Sign in to the [Azure Management Portal](https://manage.windowsazure.cn).
+1. Sign in to the [Azure portal](https://portal.azure.cn).
 
 2. Click **Browse** > **Storage accounts**.
 
@@ -79,7 +79,7 @@ You will need a storage account in Azure to upload the VM image. You can either 
 
 	1. Enter the **Name** for the storage account. It should contain between 3 to 24 lowercase letters and numbers only. This name becomes part of the URL you will use to access blob, files, and other resources from the storage account.
 
-	2. Select the **Type** of the storage account that you want to create. For more information, read [About Azure storage accounts](/documentation/articles/storage-create-storage-account).
+	2. Select the **Type** of the storage account that you want to create. For more information, read [About Azure storage accounts](/documentation/articles/storage-create-storage-account/).
 
 	3. Enter the name of the **Resource Group**. The portal will create a new resource group if it cannot find an existing one with that name.
 
@@ -248,7 +248,7 @@ For example, your workflow could look something like this:
 		--------- ------------------- ---------- ------------
 		                         True         OK OK
 
-You should see the newly created VM in either the [Azure Management Portal](https://manage.windowsazure.cn) under **Browse** > **Virtual machines**, OR by using the following PowerShell commands:
+You should see the newly created VM in either the [Azure portal](https://portal.azure.cn) under **Browse** > **Virtual machines**, OR by using the following PowerShell commands:
 
 	$vmList = Get-AzureRmVM -ResourceGroupName $rgName
 	$vmList.Name
@@ -256,4 +256,4 @@ You should see the newly created VM in either the [Azure Management Portal](http
 
 ## Next steps
 
-To manage your new virtual machine with Azure PowerShell, read [Manage virtual machines using Azure Resource Manager and PowerShell](/documentation/articles/virtual-machines-deploy-rmtemplates-powershell).
+To manage your new virtual machine with Azure PowerShell, read [Manage virtual machines using Azure Resource Manager and PowerShell](/documentation/articles/virtual-machines-deploy-rmtemplates-powershell/).

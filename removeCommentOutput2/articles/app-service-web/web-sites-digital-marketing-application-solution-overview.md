@@ -9,22 +9,26 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="12/10/2015"
+	ms.date="02/26/2016"
 	wacn.date=""/>
 
 # Create a digital marketing campaign on Azure Web Apps
 [Azure Web App](/documentation/services/web-sites/) Web Apps is a great choice for digital marketing campaigns. Digital marketing campaigns are typically short-lived and are meant to drive short-term marketing goals. There are two main scenarios to consider. In the first scenario, a third-party marketing firm creates and manages the campaign for their customer for the duration of the promotion. A second scenario involves the marketing firm creating and then transferring ownership of the digital marketing campaign resources to their customer. The customer then runs and manages the digital marketing campaign on their own. is a good match for both scenarios. 
+
+Below is an example of a global, multi-channel digital marketing campaign using Azure Web Apps. It demonstrates what you can do simply by composing Azure Web Apps together with other services with minimal technical investments. **Click on an element in the topography to read more about it.** 
+
+<object type="image/svg+xml" data="./media/web-sites-digital-marketing-application-solution-overview/digital-marketing-notitle.svg" width="100%" height="100%"></object>
 
 > [AZURE.NOTE]
 > This guide presents some of the most common areas and tasks that are aligned with running a digital marketing campaign in Azure Web Apps. However, there are other common solutions that you can implement in Azure Web Apps. To review these solutions, see the other guides on [Global Web Presence](/documentation/articles/web-sites-global-web-presence-solution-overview) and [Business Applications](/documentation/articles/web-sites-business-application-solution-overview).
 
 ## Create from scratch or bring existing assets
 
-Quickly create new web apps from a b bring your existing web assets to Azure Web Apps from a variety of languages and frameworks.
+Quickly bring your existing web assets to Azure Web Apps from a variety of languages and frameworks.
 
-The Azure gallery provides Y You can create a web app using your favorite CMS flavor. You can choose from various database backends to meet your needs, including [Azure SQL Database] and [MySQL].
+You can create a web app using your favorite CMS flavor. You can choose from various database backends to meet your needs, including [Azure SQL Database] and [MySQL].
 
-Your existing web assets can run on Web Apps, whether they are .NET, PHP, Java, Node.js, or Python. You can move them to Web Apps using your familiar [FTP] tools. If you frequently create digital marketing campaigns, it is possible that you have existing web assets in a source control management system. You can deploy to Web Apps directly from popular source control options, such as [Visual Studio], [Visual Studio Team Servicea Mand [Git] - local, GitHub, BitBucket, DropBox, Mercurial, etc..
+Your existing web assets can run on Web Apps, whether they are .NET, PHP, Java, Node.js, or Python. You can move them to Web Apps using your familiar [FTP] tools. If you frequently create digital marketing campaigns, it is possible that you have existing web assets in a source control management system. You can deploy to Web Apps directly from popular source control options, such as [Visual Studio], and [Git] - local, GitHub, Mercurial, etc..
 
 ## Stay agile
 
@@ -80,12 +84,10 @@ In the **Standard** tier, monitor app responsiveness receive email notifications
 
 [Azure Web App]: /home/features/web-site/
 
-
 [MySQL]: /documentation/articles/web-sites-php-mysql-deploy-use-git
 [Azure SQL Database]: /documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database
 [FTP]: /documentation/articles/web-sites-deploy#ftp
 [Visual Studio]: /documentation/articles/web-sites-dotnet-get-started
-
 [Git]: /documentation/articles/web-sites-publish-source-control
 
 [deploying to a staging slot]: /documentation/articles/web-sites-staged-publishing
@@ -95,7 +97,6 @@ In the **Standard** tier, monitor app responsiveness receive email notifications
 [Create an ASP.NET MVC app with auth and SQL DB and deploy to Azure Web App]: /documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database
 
 [Azure Media Services]:http://blogs.technet.com/b/cbernier/archive/2013/09/03/windows-azure-media-services-and-web-sites.aspx
-
 [Mobile Services]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users
 [Notification Hub]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users
 

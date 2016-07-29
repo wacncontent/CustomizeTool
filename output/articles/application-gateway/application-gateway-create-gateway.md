@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Create, start, or delete an application gateway | Windows Azure"
+   pageTitle="Create, start, or delete an application gateway | Azure"
    description="This page provides instructions to create, configure, start, and delete an Azure application gateway"
    documentationCenter="na"
    services="application-gateway"
@@ -8,7 +8,7 @@
    editor="tysonn"/>
 <tags
 	ms.service="application-gateway"
-	ms.date="11/10/2015"
+	ms.date="04/05/2016"
 	wacn.date=""/>
 
 # Create, start, or delete an application gateway
@@ -16,9 +16,9 @@
 Azure Application Gateway is a layer-7 load balancer. It provides failover, performance-routing HTTP requests between different servers, whether they are on the cloud or on-premises. Application Gateway has the following application delivery features: HTTP load balancing, cookie-based session affinity, and Secure Sockets Layer (SSL) offload.
 
 > [AZURE.SELECTOR]
-- [Azure Classic PowerShell](/documentation/articles/application-gateway-create-gateway)
-- [Azure Resource Manager PowerShell](/documentation/articles/application-gateway-create-gateway-arm)
-- [Azure Resource Manager template](/documentation/articles/application-gateway-create-gateway-arm-template)
+- [Azure Classic PowerShell](/documentation/articles/application-gateway-create-gateway/)
+- [Azure Resource Manager PowerShell](/documentation/articles/application-gateway-create-gateway-arm/)
+- [Azure Resource Manager template](/documentation/articles/application-gateway-create-gateway-arm-template/)
 
 
 <BR>
@@ -29,7 +29,8 @@ This article walks you through the steps to create, configure, start, and delete
 ## Before you begin
 
 1. Install the latest version of the Azure PowerShell cmdlets by using the Web Platform Installer. You can download and install the latest version from the **Windows PowerShell** section of the [Downloads page](/downloads/).
-2. Verify that you have a working virtual network with a valid subnet. Make sure that no virtual machines or cloud deployments are using the subnet. The application gateway must be by itself in a virtual network subnet.
+2. If you have an existing virtual network, either select an existing empty subnet or create a new subnet in your existing virtual network solely for use by the application gateway. You cannot deploy the application gateway to a different virtual network than the resources you intend to deploy behind the application gateway.
+3. Verify that you have a working virtual network with a valid subnet. Make sure that no virtual machines or cloud deployments are using the subnet. The application gateway must be by itself in a virtual network subnet.
 3. The servers that you will configure to use the application gateway must exist or have their endpoints created either in the virtual network or with a public IP/VIP assigned.
 
 ## What is required to create an application gateway?
@@ -44,8 +45,7 @@ The values are:
 - **Back-end server pool settings:** Every pool has settings like port, protocol, and cookie-based affinity. These settings are tied to a pool and are applied to all servers within the pool.
 - **Front-end port:** This port is the public port that is opened on the application gateway. Traffic hits this port, and then gets redirected to one of the back-end servers.
 - **Listener:** The listener has a front-end port, a protocol (Http or Https, these are case-sensitive), and the SSL certificate name (if configuring SSL offload).
-- **Rule:** The rule binds the listener and the back-end server pool and defines which back-end server pool the traffic should be directed to when it hits a particular listener. Currently, only the *basic* rule is supported. The *basic* rule is round-robin load distribution.
-
+- **Rule:** The rule binds the listener and the back-end server pool and defines which back-end server pool the traffic should be directed to when it hits a particular listener.
 
 
 ## Create a new application gateway
@@ -56,7 +56,7 @@ To create an application gateway:
 2. Create a configuration XML file or a configuration object.
 3. Commit the configuration to the newly created application gateway resource.
 
->[AZURE.NOTE] If you need to configure a custom probe for your application gateway, see [Create an application gateway with custom probes by using PowerShell](/documentation/articles/application-gateway-create-probe-classic-ps). Check out [custom probes and health monitoring](/documentation/articles/application-gateway-probe-overview) for more information.
+>[AZURE.NOTE] If you need to configure a custom probe for your application gateway, see [Create an application gateway with custom probes by using PowerShell](/documentation/articles/application-gateway-create-probe-classic-ps/). Check out [custom probes and health monitoring](/documentation/articles/application-gateway-probe-overview/) for more information.
 
 
 ### Create an application gateway resource
@@ -401,9 +401,9 @@ To verify that the service has been removed, you can use the **Get-AzureApplicat
 
 ## Next steps
 
-If you want to configure SSL offload, see [Configure an application gateway for SSL offload](/documentation/articles/application-gateway-ssl).
+If you want to configure SSL offload, see [Configure an application gateway for SSL offload](/documentation/articles/application-gateway-ssl/).
 
-If you want to configure an application gateway to use with an internal load balancer, see [Create an application gateway with an internal load balancer (ILB)](/documentation/articles/application-gateway-ilb).
+If you want to configure an application gateway to use with an internal load balancer, see [Create an application gateway with an internal load balancer (ILB)](/documentation/articles/application-gateway-ilb/).
 
 If you want more information about load balancing options in general, see:
 

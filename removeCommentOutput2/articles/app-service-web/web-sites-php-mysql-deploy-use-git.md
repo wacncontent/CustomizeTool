@@ -3,38 +3,30 @@
 	description="A tutorial that demonstrates how to create a PHP web app that stores data in MySQL and use Git deployment to Azure."
 	services="app-service\web"
 	documentationCenter="php"
-	authors="tfitzmac"
+	authors="rmcmurray"
 	manager="wpickett"
-	editor="mollybos"
+	editor=""
 	tags="mysql"/>
 
 <tags
 	ms.service="app-service-web"
-	ms.date="02/09/2016"
+	ms.date="06/24/2016"
 	wacn.date=""/>
 
-#Create a PHP-MySQL web app in Azure and deploy using Git
-
-> [AZURE.SELECTOR]
-- [.Net](/documentation/articles/web-sites-dotnet-get-started)
-- [Node.js](/documentation/articles/web-sites-nodejs-develop-deploy-mac)
-- [Java](/documentation/articles/web-sites-java-get-started)
-- [PHP - Git](/documentation/articles/web-sites-php-mysql-deploy-use-git)
-- [PHP - FTP](/documentation/articles/web-sites-php-mysql-deploy-use-ftp)
-- [Python](/documentation/articles/web-sites-python-ptvs-django-mysql)
+# Create a PHP-MySQL web app in Azure and deploy using Git
 
 This tutorial shows you how to create a PHP-MySQL web app and how to deploy it to [Azure Web App](/documentation/services/web-sites/) using Git. You will use [PHP][install-php], the MySQL Command-Line Tool (part of [MySQL][install-mysql]), and [Git][install-git] installed on your computer. The instructions in this tutorial can be followed on any operating system, including Windows, Mac, and  Linux. Upon completing this guide, you will have a PHP/MySQL web app running in Azure.
 
 You will learn:
 
-* How to create a web app and a MySQL database using the [Azure Management Portal](https://manage.windowsazure.cn). Because PHP is enabled in [Azure Web Apps](/documentation/services/web-sites/) by default, nothing special is required to run your PHP code.
+* How to create a web app and a MySQL database using the [Azure Classic Management Portal](https://manage.windowsazure.cn). Because PHP is enabled in [Azure Web Apps](/documentation/services/web-sites/) by default, nothing special is required to run your PHP code.
 * How to publish and re-publish your application to Azure using Git.
 
 By following this tutorial, you will build a simple registration web app in PHP. The application will be hosted in Web Apps. A screenshot of the completed application is below:
 
 ![Azure PHP web site][running-app]
 
-##Set up the development environment
+## Set up the development environment
 
 This tutorial assumes you have [PHP][install-php], the MySQL Command-Line Tool (part of [MySQL][install-mysql]), and [Git][install-git] installed on your computer.
 
@@ -43,8 +35,7 @@ This tutorial assumes you have [PHP][install-php], the MySQL Command-Line Tool (
 
 Follow these steps to create a web app and a MySQL database:
 
-1. Login to the [Azure Management Portal][management-portal].
-
+1. Login to the [Azure Classic Management Portal][management-portal].
 2. Click the **New** icon on the bottom left of the portal.
 
 	![Create New Azure  Website][new-website]
@@ -82,12 +73,11 @@ Follow these steps to create a web app and a MySQL database:
 
 	![Git instructions][git-instructions]
 
-##Get remote MySQL connection information
+## Get remote MySQL connection information
 
 To connect to the MySQL database that is running in Web Apps, your will need the connection information. To get MySQL connection information, follow these steps:
 
-
-1. In Azure Management Portal, click **MYSQL DATABASE ON AZURE**, and open your MYSQL database server. In **Dashboard** page, under **quick glance**, you can get your host and port.
+1. In Azure Classic Management Portal, click **MYSQL DATABASE ON AZURE**, and open your MYSQL database server. In **Dashboard** page, under **quick glance**, you can get your host and port.
 
 	![connection][connection-string-info]
 
@@ -97,7 +87,7 @@ To connect to the MySQL database that is running in Web Apps, your will need the
 
 	The Data source would be `tcp:<your MYSQL server name>.database.chinacloudapi.cn,<port>`
 
-##Build and test your app locally
+## Build and test your app locally
 
 Now that you have created a web app, you can develop your application locally, then deploy it after testing.
 
@@ -152,7 +142,7 @@ To build and run the application locally, follow the steps below. Note that thes
 		<?php
 			// DB connection info
 			//TODO: Update the values for $host, $user, $pwd, and $db
-			//using the values you retrieved earlier from the Azure Management Portal.
+			//using the values you retrieved earlier from the Azure Classic Management Portal.
 			$host = "value of Data Source";
 			$user = "value of User Id";
 			$pwd = "value of Password";
@@ -215,14 +205,14 @@ To build and run the application locally, follow the steps below. Note that thes
 You can now browse to **http://localhost:8000/** to test the application.
 
 
-##Publish your app
+## Publish your app
 
 After you have tested your app locally, you can publish it to Web Apps using Git. You will initialize your local Git repository and publish the application.
 
 > [AZURE.NOTE]
-> These are the same steps shown in the Azure Management Portal at the end of the Create a web app and Set up Git Publishing section above.
+> These are the same steps shown in the Azure Classic Management Portal at the end of the Create a web app and Set up Git Publishing section above.
 
-1. (Optional)  If you've forgotten or misplaced your Git remote repostitory URL, navigate to the web app properties on the Azure Management Portal.
+1. (Optional)  If you've forgotten or misplaced your Git remote repostitory URL, navigate to the web app properties on the Azure Classic Management Portal.
 
 1. Open GitBash (or a terminal, if Git is in your `PATH`), change directories to the root directory of your application, and run the following commands:
 
@@ -242,7 +232,7 @@ After you have tested your app locally, you can publish it to Web Apps using Git
 
 After you have published your app, you can begin making changes to it and use Git to publish them.
 
-##Publish changes to your app
+## Publish changes to your app
 
 To publish changes to your app, follow these steps:
 
@@ -260,7 +250,6 @@ To publish changes to your app, follow these steps:
 3. Browse to **http://[site name].chinacloudsites.cn/index.php** to see your app and any changes you may have made:
 
 	![Azure PHP web site][running-app]
-
 	
 [go-to-dashboard]: ./media/web-sites-php-mysql-deploy-use-git/go_to_dashboard.png
 [install-php]: http://www.php.net/manual/en/install.php
@@ -270,11 +259,12 @@ To publish changes to your app, follow these steps:
 [install-mysql]: http://dev.mysql.com/downloads/mysql/
 
 [pdo-mysql]: http://www.php.net/manual/en/ref.pdo-mysql.php
+[management-portal]: https://portal.azure.cn
+[sql-database-editions]: http://msdn.microsoft.com/zh-cn/library/azure/ee621788.aspx
+<!-- IMG List -->
 [running-app]: ./media/web-sites-php-mysql-deploy-use-git/running_app_2.png
-
 [new-website]: ./media/web-sites-php-mysql-deploy-use-git/new_website.jpg
 [custom-create]: ./media/web-sites-php-mysql-deploy-use-git/custom_create.png
-[website-details]: ./media/web-sites-php-mysql-deploy-use-git/website_details.jpg
 
 [new-mysql-db]: ./media/web-sites-php-mysql-deploy-use-git/new_mysql_db.jpg
 [go-to-webapp]: ./media/web-sites-php-mysql-deploy-use-git/select_webapp.png
@@ -291,8 +281,10 @@ To publish changes to your app, follow these steps:
 [git-instructions]: ./media/web-sites-php-mysql-deploy-use-git/git-instructions.png
 [git-change-push]: ./media/web-sites-php-mysql-deploy-use-git/php-git-change-push.png
 [git-initial-push]: ./media/web-sites-php-mysql-deploy-use-git/php-git-initial-push.png
-[deployments-list]: ./media/web-sites-php-mysql-deploy-use-git/php-deployments-list.png
-[connection-string-info]: ./media/web-sites-php-mysql-deploy-use-git/connection_string_info.png
+
 [management-portal]: https://manage.windowsazure.cn
-[sql-database-editions]: http://msdn.microsoft.com/zh-cn/library/azure/ee621788.aspx
- 
+
+[composer-extension-settings]: ./media/web-sites-php-mysql-deploy-use-git/composer-extension-settings.png
+[composer-extension-add]: ./media/web-sites-php-mysql-deploy-use-git/composer-extension-add.png
+[composer-extension-view]: ./media/web-sites-php-mysql-deploy-use-git/composer-extension-view.png
+[composer-extension-success]: ./media/web-sites-php-mysql-deploy-use-git/composer-extension-success.png

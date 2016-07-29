@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="01/29/2016"
+	ms.date="05/27/2016"
 	wacn.date=""/>
 
 
@@ -18,15 +18,12 @@
 # HBase tutorial: Get started using Apache HBase with Hadoop in HDInsight
 
 Learn how to create an HBase cluster in HDInsight, create HBase tables, and query the tables by using Hive. For general HBase information, see [HDInsight HBase overview][hdinsight-hbase-overview].
-
 
 [AZURE.INCLUDE [hdinsight-azure-portal](../includes/hdinsight-azure-portal.md)]
 
-* [HBase tutorial: Get started using Apache HBase with Hadoop in HDInsight](/documentation/articles/hdinsight-hbase-tutorial-get-started-v1)
-
+* [HBase tutorial: Get started using Apache HBase with Hadoop in HDInsight](/documentation/articles/hdinsight-hbase-tutorial-get-started-v1/)
  
 > [AZURE.NOTE] HBase (version 0.98.0) is only available for use with HDInsight 3.1 clusters on HDInsight (based on Apache Hadoop and YARN 2.4.0). For version information, see [What's new in the Hadoop cluster versions provided by HDInsight?][hdinsight-versions]
-
 
 The following video shows the same content:
 
@@ -34,9 +31,10 @@ The following video shows the same content:
 
 
 
-
 
-**Prerequisites**
+###Before you begin
+
+[AZURE.INCLUDE [delete-cluster-warning](../includes/hdinsight-delete-cluster-warning.md)]
 
 Before you begin this HBase tutorial, you must have the following:
 
@@ -47,10 +45,10 @@ Before you begin this HBase tutorial, you must have the following:
 
 [AZURE.INCLUDE [provisioningnote](../includes/hdinsight-provisioning.md)]
 
-**To create an HBase cluster by using the Azure Management Portal**
+**To create an HBase cluster by using the Azure portal**
 
 
-1. Sign in to the [Azure Management Portal][azure-management-portal].
+1. Sign in to the [Azure portal][azure-management-portal].
 2. Click **New** in the lower left, and then click **Data services**, **HDInsight**,  **HBase**.
 
 	>[AZURE.NOTE] You can also use the **Custom create** option.
@@ -86,7 +84,7 @@ It will make more sense after you finish the next procedure.
 
 **To use the HBase shell**
 
-1. Use RDP to connect to your HBase cluster in HDInsight. For the RDP instructions, see [Manage Hadoop clusters in HDInsight using the Azure Management Portal][hdinsight-manage-portal].
+1. Use RDP to connect to your HBase cluster in HDInsight. For the RDP instructions, see [Manage Hadoop clusters in HDInsight using the Azure Portal][hdinsight-manage-portal].
 2. Within your RDP session, click the **Hadoop Command Line** shortcut located on the desktop.
 3. Open the HBase shell:
 
@@ -163,12 +161,7 @@ HBase in HDInsight ships with a Web UI for monitoring clusters. Using the Web UI
 
 To open the Web UI, you must RDP into the cluster, and then click the HMaster Info Web UI shortcut on your desktop, or use the following URL in a web browser:
 
-
 	http://zookeeper[0-2]: master-status
-
-
-	http://zookeeper[0-2]:60010/master-status
-
 
 In a high availability cluster, you will find a link to the current active HBase master node that is hosting the Web UI.
 
@@ -180,7 +173,7 @@ You can query data in HBase tables by using Hive. This section creates a Hive ta
 
 **To open the cluster dashboard**
 
-1. Sign in to the [Azure Management Portal][azure-management-portal].
+1. Sign in to the [Azure portal][azure-management-portal].
 2. Click **HDINSIGHT** in the left pane. You will see a list of clusters, including the one you created earlier in this tutorial.
 3. Click the cluster name where you want to run the Hive job.
 4. Click **QUERY CONSOLE** at the bottom of the page to open the cluster dashboard. It opens a webpage in a different browser tab.
@@ -331,7 +324,9 @@ You must download the HBase REST API client library for .NET from GitHub and bui
 7. Set the first three variables in the **Main** function.
 8. Press **F5** to run the application.
 
+##Delete the cluster
 
+[AZURE.INCLUDE [delete-cluster-warning](../includes/hdinsight-delete-cluster-warning.md)]
 
 ## What's next?
 In this HBase tutorial for HDInsight, you learned how to create an HBase cluster and how to create tables and view the data in those tables from the HBase shell. You also learned how use a Hive query on data in HBase tables and how to use the HBase C# REST APIs to create an HBase table and retrieve data from the table.
@@ -342,14 +337,12 @@ To learn more, see:
 HBase is an Apache, open-source, NoSQL database built on Hadoop that provides random access and strong consistency for large amounts of unstructured and semistructured data.
 - [Create HBase clusters on Azure Virtual Network][hdinsight-hbase-provision-vnet-v1]:
 With virtual network integration, HBase clusters can be deployed to the same virtual network as your applications so that applications can communicate with HBase directly.
-- [Configure HBase replication in HDInsight](/documentation/articles/hdinsight-hbase-geo-replication): Learn how to configure HBase replication across two Azure datacenters.
-
+- [Configure HBase replication in HDInsight](/documentation/articles/hdinsight-hbase-geo-replication/): Learn how to configure HBase replication across two Azure datacenters.
 - [Analyze Twitter sentiment with HBase in HDInsight][hbase-twitter-sentiment]:
 Learn how to do real-time [sentiment analysis](http://en.wikipedia.org/wiki/Sentiment_analysis) of big data by using HBase in a Hadoop cluster in HDInsight.
-
 
-[hdinsight-manage-portal]: /documentation/articles/hdinsight-administer-use-management-portal-v1
-[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
+[hdinsight-manage-portal]: /documentation/articles/hdinsight-administer-use-management-portal-v1/
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data/
 [hbase-reference]: http://hbase.apache.org/book.html#importtsv
 [hbase-schema]: http://0b4af6cdc2f0c5998459-c0245c5c937c5dedcca3f1764ecc9b2f.r43.cf2.rackcdn.com/9353-login1210_khurana.pdf
 [hbase-quick-start]: http://hbase.apache.org/book.html#quickstart
@@ -358,12 +351,10 @@ Learn how to do real-time [sentiment analysis](http://en.wikipedia.org/wiki/Sent
 
 
 
-[hdinsight-hbase-overview]: /documentation/articles/hdinsight-hbase-overview
-[hdinsight-hbase-provision-vnet-v1]: /documentation/articles/hdinsight-hbase-provision-vnet-v1
-[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning-v1
-
-[hbase-twitter-sentiment]: /documentation/articles/hdinsight-hbase-analyze-twitter-sentiment
-
+[hdinsight-hbase-overview]: /documentation/articles/hdinsight-hbase-overview/
+[hdinsight-hbase-provision-vnet-v1]: /documentation/articles/hdinsight-hbase-provision-vnet-v1/
+[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning-v1/
+[hbase-twitter-sentiment]: /documentation/articles/hdinsight-hbase-analyze-twitter-sentiment/
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: /pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/

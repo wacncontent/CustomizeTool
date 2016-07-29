@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="02/03/2016"
+	ms.date="06/24/2016"
 	wacn.date=""/>
 
 # How to debug a Node.js web app in Azure
@@ -42,7 +42,7 @@ If the **IISNode.yml** file did not already exist within your application, you m
 
 > [AZURE.NOTE] If your web app was created using the Azure Command-Line Tools or Azure PowerShell Cmdlets, a default **IISNode.yml** file is automatically created.
 
-To restart the web app, select the web app in the [Azure Management Portal](https://manage.windowsazure.cn), and then click **RESTART** button:
+To restart the web app, select the web app in the [Azure Portal](https://portal.azure.cn), and then click **RESTART** button:
 
 ![restart button][restart-button]
 
@@ -59,17 +59,17 @@ Diagnostic logs can be accessed in three ways; Using the File Transfer Protocol 
 
 	npm install azure-cli -g
 
-Once installed, the tools can be accessed using the 'azure' command. The command-line tools must first be configured to use your Azure subscription. For information on how to accomplish this task, see the **How to download and import publish settings** section of the [How to Use The Azure Command-Line Tools](/documentation/articles/xplat-cli-connect) article.
+Once installed, the tools can be accessed using the 'azure' command. The command-line tools must first be configured to use your Azure subscription. For information on how to accomplish this task, see the **How to download and import publish settings** section of the [How to Use The Azure Command-Line Tools](/documentation/articles/xplat-cli-connect/) article.
 
 ###FTP
 
-To access the diagnostic information through FTP, visit the [Azure Management Portal](https://manage.windowsazure.cn), select your web app, and then select the **DASHBOARD**. In the **quick links** section, the **FTP DIAGNOSTIC LOGS** and **FTPS DIAGNOSTIC LOGS** links provide access to the logs using the FTP protocol.
+To access the diagnostic information through FTP, visit the [Azure Portal](https://portal.azure.cn), select your web app, and then select the **DASHBOARD**. In the **quick links** section, the **FTP DIAGNOSTIC LOGS** and **FTPS DIAGNOSTIC LOGS** links provide access to the logs using the FTP protocol.
 
 > [AZURE.NOTE] If you have not previously configured user name and password for FTP or deployment, you can do so from the **QuickStart** management page by selecting **Set up deployment credentials**.
 
 The FTP URL returned in the dashboard is for the **LogFiles** directory, which will contain the following sub-directories:
 
-* [Deployment Method](/documentation/articles/web-sites-deploy) - If you use a deployment method such as Git, a directory of the same name will be created and will contain information related to deployments.
+* [Deployment Method](/documentation/articles/web-sites-deploy/) - If you use a deployment method such as Git, a directory of the same name will be created and will contain information related to deployments.
 
 * nodejs - Stdout and stderr information captured from all instances of your application (when loggingEnabled is true.)
 
@@ -85,7 +85,7 @@ This will download a **diagnostics.zip** in the current directory. This archive 
 
 * LogFiles
 
-	* [Deployment method](/documentation/articles/web-sites-deploy) - If you use a deployment method such as Git, a directory of the same name will be created and will contain information related to deployments.
+	* [Deployment method](/documentation/articles/web-sites-deploy/) - If you use a deployment method such as Git, a directory of the same name will be created and will contain information related to deployments.
 
 	* nodejs - Stdout and stderr information captured from all instances of your application (when loggingEnabled is true.)
 
@@ -102,7 +102,7 @@ This will return a stream of log events that are updated as they occur on the se
 
 In this article you learned how to enable and access diagnostics information for Azure. While this information is useful in understanding problems that occur with your application, it may point to a problem with a module you are using or that the version of Node.js used by Azure Web Apps is different than the one used in your deployment environment.
 
-For information in working with modules on Azure, see [Using Node.js Modules with Azure Applications](/documentation/articles/nodejs-use-node-modules-azure-apps).
+For information in working with modules on Azure, see [Using Node.js Modules with Azure Applications](/documentation/articles/nodejs-use-node-modules-azure-apps/).
 
 For information on specifying a Node.js version for your application, see [Specifying a Node.js version in an Azure application].
 
@@ -115,9 +115,9 @@ For more information, see also the [Node.js Developer Center](/develop/nodejs/).
 
 [IISNode]: https://github.com/tjanczuk/iisnode
 [IISNode Readme]: https://github.com/tjanczuk/iisnode#readme
-[How to Use The Azure Command-Line Interface]: /documentation/articles/xplat-cli-install
-[Using Node.js Modules with Azure Applications]: /documentation/articles/nodejs-use-node-modules-azure-apps
-[Specifying a Node.js version in an Azure application]: /documentation/articles/nodejs-specify-node-version-azure-apps
+[How to Use The Azure Command-Line Interface]: /documentation/articles/xplat-cli-install/
+[Using Node.js Modules with Azure Applications]: /documentation/articles/nodejs-use-node-modules-azure-apps/
+[Specifying a Node.js version in an Azure application]: /documentation/articles/nodejs-specify-node-version-azure-apps/
 
 [restart-button]: ./media/web-sites-nodejs-debug/restartbutton.png
  

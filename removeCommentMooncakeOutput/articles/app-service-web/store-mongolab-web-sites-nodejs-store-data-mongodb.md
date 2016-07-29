@@ -1,3 +1,5 @@
+<!-- deleted in Global -->
+
 <properties
 	pageTitle="Create a Node.js web app on Azure with MongoDB using the MongoLab add-on"
 	description="Learn how to create a Node.js web app in Azure Websites that connects to a MongoDB instance hosted on MongoLab."
@@ -375,7 +377,7 @@ To install the Azure CLI, use the following command:
 
 	npm install azure-cli -g
 
-If you have already installed the <strong>Azure SDK for Node.js</strong> from the <a href="/develop/nodejs/">Azure Developer Center</a>, then the Azure CLI should already be installed. For more information, see <a href="/documentation/articles/virtual-machines-command-line-tools">Azure CLI</a>.
+If you have already installed the <strong>Azure SDK for Node.js</strong> from the <a href="/develop/nodejs/">Azure Developer Center</a>, then the Azure CLI should already be installed. For more information, see <a href="/documentation/articles/virtual-machines-command-line-tools/">Azure CLI</a>.
 
 While the Azure CLI tools were created primarily for Mac and Linux users, they are based on Node.js and should work on any system capable of running Node.
 
@@ -502,7 +504,7 @@ Congratulations! You've just launched a Node.js application backed by a MongoLab
 
 ## What's changed
 * For a guide to the change from Websites to Azure Websites see: [Azure Websites and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
-* For a guide to the change of the Management Portal to the new portal see: [Reference for navigating the preview portal](https://manage.windowsazure.cn/)
+* For a guide to the change of the Management Portal to the new portal see: [Reference for navigating the Portal Preview](https://manage.windowsazure.cn/)
 
 
 [screen-mongolab-websitedashboard]: ./media/store-mongolab-web-sites-nodejs-store-data-mongodb/screen-mongolab-websitedashboard.png
@@ -526,10 +528,10 @@ Congratulations! You've just launched a Node.js application backed by a MongoLab
 [Git remote]: http://git-scm.com/docs/git-remote
 [azure-sdk-for-node]: https://github.com/WindowsAzure/azure-sdk-for-node
 [iisnode.yml]: https://github.com/WindowsAzure/iisnode/blob/master/src/samples/configuration/iisnode.yml
-[Azure CLI]: /documentation/articles/virtual-machines-command-line-tools
+[Azure CLI]: /documentation/articles/virtual-machines-command-line-tools/
 [Azure Developer Center]: /develop/nodejs/
 [Create and deploy a Node.js application to Azure Web Sites]: /develop/nodejs/tutorials/create-a-website-(mac)/
-[Continuous deployment using GIT in Azure Websites]: /documentation/articles/web-sites-publish-source-control
+[Continuous deployment using GIT in Azure Websites]: /documentation/articles/web-sites-publish-source-control/
 [MongoLab]: http://mongolab.com
 [Node.js Web Application with Storage on MongoDB (Virtual Machine)]: /develop/nodejs/tutorials/website-with-mongodb-(mac)/
 [node-mongo-finished]: ./media/store-mongolab-web-sites-nodejs-store-data-mongodb/todo_list_noframe.png

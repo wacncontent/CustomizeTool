@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="12/04/2015"
+	ms.date="02/29/2016"
 	wacn.date=""/>
 
 # Create a REST service using ASP.NET Web API and SQL Database in Azure
@@ -46,8 +46,6 @@ You'll build a simple contact list web application that is built on ASP.NET MVC 
 
 1. In the **New ASP.NET Project** dialog box, select the **MVC** template, check **Web API** and then click **Change Authentication**.
 
-	![New ASP.NET Project dialog box](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/rt3.png)
-
 1. In the **Change Authentication** dialog box, click **No Authentication**, and then click **OK**.
 
 	![No Authentication](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/GS13noauth.png)
@@ -56,7 +54,6 @@ You'll build a simple contact list web application that is built on ASP.NET MVC 
 
 1. In the **New ASP.NET Project** dialog box, make sure the **Host in the Cloud** is checked and click **OK**.
 
-	![New ASP.NET Project dialog box](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/rt3.png)
 
 If you have not previously signed in to Azure, you will be prompted to sign in.
 
@@ -207,7 +204,6 @@ The ASP.NET MVC the scaffolding feature can automatically generate code that per
 
 6. Set the controller name to **HomeController**. Select **Contact** as your model class. Click the **New data context** button and accept the default "ContactManager.Models.ContactManagerContext" for the **New data context type**. Click **Add**.
 
-	![Add Controller dialog box](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/rr9.png)
 
 	A dialog box will prompt you: "A file with the name HomeController already exits. Do you want to replace it?". Click **Yes**. We are overwriting the Home Controller that was created with the new project. We will use the new Home Controller for our contact list.
 
@@ -728,7 +724,7 @@ The application is now running in the cloud, using SQL Database to store its dat
 
 ## Next Steps
 
-A real application would require authentication and authorization, and you would use the membership database for that purpose. The tutorial [Deploy a Secure ASP.NET MVC application with OAuth, Membership and SQL Database](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database) is based on this tutorial and shows how to deploy a web application with the membership database.
+A real application would require authentication and authorization, and you would use the membership database for that purpose. The tutorial [Deploy a Secure ASP.NET MVC application with OAuth, Membership and SQL Database](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/) is based on this tutorial and shows how to deploy a web application with the membership database.
 
 Another way to store data in an Azure application is to use Azure storage, which provide non-relational data storage in the form of blobs and tables. The following links provide more information on Web API, ASP.NET MVC and Window Azure.
  
@@ -736,7 +732,7 @@ Another way to store data in an Azure application is to use Azure storage, which
 * [Getting Started with Entity Framework using MVC][EFCodeFirstMVCTutorial]
 * [Intro to ASP.NET MVC 5](http://www.asp.net/mvc/tutorials/mvc-5/introduction/getting-started)
 * [Your First ASP.NET Web API](http://www.asp.net/web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api)
-* [Debugging WAWS](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio)
+* [Debugging WAWS](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/)
 
 This tutorial and the sample application was written by [Rick Anderson](http://blogs.msdn.com/b/rickandy/) (Twitter [@RickAndMSFT](https://twitter.com/RickAndMSFT)) with assistance from Tom Dykstra and Barry Dorrans (Twitter [@blowdart](https://twitter.com/blowdart)). 
 

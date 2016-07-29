@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="01/09/2016"
+	ms.date="06/24/2016"
 	wacn.date=""/>
 
 # How to use io.js with Azure Web Apps

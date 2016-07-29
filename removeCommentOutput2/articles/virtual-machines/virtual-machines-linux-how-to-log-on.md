@@ -1,3 +1,5 @@
+<!-- rename to virtual-machines-linux-classic-log-on -->
+
 <properties
 	pageTitle="Log on to a Linux VM in Azure | Azure"
 	description="Learn how to log on to an Azure virtual machine running Linux by using a Secure Shell (SSH) client."
@@ -16,7 +18,7 @@
 
 #How to Log on to a Virtual Machine Running Linux #
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the classic deployment model. Microsoft recommends that most new deployments use the [Resource Manager deployment model](/documentation/articles/virtual-machines-linux-tutorial-portal-rm).
 
 You'll need to install an SSH client on the computer you want to use to log on to the virtual machine. There are many SSH client programs that you can choose from. The following are possible choices:
 

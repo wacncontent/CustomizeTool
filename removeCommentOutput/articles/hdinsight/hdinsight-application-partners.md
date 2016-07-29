@@ -4,11 +4,11 @@
 	services="hdinsight" 
 	documentationCenter="na" 
 	authors="pablissima" 
-	manager="paulettm="" 
+	manager="paulettm" 
 	tags=""/>
 <tags
 	ms.service="hdinsight"
-	ms.date="09/25/2015"
+	ms.date="02/16/2016"
 	wacn.date=""/>
 # HDInsight Application Partners
 

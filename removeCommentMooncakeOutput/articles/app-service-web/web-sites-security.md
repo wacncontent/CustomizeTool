@@ -51,7 +51,7 @@ which lists the current top 10 critical web application security flaws, as deter
 
 ##<a name="https"></a> Secure communication with customers
 
-If you use the **\*.chinacloudsites.cn** domain name created for your Azure Web App, you can immediately use HTTPS, as an SSL certificate is provided for all **\*.chinacloudsites.cn** domain names. If your site uses a [custom domain name](/documentation/articles/web-sites-custom-domain-name), you can upload an SSL certificate to [enable HTTPS](/documentation/articles/web-sites-configure-ssl-certificate) for the custom domain.
+If you use the **\*.chinacloudsites.cn** domain name created for your Azure Web App, you can immediately use HTTPS, as an SSL certificate is provided for all **\*.chinacloudsites.cn** domain names. If your site uses a [custom domain name](/documentation/articles/web-sites-custom-domain-name/), you can upload an SSL certificate to [enable HTTPS](/documentation/articles/web-sites-configure-ssl-certificate/) for the custom domain.
 
 Enabling [HTTPS](https://en.wikipedia.org/wiki/HTTPS) can help protect against MITM attacks on the communication between your app and its users.
 
@@ -60,8 +60,8 @@ Enabling [HTTPS](https://en.wikipedia.org/wiki/HTTPS) can help protect against M
 Azure highly integrates with SQL Database, such that all the connection strings are encrypted across the board and are only decrypted on the VM that the app runs on *and* only when the app runs. 
 In addition, Azure SQL Database includes many security features to help you secure your application data from cyber threats, including 
 [at-rest encryption](https://msdn.microsoft.com/zh-cn/library/dn948096.aspx), [Always Encrypted](https://msdn.microsoft.com/zh-cn/library/mt163865.aspx),
-[Dynamic Data Masking](/documentation/articles/sql-database-dynamic-data-masking-get-started), and [Threat Detection](/documentation/articles/sql-database-threat-detection-get-started). 
-If you have sensitive data or compliance requirements, see [Securing your SQL Database](/documentation/articles/sql-database-security) for more information on how to secure 
+[Dynamic Data Masking](/documentation/articles/sql-database-dynamic-data-masking-get-started/). 
+If you have sensitive data or compliance requirements, see [Securing your SQL Database](/documentation/articles/sql-database-security/) for more information on how to secure 
 your data.
 
 If you use a third-party database provider, such as ClearDB, you should consult with the provider's documentation directly on security best practices.  
@@ -95,11 +95,11 @@ exposing this information. A simple search on [GitHub](https://github.com), for 
 
 The best practice is to keep this information out of your app's configuration files. Azure lets you store configuration information as part of the runtime environment as **app settings** and **connection strings**. The values 
 are exposed to your application at runtime through *environment variables* for most programming languages. For .NET applications, these values are injected into your .NET configuration at runtime. Apart from these situations, these
-configuration settings will remain encrypted unless you view or configure them using the [Azure Management Portal](https://manage.windowsazure.cn) or utilities such as PowerShell or the Azure CLI. 
+configuration settings will remain encrypted unless you view or configure them using the [Azure Classic Management Portal](https://manage.windowsazure.cn) or utilities such as PowerShell or the Azure CLI. 
 
 Storing configuration information in Azure makes it possible for the app's administrator to lock down sensitive information for the production apps. Developers can use a separate set of configuration settings
 for app development and the settings can be automatically superseded by the settings configured in Azure Web App. Not even the developers need to know the secrets configured for the production app. For more information on 
-configuring app settings and connection strings in Azure Web App, see [Configuring web apps](/documentation/articles/web-sites-configure).
+configuring app settings and connection strings in Azure Web App, see [Configuring web apps](/documentation/articles/web-sites-configure/).
 
 ### FTPS
 
@@ -108,7 +108,7 @@ always use FTPS instead of FTP.
 
 The FTPS link for your app can be found with the following steps:
 
-1. Open the [Azure Management Portal](https://manage.windowsazure.cn).
+1. Open the [Azure Classic Management Portal](https://manage.windowsazure.cn).
 2. Select **Web Apps**.
 4. Select the desired app.
 5. Click **Dashboard**
@@ -122,4 +122,4 @@ For more information on the security of the Azure platform, information on repor
 
 For more information on **web.config** or **applicationhost.config** files in Azure Web Apps, see [Configuration options unlocked in Azure web apps](/blog/2014/01/28/more-to-explore-configuration-options-unlocked-in-windows-azure-web-sites/).
 
-For information on logging information for Azure Web Apps, which may be useful in detecting attacks, see [Enable diagnostic logging](/documentation/articles/web-sites-enable-diagnostic-log).
+For information on logging information for Azure Web Apps, which may be useful in detecting attacks, see [Enable diagnostic logging](/documentation/articles/web-sites-enable-diagnostic-log/).

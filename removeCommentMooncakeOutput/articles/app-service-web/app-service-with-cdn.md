@@ -1,4 +1,4 @@
-<!-- not suitable for Mooncake -->
+<!-- deleted in Global -->
 
 <properties 
 	pageTitle="Integrate an Azure Web app with Azure CDN" 
@@ -20,7 +20,7 @@ Azure Websites can be integrated with [Azure CDN](/home/features/cdn/), adding t
 
 Integrating Azure Web apps with Azure CDN gives you the following advantages:
 
-- Integrate content deployment (images, scripts, and stylesheets) as part of your Azure web app's [continuous deployment](/documentation/articles/web-sites-publish-source-control) process
+- Integrate content deployment (images, scripts, and stylesheets) as part of your Azure web app's [continuous deployment](/documentation/articles/web-sites-publish-source-control/) process
 - Easily upgrade the NuGet packages in your web app in Azure Websites, such as jQuery or Bootstrap versions 
 - Manage your Web application and your CDN-served content from the same Visual Studio interface
 - Integrate ASP.NET bundling and minification with Azure CDN
@@ -33,7 +33,7 @@ You will deploy a web app to Azure Websites using the default ASP.NET MVC templa
 
 This tutorial has the following prerequisites:
 
--	An active [Azure account](http://azure.microsoft.com/account/)
+-	An active [Windows Azure account](http://azure.microsoft.com/account/)
 -	Visual Studio 2013 with [Azure SDK](https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VWDOrVs2013AzurePack.appids)
 
 > [AZURE.NOTE] You need an Azure account to complete this tutorial:
@@ -61,7 +61,7 @@ In this section, you will deploy the default ASP.NET MVC application template in
 
 	![](./media/app-service-with-cdn/4-signed-in.png)
 
-8. Assuming that you haven't created an Azure web app, Visual Studio can help you create it. In the **Configure Microsoft Azure Website** dialog, make sure your site name is unique. Then, click **OK**.
+8. Assuming that you haven't created an Azure web app, Visual Studio can help you create it. In the **Configure Windows Azure Website** dialog, make sure your site name is unique. Then, click **OK**.
 
 	![](./media/app-service-with-cdn/5-create-website.png)
 
@@ -550,8 +550,8 @@ The [Bundle](http://msdn.microsoft.com/zh-cn/library/system.web.optimization.bun
 
 ## More Information ##
 - [Overview of the Azure Content Delivery Network (CDN)](http://msdn.microsoft.com/zh-cn/library/azure/ff919703.aspx)
-- [Serve Content from Azure CDN in Your Web Application](/documentation/articles/cdn-serve-content-from-cdn-in-your-web-application)
-- [Integrate a cloud service with Azure CDN](/documentation/articles/cdn-cloud-service-with-cdn)
+- [Serve Content from Azure CDN in Your Web Application](/documentation/articles/cdn-serve-content-from-cdn-in-your-web-application/)
+- [Integrate a cloud service with Azure CDN](/documentation/articles/cdn-cloud-service-with-cdn/)
 - [ASP.NET Bundling and Minification](http://www.asp.net/mvc/tutorials/mvc-4/bundling-and-minification)
-- [Using CDN for Azure](/documentation/articles/cdn-how-to-use)
+- [Using CDN for Azure](/documentation/articles/cdn-how-to-use/)
  

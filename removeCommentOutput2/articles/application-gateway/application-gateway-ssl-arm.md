@@ -1,21 +1,21 @@
 <properties
-   pageTitle="Configure an application gateway for SSL offload by using Azure Resource Manager | Windows Azure"
+   pageTitle="Configure an application gateway for SSL offload by using Azure Resource Manager | Azure"
    description="This page provides instructions to create an application gateway with SSL offload by using Azure Resource Manager"
    documentationCenter="na"
    services="application-gateway"
    authors="joaoma"
-   manager="jdial"
+   manager="carmonm"
    editor="tysonn"/>
 <tags
 	ms.service="application-gateway"
-	ms.date="11/24/2015"
+	ms.date="03/03/2016"
 	wacn.date=""/>
 
 # Configure an application gateway for SSL offload by using Azure Resource Manager
 
 > [AZURE.SELECTOR]
--[Azure Classic PowerShell](/documentation/articles/application-gateway-ssl)
--[Azure Resource Manager PowerShell](/documentation/articles/application-gateway-ssl-arm)
+-[Azure Classic PowerShell](/documentation/articles/application-gateway-ssl/)
+-[Azure Resource Manager PowerShell](/documentation/articles/application-gateway-ssl-arm/)
 
  Azure Application Gateway can be configured to terminate the Secure Sockets Layer (SSL) session at the gateway to avoid costly SSL decryption tasks to happen at the web farm. SSL offload also simplifies the front-end server setup and management of the web application.
 
@@ -59,11 +59,17 @@ Here are the steps needed to create an application gateway:
 
 ## Create a resource group for Resource Manager
 
-Make sure that you switch PowerShell mode to use the Azure Resource Manager cmdlets. More info is available at [Using Windows PowerShell with Resource Manager](/documentation/articles/powershell-azure-resource-manager).
+Make sure that you switch PowerShell mode to use the Azure Resource Manager cmdlets. More info is available at [Using Windows PowerShell with Resource Manager](/documentation/articles/powershell-azure-resource-manager/).
 
 ### Step 1
 
+		[AZURE.ACOM]{
 		PS C:\> Login-AzureRmAccount
+		[AZURE.ACOM]}
+		
+		[AZURE.ACN]{
+		PS C:\> Login-AzureRmAccount -EnvironmentName AzureChinaCloud
+		[AZURE.ACN]}
 
 
 
@@ -87,11 +93,23 @@ Choose which of your Azure subscriptions to use. <BR>
 
 Create a new resource group (skip this step if you're using an existing resource group).
 
+    [AZURE.ACOM]{
     New-AzureRmResourceGroup -Name appgw-rg -location "China North"
+    [AZURE.ACOM]}
+    
+    [AZURE.ACN]{
+    New-AzureRmResourceGroup -Name appgw-rg -location "China North"
+    [AZURE.ACN]}
 
 Azure Resource Manager requires that all resource groups specify a location. This is used as the default location for resources in that resource group. Make sure that all commands to create an application gateway will use the same resource group.
 
+[AZURE.ACOM]{
 In the example above, we created a resource group called "appgw-RG" and location "China North".
+[AZURE.ACOM]}
+
+[AZURE.ACN]{
+In the example above, we created a resource group called "appgw-RG" and location "China North".
+[AZURE.ACN]}
 
 ## Create a virtual network and a subnet for the application gateway
 
@@ -104,9 +122,21 @@ The following example shows how to create a virtual network by using Resource Ma
 This assigns the address range 10.0.0.0/24 to a subnet variable to be used to create a virtual network.
 
 ### Step 2
+	[AZURE.ACOM]{
 	$vnet = New-AzureRmVirtualNetwork -Name appgwvnet -ResourceGroupName appgw-rg -Location "China North" -AddressPrefix 10.0.0.0/16 -Subnet $subnet
+	[AZURE.ACOM]}
 
+	[AZURE.ACN]{
+	$vnet = New-AzureRmVirtualNetwork -Name appgwvnet -ResourceGroupName appgw-rg -Location "China North" -AddressPrefix 10.0.0.0/16 -Subnet $subnet
+	[AZURE.ACN]}
+
+[AZURE.ACOM]{
 This creates a virtual network named "appgwvnet" in resource group "appgw-rg" for the China North region using the prefix 10.0.0.0/16 with subnet 10.0.0.0/24.
+[AZURE.ACOM]}
+
+[AZURE.ACN]{
+This creates a virtual network named "appgwvnet" in resource group "appgw-rg" for the China North region using the prefix 10.0.0.0/16 with subnet 10.0.0.0/24.
+[AZURE.ACN]}
 
 ### Step 3
 
@@ -116,9 +146,21 @@ This assigns the subnet object to variable $subnet for the next steps.
 
 ## Create a public IP address for the front-end configuration
 
+	[AZURE.ACOM]{
 	$publicip = New-AzureRmPublicIpAddress -ResourceGroupName appgw-rg -name publicIP01 -location "China North" -AllocationMethod Dynamic
+	[AZURE.ACOM]}
+	
+	[AZURE.ACN]{
+	$publicip = New-AzureRmPublicIpAddress -ResourceGroupName appgw-rg -name publicIP01 -location "China North" -AllocationMethod Dynamic
+	[AZURE.ACN]}
 
+[AZURE.ACOM]{
 This creates a public IP resource "publicIP01" in resource group "appgw-rg" for the China North region.
+[AZURE.ACOM]}
+
+[AZURE.ACN]{
+This creates a public IP resource "publicIP01" in resource group "appgw-rg" for the China North region.
+[AZURE.ACN]}
 
 
 ## Create an application gateway configuration object
@@ -149,7 +191,7 @@ This configures the front-end IP port named "frontendport01" for the public IP e
 
 ### Step 5
 
-	$cert = New-AzureRmApplicationGatewaySslCertificate -Name cert01 -CertificateFile <full path for certificate file> -Password â<password>â
+	$cert = New-AzureRmApplicationGatewaySslCertificate -Name cert01 -CertificateFile <full path for certificate file> -Password '<password>'
 
 This configures the certificate used for SSL connection. The certificate needs to be in .pfx format, and the password must be between 4 to 12 characters.
 
@@ -182,16 +224,23 @@ This configures the instance size of the application gateway.
 
 ## Create an application gateway by using New-AzureApplicationGateway
 
+	[AZURE.ACOM]{
 	$appgw = New-AzureRmApplicationGateway -Name appgwtest -ResourceGroupName appgw-rg -Location "China North" -BackendAddressPools $pool -BackendHttpSettingsCollection $poolSetting -FrontendIpConfigurations $fipconfig  -GatewayIpConfigurations $gipconfig -FrontendPorts $fp -HttpListeners $listener -RequestRoutingRules $rule -Sku $sku -SslCertificates $cert
+	[AZURE.ACOM]}
+
+	[AZURE.ACN]{
+	$appgw = New-AzureRmApplicationGateway -Name appgwtest -ResourceGroupName appgw-rg -Location "China North" -BackendAddressPools $pool -BackendHttpSettingsCollection $poolSetting -FrontendIpConfigurations $fipconfig  -GatewayIpConfigurations $gipconfig -FrontendPorts $fp -HttpListeners $listener -RequestRoutingRules $rule -Sku $sku -SslCertificates $cert
+	[AZURE.ACN]}
 
 This creates an application gateway with all configuration items from the steps above. In the example, the application gateway is called "appgwtest".
 
 ## Next steps
 
-If you want to configure an application gateway to use with an internal load balancer (ILB), see [Create an application gateway with an internal load balancer (ILB)](/documentation/articles/application-gateway-ilb).
+If you want to configure an application gateway to use with an internal load balancer (ILB), see [Create an application gateway with an internal load balancer (ILB)](/documentation/articles/application-gateway-ilb/).
 
 If you want more information about load balancing options in general, see:
 
+[AZURE.ACOM]{
 - [Azure Load Balancer](/documentation/services/load-balancer/)
+[AZURE.ACOM]}
 - [Azure Traffic Manager](/documentation/services/traffic-manager/)
-

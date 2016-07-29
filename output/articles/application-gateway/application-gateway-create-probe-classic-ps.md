@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Create a custom probe for Application Gateway by using PowerShell in the classic deployment model | Windows Azure"
+   pageTitle="Create a custom probe for Application Gateway by using PowerShell in the classic deployment model | Azure"
    description="Learn how to create a custom probe for Application Gateway by using PowerShell in the classic deployment model"
    services="application-gateway"
    documentationCenter="na"
@@ -10,7 +10,7 @@
 />
 <tags
 	ms.service="application-gateway"
-	ms.date="12/17/2015"
+	ms.date="06/07/2016"
 	wacn.date=""/>
 
 # Create a custom probe for Azure Application Gateway (classic) by using PowerShell
@@ -18,8 +18,7 @@
 
 [AZURE.INCLUDE [azure-probe-intro-include](../includes/application-gateway-create-probe-intro-include.md)].
 
-[AZURE.INCLUDE [azure-arm-classic-important-include](../includes/learn-about-deployment-models-classic-include.md)] [Resource Manager model](/documentation/articles/application-gateway-create-probe-ps).
-
+[AZURE.INCLUDE [azure-arm-classic-important-include](../includes/learn-about-deployment-models-classic-include.md)] Learn how to [perform these steps using the Resource Manager model](/documentation/articles/application-gateway-create-probe-ps/).
 
 [AZURE.INCLUDE [azure-ps-prerequisites-include.md](../includes/azure-ps-prerequisites-include.md)]
 
@@ -106,7 +105,8 @@ Copy the following text to Notepad.
             <Timeout>15</Timeout>
             <UnhealthyThreshold>5</UnhealthyThreshold>
         </Probe>
-    <BackendAddressPools>
+      </Probes>
+     <BackendAddressPools>
         <BackendAddressPool>
             <Name>pool1</Name>
             <IPAddresses>
@@ -214,6 +214,6 @@ Update the application gateway configuration with the new XML file by using **Se
 
 ## Next steps
 
-If you want to configure Secure Sockets Layer (SSL) offload, see [Configure an application gateway for SSL offload](/documentation/articles/application-gateway-ssl).
+If you want to configure Secure Sockets Layer (SSL) offload, see [Configure an application gateway for SSL offload](/documentation/articles/application-gateway-ssl/).
 
-If you want to configure an application gateway to use with an internal load balancer, see [Create an application gateway with an internal load balancer (ILB)](/documentation/articles/application-gateway-ilb).
+If you want to configure an application gateway to use with an internal load balancer, see [Create an application gateway with an internal load balancer (ILB)](/documentation/articles/application-gateway-ilb/).

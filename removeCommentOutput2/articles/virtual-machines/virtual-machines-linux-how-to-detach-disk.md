@@ -1,3 +1,5 @@
+<!-- rename to virtual-machines-linux-classic-detach-disk -->
+
 <properties
 	pageTitle="Detach a disk from a Linux VM | Azure"
 	description="Learn to detach a data disk from an Azure virtual machine created using the classic deployment model."
@@ -15,7 +17,7 @@
 
 # How to Detach a Disk from a Linux Virtual Machine
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the classic deployment model. Microsoft recommends that most new deployments use the Resource Manager model.
 
 
 [AZURE.INCLUDE [howto-detach-disk-windows-linux](../includes/howto-detach-disk-linux.md)]

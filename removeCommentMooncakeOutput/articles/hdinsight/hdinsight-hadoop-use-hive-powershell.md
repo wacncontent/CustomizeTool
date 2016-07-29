@@ -10,22 +10,24 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="01/28/2016"
+	ms.date="06/16/2016"
 	wacn.date=""/>
 
 #Run Hive queries using PowerShell
 
 [AZURE.INCLUDE [hive-selector](../includes/hdinsight-selector-use-hive.md)]
 
-> [AZURE.NOTE] This document does not provide a detailed description of what the HiveQL statements that are used in the examples do. For information on the HiveQL that is used in this example, see [Use Hive with Hadoop on HDInsight](/documentation/articles/hdinsight-use-hive).
+> [AZURE.NOTE] This document does not provide a detailed description of what the HiveQL statements that are used in the examples do. For information on the HiveQL that is used in this example, see [Use Hive with Hadoop on HDInsight](/documentation/articles/hdinsight-use-hive/).
 
-
-**<a id="prereq"></a> Prerequisites**
+<a id="prereq"></a>
+**Prerequisites**
 
 To complete the steps in this article, you will need the following.
 
 - **An Azure HDInsight (Hadoop on HDInsight) cluster (Windows-based )** 
-- **A workstation with Azure PowerShell**. See [Install Azure PowerShell 1.0 and greater](/documentation/articles/hdinsight-administer-use-powershell#install-azure-powershell-10-and-greater).
+- **A workstation with Azure PowerShell**.
+
+    [AZURE.INCLUDE [upgrade-powershell](../includes/hdinsight-use-latest-powershell.md)]
 
 ##<a id="powershell"></a> Run Hive queries using Azure PowerShell
 
@@ -140,10 +142,10 @@ As you can see, Azure PowerShell provides an easy way to run Hive queries in an 
 
 For general information about Hive in HDInsight:
 
-* [Use Hive with Hadoop on HDInsight](/documentation/articles/hdinsight-use-hive)
+* [Use Hive with Hadoop on HDInsight](/documentation/articles/hdinsight-use-hive/)
 
 For information about other ways you can work with Hadoop on HDInsight:
 
-* [Use Pig with Hadoop on HDInsight](/documentation/articles/hdinsight-use-pig)
+* [Use Pig with Hadoop on HDInsight](/documentation/articles/hdinsight-use-pig/)
 
-* [Use MapReduce with Hadoop on HDInsight](/documentation/articles/hdinsight-use-mapreduce)
+* [Use MapReduce with Hadoop on HDInsight](/documentation/articles/hdinsight-use-mapreduce/)

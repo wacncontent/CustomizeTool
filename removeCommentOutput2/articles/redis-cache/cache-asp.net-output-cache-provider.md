@@ -4,7 +4,7 @@
    services="redis-cache"
    documentationCenter="na"
    authors="steved0x"
-   manager="dwrede"
+   manager="erikre"
    editor="tysonn" />
 <tags
 	ms.service="cache"
@@ -53,14 +53,13 @@ The NuGet package downloads and adds the required assembly references and adds t
 
 The commented section provides an example of the attributes and sample settings for each attribute.
 
-
-You can configure Redis Cache through Azure PowerShell. For instructions on accessing your cache properties, see [Manage Azure Redis Cache with Azure PowerShell](/documentation/articles/cache-howto-manage-redis-cache-powershell).
+Configure the attributes with the values from your cache blade in the Azure portal, and configure the other values as desired. For instructions on accessing your cache properties, see [Configure Redis cache settings](/documentation/articles/cache-configure#configure-redis-cache-settings).
 
 -	**host** - specify your cache endpoint.
 -	**port** - use either your non-SSL port or your SSL port, depending on the ssl settings.
 -	**accessKey** - use either the primary or secondary key for your cache.
 -	**ssl** - true if you want to secure cache/client communications with ssl; otherwise false. Be sure to specify the correct port.
-	-	The non-SSL port is disabled by default for new caches. Specify true for this setting to use the SSL port. For more information about
+	-	The non-SSL port is disabled by default for new caches. Specify true for this setting to use the SSL port. For more information about enabling the non-SSL port, see the [Access Ports](/documentation/articles/cache-configure#access-ports) section in the [Configure a cache](/documentation/articles/cache-configure) topic.
 -	**databaseId** - Specified which database to use for cache output data. If not specified, the default value of 0 is used.
 -	**applicationName** - Keys are stored in redis as <AppName>_<SessionId>_Data. This enables multiple applications to share the same key. This parameter is optional and if you do not provide it a default value is used.
 -	**connectionTimeoutInMilliseconds** - This setting allows you to override the connectTimeout setting in the StackExchange.Redis client. If not specified, the default connectTimeout setting of 5000 is used. For more information, see [StackExchange.Redis configuration model](http://go.microsoft.com/fwlink/?LinkId=398705).
@@ -70,11 +69,11 @@ Add an OutputCache directive to each page for which you wish to cache the output
 
     <%@ OutputCache Duration="60" VaryByParam="*" %>
 
-In this example the cached page data will remain in the cache for 60 seconds, and a different version of the page will be cached for each parameter combination. For more information about the OutputCache directive, see [@OutputCache](http://go.mi.
+In this example the cached page data will remain in the cache for 60 seconds, and a different version of the page will be cached for each parameter combination. For more information about the OutputCache directive, see [@OutputCache](https://msdn.microsoft.com/zh-cn/library/hdxfb6cy(v=vs.100).aspx).
 
 Once these steps are performed, your application is configured to use the Redis Output Cache Provider.
 
 ## Next steps
 
-Check out the [ASP.NET Session State Provider for Azure Redis Cache](cache-asp.net-sessio.
+Check out the [ASP.NET Session State Provider for Azure Redis Cache](/documentation/articles/cache-asp.net-session-state-provider).
 

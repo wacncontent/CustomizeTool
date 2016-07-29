@@ -8,7 +8,7 @@
    editor="tysonn" />
 <tags
 	ms.service="virtual-network"
-	ms.date="12/11/2015"
+	ms.date="03/15/2016"
 	wacn.date=""/>
 
 # Manage DNS servers used by a virtual network (VNet)
@@ -45,18 +45,18 @@ You can manage the list of DNS servers used in a VNet in the Management Portal, 
 
 To edit a DNS server list by using a network configuration file, you'll first export your configuration settings from the Management Portal. You'll then edit the network configuration file and import it back through the Management Portal. Below is a high-level list of steps to complete this process.
 
-1. Export your virtual network settings to a network configuration file. For more information and steps to export your network configuration settings, see [Export Virtual Network Settings to a Network Configuration File](/documentation/articles/virtual-networks-using-network-configuration-file).
+1. Export your virtual network settings to a network configuration file. For more information and steps to export your network configuration settings, see [Export Virtual Network Settings to a Network Configuration File](/documentation/articles/virtual-networks-using-network-configuration-file/).
 
-1. Specify the DNS server information for your virtual network. For more information about specifying a DNS server, see [Specifying a DNS Server in a Virtual Network Configuration File](/documentation/articles/virtual-networks-specifying-a-dns-settings-in-a-virtual-network-configuration-file). For additional information about network configuration files, see [Azure Virtual Network Configuration Schema](https://msdn.microsoft.com/zh-cn/library/azure/jj157100.aspx) and [Configure a Virtual Network Using a Network Configuration File](/documentation/articles/virtual-networks-using-network-configuration-file).
+1. Specify the DNS server information for your virtual network. For more information about specifying a DNS server, see [Specifying a DNS Server in a Virtual Network Configuration File](/documentation/articles/virtual-networks-specifying-a-dns-settings-in-a-virtual-network-configuration-file/). For additional information about network configuration files, see [Azure Virtual Network Configuration Schema](https://msdn.microsoft.com/zh-cn/library/azure/jj157100.aspx) and [Configure a Virtual Network Using a Network Configuration File](/documentation/articles/virtual-networks-using-network-configuration-file/).
 
-1. Import the network configuration file. For more information and steps to import your network configuration file, see [Import a Network Configuration File](/documentation/articles/virtual-networks-using-network-configuration-file).
+1. Import the network configuration file. For more information and steps to import your network configuration file, see [Import a Network Configuration File](/documentation/articles/virtual-networks-using-network-configuration-file/).
 
 1. Restart the virtual machines located in the virtual network to allow them to acquire the new DNS settings.
 
 ## Next Steps
 
-[How to manage Virtual Network (VNet) Properties](/documentation/articles/virtual-networks-settings)
+[How to manage Virtual Network (VNet) Properties](/documentation/articles/virtual-networks-settings/)
 
-[How to use public IP addresses in a virtual network](/documentation/articles/virtual-networks-public-ip-within-vnet)
+[How to use public IP addresses in a virtual network](/documentation/articles/virtual-networks-public-ip-within-vnet/)
 
-[How to delete a Virtual Network (VNet)](/documentation/articles/virtual-networks-delete-vnet) 
+[How to delete a Virtual Network (VNet)](/documentation/articles/virtual-networks-delete-vnet/) 

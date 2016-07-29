@@ -10,21 +10,28 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="01/06/2016"
+	ms.date="06/09/2016"
 	wacn.date=""/>
 
 # Customize HDInsight clusters using Bootstrap
 
-[AZURE.INCLUDE [selector](../includes/hdinsight-create-windows-cluster-selector.md)]
-
 Sometimes, you want to configure the configuration files which include:
 
+- clusterIdentity.xml
 - core-site.xml
+- gateway.xml
+- hbase-env.xml
+- hbase-site.xml
 - hdfs-site.xml
-- mapred-site.xml
-- yarn-site.xml
+- hive-env.xml
 - hive-site.xml
+- mapred-site
 - oozie-site.xml
+- oozie-env.xml
+- storm-site.xml
+- tez-site.xml
+- webhcat-site.xml
+- yarn-site.xml
 
 The clusters can't retain the changes due to re-imaging. For more information on re-imaging, 
 see [Role Instance Restarts Due to OS Upgrades](http://blogs.msdn.com/b/kwill/archive/2012/09/19/role-instance-restarts-due-to-os-upgrades.aspx). 
@@ -33,13 +40,16 @@ To keep the changes through the clusters' lifetime, you can use HDInsight cluste
 There are 3 methods to use bootstrap:
 
 - Use Azure PowerShell
+
+    [AZURE.INCLUDE [upgrade-powershell](../includes/hdinsight-use-latest-powershell.md)]
+    
 - Use .NET SDK
 - Use ARM template
 
 For information on installing additional components on HDInsight cluster during the creation time, see :
 
-- [Customize HDInsight clusters using Script Action (Linux)](/documentation/articles/hdinsight-hadoop-customize-cluster-v1)
-- [Customize HDInsight clusters using Script Action (Windows)](/documentation/articles/hdinsight-hadoop-customize-cluster-v1)
+- [Customize HDInsight clusters using Script Action (Linux)](/documentation/articles/hdinsight-hadoop-customize-cluster-v1/)
+- [Customize HDInsight clusters using Script Action (Windows)](/documentation/articles/hdinsight-hadoop-customize-cluster-v1/)
 
 ## Use Azure PowerShell
 
@@ -70,7 +80,7 @@ A complete working PowerShell script can be found in [Appendix-A](#hdinsight-had
 
 **To verify the change:**
 
-1. Sign on to the [Azure Management Portal](https://manage.windowsazure.cn).
+1. Sign on to the [Azure portal](https://portal.azure.cn).
 2. On the left pane, click **Browse**, and then click **HDInsight Clusters**.
 3. Click the cluster you just created using the PowerShell script.
 4. Click **Dashboard** from the top of the blade to open the Ambari UI.
@@ -100,7 +110,7 @@ For more information, see Azim Uddin's blog titled [Customizing HDInsight Cluste
 
 ## Use .NET SDK
 
-See [Create Linux-based clusters in HDInsight using the .NET SDK](/documentation/articles/hdinsight-hadoop-create-linux-clusters-dotnet-sdk#use-bootstrap).
+See [Create Linux-based clusters in HDInsight using the .NET SDK](/documentation/articles/hdinsight-hadoop-create-linux-clusters-dotnet-sdk/#use-bootstrap).
 
 ## Use Azure ARM template
 
@@ -126,14 +136,14 @@ You can use bootstrap in ARM template:
 - [Develop Script Action scripts for HDInsight][hdinsight-write-script]
 - [Install and use Spark on HDInsight clusters][hdinsight-install-spark]
 - [Install and use R on HDInsight clusters][hdinsight-install-r]
-- [Install and use Solr on HDInsight clusters](/documentation/articles/hdinsight-hadoop-solr-install-v1).
-- [Install and use Giraph on HDInsight clusters](/documentation/articles/hdinsight-hadoop-giraph-install-v1).
+- [Install and use Solr on HDInsight clusters](/documentation/articles/hdinsight-hadoop-solr-install-v1/).
+- [Install and use Giraph on HDInsight clusters](/documentation/articles/hdinsight-hadoop-giraph-install-v1/).
 
-[hdinsight-install-spark]: /documentation/articles/hdinsight-hadoop-spark-install
-[hdinsight-install-r]: /documentation/articles/hdinsight-hadoop-r-scripts
-[hdinsight-write-script]: /documentation/articles/hdinsight-hadoop-script-actions
-[hdinsight-provision-cluster]: /documentation/articles/hdinsight-provision-clusters-v1
-[powershell-install-configure]: /documentation/articles/powershell-install-configure
+[hdinsight-install-spark]: /documentation/articles/hdinsight-hadoop-spark-install/
+[hdinsight-install-r]: /documentation/articles/hdinsight-hadoop-r-scripts/
+[hdinsight-write-script]: /documentation/articles/hdinsight-hadoop-script-actions/
+[hdinsight-provision-cluster]: /documentation/articles/hdinsight-provision-clusters-v1/
+[powershell-install-configure]: /documentation/articles/powershell-install-configure/
 
 
 [img-hdi-cluster-states]: ./media/hdinsight-hadoop-customize-cluster-v1/HDI-Cluster-state.png "Stages during cluster creation"
@@ -199,9 +209,9 @@ This PowerShell script creates an HDInsight cluster and customizes a Hive settin
         -Location $location `
         -Type Standard_GRS
 
-    $defaultStorageAccountKey = Get-AzureRmStorageAccountKey `
+    $defaultStorageAccountKey = (Get-AzureRmStorageAccountKey `
                                     -ResourceGroupName $resourceGroupName `
-                                    -Name $defaultStorageAccountName |  %{ $_.Key1 }
+                                    -Name $defaultStorageAccountName)[0].Value
     $defaultStorageContext = New-AzureStorageContext `
                                     -StorageAccountName $defaultStorageAccountName `
                                     -StorageAccountKey $defaultStorageAccountKey

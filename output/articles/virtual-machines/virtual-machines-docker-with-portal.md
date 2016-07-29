@@ -1,4 +1,4 @@
-<!-- not suitable for Mooncake -->
+<!-- rename to virtual-machines-linux-classic-portal-use-docker -->
 
 <properties
 	pageTitle="Using Docker VM Extension for Linux | Azure"
@@ -16,14 +16,14 @@
 	wacn.date=""/>
 
 
-# Using the Docker VM Extension with the Azure Management Portal
+# Using the Docker VM Extension with the Azure Classic Management Portal
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager model.
 
 
 [Docker](https://www.docker.com/) is one of the most popular virtualization approaches that uses [Linux containers](http://zh.wikipedia.org/wiki/LXC) rather than virtual machines as a way of isolating data and computing on shared resources. You can use the Docker VM extension managed by [Azure Linux Agent] to create a Docker VM that hosts any number of containers for your applications on Azure.
 
-> [AZURE.NOTE] This topic describes how to create a Docker VM from the Azure Management Portal. To see how to create a Docker VM at the command line, see [How to use the Docker VM Extension from the Azure Command-line Interface (Azure CLI)]. To see a high-level discussion of containers and their advantages, see the [Docker High Level Whiteboard](http://channel9.msdn.com/Blogs/Regular-IT-Guy/Docker-High-Level-Whiteboard).
+> [AZURE.NOTE] This topic describes how to create a Docker VM from the Azure Classic Management Portal. To see how to create a Docker VM at the command line, see [How to use the Docker VM Extension from the Azure Command-line Interface (Azure CLI)]. To see a high-level discussion of containers and their advantages, see the [Docker High Level Whiteboard](http://channel9.msdn.com/Blogs/Regular-IT-Guy/Docker-High-Level-Whiteboard).
 
 ## Create a new VM from the Image Gallery
 The first step requires an Azure VM from a Linux image that supports the Docker VM Extension, using an Ubuntu 14.04 LTS image from the Image Gallery as an example server image and Ubuntu 14.04 Desktop as a client. In the portal, click **+ New** in the bottom left corner to create a new VM instance and select an Ubuntu 14.04 LTS image from the selections available or from the complete Image Gallery, as shown below.
@@ -55,7 +55,7 @@ At the command line, use **`base64`** or another favorite encoding tool to creat
 
 ## Add the Docker VM Extension
 To add the Docker VM Extension, locate the VM instance you created and scroll down to **Extensions** and click it to bring up VM Extensions, as shown below.
-> [AZURE.NOTE] This functionality is supported in the preview portal only: https://manage.windowsazure.cn/
+> [AZURE.NOTE] This functionality is supported in the Portal Preview only: https://portal.azure.cn/
 
 ![](./media/virtual-machines-docker-with-portal/ClickExtensions.png)
 ### Add an Extension
@@ -138,9 +138,9 @@ You are ready to go to the [Docker User Guide] and use your Docker VM. If you wa
 
 
 <!--Link references-->
-[How to use the Docker VM Extension from the Azure Command-line Interface (Azure CLI)]: /documentation/articles/virtual-machines-docker-with-xplat-cli/
-[Azure Linux Agent]: /documentation/articles/virtual-machines-linux-agent-user-guide
-[Link 3 to another azure.microsoft.com documentation topic]: /documentation/articles/storage-whatis-account
+[How to use the Docker VM Extension from the Azure Command-line Interface (Azure CLI)]: /documentation/articles/virtual-machines-linux-classic-cli-use-docker/
+[Azure Linux Agent]: /documentation/articles/virtual-machines-linux-agent-user-guide/
+[Link 3 to another azure.microsoft.com documentation topic]: /documentation/articles/storage-whatis-account/
 
 [Running Docker with https]: http://docs.docker.com/articles/https/
 [Docker User Guide]: https://docs.docker.com/userguide/

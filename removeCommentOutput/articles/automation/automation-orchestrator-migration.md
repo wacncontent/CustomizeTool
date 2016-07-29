@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Migrating from Orchestrator to Azure Automation | Windows Azure"
+   pageTitle="Migrating from Orchestrator to Azure Automation | Azure"
    description="Describes how to migrate runbooks and integration packs from System Center Orchestrator to Azure Automation."
    services="automation"
    documentationCenter=""
@@ -8,13 +8,13 @@
    editor="tysonn" />
 <tags
 	ms.service="automation"
-	ms.date="11/11/2015"
+	ms.date="02/09/2016"
 	wacn.date=""/>
 
 
 # Migrating from Orchestrator to Azure Automation (Beta)
 
-Runbooks in [System Center Orchestrator](http://technet.microsoft.com/zh-cn/library/hh237242.aspx) are based on activities from integration packs that are written specifically for Orchestrator while runbooks in Azure Automation are based on Windows PowerShell.  [Graphical runbooks](/documentation/articles/automation-runbook-types#graphical-runbooks) in Azure Automation have a similar appearance to Orchestrator runbooks with their activities representing PowerShell cmdlets, child runbooks, and assets.
+Runbooks in [System Center Orchestrator](http://technet.microsoft.com/zh-cn/library/hh237242.aspx) are based on activities from integration packs that are written specifically for Orchestrator while runbooks in Azure Automation are based on Windows PowerShell.  [Graphical runbooks](/documentation/articles/automation-runbook-types/#graphical-runbooks) in Azure Automation have a similar appearance to Orchestrator runbooks with their activities representing PowerShell cmdlets, child runbooks, and assets.
 
 The [System Center Orchestrator Migration Toolkit](http://www.microsoft.com/download/details.aspx?id=47323&WT.mc_id=rss_alldownloads_all) includes tools to assist you in converting runbooks from Orchestrator to Azure Automation.  In addition to converting the runbooks themselves, you must convert the integration packs with the activities that the runbooks use to integration modules with Windows PowerShell cmdlets.  
 
@@ -34,7 +34,7 @@ Following is the the basic process for converting Orchestrator runbooks to Azure
 
 ## Hybrid Runbook Worker
 
-Runbooks in Orchestrator are stored on a database server and run on runbook servers, both in your local data center.  Runbooks in Azure Automation are stored in the Azure cloud and can run in your local data center using a [Hybrid Runbook Worker](/documentation/articles/automation-hybrid-runbook-worker).  This is how you will usually run runbooks converted from Orchestrator since they are designed to run on local servers.
+Runbooks in Orchestrator are stored on a database server and run on runbook servers, both in your local data center.  Runbooks in Azure Automation are stored in the Azure cloud and can run in your local data center using a [Hybrid Runbook Worker](/documentation/articles/automation-hybrid-runbook-worker/).  This is how you will usually run runbooks converted from Orchestrator since they are designed to run on local servers.
 
 ## Integration Pack Converter
 
@@ -70,7 +70,7 @@ By the RTM version of this tool, updated versions of the integration packs based
 
 ## Runbook Converter
 
-The Runbook Converter converts Orchestrator runbooks into [graphical runbooks](/documentation/articles/automation-runbook-types#graph-runbooks) that can be imported into Azure Automation.  
+The Runbook Converter converts Orchestrator runbooks into [graphical runbooks](/documentation/articles/automation-runbook-types/#graph-runbooks) that can be imported into Azure Automation.  
 
 Runbook Converter is implemented as a PowerShell module with a cmdlet called **ConvertFrom-SCORunbook** that performs the conversion.  When you install the tool, it will create a shortcut to a PowerShell session that loads the cmdlet.   
 
@@ -136,7 +136,7 @@ For example, a runbook may use a variable to populate a particular value in an a
  
 ### Input parameters
 
-Runbooks in Orchestrator accept input parameters with the **Initialize Data** activity.  If the runbook being converted includes this activity, then an [input parameter](/documentation/articles/automation-graphical-authoring-intro#runbook-input-and-output) in the Azure Automation runbook is created for each parameter in the activity.  A [Workflow Script control](/documentation/articles/automation-graphical-authoring-intro#activities) activity is created in the converted runbook that retrieves and returns each parameter.  Any activities in the runbook that use an input parameter refer to the output from this activity.
+Runbooks in Orchestrator accept input parameters with the **Initialize Data** activity.  If the runbook being converted includes this activity, then an [input parameter](/documentation/articles/automation-graphical-authoring-intro/#runbook-input-and-output) in the Azure Automation runbook is created for each parameter in the activity.  A [Workflow Script control](/documentation/articles/automation-graphical-authoring-intro/#activities) activity is created in the converted runbook that retrieves and returns each parameter.  Any activities in the runbook that use an input parameter refer to the output from this activity.
 
 The reason that this strategy is used is to best mirror the functionality in the Orchestrator runbook.  Activities in new graphical runbooks should refer directly to input parameters using a Runbook input data source.
 
@@ -152,6 +152,6 @@ Runbooks in Orchestrator start other runbooks with the **Invoke Runbook** activi
 
 - [System Center 2012 - Orchestrator](http://technet.microsoft.com/zh-cn/library/hh237242.aspx)
 - [Service Management Automation](https://technet.microsoft.com/zh-cn/library/dn469260.aspx)
-- [Hybrid Runbook Worker](/documentation/articles/automation-hybrid-runbook-worker)
+- [Hybrid Runbook Worker](/documentation/articles/automation-hybrid-runbook-worker/)
 - [Orchestrator Standard Activities](http://technet.microsoft.com/zh-cn/library/hh403832.aspx)
  

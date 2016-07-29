@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Create and Configure an Application Gateway with Internal Load Balancer (ILB) in a Virtual Network | Windows Azure"
+   pageTitle="Create and Configure an Application Gateway with Internal Load Balancer (ILB) in a Virtual Network | Azure"
    description="This page provides instructions to configure an Azure Application Gateway with an Internal Load Balanced endpoint"
    documentationCenter="na"
    services="application-gateway"
@@ -8,17 +8,17 @@
    editor="tysonn"/>
 <tags
 	ms.service="application-gateway"
-	ms.date="09/29/2015"
+	ms.date="04/05/2016"
 	wacn.date=""/>
 
 # Create an Application Gateway with an Internal Load Balancer (ILB)
 
 > [AZURE.SELECTOR]
-- [Azure classic steps](/documentation/articles/application-gateway-ilb)
-- [Resource Manager Powershell steps](/documentation/articles/application-gateway-ilb-arm)
+- [Azure classic steps](/documentation/articles/application-gateway-ilb/)
+- [Resource Manager Powershell steps](/documentation/articles/application-gateway-ilb-arm/)
 
 
-Application Gateway can be configured with an internet facing VIP or with an internal end-point not exposed to the internet, also known as Internal Load Balancer (ILB) endpoint. Configuring the gateway with an ILB is useful for internal line of business applications not exposed to internet. It's also useful for services/tiers within a multi-tier application which sit in a security boundary not exposed to internet, but still require round robin load distribution, session stickiness, or SSL termination. This article will walk you through the steps to configure an application gateway with an ILB.
+Application Gateway can be configured with an internet facing virtual IP or with an internal end-point not exposed to the internet, also known as Internal Load Balancer (ILB) endpoint. Configuring the gateway with an ILB is useful for internal line of business applications not exposed to internet. It's also useful for services/tiers within a multi-tier application which sit in a security boundary not exposed to internet, but still require round robin load distribution, session stickiness, or SSL termination. This article will walk you through the steps to configure an application gateway with an ILB.
 
 ## Before you begin
 
@@ -201,7 +201,7 @@ Use the `Get-AzureApplicationGateway` cmdlet to check the status of gateway. If 
 	VirtualIPs    : {10.0.0.10}
 	DnsName       : appgw-b2a11563-2b3a-4172-a4aa-226ee4c23eed.chinacloudapp.cn
 
-## Next Steps
+## Next steps
 
 
 If you want more information about load balancing options in general, see:

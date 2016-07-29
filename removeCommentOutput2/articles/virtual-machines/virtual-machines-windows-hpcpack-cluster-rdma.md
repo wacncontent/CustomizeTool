@@ -1,3 +1,5 @@
+<!-- rename to virtual-machines-windows-classic-hpcpack-rdma-cluster -->
+
 <properties
  pageTitle="Set up a Windows RDMA cluster to run MPI applications | Azure"
  description="Learn how to create a Windows HPC Pack cluster with size A8 or A9 VMs to use the Azure RDMA network to run MPI apps."
@@ -12,19 +14,19 @@
 	ms.date="01/13/2016"
 	wacn.date=""/>
 
-i# Set up a Windows RDMA cluster with HPC Pack and A8 and A9 instances to run MPI applications
+# Set up a Windows RDMA cluster with HPC Pack instances to run MPI applications
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the classic deployment model. Microsoft recommends that most new deployments use the Resource Manager model.
 
 
-This article shows you how to set up a Windows RDMA cluster in Azure with [Microsoft HPC Pack](https://technet.microsoft.com/zh-cn/library/cc514029) and [size A8 and A9 computet Wto run parallel Message Passing Interface (MPI) applications. When you set up size A8 and A9 Windows Server-based instances to run in an HPC Pack cluster, MPI applications communicate efficiently over a low latency, high throughput network in Azure that is based on remote direct memory access (RDMA) technology.
+This article shows you how to set up a Windows RDMA cluster in Azure with [Microsoft HPC Pack](https://technet.microsoft.com/zh-cn/library/cc514029) to run parallel Message Passing Interface (MPI) applications. When you set up Windows Server-based instances to run in an HPC Pack cluster, MPI applications communicate efficiently over a low latency, high throughput network in Azure that is based on remote direct memory access (RDMA) technology.
 
 If you want to run MPI workloads on Linux VMs that access the Azure RDMA network, see [Set up a Linux RDMA cluster to run MPI applications](/documentation/articles/virtual-machines-linux-cluster-rdma).
 
 ## HPC Pack cluster deployment options
-Microsoft HPC Pack is a recommended tool to create Windows Server-based HPC clusters in Azure. When used with A8 and A9 inH HPC Pack provides an efficient way to run Windows-based MPI applications that access the RDMA network in Azure. HPC Pack includes a runtime environment for the Microsoft implementation of the Message Passing Interface for Windows (MSMPI).
+Microsoft HPC Pack is a recommended tool to create Windows Server-based HPC clusters in Azure. HPC Pack provides an efficient way to run Windows-based MPI applications that access the RDMA network in Azure. HPC Pack includes a runtime environment for the Microsoft implementation of the Message Passing Interface for Windows (MSMPI).
 
-This article introduces two scenarios to deploy clustered A8 and A9
+This article introduces two scenarios to deploy cluster
 instances with Microsoft HPC Pack.
 
 * Scenario 1. Deploy compute intensive worker role instances (PaaS)
@@ -36,22 +38,21 @@ instances with Microsoft HPC Pack.
 * **Azure subscription** - If you don't have an account, you can create a trial account in just a couple of minutes. For details, see [Azure Trial](/pricing/1rmb-trial/).
 
 
-. * **Cores quota** - You might need to increase the quota of cores to deploy a cluster of A8 or A9 VMs. For example, you will need at least 128 cores if you want to deploy 8 A9 instances with HPC Pack. To increase a quota, open a
+* **Cores quota** - You might need to increase the quota of cores to deploy a cluster. For example, you will need at least 128 cores if you want to deploy 8 A9 instances with HPC Pack.
 
 ## Scenario 1. Deploy compute intensive worker role instances (PaaS)
 
 
 From an existing HPC Pack cluster, add extra compute resources in Azure worker role instances (Azure nodes) running in a cloud
 service (PaaS). This feature, also called "burst to Azure" from HPC
-Pack, supports a range of sizes for the worker role instances. To use
+Pack, supports a range of sizes for the worker role instances.
 
-
-The following are considerations and steps to burst to  Azure instances from an
+The following are considerations and steps to burst to Azure instances from an
 existing (typically on-premises) cluster. Use similar procedures
 to add worker role instances to an HPC Pack head node that is deployed
 in an Azure VM.
 
-A>[AZURE.NOTE] For a tutorial to burst to Azure with HPC Pack, see [Set up a hybrid cluster with HPC Pack](/documentation/articles/cloud-services-setup-hybrid-hpcpack-cluster). Note the considerations in the steps below that apply specifically to size A8 and A9 Azure nodes.
+>[AZURE.NOTE] For a tutorial to burst to Azure with HPC Pack, see [Set up a hybrid cluster with HPC Pack](/documentation/articles/cloud-services-setup-hybrid-hpcpack-cluster). Note the considerations in the steps below that apply specifically to Azure nodes.
 
 ![Burst to Azure][burst]
 
@@ -68,7 +69,7 @@ A>[AZURE.NOTE] For a tutorial to burst to Azure with HPC Pack, see [Set up a hyb
 
 6. **Create a new cloud service and a storage account**
 
-    Use the Azure Management Portal to create a cloud service and a storage account for the deployment in a region where the compute intensive instances are available.
+    Use the Azure classic portal to create a cloud service and a storage account for the deployment in a region where the compute intensive instances are available.
 
 7. **Create an Azure node template**
 
@@ -111,7 +112,7 @@ automate most of this process.
 
     Download the HPC Pack IaaS Deployment Script package from the [Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=49922).
 
-    cTo prepare the client computer, create the script configuration file, and run the script, see [Create an HPC Cluster with the HPC Pack IaaS deployment script](/documentation/articles/virtual-machines-hpcpack-cluster-powershell-script). To deploy size A8 and A9 compute nodes, see the additional considerations later in this article.
+    To prepare the client computer, create the script configuration file, and run the script, see [Create an HPC Cluster with the HPC Pack IaaS deployment script](/documentation/articles/virtual-machines-hpcpack-cluster-powershell-script). To deploy compute nodes, see the additional considerations later in this article.
 
 2. **Bring the compute nodes online to run jobs**
 
@@ -128,7 +129,7 @@ automate most of this process.
 
 
 
-## Run MPI applications on the A8 and A9 instances
+## Run MPI applications
 
 ### Example: Run mpipingpong on an HPC Pack cluster
 
@@ -153,23 +154,17 @@ To run mpipingpong on the cluster:
 
 2. To estimate latency between pairs of nodes in an Azure burst deployment of 4 nodes, type the following command to submit a job to run mpipingpong with a small packet size and a large number of iterations:
 
-    ```
-    job submit /nodegroup:azurenodes /numnodes:4 mpiexec -c 1 -affinity mpipingpong -p 1:100000 -op -s nul
-    ```
+	    job submit /nodegroup:azurenodes /numnodes:4 mpiexec -c 1 -affinity mpipingpong -p 1:100000 -op -s nul
 
     The command returns the ID of the job that is submitted.
 
     If you deployed the HPC Pack cluster deployed on Azure VMs, specify a node group that contains compute node VMs deployed in a single cloud service, and modify the **mpiexec** command as follows:
 
-    ```
-    job submit /nodegroup:vmcomputenodes /numnodes:4 mpiexec -c 1 -affinity -env MSMPI\_DISABLE\_SOCK 1 -env MSMPI\_PRECONNECT all -env MPICH\_NETMASK 172.16.0.0/255.255.0.0 mpipingpong -p 1:100000 -op -s nul
-    ```
+	    job submit /nodegroup:vmcomputenodes /numnodes:4 mpiexec -c 1 -affinity -env MSMPI\_DISABLE\_SOCK 1 -env MSMPI\_PRECONNECT all -env MPICH\_NETMASK 172.16.0.0/255.255.0.0 mpipingpong -p 1:100000 -op -s nul
 
 3. When the job completes, to view the output (in this case, the output of task 1 of the job), type the following
 
-    ```
-    task view <JobID>.1
-    ```
+	    task view <JobID>.1
 
     where &lt;*JobID*&gt; is the ID of the job that was submitted.
 
@@ -179,9 +174,7 @@ To run mpipingpong on the cluster:
 
 4. To estimate throughput between pairs of Azure burst nodes, type the following command to submit a job to run **mpipingpong** with a large packet size and a small number of iterations:
 
-    ```
-    job submit /nodegroup:azurenodes /numnodes:4 mpiexec -c 1 -affinity mpipingpong -p 4000000:1000 -op -s nul
-    ```
+	    job submit /nodegroup:azurenodes /numnodes:4 mpiexec -c 1 -affinity mpipingpong -p 4000000:1000 -op -s nul
 
     The command returns the ID of the job that is submitted.
 
@@ -189,9 +182,7 @@ To run mpipingpong on the cluster:
 
 5. When the job completes, to view the output (in this case, the output of task 1 of the job), type the following:
 
-    ```
-    task view <JobID>.1
-    ```
+	    task view <JobID>.1
 
   The output will include throughput results similar to the following.
 
@@ -208,7 +199,7 @@ instances added in a "burst to Azure" configuration).
 * Worker role instances in a cloud service are periodically reprovisioned without notice by Azure (for example, for system maintenance, or in case an instance fails). If an instance is reprovisioned while it is running an MPI job, the instance loses all its data and returns to the state when it was first deployed, which can cause the MPI job to fail. The more nodes that you use for a single MPI job, and the longer the job runs, the more likely that one of the instances will be reprovisioned while a job is running. You should also consider this if you designate a single node in the deployment as a file server.
 
 
-ii* You don't have to use the A8 and A9 instances to run MPI jobs in Azure. You can use any instance size that is supported by HPC Pack. However, the A8 and A9 instances are recommended for running relatively large-scale MPI jobs that are sensitive to the latency and the bandwidth of the network that connects the nodes. If you use instances other
+* You don't have to use the instances to run MPI jobs in Azure. You can use any instance size that is supported by HPC Pack. However, the instances are recommended for running relatively large-scale MPI jobs that are sensitive to the latency and the bandwidth of the network that connects the nodes.
 
 * Applications deployed to Azure instances are subject to the licensing terms associated with the application. Check with the vendor of any commercial application for licensing or other restrictions for running in the cloud. Not all vendors offer pay-as-you-go licensing.
 

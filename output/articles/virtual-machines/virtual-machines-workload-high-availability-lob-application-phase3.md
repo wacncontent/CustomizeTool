@@ -1,4 +1,4 @@
-<!-- not suitable for Mooncake -->
+<!-- rename to virtual-machines-windows-ps-lob-ph3 -->
 
 <properties 
 	pageTitle="Line of business application Phase 3 | Azure" 
@@ -17,11 +17,11 @@
 
 # Line of Business Application Workload Phase 3: Configure SQL Server infrastructure
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the Resource Manager deployment model, which Azure recommends for most new deployments instead of the classic deployment model.
 
 In this phase of deploying a high-availability line of business application in Azure infrastructure services, you configure the two computers running SQL Server and the cluster majority node computer, and then combine them into a Windows Server cluster. 
 
-You must complete this phase before moving on to [Phase 4](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-phase4). See [Deploy a High-Availability Line of Business Application in Azure](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-overview) for all of the phases.
+You must complete this phase before moving on to [Phase 4](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-phase4/). See [Deploy a High-Availability Line of Business Application in Azure](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-overview/) for all of the phases.
 
 > [AZURE.NOTE] These instructions use a SQL Server image in the Azure image gallery and you are charged ongoing costs for the use of the SQL Server license. It is also possible to create virtual machines in Azure and install your own SQL Server licenses, but you must have Software Assurance and License Mobility to use your SQL Server license on a virtual machine, including an Azure virtual machine. For more information about installing SQL Server on a virtual machine, see [Installation for SQL Server](https://msdn.microsoft.com/zh-cn/library/bb500469.aspx).
 
@@ -37,7 +37,7 @@ Use the following block of PowerShell commands to create the virtual machines fo
 - Table ST, for your storage accounts
 - Table A, for your availability sets
 
-Recall that you defined Table M in [Phase 2](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-phase2) and Tables V, S, ST, and A in [Phase 1](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-phase1).
+Recall that you defined Table M in [Phase 2](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-phase2/) and Tables V, S, ST, and A in [Phase 1](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-phase1/).
 
 > [AZURE.NOTE] The following command sets use Azure PowerShell 1.0 and later. For more information, see [Azure PowerShell 1.0](https://azure.microsoft.com/blog/azps-1-0/).
 
@@ -111,7 +111,7 @@ When you have supplied all the proper values, run the resulting block at the Azu
 	$vm=Set-AzureRMVMOSDisk -VM $vm -Name "OSDisk" -VhdUri $osDiskUri -CreateOption fromImage
 	New-AzureRMVM -ResourceGroupName $rgName -Location $locName -VM $vm
 
-> [AZURE.NOTE] Because these virtual machines are for an intranet application, they are not assigned a public IP address or a DNS domain name label and exposed to the Internet. However, this also means that you cannot connect to them from the Azure Management Portal. The **Connect** button will be unavailable when you view the properties of the virtual machine. Use the Remote Desktop Connection accessory or another Remote Desktop tool to connect to the virtual machine using its private IP address or intranet DNS name.
+> [AZURE.NOTE] Because these virtual machines are for an intranet application, they are not assigned a public IP address or a DNS domain name label and exposed to the Internet. However, this also means that you cannot connect to them from the Azure portal. The **Connect** button will be unavailable when you view the properties of the virtual machine. Use the Remote Desktop Connection accessory or another Remote Desktop tool to connect to the virtual machine using its private IP address or intranet DNS name.
 
 ## Configure the computers running SQL Server
 
@@ -151,7 +151,7 @@ Use the following procedure twice, once for each virtual machine running SQL Ser
 
 1. On the Start screen, type **SQL Studio**, and then click **SQL Server 2014 Management Studio**.
 2. In **Connect to Server**, click **Connect**.
-3. In the left pane, right-click the top node—the default instance named after the machine—and then click **Properties**.
+3. In the left pane, right-click the top node--the default instance named after the machine--and then click **Properties**.
 4.	In **Server Properties**, click **Database Settings**.
 5.	In **Database default locations**, set the following values: 
 	- For **Data**, set the path to **f:\Data**.
@@ -161,7 +161,7 @@ Use the following procedure twice, once for each virtual machine running SQL Ser
 6.	Click **OK** to close the window.
 7.	In the left pane, expand the **Security folder**.
 8.	Right-click **Logins**, and then click **New login**.
-9.	In **Login name**, type *domain*\sqladmin in (in which *domain* is the name of the domain in which the sqladmin account was created in [Phase 2](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-phase2)). 
+9.	In **Login name**, type *domain*\sqladmin in (in which *domain* is the name of the domain in which the sqladmin account was created in [Phase 2](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-phase2/)). 
 10.	Under **Select a page**, click **Server Roles**, click **sysadmin**, and then click **OK**.
 11.	Close SQL Server 2014 Management Studio.
 
@@ -178,7 +178,7 @@ The SQL Server service requires a port that clients use to access the database s
 
 For each of the SQL Server virtual machines, sign out as the local administrator. 
 
-For information about optimizing SQL Server performance in Azure, see [Performance Best Practices for SQL Server in Azure Virtual Machines](/documentation/articles/virtual-machines-sql-server-performance-best-practices). You can also disable Geo Redundant Storage (GRS) for the line of business application storage account and use storage spaces to optimize IOPs.
+For information about optimizing SQL Server performance in Azure, see [Performance Best Practices for SQL Server in Azure Virtual Machines](/documentation/articles/virtual-machines-windows-sql-performance/). You can also disable Geo Redundant Storage (GRS) for the line of business application storage account and use storage spaces to optimize IOPs.
 
 ## Configure the cluster majority node server
 
@@ -210,7 +210,7 @@ For both SQL Server virtual machines and for the cluster majority node, run the 
 
 Due to current non-RFC-compliant behavior by DHCP in Azure, creation of a Windows Server Failover Cluster (WSFC) cluster can fail. For details, search for "WSFC cluster behavior in Azure networking" in High Availability and Disaster Recovery for SQL Server in Azure Virtual Machines. However, there is a workaround. Use the following steps to create the cluster.
 
-1.	Log on to the primary SQL Server virtual machine with the sqladmin account created in [Phase 2](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-phase2).
+1.	Log on to the primary SQL Server virtual machine with the sqladmin account created in [Phase 2](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-phase2/).
 2.	From the Start screen, type **Failover**, and then click **Failover Cluster Manager**.
 3.	In the left pane, right-click **Failover Cluster Manager**, and then click **Create Cluster**.
 4.	On the **Before You Begin** page, click **Next**.
@@ -237,11 +237,11 @@ If a machine cannot be added, and the error message is "the Remote Registry is n
 
 ## Enable AlwaysOn Availability Groups
 
-The next step is to enable AlwaysOn Availability Groups using the SQL Server Configuration Manager. Note that an availability group in SQL Server differs from an Azure availability set. An availability group contains databases that are highly-available and recoverable. An Azure availability set allocates virtual machines to different fault domains. For more information about fault domains, see [Manage the Availability of Virtual Machines](/documentation/articles/virtual-machines-manage-availability). 
+The next step is to enable AlwaysOn Availability Groups using the SQL Server Configuration Manager. Note that an availability group in SQL Server differs from an Azure availability set. An availability group contains databases that are highly-available and recoverable. An Azure availability set allocates virtual machines to different fault domains. For more information about fault domains, see [Manage the Availability of Virtual Machines](/documentation/articles/virtual-machines-linux-manage-availability/). 
 
 Use these steps to enable AlwaysOn Availability Groups on SQL Server.
 
-1.	Log on to the primary SQL Server virtual machine with the sqladmin account created in [Phase 2](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-phase2).
+1.	Log on to the primary SQL Server virtual machine with the sqladmin account created in [Phase 2](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-phase2/).
 2.	On the Start screen, type **SQL Server Configuration**, and then click **SQL Server Configuration Manager**.
 3.	In the left pane, click **SQL Server Services**.
 4.	In the contents pane, double-click **SQL Server (MSSQLSERVER)**.
@@ -256,5 +256,5 @@ This diagram shows the configuration resulting from the successful completion of
 
 ## Next step
 
-- Use [Phase 4](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-phase4) to continue with the configuration of this workload.
+- Use [Phase 4](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-phase4/) to continue with the configuration of this workload.
 

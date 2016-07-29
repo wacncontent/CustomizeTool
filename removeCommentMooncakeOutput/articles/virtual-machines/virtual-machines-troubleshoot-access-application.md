@@ -1,3 +1,5 @@
+<!-- rename to virtual-machines-linux-troubleshoot-app-connection -->
+
 <properties
 	pageTitle="Troubleshoot application access on a VM | Azure"
 	description="If you can't access an application running on an Azure virtual machine, use these steps to isolate the source of the problem."
@@ -20,7 +22,7 @@
 
 If you can't access an application running on an Azure virtual machine, this article describes a methodical approach for isolating the source of the problem and correcting it.
 
-> [AZURE.NOTE]  For help in connecting to an Azure virtual machine, see [Troubleshoot Remote Desktop connections to a Windows-based Azure Virtual Machine](/documentation/articles/virtual-machines-troubleshoot-remote-desktop-connections) or [Troubleshoot Secure Shell (SSH) connections to a Linux-based Azure virtual machine](/documentation/articles/virtual-machines-troubleshoot-ssh-connections).
+> [AZURE.NOTE]  For help in connecting to an Azure virtual machine, see [Troubleshoot Remote Desktop connections to a Windows-based Azure Virtual Machine](/documentation/articles/virtual-machines-windows-troubleshoot-rdp-connection/) or [Troubleshoot Secure Shell (SSH) connections to a Linux-based Azure virtual machine](/documentation/articles/virtual-machines-linux-troubleshoot-ssh-connection/).
 
 There are four main areas to troubleshoot the access of an application that is running on an Azure virtual machine.
 
@@ -80,10 +82,10 @@ For example, if the application is a web server, try to access the web page from
 
 If you cannot access the application, verify the following:
 
-- For virtual machines created using the Service Management API, that the endpoint configuration for the virtual machine is allowing the incoming traffic, especially the protocol (TCP or UDP) and the public and private port numbers. For more information, see [How to Set Up Endpoints to a Virtual Machine](/documentation/articles/ virtual-machines-set-up-endpoints).
-- For virtual machines created using the Service Management API, that access control lists (ACLs) on the endpoint are not preventing incoming traffic from the Internet. For more information, see [How to Set Up Endpoints to a Virtual Machine](/documentation/articles/virtual-machines-set-up-endpoints).
+- For virtual machines created using the Service Management API, that the endpoint configuration for the virtual machine is allowing the incoming traffic, especially the protocol (TCP or UDP) and the public and private port numbers. For more information, see [How to Set Up Endpoints to a Virtual Machine](/documentation/articles/virtual-machines-linux-classic-setup-endpoints/).
+- For virtual machines created using the Service Management API, that access control lists (ACLs) on the endpoint are not preventing incoming traffic from the Internet. For more information, see [How to Set Up Endpoints to a Virtual Machine](/documentation/articles/virtual-machines-linux-classic-setup-endpoints/).
 - For virtual machines created in Resource Manager, that the inbound NAT rule configuration for the virtual machine is allowing the incoming traffic, especially the protocol (TCP or UDP) and the public and private port numbers.
-- That Network Security Groups are allowing the inbound request and outbound response traffic. For more information, see [What is a Network Security Group (NSG)?](/documentation/articles/virtual-networks-nsg).
+- That Network Security Groups are allowing the inbound request and outbound response traffic. For more information, see [What is a Network Security Group (NSG)?](/documentation/articles/virtual-networks-nsg/).
 
 If the virtual machine or endpoint is a member of a load-balanced set:
 
@@ -118,6 +120,6 @@ If you have run the above steps in this article and need additional help to corr
 
 ## Additional resources
 
-[Troubleshoot Remote Desktop connections to a Windows-based Azure Virtual Machine](/documentation/articles/virtual-machines-troubleshoot-remote-desktop-connections)
+[Troubleshoot Remote Desktop connections to a Windows-based Azure Virtual Machine](/documentation/articles/virtual-machines-windows-troubleshoot-rdp-connection/)
 
-[Troubleshoot Secure Shell (SSH) connections to a Linux-based Azure virtual machine](/documentation/articles/virtual-machines-troubleshoot-ssh-connections)
+[Troubleshoot Secure Shell (SSH) connections to a Linux-based Azure virtual machine](/documentation/articles/virtual-machines-linux-troubleshoot-ssh-connection/)

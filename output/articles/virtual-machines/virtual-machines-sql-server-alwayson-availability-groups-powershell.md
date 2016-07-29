@@ -1,3 +1,5 @@
+<!-- rename to virtual-machines-windows-classic-ps-sql-alwayson-availability-groups -->
+
 <properties
 	pageTitle="Configure AlwaysOn Availability Groups in an Azure VM | Azure"
 	description="This tutorial uses resources created with  the classic deployment model, and uses PowerShell to create an AlwaysOn Availability Group in Azure."
@@ -15,19 +17,13 @@
 # Configure AlwaysOn Availability Groups in Azure VM (PowerShell)
 
 > [AZURE.SELECTOR]
-
-- [Portal - Resource Manager](/documentation/articles/virtual-machines-sql-server-alwayson-availability-groups-gui-arm)
-- [Portal - Classic](/documentation/articles/virtual-machines-sql-server-alwayson-availability-groups-gui)
-- [PowerShell - Classic](/documentation/articles/virtual-machines-sql-server-alwayson-availability-groups-powershell)
-
-
-- [Azure Management Portal](/documentation/articles/virtual-machines-sql-server-alwayson-availability-groups-gui)
-- [PowerShell](/documentation/articles/virtual-machines-sql-server-alwayson-availability-groups-powershell)
-
+- [Portal - Resource Manager](/documentation/articles/virtual-machines-windows-classic-portal-sql-alwayson-availability-groups-arm/)
+- [Portal - Classic](/documentation/articles/virtual-machines-windows-classic-portal-sql-alwayson-availability-groups/)
+- [PowerShell - Classic](/documentation/articles/virtual-machines-windows-classic-ps-sql-alwayson-availability-groups/)
 
 <br/>
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager model.
 
 
 Azure virtual machines (VMs) can help database administrators to implement lower the cost of a high availability SQL Server system. This tutorial shows you how to implement an availability group using SQL Server AlwaysOn end-to-end inside an Azure environment. At the end of the tutorial, your SQL Server AlwaysOn solution in Azure will consist of the following elements:
@@ -48,9 +44,9 @@ This tutorial is intended to show you the steps required to set up the described
 
 - You already have an Azure account with the virtual machine subscription.
 
-- You have installed the [Azure PowerShell cmdlets](/documentation/articles/powershell-install-configure).
+- You have installed the [Azure PowerShell cmdlets](/documentation/articles/powershell-install-configure/).
 
-- You already know how to provision a SQL Server VM from the virtual machine gallery using the GUI. For more information, see [Provisioning a SQL Server Virtual Machine on Azure](/documentation/articles/virtual-machines-provision-sql-server)
+- You already know how to provision a SQL Server VM from the virtual machine gallery using the GUI. For more information, see [Provisioning a SQL Server Virtual Machine on Azure](/documentation/articles/virtual-machines-windows-classic-ps-sql-create/)
 
 - You already have a solid understanding of AlwaysOn Availability Groups for on-premise solutions. For more information, see [AlwaysOn Availability Groups (SQL Server)](https://msdn.microsoft.com/zh-cn/library/hh510230.aspx).
 
@@ -59,13 +55,8 @@ This tutorial is intended to show you the steps required to set up the described
 1. In a PowerShell window on your local computer, import the Azure module, download a publishing settings file to your machine, and connect your PowerShell session to your Azure subscription by importing the downloaded publishing settings.
 
 		Import-Module "C:\Program Files (x86)\Microsoft SDKs\Azure\PowerShell\Azure\Azure.psd1"
-		Get-AzurePublishSettingsFile  -Environment AzureChinaCloud   
-
-		Import-AzurePublishSettingsFile <publishsettingsfilepath>
-
-
+		Get-AzurePublishSettingsFile -Environment AzureChinaCloud
 		Import-AzurePublishSettingsFile -Environment AzureChinaCloud <publishsettingsfilepath>
-
 
 	The **Get-AzurePublishgSettingsFile** command automatically generates a management certificate with Azure downloads it to your machine. A browser will be automatically opened and you are prompted to enter the Microsoft account credentials for your Azure subscription. The downloaded **.publishsettings** file contains all the information you need to manage your Azure subscription. After saving this file to a local directory, import it using the **Import-AzurePublishSettingsFile** command.
 
@@ -143,12 +134,7 @@ This tutorial is intended to show you the steps required to set up the described
 			-StorageAccountName $storageAccountName `
 			-Label $storageAccountLabel `
 			-AffinityGroup $affinityGroupName
-
-		Set-AzureSubscription `
-
-
 		Set-AzureSubscription -Environment AzureChinaCloud `
-
 			-SubscriptionName (Get-AzureSubscription).SubscriptionName `
 			-CurrentStorageAccount $storageAccountName
 
@@ -549,7 +535,7 @@ Finally, you are ready to configure the availability group. You will use the SQL
 		$svc2.Start();
 		$svc2.WaitForStatus([System.ServiceProcess.ServiceControllerStatus]::Running,$timeout)
 
-1. Download **CreateAzureFailoverCluster.ps1** from [Create WSFC Cluster for AlwaysOn Availability Groups in Azure VM](http://gallery.technet.microsoft.com/scriptcenter/Create-WSFC-Cluster-for-7c207d3a) to the local working directory. You will use this script to help you create a functional WSFC cluster. For important information on how WSFC interacts with the Azure network, see [High Availability and Disaster Recovery for SQL Server in Azure Virtual Machines](/documentation/articles/virtual-machines-sql-server-high-availability-and-disaster-recovery-solutions).
+1. Download **CreateAzureFailoverCluster.ps1** from [Create WSFC Cluster for AlwaysOn Availability Groups in Azure VM](http://gallery.technet.microsoft.com/scriptcenter/Create-WSFC-Cluster-for-7c207d3a) to the local working directory. You will use this script to help you create a functional WSFC cluster. For important information on how WSFC interacts with the Azure network, see [High Availability and Disaster Recovery for SQL Server in Azure Virtual Machines](/documentation/articles/virtual-machines-windows-sql-high-availability-dr/).
 
 1. Change to your working directory and create the WSFC cluster with the downloaded script.
 
@@ -640,6 +626,6 @@ Finally, you are ready to configure the availability group. You will use the SQL
 		    -Database $db
 
 ## Next Steps
-You have now successfully implemented SQL Server AlwaysOn by creating an availability group in Azure. To configure a listener for this availability group, see [Configure an ILB listener for AlwaysOn Availability Groups in Azure](/documentation/articles/virtual-machines-sql-server-configure-ilb-alwayson-availability-group-listener).
+You have now successfully implemented SQL Server AlwaysOn by creating an availability group in Azure. To configure a listener for this availability group, see [Configure an ILB listener for AlwaysOn Availability Groups in Azure](/documentation/articles/virtual-machines-windows-classic-ps-sql-int-listener/).
 
-For other information about using SQL Server in Azure, see [SQL Server on Azure Virtual Machines](/documentation/articles/virtual-machines-sql-server-infrastructure-services).
+For other information about using SQL Server in Azure, see [SQL Server on Azure Virtual Machines](/documentation/articles/virtual-machines-windows-sql-server-iaas-overview/).

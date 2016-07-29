@@ -1,3 +1,5 @@
+<!-- rename to virtual-machines-linux-load-balance -->
+
 <properties
 	pageTitle="Load balancing for infrastructure services | Azure"
 	description="Describes the two different types of load balancing supported by Azure: Load balancer for cloud services and Azure Traffic Manager for client traffic."

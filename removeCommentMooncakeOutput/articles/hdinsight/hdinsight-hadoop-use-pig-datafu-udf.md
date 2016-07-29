@@ -9,7 +9,7 @@ editor="cgronlun"/>
 
 <tags
 	ms.service="hdinsight"
-	ms.date="01/08/2016"
+	ms.date="06/06/2016"
 	wacn.date=""/>
 
 #Use DataFu with pig on HDInsight
@@ -22,11 +22,11 @@ DataFu is a collection of Open Source libraries for use with Hadoop. In this doc
 
 * An Azure HDInsight cluster (Windows based)
 
-* A basic familiarity with [using Pig on HDInsight](/documentation/articles/hdinsight-use-pig)
+* A basic familiarity with [using Pig on HDInsight](/documentation/articles/hdinsight-use-pig/)
 
 ##Use DataFu With Pig
 
-The steps in this section assume that you are familiar with using Pig on HDInsight, and only provide the Pig Latin statements, not the steps on how to use them with the cluster. For more information on using Pig with HDInsight, see [Use Pig with HDInsight](/documentation/articles/hdinsight-use-pig).
+The steps in this section assume that you are familiar with using Pig on HDInsight, and only provide the Pig Latin statements, not the steps on how to use them with the cluster. For more information on using Pig with HDInsight, see [Use Pig with HDInsight](/documentation/articles/hdinsight-use-pig/).
 
 You will usually define an alias for DataFu functions. For example:
 
@@ -74,4 +74,4 @@ For more information on DataFu or Pig, see the following documents:
 
 * [Apache DataFu Pig Guide](http://datafu.incubator.apache.org/docs/datafu/guide.html).
 
-* [Use Pig with HDInsight](/documentation/articles/hdinsight-use-pig)
+* [Use Pig with HDInsight](/documentation/articles/hdinsight-use-pig/)

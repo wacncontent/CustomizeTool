@@ -1,41 +1,43 @@
 <properties 
-   pageTitle="Configure forced tunneling for VPN Gateways using PowerShell | Windows Azure"
-   description="If you have a virtual network with a cross-premises VPN-gateway, you can redirect or "force" all Internet-bound traffic back to your on-premises location. This article applies to VPN gateways created using the classic deployment model "
+   pageTitle="Configure forced tunneling for Site-to-Site connections using the classic deployment model | Azure"
+   description="How to redirect or 'force' all Internet-bound traffic back to your on-premises location."
    services="vpn-gateway"
    documentationCenter="na"
    authors="cherylmc"
-   manager="carolz"
+   manager="carmonm"
    editor=""
    tags="azure-service-management"/>
 <tags
 	ms.service="vpn-gateway"
-	ms.date="10/21/2015"
+	ms.date="05/16/2016"
 	wacn.date=""/>
 
-# Configure forced tunneling
+# Configure forced tunneling using the classic deployment model
 
 > [AZURE.SELECTOR]
-- [PowerShell - Service Management](/documentation/articles/vpn-gateway-about-forced-tunneling)
-- [PowerShell - Resource Manager](/documentation/articles/vpn-gateway-forced-tunneling-rm)
+- [PowerShell - Service Management](/documentation/articles/vpn-gateway-about-forced-tunneling/)
+- [PowerShell - Resource Manager](/documentation/articles/vpn-gateway-forced-tunneling-rm/)
 
-This article applies to VNets and VPN Gateways created using the classic deployment model (also known as Service Management). If you want to configure forced tunneling for VNets and VPN Gateways created using the Resource Manager deployment model, see [Configure forced tunneling using PowerShell and Azure Resource Manager](/documentation/articles/vpn-gateway-forced-tunneling-rm). 
+Forced tunneling lets you redirect or "force" all Internet-bound traffic back to your on-premises location via a Site-to-Site VPN tunnel for inspection and auditing. This is a critical security requirement for most enterprise IT policies. 
 
-[AZURE.INCLUDE [vpn-gateway-sm-rm](../includes/vpn-gateway-sm-rm-include.md)] 
+Without forced tunneling, Internet-bound traffic from your VMs in Azure will always traverse from Azure network infrastructure directly out to the Internet, without the option to allow you to inspect or audit the traffic. Unauthorized Internet access can potentially lead to information disclosure or other types of security breaches.
 
-## About forced tunneling
+This article will walk you through configuring forced tunneling for virtual networks created using the classic deployment model. 
 
-Forced tunneling lets you redirect or "force" all Internet-bound traffic back to your on-premises location via a site-to-site VPN tunnel for inspection and auditing. This is a critical security requirement for most enterprise IT policies. Without forced tunneling, Internet-bound traffic from your VMs in Azure will always traverse from Azure network infrastructure directly out to the Internet, without the option to allow you to inspect or audit the traffic. Unauthorized Internet access can potentially lead to information disclosure or other types of security breaches.
+**About Azure deployment models**
 
-The following diagram illustrates how forced tunneling works.
+[AZURE.INCLUDE [vpn-gateway-clasic-rm](../includes/vpn-gateway-classic-rm-include.md)] 
 
-![Forced Tunneling](./media/vpn-gateway-about-forced-tunneling/forced-tunnel.png)
+**Deployment models and tools for forced tunneling**
 
-In the example above, the Frontend subnet is not forced tunneled. The workloads in the Frontend subnet can continue to accept and respond to customer requests from the Internet directly. The Mid-tier and Backend subnets are forced tunneled. Any outbound connections from these two subnets to the Internet will be forced or redirected back to an on-premises site via one of the S2S VPN tunnels. This allows you to restrict and inspect Internet access from your Virtual Machines or cloud services in Azure, while continuing to enable your multi-tier service architecture required. You also have the option to apply forced tunneling to the entire virtual networks if there are no Internet-facing workloads in your virtual networks.
+A forced tunneling connection can be configured in both deployment models and by using different tools. See the table below for more information. We update this table as new articles, new deployment models, and additional tools become available for this configuration. When an article is available, we link directly to it from the table.
+
+[AZURE.INCLUDE [vpn-gateway-forcedtunnel](../includes/vpn-gateway-table-forcedtunnel-include.md)] 
+
 
 ## Requirements and considerations
 
-Forced tunneling in Azure is configured via virtual network User-Defined routes. Redirecting traffic to an on-premises site is expressed as a Default Route to the Azure VPN gateway. The following section lists the current limitation of the routing table and routes for an Azure Virtual Network:
-
+Forced tunneling in Azure is configured via virtual network user defined routes (UDR). Redirecting traffic to an on-premises site is expressed as a Default Route to the Azure VPN gateway. The following section lists the current limitation of the routing table and routes for an Azure Virtual Network:
 
 
 -  Each virtual network subnet has a built-in, system routing table. The system routing table has the following 3 groups of routes:
@@ -47,18 +49,43 @@ Forced tunneling in Azure is configured via virtual network User-Defined routes.
 	- **Default route:** Directly to the Internet. Note that packets destined to the private IP addresses not covered by the previous two routes will be dropped.
 
 
+-  With the release of user defined routes, you can create a routing table to add a default route, and then associate the routing table to your VNet subnet(s) to enable forced tunneling on those subnets.
 
--  With the release of User-Defined Routes, you can create a routing table to add a default route, and then associate the routing table to your VNet subnet(s) to enable forced tunneling on those subnets.
+- You need to set a "default site" among the cross-premises local sites connected to the virtual network.
 
-- Forced tunneling must be associated with a VNet that has a dynamic routing VPN gateway (not a static gateway). You need to set a "default site" among the cross-premises local sites connected to the virtual network.
+- Forced tunneling must be associated with a VNet that has a dynamic routing VPN gateway (not a static gateway).
+ 
+- ExpressRoute forced tunneling is not configured via this mechanism, but instead, is enabled by advertising a default route via the ExpressRoute BGP peering sessions. Please see the [ExpressRoute Documentation](/documentation/services/expressroute/) for more information.
 
-- Note that ExpressRoute forced tunneling is not configured via this mechanism, but instead, is enabled by advertising a default route via the ExpressRoute BGP peering sessions. Please see the [ExpressRoute Documentation](/documentation/services/expressroute/) for more information.
+
 
 ## Configuration overview
 
-The procedure below will help you specify forced tunneling for a virtual network. The configuration steps correspond to the virtual network netcfg file example below. 
+In the example below, the Frontend subnet is not forced tunneled. The workloads in the Frontend subnet can continue to accept and respond to customer requests from the Internet directly. The Mid-tier and Backend subnets are forced tunneled. Any outbound connections from these two subnets to the Internet will be forced or redirected back to an on-premises site via one of the S2S VPN tunnels.
 
-In the example, the virtual network "MultiTier-VNet" has 3 subnets: *Frontend*, *Midtier*, and *Backend* subnets, with 4 cross premises connections: *DefaultSiteHQ*, and 3 *Branches*. The procedure steps will set the *DefaultSiteHQ* as the default site connection for forced tunneling, and configure the *Midtier* and *Backend* subnets to use forced tunneling.
+This allows you to restrict and inspect Internet access from your virtual machines or cloud services in Azure, while continuing to enable your multi-tier service architecture required. You also have the option to apply forced tunneling to the entire virtual networks if there are no Internet-facing workloads in your virtual networks.
+
+
+![Forced Tunneling](./media/vpn-gateway-about-forced-tunneling/forced-tunnel.png)
+
+
+
+## Before you begin
+
+Verify that you have the following items before beginning configuration.
+
+- An Azure subscription. If you don't already have an Azure subscription, you can activate your [MSDN subscriber benefits](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) or sign up for a [free account](/pricing/1rmb-trial/).
+
+- A configured virtual network. 
+
+- The latest version of the Azure PowerShell cmdlets. See [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure/) for more information about installing the PowerShell cmdlets.
+
+
+## Configure forced tunneling
+
+The procedure below will help you specify forced tunneling for a virtual network. The configuration steps correspond to the virtual network network configuration file (netcfg) example below. 
+
+
 
 	<VirtualNetworkSite name="MultiTier-VNet" Location="China North">
      <AddressSpace>
@@ -96,37 +123,30 @@ In the example, the virtual network "MultiTier-VNet" has 3 subnets: *Frontend*, 
       </VirtualNetworkSite>
 	</VirtualNetworkSite>
 
-### Prerequisites
+In this example, the virtual network "MultiTier-VNet" has 3 subnets: *Frontend*, *Midtier*, and *Backend* subnets, with 4 cross premises connections: *DefaultSiteHQ*, and 3 *Branches*. 
 
-- Azure Subscription
+The procedure steps will set the *DefaultSiteHQ* as the default site connection for forced tunneling, and configure the Midtier and Backend subnets to use forced tunneling.
 
-- A configured virtual network. 
-
-- The latest version of the Azure PowerShell cmdlets using the Web Platform Installer. You can download and install the latest version from the **Windows PowerShell** section of the [Download page](/downloads/).
-
-## Configure forced tunneling
-
-Use the following procedure to configure forced tunneling.
 
 1. Create a routing table. Use the following cmdlet to create your route table.
 
 		New-AzureRouteTable -Name "MyRouteTable" -Label "Routing Table for Forced Tunneling" -Location "China North"
 
-1. Add a default route to the routing table. 
+2. Add a default route to the routing table. 
 
 	The cmdlet example below adds a default route to the routing table created in Step 1. Note that the only route supported is the destination prefix of "0.0.0.0/0" to the "VPNGateway" nexthop.
  
-		Set-AzureRoute -RouteTableName "MyRouteTable" -RouteName "DefaultRoute" -AddressPrefix "0.0.0.0/0" -NextHopType VPNGateway
+		Set-AzureRoute -RouteTable "MyRouteTable" -RouteName "DefaultRoute" -AddressPrefix "0.0.0.0/0" -NextHopType VPNGateway
 
-1. Associate the routing table to the subnets. 
+3. Associate the routing table to the subnets. 
 
 	After a routing table is created and a route added, use the cmdlet below to add or associate the route table to a VNet subnet. The samples below add the route table "MyRouteTable" to the Midtier and Backend subnets of VNet MultiTier-VNet.
 
-		Set-AzureSubnetRouteTable -VNetName "MultiTier-VNet" -SubnetName "Midtier" -RouteTableName "MyRouteTable"
+		Set-AzureSubnetRouteTable -VirtualNetworkName "MultiTier-VNet" -SubnetName "Midtier" -RouteTableName "MyRouteTable"
 
-		Set-AzureSubnetRouteTable -VNetName "MultiTier-VNet" -SubnetName "Backend" -RouteTableName "MyRouteTable"
+		Set-AzureSubnetRouteTable -VirtualNetworkName "MultiTier-VNet" -SubnetName "Backend" -RouteTableName "MyRouteTable"
 
-1. Assign a default site for forced tunneling. 
+4. Assign a default site for forced tunneling. 
 
 	In the preceding step, the sample cmdlet scripts created the routing table and associated the route table to two of the VNet subnets. The remaining step is to select a local site among the multi-site connections of the virtual network as the default site or tunnel.
 
@@ -135,31 +155,29 @@ Use the following procedure to configure forced tunneling.
 
 ## Additional PowerShell cmdlets
 
-Below are some additional PowerShell cmdlets that you may find helpful when working with forced tunneling configurations.
-
-**To delete a route table:**
-
-	Remove-AzureRouteTable -RouteTableName <routeTableName>
-
-**To list a route table:**
-
-	Get-AzureRouteTable [-Name <routeTableName> [-DetailLevel <detailLevel>]]
-
-**To delete a route from a route table:**
+### To delete a route table
 
 	Remove-AzureRouteTable -Name <routeTableName>
 
-**To remove a route from a subnet:**
+### To list a route table
 
-	Remove-AzureSubnetRouteTable -VNetName <virtualNetworkName> -SubnetName <subnetName>
+	Get-AzureRouteTable [-Name <routeTableName> [-DetailLevel <detailLevel>]]
 
-**To list the route table associated with a subnet:**
+### To delete a route from a route table
+
+	Remove-AzureRouteTable -Name <routeTableName>
+
+### To remove a route from a subnet
+
+	Remove-AzureSubnetRouteTable -VirtualNetworkName <virtualNetworkName> -SubnetName <subnetName>
+
+### To list the route table associated with a subnet
 	
-	Get-AzureSubnetRouteTable -VNetName <virtualNetworkName> -SubnetName <subnetName>
+	Get-AzureSubnetRouteTable -VirtualNetworkName <virtualNetworkName> -SubnetName <subnetName>
 
-**To remove a default site from a VNet VPN gateway:**
+### To remove a default site from a VNet VPN gateway
 
-	Remove-AzureVnetGatewayDefaultSites -VNetName <virtualNetworkName>
+	Remove-AzureVnetGatewayDefaultSite -VNetName <virtualNetworkName>
 
 
 

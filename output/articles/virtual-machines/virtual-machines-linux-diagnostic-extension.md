@@ -1,3 +1,4 @@
+<!-- rename to virtual-machines-linux-classic-diagnostic-extension -->
 
 <properties
 		pageTitle="Monitoring a Linux VM with a VM extension | Azure"
@@ -30,16 +31,14 @@ For version 2.0, the data includes:
 - All Linux Rsyslog loggings, including system, security, and application logs.
 - All system data specified in this [document](https://scx.codeplex.com/wikipage?title=xplatproviders").
 - User specified log files.
-
 
 Note this extension works with both the classic and Resource Manager deployment models.
-
 
 
 ## How to enable the extension
-The extension can be enabled through the [Azure Management Portal](https://manage.windowsazure.cn/#), Azure PowerShell, or Azure CLI scripts.
+The extension can be enabled through the [Azure portal](https://portal.azure.cn/#), Azure PowerShell, or Azure CLI scripts.
 
-To view and configure the system and performance data directly from the Azure Management Portal, follow these [steps](https://azure.microsoft.com/blog/2014/09/02/windows-azure-virtual-machine-monitoring-with-wad-extension/ "URL to the Windows blog"/).
+To view and configure the system and performance data directly from the Azure portal, follow these [steps](https://azure.microsoft.com/blog/2014/09/02/windows-azure-virtual-machine-monitoring-with-wad-extension/ "URL to the Windows blog"/).
 
 
 This article focuses on enabling and configuring the extension through Azure CLI commands.This allows you to read and view the data from the storage table directly.
@@ -48,7 +47,7 @@ This article focuses on enabling and configuring the extension through Azure CLI
 ## Prerequisites
 - Azure Linux Agent version 2.0.6 or later.
 Note that most Azure VM Linux gallery images include version 2.0.6 or later. You can run **WAAgent -version** to confirm the version installed in the VM. If the VM is running a version earlier than 2.0.6 you can follow these [instructions](https://github.com/Azure/WALinuxAgent "instructions") to update it.
-- [Azure CLI](/documentation/articles/xplat-cli-install). Follow [this guidance](/documentation/articles/xplat-cli-install) to set up the Azure CLI environment on your machine. After the Azure CLI is installed, you can use the **azure** command from your command-line interface (Bash, Terminal, command prompt) to access the Azure CLI commands. For example, run **azure vm extension set --help** for detailed usage, run **azure login** to log in to Azure, run **azure vm list** to list all the virtual machines you have on Azure.
+- [Azure CLI](/documentation/articles/xplat-cli-install/). Follow [this guidance](/documentation/articles/xplat-cli-install/) to set up the Azure CLI environment on your machine. After the Azure CLI is installed, you can use the **azure** command from your command-line interface (Bash, Terminal, command prompt) to access the Azure CLI commands. For example, run **azure vm extension set --help** for detailed usage, run **azure login** to log in to Azure, run **azure vm list** to list all the virtual machines you have on Azure.
 - A storage account to store the data. You will need a previously created storage account name and access key to upload the data to your storage.
 
 
@@ -131,7 +130,7 @@ Step 2. Run **azure vm extension set vm_name LinuxDiagnostic Microsoft.OSTCExten
 
 
 ## Review your data
-The performance and diagnostic data are stored in an Azure Storage table. Review [this article](/documentation/articles/storage-ruby-how-to-use-table-storage) to learn how to access the data in the storage table using Azure CLI scripts.
+The performance and diagnostic data are stored in an Azure Storage table. Review [this article](/documentation/articles/storage-ruby-how-to-use-table-storage/) to learn how to access the data in the storage table using Azure CLI scripts.
 
 In addition, you can use following UI tools to access the data:
 

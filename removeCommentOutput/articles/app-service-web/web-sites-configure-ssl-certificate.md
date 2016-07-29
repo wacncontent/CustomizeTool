@@ -13,9 +13,14 @@
 	ms.date="02/03/2016"
 	wacn.date=""/>
 
-
 #Enable HTTPS for an app in Azure
 
-[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)]
+
+> [AZURE.SELECTOR]
+- [Enable SSL for your custom domain](/documentation/articles/web-sites-configure-ssl-certificate/)
+- [Buy SSL Certificate for Web Apps](/documentation/articles/web-sites-purchase-ssl-web-site/)
+
+
 
 [AZURE.INCLUDE [configure-ssl-web-site](../includes/configure-ssl-web-site.md)]
+

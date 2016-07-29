@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Create and Configure an Application Gateway with Internal Load Balancer (ILB) in a Virtual Network | Windows Azure"
+   pageTitle="Create and Configure an Application Gateway with Internal Load Balancer (ILB) in a Virtual Network | Azure"
    description="This page provides instructions to configure an Azure Application Gateway with an Internal Load Balanced endpoint"
    documentationCenter="na"
    services="application-gateway"
@@ -8,17 +8,17 @@
    editor="tysonn"/>
 <tags
 	ms.service="application-gateway"
-	ms.date="09/29/2015"
+	ms.date="04/05/2016"
 	wacn.date=""/>
 
 # Create an Application Gateway with an Internal Load Balancer (ILB)
 
 > [AZURE.SELECTOR]
-- [Azure classic steps](/documentation/articles/application-gateway-ilb)
-- [Resource Manager Powershell steps](/documentation/articles/application-gateway-ilb-arm)
+- [Azure classic steps](/documentation/articles/application-gateway-ilb/)
+- [Resource Manager Powershell steps](/documentation/articles/application-gateway-ilb-arm/)
 
 
-Application Gateway can be configured with an internet facing VIP or with an internal end-point not exposed to the internet, also known as Internal Load Balancer (ILB) endpoint. Configuring the gateway with an ILB is useful for internal line of business applications not exposed to internet. It's also useful for services/tiers within a multi-tier application which sit in a security boundary not exposed to internet, but still require round robin load distribution, session stickiness, or SSL termination. This article will walk you through the steps to configure an application gateway with an ILB.
+Application Gateway can be configured with an internet facing virtual IP or with an internal end-point not exposed to the internet, also known as Internal Load Balancer (ILB) endpoint. Configuring the gateway with an ILB is useful for internal line of business applications not exposed to internet. It's also useful for services/tiers within a multi-tier application which sit in a security boundary not exposed to internet, but still require round robin load distribution, session stickiness, or SSL termination. This article will walk you through the steps to configure an application gateway with an ILB.
 
 ## Before you begin
 
@@ -37,7 +37,7 @@ To create a new application gateway, perform the following steps in the order li
 
 
 
-## Create a new application gateway:
+##<a name="create-a-new-application-gateway"></a> Create a new application gateway:
 
 **To create the gateway**, use the `New-AzureApplicationGateway` cmdlet, replacing the values with your own. Note that billing for the gateway does not start at this point. Billing begins in a later step, when the gateway is successfully started.
 
@@ -69,7 +69,7 @@ In the sample, *Description*, *InstanceCount*, and *GatewaySize* are optional pa
 	DnsName:
 
 
-## Configure the gateway
+##<a name="configure-the-gateway"></a> Configure the gateway
 
 An application gateway configuration consists of multiple values. The values can be tied together to construct the configuration.
  
@@ -154,7 +154,7 @@ Note the following:
 	
 
 
-## Set the gateway configuration
+##<a name="set-the-gateway-configuration"></a> Set the gateway configuration
 
 Next, you'll set the application gateway. You can use the `Set-AzureApplicationGatewayConfig` cmdlet with a configuration object, or with a configuration XML file. 
 
@@ -166,7 +166,7 @@ Next, you'll set the application gateway. You can use the `Set-AzureApplicationG
 	----       ----------------     ------------                             ----
 	Successful OK                   9b995a09-66fe-2944-8b67-9bb04fcccb9d
 
-## Start the gateway
+##<a name="start-the-gateway"></a> Start the gateway
 
 Once the gateway has been configured, use the `Start-AzureApplicationGateway` cmdlet to start the gateway. Billing for an application gateway begins after the gateway has been successfully started. 
 
@@ -181,7 +181,7 @@ Once the gateway has been configured, use the `Start-AzureApplicationGateway` cm
 	----       ----------------     ------------                             ----
 	Successful OK                   fc592db8-4c58-2c8e-9a1d-1c97880f0b9b
 
-## Verify the gateway status
+##<a name="verify-the-gateway-status"></a> Verify the gateway status
 
 Use the `Get-AzureApplicationGateway` cmdlet to check the status of gateway. If *Start-AzureApplicationGateway* succeeded in the previous step, the State should be *Running*, and the Vip and DnsName should have valid entries. This sample shows the cmdlet on the first line, followed by the output. In this sample, the gatway is running, and is ready to take traffic. 
 
@@ -199,12 +199,20 @@ Use the `Get-AzureApplicationGateway` cmdlet to check the status of gateway. If 
 	GatewaySize   : Medium
 	State         : Running
 	VirtualIPs    : {10.0.0.10}
+	[AZURE.ACOM]{
 	DnsName       : appgw-b2a11563-2b3a-4172-a4aa-226ee4c23eed.chinacloudapp.cn
+	[AZURE.ACOM]}
+	
+	[AZURE.ACN]{
+	DnsName       : appgw-b2a11563-2b3a-4172-a4aa-226ee4c23eed.chinacloudapp.cn
+	[AZURE.ACN]}
 
-## Next Steps
+## Next steps
 
 
 If you want more information about load balancing options in general, see:
 
-<!--- [Azure Load Balancer](/documentation/services/load-balancer/)-->
+[AZURE.ACOM]{
+- [Azure Load Balancer](/documentation/services/load-balancer/)
+[AZURE.ACOM]}
 - [Azure Traffic Manager](/documentation/services/traffic-manager/)

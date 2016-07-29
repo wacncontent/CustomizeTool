@@ -1,8 +1,8 @@
-<!-- not suitable for Mooncake -->
+<!-- rename to virtual-machines-windows-sharepoint-farm -->
 
 <properties
 	pageTitle="Create SharePoint server farms | Azure"
-	description="Quickly create a new basic or highly-available SharePoint Server 2013 farm with the Azure Management Portal marketplace."
+	description="Quickly create a new basic or highly-available SharePoint Server 2013 farm with the Azure portal marketplace."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="JoeDavies-MSFT"
@@ -17,11 +17,11 @@
 
 # Create SharePoint server farms
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic model.
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the Resource Manager deployment model, which Microsoft recommends for most new deployments instead of the classic model.
 
-With the Azure Management Portal marketplace, you can quickly create pre-configured SharePoint Server 2013 farms. This can save you a lot of time when you need a basic or high-availability SharePoint farm for a development and testing environment or if you are evaluating SharePoint Server 2013 as a collaboration solution for your organization.
+With the Azure portal marketplace, you can quickly create pre-configured SharePoint Server 2013 farms. This can save you a lot of time when you need a basic or high-availability SharePoint farm for a development and testing environment or if you are evaluating SharePoint Server 2013 as a collaboration solution for your organization.
 
-> [AZURE.NOTE] The **SharePoint Server Farm** item in the Azure gallery of the Azure Management Portal has been removed. It has been replaced with the **SharePoint 2013 non-HA Farm** and **SharePoint 2013 HA Farm** items.
+> [AZURE.NOTE] The **SharePoint Server Farm** item in the Azure gallery of the Azure portal has been removed. It has been replaced with the **SharePoint 2013 non-HA Farm** and **SharePoint 2013 HA Farm** items.
 
 The basic SharePoint farm consists of three virtual machines in this configuration.
 
@@ -55,7 +55,7 @@ You can administer the servers of these farms through Remote Desktop connections
 
 From the Central Administration SharePoint site, you can configure My sites, SharePoint applications, and other functionality. For more information, see [Configure SharePoint 2013](http://technet.microsoft.com/zh-cn/library/ee836142.aspx).
 
-> [AZURE.NOTE] The Azure Management Portal creates both of these farms in a cloud-only virtual network with an Internet-facing web presence. There is no site-to-site VPN or ExpressRoute connection back to your organization network.
+> [AZURE.NOTE] The Azure portal creates both of these farms in a cloud-only virtual network with an Internet-facing web presence. There is no site-to-site VPN or ExpressRoute connection back to your organization network.
 
 ## Next Step
 

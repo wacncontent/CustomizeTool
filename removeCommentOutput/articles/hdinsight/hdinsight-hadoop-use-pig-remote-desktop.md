@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="02/05/2016"
+	ms.date="07/12/2016"
 	wacn.date=""/>
 
 #Run Pig jobs from a Remote Desktop connection
@@ -31,7 +31,7 @@ To complete the steps in this article, you will need the following.
 
 ##<a id="connect"></a>Connect with Remote Desktop
 
-Enable Remote Desktop for the HDInsight cluster, then connect to it by following the instructions at [Connect to HDInsight clusters using RDP](/documentation/articles/hdinsight-administer-use-management-portal-v1#rdp).
+Enable Remote Desktop for the HDInsight cluster, then connect to it by following the instructions at [Connect to HDInsight clusters using RDP](/documentation/articles/hdinsight-administer-use-management-portal-v1/#rdp).
 
 ##<a id="pig"></a>Use the Pig command
 
@@ -124,10 +124,10 @@ As you can see, the Pig command allows you to interactively run MapReduce operat
 
 For general information about Pig in HDInsight:
 
-* [Use Pig with Hadoop on HDInsight](/documentation/articles/hdinsight-use-pig)
+* [Use Pig with Hadoop on HDInsight](/documentation/articles/hdinsight-use-pig/)
 
 For information about other ways you can work with Hadoop on HDInsight:
 
-* [Use Hive with Hadoop on HDInsight](/documentation/articles/hdinsight-use-hive)
+* [Use Hive with Hadoop on HDInsight](/documentation/articles/hdinsight-use-hive/)
 
-* [Use MapReduce with Hadoop on HDInsight](/documentation/articles/hdinsight-use-mapreduce)
+* [Use MapReduce with Hadoop on HDInsight](/documentation/articles/hdinsight-use-mapreduce/)

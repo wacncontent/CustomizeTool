@@ -1,22 +1,22 @@
 <properties
-   pageTitle="Create and configure an application gateway with an internal load balancer (ILB) by using Azure Resource Manager | Windows Azure"
+   pageTitle="Create and configure an application gateway with an internal load balancer (ILB) by using Azure Resource Manager | Azure"
    description="This page provides instructions to create, configure, start, and delete an Azure application gateway with internal load balancer (ILB) for Azure Resource Manager"
    documentationCenter="na"
    services="application-gateway"
    authors="joaoma"
-   manager="jdial"
+   manager="carmonm"
    editor="tysonn"/>
 <tags
 	ms.service="application-gateway"
-	ms.date="11/24/2015"
+	ms.date="04/05/2016"
 	wacn.date=""/>
 
 
 # Create an application gateway with an internal load balancer (ILB) by using Azure Resource Manager
 
 > [AZURE.SELECTOR]
-- [Azure classic steps](/documentation/articles/application-gateway-ilb)
-- [Resource Manager PowerShell steps](/documentation/articles/application-gateway-ilb-arm)
+- [Azure classic steps](/documentation/articles/application-gateway-ilb/)
+- [Resource Manager PowerShell steps](/documentation/articles/application-gateway-ilb-arm/)
 
 Azure Application Gateway can be configured with an Internet-facing VIP or with an internal endpoint that is not exposed to the Internet, also known as an internal load balancer (ILB) endpoint. Configuring the gateway with an ILB is useful for internal line-of-business applications that are not exposed to the Internet. It's also useful for services and tiers within a multi-tier application that sit in a security boundary that is not exposed to the Internet but still require round-robin load distribution, session stickiness, or Secure Sockets Layer (SSL) termination.
 
@@ -31,7 +31,7 @@ This article will walk you through the steps to configure an application gateway
 ## What is required to create an application gateway?
 
 
-- **Back-end server pool:** The list of IP addresses of the back-end servers. The IP addresses listed should either belong to the virtual network subnet or should be a public IP/VIP.
+- **Back-end server pool:** The list of IP addresses of the back-end servers. The IP addresses listed should either belong to the virtual network but in a different subnet for the application gateway or should be a public IP/VIP.
 - **Back-end server pool settings:** Every pool has settings like port, protocol, and cookie-based affinity. These settings are tied to a pool and are applied to all servers within the pool.
 - **Front-end port:** This port is the public port that is opened on the application gateway. Traffic hits this port, and then gets redirected to one of the back-end servers.
 - **Listener:** The listener has a front-end port, a protocol (Http or Https, these are case-sensitive), and the SSL certificate name (if configuring SSL offload).
@@ -55,11 +55,17 @@ Here are the steps that are needed to create an application gateway:
 
 ## Create a resource group for Resource Manager
 
-Make sure that you switch PowerShell mode to use the Azure Resource Manager cmdlets. More info is available at [Using Windows PowerShell with Resource Manager](/documentation/articles/powershell-azure-resource-manager).
+Make sure that you switch PowerShell mode to use the Azure Resource Manager cmdlets. More info is available at [Using Windows PowerShell with Resource Manager](/documentation/articles/powershell-azure-resource-manager/).
 
 ### Step 1
 
+		[AZURE.ACOM]{
 		PS C:\> Login-AzureRmAccount
+		[AZURE.ACOM]}
+		
+		[AZURE.ACN]{
+		PS C:\> Login-AzureRmAccount -EnvironmentName AzureChinaCloud
+		[AZURE.ACN]}
 
 ### Step 2
 
@@ -81,11 +87,23 @@ Choose which of your Azure subscriptions to use. <BR>
 
 Create a new resource group (skip this step if you're using an existing resource group).
 
+    [AZURE.ACOM]{
     New-AzureRmResourceGroup -Name appgw-rg -location "China North"
+    [AZURE.ACOM]}
+    
+    [AZURE.ACN]{
+    New-AzureRmResourceGroup -Name appgw-rg -location "China North"
+    [AZURE.ACN]}
 
 Azure Resource Manager requires that all resource groups specify a location. This is used as the default location for resources in that resource group. Make sure that all commands to create an application gateway will use the same resource group.
 
+[AZURE.ACOM]{
 In the example above, we created a resource group called "appgw-rg" and location "China North".
+[AZURE.ACOM]}
+
+[AZURE.ACN]{
+In the example above, we created a resource group called "appgw-rg" and location "China North".
+[AZURE.ACN]}
 
 ## Create a virtual network and a subnet for the application gateway
 
@@ -99,9 +117,21 @@ This assigns the address range 10.0.0.0/24 to a subnet variable to be used to cr
 
 ### Step 2
 
+	[AZURE.ACOM]{
 	$vnet = New-AzureRmVirtualNetwork -Name appgwvnet -ResourceGroupName appgw-rg -Location "China North" -AddressPrefix 10.0.0.0/16 -Subnet $subnetconfig
+	[AZURE.ACOM]}
+	
+	[AZURE.ACN]{
+	$vnet = New-AzureRmVirtualNetwork -Name appgwvnet -ResourceGroupName appgw-rg -Location "China North" -AddressPrefix 10.0.0.0/16 -Subnet $subnetconfig
+	[AZURE.ACN]}
 
+[AZURE.ACOM]{
 This creates a virtual network named "appgwvnet" in resource group "appgw-rg" for the China North region using the prefix 10.0.0.0/16 with subnet 10.0.0.0/24.
+[AZURE.ACOM]}
+
+[AZURE.ACN]{
+This creates a virtual network named "appgwvnet" in resource group "appgw-rg" for the China North region using the prefix 10.0.0.0/16 with subnet 10.0.0.0/24.
+[AZURE.ACN]}
 
 ### Step 3
 
@@ -120,9 +150,9 @@ This creates an application gateway IP configuration named "gatewayIP01". When A
 
 ### Step 2
 
-	$pool = New-AzureRmApplicationGatewayBackendAddressPool -Name pool01 -BackendIPAddresses 10.0.0.10,10.0.0.11,10.0.0.12
+	$pool = New-AzureRmApplicationGatewayBackendAddressPool -Name pool01 -BackendIPAddresses 134.170.185.46, 134.170.188.221,134.170.185.50
 
-This configures the back-end IP address pool named "pool01" with IP addresses "10.0.0.10,10.0.0.11, 10.0.0.12". Those will be the IP addresses that receive the network traffic that comes from the front-end IP endpoint. You will replace the IP addresses above to add your own application IP address endpoints.
+This configures the back-end IP address pool named "pool01" with IP addresses "134.170.185.46, 134.170.188.221,134.170.185.50". Those will be the IP addresses that receive the network traffic that comes from the front-end IP endpoint. You will replace the IP addresses above to add your own application IP address endpoints.
 
 ### Step 3
 
@@ -164,7 +194,16 @@ This configures the instance size of the application gateway.
 
 ## Create an application gateway by using New-AzureApplicationGateway
 
+Creates an application gateway with all configuration items from the steps above. In this example, the application gateway is called "appgwtest".
+
+
+	[AZURE.ACOM]{
 	$appgw = New-AzureRmApplicationGateway -Name appgwtest -ResourceGroupName appgw-rg -Location "China North" -BackendAddressPools $pool -BackendHttpSettingsCollection $poolSetting -FrontendIpConfigurations $fipconfig  -GatewayIpConfigurations $gipconfig -FrontendPorts $fp -HttpListeners $listener -RequestRoutingRules $rule -Sku $sku
+	[AZURE.ACOM]}
+	
+	[AZURE.ACN]{
+	$appgw = New-AzureRmApplicationGateway -Name appgwtest -ResourceGroupName appgw-rg -Location "China North" -BackendAddressPools $pool -BackendHttpSettingsCollection $poolSetting -FrontendIpConfigurations $fipconfig  -GatewayIpConfigurations $gipconfig -FrontendPorts $fp -HttpListeners $listener -RequestRoutingRules $rule -Sku $sku
+	[AZURE.ACN]}
 
 This creates an application gateway with all configuration items from the steps above. In the example, the application gateway is called "appgwtest".
 
@@ -222,11 +261,13 @@ To verify that the service has been removed, you can use the **Get-AzureRmApplic
 
 ## Next steps
 
-If you want to configure SSL offload, see [Configure an application gateway for SSL offload](/documentation/articles/application-gateway-ssl).
+If you want to configure SSL offload, see [Configure an application gateway for SSL offload](/documentation/articles/application-gateway-ssl/).
 
-If you want to configure an application gateway to use with an ILB, see [Create an application gateway with an internal load balancer (ILB)](/documentation/articles/application-gateway-ilb).
+If you want to configure an application gateway to use with an ILB, see [Create an application gateway with an internal load balancer (ILB)](/documentation/articles/application-gateway-ilb/).
 
 If you want more information about load balancing options in general, see:
 
+[AZURE.ACOM]{
 - [Azure Load Balancer](/documentation/services/load-balancer/)
+[AZURE.ACOM]}
 - [Azure Traffic Manager](/documentation/services/traffic-manager/)

@@ -1,21 +1,21 @@
 <properties
-   pageTitle="Configure an application gateway for SSL offload by using Azure Resource Manager | Windows Azure"
+   pageTitle="Configure an application gateway for SSL offload by using Azure Resource Manager | Azure"
    description="This page provides instructions to create an application gateway with SSL offload by using Azure Resource Manager"
    documentationCenter="na"
    services="application-gateway"
    authors="joaoma"
-   manager="jdial"
+   manager="carmonm"
    editor="tysonn"/>
 <tags
 	ms.service="application-gateway"
-	ms.date="11/24/2015"
+	ms.date="03/03/2016"
 	wacn.date=""/>
 
 # Configure an application gateway for SSL offload by using Azure Resource Manager
 
 > [AZURE.SELECTOR]
--[Azure Classic PowerShell](/documentation/articles/application-gateway-ssl)
--[Azure Resource Manager PowerShell](/documentation/articles/application-gateway-ssl-arm)
+-[Azure Classic PowerShell](/documentation/articles/application-gateway-ssl/)
+-[Azure Resource Manager PowerShell](/documentation/articles/application-gateway-ssl-arm/)
 
  Azure Application Gateway can be configured to terminate the Secure Sockets Layer (SSL) session at the gateway to avoid costly SSL decryption tasks to happen at the web farm. SSL offload also simplifies the front-end server setup and management of the web application.
 
@@ -59,7 +59,7 @@ Here are the steps needed to create an application gateway:
 
 ## Create a resource group for Resource Manager
 
-Make sure that you switch PowerShell mode to use the Azure Resource Manager cmdlets. More info is available at [Using Windows PowerShell with Resource Manager](/documentation/articles/powershell-azure-resource-manager).
+Make sure that you switch PowerShell mode to use the Azure Resource Manager cmdlets. More info is available at [Using Windows PowerShell with Resource Manager](/documentation/articles/powershell-azure-resource-manager/).
 
 ### Step 1
 
@@ -149,7 +149,7 @@ This configures the front-end IP port named "frontendport01" for the public IP e
 
 ### Step 5
 
-	$cert = New-AzureRmApplicationGatewaySslCertificate -Name cert01 -CertificateFile <full path for certificate file> -Password â<password>â
+	$cert = New-AzureRmApplicationGatewaySslCertificate -Name cert01 -CertificateFile <full path for certificate file> -Password '<password>'
 
 This configures the certificate used for SSL connection. The certificate needs to be in .pfx format, and the password must be between 4 to 12 characters.
 
@@ -188,7 +188,7 @@ This creates an application gateway with all configuration items from the steps 
 
 ## Next steps
 
-If you want to configure an application gateway to use with an internal load balancer (ILB), see [Create an application gateway with an internal load balancer (ILB)](/documentation/articles/application-gateway-ilb).
+If you want to configure an application gateway to use with an internal load balancer (ILB), see [Create an application gateway with an internal load balancer (ILB)](/documentation/articles/application-gateway-ilb/).
 
 If you want more information about load balancing options in general, see:
 

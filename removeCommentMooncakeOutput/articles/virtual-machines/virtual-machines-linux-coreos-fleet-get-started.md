@@ -1,3 +1,5 @@
+<!-- rename to virtual-machines-linux-classic-coreos-fleet-get-started -->
+
 <properties
 	pageTitle="Get Started with Fleet on CoreOS | Azure"
 	description="Provides basic examples of using Fleet and Docker on a CoreOS Linux VM cluster created with the classic deployment model on Azure."
@@ -15,7 +17,7 @@
 
 # Get started with fleet on a CoreOS VM cluster on Azure
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] 
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the [Resource Manager model](https://azure.microsoft.com/documentation/templates/coreos-with-fleet-multivm/).
 
 
 This article gives you two quick examples of using [fleet](https://github.com/coreos/fleet) and [Docker](https://www.docker.com/) to run applications on a cluster of [CoreOS] virtual machines.
@@ -23,13 +25,12 @@ This article gives you two quick examples of using [fleet](https://github.com/co
 To use these examples, first set up a three-node CoreOS cluster as described in [How to Use CoreOS on Azure]. Having done that, you'll understand the very basic elements of CoreOS deployments and have a working cluster and client computer. We'll use exactly the same cluster name in these examples. Also, these examples assume you're using your local Linux host to run your **fleetctl** commands. See [Using the client](https://coreos.com/fleet/docs/latest/using-the-client.html) for more about the **fleetctl** client.
 
 
-## <a id='simple'>Example 1: Hello World with Docker</a>
+## <a id='simple'></a>Example 1: Hello World with Docker
 
 Here is a simple "Hello World" application that runs in a single Docker container. This uses the [busybox Docker Hub image].
 
 On your Linux client computer, use your favorite text editor to create the following **systemd** unit file and name it `helloworld.service`. (For details about the syntax, see [Unit Files].)
 
-	
 	[Unit]
 	Description=HelloWorld
 	After=docker.service
@@ -43,24 +44,19 @@ On your Linux client computer, use your favorite text editor to create the follo
 	ExecStartPre=/usr/bin/docker pull busybox
 	ExecStart=/usr/bin/docker run --name busybox1 busybox /bin/sh -c "while true; do echo Hello World; sleep 1; done"
 	ExecStop=/usr/bin/docker stop busybox1
-	
-	
 
 Now connect to the CoreOS cluster and start the unit by running the following **fleetctl** command. The output shows that the unit is started and where it's located.
 
-	
 	fleetctl --tunnel coreos-cluster.chinacloudapp.cn:22 start helloworld.service
 	
 	
 	Unit helloworld.service launched on 62f0f66e.../100.79.86.62
-	
 
 >[AZURE.NOTE] To run your remote **fleetctl** commands without the **--tunnel** parameter, optionally set the FLEETCTL_TUNNEL environment variable to tunnel the requests. For example: `export FLEETCTL_TUNNEL=coreos-cluster.chinacloudapp.cn:22`.
 
 
 You can connect to the container to see the output of the service:
 
-	
 	fleetctl --tunnel coreos-cloudapp.cluster.net:22 journal helloworld.service
 	
 	Mar 04 21:29:26 node-1 docker[57876]: Hello World
@@ -73,17 +69,14 @@ You can connect to the container to see the output of the service:
 	Mar 04 21:29:33 node-1 docker[57876]: Hello World
 	Mar 04 21:29:34 node-1 docker[57876]: Hello World
 	Mar 04 21:29:35 node-1 docker[57876]: Hello World
-	
 
 To clean up, stop and unload the unit.
 
-	
 	fleetctl --tunnel coreos-cluster.chinacloudapp.cn:22 stop helloworld.service
 	fleetctl --tunnel coreos-cluster.chinacloudapp.cn:22 unload helloworld.service
-	
 
 
-## <a id='highavail'>Example 2: Highly available nginx server</a>
+## <a id='highavail'></a>Example 2: Highly available nginx server
 
 One advantage of using CoreOS, Docker, and **fleet** is that it's easy to run services in a highly available manner. In this example you'll deploy a service that consists of three identical containers running the nginx web server. The containers will run on the three VMs in the cluster. This example is similar to one in [Launching containers with fleet] and uses the [nginx Docker Hub image].
 
@@ -91,7 +84,6 @@ One advantage of using CoreOS, Docker, and **fleet** is that it's easy to run se
 
 On your client computer, use your favorite text editor to create a **systemd** template unit file, named nginx@.service. You'll use this simple template to launch three separate instances, named nginx@1.service, nginx@2.service, and nginx@3.service:
 
-	
 	[Unit]
 	Description=High Availability Nginx
 	After=docker.service
@@ -105,27 +97,23 @@ On your client computer, use your favorite text editor to create a **systemd** t
 	
 	[X-Fleet]
 	X-Conflicts=nginx@*.service
-	
 
 >[AZURE.NOTE] The `X-Conflicts` attribute tells CoreOS that only one instance of this container can be run on a given CoreOS host. For details see [Unit Files].
 
 Now start the unit instances on the CoreOS cluster. You should see that they're running on three different machines:
 
-	
 	fleetctl --tunnel coreos-cluster.chinacloudapp.cn:22 start nginx@{1,2,3}.service
 	
 	unit nginx@3.service launched on 00c927e4.../100.79.62.16
 	unit nginx@1.service launched on 62f0f66e.../100.79.86.62
 	unit nginx@2.service launched on df85f2d1.../100.78.126.15
-	
-	
+
 To reach the web server running on one of the units, send a simple request to the cloud service hosting the CoreOS cluster.
 
 `curl http://coreos-cluster.chinacloudapp.cn`
 
 You'll see default text returned from the nginx server similar to:
 
-	
 	<!DOCTYPE html>
 	<html>
 	<head>
@@ -150,17 +138,13 @@ You'll see default text returned from the nginx server similar to:
 	<p><em>Thank you for using nginx.</em></p>
 	</body>
 	</html>
-	
 
 You can try shutting down one or more virtual machines in your cluster to verify that the web service continues to run.
 
 When done, stop and unload units.
 
-	
 	fleetctl --tunnel coreos-cluster.chinacloudapp.cn:22 stop nginx@{1,2,3}.service
 	fleetctl --tunnel coreos-cluster.chinacloudapp.cn:22 unload nginx@{1,2,3}.service
-	
-	
 
 ## Next steps
 
@@ -170,7 +154,7 @@ When done, stop and unload units.
 * See [Linux and Open-Source Computing on Azure] for more on using open-source environments on Linux VMs in Azure.
 
 <!--Link references-->
-[Azure Command-Line Interface (Azure)]: /documentation/articles/xplat-cli-install
+[Azure Command-Line Interface (Azure)]: /documentation/articles/xplat-cli-install/
 [CoreOS]: https://coreos.com/
 [CoreOS Overview]: https://coreos.com/using-coreos/
 [CoreOS with Azure]: https://coreos.com/docs/running-coreos/cloud-providers/azure/
@@ -178,10 +162,10 @@ When done, stop and unload units.
 [Patrick Chanezon's CoreOS Tutorial]: https://github.com/chanezon/azure-linux/tree/master/coreos/cloud-init
 [Docker]: http://docker.io
 [YAML]: http://yaml.org/
-[How to Use CoreOS on Azure]: /documentation/articles/virtual-machines-linux-coreos-how-to 
-[Configure a load-balanced set]: /documentation/articles/load-balancer-internet-getstarted
+[How to Use CoreOS on Azure]: /documentation/articles/virtual-machines-linux-classic-coreos-howto/ 
+[Configure a load-balanced set]: /documentation/articles/load-balancer-internet-getstarted/
 [Launching containers with fleet]: https://coreos.com/docs/launching-containers/launching/launching-containers-fleet/
 [Unit Files]: https://coreos.com/docs/launching-containers/launching/fleet-unit-files/
 [busybox Docker Hub image]: https://registry.hub.docker.com/_/busybox/
 [nginx Docker Hub image]: https://hub.docker.com/_/nginx/
-[Linux and Open-Source Computing on Azure]: /documentation/articles/virtual-machines-linux-opensource 
+[Linux and Open-Source Computing on Azure]: /documentation/articles/virtual-machines-linux-opensource-links/ 

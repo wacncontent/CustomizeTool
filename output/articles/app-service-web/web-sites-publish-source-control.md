@@ -9,14 +9,12 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="12/11/2015"
+	ms.date="02/26/2016"
 	wacn.date=""/>
 
-# Continuous deployment using GIT in Azure  Web App   
-
+# Continuous deployment using GIT in Azure
 
 [AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)]
-
 
 [AZURE.INCLUDE [publishing-with-git](../includes/publishing-with-git.md)]
  

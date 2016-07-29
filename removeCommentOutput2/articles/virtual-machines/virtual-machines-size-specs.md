@@ -1,3 +1,5 @@
+<!-- rename to virtual-machines-windows-sizes -->
+
 <properties
  pageTitle="Virtual machine sizes | Azure"
  description="Lists the different sizes for virtual machines and their capacities."
@@ -23,14 +25,13 @@ This article describes the available sizes and options for the virtual machine-b
 
 To see general limits on Azure VMs, see [Azure subscription and service limits, quotas, and constraints](/documentation/articles/azure-subscription-service-limits).
 
-. The standard sizes consist of several series: A, D, DS, G, and GS. Considerations for some of these sizes include:
+The standard sizes consist of several series: A, D and DS. Considerations for some of these sizes include:
 
-*   D-series VMs are designed to run applications that demand higher compute power and temporary disk performance. D-series VMs provide faster processors, a higher memory-to-core ratio, and a solid-state drive (SSD) for the temporary disk. For details, see the announ
+*   D-series VMs are designed to run applications that demand higher compute power and temporary disk performance. D-series VMs provide faster processors, a higher memory-to-core ratio, and a solid-state drive (SSD) for the temporary disk.
 
 *   Dv2-series, a follow-on to the original D-series, features a more powerful CPU. The Dv2-series CPU is about 35% faster than the D-series CPU. It is based on the latest generation 2.4 GHz Intel Xeon® E5-2673 v3 (Haswell) processor, and with the Intel Turbo Boost Technology 2.0, can go up to 3.2 GHz. The Dv2-series has the same memory and disk configurations as the D-series.
 
-
-*   DS-series VMs can use Premium Storage, which provides high-performance, low-latency storage for I/O intensive workloads. These VMs use solid-state drives (SSDs) to host a virtual machine's disks and also provide a local SSD disk cache. Premium Storage is available in certain regions. For details, see [Premium Storage: High-performance storage for Azure virtual machine workloads](/documentation/articles/storage-premium-storage-preview-portal).
+*   DS-series VMs can use Premium Storage, which provides high-performance, low-latency storage for I/O intensive workloads. These VMs use solid-state drives (SSDs) to host a virtual machine's disks and also provide a local SSD disk cache. Premium Storage is available in certain regions. For details, see [Premium Storage: High-performance storage for Azure virtual machine workloads](/documentation/articles/storage-premium-storage).
 
 *   The A-series VMs can be deployed on a variety of hardware types and processors. The size is throttled, based upon the hardware, to offer consistent processor performance for the running instance, regardless of the hardware it is deployed on. To determine the physical hardware on which this size is deployed, query the virtual hardware from within the Virtual Machine.
 
@@ -41,10 +42,9 @@ The size of the virtual machine affects the pricing. The size also affects the p
 The following considerations might help you decide on a size:
 
 
-
 *	Dv2-series, D-series, and the DS counterparts  are ideal for applications that demand faster CPUs, better local disk performance, or have higher memory demands.  They offer a powerful combination for many enterprise-grade applications.
 
-*   Some of the physical hosts in Azure data centers may not support larger virtual machine sizes, such as A5 - A7. As a result, you may see the error message **Failed to configure virtual machine <machine name>** or **Failed to create virtual machine <machine name>** when resizing an existing virtual machine to a new size; creating a new virtual machine in a virtual network created before April 16, 2013; or adding a new virtual machine to an existing cloud service. See  [Error: "Failed to configure virtual machine"](https://social.msdn.microsoft.com/Forums/9693f56c-fcd3-4d42-850e-5e3b56c7d6be/error-failed-to-configure-virtual-machine-with-a5-a6-or-a7-vm-size?forum=WAVirtualMachinesforWindows) on the support forum for workarounds for each deployment scenario.  
+*   Some of the physical hosts in Azure data centers may not support larger virtual machine sizes, such as A5 - A7. As a result, you may see the error message **Failed to configure virtual machine <machine name>** or **Failed to create virtual machine <machine name>** when resizing an existing virtual machine to a new size; creating a new virtual machine in a virtual network created before April 16, 2013; or adding a new virtual machine to an existing cloud service. See  [Error: "Failed to configure virtual machine"](https://social.msdn.microsoft.com/Forums/9693f56c-fcd3-4d42-850e-5e3b56c7d6be/error-failed-to-configure-virtual-machine-with-a5-a6-or-a7-vm-size?forum=WAVirtualMachinesforWindows) on the support forum for workarounds for each deployment scenario.
 
 
 ## Performance considerations
@@ -58,7 +58,6 @@ We have created the concept of the Azure Compute Unit (ACU) to provide a way of 
 |SKU Family	|ACU/Core |
 |---|---|
 |[Standard_A0 (Extra Small)](#standard-tier-a-series)	|50 |
-
 |[Standard_A1-4 (Small - Large)](#standard-tier-a-series)	|100 |
 |[Standard_A5-7](#standard-tier-a-series)	|100 |
 |[D1-14](#standard-tier-d-series)	|160 |
@@ -76,7 +75,6 @@ The following tables show the sizes and the capacities they provide.
 >[AZURE.NOTE] Storage capacity is represented by using 1024^3 bytes as the unit of measurement for GB. This is sometimes referred to as gibibyte, or base 2 definition. When comparing sizes that use different base systems, remember that base 2 sizes may appear smaller than base 10 but for any specific size (such as 1 GB) a base 2 system provides more capacity than a base 10 system, because 1024^3 is greater than 1000^3.
 
 <br>
-
 
 
 
@@ -103,7 +101,6 @@ In the classic deployment model, some VM sizes are slightly different in Powersh
 |Standard_A6|4|28 GB|2|Temporary = 285 GB |8|8x500|
 |Standard_A7|8|56 GB|4|Temporary = 605 GB |16|16x500|
 
-
 ##<a name="standard-tier-d-series"></a> Standard tier: D-series
 
 |Size |CPU cores|Memory|NICs (Max)|Max. disk size|Max. data disks (1023 GB each)|Max. IOPS (500 per disk)|
@@ -116,7 +113,6 @@ In the classic deployment model, some VM sizes are slightly different in Powersh
 |Standard_D12 |4|28 GB|4|Temporary (SSD) =200 GB |8|8x500|
 |Standard_D13 |8|56 GB|8|Temporary (SSD) =400 GB |16|16x500|
 |Standard_D14 |16|112 GB|8|Temporary (SSD) =800 GB |32|32x500|
-
 
 ##<a name="standard-tier-dv2-series"></a> Standard tier: Dv2-series
 
@@ -132,7 +128,6 @@ In the classic deployment model, some VM sizes are slightly different in Powersh
 |Standard_D13_v2 |8|56 GB|8|Temporary (SSD) =400 GB |16|16x500|
 |Standard_D14_v2 |16|112 GB|8|Temporary (SSD) =800 GB |32|32x500|
 
-
 ##<a name="standard-tier-ds-series"></a> Standard tier: DS-series*
 
 |Size |CPU cores|Memory|NICs (Max)|Max. disk size|Max. data disks (1023 GB each)|Cache size (GB)|Max. disk IOPS &amp; bandwidth|
@@ -146,7 +141,7 @@ In the classic deployment model, some VM sizes are slightly different in Powersh
 |Standard_DS13 |8|56|8|Local SSD disk = 112 GB |16|288| 25,600  256 MB per second |
 |Standard_DS14 |16|112|8|Local SSD disk = 224 GB |32|576| 50,000  512 MB per second |
 
-*The maximum input/output operations per second (IOPS) and throughput (bandwidth) possible with a DS series VM is affected by the size of the disk. For details, see [Premium Storage: High-performance storage for Azure virtual machine workloads](/documentation/articles/storage-premium-storage-preview-portal).
+*The maximum input/output operations per second (IOPS) and throughput (bandwidth) possible with a DS series VM is affected by the size of the disk. For details, see [Premium Storage: High-performance storage for Azure virtual machine workloads](/documentation/articles/storage-premium-storage).
 
 ### See also
 

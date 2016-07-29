@@ -10,14 +10,12 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="02/10/2016"
+	ms.date="06/27/2016"
 	wacn.date=""/>
 
 #Use Python with Hive and Pig in HDInsight
 
 Hive and Pig are great for working with data in HDInsight, but sometimes you need a more general purpose language. Both Hive and Pig allow you to create User Defined Functions (UDF) using a variety of programming languages. In this article, you will learn how to use a Python UDF from Hive and Pig.
-
-> [AZURE.NOTE] The steps in this article apply to HDInsight cluster versions 2.1, 3.0, 3.1, and 3.2.
 
 ##Requirements
 
@@ -42,7 +40,7 @@ Python can be used as a UDF from Hive through the HiveQL **TRANSFORM** statement
 	add file wasb:///streaming.py;
 
 	SELECT TRANSFORM (clientid, devicemake, devicemodel)
-	  USING 'streaming.py' AS
+	  USING 'python streaming.py' AS
 	  (clientid string, phoneLable string, phoneHash string)
 	FROM hivesampletable
 	ORDER BY clientid LIMIT 50;
@@ -160,7 +158,7 @@ If you are using a Linux-based HDInsight cluster, use the **SSH** steps below. I
 
 ###SSH
 
-For more information on using SSH, see <a href="/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix" target="_blank">Use SSH with Linux-based Hadoop on HDInsight from Linux, Unix, or OS X</a> or <a href="/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows" target="_blank">Use SSH with Linux-based Hadoop on HDInsight from Windows</a>.
+For more information on using SSH, see <a href="/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix/" target="_blank">Use SSH with Linux-based Hadoop on HDInsight from Linux, Unix, or OS X</a> or <a href="/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows/" target="_blank">Use SSH with Linux-based Hadoop on HDInsight from Windows</a>.
 
 1. Using the Python examples [streaming.py](#streamingpy) and [jython.py](#jythonpy), create local copies of the files on your development machine.
 
@@ -174,8 +172,8 @@ For more information on using SSH, see <a href="/documentation/articles/hdinsigh
 
 4. From the SSH session, add the python files uploaded previously to the WASB storage for the cluster.
 
-		hadoop fs -copyFromLocal streaming.py /streaming.py
-		hadoop fs -copyFromLocal jython.py /jython.py
+		hdfs dfs -put streaming.py /streaming.py
+		hdfs dfs -put jython.py /jython.py
 
 After uploading the files, use the following steps to run the Hive and Pig jobs.
 
@@ -187,7 +185,7 @@ After uploading the files, use the following steps to run the Hive and Pig jobs.
 
 		add file wasb:///streaming.py;
 		SELECT TRANSFORM (clientid, devicemake, devicemodel)
-		  USING 'streaming.py' AS
+		  USING 'python streaming.py' AS
 		  (clientid string, phoneLabel string, phoneHash string)
 		FROM hivesampletable
 		ORDER BY clientid LIMIT 50;
@@ -222,7 +220,9 @@ After uploading the files, use the following steps to run the Hive and Pig jobs.
 
 ###PowerShell
 
-These steps use Azure PowerShell. If this is not already installed and configured on your development machine, see [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure) before using the following steps.
+These steps use Azure PowerShell. If this is not already installed and configured on your development machine, see [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure/) before using the following steps.
+
+[AZURE.INCLUDE [upgrade-powershell](../includes/hdinsight-use-latest-powershell.md)]
 
 1. Using the Python examples [streaming.py](#streamingpy) and [jython.py](#jythonpy), create local copies of the files on your development machine.
 
@@ -236,10 +236,9 @@ These steps use Azure PowerShell. If this is not already installed and configure
         $resourceGroup = $clusterInfo.ResourceGroup
         $storageAccountName=$clusterInfo.DefaultStorageAccount.split('.')[0]
         $container=$clusterInfo.DefaultStorageContainer
-        $storageAccountKey=Get-AzureRmStorageAccountKey `
+        $storageAccountKey=(Get-AzureRmStorageAccountKey `
             -Name $storageAccountName `
-            -ResourceGroupName $resourceGroup `
-            | %{ $_.Key1 }
+        -ResourceGroupName $resourceGroup)[0].Value
 
 		#Create a storage content and upload the file
         $context = New-AzureStorageContext `
@@ -260,7 +259,7 @@ These steps use Azure PowerShell. If this is not already installed and configure
 
 	This script retrieves information for your HDInsight cluster, then extracts the account and key for the default storage account, and uploads the files to the root of the container.
 
-	> [AZURE.NOTE] Other methods of uploading the scripts can be found in the [Upload data for Hadoop jobs in HDInsight](/documentation/articles/hdinsight-upload-data) document.
+	> [AZURE.NOTE] Other methods of uploading the scripts can be found in the [Upload data for Hadoop jobs in HDInsight](/documentation/articles/hdinsight-upload-data/) document.
 
 After uploading the files, use the following PowerShell scripts to start the jobs. When the job completes, the output should be written to the PowerShell console.
 
@@ -276,10 +275,9 @@ The following script will run the __streaming.py__ script. Before running, it wi
     $resourceGroup = $clusterInfo.ResourceGroup
     $storageAccountName=$clusterInfo.DefaultStorageAccount.split('.')[0]
     $container=$clusterInfo.DefaultStorageContainer
-    $storageAccountKey=Get-AzureRmStorageAccountKey `
+    $storageAccountKey=(Get-AzureRmStorageAccountKey `
         -Name $storageAccountName `
-        -ResourceGroupName $resourceGroup `
-        | %{ $_.Key1 }
+        -ResourceGroupName $resourceGroup)[0].Value
     #Create a storage content and upload the file
     $context = New-AzureStorageContext `
         -StorageAccountName $storageAccountName `
@@ -306,13 +304,13 @@ The following script will run the __streaming.py__ script. Before running, it wi
         -HttpCredential $creds
     # Uncomment the following to see stderr output
     # Get-AzureRmHDInsightJobOutput `
-        -Clustername $clusterName `
-        -JobId $job.JobId `
-        -DefaultContainer $container `
-        -DefaultStorageAccountName $storageAccountName `
-        -DefaultStorageAccountKey $storageAccountKey `
-        -HttpCredential $creds `
-        -DisplayOutputType StandardError
+    #   -Clustername $clusterName `
+    #   -JobId $job.JobId `
+    #   -DefaultContainer $container `
+    #   -DefaultStorageAccountName $storageAccountName `
+    #   -DefaultStorageAccountKey $storageAccountKey `
+    #   -HttpCredential $creds `
+    #   -DisplayOutputType StandardError
 	Write-Host "Display the standard output ..." -ForegroundColor Green
 	Get-AzureRmHDInsightJobOutput `
         -Clustername $clusterName `
@@ -343,10 +341,9 @@ The following will use the __jython.py__ script. Before running, it will prompt 
     $resourceGroup = $clusterInfo.ResourceGroup
     $storageAccountName=$clusterInfo.DefaultStorageAccount.split('.')[0]
     $container=$clusterInfo.DefaultStorageContainer
-    $storageAccountKey=Get-AzureRmStorageAccountKey `
+    $storageAccountKey=(Get-AzureRmStorageAccountKey `
         -Name $storageAccountName `
-        -ResourceGroupName $resourceGroup `
-        | %{ $_.Key1 }
+        -ResourceGroupName $resourceGroup)[0].Value
     
     #Create a storage content and upload the file
     $context = New-AzureStorageContext `
@@ -439,8 +436,8 @@ If you need to load Python modules that aren't provided by default, see [How to 
 
 For other ways to use Pig, Hive, and to learn about using MapReduce, see the following.
 
-* [Use Hive with HDInsight](/documentation/articles/hdinsight-use-hive)
+* [Use Hive with HDInsight](/documentation/articles/hdinsight-use-hive/)
 
-* [Use Pig with HDInsight](/documentation/articles/hdinsight-use-pig)
+* [Use Pig with HDInsight](/documentation/articles/hdinsight-use-pig/)
 
-* [Use MapReduce with HDInsight](/documentation/articles/hdinsight-use-mapreduce)
+* [Use MapReduce with HDInsight](/documentation/articles/hdinsight-use-mapreduce/)

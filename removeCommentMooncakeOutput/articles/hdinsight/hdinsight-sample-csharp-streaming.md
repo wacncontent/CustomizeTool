@@ -1,3 +1,5 @@
+<!-- deleted in Global -->
+
 <properties
 	pageTitle="C# streaming wordcount Hadoop sample | Azure"
 	description="How to write MapReduce programs in C# that use the Hadoop Streaming interface, and how to run them on HDInsight using PowerShell cmdlets."
@@ -40,8 +42,8 @@ For more information about the Hadoop Streaming interface, see [Hadoop Streaming
 Before you begin, you must have the following:
 
 - **An Azure subscription**. See [Get Azure trial](/pricing/1rmb-trial/).
-- **an HDInsight cluster**. For instructions on the various ways in which such clusters can be created, see [Provision HDInsight Clusters](/documentation/articles/hdinsight-provision-clusters-v1).
-- **A workstation with Azure PowerShell**. See [Install and use Azure PowerShell](/documentation/articles/powershell-install-configure).
+- **an HDInsight cluster**. For instructions on the various ways in which such clusters can be created, see [Provision HDInsight Clusters](/documentation/articles/hdinsight-provision-clusters-v1/).
+- **A workstation with Azure PowerShell**. See [Install and use Azure PowerShell](/documentation/articles/powershell-install-configure/).
 
 
 
@@ -186,15 +188,15 @@ For tutorials that run other samples and provide instructions for running Pig, H
 [console-writeline]: http://msdn.microsoft.com/zh-cn/library/system.console.writeline
 [stdin-stdout-stderr]: http://msdn.microsoft.com/zh-cn/library/3x292kth(v=vs.110).aspx
 
-[powershell-install-configure]: /documentation/articles/powershell-install-configure
+[powershell-install-configure]: /documentation/articles/powershell-install-configure/
 
-[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1/
 
-[hdinsight-samples]: /documentation/articles/hdinsight-run-samples
-[hdinsight-sample-10gb-graysort]: /documentation/articles/hdinsight-sample-10gb-graysort
-[hdinsight-sample-csharp-streaming]: /documentation/articles/hdinsight-sample-csharp-streaming
-[hdinsight-sample-pi-estimator]: /documentation/articles/hdinsight-sample-pi-estimator
-[hdinsight-sample-wordcount]: /documentation/articles/hdinsight-sample-wordcount
+[hdinsight-samples]: /documentation/articles/hdinsight-run-samples/
+[hdinsight-sample-10gb-graysort]: /documentation/articles/hdinsight-sample-10gb-graysort/
+[hdinsight-sample-csharp-streaming]: /documentation/articles/hdinsight-sample-csharp-streaming/
+[hdinsight-sample-pi-estimator]: /documentation/articles/hdinsight-sample-pi-estimator/
+[hdinsight-sample-wordcount]: /documentation/articles/hdinsight-sample-wordcount/
 
-[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
-[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
+[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive/
+[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig/

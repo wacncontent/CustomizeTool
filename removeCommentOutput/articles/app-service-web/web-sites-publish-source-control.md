@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="12/11/2015"
+	ms.date="02/26/2016"
 	wacn.date=""/>
 
 # Continuous deployment using GIT in Azure

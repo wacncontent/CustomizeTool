@@ -1,3 +1,5 @@
+<!-- rename to virtual-machines-linux-create-upload-generic -->
+
 <properties
 	pageTitle="Create and upload a Linux VHD in Azure"
 	description="Learn to create and upload an Azure virtual hard disk (VHD) that contains a Linux operating system."

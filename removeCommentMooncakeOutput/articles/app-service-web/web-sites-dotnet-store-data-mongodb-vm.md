@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="12/11/2015"
+	ms.date="02/29/2016"
 	wacn.date=""/>
 
 
@@ -41,6 +41,9 @@ Knowledge of the following is useful for this tutorial, though not required:
 
 This tutorial assumes you have created a virtual machine in Azure. After creating the virtual machine you need to install MongoDB on the virtual machine:
 
+* To create a Windows virtual machine and install MongoDB, see [Install MongoDB on a virtual machine running Windows Server in Azure][InstallMongoOnWindowsVM].
+
+
 After you have created the virtual machine in Azure and installed MongoDB, be sure to remember the DNS name of the virtual machine ("testlinuxvm.chinacloudapp.cn", for example) and the external port for MongoDB that you specified in the endpoint.  You will need this information later in the tutorial.
 
 <a id="createapp"></a>
@@ -56,9 +59,9 @@ In this section you will create an ASP.NET application called "My Task List" by 
 
 	![New Project Dialog][NewProjectMyTaskListApp]
 
-1. In the **New ASP.NET Project** dialog box, select **MVC**, and then click **OK**. Make sure **Host in the cloud** is unchecked, and click **OK**. 
+1. In the **New ASP.NET Project** dialog box, select **MVC**, and then click **OK**. Make sure **Host in the cloud** is unchecked, and click **OK**.
 
-	If you haven't create a web app yet, go to [Azure Management Portal](https://manage.windowsazure.cn) to create one. And, in **Dashboard** of your web app, under **quick glance**, download the "publish profile".
+	If you haven't create a web app yet, go to [Azure Classic Management Portal](https://manage.windowsazure.cn) to create one. And, in **Dashboard** of your web app, under **quick glance**, download the "publish profile".
 
 2. Right click your solution, and click **Publish...**
 
@@ -410,7 +413,7 @@ In **Solution Explorer**, open the *DAL/Dal.cs* file. Find the following line of
 
 	private string connectionString = "mongodb://<vm-dns-name>";
 
-Replace `<vm-dns-name>` with the DNS name of the virtual machine running MongoDB you created in the [Create a virtual machine and install MongoDB][] step of this tutorial.  To find the DNS name of your virtual machine, go to the Azure Management Portal, select **Virtual Machines**, and find **DNS Name**.
+Replace `<vm-dns-name>` with the DNS name of the virtual machine running MongoDB you created in the [Create a virtual machine and install MongoDB][] step of this tutorial.  To find the DNS name of your virtual machine, go to the Azure Classic Management Portal, select **Virtual Machines**, and find **DNS Name**.
 
 If the DNS name of the virtual machine is "testlinuxvm.chinacloudapp.cn" and MongoDB is listening on the default port 27017, the connection string line of code will look like:
 
@@ -429,12 +432,13 @@ To run your application on your development computer, select **Start Debugging**
 ![My Task List Application][TaskListAppBlank]
 
 ## Publish to Azure Web Apps
+
 In this section you will create a website and deploy the My Task List ASP.NET application using Git.
 
 ###<a id="createwebsite"></a> Create an Azure website###
 In this section you will create an Azure website.
 
-1. Open a web browser and browse to the [Azure Management Portal][AzurePortal]. Sign in with your Azure account. 
+1. Open a web browser and browse to the [Azure Classic Management Portal][AzurePortal]. Sign in with your Azure account. 
 2. At the bottom of the page, click **+New**, then **Website**, and finally **Quick Create**.
 3. Enter a unique prefix for the application's URL.
 4. Select a region.
@@ -471,7 +475,7 @@ In this section you will deploy the My Task List application using Git.
 
 You have now successfully deployed your ASP.NET application to Azure Web Apps. To view the web app:
 
-1. Log into the Azure Management Portal.
+1. Log into the Azure Classic Management Portal.
 2. Click **Web apps**. 
 3. Select your web app in the **Web Apps** list.
 
@@ -487,8 +491,7 @@ For more information on developing C# applications against MongoDB, see [CSharp 
 [ASP.NET]: http://www.asp.net/
 [MongoConnectionStrings]: http://www.mongodb.org/display/DOCS/Connections
 [MongoDB]: http://www.mongodb.org
-[InstallMongoOnCentOSLinuxVM]: /manage/linux/common-tasks/mongodb-on-a-linux-vm/
-[InstallMongoOnWindowsVM]: /documentation/articles/virtual-machines-install-mongodb-windows-server-2008r2
+[InstallMongoOnWindowsVM]: /documentation/articles/virtual-machines-windows-classic-install-mongodb/
 [VSEWeb]: http://www.visualstudio.com/zh-cn/downloads/download-visual-studio-vs#d-2013-express
 [VSUlt]: http://www.visualstudio.com/zh-cn/downloads/download-visual-studio-vs
 
@@ -516,4 +519,3 @@ For more information on developing C# applications against MongoDB, see [CSharp 
 [Create and run the My Task List ASP.NET application on your development computer]: #createapp
 [Create an Azure web site]: #createwebsite
 [Deploy the ASP.NET application to the web site using Git]: #deployapp
- 

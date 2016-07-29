@@ -17,21 +17,23 @@
 
 By default, Hadoop clusters are not optimized for performance. This article covers a few of the most common Hive performance optimization methods that you can apply to our queries.
 
-[AZURE.INCLUDE [portal](../includes/hdinsight-azure-portal.md)] 
-
-* [Optimize Hive queries for Hadoop in HDInsight](/documentation/articles/hdinsight-hadoop-optimize-hive-query-v1).
+> [AZURE.IMPORTANT] The steps in this document use the Azure Classic Management Portal. Microsoft does not recommend using the Classic Management Portal when creating new services. For an explanation of the advantages of the Azure Portal, see [Azure Portal](https://azure.microsoft.com/features/azure-portal/).
+>
+> This document also includes information on using Azure PowerShell. The snippets provided are based on commands that use Azure Service Management (ASM) to work with HDInsight and are __deprecated__. These commands will be removed by January 1, 2017.
+>
+>For a version of this document that uses the Azure portal, along with PowerShell snippets that use Azure Resource Manager (ARM), see [Optimize Hive queries for Hadoop in HDInsight](/documentation/articles/hdinsight-hadoop-optimize-hive-query-v1/).
 
 ##Scale out worker nodes
 
 Increasing the number of worker nodes in a cluster can leverage more mappers and reducers to be run in parallel. There are two ways you can increase scale out in HDInsight:
 
-- At the provision time, you can specify the number of worker nodes using the Azure Management Portal, Azure PowerShell or Cross-platform command line interface.  For more information, see [Provision HDInsight clusters](/documentation/articles/hdinsight-provision-clusters-v1). The following screen show the worker node configuration on the Azure Management Portal:
+- At the provision time, you can specify the number of worker nodes using the Azure portal, Azure PowerShell or Cross-platform command line interface.  For more information, see [Provision HDInsight clusters](/documentation/articles/hdinsight-provision-clusters-v1/). The following screen show the worker node configuration on the Azure portal:
 
 	![scaleout_1][image-hdi-optimize-hive-scaleout_1]
 - At the run time, you can also scale out a cluster without recreating one. This is shown below.
 ![scaleout_1][image-hdi-optimize-hive-scaleout_2]
 
-For more details on the different virtual machines supported by HDInsight, see [HDInsight pricing](/home/features/hdinsight/#price).
+For more details on the different virtual machines supported by HDInsight, see [HDInsight pricing](/home/features/hdinsight/pricing/).
 
 ##Enable Tez
 
@@ -203,11 +205,11 @@ There are more optimization methods that you can consider, for example:
 ##<a id="nextsteps"></a> Next steps
 In this article, you have learned several common Hive query optimization methods. To learn more, see the following articles:
 
-- [Use Apache Hive in HDInsight](/documentation/articles/hdinsight-use-hive)
-- [Analyze flight delay data by using Hive in HDInsight](/documentation/articles/hdinsight-analyze-flight-delay-data)
-- [Analyze Twitter data using Hive in HDInsight](/documentation/articles/hdinsight-analyze-twitter-data)
-- [Analyze sensor data using the Hive Query Console on Hadoop in HDInsight](/documentation/articles/hdinsight-hive-analyze-sensor-data)
-- [Use Hive with HDInsight to analyze logs from websites](/documentation/articles/hdinsight-hive-analyze-website-log)
+- [Use Apache Hive in HDInsight](/documentation/articles/hdinsight-use-hive/)
+- [Analyze flight delay data by using Hive in HDInsight](/documentation/articles/hdinsight-analyze-flight-delay-data/)
+- [Analyze Twitter data using Hive in HDInsight](/documentation/articles/hdinsight-analyze-twitter-data/)
+- [Analyze sensor data using the Hive Query Console on Hadoop in HDInsight](/documentation/articles/hdinsight-hive-analyze-sensor-data/)
+- [Use Hive with HDInsight to analyze logs from websites](/documentation/articles/hdinsight-hive-analyze-website-log/)
 
 
 [image-hdi-optimize-hive-scaleout_1]: ./media/hdinsight-hadoop-optimize-hive-query-v1/scaleout_1.png

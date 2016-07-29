@@ -1,4 +1,4 @@
-<!-- not suitable for Mooncake -->
+<!-- rename to virtual-machines-windows-ps-lob-ph1 -->
 
 <properties 
 	pageTitle="Line of business application Phase 1 | Azure" 
@@ -17,7 +17,7 @@
 
 # Line of Business Application Workload Phase 1: Configure Azure
  
-[AZURE.INCLUDE [learn-about-deployment-models-rm-include](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the Resource Manager deployment model, which Microsoft recommends for most new deployments instead of the classic deployment model.
  
 In this phase of deploying an intranet-only, high-availability line of business application in Azure infrastructure services, you build out the Azure networking and storage infrastructure. You must complete this phase before moving on to [Phase 2](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-phase2). See [Deploy a High-Availability Line of Business Application in Azure](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-overview) for all of the phases.
 

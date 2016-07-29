@@ -10,30 +10,28 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="02/05/2016"
+	ms.date="07/12/2016"
 	wacn.date=""/>
 
 # Analyze Twitter data using Hive in HDInsight
 
 In this document, you will get tweets by using a Twitter streaming API and then use Apache Hive on a Linux-based HDInsight cluster to process the JSON formatted data. The result will be a list of Twitter users who sent the most tweets that contained a certain word.
 
-> [AZURE.NOTE] While individual pieces of this document can be used with Windows-based HDInsight clusters (Python and Hive for example,) many steps are based on using a Linux-based HDInsight cluster. For steps specific to a Windows-based cluster, see [Analyze Twitter data using Hive in HDInsight](/documentation/articles/hdinsight-analyze-twitter-data).
+> [AZURE.NOTE] While individual pieces of this document can be used with Windows-based HDInsight clusters (Python for example,) many steps are based on using a Linux-based HDInsight cluster. For steps specific to a Windows-based cluster, see [Analyze Twitter data using Hive in HDInsight](/documentation/articles/hdinsight-analyze-twitter-data/).
 
 ###Prerequisites
 
 Before you begin this tutorial, you must have the following:
 
-- A __Linux-based Azure HDInsight cluster__. For information on creating a cluster, see [Get Started with Linux-based HDInsight](/documentation/articles/hdinsight-hadoop-linux-tutorial-get-started) for steps on creating a cluster.
+- A __Linux-based Azure HDInsight cluster__. For information on creating a cluster, see [Get Started with Linux-based HDInsight](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1/) for steps on creating a cluster.
 
 - An __SSH client__. For more information on using SSH with Linux-based HDInsight, see the following articles:
 
-	* [Use SSH with Linux-based Hadoop on HDInsight from Linux, Unix, or OS X](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix)
+	* [Use SSH with Linux-based Hadoop on HDInsight from Linux, Unix, or OS X](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix/)
 
-	* [Use SSH with Linux-based Hadoop on HDInsight from Windows](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows)
+	* [Use SSH with Linux-based Hadoop on HDInsight from Windows](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows/)
 
 - __Python__ and [pip](https://pypi.python.org/pypi/pip)
-
-- The __Azure CLI__. For more information, see [Install and configure the Azure CLI](/documentation/articles/xplat-cli-install)
 
 ##Get a Twitter feed
 
@@ -74,9 +72,9 @@ The following Python code will download 10,000 tweets from Twitter and save them
 		
 	For more information on using SSH with Linux-based HDInsight, see the following articles:
 	
-	* [Use SSH with Linux-based Hadoop on HDInsight from Linux, Unix, or OS X](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix)
+	* [Use SSH with Linux-based Hadoop on HDInsight from Linux, Unix, or OS X](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix/)
 
-	* [Use SSH with Linux-based Hadoop on HDInsight from Windows](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows)
+	* [Use SSH with Linux-based Hadoop on HDInsight from Windows](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows/)
 	
 2. By default, the __pip__ utility is not installed on the HDInsight head node. Use the following to install, and then update this utility:
 
@@ -158,6 +156,8 @@ The following Python code will download 10,000 tweets from Twitter and save them
 		python gettweets.py
 
 	A progress indicator should appear, and count up to 100% as the tweets are downloaded and saved to file.
+
+    > [AZURE.NOTE] If it is taking a very long time for the progress bar to advance, you should change the filter to track trending topics; when there are a lot of tweets about the topic you are filtering on, you can very quickly get the 10000 tweets needed.
 
 ###Upload the data
 
@@ -286,11 +286,11 @@ This stores the data in a location that all nodes in the cluster can access.
 
 4. Use the following command to run the HiveQL contained in the file:
 
-		hive -i twitter.hql		
+		beeline -u 'jdbc:hive2://localhost:10001/;transportMode=http' -n admin -i twitter.hql		
 		
-	This will load the Hive shell, run the HiveQL in the __twitter.hql__ file, and finally return a `hive >` prompt.
+	This will load the Hive shell, run the HiveQL in the __twitter.hql__ file, and finally return a `jdbc:hive2//localhost:10001/>` prompt.
 	
-5. From the `hive >` prompt, use the following to verify that you can select data from the __tweets__ table created by the HiveQL in the __twitter.hql__ file:
+5. From the beeline prompt, use the following to verify that you can select data from the __tweets__ table created by the HiveQL in the __twitter.hql__ file:
 		
 		SELECT name, screen_name, count(1) as cc
 			FROM tweets
@@ -304,8 +304,8 @@ This stores the data in a location that all nodes in the cluster can access.
 
 In this tutorial we have seen how to transform an unstructured JSON dataset into a structured Hive table to query, explore, and analyze data from Twitter by using HDInsight on Azure. To learn more, see:
 
-- [Get started with HDInsight](/documentation/articles/hdinsight-hadoop-linux-tutorial-get-started)
-- [Analyze flight delay data using HDInsight](/documentation/articles/hdinsight-analyze-flight-delay-data-linux)
+- [Get started with HDInsight](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1/)
+- [Analyze flight delay data using HDInsight](/documentation/articles/hdinsight-analyze-flight-delay-data-linux/)
 
 [curl]: http://curl.haxx.se
 [curl-download]: http://curl.haxx.se/download.html

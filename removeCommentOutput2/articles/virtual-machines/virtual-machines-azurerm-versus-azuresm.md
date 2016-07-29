@@ -1,4 +1,4 @@
-<!-- not suitable for Mooncake -->
+<!-- rename to virtual-machines-windows-compare-deployment-models -->
 
 <properties
    pageTitle="Compute, Network, and Storage providers | Azure"
@@ -68,9 +68,9 @@ In this section, we will walk through some of the most important conceptual diff
 
 You can get started with the Azure Templates by leveraging the various tools that we have for developing and deploying to the platform.
 
-### Azure Management Portal
+### Azure portal
 
-The Azure Management Portal will continue to have the option to deploy Virtual Machines with the classic deployment model and Virtual Machines with the Resource Manager deployment model simultaneously. The Azure Management Portal will also allow custom template deployments.
+The Azure portal will continue to have the option to deploy Virtual Machines with the classic deployment model and Virtual Machines with the Resource Manager deployment model simultaneously. The Azure portal will also allow custom template deployments.
 
 ### Azure PowerShell
 

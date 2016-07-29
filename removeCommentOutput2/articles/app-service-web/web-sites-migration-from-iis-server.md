@@ -12,14 +12,14 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="12/10/2015"
+	ms.date="07/01/2016"
 	wacn.date=""/>
 
 # Migrate an enterprise web app to Azure
 
 You can easily migrate your existing websites that run on Internet Information Service (IIS) 6 or later to [Azure Web Apps](/documentation/services/web-sites/). 
 
->[AZURE.IMPORTANT] Windows Server 2003 will reach end of support on July 14th 2015. If you are currently hosting your websites on an IIS server that is Windows Server 2003, Web Apps is a low-risk, low-cost, and low-friction way to keep your websites online, and Web Apps Migration Assistant can help automate the migration process for you. 
+>[AZURE.IMPORTANT] Windows Server 2003 reached end of support on July 14th 2015. If you are currently hosting your websites on an IIS server that is Windows Server 2003, Web Apps is a low-risk, low-cost, and low-friction way to keep your websites online, and Web Apps Migration Assistant can help automate the migration process for you. 
 
 [Web Apps Migration Assistant](https://www.movemetothecloud.net/) can analyze your IIS server installation, identify which sites can be migrated to Azure Web App, highlight any elements that cannot be migrated or are unsupported on the platform, and then migrate your websites and associated databases to Azure.
 
@@ -92,7 +92,7 @@ This section steps through an example to to migrate a few websites that use a SQ
  
 	![](./media/web-sites-migration-from-iis-server/readiness-assessment.png)
 
-12.	Click **Begin Migration** to start the migration.You will now be redirected to Azure to log into your account. It is important that you log in with an account that has an active Azure Subscription. If you do not have an Azure account then you can sign up for a trial here. 
+12.	Click **Begin Migration** to start the migration.You will now be redirected to Azure to log into your account. It is important that you log in with an account that has an active Azure Subscription. If you do not have an Azure account then you can sign up for a trial [here](/pricing/1rmb-trial/?WT.srch=1&WT.mc_ID=SEM_). 
 
 13.	Select the tenant account, Azure subscription and region to use for your migrated Azure web apps and databases, and then click **Start Migration**. You can select the websites to migrate later.
 
@@ -109,7 +109,7 @@ This section steps through an example to to migrate a few websites that use a SQ
 
 	![](./media/web-sites-migration-from-iis-server/migration-settings.png)
 
-	>[AZURE.NOTE] the **Enable Azure Active Directory** checkbox in custom settings integrates the Azure web app with [Azure Active Directory](/documentation/articles/active-directory-whatis) (the **Default Directory**). For more information on syncing Azure Active Directory with your on-premise Active Directory, see [Directory integration](http://msdn.microsoft.com/zh-cn/library/jj573653).
+	>[AZURE.NOTE] the **Enable Azure Active Directory** checkbox in custom settings integrates the Azure web app with [Azure Active Directory](/documentation/articles/active-directory-whatis/) (the **Default Directory**). For more information on syncing Azure Active Directory with your on-premise Active Directory, see [Directory integration](http://msdn.microsoft.com/zh-cn/library/jj573653).
 
 16.	 Once you make all the desired changes, click **Create** to start the migration process. The migration tool will create the Azure SQL Database and Azure web app, and then publish the website content and databases. The migration progress is clearly shown in the migration tool, and you will see a summary screen at the end, which details the sites migrated, whether they were successful, links to the newly-created Azure web apps. 
 
@@ -121,9 +121,9 @@ This section steps through an example to to migrate a few websites that use a SQ
  
 20.	Click the links to the Azure web apps and verify that the migration has succeeded.
 
-21. You can now manage the migrated web apps in Azure. To do this, log into the [Azure Management Portal](https://manage.windowsazure.cn).
+21. You can now manage the migrated web apps in Azure. To do this, log into the [Azure Portal](https://portal.azure.cn).
 
-22. In the Azure Management Portal, open the Web Apps blade to see your migrated websites (shown as web apps), then click on any one of them to start managing the web app, such as configuring continuous publishing, creating backups, autoscaling, and monitoring usage or performance.
+22. In the Azure Portal, open the Web Apps blade to see your migrated websites (shown as web apps), then click on any one of them to start managing the web app, such as configuring continuous publishing, creating backups, autoscaling, and monitoring usage or performance.
 
 	![](./media/web-sites-migration-from-iis-server/TimeTrackerMigrated.png)
 
@@ -131,3 +131,4 @@ This section steps through an example to to migrate a few websites that use a SQ
 
 ## What's changed
 * For a guide to the change from Websites to Azure see: [Azure and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
+ 

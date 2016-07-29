@@ -1,3 +1,5 @@
+<!-- rename to virtual-machines-windows-reset-rdp -->
+
 <properties
 	pageTitle="Reset the password or Remote Desktop on a Windows VM | Azure"
 	description="Reset the administrator password or Remote Desktop services on a Windows VM created with the Resource Manager deployment model."
@@ -15,10 +17,22 @@
 
 # How to reset a password or the Remote Desktop service for a Windows VM
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the Resource Manager deployment model, which Microsoft recommends for most new deployments instead of the classic deployment model.
 
 
-If you can't connect to a Windows virtual machine because of a forgotten password or a problem with the Remote Desktop service configuration, use the Azure Management Portal or the VMAccess extension to reset the local administrator password or reset the Remote Desktop service configuration.
+If you can't connect to a Windows virtual machine because of a forgotten password or a problem with the Remote Desktop service configuration, use the Azure portal or the VMAccess extension to reset the local administrator password or reset the Remote Desktop service configuration.
+
+## Azure portal
+
+To reset the Remote Desktop service in the [Azure portal](https://portal.azure.cn), click **Browse all** > **Virtual machines (classic)** > *your Windows virtual machine* > **Reset Remote Access**. The following page appears.
+
+
+![](./media/virtual-machines-windows-reset-password/Portal-RDP-Reset-Windows.png)
+
+To reset the name and password of the local administrator account in the [Azure portal](https://portal.azure.cn), click **Browse all** > **Virtual machines (classic)** > *your Windows virtual machine* > **All settings** > **Password reset**. The following page appears.
+
+![](./media/virtual-machines-windows-reset-password/Portal-PW-Reset-Windows.png)
+
 
 ## VMAccess extension and PowerShell
 

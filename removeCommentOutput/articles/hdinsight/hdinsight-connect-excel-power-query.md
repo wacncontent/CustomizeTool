@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="01/28/2016"
+	ms.date="04/28/2016"
 	wacn.date=""/>
 
 
@@ -53,7 +53,7 @@ The Power Query add-in for Excel makes it easy to import data from your HDInsigh
 
 	**Note:** Power Query also allows you to import data from HDFS by clicking **From Other Sources**.
 
-3. For **Account Name**, enter the name of the Azure Blob storage account associated with your cluster, and then click **OK**. This can be the [default storage account](/documentation/articles/hdinsight-administer-use-management-portal-v1#find-the-default-storage-account) or a linked storage account.  The format is *https://<StorageAccountName>.blob.core.chinacloudapi.cn/*.
+3. For **Account Name**, enter the name of the Azure Blob storage account associated with your cluster, and then click **OK**. This can be the [default storage account](/documentation/articles/hdinsight-administer-use-management-portal-v1/#find-the-default-storage-account) or a linked storage account.  The format is *https://<StorageAccountName>.blob.core.chinacloudapi.cn/*.
 
 4. For **Account Key**, enter the key for the Blob storage account, and then click **Save**. (You need to do this only the first time you access this store.)
 
@@ -74,9 +74,9 @@ In this article, you learned how to use Power Query to retrieve data from HDInsi
 * [Connect Excel to HDInsight with the Microsoft Hive ODBC Driver][hdinsight-ODBC]
 * [Upload Data to HDInsight][hdinsight-upload-data]
 
-[hdinsight-ODBC]: /documentation/articles/hdinsight-connect-excel-hive-ODBC-driver
-[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
-[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
+[hdinsight-ODBC]: /documentation/articles/hdinsight-connect-excel-hive-ODBC-driver/
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1/
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data/
 
 [image-hdi-powerquery-hdi-source]: ./media/hdinsight-connect-excel-power-query/HDI.PowerQuery.SelectHdiSource.png
 [image-hdi-powerquery-importdata]: ./media/hdinsight-connect-excel-power-query/HDI.PowerQuery.ImportData.png

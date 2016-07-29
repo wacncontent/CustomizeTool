@@ -3,31 +3,23 @@
 	description="A tutorial that demonstrates how to create a PHP web app that stores data in MySQL and use FTP deployment to Azure." 
 	services="app-service\web" 
 	documentationCenter="php" 
-	authors="tfitzmac" 
+	authors="rmcmurray" 
 	manager="wpickett" 
 	editor=""/>
 
 <tags
 	ms.service="app-service-web"
-	ms.date="01/12/2016"
+	ms.date="06/24/2016"
 	wacn.date=""/>
 
 
 #Create a PHP-MySQL web app in Azure and deploy using FTP
 
-> [AZURE.SELECTOR]
-- [.Net](/documentation/articles/web-sites-dotnet-get-started)
-- [Node.js](/documentation/articles/web-sites-nodejs-develop-deploy-mac)
-- [Java](/documentation/articles/web-sites-java-get-started)
-- [PHP - Git](/documentation/articles/web-sites-php-mysql-deploy-use-git)
-- [PHP - FTP](/documentation/articles/web-sites-php-mysql-deploy-use-ftp)
-- [Python](/documentation/articles/web-sites-python-ptvs-django-mysql)
-
 This tutorial shows you how to create a PHP-MySQL web app and how to deploy it using FTP. This tutorial assumes you have [PHP][install-php], [MySQL][install-mysql], a web server, and an FTP client installed on your computer. The instructions in this tutorial can be followed on any operating system, including Windows, Mac, and  Linux. Upon completing this guide, you will have a PHP/MySQL web app running in Azure.
  
 You will learn:
 
-* How to create a web app and a MySQL database using the Azure Management Portal. Because PHP is enabled in Web Apps by default, nothing special is required to run your PHP code.
+* How to create a web app and a MySQL database using the Azure Portal. Because PHP is enabled in Web Apps by default, nothing special is required to run your PHP code.
 * How to publish your application to Azure using FTP.
  
 By following this tutorial, you will build a simple registration web app in PHP. The application will be hosted in a Web App. A screenshot of the completed application is below:
@@ -41,8 +33,8 @@ By following this tutorial, you will build a simple registration web app in PHP.
 
 Follow these steps to create a web app and a MySQL database:
 
-1. Login to the [Azure Management Portal][management-portal].
-2. Click the **+ New** icon on the top left of the Azure Management Portal.
+1. Login to the [Azure Portal][management-portal].
+2. Click the **+ New** icon on the top left of the Azure Portal.
 
 	![Create New Azure Web Site][new-website]
 
@@ -295,6 +287,6 @@ For more information, see the [PHP Developer Center](/develop/php/).
 [note-properties]: ./media/web-sites-php-mysql-deploy-use-ftp/note-properties.png
 
 [connection-string-info]: ./media/web-sites-php-web-site-mysql-deploy-use-ftp/connection_string_info.png
-[management-portal]: https://manage.windowsazure.cn
+[management-portal]: https://portal.azure.cn
 [download-publish-profile]: ./media/web-sites-php-mysql-deploy-use-ftp/download_publish_profile_3.png
  

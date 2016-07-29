@@ -1,3 +1,5 @@
+<!-- deleted in Global -->
+
 <properties
    pageTitle="Cluster Scaling in HDInsight | Azure"
    description="Change the number of data nodes in a cluster that is running on HDInsight without having to delete and recreate the cluster."
@@ -118,7 +120,7 @@ Here is some sample code that shows how to use the synchronous version of this m
 	            string certfriendlyname = "<CertificateFriendlyName>";     
 	            string subscriptionid = "<SubscriptionID>";
 	            string clustername = "<ClusterDNSName>";
-	     		string location = "<ClusterLocation>"";
+	     		string location = "<ClusterLocation>";
 				int newSize = <NewClusterSize>;
 	
 	            // Get the certificate object from certificate store by using the friendly name to identify it
@@ -143,4 +145,4 @@ Here is some sample code that shows how to use the synchronous version of this m
 	}
 
 
-Please refer to the [Provision Hadoop clusters in HDInsight using custom options](/documentation/articles/hdinsight-provision-clusters-v1) topic for more information on using the HDInsight .NET SDK.
+Please refer to the [Provision Hadoop clusters in HDInsight using custom options](/documentation/articles/hdinsight-provision-clusters-v1/) topic for more information on using the HDInsight .NET SDK.

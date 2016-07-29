@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="11/17/2015"
+	ms.date="02/20/2016"
 	wacn.date=""/>
 
 
@@ -18,7 +18,7 @@
 
 This tutorial describes how to get started running Python in [Azure Web Apps](/documentation/services/web-sites/).  Web Apps provides limited free hosting and rapid deployment, and you can use Python!  As your app grows, you can switch to paid hosting, and you can also integrate with all of the other Azure services.
 
-You will create an application using the Flask web framework (see alternate versions of this tutorial for [Django](/documentation/articles/web-sites-python-create-deploy-django-app) and [Bottle](/documentation/articles/web-sites-python-create-deploy-bottle-app)).  You will create the website, set up Git deployment, and clone the repository locally.  Then you will run the application locally, make changes, commit and push them to Azure.  The tutorial shows how to do this from Windows or Mac/Linux.
+You will create an application using the Flask web framework (see alternate versions of this tutorial for [Django](/documentation/articles/web-sites-python-create-deploy-django-app/) and [Bottle](/documentation/articles/web-sites-python-create-deploy-bottle-app/)).  You will create the website, set up Git deployment, and clone the repository locally.  Then you will run the application locally, make changes, commit and push them to Azure.  The tutorial shows how to do this from Windows or Mac/Linux.
 
 [AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
 
@@ -45,13 +45,13 @@ We also recommend installing [Python Tools 2.2 for Visual Studio].  This is opti
 You should have Python and Git already installed, but make sure you have either Python 2.7 or 3.4.
 
 
-## Web app create on the Azure Management Portal
+## Web app create on the Azure Classic Management Portal
 
-The first step in creating your app is to create the web app via the [Azure Management Portal](https://manage.windowsazure.cn). To do this, you will need to login to the portal and click the NEW button in the bottom left corner. A window will appear. Click **Quick Create**, enter a URL, and select **Create Web Site**. 
+The first step in creating your app is to create the web app via the [Azure Classic Management Portal](https://manage.windowsazure.cn). To do this, you will need to login to the portal and click the NEW button in the bottom left corner. A window will appear. Click **Quick Create**, enter a URL, and select **Create Web App**. 
 
 ![](./media/web-sites-python-create-deploy-django-app/django-ws-003.png)
 
-The site will be quickly set up.  Next, you will add support for publishing via Git.  This can be done by choosing **Set up deployment from source control**.
+The app will be quickly set up.  Next, you will add support for publishing via Git.  This can be done by choosing **Set up deployment from source control**.
 
 ![](./media/web-sites-python-create-deploy-django-app/django-ws-004.png)
 
@@ -138,7 +138,7 @@ The next 3 sections describe how to proceed with the web app development under 3
 
 ### Clone the repository
 
-First, clone the repository using the URL provided on the Azure Management Portal. For more information, see [Continuous deployment using GIT in Azure Web App](/documentation/articles/web-sites-publish-source-control).
+First, clone the repository using the URL provided on the Azure Classic Management Portal. For more information, see [Continuous deployment using GIT in Azure Web App](/documentation/articles/web-sites-publish-source-control/).
 
 Open the solution file (.sln) that is included in the root of the repository.
 
@@ -205,7 +205,7 @@ Browse to the Azure URL to view your changes.
 
 ### Clone the repository
 
-First, clone the repository using the URL provided on the Azure Management Portal, and add the Azure repository as a remote. For more information, see [Continuous deployment using GIT in Azure Web App](/documentation/articles/web-sites-publish-source-control).
+First, clone the repository using the URL provided on the Azure Classic Management Portal, and add the Azure repository as a remote. For more information, see [Continuous deployment using GIT in Azure Web App](/documentation/articles/web-sites-publish-source-control/).
 
     git clone <repo-url>
     cd <repo-folder>
@@ -284,7 +284,7 @@ Browse to the Azure URL to view your changes.
 
 ### Clone the repository
 
-First, clone the repository using the URL provided on the Azure Management Portal, and add the Azure repository as a remote. For more information, see [Continuous deployment using GIT in Azure Web App](/documentation/articles/web-sites-publish-source-control).
+First, clone the repository using the URL provided on the Azure Classic Management Portal, and add the Azure repository as a remote. For more information, see [Continuous deployment using GIT in Azure Web App](/documentation/articles/web-sites-publish-source-control/).
 
     git clone <repo-url>
     cd <repo-folder>
@@ -386,7 +386,7 @@ For information on using Azure Table Storage and MongoDB:
 
 <!--Link references-->
 [Flask and MongoDB on Azure with Python Tools for Visual Studio]: https://github.com/microsoft/ptvs/wiki/Flask-and-MongoDB-on-Azure
-[Flask and Azure Table Storage on Azure with Python Tools for Visual Studio]: /documentation/articles/web-sites-python-ptvs-flask-table-storage 
+[Flask and Azure Table Storage on Azure with Python Tools for Visual Studio]: /documentation/articles/web-sites-python-ptvs-flask-table-storage/
 
 <!--External Link references-->
 [Azure SDK for Python 2.7]: http://go.microsoft.com/fwlink/?linkid=254281

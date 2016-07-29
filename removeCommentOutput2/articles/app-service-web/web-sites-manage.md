@@ -1,3 +1,5 @@
+<!-- deleted in Global -->
+
 <properties linkid="manage-scenarios-how-to-manage-websites" urlDisplayName="How to manage" pageTitle="How to manage  Websites - Azure service management" metaKeywords="Azure Management Portal  Website management" description="A reference for the Portal  Website management pages in Azure. Details are provided for each  Website management page." metaCanonical="" services="web-sites" documentationCenter="" title="How to Manage  Websites" authors="timamm"  solutions="" writer="timamm" manager="" editor=""  />
 
 

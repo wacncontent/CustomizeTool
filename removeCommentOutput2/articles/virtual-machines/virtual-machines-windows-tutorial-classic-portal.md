@@ -1,6 +1,8 @@
+<!-- rename to virtual-machines-windows-classic-tutorial -->
+
 <properties
-	pageTitle="Create a VM running Windows in the Management Portal | Azure"
-	description="Create a Windows virtual machine in the Azure Management Portal."
+	pageTitle="Create a VM running Windows in the classic portal | Azure"
+	description="Create a Windows virtual machine in the Azure classic portal."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="cynthn"
@@ -13,17 +15,19 @@
 	ms.date="01/06/2016"
 	wacn.date=""/>
 
-# Create a virtual machine running Windows in the Azure Management Portal
+# Create a virtual machine running Windows in the Azure classic portal
 
 > [AZURE.SELECTOR]
-- [Azure Management Portal](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)
+- [Azure portal](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)
+- [Azure classic portal](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)
+- [PowerShell: Resource Manager deployment](/documentation/articles/virtual-machines-deploy-rmtemplates-powershell)
 - [PowerShell: Classic deployment](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-vms)
 
 <!-- HHTML comment in to break between the selector and the note in the include below-->
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] [Resource Manager deploymen
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the classic deployment model. Microsoft recommends that most new deployments use the [Resource Manager deployment model](/documentation/articles/virtual-machines-windows-tutorial-classic-portal).
 
-This tutorial shows you how easy it is to create an Azure virtual machine (VM) running Windows in the Azure Management Portal. We'll use a Windows Server image as an example, but that's just one of the many images Azure offers. Note that your image choice
+This tutorial shows you how easy it is to create an Azure virtual machine (VM) running Windows in the Azure classic portal. We'll use a Windows Server image as an example, but that's just one of the many images Azure offers.
 
 You can also create VMs using [your own images](/documentation/articles/virtual-machines-create-upload-vhd-windows-server). To learn about this and other methods, see [Different ways to create a Windows virtual machine](/documentation/articles/virtual-machines-windows-choices-create-vm).
 
@@ -31,7 +35,9 @@ You can also create VMs using [your own images](/documentation/articles/virtual-
 
 ## <a id="createvirtualmachine"> </a>How to create the virtual machine
 
-This section shows you how to use the **From Gallery** option in the Azure Management Portal to create the virtual machine. This option provides more configuration choices than the **Quick Create** option. For example, if you want to join a virtual machine to a virtual network, you'll need to use the **From Gallery** option.
+This section shows you how to use the **From Gallery** option in the Azure classic portal to create the virtual machine. This option provides more configuration choices than the **Quick Create** option. For example, if you want to join a virtual machine to a virtual network, you'll need to use the **From Gallery** option.
+
+> [AZURE.NOTE] You can also try the richer, customizable Azure portal to create a virtual machine, use enhanced monitoring and diagnostics, use Premium storage, and more. The available options for configuring a virtual machine in the two portals overlap substantially but aren't identical. For example, use the Azure portal to configure a virtual machine with Premium storage.
 
 [AZURE.INCLUDE [virtual-machines-create-WindowsVM](../includes/virtual-machines-create-windowsvm.md)]
 

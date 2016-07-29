@@ -1,4 +1,4 @@
-<properties 
+<properties
    pageTitle="Deploy multi NIC VMs using PowerShell in the classic deployment model | Azure"
    description="Learn how to deploy multi NIC VMs using PowerShell in the classic deployment model"
    services="virtual-network"
@@ -19,20 +19,15 @@
 
 [AZURE.INCLUDE [virtual-network-deploy-multinic-intro-include.md](../includes/virtual-network-deploy-multinic-intro-include.md)]
 
-[AZURE.INCLUDE [azure-arm-classic-important-include](../includes/learn-about-deployment-models-classic-include.md)] [Resource Manager model](/d [Resource Manager model](/documentation/articles/virtual-network-deploy-multinic-arm-ps). 
+[AZURE.INCLUDE [azure-arm-classic-important-include](../includes/learn-about-deployment-models-classic-include.md)] Learn how to [perform these steps using the Resource Manager model](/documentation/articles/virtual-network-deploy-multinic-arm-ps/).
 
 [AZURE.INCLUDE [virtual-network-deploy-multinic-scenario-include.md](../includes/virtual-network-deploy-multinic-scenario-include.md)]
 
-Since at this point in time you cannot have VMs with a single NIC and VMs with multiple NICs in the same cloud service, you will implement the back end servers in a different cloud service than and all other components in the scenario. The steps below use a cloud service named *IaaSStory* for the main resources, and *IaaSStory-BackEnd* for the back end servers.
+Currently, you cannot have VMs with a single NIC and VMs with multiple NICs in the same cloud service. Therefore, you need to implement the back end servers in a different cloud service than and all other components in the scenario. The steps below use a cloud service named *IaaSStory* for the main resources, and *IaaSStory-BackEnd* for the back end servers.
 
-
 ## Prerequisites
-
-
-##<a name="Prerequisites"></a> Prerequisites
-
 
-Before you can deploy the back end servers, you need to deploy the main cloud service with all the necessary resources for this scenario. At minimum, you need to create a virtual network with a subnet for the backend. Visit [Create a virtual network by using PowerShell](/documentation/articles/virtual-networks-create-vnet-classic-netcfg-ps) to learn how to deploy a virtual network.
+Before you can deploy the back end servers, you need to deploy the main cloud service with all the necessary resources for this scenario. At minimum, you need to create a virtual network with a subnet for the backend. Visit [Create a virtual network by using PowerShell](/documentation/articles/virtual-networks-create-vnet-classic-netcfg-ps/) to learn how to deploy a virtual network.
 
 [AZURE.INCLUDE [azure-ps-prerequisites-include.md](../includes/azure-ps-prerequisites-include.md)]
 
@@ -42,13 +37,13 @@ The backend VMs depend on the creation of the resources listed below.
 
 - **Backend subnet**. The database servers will be part of a separate subnet, to segregate traffic. The script below expects this subnet to exist in a vnet named *WTestVnet*.
 - **Storage account for data disks**. For better performance, the data disks on the database servers will use solid state drive (SSD) technology, which requires a premium storage account. Make sure the Azure location you deploy to support premium storage.
-- **Availability set**. All database servers will be added to a single availability set, to ensure at least one of the VMs is up and running during maintenance. 
+- **Availability set**. All database servers will be added to a single availability set, to ensure at least one of the VMs is up and running during maintenance.
 
 ### Step 1 - Start your script
 
 You can download the full PowerShell script used [here](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/IaaS-Story/11-MultiNIC/classic/virtual-network-deploy-multinic-classic-ps.ps1). Follow the steps below to change the script to work in your environment.
 
-1. Change the values of the variables below based on your existing resource grou your existing resource group   deployed above in [Prerequisites](#Prerequisites).
+1. Change the values of the variables below based on your existing resource group deployed above in [Prerequisites](#Prerequisites).
 
 		$location              = "China North"
 		$vnetName              = "WTestVNet"
@@ -130,7 +125,7 @@ You need to use a loop to create as many VMs as you want, and create the necessa
 		    Add-AzureNetworkInterfaceConfig -Name ("RemoteAccessNIC"+$suffixNumber) `
 		        -SubnetName $backendSubnetName `
 		        -StaticVNetIPAddress ($ipAddressPrefix+(53+$suffixNumber)) `
-		        -VM $vmConfig 
+		        -VM $vmConfig
 
 6. Create to data disks for each VM.
 
@@ -139,7 +134,7 @@ You need to use a loop to create as many VMs as you want, and create the necessa
 		        -DiskSizeInGB $diskSize `
 		        -DiskLabel $dataDisk1Name `
 		        -LUN 0       
-		
+
 		    $dataDisk2Name = $vmName + "-" + $dataDiskSuffix + "-2"   
 		    Add-AzureDataDisk -CreateNew -VM $vmConfig `
 		        -DiskSizeInGB $diskSize `
@@ -164,10 +159,10 @@ Now that you downloaded and changed the script based on your needs, runt he scri
 		--------------------    -----------                          ---------------
 		New-AzureService        xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx Succeeded      
 		New-AzureStorageAccount xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx Succeeded      
-		                                                                            
+
 		WARNING: No deployment found in service: 'IaaSStory-Backend'.
 
 2. Fill out the information needed in the credentials prompt and click **OK**. The output below will be displayed.
 
 		New-AzureVM             xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx Succeeded
-		New-AzureVM             xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx Succeeded 
+		New-AzureVM             xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx Succeeded

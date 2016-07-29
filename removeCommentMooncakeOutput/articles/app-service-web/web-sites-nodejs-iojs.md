@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="01/09/2016"
+	ms.date="05/04/2016"
 	wacn.date=""/>
 
 # How to use io.js with Azure Web Apps
@@ -49,4 +49,3 @@ In this article you learned how to use io.js with Azure Web Apps, using both pro
 [io.js distribution]: https://iojs.org/dist/
 [io.js on GitHub]: https://github.com/iojs/io.js
 [io.js Deployment Script]: https://github.com/felixrieseberg/iojs-azure
- 

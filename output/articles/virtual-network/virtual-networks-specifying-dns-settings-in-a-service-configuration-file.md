@@ -8,7 +8,7 @@
    editor="tysonn" />
 <tags
 	ms.service="virtual-network"
-	ms.date="12/07/2015"
+	ms.date="02/24/2016"
 	wacn.date=""/>
 
 # Specifying DNS Settings in a Service Configuration File

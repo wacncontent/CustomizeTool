@@ -1,19 +1,19 @@
 <properties 
-   pageTitle="Variable assets in Azure Automation | Windows Azure"
+   pageTitle="Variable assets in Azure Automation | Azure"
    description="Variable assets are values that are available to all runbooks in Azure Automation.  This article explains the details of variables and how to work with them in both textual and graphical authoring."
    services="automation"
    documentationCenter=""
-   authors="bwren"
-   manager="stevenka"
+   authors="mgoedtel"
+   manager="jwhit""
    editor="tysonn" />
 <tags
 	ms.service="automation"
-	ms.date="10/23/2015"
+	ms.date="05/24/2016"
 	wacn.date=""/>
 
 # Variable assets in Azure Automation
 
-Variable assets are values that are available to all runbooks in your automation account.  They can be created, modified, and retrieved from the Azure Management Portal, Windows PowerShell, and from within a runbook. Automation variables are useful for the following scenarios:
+Variable assets are values that are available to all runbooks in your automation account.  They can be created, modified, and retrieved from the Azure Classic Management Portal, Windows PowerShell, and from within a runbook. Automation variables are useful for the following scenarios:
 
 - Share a value between multiple runbooks.
 
@@ -27,15 +27,15 @@ When a variable is created, you can specify that it be stored encrypted.  When a
 
 >[AZURE.NOTE]Secure assets in Azure Automation include credentials, certificates, connections, and encrypted variables. These assets are encrypted and stored in the Azure Automation using a unique key that is generated for each automation account. This key is encrypted by a master certificate and stored in Azure Automation. Before storing a secure asset, the key for the automation account is decrypted using the master certificate and then used to encrypt the asset.
 
-## Variable types
+##<a id="variable-types"></a> Variable types
 
-When you create a variable with the Azure Management Portal, you must specify a data type from the dropdown list so the portal can display the appropriate control for entering the variable value. The variable is not restricted to this data type, but you must set the variable using Windows PowerShell if you want to specify a value of a different type. If you specify **Not defined**, then the value of the variable will be set to **$null**, and you must set the value with the [Set-AzureAutomationVariable](http://msdn.microsoft.com/zh-cn/library/dn913767.aspx) cmdlet or **Set-AutomationVariable** activity.  You cannot create or change the value for a complex variable type in the portal, but you can provide a value of any type using Windows PowerShell. Complex types will be returned as a [PSCustomObject](http://msdn.microsoft.com/zh-cn/library/system.management.automation.pscustomobject.aspx).
+When you create a variable with the Azure Classic Management Portal, you must specify a data type from the dropdown list so the portal can display the appropriate control for entering the variable value. The variable is not restricted to this data type, but you must set the variable using Windows PowerShell if you want to specify a value of a different type. If you specify **Not defined**, then the value of the variable will be set to **$null**, and you must set the value with the [Set-AzureAutomationVariable](http://msdn.microsoft.com/zh-cn/library/dn913767.aspx) cmdlet or **Set-AutomationVariable** activity.  You cannot create or change the value for a complex variable type in the portal, but you can provide a value of any type using Windows PowerShell. Complex types will be returned as a [PSCustomObject](http://msdn.microsoft.com/zh-cn/library/system.management.automation.pscustomobject.aspx).
 
 You can store multiple values to a single variable by creating an array or hashtable and saving it to the variable.
 
 ## Cmdlets and workflow activities
 
-The cmdlets in the following table are used to create and manage Automation variables with Windows PowerShell. They ship as part of the [Azure PowerShell module](/documentation/articles/powershell-install-configure) which is available for use in Automation runbooks.
+The cmdlets in the following table are used to create and manage Automation variables with Windows PowerShell. They ship as part of the [Azure PowerShell module](/documentation/articles/powershell-install-configure/) which is available for use in Automation runbooks.
 
 |Cmdlets|Description|
 |:---|:---|
@@ -55,7 +55,7 @@ The workflow activities in the following table are used to access Automation var
 
 ## Creating a new Automation variable
 
-### To create a new variable with the Azure Management Portal
+### To create a new variable with the Azure Classic Management Portal
 
 1. From your automation account, click **Assets** at the top of the window.
 1. At the bottom of the window, click **Add Setting**.
@@ -80,8 +80,8 @@ The following sample commands show how to create a variable with a complex type 
 	New-AzureAutomationVariable -AutomationAccountName "MyAutomationAccount" -Name "MyComplexVariable" -Encrypted $false -Value $vm
 	
 	$vmValue = (Get-AzureAutomationVariable -AutomationAccountName "MyAutomationAccount" -Name "MyComplexVariable").Value
-	$vmName = $ vmValue.Name
-	$vmIpAddress = $ vmValue.IpAddress
+	$vmName = $vmValue.Name
+	$vmIpAddress = $vmValue.IpAddress
 
 
 
@@ -105,7 +105,7 @@ The following sample commands show how to set and retrieve a variable in a textu
 	for ($i = 1; $i -le $NumberOfIterations; $i++) {
 	   Write-Output "$i`: $SampleMessage"
 	}
-	Set-AutomationVariable -Name NumberOfRunnings -Value (NumberOfRunngs += 1)
+	Set-AutomationVariable -Name NumberOfRunnings -Value ($NumberOfRunnings += 1)
 
 
 #### Setting and retrieving a complex object in a variable
@@ -141,4 +141,3 @@ In the following code, the collection is retrieved from the variable and used to
 	   }
 	}
 
- 

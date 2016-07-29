@@ -1,4 +1,4 @@
-<!-- not suitable for Mooncake -->
+<!-- rename to virtual-machines-windows-extensions-configuration-samples -->
 
 <properties
    pageTitle="Sample configuration for Windows VM extensions | Azure"
@@ -18,22 +18,22 @@
 # Azure Windows VM Extension Configuration Samples
 
 > [AZURE.SELECTOR]
-- [PowerShell - Template](/documentation/articles/virtual-machines-extensions-configuration-samples-windows)
-- [CLI - Template](/documentation/articles/virtual-machines-extensions-configuration-samples-linux)
+- [PowerShell - Template](/documentation/articles/virtual-machines-extensions-configuration-samples-windows/)
+- [CLI - Template](/documentation/articles/virtual-machines-extensions-configuration-samples-linux/)
 
 <br> 
 
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the Resource Manager deployment model, which Azure recommends for most new deployments instead of the classic deployment model.
 
 
 
 This article provides sample configuration for configuring Azure VM Extensions for Windows VMs.
 
 
-To learn more about these extensions, see [Azure VM Extensions Overview.](/documentation/articles/virtual-machines-extensions-features)
+To learn more about these extensions, see [Azure VM Extensions Overview.](/documentation/articles/virtual-machines-linux-extensions-features/)
 
-To learn more about authoring extension templates, see [Authoring Extension Templates.](/documentation/articles/virtual-machines-extensions-authoring-templates)
+To learn more about authoring extension templates, see [Authoring Extension Templates.](/documentation/articles/virtual-machines-extensions-authoring-templates/)
 
 This article lists expected configuration values for some of the Windows Extensions.
 
@@ -290,7 +290,7 @@ Before deploying the extension please check the latest extension version and rep
 
 ### Azure Diagnostics
 
-For more details about how to configure diagnostics, see [Azure Diagnostics Extension](/documentation/articles/virtual-machines-extensions-diagnostics-windows-template)
+For more details about how to configure diagnostics, see [Azure Diagnostics Extension](/documentation/articles/virtual-machines-extensions-diagnostics-windows-template/)
 
           {
             "publisher": "Microsoft.Azure.Diagnostics",

@@ -11,13 +11,13 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="12/08/2015"
+	ms.date="05/26/2016"
 	wacn.date=""/>	
 
 # How To Control Inbound Traffic to an Azure Environment
 
 ## Overview ##
-An Azure Environment is always created in a subnet of a regional classic "v1" [virtual network][virtualnetwork].  A new regional classic "v1" virtual network and new subnet can be defined at the time an Azure Environment is created.  Alternatively, an Azure Environment can be created in a pre-existing regional classic "v1" virtual network and pre-existing subnet.  For more details on creating an Azure Environment see [How To Create an Azure Environment][HowToCreateAnAppServiceEnvironment].
+An Azure Environment is always created in a subnet of a regional classic "v1" [virtual network][virtualnetwork].  A new regional classic "v1" virtual network and new subnet can be defined at the time an Azure Environment is created.  Alternatively, an Azure Environment can be created in a pre-existing regional classic "v1" virtual network and pre-existing subnet.  Currently only virtual networks with an RFC1918 address space (i.e. private addresses) are supported.  For more details on creating an Azure Environment see [How To Create an Azure Environment][HowToCreateAnAppServiceEnvironment].
 
 **Note:**  An Azure Environment cannot be created in a "v2" ARM-managed virtual network.
 
@@ -39,7 +39,7 @@ The following is a list of ports used by an Azure Environment:
 - 80:  Default port for inbound HTTP traffic to apps running in App Service Plans in an Azure Environment
 - 443: Default port for inbound SSL traffic to apps running in App Service Plans in an Azure Environment
 - 21:  Control channel for FTP.  This port can be safely blocked if FTP is not being used.
-- 10001-10020: Data channels for FTP.  As with the control channel, these ports can be safely blocked if FTP is not being used   (**Note:** the FTP data channels may change during preview.)
+- 10001-10020: Data channels for FTP.  As with the control channel, these ports can be safely blocked if FTP is not being used   
 - 4016: Used for remote debugging with Visual Studio 2012.  This port can be safely blocked if the feature is not being used.
 - 4018: Used for remote debugging with Visual Studio 2013.  This port can be safely blocked if the feature is not being used.
 - 4020: Used for remote debugging with Visual Studio 2015.  This port can be safely blocked if the feature is not being used.
@@ -47,25 +47,25 @@ The following is a list of ports used by an Azure Environment:
 ## Outbound Connectivity and DNS Requirements ##
 For an Azure Environment to function properly, it requires outbound access to Azure Storage worldwide as well as Sql Database in the same Azure region.  If outbound Internet access is blocked in the virtual network, Azure Environments will not be able to access these Azure endpoints.
 
-Azure Environments also require a valid DNS infrastructure configured for the virtual network.  If for any reason the DNS configuration is changed after an Azure Environment has been created, developers can force an Azure Environment to pick up the new DNS configuration.  Triggering a rolling environment reboot using the "Restart" icon located at the top of the Azure Environment management blade in the [new management portal][NewPortal] will cause the environment to pick up the new DNS configuration.
+Azure Environments also require a valid DNS infrastructure configured for the virtual network.  If for any reason the DNS configuration is changed after an Azure Environment has been created, developers can force an Azure Environment to pick up the new DNS configuration.  Triggering a rolling environment reboot using the "Restart" icon located at the top of the Azure Environment management blade in the [Azure portal][NewPortal] will cause the environment to pick up the new DNS configuration.
 
 The following list details the connectivity and DNS requirements for an Azure Environment:
 
 -  Outbound network connectivity to Azure Storage endpoints worldwide.  This includes endpoints located in the same region as the Azure Environment, as well as storage endpoints located in **other** Azure regions.  Azure Storage endpoints resolve under the following DNS domains: *table.core.chinacloudapi.cn*, *blob.core.chinacloudapi.cn*, *queue.core.chinacloudapi.cn* and *file.core.chinacloudapi.cn*.  
--  Outbound network connectivity to Sql DB endpoints located in the same region as the Azure Environment.  SQl DB endpoints resolve under the following domain:  *database.chinacloudapi.cn*.
+-  Outbound network connectivity to Sql DB endpoints located in the same region as the Azure Environment.  Sql DB endpoints resolve under the following domain:  *database.chinacloudapi.cn*.
 -  Outbound network connectivity to the Azure management plane endpoints (both ASM and ARM endpoints).  This includes outbound connectivity to both *management.core.chinacloudapi.cn* and *management.azure.com*. 
--  Outbound network connectivity to *ocsp.msocsp.com*.  This is needed to support SSL functionality.
+-  Outbound network connectivity to *ocsp.msocsp.com*, *mscrl.microsoft.com* and *crl.microsoft.com*.  This is needed to support SSL functionality.
 -  The DNS configuration for the virtual network must be capable of resolving all of the endpoints and domains mentioned in the earlier points.  If these endpoints cannot be resolved, Azure Environment creation attempts will fail, and existing Azure Environments will be marked as unhealthy.
 -  If a custom DNS server exists on the other end of a VPN gateway, the DNS server must be reachable from the subnet containing the Azure Environment. 
 -  The outbound network path cannot travel through internal corporate proxies, nor can it be force tunneled to on-premises.  Doing so changes the effective NAT address of outbound network traffic from the Azure Environment.  Changing the NAT address of an Azure Environment's outbound network traffic will cause connectivity failures to many of the endpoints listed above.  This results in failed Azure Environment creation attempts, as well as previously healthy Azure Environments being marked as unhealthy.  
--  Inbound network access to required ports for Azure Environments must be allowed as described in this [article](/documentation/articles/app-service-app-service-environment-control-inbound-traffic).
+-  Inbound network access to required ports for Azure Environments must be allowed as described in this [article](/documentation/articles/app-service-app-service-environment-control-inbound-traffic/).
 
 It is also recommended that any custom DNS servers on the vnet be setup ahead of time prior to creating an Azure Environment.  If a virtual network's DNS configuration is changed while an Azure Environment is being created, that will result in the Azure Environment creation process failing.  In a similar vein, if a custom DNS server exists on the other end of a VPN gateway, and the DNS server is unreachable or unavailable, the Azure Environment creation process will also fail.
 
 ## Creating a Network Security Group ##
 For full details on how network security groups work see the following [information][NetworkSecurityGroups].  The details below touch on highlights of network security groups, with a focus on configuring and applying a network security group to a subnet that contains an Azure Environment.
 
-**Note:** Network security groups can only be configured using the Powershell cmdlets described below.  Network security groups cannot be configured graphically using the [Azure Management Portal](portal.azure.com) because the Azure Management Portal only allows graphical configuration of NSGs associated with "v2" virtual networks.  However, Azure Environments currently only work with classic "v1" virtual networks.  As a result only Powershell cmdlets can be used to configure network security groups associated with "v1" virtual networks.
+**Note:** Network security groups can only be configured using the Powershell cmdlets described below.  Network security groups cannot be configured graphically using the [Azure Portal](https://portal.azure.cn) because the Azure Portal only allows graphical configuration of NSGs associated with "v2" virtual networks.  However, Azure Environments currently only work with classic "v1" virtual networks.  As a result only Powershell cmdlets can be used to configure network security groups associated with "v1" virtual networks.
 
 Network security groups are first created as a standalone entity associated with a subscription. Since network security groups are created in an Azure region, ensure that the network security group is created in the same region as the Azure Environment.
 
@@ -142,7 +142,7 @@ For more information about the Azure platform, see [Azure Web App][AzureAppServi
 [AzureAppService]: /documentation/services/web-sites/
 [IntroToAppServiceEnvironment]:  /documentation/articles/app-service-app-service-environment-intro/
 [SecurelyConnecttoBackend]:  /documentation/articles/app-service-app-service-environment-securely-connecting-to-backend-resources/
-[NewPortal]:  https://manage.windowsazure.cn  
+[NewPortal]:  https://portal.azure.cn  
 
 <!-- IMAGES -->
  

@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
    pageTitle="MapReduce and SSH connection with Hadoop in HDInsight | Azure"
    description="Learn how to use SSH to run MapReduce jobs using Hadoop on HDInsight."
@@ -12,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="01/08/2016"
+	ms.date="06/06/2016"
 	wacn.date=""/>
 
 # Use MapReduce with Hadoop on HDInsight with SSH
@@ -21,7 +19,7 @@
 
 In this article, you will learn how to use Secure Shell (SSH) to connect to a Hadoop on HDInsight cluster and then submit MapReduce jobs by using Hadoop commands.
 
-> [AZURE.NOTE] If you are already familiar with using Linux-based Hadoop servers, but you are new to HDInsight, see [Linux-based HDInsight tips](/documentation/articles/hdinsight-hadoop-linux-information).
+> [AZURE.NOTE] If you are already familiar with using Linux-based Hadoop servers, but you are new to HDInsight, see [Linux-based HDInsight tips](/documentation/articles/hdinsight-hadoop-linux-information/).
 
 ##<a id="prereq"></a>Prerequisites
 
@@ -39,17 +37,17 @@ Connect to the fully qualified domain name (FQDN) of your HDInsight cluster by u
 
 **If you provided a certificate key for SSH authentication** when you created the HDInsight cluster, you may need to specify the location of the private key on your client system, for example:
 
-	ssh admin@myhdinsight-ssh.azurehdinsight.cn -i ~/mykey.key
+	ssh -i ~/mykey.key admin@myhdinsight-ssh.azurehdinsight.cn
 
 **If you provided a password for SSH authentication** when you created the HDInsight cluster, you will need to provide the password when prompted.
 
-For more information on using SSH with HDInsight, see [Use SSH with Linux-based Hadoop on HDInsight from Linux, OS X, and Unix](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix).
+For more information on using SSH with HDInsight, see [Use SSH with Linux-based Hadoop on HDInsight from Linux, OS X, and Unix](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix/).
 
 ###PuTTY (Windows clients)
 
 Windows does not provide a built-in SSH client. We recommend using **PuTTY**, which can be downloaded from [http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html).
 
-For more information on using PuTTY, see [Use SSH with Linux-based Hadoop on HDInsight from Windows ](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows).
+For more information on using PuTTY, see [Use SSH with Linux-based Hadoop on HDInsight from Windows ](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows/).
 
 ##<a id="hadoop"></a>Use Hadoop commands
 
@@ -59,7 +57,7 @@ For more information on using PuTTY, see [Use SSH with Linux-based Hadoop on HDI
 
 	This starts the **wordcount** class, which is contained in the **hadoop-mapreduce-examples.jar** file. As input, it uses the **wasb://example/data/gutenberg/davinci.txt** document, and output is stored at **wasb:///example/data/WordCountOutput**.
 
-	> [AZURE.NOTE] For more information about this MapReduce job and the example data, see [Use MapReduce in Hadoop on HDInsight](/documentation/articles/hdinsight-use-mapreduce).
+	> [AZURE.NOTE] For more information about this MapReduce job and the example data, see [Use MapReduce in Hadoop on HDInsight](/documentation/articles/hdinsight-use-mapreduce/).
 
 2. The job emits details as it processes, and it returns information similar to the following when the job completes:
 
@@ -98,10 +96,10 @@ As you can see, Hadoop commands provide an easy way to run MapReduce jobs in an 
 
 For general information about MapReduce jobs in HDInsight:
 
-* [Use MapReduce on HDInsight Hadoop](/documentation/articles/hdinsight-use-mapreduce)
+* [Use MapReduce on HDInsight Hadoop](/documentation/articles/hdinsight-use-mapreduce/)
 
 For information about other ways you can work with Hadoop on HDInsight:
 
-* [Use Hive with Hadoop on HDInsight](/documentation/articles/hdinsight-use-hive)
+* [Use Hive with Hadoop on HDInsight](/documentation/articles/hdinsight-use-hive/)
 
-* [Use Pig with Hadoop on HDInsight](/documentation/articles/hdinsight-use-pig)
+* [Use Pig with Hadoop on HDInsight](/documentation/articles/hdinsight-use-pig/)

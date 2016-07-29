@@ -30,7 +30,7 @@ This simple PowerShell statement can be run on any Windows VM to allow ICMP (Pin
 **Note:** If you use the below scripts, this firewall rule addition is the first statement.
 
 ## IIS01 - Web Application Installation Script
-This script will;
+This script will:
 
 1.	Open IMCPv4 (Ping) on the local server windows firewall for easier testing
 2.	Install IIS and the .Net Framework v4.5
@@ -136,7 +136,7 @@ This PowerShell script should be run locally while RDP'd into IIS01.
 
 
 ## AppVM01 - File Server Installation Script
-This script sets up the back end for this simple application. This script will;
+This script sets up the back end for this simple application. This script will:
 
 1.	Open IMCPv4 (Ping) on the firewall for easier testing
 2.	Create a new directory
@@ -182,4 +182,4 @@ This PowerShell script should be run locally while RDP'd into AppVM01. PowerShel
 There is no script included in this sample application to setup the DNS server. If testing of the firewall rules, NSG, or UDR needs to include DNS traffic, the DNS01 server will need to be setup manually. The Network Configuration xml file for both examples includes DNS01 as the primary DNS server and the public DNS server hosted by Level 3 as the backup DNS server. The Level 3 DNS server would be the actual DNS server used for non-local traffic, and with DNS01 not setup, no local DNS would occur.
 
 <!--Link References-->
-[HOME]: /documentation/articles/best-practices-network-security
+[HOME]: /documentation/articles/best-practices-network-security/

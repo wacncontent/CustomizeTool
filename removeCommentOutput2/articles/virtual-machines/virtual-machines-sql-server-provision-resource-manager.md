@@ -1,4 +1,4 @@
-<!-- not suitable for Mooncake -->
+<!-- rename to virtual-machines-windows-portal-sql-server-provision -->
 
 <properties
 	pageTitle="Provision a SQL Server virtual machine in Azure Resource Manager (GUI) | Azure"
@@ -19,13 +19,13 @@
 # Provision a SQL Server virtual machine in Azure Resource Manager
 
 > [AZURE.SELECTOR]
-- [Management Portal](/documentation/articles/virtual-machines-provision-sql-server)
+- [Classic portal](/documentation/articles/virtual-machines-provision-sql-server)
 - [PowerShell](/documentation/articles/virtual-machines-sql-server-create-vm-with-powershell)
 - [Azure Resource Manager portal](/documentation/articles/virtual-machines-sql-server-provision-resource-manager)
 
 <br/>
 
->[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the Resource Manager deployment model, which Microsoft recommends for most new deployments instead of the classic deployment model.
 
 This end-to-end tutorial shows you how to provision an Azure virtual machine in the portal using Azure Resource Manager model and configure SQL Server from a template in the Azure gallery.
 
@@ -33,7 +33,7 @@ The Azure virtual machine (VM) gallery includes several images that contain Micr
 
 In this tutorial, you will:
 
-- [Connect to the Azure Management Portal and provision a SQL VM image from the gallery with the resource manager deployment model](#Provision)
+- [Connect to the Azure portal and provision a SQL VM image from the gallery with the resource manager deployment model](#Provision)
 
 - [Configure the virtual machine and SQL Server settings](#ConfigureVM)
 
@@ -47,8 +47,8 @@ This tutorial assumes that you already have an Azure account. If you do not have
 
 ## <a id="Provision">Provision a SQL VM image from the gallery with the resource manager deployment model
 
-1. Log in to the [Azure Management Portal](https://manage.windowsazure.cn) using your account.
-1. On the Azure Management Portal click **+New**. The portal will open the **New** blade. The SQL Server VM templates are in the **Compute** group of the Marketplace.
+1. Log in to the [Azure portal](https://portal.azure.cn) using your account.
+1. On the Azure portal click **+New**. The portal will open the **New** blade. The SQL Server VM templates are in the **Compute** group of the Marketplace.
 
 1. In the **New** blade, click **Compute**.
 1. To see all of the types of resources in the in the **Compute** blade, click **See all**.
@@ -63,7 +63,7 @@ This tutorial assumes that you already have an Azure account. If you do not have
 <br/>
 
 ## <a id="ConfigureVM"> Configure the VM
-In the Azure Management Portal there are five blades for configuring a SQL Server virtual machine.
+In the Azure portal there are five blades for configuring a SQL Server virtual machine.
 
 1.	Configure basic settings
 1.	Choose virtual machine size
@@ -87,7 +87,7 @@ Verify that the **Location** is correct for your requirements.
 <br/>
 
 ## 2. Choose virtual machine size
-On the **Create Virtual Machine** blade under **Size** choose a virtual machine size. The Azure Management Portal will display recommended sizes. Find more information about virtual machine sizes see, [Sizes for virtual machines](/documentation/articles/virtual-machines-size-specs). The sizes are based on the template you selected. The size estimates the monthly cost to run the VM.  Select a VM size for your server. For considerations about SQL Server VM sizes, see [Performance best practices for SQL Server in Azure Virtual Machines](/documentation/articles/virtual-machines-sql-server-performance-best-practices).
+On the **Create Virtual Machine** blade under **Size** choose a virtual machine size. The Azure portal will display recommended sizes. Find more information about virtual machine sizes see, [Sizes for virtual machines](/documentation/articles/virtual-machines-size-specs). The sizes are based on the template you selected. The size estimates the monthly cost to run the VM.  Select a VM size for your server. For considerations about SQL Server VM sizes, see [Performance best practices for SQL Server in Azure Virtual Machines](/documentation/articles/virtual-machines-sql-server-performance-best-practices).
 
 ## 3. Configure virtual machine settings
 On the **Create Virtual Machine** blade under **Settings**, configure Azure storage, networking and monitoring for the virtual machine.
@@ -199,7 +199,7 @@ For more information, see [Configure Azure Key Vault Integration for SQL Server 
 
 ## 5. Review the Summary
 Review the summary and click **OK** to create SQL Server, resource group, and resources specified for this VM.
-You can monitor the deployment from the Azure Management Portal. The **Notifications** button at the top of the screen shows basic status of the deployment.
+You can monitor the deployment from the azure portal. The **Notifications** button at the top of the screen shows basic status of the deployment.
 
 ##<a id="Open"> Open the virtual machine using Remote Desktop and complete setup
 Follow these steps to use Remote Desktop to open the virtual machine:

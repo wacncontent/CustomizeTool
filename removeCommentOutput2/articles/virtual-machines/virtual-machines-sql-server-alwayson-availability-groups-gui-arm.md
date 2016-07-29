@@ -1,4 +1,4 @@
-<!-- not suitable for Mooncake -->
+<!-- rename to virtual-machines-windows-portal-sql-alwayson-availability-groups -->
 
 <properties
 	pageTitle="Configure AlwaysOn availability groups Azure Resource Manager | Azure"
@@ -23,12 +23,12 @@
 
 <br/>
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] Classic model.
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the Resource Manager deployment model, which Microsoft recommends for most new deployments instead of the Classic model.
 
 
 This end-to-end tutorial shows you how to create a SQL Server availability group with Azure Resource Manager virtual machines. The tutorial uses Azure blades to configure a template. You will review the default settings, type required settings, and update the blades in the portal as you walk through this tutorial. 
 
->[AZURE.NOTE] In the Azure Management Portal, there is a new gallery setup for AlwaysOn availability groups with a Listener. This configures everything you need for AlwaysOn availability groups automatically. For more information, see [SQL Server AlwaysOn Offering in Azure Management Portal Gallery](http://blogs.technet.com/b/dataplatforminsider/archive/2014/08/25/sql-server-alwayson-offering-in-microsoft-azure-portal-gallery.aspx). 
+>[AZURE.NOTE] In the Azure Management Portal, there is a new gallery setup for AlwaysOn availability groups with a Listener. This configures everything you need for AlwaysOn availability groups automatically. For more information, see [SQL Server AlwaysOn Offering in Azure classic portal Gallery](http://blogs.technet.com/b/dataplatforminsider/archive/2014/08/25/sql-server-alwayson-offering-in-microsoft-azure-portal-gallery.aspx). 
 
 At the end of the tutorial, your SQL Server AlwaysOn solution in Azure will consist of the following elements:
 
@@ -58,7 +58,7 @@ This tutorial assumes the following:
 
 >[AZURE.NOTE] If you are interested in using AlwaysOn availability groups with SharePoint, also see [Configure SQL Server 2012 AlwaysOn availability groups for SharePoint 2013](http://technet.microsoft.com/zh-cn/library/jj715261.aspx).
 
-In this tutorial you will use the Azure Management Portal to:
+In this tutorial you will use the Azure portal to:
 
 - Select the the new AlwaysOn Availabiltiy group template from the portal
 
@@ -72,8 +72,8 @@ In this tutorial you will use the Azure Management Portal to:
 
 Azure provides a gallery image for the entire solution. In order to locate the template: 
 
-1. 	Log in to the Azure Management Portal using your account.
-1.	On the Azure Management Portal click **+New.** The portal will open the New blade. 
+1. 	Log in to the Azure portal using your account.
+1.	On the Azure portal click **+New.** The portal will open the New blade. 
 1.	On the New blade search for **AlwaysOn**. 
 ![Find AlwaysOn Template](./media/virtual-machines-sql-server-alwayson-availability-groups-gui-arm/16-findalwayson.png)
 1.	In the search results locate **SQL Server AlwaysOn Cluster**. 
@@ -224,11 +224,11 @@ On the summary page Azure validates the settings. You can also download the temp
 
 This final blade contains **Terms of use**, and **privacy policy**. Review this information. When you are ready for Azure to start creating the virtual machines, and all of the other required resources for the AlwaysOn availability group, click **Create**.
  
-The Azure Management Portal will create the resource group and all of the resources. 
+The Azure portal will create the resource group and all of the resources. 
 
 ##Monitor deployment
 
-Monitor the deployment progress from the Azure Management Portal. An icon representing the deployment is automatically pinned to the Azure Management Portal dashboard.
+Monitor the deployment progress from the Azure portal. An icon representing the deployment is automatically pinned to the Azure portal dashboard.
 
 ![Azure Dashboard](./media/virtual-machines-sql-server-alwayson-availability-groups-gui-arm/11-deploydashboard.png)
 
@@ -238,7 +238,7 @@ The new instances of SQL Server are running on virtual machines that do not have
 
 To RDP to the primary domain controller, follow these steps:
 
-1.	From the Azure Management Portal dashboard very that the deployment has succeeded. 
+1.	From the Azure portal dashboard very that the deployment has succeeded. 
 
 1.	Click **Resources**.
 

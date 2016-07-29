@@ -8,7 +8,7 @@
    editor="tysonn" />
 <tags
 	ms.service="virtual-network"
-	ms.date="12/11/2015"
+	ms.date="03/15/2016"
 	wacn.date=""/>
 
 # Virtual Network FAQ
@@ -17,4 +17,4 @@
 
 ## Virtual Network Cross-premises Connectivity (VPNs)
 
-For the latest FAQ on virtual network VPNs, see the [VPN Gateway FAQ](/documentation/articles/vpn-gateway-vpn-faq).
+For the latest FAQ on virtual network VPNs, see the [VPN Gateway FAQ](/documentation/articles/vpn-gateway-vpn-faq/).

@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="12/29/2015"
+	ms.date="05/18/2016"
 	wacn.date=""/>
 
 
@@ -58,11 +58,13 @@ Microsoft provides the following utilities to work with Azure Blob storage:
 
 The Azure CLI is a cross-platform tool that allows you to manage Azure services. Use the following steps to upload data to Azure Blob storage:
 
-1. [Install and configure the Azure CLI for Mac, Linux and Windows](/documentation/articles/xplat-cli-install).
+[AZURE.INCLUDE [use-latest-version](../includes/hdinsight-use-latest-cli.md)]
+
+1. [Install and configure the Azure CLI for Mac, Linux and Windows](/documentation/articles/xplat-cli-install/).
 
 2. Open a command prompt, bash, or other shell, and use the following to authenticate to your Azure subscription.
 
-		azure login  -e AzureChinaCloud -u <your account>   
+		azure login
 
 	When prompted, enter the user name and password for your subscription.
 
@@ -98,14 +100,15 @@ The Azure CLI is a cross-platform tool that allows you to manage Azure services.
 
 ###<a id="powershell"></a>Azure PowerShell
 
-Azure PowerShell is a scripting environment that you can use to control and automate the deployment and management of your workloads in Azure. For information about configuring your workstation to run Azure PowerShell, see [Install and configure Azure PowerShell](/documentation/articles/powershell-install-configure).
+Azure PowerShell is a scripting environment that you can use to control and automate the deployment and management of your workloads in Azure. For information about configuring your workstation to run Azure PowerShell, see [Install and configure Azure PowerShell](/documentation/articles/powershell-install-configure/).
+
+[AZURE.INCLUDE [use-latest-version](../includes/hdinsight-use-latest-powershell.md)]
 
 **To upload a local file to Azure Blob storage**
 
-1. Open the Azure PowerShell console as instructed in [Install and configure Azure PowerShell](/documentation/articles/powershell-install-configure).
+1. Open the Azure PowerShell console as instructed in [Install and configure Azure PowerShell](/documentation/articles/powershell-install-configure/).
 2. Set the values of the first five variables in the following script:
 
-		$subscriptionName = "<AzureSubscriptionName>"
 		$resourceGroupName = "<AzureResourceGroupName>"
 		$storageAccountName = "<StorageAccountName>"
 		$containerName = "<ContainerName>"
@@ -113,19 +116,8 @@ Azure PowerShell is a scripting environment that you can use to control and auto
 		$fileName ="<LocalFileName>"
 		$blobName = "<BlobName>"
 
-		Switch-AzureMode -Name AzureResourceManager
-
-		Add-AzureAccount  -Environment AzureChinaCloud   
-		Select-AzureSubscription $subscriptionName
-
 		# Get the storage account key
-
-		$storageAccountKey = Get-AzureRmStorageAccountKey -ResourceGroupName $resourceGroupName -Name $storageAccountName | %{ $_.Key1 }
-
-
-		$storageaccountkey = get-azurestoragekey -ResourceGroupName $resourceGroupName -Name $storageAccountName | %{$_.Primary}
-
-
+		$storageAccountKey = (Get-AzureRmStorageAccountKey -ResourceGroupName $resourceGroupName -Name $storageAccountName)[0].Value
 		# Create the storage context object
 		$destContext = New-AzureStorageContext -StorageAccountName $storageAccountName -StorageAccountKey $storageaccountkey
 
@@ -153,11 +145,9 @@ The Hadoop command line is only useful for storing data into blob storage when t
 
 In order to use the Hadoop command, you must first connect to the headnode using one of the following methods:
 
-* **Windows-based HDInsight**: [Connect using Remote Desktop](/documentation/articles/hdinsight-administer-use-management-portal-v1#connect-to-hdinsight-clusters-by-using-rdp)
-
+* **Windows-based HDInsight**: [Connect using Remote Desktop](/documentation/articles/hdinsight-administer-use-management-portal-v1/#connect-to-hdinsight-clusters-by-using-rdp)
 
-* **Linux-based HDInsight**: Connect using SSH ([the SSH command](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix#connect-to-a-linux-based-hdinsight-cluster) or [PuTTY](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows#connect-to-a-linux-based-hdinsight-cluster))
-
+* **Linux-based HDInsight**: Connect using SSH ([the SSH command](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix/#connect-to-a-linux-based-hdinsight-cluster) or [PuTTY](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows/#connect-to-a-linux-based-hdinsight-cluster))
 
 Once connected, you can use the following syntax to upload a file to storage.
 
@@ -218,7 +208,6 @@ See [Mount Azure Blob Storage as Local Drive](http://blogs.msdn.com/b/bigdatasup
 
 ##Services
 
-
 ###Azure Data Factory
 
 The Azure Data Factory service is a fully managed service for composing data storage, data processing, and data movement services into streamlined, scalable, and reliable data production pipelines.
@@ -227,7 +216,6 @@ Azure Data Factory can be used to move data into Azure Blob storage, or to creat
 
 For more information, see the [Azure Data Factory documentation](/documentation/services/data-factory/).
 
-
 ###<a id="sqoop"></a>Apache Sqoop
 
 Sqoop is a tool designed to transfer data between Hadoop and relational databases. You can use it to import data from a relational database management system (RDBMS), such as SQL Server, MySQL, or Oracle into the Hadoop distributed file system (HDFS), transform the data in Hadoop with MapReduce or Hive, and then export the data back into an RDBMS.
@@ -259,31 +247,31 @@ Now that you understand how to get data into HDInsight, read the following artic
 
 
 
-[azure-management-portal]: https://manage.windowsazure.cn
+[azure-management-portal]: https://portal.azure.cn
 [azure-powershell]: http://msdn.microsoft.com/zh-cn/library/azure/jj152841.aspx
 
 [azure-storage-client-library]: /documentation/articles/storage-dotnet-how-to-use-blobs/
-[azure-create-storage-account]: /documentation/articles/storage-create-storage-account
-[azure-azcopy-download]: /documentation/articles/storage-use-azcopy
-[azure-azcopy]: /documentation/articles/storage-use-azcopy
+[azure-create-storage-account]: /documentation/articles/storage-create-storage-account/
+[azure-azcopy-download]: /documentation/articles/storage-use-azcopy/
+[azure-azcopy]: /documentation/articles/storage-use-azcopy/
 
-[hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop
+[hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop/
 
-[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
-[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
-[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage/
+[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1/
 
-[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
-[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
+[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive/
+[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig/
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1/
 
-[sqldatabase-create-configure]: /documentation/articles/sql-database-get-started
+[sqldatabase-create-configure]: /documentation/articles/sql-database-get-started/
 
 [apache-sqoop-guide]: http://sqoop.apache.org/docs/1.4.4/SqoopUserGuide.html
 
-[Powershell-install-configure]: /documentation/articles/powershell-install-configure
+[Powershell-install-configure]: /documentation/articles/powershell-install-configure/
 
-[azurecli]: /documentation/articles/xplat-cli-install
+[azurecli]: /documentation/articles/xplat-cli-install/
 
 
 [image-azure-storage-explorer]: ./media/hdinsight-upload-data/HDI.AzureStorageExplorer.png

@@ -9,15 +9,15 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="01/07/2016"
+	ms.date="07/01/2016"
 	wacn.date=""/>
 
 
 # Agile software development with Azure #
 
-In this tutorial, you will learn how to create high-scale complex applications with [Azure Web App](/home/features/web-site/) in a way that supports [agile software development](https://en.wikipedia.org/wiki/Agile_software_development). It assumes that you already know how to [deploy complex applications predictably in Azure](/documentation/articles/app-service-deploy-complex-application-predictably).
+In this tutorial, you will learn how to create high-scale complex applications with [Azure Web App](/home/features/web-site/) in a way that supports [agile software development](https://en.wikipedia.org/wiki/Agile_software_development). It assumes that you already know how to [deploy complex applications predictably in Azure](/documentation/articles/app-service-deploy-complex-application-predictably/).
 
-Limitations in technical processes can often stand in the way of successful implementation of agile methodologies. Azure with features such as [continuous publishing](/documentation/articles/web-sites-publish-source-control), [staging environments](/documentation/articles/web-sites-staged-publishing) (slots), and [monitoring](/documentation/articles/web-sites-monitor), when coupled wisely with the orchestration and management of deployment in [Azure Resource Manager](/documentation/articles/resource-group-overview), can be part of a great solution for developers who embrace agile software development.
+Limitations in technical processes can often stand in the way of successful implementation of agile methodologies. Azure with features such as [continuous publishing](/documentation/articles/web-sites-publish-source-control/), [staging environments](/documentation/articles/web-sites-staged-publishing/) (slots), and [monitoring](/documentation/articles/web-sites-monitor/), when coupled wisely with the orchestration and management of deployment in [Azure Resource Manager](/documentation/articles/resource-group-overview/), can be part of a great solution for developers who embrace agile software development.
 
 The following table is a short list of requirements associated with agile development, and how Azure services enables each of them.
 
@@ -39,10 +39,10 @@ You will walk through a typical dev-test-stage-production workflow in order to p
 
 To put the picture into words :
 
--	The deployment architecture is separated into three distinct environments (or [resource groups](/documentation/articles/resource-group-overview) in Azure), each with its own [App Service plan](/documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview), [scaling](/documentation/articles/web-sites-scale) settings, and SQL database. 
+-	The deployment architecture is separated into three distinct environments (or [resource groups](/documentation/articles/resource-group-overview/) in Azure), each with its own [App Service plan](/documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview/), [scaling](/documentation/articles/web-sites-scale/) settings, and SQL database. 
 -	Each environment can be managed separately. They can even exist in different subscriptions.
 -	Staging and production are implemented as two slots of the same Azure Web App. The master branch is setup for continuous integration with the staging slot.
--	When a commit to master branch is verified on the staging slot (with production data), the verified staging app is swapped into the production slot [with no downtime](/documentation/articles/web-sites-staged-publishing).
+-	When a commit to master branch is verified on the staging slot (with production data), the verified staging app is swapped into the production slot [with no downtime](/documentation/articles/web-sites-staged-publishing/).
 
 The production and staging environment is defined by the template at [*&lt;repository_root>*/ARMTemplates/ProdandStage.json](https://github.com/azure-appservice-samples/ToDoApp/blob/master/ARMTemplates/ProdAndStage.json).
 
@@ -59,7 +59,7 @@ You will also use the typical branching strategy, with code moving from the dev 
 -	Git Shell (installed with [GitHub for Windows](https://windows.github.com/)) - this enables you to run both the Git and PowerShell commands in the same session 
 -	Latest [Azure PowerShell](https://github.com/Azure/azure-powershell/releases/download/0.9.4-June2015/azure-powershell.0.9.4.msi) bits
 -	Basic understanding of the following:
-	-	[Azure Resource Manager](/documentation/articles/resource-group-overview) template deployment (also see [Deploy a complex application predictably in Azure](/documentation/articles/app-service-deploy-complex-application-predictably))
+	-	[Azure Resource Manager](/documentation/articles/resource-group-overview/) template deployment (also see [Deploy a complex application predictably in Azure](/documentation/articles/app-service-deploy-complex-application-predictably/))
 	-	[Git](http://git-scm.com/documentation)
 	-	[PowerShell](https://technet.microsoft.com/zh-cn/library/bb978526.aspx)
 
@@ -73,7 +73,7 @@ You will also use the typical branching strategy, with code moving from the dev 
 
 >[AZURE.NOTE] The script used in this tutorial will automatically configure continuous publishing from your GitHub repository. This requires that your GitHub credentials are already stored in Azure, otherwise the scripted deployment will fail when attempting to configure source control settings for the web apps. 
 >
->To store your GitHub credentials in Azure, create a web app in the [Azure Management Portal](https://manage.windowsazure.cn/) and [configure GitHub deployment](/documentation/articles/web-sites-publish-source-control#Step7). You only need to do this once. 
+>To store your GitHub credentials in Azure, create a web app in the [Azure Portal](https://portal.azure.cn/) and [configure GitHub deployment](/documentation/articles/web-sites-publish-source-control/#Step7). You only need to do this once. 
 
 In a typical DevOps scenario, you have an application that's running live in Azure, and you want to make changes to it through continuous publishing. In this scenario, you have a template that you developed, tested, and used to deploy the production environment. You will set it up in this section.
 
@@ -107,7 +107,7 @@ In a typical DevOps scenario, you have an application that's running live in Azu
 
 7.	When the script finishes, go back to browse to the frontend's address (http://ToDoApp*&lt;unique_string>*master.chinacloudsites.cn/) to see the application running in production.
  
-5.	Log into the [Azure Management Portal](https://manage.windowsazure.cn/) and take a look at what's created.
+5.	Log into the [Azure Portal](https://portal.azure.cn/) and take a look at what's created.
 
 	You should be able to see two web apps in the same resource group, one with the `Api` suffix in the name. If you look at the resource group view, you will also see the SQL Database and server, the App Service plan, and the staging slots for the web apps. Browse through the different resources and compare them with *&lt;repository_root>*\ARMTemplates\ProdAndStage.json to see how they are configured in the template.
 
@@ -261,19 +261,19 @@ Because you have purposely architected your dev and test environments to be self
 
 ## Summary ##
 
-Agile software development is a must-have for many companies who want to adopt Azure as their application platform. In this tutorial, you have learned how to create and tear down exact replicas or near replicas of the production environment with ease, even for complex applications. You have also learned how to leverage this ability to create a development process that can build and test every single commit in Azure. This tutorial has hopefully shown you how you can best use Azure and Azure Resource Manager together to create a DevOps solution that caters to agile methodologies. Next, you can build on this scenario by performing advanced DevOps techniques such as [testing in production](/documentation/articles/app-service-web-test-in-production-get-start). For a common testing-in-production scenario, see [Flighting deployment (beta testing) in Azure Web App](/documentation/articles/app-service-web-test-in-production-controlled-test-flight).
+Agile software development is a must-have for many companies who want to adopt Azure as their application platform. In this tutorial, you have learned how to create and tear down exact replicas or near replicas of the production environment with ease, even for complex applications. You have also learned how to leverage this ability to create a development process that can build and test every single commit in Azure. This tutorial has hopefully shown you how you can best use Azure and Azure Resource Manager together to create a DevOps solution that caters to agile methodologies. Next, you can build on this scenario by performing advanced DevOps techniques such as [testing in production](/documentation/articles/app-service-web-test-in-production-get-start/). For a common testing-in-production scenario, see [Flighting deployment (beta testing) in Azure Web App](/documentation/articles/app-service-web-test-in-production-controlled-test-flight/).
 
 ## More resources ##
 
--	[Deploy a complex application predictably in Azure](/documentation/articles/app-service-deploy-complex-application-predictably)
+-	[Deploy a complex application predictably in Azure](/documentation/articles/app-service-deploy-complex-application-predictably/)
 -	[Agile Development in Practice: Tips and Tricks for Modernized Development Cycle](http://channel9.msdn.com/Events/Ignite/2015/BRK3707)
 -	[Advanced deployment strategies for Azure Web Apps using Resource Manager templates](http://channel9.msdn.com/Events/Build/2015/2-620)
--	[Authoring Azure Resource Manager Templates](/documentation/articles/resource-group-authoring-templates)
+-	[Authoring Azure Resource Manager Templates](/documentation/articles/resource-group-authoring-templates/)
 -	[JSONLint - The JSON Validator](http://jsonlint.com/)
 -	[ARMClient - Set up GitHub publishing to site](https://github.com/projectKudu/ARMClient/wiki/Setup-GitHub-publishing-to-Site)
 -	[Git Branching - Basic Branching and Merging](http://www.git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging)
 -	[David Ebbo's Blog](http://blog.davidebbo.com/)
--	[Azure PowerShell](/documentation/articles/powershell-install-configure)
--	[Azure Cross-Platform Command-Line Tools](/documentation/articles/xplat-cli-install)
+-	[Azure PowerShell](/documentation/articles/powershell-install-configure/)
+-	[Azure Cross-Platform Command-Line Tools](/documentation/articles/xplat-cli-install/)
 -	[Create or edit users in Azure AD](https://msdn.microsoft.com/zh-cn/library/azure/hh967632.aspx#BKMK_1)
 -	[Project Kudu Wiki](https://github.com/projectkudu/kudu/wiki)

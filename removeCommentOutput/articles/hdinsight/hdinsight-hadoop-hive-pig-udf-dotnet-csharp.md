@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="02/05/2016"
+	ms.date="07/12/2016"
 	wacn.date=""/>
 
 
@@ -22,7 +22,7 @@ In this document, learn how to use C# with Hive and Pig.
 
 ##Prerequisites
 
-* Windows 7, Windows 8, or Windows 8.1.
+* Windows 7 or newer.
 
 * Visual Studio with the following versions:
 
@@ -30,11 +30,11 @@ In this document, learn how to use C# with Hive and Pig.
 
 	* Visual Studio 2013 Community/Professional/Premium/Ultimate with [Update 4](https://www.microsoft.com/download/details.aspx?id=44921)
 
-	* Visual Studio 2015 Preview
+	* Visual Studio 2015
 
-* Hadoop on HDInsight cluster - see [Provision an HDInsight cluster](/documentation/articles/hdinsight-provision-clusters-v1) for steps to create a cluster
+* Hadoop on HDInsight cluster - see [Provision an HDInsight cluster](/documentation/articles/hdinsight-provision-clusters-v1/) for steps to create a cluster
 
-* Hadoop Tools for Visual Studio. See [Get started using HDInsight Hadoop Tools for Visual Studio](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started) for steps on installing and configuring the tools.
+* Hadoop Tools for Visual Studio. See [Get started using HDInsight Hadoop Tools for Visual Studio](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/) for steps on installing and configuring the tools.
 
 ##.NET on HDInsight
 
@@ -190,7 +190,7 @@ Since Hive and Pig need to invoke the application at run time, the **Console App
 
 ###Upload the application
 
-1. Pig streaming expects the application to be local on the cluster file system. Enable Remote Desktop for the HDInsight cluster, and then connect to it by following the instructions at [Connect to HDInsight clusters using RDP](/documentation/articles/hdinsight-administer-use-management-portal-v1#rdp).
+1. Pig streaming expects the application to be local on the cluster file system. Enable Remote Desktop for the HDInsight cluster, and then connect to it by following the instructions at [Connect to HDInsight clusters using RDP](/documentation/articles/hdinsight-administer-use-management-portal-v1/#rdp).
 
 2. Once connected, copy **PigUDF.exe** from the **bin/debug** directory for the PigUDF project on your local machine, and paste it to the **%PIG_HOME%** directory on the cluster.
 
@@ -227,12 +227,12 @@ Since Hive and Pig need to invoke the application at run time, the **Console App
 
 ##Summary
 
-In this document, you have learned how to use a .NET Framework application from Hive and Pig on HDInsight. If you would like to learn how to use Python with Hive and Pig, see [Use Python with Hive and Pig in HDInsight](/documentation/articles/hdinsight-python).
+In this document, you have learned how to use a .NET Framework application from Hive and Pig on HDInsight. If you would like to learn how to use Python with Hive and Pig, see [Use Python with Hive and Pig in HDInsight](/documentation/articles/hdinsight-python/).
 
 For other ways to use Pig and Hive, and to learn about using MapReduce, see the following:
 
-* [Use Hive with HDInsight](/documentation/articles/hdinsight-use-hive)
+* [Use Hive with HDInsight](/documentation/articles/hdinsight-use-hive/)
 
-* [Use Pig with HDInsight](/documentation/articles/hdinsight-use-pig)
+* [Use Pig with HDInsight](/documentation/articles/hdinsight-use-pig/)
 
-* [Use MapReduce with HDInsight](/documentation/articles/hdinsight-use-mapreduce)
+* [Use MapReduce with HDInsight](/documentation/articles/hdinsight-use-mapreduce/)

@@ -4,26 +4,26 @@
 	services="redis-cache"
 	documentationCenter=""
 	authors="steved0x"
-	manager="dwrede"
+	manager="douge"
 	editor=""/>
 
 <tags
 	ms.service="cache"
-	ms.date="12/03/2015"
+	ms.date="05/31/2016"
 	wacn.date=""/>
 
 # How to use Azure Redis Cache with Java
 
 > [AZURE.SELECTOR]
-- [.Net](/documentation/articles/cache-dotnet-how-to-use-azure-redis-cache)
-- [Node.js](/documentation/articles/cache-nodejs-get-started)
-- [Java](/documentation/articles/cache-java-get-started)
-- [Python](/documentation/articles/cache-python-get-started)
+- [.NET](/documentation/articles/cache-dotnet-how-to-use-azure-redis-cache/)
+- [ASP.NET](/documentation/articles/cache-web-app-howto/)
+- [Node.js](/documentation/articles/cache-nodejs-get-started/)
+- [Java](/documentation/articles/cache-java-get-started/)
+- [Python](/documentation/articles/cache-python-get-started/)
 
 Azure Redis Cache gives you access to a dedicated Redis cache, managed by Microsoft. Your cache is accessible from any application within Azure.
 
 This topic shows you how to get started with Azure Redis Cache using Java.
-
 
 ## Prerequisites
 
@@ -31,29 +31,22 @@ This topic shows you how to get started with Azure Redis Cache using Java.
 
 This tutorial uses Jedis, but you can use any Java client listed at [http://redis.io/clients](http://redis.io/clients).
 
-
 ## Create a Redis cache on Azure
 
-In the [Azure Management Portal](https://manage.windowsazure.cn/), click **New**, **DATA SERVICE**, and select **Redis Cache**.
+[AZURE.INCLUDE [redis-cache-create](../includes/redis-cache-create.md)]
 
-  ![][1]
+## Retrieve the host name and access keys
 
-Enter a DNS hostname. It will have the form `<name>.redis.cache.chinacloudapi.cn`. Click **Create**.
-
-  ![][2]
-
-
-Once you create the cache, click on it in the Azure Management Portal to view the cache settings. Click the link under **Keys** and copy the primary key. You need this to authenticate requests.
-
-  ![][4]
+[AZURE.INCLUDE [redis-cache-create](../includes/redis-cache-access-keys.md)]
 
 
 ## Enable the non-SSL endpoint
 
+Some Redis clients don't support SSL, and by default the [non-SSL port is disabled for new Azure Redis Cache instances](/documentation/articles/cache-configure/#access-ports). At the time of this writing, the [Jedis](https://github.com/xetorthio/jedis) client doesn't support SSL. 
 
-Click the link under **Ports**, and click **No** for "Allow access only via SSL". This enables the non-SSL port for the cache. The Jedis client currently does not support SSL.
+[AZURE.INCLUDE [redis-cache-create](../includes/redis-cache-non-ssl-port.md)]
 
-  ![][3]
+
 
 
 ## Add something to the cache and retrieve it
@@ -62,7 +55,7 @@ Click the link under **Ports**, and click **No** for "Allow access only via SSL"
 	import redis.clients.jedis.Jedis;
 	import redis.clients.jedis.JedisShardInfo;
 
-	/* Make sure you turn on non-SSL port in Azure Redis using the Configuration section in the Azure Management Portal */
+	/* Make sure you turn on non-SSL port in Azure Redis using the Configuration section in the Azure Portal */
 	public class App
 	{
 	  public static void main( String[] args )
@@ -82,9 +75,3 @@ Click the link under **Ports**, and click **No** for "Allow access only via SSL"
 - [Enable cache diagnostics](https://msdn.microsoft.com/zh-cn/library/azure/dn763945.aspx#EnableDiagnostics) so you can [monitor](https://msdn.microsoft.com/zh-cn/library/azure/dn763945.aspx) the health of your cache.
 - Read the official [Redis documentation](http://redis.io/documentation).
 
-
-<!--Image references-->
-[1]: ./media/cache-java-get-started/cache01.png
-[2]: ./media/cache-java-get-started/cache02.png
-[3]: ./media/cache-java-get-started/cache03.png
-[4]: ./media/cache-java-get-started/cache04.png

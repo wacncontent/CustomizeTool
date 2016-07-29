@@ -1,3 +1,5 @@
+<!-- deleted in Global -->
+
 <properties title="Creating an Oracle WebLogic Server 12c cluster in Azure" pageTitle="Creating an Oracle WebLogic Server 12c cluster in Azure" description="Step through an example of creating an Oracle WebLogic Server 12c cluster in Azure." services="virtual-machines" authors="bbenz" documentationCenter=""/>
 <tags ms.service="virtual-machines"  ms.date="06/22/2015" wacn.date="" />
 #Creating an Oracle WebLogic Server 12c cluster in Azure
@@ -300,7 +302,7 @@ For example:
 
 Now that you've set up your cluster running Oracle WebLogic Server, see the following topics for additional information.
 
-- [Oracle Virtual Machine images - Miscellaneous Considerations](/documentation/articles/virtual-machines-miscellaneous-considerations-oracle-virtual-machine-images)
+- [Oracle Virtual Machine images - Miscellaneous Considerations](/documentation/articles/virtual-machines-windows-classic-oracle-considerations/)
 
 - [Oracle WebLogic Server Product Documentation](http://www.oracle.com/technetwork/middleware/weblogic/documentation/index.html)
 

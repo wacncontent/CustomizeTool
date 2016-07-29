@@ -10,12 +10,12 @@
 
 <tags
 	ms.service="virtual-network"
-	ms.date="02/03/2016"
+	ms.date="03/28/2016"
 	wacn.date=""/>
 
 # Set up a simulated hybrid cloud environment for testing (classic deployment mode)
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] [Resource Manager model](/d
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the classic deployment model. Microsoft recommends that most new deployments use the [Resource Manager model](/documentation/articles/virtual-machines-setup-simulated-hybrid-cloud-environment-testing).
 
 This article steps you through creating a simulated hybrid cloud environment with Azure for testing using two separate Azure virtual networks. Use this configuration as an alternative to 
 [Set up a hybrid cloud environment for testing](/documentation/articles/virtual-networks-setup-hybrid-cloud-environment-testing) when you do not have a direct Internet connection and an available public IP address. Here is the resulting configuration.
@@ -41,14 +41,14 @@ There are four major phases to setting up this hybrid cloud test environment:
 3.	Create the VNet-to-VNet VPN connection.
 4.	Configure DC2. 
 
-If you don't already have an Azure subscription, you can sign up for a trial at [Try Azure](/pricing/1rmb-trial/). If you have an MSDN Subscri
+If you don't already have an Azure subscription, you can sign up for a trial at [Try Azure](/pricing/1rmb-trial/).
 
-o>[AZURE.NOTE] Virtual machines and virtual network gateways in Azure incur an ongoing monetary cost when they are running. This cost is billed against your trial, MSDN subscription, or paid subscription. To reduce the costs of running this test environment when you are not using it, see [Minimizing the ongoing costs of this environment](#costs) in this article for more information.
+>[AZURE.NOTE] Virtual machines and virtual network gateways in Azure incur an ongoing monetary cost when they are running. This cost is billed against your trial or paid subscription. To reduce the costs of running this test environment when you are not using it, see [Minimizing the ongoing costs of this environment](#costs) in this article for more information.
 
 
 ## Phase 1: Configure the TestLab virtual network
 
-Use the instructions in the [Base Configuration Test Environment](/documentation/articles/virtual-machines-base-configuration-test-environment) to configure the DC1, APP1, and CLIENT1 computers in an Azure virtual network named TestLab. 
+Use the instructions in the [Base Configuration Test Environment](/documentation/articles/virtual-machines-windows-classic-test-config-env) to configure the DC1, APP1, and CLIENT1 computers in an Azure virtual network named TestLab. 
 
 From the Azure Management Portal on your local computer, connect to DC1 with the CORP\User1 credentials. To configure the CORP domain so that computers and users use their local domain controller for authentication, run these commands from an administrator-level Windows PowerShell command prompt.
 
@@ -222,7 +222,7 @@ Your simulated hybrid cloud environment is now ready for testing.
 
 ## <a id="costs"></a>Minimizing the ongoing costs of this environment
 
-To minimize the costs of running the virtual machines in this environment, perform your needed testing and demonstration as quickly as possible and then delete them or shut down the virtual machines when you are not using them. For example, you could use Azure automation and a runbook to automatically shut down the virtual machines in the TestLab and Test_VNET virtual networks at the end of each business day. For more information, see [Get started with Azure Automation](/documentation/articles/automation-create-runbook-from-samples). When you start the virtual machines on the Corpnet subnet again, start DC1 first.
+To minimize the costs of running the virtual machines in this environment, perform your needed testing and demonstration as quickly as possible and then delete them or shut down the virtual machines when you are not using them. For example, you could use Azure automation and a runbook to automatically shut down the virtual machines in the TestLab and Test_VNET virtual networks at the end of each business day. When you start the virtual machines on the Corpnet subnet again, start DC1 first.
 
 An Azure VPN gateway is implemented as a set of two Azure virtual machines that incur an ongoing monetary cost. For the details, see [Pricing - Virtual Network](/home/features/networking/#price). To minimize the costs of the two VPN gateways (one for TestLab and one for TestVNET), create the test environment and perform your needed testing and demonstration as quickly as possible or delete the gateways with these steps.
  

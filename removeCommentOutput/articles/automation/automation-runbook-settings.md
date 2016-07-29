@@ -8,7 +8,7 @@
    editor="tysonn" />
 <tags
 	ms.service="automation"
-	ms.date="10/22/2015"
+	ms.date="02/09/2016"
 	wacn.date=""/>
 
 # Runbook settings
@@ -53,5 +53,5 @@ The following sample commands show how to set the properties for a runbook. This
 	Set-AzureAutomationRunbook -AutomationAccountName $automationAccountName -Name $runbookName -LogVerbose $true -Tags $tags
 
 ## Related articles
-- [Runbook Output and Messages](/documentation/articles/automation-runbook-output-and-messages) 
-- [Creating or Importing a Runbook](/documentation/articles/automation-creating-importing-runbook) 
+- [Runbook Output and Messages](/documentation/articles/automation-runbook-output-and-messages/) 
+- [Creating or Importing a Runbook](/documentation/articles/automation-creating-importing-runbook/)

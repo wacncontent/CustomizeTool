@@ -1,6 +1,8 @@
+<!-- rename to virtual-machines-windows-classic-createportal -->
+
 <properties
 	pageTitle="Create a custom Windows virtual machine | Azure"
-	description="Learn how to create a custom Windows virtual machine from the Azure Management Portal using the classic deployment model."
+	description="Learn how to create a custom Windows virtual machine from the Azure Classic Management Portal using the classic deployment model."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="cynthn"
@@ -17,7 +19,7 @@
 # Create a custom virtual machine running Windows
 
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]  Resource Manager model. 
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager model.
  
 
 
@@ -29,7 +31,7 @@ A *custom* virtual machine simply means a virtual machine that you create using 
 - Adding the virtual machine to an existing Storage account.
 - Adding the virtual machine to an availability set.
 
-> [AZURE.IMPORTANT] If you want your virtual machine to use a virtual network so you can connect to it directly by host name or set up cross-premises connections, make sure that you specify the virtual network when you create the virtual machine. A virtual machine can be configured to join a virtual network only when you create the virtual machine. For details on virtual networks, see [Azure Virtual Network overview](/documentation/articles/virtual-networks-overview).
+> [AZURE.IMPORTANT] If you want your virtual machine to use a virtual network so you can connect to it directly by host name or set up cross-premises connections, make sure that you specify the virtual network when you create the virtual machine. A virtual machine can be configured to join a virtual network only when you create the virtual machine. For details on virtual networks, see [Azure Virtual Network overview](/documentation/articles/virtual-networks-overview/).
 
 
 ## To create the virtual machine

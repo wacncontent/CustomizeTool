@@ -1,4 +1,4 @@
-<!-- not suitable for Mooncake -->
+<!-- rename to virtual-machines-windows-ps-sp-intranet-ph4 -->
 
 <properties
 	pageTitle="SharePoint Server 2013 farm Phase 4 | Azure"
@@ -17,11 +17,11 @@
 
 # SharePoint Intranet Farm Workload Phase 4: Configure SharePoint servers
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the Resource Manager deployment model, which Azure recommends for most new deployments instead of the classic deployment model.
 
 In this phase of deploying an intranet-only SharePoint 2013 farm with SQL Server AlwaysOn Availability Groups in Azure infrastructure services, you build out the application and web tiers of the SharePoint farm and create the farm by using the SharePoint Configuration Wizard.
 
-You must complete this phase before moving on to [Phase 5](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase5). See [Deploying SharePoint with SQL Server AlwaysOn Availability Groups in Azure](/documentation/articles/virtual-machines-workload-intranet-sharepoint-overview) for all of the phases.
+You must complete this phase before moving on to [Phase 5](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase5/). See [Deploying SharePoint with SQL Server AlwaysOn Availability Groups in Azure](/documentation/articles/virtual-machines-workload-intranet-sharepoint-overview/) for all of the phases.
 
 ## Create the SharePoint server virtual machines in Azure
 
@@ -39,7 +39,7 @@ Specify the values for the variables, removing the < and > characters. Note that
 - Table ST, for your storage accounts
 - Table A, for your availability sets
 
-Recall that you defined Table M in [Phase 2: Configure domain controllers](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase2) and Tables V, S, ST, and A in [Phase 1: Configure Azure](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase1).
+Recall that you defined Table M in [Phase 2: Configure domain controllers](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase2/) and Tables V, S, ST, and A in [Phase 1: Configure Azure](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase1/).
 
 When you have supplied all the proper values, run the resulting block at the Azure PowerShell command prompt.
 
@@ -139,7 +139,7 @@ Use the following block of Azure PowerShell commands to create the virtual machi
 	$vm=Set-AzureRMVMOSDisk -VM $vm -Name "OSDisk" -VhdUri $osDiskUri -CreateOption fromImage
 	New-AzureRMVM -ResourceGroupName $rgName -Location $locName -VM $vm
 
-> [AZURE.NOTE] Because these virtual machines are for an intranet application, they are not assigned a public IP address or a DNS domain name label and exposed to the Internet. However, this also means that you cannot connect to them from the Azure Management Portal. The **Connect** button will be unavailable when you view the properties of the virtual machine.
+> [AZURE.NOTE] Because these virtual machines are for an intranet application, they are not assigned a public IP address or a DNS domain name label and exposed to the Internet. However, this also means that you cannot connect to them from the Azure portal. The **Connect** button will be unavailable when you view the properties of the virtual machine.
 
 Use the remote desktop client of your choice and create a remote desktop connection to each virtual machine. Use its intranet DNS or computer name and the credentials of the local administrator account.
 
@@ -151,9 +151,9 @@ Next, for each virtual machine, join them to the appropriate Active Directory do
 
 Note that you must supply domain account credentials after entering the **Add-Computer** command.
 
-After they restart, use the [Logging on to a virtual machine with a Remote Desktop connection procedure](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase2#logon) four times, once for each SharePoint server, to log on by using the [Domain]\sp_farm_db account credentials. You created these credentials in [Phase 2: Configure domain controllers](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase2).
+After they restart, use the [Logging on to a virtual machine with a Remote Desktop connection procedure](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase2/#logon) four times, once for each SharePoint server, to log on by using the [Domain]\sp_farm_db account credentials. You created these credentials in [Phase 2: Configure domain controllers](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase2/).
 
-Use the [To test connectivity procedure](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase2#testconn) four times, once for each SharePoint server, to test connectivity to locations on your organization network.
+Use the [To test connectivity procedure](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase2/#testconn) four times, once for each SharePoint server, to test connectivity to locations on your organization network.
 
 > [AZURE.NOTE] The SharePoint servers are created from the SharePoint Server 2013 Trial image. You need to convert the installation to use a Retail or Volume License key for either the Standard or Enterprise edition of SharePoint Server 2013. 
 
@@ -167,7 +167,7 @@ Use these steps to configure the first SharePoint server in the farm:
 4.	On the **Connect to a server farm** page, select **Create a new server farm**, and then click **Next**.
 5.	On the **Specify Configuration Database Settings** page:
  - In **Database server**, type the name of the primary database server.
- - In **Username**, type [Domain]**\sp_farm_db** (created in [Phase 2: Configure domain controllers](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase2)). Recall that the sp_farm_db account has sysadmin privileges on the database server.
+ - In **Username**, type [Domain]**\sp_farm_db** (created in [Phase 2: Configure domain controllers](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase2/)). Recall that the sp_farm_db account has sysadmin privileges on the database server.
  - In **Password**, type the sp_farm_db account password.
 6.	Click **Next**.
 7.	On the **Specify Farm Security Settings** page, type a passphrase twice. Record the passphrase and store it in a secure location for future reference. Click **Next**.
@@ -201,4 +201,4 @@ This is the configuration that results from the successful completion of this ph
 
 ## Next step
 
-- Use [Phase 5](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase5) to continue with the configuration of this workload.
+- Use [Phase 5](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase5/) to continue with the configuration of this workload.

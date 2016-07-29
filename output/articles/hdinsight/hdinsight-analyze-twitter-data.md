@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
 	pageTitle="Analyze Twitter data with Hadoop in HDInsight | Azure"
 	description="Learn how to use Hive to analyze Twitter data on Hadoop in HDInsight to find the usage frequency of a particular word."
@@ -11,7 +9,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="12/02/2015"
+	ms.date="05/18/2016"
 	wacn.date=""/>
 
 # Analyze Twitter data using Hive in HDInsight
@@ -22,7 +20,7 @@ In this tutorial, you will get tweets by using a Twitter streaming API, and then
 on Azure HDInsight to get a list of Twitter users who sent the most tweets that contained a certain word.
 
 > [AZURE.NOTE] The steps in this document require a Windows-based HDInsight cluster. For steps specific 
-to a Linux-based cluster, see [Analyze Twitter data using Hive in HDInsight (Linux)](/documentation/articles/hdinsight-analyze-twitter-data-linux).
+to a Linux-based cluster, see [Analyze Twitter data using Hive in HDInsight (Linux)](/documentation/articles/hdinsight-analyze-twitter-data-linux/).
 
 
 
@@ -32,16 +30,19 @@ to a Linux-based cluster, see [Analyze Twitter data using Hive in HDInsight (Lin
 
 Before you begin this tutorial, you must have the following:
 
-- **A workstation** with Azure PowerShell installed and configured. See [Install and use Azure PowerShell](/documentation/articles/powershell-install-configure). To execute Windows PowerShell scripts, you must run Azure PowerShell as administrator and set the execution policy to *RemoteSigned*. See [Run Windows PowerShell scripts][powershell-script].
+- **A workstation** with Azure PowerShell installed and configured. 
 
-	Before running Windows PowerShell scripts, make sure you are connected to your Azure subscription by using the following cmdlet:
+    To execute Windows PowerShell scripts, you must run Azure PowerShell as administrator and set the execution policy to *RemoteSigned*. See [Run Windows PowerShell scripts][powershell-script].
 
-		Login-AzureRmAccount
+    Before running Windows PowerShell scripts, make sure you are connected to your Azure subscription by using the following cmdlet:
 
-	If you have multiple Azure subscriptions, use the following cmdlet to set the current subscription:
+        Login-AzureRmAccount
 
-		Select-AzureRmSubscription -SubscriptionID <Azure Subscription ID>
+    If you have multiple Azure subscriptions, use the following cmdlet to set the current subscription:
 
+        Select-AzureRmSubscription -SubscriptionID <Azure Subscription ID>
+
+	[AZURE.INCLUDE [upgrade-powershell](../includes/hdinsight-use-latest-powershell.md)]
 
 - **An Azure HDInsight cluster**. For instructions on cluster provisioning, see [Get started using HDInsight][hdinsight-get-started] or [Provision HDInsight clusters] [hdinsight-provision]. You will need the cluster name later in the tutorial.
 
@@ -114,7 +115,7 @@ In this tutorial, you will use Windows PowerShell to make the web service call. 
 
 		#region - Connect to Azure subscription
 		Write-Host "`nConnecting to your Azure subscription ..." -ForegroundColor Green
-		Add-AzureAccount
+		Login-AzureRmAccount
 		#endregion
 
 		#region - Create a block blob object for writing tweets into Blob storage
@@ -127,7 +128,7 @@ In this tutorial, you will use Windows PowerShell to make the web service call. 
 		Write-Host "`tThe blob container name is $containerName." -ForegroundColor Yellow
 
 		Write-Host "Define the Azure storage connection string ..." -ForegroundColor Green
-		$storageAccountKey = Get-AzureRmStorageAccountKey -ResourceGroupName $resourceGroupName -Name $storageAccountName |  %{ $_.Key1 }
+		$storageAccountKey = (Get-AzureRmStorageAccountKey -ResourceGroupName $resourceGroupName -Name $storageAccountName)[0].Value
 		$storageConnectionString = "DefaultEndpointsProtocol=https;AccountName=$storageAccountName;AccountKey=$storageAccountKey"
 		Write-Host "`tThe connection string is $storageConnectionString." -ForegroundColor Yellow
 
@@ -406,7 +407,7 @@ The HiveQL script will perform the following:
 		Write-Host "`tThe blob container name is $defaultBlobContainerName." -ForegroundColor Yellow
 		
 		Write-Host "Define the connection string ..." -ForegroundColor Green
-		$defaultStorageAccountKey = Get-AzureRmStorageAccountKey -ResourceGroupName $resourceGroupName -Name $defaultStorageAccountName | %{$_.key1}
+		$defaultStorageAccountKey = (Get-AzureRmStorageAccountKey -ResourceGroupName $resourceGroupName -Name $defaultStorageAccountName)[0].Value
 		$storageConnectionString = "DefaultEndpointsProtocol=https;AccountName=$defaultStorageAccountName;AccountKey=$defaultStorageAccountKey"
 		
 		Write-Host "Create block blob objects referencing the hql script file" -ForegroundColor Green
@@ -473,7 +474,7 @@ Use the following Windows PowerShell script to run the Hive script. You will nee
 	$myCluster = Get-AzureRmHDInsightCluster -ClusterName $clusterName
 	$resourceGroupName = $myCluster.ResourceGroup
 	$defaultStorageAccountName = $myCluster.DefaultStorageAccount.Replace(".blob.core.chinacloudapi.cn", "")
-	$defaultStorageAccountKey = Get-AzureRmStorageAccountKey -ResourceGroupName $resourceGroupName -Name $defaultStorageAccountName |  %{ $_.Key1 }
+	$defaultStorageAccountKey = (Get-AzureRmStorageAccountKey -ResourceGroupName $resourceGroupName -Name $defaultStorageAccountName)[0].Value
 	
 	$defaultBlobContainerName = $myCluster.DefaultStorageContainer
 	
@@ -490,7 +491,7 @@ Use the following Windows PowerShell script to run the Hive script. You will nee
 	
 	Write-Host "Display the standard error log ... " -ForegroundColor Green
 	$jobID = ($response | Select-String job_ | Select-Object -First 1) -replace '\s*$' -replace '.*\s'
-	Get-AzureRmHDInsightJobOutput -ClusterName $clusterName -JobId $jobID -StandardError
+	Get-AzureRmHDInsightJobOutput -ClusterName $clusterName -JobId $jobID -DefaultContainer $defaultBlobContainerName -DefaultStorageAccountName $defaultStorageAccountName -DefaultStorageAccountKey $defaultStorageAccountKey -HttpCredential $httpCredential
 	#endregion
 
 ### Check the results
@@ -508,14 +509,14 @@ Use the following Windows PowerShell script to check the Hive job output. You wi
 	$myCluster = Get-AzureRmHDInsightCluster -ClusterName $clusterName
 	$resourceGroupName = $myCluster.ResourceGroup
 	$defaultStorageAccountName = $myCluster.DefaultStorageAccount.Replace(".blob.core.chinacloudapi.cn", "")
-	$defaultStorageAccountKey = Get-AzureRmStorageAccountKey -ResourceGroupName $resourceGroupName -Name $defaultStorageAccountName |  %{ $_.Key1 }
+	$defaultStorageAccountKey = (Get-AzureRmStorageAccountKey -ResourceGroupName $resourceGroupName -Name $defaultStorageAccountName)[0].Value
 	$defaultBlobContainerName = $myCluster.DefaultStorageContainer
 	
 	Write-Host "`tThe storage account name is $defaultStorageAccountName." -ForegroundColor Yellow
 	Write-Host "`tThe blob container name is $defaultBlobContainerName." -ForegroundColor Yellow
 	
 	Write-Host "Create a context object ... " -ForegroundColor Green
-	$storageContext = New-AzureStorageContext -StorageAccountName $defaultStorageAccountName -StorageAccountKey $storageAccountKey  
+	$storageContext = New-AzureStorageContext -StorageAccountName $defaultStorageAccountName -StorageAccountKey $defaultStorageAccountKey  
 	#endregion
 	
 	#region - Download blob and display blob
@@ -553,16 +554,16 @@ In this tutorial we have seen how to transform an unstructured JSON dataset into
 [twitter-statuses-filter]: https://dev.twitter.com/docs/api/1.1/post/statuses/filter
 
 [powershell-start]: http://technet.microsoft.com/zh-cn/library/hh847889.aspx
-[powershell-install]: /documentation/articles/powershell-install-configure
+[powershell-install]: /documentation/articles/powershell-install-configure/
 [powershell-script]: http://technet.microsoft.com/zh-cn/library/ee176961.aspx
 
 
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
-[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
-[hdinsight-storage-powershell]: /documentation/articles/hdinsight-hadoop-use-blob-storage#powershell
-[hdinsight-analyze-flight-delay-data]: /documentation/articles/hdinsight-analyze-flight-delay-data
-[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
-[hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop
-[hdinsight-power-query]: /documentation/articles/hdinsight-connect-excel-power-query
-[hdinsight-hive-odbc]: /documentation/articles/hdinsight-connect-excel-hive-ODBC-driver
-[hdinsight-hbase-twitter-sentiment]: /documentation/articles/hdinsight-hbase-analyze-twitter-sentiment
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1/
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1/
+[hdinsight-storage-powershell]: /documentation/articles/hdinsight-hadoop-use-blob-storage/#powershell
+[hdinsight-analyze-flight-delay-data]: /documentation/articles/hdinsight-analyze-flight-delay-data/
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage/
+[hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop/
+[hdinsight-power-query]: /documentation/articles/hdinsight-connect-excel-power-query/
+[hdinsight-hive-odbc]: /documentation/articles/hdinsight-connect-excel-hive-ODBC-driver/
+[hdinsight-hbase-twitter-sentiment]: /documentation/articles/hdinsight-hbase-analyze-twitter-sentiment/

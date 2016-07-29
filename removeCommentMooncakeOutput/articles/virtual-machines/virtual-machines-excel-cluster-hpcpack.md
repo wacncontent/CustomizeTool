@@ -1,3 +1,5 @@
+<!-- rename to virtual-machines-windows-excel-cluster-hpcpack -->
+
 <properties
  pageTitle="HPC Pack cluster for Excel and SOA | Azure"
  description="Get started with an HPC Pack cluster to run Excel and SOA workloads, using the Resource Manager deployment model."
@@ -17,7 +19,7 @@
 
 This article shows you how to deploy an HPC Pack cluster on Azure infrastructure services (IaaS) using an Azure quickstart template or an Azure PowerShell deployment script. You'll use Azure gallery VM images designed to run Microsoft Excel or service-oriented architecture (SOA) workloads with HPC Pack. You can use the cluster to run simple Excel HPC and SOA services from an on-premises client computer. The Excel HPC services include Excel workbook offloading and Excel user-defined functions, or UDFs.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the Resource Manager deployment model, which Azure recommends for most new deployments instead of the classic deployment model.
 
 
 At a high level the following diagram shows the HPC Pack cluster you'll create.
@@ -30,10 +32,60 @@ At a high level the following diagram shows the HPC Pack cluster you'll create.
 
 * **Azure subscription** - If you don't have an account, you can create a trial account in just a couple of minutes. For details, see [Azure Trial](/pricing/1rmb-trial/).
 
-* **Cores quota** - You might need to increase the quota of cores, especially if you choose to deploy several cluster nodes with multicore VM sizes. If you are using an Azure quickstart template, be aware that the cores quota in Resource Manager is per Azure region, and you might need to increase the quota in a specific region. See [Azure subscription limits, quotas, and constraints](/documentation/articles/azure-subscription-service-limits).
+* **Cores quota** - You might need to increase the quota of cores, especially if you choose to deploy several cluster nodes with multicore VM sizes. If you are using an Azure quickstart template, be aware that the cores quota in Resource Manager is per Azure region, and you might need to increase the quota in a specific region. See [Azure subscription limits, quotas, and constraints](/documentation/articles/azure-subscription-service-limits/). To increase a quota, you can [open an online customer support request](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/) at no charge.
 
 
 ## Step 1. Set up an HPC Pack cluster in Azure
+
+We'll show you two ways to set up the cluster: first, using an Azure quickstart template and the Azure portal; and second, using an Azure PowerShell deployment script.
+
+
+### Use a quickstart template
+Use an Azure quickstart template to quickly and easily deploy an HPC Pack cluster in the Azure portal. When you open the template in the Portal Preview, you get a simple UI where you enter the settings for your cluster. Here are the steps.
+
+1. Visit the [Create HPC Cluster template page on GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/create-hpc-cluster). If you want, review information about the template and the source code.
+
+2. Click **Deploy to Azure** to start a deployment with the template in the Azure portal.
+
+    ![Deploy template to Azure][github]
+
+3. In the Portal Preview, follow these steps to enter the parameters for the HPC cluster template.
+
+    a. On the **Edit Template** page, click **Save**.
+
+    ![Save the template][template]
+
+    b. On the **Parameters** page, enter values for the template parameters. (Click the icon next to each setting for help information.) Sample values are shown in the following screen. This example will create a new HPC Pack cluster named *hpc01* in the *hpc.local* domain consisting of a head node and 2 compute nodes. The compute nodes will be created from an HPC Pack VM image including Microsoft Excel.
+
+    ![Enter parameters][parameters]
+
+    >[AZURE.NOTE]The head node VM will be created automatically from the [latest Marketplace  image](https://azure.microsoft.com/marketplace/partners/microsoft/hpcpack2012r2onwindowsserver2012r2/) of HPC Pack 2012 R2 on Windows Server 2012 R2. Currently the image is based on HPC Pack 2012 R2 Update 3.
+    >
+    >Compute node VMs will be created from the latest image of the selected compute node family. Select the **ComputeNode** option for the latest HPC Pack 2012 R2 Update 3 compute image for general purposes. Select **ComputeNodeWithExcel** option for the latest HPC Pack compute node image that includes an evaluation version of Microsoft Excel Professional Plus 2013. If you want to deploy a cluster for general SOA sessions or for Excel UDF offloading, choose the **ComputeNode** option (without Excel installed).
+    >
+    >When using  **ComputeNodeWithExcel** for production workloads, you'll need to provide a valid Excel license to activate Excel on the compute nodes. Otherwise, the evaluation version of Excel could be expired within 30 days, and running the Excel workbook would constantly fail with the COMExeption (0x800AC472). If this happens, you may log on the head node to clusrun "%ProgramFiles(x86)%\Microsoft Office\Office15\OSPPREARM.exe" on all Excel compute nodes via HPC Cluster Manager console to rearm Excel for another 30 days of evaluation time. The max rearm time for the grace period is 2, after that you may need to provide a valid Excel license.
+
+    c. Choose the subscription.
+
+    d. Create a new resource group for the cluster, such as *hpc01RG*.
+
+    e. Choose a location for the resource group, such as China East.
+
+    f. On the **Legal terms** page, review the terms. If you agree, click **Buy**.
+
+    g. When you are finished setting the values for the template, click **Create** .
+
+    ![Create the cluster][create]
+
+3.	When the deployment completes (it typically takes around 30 minutes), export the cluster certificate file from the cluster head node. In a later step this public certificate will be imported on the client computer to provide the server-side authentication for secure HTTP binding.
+
+    a. Connect to the head node by Remote Desktop from the Azure portal.
+
+     ![Connect to the head node][connect]
+
+    b. Use standard procedures to use Certificate Manager to export the head node certificate (located under Cert:\LocalMachine\My) without the private key. In this example, export *CN = hpc01.chinaeast.chinacloudapp.cn*.
+
+    ![Export the certificate][cert]
 
 ### Use the HPC Pack IaaS Deployment script
 
@@ -41,13 +93,13 @@ The HPC Pack IaaS deployment script provides another versatile way to deploy an 
 
 **Additional prerequisites**
 
-* **Azure PowerShell** - [Install and configure Azure PowerShell](/documentation/articles/powershell-install-configure) (version 0.8.10 or later) on your client computer.
+* **Azure PowerShell** - [Install and configure Azure PowerShell](/documentation/articles/powershell-install-configure/) (version 0.8.10 or later) on your client computer.
 
 * **HPC Pack IaaS deployment script** - Download and unpack the latest version of the script from the [Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=44949). Check the version of the script by running `New-HPCIaaSCluster.ps1 -Version`. This article is based on version 4.5.0 or later of the script.
 
 **Create the configuration file**
 
- The HPC Pack IaaS deployment script uses an XML configuration file as input which describes the infrastructure of the HPC cluster. To deploy a cluster consisting of a head node and 18 compute nodes created from the compute node image that includes Microsoft Excel, substitute values for your environment into the following sample configuration file. For more information about the configuration file, see the Manual.rtf file in the script folder and [Create an HPC cluster with the HPC Pack IaaS deployment script](/documentation/articles/virtual-machines-hpcpack-cluster-powershell-script).
+ The HPC Pack IaaS deployment script uses an XML configuration file as input which describes the infrastructure of the HPC cluster. To deploy a cluster consisting of a head node and 18 compute nodes created from the compute node image that includes Microsoft Excel, substitute values for your environment into the following sample configuration file. For more information about the configuration file, see the Manual.rtf file in the script folder and [Create an HPC cluster with the HPC Pack IaaS deployment script](/documentation/articles/virtual-machines-linux-classic-hpcpack-cluster-powershell-script/).
 
 	<?xml version="1.0" encoding="utf-8"?>
 	<IaaSClusterConfig>
@@ -134,7 +186,6 @@ The HPC Pack IaaS deployment script provides another versatile way to deploy an 
 4. Run the command below to deploy the HPC Pack cluster. This example assumes that the configuration file is located in E:\HPCDemoConfig.xml.
 
     	.\New-HpcIaaSCluster.ps1 -ConfigFile E:\HPCDemoConfig.xml -AdminUserName MyAdminName
-
 
 The HPC Pack deployment script will run for some time. One thing the script wil do is to export and download the cluster certificate and save it in the current user's Documents folder on the client computer. The script will generate a message similar to the following. In a following step you'll import the certificate in the appropriate certificate store.
 
@@ -270,7 +321,7 @@ To do this, explicitly set UseAzureQueue flag to false in the SessionStartInfo.
 
 ### Use NetTcp binding
 
-To use NetTcp binding, the configuration is like connecting to an on-premises cluster. You'll need to open a few endpoints on the head node VM. In the Azure Management Portal do the following.
+To use NetTcp binding, the configuration is like connecting to an on-premises cluster. You'll need to open a few endpoints on the head node VM. In the Azure Classic Management Portal do the following.
 
 
 1. Stop the VM.

@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="12/10/2015"
+	ms.date="05/18/2016"
 	wacn.date=""/>
 
 # Fix an Out of Memory (OOM) error with Hive memory settings in Hadoop in Azure HDInsight
@@ -50,7 +50,7 @@ When the customer ran the query using Hive on MapReduce on a 24 node A3 cluster,
 
 Because the query finished executing in about 26 minutes, the customer ignored these warnings and instead started to focus on how to improve the this query's performance further.
 
-The customer consulted [Optimize Hive queries for Hadoop in HDInsight](/documentation/articles/hdinsight-hadoop-optimize-hive-query-v1), and decided to use Tez execution engine. Once the same query was run with the Tez setting enabled the query ran for 15 minutes, and then threw the following error:
+The customer consulted [Optimize Hive queries for Hadoop in HDInsight](/documentation/articles/hdinsight-hadoop-optimize-hive-query-v1/), and decided to use Tez execution engine. Once the same query was run with the Tez setting enabled the query ran for 15 minutes, and then threw the following error:
 
 	Status: Failed
 	Vertex failed, vertexName=Map 5, vertexId=vertex_1443634917922_0008_1_05, diagnostics=[Task failed, taskId=task_1443634917922_0008_1_05_000006, diagnostics=[TaskAttempt 0 failed, info=[Error: Failure while running task:java.lang.RuntimeException: java.lang.OutOfMemoryError: Java heap space

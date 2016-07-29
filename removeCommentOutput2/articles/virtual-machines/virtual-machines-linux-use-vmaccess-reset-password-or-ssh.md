@@ -1,6 +1,8 @@
+<!-- rename to virtual-machines-linux-classic-reset-access -->
+
 <properties
 	pageTitle="Resetting Linux VM Passwords and adding Users from the Azure CLI | Azure"
-	description="How to use VMAccess extension from the Azure Management Portal or CLI to reset Linux VM passwords and SSH keys, SSH configurations, add or delete user accounts, and check the consistency of disks."
+	description="How to use VMAccess extension from the Azure portal or CLI to reset Linux VM passwords and SSH keys, SSH configurations, add or delete user accounts, and check the consistency of disks."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="cynthn"
@@ -15,10 +17,20 @@
 
 # How to Reset Access and Manage Users and Check Disks with the Azure VMAccess Extension for Linux#
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the classic deployment model. Microsoft recommends that most new deployments use the Resource Manager model.
 
 
-If you can't connect to a Linux virtual machine on Azure because of a forgotten password, an incorrect Secure Shell (SSH) key, or a problem with the SSH configuration, use the Azure Management Portal or the VMAccessForLinux extension with the Azure CLI to reset the password or SSH key, fix the SSH configuration, and check disk consistency. 
+If you can't connect to a Linux virtual machine on Azure because of a forgotten password, an incorrect Secure Shell (SSH) key, or a problem with the SSH configuration, use the Azure portal or the VMAccessForLinux extension with the Azure CLI to reset the password or SSH key, fix the SSH configuration, and check disk consistency. 
+
+## Azure portal
+
+To reset the SSH configuration in the [Azure portal](https://portal.azure.cn), click **Browse** > **Virtual machines** > *your Linux virtual machine* > **Reset Remote Access**. Here is an example.
+
+![](./media/virtual-machines-linux-use-vmaccess-reset-password-or-ssh/Portal-RDP-Reset-Linux.png)
+
+To reset the name and password of the user account with sudo privileges or the SSH public key in the [Azure portal](https://portal.azure.cn), click **Browse** > **Virtual machines** > *your Linux virtual machine* > **All settings** > **Password reset**. Here is an example.
+
+![](./media/virtual-machines-linux-use-vmaccess-reset-password-or-ssh/Portal-PW-Reset-Linux.png)
 
 
 ## Azure CLI and PowerShell
@@ -137,7 +149,6 @@ To display the status of the VMAccess extension, run this command.
 
 	azure vm extension get
 
-
 ### <a name='checkdisk'></a>Check consistency of added disks
 
 To run fsck on all disks in your Linux virtual machine, you will need to do the following:
@@ -182,7 +193,7 @@ If you don't know the cloud service and virtual machine name, run **Get-AzureVM*
 
 > [AZURE.NOTE] The command lines that begin with $ are setting PowerShell variables that later get used in PowerShell commands.
 
-If you created the virtual machine with the Azure Management Portal, run the following additional command:
+If you created the virtual machine with the Azure classic portal, run the following additional command:
 
 	$vm.GetInstance().ProvisionGuestAgent = $true
 
@@ -271,7 +282,7 @@ To display the status of the VMAccess extension, run this command.
 
 	$vm.GuestAgentStatus
 
-### <a name="checkdisk"<</a>Check the consistency of added disks
+### <a name="checkdisk"></a>Check the consistency of added disks
 
 To check the consistency of your disks with fsck utility, run these commands. 
 
@@ -281,7 +292,7 @@ To check the consistency of your disks with fsck utility, run these commands.
 	$Version = "1.*"
 	Set-AzureVMExtension -ExtensionName $ExtensionName -VM $vm -Publisher $Publisher -Version $Version -PublicConfiguration $PublicConfig | Update-AzureVM
 
-### <a name="checkdisk"<</a>Repair added disks on your Linux VM
+### <a name="checkdisk"></a>Repair added disks on your Linux VM
 
 To repair disks with fsck utility, run these commands. 
 

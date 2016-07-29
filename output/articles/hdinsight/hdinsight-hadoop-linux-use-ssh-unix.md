@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
    pageTitle="Use SSH keys with  Linux-based Hadoop from Linux, Unix, or OS X | Azure"
    description=" You can access Linux-based HDInsight using Secure Shell (SSH). This document provides information on using SSH with HDInsight from Linux, Unix, or OS X clients."
@@ -12,18 +10,18 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="01/28/2016"
+	ms.date="06/14/2016"
 	wacn.date=""/>
 
 #Use SSH with Linux-based Hadoop on HDInsight from Linux, Unix, or OS X
 
 > [AZURE.SELECTOR]
-- [Windows](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows)
-- [Linux, Unix, OS X](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix)
+- [Windows](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows/)
+- [Linux, Unix, OS X](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix/)
 
-[Secure Shell (SSH)](https://en.wikipedia.org/wiki/Secure_Shell) allows you to remotely perform operations on your Liux-based HDInsight clusters using a command-line interface. This document provides information on using SSH with HDInsight from Linux, Unix, or OS X clients.
+[Secure Shell (SSH)](https://en.wikipedia.org/wiki/Secure_Shell) allows you to remotely perform operations on your Linux-based HDInsight clusters using a command-line interface. This document provides information on using SSH with HDInsight from Linux, Unix, or OS X clients.
 
-> [AZURE.NOTE] The steps in this article assume you are using a Linux, Unix, or OS X client. While these steps may be performed on a Windows-based client if you have installed a package that provides `ssh` and `ssh-keygen` (such as Git for Windows,) we recommend that Windows-based clients follow the steps in [Use SSH with Linux-based HDInsight (Hadoop) from Windows](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows).
+> [AZURE.NOTE] The steps in this article assume you are using a Linux, Unix, or OS X client. While these steps may be performed on a Windows-based client if you have installed a package that provides `ssh` and `ssh-keygen` (such as Git for Windows,) we recommend that Windows-based clients follow the steps in [Use SSH with Linux-based HDInsight (Hadoop) from Windows](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows/).
 
 ##Prerequisites
 
@@ -33,7 +31,9 @@
 
 OR
 
-* [Azure CLI for Mac, Linux and Windows](/documentation/articles/xplat-cli-install).
+* [Azure CLI](/documentation/articles/xplat-cli-install/).
+
+    [AZURE.INCLUDE [use-latest-version](../includes/hdinsight-use-latest-cli.md)] 
 
 ##What is SSH?
 
@@ -83,15 +83,15 @@ Use the following information if you plan on using SSH keys with your cluster. I
 
 When creating a Linux-based HDInsight cluster, you must provide the public key created previously. From Linux, Unix, or OS X clients, there are two ways to create an HDInsight cluster:
 
-* **Azure Management Portal** - Uses a web-based portal to create the cluster.
+* **Azure Portal** - Uses a web-based portal to create the cluster.
 
 * **Azure CLI for Mac, Linux and Windows** - Uses command-line commands to create the cluster.
 
-Each of these methods will require either a password or a public key. For complete information on creating a Linux-based HDInsight cluster, see [Provision Linux-based HDInsight clusters](/documentation/articles/hdinsight-provision-clusters-v1).
+Each of these methods will require either a password or a public key. For complete information on creating a Linux-based HDInsight cluster, see [Provision Linux-based HDInsight clusters](/documentation/articles/hdinsight-provision-clusters-v1/).
 
-###Azure Management Portal
+###Azure Portal
 
-When using the [Azure Management Portal][preview-portal] to create a Linux-based HDInsight cluster, you must enter an **SSH USER NAME**, and select to enter a **PASSWORD** or **SSH PUBLIC KEY**.
+When using the [Azure Portal][preview-portal] to create a Linux-based HDInsight cluster, you must enter an **SSH USER NAME**, and select to enter a **PASSWORD** or **SSH PUBLIC KEY**.
 
 If you select **SSH PUBLIC KEY**, you can either paste the public key (contained in the file with the **.pub** extension) into the __SSH PublicKey__ field, or select __Select a file__ to browse and select the public key file.
 
@@ -106,19 +106,23 @@ This creates a login for the specified user, by using the password or public key
 
 ###Azure Command-Line Interface for Mac, Linux and Windows
 
-You can use the [Azure CLI for Mac, Linux and Windows](/documentation/articles/xplat-cli-install) to create a new cluster by using the `azure hdinsight cluster create` command.
+You can use the [Azure CLI for Mac, Linux and Windows](/documentation/articles/xplat-cli-install/) to create a new cluster by using the `azure hdinsight cluster create` command.
 
-For more information on using this command, see [Provision Hadoop Linux clusters in HDInsight using custom options](/documentation/articles/hdinsight-provision-clusters-v1).
+For more information on using this command, see [Provision Hadoop Linux clusters in HDInsight using custom options](/documentation/articles/hdinsight-provision-clusters-v1/).
 
 ##Connect to a Linux-based HDInsight cluster
 
 From a terminal session, use the SSH command to connect to the cluster head node by providing the address and user name:
 
-* **SSH address** - The cluster name, followed by **-ssh.azurehdinsight.cn**. For example, **mycluster-ssh.azurehdinsight.cn**.
+* **SSH address** - There are two addresses that may be used to connect to a cluster using SSH:
+
+    * **Connect to the head node**: The cluster name, followed by **-ssh.azurehdinsight.cn**. For example, **mycluster-ssh.azurehdinsight.cn**.
+    
+    * **Connect to the edge node**: If your cluster is R Server on HDInsight, the cluster will also contain an edge node that can be accessed using **RServer.CLUSTERNAME.ssh.azurehdinsight.cn**, where __CLUSTERNAME__ is the name of the cluster.
 
 * **User name** - The SSH user name you provided when you created the cluster.
 
-The following example will connect to the cluster **mycluster** as the user **me**:
+The following example will connect to head node 0 of **mycluster** as the user **me**:
 
 	ssh me@mycluster-ssh.azurehdinsight.cn
 
@@ -130,7 +134,7 @@ If you used an SSH key that is secured with a passphrase, you will be prompted t
 >
 > `ssh -i ~/.ssh/id_rsa me@mycluster-ssh.azurehdinsight.cn`
 
-If no port is specified, SSH will default to port 22, which will connect to head node 0 on the HDInsight cluster. If you use port 23, you will connect to head node 1. For more information on the head nodes, see [Availability and reliability of Hadoop clusters in HDInsight](/documentation/articles/hdinsight-high-availability).
+If you are connecting to using the address for the head node, and no port is specified, SSH will default to port 22, which will connect to head node 0 on the HDInsight cluster. If you use port 23, you will connect to head node 1. For more information on the head nodes, see [Availability and reliability of Hadoop clusters in HDInsight](/documentation/articles/hdinsight-high-availability/).
 
 ###Connect to worker nodes
 
@@ -223,16 +227,16 @@ SSH can be used to tunnel local requests, such as web requests, to the HDInsight
 
 > [AZURE.IMPORTANT] An SSH tunnel is a requirement for accessing the web UI for some Hadoop services. For example, both the Job History UI or Resource Manager UI can only be accessed using an SSH tunnel.
 
-For more information on creating and using an SSH tunnel, see [Use SSH Tunneling to access Ambari web UI, ResourceManager, JobHistory, NameNode, Oozie, and other web UI's](/documentation/articles/hdinsight-linux-ambari-ssh-tunnel).
+For more information on creating and using an SSH tunnel, see [Use SSH Tunneling to access Ambari web UI, ResourceManager, JobHistory, NameNode, Oozie, and other web UI's](/documentation/articles/hdinsight-linux-ambari-ssh-tunnel/).
 
 ##Next steps
 
 Now that you understand how to authenticate by using an SSH key, learn how to use MapReduce with Hadoop on HDInsight.
 
-* [Use Hive with HDInsight](/documentation/articles/hdinsight-use-hive)
+* [Use Hive with HDInsight](/documentation/articles/hdinsight-use-hive/)
 
-* [Use Pig with HDInsight](/documentation/articles/hdinsight-use-pig)
+* [Use Pig with HDInsight](/documentation/articles/hdinsight-use-pig/)
 
-* [Use MapReduce jobs with HDInsight](/documentation/articles/hdinsight-use-mapreduce)
+* [Use MapReduce jobs with HDInsight](/documentation/articles/hdinsight-use-mapreduce/)
 
-[preview-portal]: https://manage.windowsazure.cn/
+[preview-portal]: https://portal.azure.cn/

@@ -1,3 +1,5 @@
+<!-- rename to virtual-machines-linux-infrastructure-service-guidelines -->
+
 <properties
 	pageTitle="Azure infrastructure services implementation guidelines"
 	description="Learn about the key design and implementation guidelines for deploying an IT workload in Azure infrastructure services."
@@ -23,7 +25,7 @@ This guidance identifies many areas for which planning is vital to the success o
 
 This article was adapted from the content in the [Azure implementation guidelines](http://blogs.msdn.com/b/thecolorofazure/archive/2014/05/13/azure-implementation-guidelines.aspx) blog post. Thanks to Santiago Cánepa (Application Development Manager for Microsoft) and Hugo Salcedo (Application Development Manager for Microsoft) for their original material.
 
-> [AZURE.NOTE] Affinity groups have been deprecated. Their use is not described here. For more information, see [About regional VNets and affinity groups](/documentation/articles/virtual-networks-migrate-to-regional-vnet).
+> [AZURE.NOTE] Affinity groups have been deprecated. Their use is not described here. For more information, see [About regional VNets and affinity groups](/documentation/articles/virtual-networks-migrate-to-regional-vnet/).
 
 ## 1. Naming conventions
 
@@ -35,7 +37,7 @@ You should agree on a set of naming conventions up front. There are some conside
 
 ### Affixes
 
-When creating certain resources, Azure uses some defaults to simplify management of the resources that are associated with these resources. For example, when creating the first virtual machine for a new cloud service, the Azure Management Portal attempts to use the virtual machine's name for the name of a new cloud service for the virtual machine.
+When creating certain resources, Azure uses some defaults to simplify management of the resources that are associated with these resources. For example, when creating the first virtual machine for a new cloud service, the Azure Classic Management Portal attempts to use the virtual machine's name for the name of a new cloud service for the virtual machine.
 
 Therefore, it is beneficial to identify types of resources that need an affix to identify that type. In addition, clearly specify whether the affix will be at:
 
@@ -52,12 +54,7 @@ Affixes can refer to different aspects that describe the particular resources. T
 Aspect | Examples | Notes
 --- | --- | ---
 Environment | dev, stg, prod | Depending on the purpose and name of each environment.
-
-Location | usw (China North), use (China East 2) | Depending on the region of the datacenter or the region of the organization.
-
-
 Location | China North, China East | Depending on the region of the datacenter or the region of the organization.
-
 Azure component, service, or product | Rg for resource group, Svc for cloud service, VNet for virtual network | Depending on the product for which the resource provides support.
 Role | sql, ora, sp, iis | Depending on the role of the virtual machine.
 Instance | 01, 02, 03, etc. | For resources that have more than one instance. For example, load balanced web servers in a cloud service.
@@ -97,7 +94,7 @@ We recommend that the Azure virtual machine name be the same as the underlying o
 
 ### Storage account names
 
-Storage accounts have special rules governing their names. You can only use lowercase letters and numbers. See [Create a storage account](/documentation/articles/storage-create-storage-account#create-a-storage-account) for more information. Additionally, the storage account name, in combination with core.chinacloudapi.cn, should be a globally valid, unique DNS name. For instance, if the storage account is called mystorageaccount, the following resulting DNS names should be unique:
+Storage accounts have special rules governing their names. You can only use lowercase letters and numbers. See [Create a storage account](/documentation/articles/storage-create-storage-account/#create-a-storage-account) for more information. Additionally, the storage account name, in combination with core.chinacloudapi.cn, should be a globally valid, unique DNS name. For instance, if the storage account is called mystorageaccount, the following resulting DNS names should be unique:
 
 - mystorageaccount.blob.core.chinacloudapi.cn
 - mystorageaccount.table.core.chinacloudapi.cn
@@ -162,7 +159,7 @@ Azure Storage is an integral part of many Azure solutions. Azure Storage provide
 
 There are two types of storage accounts available from Azure. A standard storage account gives you access to blob storage (used for storing Azure virtual machine disks), table storage, queue storage, and file storage. Premium storage is designed for high-performance applications, such as SQL Servers in an AlwaysOn cluster, and currently supports Azure virtual machine disks only.
 
-Storage accounts are bound to scalability targets. See [Azure subscription and service limits, quotas, and constraints](/documentation/articles/azure-subscription-service-limits#storage-limits) to become familiar with current Azure storage limits. Also see [Azure storage scalability and performance targets](/documentation/articles/storage-scalability-targets).
+Storage accounts are bound to scalability targets. See [Azure subscription and service limits, quotas, and constraints](/documentation/articles/azure-subscription-service-limits/#storage-limits) to become familiar with current Azure storage limits. Also see [Azure storage scalability and performance targets](/documentation/articles/storage-scalability-targets/).
 
 Azure creates virtual machines with an operating system disk, a temporary disk, and zero or more optional data disks. The operating system disk and data disks are Azure page blobs, whereas the temporary disk is stored locally on the node where the machine lives. This makes the temporary disk unfit for data that must persist during a system recycle, because the machine might silently be migrated from one node to another, losing any data in that disk. Do not store anything on the temporary drive.
 
@@ -171,7 +168,7 @@ Operating system disks and data disks have a maximum size of 1023 gigabytes (GB)
 ### Striped disks
 Besides providing the ability to create disks larger than 1023 GB, in many instances, using striping for data disks enhances performance by allowing multiple blobs to back the storage for a single volume. With striping, the I/O required to write and read data from a single logical disk proceeds in parallel.
 
-Azure imposes limits on the amount of data disks and bandwidth available, depending on the virtual machine size. For details, see [Sizes for virtual machines](/documentation/articles/virtual-machines-size-specs).
+Azure imposes limits on the amount of data disks and bandwidth available, depending on the virtual machine size. For details, see [Sizes for virtual machines](/documentation/articles/virtual-machines-linux-sizes/).
 
 If you are using disk striping for Azure data disks, consider the following guidelines:
 
@@ -205,7 +202,7 @@ Decisions:
 
 Task:
 
-- Create the set of storage accounts using your naming convention. You can use the Azure Management Portal, the Azure Management Portal,  or the **New-AzureStorageAccount** PowerShell cmdlet.
+- Create the set of storage accounts using your naming convention. You can use the Azure portal, the Azure Classic Management Portal, or the **New-AzureStorageAccount** PowerShell cmdlet.
 
 ## 4. Cloud services
 
@@ -213,7 +210,7 @@ Cloud services are a fundamental building block in Azure service management, bot
 
 In the case of IaaS, cloud services offer similar functionality, although in most cases, the load balancer functionality is used to forward traffic to specific TCP or UDP ports from the Internet to the many virtual machines within that cloud service.
 
-> [AZURE.NOTE] Cloud services do not exist in Azure Resource Manager.  For an introduction to the advantages of Resource Manager, see [Azure compute, network and storage providers under Azure Resource Manager](/documentation/articles/virtual-machines-azurerm-versus-azuresm). 
+> [AZURE.NOTE] Cloud services do not exist in Azure Resource Manager. For an introduction to the advantages of Resource Manager, see [Azure compute, network and storage providers under Azure Resource Manager](/documentation/articles/virtual-machines-azurerm-versus-azuresm/).
 
 Cloud service names are especially important in IaaS because Azure uses them as part of the default naming convention for disks. The cloud service name can contain only letters, numbers, and hyphens. The first and last character in the field must be a letter or number.
 
@@ -233,7 +230,7 @@ Decision:
 
 Task:
 
-- Create the set of cloud services using your naming convention. You can use the Azure Management Portal or the **New-AzureService** PowerShell cmdlet.
+- Create the set of cloud services using your naming convention. You can use the Azure Classic Management Portal or the **New-AzureService** PowerShell cmdlet.
 
 ## 5. Virtual networks
 
@@ -291,7 +288,7 @@ Tasks:
 - Define the address space for the virtual network.
 - Define the set of subnets and the address space for each.
 - For cross-premises virtual networks, define the set of local network address spaces for the on-premises locations that the virtual machines in the virtual network need to reach.
-- Create the virtual network using your naming convention. You can use the Azure Management Portal  or the Azure Management Portal .
+- Create the virtual network using your naming convention. You can use the Azure portal or the Azure Classic Management Portal.
 
 ## 6. Availability sets
 
@@ -315,7 +312,7 @@ Task:
 
 In Azure PaaS, Azure manages virtual machines and their associated disks. You must create and name cloud services and roles, and then Azure creates instances associated to those roles. In the case of Azure IaaS, it is up to you to provide names for the cloud services, virtual machines, and associated disks.
 
-To reduce administrative burden, the Azure Management Portal uses the computer name as a suggestion for the default name for the associated cloud service (in the case the customer chooses to create a new cloud service as part of the virtual machine creation wizard).
+To reduce administrative burden, the Azure Classic Management Portal uses the computer name as a suggestion for the default name for the associated cloud service (in the case the customer chooses to create a new cloud service as part of the virtual machine creation wizard).
 
 In addition, Azure names disks and their supporting VHD blobs using a combination of the cloud service name, the computer name, and the creation date.
 
@@ -330,7 +327,7 @@ Decision:
 Tasks:
 
 - Define each virtual machine name using your naming convention.
-- Create your virtual machines with the  Azure Management Portal, the  Azure Management Portal, the **New-AzureVM** PowerShell cmdlet,  or   the Azure CLI, or with Resource Manager templates .
+- Create your virtual machines with the Azure portal, the Azure Classic Management Portal, the **New-AzureVM** PowerShell cmdlet, the Azure CLI, or with Resource Manager templates.
 
 ## Example of an IT workload: The Contoso financial analysis engine
 
@@ -357,7 +354,7 @@ The resulting design must incorporate:
 
 All of the above will follow these Contoso naming conventions:
 
-- Contoso uses [IT workload]-[location]-[Azure resource] as a prefix. For this example, "azfae" (Azure Financial Analysis Engine) is the IT workload name and  "use" (China East 2)  "chinaeast"  is the location, because most of Contoso's initial customers are on the East Coast of the United States.
+- Contoso uses [IT workload]-[location]-[Azure resource] as a prefix. For this example, "azfae" (Azure Financial Analysis Engine) is the IT workload name and "chinaeast" is the location, because most of Contoso's initial customers are on the East Coast of the United States.
 - Storage accounts use contosoazfaeusesa[description] Note that contoso was added to the prefix to provide uniqueness, and storage account names do not support the use of hyphens.
 - Virtual networks use AZFAE-USE-VN[number].
 - Availability sets use azfae-use-as-[role].
@@ -378,10 +375,10 @@ Contoso determined that they needed two storage accounts:
 
 Because the virtual network does not need ongoing connectivity to the Contoso on-premises network, Contoso decided on a cloud-only virtual network.
 
-They created a cloud-only virtual network with the following settings using the Azure Management Portal:
+They created a cloud-only virtual network with the following settings using the Azure portal:
 
 - Name: AZFAE-USE-VN01
-- Location: China East  2 
+- Location: China East
 - Virtual network address space: 10.0.0.0/8
 - First subnet:
 	- Name: FrontEnd
@@ -431,16 +428,12 @@ This configuration incorporates:
 
 ## Additional resources
 
-[Azure subscription and service limits, quotas, and constraints](/documentation/articles/azure-subscription-service-limits#storage-limits)
+[Azure subscription and service limits, quotas, and constraints](/documentation/articles/azure-subscription-service-limits/#storage-limits)
 
-[Sizes for virtual machines](/documentation/articles/virtual-machines-size-specs)
+[Sizes for virtual machines](/documentation/articles/virtual-machines-linux-sizes/)
 
-[Azure storage scalability and performance targets](/documentation/articles/storage-scalability-targets)
-
-[Cloud Platform integration framework (Azure architecture patterns)](/documentation/articles/azure-architectures-cpif-overview)
+[Azure storage scalability and performance targets](/documentation/articles/storage-scalability-targets/)
 
 [Datacenter extension reference architecture diagram](https://gallery.technet.microsoft.com/Datacenter-extension-687b1d84)
-
 
-[Azure compute, network, and storage providers under Azure Resource Manager](/documentation/articles/virtual-machines-azurerm-versus-azuresm)
-
+[Azure compute, network, and storage providers under Azure Resource Manager](/documentation/articles/virtual-machines-azurerm-versus-azuresm/)

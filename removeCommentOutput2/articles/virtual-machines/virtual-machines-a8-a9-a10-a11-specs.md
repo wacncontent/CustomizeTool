@@ -1,4 +1,4 @@
-<!-- not suitable for Mooncake -->
+<!-- rename to virtual-machines-windows-a8-a9-a10-a11-specs -->
 
 <properties
  pageTitle="About the A8, A9, A10, and A11 instances | Azure"

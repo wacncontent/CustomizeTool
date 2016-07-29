@@ -1,29 +1,21 @@
 <properties 
 	pageTitle="Configure web apps in Azure" 
 	description="How to configure a web app in Azure" 
-	services="app-service" 
+	services="app-service\web" 
 	documentationCenter="" 
-	authors="erikre" 
+	authors="rmcmurray" 
 	manager="wpickett" 
-	editor="jimbe"/>
+	editor=""/>
 
 <tags
 	ms.service="app-service"
-	ms.date="12/08/2015"
+	ms.date="06/02/2016"
 	wacn.date=""/>
 
 
 # Configure web apps in Azure #
-In the Azure Management Portal, you can change the configuration options for websites and link to other Azure resources, such as a database.
 
-## Table of Contents ##
-- [How to: Change configuration options for a web site](#howtochangeconfig)
-- [How to: Configure a web site to use a SQL database](#howtoconfigSQL)
-- [How to: Configure a web site to use a MySQL database](#howtoconfigMySQL)
-- [How to: Configure a custom domain name](#howtodomain)
-- [How to: Configure a web site to use SSL](#howtoconfigSSL)
-- [Next steps](#next)
-
+This topic explains how to configure a web app using the [Azure Classic Management Portal](https://manage.windowsazure.cn/).
 
 ##<a name="howtochangeconfig"></a>How to: Change configuration options for a website
 
@@ -31,51 +23,50 @@ In the Azure Management Portal, you can change the configuration options for web
 
 To set configuration options for a website:
 
-1. In the [Management Portal](https://manage.windowsazure.cn/), open the Website's management pages.
+1. In the [Classic Management Portal](https://manage.windowsazure.cn/), open the Website's management pages.
 1. Click the **Configure** tab.
 
 The **Configure** tab has the following sections:
+
 ### General settings
 
 **Framework versions**. Set these options if your app uses any these frameworks: 
 
-- **.NET Framework Version**: Set the .NET framework version. 
-- **PHP Version**: Set the PHP version, or **OFF **to disable PHP. 
+- **.NET Framework Version**: Set the .NET framework version.
+- **PHP Version**: Set the PHP version, or **OFF** to disable PHP.
 - **Java Version**: Select the displayed version to enable Java, or **OFF** to disable Java. 
 - **Python Version**: Select the Python version, or **OFF** to disable Python.
 
 For technical reasons, enabling Java for your app disables the .NET, PHP, and Python options.
 
-**Managed Pipeline Mode**. Sets the IIS [pipeline mode](http://www.iis.net/learn/get-started/introduction-to-iis/introduction-to-iis-architecture#Application). Leave this set to Integrated (the default) unless you have a legacy website that requires an older version of IIS.
-
 <a name="platform"></a>
-**Platform**. Selects whether your application runs in a 32-bit or 64-bit environment. The 64-bit environment requires Basic or Standard mode. Free and Shared modes always run in a 32-bit environment.
+**Platform**. Selects whether your web app runs in a 32-bit or 64-bit environment. The 64-bit environment requires Basic or Standard mode. Free and Shared modes always run in a 32-bit environment.
 
-**Web Sockets**. Set **ON** to enable the WebSocket protocol; for example, if your website uses [ASP.NET SignalR](http://www.asp.net/signalr) or [socket.io](/documentation/articles/web-sites-nodejs-chat-app-socketio/).
+**Web Sockets**. Set **ON** to enable the WebSocket protocol; for example, if your web app uses [ASP.NET SignalR] or [socket.io].
 
 <a name="alwayson"></a>
-**Always On**. By default, websites are unloaded if they are idle for some period of time. This lets the system conserve resources. In Basic or Standard mode, you can enable **Always On** to keep the site loaded all the time. If your site runs continuous web jobs, you should enable **Always On**, or the web jobs may not run reliably
+**Always On**. By default, web apps are unloaded if they are idle for some period of time. This lets the system conserve resources. In Basic or Standard mode, you can enable **Always On** to keep the app loaded all the time. If your app runs continuous web jobs, you should enable **Always On**, or the web jobs may not run reliably.
 
 **Edit in Visual Studio Online**. Enables live code editing with Visual Studio Online. If enabled, the Dashboard tab will show a link called **Edit in Visual Studio Online**, under the **Quick Glance** section. Click this link to edit your website directly online. If you need to authenticate, you can use your basic deployment credentials.
 
-	>[AZURE.NOTE]
-	> This feature is on preview.
+>[AZURE.NOTE]
+> This feature is on preview.
 
 Note: If you enable deployment from source control, it is possible for a deployment to overwrite changes you make in the Visual Studio Online editor. 
 
 ### Certificates
 
-In Basic or Standard mode, you can upload SSL certificates for a custom domain. For more information,, see [Enable HTTPS for an Azure website](href="/documentation/articles/web-sites-configure-ssl-certificate/). 
+In Basic or Standard mode, you can upload SSL certificates for a custom domain. For more information,, see [Enable HTTPS for an Azure website](/documentation/articles/web-sites-configure-ssl-certificate/). 
 
 Your uploaded certificates are listed here. After you upload a certificate, you can assign it to any website in your subscription and region. Wildcard certificates can be used for any site within the domain for which it is valid. A certificate can be deleted only if there are no active bindings for that certificate.
 
 ### Domain names
 
-View or add additional domain names for the  Website. For more information, see [Configuring a custom domain name for an Azure Website](/zh-cm/documentation/articles/web-sites-custom-domain-name/).
+View or add additional domain names for the  Website. For more information, see [Configuring a custom domain name for an Azure Website](/documentation/articles/web-sites-custom-domain-name/).
 
 ### SSL Bindings
 
-If you uploaded SSL certificates, you can bind them to custom domain names. For more information,, see [Enable HTTPS for an Azure Website](href="/documentation/articles/web-sites-configure-ssl-certificate/)
+If you uploaded SSL certificates, you can bind them to custom domain names. For more information,, see [Enable HTTPS for an Azure Website](/documentation/articles/web-sites-configure-ssl-certificate/)
 
 ### Deployments
 
@@ -135,14 +126,14 @@ This section contains name/value pairs that you web app will load on start up.
 
 Connection strings for linked resources. 
 
-For .NET apps, these connection strings are be injected into your .NET configuration `connectionStrings` settings at runtime, overriding existing entries where the key equals the linked database name. 
+For .NET apps, these connection strings are injected into your .NET configuration `connectionStrings` settings at runtime, overriding existing entries where the key equals the linked database name. 
 
 For PHP, Python, Java and Node applications, these settings will be available as environment variables at runtime, prefixed with the connection type. The environment variable prefixes are as follows: 
 
-- SQL Server: SQLCONNSTR_
-- MySQL: MYSQLCONNSTR_
-- SQL Database: SQLAZURECONNSTR_
-- Custom: CUSTOMCONNSTR_
+- SQL Server: `SQLCONNSTR_`
+- MySQL: `MYSQLCONNSTR_`
+- SQL Database: `SQLAZURECONNSTR_`
+- Custom: `CUSTOMCONNSTR_`
 
 For example, if a MySql connection string were named `connectionstring1`, it would be accessed through the environment variable `MYSQLCONNSTR_connectionString1`.
 
@@ -167,8 +158,28 @@ To configure virtual applications and directories, specify each virtual director
 
 ## Next steps
 
-- [Configure a custom domain name](/documentation/articles/web-sites-custom-domain-name)
-- [Enable HTTPS](/documentation/articles/web-sites-configure-ssl-certificate)
-- [Scale a web app in Azure](/documentation/articles/web-sites-scale)
-- [Monitoring basics for Web Apps in Azure](/documentation/articles/web-sites-monitor)
- 
+- [Configure a custom domain name in Azure Web App]
+- [Enable HTTPS for an app in Azure Web App]
+- [Scale a web app in Azure]
+- [Monitoring basics for Web Apps in Azure]
+
+<!-- URL List -->
+
+[ASP.NET SignalR]: http://www.asp.net/signalr
+[Azure Portal]: https://portal.azure.cn/
+[Configure a custom domain name in Azure Web App]: /documentation/articles/web-sites-custom-domain-name/
+[Deploy to Staging Environments for Web Apps in Azure]: /documentation/articles/web-sites-staged-publishing/
+[Enable HTTPS for an app in Azure Web App]: /documentation/articles/web-sites-configure-ssl-certificate/
+[How to: Monitor web endpoint status]: http://go.microsoft.com/fwLink/?LinkID=279906
+[Monitoring basics for Web Apps in Azure]: /documentation/articles/web-sites-monitor/
+[pipeline mode]: http://www.iis.net/learn/get-started/introduction-to-iis/introduction-to-iis-architecture#Application
+[Scale a web app in Azure]: /documentation/articles/web-sites-scale/
+[socket.io]: /documentation/articles/web-sites-nodejs-chat-app-socketio/
+[Try Azure Web App]: https://tryappservice.azure.com/
+[Using Git to deploy Web Apps in Azure]: /documentation/articles/web-sites-publish-source-control/
+
+<!-- IMG List -->
+
+[configure01]: ./media/web-sites-configure/configure01.png
+[configure02]: ./media/web-sites-configure/configure02.png
+[configure03]: ./media/web-sites-configure/configure03.png

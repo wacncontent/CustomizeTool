@@ -1,3 +1,5 @@
+<!-- deleted in Global -->
+
 <properties 
  pageTitle="Manage Azure Traffic Manager using Azure Automation" 
  description="Learn about how the Azure Automation service can be used to manage Azure Traffic Manager." 
@@ -36,4 +38,3 @@ Traffic Manager can be managed in Azure Automation by using the PowerShell cmdle
 Now that you've learned the basics of Azure Automation and how it can be used to manage Azure Traffic Manager, follow these links to learn more about Azure Automation.
 
 * Check out the Azure Automation [Getting Started Guide](/documentation/articles/automation-create-runbook-from-samples/)
- 

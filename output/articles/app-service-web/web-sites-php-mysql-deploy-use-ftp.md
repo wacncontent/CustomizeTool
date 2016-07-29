@@ -3,52 +3,41 @@
 	description="A tutorial that demonstrates how to create a PHP web app that stores data in MySQL and use FTP deployment to Azure." 
 	services="app-service\web" 
 	documentationCenter="php" 
-	authors="tfitzmac" 
+	authors="rmcmurray" 
 	manager="wpickett" 
 	editor=""/>
 
 <tags
 	ms.service="app-service-web"
-	ms.date="01/12/2016"
+	ms.date="06/24/2016"
 	wacn.date=""/>
 
 
 #Create a PHP-MySQL web app in Azure and deploy using FTP
 
-> [AZURE.SELECTOR]
-- [.Net](/documentation/articles/web-sites-dotnet-get-started)
-- [Node.js](/documentation/articles/web-sites-nodejs-develop-deploy-mac)
-- [Java](/documentation/articles/web-sites-java-get-started)
-- [PHP - Git](/documentation/articles/web-sites-php-mysql-deploy-use-git)
-- [PHP - FTP](/documentation/articles/web-sites-php-mysql-deploy-use-ftp)
-- [Python](/documentation/articles/web-sites-python-ptvs-django-mysql)
-
 This tutorial shows you how to create a PHP-MySQL web app and how to deploy it using FTP. This tutorial assumes you have [PHP][install-php], [MySQL][install-mysql], a web server, and an FTP client installed on your computer. The instructions in this tutorial can be followed on any operating system, including Windows, Mac, and  Linux. Upon completing this guide, you will have a PHP/MySQL web app running in Azure.
  
 You will learn:
 
-* How to create a web app and a MySQL database using the Azure Management Portal. Because PHP is enabled in Web Apps by default, nothing special is required to run your PHP code.
+* How to create a web app and a MySQL database using the Azure Portal. Because PHP is enabled in Web Apps by default, nothing special is required to run your PHP code.
 * How to publish your application to Azure using FTP.
  
 By following this tutorial, you will build a simple registration web app in PHP. The application will be hosted in a Web App. A screenshot of the completed application is below:
 
 ![Azure PHP Web Site][running-app]
 
-
 >[AZURE.NOTE] If you want to get started with Azure before signing up for an account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required, no commitments. 
-
 
 
 ##Create a web app and set up FTP publishing
 
 Follow these steps to create a web app and a MySQL database:
 
-1. Login to the [Azure Management Portal][management-portal].
- top  2. Click the **+ New** icon on the top left of the Azure Management Portal.
+1. Login to the [Azure Portal][management-portal].
+2. Click the **+ New** icon on the top left of the Azure Portal.
 
 	![Create New Azure Web Site][new-website]
 
-
 3. In the search type **Web app + MySQL** and click on **Web app + MySQL**.
 
 	![Custom Create a new Web Site][custom-create]
@@ -72,35 +61,6 @@ Follow these steps to create a web app and a MySQL database:
 7. To enable FTP publishing, you must provide a user name and password. Save the credentials and make a note of the user name and password you create.
 
 	![Create publishing credentials][portal-ftp-username-password]
-
-
-3. Click ** web site**, then **CUSTOM CREATE**.
-
-	![Custom Create a new  Website][custom-create]
-	
-	Enter a value for **URL**, select **No Database** from the **DATABASE** dropdown,  and select the data center for your  Website in the **REGION** dropdown. Click the arrow at the bottom of the dialog.
-
-	![Fill in  Website details][Website-details]
-
-4. Click **New** --> **Storage** --> **MYSQL DATABASE ON AZURE** --> **Quick Create**, to create a MYSQL Database for your web site.
-
-	![Create new MySQL database][new-mysql-db]
-
-	When the  Website has been created you will see the text **Creation of  Website '[SITENAME]' completed successfully**. Now, you can enable FTP publishing.
-
-5. Click the name of the  Website displayed in the list of Websites and click the  Website's **Dashboard**.
-
-	![Open  Website dashboard][go-to-dashboard]
-
-
-6. In the **Dashboard** page, under the **quick glance**, click **Reset deployment credentials**. 
-
-	![Reset deployment credentials][reset-deployment-credentials]
-
-7. To enable FTP publishing, you must provide a user name and password. Make a note of the user name and password you create.
-
-	![Create publishing credentials][portal-git-username-password]
-
 
 ##Build and test your app locally
 
@@ -248,7 +208,6 @@ You can now browse to [http://localhost/registration/index.php][localhost-index]
 
 To connect to the MySQL database that is running in Web Apps, your will need the connection information. To get MySQL connection information, follow these steps:
 
-
 1. From the app service web app blade click on the resource group link:
 
 	![Select Resource Group][select-resourcegroup]
@@ -278,18 +237,6 @@ To connect to the MySQL database that is running in Web Apps, your will need the
 		</publishProfile>
 	
 Make note of the `publishUrl`, `userName`, and `userPWD` attributes.
-
-
-1. In Azure Management Portal, click **MYSQL DATABASE ON AZURE**, and open your MYSQL database server. In **Dashboard** page, under **quick glance**, you can get your host and port.
-
-	![connection][connection-string-info]
-
-2. In **Account** page, you can get all account name, and reset password.
-
-3. in **Database** page, you can get all Database under this MYSQL Database Server.
-
-	The Data source would be `tcp:<your MYSQL server name>.database.chinacloudapi.cn,<port>`
-
 
 ##Publish your app
 
@@ -314,40 +261,21 @@ Now you are ready to publish your app using FTP.
 After you have connected you will be able to upload and download files as needed. Be sure that you are uploading files to the root directory, which is `/site/wwwroot`.
 
 After uploading both `index.php` and `createtable.php`, browse to **http://[site name].chinacloudsites.cn/createtable.php** to create the MySQL table for the application, then browse to **http://[site name].chinacloudsites.cn/index.php** to begin using the application.
-
  
 ## Next steps
 
 For more information, see the [PHP Developer Center](/develop/php/).
 
-
-
-
-[go-to-dashboard]: ./media/web-sites-php-web-site-mysql-deploy-use-ftp/go_to_dashboard.png
-[reset-deployment-credentials]: ./media/web-sites-php-web-site-mysql-deploy-use-ftp/reset-deployment-credentials.png
-[portal-git-username-password]: ./media/web-sites-php-web-site-mysql-deploy-use-ftp/git-deployment-credentials.png
-
 [install-php]: http://www.php.net/manual/en/install.php
 [install-mysql]: http://dev.mysql.com/doc/refman/5.6/en/installing.html
 [pdo-mysql]: http://www.php.net/manual/en/ref.pdo-mysql.php
 [localhost-createtable]: http://localhost/tasklist/createtable.php
 [localhost-index]: http://localhost/tasklist/index.php
 [running-app]: ./media/web-sites-php-mysql-deploy-use-ftp/running_app_2.png
-
 [new-website]: ./media/web-sites-php-mysql-deploy-use-ftp/new_website2.png
 [custom-create]: ./media/web-sites-php-mysql-deploy-use-ftp/create_web_mysql.png
-
-
-[new-website]: ./media/web-sites-php-mysql-deploy-use-ftp/new_website.jpg
-[custom-create]: ./media/web-sites-php-mysql-deploy-use-ftp/custom_create.png
-
 [website-details]: ./media/web-sites-php-web-site-mysql-deploy-use-ftp/website_details.jpg
-
 [new-mysql-db]: ./media/web-sites-php-mysql-deploy-use-ftp/create_db.png
-
-
-[new-mysql-db]: ./media/web-sites-php-mysql-deploy-use-ftp/new_mysql_db.jpg
-
 [go-to-webapp]: ./media/web-sites-php-mysql-deploy-use-ftp/select_webapp.png
 [set-deployment-credentials]: ./media/web-sites-php-mysql-deploy-use-ftp/set_credentials.png
 [portal-ftp-username-password]: ./media/web-sites-php-mysql-deploy-use-ftp/save_credentials.png
@@ -359,6 +287,6 @@ For more information, see the [PHP Developer Center](/develop/php/).
 [note-properties]: ./media/web-sites-php-mysql-deploy-use-ftp/note-properties.png
 
 [connection-string-info]: ./media/web-sites-php-web-site-mysql-deploy-use-ftp/connection_string_info.png
-[management-portal]: https://manage.windowsazure.cn
+[management-portal]: https://portal.azure.cn
 [download-publish-profile]: ./media/web-sites-php-mysql-deploy-use-ftp/download_publish_profile_3.png
  

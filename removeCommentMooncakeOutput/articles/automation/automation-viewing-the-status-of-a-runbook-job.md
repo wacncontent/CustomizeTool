@@ -1,3 +1,5 @@
+<!-- deleted in Global -->
+
 <properties 
    pageTitle="Viewing the status of a runbook job in Azure Automation"
    description="When you start a runbook in Azure Automation, a job is created. This article provides information on how to track each job and view its current status."
@@ -80,4 +82,4 @@ The following sample commands retrieves the last job for a sample runbook and di
 
 ## Related articles
 
-- [Starting a Runbook in Azure Automation](/documentation/articles/automation-starting-a-runbook)
+- [Starting a Runbook in Azure Automation](/documentation/articles/automation-starting-a-runbook/)

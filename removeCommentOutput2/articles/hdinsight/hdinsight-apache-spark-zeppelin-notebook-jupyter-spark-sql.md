@@ -12,11 +12,11 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="12/22/2015"
+	ms.date="03/07/2016"
 	wacn.date=""/>
 
 
-# Get started: create Apache Spark on Azure HDInsight and run interactive queries using Spark SQL
+# Get started: Create Apache Spark on HDInsight Windows and run interactive queries using Spark SQL (Preview)
 
 > [AZURE.NOTE] HDInsight now provides Spark clusters on Linux. For information on how to get started with Spark clusters on HDInsight Linux, see [Get started: create Apache Spark on Azure HDInsight (Linux)](/documentation/articles/hdinsight-apache-spark-jupyter-spark-sql).
 
@@ -24,6 +24,8 @@ Learn how to create an Apache Spark cluster in HDInsight using the Quick Create 
 
 
    ![Get started using Apache Spark in HDInsight](./media/hdinsight-apache-spark-zeppelin-notebook-jupyter-spark-sql/hdispark.getstartedflow.png  "Get started using Apache Spark in HDInsight tutorial. Steps illustrated: create a storage account; create a cluster; run Spark SQL statements")
+
+[AZURE.INCLUDE [delete-cluster-warning](../includes/hdinsight-delete-cluster-warning.md)]
 
 **Prerequisites:**
 
@@ -39,11 +41,11 @@ In this section, you create an HDInsight version 3.2 cluster, which is based on 
 
 **To create a Spark cluster**
 
-1. Sign in to the [Azure Management Portal](https://manage.windowsazure.cn/).
+1. Sign in to the [Azure Portal](https://portal.azure.cn/).
 
 2. Click **NEW**, click **Data + Analytics**, and then click **HDInsight**.
 
-    ![Creating a new cluster in the Azure Management Portal](./media/hdinsight-apache-spark-zeppelin-notebook-jupyter-spark-sql/hdispark.createcluster.1.png "Creating a new cluster in the Azure Management Portal")
+    ![Creating a new cluster in the Azure Portal](./media/hdinsight-apache-spark-zeppelin-notebook-jupyter-spark-sql/hdispark.createcluster.1.png "Creating a new cluster in the Azure Portal")
 
 3. Enter a **Cluster Name**, select **Spark** for the **Cluster Type**, and from the **Cluster Operating System** drop-down menu, select **Windows Server 2012 R2 Datacenter**. A green check appears beside the cluster name if it is available.
 
@@ -83,7 +85,7 @@ In this section, you create an HDInsight version 3.2 cluster, which is based on 
 
 	Click **Select** to save the node pricing configuration.
 
-9. On the **New HDInsight Cluster** blade, ensure that **Pin to Startboard** is selected, and then click **Create**. This creates the cluster and adds a tile for it to the Startboard of your Azure Management Portal. The icon will indicate that the cluster is creating, and will change to display the HDInsight icon once creation has completed.
+9. On the **New HDInsight Cluster** blade, ensure that **Pin to Startboard** is selected, and then click **Create**. This creates the cluster and adds a tile for it to the Startboard of your Azure portal. The icon will indicate that the cluster is creating, and will change to display the HDInsight icon once creation has completed.
 
 	| While creating | Creation complete |
 	| ------------------ | --------------------- |
@@ -100,7 +102,7 @@ After you have created a cluster, you can use a web-based Zeppelin notebook to r
 
 >[AZURE.NOTE] The notebook you create by following the instructions below is also available by default on the cluster. After you have launched Zeppelin, you will find this notebook by the name **Zeppelin HVAC tutorial**.
 
-1. From the [Azure Management Portal](https://manage.windowsazure.cn/), from the startboard, click the tile for your Spark cluster (if you pinned it to the startboard). You can also navigate to your cluster under **Browse All** > **HDInsight Clusters**.   
+1. From the [Azure Portal](https://portal.azure.cn/), from the startboard, click the tile for your Spark cluster (if you pinned it to the startboard). You can also navigate to your cluster under **Browse All** > **HDInsight Clusters**.   
 
 2. From the Spark cluster blade, click **Quick Links**, and then from the **Cluster Dashboard** blade, click **Zeppelin Notebook**. If prompted, enter the admin credentials for the cluster.
 
@@ -185,7 +187,7 @@ In this section, you use a Jupyter notebook to run Spark SQL queries against a S
 
 >[AZURE.NOTE] The notebook you create by following the instructions below is also available by default on the cluster. After you have launched Jupyter, you will find this notebook by the name **HVACTutorial.ipynb**.
 
-1. From the [Azure Management Portal](https://manage.windowsazure.cn/), from the startboard, click the tile for your Spark cluster (if you pinned it to the startboard). You can also navigate to your cluster under **Browse All** > **HDInsight Clusters**.   
+1. From the [Azure Portal](https://portal.azure.cn/), from the startboard, click the tile for your Spark cluster (if you pinned it to the startboard). You can also navigate to your cluster under **Browse All** > **HDInsight Clusters**.   
 
 2. From the Spark cluster blade, click **Quick Links**, and then from the **Cluster Dashboard** blade, click **Jupyter Notebook**. If prompted, enter the admin credentials for the cluster.
 
@@ -265,6 +267,10 @@ In this section, you use a Jupyter notebook to run Spark SQL queries against a S
 6. Restart the kernel to exit the application. From the top menu bar, click **Kernel**, click **Restart**, and then click **Restart** again at the prompt.
 
 	![Restart the Jupyter Kernel](./media/hdinsight-apache-spark-zeppelin-notebook-jupyter-spark-sql/hdispark.jupyter.restart.kernel.png "Restart the Jupyter Kernel")
+
+##Delete the cluster
+
+[AZURE.INCLUDE [delete-cluster-warning](../includes/hdinsight-delete-cluster-warning.md)]
 
 
 ## <a name="seealso"></a>See also

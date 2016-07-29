@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
 	pageTitle="Provision HBase clusters on a Virtual Network | Azure"
 	description="Get started using HBase in Azure HDInsight. Learn how to create HDInsight HBase clusters on Azure Virtual Network."
@@ -12,16 +10,12 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="11/18/2015"
+	ms.date="06/27/2016"
 	wacn.date=""/>
 
-# Provision HBase clusters on Azure Virtual Network 
+# Create HBase clusters on Azure Virtual Network 
 
 Learn how to create Azure HDInsight HBase clusters on an [Azure Virtual Network][1].
-
-[AZURE.INCLUDE [hdinsight-azure-preview-portal](../includes/hdinsight-azure-preview-portal.md)]
-
-* [Provision HBase clusters on Azure Virtual Network](/documentation/articles/hdinsight-hbase-provision-vnet-v1)
 
 With virtual network integration, HBase clusters can be deployed to the same virtual network as your applications so that applications can communicate with HBase directly. The benefits include:
 
@@ -29,128 +23,61 @@ With virtual network integration, HBase clusters can be deployed to the same vir
 - Improved performance by not having your traffic go over multiple gateways and load-balancers.
 - The ability to process sensitive information in a more secure manner without exposing a public endpoint.
 
-##Prerequisites
+###Prerequisites
 Before you begin this tutorial, you must have the following:
 
 - **An Azure subscription**. See [Get Azure trial](/pricing/1rmb-trial/).
 
-- **A workstation with Azure PowerShell**. See [Install and use Azure PowerShell](/documentation/articles/powershell-install-configure). For instructions, see [Install and configure Azure PowerShell](/documentation/articles/powershell-install-configure). To execute Azure PowerShell scripts, you must run Azure PowerShell as administrator and set the execution policy to *RemoteSigned*. See [Using the Set-ExecutionPolicy cmdlet][2].
+- **A workstation with Azure PowerShell**. See [Install and use Azure PowerShell](/documentation/articles/powershell-install-configure/). 
 
-	Before running Azure PowerShell scripts, make sure you are connected to your Azure subscription by using the following cmdlet:
+## Create HBase cluster into virtual network
 
-		Add-AzureAccount
+In this section, you will create a Linux-based HBase cluster in HDInsight using [Azure ARM template](/documentation/articles/resource-group-template-deploy/). The Azure ARM template experience is not required for following this tutorial. For other cluster creation methods and understanding the settings, see [Create HDInsight clusters](/documentation/articles/hdinsight-provision-clusters-v1/). For more information about using ARM template to create Hadoop clusters in HDInsight, see [Create Hadoop clusters in HDInsight using ARM templates](/documentation/articles/hdinsight-hadoop-create-windows-clusters-arm-templates/)
 
-	If you have multiple Azure subscriptions, use the following cmdlet to set the current subscription:
+1. Click the following image to open an ARM template in the Azure Portal. The ARM template is located in a public blob container. 
 
-		Select-AzureSubscription <AzureSubscriptionName>
+    <a href="https://portal.azure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fhditutorialdata.blob.core.windows.net%2Farmtemplates%2Fcreate-linux-based-hbase-cluster-in-vnet.json" target="_blank"><img src="https://acom.azurecomcdn.net/80C57D/cdn/mediahandler/docarticles/dpsmedia-prod/azure.microsoft.com/documentation/articles/hdinsight-hbase-tutorial-get-started-v1/20160201111850/deploy-to-azure.png" alt="Deploy to Azure"></a>
 
+2. From the **Parameters** blade, enter the following:
+    - **ClusterName**: Enter a name for the Hadoop cluster that you will create.
+    - **Cluster login name and password**: The default login name is **admin**.
+    - **SSH username and password**: The default username is **sshuser**.  You can rename it. 
+	
+	Some properties have been hard-coded into the template. For example:<br/>
 
-## Provision an HBase cluster into a virtual network
+    - Location: China East
+	- Cluster worker node count: 4
+    - Default storage account: &lt;Cluster Name>store
+    - Virtual network name: &lt;Cluster Name>-vnet
+    - Virtual network address space: 10.0.0.0/16
+    - Subnet name: default
+    - Subnet address range: 10.0.0.0/24
 
-Applications are typically made up of many components. In this tutorial, you will have:
+3. Click **OK** to save the parameters.
+4. From the **Custom deployment** blade, click **Resource group** dropdown box, and then click **New** to create a new resource group.  The resource group is a container that groups the cluster, the dependent storage account and other linked resource.
+5. Click **Legal terms**, and then click **Create**.
+6. Click **Create**. You will see a new tile titled **Submitting deployment for Template deployment**. It takes about around 20 minutes to create a cluster. Once the cluster is created, you can click the cluster blade in the portal to open it.
 
-- an Azure virtual network
-- an Azure Storage Account
-- an Azure HDInsight HBase Cluster
-- (optional) an Azure virtual machine serving as a DNS server
+After you complete the tutorial, you might want to delete the cluster. With HDInsight, your data is stored in Azure Storage, so you can safely delete a cluster when it is not in use. You are also charged for an HDInsight cluster, even when it is not in use. Since the charges for the cluster are many times more than the charges for storage, it makes economic sense to delete clusters when they are not in use. For the instructions of deleting a cluster, see [Manage Hadoop clusters in HDInsight by using the Azure Portal](/documentation/articles/hdinsight-administer-use-management-portal-v1/#delete-clusters).
 
-Azure Resource Manager enables you to work with the resources in your application as a group. You can deploy, update or delete all of the resources for your application in a single, coordinated operation. You use a template for deployment and that template can work for different environments such as testing, staging and production. You can clarify billing for your organization by viewing the rolled-up costs for the entire group.
+To begin working with your new HBase cluster, you can use the procedures found in [Get started using HBase with Hadoop in HDInsight](/documentation/articles/hdinsight-hbase-tutorial-get-started-v1/).
 
-**To create a resource group**
+##Connect to the HBase cluster using HBase Java RPC APIs
 
-1. Sign in to the [Azure Management Portal](https://manage.windowsazure.cn).
-2. Click **NEW**, click **Management**, and then click **Resource group**.
-3. Type or select the following values:
+1.	Create an infrastructure as a service (IaaS) virtual machine into the same Azure virtual network and the same subnet. So both the virtual machine and the HBase cluster use the same internal DNS server to resolve host names. To do so, you must choose the **From Gallery** option, and select the virtual network instead of a data center. For instructions, see [Create a Virtual Machine Running Windows Server](/documentation/articles/virtual-machines-windows-hero-tutorial/). A standard Windows Server 2012 image with a small VM size is sufficient.
 
-	- **Resource group name**: Enter a name for the resource group.
-	- **Subscription**: Select the Azure subscription used for this resource group.
-	- **Resource group location**: Select an Azure data center.  This location doesn't have to match the HDInsight cluster location.
+2.	When using a Java application to connect to HBase remotely, you must use the fully qualified domain name (FQDN). To determine this, you must get the connection-specific DNS suffix of the HBase cluster. To do that, you can use one of the following methods:
 
-4. Click **Create**.
+	* Use a Web browser to make an Ambari call:
+	
+		Browse to https://&lt;ClusterName>.azurehdinsight.cn/api/v1/clusters/&lt;ClusterName>/hosts?minimal_response=true. It turns a JSON file with the DNS suffixes.
 
-Before provisioning an HBase cluster, you need to have an Azure virtual network.
+	* Use the Ambari website:
 
-**To create a virtual network by using the Azure Management Portal**
+		1. Browse to  https://&lt;ClusterName>.azurehdinsight.cn.
+		2. Click **Hosts** from the top menu.
 
-1. Sign in to the [Portal](https://manage.windowsazure.cn).
-2. Click **NEW**, click **Networking**, and then click **Virtual network**.
-3. In **Select a deployment model**, select **Classic** if you will be using a Windows-based HDInsight cluster; select **Resource Manager** if you will be using a Linux-based HDInsight cluster. Finally, click **Create**.
-
-    > [AZURE.NOTE] Windows-based clusters require a v1 (Classic) Virtual Network, while Linux-based clusters require a v2 (Azure Resource Manager,) Virtual Network. If you do not have the correct type of network, it will not be usable when you create the cluster.
-    >
-    > If you have resources on a Virtual Network that is not usable by the cluster you plan on creating, you can create a new Virtual Network that is usable by the cluster, and connect it to the incompatible Virtual Network. You can then create the cluster in the network version that it requires, and it will be able to access resources in the other network since the two are joined. For more information on connecting classic and new Virtual Networks, see [Connecting classic VNets to new VNets](/documentation/articles/virtual-networks-arm-asm-s2s).
-    
-4. Type or select the following values:
-
-	- **Name**: The name of your virtual network.
-	- **Address space**:  Choose an address space for the virtual network that is large enough to provide addresses for all nodes in the cluster. Otherwise the provision will fail. For walking through this tutorial, you can use the default values. Click **OK** to save the changes.
-    
-        > [AZURE.NOTE] If you will be using this Virtual Network with multiple HDInsight clusters, it is highly recommended to designate a single subnet for each cluster.
-         
-	- **Resource group**: Select the resource group you created earlier in the tutorial.
-	- **Subscription**: Select the Azure subscription you like to use for this virtual network.
-	- **Location** - The location must be the same as the HBase cluster that you will create.
-    
-        > [AZURE.NOTE] > Azure HDInsight supports only location-based virtual networks, and does not currently work with virtual networks based on affinity group.
-        
-    For information on using HDInsight with a Virtual Network, including specific configuration requirements for the Virtual Network, see [Extend HDInsight capbilities by using an Azure Virtual Network](/documentation/articles/hdinsight-extend-hadoop-virtual-network).
-
-5. Click **Create**.
-
-By default, the virtual network uses an internal Domain Name System (DNS) server provided by Azure. More advanced networking configurations with custom DNS servers are also supported. For detailed guidance, see [Name Resolution (DNS)](/documentation/articles/virtual-networks-name-resolution-for-vms-and-role-instances).
-
-**(Optinoal) To add a DNS server virtual machine to the virtual network**
-
-A DNS server is optional, but necessary in some cases.  The procedure has been documented in [Configure DNS between two Azure virtual networks][hdinsight-hbase-replication-dns]. Basically, you will need to perform these steps:
-
-1. add an Azure virtual machine to the virtual network
-2. set a static IP address for the virtual machine
-3. add the DNS server role to the virtual machine
-4. Assign the DNS server to the virtual network
-
-**To provision an HBase cluster by using the Azure Management Portal**
-
-> [AZURE.NOTE] For information on provisioning a new HBase cluster by using Azure PowerShell, see [Provision an HBase cluster using Azure PowerShell](#powershell).
-
-
-**To create an HDInsight cluster**
-
-1. Sign in to the [Azure Management Portal](https://manage.windowsazure.cn).
-2. Click **NEW**, Click **Data Analytics**, and then click **HDInsight**.
-
-    ![Creating a new cluster in the Azure Management Portal](./media/hdinsight-provision-clusters-v1/HDI.CreateCluster.1.png "Creating a new cluster in the Azure Management Portal")
-
-3. Type or select the following values:
-
-  - **Cluster Name**: Enter a name for the cluster. A green check will appear beside the cluster name if the name is available.
-  - **Cluster Type**: Select **HBase**.
-  - **Cluster Operating System**: Select **Windows Server 2012 R2 Datacenter**.
-  - **Subscription**: Select the Azure subscription that will be used for provision this cluster.
-  - **Resource Group**: Select the resource group you created earlier in the tutorial.
-  - **Credentials**: Configure the username and the password for the Hadoop user (HTTP user). If you enable remote desktop for the cluster, you will need to configure the remote desktop user username and password, and an account expiration date. Click **Select** at the bottom to save the changes.
-  - **Data Source**: Select an existing or create a new Azure Storage account that will be used as the default file system for the cluster. The default name for the default container is the cluster name.  The location of the storage account also determine the location of the cluster.
-  - **Node Pricing Tier**: For learning or evaluation purpose, select 1 region node to minimize the cost.
-
-  	- **Selection Method**: Set this to **From all subscriptions** to enable browsing of storage accounts from all your subscriptions. Set this to **Access Key** if you want to enter the **Storage Name** and **Access Key** of an existing storage account.
-  	- **Select storage account / Create New**: Click **Select storage account** to browse and select an existing storage account you want to associate with the cluster. Or, click **Create New** to create a new storage account. Use the field that appears to enter the name of the storage account. A green check will appear if the name is available.
-    - **Choose Default Container**: Use this to enter the name of the default container to use for the cluster. While you can enter any name here, we recommend using the same name as the cluster so that you can easily recognize that the container is used for this specific cluster.
-  	- **Location**: The geographic region that the storage account is in, or will be created in. This location will determine the cluster location.  The cluster and its default storage account must co-locate in the same Azure data center.
-
-  - **Node Pricing Tiers**: Set the number of worker nodes that you need for the cluster. The estimated cost of the cluster will be shown within the blade.
-	- **Optional Configuration**: For this tutorial, you only need to configure **Virtual Network**.  Select the virtual network you created earlier in the tutorial. Make sure you also select a subnet.
-
-4. Click **Create**.
-
-
-To begin working with your new HBase cluster, you can use the procedures found in [Get started using HBase with Hadoop in HDInsight](/documentation/articles/hdinsight-hbase-tutorial-get-started-v1).
-
-##Connect to the HBase cluster provisioned in the virtual network by using HBase Java RPC APIs
-
-1.	Provision an infrastructure as a service (IaaS) virtual machine into the same Azure virtual network and the same subnet. So both the virtual machine and the HBase cluster use the same internal DNS server to resolve host names. To do so, you must choose the **From Gallery** option, and select the virtual network instead of a data center. For instructions, see [Create a Virtual Machine Running Windows Server](/documentation/articles/virtual-machines-windows-tutorial-classic-portal). A standard Windows Server 2012 image with a small VM size is sufficient.
-
-2.	When using a Java application to connect to HBase remotely, you must use the fully qualified domain name (FQDN). To determine this, you must get the connection-specific DNS suffix of the HBase cluster. To do that, use Curl to query Ambari, or use Remote Desktop to connect to the cluster.
-
-	* **Curl** - Use the following command:
+	* Use Curl to make REST calls:
 
 			curl -u <username>:<password> -k https://<clustername>.azurehdinsight.cn/ambari/api/v1/clusters/<clustername>.azurehdinsight.cn/services/hbase/components/hbrest
 
@@ -162,7 +89,9 @@ To begin working with your new HBase cluster, you can use the procedures found i
 
 		The portion of the domain name beginning with the cluster name is the DNS suffix. For example, mycluster.b1.chinacloudapp.cn.
 
-	* **Azure PowerShell** - Use the following Azure PowerShell script to register the **Get-ClusterDetail** function, which can be used to return the DNS suffix:
+	* Use Azure PowerShell
+	
+		Use the following Azure PowerShell script to register the **Get-ClusterDetail** function, which can be used to return the DNS suffix:
 
 			function Get-ClusterDetail(
 			    [String]
@@ -244,7 +173,7 @@ To begin working with your new HBase cluster, you can use the procedures found i
 				}
 				if($PropertyName -eq "FQDNSuffix")
 				{
-					$Url = "https://" + $ClusterFQDN + "/ambari/api/v1/clusters/" + $ClusterFQDN + "/services/yarn/components/resourcemanager"
+					$Url = "https://" + $ClusterFQDN + "/ambari/api/v1/clusters/" + $ClusterFQDN + "/home/features/YARN/components/RESOURCEMANAGER"
 					$Response = $webclient.DownloadString($Url)
 					$JsonObject = $Response | ConvertFrom-Json
 					$FQDN = $JsonObject.host_components[0].HostRoles.host_name
@@ -260,9 +189,11 @@ To begin working with your new HBase cluster, you can use the procedures found i
 
 		This will return the DNS suffix. For example, **yourclustername.b4.internal.chinacloudapp.cn**.
 
-	> [AZURE.NOTE] You can also use Remote Desktop to connect to the HBase cluster (you will be connected to the head node) and run **ipconfig** from a command prompt to obtain the DNS suffix. For instructions on enabling Remote Desktop Protocol (RDP) and connecting to the cluster by using RDP, see [Manage Hadoop clusters in HDInsight using the Azure Management Portal][hdinsight-admin-portal].
-	>
-	> ![hdinsight.hbase.dns.surffix][img-dns-surffix]
+	* Use RDP
+	
+		You can also use Remote Desktop to connect to the HBase cluster (you will be connected to the head node) and run **ipconfig** from a command prompt to obtain the DNS suffix. For instructions on enabling Remote Desktop Protocol (RDP) and connecting to the cluster by using RDP, see [Manage Hadoop clusters in HDInsight using the Azure portal][hdinsight-admin-portal].
+		
+		![hdinsight.hbase.dns.surffix][img-dns-surffix]
 
 
 <!--
@@ -282,64 +213,24 @@ To begin working with your new HBase cluster, you can use the procedures found i
 
 To verify that the virtual machine can communicate with the HBase cluster, use the command `ping headnode0.<dns suffix>` from the virtual machine. For example, ping headnode0.mycluster.b1.chinacloudapp.cn.
 
-To use this information in a Java application, you can follow the steps in [Use Maven to build Java applications that use HBase with HDInsight (Hadoop)](/documentation/articles/hdinsight-hbase-build-java-maven) to create an application. To have the application connect to a remote HBase server, modify the **hbase-site.xml** file in this example to use the FQDN for Zookeeper. For example:
+To use this information in a Java application, you can follow the steps in [Use Maven to build Java applications that use HBase with HDInsight (Hadoop)](/documentation/articles/hdinsight-hbase-build-java-maven/) to create an application. To have the application connect to a remote HBase server, modify the **hbase-site.xml** file in this example to use the FQDN for Zookeeper. For example:
 
 	<property>
     	<name>hbase.zookeeper.quorum</name>
     	<value>zookeeper0.<dns suffix>,zookeeper1.<dns suffix>,zookeeper2.<dns suffix></value>
 	</property>
 
-> [AZURE.NOTE] For more information on name resolution in Azure virtual networks, including how to use your own DNS server, see [Name Resolution (DNS)](/documentation/articles/virtual-networks-name-resolution-for-vms-and-role-instances).
-
-##Provision an HBase cluster by using Azure PowerShell
-
-**To provision an HBase cluster by using Azure PowerShell**
-
-1. Open the Azure PowerShell Integrated Scripting Environment (ISE).
-2. Copy and paste the following into the script pane:
-
-		$hbaseClusterName = "<HBaseClusterName>"
-		$hadoopUserName = "<HBaseClusterUsername>"
-		$hadoopUserPassword = "<HBaseClusterUserPassword>"
-		$location = "<HBaseClusterLocation>"  #i.e. "China North"
-		$clusterSize = <HBaseClusterSize>  
-		$resourceGroup = "<AzureResourceGroupName>"
-		$vnetID = "<AzureVirtualNetworkID>"
-		$subNetName = "<AzureVirtualNetworkSubNetName>"
-		$storageAccountName = "<AzureStorageAccountName>" # Do not use the full name here
-		$storageAccountKey = "<AzureStorageAccountKey>"
-		$storageContainerName = "<AzureBlobStorageContainer>"
-
-		$password = ConvertTo-SecureString $hadoopUserPassword -AsPlainText -Force
-		$creds = New-Object System.Management.Automation.PSCredential ($hadoopUserName, $password)
-
-		New-AzureHDInsightCluster -ResourceGroupName $resourceGroup `
-		                          -ClusterName $hbaseClusterName `
-				                    	-ClusterType HBase `
-				                    	-Location $location `
-				                    	-ClusterSizeInNodes $clusterSize `
-		                          -HttpCredential $creds `
-				                    	-VirtualNetworkId $vnetID `
-				                    	-SubnetName $subNetName `
-				                    	-DefaultStorageAccountName "$storageAccountName.blob.core.chinacloudapi.cn" `
-				                    	-DefaultStorageAccountKey $storageAccountKey `
-		                          -DefaultStorageContainer $storageContainerName
-
-
-3. Click **Run Script**, or press **F5**.
-4. To validate the cluster, you can either check the cluster from the Azure Management Portal, or run the following Azure PowerShell cmdlet from the bottom pane:
-
-	Get-AzureHDInsightCluster
+> [AZURE.NOTE] For more information on name resolution in Azure virtual networks, including how to use your own DNS server, see [Name Resolution (DNS)](/documentation/articles/virtual-networks-name-resolution-for-vms-and-role-instances/).
 
 ##Next steps
 
-In this tutorial you learned how to provision an HBase cluster. To learn more, see:
+In this tutorial you learned how to create an HBase cluster. To learn more, see:
 
-- [Get started with HDInsight](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1)
-- [Configure HBase replication in HDInsight](/documentation/articles/hdinsight-hbase-geo-replication)
-- [Provision Hadoop clusters in HDInsight](/documentation/articles/hdinsight-provision-clusters-v1)
-- [Get started using HBase with Hadoop in HDInsight](/documentation/articles/hdinsight-hbase-tutorial-get-started-v1)
-- [Analyze Twitter sentiment with HBase in HDInsight](/documentation/articles/hdinsight-hbase-twitter-sentiment)
+- [Get started with HDInsight](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1/)
+- [Configure HBase replication in HDInsight](/documentation/articles/hdinsight-hbase-geo-replication/)
+- [Create Hadoop clusters in HDInsight](/documentation/articles/hdinsight-provision-clusters-v1/)
+- [Get started using HBase with Hadoop in HDInsight](/documentation/articles/hdinsight-hbase-tutorial-get-started-v1/)
+- [Analyze Twitter sentiment with HBase in HDInsight](/documentation/articles/hdinsight-hbase-analyze-twitter-sentiment/)
 - [Virtual Network Overview][vnet-overview]
 
 
@@ -347,19 +238,19 @@ In this tutorial you learned how to provision an HBase cluster. To learn more, s
 [2]: http://technet.microsoft.com/zh-cn/library/ee176961.aspx
 [3]: http://technet.microsoft.com/zh-cn/library/hh847889.aspx
 
-[hbase-get-started]: /documentation/articles/hdinsight-hbase-tutorial-get-started-v1
-[hbase-twitter-sentiment]: /documentation/articles/hdinsight-hbase-twitter-sentiment
-[vnet-overview]: /documentation/articles/virtual-networks-overview
-[vm-create]: /documentation/articles/virtual-machines-windows-tutorial-classic-portal
+[hbase-get-started]: /documentation/articles/hdinsight-hbase-tutorial-get-started-v1/
+[hbase-twitter-sentiment]: /documentation/articles/hdinsight-hbase-analyze-twitter-sentiment/
+[vnet-overview]: /documentation/articles/virtual-networks-overview/
+[vm-create]: /documentation/articles/virtual-machines-windows-hero-tutorial/
 
-[azure-portal]: https://manage.windowsazure.cn
-[azure-create-storageaccount]: /documentation/articles/storage-create-storage-account
+[azure-portal]: https://portal.azure.cn
+[azure-create-storageaccount]: /documentation/articles/storage-create-storage-account/
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: /pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
 
-[hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell
-[hdinsight-admin-portal]: /documentation/articles/hdinsight-administer-use-management-portal-v1#rdp
+[hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell/
+[hdinsight-admin-portal]: /documentation/articles/hdinsight-administer-use-management-portal-v1/#rdp
 
 [hdinsight-powershell-reference]: https://msdn.microsoft.com/zh-cn/library/dn858087.aspx
 
@@ -368,23 +259,23 @@ In this tutorial you learned how to provision an HBase cluster. To learn more, s
 [twitter-statuses-filter]: https://dev.twitter.com/docs/api/1.1/post/statuses/filter
 
 
-[powershell-install]: /documentation/articles/powershell-install-configure
+[powershell-install]: /documentation/articles/powershell-install-configure/
 
 
-[hdinsight-customize-cluster]: /documentation/articles/hdinsight-hadoop-customize-cluster-v1
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
-[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
-[hdinsight-storage-powershell]: /documentation/articles/hdinsight-hadoop-use-blob-storage#powershell
-[hdinsight-analyze-flight-delay-data]: /documentation/articles/hdinsight-analyze-flight-delay-data
-[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
-[hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop
-[hdinsight-power-query]: /documentation/articles/hdinsight-connect-excel-power-query
-[hdinsight-hive-odbc]: /documentation/articles/hdinsight-connect-excel-hive-ODBC-driver
-[hdinsight-hbase-replication-dns]: /documentation/articles/hdinsight-hbase-geo-replication-configure-DNS
+[hdinsight-customize-cluster]: /documentation/articles/hdinsight-hadoop-customize-cluster-v1/
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1/
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1/
+[hdinsight-storage-powershell]: /documentation/articles/hdinsight-hadoop-use-blob-storage/#powershell
+[hdinsight-analyze-flight-delay-data]: /documentation/articles/hdinsight-analyze-flight-delay-data/
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage/
+[hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop/
+[hdinsight-power-query]: /documentation/articles/hdinsight-connect-excel-power-query/
+[hdinsight-hive-odbc]: /documentation/articles/hdinsight-connect-excel-hive-ODBC-driver/
+[hdinsight-hbase-replication-dns]: /documentation/articles/hdinsight-hbase-geo-replication-configure-DNS/
 
 [img-dns-surffix]: ./media/hdinsight-hbase-provision-vnet-v1/DNSSuffix.png
 [img-primary-dns-suffix]: ./media/hdinsight-hbase-provision-vnet-v1/PrimaryDNSSuffix.png
 [img-provision-cluster-page1]: ./media/hdinsight-hbase-provision-vnet-v1/hbasewizard1.png "Provision details for the new HBase cluster"
 [img-provision-cluster-page5]: ./media/hdinsight-hbase-provision-vnet-v1/hbasewizard5.png "Use Script Action to customize an HBase cluster"
 
-[azure-preview-portal]: https://manage.windowsazure.cn
+[azure-preview-portal]: https://portal.azure.cn

@@ -1,3 +1,5 @@
+<!-- rename to virtual-machines-windows-extensions-features -->
+
 <properties
  pageTitle="Virtual machine extensions and features | Azure"
  description="Learn what extensions are available for Azure virtual machines, grouped by what they provide or improve."

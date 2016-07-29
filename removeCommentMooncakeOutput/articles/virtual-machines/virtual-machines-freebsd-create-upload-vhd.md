@@ -1,3 +1,5 @@
+<!-- rename to virtual-machines-linux-classic-freebsd-create-upload-vhd -->
+
 <properties
    pageTitle="Create and upload a FreeBSD VM image | Azure"
    description="Learn to create and upload a virtual hard disk (VHD) that contains the FreeBSD operating system to create an Azure virtual machine"
@@ -17,7 +19,7 @@
 
 This article shows you how to create and upload a virtual hard disk (VHD) that contains the FreeBSD operating system so you can use it as your own image to create a virtual machine (VM) in Azure.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-include.md)]
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager model.
 
 
 ##Prerequisites##
@@ -100,9 +102,9 @@ From the virtual machine that the FreeBSD operating system was installed to, com
 
 ## Step 2: Create a storage account in Azure ##
 
-You need a storage account in Azure to upload a .vhd file so it can be used in Azure to create a virtual machine. You can use the Azure Management Portal to create a storage account.
+You need a storage account in Azure to upload a .vhd file so it can be used in Azure to create a virtual machine. You can use the Azure Classic Management Portal to create a storage account.
 
-1. Sign in to the [Azure Management Portal](https://manage.windowsazure.cn).
+1. Sign in to the [Azure Classic Management Portal](https://manage.windowsazure.cn).
 
 2. On the command bar, click **New**.
 
@@ -116,7 +118,7 @@ You need a storage account in Azure to upload a .vhd file so it can be used in A
 
 	- Choose the **location or affinity group** for the storage account. An affinity group lets you place your cloud services and storage in the same data center.
 
-	- Decide whether to use **geo-replication** for the storage account. Geo-replication is turned on by default. This option replicates your data to a secondary location, at no cost to you, so that your storage fails over to that location if a major failure occurs at the primary location. The secondary location is assigned automatically, and can't be changed. If you need more control over the location of your cloud-based storage due to legal requirements or organizational policy, you can turn off geo-replication. However, be aware that if you later turn on geo-replication, you will be charged a one-time data transfer fee to replicate your existing data to the secondary location. Storage services without geo-replication are offered at a discount. More details on managing geo-replication of Storage accounts can be found here: [Create, manage, or delete a storage account](/documentation/articles/storage-create-storage-account#replication-options).
+	- Decide whether to use **geo-replication** for the storage account. Geo-replication is turned on by default. This option replicates your data to a secondary location, at no cost to you, so that your storage fails over to that location if a major failure occurs at the primary location. The secondary location is assigned automatically, and can't be changed. If you need more control over the location of your cloud-based storage due to legal requirements or organizational policy, you can turn off geo-replication. However, be aware that if you later turn on geo-replication, you will be charged a one-time data transfer fee to replicate your existing data to the secondary location. Storage services without geo-replication are offered at a discount. More details on managing geo-replication of Storage accounts can be found here: [Create, manage, or delete a storage account](/documentation/articles/storage-create-storage-account/#replication-options).
 
 	![Enter storage account details](./media/virtual-machines-freebsd-create-upload-vhd/Storage-create-account.png)
 
@@ -176,11 +178,11 @@ Before you can upload a .vhd file, you need to establish a secure connection bet
 
    For more information, see [Get Started with Azure Cmdlets](http://msdn.microsoft.com/zh-cn/library/azure/jj554332.aspx)
 
-   For more information on installing and configuring PowerShell, see [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure).
+   For more information on installing and configuring PowerShell, see [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure/).
 
 ## Step 4: Upload the .vhd file ##
 
-When you upload the .vhd file, you can place the .vhd file anywhere within your blob storage. In the following command examples, **BlobStorageURL** is the URL for the storage account that you created in Step 2, **YourImagesFolder** is the container within blob storage where you want to store your images. **VHDName** is the label that appears in the Azure Management Portal to identify the virtual hard disk. **PathToVHDFile** is the full path and name of the .vhd file.
+When you upload the .vhd file, you can place the .vhd file anywhere within your blob storage. In the following command examples, **BlobStorageURL** is the URL for the storage account that you created in Step 2, **YourImagesFolder** is the container within blob storage where you want to store your images. **VHDName** is the label that appears in the Azure Classic Management Portal to identify the virtual hard disk. **PathToVHDFile** is the full path and name of the .vhd file.
 
 
 1. From the Azure PowerShell window you used in the previous step, type:
@@ -196,7 +198,7 @@ After you upload the .vhd, you can add it as an image to the list of custom imag
 
     **Important**: Please use Linux as OS type for now since current Azure PowerShell version only accepts "Linux" or "Windows" as a parameter.
 
-2. After you complete the previous steps, the new image is listed when you choose the **Images** tab on the Azure Management Portal.  
+2. After you complete the previous steps, the new image is listed when you choose the **Images** tab on the Azure Classic Management Portal.  
 
     ![add image](./media/virtual-machines-freebsd-create-upload-vhd/addfreebsdimage.png)
 

@@ -1,3 +1,5 @@
+<!-- deleted in Global -->
+
 <properties 
 	pageTitle="Learning Map for Azure Websites" 
 	description="Get a visual map through all the resources you need to go from 0 to 60 on Azure Websites." 

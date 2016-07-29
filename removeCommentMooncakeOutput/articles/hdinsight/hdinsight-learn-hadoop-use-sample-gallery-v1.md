@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="12/02/2015"
+	ms.date="05/27/2016"
 	wacn.date=""/>
 
 # Learn Hadoop by using the HDInsight Getting Started Gallery
@@ -30,7 +30,7 @@ The HDInsight Getting Started Gallery provides an easy and quick way learn Hadoo
 
 **To run a sample from the Getting Started Gallery**
 
-1.	Sign in to the [Azure Management Portal][azure.portal].
+1.	Sign in to the [Azure Classic Management Portal][azure.portal].
 2.	Click **HDInsight** in the left menu. You will see a list of existing HDInsight clusters, including Hadoop, Storm, and HBase clusters.
 3.	Click the cluster where you want to run the sample.
 4.	Click **QUERY CONSOLE** at the bottom of the page.
@@ -51,6 +51,6 @@ Other ways to learn about HDInsight include:
 [hdinsight.twitter.sample]: ./media/hdinsight-learn-hadoop-use-sample-gallery/HDInsight-Twitter-Trend-Analysis-sample.png
 
 <!--Link references-->
-[hdinsight.learn.map]: /documentation/articles/hdinsight-learn-map
+[hdinsight.learn.map]: https://azure.microsoft.com/documentation/learning-paths/hdinsight-self-guided-hadoop-training/
 [hdinsight.infographic]: http://go.microsoft.com/fwlink/?linkid=523960
 [azure.portal]:https://manage.windowsazure.cn

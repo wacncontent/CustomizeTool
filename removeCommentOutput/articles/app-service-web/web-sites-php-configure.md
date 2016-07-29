@@ -3,13 +3,13 @@
 	description="Learn how to configure the default PHP installation or add a custom PHP installation for Web Apps in Azure."
 	services="app-service"
 	documentationCenter="php"
-	authors="tfitzmac"
+	authors="rmcmurray"
 	manager="wpickett"
 	editor=""/>
 
 <tags
 	ms.service="app-service"
-	ms.date="12/16/2015"
+	ms.date="06/03/2016"
 	wacn.date=""/>
 
 #Configure PHP in Azure Web Apps
@@ -25,9 +25,9 @@ By default, PHP 5.4 is installed and immediately available for use when you crea
 
 PHP 5.5 and PHP 5.6 versions are also available, but not enabled by default. To update the PHP version, follow one of these methods:
 
-### Azure Management Portal
+### Azure Portal
 
-1. Browse to your web app in the [Azure Management Portal](https://manage.windowsazure.cn) and click on the **Settings** button.
+1. Browse to your web app in the [Azure Portal](https://portal.azure.cn) and click on the **Settings** button.
 
 	![Web App Settings][settings-button]
 
@@ -120,7 +120,7 @@ As noted in the previous section, the best way to see the default PHP version, i
 1. Add a `bin` directory to the root directory.
 2. Put `.dll` extension files in the `bin` directory (for example, `php_mongo.dll`). Make sure that the extensions are compatible with default version of PHP (which is, as of this writing, PHP 5.4) and are VC9 and non-thread-safe (nts) compatible.
 3. Deploy your web app.
-4. Browse to your web app in the Azure Management Portal and click on the **Settings** button.
+4. Browse to your web app in the Azure Portal and click on the **Settings** button.
 
 	![Web App Settings][settings-button]
 
@@ -144,7 +144,7 @@ Instead of the default PHP runtime, Azure Web Apps can use a PHP runtime that yo
 3. Optionally, add extensions to your PHP runtime and enable them in the `php.ini` file.
 4. Add a `bin` directory to your root directory, and put the directory that contains your PHP runtime in it (for example, `bin\php`).
 5. Deploy your web app.
-4. Browse to your web app in the Azure Management Portal and click on the **Settings** button.
+4. Browse to your web app in the Azure Portal and click on the **Settings** button.
 
 	![Web App Settings][settings-button]
 
@@ -156,14 +156,38 @@ Instead of the default PHP runtime, Azure Web Apps can use a PHP runtime that yo
 
 	![Save configuration settings][save-button]
 
+<a name="composer" />
+## How to: Enable Composer automation in Azure
+
+By default, Azure doesn't do anything with composer.json, if you have one in your PHP
+project. If you use [Git deployment](/documentation/articles/app-service-web-php-get-started/), you can enable composer.json 
+processing during `git push` by enabling the Composer extension.
+
+>[AZURE.NOTE] You can [vote for first-class Composer support in Azure here](https://feedback.azure.com/forums/169385-web-apps-formerly-websites/suggestions/6477437-first-class-support-for-composer-and-pip)!
+
+1. In your PHP web app's blade in the [Azure portal](https://portal.azure.cn), click **Tools** > **Extensions**.
+
+    ![Azure Portal settings blade to enable Composer automation in Azure](./media/web-sites-php-configure/composer-extension-settings.png)
+
+2. Click **Add**, then click **Composer**.
+
+    ![Add Composer extension to enable Composer automation in Azure](./media/web-sites-php-configure/composer-extension-add.png)
+    
+3. Click **OK** to accept legal terms. Click **OK** again to add the extension.
+
+    The **Installed extensions** blade will now show the Composer extension.  
+    ![Accept legal terms to enable Composer automation in Azure](./media/web-sites-php-configure/composer-extension-view.png)
+    
+4. Now, perform `git add`, `git commit`, and `git push` like in the previous section. You'll now see that Composer
+is installing dependencies defined in composer.json.
+
+    ![Git deployment with Composer automation in Azure](./media/web-sites-php-configure/composer-extension-success.png)
+
 ## Next steps
 
 For more information, see the [PHP Developer Center](/develop/php/).
 
 >[AZURE.NOTE] If you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.
-
-## What's changed
-* For a guide to the change from Websites to Azure see: [Azure and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
 
 [trial]: /pricing/1rmb-trial/
 [phpinfo()]: http://php.net/manual/en/function.phpinfo.php

@@ -1,4 +1,4 @@
-<!-- not suitable for Mooncake -->
+<!-- rename to virtual-machines-windows-csharp -->
 
 <properties
 	pageTitle="Deploy Resources Using .NET Libraries | Azure"
@@ -17,7 +17,7 @@
 
 # Deploy Azure Resources Using the Compute, Network, and Storage .NET Libraries
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the Resource Manager deployment model, which Azure recommends for most new deployments instead of the classic deployment model.
 
 This tutorial shows you how to use the Compute, Storage, and Network .NET libraries to create and delete resources in Azure. It also shows you how to authenticate the requests to Azure Resource Manager by using Azure Active Directory.
 
@@ -26,7 +26,7 @@ This tutorial shows you how to use the Compute, Storage, and Network .NET librar
 To complete this tutorial you also need:
 
 - [Visual Studio](http://msdn.microsoft.com/zh-cn/library/dd831853.aspx)
-- [Azure storage account](/documentation/articles/storage-create-storage-account)
+- [Azure storage account](/documentation/articles/storage-create-storage-account/)
 - [Windows Management Framework 3.0](http://www.microsoft.com/download/details.aspx?id=34595) or [Windows Management Framework 4.0](http://www.microsoft.com/download/details.aspx?id=40855)
 
 [AZURE.INCLUDE [powershell-preview](../includes/powershell-preview-inline-include.md)]
@@ -35,7 +35,7 @@ It takes about 30 minutes to do these steps.
 
 ## Step 1: Add an application to Azure AD and set permissions
 
-To use Azure AD to authenticate requests to Azure Resource Manager, an application must be added to the Default Directory. For more information, see [Authenticating a service principal with Azure Resource Manager](/documentation/articles/resource-group-authenticate-service-principal)
+To use Azure AD to authenticate requests to Azure Resource Manager, an application must be added to the Default Directory. For more information, see [Authenticating a service principal with Azure Resource Manager](/documentation/articles/resource-group-authenticate-service-principal/)
 
 1. Open an Azure PowerShell prompt, run this command, and then enter the credentials for your subscription when prompted:
 
@@ -45,7 +45,7 @@ To use Azure AD to authenticate requests to Azure Resource Manager, an applicati
 
 			New-AzureRmADApplication -DisplayName "My AD Application 1" -HomePage "https://myapp1.com" -IdentifierUris "https://myapp1.com"  -Password "{password}"
 
-	>[AZURE.NOTE] Take note of the application identifer that is returned after the application is created because you'll need it for the next step. You can also find the application identifier in the client id field of the application in the Active Directory section of the Azure Management Portal.
+	>[AZURE.NOTE] Take note of the application identifer that is returned after the application is created because you'll need it for the next step. You can also find the application identifier in the client id field of the application in the Active Directory section of the Azure portal.
 
 3. Replace {application-id} with the identifier that you just recorded and then create the service principal for the application:
 
@@ -104,7 +104,7 @@ Now that the Azure Active Directory application is created and the authenticatio
 	{
 		ClientCredential cc = new ClientCredential("{application-id}", "{password}");
 		var context = new AuthenticationContext("https://login.chinacloudapi.cn/{tenant-id}");
-		var result = context.AcquireTokenAsync("https://manage.windowsazure.cn/", cc);
+		var result = context.AcquireTokenAsync("https://management.chinacloudapi.cn/", cc);
 
 		if (result == null)
 		{
@@ -487,7 +487,7 @@ Now that you created all of the supporting resources, you can create a virtual m
 	}
 	```
 
-	>[AZURE.NOTE] This tutorial creates a virtual machine running a version of the Windows Server operating system. To learn more about selecting other images, see [Navigate and select Azure virtual machine images with Windows PowerShell and the Azure CLI](/documentation/articles/resource-groups-vm-searching).
+	>[AZURE.NOTE] This tutorial creates a virtual machine running a version of the Windows Server operating system. To learn more about selecting other images, see [Navigate and select Azure virtual machine images with Windows PowerShell and the Azure CLI](/documentation/articles/virtual-machines-linux-cli-ps-findimage/).
 
 2. Add the following code to the Main method to call the method that you just added:
 
@@ -540,8 +540,8 @@ Because you are charged for resources used in Azure, it is always a good practic
 
 2. Press **Enter** after each status code is returned to create each resource. After the virtual machine is created, do the next step before pressing Enter to delete all of the resources.
 
-	It should take about 5 minutes for this console application to run completely from start to finish. Before you press Enter to start deleting resources, you could take a few minutes to verify the creation of the resources in the Azure Management Portal before you delete them.
+	It should take about 5 minutes for this console application to run completely from start to finish. Before you press Enter to start deleting resources, you could take a few minutes to verify the creation of the resources in the Azure portal before you delete them.
 
-3. Browse to the Audit Logs in the Azure Management Portal to see the status of the resources:
+3. Browse to the Audit Logs in the Azure portal to see the status of the resources:
 
 	![Create an AD application](./media/virtual-machines-arm-deployment/crpportal.png)

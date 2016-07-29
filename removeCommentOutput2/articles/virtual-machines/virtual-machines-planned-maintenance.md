@@ -1,3 +1,5 @@
+<!-- rename to virtual-machines-linux-planned-maintenance -->
+
 <properties
 	pageTitle="Planned maintenance for Azure VMs | Azure"
 	description="Understand what Azure planned maintenance is and how it affects your virtual machines running in Azure."
@@ -46,7 +48,7 @@ For more information about configuring your virtual machines for high availabili
 
 By contrast, a single-instance configuration is used for standalone virtual machines that are not placed in an availability set. These virtual machines do not qualify for the service level agreement (SLA), which requires that two or more virtual machines are deployed under the same availability set.
 
-For more information about SLAs, refer to the "Cloud Services, Virtual Machines and Virtual Network" section of [Service Level Agreements](https://azure.m.
+For more information about SLAs, refer to the "Cloud Services, Virtual Machines and Virtual Network" section of [Service Level Agreements](/support/legal/sla/).
 
 
 ## Multi-instance configuration updates
@@ -68,7 +70,10 @@ After a virtual machine is restored, here is an example of what your Windows Eve
 <!--Image reference-->
 ![][image2]
 
-Use the viewer to determine which virtual machines are configured in a multi-instance configuration using the Azure Management Portal, Azure PowerShell, or Azure CLI. For example, to determine which virtual machines are in a multi-instance configuration, you can browse the list of virtual machines with the Availability Set column added to the virtual machines browse dialog. In the following example, t
+Use the viewer to determine which virtual machines are configured in a multi-instance configuration using the Azure portal, Azure PowerShell, or Azure CLI. For example, to determine which virtual machines are in a multi-instance configuration, you can browse the list of virtual machines with the Availability Set column added to the virtual machines browse dialog. In the following example, the Example-VM1 and Example-VM2 virtual machines are in a muilti-instance configuration:
+
+<!--Image reference-->
+![][image4]
 
 ## Single-instance configuration updates
 
@@ -82,7 +87,21 @@ This planned maintenance event will impact the availability of your application 
 
 ### Email notification
 
-For single-instance and multi-instance virtual machine configurations only, Azure sends email communication in advance to alert you of the upcoming planned maintenance (1-week in advance). This email will be sent to the account administrator and co-administrator email accounts provided in the subscription. Here is an example of this
+For single-instance and multi-instance virtual machine configurations only, Azure sends email communication in advance to alert you of the upcoming planned maintenance (1-week in advance). This email will be sent to the account administrator and co-administrator email accounts provided in the subscription. Here is an example of this type of email:
+
+<!--Image reference-->
+![][image1]
+
+## Region pairs
+
+When executing maintenance, Azure will only update the Virtual Machine instances in a single region of its pair. For example, when updating the Virtual Machines in China North, Azure will not update any Virtual Machines in China East at the same time. This will be scheduled at a separate time, enabling failover or load balancing between regions. However, other regions such as China North can be under maintenance at the same time as China East.
+
+Please refer to the following table for information regarding current region pairs:
+
+Region 1 | Region 2
+:----- | ------:
+China North | China East
+China East | China North
 
 <!--Anchors-->
 [image1]: ./media/virtual-machines-planned-maintenance/vmplanned1.png
@@ -93,4 +112,4 @@ For single-instance and multi-instance virtual machine configurations only, Azur
 
 <!--Link references-->
 [Virtual Machines Manage Availability]: /documentation/articles/virtual-machines-windows-tutorial-classic-portal
-[Understand planned versus unplanned maintenance]: /documentation/articles/vir
+[Understand planned versus unplanned maintenance]: /documentation/articles/virtual-machines-manage-availability#Understand-planned-versus-unplanned-maintenance

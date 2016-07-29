@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Connection assets in Azure Automation | Windows Azure"
+   pageTitle="Connection assets in Azure Automation | Azure"
    description="Connection assets in Azure Automation contain the information required to connect to an external service or application from a runbook or DSC configuration. This article explains the details of connections and how to work with them in both textual and graphical authoring."
    services="automation"
    documentationCenter=""
@@ -8,24 +8,24 @@
    editor="tysonn" />
 <tags
 	ms.service="automation"
-	ms.date="10/23/2015"
+	ms.date="01/27/2016"
 	wacn.date=""/>
 
 # Connection assets in Azure Automation
 
 An Automation connection asset contains the information required to connect to an external service or application from a runbook. This may include information required for authentication such as a username and password in addition to connection information such as a URL or a port. The value of a connection is keeping all of the properties for connecting to a particular application in one asset as opposed to creating multiple variables. The user can edit the values for a connection in one place, and you can pass the name of a connection to a runbook in a single parameter. The properties for a connection can be accessed in the runbook with the **Get-AutomationConnection** activity.
 
-When you create a connection, you must specify a *connection type*. The connection type is a template that defines a set of properties. The connection defines values for each property defined in its connection type. Connection types are added to Azure Automation in integration modules or created with the [Azure Automation API](http://msdn.microsoft.com/zh-cn/library/azure/mt163818.aspx). The only connection types that are available when you create a connection are those installed in your automation account.
+When you create a connection, you must specify a *connection type*. The connection type is a template that defines a set of properties. The connection defines values for each property defined in its connection type. Connection types are added to Azure Automation in integration modules or created with the [Azure Automation API](http://msdn.microsoft.com/zh-cn/library/azure/mt163818.aspx). The only connection types that are available when you create a connection are those installed in your Automation account.
 
 >[AZURE.NOTE] Secure assets in Azure Automation include credentials, certificates, connections, and encrypted variables. These assets are encrypted and stored in the Azure Automation using a unique key that is generated for each automation account. This key is encrypted by a master certificate and stored in Azure Automation. Before storing a secure asset, the key for the automation account is decrypted using the master certificate and then used to encrypt the asset.
 
 ## Windows PowerShell Cmdlets
 
-The cmdlets in the following table are used to create and manage Automation connections with Windows PowerShell They ship as part of the [Azure PowerShell module](/documentation/articles/powershell-install-configure) which is available for use in Automation runbooks.
+The cmdlets in the following table are used to create and manage Automation connections with Windows PowerShell. They ship as part of the [Azure PowerShell module](/documentation/articles/powershell-install-configure/) which is available for use in Automation runbooks.
 
 |Cmdlet|Description|
 |:---|:---|
-|[Get-AzureAutomationConnection](http://msdn.microsoft.com/zh-cn/library/dn921828.aspx)|Retrieves a connection. Includes a hashtable with the values of the connectionâs fields.|
+|[Get-AzureAutomationConnection](http://msdn.microsoft.com/zh-cn/library/dn921828.aspx)|Retrieves a connection. Includes a hash table with the values of the connection's fields.|
 |[New-AzureAutomationConnection](http://msdn.microsoft.com/zh-cn/library/dn921825.aspx)|Creates a new connection.|
 |[Remove-AzureAutomationConnection](http://msdn.microsoft.com/zh-cn/library/dn921827.aspx)|Remove an existing connection.|
 |[Set-AzureAutomationConnectionFieldValue](http://msdn.microsoft.com/zh-cn/library/dn921826.aspx)|Sets the value of a particular field for an existing connection.|
@@ -36,13 +36,13 @@ The activities in the following table are used to access connections in a runboo
 
 |Activities|Description|
 |---|---|
-|Get-AutomationConnection|Gets a connection to use in a runbook. Returns a hashtable with the properties of the connection.|
+|Get-AutomationConnection|Gets a connection to use. Returns a hash table with the properties of the connection.|
 
->[AZURE.NOTE] You should avoid using variables in the âName parameter of **Get- AutomationConnection** since this can complicate discovering dependencies between runbooks and connection assets at design time.
+>[AZURE.NOTE] You should avoid using variables in the -Name parameter of **Get- AutomationConnection** since this can complicate discovering dependencies between runbooks and connection assets at design time.
 
 ## Creating a New Connection
 
-### To create a new connection with the Azure Management Portal
+### To create a new connection with the Azure Classic Management Portal
 
 1. From your automation account, click **Assets** at the top of the window.
 1. At the bottom of the window, click **Add Setting**.
@@ -83,5 +83,5 @@ The following sample commands show how to use the Twilio connection in the previ
 	Send-TwilioSMS -Connection $Con -From $NumFrom -To $NumTo -Body $Body
 
 	#Send text with connection properties.
-	Send-TwilioSMS -AccountSid $Con.AccountSid -AuthToken $Con.AuthToken $Con -From $NumFrom -To $NumTo -Body $Body
+	Send-TwilioSMS -AccountSid $Con.AccountSid -AuthToken $Con.AuthToken -From $NumFrom -To $NumTo -Body $Body
 

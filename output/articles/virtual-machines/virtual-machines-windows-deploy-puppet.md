@@ -1,3 +1,5 @@
+<!-- deleted in Global -->
+
 <properties title="About Puppet and Azure Virtual Machines" pageTitle="About Puppet and Azure Virtual Machines" description="Describes installing and configuring Puppet on a VM in Azure" metaKeywords="" services="virtual machines" solutions="" documentationCenter="" authors="kathydav" manager="timlt" videoId="" scriptId="" />
 <tags
 	ms.service="virtual-machines"
@@ -29,8 +31,8 @@ For instructions, download the "Getting Started Guide"  from the [Microsoft Wind
 
 <!--Link references-->
 [New Integrations with Azure and Visual Studio]: http://puppetlabs.com/blog/new-integrations-windows-azure-and-visual-studio
-[How to Log on to a Virtual Machine Running Windows Server]: /documentation/articles/virtual-machines-log-on-windows-server/
-[How to Log on to a Virtual Machine Running Linux]: /documentation/articles/virtual-machines-linux-how-to-log-on
+[How to Log on to a Virtual Machine Running Windows Server]: /documentation/articles/virtual-machines-windows-classic-connect-logon/
+[How to Log on to a Virtual Machine Running Linux]: /documentation/articles/virtual-machines-linux-classic-log-on/
 [Manage Extensions]: http://msdn.microsoft.com/zh-cn/library/dn606311.aspx
 
 

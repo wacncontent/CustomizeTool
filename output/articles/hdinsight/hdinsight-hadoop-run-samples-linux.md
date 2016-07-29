@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
 	pageTitle="Run Hadoop MapReduce samples on Linux-based HDInsight | Azure"
 	description="Get started using MapReduce samples with Linux-based HDInsight. Use SSH to connect to the cluster, then use the Hadoop command to run sample jobs."
@@ -12,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="02/05/2016"
+	ms.date="07/12/2016"
 	wacn.date=""/>
 
 
@@ -28,13 +26,13 @@ Linux-based HDInsight clusters provide a set of MapReduce samples that can be us
 
 - **An Azure subscription**: See [Get Azure trial](/pricing/1rmb-trial/)
 
-- **A Linux-based HDInsight cluster**: See [Get started using Hadoop with Hive in HDInsight on Linux](/documentation/articles/hdinsight-hadoop-linux-tutorial-get-started)
+- **A Linux-based HDInsight cluster**: See [Get started using Hadoop with Hive in HDInsight on Linux](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1/)
 
 - **An SSH client**: For information on using SSH with HDInsight, see the following articles:
 
-    - [Use SSH with Linux-based Hadoop on HDInsight from Linux, Unix, or OS X](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix)
+    - [Use SSH with Linux-based Hadoop on HDInsight from Linux, Unix, or OS X](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix/)
 
-    - [Use SSH with Linux-based Hadoop on HDInsight from Windows](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows)
+    - [Use SSH with Linux-based Hadoop on HDInsight from Windows](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows/)
 
 ## The samples ##
 
@@ -73,9 +71,9 @@ Linux-based HDInsight clusters provide a set of MapReduce samples that can be us
 
 1. Connect to HDInsight using SSH as described in the following articles:
 
-    - [Use SSH with Linux-based Hadoop on HDInsight from Linux, Unix, or OS X](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix)
+    - [Use SSH with Linux-based Hadoop on HDInsight from Linux, Unix, or OS X](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix/)
 
-    - [Use SSH with Linux-based Hadoop on HDInsight from Windows](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows)
+    - [Use SSH with Linux-based Hadoop on HDInsight from Windows](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows/)
 
 2. From the `username@#######:~$` prompt, use the following command to list the samples:
 
@@ -130,7 +128,7 @@ The Sudoku example has somewhat unhelpful usage instructions; "Include a puzzle 
 
 - Cells are separated by a space
 
-Now, there's a certain way to construct Sudoku puzzles in that you can't repeat a number in a column or row. Thankfully there's an example on the HDInsight cluster that is properly constructed. It is located at **/usr/hdp/2.2.4.9-1/hadoop/src/hadoop-mapreduce-project/hadoop-mapreduce-examples/src/main/java/org/apache/hadoop/examples/dancing/puzzle1.dta** and contains the following:
+There is a certain way to construct Sudoku puzzles; you can't repeat a number in a column or row. There's an example on the HDInsight cluster that is properly constructed. It is located at **/usr/hdp/2.2.4.9-1/hadoop/src/hadoop-mapreduce-project/hadoop-mapreduce-examples/src/main/java/org/apache/hadoop/examples/dancing/puzzle1.dta** and contains the following:
 
     8 5 ? 3 9 ? ? ? ?
     ? ? 2 ? ? ? ? ? ?
@@ -220,16 +218,16 @@ From this article, you learned how to run the samples included with the Linux-ba
 
 
 
-[hdinsight-errors]: /documentation/articles/hdinsight-debug-jobs
-[hdinsight-use-mapreduce]: /documentation/articles/hdinsight-use-mapreduce
+[hdinsight-errors]: /documentation/articles/hdinsight-debug-jobs/
+[hdinsight-use-mapreduce]: /documentation/articles/hdinsight-use-mapreduce/
 [hdinsight-sdk-documentation]: https://msdn.microsoft.com/zh-cn/library/azure/dn479185.aspx
 
-[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
-[hdinsight-introduction]: /documentation/articles/hdinsight-hadoop-introduction
+[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/
+[hdinsight-introduction]: /documentation/articles/hdinsight-hadoop-introduction/
 
 
 
-[hdinsight-samples]: /documentation/articles/hdinsight-run-samples
+[hdinsight-samples]: /documentation/articles/hdinsight-run-samples/
 
-[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
-[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
+[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive/
+[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig/

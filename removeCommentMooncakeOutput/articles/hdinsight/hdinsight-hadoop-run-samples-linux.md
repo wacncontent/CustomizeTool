@@ -12,7 +12,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="02/05/2016"
+	ms.date="04/22/2016"
 	wacn.date=""/>
 
 
@@ -28,13 +28,13 @@ Linux-based HDInsight clusters provide a set of MapReduce samples that can be us
 
 - **An Azure subscription**: See [Get Azure trial](/pricing/1rmb-trial/)
 
-- **A Linux-based HDInsight cluster**: See [Get started using Hadoop with Hive in HDInsight on Linux](/documentation/articles/hdinsight-hadoop-linux-tutorial-get-started)
+- **A Linux-based HDInsight cluster**: See [Get started using Hadoop with Hive in HDInsight on Linux](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1/)
 
 - **An SSH client**: For information on using SSH with HDInsight, see the following articles:
 
-    - [Use SSH with Linux-based Hadoop on HDInsight from Linux, Unix, or OS X](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix)
+    - [Use SSH with Linux-based Hadoop on HDInsight from Linux, Unix, or OS X](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix/)
 
-    - [Use SSH with Linux-based Hadoop on HDInsight from Windows](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows)
+    - [Use SSH with Linux-based Hadoop on HDInsight from Windows](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows/)
 
 ## The samples ##
 
@@ -73,9 +73,9 @@ Linux-based HDInsight clusters provide a set of MapReduce samples that can be us
 
 1. Connect to HDInsight using SSH as described in the following articles:
 
-    - [Use SSH with Linux-based Hadoop on HDInsight from Linux, Unix, or OS X](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix)
+    - [Use SSH with Linux-based Hadoop on HDInsight from Linux, Unix, or OS X](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix/)
 
-    - [Use SSH with Linux-based Hadoop on HDInsight from Windows](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows)
+    - [Use SSH with Linux-based Hadoop on HDInsight from Windows](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows/)
 
 2. From the `username@#######:~$` prompt, use the following command to list the samples:
 
@@ -160,7 +160,7 @@ The results should appear similar to the following:
     1 8 5 7 3 9 2 6 4
     2 6 3 1 4 5 9 7 8
 
-## Pi (Ď)
+## Pi (π)
 
 The pi sample uses a statistical (quasi-Monte Carlo) method to estimate the value of pi. Points placed at random inside of a unit square also fall within a circle inscribed within that square with a probability equal to the area of the circle, pi/4. The value of pi can be estimated from the value of 4R, where R is the ratio of the number of points that are inside the circle to the total number of points that are within the square. The larger the sample of points used, the better the estimate is.
 
@@ -220,16 +220,16 @@ From this article, you learned how to run the samples included with the Linux-ba
 
 
 
-[hdinsight-errors]: hdinsight-debug-jobs.md
-[hdinsight-use-mapreduce]: hdinsight-use-mapreduce.md
+[hdinsight-errors]: /documentation/articles/hdinsight-debug-jobs/
+[hdinsight-use-mapreduce]: /documentation/articles/hdinsight-use-mapreduce/
 [hdinsight-sdk-documentation]: https://msdn.microsoft.com/zh-cn/library/azure/dn479185.aspx
 
-[hdinsight-submit-jobs]: hdinsight-submit-hadoop-jobs-programmatically.md
-[hdinsight-introduction]: hdinsight-hadoop-introduction.md
+[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/
+[hdinsight-introduction]: /documentation/articles/hdinsight-hadoop-introduction/
 
 
 
-[hdinsight-samples]: hdinsight-run-samples.md
+[hdinsight-samples]: /documentation/articles/hdinsight-run-samples/
 
-[hdinsight-use-hive]: hdinsight-use-hive.md
-[hdinsight-use-pig]: hdinsight-use-pig.md
+[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive/
+[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig/

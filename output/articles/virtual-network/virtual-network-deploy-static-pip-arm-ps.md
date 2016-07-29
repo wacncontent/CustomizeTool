@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties 
    pageTitle="Deploy a VM with a static public IP using PowerShell in Resource Manager | Azure"
    description="Learn how to deploy VMs with a static public IP using PowerShell in Resource Manager"
@@ -12,7 +10,7 @@
 />
 <tags
 	ms.service="virtual-network"
-	ms.date="12/15/2015"
+	ms.date="03/15/2016"
 	wacn.date=""/>
 
 # Deploy a VM with a static public IP using PowerShell

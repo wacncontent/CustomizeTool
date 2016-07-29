@@ -1,3 +1,5 @@
+<!-- rename to virtual-machines-windows-classic-python-django-web-app -->
+
 <properties
 	pageTitle="Python web app with Django | Azure"
 	description="This tutorial teaches you how to host a Django-based website on Azure using a Windows Server 2012 R2 Datacenter virtual machine using the classic deployment model."
@@ -18,12 +20,12 @@
 # Django Hello World web application on a Windows Server VM
 
 > [AZURE.SELECTOR]
-- [Windows](/documentation/articles/virtual-machines-python-django-web-app-windows-server)
-- [Mac/Linux](/documentation/articles/virtual-machines-python-django-web-app-linux)
+- [Windows](/documentation/articles/virtual-machines-windows-classic-python-django-web-app/)
+- [Mac/Linux](/documentation/articles/virtual-machines-linux-python-django-web-app/)
 
 <br>
 
- Resource Manager model. [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager model.
  
 
 This tutorial describes how to host a Django-based website on Microsoft
@@ -45,10 +47,10 @@ A screenshot of the completed application appears next.
 
 ## Creating and configuring an Azure virtual machine to host Django
 
-1. Follow the instructions given [here](/documentation/articles/virtual-machines-windows-tutorial-classic-portal) to create an Azure virtual machine of the Windows Server 2012 R2 Datacenter distribution.
+1. Follow the instructions given [here](/documentation/articles/virtual-machines-windows-classic-tutorial/) to create an Azure virtual machine of the Windows Server 2012 R2 Datacenter distribution.
 
 1. Instruct Azure to direct port 80 traffic from the web to port 80 on the virtual machine:
- - Navigate to your newly created virtual machine in the Azure Management Portal and click the **ENDPOINTS** tab.
+ - Navigate to your newly created virtual machine in the Azure Classic Management Portal and click the **ENDPOINTS** tab.
  - Click the **ADD** button at the bottom of the screen.
 	![add endpoint](./media/virtual-machines-python-django-web-app-windows-server/django-helloworld-addendpoint.png)
 

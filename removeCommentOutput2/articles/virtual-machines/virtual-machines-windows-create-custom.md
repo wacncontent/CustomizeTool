@@ -1,5 +1,7 @@
+<!-- deleted in Global -->
+
 <properties
-	pageTitle="Create a custom virtual machine running Windows | Windows Azure"
+	pageTitle="Create a custom virtual machine running Windows | Azure"
 	description="Learn to create a custom virtual machine running Windows in Azure."
 	services="virtual-machines"
 	documentationCenter=""
@@ -15,6 +17,9 @@
 	wacn.date=""/>
 
 #Create a custom virtual machine running Windows in Azure
+
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the classic deployment model. Microsoft recommends that most new deployments use the
+
 
 A *custom* virtual machine simply means a virtual machine you create using the **From Gallery** option because it gives you more configuration choices than the **Quick Create** option. These choices include:
 

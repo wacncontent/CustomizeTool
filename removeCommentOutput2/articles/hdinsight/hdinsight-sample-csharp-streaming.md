@@ -1,5 +1,7 @@
+<!-- deleted in Global -->
+
 <properties
-	pageTitle="C# streaming wordcount Hadoop sample | Windows Azure"
+	pageTitle="C# streaming wordcount Hadoop sample | Azure"
 	description="How to write MapReduce programs in C# that use the Hadoop Streaming interface, and how to run them on HDInsight using PowerShell cmdlets."
 	editor="cgronlun"
 	manager="paulettm"
@@ -40,7 +42,7 @@ For more information about the Hadoop Streaming interface, see [Hadoop Streaming
 Before you begin, you must have the following:
 
 - **An Azure subscription**. See [Get Azure trial](/pricing/1rmb-trial/).
-- **an HDInsight cluster**. For instructions on the various ways in which such clusters can be created, see [Provision HDInsight Clusters](/documentation/articles/hdinsight-provision-clusters).
+- **an HDInsight cluster**. For instructions on the various ways in which such clusters can be created, see [Provision HDInsight Clusters](/documentation/articles/hdinsight-provision-clusters-v1).
 - **A workstation with Azure PowerShell**. See [Install and use Azure PowerShell](/documentation/articles/powershell-install-configure).
 
 
@@ -179,7 +181,7 @@ For tutorials that run other samples and provide instructions for running Pig, H
 * [Use Hive with HDInsight][hdinsight-use-hive]
 * [Azure HDInsight SDK documentation][hdinsight-sdk-documentation]
 
-[hdinsight-sdk-documentation]: http://msdnstage.redmond.corp.microsoft.com/zh-cn/library/dn479185.aspx
+[hdinsight-sdk-documentation]: http://msdn.microsoft.com/zh-cn/library/dn479185.aspx
 
 [hadoop-streaming]: http://wiki.apache.org/hadoop/HadoopStreaming
 [streamreader]: http://msdn.microsoft.com/zh-cn/library/system.io.streamreader.aspx
@@ -188,7 +190,7 @@ For tutorials that run other samples and provide instructions for running Pig, H
 
 [powershell-install-configure]: /documentation/articles/powershell-install-configure
 
-[hdinsight-get-started]: /documentation/articles/hdinsight-get-started
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
 
 [hdinsight-samples]: /documentation/articles/hdinsight-run-samples
 [hdinsight-sample-10gb-graysort]: /documentation/articles/hdinsight-sample-10gb-graysort

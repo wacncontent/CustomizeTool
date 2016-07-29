@@ -1,4 +1,4 @@
-<!-- not suitable for Mooncake -->
+<!-- deleted in Global -->
 
 <properties
 	pageTitle="Automate with Azure Resource Manager | Azure"
@@ -18,25 +18,25 @@
 
 # How to automate with Azure Resource Manager
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model. You can't create this resource with the classic deployment model.
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the Resource Manager deployment model, which Azure recommends for most new deployments instead of the classic deployment model. You can't create this resource with the classic deployment model.
 
 Azure Resource Manager simplifies the deployment and management of complex applications running on Azure infrastructure services. Many applications require a combination of compute, network, and storage resources, such as virtual network, Storage account, and virtual machines with network interfaces. Azure Resource Manager allows you to use or construct a JSON template to deploy and manage all these resources together as a single application.
 
 ## Start here
 
-[Azure Resource Manager overview](/documentation/articles/resource-group-overview)
+[Azure Resource Manager overview](/documentation/articles/resource-group-overview/)
 
 [Azure Quickstart templates](https://azure.microsoft.com/zh-cn/documentation/templates/)
 
-[Application frameworks using templates](/documentation/articles/virtual-machines-app-frameworks)
+[Application frameworks using templates](/documentation/articles/virtual-machines-app-frameworks/)
 
 [Deploy and manage virtual machines using Azure Resource Manager templates and the Azure CLI](/documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli/)
 
-[Using the Azure CLI for Mac, Linux, and Windows with Azure Resource Manager](/documentation/articles/xplat-cli-azure-resource-manager)
+[Using the Azure CLI for Mac, Linux, and Windows with Azure Resource Manager](/documentation/articles/xplat-cli-azure-resource-manager/)
 
-[Deploy and manage virtual machines using Azure Resource Manager templates and PowerShell](/documentation/articles/virtual-machines-deploy-rmtemplates-powershell)
+[Deploy and manage virtual machines using Azure Resource Manager templates and PowerShell](/documentation/articles/virtual-machines-deploy-rmtemplates-powershell/)
 
-[Azure compute, network, and storage providers under Azure Resource Manager](/documentation/articles/virtual-machines-azurerm-versus-azuresm)
+[Azure compute, network, and storage providers under Azure Resource Manager](/documentation/articles/virtual-machines-azurerm-versus-azuresm/)
 
 
 ## Networking
@@ -45,12 +45,12 @@ Azure Resource Manager simplifies the deployment and management of complex appli
 
 ## .NET
 
-[Deploy Azure resources using the .NET Library](/documentation/articles/virtual-machines-arm-deployment)
+[Deploy Azure resources using the .NET Library](/documentation/articles/virtual-machines-arm-deployment/)
 
 
 ## Azure Automation
 
-[Managing Azure virtual machines using Azure Automation](/documentation/articles/automation-manage-virtual-machines)
+[Managing Azure virtual machines using Azure Automation](/documentation/articles/virtual-machines-windows-manage-using-azure-automation/)
 
 ## Additional resources
 

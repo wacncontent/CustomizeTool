@@ -1,3 +1,5 @@
+<!-- rename to virtual-machines-windows-classic-ps-sql-report -->
+
 <properties 
 	pageTitle="Use PowerShell to Create a VM With a Native Mode Report Server | Azure"
 	description="This topic describes and walks you through the deployment and configuration of a SQL Server Reporting Services native mode report server in an Azure Virtual Machine. "
@@ -14,7 +16,7 @@
 
 # Use PowerShell to Create an Azure VM With a Native Mode Report Server
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager model.
  
 
 This topic describes and walks you through the deployment and configuration of a SQL Server Reporting Services native mode report server in an Azure Virtual Machine. The steps in this document use a combination of manual steps to create the virtual machine and a Windows PowerShell script to configure Reporting Services on the VM. The configuration script includes opening a firewall port for HTTP or HTTPs.
@@ -26,9 +28,9 @@ This topic describes and walks you through the deployment and configuration of a
 
 - **Azure Subscription**: Verify the number of cores available in your Azure Subscription. If you create the recommended VM size of **A3**, you need **4** available cores. If you use a VM size of **A2**, you need **2** available cores.
 	
-	- To verify the core limit of your subscription, in the Azure Management Portal, click SETTINGS in the left pane and then Click USAGE in the top menu.
+	- To verify the core limit of your subscription, in the Azure Classic Management Portal, click SETTINGS in the left pane and then Click USAGE in the top menu.
 	
-	- To increase the core quota, contact [Azure Support](/support/contact/). For VM size information, see [Virtual Machine Sizes for Azure](/documentation/articles/virtual-machines-size-specs).
+	- To increase the core quota, contact [Azure Support](/support/contact/). For VM size information, see [Virtual Machine Sizes for Azure](/documentation/articles/virtual-machines-linux-sizes/).
 
 - **Windows PowerShell Scripting**: The topic assumes that you have a basic working knowledge of Windows PowerShell. For more information about using Windows PowerShell, see the following:
 
@@ -38,7 +40,7 @@ This topic describes and walks you through the deployment and configuration of a
 
 ## Step 1: Provision an Azure Virtual Machine
 
-1. Browse to the Azure Management Portal.
+1. Browse to the Azure Classic Management Portal.
 
 1. Click **Virtual Machines** in the left pane.
 
@@ -66,7 +68,7 @@ This topic describes and walks you through the deployment and configuration of a
 	
 	- **Tier**: Standard
 	
-	- **Size:A3** is the recommended VM size for SQL Server workloads. If a VM is only used as a report server, a VM size of A2 is sufficient unless the report server experiences a large workload. For VM pricing information, see [Virtual Machines Pricing](/home/features/virtual-machines/#price).
+	- **Size:A3** is the recommended VM size for SQL Server workloads. If a VM is only used as a report server, a VM size of A2 is sufficient unless the report server experiences a large workload. For VM pricing information, see [Virtual Machines Pricing](/home/features/virtual-machines/pricing/).
 	
 	- **New User Name**: the name you provide is created as an administrator on the VM.
 	
@@ -90,7 +92,7 @@ This topic describes and walks you through the deployment and configuration of a
 
 		- **HTTP**: The default public and private ports are **80**. Note that if you use a private port other than 80, modify **$HTTPport = 80** in the http script.
 
-		- **HTTPS**: The default public and private ports are **443**. A security best practice is to change the private port and configure your firewall and the report server to use the private port. For more information on endpoints, see [How to Set Up Communication with a Virtual Machine](/documentation/articles/virtual-machines-set-up-endpoints). Note that if you use a port other than 443, change the parameter **$HTTPsport = 443** in the HTTPS script.
+		- **HTTPS**: The default public and private ports are **443**. A security best practice is to change the private port and configure your firewall and the report server to use the private port. For more information on endpoints, see [How to Set Up Communication with a Virtual Machine](/documentation/articles/virtual-machines-linux-classic-setup-endpoints/). Note that if you use a port other than 443, change the parameter **$HTTPsport = 443** in the HTTPS script.
 	
 	- Click next . ![next](./media/virtual-machines-sql-server-create-native-mode-report-server-powershell/IC692021.gif)
 
@@ -138,7 +140,7 @@ A self-signed certificate was created on the VM when the VM was provisioned. The
 
 1. To trust the root CA of the certificate on the Local VM, add the certificate to the **Trusted Root Certification Authorities**. The following is a summary of the steps required. For detailed steps on how to trust the CA, see [Install a Server Certificate](https://technet.microsoft.com/zh-cn/library/cc740068).
 
-	1. From the Azure Management Portal, select the VM and click connect. Depending on your browser configuration, you may be prompted to save an .rdp file for connecting to the VM.
+	1. From the Azure Classic Management Portal, select the VM and click connect. Depending on your browser configuration, you may be prompted to save an .rdp file for connecting to the VM.
 	
 		![connect to azure virtual machine](./media/virtual-machines-sql-server-create-native-mode-report-server-powershell/IC650112.gif) Use the user VM name, user name and password you configured when you created the VM. 
 	
@@ -180,7 +182,7 @@ This section walks you through configuring the VM as a Reporting Services native
 
 - Use Configuration Manager to Configure the Report Server.
 
-For more detailed steps, see the section [Connect to the Virtual Machine and Start the Reporting Services Configuration Manager](/documentation/articles/virtual-machines-sql-server-business-intelligence#connect-to-the-virtual-machine-and-start-the-reporting-services-configuration-manager).
+For more detailed steps, see the section [Connect to the Virtual Machine and Start the Reporting Services Configuration Manager](/documentation/articles/virtual-machines-windows-classic-ps-sql-bi/#connect-to-the-virtual-machine-and-start-the-reporting-services-configuration-manager).
 
 **Authentication Note:** Windows authentication is the recommended authentication method and it is the default Reporting Services authentication. Only users that are configured on the VM can access Reporting Services and assigned to Reporting Services roles.
 
@@ -188,7 +190,7 @@ For more detailed steps, see the section [Connect to the Virtual Machine and Sta
 
 To use the Windows PowerShell script to configure the report server, complete the following steps. The configuration includes HTTP, not HTTPS:
 
-1. From the Azure Management Portal, select the VM and click connect. Depending on your browser configuration, you may be prompted to save an .rdp file for connecting to the VM.
+1. From the Azure Classic Management Portal, select the VM and click connect. Depending on your browser configuration, you may be prompted to save an .rdp file for connecting to the VM.
 
 	![connect to azure virtual machine](./media/virtual-machines-sql-server-create-native-mode-report-server-powershell/IC650112.gif) Use the user VM name, user name and password you configured when you created the VM. 
 
@@ -329,7 +331,7 @@ To use the Windows PowerShell script to configure the report server, complete th
 
 To use Windows PowerShell to configure the report server, complete the following steps. The configuration includes HTTPS, not HTTP.
 
-1. From the Azure Management Portal, select the VM and click connect. Depending on your browser configuration, you may be prompted to save an .rdp file for connecting to the VM.
+1. From the Azure Classic Management Portal, select the VM and click connect. Depending on your browser configuration, you may be prompted to save an .rdp file for connecting to the VM.
 
 	![connect to azure virtual machine](./media/virtual-machines-sql-server-create-native-mode-report-server-powershell/IC650112.gif) Use the user VM name, user name and password you configured when you created the VM. 
 
@@ -552,11 +554,11 @@ The result will include the following:
 
 If you do not want to run the PowerShell script to configure the report server, follow the steps in this section to use the Reporting Services native mode configuration manager to configure the report server.
 
-1. From the Azure Management Portal, select the VM and click connect. Use the user name and password you configured when you created the VM.
+1. From the Azure Classic Management Portal, select the VM and click connect. Use the user name and password you configured when you created the VM.
 
 	![connect to azure virtual machine](./media/virtual-machines-sql-server-create-native-mode-report-server-powershell/IC650112.gif)
 
-1. Run Windows update and install updates to the VM. If a restart of the VM is required, restart the VM and reconnect to the VM from the Azure Management Portal.
+1. Run Windows update and install updates to the VM. If a restart of the VM is required, restart the VM and reconnect to the VM from the Azure Classic Management Portal.
 
 1. From the Start menu on the VM, type **Reporting Services** and open **Reporting Services Configuration Manager**.
 
@@ -678,7 +680,7 @@ The following table summarizes some of the options available to publish existing
 
 ## Minimize cost if you are not using the VM
 
->[AZURE.NOTE] To minimize charges for your Azure Virtual Machines when not in use, shut down the VM from the Azure Management Portal. If you use the Windows power options inside a VM to shut down the VM, you are still charged the same amount for the VM. To reduce charges, you need to shut down the VM in the Azure Management Portal. If you no longer need the VM, remember to delete the VM and the associated .vhd files to avoid storage charges.For more information, see the FAQ section at [Virtual Machines Pricing Details](/home/features/virtual-machines/#price).
+>[AZURE.NOTE] To minimize charges for your Azure Virtual Machines when not in use, shut down the VM from the Azure Classic Management Portal. If you use the Windows power options inside a VM to shut down the VM, you are still charged the same amount for the VM. To reduce charges, you need to shut down the VM in the Azure Classic Management Portal. If you no longer need the VM, remember to delete the VM and the associated .vhd files to avoid storage charges.For more information, see the FAQ section at [Virtual Machines Pricing Details](/home/features/virtual-machines/pricing/).
 
 ## More Information
 
@@ -688,7 +690,7 @@ The following table summarizes some of the options available to publish existing
 
 - For similar content related to a multi-server deployment of SQL Server Business Intelligence and SharePoint 2013, see [Deploy SQL Server Business Intelligence in Azure Virtual Machines](https://msdn.microsoft.com/zh-cn/library/dn321998.aspx).
 
-- For General information related to deployments of SQL Server Business Intelligence in Azure Virtual Machines, see [SQL Server Business Intelligence in Azure Virtual Machines](/documentation/articles/virtual-machines-sql-server-business-intelligence).
+- For General information related to deployments of SQL Server Business Intelligence in Azure Virtual Machines, see [SQL Server Business Intelligence in Azure Virtual Machines](/documentation/articles/virtual-machines-windows-classic-ps-sql-bi/).
 
 - For more information about the cost of Azure compute charges, see the Virtual Machines tab of [Azure pricing calculator](/pricing/calculator/?scenario=virtual-machines).
 
@@ -698,4 +700,4 @@ The following table summarizes some of the options available to publish existing
 
 ### Links to other resources for SQL Server in Azure VMs
 
-[SQL Server on Azure Virtual Machines Overview](/documentation/articles/virtual-machines-sql-server-infrastructure-services)
+[SQL Server on Azure Virtual Machines Overview](/documentation/articles/virtual-machines-windows-sql-server-iaas-overview/)

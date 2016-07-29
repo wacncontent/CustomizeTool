@@ -1,3 +1,5 @@
+<!-- rename to virtual-machines-linux-scale-sets-overview -->
+
 <properties
 	pageTitle="Virtual Machine Scale Sets Overview | Azure"
 	description="Learn more about Virtual Machine Scale Sets"

@@ -1,6 +1,6 @@
 
 <properties
-   pageTitle="Create an application gateway by using Azure Resource Manager templates| Windows Azure"
+   pageTitle="Create an application gateway by using Azure Resource Manager templates| Azure"
    description="This page provides instructions to create an Azure application gateway by using the Azure Resource Manager template"
    documentationCenter="na"
    services="application-gateway"
@@ -9,7 +9,7 @@
    editor="tysonn"/>
 <tags
 	ms.service="application-gateway"
-	ms.date="11/10/2015"
+	ms.date="06/07/2016"
 	wacn.date=""/>
 
 
@@ -18,9 +18,9 @@
 Azure Application Gateway is a layer-7 load balancer. It provides failover, performance-routing HTTP requests between different servers, whether they are on the cloud or on-premises. Application Gateway has the following application delivery features: HTTP load balancing, cookie-based session affinity, and Secure Sockets Layer (SSL) offload.
 
 > [AZURE.SELECTOR]
-- [Azure Classic PowerShell](/documentation/articles/application-gateway-create-gateway)
-- [Azure Resource Manager PowerShell](/documentation/articles/application-gateway-create-gateway-arm)
-- [Azure Resource Manager template](/documentation/articles/application-gateway-create-gateway-arm-template)
+- [Azure Classic PowerShell](/documentation/articles/application-gateway-create-gateway/)
+- [Azure Resource Manager PowerShell](/documentation/articles/application-gateway-create-gateway-arm/)
+- [Azure Resource Manager template](/documentation/articles/application-gateway-create-gateway-arm-template/)
 
 <BR>
 
@@ -50,7 +50,7 @@ In this scenario you will:
 
 You can download the existing Azure Resource Manager template to create a virtual network and two subnets from GitHub, make any changes you might want, and reuse it. To do so, follow the steps below:
 
-1. Navigate to https://raw.githubusercontent.com/azure/azure-quickstart-templates/master/101-create-application-gateway/.
+1. Navigate to [Create Application Gateway](https://github.com/Azure/azure-quickstart-templates/tree/master/101-application-gateway-create).
 2. Click **azuredeploy.json**, and then click **RAW**.
 3. Save the file to a local folder on your computer.
 4. If you are familiar with Azure Resource Manager templates, skip to step 7.
@@ -66,7 +66,7 @@ You can download the existing Azure Resource Manager template to create a virtua
 	| **skuname** | SKU instance size |
 	| **capacity** | Number of instances |
 	| **backendaddress1** | IP address of the first web server |
-	| **backendaddress2** | IP address of the second web server| 
+	| **backendaddress2** | IP address of the second web server |
 
 
 >[AZURE.IMPORTANT] Azure Resource Manager templates maintained in GitHub can change over time. Make sure that you check the template before using it.
@@ -77,7 +77,7 @@ You can download the existing Azure Resource Manager template to create a virtua
 	- **name**. Name for the resource. Notice the use of **[parameters('applicationGatewayName')]**, which means that the name will be provided as input by the user or by a parameter file during deployment.
 	- **properties**. List of properties for the resource. This template uses the virtual network and public IP address during application gateway creation.
 
-7. Navigate back to https://raw.githubusercontent.com/azure/azure-quickstart-templates/master/101-create-application-gateway/azuredeploy.json.
+7. Navigate back to [https://github.com/Azure/azure-quickstart-templates/blob/master/101-application-gateway-create/](https://github.com/Azure/azure-quickstart-templates/blob/master/101-application-gateway-create).
 8. Click **azuredeploy-paremeters.json**, and then click **RAW**.
 9. Save the file to a a local folder on your computer.
 10. Open the file that you just saved and edit the values for the parameters. Use the values below to deploy the application gateway described in our scenario.
@@ -86,7 +86,13 @@ You can download the existing Azure Resource Manager template to create a virtua
 		  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
 		{
     	"location" : {
+        [AZURE.ACOM]{
         "value" : "China North"
+        [AZURE.ACOM]}
+        
+        [AZURE.ACN]{
+        "value" : "China North"
+        [AZURE.ACN]}
     	},
     	"addressPrefix": {
         "value": "10.0.0.0/16"
@@ -112,11 +118,17 @@ You can download the existing Azure Resource Manager template to create a virtua
 
 ## Deploy the Azure Resource Manager template by using PowerShell
 
-If you have never used Azure PowerShell, see [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure) and follow the instructions all the way to the end to sign into Azure and select your subscription.
+If you have never used Azure PowerShell, see [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure/) and follow the instructions all the way to the end to sign into Azure and select your subscription.
 
 ### Step 1
 
+		[AZURE.ACOM]{
 		Login-AzureRmAccount
+		[AZURE.ACOM]}
+
+		[AZURE.ACN]{
+		Login-AzureRmAccount -EnvironmentName AzureChinaCloud
+		[AZURE.ACN]}
 
 
 
@@ -139,14 +151,32 @@ Choose which of your Azure subscriptions to use. <BR>
 ### Step 4
 
 
+[AZURE.ACOM]{
 If needed, create a new resource group by using the **New-AzureResourceGroup** cmdlet. In the example below, you will create a new resource group called AppgatewayRG in China East location.
+[AZURE.ACOM]}
 
+[AZURE.ACN]{
+If needed, create a new resource group by using the **New-AzureResourceGroup** cmdlet. In the example below, you will create a new resource group called AppgatewayRG in China East location.
+[AZURE.ACN]}
+
+	[AZURE.ACOM]{
 	 New-AzureRmResourceGroup -Name AppgatewayRG -Location "China East"
 		VERBOSE: 5:38:49 PM - Created resource group 'AppgatewayRG' in location 'chinaeast'
+	[AZURE.ACOM]}
 
+	[AZURE.ACN]{
+	 New-AzureRmResourceGroup -Name AppgatewayRG -Location "China East"
+		VERBOSE: 5:38:49 PM - Created resource group 'AppgatewayRG' in location 'chinaeast'
+	[AZURE.ACN]}
 
 		ResourceGroupName : AppgatewayRG
+		[AZURE.ACOM]{
 		Location          : chinaeast
+		[AZURE.ACOM]}
+		
+		[AZURE.ACN]{
+		Location          : chinaeast
+		[AZURE.ACN]}
 		ProvisioningState : Succeeded
 		Tags              :
 		Permissions       :
@@ -154,7 +184,7 @@ If needed, create a new resource group by using the **New-AzureResourceGroup** c
 	                 =======  ==========
 	                  *
 
-		ResourceId        : /subscriptions/################################/resourceGroups/AppgatewayRG 
+		ResourceId        : /subscriptions/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/resourceGroups/AppgatewayRG
 
 Run the **New-AzureRmResourceGroupDeployment** cmdlet to deploy the new virtual network by using the template and parameter files you downloaded and modified above.
 
@@ -172,7 +202,13 @@ The output generated by the command line will be the following:
 		Parameters        :
                    Name             Type                       Value
                    ===============  =========================  ==========
+                   [AZURE.ACOM]{
                    location         String                     China East
+                   [AZURE.ACOM]}
+                   
+                   [AZURE.ACN]{
+                   location         String                     China East
+                   [AZURE.ACN]}
                    addressPrefix    String                     10.0.0.0/16
                    subnetPrefix     String                     10.0.0.0/24
                    skuName          String                     Standard_Small
@@ -187,7 +223,7 @@ The output generated by the command line will be the following:
 
 To deploy the Azure Resource Manager template you downloaded by using Azure CLI, follow the steps below:
 
-1. If you have never used Azure CLI, see [Install and configure the Azure CLI](/documentation/articles/xplat-cli-install) and follow the instructions up to the point where you select your Azure account and subscription.
+1. If you have never used Azure CLI, see [Install and configure the Azure CLI](/documentation/articles/xplat-cli-install/) and follow the instructions up to the point where you select your Azure account and subscription.
 2. Run the **azure config mode** command to switch to Resource Manager mode, as shown below.
 
 		azure config mode arm
@@ -196,13 +232,25 @@ Here is the expected output for the command above:
 
 		info:	New mode is arm
 
-3. If necessary, run the **azure group create** command to create a new resource group, as shown below. Notice the output of the command. The list shown after the output explains the parameters used. For more information about resource groups, visit [Azure Resource Manager overview](/documentation/articles/resource-group-overview).
+3. If necessary, run the **azure group create** command to create a new resource group, as shown below. Notice the output of the command. The list shown after the output explains the parameters used. For more information about resource groups, visit [Azure Resource Manager overview](/documentation/articles/resource-group-overview/).
 
+		[AZURE.ACOM]{
 		azure group create -n appgatewayRG -l chinaeast
+		[AZURE.ACOM]}
+
+		[AZURE.ACN]{
+		azure group create -n appgatewayRG -l chinaeast
+		[AZURE.ACN]}
 
 **-n (or --name)**. Name for the new resource group. For our scenario, it's *appgatewayRG*.
 
+[AZURE.ACOM]{
 **-l (or --location)**. Azure region where the new resource group will be created. For our scenario, it's *chinaeast*.
+[AZURE.ACOM]}
+
+[AZURE.ACN]{
+**-l (or --location)**. Azure region where the new resource group will be created. For our scenario, it's *chinaeast*.
+[AZURE.ACN]}
 
 4. Run the **azure group deployment create** cmdlet to deploy the new virtual network by using the template and parameter files you downloaded and modified above. The list shown after the output explains the parameters used.
 
@@ -223,7 +271,13 @@ Here is the expected output for the command above:
 		data:    Mode               : Incremental
 		data:    Name               Type    Value
 		data:    -----------------  ------  --------------
+		[AZURE.ACOM]{
 		data:    location           String  China East
+		[AZURE.ACOM]}
+		
+		[AZURE.ACN]{
+		data:    location           String  China East
+		[AZURE.ACN]}
 		data:    addressPrefix      String  10.0.0.0/16
 		data:    subnetPrefix       String  10.0.0.0/24
 		data:    skuName            String  Standard_Small
@@ -238,9 +292,10 @@ Here is the expected output for the command above:
 
 **-e (or --parameters-file)**. Path to your Azure Resource Manager parameters file.
 
+[AZURE.ACOM]{
 ## Deploy the Azure Resource Manager template by using click-to-deploy
 
-Click-to-deploy is another way to use Azure Resource Manager templates. It's an easy way to use templates with the Azure Management Portal.
+Click-to-deploy is another way to use Azure Resource Manager templates. It's an easy way to use templates with the Azure portal.
 
 
 ### Step 1
@@ -266,16 +321,19 @@ Select **Legal terms** and click **Buy**.
 ### Step 5
 
 On the Custom deployment blade, click **Create**.
+[AZURE.ACOM]}
 
 
 
 ## Next steps
 
-If you want to configure SSL offload, see [Configure an application gateway for SSL offload](/documentation/articles/application-gateway-ssl).
+If you want to configure SSL offload, see [Configure an application gateway for SSL offload](/documentation/articles/application-gateway-ssl/).
 
-If you want to configure an application gateway to use with an internal load balancer, see [Create an application gateway with an internal load balancer (ILB)](/documentation/articles/application-gateway-ilb).
+If you want to configure an application gateway to use with an internal load balancer, see [Create an application gateway with an internal load balancer (ILB)](/documentation/articles/application-gateway-ilb/).
 
 If you want more information about load balancing options in general, see:
 
+[AZURE.ACOM]{
 - [Azure Load Balancer](/documentation/services/load-balancer/)
+[AZURE.ACOM]}
 - [Azure Traffic Manager](/documentation/services/traffic-manager/)

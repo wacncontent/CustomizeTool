@@ -1,3 +1,5 @@
+<!-- deleted in Global -->
+
 <properties
    pageTitle="Troubleshooting resource group deployments | Azure"
    description="Describes common problems deploying resources created using Resource Manager deployment model, and shows how to detect and fix these issues."
@@ -21,11 +23,11 @@ issue and resume operations in your solution.
 
 This topic focuses primarily on using deployment commands to troubleshoot deployments. For information about using the audit logs to track all operations on your resources, see [Audit operations with Resource Manager](/documentation/articles/resource-group-audit).
 
-This topic shows how to retrieve troubleshooting information through Azure PowerShell, Azure CLI and REST API.
+This topic shows how to retrieve troubleshooting information through Azure PowerShell, Azure CLI and REST API. For information about using the portal to troubleshoot deployments, see [Using the Azure portal to manage your Azure resources](/documentation/articles/resource-group-portal).
 
 Solutions to common errors that users encounter are also described in this topic.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model. You can't create resource groups with the classic deployment model.
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the Resource Manager deployment model, which Microsoft recommends for most new deployments instead of the classic deployment model. You can't create resource groups with the classic deployment model.
 
 
 ## Troubleshoot with PowerShell
@@ -205,7 +207,6 @@ For versions of PowerShell prior to 1.0, you can see the full list of resources 
 
     Name                                    Locations                               LocationsString
     ----                                    ---------                               ---------------
-
     ResourceGroup                           {China East, china North}				{China East, china North}
     Microsoft.AppService/apiapps            {China East, china North}				{China East, china North}
     ...
@@ -218,6 +219,24 @@ You can specify a particular type of resource with:
     ----                                                        ---------------
     Microsoft.Compute/virtualMachines                           China East, China North
 
+For PowerShell 1.0, use **Get-AzureRmResourceProvider** to get supported locations.
+
+    PS C:\> Get-AzureRmResourceProvider -ProviderNamespace Microsoft.Web
+
+    ProviderNamespace RegistrationState ResourceTypes               Locations
+    ----------------- ----------------- -------------               ---------
+    Microsoft.Web     Registered        {sites/extensions}          {China North, China East}
+    Microsoft.Web     Registered        {sites/slots/extensions}    {China North, China East}
+    Microsoft.Web     Registered        {sites/instances}           {China North, China East}
+    ...
+
+You can specify a particular type of resource with:
+
+    PS C:\> ((Get-AzureRmResourceProvider -ProviderNamespace Microsoft.Web).ResourceTypes | Where-Object ResourceTypeName -eq sites).Locations
+
+    China North
+    China East
+
 ### Azure CLI
 
 For Azure CLI, you can use **azure location list**. Because the list of locations can be long, and there are many providers, you can use tools to examine providers and locations before you use a location that isn't available yet. The following script uses **jq** to discover the locations where the resource provider for Azure virtual machines is available.
@@ -225,7 +244,6 @@ For Azure CLI, you can use **azure location list**. Because the list of location
     azure location list --json | jq '.[] | select(.name == "Microsoft.Compute/virtualMachines")'
     {
       "name": "Microsoft.Compute/virtualMachines",
-
       "location": "China East,China North"
     }
 
@@ -245,7 +263,7 @@ But Azure Active Directory enables you or your administrator to control which id
 
 You might also have issues when a deployment hits a default quota, which could be per resource group, subscriptions, accounts, and other scopes. Confirm to your satisfaction that you have the resources available to deploy correctly. For complete quota information, see [Azure subscription and service limits, quotas, and constraints](/documentation/articles/azure-subscription-service-limits).
 
-To examine your own subscription's quotas for cores, you should use the `azure vm list-usage` command in the Azure CLI and the **Get-AzureVMUsage** cmdlet in PowerShell. The following shows the command in the Azure CLI, and illustrates that the core quota for a trial account is 4:
+To examine your own subscription's quotas for cores, you should use the `azure vm list-usage` command in the Azure CLI and the **Get-AzureRmVMUsage** cmdlet in PowerShell. The following shows the command in the Azure CLI, and illustrates that the core quota for a trial account is 4:
 
     azure vm list-usage
     info:    Executing command vm list-usage
@@ -283,7 +301,7 @@ To be specific about cores, for example, you can check the regions for which you
 
 ## Checking resource provider registration
 
-Resources are managed by resource providers, and an account or subscription might be enabled to use a particular provider. If you are enabled to use a provider, it must also be registered for use. Most providers are registered automatically by the Azure Management Portal or the command-line interface you are using, but not all.
+Resources are managed by resource providers, and an account or subscription might be enabled to use a particular provider. If you are enabled to use a provider, it must also be registered for use. Most providers are registered automatically by the Azure portal or the command-line interface you are using, but not all.
 
 ### PowerShell
 
@@ -304,7 +322,6 @@ For Powershell 1.0, use **Get-AzureRmResourceProvider**.
 
     PS C:\> Get-AzureRmResourceProvider -ListAvailable
 
-
 	ProviderNamespace         RegistrationState ResourceTypes                                                                               Locations
 	-----------------         ----------------- -------------                                                                               ---------
 	microsoft.backup          Registering       {BackupVault}                                                                               {China East, China North}
@@ -322,7 +339,6 @@ To see whether the provider is registered for use using the Azure CLI, use the `
         info:    Executing command provider list
         + Getting ARM registered providers
         data:    Namespace                        Registered
-
 		data:    -------------------------  -----------
 		data:    microsoft.backup           Registering
 		data:    Microsoft.Batch            Registered
@@ -333,7 +349,7 @@ To see whether the provider is registered for use using the Azure CLI, use the `
 		data:    Microsoft.Insights         Registered
 		data:    Microsoft.KeyVault         Registered
 		data:    Microsoft.SiteRecovery     Registered
-        data:    Microsoft.Sql                Registered
+		data:    Microsoft.Sql               Registered
 		data:    Microsoft.StreamAnalytics  Registered
 		data:    Microsoft.Web              Registered
 		data:    Microsoft.Authorization    Registered
@@ -380,7 +396,6 @@ If you are using templates that you created, it's important to understand that t
 Note however, that this does not necessarily mean that your resource group is "active and ready for your users". For example, most deployments request the deployment to download upgrades, wait on other, non-template resources, or to install complex scripts or some other executable activity that Azure does not know about because it is not an activity that a provider is tracking. In these cases, it can be some time before your resources are ready for real-world use. As a result, you should expect that the deployment status succeeds some time before your deployment can be used.
 
 You can prevent Azure from reporting deployment success, however, by creating a custom script for your custom template -- using the [CustomScriptExtension](https://azure.microsoft.com/blog/2014/08/20/automate-linux-vm-customization-tasks-using-customscript-extension/) for example -- that knows how to monitor the entire deployment for system-wide readiness and returns successfully only when users can interact with the entire deployment. If you want to ensure that your extension is the last to run, use the **dependsOn** property in your template. An example can be seen when [creating template deployments](https://msdn.microsoft.com/zh-cn/library/azure/dn790564.aspx).
-
 
 ##<a name="useful-tools-to-interact-with-azure"></a> Useful tools to interact with Azure
 When you work with your Azure resources from the command-line, you will collect tools that help you do your work. Azure resource group templates are JSON documents, and the Azure Resource Manager API accepts and returns JSON, so JSON parsing tools are some of the first things you will use to help you navigate information about your resources and to design or interact with templates and template parameter files.

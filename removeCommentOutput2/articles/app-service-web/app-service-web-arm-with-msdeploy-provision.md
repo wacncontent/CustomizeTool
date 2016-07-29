@@ -8,14 +8,14 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="12/22/2015"
+	ms.date="05/31/2016"
 	wacn.date=""/>
 
 # Deploy a web app with MSDeploy, custom hostname and SSL certificate
 
 This guide walks through creating an end-to-end deployment for an Azure Web App, leveraging MSDeploy as well as adding a custom hostname and an SSL certificate to the ARM template.
 
-For more information about creating templates, see [Authoring Azure Resource Manager Templates](/documentation/articles/resource-group-authoring-templates).
+For more information about creating templates, see [Authoring Azure Resource Manager Templates](/documentation/articles/resource-group-authoring-templates/).
 
 ###Create Sample Application
 
@@ -116,9 +116,9 @@ Now you will notice that the MSDeploy resource takes a **packageUri** property w
 
 	"packageUri": "[concat(parameters('_artifactsLocation'), '/', parameters('webDeployPackageFolder'), '/', parameters('webDeployPackageFileName'), parameters('_artifactsLocationSasToken'))]"
 
-This **packageUri** takes the storage account uri which points to the storage account where you will upload your package zip to. The Azure Resource Manager will leverage [Shared Access Signatures](/documentation/articles/storage-dotnet-shared-access-signature-part-1) to pull the package down locally from the storage account when you deploy the template. This process will be automated via a PowerShell script that will upload the package and call the Azure Management API to create the keys required and pass those into the template as parameters (*_artifactsLocation* and *_artifactsLocationSasToken*). You will need to define parameters for the folder and filename the package is uploaded to under the storage container.
+This **packageUri** takes the storage account uri which points to the storage account where you will upload your package zip to. The Azure Resource Manager will leverage [Shared Access Signatures](/documentation/articles/storage-dotnet-shared-access-signature-part-1/) to pull the package down locally from the storage account when you deploy the template. This process will be automated via a PowerShell script that will upload the package and call the Azure Management API to create the keys required and pass those into the template as parameters (*_artifactsLocation* and *_artifactsLocationSasToken*). You will need to define parameters for the folder and filename the package is uploaded to under the storage container.
 
-Next you need to add in another nested resource to setup the hostname bindings to leverage a custom domain. You will first need to ensure that you own the hostname and set it up to be verified by Azure that you own it - see [Configure a custom domain name in Azure Web App](/documentation/articles/web-sites-custom-domain-name). Once that is done you can add the following to your template under the Microsoft.Web/sites resource section:
+Next you need to add in another nested resource to setup the hostname bindings to leverage a custom domain. You will first need to ensure that you own the hostname and set it up to be verified by Azure that you own it - see [Configure a custom domain name in Azure Web App](/documentation/articles/web-sites-custom-domain-name/). Once that is done you can add the following to your template under the Microsoft.Web/sites resource section:
 
 	{
 		"apiVersion": "2015-08-01",
@@ -170,7 +170,7 @@ The following PowerShell shows the complete deployment calling the Deploy-AzureR
 
 	.\Deploy-AzureResourceGroup.ps1 -ResourceGroupLocation "China East" `
 									-ResourceGroupName $rgName `
-									-UploadArtifacts "container-name" `
+									-UploadArtifacts `
 									-StorageAccountName "name-of-storage-acct-for-package" `
 									-StorageAccountResourceGroupName "resource-group-name-storage-acct" `
 									-TemplateFile "web-app-deploy.json" `

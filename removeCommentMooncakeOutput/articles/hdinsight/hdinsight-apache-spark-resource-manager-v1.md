@@ -1,4 +1,4 @@
-<!-- not suitable for Mooncake -->
+<!-- deleted in Global -->
 
 <properties 
 	pageTitle="Use Resource Manager to allocate resources to the Apache Spark cluster in HDInsight| Azure" 
@@ -16,15 +16,15 @@
 	wacn.date=""/>
 
 
-# Manage resources for the Apache Spark cluster in Azure HDInsight (Windows)
+# Manage resources for the Apache Spark cluster on HDInsight Windows (Preview)
 
-> [AZURE.NOTE] HDInsight now provides Spark clusters on Linux. For information on how to manage resources for a Spark cluster on HDInsight Linux, see [Manage resources for the Apache Spark cluster in Azure HDInsight (Linux)](/documentation/articles/hdinsight-apache-spark-resource-manager).
+> [AZURE.NOTE] HDInsight now provides Spark clusters on Linux. For information on how to manage resources for a Spark cluster on HDInsight Linux, see [Manage resources for the Apache Spark cluster in Azure HDInsight (Linux)](/documentation/articles/hdinsight-apache-spark-resource-manager/).
 
 Resource manager is a component of the Spark cluster dashboard that enables you to manage resources such as cores and RAM used by each application running on the cluster.
 
 ## <a name="launchrm"></a>How do I launch the Resource Manager?
 
-1. From the [Azure Preview Portal](https://manage.windowsazure.cn/), from the startboard, click the tile for your Spark cluster (if you pinned it to the startboard). You can also navigate to your cluster under **Browse All** > **HDInsight Clusters**. 
+1. From the [Azure Portal](https://portal.azure.cn/), from the startboard, click the tile for your Spark cluster (if you pinned it to the startboard). You can also navigate to your cluster under **Browse All** > **HDInsight Clusters**. 
  
 2. From the Spark cluster blade, click **Dashboard**. When prompted, enter the admin credentials for the Spark cluster.
 
@@ -64,20 +64,20 @@ Specify thrift server core Count and thrift Server executor memory as 0. With no
 
 ##<a name="seealso"></a>See also
 
-* [Overview: Apache Spark on Azure HDInsight](/documentation/articles/hdinsight-apache-spark-overview-v1)
-* [Create a Spark on HDInsight cluster](/documentation/articles/hdinsight-apache-spark-provision-clusters)
-* [Perform interactive data analysis using Spark in HDInsight with BI tools](/documentation/articles/hdinsight-apache-spark-use-bi-tools-v1)
-* [Use Spark in HDInsight for building machine learning applications](/documentation/articles/hdinsight-apache-spark-ipython-notebook-machine-learning-v1)
-* [Use Spark in HDInsight for building real-time streaming applications](/documentation/articles/hdinsight-apache-spark-csharp-apache-zeppelin-eventhub-streaming)
+* [Overview: Apache Spark on Azure HDInsight](/documentation/articles/hdinsight-apache-spark-overview-v1/)
+* [Create a Spark on HDInsight cluster](/documentation/articles/hdinsight-apache-spark-provision-clusters/)
+* [Perform interactive data analysis using Spark in HDInsight with BI tools](/documentation/articles/hdinsight-apache-spark-use-bi-tools-v1/)
+* [Use Spark in HDInsight for building machine learning applications](/documentation/articles/hdinsight-apache-spark-ipython-notebook-machine-learning-v1/)
+* [Use Spark in HDInsight for building real-time streaming applications](/documentation/articles/hdinsight-apache-spark-csharp-apache-zeppelin-eventhub-streaming/)
 
 
-[hdinsight-versions]: ../hdinsight-component-versioning-v1/
-[hdinsight-upload-data]: ../hdinsight-upload-data/
-[hdinsight-storage]: ../hdinsight-use-blob-storage/
+[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning-v1/
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data/
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage/
 
 
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: /pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
 [azure-management-portal]: https://manage.windowsazure.cn/
-[azure-create-storageaccount]: ../storage-create-storage-account/ 
+[azure-create-storageaccount]: /documentation/articles/storage-create-storage-account/

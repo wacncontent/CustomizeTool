@@ -1,3 +1,5 @@
+<!-- deleted in Global -->
+
 <properties 
    pageTitle="How to manage Virtual Network (VNet) Properties"
    description="Learn how to view and edit virtual network settings"

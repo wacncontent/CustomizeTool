@@ -1,7 +1,7 @@
-<!-- not suitable for Mooncake -->
+<!-- deleted in Global -->
 
 <properties
-	pageTitle="WordPress on Ubuntu with ARM template | Windows Azure"
+	pageTitle="WordPress on Ubuntu with ARM template | Azure"
 	description="Easily deploy a single WordPress server running Ubuntu using a Resource Manager Template and the Azure Management Portal, Azure PowerShell, or the Azure CLI."
 	services="virtual-machines"
 	documentationCenter=""
@@ -17,17 +17,17 @@
 
 # Deploy a WordPress server on Ubuntu with an Azure Resource Manager template
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model. You can't create this resource with the classic deployment model.
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the Resource Manager deployment model, which Microsoft recommends for most new deployments instead of the classic deployment model. You can't create this resource with the classic deployment model.
 
 Use the instructions in this article to deploy a WordPress server running on Ubuntu using a Resource Manager template. This template creates a single virtual machine in a new virtual network.
 
 ![](./media/virtual-machines-workload-template-wordpress/one-server-wordpress.png)
 
-You can run the template with the Azure Preview portal, Azure PowerShell, or the Azure CLI.
+You can run the template with the Azure Management Portal, Azure PowerShell, or the Azure CLI.
 
-## Azure Preview portal
+## Azure Management Portal
 
-To deploy this workload using a Resource Manager template and the Azure Preview portal, click [here](https://manage.windowsazure.cn#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fwordpress-single-vm-ubuntu%2Fazuredeploy.json).
+To deploy this workload using a Resource Manager template and the Azure Management Portal, click [here](https://manage.windowsazure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fwordpress-single-vm-ubuntu%2Fazuredeploy.json).
 
 ![](./media/virtual-machines-workload-template-wordpress/azure-portal-template.png)
 
@@ -89,4 +89,3 @@ Here is an example.
 When you run the **azure group deployment create** command, you will be prompted to supply the values for a series of parameters. When you have specified all the parameter values, Azure creates and configures the virtual machines.
 
 When the template execution is complete, you now have WordPress server running on Ubuntu in your new resource group.
-

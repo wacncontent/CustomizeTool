@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="12/24/2015"
+	ms.date="05/31/2016"
 	wacn.date=""/>
 
 # Use DevOps environments effectively for your web apps
@@ -18,13 +18,13 @@ This article shows you how to setup and manage web application deployments  for 
 Setting up multiple development environments can be a challenging task as you need to track and manage the resources (compute, web app, database, cache etc.) across these environments and deploy content from one environment to another.
 
 ## Setting up a non-production environment (stage,dev,QA)
-AOnce you have a production web app up and running, the next step is to create a non-production environment. In order to use deployment slots make sure you are running in the **Standard** or **Premium** App Service plan mode. Deployment slots are actually live web apps with their own hostnames. Web app content and configuration elements can be swapped between two deployment slots, including the production slot. Deploying your application to a deployment slot has the following benefits:
+Once you have a production web app up and running, the next step is to create a non-production environment. In order to use deployment slots make sure you are running in the **Standard** App Service plan mode. Deployment slots are actually live web apps with their own hostnames. Web app content and configuration elements can be swapped between two deployment slots, including the production slot. Deploying your application to a deployment slot has the following benefits:
 
 1. You can validate web app changes in a staging deployment slot before swapping it with the production slot.
-2. Deploying a web app to a slot first and swapping it into production ensures that all instances of the slot are warmed up before being swapped into production. This eliminates downtime when you deploy your web app. The traffic redirection is seamless, and no requests are dropped due to swap operations. This entire workflow can be
+2. Deploying a web app to a slot first and swapping it into production ensures that all instances of the slot are warmed up before being swapped into production. This eliminates downtime when you deploy your web app. The traffic redirection is seamless, and no requests are dropped due to swap operations.
 3. After a swap, the slot with previously staged web app now has the previous production web app. If the changes swapped into the production slot are not as you expected, you can perform the same swap immediately to get your "last known good web app" back.
 
-To setup a staging deployment slot, see [Set up staging environments for web apps in Azure](/documentation/articles/web-sites-staged-publishing) . Every environment should include its own set of resources, for example if your web app uses a database then both production web app and staging web app should be using different databases.  Add staging development environment resources such as database, storage or cache for setting up your staging development environment.
+To setup a staging deployment slot, see [Set up staging environments for web apps in Azure](/documentation/articles/web-sites-staged-publishing/) . Every environment should include its own set of resources, for example if your web app uses a database then both production web app and staging web app should be using different databases.  Add staging development environment resources such as database, storage or cache for setting up your staging development environment.
 
 ## Examples of using multiple development environments
 
@@ -232,11 +232,10 @@ Any WordPress Core updates will not affect your `wp-config.php` , `wp-config.azu
 
 #### Setup a Staging Environment
 
-Assuming you already have a WordPress web app running on Azure Web, login to [Azure Management Portal](https://manage.windowsazure.cn/) and go to your WordPress web app.
-Click on **Dashboard** -> **quick glance** -> **Add a new deployment slot** with the name stage .A deployment slot is another web site sharing the same resources as the primary web site created above.
+Assuming you already have a WordPress web app running on Azure Web, login to [Azure Classic Management Portal](https://manage.windowsazure.cn/) and go to your WordPress web app.
+Click on **Dashboard** -> **quick glance** -> **Add a new deployment slot** with the name stage. A deployment slot is another web app sharing the same resources as the primary web app created above.
 
 
-Add another MySQL database, say `wordpress-stage-db`.Update the Connection strings for your stage deployment slot to point to newly created database, `wordpress-stage-db`. Note that your production web site , `wordpressapp-group` and staging web site `wordpressprodapp-stage` must point to different databases.
 
 #### Configure environment-specific app settings
 Developers can store key-value string pairs in Azure as part of the configuration information associated with a web app called App Settings. At runtime, Azure Web Apps automatically retrieve these values for you and make them available to code running in your web app.  From a security perspective that is a benefit since sensitive information such as database connection strings with passwords should never show up as clear text in a file such as `wp-config.php`.
@@ -264,7 +263,6 @@ Deploy the local development environment web app to stage web app and database u
 Browse and test your staging web app. Considering a scenario where the theme of the web app is to be updated, here is the staging web app.
 
 ![Browse staging web app before swapping slots](./media/app-service-web-staged-publishing-realworld-scenarios/5wpstage.png)
-
 
 
 If all looks good, use the following PowerShell script to swap you web site slot.
@@ -314,11 +312,10 @@ If all looks good, use the following PowerShell script to swap you web site slot
 
 > [AZURE.NOTE] The above script is written for Azure PowerShell 1.0.2 or greater. For lower version, please change the commands correspondingly. For more detail, see the blog [Azure PowerShell 1.0.0 or greater in China](http://blogs.msdn.com/b/azchina/archive/2015/12/18/azure-powershell-1.0.0_e54e0a4e48722c6728572d4efd56_azure_7f4f28758476e86c0f618b4e7998_.aspx).
 
-You must use this PowerShell script (or some other similar way, such as Azure CLI) to swap, in order to keep the app settings for each slot. If you swap on Azure Management Portal, the web site's app settings, connection strings configuration will NOT move across environments when doing a SWAP operation and hence if any database changes are present this will not be visible breaking your production web site.
+You must use this PowerShell script (or some other similar way, such as Azure CLI) to swap, in order to keep the app settings for each slot. If you swap on Azure Classic Management Portal, the web site's app settings, connection strings configuration will NOT move across environments when doing a SWAP operation and hence if any database changes are present this will not be visible breaking your production web site.
 
 
  > [AZURE.NOTE]
-
  >If you need to swap some of the app settings while keep other app settings, you can manipulate the variables `$hash` and `$hash_stage` in the above script.
 
 Before doing a SWAP, here is the production WordPress web app
@@ -344,8 +341,8 @@ To generalize the process for any application with a database
 9. Repeat steps 4 through 6
 
 ## References
-[Agile software development with Azure Web App](/documentation/articles/app-service-agile-software-development)
+[Agile software development with Azure Web App](/documentation/articles/app-service-agile-software-development/)
 
-[Set up staging environments for web apps in Azure](/documentation/articles/web-sites-staged-publishing)
+[Set up staging environments for web apps in Azure](/documentation/articles/web-sites-staged-publishing/)
 
 [How to block web access to non-production deployment slots](http://ruslany.net/2014/04/azure-web-sites-block-web-access-to-non-production-deployment-slots/)

@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="12/09/2015"
+	ms.date="02/25/2016"
 	wacn.date=""/>
 
 # Azure web app advanced config and extensions

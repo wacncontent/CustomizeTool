@@ -1,3 +1,5 @@
+<!-- rename to virtual-machines-windows-allocation-failure -->
+
 <properties
 	pageTitle="Troubleshooting VM allocation failures | Azure"
 	description="Troubleshoot allocation failures when you create, restart, or resize a VM in Azure"
@@ -21,7 +23,7 @@ When you create a VM, restart stopped (deallocated) VMs, or resize a VM, Azure a
 
 The "General troubleshooting steps" section lists steps to address common issues. The "Detailed troubleshooting steps" section provides resolution steps by specific error message. Before you get started, here is some background information to understand how allocation works and why allocation failure happens.
 
-If your Azure issue is not addressed in this article, visit the [Azure forums on MSDN and  Stack Overflow](https://azure.microsoft.com/support/forums/)  CSDN Azure](/support/forums/) . You can post your issue on these forums  or to @AzureSupport on Twitter . Also, you can file an Azure support request by selecting **Get support** on the [Azure  support](https://azure.microsoft.com/support/contact/)  support](/support/contact/)  site.
+If your Azure issue is not addressed in this article, visit the [Azure forums on MSDN and CSDN Azure](/support/forums/). You can post your issue on these forums. Also, you can file an Azure support request by selecting **Get support** on the [Azure support](/support/contact/) site.
 
 ## Background information
 ### How allocation works
@@ -34,20 +36,14 @@ When an allocation request is pinned to a cluster, there's a higher chance of fa
 ![Pinned Allocation Failure](./media/virtual-machines-allocation-failure/Allocation2.png)
 
 ## General troubleshooting steps
-### Troubleshoot common allocation failures  in the classic deployment model 
+### Troubleshoot common allocation failures in the classic deployment model
 
 These steps can help resolve many allocation failures in virtual machines:
 
 - Resize the VM to a different VM size.<br>
-
 	Click **Browse all** > **Virtual machines (classic)** > your virtual machine > **Settings** > **Size**. For detailed steps, see [Resize the virtual machine](https://msdn.microsoft.com/zh-cn/library/dn168976.aspx).
-
-
-	Click **Virtual machines** > your virtual machine > **Configure** > **Size**. For detailed steps, see [Resize the virtual machine](https://msdn.microsoft.com/zh-cn/library/dn168976.aspx).
-
 
 - Delete all VMs from the cloud service and re-create VMs.<br>
-
 	Click **Browse all** > **Virtual machines (classic)** > your virtual machine > **Delete**. Then, click **New** > **Compute** > [virtual machine image].
 
 ### Troubleshoot common allocation failures in the Azure Resource Manager deployment model
@@ -58,13 +54,9 @@ These steps can help resolve many allocation failures in virtual machines:
 	To stop: Click **Resource groups** > your resource group > **Resources** > your availability set > **Virtual Machines** > your virtual machine > **Stop**.
 
 	After all VMs stop, select the first VM and click **Start**.
-
-
-	Click **Virtual machines** > your virtual machine > **Delete**. Then, click **New** > **Compute** > **From gellary** > **My Disks**.
-
 
 ## Detailed troubleshooting steps
-### Troubleshoot specific allocation failure scenarios  in the classic deployment model 
+### Troubleshoot specific allocation failure scenarios in the classic deployment model
 Here are common allocation scenarios that cause an allocation request to be pinned. We'll dive into each scenario later in this article.
 
 - Resize a VM or add VMs or role instances to an existing cloud service
@@ -160,7 +152,7 @@ If an affinity group is not necessary, do not use an affinity group, or group yo
 
 New_General* or New_VMSizeNotSupported*
 
-<**Cause of cluster pinning**
+**Cause of cluster pinning**
 
 Before regional virtual networks were introduced, you were required to associate a virtual network with an affinity group. As a result, compute resources placed into an affinity group are bound by the same constraints as described in the "Allocation scenario: Affinity group (VM/service proximity)" section above. The compute resources are tied to one cluster.
 

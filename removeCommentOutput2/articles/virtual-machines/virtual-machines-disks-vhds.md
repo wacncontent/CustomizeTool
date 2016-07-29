@@ -1,3 +1,5 @@
+<!-- rename to virtual-machines-linux-about-disks-vhds -->
+
 <properties
 	pageTitle="About disks and VHDs | Azure"
 	description="Learn about the basics of disks and VHDs for virtual machines in Azure."
@@ -43,7 +45,7 @@ You can add data disks to a virtual machine at any time, by 'attaching' the disk
 
 ## About VHDs
 
-The VHDs used in Azure are .vhd files stored as page blobs in a standard or premium storage account in Azure. (Premium storage is available in certain regions.) For details about page blobs, see [Understanding block blobs and page blobs](https://msdn.microsoft.com/zh-cn/library/ee691964.aspx). For details about premium storage, see [Premium storage: High-performance storage for Azure virtual machine workloads](/documentation/articles/storage-premium-storage-preview-portal).
+The VHDs used in Azure are .vhd files stored as page blobs in a standard or premium storage account in Azure. (Premium storage is available in certain regions.) For details about page blobs, see [Understanding block blobs and page blobs](https://msdn.microsoft.com/zh-cn/library/ee691964.aspx). For details about premium storage, see [Premium storage: High-performance storage for Azure virtual machine workloads](/documentation/articles/storage-premium-storage).
 
 Outside of Azure, virtual hard disks can use either a VHD or a VHDX format. They can also be fixed, dynamically expanding, or differencing. Azure supports VHD format, fixed disks. The fixed format lays the logical disk out linearly within the file, so that disk offset X is stored at blob offset X. A small footer at the end of the blob describes the properties of the VHD. Often, the fixed format wastes space because most disks have large unused ranges in them. However, Azure stores .vhd files in a sparse format, so you receive the benefits of both the fixed and dynamic disks at the same time. For more details, see [Getting started with virtual hard disks](https://technet.microsoft.com/zh-cn/library/dd979539.aspx).
 

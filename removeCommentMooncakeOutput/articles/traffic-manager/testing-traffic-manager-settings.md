@@ -8,7 +8,7 @@
    editor="tysonn" />
 <tags
 	ms.service="traffic-manager"
-	ms.date="12/01/2015"
+	ms.date="06/10/2016"
 	wacn.date=""/>
 
 # Testing Traffic Manager Settings
@@ -63,3 +63,8 @@ A typical result will show the following:
 To effectively test a performance load balancing method, you must have clients located in different parts of the world. You could create clients in Azure that will attempt to call your services via your company domain name. Alternatively, if your corporation is global, you can remotely log into clients in other parts of the world and test from those clients.
 
 There are free web-based DNS lookup and dig services available. Some of these give you the ability to check DNS name resolution from various locations. Do a search on "DNS lookup" for examples. Another option is to use a third-party solution like Gomez or Keynote to confirm that your profiles are distributing traffic as expected.
+
+## Next Steps
+
+[About Traffic Manager traffic routing methods](/documentation/articles/traffic-manager-routing-methods/)
+[Traffic Manager](/documentation/articles/traffic-manager-overview/)

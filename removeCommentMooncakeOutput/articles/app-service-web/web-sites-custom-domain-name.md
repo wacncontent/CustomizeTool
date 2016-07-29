@@ -10,32 +10,31 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="10/23/2015"
+	ms.date="02/16/2016"
 	wacn.date=""/>
 
 # Configure a custom domain name in Azure
 
 > [AZURE.SELECTOR]
-- [Web Apps with External Domains](/documentation/articles/web-sites-custom-domain-name)
-- [Web Apps with Traffic Manager](/documentation/articles/web-sites-traffic-manager-custom-domain-name)
+- [Web Apps with External Domains](/documentation/articles/web-sites-custom-domain-name/)
+- [Web Apps with Traffic Manager](/documentation/articles/web-sites-traffic-manager-custom-domain-name/)
 
 When you create a web app, Azure assigns it to a subdomain of chinacloudsites.cn. For example, if your web app is named **contoso**, the URL is **contoso.chinacloudsites.cn**. Azure also assigns a virtual IP address.
 
 For a production web app, you may want users to see a custom domain name. This article explains how to configure a custom domain with [Azure Web Apps](/documentation/services/web-sites/).
 
-If you need more help at any point in this article, you can contact the Azure experts on [the MSDN Azure and the Stack Overflow forums](/support/forums/). Alternatively, you can also file an Azure support incident. Go to the [Azure Support site](/support/contact/) and click on **Get Support**.
+If you need more help at any point in this article, you can contact the Azure experts on [the MSDN Azure and CSDN Azure](/support/forums/). Alternatively, you can also file an Azure support incident. Go to the [Azure Support site](/support/contact/) and click on **Get Support**.
 
 [AZURE.INCLUDE [introfooter](../includes/custom-dns-web-site-intro-notes.md)]
 
 
 ##<a href="overview"></a> Overview
 
-
 If you have a domain name already, or you want reserve domain from other domain registrars, here are the general steps to bring a custom domain name for web site:
 
 1. Reserve your domain name. This article does not cover that process. There are many domain registrars to choose from. When you sign up, their site will walk you through the process.
 1. Create DNS records that map the domain to your Azure web app.
-1. Add the domain name inside the [Azure Management Portal](https://manage.windowsazure.cn).
+1. Add the domain name inside the [Azure Classic Management Portal](https://manage.windowsazure.cn).
 
 Within this basic outline, there are specific cases to consider:
 
@@ -62,15 +61,16 @@ If the IP address changes, a CNAME entry is still valid, whereas an A record mus
 
 Skip this step if you are creating a CNAME record. To create an A record, you need the virtual IP address of your web app. To get the IP address:
 
-1.	In your browser, open the [Azure Management Portal](https://manage.windowsazure.cn).
+1.	In your browser, open the [Azure Classic Management Portal](https://manage.windowsazure.cn).
 2.	In the **Websites** tab, click the name of your site and select **Dashboard**.
-3.	Select **Manage Domains** from the bottom of the page. (If this option is disabled, make sure you are using Shared, Basic, or Standard mode. For more information, see [How to scale websites](http://www.windowsazure.cn/documentation/articles/web-sites-scale/).) 
+3.	Select **Manage Domains** from the bottom of the page. (If this option is disabled, make sure you are using Shared, Basic, or Standard mode. For more information, see [How to scale websites](/documentation/articles/web-sites-scale/).) 
 
 	![](./media/web-sites-custom-domain-name/dncmntask-cname-6.png)
 
 4.	The IP address is listed toward the bottom of the dialog.
 
 	![](./media/web-sites-custom-domain-name/ipaddress.png)
+
 ##<a href="create-the-dns-records"></a> Create the DNS records
 
 Log in to your domain registrar and use their tool to add an A record or CNAME record. Every registrar's web app is slightly different, but here are some general guidelines.
@@ -93,7 +93,7 @@ In many registrar tools, you will just type the subdomain portion of your domain
   <tr>
     <td>@</td>
     <td>A (address)</td>
-    <td>168.62.48.183</td>
+    <td>42.159.132.179</td>
   </tr>
   <tr>
     <td>www</td>
@@ -104,7 +104,7 @@ In many registrar tools, you will just type the subdomain portion of your domain
 
 Assuming the custom domain name is 'contoso.com', this would create the following records:
 
-- **contoso.com** mapped to 168.62.48.183.
+- **contoso.com** mapped to 42.159.132.179.
 - **www.contoso.com** mapped to **contoso.chinacloudsites.cn**.
 
 ##<a name="awverify" /></a> Create an awverify record (A records only)

@@ -1,3 +1,5 @@
+<!-- deleted in Global -->
+
 <properties title="How to create a PHP  Website in Azure  Websites" pageTitle="How to create a PHP  Website in Azure  Websites" metaKeywords="PHP Azure  Websites" description="Learn how to create a PHP  Website in Azure  Websites" documentationCenter="PHP" services=" Websites" editor="mollybos" manager="bjsmith" authors="" />
 
 #How to create a PHP  Website in Azure  Websites

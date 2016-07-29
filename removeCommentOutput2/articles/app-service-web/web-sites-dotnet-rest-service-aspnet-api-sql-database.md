@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="12/04/2015"
+	ms.date="02/29/2016"
 	wacn.date=""/>
 
 # Create a REST service using ASP.NET Web API and SQL Database in Azure
@@ -45,12 +45,11 @@ You'll build a simple contact list web application that is built on ASP.NET MVC 
 
 	![New Project dialog box](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/rr4.png)
 
-
 1. In the **New ASP.NET Project** dialog box, make sure the **Host in the Cloud** is unchecked and click **OK**.
 
 	![New ASP.NET Project dialog box](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/rt3.png)
 
-If you do not have a web site in Azure yet, you can go to the [Azure Management Portal](http://manage.windowsazure.cn) to create one. After the web site is created, go to the **Dashboard**, under **quick glance**, you can download the publish profile. You will need it in the publish section in this article.
+If you do not have a web site in Azure yet, you can go to the [Azure Classic Management Portal](http://manage.windowsazure.cn) to create one. After the web site is created, go to the **Dashboard**, under **quick glance**, you can download the publish profile. You will need it in the publish section in this article.
 
 If you have a database server, use that to create a new database. Database servers are a precious resource, and you generally want to create multiple databases on the same server for testing and development rather than creating a database server per database. Make sure your web site and database are in the same region.
 
@@ -118,12 +117,11 @@ This is all you need to do for now to create the application that you'll deploy 
 
 	The **Publish Web** wizard opens.
 
-
 12. Click **Publish**, click **Import**, and Choose the previously downloaded "publish profile".
 
-![Settings tab](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/pw.png)
+	![Settings tab](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/pw.png)
 
-Visual Studio begins the process of copying the files to the Azure server. The **Output** window shows what deployment actions were taken and reports successful completion of the deployment.
+	Visual Studio begins the process of copying the files to the Azure server. The **Output** window shows what deployment actions were taken and reports successful completion of the deployment.
 
 14. The default browser automatically opens to the URL of the deployed site.
 
@@ -193,7 +191,6 @@ The ASP.NET MVC the scaffolding feature can automatically generate code that per
 
 6. Set the controller name to **HomeController**. Select **Contact** as your model class. Click the **New data context** button and accept the default "ContactManager.Models.ContactManagerContext" for the **New data context type**. Click **Add**.
 
-	![Add Controller dialog box](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/rr9.png)
 
 	A dialog box will prompt you: "A file with the name HomeController already exits. Do you want to replace it?". Click **Yes**. We are overwriting the Home Controller that was created with the new project. We will use the new Home Controller for our contact list.
 
@@ -682,9 +679,9 @@ To publish the application, you repeat the procedure you followed earlier.
 
 	![Publish][rxP]
 
-
 5. Click **Import**, and choose the publish profile downloaded above.
 	
+
 1. Under **ContactsManagerContext(ContactsManagerContext)**, click the **v** icon to change *Remote connection string* to the connection string for the contact database. Click **ContactDB**.
 
 	![Settings](./media/web-sites-dotnet-rest-service-aspnet-api-sql-database/rt5.png)
@@ -710,10 +707,9 @@ When you see that the item you enter is saved and appears on the contact manager
 
 The application is now running in the cloud, using SQL Database to store its data. After you finish testing the application in Azure, delete it. The application is public and doesn't have a mechanism to limit access.
 
-
 ##<a name="nextsteps"></a> Next Steps
 
-A real application would require authentication and authorization, and you would use the membership database for that purpose. The tutorial [Deploy a Secure ASP.NET MVC application with OAuth, Membership and SQL Database](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database) is based on this tutorial and shows how to deploy a web application with the membership database.
+A real application would require authentication and authorization, and you would use the membership database for that purpose. The tutorial [Deploy a Secure ASP.NET MVC application with OAuth, Membership and SQL Database](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/) is based on this tutorial and shows how to deploy a web application with the membership database.
 
 Another way to store data in an Azure application is to use Azure storage, which provide non-relational data storage in the form of blobs and tables. The following links provide more information on Web API, ASP.NET MVC and Window Azure.
  
@@ -721,9 +717,9 @@ Another way to store data in an Azure application is to use Azure storage, which
 * [Getting Started with Entity Framework using MVC][EFCodeFirstMVCTutorial]
 * [Intro to ASP.NET MVC 5](http://www.asp.net/mvc/tutorials/mvc-5/introduction/getting-started)
 * [Your First ASP.NET Web API](http://www.asp.net/web-api/overview/getting-started-with-aspnet-web-api/tutorial-your-first-web-api)
-* [Debugging WAWS](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio)
+* [Debugging WAWS](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/)
 
-This tutorial and the sample application was written by [Rick Anderson](http://blogs.msdn.com/b/rickandy/) (Twitter [@RickAndMSFT](httw with assistance from Tom Dykstra and Barry Dorrans (Twitter [@blowdart](https:..
+This tutorial and the sample application was written by [Rick Anderson](http://blogs.msdn.com/b/rickandy/) with assistance from Tom Dykstra and Barry Dorrans.
 
 Please leave feedback on what you liked or what you would like to see improved, not only about the tutorial itself but also about the products that it demonstrates. Your feedback will help us prioritize improvements. We are especially interested in finding out how much interest there is in more automation for the process of configuring and deploying the membership database. 
 

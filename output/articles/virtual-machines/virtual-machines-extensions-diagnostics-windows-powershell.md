@@ -1,3 +1,5 @@
+<!-- rename to virtual-machines-windows-ps-extensions-diagnostics -->
+
 <properties
 	pageTitle="Use PowerShell to enable Azure Diagnostics in a virtual machine running Windows | Azure"
 	services="virtual-machines"
@@ -17,12 +19,11 @@
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
 
-
-Azure Diagnostics is the capability within Azure that enables the collection of diagnostic data on a deployed application. You can use the diagnostics extension to collect diagnostic data like application logs or performance counters from an Azure virtual machine (VM) that is running Windows. This article describes how to use Windows PowerShell to enable the diagnostics extension for a VM. See [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure) for the prerequisites needed for this article.
+Azure Diagnostics is the capability within Azure that enables the collection of diagnostic data on a deployed application. You can use the diagnostics extension to collect diagnostic data like application logs or performance counters from an Azure virtual machine (VM) that is running Windows. This article describes how to use Windows PowerShell to enable the diagnostics extension for a VM. See [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure/) for the prerequisites needed for this article.
 
 ## Enable the diagnostics extension if you use the Resource Manager deployment model
 
-You can enable the diagnostics extension while you create a Windows VM through the Azure Resource Manager deployment model by adding the extension configuration to the Resource Manager template. See [Create a Windows virtual machine with monitoring and diagnostics by using the Azure Resource Manager template](/documentation/articles/virtual-machines-extensions-diagnostics-windows-template).
+You can enable the diagnostics extension while you create a Windows VM through the Azure Resource Manager deployment model by adding the extension configuration to the Resource Manager template. See [Create a Windows virtual machine with monitoring and diagnostics by using the Azure Resource Manager template](/documentation/articles/virtual-machines-extensions-diagnostics-windows-template/).
 
 To enable the diagnostics extension on an existing VM that was created through the Resource Manager deployment model, you can use the [Set-AzureRMVMDiagnosticsExtension](https://msdn.microsoft.com/zh-cn/library/mt603499.aspx) PowerShell cmdlet as shown below.
 
@@ -56,10 +57,6 @@ The cmdlet returns *PublicSettings*, which contains the XML configuration in a B
 	Write-Host $xmlconfig
 
 The [Remove-AzureRMVmDiagnosticsExtension](https://msdn.microsoft.com/zh-cn/library/mt603782.aspx) cmdlet can be used to remove the diagnostics extension from the VM.  
-
-
-You can collect diagnostic data like application logs, performance counter etc. from a Azure Virtual machine running Windows using the Azure Diagnostics extension. This article describes how to enable the Azure Diagnostics extension for a Virtual Machine using PowerShell.  See [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure) for the prerequisites needed for this article.
-
 
 ## Enable the diagnostics extension if you use the classic deployment model
 
@@ -83,127 +80,117 @@ The following XML can be used for the diagnostics public configuration with the 
 The configuration needs to be updated to include the following:
 
 - The *resourceID* attribute of the **Metrics** element needs to be updated with the resource ID for the VM.
-	- The resource ID can be constructed by using the following pattern: "/subscriptions/{*subscription ID for the subscription with the  VM*}/resourceGroups/{*The resourcegroup name for the VM*}/providers/Microsoft.Compute/virtualMachines/{*The  VM*}/providers/Microsoft.ClassicCompute/virtualMachines/{*The  VM Name*}".
-	- For example,  if the subscription ID for the subscription where the VM is running is **11111111-1111-1111-1111-111111111111**, the  resource group name for the resource group is **MyResourceGroup**, and the  VM Name is **MyWindowsVM**, then the value for *resourceID* would be:
+	- The resource ID can be constructed by using the following pattern: "/subscriptions/{*subscription ID for the subscription with the VM*}/resourceGroups/{*The resourcegroup name for the VM*}/providers/Microsoft.Compute/virtualMachines/{*The VM Name*}".
+	- For example, if the subscription ID for the subscription where the VM is running is **11111111-1111-1111-1111-111111111111**, the resource group name for the resource group is **MyResourceGroup**, and the VM Name is **MyWindowsVM**, then the value for *resourceID* would be:
 
-		 ``` 
-
 		<Metrics resourceId="/subscriptions/11111111-1111-1111-1111-111111111111/resourceGroups/MyResourceGroup/providers/Microsoft.Compute/virtualMachines/MyWindowsVM" >
-		```
-
-
-			<Metrics resourceId="/subscriptions/11111111-1111-1111-1111-111111111111/providers/Microsoft.ClassicCompute/virtualMachines/MyWindowsVM" >
-		
-
 
-	- For more information on how metrics are generated based on the performance counters and metrics configuration, see [Azure Diagnostics metrics table in storage](/documentation/articles/virtual-machines-extensions-diagnostics-windows-template#wadmetrics-tables-in-storage).
+	- For more information on how metrics are generated based on the performance counters and metrics configuration, see [Azure Diagnostics metrics table in storage](/documentation/articles/virtual-machines-extensions-diagnostics-windows-template/#wadmetrics-tables-in-storage).
 
 - The **StorageAccount** element needs to be updated with the name of the diagnostics storage account.
 
-	 ``` 
-	<?xml version="1.0" encoding="utf-8"?>
-	<PublicConfig xmlns="http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration">
-	    <WadCfg>
-	      <DiagnosticMonitorConfiguration overallQuotaInMB="4096">
-	        <DiagnosticInfrastructureLogs scheduledTransferLogLevelFilter="Error"/>
-	        <PerformanceCounters scheduledTransferPeriod="PT1M">
-	      <PerformanceCounterConfiguration counterSpecifier="\Processor(_Total)\% Processor Time" sampleRate="PT15S" unit="Percent">
-	        <annotation displayName="CPU utilization" locale="en-us"/>
-	      </PerformanceCounterConfiguration>
-	      <PerformanceCounterConfiguration counterSpecifier="\Processor(_Total)\% Privileged Time" sampleRate="PT15S" unit="Percent">
-	        <annotation displayName="CPU privileged time" locale="en-us"/>
-	      </PerformanceCounterConfiguration>
-	      <PerformanceCounterConfiguration counterSpecifier="\Processor(_Total)\% User Time" sampleRate="PT15S" unit="Percent">
-	        <annotation displayName="CPU user time" locale="en-us"/>
-	      </PerformanceCounterConfiguration>
-	      <PerformanceCounterConfiguration counterSpecifier="\Processor Information(_Total)\Processor Frequency" sampleRate="PT15S" unit="Count">
-	        <annotation displayName="CPU frequency" locale="en-us"/>
-	      </PerformanceCounterConfiguration>
-	      <PerformanceCounterConfiguration counterSpecifier="\System\Processes" sampleRate="PT15S" unit="Count">
-	        <annotation displayName="Processes" locale="en-us"/>
-	      </PerformanceCounterConfiguration>
-	      <PerformanceCounterConfiguration counterSpecifier="\Process(_Total)\Thread Count" sampleRate="PT15S" unit="Count">
-	        <annotation displayName="Threads" locale="en-us"/>
-	      </PerformanceCounterConfiguration>
-	      <PerformanceCounterConfiguration counterSpecifier="\Process(_Total)\Handle Count" sampleRate="PT15S" unit="Count">
-	        <annotation displayName="Handles" locale="en-us"/>
-	      </PerformanceCounterConfiguration>
-	      <PerformanceCounterConfiguration counterSpecifier="\Memory\% Committed Bytes In Use" sampleRate="PT15S" unit="Percent">
-	        <annotation displayName="Memory usage" locale="en-us"/>
-	      </PerformanceCounterConfiguration>
-	      <PerformanceCounterConfiguration counterSpecifier="\Memory\Available Bytes" sampleRate="PT15S" unit="Bytes">
-	        <annotation displayName="Memory available" locale="en-us"/>
-	      </PerformanceCounterConfiguration>
-	      <PerformanceCounterConfiguration counterSpecifier="\Memory\Committed Bytes" sampleRate="PT15S" unit="Bytes">
-	        <annotation displayName="Memory committed" locale="en-us"/>
-	      </PerformanceCounterConfiguration>
-	      <PerformanceCounterConfiguration counterSpecifier="\Memory\Commit Limit" sampleRate="PT15S" unit="Bytes">
-	        <annotation displayName="Memory commit limit" locale="en-us"/>
-	      </PerformanceCounterConfiguration>
-	      <PerformanceCounterConfiguration counterSpecifier="\Memory\Pool Paged Bytes" sampleRate="PT15S" unit="Bytes">
-	        <annotation displayName="Memory paged pool" locale="en-us"/>
-	      </PerformanceCounterConfiguration>
-	      <PerformanceCounterConfiguration counterSpecifier="\Memory\Pool Nonpaged Bytes" sampleRate="PT15S" unit="Bytes">
-	        <annotation displayName="Memory non-paged pool" locale="en-us"/>
-	      </PerformanceCounterConfiguration>
-	      <PerformanceCounterConfiguration counterSpecifier="\PhysicalDisk(_Total)\% Disk Time" sampleRate="PT15S" unit="Percent">
-	        <annotation displayName="Disk active time" locale="en-us"/>
-	      </PerformanceCounterConfiguration>
-	      <PerformanceCounterConfiguration counterSpecifier="\PhysicalDisk(_Total)\% Disk Read Time" sampleRate="PT15S" unit="Percent">
-	        <annotation displayName="Disk active read time" locale="en-us"/>
-	      </PerformanceCounterConfiguration>
-	      <PerformanceCounterConfiguration counterSpecifier="\PhysicalDisk(_Total)\% Disk Write Time" sampleRate="PT15S" unit="Percent">
-	        <annotation displayName="Disk active write time" locale="en-us"/>
-	      </PerformanceCounterConfiguration>
-	      <PerformanceCounterConfiguration counterSpecifier="\PhysicalDisk(_Total)\Disk Transfers/sec" sampleRate="PT15S" unit="CountPerSecond">
-	        <annotation displayName="Disk operations" locale="en-us"/>
-	      </PerformanceCounterConfiguration>
-	      <PerformanceCounterConfiguration counterSpecifier="\PhysicalDisk(_Total)\Disk Reads/sec" sampleRate="PT15S" unit="CountPerSecond">
-	        <annotation displayName="Disk read operations" locale="en-us"/>
-	      </PerformanceCounterConfiguration>
-	      <PerformanceCounterConfiguration counterSpecifier="\PhysicalDisk(_Total)\Disk Writes/sec" sampleRate="PT15S" unit="CountPerSecond">
-	        <annotation displayName="Disk write operations" locale="en-us"/>
-	      </PerformanceCounterConfiguration>
-	      <PerformanceCounterConfiguration counterSpecifier="\PhysicalDisk(_Total)\Disk Bytes/sec" sampleRate="PT15S" unit="BytesPerSecond">
-	        <annotation displayName="Disk speed" locale="en-us"/>
-	      </PerformanceCounterConfiguration>
-	      <PerformanceCounterConfiguration counterSpecifier="\PhysicalDisk(_Total)\Disk Read Bytes/sec" sampleRate="PT15S" unit="BytesPerSecond">
-	        <annotation displayName="Disk read speed" locale="en-us"/>
-	      </PerformanceCounterConfiguration>
-	      <PerformanceCounterConfiguration counterSpecifier="\PhysicalDisk(_Total)\Disk Write Bytes/sec" sampleRate="PT15S" unit="BytesPerSecond">
-	        <annotation displayName="Disk write speed" locale="en-us"/>
-	      </PerformanceCounterConfiguration>
-	      <PerformanceCounterConfiguration counterSpecifier="\PhysicalDisk(_Total)\Avg. Disk Queue Length" sampleRate="PT15S" unit="Count">
-	        <annotation displayName="Disk average queue length" locale="en-us"/>
-	      </PerformanceCounterConfiguration>
-	      <PerformanceCounterConfiguration counterSpecifier="\PhysicalDisk(_Total)\Avg. Disk Read Queue Length" sampleRate="PT15S" unit="Count">
-	        <annotation displayName="Disk average read queue length" locale="en-us"/>
-	      </PerformanceCounterConfiguration>
-	      <PerformanceCounterConfiguration counterSpecifier="\PhysicalDisk(_Total)\Avg. Disk Write Queue Length" sampleRate="PT15S" unit="Count">
-	        <annotation displayName="Disk average write queue length" locale="en-us"/>
-	      </PerformanceCounterConfiguration>
-	      <PerformanceCounterConfiguration counterSpecifier="\LogicalDisk(_Total)\% Free Space" sampleRate="PT15S" unit="Percent">
-	        <annotation displayName="Disk free space (percentage)" locale="en-us"/>
-	      </PerformanceCounterConfiguration>
-	      <PerformanceCounterConfiguration counterSpecifier="\LogicalDisk(_Total)\Free Megabytes" sampleRate="PT15S" unit="Count">
-	        <annotation displayName="Disk free space (MB)" locale="en-us"/>
-	      </PerformanceCounterConfiguration>
-	    </PerformanceCounters>
-		<Metrics resourceId="(Update with resource ID for the VM)" >
-	        <MetricAggregation scheduledTransferPeriod="PT1H"/>
-	        <MetricAggregation scheduledTransferPeriod="PT1M"/>
-	    </Metrics>
-	    <WindowsEventLog scheduledTransferPeriod="PT1M">
-	      <DataSource name="Application!*[System[(Level = 1 or Level = 2)]]"/>
-	      <DataSource name="Security!*[System[(Level = 1 or Level = 2)]"/>
-	      <DataSource name="System!*[System[(Level = 1 or Level = 2)]]"/>
-	    </WindowsEventLog>
-	      </DiagnosticMonitorConfiguration>
-	    </WadCfg>
-	    <StorageAccount>(Update with diagnostics storage account name)</StorageAccount>
-	</PublicConfig>
-	 ``` 
+		<?xml version="1.0" encoding="utf-8"?>
+		<PublicConfig xmlns="http://schemas.microsoft.com/ServiceHosting/2010/10/DiagnosticsConfiguration">
+		    <WadCfg>
+		      <DiagnosticMonitorConfiguration overallQuotaInMB="4096">
+		        <DiagnosticInfrastructureLogs scheduledTransferLogLevelFilter="Error"/>
+		        <PerformanceCounters scheduledTransferPeriod="PT1M">
+		      <PerformanceCounterConfiguration counterSpecifier="\Processor(_Total)\% Processor Time" sampleRate="PT15S" unit="Percent">
+		        <annotation displayName="CPU utilization" locale="en-us"/>
+		      </PerformanceCounterConfiguration>
+		      <PerformanceCounterConfiguration counterSpecifier="\Processor(_Total)\% Privileged Time" sampleRate="PT15S" unit="Percent">
+		        <annotation displayName="CPU privileged time" locale="en-us"/>
+		      </PerformanceCounterConfiguration>
+		      <PerformanceCounterConfiguration counterSpecifier="\Processor(_Total)\% User Time" sampleRate="PT15S" unit="Percent">
+		        <annotation displayName="CPU user time" locale="en-us"/>
+		      </PerformanceCounterConfiguration>
+		      <PerformanceCounterConfiguration counterSpecifier="\Processor Information(_Total)\Processor Frequency" sampleRate="PT15S" unit="Count">
+		        <annotation displayName="CPU frequency" locale="en-us"/>
+		      </PerformanceCounterConfiguration>
+		      <PerformanceCounterConfiguration counterSpecifier="\System\Processes" sampleRate="PT15S" unit="Count">
+		        <annotation displayName="Processes" locale="en-us"/>
+		      </PerformanceCounterConfiguration>
+		      <PerformanceCounterConfiguration counterSpecifier="\Process(_Total)\Thread Count" sampleRate="PT15S" unit="Count">
+		        <annotation displayName="Threads" locale="en-us"/>
+		      </PerformanceCounterConfiguration>
+		      <PerformanceCounterConfiguration counterSpecifier="\Process(_Total)\Handle Count" sampleRate="PT15S" unit="Count">
+		        <annotation displayName="Handles" locale="en-us"/>
+		      </PerformanceCounterConfiguration>
+		      <PerformanceCounterConfiguration counterSpecifier="\Memory\% Committed Bytes In Use" sampleRate="PT15S" unit="Percent">
+		        <annotation displayName="Memory usage" locale="en-us"/>
+		      </PerformanceCounterConfiguration>
+		      <PerformanceCounterConfiguration counterSpecifier="\Memory\Available Bytes" sampleRate="PT15S" unit="Bytes">
+		        <annotation displayName="Memory available" locale="en-us"/>
+		      </PerformanceCounterConfiguration>
+		      <PerformanceCounterConfiguration counterSpecifier="\Memory\Committed Bytes" sampleRate="PT15S" unit="Bytes">
+		        <annotation displayName="Memory committed" locale="en-us"/>
+		      </PerformanceCounterConfiguration>
+		      <PerformanceCounterConfiguration counterSpecifier="\Memory\Commit Limit" sampleRate="PT15S" unit="Bytes">
+		        <annotation displayName="Memory commit limit" locale="en-us"/>
+		      </PerformanceCounterConfiguration>
+		      <PerformanceCounterConfiguration counterSpecifier="\Memory\Pool Paged Bytes" sampleRate="PT15S" unit="Bytes">
+		        <annotation displayName="Memory paged pool" locale="en-us"/>
+		      </PerformanceCounterConfiguration>
+		      <PerformanceCounterConfiguration counterSpecifier="\Memory\Pool Nonpaged Bytes" sampleRate="PT15S" unit="Bytes">
+		        <annotation displayName="Memory non-paged pool" locale="en-us"/>
+		      </PerformanceCounterConfiguration>
+		      <PerformanceCounterConfiguration counterSpecifier="\PhysicalDisk(_Total)\% Disk Time" sampleRate="PT15S" unit="Percent">
+		        <annotation displayName="Disk active time" locale="en-us"/>
+		      </PerformanceCounterConfiguration>
+		      <PerformanceCounterConfiguration counterSpecifier="\PhysicalDisk(_Total)\% Disk Read Time" sampleRate="PT15S" unit="Percent">
+		        <annotation displayName="Disk active read time" locale="en-us"/>
+		      </PerformanceCounterConfiguration>
+		      <PerformanceCounterConfiguration counterSpecifier="\PhysicalDisk(_Total)\% Disk Write Time" sampleRate="PT15S" unit="Percent">
+		        <annotation displayName="Disk active write time" locale="en-us"/>
+		      </PerformanceCounterConfiguration>
+		      <PerformanceCounterConfiguration counterSpecifier="\PhysicalDisk(_Total)\Disk Transfers/sec" sampleRate="PT15S" unit="CountPerSecond">
+		        <annotation displayName="Disk operations" locale="en-us"/>
+		      </PerformanceCounterConfiguration>
+		      <PerformanceCounterConfiguration counterSpecifier="\PhysicalDisk(_Total)\Disk Reads/sec" sampleRate="PT15S" unit="CountPerSecond">
+		        <annotation displayName="Disk read operations" locale="en-us"/>
+		      </PerformanceCounterConfiguration>
+		      <PerformanceCounterConfiguration counterSpecifier="\PhysicalDisk(_Total)\Disk Writes/sec" sampleRate="PT15S" unit="CountPerSecond">
+		        <annotation displayName="Disk write operations" locale="en-us"/>
+		      </PerformanceCounterConfiguration>
+		      <PerformanceCounterConfiguration counterSpecifier="\PhysicalDisk(_Total)\Disk Bytes/sec" sampleRate="PT15S" unit="BytesPerSecond">
+		        <annotation displayName="Disk speed" locale="en-us"/>
+		      </PerformanceCounterConfiguration>
+		      <PerformanceCounterConfiguration counterSpecifier="\PhysicalDisk(_Total)\Disk Read Bytes/sec" sampleRate="PT15S" unit="BytesPerSecond">
+		        <annotation displayName="Disk read speed" locale="en-us"/>
+		      </PerformanceCounterConfiguration>
+		      <PerformanceCounterConfiguration counterSpecifier="\PhysicalDisk(_Total)\Disk Write Bytes/sec" sampleRate="PT15S" unit="BytesPerSecond">
+		        <annotation displayName="Disk write speed" locale="en-us"/>
+		      </PerformanceCounterConfiguration>
+		      <PerformanceCounterConfiguration counterSpecifier="\PhysicalDisk(_Total)\Avg. Disk Queue Length" sampleRate="PT15S" unit="Count">
+		        <annotation displayName="Disk average queue length" locale="en-us"/>
+		      </PerformanceCounterConfiguration>
+		      <PerformanceCounterConfiguration counterSpecifier="\PhysicalDisk(_Total)\Avg. Disk Read Queue Length" sampleRate="PT15S" unit="Count">
+		        <annotation displayName="Disk average read queue length" locale="en-us"/>
+		      </PerformanceCounterConfiguration>
+		      <PerformanceCounterConfiguration counterSpecifier="\PhysicalDisk(_Total)\Avg. Disk Write Queue Length" sampleRate="PT15S" unit="Count">
+		        <annotation displayName="Disk average write queue length" locale="en-us"/>
+		      </PerformanceCounterConfiguration>
+		      <PerformanceCounterConfiguration counterSpecifier="\LogicalDisk(_Total)\% Free Space" sampleRate="PT15S" unit="Percent">
+		        <annotation displayName="Disk free space (percentage)" locale="en-us"/>
+		      </PerformanceCounterConfiguration>
+		      <PerformanceCounterConfiguration counterSpecifier="\LogicalDisk(_Total)\Free Megabytes" sampleRate="PT15S" unit="Count">
+		        <annotation displayName="Disk free space (MB)" locale="en-us"/>
+		      </PerformanceCounterConfiguration>
+		    </PerformanceCounters>
+			<Metrics resourceId="(Update with resource ID for the VM)" >
+		        <MetricAggregation scheduledTransferPeriod="PT1H"/>
+		        <MetricAggregation scheduledTransferPeriod="PT1M"/>
+		    </Metrics>
+		    <WindowsEventLog scheduledTransferPeriod="PT1M">
+		      <DataSource name="Application!*[System[(Level = 1 or Level = 2)]]"/>
+		      <DataSource name="Security!*[System[(Level = 1 or Level = 2)]"/>
+		      <DataSource name="System!*[System[(Level = 1 or Level = 2)]]"/>
+		    </WindowsEventLog>
+		      </DiagnosticMonitorConfiguration>
+		    </WadCfg>
+		    <StorageAccount>(Update with diagnostics storage account name)</StorageAccount>
+		</PublicConfig>
 
 ## Next steps
-- For additional guidance on using the Azure Diagnostics capability and other techniques to troubleshoot problems, see [Enabling Diagnostics in Azure Cloud Services and Virtual Machines](/documentation/articles/cloud-services-dotnet-diagnostics).
+- For additional guidance on using the Azure Diagnostics capability and other techniques to troubleshoot problems, see [Enabling Diagnostics in Azure Cloud Services and Virtual Machines](/documentation/articles/cloud-services-dotnet-diagnostics/).
 - [Diagnostics configurations schema](https://msdn.microsoft.com/zh-cn/library/azure/mt634524.aspx) explains the various XML configurations options for the diagnostics extension.

@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="virtual-network"
-	ms.date="12/11/2015"
+	ms.date="03/28/2016"
 	wacn.date=""/>
 
 # Set up Office 365 Directory Synchronization (DirSync) in a hybrid cloud for testing
@@ -177,6 +177,6 @@ This environment is now ready for you to perform testing of Office 365 applicati
 
 [Set up a simulated hybrid cloud environment for testing](/documentation/articles/virtual-networks-setup-simulated-hybrid-cloud-environment-testing)
 
-[Azure hybrid cloud test environments](/documentation/articles/virtual-machines-hybrid-cloud-test-environments)
+[Azure hybrid cloud test environments](/documentation/articles/virtual-machines-windows-classic-hybrid-test-env)
 
-[Azure infrastructure services implementation guidelines](/documentation/articles/virtual-machines-infrastructure-services-implementation-guidelines)
+[Azure infrastructure services implementation guidelines](/documentation/articles/virtual-machines-linux-infrastructure-service-guidelines)

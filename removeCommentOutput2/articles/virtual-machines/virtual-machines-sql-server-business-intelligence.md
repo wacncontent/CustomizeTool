@@ -1,3 +1,5 @@
+<!-- rename to virtual-machines-windows-classic-ps-sql-bi -->
+
 <properties 
 	pageTitle="SQL Server Business Intelligence | Azure"
 	description="This topic uses resources created with the classic deployment model, and describes the Business Intelligence (BI) features available for SQL Server running on Azure Virtual Machines (VMs)."
@@ -14,7 +16,7 @@
 
 # SQL Server Business Intelligence in Azure Virtual Machines
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the classic deployment model. Microsoft recommends that most new deployments use the Resource Manager model.
  
  
 The Azure Virtual Machine gallery includes images that contain SQL Server installations. The SQL Server editions supported in the gallery images are the same installation files you can install to on-premises computers and virtual machines. This topic summarizes the SQL Server Business Intelligence (BI) Features installed on the images and configuration steps required after a virtual machine is provisioned. This topic also describes supported deployment topologies for BI features and best practices.
@@ -23,11 +25,11 @@ The Azure Virtual Machine gallery includes images that contain SQL Server instal
 
 There are two ways to license SQL Server in Azure Virtual Machines:
 
-1. License mobility benefits that are part of Software Assurance. For more information, see [License Mobility through Software Assurance on Azure](https://azure.micros.
+1. License mobility benefits that are part of Software Assurance. For more information, see [License Mobility through Software Assurance on Azure](/pricing/license-mobility/).
 
 1. Pay per hour rate of Azure Virtual Machines with SQL Server installed. See the "SQL Server" section in [Virtual Machines Pricing](/home/features/virtual-machines/#price).
 
-For more information on licensing and current rates, see [Virtual Machines Licensing FAQ](https://azure.microsof.
+For more information on licensing and current rates, see [Virtual Machines Licensing FAQ](/pricing/licensing-faq/%20/).
 
 ## SQL Server Images Available in Azure Virtual Machine Gallery
 
@@ -37,7 +39,7 @@ The Azure Virtual Machine gallery includes several images that contain Microsoft
 
 ![PowerShell](./media/virtual-machines-sql-server-business-intelligence/IC660119.gif) The following PowerShell script returns the list of Azure images that contain "SQL-Server" in the ImageName:
 
-	# assumes you have already uploaded a management certificate to your Azure Subscription. View the thumbprint value from the "settings" menu in Azure Management Portal.
+	# assumes you have already uploaded a management certificate to your Azure Subscription. View the thumbprint value from the "settings" menu in Azure classic portal.
 	
 	$subscriptionID = ""    # REQUIRED: Provide your subscription ID.
 	$subscriptionName = "" # REQUIRED: Provide your subscription name.
@@ -312,7 +314,6 @@ To install additional SQL Server services, such as Analysis Services in tabular 
 Or run C:\SQLServer_12.0_full\setup.exe or C:\SQLServer_11.0_full\setup.exe
 
 >[AZURE.NOTE] The first time you run SQL Server setup, more setup files may be downloaded and require a reboot of the virtual machine and a restart of SQL Server setup.
-
 ><p>If you need to repeatedly customize the image selected from the Azure Virtual Machine, consider creating your own SQL Server image. Analysis Services SysPrep functionality was enabled with SQL Server 2012 SP1 CU2. For more information, see [Considerations for Installing SQL Server Using SysPrep](https://msdn.microsoft.com/zh-cn/library/ee210754.aspx).
 
 ### To Install Analysis Services Tabular Mode

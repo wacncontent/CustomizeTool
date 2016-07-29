@@ -13,7 +13,8 @@
 	ms.date="02/03/2016"
 	wacn.date=""/>
 
-
 #Enable HTTPS for an app in Azure
 
+
 [AZURE.INCLUDE [configure-ssl-web-site](../includes/configure-ssl-web-site.md)]
+

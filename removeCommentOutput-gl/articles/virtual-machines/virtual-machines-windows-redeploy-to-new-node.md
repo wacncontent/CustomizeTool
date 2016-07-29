@@ -1,0 +1,20 @@
+<properties 
+	pageTitle="Redeploy Virtual Machines | Microsoft Azure" 
+	description="Describes how to redeploy Virtual Machines to mitigate RDP connection issues." 
+	services="virtual-machines-windows" 
+	documentationCenter="virtual-machines" 
+	authors="iainfoulds" 
+	manager="timlt"
+	tags="azure-resource-manager,top-support-issue" 
+/>
+	
+
+<tags
+	ms.service="virtual-machines-windows"
+	ms.date="04/13/2016"
+	wacn.date=""/>
+
+
+# Redeploy Virtual Machine to new Azure node
+
+[AZURE.INCLUDE [virtual-machines-common-redeploy-to-new-node](../includes/virtual-machines-common-redeploy-to-new-node.md)]

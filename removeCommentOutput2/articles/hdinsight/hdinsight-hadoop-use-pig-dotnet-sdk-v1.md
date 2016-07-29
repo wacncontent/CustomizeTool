@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="02/04/2016"
+	ms.date="05/04/2016"
 	wacn.date=""/>
 
 #Run Pig jobs using the .NET SDK for Hadoop in HDInsight
@@ -20,14 +20,11 @@ This document provides an example of using the .NET SDK for Hadoop to submit Pig
 
 The HDInsight .NET SDK provides .NET client libraries that makes it easier to work with HDInsight clusters from .NET. Pig allows you to create MapReduce operations by modeling a series of data transformations. You will learn how to use a basic C# application to submit a Pig job to an HDInsight cluster.
 
-[AZURE.INCLUDE [azure-preview-portal](../includes/hdinsight-azure-portal.md)]
-
-* [Run Pig jobs using the .NET SDK for Hadoop in HDInsight](/documentation/articles/hdinsight-hadoop-use-pig-dotnet-sdk-v1)
+> [AZURE.IMPORTANT] Currently, HDInsight in Azure China is only manageable by Azure Service Manager (ASM). Azure Resource Manager (ARM) model for HDInsight is not available yet.
 
 ##<a id="prereq"></a>Prerequisites
 
 To complete the steps in this article, you will need the following.
-
 
 * An Azure HDInsight (Hadoop on HDInsight) cluster (Windows) 
 
@@ -123,7 +120,6 @@ Save the subscription ID, as it will be used later.
 		            // Define the Pig job
 		            var parameters = new PigJobSubmissionParameters()
 		            {
-		                UserName = ExistingClusterUsername,
 		                Query = queryString,
 		            };
 		
@@ -150,10 +146,10 @@ As you can see, the .NET SDK for Hadoop allows you to create .NET applications t
 
 For general information on Pig in HDInsight.
 
-* [Use Pig with Hadoop on HDInsight](/documentation/articles/hdinsight-use-pig)
+* [Use Pig with Hadoop on HDInsight](/documentation/articles/hdinsight-use-pig/)
 
 For information on other ways you can work with Hadoop on HDInsight.
 
-* [Use Hive with Hadoop on HDInsight](/documentation/articles/hdinsight-use-hive)
+* [Use Hive with Hadoop on HDInsight](/documentation/articles/hdinsight-use-hive/)
 
-* [Use MapReduce with Hadoop on HDInsight](/documentation/articles/hdinsight-use-mapreduce)
+* [Use MapReduce with Hadoop on HDInsight](/documentation/articles/hdinsight-use-mapreduce/)

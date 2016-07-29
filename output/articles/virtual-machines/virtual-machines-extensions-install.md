@@ -1,3 +1,5 @@
+<!-- rename to virtual-machines-windows-classic-manage-extensions -->
+
 <properties
  pageTitle="Manage virtual machine extensions | Azure"
  description="Describes how to add, find, update, and remove extensions for Azure virtual machines, in the classic deployment model."
@@ -15,14 +17,14 @@
 
 Describes how to find, add, modify, or remove VM Extensions with either Windows or Linux Virtual Machines on Azure.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]  Resource Manager mode 
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager mode
 
 
 ##Using VM Extensions
 
 Azure VM Extensions implement behaviors or features that either help other programs work on Azure VMs (for example, the **WebDeployForVSDevTest** extension allows Visual Studio to Web Deploy solutions on your Azure VM) or provide the ability for you to interact with the VM to support some other behavior (for example, you can use the VM Access extensions from Powershell, the Azure CLI, and REST clients to reset or modify remote access values on your Azure VM).
 
->[AZURE.IMPORTANT] For a complete list of extensions by the features they support, see [Azure VM Extensions and Features](/documentation/articles/virtual-machines-extensions-features). Because each VM extension supports a specific feature, exactly what you can and cannot do with an extension depends on the extension. Therefore, before modifying your VM, make sure you have read the documentation for the VM Extension you want to use. Removing some VM Extensions is not supported; others have properties that can be set that change VM behavior radically.
+>[AZURE.IMPORTANT] For a complete list of extensions by the features they support, see [Azure VM Extensions and Features](/documentation/articles/virtual-machines-linux-extensions-features/). Because each VM extension supports a specific feature, exactly what you can and cannot do with an extension depends on the extension. Therefore, before modifying your VM, make sure you have read the documentation for the VM Extension you want to use. Removing some VM Extensions is not supported; others have properties that can be set that change VM behavior radically.
 
 The most common tasks are:
 
@@ -36,7 +38,7 @@ The most common tasks are:
 
 ##Find Available Extensions
 
-Azure VM Extensions are (For a complete list of extensions by the features they support, see [Azure VM Extensions and Features](/documentation/articles/virtual-machines-extensions-features).) You can locate the extension and extended information using:
+Azure VM Extensions are (For a complete list of extensions by the features they support, see [Azure VM Extensions and Features](/documentation/articles/virtual-machines-linux-extensions-features/).) You can locate the extension and extended information using:
 
 -   PowerShell
 -   Azure Cross-Platform Interface (Azure CLI)

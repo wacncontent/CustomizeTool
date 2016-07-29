@@ -1,3 +1,5 @@
+<!-- rename to virtual-machines-windows-classic-test-config-env -->
+
 <properties
 	pageTitle="Base Configuration Test Environment"
 	description="Learn how to create a simple dev/test environment that simulates a simplified intranet in Azure."
@@ -15,7 +17,7 @@
 
 # Base Configuration test environment
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the classic deployment model. Microsoft recommends that most new deployments use the [Resource Manager model](/documentation/articles/virtual-machines-base-configuration-test-environment-resource-manager).
 
 This article provides you with step-by-step instructions to create the Base Configuration test environment in an Azure Virtual Network.
 
@@ -47,7 +49,6 @@ There are four phases to setting up the Corpnet subnet of the Windows Server 201
 3.	Configure APP1.
 4.	Configure CLIENT1.
 
-
 If you do not already have an Azure account, you can sign up for a trial at [Try Azure](/pricing/1rmb-trial/).
 
 > [AZURE.NOTE] Virtual machines in Azure incur an ongoing monetary cost when they are running. This cost is billed against your trial or paid subscription. For more information about the costs of running Azure virtual machines, see [Virtual Machines Pricing Details](/home/features/virtual-machines/#price) and [Azure Pricing Calculator](/pricing/calculator/). To keep costs down, see [Minimizing the costs of test environment virtual machines in Azure](#costs).
@@ -56,7 +57,7 @@ If you do not already have an Azure account, you can sign up for a trial at [Try
 
 First, you create the TestLab virtual network that will host the Corpnet subnet of the base configuration.
 
-1.	In the task bar of the [Azure Management Portal](https://manage.windowsazure.cn), click **New > Network Services > Virtual Network > Custom Create**.
+1.	In the task bar of the [Azure classic portal](https://manage.windowsazure.cn), click **New > Network Services > Virtual Network > Custom Create**.
 2.	On the Virtual Network Details page, type **TestLab** in **Name**.
 3.	In **Location**, select the appropriate region.
 4.	Click the Next arrow.
@@ -123,7 +124,7 @@ First, fill in the name of your cloud service and run these commands at the Azur
 
 Next, connect to the DC1 virtual machine.
 
-1.	In the Azure Management Portal, click **Virtual Machines** in the left pane, and then click **Started** in the **Status** column for the DC1 virtual machine.  
+1.	In the Azure classic portal, click **Virtual Machines** in the left pane, and then click **Started** in the **Status** column for the DC1 virtual machine.  
 2.	In the task bar, click **Connect**.
 3.	When prompted to open DC1.rdp, click **Open**.
 4.	When prompted with a Remote Desktop Connection message box, click **Connect**.
@@ -152,7 +153,7 @@ Next, configure DC1 as a domain controller and DNS server for the corp.contoso.c
 
 After DC1 restarts, reconnect to the DC1 virtual machine.
 
-1.	On the virtual machines page of the Azure Management Portal, click **Running** in the **Status** column for the DC1 virtual machine.
+1.	On the virtual machines page of the Azure classic portal, click **Running** in the **Status** column for the DC1 virtual machine.
 2.	In the task bar, click **Connect**.
 3.	When prompted to open DC1.rdp, click **Open**.
 4.	When prompted with a Remote Desktop Connection message box, click **Connect**.

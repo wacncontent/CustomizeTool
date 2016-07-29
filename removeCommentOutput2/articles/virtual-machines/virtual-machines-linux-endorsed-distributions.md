@@ -1,3 +1,5 @@
+<!-- rename to virtual-machines-linux-endorsed-distros -->
+
 <properties
 	pageTitle="Endorsed distributions of Linux | Azure"
 	description="Learn about Linux on Azure-endorsed distributions, including guidelines for Ubuntu, OpenLogic, Oracle, and SUSE."

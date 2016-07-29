@@ -1,3 +1,5 @@
+<!-- deleted in Global -->
+
 <properties title="Learn how to configure an Azure  Website to use a domain name registered with Network Solutions" pageTitle="Configure a Network Solutions domain name for an Azure  Website" metaKeywords="Azure, Azure  Websites, domain name" description="" services="web-sites" documentationCenter="" authors="larryfr, jroth" />
 
 #Configuring a custom domain name for an Azure Website (Network Solutions)

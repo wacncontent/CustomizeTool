@@ -1,3 +1,5 @@
+<!-- rename to virtual-machines-windows-classic-hpcpack-cluster-node-manage -->
+
 <properties
  pageTitle="Manage HPC Pack cluster compute nodes | Azure"
  description="Learn about PowerShell script tools to add, remove, start, and stop HPC Pack cluster compute nodes in Azure"
@@ -14,7 +16,7 @@
 
 # Manage the number and availability of compute nodes in an HPC Pack cluster in Azure
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]  Resource Manager model. 
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager model.
 
 
 If you created an HPC Pack cluster in Azure VMs, you might want ways to easily add, remove,
@@ -28,62 +30,35 @@ run each of the scripts as an administrator.
 
 ## Prerequisites
 
-* **HPC Pack cluster in Azure VMs** - Create an HPC Pack cluster in the classic (Service Management) deployment model by using at least HPC Pack 2012 R2 Update 1. For example, you can automate the deployment by using the HPC Pack VM image in the Azure gallery and an Azure PowerShell script. For information and prerequisites, see [Create an HPC Cluster with the HPC Pack IaaS deployment script](/documentation/articles/virtual-machines-hpcpack-cluster-powershell-script).
+* **HPC Pack cluster in Azure VMs** - Create an HPC Pack cluster in the classic (Service Management) deployment model by using at least HPC Pack 2012 R2 Update 1. For example, you can automate the deployment by using the HPC Pack VM image in the Azure gallery and an Azure PowerShell script. For information and prerequisites, see [Create an HPC Cluster with the HPC Pack IaaS deployment script](/documentation/articles/virtual-machines-linux-classic-hpcpack-cluster-powershell-script/).
 
 * **Azure publish settings file or management certificate** - You need to do one of the following on the head node:
 
     * **Import the Azure publish settings file**. To do this, run the following Azure PowerShell cmdlets on the head node:
 
-
-    ```
-    Get-AzurePublishSettingsFile
-
-
-
 	    Get-AzurePublishSettingsFile
 	
-
-    Import-AzurePublishSettingsFile -PublishSettingsFile <publish settings file>
-
-    ```
-
+	    Import-AzurePublishSettingsFile -PublishSettingsFile <publish settings file>
 
     * **Configure the Azure management certificate on the head node**. If you have the .cer file, import it in the CurrentUser\My certificate store and then run the following Azure PowerShell cmdlet for your Azure environment (either AzureCloud or AzureChinaCloud):
 
-
-    ```
-    Set-AzureSubscription -SubscriptionName <Sub Name> -SubscriptionId <Sub ID> -Certificate (Get-Item Cert:\CurrentUser\My\<Cert Thrumbprint>) -Environment <AzureCloud | AzureChinaCloud>
-    ```
-
-
     	Set-AzureSubscription -SubscriptionName <Sub Name> -SubscriptionId <Sub ID> -Certificate (Get-Item Cert:\CurrentUser\My\<Cert Thrumbprint>) -Environment <AzureCloud | AzureChinaCloud>
-
 
 ## Add compute node VMs
 
 Add compute nodes with the **Add-HpcIaaSNode.ps1** script.
 
 ### Syntax
-
-```
-Add-HPCIaaSNode.ps1 [-ServiceName] <String> [-ImageName] <String>
- [-Quantity] <Int32> [-InstanceSize] <String> [-DomainUserName] <String> [[-DomainUserPassword] <String>]
- [[-NodeNameSeries] <String>] [<CommonParameters>]
-
-```
-
-
 
 	Add-HPCIaaSNode.ps1 [-ServiceName] <String> [-ImageName] <String> `
 		[-Quantity] <Int32> [-InstanceSize] <String> [-DomainUserName] <String> `
 		[[-DomainUserPassword] <String>] [[-NodeNameSeries] <String>] [<CommonParameters>]
 
-
 ### Parameters
 
 * **ServiceName** - Name of the cloud service that new compute node VMs will be added to.
 
-* **ImageName** - Azure VM image name, which can be obtained through the Azure Management Portal or Azure PowerShell cmdlet **Get-AzureVMImage**. The image must meet the following requirements:
+* **ImageName** - Azure VM image name, which can be obtained through the Azure Classic Management Portal or Azure PowerShell cmdlet **Get-AzureVMImage**. The image must meet the following requirements:
 
     1. A Windows operating system must be installed.
 
@@ -106,19 +81,9 @@ Add-HPCIaaSNode.ps1 [-ServiceName] <String> [-ImageName] <String>
 The following example adds 20 size Large compute node VMs in the cloud
 service *hpcservice1*, based on the VM image *hpccnimage1*.
 
-
-```
-Add-HPCIaaSNode.ps1 -ServiceName hpcservice1 -ImageName hpccniamge1
--Quantity 20 -InstanceSize Large -DomainUserName <username>
-
-
 	Add-HPCIaaSNode.ps1 -ServiceName hpcservice1 -ImageName hpccniamge1 `
--Quantity 20 -InstanceSize Large -DomainUserName <username> `
-
--DomainUserPassword <password>
-
-```
-
+		-Quantity 20 -InstanceSize Large -DomainUserName <username> `
+		-DomainUserPassword <password>
 
 
 ## Remove compute node VMs
@@ -127,19 +92,9 @@ Remove compute nodes with the **Remove-HpcIaaSNode.ps1** script.
 
 ### Syntax
 
-
-```
-Remove-HPCIaaSNode.ps1 -Name <String[]> [-DeleteVHD] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
-
-
-
 	Remove-HPCIaaSNode.ps1 -Name <String[]> [-DeleteVHD] [-Force] [-WhatIf] [-Confirm] [<CommonParameters>]
 		
-
-Remove-HPCIaaSNode.ps1 -Node <Object> [-DeleteVHD] [-Force] [-Confirm] [<CommonParameters>]
-
-```
-
+	Remove-HPCIaaSNode.ps1 -Node <Object> [-DeleteVHD] [-Force] [-Confirm] [<CommonParameters>]
 
 ### Parameters
 
@@ -160,14 +115,7 @@ Remove-HPCIaaSNode.ps1 -Node <Object> [-DeleteVHD] [-Force] [-Confirm] [<CommonP
 The following example forces offline nodes with names beginning
 *HPCNode-CN-* and them removes the nodes and their associated disks.
 
-
-```
-Remove-HPCIaaSNode.ps1 -Name HPCNodeCN-* -DeleteVHD -Force
-```
-
-
 	Remove-HPCIaaSNode.ps1 -Name HPCNodeCN-* -DeleteVHD -Force
-
 
 ## Start compute node VMs
 
@@ -175,19 +123,10 @@ Start compute nodes with the **Start-HpcIaaSNode.ps1** script.
 
 ### Syntax
 
-
-```
-Start-HPCIaaSNode.ps1 -Name <String[]> [<CommonParameters>]
-
-Start-HPCIaaSNode.ps1 -Node <Object> [<CommonParameters>]
-```
-
-
 	Start-HPCIaaSNode.ps1 -Name <String[]> [<CommonParameters>]
 	
 	Start-HPCIaaSNode.ps1 -Node <Object> [<CommonParameters>]
 
-
 ### Parameters
 
 * **Name** - Names of the cluster nodes to be started. Wildcards are supported. The parameter set name is Name. You cannot specify both the **Name** and **Node** parameters.
@@ -198,14 +137,7 @@ Start-HPCIaaSNode.ps1 -Node <Object> [<CommonParameters>]
 
 The following example starts nodes with names beginning *HPCNode-CN-*.
 
-
-```
-Start-HPCIaaSNode.ps1 -Name HPCNodeCN-*
-```
-
-
 	Start-HPCIaaSNode.ps1 -Name HPCNodeCN-*
-
 
 ## Stop compute node VMs
 
@@ -213,19 +145,9 @@ Stop compute nodes with the **Stop-HpcIaaSNode.ps1** script.
 
 ### Syntax
 
-
-```
-Stop-HPCIaaSNode.ps1 -Name <String[]> [-Force] [<CommonParameters>]
-
-
-
 	Stop-HPCIaaSNode.ps1 -Name <String[]> [-Force] [<CommonParameters>]
 	
-
-Stop-HPCIaaSNode.ps1 -Node <Object> [-Force] [<CommonParameters>]
-
-```
-
+	Stop-HPCIaaSNode.ps1 -Node <Object> [-Force] [<CommonParameters>]
 
 ### Parameters
 
@@ -247,4 +169,4 @@ Stop-HPCIaaSNode.ps1 -Name HPCNodeCN-* -Force
 
 * If you want a way to
 automatically grow or shrink the cluster nodes according to
-the current workload of jobs and tasks on the cluster, see [Automatically grow and shrink Azure compute resources in an HPC Pack cluster](/documentation/articles/virtual-machines-hpcpack-cluster-node-autogrowshrink).
+the current workload of jobs and tasks on the cluster, see [Automatically grow and shrink Azure compute resources in an HPC Pack cluster](/documentation/articles/virtual-machines-windows-classic-hpcpack-cluster-node-autogrowshrink/).

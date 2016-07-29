@@ -1,8 +1,6 @@
-<!-- not suitable for Mooncake -->
-
 <properties 
-   pageTitle="Control routing and use virtual appliances in Resource Manager using a template | Azure"
-   description="Learn how to control routing and use virtual appliances in Azure using templates"
+   pageTitle="Control routing and use virtual appliances in Resource Manager by using a template | Azure"
+   description="Learn how to control routing and use virtual appliances in Azure Resource Manager by using a template"
    services="virtual-network"
    documentationCenter="na"
    authors="telmosampaio"
@@ -12,16 +10,16 @@
 />
 <tags
 	ms.service="virtual-network"
-	ms.date="11/20/2015"
+	ms.date="02/23/2016"
 	wacn.date=""/>
 
-#Create User Defined Routes (UDR) using a template
+#Create User Defined Routes (UDR) in Resource Manager by using a template
 
 [AZURE.INCLUDE [virtual-network-create-udr-arm-selectors-include.md](../includes/virtual-network-create-udr-arm-selectors-include.md)]
 
 [AZURE.INCLUDE [virtual-network-create-udr-intro-include.md](../includes/virtual-network-create-udr-intro-include.md)]
 
-[AZURE.INCLUDE [azure-arm-classic-important-include](../includes/azure-arm-classic-important-include.md)] This article covers the Resource Manager deployment model. You can also [create UDRs in the classic deployment mode](/documentation/articles/virtual-networks-udr-how-to).
+[AZURE.INCLUDE [azure-arm-classic-important-include](../includes/azure-arm-classic-important-include.md)] This article covers the Resource Manager deployment model. 
 
 [AZURE.INCLUDE [virtual-network-create-udr-scenario-include.md](../includes/virtual-network-create-udr-scenario-include.md)]
 
@@ -29,7 +27,7 @@
 
 You can view and download the [sample template](https://github.com/telmosampaio/azure-templates/tree/master/IaaS-NSG-UDR).
 
-The section below shows the definition of the front end UDR in the azuredeploy-vnet-nsg-udr.json file, based on the scenario above.
+The section below shows the definition of the front end UDR in the **azuredeploy-vnet-nsg-udr.json** file, based on the scenario above.
 
 	"apiVersion": "2015-06-15",
 	"type": "Microsoft.Network/routeTables",
@@ -114,13 +112,17 @@ To deploy the ARM template you downloaded by using PowerShell, follow the steps 
 
 [AZURE.INCLUDE [powershell-preview-include.md](../includes/powershell-preview-include.md)]
 
-1. If you have never used Azure PowerShell, see [How to Install and Configure Azure PowerShell](/documentation/articles/powershell-install-configure) and follow the instructions all the way to the end to sign into Azure and select your subscription.
+1. If you have never used Azure PowerShell, see [How to Install and Configure Azure PowerShell](/documentation/articles/powershell-install-configure/) and follow the instructions all the way to the end to sign into Azure and select your subscription.
 
-3. Run the **New-AzureRmResourceGroup** cmdlet to create a resource group using the template.
+2. Run the `New-AzureRmResourceGroup` cmdlet to create a resource group.
 
-		New-AzureRmResourceGroup -Name TestRG -Location chinanorth `
-		    -TemplateFile 'https://raw.githubusercontent.com/telmosampaio/azure-templates/master/IaaS-NSG-UDR/azuredeploy.json' `
-		    -TemplateParameterFile 'https://raw.githubusercontent.com/telmosampaio/azure-templates/master/IaaS-NSG-UDR/azuredeploy.parameters.json'	
+		New-AzureRmResourceGroup -Name TestRG -Location chinanorth
+
+3. Run the `New-AzureRmResourceGroupDeployment` cmdlet to deploy the template.
+
+		New-AzureRmResourceGroupDeployment -Name DeployUDR -ResourceGroupName TestRG `
+		    -TemplateUri https://raw.githubusercontent.com/telmosampaio/azure-templates/master/IaaS-NSG-UDR/azuredeploy.json `
+		    -TemplateParameterUri https://raw.githubusercontent.com/telmosampaio/azure-templates/master/IaaS-NSG-UDR/azuredeploy.parameters.json	    	
 
 	Expected output:
 
@@ -162,14 +164,14 @@ To deploy the ARM template you downloaded by using PowerShell, follow the steps 
 		                    testvnetstorageprm  Microsoft.Storage/storageAccounts        chinanorth  
 		                    testvnetstoragestd  Microsoft.Storage/storageAccounts        chinanorth  
 		                    
-		ResourceId        : /subscriptions/628dad04-b5d1-4f10-b3a4-dc61d88cf97c/resourceGroups/TestRG
+		ResourceId        : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/TestRG
 
 ## Deploy the ARM template by using the Azure CLI
 
 To deploy the ARM template by using the Azure CLI, follow the steps below.
 
-1. If you have never used Azure CLI, see [Install and Configure the Azure CLI](/documentation/articles/xplat-cli-install) and follow the instructions up to the point where you select your Azure account and subscription.
-2. Run the **azure config mode** command to switch to Resource Manager mode, as shown below.
+1. If you have never used Azure CLI, see [Install and Configure the Azure CLI](/documentation/articles/xplat-cli-install/) and follow the instructions up to the point where you select your Azure account and subscription.
+2. Run the `azure config mode` command to switch to Resource Manager mode, as shown below.
 
 		azure config mode arm
 
@@ -388,4 +390,4 @@ To deploy the ARM template by using the Azure CLI, follow the steps below.
 		data:    
 		info:    group show command OK
 
->[AZURE.TIP] If you do not see all the resources, run the **azure group deployment show** command to ensure the provisioning state of the deployment is *Succeded*.
+>[AZURE.TIP] If you do not see all the resources, run the `azure group deployment show` command to ensure the provisioning state of the deployment is *Succeded*.

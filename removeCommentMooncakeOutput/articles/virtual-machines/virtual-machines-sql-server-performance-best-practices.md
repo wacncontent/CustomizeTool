@@ -1,3 +1,5 @@
+<!-- rename to virtual-machines-windows-sql-performance -->
+
 <properties 
 	pageTitle="Performance best practices for SQL Server | Azure"
 	description="Provides best practices for optimizing SQL Server performance in Azure VMs."
@@ -19,6 +21,8 @@
 
 This topic provides best practices for optimizing SQL Server performance in Azure Virtual Machine. While running SQL Server in Azure Virtual Machines, we recommend that you continue using the same database performance tuning options that are applicable to SQL Server in on-premises server environment. However, the performance of a relational database in a public cloud depends on many factors such as the size of a virtual machine, and the configuration of the data disks.
 
+When creating SQL Server images, consider using the Azure portal to take advantage of features, such as the default use of Premium Storage, and other options, such as Automated Patching, Automated Backup, and AlwaysOn configurations.
+
 This paper is focused on getting the best performance for SQL Server on Azure VMs. If your workload is less demanding, you might not require every optimization listed below. Consider your performance needs and workload patterns as you evaluate these recommendations.
 
 [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
@@ -29,9 +33,9 @@ The following is a quick check list for optimal performance of SQL Server on Azu
 
 |Area|Optimizations|
 |---|---|
-|**VM size**|[DS3](/documentation/articles/virtual-machines-size-specs#standard-tier-ds-series) or higher for SQL Enterprise edition.<br/><br/>[DS2](/documentation/articles/virtual-machines-size-specs#standard-tier-ds-series) or higher for SQL Standard and Web editions.|
-|**Storage**|Use [Premium Storage](/documentation/articles/storage-premium-storage-preview-portal).<br/><br/>Keep the [storage account](/documentation/articles/storage-create-storage-account) and SQL Server VM in the same region.<br/><br/>Disable Azure [geo-redundant storage](/documentation/articles/storage-redundancy) (geo-replication) on the storage account.|
-|**Disks**|Use a minimum of 2 [P30 disks](/documentation/articles/storage-premium-storage-preview-portal#scalability-and-performance-targets-when-using-premium-storage) (1 for log files; 1 for data files and TempDB).<br/><br/>Avoid using operating system or temporary disks for database storage or logging.<br/><br/>Enable read caching on the disk(s) hosting the data files and TempDB.<br/><br/>Do not enable caching on disk(s) hosting the log file.<br/><br/>Stripe multiple Azure data disks to get increased IO throughput.<br/><br/>Format with documented allocation sizes.|
+|**VM size**|[DS3](/documentation/articles/virtual-machines-linux-sizes/#standard-tier-ds-series) or higher for SQL Enterprise edition.<br/><br/>[DS2](/documentation/articles/virtual-machines-linux-sizes/#standard-tier-ds-series) or higher for SQL Standard and Web editions.|
+|**Storage**|Use [Premium Storage](/documentation/articles/storage-premium-storage/).<br/><br/>Keep the [storage account](/documentation/articles/storage-create-storage-account/) and SQL Server VM in the same region.<br/><br/>Disable Azure [geo-redundant storage](/documentation/articles/storage-redundancy/) (geo-replication) on the storage account.|
+|**Disks**|Use a minimum of 2 [P30 disks](/documentation/articles/storage-premium-storage/#scalability-and-performance-targets-when-using-premium-storage) (1 for log files; 1 for data files and TempDB).<br/><br/>Avoid using operating system or temporary disks for database storage or logging.<br/><br/>Enable read caching on the disk(s) hosting the data files and TempDB.<br/><br/>Do not enable caching on disk(s) hosting the log file.<br/><br/>Stripe multiple Azure data disks to get increased IO throughput.<br/><br/>Format with documented allocation sizes.|
 |**I/O**|Enable database page compression.<br/><br/>Enable instant file initialization for data files.<br/><br/>Limit or disable autogrow on the database.<br/><br/>Disable autoshrink on the database.<br/><br/>Move all databases to data disks, including system databases.<br/><br/>Move SQL Server error log and trace file directories to data disks.<br/><br/>Setup default backup and database file locations.<br/><br/>Enable locked pages.<br/><br/>Apply SQL Server performance fixes.|
 |**Feature-specific**|Back up directly to blob storage.|
 
@@ -45,9 +49,9 @@ For performance sensitive applications, it's recommended that you use the follow
 
 - **SQL Server Standard and Web Editions**: DS2 or higher
 
-For up-to-date information on supported virtual machine sizes, see [Sizes for Virtual Machines](/documentation/articles/virtual-machines-size-specs).
+For up-to-date information on supported virtual machine sizes, see [Sizes for Virtual Machines](/documentation/articles/virtual-machines-linux-sizes/).
 
-In addition, we recommend that you create your Azure storage account in the same data center as your SQL Server virtual machines to reduce transfer delays. When creating a storage account, disable geo-replication as consistent write order across multiple disks is not guaranteed. Instead, consider configuring a SQL Server disaster recovery technology between two Azure data centers. For more information, see [High Availability and Disaster Recovery for SQL Server in Azure Virtual Machines](/documentation/articles/virtual-machines-sql-server-high-availability-and-disaster-recovery-solutions).
+In addition, we recommend that you create your Azure storage account in the same data center as your SQL Server virtual machines to reduce transfer delays. When creating a storage account, disable geo-replication as consistent write order across multiple disks is not guaranteed. Instead, consider configuring a SQL Server disaster recovery technology between two Azure data centers. For more information, see [High Availability and Disaster Recovery for SQL Server in Azure Virtual Machines](/documentation/articles/virtual-machines-windows-sql-high-availability-dr/).
 
 ## Disks and performance considerations
 
@@ -69,7 +73,7 @@ For VMs that support Premium storage, we recommend storing TempDB on a disk that
 
 ### Data Disk
 
-- **Number of data disks for data and log files**: At a minimum, use 2 [P30 disks](/documentation/articles/storage-premium-storage-preview-portal#scalability-and-performance-targets-when-using-premium-storage) where one disk contains the log file(s) and the other contains the data file(s) and TempDB. For more throughput, you might require additional data disks. To determine the number of data disks, you need to analyze the number of IOPS available for your data and log disk(s). For that information, see the tables on IOPS per [VM size](/documentation/articles/virtual-machines-size-specs) and disk size in the following article: [Using Premium Storage for Disks](/documentation/articles/storage-premium-storage-preview-portal). If you require more bandwidth, you can attach additional disks use Disk Striping. If you are not using Premium Storage, the recommendation is to add the maximum number of data disks supported by your [VM size](/documentation/articles/virtual-machines-size-specs) and use Disk Striping. For more information about Disk Striping, see the related section below.
+- **Number of data disks for data and log files**: At a minimum, use 2 [P30 disks](/documentation/articles/storage-premium-storage/#scalability-and-performance-targets-when-using-premium-storage) where one disk contains the log file(s) and the other contains the data file(s) and TempDB. For more throughput, you might require additional data disks. To determine the number of data disks, you need to analyze the number of IOPS available for your data and log disk(s). For that information, see the tables on IOPS per [VM size](/documentation/articles/virtual-machines-linux-sizes/) and disk size in the following article: [Using Premium Storage for Disks](/documentation/articles/storage-premium-storage/). If you require more bandwidth, you can attach additional disks use Disk Striping. If you are not using Premium Storage, the recommendation is to add the maximum number of data disks supported by your [VM size](/documentation/articles/virtual-machines-linux-sizes/) and use Disk Striping. For more information about Disk Striping, see the related section below.
 
 - **Caching policy**: Enable read caching on the data disks hosting your data files and TempDB only. If you are not using Premium Storage, do not enable any caching on any data disks. For instructions on configuring disk caching, see the following topics: [Set-AzureOSDisk](https://msdn.microsoft.com/zh-cn/library/azure/jj152847) and [Set-AzureDataDisk](https://msdn.microsoft.com/zh-cn/library/azure/jj152851.aspx).
 
@@ -81,7 +85,7 @@ For VMs that support Premium storage, we recommend storing TempDB on a disk that
 	
 	- For Windows 2008 R2 or earlier, you can use dynamic disks (OS striped volumes) and the stripe size is always 64 KB. Note that this option is deprecated as of Windows 8/Windows Server 2012. For information, see the support statement at [Virtual Disk Service is transitioning to Windows Storage Management API](https://msdn.microsoft.com/zh-cn/library/windows/desktop/hh848071.aspx).
 	
-	- If your workload is not log intensive and does not need dedicated IOPs, you can configure just one storage pool. Otherwise, create two storage pools, one for the log file(s) and another storage pool for the data file(s) and TempDB. Determine the number of disks associated with each storage pool based on your load expectations. Keep in mind that different VM sizes allow different numbers of attached data disks. For more information, see [Sizes for Virtual Machines](/documentation/articles/virtual-machines-size-specs).
+	- If your workload is not log intensive and does not need dedicated IOPs, you can configure just one storage pool. Otherwise, create two storage pools, one for the log file(s) and another storage pool for the data file(s) and TempDB. Determine the number of disks associated with each storage pool based on your load expectations. Keep in mind that different VM sizes allow different numbers of attached data disks. For more information, see [Sizes for Virtual Machines](/documentation/articles/virtual-machines-linux-sizes/).
 
 ## I/O performance considerations
 
@@ -105,7 +109,7 @@ For VMs that support Premium storage, we recommend storing TempDB on a disk that
 
 Some deployments may achieve additional performance benefits using more advanced configuration techniques. The following list highlights some SQL Server features that can help you to achieve better performance:
 
-- **Backup to Azure storage**: When performing backups for SQL Server running in Azure virtual machines, you can use [SQL Server Backup to URL](https://msdn.microsoft.com/zh-cn/library/dn435916.aspx). This feature is available starting with SQL Server 2012 SP1 CU2 and recommended for backing up to the attached data disks. When you backup/restore to/from Azure storage, follow the recommendations provided at [SQL Server Backup to URL Best Practices and Troubleshooting and Restoring from Backups Stored in Azure Storage](https://msdn.microsoft.com/zh-cn/library/jj919149.aspx). You can also automate these backups using [Automated Backup for SQL Server in Azure Virtual Machines](/documentation/articles/virtual-machines-sql-server-automated-backup).
+- **Backup to Azure storage**: When performing backups for SQL Server running in Azure virtual machines, you can use [SQL Server Backup to URL](https://msdn.microsoft.com/zh-cn/library/dn435916.aspx). This feature is available starting with SQL Server 2012 SP1 CU2 and recommended for backing up to the attached data disks. When you backup/restore to/from Azure storage, follow the recommendations provided at [SQL Server Backup to URL Best Practices and Troubleshooting and Restoring from Backups Stored in Azure Storage](https://msdn.microsoft.com/zh-cn/library/jj919149.aspx). You can also automate these backups using [Automated Backup for SQL Server in Azure Virtual Machines](/documentation/articles/virtual-machines-windows-classic-sql-automated-backup/).
 
 	Prior to SQL Server 2012, you can use [SQL Server Backup to Azure Tool](https://www.microsoft.com/download/details.aspx?id=40740). This tool can help to increase backup throughput using multiple backup stripe targets.
 
@@ -113,8 +117,8 @@ Some deployments may achieve additional performance benefits using more advanced
 
 ## Next Steps
 
-If you are interested in exploring SQL Server and Premium Storage in more depth, see the article [Use Azure Premium Storage with SQL Server on Virtual Machines](/documentation/articles/virtual-machines-sql-server-use-premium-storage).
+If you are interested in exploring SQL Server and Premium Storage in more depth, see the article [Use Azure Premium Storage with SQL Server on Virtual Machines](/documentation/articles/virtual-machines-windows-classic-sql-server-premium-storage/).
 
-For security best practices, see [Security Considerations for SQL Server in Azure Virtual Machines](/documentation/articles/virtual-machines-sql-server-security-considerations).
+For security best practices, see [Security Considerations for SQL Server in Azure Virtual Machines](/documentation/articles/virtual-machines-windows-sql-security/).
 
-Review other SQL Server Virtual Machine topics at [SQL Server on Azure Virtual Machines Overview](/documentation/articles/virtual-machines-sql-server-infrastructure-services).
+Review other SQL Server Virtual Machine topics at [SQL Server on Azure Virtual Machines Overview](/documentation/articles/virtual-machines-windows-sql-server-iaas-overview/).

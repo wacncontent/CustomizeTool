@@ -1,3 +1,5 @@
+<!-- rename to virtual-machines-linux-debian-create-upload-vhd -->
+
 <properties
 	pageTitle="Prepare Debian Linux VHD | Azure"
 	description="Learn how to create Debian 7 & 8 VHD files for deployment in Azure."

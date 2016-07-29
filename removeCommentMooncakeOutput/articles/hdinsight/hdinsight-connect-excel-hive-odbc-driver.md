@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="01/28/2016"
+	ms.date="04/28/2016"
 	wacn.date=""/>
 
 #Connect Excel to Hadoop with the Microsoft Hive ODBC driver
@@ -111,12 +111,12 @@ In this article you learned how to use the Microsoft Hive ODBC driver to retriev
 - [Use Sqoop with HDInsight] [hdinsight-use-sqoop]
 
 
-[hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop
-[hdinsight-analyze-flight-data]: /documentation/articles/hdinsight-analyze-flight-delay-data
-[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
-[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
-[hdinsight-power-query]: /documentation/articles/hdinsight-connect-excel-power-query
-[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
+[hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop/
+[hdinsight-analyze-flight-data]: /documentation/articles/hdinsight-analyze-flight-delay-data/
+[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive/
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data/
+[hdinsight-power-query]: /documentation/articles/hdinsight-connect-excel-power-query/
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1/
 
 [hive-odbc-driver-download]: http://go.microsoft.com/fwlink/?LinkID=286698
 

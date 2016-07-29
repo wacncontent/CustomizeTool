@@ -1,4 +1,4 @@
-<!-- not suitable for Mooncake -->
+<!-- deleted in Global -->
 
 <properties
 	pageTitle="Redis Cluster Resource Manager Template"
@@ -17,7 +17,7 @@
 
 # Redis cluster with a Resource Manager template
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the Resource Manager deployment model, which Azure recommends for most new deployments instead of the classic deployment model.
 
 
 Redis is an open-source key-value cache and store, where keys can contain data structures such as strings, hashes, lists, sets and sorted sets. Redis supports a set of atomic operations on these data types.  With the release of Redis version 3.0, Redis Cluster is now available in the latest stable version of Redis.  Redis Cluster is a distributed implementation of Redis where data is automatically sharded across multiple Redis nodes, with the ability to continue operations when a subset of nodes is experiencing failures.
@@ -346,7 +346,7 @@ During the deployment, you will see something like this:
 
 During and after deployment, you can check all the requests that were made during provisioning, including any errors that occurred.
 
-To do that, go to the [Azure Management Portal](https://manage.windowsazure.cn), and do the following:
+To do that, go to the [Azure portal](https://portal.azure.cn), and do the following:
 
 - In the left-hand navigation bar, click **Browse**, and then scroll down and click **Resource Groups**.
 - Select the resource group that you just created, to bring up the "Resource Group" blade.
@@ -489,7 +489,7 @@ If you want to customize the size of the Redis Cluster deployment, then you can 
 
 Note:  The `totalMemberCountExcludingLast` and `totalMemberCount` properties are needed because the template language currently does not have "math" operations.
 
-More information regarding the template language can be found in MSDN at [Azure Resource Manager Template Language](/documentation/articles/resource-group-authoring-templates).
+More information regarding the template language can be found in MSDN at [Azure Resource Manager Template Language](/documentation/articles/resource-group-authoring-templates/).
 
 ### "resources" section
 
@@ -666,4 +666,4 @@ In essence, this approach suggests to:
 - For identical members of a group of resources (nodes in a cluster, etc.), create specific templates that leverage resource looping in order to deploy multiple instances with unique properties.
 - For all post-deployment tasks (product installation, configurations, etc.), leverage script deployment extensions and create scripts specific to each technology.
 
-For more information, see [Azure Resource Manager Template Language](/documentation/articles/resource-group-authoring-templates).
+For more information, see [Azure Resource Manager Template Language](/documentation/articles/resource-group-authoring-templates/).

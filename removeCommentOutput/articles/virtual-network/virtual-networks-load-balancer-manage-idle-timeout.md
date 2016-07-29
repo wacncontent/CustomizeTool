@@ -31,7 +31,7 @@ TCP idle timeout can be configured for:
 
 * [Instance-Level Public IPs](/documentation/articles/virtual-networks-instance-level-public-ip)
 * [Load-Balanced endpoint sets](/documentation/articles/load-balancer-overview)
-* [Virtual Machine endpoints](/documentation/articles/virtual-machines-set-up-endpoints)
+* [Virtual Machine endpoints](/documentation/articles/virtual-machines-windows-classic-setup-endpoints)
 * [Web roles](http://msdn.microsoft.com/zh-cn/library/azure/ee758711.aspx)
 * [Worker roles](http://msdn.microsoft.com/zh-cn/library/azure/ee758711.aspx)
 

@@ -1,4 +1,4 @@
-<!-- not suitable for Mooncake -->
+<!-- deleted in Global -->
 
 <properties 
 	pageTitle="Create an Orchard CMS web app from the Azure Marketplace" 
@@ -19,7 +19,7 @@
 
 ## Overview
 
-The Marketplace makes available a wide range of popular web applications developed by Microsoft, third party companies, and open source software initiatives. Web applications created from the Marketplace do not require installation of any software other than the browser used to connect to the [Azure preview portal](https://manage.windowsazure.cn/). For more information about the web applications in the Marketplace, see [Azure Marketplace](/marketplace/).
+The Marketplace makes available a wide range of popular web applications developed by Microsoft, third party companies, and open source software initiatives. Web applications created from the Marketplace do not require installation of any software other than the browser used to connect to the [Azure Portal Preview](https://manage.windowsazure.cn/). For more information about the web applications in the Marketplace, see [Azure Marketplace](/marketplace/).
 
 In this tutorial, you'll learn:
 
@@ -37,7 +37,7 @@ You'll build an Orchard CMS web app that uses a default template. [Orchard](http
 
 ## Create an Orchard web app from the Marketplace
 
-1. Login to the [Azure preview portal](http://manage.windowsazure.cn).
+1. Login to the [Azure Portal Preview](http://manage.windowsazure.cn).
 
 2. Click **New** > **Web + Mobile** > **Azure Marketplace**.
 	
@@ -71,11 +71,11 @@ You'll build an Orchard CMS web app that uses a default template. [Orchard](http
 
 ## Next steps
 
-* [Create an ASP.NET MVC app with auth and SQL DB and deploy to Azure Websites](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database)-- Learn how to create a new web app in Azure Websites from Visual Studio.
+* [Create an ASP.NET MVC app with auth and SQL DB and deploy to Azure Websites](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/)-- Learn how to create a new web app in Azure Websites from Visual Studio.
 
 ## What's changed
 * For a guide to the change from Websites to Azure Websites see: [Azure Websites and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
-* For a guide to the change of the portal to the preview portal see: [Reference for navigating the preview portal](https://manage.windowsazure.cn/)
+* For a guide to the change of the portal to the Portal Preview see: [Reference for navigating the Portal Preview](https://manage.windowsazure.cn/)
 
 [1]: ./media/web-sites-dotnet-orchard-cms-gallery/orchardgallery-01.png
 [2]: ./media/web-sites-dotnet-orchard-cms-gallery/orchardgallery-02.png

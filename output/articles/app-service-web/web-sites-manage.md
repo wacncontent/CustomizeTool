@@ -1,3 +1,5 @@
+<!-- deleted in Global -->
+
 <properties linkid="manage-scenarios-how-to-manage-websites" urlDisplayName="How to manage" pageTitle="How to manage  Websites - Azure service management" metaKeywords="Azure Management Portal  Website management" description="A reference for the Portal  Website management pages in Azure. Details are provided for each  Website management page." metaCanonical="" services="web-sites" documentationCenter="" title="How to Manage  Websites" authors="timamm"  solutions="" writer="timamm" manager="" editor=""  />
 
 
@@ -72,7 +74,7 @@ A **Quick Glance** section which includes the following summary information and 
 The **Monitor** management page provides a chart that displays usage information for the website. By default this chart displays the same metrics as the chart on the **Dashboard** page as described above in the Dashboard section. The chart can also be configured to display the metrics HTTP Successes, HTTP Redirects, HTTP 401 errors, HTTP 403 errors, HTTP 404 errors and HTTP 406 errors. For more information about these metrics, see [How to Monitor Web Sites][Monitor].
 
 ##WebJobs##
-The WebJobs management page lets you create on demand, scheduled, or continuously running tasks for your website. For more information, see [How to Use the WebJobs feature in Azure Web Sites](/documentation/articles/web-sites-create-web-jobs).
+The WebJobs management page lets you create on demand, scheduled, or continuously running tasks for your website. For more information, see [How to Use the WebJobs feature in Azure Web Sites](/documentation/articles/web-sites-create-web-jobs/).
 
 ##Configure##
 The **Configure** management page is used to set application specific settings.
@@ -125,7 +127,7 @@ There are two sets of FTP credentials that you can use, *deployment* credentials
 **Publishing profile credentials**
 
 - Associated with a single website. 
-- You dont pick the username or password.
+- You don't pick the username or password.
 - Typically used for Web Deploy, but can also be used for FTP.
 
 
@@ -143,7 +145,7 @@ To set up deployment credentials:
 Note: In step 2, if you already have deployment credentials, the portal will say **Reset deployment credentials**. Click this to set a new password or change the user name.
 
 Deployment credentials are associated with a Microsoft account. If you change the username or password, the change applies to all websites associated with the account. If an Azure subscription has multiple administrators, each person has their own credentials. 
-The full FTP user name is website\username.  This is listed in the portal under **Quick Glance**, as **Deployment / FTP user**.
+The full FTP user name is "website\username".  This is listed in the portal under **Quick Glance**, as **Deployment / FTP user**.
 
 
 ### Using Publishing Profile Credentials
@@ -199,9 +201,9 @@ To reset the password, click **Reset your publish profile credentials**. To get 
 
 [azuresdk]:/zh-cn/downloads/
 
-[Configure]: /documentation/articles/web-sites-configure
-[Monitor]: /documentation/articles/web-sites-monitor
-[Scale]: /documentation/articles/web-sites-scale
+[Configure]: /documentation/articles/web-sites-configure/
+[Monitor]: /documentation/articles/web-sites-monitor/
+[Scale]: /documentation/articles/web-sites-scale/
 <!-- Anchors. -->
 [FTP Credentials]: #ftp-credentials
 

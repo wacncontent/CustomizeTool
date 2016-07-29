@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="02/04/2015"
+	ms.date="05/04/2016"
 	wacn.date=""/>
 
 
@@ -51,7 +51,7 @@ The Microsoft Avro Library is distributed as a NuGet package that can be install
 
 1. Select the **Project** tab -> **Manage NuGet Packages...**
 2. Search for "Microsoft.Hadoop.Avro" in the **Search Online** box.
-3. Click the **Install** button next to **Microsoft Azure HDInsight Avro Library**.
+3. Click the **Install** button next to **Azure HDInsight Avro Library**.
 
 Note that the Newtonsoft.Json.dll (>=6.0.4) dependency is also downloaded automatically with the Microsoft Avro Library.
 
@@ -94,11 +94,11 @@ The first two examples show how to serialize and deserialize data into memory st
 
 The third and fourth examples show how to serialize and deserialize data by using the Avro object container files. When data is stored in an Avro container file, its schema is always stored with it because the schema must be shared for deserialization.
 
-The sample containing the first four examples can be downloaded from the <a href="http://code.msdn.microsoft.com/windowsazure/Serialize-data-with-the-86055923" target="_blank">Azure code samples</a> site.
+The sample containing the first four examples can be downloaded from the <a href="ttps://github.com/Azure-Samples" target="_blank">Azure code samples</a> site.
 
-The fifth example shows how to how to use a custom compression codec for Avro object container files. A sample containing the code for this example can be downloaded from the <a href="http://code.msdn.microsoft.com/windowsazure/Serialize-data-with-the-67159111" target="_blank">Azure code samples</a> site.
+The fifth example shows how to how to use a custom compression codec for Avro object container files. A sample containing the code for this example can be downloaded from the <a href="ttps://github.com/Azure-Samples" target="_blank">Azure code samples</a> site.
 
-The sixth sample shows how to use Avro serialization to upload data to Azure Blob storage and then analyze it by using Hive with an HDInsight (Hadoop) cluster. It can be downloaded from the <a href="https://code.msdn.microsoft.com/windowsazure/Using-Avro-to-upload-data-ae81b1e3" target="_blank">Azure code samples</a> site.
+The sixth sample shows how to use Avro serialization to upload data to Azure Blob storage and then analyze it by using Hive with an HDInsight (Hadoop) cluster. It can be downloaded from the <a href="ttps://github.com/Azure-Samples" target="_blank">Azure code samples</a> site.
 
 Here are links to the six samples discussed in the topic:
 
@@ -867,7 +867,7 @@ The data is then read from the file and deserialized into a collection of object
 
 ###<a name="Scenario5"></a>Sample 5: Serialization using object container files with a custom compression codec
 
-The fifth example shows how to how to use a custom compression codec for Avro object container files. A sample containing the code for this example can be downloaded from the [Azure code samples](http://code.msdn.microsoft.com/windowsazure/Serialize-data-with-the-67159111) site.
+The fifth example shows how to how to use a custom compression codec for Avro object container files. A sample containing the code for this example can be downloaded from the [Azure code samples](https://github.com/Azure-Samples) site.
 
 The [Avro Specification](http://avro.apache.org/docs/current/spec.html#Required+Codecs) allows usage of an optional compression codec (in addition to **Null** and **Deflate** defaults). This example is not implementing a completely new codec such as Snappy (mentioned as a supported optional codec in the [Avro Specification](http://avro.apache.org/docs/current/spec.html#snappy)). It shows how to use the .NET Framework 4.5 implementation of the [**Deflate**][deflate-110] codec, which provides a better compression algorithm based on the [zlib](http://zlib.net/) compression library than the default .NET Framework 4 version.
 
@@ -1365,7 +1365,7 @@ The [Avro Specification](http://avro.apache.org/docs/current/spec.html#Required+
 
 ###<a name="Scenario6"></a>Sample 6: Using Avro to upload data for the Azure HDInsight service
 
-The sixth example illustrates some programming techniques related to interacting with the Azure HDInsight service. A sample containing the code for this example can be downloaded from the [Azure code samples](https://code.msdn.microsoft.com/windowsazure/Using-Avro-to-upload-data-ae81b1e3) site.
+The sixth example illustrates some programming techniques related to interacting with the Azure HDInsight service. A sample containing the code for this example can be downloaded from the [Azure code samples](https://github.com/Azure-Samples) site.
 
 The sample does the following:
 

@@ -1,3 +1,5 @@
+<!-- deleted in Global -->
+
 <properties 
    pageTitle="How to create a Virtual Network (VNet)"
    description="Learn how to create a virtual network (VNet)"
@@ -49,15 +51,14 @@ When you create a VNet, your services and VMs within the VNet can communicate se
 
 ## Adding virtual machines to your VNet
 
-After you create your VNet, you can add new VMs to it. It's important to create the VNet first, then deploy the VM. After a VM has been deployed, you can't move it to a VNet without redeploying it. If you use the Management Portal to create your VMs, the interface to deploy your VM to a VNet is only available when you select **New/ Compute/ Virtual Machine/  From Gallery**. When you go through the wizard to create your VM, on the **Virtual machine configuration** page, you'll see **Region/Affinity Group/Virtual Network**. From the drop-down list, select the already-created VNet. For more information about creating virtual machines, see [Azure virtual machines](/documentation/articles/virtual-machines).
+After you create your VNet, you can add new VMs to it. It's important to create the VNet first, then deploy the VM. After a VM has been deployed, you can't move it to a VNet without redeploying it. If you use the Management Portal to create your VMs, the interface to deploy your VM to a VNet is only available when you select **New/ Compute/ Virtual Machine/  From Gallery**. When you go through the wizard to create your VM, on the **Virtual machine configuration** page, you'll see **Region/Affinity Group/Virtual Network**. From the drop-down list, select the already-created VNet. For more information about creating virtual machines, see [Azure virtual machines](/documentation/articles/virtual-machines/).
 
 ## Next Steps
 
-[How to manage Virtual Network (VNet) Properties](/documentation/articles/virtual-networks-settings)
+[How to manage Virtual Network (VNet) Properties](/documentation/articles/virtual-networks-settings/)
 
-[How to manage DNS servers used by a virtual network (VNet)](/documentation/articles/virtual-networks-manage-dns-in-vnet)
+[How to manage DNS servers used by a virtual network (VNet)](/documentation/articles/virtual-networks-manage-dns-in-vnet/)
 
-[How to use public IP addresses in a virtual network](/documentation/articles/virtual-networks-public-ip-within-vnet)
+[How to use public IP addresses in a virtual network](/documentation/articles/virtual-networks-public-ip-within-vnet/)
 
-[How to delete a Virtual Network (VNet)](/documentation/articles/virtual-networks-delete-vnet)
- 
+[How to delete a Virtual Network (VNet)](/documentation/articles/virtual-networks-delete-vnet/)

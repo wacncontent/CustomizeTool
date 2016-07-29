@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="11/17/2015"
+	ms.date="02/19/2016"
 	wacn.date=""/>
 
 
@@ -18,7 +18,7 @@
 
 This tutorial describes how to get started running Python in Azure Web Apps. Web Apps provides limited free hosting and rapid deployment, and you can use Python! As your app grows, you can switch to paid hosting, and you can also integrate with all of the other Azure services.
 
-You will create a web app using the Bottle web framework (see alternate versions of this tutorial for [Django](/documentation/articles/web-sites-python-create-deploy-django-app) and [Flask](/documentation/articles/web-sites-python-create-deploy-flask-app)). You will create the web app from the Azure gallery, set up Git deployment, and clone the repository locally. Then you will run the web app locally, make changes, commit and push them to [Azure Web Apps](/documentation/services/web-sites/). The tutorial shows how to do this from Windows or Mac/Linux.
+You will create a web app using the Bottle web framework (see alternate versions of this tutorial for [Django](/documentation/articles/web-sites-python-create-deploy-django-app/) and [Flask](/documentation/articles/web-sites-python-create-deploy-flask-app/)). You will create the web app from the Azure Marketplace, set up Git deployment, and clone the repository locally. Then you will run the web app locally, make changes, commit and push them to [Azure Web Apps](/documentation/services/web-sites/). The tutorial shows how to do this from Windows or Mac/Linux.
 
 [AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
 
@@ -47,16 +47,15 @@ We also recommend installing [Python Tools 2.2 for Visual Studio]. This is optio
 You should have Python and Git already installed, but make sure you have either Python 2.7 or 3.4.
 
 
-## Web app creation on the Azure Management Portal
+## Web app creation on the Azure Portal
 
-The first step in creating your app is to create the web app via the [Azure Management Portal](https://manage.windowsazure.cn).  
+The first step in creating your app is to create the web app via the [Azure Portal](https://portal.azure.cn).  
 
-1. Log into the Azure Management Portal and click the **NEW** button in the bottom left corner. 
-2. Click **Web + Mobile**.
+1. Log into the Azure Portal and click the **NEW** button in the bottom left corner. 
 3. In the search box, type "python".
 4. In the search results, select **Bottle**, then click **Create**.
 5. Configure the new Bottle app, such as creating a new App Service plan and a new resource group for it. Then, click **Create**.
-6. Configure Git publishing for your newly created web app by following the instructions at [Continuous deployment using GIT in Azure Web App](/documentation/articles/web-sites-publish-source-control).
+6. Configure Git publishing for your newly created web app by following the instructions at [Continuous deployment using GIT in Azure Web App](/documentation/articles/web-sites-publish-source-control/).
  
 ## Application Overview
 
@@ -128,7 +127,7 @@ The next 3 sections describe how to proceed with the web app development under 3
 
 ### Clone the repository
 
-First, clone the repository using the url provided on the Azure Management Portal. For more information, see [Continuous deployment using GIT in Azure Web App](/documentation/articles/web-sites-publish-source-control).
+First, clone the repository using the url provided on the Azure Portal. For more information, see [Continuous deployment using GIT in Azure Web App](/documentation/articles/web-sites-publish-source-control/).
 
 Open the solution file (.sln) that is included in the root of the repository.
 
@@ -140,7 +139,7 @@ Now we'll create a virtual environment for local development. Right-click on **P
 
 - Make sure the name of the environment is `env`.
 
-- Select the base interpreter. Make sure to use the same version of Python that is selected for your web app (in runtime.txt or the **Application Settings** blade of your web app in the Azure Management Portal).
+- Select the base interpreter. Make sure to use the same version of Python that is selected for your web app (in runtime.txt or the **Application Settings** blade of your web app in the Azure Portal).
 
 - Make sure the option to download and install packages is checked.
 
@@ -195,7 +194,7 @@ Browse to the Azure URL to view your changes.
 
 ### Clone the repository
 
-First, clone the repository using the URL provided on the Azure Management Portal, and add the Azure repository as a remote. For more information, see [Continuous deployment using GIT in Azure Web App](/documentation/articles/web-sites-publish-source-control).
+First, clone the repository using the URL provided on the Azure Portal, and add the Azure repository as a remote. For more information, see [Continuous deployment using GIT in Azure Web App](/documentation/articles/web-sites-publish-source-control/).
 
     git clone <repo-url>
     cd <repo-folder>
@@ -205,7 +204,7 @@ First, clone the repository using the URL provided on the Azure Management Porta
 
 We'll create a new virtual environment for development purposes (do not add it to the repository). Virtual environments in Python are not relocatable, so every developer working on the application will create their own locally.
 
-Make sure to use the same version of Python that is selected for your web app (in runtime.txt or the Application Settings blade for your web app in the Azure Management Portal)
+Make sure to use the same version of Python that is selected for your web app (in runtime.txt or the Application Settings blade for your web app in the Azure Portal)
 
 For Python 2.7:
 
@@ -274,7 +273,7 @@ Browse to the Azure URL to view your changes.
 
 ### Clone the repository
 
-First, clone the repository using the URL provided on the Azure Management Portal, and add the Azure repository as a remote. For more information, see [Continuous deployment using GIT in Azure Web App](/documentation/articles/web-sites-publish-source-control).
+First, clone the repository using the URL provided on the Azure Portal, and add the Azure repository as a remote. For more information, see [Continuous deployment using GIT in Azure Web App](/documentation/articles/web-sites-publish-source-control/).
 
     git clone <repo-url>
     cd <repo-folder>
@@ -284,7 +283,7 @@ First, clone the repository using the URL provided on the Azure Management Porta
 
 We'll create a new virtual environment for development purposes (do not add it to the repository). Virtual environments in Python are not relocatable, so every developer working on the application will create their own locally.
 
-Make sure to use the same version of Python that is selected for your web app (in runtime.txt or the Application Settings blade of your web app in the Azure Management Portal).
+Make sure to use the same version of Python that is selected for your web app (in runtime.txt or the Application Settings blade of your web app in the Azure Portal).
 
 For Python 2.7:
 
@@ -378,8 +377,8 @@ For information on using Azure Table Storage and MongoDB:
 
 
 <!--Link references-->
-[Bottle and MongoDB on Azure with Python Tools for Visual Studio]: /documentation/articles/web-sites-python-ptvs-bottle-table-storage
-[Bottle and Azure Table Storage on Azure with Python Tools for Visual Studio]: /documentation/articles/web-sites-python-ptvs-bottle-table-storage
+[Bottle and MongoDB on Azure with Python Tools for Visual Studio]: /documentation/articles/web-sites-python-ptvs-bottle-table-storage/
+[Bottle and Azure Table Storage on Azure with Python Tools for Visual Studio]: /documentation/articles/web-sites-python-ptvs-bottle-table-storage/
 
 <!--External Link references-->
 [Azure SDK for Python 2.7]: http://go.microsoft.com/fwlink/?linkid=254281

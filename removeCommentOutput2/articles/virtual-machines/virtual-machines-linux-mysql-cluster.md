@@ -1,3 +1,5 @@
+<!-- rename to virtual-machines-linux-classic-mysql-cluster -->
+
 <properties
 	pageTitle="Clusterize MySQL with load-balanced sets | Azure"
 	description="Setup a load-balanced, high availability Linux MySQL cluster created with the classic deployment model on Azure"
@@ -15,10 +17,10 @@
 
 # Using load-balanced sets to clusterize MySQL on Linux
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the classic deployment model. Microsoft recommends that most new deployments use the Resource Manager model.
 
 
-The purpose of this article is to explore and illustrate the different approaches available to deploy highly available Linux-based services on Azure, exploring MySQL Server high availability as a primer. A video illustrating this a
+The purpose of this article is to explore and illustrate the different approaches available to deploy highly available Linux-based services on Azure, exploring MySQL Server high availability as a primer.
 
 We outline a shared-nothing two-node single-master MySQL high availability solution based on DRBD, Corosync and Pacemaker. Only one node is running MySQL at a time. Reading and writing from the DRBD resource is also limited to only one node at a time.
 
@@ -41,7 +43,7 @@ You will need a Azure account with a valid subscription able to create at least 
 
 ### Affinity group
 
-An affinity group for the solution is created by logging into the Azure Management Portal scrolling down to Settings and creating a new affinity group. Allocated resources created later will be assigned to this affinity group.
+An affinity group for the solution is created by logging into the Azure classic portal scrolling down to Settings and creating a new affinity group. Allocated resources created later will be assigned to this affinity group.
 
 ### Networks
 

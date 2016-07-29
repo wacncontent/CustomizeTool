@@ -1,3 +1,5 @@
+<!-- rename to virtual-machines-windows-classic-extensions-customscript -->
+
 <properties
    pageTitle="Custom Script extension on a Windows VM | Azure"
    description="Automate Azure VM configuration tasks by using the Custom Script extension to run PowerShell scripts on a remote Windows VM"
@@ -18,15 +20,10 @@
 This article gives an overview of using the Custom Script extension on Windows VMs using Azure PowerShell cmdlets.
 
 Virtual machine (VM) extensions are built by Microsoft and trusted third-party publishers to extend the functionality of the VM. For an overview of VM extensions, see
-[Azure VM extensions and features](/documentation/articles/virtual-machines-extensions-features).
+[Azure VM extensions and features](/documentation/articles/virtual-machines-linux-extensions-features/).
 
-
 Link:
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] [Resource Manager model](/documentation/articles/virtual-machines-extensions-customscript%20-with%20template).
-
-
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] 
-
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the [Resource Manager model](/documentation/articles/virtual-machines-windows-classic-extensions-customscript%20-with%20template/).
 
 
 ## Custom Script extension overview
@@ -35,7 +32,7 @@ Custom Script extension for Windows allows you to run PowerShell scripts on a re
 
 ### Prerequistes for running Custom Script Extension
 
-1. Install Azure PowerShell cmdlets version 0.8.0 or later from <a  href="http://azure.microsoft.com/downloads"  href="/downloads"  target="_blank">here</a>.
+1. Install Azure PowerShell cmdlets version 0.8.0 or later from <a href="/downloads" target="_blank">here</a>.
 2. If the scripts are run on an existing VM, make sure VM Agent is enabled on the VM, if not follow this <a href="https://msdn.microsoft.com/zh-cn/library/azure/dn832621.aspx" target="_blank">article</a> to install one. (If you are provisioning the VM from Azure gallery then VM agents are enabled by default , you don't have to enable them)
 3. Upload the scripts that you want to run on the VM to Azure Storage. The scripts can come from a single container or multiple storage containers.
 4. The script should be authored in such a way that the entry script, which is started by the extension, starts other scripts.
@@ -73,27 +70,23 @@ This scenario shows how to use a non-default storage either within the same subs
 
       Get-AzureVM -Name $name -ServiceName $servicename | Set-AzureVMCustomScriptExtension -StorageAccountName $storageaccount -StorageAccountKey $storagekey -ContainerName $container -FileUri $fileUrl1, $fileUrl2 -Run 'file.ps1' | Update-AzureVM
 
-
 
-### Add Custom Script extension from the Azure Management Portal
+### Add Custom Script extension from the Azure portal
 
-Browse to the VM in the <a href="https://manage.windowsazure.cn/ " target="_blank">Azure Management Portal </a> and add the extension by specifying the script file to run.
+Browse to the VM in the <a href="https://portal.azure.cn/ " target="_blank">Azure portal </a> and add the extension by specifying the script file to run.
 
   ![][5]
 
 
-
 ### Uninstalling Custom Script extension
 
 Custom Script Extension can be uninstalled from the VM using the following command.
 
       get-azureVM -ServiceName KPTRDemo -Name KPTRDemo | Set-AzureVMCustomScriptExtension -Uninstall | Update-AzureVM
 
-
 ### Using Custom Script extension with templates
 
-To learn about using Custom Script extension with Azure Resource Manager templates, see the documentation [here](/documentation/articles/virtual-machines-extensions-customscript%20-with%20template).
+To learn about using Custom Script extension with Azure Resource Manager templates, see the documentation [here](/documentation/articles/virtual-machines-windows-classic-extensions-customscript%20-with%20template/).
 
-
 <!--Image references-->
 [5]: ./media/virtual-machines-extensions-customscript/addcse.png

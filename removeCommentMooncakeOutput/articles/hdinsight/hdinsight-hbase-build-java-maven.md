@@ -10,7 +10,7 @@ tags="azure-portal"/>
 
 <tags
 	ms.service="hdinsight"
-	ms.date="02/01/2016"
+	ms.date="05/18/2016"
 	wacn.date=""/>
 
 #Use Maven to build Java applications that use HBase with HDInsight (Hadoop)
@@ -25,7 +25,7 @@ Learn how to create and build an [Apache HBase](http://hbase.apache.org/) applic
 
 * [Maven](http://maven.apache.org/)
 
-* [An Azure HDInsight cluster with HBase](/documentation/articles/hdinsight-hbase-tutorial-get-started-v1#create-hbase-cluster)
+* [An Azure HDInsight cluster with HBase](/documentation/articles/hdinsight-hbase-tutorial-get-started-v1/#create-hbase-cluster)
 
 ##Create the project
 
@@ -347,7 +347,10 @@ Learn how to create and build an [Apache HBase](http://hbase.apache.org/) applic
 
 ##Upload the JAR file and start a job
 
-> [AZURE.NOTE] There are many ways to upload a file to your HDInsight cluster, as described in [Upload data for Hadoop jobs in HDInsight](/documentation/articles/hdinsight-upload-data). The following steps use [Azure PowerShell](/documentation/articles/powershell-install-configure).
+There are many ways to upload a file to your HDInsight cluster, as described in [Upload data for Hadoop jobs in HDInsight](/documentation/articles/hdinsight-upload-data/). The following steps use Azure PowerShell.
+
+[AZURE.INCLUDE [upgrade-powershell](../includes/hdinsight-use-latest-powershell.md)]
+
 
 1. After installing and configuring Azure PowerShell, create a new file named __hbase-runner.psm1__. Use the following as the contents of this file:
 
@@ -534,10 +537,9 @@ Learn how to create and build an [Apache HBase](http://hbase.apache.org/) applic
             $resourceGroup = $hdi.ResourceGroup
             $storageAccountName=$hdi.DefaultStorageAccount.split('.')[0]
             $container=$hdi.DefaultStorageContainer
-            $storageAccountKey=Get-AzureRmStorageAccountKey `
+            $storageAccountKey=(Get-AzureRmStorageAccountKey `
                 -Name $storageAccountName `
-                -ResourceGroupName $resourceGroup `
-                | %{ $_.Key1 }
+            -ResourceGroupName $resourceGroup)[0].Value
             # Get the resource group, in case we need that
             $return.resourceGroup = $resourceGroup
             # Get the storage context, as we can't depend

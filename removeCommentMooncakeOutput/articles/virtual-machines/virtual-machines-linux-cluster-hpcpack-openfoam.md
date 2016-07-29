@@ -1,3 +1,5 @@
+<!-- rename to virtual-machines-linux-classic-hpcpack-cluster-openfoam -->
+
 <properties
  pageTitle="Run OpenFOAM with HPC Pack on Linux VMs | Azure"
  description="Deploy a Microsoft HPC Pack cluster on Azure and run an OpenFOAM job on multiple Linux compute nodes across an RDMA network."
@@ -16,23 +18,22 @@
 
 This article shows you how to deploy a Microsoft HPC Pack cluster on Azure and run an [OpenFoam](http://openfoam.com/) job with Intel MPI on multiple Linux compute nodes that connect across the Azure remote direct memory access (RDMA) network.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] 
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager model.
 
 OpenFOAM (for Open Field Operation and Manipulation) is a freely available open-source computational fluid dynamics (CFD) software package that is used widely in engineering and science, in both commercial and academic organizations. It includes tools for meshing, notably snappyHexMesh, a parallelized mesher for complex CAD geometries, and for pre- and post-processing. Almost all processes run in parallel, enabling users to take full advantage of computer hardware at their disposal.  
 
-Microsoft HPC Pack provides features to run a variety of large-scale HPC and parallel applications, including MPI applications, on clusters of Azure virtual machines. Starting in Microsoft HPC Pack 2012 R2 Update 2, HPC Pack also supports running Linux HPC applications on Linux compute node VMs deployed in an HPC Pack cluster. See [Get started with Linux compute nodes in an HPC Pack cluster in Azure](/documentation/articles/virtual-machines-linux-cluster-hpcpack) for an introduction to using Linux compute nodes with HPC Pack.
+Microsoft HPC Pack provides features to run a variety of large-scale HPC and parallel applications, including MPI applications, on clusters of Azure virtual machines. Starting in Microsoft HPC Pack 2012 R2 Update 2, HPC Pack also supports running Linux HPC applications on Linux compute node VMs deployed in an HPC Pack cluster. See [Get started with Linux compute nodes in an HPC Pack cluster in Azure](/documentation/articles/virtual-machines-linux-classic-hpcpack-cluster/) for an introduction to using Linux compute nodes with HPC Pack.
 
 >[AZURE.NOTE] This article assumes you have some familiarity with Linux system administration and with running MPI workloads on Linux HPC clusters. 
 
 ## Prerequisites
 
-*   **HPC Pack cluster with Linux compute nodes** - See [Get started with Linux compute nodes in an HPC Pack cluster in Azure](/documentation/articles/virtual-machines-linux-cluster-hpcpack) for the prerequisites and steps to deploy an HPC Pack cluster with Linux compute nodes on Azure by using an Azure PowerShell script and HPC Pack images in the Azure gallery. For additional considerations to use the A8 compute-intensive instances to access the Azure RDMA network, see [About the A8, A9, A10, and A11 compute-intensive instances](/documentation/articles/virtual-machines-a8-a9-a10-a11-specs).
+*   **HPC Pack cluster with Linux compute nodes** - See [Get started with Linux compute nodes in an HPC Pack cluster in Azure](/documentation/articles/virtual-machines-linux-classic-hpcpack-cluster/) for the prerequisites and steps to deploy an HPC Pack cluster with Linux compute nodes on Azure by using an Azure PowerShell script and HPC Pack images in the Azure gallery. For additional considerations to use the A8 compute-intensive instances to access the Azure RDMA network, see [About the A8, A9, A10, and A11 compute-intensive instances](/documentation/articles/virtual-machines-a8-a9-a10-a11-specs/).
 
     Following is a sample XML configuration file to use with the script to deploy an Azure-based HPC Pack cluster consisting of one size A8 Windows Server 2012 R2 head node and 2 size A8 SUSE Linux Enterprise Server 12 compute nodes. Substitute appropriate values for your subscription and service names.
 
     >[AZURE.NOTE]Currently, Linux RDMA networking in Azure is supported only on VMs created from the RDMA-enabled SUSE Linux Enterprise Server 12 image in the Azure gallery (b4590d9e3ed742e4a1d46e5424aa335e__suse-sles-12-hpc-v20150708).
 
-	
 	    <?xml version="1.0" encoding="utf-8" ?>
 	    <IaaSClusterConfig>
 	      <Subscription>
@@ -66,13 +67,12 @@ Microsoft HPC Pack provides features to run a variety of large-scale HPC and par
 	        <ImageName>b4590d9e3ed742e4a1d46e5424aa335e__suse-sles-12-hpc-v20150708</ImageName>
 	      </LinuxComputeNodes>
 	    </IaaSClusterConfig>
-	
 
     **Additional things to know**
 
     *   Deploy all the Linux compute nodes within one cloud service to use the RDMA network connection between the nodes.
 
-    *   After deploying the Linux nodes, if you need to connect by SSH to perform any additional administrative tasks, find the SSH connection details for each Linux VM in the Azure Management Portal.  
+    *   After deploying the Linux nodes, if you need to connect by SSH to perform any additional administrative tasks, find the SSH connection details for each Linux VM in the Azure portal.  
         
 *   **Intel MPI** - To run OpenFOAM on Linux compute nodes in Azure, you need the Intel MPI Library 5 runtime from the [Intel.com site](https://software.intel.com/intel-mpi-library/). In a later step, you'll install Intel MPI on your Linux compute nodes. To prepare for this, after you register with Intel, follow the link in the confirmation email to the related web page and copy the download link for the .tgz file for the appropriate version of Intel MPI. This article is based on Intel MPI version 5.0.3.048.
 
@@ -93,9 +93,7 @@ It's easy to generate an RSA key pair, which contains a public key and a private
 
 2.	Run the following command.
 
-	
 	    ssh-keygen -t rsa
-	    
 
     >[AZURE.NOTE] Press **Enter** to use the default settings until the command is completed. Do not enter a passphrase here; when prompted for a password, just press **Enter**.
 
@@ -112,18 +110,14 @@ It's easy to generate an RSA key pair, which contains a public key and a private
 
 3.	Create a file named C:\cred.xml and copy the RSA key data into it. You can find an example of this file in the sample files at the end of this article.
 
-	
 	    <ExtendedData>
 	        <PrivateKey>Copy the contents of private key here</PrivateKey>
 	        <PublicKey>Copy the contents of public key here</PublicKey>
 	    </ExtendedData>
-	    
 
 4.	Open a Command Prompt and enter the following command to set the credentials data for the hpclab\hpcuser account. You use the **extendeddata** parameter to pass the name of C:\cred.xml file you created for the key data.
 
-	
 	    hpccred setcreds /extendeddata:c:\cred.xml /user:hpclab\hpcuser /password:<UserPassword>
-	    
 
     This command completes successfully without output. After setting the credentials for the user accounts you need to run jobs, store the cred.xml file in a secure location, or delete it.
 
@@ -133,7 +127,7 @@ It's easy to generate an RSA key pair, which contains a public key and a private
 
 ## Set up a file share for Linux nodes
 
-Now set up a standard SMB share on a folder on the head node, and mount the shared folder on all Linux nodes to allow the Linux nodes to access application files with a common path. If you want, you can use another file sharing option, such as an Azure Files share - recommended for many scenarios - or an NFS share. See the file sharing information and detailed steps in [Get started with Linux compute nodes in an HPC Pack Cluster in Azure](/documentation/articles/virtual-machines-linux-cluster-hpcpack).
+Now set up a standard SMB share on a folder on the head node, and mount the shared folder on all Linux nodes to allow the Linux nodes to access application files with a common path. If you want, you can use another file sharing option, such as an Azure Files share - recommended for many scenarios - or an NFS share. See the file sharing information and detailed steps in [Get started with Linux compute nodes in an HPC Pack Cluster in Azure](/documentation/articles/virtual-machines-linux-classic-hpcpack-cluster/).
 
 1.	Create a folder on the head node, and share it to everyone by setting Read/Write privileges. For example, share C:\OpenFOAM on the head node as \\\\SUSE12RDMA-HN\OpenFOAM. Here, *SUSE12RDMA-HN* is the host name of the head node.
 
@@ -164,13 +158,11 @@ Save the downloaded installation package for Intel MPI (l_mpi_p_5.0.3.048.tgz in
 
 1.  The following commands copy the installation package and extract it to /opt/intel on each node.
 
-	
 	    clusrun /nodegroup:LinuxNodes mkdir -p /opt/intel
 	
 	    clusrun /nodegroup:LinuxNodes cp /openfoam/l_mpi_p_5.0.3.048.tgz /opt/intel/
 	
 	    clusrun /nodegroup:LinuxNodes tar -xzf /opt/intel/l_mpi_p_5.0.3.048.tgz -C /opt/intel/
-	    
 
 2.  To install Intel MPI Library silently, use a silent.cfg file. You can find an example in the sample files at the end of this article. Place this file in the shared folder /openfoam. For details about the silent.cfg file, see [Intel MPI Library for Linux Installation Guide - Silent Installation](http://scc.ustc.edu.cn/zlsc/tc4600/intel/impi/INSTALL.html#silentinstall).
 
@@ -178,24 +170,18 @@ Save the downloaded installation package for Intel MPI (l_mpi_p_5.0.3.048.tgz in
 
 3.  Install Intel MPI Library in silent mode.
 
-	
 	    clusrun /nodegroup:LinuxNodes bash /opt/intel/l_mpi_p_5.0.3.048/install.sh --silent /openfoam/silent.cfg
-	    
     
 ### Configure MPI
 
 For testing, you should add the following lines to the /etc/security/limits.conf on each of the Linux nodes:
 
-	
 	*               hard    memlock         unlimited
 	*               soft    memlock         unlimited
-	
 
 Restart the Linux nodes after you update the limits.conf file. For example, use the following **clusrun** command.
 
-	
 	clusrun /nodegroup:LinuxNodes systemctl reboot
-	
 
 After restarting, ensure that the shared folder is mounted as /openfoam.
 
@@ -206,23 +192,19 @@ Save the downloaded installation package for the OpenFOAM Source Pack (OpenFOAM-
 
 1.  Create a folder /opt/OpenFOAM on each Linux node, copy the source package to this folder, and extract it there.
 
-	
 	    clusrun /nodegroup:LinuxNodes mkdir -p /opt/OpenFOAM
 	
 	    clusrun /nodegroup:LinuxNodes cp /openfoam/OpenFOAM-2.3.1.tgz /opt/OpenFOAM/
 	
 	    clusrun /nodegroup:LinuxNodes tar -xzf /opt/OpenFOAM/OpenFOAM-2.3.1.tgz -C /opt/OpenFOAM/
-	    
 
 2.  To compile OpenFOAM with the Intel MPI Library, first set up some environment variables for both Intel MPI and OpenFOAM. Use a bash script called settings.sh to do this. You can find an example in the sample files at the end of this article. Place this file (saved with Linux line endings) in the shared folder /openfoam. This file also contains settings for the MPI and OpenFOAM runtimes that you use later to run an OpenFOAM job.
 
 3. Install dependent packages needed to compile OpenFOAM. Depending on your Linux distribution, you might first need to add a repository. Run **clusrun** commands similar to the following:
 
-	
 	    clusrun /nodegroup:LinuxNodes zypper ar http://download.opensuse.org/distribution/13.2/repo/oss/suse/ opensuse
 	    
 	    clusrun /nodegroup:LinuxNodes zypper -n --gpg-auto-import-keys install --repo opensuse --force-resolution -t pattern devel_C_C++
-	    
     
     If necessary, ssh to each Linux node to run the commands to confirm that they run properly.
 
@@ -242,9 +224,7 @@ Now get ready to run an MPI job called sloshingTank3D, which is one of the OpenF
 
 Run the following command in a Windows PowerShell window on the head node to set up the runtime environments for MPI and OpenFOAM on all Linux nodes. (This command is valid for SUSE Linux only.)
 
-	
 	clusrun /nodegroup:LinuxNodes cp /openfoam/settings.sh /etc/profile.d/
-	
 
 ### Prepare sample data
 
@@ -254,17 +234,13 @@ Use the head node share you configured previously to share files among the Linux
 
 2.  Run the following command to set up the OpenFOAM runtime environment, if you haven't already done this.
 
-	
 	    $ source /openfoam/settings.sh
-	    
     
 3.  Copy the sloshingTank3D sample to the shared folder and navigate to it.
 
-	
 	    $ cp -r $FOAM_TUTORIALS/multiphase/interDyMFoam/ras/sloshingTank3D /openfoam/
 	
 	    $ cd /openfoam/sloshingTank3D
-	    
 
 4.  When you use the default parameters of this sample, it can take tens of minutes or longer to run, so you might want to modify some parameters to make it run faster. One simple choice is to modify the time step variables deltaT and writeInterval in the system/controlDict file, which stores all input data relating to the control of time and reading and writing solution data. For example, you could change the value of deltaT from 0.05 to 0.5 and the value of writeInterval from 0.05 to 0.5.
 
@@ -276,7 +252,6 @@ Use the head node share you configured previously to share files among the Linux
 
 6.  Run the following commands from the sloshingTank3D directory to prepare the sample data.
 
-	
 	    $ . $WM_PROJECT_DIR/bin/tools/RunFunctions
 	
 	    $ m4 constant/polyMesh/blockMeshDict.m4 > constant/polyMesh/blockMeshDict
@@ -286,7 +261,6 @@ Use the head node share you configured previously to share files among the Linux
 	    $ cp 0/alpha.water.org 0/alpha.water
 	
 	    $ runApplication setFields  
-	    
     
 7.  On the head node, you should see the sample data files are copied into C:\OpenFoam\sloshingTank3D. (C:\OpenFoam is the shared folder on the head node.)
 
@@ -300,10 +274,8 @@ In this step you create a host file (a list of compute nodes) which the **mpirun
 
 2.	Write your Linux node names into this file. In this example, the file looks like this:
 
-	       
 	    SUSE12RDMA-LN1
 	    SUSE12RDMA-LN2
-	    
     
     >[AZURE.TIP]You can also create this file at C:\OpenFoam\hostfile on the head node. If you do this, save it as a text file with Linux line endings (LF only, not CR LF). This ensures that it runs properly on the Linux nodes.
 
@@ -335,9 +307,7 @@ In this step you create a host file (a list of compute nodes) which the **mpirun
 
         For example, if the job needs 2 nodes to run, $CCP_NODES_CORES will be similar to
 
-	
 	        2 SUSE12RDMA-LN1 8 SUSE12RDMA-LN2 8
-	        
         
     3.	Calls the **mpirun** command and appends 2 parameters to the command line.
 
@@ -416,9 +386,7 @@ Now you can submit a job in HPC Cluster Manager. You'll need to pass the script 
 
     Under some conditions HPC Pack remembers the user information you input before and won't show this dialog box. To make HPC Pack show it again, enter the following in a Command Prompt window and then submit the job.
 
-	
 	    hpccred delcreds
-	    
 
 8.	The job takes from tens of minutes to several hours according to the parameters you have set for the sample. In the heat map you will see the job running on 2 Linux nodes. 
 
@@ -468,7 +436,6 @@ Optionally use [EnSight](https://www.ceisoftware.com/) to visualize and analyze 
 
 ### Sample cred.xml file
 
-	
 	<ExtendedData>
 	  <PrivateKey>-----BEGIN RSA PRIVATE KEY-----
 	MIIEpQIBAAKCAQEAxJKBABhnOsE9eneGHvsjdoXKooHUxpTHI1JVunAJkVmFy8JC
@@ -499,10 +466,9 @@ Optionally use [EnSight](https://www.ceisoftware.com/) to visualize and analyze 
 	-----END RSA PRIVATE KEY-----</PrivateKey>
 	  <PublicKey>ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDEkoEAGGc6wT16d4Ye+yN2hcqigdTGlMcjUlW6cAmRWYXLwkKoW3WlX3xAK0oQdMLqRDu2PVRPY3qfHURj0EEellpydeaSekp1fg27Rw2VKmEumu6Wxwo9HddXORPAQXTQ4yI0lWSerypckXVPeVjHetbkSci2foLedCbeBA9c/RyRgIUl227/pJKDNX2Rpqly0sY82nVWN/0p4NAyslexA0fGdBx+IgKnbU2JQKJeiwOomtEB/N492XRfCw2eCi7Ly3R8+U1KeBm+zH6Q8aH8ApqQohhLRw71bcWZ1g1bxd6HORxXOu0mFTzHbWFcZ9ILtXRl4Pt0x5Mve1AJXEKb username@servername;</PublicKey>
 	</ExtendedData>
-	
+
 ### Sample silent.cfg file
 
-	
 	# Patterns used to check silent configuration file
 	#
 	# anythingpat - any string
@@ -554,12 +520,9 @@ Optionally use [EnSight](https://www.ceisoftware.com/) to visualize and analyze 
 	
 	# Select yes to update ld.so.conf, valid values are: {yes, no}
 	ENVIRONMENT_LD_SO_CONF=no
-	
-	
 
 ### Sample settings.sh script
 
-	
 	#!/bin/bash
 	
 	# impi
@@ -573,12 +536,10 @@ Optionally use [EnSight](https://www.ceisoftware.com/) to visualize and analyze 
 	export FOAM_INST_DIR=/opt/OpenFOAM
 	source /opt/OpenFOAM/OpenFOAM-2.3.1/etc/bashrc
 	export WM_MPLIB=INTELMPI
-	
 
 
 ###Sample hpcimpirun.sh script
 
-	
 	#!/bin/bash
 	
 	# The path of this script
@@ -626,8 +587,6 @@ Optionally use [EnSight](https://www.ceisoftware.com/) to visualize and analyze 
 	fi
 	
 	exit ${RTNSTS}
-	
-	
 
 
 

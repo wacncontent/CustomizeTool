@@ -1,3 +1,5 @@
+<!-- rename to virtual-machines-linux-troubleshoot-app-connection -->
+
 <properties
 	pageTitle="Troubleshoot application access on a VM | Azure"
 	description="If you can't access an application running on an Azure virtual machine, use these steps to isolate the source of the problem."
@@ -80,7 +82,7 @@ For example, if the application is a web server, try to access the web page from
 
 If you cannot access the application, verify the following:
 
-- For virtual machines created using the Service Management API, that the endpoint configuration for the virtual machine is allowing the incoming traffic, especially the protocol (TCP or UDP) and the public and private port numbers. For more information, see [How to Set Up Endpoints to a Virtual Machine]( virtual-machines-.
+- For virtual machines created using the Service Management API, that the endpoint configuration for the virtual machine is allowing the incoming traffic, especially the protocol (TCP or UDP) and the public and private port numbers. For more information, see [How to Set Up Endpoints to a Virtual Machine](/documentation/articles/virtual-machines-set-up-endpoints).
 - For virtual machines created using the Service Management API, that access control lists (ACLs) on the endpoint are not preventing incoming traffic from the Internet. For more information, see [How to Set Up Endpoints to a Virtual Machine](/documentation/articles/virtual-machines-set-up-endpoints).
 - For virtual machines created in Resource Manager, that the inbound NAT rule configuration for the virtual machine is allowing the incoming traffic, especially the protocol (TCP or UDP) and the public and private port numbers.
 - That Network Security Groups are allowing the inbound request and outbound response traffic. For more information, see [What is a Network Security Group (NSG)?](/documentation/articles/virtual-networks-nsg).
@@ -113,8 +115,8 @@ For more information, see [Troubleshooting Endpoint Connectivity (RDP/SSH/HTTP, 
 
 If you have run the above steps in this article and need additional help to correct the problem, you can:
 
-- Get help from Azure experts across the world. Submit your issue to either the MSDN Azure or Stack Overflow forums. See [Azure Forums](https://azure.microfor more information.
-- File an Azure support incident. Go to the [Azure Support site](https://azure.microsoand click **Get support** under **Technical and billing support**.
+- Get help from Azure experts across the world. Submit your issue to either the MSDN Azure or CSDN Azure forums. See [Azure Forums](/support/forums/) for more information.
+- File an Azure support incident. Go to the [Azure Support site](/support/contact/) and click **Get support** under **Technical and billing support**.
 
 ## Additional resources
 

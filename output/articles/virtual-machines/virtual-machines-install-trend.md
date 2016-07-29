@@ -1,3 +1,5 @@
+<!-- rename to virtual-machines-windows-classic-install-trend -->
+
 <properties
 	pageTitle="Install Trend Micro Deep Security on a VM | Azure"
 	description="This article describes how to install and configure Trend Micro security on a VM created with the classic deployment model in Azure."
@@ -16,7 +18,7 @@
 
 # How to install and configure Trend Micro Deep Security as a Service on a Windows VM
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]  Resource Manager model. 
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager model.
 
 
 This article shows you how to install and configure Trend Micro Deep Security as a Service on a new or existing virtual machine (VM) running Windows Server. Deep Security as a Service includes anti-malware protection, a firewall, an intrusion prevention system, and integrity monitoring.
@@ -27,9 +29,9 @@ If you have existing subscription from Trend Micro for an on-premises solution, 
 
 ## Install the Deep Security Agent on a new virtual machine
 
-The [Azure Management Portal](http://manage.windowsazure.cn) lets you install the VM Agent and the Trend Micro security extension when you use the **From Gallery** option to create the virtual machine. Using this approach is an easy way to add protection from Trend Micro if you're creating a single virtual machine.
+The [Azure Classic Management Portal](http://manage.windowsazure.cn) lets you install the VM Agent and the Trend Micro security extension when you use the **From Gallery** option to create the virtual machine. Using this approach is an easy way to add protection from Trend Micro if you're creating a single virtual machine.
 
-This **From Gallery** option opens a wizard that helps you set up the virtual machine. You use the last page of the wizard to install the VM Agent and Trend Micro security extension. For general instructions, see [Create a virtual machine running Windows in the Azure Management Portal](/documentation/articles/virtual-machines-windows-tutorial-classic-portal). When you get to the last page of the wizard, do the following:
+This **From Gallery** option opens a wizard that helps you set up the virtual machine. You use the last page of the wizard to install the VM Agent and Trend Micro security extension. For general instructions, see [Create a virtual machine running Windows in the Azure Classic Management Portal](/documentation/articles/virtual-machines-windows-classic-tutorial/). When you get to the last page of the wizard, do the following:
 
 1.	Under **VM Agent**, check **Install VM Agent**.
 
@@ -43,7 +45,7 @@ This **From Gallery** option opens a wizard that helps you set up the virtual ma
 
 To do this, you'll need the following:
 
-- The Azure PowerShell module, version 0.8.2 or newer, installed on your local computer. You can check the version of Azure PowerShell that you have installed by using the **Get-Module azure | format-table version** command. For instructions and a link to the latest version, see [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure).
+- The Azure PowerShell module, version 0.8.2 or newer, installed on your local computer. You can check the version of Azure PowerShell that you have installed by using the **Get-Module azure | format-table version** command. For instructions and a link to the latest version, see [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure/).
 
 - The VM Agent installed on the target virtual machine.
 
@@ -80,10 +82,5 @@ It takes a few minutes for the agent to start running when it is installed. Afte
 
 
 <!--Link references-->
-[How to log on to a virtual machine running Windows Server]: /documentation/articles/virtual-machines-log-on-windows-server
-
-[Azure VM Extensions and features]: http://go.microsoft.com/fwlink/p/?linkid=390493&clcid=0x409
-
-
-[Azure VM Extensions and features]: http://msdn.microsoft.com/zh-cn/library/dn606311.aspx
-
+[How to log on to a virtual machine running Windows Server]: /documentation/articles/virtual-machines-windows-classic-connect-logon/
+[Azure VM Extensions and features]: /documentation/articles/virtual-machines-linux-extensions-features/

@@ -14,11 +14,11 @@
 
 # Restore an app in Azure
 
-This article shows you how to restore an Azure Web App that you have previously backed up by using the [Azure Web App](/documentation/services/web-sites) Backup feature. For more information, see [Azure Web App Backups](/documentation/articles/web-sites-backup). 
+This article shows you how to restore an Azure Web App that you have previously backed up by using the [Azure Web App](/documentation/services/web-sites) Backup feature. For more information, see [Azure Web App Backups](/documentation/articles/web-sites-backup/).
 
 The Azure web app Restore feature lets you restore your app with its linked databases (SQL Database or MySQL) on-demand to a previous state, or create a new app based on one of your original app's backup. Creating a new app that runs in parallel to the latest version can be useful for A/B testing.
 
-The Azure web app Restore feature, available on the **Backups** blade in the [Azure Management Portal](https://manage.windowsazure.cn), is available only in Standard pricing tiers. For information about scaling your app using Standard tier, see [Scale an app in Azure Web App](/documentation/articles/web-sites-scale).
+The Azure web app Restore feature, available on the **Backups** blade in the [Azure Classic Management Portal](https://manage.windowsazure.cn), is available only in Standard pricing tiers. For information about scaling your app using Standard tier, see [Scale an app in Azure Web App](/documentation/articles/web-sites-scale/).
 
 <a name="PreviousBackup"></a>
 ## To Restore an app from a previously made backup
@@ -125,4 +125,3 @@ The Azure web app Restore feature, available on the **Backups** blade in the [Az
 [ManagementServicesOperationLogsList]: ./media/web-sites-restore/11ManagementServicesOperationLogsList.png
 [DetailsButton]: ./media/web-sites-restore/12DetailsButton.png
 [OperationDetails]: ./media/web-sites-restore/13OperationDetails.png
- 

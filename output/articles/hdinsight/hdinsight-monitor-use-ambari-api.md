@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
 	pageTitle="Monitor Hadoop clusters in HDInsight using the Ambari API | Azure"
 	description="Use the Apache Ambari APIs for provisioning, managing, and monitoring Hadoop clusters. Intuitive operator tools and APIs hide the complexity of Hadoop."
@@ -12,14 +10,14 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="11/11/2015"
+	ms.date="05/18/2016"
 	wacn.date=""/>
 
 # Monitor Hadoop clusters in HDInsight using the Ambari API
 
 Learn how to monitor HDInsight clusters versions 3.1 and 2.1 by using Ambari APIs.
 
-> [AZURE.NOTE] The information in this article is primarily for Windows-based HDInsight clusters, which provide a read-only version of the Ambari REST API. For Linux-based clusters, see [Manage Hadoop clusters using Ambari](/documentation/articles/hdinsight-hadoop-manage-ambari).
+> [AZURE.NOTE] The information in this article is primarily for Windows-based HDInsight clusters, which provide a read-only version of the Ambari REST API. For Linux-based clusters, see [Manage Hadoop clusters using Ambari](/documentation/articles/hdinsight-hadoop-manage-ambari/).
 
 ## What is Ambari?
 
@@ -33,8 +31,9 @@ HDInsight currently supports only the Ambari monitoring feature. Ambari API 1.0 
 
 Before you begin this tutorial, you must have the following:
 
-- **A workstation with Azure PowerShell**. See [Install Azure PowerShell 1.0 and greater](/documentation/articles/hdinsight-administer-use-powershell#install-azure-powershell-10-and-greater).
+- **A workstation with Azure PowerShell**.
 
+    [AZURE.INCLUDE [upgrade-powershell](../includes/hdinsight-use-latest-powershell.md)]
 
 - (Optional) [cURL][curl]. To install it, see [cURL Releases and Downloads][curl-download].
 
@@ -42,15 +41,13 @@ Before you begin this tutorial, you must have the following:
 
 - **An Azure HDInsight cluster**. For instructions about cluster provisioning, see [Get started using HDInsight][hdinsight-get-started] or [Provision HDInsight clusters][hdinsight-provision]. You will need the following data to go through the tutorial:
 
-Cluster property|Azure PowerShell variable name|Value|Description
----|---|---|---
-HDInsight cluster name|$clusterName||The name of your HDInsight cluster.
-Cluster username|$clusterUsername||Cluster user name specified at provisioning.
-Cluster password|$clusterPassword||Cluster user password.
+    Cluster property|Azure PowerShell variable name|Value|Description
+    ---|---|---|---
+    HDInsight cluster name|$clusterName||The name of your HDInsight cluster.
+    Cluster username|$clusterUsername||Cluster user name specified at provisioning.
+    Cluster password|$clusterPassword||Cluster user password.
 
-	> [AZURE.NOTE] Fill-in the values in the table. This will be helpful for going through this tutorial.
-
-
+    >[AZURE.NOTE] Fill-in the values in the table. This will be helpful for going through this tutorial.
 
 ## Jump start
 
@@ -145,7 +142,7 @@ Get configuration info.|`/api/v1/clusters/<ClusterName>.azurehdinsight.cn/config
 
 Now you have learned how to use Ambari monitoring API calls. To learn more, see:
 
-- [Manage HDInsight clusters using the Azure Management Portal][hdinsight-admin-portal]
+- [Manage HDInsight clusters using the Azure Portal][hdinsight-admin-portal]
 - [Manage HDInsight clusters using Azure PowerShell][hdinsight-admin-powershell]
 - [Manage HDInsight clusters using command-line interface][hdinsight-admin-cli]
 - [HDInsight documentation][hdinsight-documentation]
@@ -161,14 +158,14 @@ Now you have learned how to use Ambari monitoring API calls. To learn more, see:
 
 [microsoft-hadoop-SDK]: http://hadoopsdk.codeplex.com/wikipage?title=Ambari%20Monitoring%20Client
 
-[powershell-install]: /documentation/articles/powershell-install-configure
+[powershell-install]: /documentation/articles/powershell-install-configure/
 [powershell-script]: https://technet.microsoft.com/zh-cn/library/dn425048.aspx
 
-[hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell
-[hdinsight-admin-portal]: /documentation/articles/hdinsight-administer-use-management-portal-v1
-[hdinsight-admin-cli]: /documentation/articles/hdinsight-administer-use-command-line
+[hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell/
+[hdinsight-admin-portal]: /documentation/articles/hdinsight-administer-use-management-portal-v1/
+[hdinsight-admin-cli]: /documentation/articles/hdinsight-administer-use-command-line/
 [hdinsight-documentation]: /documentation/services/hdinsight/
-[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1/
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1/
 
 [img-jobtracker-output]: ./media/hdinsight-monitor-use-ambari-api/hdi.ambari.monitor.jobtracker.output.png

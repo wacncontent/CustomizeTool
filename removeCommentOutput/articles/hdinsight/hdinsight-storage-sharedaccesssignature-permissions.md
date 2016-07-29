@@ -9,7 +9,7 @@ editor="cgronlun"/>
 
 <tags
 	ms.service="hdinsight"
-	ms.date="02/01/2016"
+	ms.date="07/05/2016"
 	wacn.date=""/>
 
 #Use Azure Storage Shared Access Signatures to restrict access to data with HDInsight
@@ -60,7 +60,7 @@ The difference between the two forms is important for one key scenario: revocati
 
 It is recommended that you always use stored access policies, so that you can either revoke signatures or extend the expiry date as needed. The steps in this document use stored access policies to generate SAS.
 
-For more information on Shared Access Signatures, see [Understanding the SAS model](/documentation/articles/storage-dotnet-shared-access-signature-part-1).
+For more information on Shared Access Signatures, see [Understanding the SAS model](/documentation/articles/storage-dotnet-shared-access-signature-part-1/).
 
 ##Create a stored policy and generate a SAS
 
@@ -209,14 +209,14 @@ If you have an existing Linux-based cluster, you can add the SAS to the __core-s
 
 To verify that you have restricted access, use the following methods:
 
-* For __Windows-based__ HDInsight clusters, use Remote Desktop to connect to the cluster. See [Connecto to HDInsight using RDP](/documentation/articles/hdinsight-administer-use-management-portal-v1#connect-to-clusters-using-rdp) for more information.
+* For __Windows-based__ HDInsight clusters, use Remote Desktop to connect to the cluster. See [Connecto to HDInsight using RDP](/documentation/articles/hdinsight-administer-use-management-portal-v1/#connect-to-clusters-using-rdp) for more information.
 
     Once connected, use the __Hadoop Command Line__ icon on the desktop to open a command prompt.
 
 * For __Linux-based__ HDInsight clusters, use SSH to connect to the cluster. See one of the following for information on using SSH with Linux-based clusters:
 
-    * [Use SSH with Linux-based Hadoop on HDInsight from Linux, OS X, and Unix](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix)
-    * [Use SSH with Linux-based Hadoop on HDInsight from Windows](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows)
+    * [Use SSH with Linux-based Hadoop on HDInsight from Linux, OS X, and Unix](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix/)
+    * [Use SSH with Linux-based Hadoop on HDInsight from Windows](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows/)
     
 Once connected to the cluster, use the following steps to verify that you can only read and list items on the SAS storage account:
 
@@ -278,10 +278,10 @@ __Resolution__: Use a password that meets the following criteria:
 
 Now that you have learned how to add limited-access storage to your HDInsight cluster, learn other ways to work with data on your cluster:
 
-* [Use Hive with HDInsight](/documentation/articles/hdinsight-use-hive)
+* [Use Hive with HDInsight](/documentation/articles/hdinsight-use-hive/)
 
-* [Use Pig with HDInsight](/documentation/articles/hdinsight-use-pig)
+* [Use Pig with HDInsight](/documentation/articles/hdinsight-use-pig/)
 
-* [Use MapReduce with HDInsight](/documentation/articles/hdinsight-use-mapreduce)
+* [Use MapReduce with HDInsight](/documentation/articles/hdinsight-use-mapreduce/)
 
-[powershell]: /documentation/articles/powershell-install-configure
+[powershell]: /documentation/articles/powershell-install-configure/

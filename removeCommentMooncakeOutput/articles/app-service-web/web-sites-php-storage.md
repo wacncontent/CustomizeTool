@@ -1,3 +1,5 @@
+<!-- deleted in Global -->
+
 <properties 
 	pageTitle="Create a PHP web app in Azure Websites using Azure Storage" 
 	description="This tutorial shows you how to create a PHP web app in Azure Websites and use the Azure Tables storage service in the back-end." 
@@ -318,30 +320,15 @@ Deleting an item is accomplished with a single call to `deleteItem`. The passed 
 
 To make your application store data into the cloud you need to first create a storage account in Azure and then pass the proper authentication information to the *Configuration* class.
 
-
 1. Login to the [Azure Management Portal][management-portal].
 
-2. Click the **+ New** icon on the bottom left of the portal.
+2. Click the **New** icon on the bottom left of the portal, then click **DATA SERVICE** > **Storage**. Give the storage account a unique name and create a new [resource group](/documentation/articles/resource-group-overview/) for it.
 
-	![Create New Azure  Website][new- Website]
-
-3. Click **Data Services**, **Storage**, then **Quick Create**.
-
-	![Custom Create a new  Website][storage-quick-create]
+	![Create a new storage account][storage-quick-create]
 	
-	Enter a value for **URL** and select the data center for your  Website in the **REGION** dropdown. Click the **Create Storage Account** button at the bottom of the dialog.
+	When the storage account has been created, the **Notifications** button will flash a green **SUCCESS** and the storage account's blade is open to show that it belongs to the new resource group you created.
 
-	![Fill in  Website details][storage-quick-create-details]
-
-	When the storage account has been created you will see the text **Creation of Storage Account '[NAME]' completed successfully**.
-
-4. Ensure the **Storage** tab is selected and then select the storage account you just created from the list.
-
-5. Click on **Manage Access Keys** from the app bar on the bottom.
-
-	![Select Manage Keys][storage-manage-keys]
-
-6. Take note of the name of the storage account you created and of the primary key.
+5. Click the **Settings** part in the storage account's blade. Take note of the account name and the primary key.
 
 	![Select Manage Keys][storage-access-keys]
 
@@ -352,42 +339,25 @@ To make your application store data into the cloud you need to first create a st
 Follow these steps to create an Azure web app:
 
 1. Login to the [Azure Management Portal][management-portal].
-2. Click the **+ New** icon on the bottom left of the portal.
 
-	![Create New Azure  Website][new- Website]
+2. Create an empty web app with the instructions at [How to: Create a web app Using the Azure Management Portal](/documentation/articles/web-sites-create-deploy/#createawebsiteportal). Be sure to create a new [App Service plan](/documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview/) and select the resource group you created previously for the storage account.
 
-3. Click **Compute**, ** Website**, then **Quick Create**.
+	When the web app has been created, the **Notifications** button will flash a green **SUCCESS** and the web app's blade is open to show that it belongs to the new resource group you created.
 
-	![Custom Create a new  Website][ Website-quick-create]
-	
-	Enter a value for **URL** and select the data center for your  Website in the **REGION** dropdown. Click the **Create New  Website** button at the bottom of the dialog.
-
-	![Fill in  Website details][ Website-quick-create-details]
-
-	When the  Website has been created you will see the text **Creation of  Website '[SITENAME]' completed successfully**. Now, you can enable Git publishing.
-
-5. Click the name of the  Website displayed in the list of  Websites to open the  Website's **QUICKSTART** dashboard.
-
-	![Open  Website dashboard][go-to-dashboard]
-
-
-6. At the bottom right of the Quickstart page, select **Set up a deployment from source control**.
+6. In the web app's blade, click **Set up continuous deployment**, and choose **Local Git Repository**. Click **OK**.
 
 	![Set up Git publishing][setup-git-publishing]
 
-6. When asked "Where is your source code?" select **Local Git repository**, and then click the arrow.
-
-	![where is your source code][where-is-code]
-
-7. To enable Git publishing, you must provide a user name and password. Make a note of the user name and password you create. (If you have set up a Git repository before, this step will be skipped.)
+7. Before you can deploy your local Git repository to Azure, you must also set up deployment credentials. In the web app's blade, click **Configure** > **Deployment credentials** to configure the credentials. Click **Save** when you're done.
 
 	![Create publishing credentials][credentials]
 
 	It will take a few seconds to set up your repository.
 
-8. Once the Git repository is ready, you will be presented with instructions on the Git commands to use in order to setup a local repository and then push the files to Azure.
+8. Once the Git repository is ready, you now push your changes to it. You can find the repo URL by clicking the same deployment part in the web app's blade. 
 
-	![Git deployment instructions returned after creating a repository for the  Website.][git-instructions]
+	![Git deployment instructions returned after creating a repository for the web app.][git-instructions]
+
 	Note the instructions, as these will be used in the next section to publish the application.
 
 ##Publish Your Application
@@ -431,13 +401,13 @@ To publish changes to application, follow these steps:
 
 3. Browse to **http://[your web app domain]/index.php** to see your changes. 
 
-[new- Website]: ./media/web-sites-php-storage/new_Website.jpg
-[website-quick-create]: ./media/web-sites-php-storage/createsite.png
-[website-quick-create-details]: ./media/web-sites-php-storage/sitedetails.png
-[storage-quick-create-details]: ./media/web-sites-php-storage/provideurl.png
-[storage-manage-keys]: ./media/web-sites-php-storage/accesskeys.png
-[go-to-dashboard]: ./media/web-sites-php-storage/selectsite.png
-[where-is-code]: ./media/web-sites-php-storage/where_is_code.png
+## What's changed
+* For a guide to the change from Websites to Azure Websites see: [Azure Websites and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
+* For a guide to the change of the Management Portal to the new portal see: [Reference for navigating the portal](https://manage.windowsazure.cn/)
+
+
+
+
 [install-php]: http://www.php.net/manual/en/install.php
 [install-git]: http://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%AE%89%E8%A3%85-Git
 [composer-phar]: http://getcomposer.org/composer.phar

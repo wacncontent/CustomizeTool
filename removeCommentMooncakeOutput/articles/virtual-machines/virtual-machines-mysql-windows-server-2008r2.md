@@ -1,3 +1,5 @@
+<!-- rename to virtual-machines-windows-classic-mysql-2008r2 -->
+
 <properties
 	pageTitle="Create a VM running MySQL | Azure"
 	description="Create an Azure virtual machine created with the classic deployment model running Windows Server 2012 R2, and then install and configure the MySQL database on it."
@@ -16,16 +18,16 @@
 
 # Install MySQL on a virtual machine created with the classic deployment model running Windows Server 2012 R2
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] 
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager model.
 
 
-[MySQL](http://www.mysql.com) is a popular open source, SQL database. Using the [Azure Management Portal](http://manage.windowsazure.cn), you can create a virtual machine running Windows Server 2012 R2 from the Image Gallery. You can then install and configure it as a MySQL Server.
+[MySQL](http://www.mysql.com) is a popular open source, SQL database. Using the [Azure Classic Management Portal](http://manage.windowsazure.cn), you can create a virtual machine running Windows Server 2012 R2 from the Image Gallery. You can then install and configure it as a MySQL Server.
 
-For instructions on installing MySQL on Linux, refer to: [How to install MySQL on Azure](/documentation/articles/virtual-machines-linux-install-mysql).
+For instructions on installing MySQL on Linux, refer to: [How to install MySQL on Azure](/documentation/articles/virtual-machines-linux-mysql-install/).
 
 This tutorial shows you how to:
 
-- Use the Azure Management Portal to create a virtual machine running Windows Server 2012 R2.
+- Use the Azure Classic Management Portal to create a virtual machine running Windows Server 2012 R2.
 
 - Install and run the community version of MySQL 5.6.23 as a MySQL Server on the virtual machine.
 
@@ -38,7 +40,7 @@ This tutorial shows you how to:
 
 After the virtual machine is created, you can optionally attach an additional data disk. This is recommended for production workloads and to avoid running out of space on the OS drive (C:), which  includes the operating system.
 
-See [How to attach a data disk to a Windows virtual machine](/documentation/articles/storage-windows-attach-disk) and follow the instructions for attaching an empty disk. Set the host cache setting to **None** or **Read-only**.
+See [How to attach a data disk to a Windows virtual machine](/documentation/articles/virtual-machines-windows-classic-attach-disk/) and follow the instructions for attaching an empty disk. Set the host cache setting to **None** or **Read-only**.
 
 ## Log on to the virtual machine
 
@@ -92,12 +94,12 @@ Follow these steps to install, configure, and run the Community version of MySQL
 If you want the MySQL Server service to be available to MySQL client computers on the Internet, you must configure an endpoint for the TCP port on which the MySQL Server service is listening and create an additional Windows Firewall rule. This is TCP port 3306 unless you specified a different port on the **Type and Networking** page (step 10 of the previous procedure).
 
 
-> [AZURE.NOTE] You should carefully consider the security implications of doing this, because this will make the MySQL Server service available to all computers on the Internet. You can define the set of source IP addresses that are allowed to use the endpoint with an Access Control List (ACL). For more information, see [How to Set Up Endpoints to a Virtual Machine](/documentation/articles/virtual-machines-set-up-endpoints).
+> [AZURE.NOTE] You should carefully consider the security implications of doing this, because this will make the MySQL Server service available to all computers on the Internet. You can define the set of source IP addresses that are allowed to use the endpoint with an Access Control List (ACL). For more information, see [How to Set Up Endpoints to a Virtual Machine](/documentation/articles/virtual-machines-linux-classic-setup-endpoints/).
 
 
 To configure an endpoint for the MySQL Server service:
 
-1.	In the Azure Management Portal, click **Virtual Machines**, click the name of your MySQL virtual machine, and then click **Endpoints**.
+1.	In the Azure Classic Management Portal, click **Virtual Machines**, click the name of your MySQL virtual machine, and then click **Endpoints**.
 2.	In the command bar, click **Add**.
 3.	On the **Add an endpoint to a virtual machine** page, click the right arrow.
 4.	If you are using the default MySQL TCP port of 3306, click **MySQL** in **Name**, and then click the check mark.
@@ -116,7 +118,7 @@ To add a Windows Firewall rule that allows MySQL traffic from the Internet, run 
 
 To test your remote connection to the MySQL Server service running on the Azure virtual machine, you must first determine the DNS name corresponding to the cloud service that contains the virtual machine running MySQL Server.
 
-1.	In the Azure Management Portal, click **Virtual Machines**, click the name of your MySQL server virtual machine, and then click **Dashboard**.
+1.	In the Azure Classic Management Portal, click **Virtual Machines**, click the name of your MySQL server virtual machine, and then click **Dashboard**.
 2.	From the virtual machine dashboard, note the **DNS Name** value under the **Quick Glance** section. Here is an example:
 
 	![](./media/virtual-machines-mysql-windows-server-2008r2/MySQL_DNSName.png)

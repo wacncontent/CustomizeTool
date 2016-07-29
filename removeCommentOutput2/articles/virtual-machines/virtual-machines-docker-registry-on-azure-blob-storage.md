@@ -1,3 +1,5 @@
+<!-- rename to virtual-machines-linux-docker-registry-in-blob-storage -->
+
 <properties 
   pageTitle="Deploying Your Own Private Docker Registry on Azure | Azure"
   description="Describes how you can use Docker Registry to host your container images on the Azure Blob Storage service."
@@ -87,28 +89,27 @@ you need to run the following Docker command in your bash
 terminal (replace `<storage-account>` and `<storage-key>` 
 with your credentials):
 
-$ docker run -d -p 5000:5000 \
-     -e REGISTRY_STORAGE=azure \
-     -e REGISTRY_STORAGE_AZURE_ACCOUNTNAME="<storage-account>" \
-     -e REGISTRY_STORAGE_AZURE_ACCOUNTKEY="<storage-key>" \
-     -e REGISTRY_STORAGE_AZURE_CONTAINER="registry" \
-     --name=registry \
-     registry:2
+	$ docker run -d -p 5000:5000 \
+	     -e REGISTRY_STORAGE=azure \
+	     -e REGISTRY_STORAGE_AZURE_ACCOUNTNAME="<storage-account>" \
+	     -e REGISTRY_STORAGE_AZURE_ACCOUNTKEY="<storage-key>" \
+	     -e REGISTRY_STORAGE_AZURE_CONTAINER="registry" \
+	     --name=registry \
+	     registry:2
 
 Once the command exits, you can see the container hosting
 your private Docker Registry instance by running the `docker ps`
 command on your host:
 
-$ docker ps
-CONTAINER ID        IMAGE               COMMAND                CREATED             STATUS              PORTS                    NAMES
-3698ddfebc6f        registry:2          "registry cmd/regist   2 seconds ago       Up 1 seconds        0.0.0.0:5000->5000/tcp   registry
+	$ docker ps
+	CONTAINER ID        IMAGE               COMMAND                CREATED             STATUS              PORTS                    NAMES
+	3698ddfebc6f        registry:2          "registry cmd/regist   2 seconds ago       Up 1 seconds        0.0.0.0:5000->5000/tcp   registry
 
 > [AZURE.IMPORTANT] Configuring security for the Docker Registry
 is not covered in this document and your registry will be accessible
 to anyone without authentication by default if you open up the port to
 the registry port on the Virtual Machine endpoint or load balancer if you
 use the deployment command above.
-
 > <p>Please read the [Configuring Docker
 Registry][registry-config] documentation to learn how to secure the
 registry instance and your images.

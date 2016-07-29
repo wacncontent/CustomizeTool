@@ -10,35 +10,42 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="01/06/2016"
+	ms.date="06/09/2016"
 	wacn.date=""/>
 
 # Customize HDInsight clusters using Bootstrap
 
-[AZURE.INCLUDE [selector](../includes/hdinsight-create-windows-cluster-selector.md)]
-
 Sometimes, you want to configure the configuration files which include:
 
+- clusterIdentity.xml
 - core-site.xml
+- gateway.xml
+- hbase-env.xml
+- hbase-site.xml
 - hdfs-site.xml
-- mapred-site.xml
-- yarn-site.xml
+- hive-env.xml
 - hive-site.xml
+- mapred-site
 - oozie-site.xml
+- oozie-env.xml
+- storm-site.xml
+- tez-site.xml
+- webhcat-site.xml
+- yarn-site.xml
 
 The clusters can't retain the changes due to re-imaging. For more information on re-imaging, 
 see [Role Instance Restarts Due to OS Upgrades](http://blogs.msdn.com/b/kwill/archive/2012/09/19/role-instance-restarts-due-to-os-upgrades.aspx). 
-To keep the changes through the clusters' lifetime, you can use HDInsight cluster customization during the creation process. This is the recommended way to change configurations of a cluster and persist across these Azure reimage reboot restart events. These configuration changes are applied before service start, so services needn't be restarted.
+To keep the changes through the clusters' lifetime, you can use HDInsight cluster customization during the creation process. This is the recommended way to change configurations of a cluster and persist across these Azure reimage reboot restart events. These configuration changes are applied before service start, so services needn't be restarted. 
 
-There are 3 methods to use bootstrap:
+There are 2 methods to use bootstrap:
 
 - Use Azure PowerShell
+    [AZURE.INCLUDE [upgrade-powershell](../includes/hdinsight-use-latest-powershell.md)]
 - Use .NET SDK
 
 For information on installing additional components on HDInsight cluster during the creation time, see :
 
-- [Customize HDInsight clusters using Script Action (Windows)](/documentation/articles/hdinsight-hadoop-customize-cluster-v1)
-
+- [Customize HDInsight clusters using Script Action (Windows)](/documentation/articles/hdinsight-hadoop-customize-cluster-v1/)
 
 ##<a name="use-azure-powershell"></a> Use Azure PowerShell
 
@@ -47,12 +54,10 @@ The following PowerShell code customizes a Hive configuration:
 	# hive-site.xml configuration
 	$hiveConfigValues = @{ "hive.metastore.client.socket.timeout"="90" }
 	
-
 	$config = New-AzureHDInsightClusterConfig `
 		| Set-AzureHDInsightDefaultStorage `
 			-StorageAccountName "$defaultStorageAccountName.blob.core.chinacloudapi.cn" `
 			-StorageAccountKey $defaultStorageAccountKey `
-
 		| Add-AzureHDInsightConfigValues `
 			-Hive $hiveConfigValues 
 	
@@ -62,11 +67,10 @@ The following PowerShell code customizes a Hive configuration:
 		-ClusterSizeInNodes $clusterSizeInNodes `
 		-ClusterType Hadoop `
 		-Version "3.2" `
-
 		-Credential $httpCredential `
 		-Config $config 
 
-A complete working PowerShell script can be found in [Appendix-A](#hdinsight-had.
+A complete working PowerShell script can be found in [Appendix-A](#appx-a:-powershell-sample).
 
 Some more samples on customizing other configuration files:
 
@@ -90,18 +94,16 @@ For more information, see Azim Uddin's blog titled [Customizing HDInsight Cluste
 - [Develop Script Action scripts for HDInsight][hdinsight-write-script]
 - [Install and use Spark on HDInsight clusters][hdinsight-install-spark]
 - [Install and use R on HDInsight clusters][hdinsight-install-r]
-- [Install and use Solr on HDInsight clusters](/documentation/articles/hdinsight-hadoop-solr-install-v1).
-- [Install and use Giraph on HDInsight clusters](/documentation/articles/hdinsight-hadoop-giraph-install-v1).
+- [Install and use Solr on HDInsight clusters](/documentation/articles/hdinsight-hadoop-solr-install-v1/).
+- [Install and use Giraph on HDInsight clusters](/documentation/articles/hdinsight-hadoop-giraph-install-v1/).
 
-
-[hdinsight-install-r]: /documentation/articles/hdinsight-hadoop-r-scripts
-[hdinsight-write-script]: /documentation/articles/hdinsight-hadoop-script-actions
-[hdinsight-provision-cluster]: /documentation/articles/hdinsight-provision-clusters-v1
-[powershell-install-configure]: /documentation/articles/powershell-install-configure
+[hdinsight-install-r]: /documentation/articles/hdinsight-hadoop-r-scripts/
+[hdinsight-write-script]: /documentation/articles/hdinsight-hadoop-script-actions/
+[hdinsight-provision-cluster]: /documentation/articles/hdinsight-provision-clusters-v1/
+[powershell-install-configure]: /documentation/articles/powershell-install-configure/
 
 
 [img-hdi-cluster-states]: ./media/hdinsight-hadoop-customize-cluster-v1/HDI-Cluster-state.png "Stages during cluster creation"
-
 
 ##<a name="appx-a:-powershell-sample"></a> Appx-A: PowerShell sample
 
@@ -144,18 +146,15 @@ This PowerShell script creates an HDInsight cluster and customizes a Hive settin
     ####################################
     #region - Connect to Azure subscription
     Write-Host "`nConnecting to your Azure subscription ..." -ForegroundColor Green
-
     try{Get-AzureContext}
     catch{Add-AzureAccount -Environment AzureChinaCloud}
     #endregion
 
     Write-Host "Creating the default storage account and default blob container ..."  -ForegroundColor Green
-
     New-AzureStorageAccount `
         -StorageAccountName $defaultStorageAccountName `
         -Location $location `
         -Type Standard_GRS
-
 
     $defaultStorageAccountKey = Get-AzureStorageAccountKey `
                                     -StorageAccountName $defaultStorageAccountName |  %{ $_.Primary }
@@ -171,12 +170,10 @@ This PowerShell script creates an HDInsight cluster and customizes a Hive settin
     ####################################
     $hiveConfigValues = @{ "hive.metastore.client.socket.timeout"="90" }
         
-
     $config = New-AzureHDInsightClusterConfig `
         | Set-AzureHDInsightDefaultStorage `
             -StorageAccountName "$defaultStorageAccountName.blob.core.chinacloudapi.cn" `
             -StorageAccountKey $defaultStorageAccountKey `
-
         | Add-AzureHDInsightConfigValues `
             -Hive $hiveConfigValues 
 
@@ -189,21 +186,18 @@ This PowerShell script creates an HDInsight cluster and customizes a Hive settin
     $sshPW = ConvertTo-SecureString -String $sshPassword -AsPlainText -Force
     $sshCredential = New-Object System.Management.Automation.PSCredential($sshUserName,$sshPW)
 
-
     New-AzureHDInsightCluster `
         -Name $hdinsightClusterName `
         -Location $location `
         -ClusterSizeInNodes 1 `
         -ClusterType Hadoop `
         -Version "3.2" `
-
         -Credential $httpCredential `
         -Config $config
 
     ####################################
     # Verify the cluster
     ####################################
-
     Get-AzureHDInsightCluster -Name $hdinsightClusterName
 
     #endregion

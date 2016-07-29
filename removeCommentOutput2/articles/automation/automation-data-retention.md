@@ -1,3 +1,5 @@
+<!-- deleted in Global -->
+
 <properties 
    pageTitle="Azure Automation data retention"
    description="Describes the data retention policy for Azure Automation."

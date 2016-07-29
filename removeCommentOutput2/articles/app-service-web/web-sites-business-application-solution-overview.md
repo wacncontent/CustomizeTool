@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="12/10/2015"
+	ms.date="02/26/2016"
 	wacn.date=""/>
 
 
@@ -26,7 +26,6 @@ There are major benefits of moving line-of-business applications to Azure Web Ap
 
 Below is an example of a line-of-business application running on Azure Web Apps. It demonstrates what you can do simply by composing Web Apps together with other services with minimal technical investments. **Click on an element in the topography to read more about it.** 
 
-
 <div style="display:none">
 ![svg](./media/web-sites-business-application-solution-overview/web-app-notitle.svg)
 </div>
@@ -39,7 +38,7 @@ Below is an example of a line-of-business application running on Azure Web Apps.
 
 Bring your existing web assets to Azure Web Apps from a variety of languages and frameworks.
 
-Your existing web assets can run on Azure Web Apps, whether they are .NET, PHP, Java, Node.js, or Python. You can move them to Web Apps using your familiar [FTP] tools or your source control management system. Web Apps supports direct publishing from popular source control options, such as [Visual Studio], [Visual Studio Team Servicea Mand [Git] - local, GitHub, BitBucket, DropBox, Mercurial, etc..
+Your existing web assets can run on Azure Web Apps, whether they are .NET, PHP, Java, Node.js, or Python. You can move them to Web Apps using your familiar [FTP] tools or your source control management system. Web Apps supports direct publishing from popular source control options, such as [Visual Studio], and [Git] - local, GitHub, Mercurial, etc..
 
 ## Secure your assets
 
@@ -47,7 +46,7 @@ Secure assets by encryption, authenticate corporate users whether they are on-si
 
 Protect internal assets against eavesdroppers with [HTTPS]. The **\*.chinacloudsites.cn** domain name already comes with an SSL certificate, and if you use your custom domain, you can bring your SSL certificate for it to Azure Web Apps. There is a monthly charge (prorated hourly) associated with each SSL certificate. For more information, see [Azure Pricing Details].
 
-[Authenticate users] against the corporate directory. Azure Web Apps can authenticate users with on-premises identity providers, such as Active Directory Federation Services (AD FS), or with an Azure Active Directory tenant that has been synchronized with your corporate Active Directory deployment. Users can access your web properties in Web Apps through single sign-on when they are on-site and when they are in the field. Existing services, such as Office 365 or Microsoft Intune, already use Azure Active Directory. Through [Easy Auth], turnin
+[Authenticate users] against the corporate directory. Azure Web Apps can authenticate users with on-premises identity providers, such as Active Directory Federation Services (AD FS), or with an Azure Active Directory tenant that has been synchronized with your corporate Active Directory deployment. Users can access your web properties in Web Apps through single sign-on when they are on-site and when they are in the field. Existing services, such as Office 365 or Microsoft Intune, already use Azure Active Directory.
 
 [Authorize users] for their use of web properties. With minimal additional code, you can bring the same on-premises ASP.NET coding pattern to Azure Web Apps using the `[Authorize]` decoration, for example. You retain the same flexibility for fine-grain access control as the applications you maintain on-premises.
 
@@ -85,8 +84,7 @@ In the **Standard** tier, monitor app responsiveness receive email notifications
 
 [FTP]: /documentation/articles/web-sites-deploy#ftp
 [Visual Studio]: /documentation/articles/web-sites-dotnet-get-started
-
-[Visual Studio Online]: /documentation/articles/cloud-services-continuous-delivery-use-vso
+[Visual Studio Team Services]: /documentation/articles/cloud-services-continuous-delivery-use-vso
 [Git]: /documentation/articles/web-sites-publish-source-control
 
 [HTTPS]: /documentation/articles/web-sites-configure-ssl-certificate
@@ -98,7 +96,6 @@ In the **Standard** tier, monitor app responsiveness receive email notifications
 [Azure Trust Center]:/support/trust-center/
 [MySQL]: /documentation/articles/web-sites-php-mysql-deploy-use-git
 [Azure SQL Database]: /documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database
-
 [scale up and out]: /documentation/articles/web-sites-scale
 [Azure Management Portal]:http://manage.windowsazure.cn/
 [Service Management API]:http://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx
@@ -108,6 +105,7 @@ In the **Standard** tier, monitor app responsiveness receive email notifications
 [Azure Redis Cache]:/blog/2014/06/05/mvc-movie-app-with-azure-redis-cache-in-15-minutes/
 [ASP.NET session state]:https://msdn.microsoft.com/zh-cn/library/azure/dn690522.aspx
 [output cache]:https://msdn.microsoft.com/zh-cn/library/azure/dn798898.aspx
+[Azure Traffic Manager]:http://www.hanselman.com/blog/CloudPowerHowToScaleAzureWebsitesGloballyWithTrafficManager.aspx
 
 [quick glance]: /documentation/articles/web-sites-monitor
 [Azure Application Insights]:http://blogs.msdn.com/b/visualstudioalm/archive/2015/01/07/application-insights-and-azure-websites.aspx

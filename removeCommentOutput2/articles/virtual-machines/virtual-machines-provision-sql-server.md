@@ -1,3 +1,5 @@
+<!-- deleted in Global -->
+
 <properties
 	pageTitle="Provision a SQL Server virtual machine | Azure"
 	description="This tutorial teaches you how to create and configure a SQL Server VM on Azure."
@@ -16,28 +18,30 @@
 # Provision a SQL Server virtual machine in Azure
 
 > [AZURE.SELECTOR]
-- [Management Portal](/documentation/articles/virtual-machines-provision-sql-server)
+- [Classic portal](/documentation/articles/virtual-machines-provision-sql-server)
 - [PowerShell](/documentation/articles/virtual-machines-sql-server-create-vm-with-powershell)
+- [Azure Resource Manager portal](/documentation/articles/virtual-machines-sql-server-provision-resource-manager)
 
 ## Overview
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the classic deployment model. Microsoft recommends that most new deployments use the Resource Manager model.
 
 The Azure virtual machine gallery includes several images that contain Microsoft SQL Server. You can select one of the virtual machine images from the gallery and with a few clicks you can provision the virtual machine to your Azure environment.
 
 In this tutorial, you will:
 
-* [Connect to the Azure Management Portal and provision a virtual machine from the gallery](#Provision)
+* [Connect to the Azure classic portal and provision a virtual machine from the gallery](#Provision)
 * [Open the virtual machine using Remote Desktop and complete setup](#RemoteDesktop)
 * [Complete configuration steps to connect to the virtual machine using SQL Server Management Studio on another computer](#SSMS)
 * [Next steps](#Optional)
 
+>[AZURE.NOTE] This article describes how to provision a SQL Server VM with the existing portal. However, it is also possible to create and manage SQL Server VMs in the [new portal](https://manage.windowsazure.cn). There are some advantages to the new portal, such as defaulting to the use of Premium Storage, and other options, such as Automated Patching, Automated Backup, and AlwaysOn configurations. Future content will cover step-by-step instructions.
 
 ##<a id="Provision"></a>Provision a SQL Server virtual machine from the gallery
 
-1. Log in to the [Azure Management Portal](http://manage.windowsazure.cn) using your account. If you do not have an Azure account, visit [Azure trial](/pricing/1rmb-trial/).
+1. Log in to the [Azure classic portal](http://manage.windowsazure.cn) using your account. If you do not have an Azure account, visit [Azure trial](/pricing/1rmb-trial/).
 
-2. On the Azure Management Portal, at the bottom left of the web page, click **+NEW**, click **COMPUTE**, click **VIRTUAL MACHINE**, and then click **FROM GALLERY**.
+2. On the Azure classic portal, at the bottom left of the web page, click **+NEW**, click **COMPUTE**, click **VIRTUAL MACHINE**, and then click **FROM GALLERY**.
 
 3. On the **Choose an Image** page, click **SQL SERVER**. Then select a SQL Server image. Click the next arrow at the bottom right of the page.
 
@@ -48,7 +52,7 @@ For the most up-to-date information on the supported SQL Server images on Azure,
 >[AZURE.NOTE] If you have a virtual machine created by using the platform image SQL Server Evaluation edition, you cannot upgrade it to a per-minute paid edition image in the gallery. You can choose one of the following two options:
 >
 > - You can create a new virtual machine by using the per-minute paid SQL Server edition from the gallery and migrate your database files to this new virtual machine by following the steps at [Migrating a Database to SQL Server on an Azure VM](/documentation/articles/virtual-machines-migrate-onpremises-database)
-> - Or, you can upgrade an existing instance of SQL Server Evaluation edition to a different edition of SQL Server under the [License Mobility through Software Assurance on Azure](https://azure.microsagreement by following the steps at [Upgrade to a Different Edition of SQL Server](https://msdn.microsoft.com/zh-cn/library/cc707783.aspx). For information on how to purchase the licensed copy of SQL Server, see [How to Buy SQL Server](http://www.microsoft.com/sqlserver/get-sql-server/how-to-buy.aspx).
+> - Or, you can upgrade an existing instance of SQL Server Evaluation edition to a different edition of SQL Server under the [License Mobility through Software Assurance on Azure](/pricing/license-mobility/) agreement by following the steps at [Upgrade to a Different Edition of SQL Server](https://msdn.microsoft.com/zh-cn/library/cc707783.aspx). For information on how to purchase the licensed copy of SQL Server, see [How to Buy SQL Server](http://www.microsoft.com/sqlserver/get-sql-server/how-to-buy.aspx).
 
 4. On the first **Virtual Machine Configuration** page, provide the following information:
 	- A **VERSION RELEASE DATE**. If multiple images are available, select the latest.
@@ -91,7 +95,6 @@ For the most up-to-date information on the supported SQL Server images on Azure,
 	- **Running**
 
 
-
 ##<a id="RemoteDesktop"></a>Open the VM using Remote Desktop to complete setup
 
 1. When provisioning completes, click on the name of your virtual machine to go to the DASHBOARD page. At the bottom of the page, click **Connect**.
@@ -109,7 +112,6 @@ For the most up-to-date information on the supported SQL Server images on Azure,
 4. The first time you log on, several processes will complete, including setup of your desktop, Windows updates, and completion of the Windows initial configuration tasks (sysprep). After Windows sysprep completes, SQL Server setup  completes configuration tasks. These tasks make cause a delay of a few minutes while they complete. `SELECT @@SERVERNAME` may not return the correct name until SQL Server setup completes, and SQL Server Management Studio may not be visible on the start page.
 
 Once you are connected to the virtual machine with Windows Remote Desktop, the virtual machine works much like any other computer. Connect to the default instance of SQL Server with SQL Server Management Studio (running on the virtual machine) in the normal way.
-
 
 ##<a id="SSMS"></a>Connect to the SQL Server VM instance from SSMS on another computer
 
@@ -135,7 +137,6 @@ The connection path is summarized by the following diagram:
 
 [AZURE.INCLUDE [Connect to SQL Server in a VM Classic Steps](../includes/virtual-machines-sql-server-connection-steps-classic.md)]
 
-
 ## <a id="cdea"></a>Connect to the Database Engine from your application
 
 If you can connect to an instance of SQL Server running on an Azure virtual machine by using Management Studio, you should be able to connect by using a connection string similar to the following.
@@ -143,7 +144,6 @@ If you can connect to an instance of SQL Server running on an Azure virtual mach
 	connectionString = "Server=tutorialtestVM.chinacloudapp.cn,57500;Integrated Security=false;User ID=<login_name>;Password=<your_password>"
 
 For more information, see [How to Troubleshoot Connecting to the SQL Server Database Engine](http://social.technet.microsoft.com/wiki/contents/articles/how-to-troubleshoot-connecting-to-the-sql-server-database-engine.aspx).
-
 
 ##<a id="Optional"></a>Next Steps
 

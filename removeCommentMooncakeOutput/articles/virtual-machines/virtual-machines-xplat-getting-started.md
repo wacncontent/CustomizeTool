@@ -1,3 +1,5 @@
+<!-- deleted in Global -->
+
 <properties
    pageTitle="How to Create an Azure Virtual Machine with the Azure CLI | Azure"
    description="This topic describes how to install the Azure CLI on any platform, how to use it to connect to your Azure account, and how to create a VM from the Azure CLI."
@@ -19,11 +21,11 @@ Only installing the Azure CLI and having an Azure subscription will prevent you 
 
 ## Installing the Azure CLI
 
-Follow the instructions for [installing the Azure CLI](/documentation/articles/xplat-cli-install#install).
+Follow the instructions for [installing the Azure CLI](/documentation/articles/xplat-cli-install/#install).
 
 ## Connecting to Azure by using the Azure CLI
 
-You can connect your Azure CLI installation with a personal Azure account, or with a work or school Azure account. To understand the differences and choose, see [How to connect to your Azure subscription](/documentation/articles/xplat-cli-install#configure).
+You can connect your Azure CLI installation with a personal Azure account, or with a work or school Azure account. To understand the differences and choose, see [How to connect to your Azure subscription](/documentation/articles/xplat-cli-install/#configure).
 
 ## Creating and connecting to a VM in Azure
 
@@ -39,7 +41,7 @@ Creating a VM starts with choosing (or uploading) an image and using the `azure 
 
     From here you can choose an image and use the `show` command to view its properties in more detail:
 
-        azure vm image show b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_10-amd64-server-20150202-en-us-30GB
+        azure vm image show b549f4301d0b4295b8e76ceb65df47d4__Ubuntu-14_10-amd64-server-20150202-en-us-30GB
 
 2. Once you have chosen a VM image, use the `vm create` command to create the image. This command has a lot of options, which you can list by using the `help` command:
 
@@ -55,7 +57,7 @@ Creating a VM starts with choosing (or uploading) an image and using the `azure 
 
     The Linux example below creates a VM in China North, opens the default SSH port 22 (the -e argument), and creates a user called `myadminuser`:
 
-        azure vm create -e -l "China North"  my-new-cli-vm b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_10-amd64-server-20150202-en-us-30GB "myadminuser" "myAdm1n@passwd"
+        azure vm create -e -l "China North"  my-new-cli-vm b549f4301d0b4295b8e76ceb65df47d4__Ubuntu-14_10-amd64-server-20150202-en-us-30GB "myadminuser" "myAdm1n@passwd"
 
 ## Next steps
 
@@ -65,7 +67,7 @@ Since the example above opened the default SSH port, connecting to the VM once i
 
     ssh myadminuser@my-new-cli-vm.chinacloudapp.cn
 
-A great place to see more examples of using the Azure CLI to manage your Azure infrastructure is [the Azure CLI command reference page](/documentation/articles/virtual-machines-command-line-tools).
+A great place to see more examples of using the Azure CLI to manage your Azure infrastructure is [the Azure CLI command reference page](/documentation/articles/virtual-machines-command-line-tools/).
 
 <!--Image references-->
 [5]: ./media/markdown-template-for-new-articles/octocats.png

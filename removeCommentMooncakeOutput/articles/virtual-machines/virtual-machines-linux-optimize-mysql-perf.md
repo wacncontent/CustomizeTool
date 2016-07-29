@@ -1,3 +1,5 @@
+<!-- rename to virtual-machines-linux-classic-optimize-mysql -->
+
 <properties
 	pageTitle="Optimize MySQL Performance on Linux VMs | Azure"
 	description="Learn how to optimize MySQL running on an Azure virtual machine (VM) running Linux."
@@ -17,7 +19,7 @@
 
 There are many factors that impact MySQL performance on Azure, both in virtual hardware selection and software configuration. This article focuses on optimizing performance through storage, system, and database configurations.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] 
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager model.
 
 
 ##Utilizing RAID on an Azure virtual machine
@@ -34,12 +36,12 @@ Please note that there are limits on how many disks you can add for different vi
 This article assumes you have already created a Linux virtual machine and have MYSQL installed and configured. For more information on getting started please refer to How to install MySQL on Azure.  
 
 ###Setting up RAID on Azure
-The following steps show how to create RAID on Azure using the Azure Management Portal. You can also set up RAID using Windows PowerShell scripts.
+The following steps show how to create RAID on Azure using the Azure Classic Management Portal. You can also set up RAID using Windows PowerShell scripts.
 In this example we will configure RAID 0 with 4 disks.  
 
 ####Step 1: Add a Data Disk to your Virtual Machine  
 
-In the Virtual Machines page of the Azure Management Portal, click the virtual machine to which you want to add a data disk. In this example, the virtual machine is mysqlnode1.  
+In the Virtual Machines page of the Azure Classic Management Portal, click the virtual machine to which you want to add a data disk. In this example, the virtual machine is mysqlnode1.  
 
 ![][1]
 
@@ -67,7 +69,7 @@ You can see the added drives in the virtual machine by looking at the kernel mes
 ####Step 2: Create RAID with the additional disks
 Follow this article for detailed RAID setup steps:  
 
-[Configure software RAID on Linux](/documentation/articles/virtual-machines-linux-configure-raid)
+[Configure software RAID on Linux](/documentation/articles/virtual-machines-linux-configure-raid/)
 
 >[AZURE.NOTE] If you are using the XFS file system, follow the steps below after you have created RAID.
 

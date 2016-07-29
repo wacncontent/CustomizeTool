@@ -1,3 +1,5 @@
+<!-- rename to virtual-machines-windows-classic-hpcpack-cluster-node-autogrowshrink -->
+
 <properties
  pageTitle="Autoscale compute resources in HPC cluster | Azure"
  description="Learn about ways to automatically grow and shrink compute resources in an HPC Pack cluster in Azure"
@@ -14,7 +16,7 @@
 
 # Automatically scale Azure compute resources up and down in an HPC Pack cluster according to the cluster workload
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the classic deployment model. Microsoft recommends that most new deployments use the Resource Manager model.
 
 
 If you deploy Azure "burst" nodes in your HPC Pack cluster, or you
@@ -46,17 +48,16 @@ property. See [What's New in Microsoft HPC Pack 2012 R2 Update
 
 ## Syntax
 
-
 	AzureAutoGrowShrink.ps1
-[[-NodeTemplates] <String[]>] [[-JobTemplates] <String[]>] [[-NodeType] <String>]
-[[-NumOfQueuedJobsPerNodeToGrow] <Int32>]
-[[-NumOfQueuedJobsToGrowThreshold] <Int32>]
-[[-NumOfActiveQueuedTasksPerNodeToGrow] <Int32>]
-[[-NumOfActiveQueuedTasksToGrowThreshold] <Int32>]
-[[-NumOfInitialNodesToGrow] <Int32>] [[-GrowCheckIntervalMins] <Int32>]
-[[-ShrinkCheckIntervalMins] <Int32>] [[-ShrinkCheckIdleTimes] <Int32>]
-[-UseLastConfigurations] [[-ArgFile] <String>] [[-LogFilePrefix] <String>]
-[<CommonParameters>]
+	[[-NodeTemplates] <String[]>] [[-JobTemplates] <String[]>] [[-NodeType] <String>]
+	[[-NumOfQueuedJobsPerNodeToGrow] <Int32>]
+	[[-NumOfQueuedJobsToGrowThreshold] <Int32>]
+	[[-NumOfActiveQueuedTasksPerNodeToGrow] <Int32>]
+	[[-NumOfActiveQueuedTasksToGrowThreshold] <Int32>]
+	[[-NumOfInitialNodesToGrow] <Int32>] [[-GrowCheckIntervalMins] <Int32>]
+	[[-ShrinkCheckIntervalMins] <Int32>] [[-ShrinkCheckIdleTimes] <Int32>]
+	[-UseLastConfigurations] [[-ArgFile] <String>] [[-LogFilePrefix] <String>]
+	[<CommonParameters>]
 
 ## Parameters
 
@@ -102,11 +103,10 @@ until their number exceeds the ratio of queued jobs to
 **NumOfQueuedJobsPerNodeToGrow**. If a node is found to be idle in 3
 consecutive idle times, it is stopped.
 
-
 	.\AzureAutoGrowShrink.ps1 -NodeTemplates @('Default AzureNode Template') `
 				-NodeType AzureNodes -NumOfQueuedJobsPerNodeToGrow 5 `
- -NumOfQueuedJobsToGrowThreshold 8 -NumOfInitialNodesToGrow 3 `
- -GrowCheckIntervalMins 1 -ShrinkCheckIntervalMins 1 -ShrinkCheckIdleTimes 3
+	 			-NumOfQueuedJobsToGrowThreshold 8 -NumOfInitialNodesToGrow 3 `
+	 			-GrowCheckIntervalMins 1 -ShrinkCheckIntervalMins 1 -ShrinkCheckIdleTimes 3
 
 ### Example 2
 
@@ -118,6 +118,5 @@ least 5 nodes are started. If the number of active queued tasks exceeds
 15, the script starts nodes until their number exceeds the ratio of
 active queued tasks to **NumOfActiveQueuedTasksPerNodeToGrow**. If a
 node is found to be idle in 10 consecutive idle times, it is stopped.
-
 
 	.\AzureAutoGrowShrink.ps1 -NodeTemplates 'Default ComputeNode Template' -JobTemplates 'Default' -NodeType ComputeNodes -NumOfActiveQueuedTasksPerNodeToGrow 10 -NumOfActiveQueuedTasksToGrowThreshold 15 -NumOfInitialNodesToGrow 5 -GrowCheckIntervalMins 1 -ShrinkCheckIntervalMins 1 -ShrinkCheckIdleTimes 10 -ArgFile 'IaaSVMComputeNodes_Arg.xml' -LogFilePrefix 'IaaSVMComputeNodes_log'

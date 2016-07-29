@@ -1,5 +1,7 @@
+<!-- deleted in Global -->
+
 <properties
-	pageTitle="Get Started with Azure Automation | Windows Azure"
+	pageTitle="Get Started with Azure Automation | Azure"
 	description="Learn how to import and run an automation job in Azure."
 	services="automation"
 	documentationCenter=""
@@ -17,7 +19,7 @@
 
 ## What is Azure Automation?
 
-Windows Azure Automation provides a way for users to automate the manual, long-running, error-prone, and frequently repeated tasks that are commonly performed in a cloud environment. You can create, monitor, manage, and deploy resources in your Azure environment using runbooks, which are based on Windows PowerShell workflows. In this article, you will go through a tutorial for running a simple example runbook. You will then find resources for exploring more advanced capabilities of the service.
+Azure Automation provides a way for users to automate the manual, long-running, error-prone, and frequently repeated tasks that are commonly performed in a cloud environment. You can create, monitor, manage, and deploy resources in your Azure environment using runbooks, which are based on Windows PowerShell workflows. In this article, you will go through a tutorial for running a simple example runbook. You will then find resources for exploring more advanced capabilities of the service.
 
 ## Tutorial
 This tutorial walks you through creating an automation account, importing a sample "Hello World" runbook into Azure Automation, executing that runbook, and then viewing its output.
@@ -50,7 +52,7 @@ The runbook is first imported in Draft mode. This means you can continue to do w
 
 9.	Click **AUTHOR**, and then click **DRAFT**.  
 
-	You can modify the contents of a runbook in Draft mode. For this runbook, you donât need to make any modifications.
+	You can modify the contents of a runbook in Draft mode. For this runbook, you don't need to make any modifications.
 
 	![Author Draft](./media/automation-create-runbook-from-samples/automation_08_AuthorDraft.png)  
 

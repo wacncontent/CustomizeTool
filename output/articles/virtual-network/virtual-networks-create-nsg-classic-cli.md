@@ -1,4 +1,4 @@
-<properties 
+<properties
    pageTitle="How to create NSGs in classic mode using the Azure CLI| Azure"
    description="Learn how to create and deploy NSGs in classic mode using the Azure CLI"
    services="virtual-network"
@@ -18,19 +18,17 @@
 [AZURE.INCLUDE [virtual-networks-create-nsg-selectors-classic-include](../includes/virtual-networks-create-nsg-selectors-classic-include.md)]
 
 [AZURE.INCLUDE [virtual-networks-create-nsg-intro-include](../includes/virtual-networks-create-nsg-intro-include.md)]
-
 
-[AZURE.INCLUDE [azure-arm-classic-important-include](../includes/azure-arm-classic-important-include.md)] This article covers the classic deployment model. You can also [create NSGs in the Resource Manager deployment model](/documentation/articles/virtual-networks-create-nsg-arm-cli).
-
+[AZURE.INCLUDE [azure-arm-classic-important-include](../includes/azure-arm-classic-important-include.md)] This article covers the classic deployment model. You can also [create NSGs in the Resource Manager deployment model](/documentation/articles/virtual-networks-create-nsg-arm-cli/).
 
 [AZURE.INCLUDE [virtual-networks-create-nsg-scenario-include](../includes/virtual-networks-create-nsg-scenario-include.md)]
 
-The sample Azure CLI commands below expect a simple environment already created based on the scenario above. If you want to run the commands as they are displayed in this document, first build the test environment by [creating a VNet](/documentation/articles/virtual-networks-create-vnet-classic-cli).
+The sample Azure CLI commands below expect a simple environment already created based on the scenario above. If you want to run the commands as they are displayed in this document, first build the test environment by [creating a VNet](/documentation/articles/virtual-networks-create-vnet-classic-cli/).
 
 ## How to create the NSG for the front end subnet
 To create an NSG named named **NSG-FrontEnd** based on the scenario above, follow the steps below.
 
-1. If you have never used Azure CLI, see [Install and Configure the Azure CLI](/documentation/articles/xplat-cli-install) and follow the instructions up to the point where you select your Azure account and subscription.
+1. If you have never used Azure CLI, see [Install and Configure the Azure CLI](/documentation/articles/xplat-cli-install/) and follow the instructions up to the point where you select your Azure account and subscription.
 
 2. Run the **`azure config mode`** command to switch to classic mode, as shown below.
 
@@ -107,7 +105,7 @@ To create an NSG named named **NSG-FrontEnd** based on the scenario above, follo
 	- **-f (or --source-address-prefix)**. Source address prefix in CIDR or using default tags.
 	- **-o (or --source-port-range)**. Source port, or port range.
 	- **-e (or --destination-address-prefix)**. Destination address prefix in CIDR or using default tags.
-	- **-u (or --destination-port-range)**. Destination port, or port range.	
+	- **-u (or --destination-port-range)**. Destination port, or port range.
 
 5. Run the **`azure network nsg rule create`** command to create a rule that allows access to port 80 (HTTP) from the Internet.
 
@@ -132,7 +130,7 @@ To create an NSG named named **NSG-FrontEnd** based on the scenario above, follo
 
 6. Run the **`azure network nsg subnet add`** command to link the NSG to the front end subnet.
 
-		azure network nsg subnet add -a NSG-FrontEnd --vnet-name TestVNet --subnet-name FrontEnd 
+		azure network nsg subnet add -a NSG-FrontEnd --vnet-name TestVNet --subnet-name FrontEnd
 
 	Expected output:
 
@@ -226,7 +224,7 @@ To create an NSG named named *NSG-BackEnd* based on the scenario above, follow t
 
 6. Run the **`azure network nsg subnet add`** command to link the NSG to the back end subnet.
 
-		azure network nsg subnet add -a NSG-BackEnd --vnet-name TestVNet --subnet-name BackEnd 
+		azure network nsg subnet add -a NSG-BackEnd --vnet-name TestVNet --subnet-name BackEnd
 
 	Expected output:
 

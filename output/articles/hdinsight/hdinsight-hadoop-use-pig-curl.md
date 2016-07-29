@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="01/08/2016"
+	ms.date="06/06/2016"
 	wacn.date=""/>
 
 #Run Pig jobs with Hadoop on HDInsight by using Curl
@@ -21,20 +21,13 @@ In this document, you will learn how to use Curl to run Pig Latin jobs on an Azu
 
 Curl is used to demonstrate how you can interact with HDInsight by using raw HTTP requests to run, monitor, and retrieve the results of Pig jobs. This works by using the WebHCat REST API (formerly known as Templeton) that is provided by your HDInsight cluster.
 
-
-> [AZURE.NOTE] If you are already familiar with using Linux-based Hadoop servers, but are new to HDInsight, see [Linux-based HDInsight Tips](/documentation/articles/hdinsight-hadoop-linux-information).
+> [AZURE.NOTE] If you are already familiar with using Linux-based Hadoop servers, but are new to HDInsight, see [Linux-based HDInsight Tips](/documentation/articles/hdinsight-hadoop-linux-information/).
 
-
 ##<a id="prereq"></a>Prerequisites
 
 To complete the steps in this article, you will need the following:
 
-
 * An Azure HDInsight (Hadoop on HDInsight) cluster (Linux-based or Windows-based)
-
-
-* An Azure HDInsight (Hadoop on HDInsight) cluster (Windows-based)
-
 
 * [Curl](http://curl.haxx.se/)
 
@@ -93,7 +86,7 @@ To complete the steps in this article, you will need the following:
 
 When the state of the job has changed to **SUCCEEDED**, you can retrieve the results of the job from Azure Blob storage. The `statusdir` parameter passed with the query contains the location of the output file; in this case, **wasb:///example/pigcurl**. This address stores the output of the job in the **example/pigcurl** directory in the default storage container used by your HDInsight cluster.
 
-You can list and download these files by using the [Azure CLI for Mac, Linux and Windows](/documentation/articles/xplat-cli-install). For example, to list files in **example/pigcurl**, use the following command:
+You can list and download these files by using the [Azure CLI](/documentation/articles/xplat-cli-install/). For example, to list files in **example/pigcurl**, use the following command:
 
 	azure storage blob list <container-name> example/pigcurl
 
@@ -113,10 +106,10 @@ For more information about the REST interface used in this article, see the [Web
 
 For general information about Pig on HDInsight:
 
-* [Use Pig with Hadoop on HDInsight](/documentation/articles/hdinsight-use-pig)
+* [Use Pig with Hadoop on HDInsight](/documentation/articles/hdinsight-use-pig/)
 
 For information about other ways you can work with Hadoop on HDInsight:
 
-* [Use Hive with Hadoop on HDInsight](/documentation/articles/hdinsight-use-hive)
+* [Use Hive with Hadoop on HDInsight](/documentation/articles/hdinsight-use-hive/)
 
-* [Use MapReduce with Hadoop on HDInsight](/documentation/articles/hdinsight-use-mapreduce)
+* [Use MapReduce with Hadoop on HDInsight](/documentation/articles/hdinsight-use-mapreduce/)

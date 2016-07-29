@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties 
    pageTitle="How to set a static private IP in ARM mode using the CLI| Azure"
    description="Understanding static IPs (DIPs) and how to manage them in ARM mode using the CLI"
@@ -12,7 +10,7 @@
 />
 <tags
 	ms.service="virtual-network"
-	ms.date="12/11/2015"
+	ms.date="03/15/2016"
 	wacn.date=""/>
 
 # How to set a static private IP address in Azure CLI
@@ -21,16 +19,16 @@
 
 [AZURE.INCLUDE [virtual-networks-static-private-ip-intro-include](../includes/virtual-networks-static-private-ip-intro-include.md)]
 
-[AZURE.INCLUDE [azure-arm-classic-important-include](../includes/azure-arm-classic-important-include.md)] This article covers the Resource Manager deployment model. You can also [manage static private IP address in the classic deployment model](/documentation/articles/virtual-networks-static-private-ip-classic-cli).
+[AZURE.INCLUDE [azure-arm-classic-important-include](../includes/azure-arm-classic-important-include.md)] This article covers the Resource Manager deployment model. You can also [manage static private IP address in the classic deployment model](/documentation/articles/virtual-networks-static-private-ip-classic-cli/).
 
 [AZURE.INCLUDE [virtual-networks-static-ip-scenario-include](../includes/virtual-networks-static-ip-scenario-include.md)]
 
-The sample Azure CLI commands below expect a simple environment already created. If you want to run the commands as they are displayed in this document, first build the test environment described in [create a vnet](/documentation/articles/virtual-networks-create-vnet-arm-cli).
+The sample Azure CLI commands below expect a simple environment already created. If you want to run the commands as they are displayed in this document, first build the test environment described in [create a vnet](/documentation/articles/virtual-networks-create-vnet-arm-cli/).
 
 ## How to specify a static private IP address when creating a VM
 To create a VM named *DNS01* in the *FrontEnd* subnet of a VNet named *TestVNet* with a static private IP of *192.168.1.101*, follow the steps below:
 
-1. If you have never used Azure CLI, see [Install and Configure the Azure CLI](/documentation/articles/xplat-cli-install) and follow the instructions up to the point where you select your Azure account and subscription.
+1. If you have never used Azure CLI, see [Install and Configure the Azure CLI](/documentation/articles/xplat-cli-install/) and follow the instructions up to the point where you select your Azure account and subscription.
 
 2. Run the **azure config mode** command to switch to Resource Manager mode, as shown below.
 
@@ -258,6 +256,6 @@ Expected output:
 
 ## Next steps
 
-- Learn about [reserved public IP](/documentation/articles/virtual-networks-reserved-public-ip) addresses.
-- Learn about [instance-level public IP (ILPIP)](/documentation/articles/virtual-networks-instance-level-public-ip) addresses.
+- Learn about [reserved public IP](/documentation/articles/virtual-networks-reserved-public-ip/) addresses.
+- Learn about [instance-level public IP (ILPIP)](/documentation/articles/virtual-networks-instance-level-public-ip/) addresses.
 - Consult the [Reserved IP REST APIs](https://msdn.microsoft.com/zh-cn/library/azure/dn722420.aspx).

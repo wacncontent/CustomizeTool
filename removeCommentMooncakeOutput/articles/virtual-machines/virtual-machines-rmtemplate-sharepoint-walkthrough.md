@@ -1,4 +1,4 @@
-<!-- not suitable for Mooncake -->
+<!-- deleted in Global -->
 
 <properties
 	pageTitle="3-server SharePoint farm ARM template | Azure"
@@ -17,7 +17,7 @@
 
 # The three-server SharePoint farm Resource Manager template
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model. You can't create this resource with the classic deployment model.
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the Resource Manager deployment model, which Azure recommends for most new deployments instead of the classic deployment model. You can't create this resource with the classic deployment model.
 
 This topic steps you through the structure of the azuredeploy.json template file for the three-server SharePoint farm. You can see the contents of this template in your browser from [here](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/sharepoint-three-vm/azuredeploy.json).
 
@@ -364,5 +364,5 @@ Your own JSON template to build a multi-tier infrastructure in Azure should foll
 
 ## Next step
 
-- Learn about the [Azure Resource Manager template language](/documentation/articles/resource-group-authoring-templates) and build your own.
+- Learn about the [Azure Resource Manager template language](/documentation/articles/resource-group-authoring-templates/) and build your own.
 

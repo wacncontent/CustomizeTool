@@ -1,4 +1,4 @@
-<!-- not suitable for Mooncake -->
+<!-- rename to virtual-machines-windows-ps-lob-ph5 -->
 
 <properties 
 	pageTitle="Line of business application Phase 5 | Azure" 
@@ -17,11 +17,11 @@
 
 # Line of Business Application Workload Phase 5: Create the availability group and add the application databases
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the Resource Manager deployment model, which Azure recommends for most new deployments instead of the classic deployment model.
 
 In this final phase of deploying a high-availability line of business application in Azure infrastructure services, you create a new SQL Server AlwaysOn Availability Group and add the databases of the application.
 
-See [Deploy a high-availability line of business application in Azure](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-overview) for all of the phases.
+See [Deploy a high-availability line of business application in Azure](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-overview/) for all of the phases.
 
 ## Create the Availability Group and add databases
 
@@ -67,7 +67,7 @@ Use these steps to restore a database.
 2.	From the Start screen, type **SQL Studio**, and then click **SQL Server Management Studio**.
 3.	Click **Connect**.
 4.	In the left pane, right-click **Databases**, and then click **Restore Database**.
-5.	In the **Source** section, select **Device**, and click the ellipses (âŚ) button
+5.	In the **Source** section, select **Device**, and click the ellipses (…) button
 6.	In **Select backup devices**, click **Add**.
 7.	In **Backup file location**, type **\\[machineName]\backup**, press **Enter**, select **[databaseName].bak**, and then click **OK** twice. You should now see the full backup and the log backup in the **Backup sets to restore** section.
 8.	Under **Select a page**, click **Options**. In the **Restore options** section, in **Recovery state**, select **RESTORE WITH NORECOVERY**, and then click **OK**. 
@@ -115,4 +115,4 @@ Once the listener is configured, you need to configure all the web server virtua
 
 ## Next step
 
-- See these [guidelines](/documentation/articles/virtual-machines-infrastructure-services-implementation-guidelines) if you are deploying your own IT workload in Azure.
+- See these [guidelines](/documentation/articles/virtual-machines-linux-infrastructure-service-guidelines/) if you are deploying your own IT workload in Azure.

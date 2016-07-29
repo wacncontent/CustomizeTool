@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="02/05/2016"
+	ms.date="07/12/2016"
 	wacn.date=""/>
 
 # Use MapReduce in Hadoop on HDInsight with Remote Desktop
@@ -29,7 +29,7 @@ To complete the steps in this article, you will need the following:
 
 ##<a id="connect"></a>Connect with Remote Desktop
 
-Enable Remote Desktop for the HDInsight cluster, then connect to it by following the instructions at [Connect to HDInsight clusters using RDP](/documentation/articles/hdinsight-administer-use-management-portal-v1#rdp).
+Enable Remote Desktop for the HDInsight cluster, then connect to it by following the instructions at [Connect to HDInsight clusters using RDP](/documentation/articles/hdinsight-administer-use-management-portal-v1/#rdp).
 
 ##<a id="hadoop"></a>Use the Hadoop command
 
@@ -84,10 +84,10 @@ As you can see, the Hadoop command provides an easy way to run MapReduce jobs on
 
 For general information about MapReduce jobs in HDInsight:
 
-* [Use MapReduce on HDInsight Hadoop](/documentation/articles/hdinsight-use-mapreduce)
+* [Use MapReduce on HDInsight Hadoop](/documentation/articles/hdinsight-use-mapreduce/)
 
 For information about other ways you can work with Hadoop on HDInsight:
 
-* [Use Hive with Hadoop on HDInsight](/documentation/articles/hdinsight-use-hive)
+* [Use Hive with Hadoop on HDInsight](/documentation/articles/hdinsight-use-hive/)
 
-* [Use Pig with Hadoop on HDInsight](/documentation/articles/hdinsight-use-pig)
+* [Use Pig with Hadoop on HDInsight](/documentation/articles/hdinsight-use-pig/)

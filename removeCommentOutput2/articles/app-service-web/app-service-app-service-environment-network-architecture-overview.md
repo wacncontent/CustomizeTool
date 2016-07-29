@@ -11,7 +11,7 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="12/17/2015"
+	ms.date="07/13/2016"
 	wacn.date=""/>	
 
 # Network Architecture Overview of Azure Environments
@@ -21,15 +21,16 @@ Azure Environments are always created within a subnet of a [virtual network][vir
 
 ## General Network Flow ##
  
-An Azure Environment always has a public virtual IP address (VIP).  All inbound traffic arrives on that public VIP including HTTP and HTTPS traffic for apps, as well as other traffic for FTP, remote debugging functionality, and Azure management operations.  For a full list of the specific ports (both required and optional) that are available on the public VIP see the article on [controlling inbound traffic][controllinginboundtraffic] to an Azure Environment. 
+When an Azure Environment (ASE) uses a public virtual IP address (VIP) for apps, all inbound traffic arrives on that public VIP.  This includes HTTP and HTTPS traffic for apps, as well as other traffic for FTP, remote debugging functionality, and Azure management operations.  For a full list of the specific ports (both required and optional) that are available on the public VIP see the article on [controlling inbound traffic][controllinginboundtraffic] to an Azure Environment. 
 
-The diagram below shows an overview of the various inbound and outbound network flows:
+Azure Environments also support running apps that are bound only to a virtual network internal address, also referred to as an ILB (internal load balancer) address.  On an ILB enabled ASE, HTTP and HTTPS traffic for apps as well as remote debugging calls, arrive on the ILB address.  For most common ILB-ASE configurations, FTP/FTPS traffic will also arrive on the ILB address.  However Azure management operations will still flow to ports 454/455 on the public VIP of an ILB enabled ASE.
+The diagram below shows an overview of the various inbound and outbound network flows for an Azure Environment where the apps are bound to a public virtual IP address:
 
 ![General Network Flows][GeneralNetworkFlows]
 
 An Azure Environment can communicate with a variety of private customer endpoints.  For example, apps running in the Azure Environment can connect to database server(s) running on IaaS virtual machines in the same virtual network topology.
 
-[AZURE.IMPORTANT] Looking at the network diagram, the "Other Computer Resources" are deployed in a different Subnet from the Azure Environment. Deploying resources in the same Subnet with the ASE will block connectivity from ASE to those resources (except for specific intra-ASE routing). Deploy to a different Subnet instead (in the same VNET). The Azure Environment will then be able to connect. No additional configuration is necessary.
+>[AZURE.IMPORTANT] Looking at the network diagram, the "Other Compute Resources" are deployed in a different Subnet from the Azure Environment. Deploying resources in the same Subnet with the ASE will block connectivity from ASE to those resources (except for specific intra-ASE routing). Deploy to a different Subnet instead (in the same VNET). The Azure Environment will then be able to connect. No additional configuration is necessary.
 
 Azure Environments also communicate with Sql DB and Azure Storage resources necessary for managing and operating an Azure Environment.  Some of the Sql and Storage resources that an Azure Environment communicates with are located in the same region as the Azure Environment, while others are located in remote Azure regions.  As a result, outbound connectivity to the Internet is always required for an Azure Environment to function properly. 
 
@@ -44,7 +45,7 @@ If the endpoint being called is **outside** of the virtual network topology, the
  
 ![Outbound IP Address][OutboundIPAddress]
 
-This address can also be determined by creating an app in the Azure Environment, and then performing an *nslookup* on the app's address. The resultant IP address is both the public VIP, as well as the Azure Environment's outbound NAT address.
+This address can also be determined for ASEs that only have a public VIP by creating an app in the Azure Environment, and then performing an *nslookup* on the app's address. The resultant IP address is both the public VIP, as well as the Azure Environment's outbound NAT address.
 
 If the endpoint being called is **inside** of the virtual network topology, the outbound address of the calling app will be the internal IP address of the individual compute resource running the app.  However there is not a persistent mapping of virtual network internal IP addresses to apps.  Apps can move around across different compute resources, and the pool of available compute resources in an Azure Environment can change due to scaling operations.
 
@@ -71,6 +72,7 @@ In the example above the Azure Environment "ASE One" has an outbound IP address 
 Even though calls between different Azure Environments are treated as "Internet" calls, when both Azure Environments are located in the same Azure region the network traffic will remain on the regional Azure network and will not physically flow over the public Internet.  As a result you can use a network security group on the subnet of the second Azure Environment to only allow inbound calls from the first Azure Environment (whose outbound IP address is 192.23.1.2), thus ensuring secure communication between the Azure Environments.
 
 ## Additional Links and Information ##
+All articles and How-To's for Azure Environments are available in the [README for Application Service Environments](/documentation/articles/app-service-app-service-environments-readme/).
 Details on inbound ports used by Azure Environments and using network security groups to control inbound traffic is available [here][controllinginboundtraffic].
 
 Details on using user defined routes to grant outbound Internet access to Azure Environments is available in this [article][ExpressRoute]. 

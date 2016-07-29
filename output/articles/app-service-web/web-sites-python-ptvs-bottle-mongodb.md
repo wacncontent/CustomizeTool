@@ -1,3 +1,5 @@
+<!-- deleted in Global -->
+
 <properties 
 	pageTitle="Bottle and MongoDB on Azure with Python Tools 2.1 for Visual Studio" 
 	description="Learn how to use the Python Tools for Visual Studio to create a Bottle application that stores data in a MongoDB database instance and deploy it to Azure Websites." 
@@ -15,7 +17,7 @@
 
 # Bottle and MongoDB on Azure with Python Tools 2.1 for Visual Studio
 
-> **NOTE:** The MongoLab workflow is not currently supported in the Preview Portal
+> **NOTE:** The MongoLab workflow is not currently supported in the Portal Preview
 
 In this tutorial, we'll use [Python Tools for Visual Studio] to create a simple polls web app using one of the PTVS sample templates. This tutorial is also available as a [video](https://www.youtube.com/watch?v=8hQMyf8p_Jo).
 
@@ -41,7 +43,7 @@ See the [Python Developer Center] for more articles that cover development of Az
  - [Python Tools 2.1 for Visual Studio Samples VSIX]
  - [Azure SDK Tools for VS 2013] or [Azure SDK Tools for VS 2012]
  - [Python 2.7 32-bit] or [Python 3.4 32-bit]
- - [RoboMongo](/documentation/articles/optional)
+ - [RoboMongo](/documentation/articles/optional/)
 
 [AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
 
@@ -221,7 +223,7 @@ Follow these links to learn more about Python Tools for Visual Studio, Bottle an
 
 <!--Link references-->
 [Python Developer Center]: /develop/python/
-[Azure Cloud Services]: /documentation/articles/cloud-services-python-ptvs
+[Azure Cloud Services]: /documentation/articles/cloud-services-python-ptvs/
 <!--External Link references-->
 [Azure Management Portal]: https://manage.windowsazure.cn
 [RoboMongo]: http://robomongo.org/
@@ -240,4 +242,3 @@ Follow these links to learn more about Python Tools for Visual Studio, Bottle an
 [Remote Debugging on Azure]: http://pytools.codeplex.com/wikipage?title=Features%20Azure%20Remote%20Debugging
 [Web Projects]: http://pytools.codeplex.com/wikipage?title=Features%20Web%20Project
 [Cloud Service Projects]: http://pytools.codeplex.com/wikipage?title=Features%20Cloud%20Project
- 

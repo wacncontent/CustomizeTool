@@ -1,9 +1,7 @@
-<!-- not suitable for Mooncake -->
-
 <properties 
 	pageTitle="Simulated hybrid cloud test environment | Azure" 
 	description="Create a simulated hybrid cloud environment for IT pro or development testing, using two Azure virtual networks and a VNet-to-VNet connection." 
-	services="virtual-network" 
+	services="virtual-machines-windows" 
 	documentationCenter="" 
 	authors="JoeDavies-MSFT" 
 	manager="timlt" 
@@ -11,18 +9,16 @@
 	tags="azure-resource-manager"/>
 
 <tags
-	ms.service="virtual-machines"
-	ms.date="02/03/2016"
+	ms.service="virtual-machines-windows"
+	ms.date="04/25/2016"
 	wacn.date=""/>
 
 # Set up a simulated hybrid cloud environment for testing
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] [classic deployment model](/documentation/articles/virtual-networks-setup-simulated-hybrid-cloud-environment-testing).
-
 This article steps you through creating a simulated hybrid cloud environment with Azure for testing using two separate Azure virtual networks. Use this configuration as an alternative to 
-[Set up a hybrid cloud environment for testing](/documentation/articles/virtual-networks-setup-hybrid-cloud-environment-testing) when you do not have a direct Internet connection and an available public IP address. Here is the resulting configuration.
+[Set up a hybrid cloud environment for testing](/documentation/articles/virtual-machines-windows-ps-hybrid-cloud-test-env-base/) when you do not have a direct Internet connection and an available public IP address. Here is the resulting configuration.
 
-![](./media/virtual-machines-setup-simulated-hybrid-cloud-environment-testing/CreateSimHybridCloud_4.png)
+![](./media/virtual-machines-setup-simulated-hybrid-cloud-environment-testing/virtual-machines-setup-simulated-hybrid-cloud-environment-testing-ph4.png)
 
 This simulates a hybrid cloud production environment. It consists of:
 
@@ -49,11 +45,11 @@ If you don't already have an Azure subscription, you can sign up for a trial at 
 
 ## Phase 1: Configure the TestLab virtual network
 
-Use the instructions in the [Base Configuration Test Environment](/documentation/articles/virtual-machines-base-configuration-test-environment-resource-manager) to configure the DC1, APP1, and CLIENT1 computers in an Azure virtual network named TestLab. 
+Use the instructions in the [Base Configuration Test Environment](/documentation/articles/virtual-machines-windows-test-config-env/) to configure the DC1, APP1, and CLIENT1 computers in an Azure virtual network named TestLab. 
 
 Next, start an Azure PowerShell prompt.
 
-> [AZURE.NOTE] The following command sets use Azure PowerShell 1.0 and later. For more information, see Azure PowerShell 1.0.
+> [AZURE.NOTE] The following command sets use Azure PowerShell 1.0 and later. For more information, see [Azure PowerShell 1.0](https://azure.microsoft.com/blog/azps-1-0/).
 
 Login to your account.
 
@@ -89,7 +85,7 @@ Next, create your gateway.
 
 Keep in mind that new gateways can take 20 minutes or more to complete.
 
-From the Azure Management Portal on your local computer, connect to DC1 with the CORP\User1 credentials. To configure the CORP domain so that computers and users use their local domain controller for authentication, run these commands from an administrator-level Windows PowerShell command prompt.
+From the Azure portal on your local computer, connect to DC1 with the CORP\User1 credentials. To configure the CORP domain so that computers and users use their local domain controller for authentication, run these commands from an administrator-level Windows PowerShell command prompt.
 
 	New-ADReplicationSite -Name "TestLab" 
 	New-ADReplicationSite -Name "TestVNET"
@@ -98,7 +94,7 @@ From the Azure Management Portal on your local computer, connect to DC1 with the
 
 This is your current configuration.
 
-![](./media/virtual-machines-setup-simulated-hybrid-cloud-environment-testing/CreateSimHybridCloud_1.png)
+![](./media/virtual-machines-setup-simulated-hybrid-cloud-environment-testing/virtual-machines-setup-simulated-hybrid-cloud-environment-testing-ph1.png)
  
 ## Phase 2: Create the TestVNET virtual network
 
@@ -126,7 +122,7 @@ Next, request a public IP address to be allocated to the gateway for the TestVNE
 
 This is your current configuration.
 
-![](./media/virtual-machines-setup-simulated-hybrid-cloud-environment-testing/CreateSimHybridCloud_2.png)
+![](./media/virtual-machines-setup-simulated-hybrid-cloud-environment-testing/virtual-machines-setup-simulated-hybrid-cloud-environment-testing-ph2.png)
  
 ##Phase 3: Create the VNet-to-VNet connection
 
@@ -140,11 +136,11 @@ Next, use these commands to create the site-to-site VPN connection, which can ta
 	New-AzureRmVirtualNetworkGatewayConnection -Name TestLab_to_TestVNET -ResourceGroupName $rgName -VirtualNetworkGateway1 $gwTestLab -VirtualNetworkGateway2 $gwTestVNET -Location $locName -ConnectionType Vnet2Vnet -SharedKey $sharedKey
 	New-AzureRmVirtualNetworkGatewayConnection -Name TestVNET_to_TestLab -ResourceGroupName $rgName -VirtualNetworkGateway1 $gwTestVNET -VirtualNetworkGateway2 $gwTestLab -Location $locName -ConnectionType Vnet2Vnet -SharedKey $sharedKey
 
-After a few minutes, the connection should be established. Note that at this time, gateways and connections created with Azure Resource Manager are not visible in the Azure Management Portal.
+After a few minutes, the connection should be established. Note that at this time, gateways and connections created with Azure Resource Manager are not visible in the Azure portal.
 
 This is your current configuration.
 
-![](./media/virtual-machines-setup-simulated-hybrid-cloud-environment-testing/CreateSimHybridCloud_3.png)
+![](./media/virtual-machines-setup-simulated-hybrid-cloud-environment-testing/virtual-machines-setup-simulated-hybrid-cloud-environment-testing-ph3.png)
  
 ## Phase 4: Configure DC2
 
@@ -168,7 +164,7 @@ First, create an Azure Virtual Machine for DC2. Run these commands at the Azure 
 	$vm=Set-AzureRMVMOSDisk -VM $vm -Name DC2-TestVNET-OSDisk -VhdUri $osDiskUri -CreateOption fromImage
 	New-AzureRMVM -ResourceGroupName $rgName -Location $locName -VM $vm
 
-Next, log on to the new DC2 virtual machine from the Azure Management Portal.
+Next, log on to the new DC2 virtual machine from the Azure portal.
 
 Next, configure a Windows Firewall rule to allow traffic for basic connectivity testing. From an administrator-level Windows PowerShell command prompt on DC2, run these commands.
 
@@ -189,7 +185,7 @@ Next, add the extra data disk as a new volume with the drive letter F:.
 8.	On the Select file system settings page, click **Next**.
 9.	On the Confirm selections page, click **Create**.
 10.	When complete, click **Close**.
-
+ 
 Next, configure DC2 as a replica domain controller for the corp.contoso.com domain. Run these commands from the Windows PowerShell command prompt on DC2.
 
 	Install-WindowsFeature AD-Domain-Services -IncludeManagementTools
@@ -199,17 +195,17 @@ Note that you are prompted to supply both the CORP\User1 password and a Director
 
 Now that the TestVNET virtual network has its own DNS server (DC2), you must configure the TestVNET virtual network to use this DNS server.
 
-1.	In the left pane of the Azure Management Portal, click the virtual networks icon, and then click **TestVNET**.
+1.	In the left pane of the Azure portal, click the virtual networks icon, and then click **TestVNET**.
 2.	On the **Settings** tab, click **DNS servers**.
 3.	In **Primary DNS server**, type **192.168.0.4** to replace 10.0.0.4.
 4.	Click **Save**.
 
 This is your current configuration. 
 
-![](./media/virtual-machines-setup-simulated-hybrid-cloud-environment-testing/CreateSimHybridCloud_4.png)
+![](./media/virtual-machines-setup-simulated-hybrid-cloud-environment-testing/virtual-machines-setup-simulated-hybrid-cloud-environment-testing-ph4.png)
  
 Your simulated hybrid cloud environment is now ready for testing.
 
 ## Next Steps
 
-- [Add a new virtual machine](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-resource-manager-vms) to the TestVNET subnet, such as one running Microsoft SQL Server.
+- [Add a new virtual machine](/documentation/articles/virtual-machines-windows-ps-create/) to the TestVNET subnet, such as one running Microsoft SQL Server.

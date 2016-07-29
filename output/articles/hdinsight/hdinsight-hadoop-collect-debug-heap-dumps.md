@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="02/04/2016"
+	ms.date="04/28/2016"
 	wacn.date=""/>
 
 
@@ -27,12 +27,10 @@ The collection of heap dumps for various services must be enabled for services o
 clusters. The default for this feature is to be off for a cluster. These heap dumps can be 
 large, so it is advisable to monitor the Blob storage account where they are being saved 
 once the collection has been enabled.
-
 
 > [AZURE.NOTE] The information in this article only applies to Windows-based HDInsight. 
 For information on Linux-based HDInsight, see [Enable heap dumps for Hadoop services on 
-Linux-based HDInsight](/documentation/articles/hdinsight-hadoop-collect-debug-heap-dump-linux)
-
+Linux-based HDInsight](/documentation/articles/hdinsight-hadoop-collect-debug-heap-dump-linux/)
 
 ## Eligible services for heap dumps
 
@@ -58,6 +56,8 @@ tempelton, hiveserver2, metastore, derbyserver, jobhistoryserver, resourcemanage
 ## Enable using Azure PowerShell
 
 For example, to turn on heap dumps by using Azure PowerShell for jobhistoryserver, you would do the following:
+
+[AZURE.INCLUDE [upgrade-powershell](../includes/hdinsight-use-latest-powershell.md)]
 
 	$MapRedConfigValues = new-object 'Microsoft.WindowsAzure.Management.HDInsight.Cmdlet.DataObjects.AzureHDInsightMapReduceConfiguration'
 

@@ -1,15 +1,15 @@
-<properties
+﻿<properties
    pageTitle="Performance considerations for Azure Traffic Manager | Azure"
    description="Understand performance on Traffic Manager and how to test performance of your website when using Traffic Manager"
    services="traffic-manager"
    documentationCenter=""
    authors="kwill-MSFT"
-   manager="adinah"
+   manager="carmonm"
    editor="joaoma" />
 
 <tags
 	ms.service="traffic-manager"
-	ms.date="02/09/2016"
+	ms.date="06/10/2016"
 	wacn.date=""/>
 
 
@@ -71,9 +71,9 @@ http://www.digwebinterface.com - Similar to the watchmouse site, but this one sh
 ## Next Steps
 
 
-[About Traffic Manager traffic routing methods](/documentation/articles/traffic-manager-load-balancing-methods)
+[About Traffic Manager traffic routing methods](/documentation/articles/traffic-manager-routing-methods/)
 
-[Test your Traffic Manager settings](/documentation/articles/traffic-manager-testing-settings)
+[Test your Traffic Manager settings](/documentation/articles/traffic-manager-testing-settings/)
 
 [Operations on Traffic Manager (REST API Reference)](https://msdn.microsoft.com/zh-cn/library/hh758255.aspx)
 

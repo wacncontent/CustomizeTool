@@ -1,3 +1,5 @@
+<!-- rename to virtual-machines-linux-classic-mariadb-mysql-cluster -->
+
 <properties
 	pageTitle="Running a MariaDB (MySQL) cluster on Azure"
 	description="Create a MariaDB + Galera MySQL cluster on Azure Virtual Machines"
@@ -15,11 +17,7 @@
 
 # MariaDB (MySQL) cluster - Azure tutorial
 
- Resource Manager model. [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
-
-
-> [AZURE.NOTE]  MariaDB Enterprise cluster is now available in the Azure gallery.  The new offering will automatically deploy a MariaDB Galera cluster on ARM. You should use the new offering from  https://azure.microsoft.com/marketplace/partners/mariadb/cluster-maxscale/ 
-
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager model.
 
 We're creating a multi-Master [Galera](http://galeracluster.com/products/) cluster of [MariaDBs](https://mariadb.org/en/about/), a robust, scalable, and reliable drop-in replacement for MySQL, to work in a highly available environment on Azure Virtual Machines.
 
@@ -368,15 +366,10 @@ You may want to take a look at [another way to cluster MySQL on Linux] and ways 
 <!--Link references-->
 [Galera]: http://galeracluster.com/products/
 [MariaDBs]: https://mariadb.org/en/about/
-
-[Azure CLI]: /documentation/articles/xplat-cli/
-
-
 [Azure CLI]: /documentation/articles/xplat-cli-install/
-
 [Azure CLI command reference]: /documentation/articles/virtual-machines-command-line-tools/
 [create an SSH key for authentication]:http://www.jeff.wilcox.name/2013/06/secure-linux-vms-with-ssh-certificates/
-[performance tuning strategy]: /documentation/articles/virtual-machines-linux-optimize-mysql-perf/
-[optimize and test MySQL performance on Azure Linux VMs]:/documentation/articles/virtual-machines-linux-optimize-mysql-perf/
+[performance tuning strategy]: /documentation/articles/virtual-machines-linux-classic-optimize-mysql/
+[optimize and test MySQL performance on Azure Linux VMs]:/documentation/articles/virtual-machines-linux-classic-optimize-mysql/
 [issue #1268 in the Azure CLI]:https://github.com/Azure/azure-xplat-cli/issues/1268
-[another way to cluster MySQL on Linux]: /documentation/articles/virtual-machines-linux-mysql-cluster/
+[another way to cluster MySQL on Linux]: /documentation/articles/virtual-machines-linux-classic-mysql-cluster/

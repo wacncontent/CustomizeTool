@@ -1,6 +1,8 @@
+<!-- rename to virtual-machines-windows-classic-connect-logon -->
+
 <properties
 	pageTitle="Log on to a VM | Azure"
-	description="Use the Azure Management Portal to log on to a Windows virtual machine created with the classic deployment model."
+	description="Use the Azure classic portal to log on to a Windows virtual machine created with the classic deployment model."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="cynthn"
@@ -14,19 +16,19 @@
 	wacn.date=""/>
 
 
-# Log on to a Windows virtual machine using the Azure Management Portal
+# Log on to a Windows virtual machine using the Azure classic portal
 
 
 
-In the Azure Management Portal, you use the **Connect** button to start a Remote Desktop session and log on to a Windows VM.
+In the Azure classic portal, you use the **Connect** button to start a Remote Desktop session and log on to a Windows VM.
 
 Do you want to connect to a Linux VM? See [How to log on to a virtual machine running Linux](/documentation/articles/virtual-machines-linux-how-to-log-on).
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the classic deployment model. Microsoft recommends that most new deployments use the Resource Manager model.
 
 ## Connect to the virtual machine
 
-1. Sign in to the Azure Management Portal.
+1. Sign in to the Azure classic portal.
 
 2. Click **Virtual Machines**, and then select the virtual machine.
 

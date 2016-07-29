@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="01/09/2016"
+	ms.date="05/04/2016"
 	wacn.date=""/>
 
 
@@ -30,7 +30,7 @@ A screenshot of the completed application is below:
 Follow these steps to create a web app in Azure.
 
 1. Launch WebMatrix
-2. Log into the [Azure Management Portal], and click [publish profile](https://manage.windowsazure.cn/publishsettings/index?client=powershell&schemaversion=1.0) to download the publish profile for your account.
+2. Log into the [Azure Classic Management Portal], and click [publish profile](https://manage.windowsazure.cn/publishsettings/index?client=powershell&schemaversion=1.0) to download the publish profile for your account.
 2. If this is the first time you've used WebMatrix, you will be prompted to sign into Azure.  Otherwise, you can click on the **Sign In** button, and choose **Add Account**.  Select to **Import an account** using your Microsoft Account, and select the profile downloaded in the previous step.
 
 	![Add Account][addaccount]
@@ -92,11 +92,11 @@ You can easily modify and republish your application. Here, you will make a simp
 
 ##Next steps
 
-To learn more about the versions of Node.js that are provided with Azure and how to specify the version to be used with your application, see [Specifying a Node.js version in an Azure application](/documentation/articles/nodejs-specify-node-version-azure-apps).
+To learn more about the versions of Node.js that are provided with Azure and how to specify the version to be used with your application, see [Specifying a Node.js version in an Azure application](/documentation/articles/nodejs-specify-node-version-azure-apps/).
 
-If you encounter problems with your application after it has been deployed to Azure, see [How to debug a Node.js web app in Azure](/documentation/articles/web-sites-nodejs-debug) for information on diagnosing the problem.
-[Azure Management Portal]: http://manage.windowsazure.cn
-[Publishing an Azure  Website using Git]: /documentation/articles/web-sites-publish-source-control
+If you encounter problems with your application after it has been deployed to Azure, see [How to debug a Node.js web app in Azure](/documentation/articles/web-sites-nodejs-debug/) for information on diagnosing the problem.
+[Azure Classic Management Portal]: http://manage.windowsazure.cn
+[Publishing an Azure  Website using Git]: /documentation/articles/web-sites-publish-source-control/
 [for free]: /zh-cn/pricing/1rmb-trial
 [WebMatrix WebSite]: http://www.microsoft.com/click/services/Redirect2.ashx?CR_CC=200106398
 [WebMatrix for Azure]: http://go.microsoft.com/fwlink/?LinkID=253622&clcid=0x409
@@ -115,4 +115,3 @@ If you encounter problems with your application after it has been deployed to Az
 [signin]: ./media/web-sites-nodejs-use-webmatrix/webmatrix-sign-in.png
 [sitefromtemplate]: ./media/web-sites-nodejs-use-webmatrix/webmatrix-site-from-template.png
 [nodesitefromtemplateazure]: ./media/web-sites-nodejs-use-webmatrix/webmatrix-node-site-azure.png
- 

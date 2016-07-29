@@ -1,3 +1,5 @@
+<!-- rename to virtual-machines-linux-oracle-create-upload-vhd -->
+
 <properties
 	pageTitle="Create and upload an Oracle Linux VHD | Azure"
 	description="Learn to create and upload an Azure virtual hard disk (VHD) that contains an Oracle Linux operating system."

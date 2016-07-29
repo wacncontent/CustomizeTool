@@ -1,23 +1,27 @@
 <properties 
-   pageTitle="Specifying a DNS Settings in a Virtual Network Configuration File | Azure"
-   description="How to change DNS server settings in a virtual network using a virtual network configuration file"
+   pageTitle="Specifying DNS Settings in a virtual network configuration file | Azure"
+   description="How to change DNS server settings in a virtual network using a virtual network configuration file in the classic deployment model"
    services="virtual-network"
    documentationCenter="na"
-   authors="joaoma"
+   authors="telmosampaio"
    manager="carmonm"
-   editor="tysonn" />
+   editor="tysonn" 
+   tags="azure-service-management" />
 <tags
 	ms.service="virtual-network"
-	ms.date="08/25/2015"
-	wacn.date=""/>
+	ms.date="02/23/2016"
+	wacn.date=""/> 
+
 
 # Specifying DNS settings in a virtual network configuration file
 
 A network configuration file has two elements that you can use to specify Domain Name System (DNS) settings: **DnsServers** and **DnsServerRef**. You can add a list of DNS servers by specifying their IP addresses and reference names to the **DnsServers** element. You can then use a **DnsServerRef** element to specify which DNS server entries from the DnsServers element are used for different network sites within your virtual network.
 
->[AZURE.IMPORTANT] For information about how to configure the network configuration file, see [Configure a Virtual Network Using a Network Configuration File](/documentation/articles/virtual-networks-using-network-configuration-file). For information about each element contained in the network configuration file, see [Azure Virtual Network Configuration Schema](https://msdn.microsoft.com/zh-cn/library/azure/jj157100.aspx).
+[AZURE.INCLUDE [azure-arm-classic-important-include](../includes/azure-arm-classic-important-include.md)] This article covers the classic deployment model.
 
 The network configuration file may contain the following elements. The title of each element is linked to a page that provides additional information about the element value settings.
+
+>[AZURE.IMPORTANT] For information about how to configure the network configuration file, see [Configure a Virtual Network Using a Network Configuration File](/documentation/articles/virtual-networks-using-network-configuration-file/). For information about each element contained in the network configuration file, see [Azure Virtual Network Configuration Schema](https://msdn.microsoft.com/zh-cn/library/azure/jj157100.aspx).
 
 [Dns Element](https://msdn.microsoft.com/zh-cn/library/azure/jj157100)
 
@@ -43,8 +47,6 @@ The network configuration file may contain the following elements. The title of 
 
 ## Next steps
 
-[Configure a virtual network using Network configuration files](/documentation/articles/virtual-networks-using-network-configuration-file)
-
-[Azure Virtual Network Configuration Schema](https://msdn.microsoft.com/zh-cn/library/azure/jj157100)
-
-[Azure Service Configuration Schema](https://msdn.microsoft.com/zh-cn/library/azure/ee758710)
+- Understand the [Azure Virtual Network Configuration Schema](https://msdn.microsoft.com/zh-cn/library/azure/jj157100).
+- Understand the [Azure Service Configuration Schema](https://msdn.microsoft.com/zh-cn/library/azure/ee758710).
+- [Configure a virtual network using Network configuration files](/documentation/articles/virtual-networks-using-network-configuration-file/).

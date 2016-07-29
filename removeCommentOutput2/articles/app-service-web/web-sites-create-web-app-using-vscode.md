@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="12/17/2015"
+	ms.date="02/26/2016"
 	wacn.date=""/>
 
 # Create an ASP.NET 5 web app in Visual Studio Code
@@ -49,7 +49,7 @@ This tutorial is designed to get you started building applications with the late
 
 	![dnvm location](./media/web-sites-create-web-app-using-vscode/00-where-dnvm.png)
 
-3. Now that you have DNVM, you must to use it to download DNX to run your applications. Run the following at the command prompt:
+3. Now that you have DNVM, you must use it to download DNX to run your applications. Run the following at the command prompt:
 
 		dnvm upgrade
 
@@ -118,6 +118,7 @@ Now that you have created the web app and retrieved all the NuGet packages for t
 	The command window will display that the application has started. If the command window doesn't display this message, check the lower left corning of VS Code for errors in your project.
 	
 	> [AZURE.NOTE] Issuing a command from the **Command Palette** requires a **>** character at the beginning of the command line. You can view the details related to the **web** command in the *project.json* file. 
+	> If the command does not appear or is not available, you may need to install the C# extension. Run  `>Extensions: Install Extension` and `ext install c#` to install the C# extensions.
 
 2. Open a browser and navigate to the following URL.
 
@@ -129,10 +130,9 @@ Now that you have created the web app and retrieved all the NuGet packages for t
 
 3. Close your browser. In the **Command Window**, press **Ctrl+C** to shut down the application and close the **Command Window**. 
 
-## Create a web app in the Azure Management Portal
+## Create a web app in the Azure Classic Management Portal
 
-
-The first step in creating your app is to create the web site via the Azure Management Portal.  To do this, you will need to login to the portal and click the NEW button in the bottom left corner. A window will appear. Click **Quick Create**, enter a URL, and select **Create Web Site**.
+The first step in creating your app is to create the web site via the Azure Classic Management Portal.  To do this, you will need to login to the portal and click the NEW button in the bottom left corner. A window will appear. Click **Quick Create**, enter a URL, and select **Create Web Site**.
 
 ![](./media/web-sites-python-create-deploy-django-app/django-ws-003.png)
 
@@ -209,7 +209,7 @@ This can be done in two ways:
 
 		http://SampleWebAppDemo.chinacloudsites.cn
  
-* In the Azure Management Portal, locate the web app blade for your web app, and click **Browse** to view your app 
+* In the Azure Classic Management Portal, locate the web app blade for your web app, and click **Browse** to view your app 
 * in your default browser.
 
 ![Azure web app](./media/web-sites-create-web-app-using-vscode/21-azurewebapp.png)

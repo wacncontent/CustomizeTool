@@ -11,7 +11,7 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="01/05/2016"
+	ms.date="07/11/2016"
 	wacn.date=""/>
 
 # Introduction to Azure Environment
@@ -28,13 +28,15 @@ Customers can create multiple Azure Environments within a single Azure region, a
 
 Azure Environments are isolated to running only a single customer's applications, and are always deployed into a virtual network.  Customers have fine-grained control over both inbound and outbound application network traffic, and applications can establish high-speed secure connections over virtual networks to on-premises corporate resources.
 
+All articles and How-To's about Azure Environments are available in the [README for Application Service Environments](/documentation/articles/app-service-app-service-environments-readme/).
+
 For an overview of how Azure Environments enable high scale and secure network access, see the [AzureCon Deep Dive][AzureConDeepDive] on Azure Environments!
 
 For a deep-dive on horizontally scaling using multiple Azure Environments see the article on how to setup a [geo-distributed app footprint][GeodistributedAppFootprint].
 
-To see how the security architecture shown in the AzureCon Deep Dive was configured, see the article on implementing a [layered security architecture](/documentation/articles/app-service-app-service-environment-layered-security) with Azure Environments.
+To see how the security architecture shown in the AzureCon Deep Dive was configured, see the article on implementing a [layered security architecture](/documentation/articles/app-service-app-service-environment-layered-security/) with Azure Environments.
 
-Apps running on Azure Environments can have their access gated by upstream devices such as web application firewalls (WAF).  The article on [configuring a WAF for Azure Environments](/documentation/articles/app-service-app-service-environment-web-application-firewall) covers this scenario. 
+Apps running on Azure Environments can have their access gated by upstream devices such as web application firewalls (WAF).  The article on [configuring a WAF for Azure Environments](/documentation/articles/app-service-app-service-environment-web-application-firewall/) covers this scenario. 
 
 [AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)] 
 
@@ -54,7 +56,7 @@ For more details on the quantity of compute resources available to the front-end
 For details on the available compute resource sizes supported in an Azure Environment, consult the [Azure Pricing][AppServicePricing] page and review the available options for Azure Environments in the Premium pricing tier.
 
 ## Virtual Network Support ##
-An Azure Environment can either be created in a pre-existing regional classic "v1" virtual network, or a new regional classic "v1" virtual network ([more info on virtual networks][MoreInfoOnVirtualNetworks]).  Since an Azure Environment always exists in a regional virtual network, and more precisely within a subnet of a regional virtual network, you can leverage the security features of virtual networks to control both inbound and outbound network communications.  
+An Azure Environment can be created in **either** an Azure Resource Manager virtual network, **or** a classic deployment model virtual network ([more info on virtual networks][MoreInfoOnVirtualNetworks]).  Since an Azure Environment always exists in a virtual network, and more precisely within a subnet of a virtual network, you can leverage the security features of virtual networks to control both inbound and outbound network communications.  
 
 You can use [network security groups][NetworkSecurityGroups] to restrict inbound network communications to the subnet where an Azure Environment resides.  This allows you to run apps behind upstream devices and services such as web application firewalls, and network SaaS providers.  
 
@@ -62,11 +64,11 @@ Apps also frequently need to access corporate resources such as internal databas
 
 For more details on how Azure Environments work with virtual networks and on-premises networks consult the following articles on [Network Architecture][NetworkArchitectureOverview], [Controlling Inbound Traffic][ControllingInboundTraffic], and [Securely Connecting to Backends][SecurelyConnectingToBackends]. 
 
-**Note:**  An Azure Environment cannot be created in a "v2" virtual network.
 
 ## Getting started
 
 To get started with Azure Environments, see [How To Create An Azure Environment][HowToCreateAnAppServiceEnvironment]
+All articles and How-To's for Azure Environments are available in the [README for Application Service Environments](/documentation/articles/app-service-app-service-environments-readme/).
 
 For more information about the Azure platform, see [Azure Web App][AzureAppService].
 
@@ -79,7 +81,7 @@ For details on using an Azure Environment with ExpressRoute, see the following a
 [AZURE.INCLUDE [app-service-web-try-app-service](../includes/app-service-web-try-app-service.md)]
 
 <!-- LINKS -->
-[PremiumTier]: /home/features/web-site/#price
+[PremiumTier]: /home/features/web-site/pricing/
 [MoreInfoOnVirtualNetworks]: /documentation/articles/virtual-networks-faq/
 [AppServicePlan]: /documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview/
 [HowToCreateAnAppServiceEnvironment]: /documentation/articles/app-service-web-how-to-create-an-app-service-environment/
@@ -98,7 +100,7 @@ For details on using an Azure Environment with ExpressRoute, see the following a
 [SecurelyConnectingToBackends]:  /documentation/articles/app-service-app-service-environment-securely-connecting-to-backend-resources/
 [NetworkArchitectureOverview]:  /documentation/articles/app-service-app-service-environment-network-architecture-overview/
 [NetworkConfigDetailsForExpressRoute]:  /documentation/articles/app-service-app-service-environment-network-configuration-expressroute/
-[AppServicePricing]: /home/features/web-site/#price 
+[AppServicePricing]: /home/features/web-site/pricing/ 
 
 <!-- IMAGES -->
 

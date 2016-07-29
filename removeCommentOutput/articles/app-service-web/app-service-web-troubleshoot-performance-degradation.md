@@ -1,21 +1,22 @@
 <properties
-	pageTitle="Troubleshoot: performance degradation in a web app"
-	description="This article helps you troubleshoot performance issues in your web app hosted in Azure Web App."
+	pageTitle="Slow web app performance in Azure | Azure"
+	description="This article helps you troubleshoot slow web app performance issues in Azure Web App."
 	services="app-service\web"
 	documentationCenter=""
 	authors="cephalin"
 	manager="wpickett"
 	editor=""
-	tags="top-support-issue"/>
+	tags="top-support-issue
+	keywords="web app performance, slow app, app slow"/>
 
 <tags
 	ms.service="app-service-web"
-	ms.date="01/13/2016"
+	ms.date="07/06/2016"
 	wacn.date=""/>
 
-# Troubleshoot: performance degradation in a web app
+# Troubleshoot slow web app performance issues in Azure
 
-This article helps you troubleshoot performance issues in your web app hosted in [Azure Web App](/documentation/services/web-sites/).
+This article helps you troubleshoot slow web app performance issues in [Azure Web App](/documentation/services/web-sites/).
 
 If you need more help at any point in this article, you can contact the Azure experts on [the MSDN Azure and the Stack Overflow forums](https://azure.microsoft.com/support/forums/). Alternatively, you can also file an Azure support incident. Go to the [Azure Support site](https://azure.microsoft.com/support/contact/) and click on **Get Support**.
 
@@ -46,7 +47,7 @@ Troubleshooting can be divided into three distinct tasks, in sequential order:
 
 #### Track Service health
 
-Azure publicizes each time there is a service interruption or performance degradation. You can track the health of the service on the [Azure Management Portal](https://manage.windowsazure.cn/). For more information, see [Track service health](/documentation/articles/insights-service-health).
+Azure publicizes each time there is a service interruption or performance degradation. You can track the health of the service on the [Azure Portal](https://portal.azure.cn/). For more information, see [Track service health](/documentation/articles/insights-service-health/).
 
 #### Monitor your web app
 
@@ -60,12 +61,12 @@ Some of the metrics that you might want to monitor for your web app are
 -	Memory working set
 -	Requests
 
-![](./media/app-service-web-troubleshoot-performance-degradation/1-monitor-metrics.png)
+![monitor web app performance](./media/app-service-web-troubleshoot-performance-degradation/1-monitor-metrics.png)
 
 For more information, see:
 
--	[Monitor Web Apps in Azure](/documentation/articles/web-sites-monitor)
--	[Receive alert notifications](/documentation/articles/insights-receive-alert-notifications)
+-	[Monitor Web Apps in Azure](/documentation/articles/web-sites-monitor/)
+-	[Receive alert notifications](/documentation/articles/insights-receive-alert-notifications/)
 
 #### Monitor web endpoint status
 
@@ -75,7 +76,7 @@ Endpoint monitoring configures web tests from geo-distributed locations that tes
 
 Uptime is monitored using HTTP response codes, and response time is measured in milliseconds. A monitoring test fails if the HTTP response code is greater than or equal to 400 or if the response takes more than 30 seconds. An endpoint is considered available if its monitoring tests succeed from all the specified locations.
 
-To set it up, see [How to: Monitor web endpoint status](/documentation/articles/web-sites-monitor#webendpointstatus).
+To set it up, see [How to: Monitor web endpoint status](/documentation/articles/web-sites-monitor/#webendpointstatus).
 
 Also, see [Keeping Azure Web Sites up plus Endpoint Monitoring - with Stefan Schackow](/documentation/videos/azure-web-sites-endpoint-monitoring-and-staying-up/) for a video on endpoint monitoring.
 
@@ -87,9 +88,9 @@ Each Azure web app provides an extensible management end point that allows you t
 
 [Azure Application Insights](/home/features/application-insights/) and [New Relic](/marketplace/partners/newrelic/newrelic/) are two of the performance monitoring site extensions that are available. To use New Relic, you install an agent at runtime. To use Azure Application Insights, you rebuild your code with an SDK, and you can also install an extension that provides access to additional data. The SDK lets you write code to monitor the usage and performance of your app in more detail.
 
-To use Application Insights, see [Monitor performance in web applications](/documentation/articles/app-insights-web-monitor-performance).
+To use Application Insights, see [Monitor performance in web applications](/documentation/articles/app-insights-web-monitor-performance/).
 
-To use New Relic, see [New Relic Application Performance Management on Azure](/documentation/articles/store-new-relic-cloud-services-dotnet-application-performance-management).
+To use New Relic, see [New Relic Application Performance Management on Azure](/documentation/articles/store-new-relic-cloud-services-dotnet-application-performance-management/).
 
 <a name="collect" />
 ### 2. Collect data
@@ -110,7 +111,7 @@ You can enable or disable the following kinds of logs:
 
 Application diagnostics enables you to capture information produced by a web application. ASP.NET applications can use the `System.Diagnostics.Trace` class to log information to the application diagnostics log.
 
-For detailed instructions on how to configure your application for logging, see [Enable diagnostics logging for web apps in Azure](/documentation/articles/web-sites-enable-diagnostic-log).
+For detailed instructions on how to configure your application for logging, see [Enable diagnostics logging for web apps in Azure](/documentation/articles/web-sites-enable-diagnostic-log/).
 
 #### Use Remote Profiling
 
@@ -163,7 +164,7 @@ For more information on features available in Kudu, see
 
 In Azure Web App, for increased performance and throughput,  you can adjust the scale at which you are running your application. Scaling up a web app involves two related actions: changing your App Service plan to a higher pricing tier, and configuring certain settings after you have switched to the higher pricing tier.
 
-For more information on scaling, see [Scale a web app in Azure](/documentation/articles/web-sites-scale).
+For more information on scaling, see [Scale a web app in Azure](/documentation/articles/web-sites-scale/).
 
 Additionally, you can choose to run your application on more than one instance . This not only provides you with more processing capability, but also gives you some amount of fault tolerance. If the process goes down on one instance, the other instance will still continue serving requests.
 
@@ -171,15 +172,15 @@ You can set the scaling to be Manual or Automatic.
 
 ####	Use AutoHeal
 
-AutoHeal recycles the worker process for your app based on settings you choose (like configuration changes, requests, memory-based limits, or the time needed to execute a request). Most of the time, recycle the process is the fastest way to recover from a problem. Though you can always restart the web app from directly within the Azure Management Portal, AutoHeal will do it automatically for you. All you need to do is add some triggers in the root web.config for your web app. Note that these settings would work in the same way even if your application is not a .Net one.
+AutoHeal recycles the worker process for your app based on settings you choose (like configuration changes, requests, memory-based limits, or the time needed to execute a request). Most of the time, recycle the process is the fastest way to recover from a problem. Though you can always restart the web app from directly within the Azure Portal, AutoHeal will do it automatically for you. All you need to do is add some triggers in the root web.config for your web app. Note that these settings would work in the same way even if your application is not a .Net one.
 
 For more information, see [Auto-Healing Azure Web Sites](/blog/auto-healing-windows-azure-web-sites/).
 
 ####	Restart the web app
 
-This is often the simplest way to recover from one-time issues. On the [Azure Management Portal](https://manage.windowsazure.cn/), on your web app's blade, you have the options to stop or restart your app.
+This is often the simplest way to recover from one-time issues. On the [Azure Portal](https://portal.azure.cn/), on your web app's blade, you have the options to stop or restart your app.
 
- ![](./media/app-service-web-troubleshoot-performance-degradation/2-restart.png)
+ ![restart web app to solve performance issues](./media/app-service-web-troubleshoot-performance-degradation/2-restart.png)
 
 You can also manage your web app using Azure Powershell. For more information, see
-[Using Azure PowerShell with Azure Resource Manager](/documentation/articles/powershell-azure-resource-manager).
+[Using Azure PowerShell with Azure Resource Manager](/documentation/articles/powershell-azure-resource-manager/).

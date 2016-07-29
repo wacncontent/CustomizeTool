@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="12/16/2015"
+	ms.date="02/26/2016"
 	wacn.date=""/>
 
 
@@ -25,22 +25,22 @@ It describes additional features of Git deployment, such as virtual environment 
 
 ## Bottle, Django or Flask?
 
-The Azure gallery contains templates for the Bottle, Django and Flask frameworks. If you are developing your first web app in Azure, or you are not familiar with Git, we recommend that you follow one of these tutorials, which include step-by-step instructions for building a working application from the gallery using Git deployment from Windows or Mac:
+The Azure Marketplace contains templates for the Bottle, Django and Flask frameworks. If you are developing your first web app in Azure, or you are not familiar with Git, we recommend that you follow one of these tutorials, which include step-by-step instructions for building a working application from the gallery using Git deployment from Windows or Mac:
 
-- [Creating web apps with Bottle](/documentation/articles/web-sites-python-create-deploy-bottle-app)
-- [Creating web apps with Django](/documentation/articles/web-sites-python-create-deploy-django-app)
-- [Creating web apps with Flask](/documentation/articles/web-sites-python-create-deploy-flask-app)
+- [Creating web apps with Bottle](/documentation/articles/web-sites-python-create-deploy-bottle-app/)
+- [Creating web apps with Django](/documentation/articles/web-sites-python-create-deploy-django-app/)
+- [Creating web apps with Flask](/documentation/articles/web-sites-python-create-deploy-flask-app/)
 
 
-## Web app creation on Azure Management Portal
+## Web app creation on Azure Portal
 
-This tutorial assumes an existing Azure subscription and access to the Azure Management Portal.
+This tutorial assumes an existing Azure subscription and access to the Azure Portal.
 
-If you do not have an existing web app, you can create one from the [Azure Management Portal](https://manage.windowsazure.cn).  Click the NEW button in the top left corner, then click **Web + Mobile** > **Web app**.
+If you do not have an existing web app, you can create one from the [Azure Portal](https://portal.azure.cn).  Click the NEW button in the top left corner, then click **Web + Mobile** > **Web app**.
 
 ## Git Publishing
 
-Configure Git publishing for your newly created web app by following the instructions at [Continuous deployment using GIT in Azure Web App](/documentation/articles/web-sites-publish-source-control). This tutorial uses Git to create, manage, and publish our Python web app to Azure.
+Configure Git publishing for your newly created web app by following the instructions at [Continuous deployment using GIT in Azure Web App](/documentation/articles/web-sites-publish-source-control/). This tutorial uses Git to create, manage, and publish our Python web app to Azure.
 
 Once Git publishing is set up, a Git repository will be created and associated with your web app. The repository's URL will be displayed and can henceforth be used to push data from the local development environment to the cloud. To publish applications via Git, make sure a Git client is also installed and use the instructions provided to push your web app content to Azure Web App.
 

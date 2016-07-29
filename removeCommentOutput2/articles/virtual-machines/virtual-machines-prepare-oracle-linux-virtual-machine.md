@@ -1,3 +1,5 @@
+<!-- rename to virtual-machines-linux-prepare-oracle -->
+
 <properties
 pageTitle="Prepare an Oracle Linux Virtual Machine for Azure | Azure"
 description="Step by Step configuration of an Oracle virtual machine running Linux in Azure."

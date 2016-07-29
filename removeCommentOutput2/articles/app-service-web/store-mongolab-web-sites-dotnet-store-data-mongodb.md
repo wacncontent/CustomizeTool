@@ -1,3 +1,5 @@
+<!-- deleted in Global -->
+
 <properties 
 	pageTitle="Create a .NET web app on Azure with MongoDB using the MongoLab add-on" 
 	description="Learn how to create an ASP.NET web app on Azure Websites that stores data in MongoDB hosted by MongoLab." 

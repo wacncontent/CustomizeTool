@@ -11,13 +11,13 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="02/10/2016"
+	ms.date="06/21/2016"
 	wacn.date=""/>	
 
 # Securely Connecting to Backend Resources from an Azure Environment #
 
 ## Overview ##
-Since an Azure Environment is always created in a subnet of a regional classic "v1" [virtual network][virtualnetwork], outbound connections from an Azure Environment to other backend resources can flow exclusively over the virtual network.  
+Since an Azure Environment is always created in a subnet of a regional classic "v1" [virtual network][virtualnetwork], outbound connections from an Azure Environment to other backend resources can flow exclusively over the virtual network.  Note that only virtual networks with an RFC1918 address space (i.e. private addresses) are supported.  
 
 **Note:**  An Azure Environment cannot be created in a "v2" ARM-managed virtual network.
 
@@ -32,9 +32,7 @@ One caveat applies to outbound traffic from an Azure Environment to endpoints wi
 [AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)] 
 
 ## Outbound Connectivity and DNS Requirements ##
-Note that for an Azure Environment to function properly, it requires outbound access to Azure Storage worldwide, as well as connectivity to Sql Database in the same Azure region.  If outbound Internet access is blocked in the virtual network, Azure Environments will not be able to access these Azure endpoints.
-
-Customer may also have custom DNS servers configured in the virtual network.  Azure Environments need to be able to resolve Azure endpoints under *.database.chinacloudapi.cn, *.file.core.chinacloudapi.cn and *.blob.core.chinacloudapi.cn.  
+For an Azure Environment to function properly, it requires outbound access to various endpoints. A full list of the external endpoints used by an ASE is in the "Required Network Connectivity" section of the [Network Configuration for ExpressRoute](/documentation/articles/app-service-app-service-environment-network-configuration-expressroute/#required-network-connectivity) article.
 
 It is also recommended that any custom DNS servers on the virtual network be setup ahead of time prior to creating an Azure Environment.  If a virtual network's DNS configuration is changed while an Azure Environment is being created, that will result in the Azure Environment creation process failing.  If a custom DNS server exists on the other end of a VPN gateway, and the DNS server is unreachable or unavailable, the Azure Environment creation process will also fail. 
 
@@ -86,6 +84,7 @@ The end result is a set of security rules that block external access, while allo
 
 
 ## Getting started
+All articles and How-To's for Azure Environments are available in the [README for Application Service Environments](/documentation/articles/app-service-app-service-environments-readme/).
 
 To get started with Azure Environments, see [Introduction to Azure Environment][IntroToAppServiceEnvironment]
 

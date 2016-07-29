@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="12/24/2015"
+	ms.date="02/29/2016"
 	wacn.date=""/>
 
 # Connect a web app in Azure to Redis Cache via the Memcache protocol
@@ -72,7 +72,7 @@ Download the Non-Thread Safe (NTS) x86 link for the version of PHP enabled in We
 
 ### Enable the php_memcache extension
 
-After you download the file, unzip and upload the **php\_memcache.dll** into the **d:\\home\\site\\wwwroot\\bin\\ext\\** directory. After the php_memcache.dll is uploaded into the web app, you need to enable the extension to the PHP Runtime. To enable the Memcache extension in the Azure Management Portal, open the **Configure** of your the web app, then add a new app setting with the key of **PHP\_EXTENSIONS** and the value **bin\\ext\\php_memcache.dll**.
+After you download the file, unzip and upload the **php\_memcache.dll** into the **d:\\home\\site\\wwwroot\\bin\\ext\\** directory. After the php_memcache.dll is uploaded into the web app, you need to enable the extension to the PHP Runtime. To enable the Memcache extension in the Azure Classic Management Portal, open the **Configure** of your the web app, then add a new app setting with the key of **PHP\_EXTENSIONS** and the value **bin\\ext\\php_memcache.dll**.
 
 
 > [AZURE.NOTE] If the web app needs to load multiple PHP extensions, the value of PHP_EXTENSIONS should be a comma delimited list of relative paths to DLL files.
@@ -147,11 +147,11 @@ Congratulations! The WordPress app now has a centralized in-memory cache to aid 
 
 
 
-[0]: /documentation/articles/cache-dotnet-how-to-use-azure-redis-cache#create-a-cache
+[0]: /documentation/articles/cache-dotnet-how-to-use-azure-redis-cache/#create-a-cache
 [1]: http://bit.ly/1t0KxBQ
 [2]: http://manage.windowsazure.cn
 [3]: http://manage.windowsazure.cn
-[4]: /documentation/articles/powershell-install-configure
+[4]: /documentation/articles/powershell-install-configure/
 [5]: /downloads
 [6]: http://pecl.php.net
 [7]: http://pecl.php.net/package/memcache

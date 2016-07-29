@@ -9,14 +9,18 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="12/10/2015"
+	ms.date="02/26/2016"
 	wacn.date=""/>
 
 # Create a digital marketing campaign on Azure Web Apps
 [Azure Web App](/documentation/services/web-sites/) Web Apps is a great choice for digital marketing campaigns. Digital marketing campaigns are typically short-lived and are meant to drive short-term marketing goals. There are two main scenarios to consider. In the first scenario, a third-party marketing firm creates and manages the campaign for their customer for the duration of the promotion. A second scenario involves the marketing firm creating and then transferring ownership of the digital marketing campaign resources to their customer. The customer then runs and manages the digital marketing campaign on their own. is a good match for both scenarios. 
 
+Below is an example of a global, multi-channel digital marketing campaign using Azure Web Apps. It demonstrates what you can do simply by composing Azure Web Apps together with other services with minimal technical investments. **Click on an element in the topography to read more about it.** 
+
+<object type="image/svg+xml" data="./media/web-sites-digital-marketing-application-solution-overview/digital-marketing-notitle.svg" width="100%" height="100%"></object>
+
 > [AZURE.NOTE]
-> This guide presents some of the most common areas and tasks that are aligned with running a digital marketing campaign in Azure Web Apps. However, there are other common solutions that you can implement in Azure Web Apps. To review these solutions, see the other guides on [Global Web Presence](/documentation/articles/web-sites-global-web-presence-solution-overview) and [Business Applications](/documentation/articles/web-sites-business-application-solution-overview).
+> This guide presents some of the most common areas and tasks that are aligned with running a digital marketing campaign in Azure Web Apps. However, there are other common solutions that you can implement in Azure Web Apps. To review these solutions, see the other guides on [Global Web Presence](/documentation/articles/web-sites-global-web-presence-solution-overview/) and [Business Applications](/documentation/articles/web-sites-business-application-solution-overview/).
 
 ## Create from scratch or bring existing assets
 
@@ -61,7 +65,7 @@ Deliver your static content lightning fast to users globally by [integrating you
 
 Optimize your web app by scaling automatically with Autoscale, caching with Azure Redis Cache, running background tasks with WebJobs, and maintaining high availability with Azure Traffic Manager.
 
-The ability of Azure Web Apps to [scale up and out] is perfect for unpredictable workloads, which is the case with digital marketing campaigns. Scale out your web app manually through the [Azure Management Portal](https://manage.windowsazure.cn/), programmatically through the [Service Management API] or [PowerShell scripting], or automatically through the Autoscale feature. In the **Standard** tier, Autoscale enables you to scale out a web app automatically based on CPU utilization. This feature helps you maximize agility and minimize cost at the same time by scaling out the web app only when needed based on user activity. For best practices, see [Troy Hunt]'s [10 things I learned about rapidly scaling web apps with Azure].
+The ability of Azure Web Apps to [scale up and out] is perfect for unpredictable workloads, which is the case with digital marketing campaigns. Scale out your web app manually through the [Azure Classic Management Portal](https://manage.windowsazure.cn/), programmatically through the [Service Management API] or [PowerShell scripting], or automatically through the Autoscale feature. In the **Standard** tier, Autoscale enables you to scale out a web app automatically based on CPU utilization. This feature helps you maximize agility and minimize cost at the same time by scaling out the web app only when needed based on user activity. For best practices, see [Troy Hunt]'s [10 things I learned about rapidly scaling web apps with Azure].
 
 Make your web app more responsive with the [Azure Redis Cache]. Use it to cache data from backend databases and other things such as the [ASP.NET session state] and [output cache].
 
@@ -80,28 +84,28 @@ In the **Standard** tier, monitor app responsiveness receive email notifications
 
 [Azure Web App]: /home/features/web-site/
 
-[MySQL]: /documentation/articles/web-sites-php-mysql-deploy-use-git
-[Azure SQL Database]: /documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database
-[FTP]: /documentation/articles/web-sites-deploy#ftp
-[Visual Studio]: /documentation/articles/web-sites-dotnet-get-started
-[Git]: /documentation/articles/web-sites-publish-source-control
+[MySQL]: /documentation/articles/web-sites-php-mysql-deploy-use-git/
+[Azure SQL Database]: /documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/
+[FTP]: /documentation/articles/web-sites-deploy/#ftp
+[Visual Studio]: /documentation/articles/web-sites-dotnet-get-started/
+[Git]: /documentation/articles/web-sites-publish-source-control/
 
-[deploying to a staging slot]: /documentation/articles/web-sites-staged-publishing
+[deploying to a staging slot]: /documentation/articles/web-sites-staged-publishing/
 [continuously publish]:http://rickrainey.com/2014/01/21/continuous-deployment-github-with-azure-web-sites-and-staged-publishing/
 [run A/B tests]:http://blogs.msdn.com/b/tomholl/archive/2014/11/10/a-b-testing-with-azure-websites.aspx
 
-[Create an ASP.NET MVC app with auth and SQL DB and deploy to Azure Web App]: /documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database 
+[Create an ASP.NET MVC app with auth and SQL DB and deploy to Azure Web App]: /documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/
 
 [Azure Media Services]:http://blogs.technet.com/b/cbernier/archive/2013/09/03/windows-azure-media-services-and-web-sites.aspx
-[Mobile Services]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users
-[Notification Hub]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users
+[Mobile Services]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users/
+[Notification Hub]: /documentation/articles/mobile-services-dotnet-backend-windows-store-dotnet-push-notifications-app-users/
 
 [Azure Traffic Manager]:http://www.hanselman.com/blog/CloudPowerHowToScaleAzureWebsitesGloballyWithTrafficManager.aspx
-[integrating your web app with Azure CDN]: /documentation/articles/cdn-websites-with-cdn
+[integrating your web app with Azure CDN]: /documentation/articles/cdn-websites-with-cdn/
 [CDN node]:https://msdn.microsoft.com/zh-cn/library/azure/gg680302.aspx
 
 [scale up and out]:/manage/services/web-sites/how-to-scale-websites/
-[Azure Management Portal]:http://manage.windowsazure.cn/
+[Azure Classic Management Portal]:http://manage.windowsazure.cn/
 [Service Management API]:http://msdn.microsoft.com/zh-cn/library/azure/ee460799.aspx
 [PowerShell scripting]:http://msdn.microsoft.com/zh-cn/library/azure/jj152841.aspx
 [Troy Hunt]:https://twitter.com/troyhunt

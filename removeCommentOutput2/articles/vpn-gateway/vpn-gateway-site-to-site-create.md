@@ -1,44 +1,58 @@
 <properties
-   pageTitle="Create a virtual network with a site-to-site VPN Gateway connection using the Azure Management Portal | Windows Azure"
+   pageTitle="Create a virtual network with a site-to-site VPN Gateway connection using the Azure Classic Management Portal | Azure"
    description="Create a VNet with a S2S VPN Gateway connection for cross-premises and hybrid configurations using the classic deployment model."
    services="vpn-gateway"
    documentationCenter=""
    authors="cherylmc"
-   manager="carolz"
+   manager="carmonm"
    editor=""
    tags="azure-service-management"/>
 
 <tags
 	ms.service="vpn-gateway"
-	ms.date="12/14/2015"
+	ms.date="05/13/2016"
 	wacn.date=""/>
 
-# Create a virtual network with a site-to-site VPN connection using the Azure Management Portal
+# Create a virtual network with a Site-to-Site VPN connection using the Azure Classic Management Portal
 
 > [AZURE.SELECTOR]
-- [Azure Management Portal](/documentation/articles/vpn-gateway-site-to-site-create)
-- [PowerShell - Azure Resource Manager](/documentation/articles/vpn-gateway-create-site-to-site-rm-powershell)
+- [Azure Portal Preview](/documentation/articles/vpn-gateway-howto-site-to-site-resource-manager-portal/)
+- [Azure Classic Management Portal](/documentation/articles/vpn-gateway-site-to-site-create/)
+- [PowerShell - Resource Manager](/documentation/articles/vpn-gateway-create-site-to-site-rm-powershell/)
 
-This article will walk you through creating a virtual network and a site-to-site VPN connection to your on-premises network. This article applies to the classic deployment model. If you are looking for a different deployment model for this configuration, use the tabs above to select the article you want. If you want to connect VNets together, but are not creating a connection to an on-premises location, see [Configure a VNet-to-VNet connection](/documentation/articles/virtual-networks-configure-vnet-to-vnet-connection).
+
+This article will walk you through creating a virtual network and a site-to-site VPN connection to your on-premises network. Site-to-site connections can be used for cross-premises and hybrid configurations. This article applies to the classic deployment model and uses the Azure Classic Management Portal. 
+
 
 **About Azure deployment models**
 
 [AZURE.INCLUDE [vpn-gateway-clasic-rm](../includes/vpn-gateway-classic-rm-include.md)] 
+
+## Connection diagram
+ 
+![Site-to-Site diagram](./media/vpn-gateway-site-to-site-create/site2site.png "site-to-site")
+
+**Deployment models and tools for Site-to-Site connections**
+
+[AZURE.INCLUDE [vpn-gateway-table-site-to-site](../includes/vpn-gateway-table-site-to-site-include.md)]
+
+If you want to connect VNets together, but are not creating a connection to an on-premises location, see [Configure a VNet-to-VNet connection for the classic deployment model](/documentation/articles/virtual-networks-configure-vnet-to-vnet-connection/). If you are looking for a different type of connection configuration, see the [VPN Gateway connection topologies](/documentation/articles/vpn-gateway-topology/) article.
+
  
 ## Before you begin
 
 Verify that you have the following items before beginning configuration.
 
-- A compatible VPN device and someone who is able to configure it. See [About VPN Devices](/documentation/articles/vpn-gateway-about-vpn-devices). If you aren't familiar with configuring your VPN device, or are unfamiliar with the IP address ranges located on your on-premises network configuration, you will need to coordinate with someone who can provide those details for you.
+- A compatible VPN device and someone who can configure it. See [About VPN Devices](/documentation/articles/vpn-gateway-about-vpn-devices/). If you aren't familiar with configuring your VPN device, or are unfamiliar with the IP address ranges located in your on-premises network configuration, you will need to coordinate with someone who can provide those details for you.
 
 -  An externally-facing public IP address for your VPN device. This IP address cannot be located behind a NAT.
 
-- An Azure subscription. If you don't already have an Azure subscription, you can activate your [MSDN subscriber benefits](/pricing/member-offers/msdn-benefits-details/) or sign up for a [trial](/pricing/1rmb-trial/).
+- An Azure subscription. If you don't already have an Azure subscription, you can sign up for a [Trial](/pricing/1rmb-trial).
 
 
 ## Create your virtual network
 
-1. Log in to the **Azure Management Portal**.
+1. Log in to the [Azure Classic Management Portal](https://manage.windowsazure.cn/).
 
 2. In the lower left corner of the screen, click **New**. In the navigation pane, click **Network Services**, and then click **Virtual Network**. Click **Custom Create** to begin the configuration wizard.
 
@@ -67,8 +81,8 @@ Enter the following information and then click the next arrow.
 
 - 	**Name**: The name you want to call your local (on-premises) network site.
 - 	**VPN Device IP Address**: This is public facing IPv4 address of your on-premises VPN device that you'll use to connect to Azure. The VPN device cannot be located behind a NAT.
-- 	**Address Space**: Include Starting IP and CIDR (Address Count). This is where you specify the address range(s) that you want sent through the virtual network gateway to your local on-premises location. If a destination IP address falls within the ranges that you specify here, it will be routed through the virtual network gateway.
-- 	**Add address space**: If you have multiple address ranges that you want sent through the virtual network gateway, this is where you specify each additional address range. You can add or remove ranges later on the **Local Network** page.
+- 	**Address Space**: Include Starting IP and CIDR (Address Count). This is where you specify the address range(s) that you want to be sent through the virtual network gateway to your local on-premises location. If a destination IP address falls within the ranges that you specify here, it will be routed through the virtual network gateway.
+- 	**Add address space**: If you have multiple address ranges that you want to be sent through the virtual network gateway, this is where you specify each additional address range. You can add or remove ranges later on the **Local Network** page.
 
 ## Virtual network address spaces page
 
@@ -82,16 +96,14 @@ Enter the following information, and then click the checkmark on the lower right
 - **Add subnet**: Include Starting IP and Address Count. Additional subnets are not required, but you may want to create a separate subnet for VMs that will have static DIPS. Or you might want to have your VMs in a subnet that is separate from your other role instances.
 - **Add gateway subnet**: Click to add the gateway subnet. The gateway subnet is used only for the virtual network gateway and is required for this configuration.
 
-Click the checkmark on the bottom of the page and your virtual network will begin to create. When it completes, you will see **Created** listed under **Status** on the **Networks** page in the Azure Management Portal. After the VNet has been created, you can then configure your virtual network gateway.
+Click the checkmark on the bottom of the page and your virtual network will begin to create. When it completes, you will see **Created** listed under **Status** on the **Networks** page in the Azure Classic Management Portal. After the VNet has been created, you can then configure your virtual network gateway.
 
 [AZURE.INCLUDE [vpn-gateway-no-nsg](../includes/vpn-gateway-no-nsg-include.md)] 
 
 ## Configure your virtual network gateway
 
-Next, you'll configure the virtual network gateway in order to create a secure site-to-site connection. See [Configure a virtual network gateway in the Azure Management Portal](/documentation/articles/vpn-gateway-configure-vpn-gateway-mp).
+Next, you'll configure the virtual network gateway in order to create a secure site-to-site connection. See [Configure a virtual network gateway in the Azure Classic Management Portal](/documentation/articles/vpn-gateway-configure-vpn-gateway-mp/).
 
-## Next Steps
+## Next steps
 
-You can add virtual machines to your virtual network. See [How to create a custom virtual machine](/documentation/articles/virtual-machines-create-custom).
-
-If you want to configure a connection between your classic virtual network and a virtual network created using the Azure Resource Manager mode, see [Connecting classic VNets to Azure Resource Manager VNets](/documentation/articles/virtual-networks-arm-asm-s2s-howto).
+Once your connection is complete, you can add virtual machines to your virtual networks. See the [Virtual Machines](/documentation/services/virtual-machines/) documentation for more information.

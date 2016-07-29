@@ -1,3 +1,5 @@
+<!-- deleted in Global -->
+
 <properties linkid="develop-php- Website-with-sql-database-and-webmatrix" urlDisplayName="Web w/ SQL + WebMatrix" pageTitle="PHP  Website with SQL Database and WebMatrix - Azure" metaKeywords="" description="A tutorial that demonstrates how to use the free WebMatrix IDE to create and deploy a PHP  Website that stores data in SQL Database." metaCanonical="" services="" documentationCenter="" title="Create and Deploy a PHP  Website and SQL Database using WebMatrix" authors="" solutions="" manager="" editor="mollybos" />
 
 

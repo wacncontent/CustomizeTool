@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="virtual-network"
-	ms.date="01/28/2016"
+	ms.date="03/28/2016"
 	wacn.date=""/>
 
 # Set up a SharePoint intranet farm in a hybrid cloud for testing
@@ -193,6 +193,6 @@ Your SharePoint intranet farm in a hybrid cloud environment is now ready for tes
 
 ## Next steps
 
-- Set up the [production workload](/documentation/articles/virtual-machines-workload-intranet-sharepoint-overview).
+- Set up the [production workload](/documentation/articles/virtual-machines-windows-sp-intranet-overview).
 
 

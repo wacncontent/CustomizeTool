@@ -1,5 +1,5 @@
 <properties
-   pageTitle="Runbook input parameters| Windows Azure"
+   pageTitle="Runbook input parameters| Azure"
    description="Runbook input parameters increase the flexibility of runbooks by allowing you to pass data to a runbook when it is started. This article describes different scenarios where input parameters are used in runbooks."
    services="automation"
    documentationCenter=""
@@ -8,7 +8,7 @@
    editor="tysonn" />
 <tags
 	ms.service="automation"
-	ms.date="12/16/2015"
+	ms.date="04/25/2016"
 	wacn.date=""/>
 
 # Runbook input parameters
@@ -21,7 +21,7 @@ Input parameters can be configured in PowerShell, PowerShell Workflow, and graph
 
 ## Configure input parameters in PowerShell and PowerShell Workflow runbooks
 
-PowerShell and [PowerShell Workflow runbooks](/documentation/articles/automation-first-runbook-textual) in Azure Automation support input parameters that are defined through the following attributes.  
+PowerShell and [PowerShell Workflow runbooks](/documentation/articles/automation-first-runbook-textual/) in Azure Automation support input parameters that are defined through the following attributes.  
 
 | **Property** | **Description** |
 |:--- |:---|
@@ -65,15 +65,15 @@ Then you can pass the following value to the parameter:
 
 ## Configure input parameters in graphical runbooks
 
-To [configure a graphical runbook](/documentation/articles/automation-first-runbook-graphical) with input parameters, let's create a graphical runbook that outputs details about virtual machines--either a single VM or all VMs within a service. Configuring a runbook consists of two major activities, as described below.
+To [configure a graphical runbook](/documentation/articles/automation-first-runbook-graphical/) with input parameters, let's create a graphical runbook that outputs details about virtual machines--either a single VM or all VMs within a service. Configuring a runbook consists of two major activities, as described below.
 
 [**Add-AzureAccount**](https://msdn.microsoft.com/zh-cn/library/dn495128.aspx) to authenticate with Azure.
 
 [**Get-AzureVM**](https://msdn.microsoft.com/zh-cn/library/azure/dn495236.aspx) to get all the virtual machines.
 
-You can use the [**Write-Output**](https://technet.microsoft.com/zh-cn/library/hh849921.aspx) activity to output the names of virtual machines. The activity **Get-AzureVM** will accept two parameters, the **virtual machine name** and the **service account name**. Since these parameters could require different values each time you start the runbook, you can add input parameters to your runbook. Here are the steps to add input parameters:
+You can use the [**Write-Output**](https://technet.microsoft.com/zh-cn/library/hh849921.aspx) activity to output the names of virtual machines. The activity **Get-AzureVM** will accept two parameters, the **virtual machine name** and the **service name**. Since these parameters could require different values each time you start the runbook, you can add input parameters to your runbook. Here are the steps to add input parameters:
 
-1. Select the graphical runbook from the **Runbooks** blade and [edit](/documentation/articles/automation-graphical-authoring-intro) it.
+1. Select the graphical runbook from the **Runbooks** blade and [edit](/documentation/articles/automation-graphical-authoring-intro/) it.
 
 2. From the **Edit** blade, click **Input and output** to open the **Input and output** blade.
 
@@ -100,7 +100,7 @@ You can use the [**Write-Output**](https://technet.microsoft.com/zh-cn/library/h
     Mandatory--No
 
     * **Parameter2:**
-    Name--VMNameServiceName,
+    Name--ServiceName,
     Type--String,
     Mandatory--No,
     Default value--Custom,
@@ -114,11 +114,11 @@ You can pass values to input parameters in runbooks in the following scenarios.
 
 ### Start a runbook and assign parameters
 
-A runbook can be started many ways: through the Azure Management Portal UI, with a webhook,  with the PowerShell cmdlets, with the REST API, or with an SDK. Below we discuss different methods for starting a runbook and assigning parameters.
+A runbook can be started many ways: through the Azure portal UI, with a webhook,  with the PowerShell cmdlets, with the REST API, or with an SDK. Below we discuss different methods for starting a runbook and assigning parameters.
 
-- **Start a published runbook by using the Azure Management Portal and assign parameters**
+- **Start a published runbook by using the Azure portal and assign parameters**
 
-When you [start the runbook](/documentation/articles/automation-starting-a-runbook#starting-a-runbook-with-the-azure-portal.md), the **Start Runbook** blade opens and you can configure values for the parameters that you just created.
+When you [start the runbook](/documentation/articles/automation-starting-a-runbook/#starting-a-runbook-with-the-azure-portal), the **Start Runbook** blade opens and you can configure values for the parameters that you just created.
 
 ![Start using the portal](./media/automation-runbook-input-parameters/automation_04_StartRunbookUsingPortal.png)
 
@@ -141,7 +141,7 @@ In the label beneath the input box, you can see the attributes that have been se
         Start-AzureAutomationRunbook -AutomationAccountName "TestAutomation" -Name "Get-AzureVMGraphical" -Parameters $params
       ```
 
-    - **Azure Resource Manager cmdlets:** You can start an Automation runbook that was created in a resource group by using [Start-AzureRMAutomationRunbook](https://msdn.microsoft.com/zh-cn/library/mt603661.aspx).
+    - **Azure Resource Manager cmdlets:** You can start an Automation runbook that was created in a resource group by using [Start-AzureRmAutomationRunbook](https://msdn.microsoft.com/zh-cn/library/mt603661.aspx).
 
 
     **Example:**  
@@ -149,7 +149,7 @@ In the label beneath the input box, you can see the attributes that have been se
       ```
         $params = @{"VMName"="WSVMClassic";"ServiceName"="WSVMClassicSG"}
 
-        Start-AzureRMAutomationRunbook -AutomationAccountName "TestAutomationRG" -Name "Get-AzureVMGraphical" -ResourceGroupName "RG1" -Parameters $params
+        Start-AzureRmAutomationRunbook -AutomationAccountName "TestAutomationRG" -Name "Get-AzureVMGraphical" -ResourceGroupName "RG1" -Parameters $params
       ```
 
 >[AZURE.NOTE] When you start a runbook by using PowerShell cmdlets, a default parameter, **MicrosoftApplicationManagementStartedBy**, is created with the value **PowerShell**. You can view this parameter in the **Job details** blade.
@@ -220,7 +220,7 @@ In the request URI, replace the following parameters:
 * **subscription-id:** Your Azure subscription ID.  
 * **cloud-service-name:** The name of the cloud service to which the request should be sent.  
 * **automation-account-name:** The name of your automation account that's hosted within the specified cloud service.  
-* **job-id:** The GUID for the job. GUIDs in PowerShell can be created by using the **[GUID]::NewGuid().ToString()** cmdlet.
+* **job-id:** The GUID for the job. GUIDs in PowerShell can be created by using the **[GUID]::NewGuid().ToString()** command.
 
 In order to pass parameters to the runbook job, use the request body. It takes the following two properties provided in JSON format:
 
@@ -247,23 +247,23 @@ An HTTP status code 201 is returned if the job is successfully created. For more
 
 ### Test a runbook and assign parameters
 
-When you  [test the draft version of your runbook](/documentation/articles/automation-testing-runbook) by using the test option, the **Test** blade opens and you can configure values for the parameters that you just created.
+When you  [test the draft version of your runbook](/documentation/articles/automation-testing-runbook/) by using the test option, the **Test** blade opens and you can configure values for the parameters that you just created.
 
 ![Test and assign parameters](./media/automation-runbook-input-parameters/automation_06_TestAndAssignParameters.png)
 
 ### Link a schedule to a runbook and assign parameters
 
-You can [link a schedule](/documentation/articles/automation-scheduling-a-runbook) to your runbook so that the runbook starts at a specific time. You assign input parameters when you create the schedule, and the runbook will use these values when it is started by the schedule. You can't save the schedule until all mandatory parameter values are provided.
+You can [link a schedule](/documentation/articles/automation-scheduling-a-runbook/) to your runbook so that the runbook starts at a specific time. You assign input parameters when you create the schedule, and the runbook will use these values when it is started by the schedule. You can't save the schedule until all mandatory parameter values are provided.
 
 ![Schedule and assign parameters](./media/automation-runbook-input-parameters/automation_07_ScheduleAndAssignParameters.png)
 
 ### Create a webhook for a runbook and assign parameters
 
-You can create a [webhook](/documentation/articles/automation-webhooks)  for your runbook and configure runbook input parameters. You can't save the webhook until all mandatory parameter values are provided.
+You can create a [webhook](/documentation/articles/automation-webhooks/)  for your runbook and configure runbook input parameters. You can't save the webhook until all mandatory parameter values are provided.
 
 ![Create webhook and assign parameters](./media/automation-runbook-input-parameters/automation_08_CreateWebhookAndAssignParameters.png)
 
-When you execute a runbook by using a webhook, the predefined input parameter  **[Webhookdata](/documentation/articles/automation-webhooks#details-of-a-webhook)** is sent, along with the input parameters that you defined. You can click to expand the **WebhookData** parameter for more details.
+When you execute a runbook by using a webhook, the predefined input parameter  **[Webhookdata](/documentation/articles/automation-webhooks/#details-of-a-webhook)** is sent, along with the input parameters that you defined. You can click to expand the **WebhookData** parameter for more details.
 
 ![WebhookData parameter](./media/automation-runbook-input-parameters/automation_09_WebhookDataParameter.png)
 
@@ -271,6 +271,6 @@ When you execute a runbook by using a webhook, the predefined input parameter  *
 ## Next steps
 
 - For more information on runbook input and output, see [Azure Automation: runbook input, output, and nested runbooks](https://azure.microsoft.com/blog/azure-automation-runbook-input-output-and-nested-runbooks/).
-- For details about different ways to start a runbook, see [Starting a runbook](/documentation/articles/automation-starting-a-runbook).
-- To edit a textual runbook, refer to [Editing textual runbooks](/documentation/articles/automation-edit-textual-runbook).
-- To edit a graphical runbook, refer to [Graphical authoring in Azure Automation](/documentation/articles/automation-graphical-authoring-intro).
+- For details about different ways to start a runbook, see [Starting a runbook](/documentation/articles/automation-starting-a-runbook/).
+- To edit a textual runbook, refer to [Editing textual runbooks](/documentation/articles/automation-edit-textual-runbook/).
+- To edit a graphical runbook, refer to [Graphical authoring in Azure Automation](/documentation/articles/automation-graphical-authoring-intro/).

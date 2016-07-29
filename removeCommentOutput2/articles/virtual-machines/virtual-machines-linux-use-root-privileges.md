@@ -1,7 +1,7 @@
 <properties 
 	pageTitle="Use root privileges on Linux virtual machines | Azure" 
 	description="Learn how to use root privileges on a Linux virtual machine in Azure." 
-	services="virtual-machines" 
+	services="virtual-machines-linux" 
 	documentationCenter="" 
 	authors="szarkos" 
 	manager="timlt" 
@@ -9,8 +9,8 @@
 	tags="azure-service-management,azure-resource-manager" />
 
 <tags
-	ms.service="virtual-machines"
-	ms.date="12/17/2015"
+	ms.service="virtual-machines-linux"
+	ms.date="07/13/2016"
 	wacn.date=""/>
 
 

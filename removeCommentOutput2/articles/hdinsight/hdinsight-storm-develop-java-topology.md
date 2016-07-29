@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="01/29/2016"
+	ms.date="06/17/2016"
 	wacn.date=""/>
 
 #Develop Java-based topologies for a basic word-count application with Apache Storm and Maven on HDInsight
@@ -35,7 +35,7 @@ After completing the steps in this document, you will have a basic topology that
 
 The following environment variables may be set when you install Java and the JDK. However, you should check that they exist and that they contain the correct values for your system.
 
-* **JAVA_HOME** - should point to the directory where the Java runtime environment (JRE) is installed. For example, in a Unix or Linux distribuI In Windows, it would have a value similar to `c:\Program Files (x86)\Java\jre1.7`
+* **JAVA_HOME** - should point to the directory where the Java runtime environment (JRE) is installed. For example, In Windows, it would have a value similar to `c:\Program Files (x86)\Java\jre1.7`
 
 * **PATH** - should contain the following paths:
 
@@ -103,6 +103,7 @@ For Storm topologies, the <a href="http://mojo.codehaus.org/exec-maven-plugin/" 
 	<plugin>
       <groupId>org.codehaus.mojo</groupId>
       <artifactId>exec-maven-plugin</artifactId>
+      <version>1.4.0</version>
       <executions>
         <execution>
         <goals>
@@ -126,6 +127,7 @@ Add the following in the `<plugins>` section of the **pom.xml** file to include 
 	<plugin>
       <groupId>org.apache.maven.plugins</groupId>
       <artifactId>maven-compiler-plugin</artifactId>
+      <version>3.3</version>
       <configuration>
         <source>1.7</source>
         <target>1.7</target>
@@ -146,11 +148,7 @@ A Java-based Storm topology consists of three components that you must author (o
 
 To reduce requirements for setting up external data sources, the following spout simply emits random sentences. It is a modified version of a spout that is provided with the  (<a href="https://github.com/apache/storm/blob/master/examples/storm-starter/" target="_blank">Storm-Starter examples</a>).
 
-> [AZURE.NOTE] For an example of a spout that reads from an external data source, see one of the following examples:
->
-> * <a href="https://github.com/apache/storm/blob/master/examples/storm-starter/src/jvm/storm/starter/spout/TwitterSampleSpout.java" target="_blank">TwitterSampleSpout</a>: An example spout that reads from Twitter
->
-> * <a href="https://github.com/apache/storm/tree/master/external/storm-kafka" target="_blank">Storm-Kafka</a>: A spout that reads from Kafka
+> [AZURE.NOTE] For an example of a spout that reads from an external data source, see one of the following examples: <a href="https://github.com/apache/storm/tree/master/external/storm-kafka" target="_blank">Storm-Kafka</a>: A spout that reads from Kafka
 
 For the spout, create a new file named **RandomSentenceSpout.java** in the **src\main\java\com\microsoft\example** directory and use the following as the contents:
 
@@ -449,7 +447,7 @@ By looking at the data emitted by the count bolt, we can see that 'apple' has be
 
 Trident is a high-level abstraction that is provided by Storm. It supports stateful processing. The primary advantage of Trident is that it can guarantee that every message that enters the topology is processed only once. This is difficult to achieve in a raw Java topology, which guarantee's that messages will be processed at least once. There are also other differences, such as built-in components that can be used instead of creating bolts. In fact, bolts are completely replaced by less-generic components, such as filters, projections, and functions.
 
-Trident applications can be created by using Maven projects. You use the same basic steps as presented earlier in this article—only the code is different.
+Trident applications can be created by using Maven projects. You use the same basic steps as presented earlier in this article--only the code is different.
 
 For more information about Trident, see the <a href="http://storm.apache.org/documentation/Trident-API-Overview.html" target="_blank">Trident API Overview</a>.
 
@@ -457,8 +455,8 @@ For more information about Trident, see the <a href="http://storm.apache.org/doc
 
 You have learned how to create a Storm topology by using Java. Now learn how to:
 
-* [Deploy and manage Apache Storm topologies on HDInsight](/documentation/articles/hdinsight-storm-deploy-monitor-topology)
+* [Deploy and manage Apache Storm topologies on HDInsight](/documentation/articles/hdinsight-storm-deploy-monitor-topology/)
 
-* [Develop C# topologies for Apache Storm on HDInsight using Visual Studio](/documentation/articles/hdinsight-storm-develop-csharp-visual-studio-topology)
+* [Develop C# topologies for Apache Storm on HDInsight using Visual Studio](/documentation/articles/hdinsight-storm-develop-csharp-visual-studio-topology/)
 
-You can find more example Storm topologies by visiting [Example topologies for Storm on HDInsight](/documentation/articles/hdinsight-storm-example-topology).
+You can find more example Storm topologies by visiting [Example topologies for Storm on HDInsight](/documentation/articles/hdinsight-storm-example-topology/).

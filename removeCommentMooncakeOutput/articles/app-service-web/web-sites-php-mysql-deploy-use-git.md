@@ -3,31 +3,23 @@
 	description="A tutorial that demonstrates how to create a PHP web app that stores data in MySQL and use Git deployment to Azure."
 	services="app-service\web"
 	documentationCenter="php"
-	authors="tfitzmac"
+	authors="rmcmurray"
 	manager="wpickett"
-	editor="mollybos"
+	editor=""
 	tags="mysql"/>
 
 <tags
 	ms.service="app-service-web"
-	ms.date="02/09/2016"
+	ms.date="04/08/2016"
 	wacn.date=""/>
 
 #Create a PHP-MySQL web app in Azure and deploy using Git
-
-> [AZURE.SELECTOR]
-- [.Net](/documentation/articles/web-sites-dotnet-get-started)
-- [Node.js](/documentation/articles/web-sites-nodejs-develop-deploy-mac)
-- [Java](/documentation/articles/web-sites-java-get-started)
-- [PHP - Git](/documentation/articles/web-sites-php-mysql-deploy-use-git)
-- [PHP - FTP](/documentation/articles/web-sites-php-mysql-deploy-use-ftp)
-- [Python](/documentation/articles/web-sites-python-ptvs-django-mysql)
 
 This tutorial shows you how to create a PHP-MySQL web app and how to deploy it to [Azure Web App](/documentation/services/web-sites/) using Git. You will use [PHP][install-php], the MySQL Command-Line Tool (part of [MySQL][install-mysql]), and [Git][install-git] installed on your computer. The instructions in this tutorial can be followed on any operating system, including Windows, Mac, and  Linux. Upon completing this guide, you will have a PHP/MySQL web app running in Azure.
 
 You will learn:
 
-* How to create a web app and a MySQL database using the [Azure Management Portal](https://manage.windowsazure.cn). Because PHP is enabled in [Azure Web Apps](/documentation/services/web-sites/) by default, nothing special is required to run your PHP code.
+* How to create a web app and a MySQL database using the [Azure Classic Management Portal](https://manage.windowsazure.cn). Because PHP is enabled in [Azure Web Apps](/documentation/services/web-sites/) by default, nothing special is required to run your PHP code.
 * How to publish and re-publish your application to Azure using Git.
 
 By following this tutorial, you will build a simple registration web app in PHP. The application will be hosted in Web Apps. A screenshot of the completed application is below:
@@ -43,7 +35,7 @@ This tutorial assumes you have [PHP][install-php], the MySQL Command-Line Tool (
 
 Follow these steps to create a web app and a MySQL database:
 
-1. Login to the [Azure Management Portal][management-portal].
+1. Login to the [Azure Classic Management Portal][management-portal].
 2. Click the **New** icon on the bottom left of the portal.
 
 	![Create New Azure  Website][new-website]
@@ -85,7 +77,7 @@ Follow these steps to create a web app and a MySQL database:
 
 To connect to the MySQL database that is running in Web Apps, your will need the connection information. To get MySQL connection information, follow these steps:
 
-1. In Azure Management Portal, click **MYSQL DATABASE ON AZURE**, and open your MYSQL database server. In **Dashboard** page, under **quick glance**, you can get your host and port.
+1. In Azure Classic Management Portal, click **MYSQL DATABASE ON AZURE**, and open your MYSQL database server. In **Dashboard** page, under **quick glance**, you can get your host and port.
 
 	![connection][connection-string-info]
 
@@ -150,7 +142,7 @@ To build and run the application locally, follow the steps below. Note that thes
 		<?php
 			// DB connection info
 			//TODO: Update the values for $host, $user, $pwd, and $db
-			//using the values you retrieved earlier from the Azure Management Portal.
+			//using the values you retrieved earlier from the Azure Classic Management Portal.
 			$host = "value of Data Source";
 			$user = "value of User Id";
 			$pwd = "value of Password";
@@ -218,9 +210,9 @@ You can now browse to **http://localhost:8000/** to test the application.
 After you have tested your app locally, you can publish it to Web Apps using Git. You will initialize your local Git repository and publish the application.
 
 > [AZURE.NOTE]
-> These are the same steps shown in the Azure Management Portal at the end of the Create a web app and Set up Git Publishing section above.
+> These are the same steps shown in the Azure Classic Management Portal at the end of the Create a web app and Set up Git Publishing section above.
 
-1. (Optional)  If you've forgotten or misplaced your Git remote repostitory URL, navigate to the web app properties on the Azure Management Portal.
+1. (Optional)  If you've forgotten or misplaced your Git remote repostitory URL, navigate to the web app properties on the Azure Classic Management Portal.
 
 1. Open GitBash (or a terminal, if Git is in your `PATH`), change directories to the root directory of your application, and run the following commands:
 

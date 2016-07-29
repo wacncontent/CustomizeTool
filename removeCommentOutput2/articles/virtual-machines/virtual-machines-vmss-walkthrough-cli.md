@@ -1,4 +1,4 @@
-<!-- not suitable for Mooncake -->
+<!-- rename to virtual-machines-linux-create-vmss -->
 
 <properties
 	pageTitle="Automatically Scale Virtual Machine Scale Sets | Azure"
@@ -23,7 +23,7 @@
 
 <br>
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the Resource Manager deployment model, which Microsoft recommends for most new deployments instead of the classic deployment model.
 
 Virtual Machine Scale Sets make it easy for you to deploy and manage identical virtual machines as a set. Scale sets provide a highly scalable and customizable compute layer for hyperscale applications, and they support Windows platform images, Linux platform images, custom images, and extensions. For more information about scale sets, see [Virtual Machine Scale Sets](/documentation/articles/virtual-machines-vmss-overview).
 
@@ -546,7 +546,7 @@ The template can be uploaded from your command-line interface as long as you kno
 		export AZURE_STORAGE_ACCOUNT={account_name}
 		export AZURE_STORAGE_ACCESS_KEY={key}
 
-	You can get the key by clicking the key icon when viewing the storage account resource in the Azure Management Portal. When using a Windows command prompt, type **set** instead of export.
+	You can get the key by clicking the key icon when viewing the storage account resource in the Azure portal. When using a Windows command prompt, type **set** instead of export.
 
 2. Create the container to store the template:
 
@@ -574,13 +574,13 @@ When you press enter, you are prompted to provide values for the variables you a
 It should take about 15 minutes for all of the resources to successfully be deployed.
 
 >[AZURE.NOTE]You can also make use of the portal's ability to deploy the resources. To do this, use this link:
-https://manage.windowsazure.cn/#create/Microsoft.Template/uri/<link to VM Scale Set JSON template>
+https://portal.azure.cn/#create/Microsoft.Template/uri/<link to VM Scale Set JSON template>
 
 ## Step 5: Monitor resources
 
 You can get some information about virtual machine scale sets using these methods:
 
- - The Azure Management Portal - You can currently get a limited amount of information using the portal.
+ - The Azure portal - You can currently get a limited amount of information using the portal.
  - The [Azure Resource Explorer](https://resources.azure.com/) - This is the best tool to explore the current state of your scale set. Follow this path and you should see the instance view of the scale set that you created:
 
 		subscriptions > {your subscription} > resourceGroups > vmsstestrg1 > providers > Microsoft.Compute > virtualMachineScaleSets > vmsstest1 > virtualMachines

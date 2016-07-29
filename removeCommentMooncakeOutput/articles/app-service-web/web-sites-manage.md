@@ -1,3 +1,5 @@
+<!-- deleted in Global -->
+
 <properties linkid="manage-scenarios-how-to-manage-websites" urlDisplayName="How to manage" pageTitle="How to manage  Websites - Azure service management" metaKeywords="Azure Management Portal  Website management" description="A reference for the Portal  Website management pages in Azure. Details are provided for each  Website management page." metaCanonical="" services="web-sites" documentationCenter="" title="How to Manage  Websites" authors="timamm"  solutions="" writer="timamm" manager="" editor=""  />
 
 
@@ -72,7 +74,7 @@ A **Quick Glance** section which includes the following summary information and 
 The **Monitor** management page provides a chart that displays usage information for the website. By default this chart displays the same metrics as the chart on the **Dashboard** page as described above in the Dashboard section. The chart can also be configured to display the metrics HTTP Successes, HTTP Redirects, HTTP 401 errors, HTTP 403 errors, HTTP 404 errors and HTTP 406 errors. For more information about these metrics, see [How to Monitor Web Sites][Monitor].
 
 ##WebJobs##
-The WebJobs management page lets you create on demand, scheduled, or continuously running tasks for your website. For more information, see [How to Use the WebJobs feature in Azure Web Sites](/documentation/articles/web-sites-create-web-jobs).
+The WebJobs management page lets you create on demand, scheduled, or continuously running tasks for your website. For more information, see [How to Use the WebJobs feature in Azure Web Sites](/documentation/articles/web-sites-create-web-jobs/).
 
 ##Configure##
 The **Configure** management page is used to set application specific settings.
@@ -199,9 +201,9 @@ To reset the password, click **Reset your publish profile credentials**. To get 
 
 [azuresdk]:/zh-cn/downloads/
 
-[Configure]: /documentation/articles/web-sites-configure
-[Monitor]: /documentation/articles/web-sites-monitor
-[Scale]: /documentation/articles/web-sites-scale
+[Configure]: /documentation/articles/web-sites-configure/
+[Monitor]: /documentation/articles/web-sites-monitor/
+[Scale]: /documentation/articles/web-sites-scale/
 <!-- Anchors. -->
 [FTP Credentials]: #ftp-credentials
 

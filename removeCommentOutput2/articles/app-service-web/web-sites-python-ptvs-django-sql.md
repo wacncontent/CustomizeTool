@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="11/13/2015"
+	ms.date="07/07/2016"
 	wacn.date=""/>
 
 
@@ -18,20 +18,20 @@
 
 # Django and SQL Database on Azure with Python Tools 2.2 for Visual Studio 
 
-In this tutorial, we'll use [Python Tools for Visual Studio] to create a simple polls web app using one of the PTVS sample templates. This tutorial is also avail
+In this tutorial, we'll use [Python Tools for Visual Studio] to create a simple polls web app using one of the PTVS sample templates.
 
 We'll learn how to use a SQL database hosted on Azure, how to configure the web app to use a SQL database, and how to publish the web app to [Azure Web Apps](/documentation/services/web-sites/).
 
-See the [Python Developer Center] for more articles that cover development of Azure Web Apps with PTVS using Bottle, Flask and Django web frameworks, with MongoDB, Azure Table Storage, MySQL and SQL Database services. While this article focuses on Azure Web App, the steps are similar when developing [Azure Cloud Services].
-
+See the [Python Developer Center] for more articles that cover development of Azure Web Apps with PTVS using Bottle, Flask and Django web frameworks, with Azure Table Storage, MySQL and SQL Database services. While this article focuses on Azure Web App, the steps are similar when developing [Azure Cloud Services].
 
 ##<a name="prerequisites"></a> Prerequisites
 
- - Visual Studio 2013 or 2015
+ - Visual Studio 2015
+ - [Python 2.7 32-bit]
  - [Python Tools 2.2 for Visual Studio]
  - [Python Tools 2.2 for Visual Studio Samples VSIX]
- - [Azure SDK Tools for VS 2013] or [Azure SDK Tools for VS 2015]
- - [Python 2.7 32-bit]
+ - [Azure SDK Tools for VS 2015]
+ - Django 1.9 or later
 
 [AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
 
@@ -41,7 +41,7 @@ In this section, we'll create a Visual Studio project using a sample template. W
 
 1.  In Visual Studio, select **File**, **New Project**.
 
-1.  The project templates from the PTVS Samples VSIX are available under **Python**, **Samples**. Select **Polls Django Web Project** and click OK to create the project.
+1.  The project templates from the [Python Tools 2.2 for Visual Studio Samples VSIX] are available under **Python**, **Samples**. Select **Polls Django Web Project** and click OK to create the project.
 
   	![New Project Dialog](./media/web-sites-python-ptvs-django-sql/PollsDjangoNewProject.png)
 
@@ -53,15 +53,10 @@ In this section, we'll create a Visual Studio project using a sample template. W
 
   	![Add Virtual Environment Dialog](./media/web-sites-python-ptvs-django-sql/PollsCommonAddVirtualEnv.png)
 
-1.  Right-click the project node and select **Python**, **Django Sync DB**.
+1.  In **Solution Explorer**, right-click on the project node and select **Python**, and then select **Django Migrate**.  Then select **Django Create Superuser**.
 
-  	![Django Sync DB Command](./media/web-sites-python-ptvs-django-sql/PollsDjangoSyncDB.png)
+1.  This will open a Django Management Console and create a sqlite database in the project folder. Follow the prompts to create a user.
 
-1.  This will open a Django Management Console. Follow the prompts to create a user.
-
-    This will create a sqlite database in the project folder.
-
-  	![Django Management Console Window](./media/web-sites-python-ptvs-django-sql/PollsDjangoConsole.png)
 
 1.  Confirm that the application works by pressing <kbd>F5</kbd>.
 
@@ -87,15 +82,11 @@ For the database, we'll create an Azure SQL database.
 
 You can create a database by following these steps.
 
-1.  Log into the [Azure Management Portal].
+1.  Log into the [Azure Classic Management Portal].
 
 1.  At the bottom of the navigation pane, click **NEW**. , click **DATA SERVICE** > **SQL Database**.
 
-  	<!-- ![New Button](./media/web-sites-python-ptvs-django-sql/PollsCommonAzurePlusNew.png) -->
-
 1.  Configure the new SQL Database by creating a new resource group and select the appropriate location for it.
-
-  	<!-- ![Quick Create SQL Database](./media/web-sites-python-ptvs-django-sql/PollsDjangoSqlCreate.png) -->
 
 1.  Once the SQL Database is created, click **Open in Visual Studio** in the database blade.
 2.  Click **Configure your firewall**.
@@ -144,35 +135,24 @@ Edit the definition of `DATABASES` to use the values above.
 
   	![Install Python Package Dialog](./media/web-sites-python-ptvs-django-sql/PollsDjangoSqlInstallPackageDjangoPyodbcAzure.png)
 
-1.  Right-click the project node and select **Python**, **Django Sync DB**. 
+1.  In **Solution Explorer**, right-click on the project node and select **Python**, and then select **Django Migrate**.  Then select **Django Create Superuser**.
 
     This will create the tables for the SQL database we created in the previous section. Follow the prompts to create a user, which doesn't have to match the user in the sqlite database created in the first section.
-
-  	![Django Management Console Window](./media/web-sites-python-ptvs-django-sql/PollsDjangoConsole.png)
 
 1.  Run the application with `F5`. Polls that are created with **Create Sample Polls** and the data submitted by voting will be serialized in the SQL database.
 
 
 ## Publish the web app to Azure
 
-The Azure .NET SDK provides an easy way to deploy your web web app to Azures.
+The Azure .NET SDK provides an easy way to deploy your web web app to Azure.
 
 1.  In **Solution Explorer**, right-click on the project node and select **Publish**.
 
-  	<!-- ![Publish Web Dialog](./media/web-sites-python-ptvs-django-sql/PollsCommonPublishWebSiteDialog.png) -->
+  	![Publish Web Dialog](./media/web-sites-python-ptvs-django-sql/PollsCommonPublishWebSiteDialog.png)
 
-1.  Click on **Azure Web Apps**.
+1.  Click on **Import**, and choose the downloaded "Publish Profile".
 
-1.  Click on **New** to create a new web app.
-
-1.  Fill in the following fields and click **Create**.
-	-	**Web App name**
-	-	**App Service plan**
-	-	**Resource group**
-	-	**Region**
-	-	Leave **Database server** set to **No database**
-
-  	<!-- ![Create Site on Azure Dialog](./media/web-sites-python-ptvs-django-sql/PollsCommonCreateWebSite.png) -->
+	If you haven't create a web app yet, you can log into the [Azure Classic Management Portal](https://manage.windowsazure.cn/) to create one, and go to the **Dashboard** page, under the **quick glance**, download the "Publish Profile".
 
 1.  Accept all other defaults and click **Publish**.
 
@@ -196,14 +176,13 @@ Follow these links to learn more about Python Tools for Visual Studio, Django an
 
 <!--Link references-->
 [Python Developer Center]: /develop/python/
-[Azure Cloud Services]: /documentation/articles/cloud-services-python-ptvs
+[Azure Cloud Services]: /documentation/articles/cloud-services-python-ptvs/
 
 <!--External Link references-->
-[Azure Management Portal]: https://manage.windowsazure.cn
+[Azure Classic Management Portal]: https://manage.windowsazure.cn
 [Python Tools for Visual Studio]: http://aka.ms/ptvs
 [Python Tools 2.2 for Visual Studio]: http://go.microsoft.com/fwlink/?LinkID=624025
 [Python Tools 2.2 for Visual Studio Samples VSIX]: http://go.microsoft.com/fwlink/?LinkID=624025
-[Azure SDK Tools for VS 2013]: http://go.microsoft.com/fwlink/?LinkId=323510
 [Azure SDK Tools for VS 2015]: http://go.microsoft.com/fwlink/?LinkId=518003
 [Python 2.7 32-bit]: http://go.microsoft.com/fwlink/?LinkId=517190 
 [Python Tools for Visual Studio Documentation]: http://aka.ms/ptvsdocs

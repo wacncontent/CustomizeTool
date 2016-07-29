@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="12/02/2015"
+	ms.date="05/27/2016"
 	wacn.date=""/>
 
 # Learn Hadoop by using the HDInsight Getting Started Gallery
@@ -25,10 +25,9 @@ The HDInsight Getting Started Gallery provides an easy and quick way learn Hadoo
 	- Website log analysis
 	- Mahout movie recommendation
 
-
 [AZURE.INCLUDE [hdinsight-azure-portal](../includes/hdinsight-azure-portal.md)]
 
-* [Learn Hadoop by using the HDInsight Getting Started Gallery](/documentation/articles/hdinsight-learn-hadoop-use-sample-gallery)
+* [Learn Hadoop by using the HDInsight Getting Started Gallery](/documentation/articles/hdinsight-learn-hadoop-use-sample-gallery/)
 
 
 ![HDInsight Hadoop, Storm, and HBase Getting Started Gallery solutions including sample data.][hdinsight.sample.gallery]
@@ -36,15 +35,11 @@ The HDInsight Getting Started Gallery provides an easy and quick way learn Hadoo
 The following video clip shows how to run the Twitter trend analysis sample:
 
 <center><a href="https://www.youtube.com/embed/7ePbHot1SN4">https://www.youtube.com/embed/7ePbHot1SN4></a></center>
-
-
-![HDInsight Hadoop, Storm, and HBase Getting Started Gallery solutions including sample data.][hdinsight.sample.gallery]
-
 
 
 **To run a sample from the Getting Started Gallery**
 
-1.	Sign in to the [Azure Management Portal][azure.portal].
+1.	Sign in to the [Azure portal][azure.portal].
 2.	Click **HDInsight** in the left menu. You will see a list of existing HDInsight clusters, including Hadoop, Storm, and HBase clusters.
 3.	Click the cluster where you want to run the sample.
 4.	Click **QUERY CONSOLE** at the bottom of the page.
@@ -65,6 +60,6 @@ Other ways to learn about HDInsight include:
 [hdinsight.twitter.sample]: ./media/hdinsight-learn-hadoop-use-sample-gallery/HDInsight-Twitter-Trend-Analysis-sample.png
 
 <!--Link references-->
-[hdinsight.learn.map]: /documentation/articles/hdinsight-learn-map
+[hdinsight.learn.map]: https://azure.microsoft.com/documentation/learning-paths/hdinsight-self-guided-hadoop-training/
 [hdinsight.infographic]: http://go.microsoft.com/fwlink/?linkid=523960
 [azure.portal]:https://manage.windowsazure.cn

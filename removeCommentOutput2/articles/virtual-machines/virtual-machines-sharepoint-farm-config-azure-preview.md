@@ -1,5 +1,7 @@
+<!-- deleted in Global -->
+
 <properties
-	pageTitle="SharePoint Server Farm configuration | Windows Azure"
+	pageTitle="SharePoint Server Farm configuration | Azure"
 	description="Learn about the default configuration of SharePoint farms when you use the SharePoint Server Farm feature of the Azure preview portal."
 	services="virtual-machines"
 	documentationCenter=""
@@ -15,7 +17,7 @@
 
 # SharePoint Server Farm configuration details
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the classic deployment model. Microsoft recommends that most new deployments use the
 
 
 SharePoint Server Farm is a feature of the Azure preview portal that automatically creates a preconfigured SharePoint Server 2013 farm for you. There are two farm configurations:

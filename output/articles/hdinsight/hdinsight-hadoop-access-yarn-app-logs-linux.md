@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
 	pageTitle="Access Hadoop YARN application logs on Linux-based HDInsight | Azure"
 	description="Learn how to access YARN application logs on a Linux-based HDInsight (Hadoop) cluster using both the command-line and a web browser."
@@ -12,20 +10,20 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="02/05/2016"
+	ms.date="07/12/2016"
 	wacn.date=""/>
 
-# Access YARN application logs on Linux-based HDInsight
+# Access YARN application logs on Linux-based HDInsight 
 
 This document explains how to access the logs for YARN (Yet Another Resource Negotiator) applications that have finished on a Hadoop cluster in Azure HDInsight.
 
-> [AZURE.NOTE] The information in this document is specific to Linux-based HDInsight clusters. For information on Windows-based clusters, see [Access YARN application logs on Windows-based HDInsight](/documentation/articles/hdinsight-hadoop-access-yarn-app-logs)
+> [AZURE.NOTE] The information in this document is specific to Linux-based HDInsight clusters. For information on Windows-based clusters, see [Access YARN application logs on Windows-based HDInsight](/documentation/articles/hdinsight-hadoop-access-yarn-app-logs/)
 
 ## Prerequisites
 
 * A Linux-based HDInsight cluster.
 
-* You must [create an SSH tunnel](/documentation/articles/hdinsight-linux-ambari-ssh-tunnel) before you can access the ResourceManager Logs web UI.
+* You must [create an SSH tunnel](/documentation/articles/hdinsight-linux-ambari-ssh-tunnel/) before you can access the ResourceManager Logs web UI.
 
 ## <a name="YARNTimelineServer"></a>YARN Timeline Server
 
@@ -59,9 +57,9 @@ The aggregated logs are not directly readable, as they are written in a [TFile][
 
 In order to use the YARN CLI tools, you must first connect to the HDInsight cluster using SSH. Use one of the following documents for information on using SSH with HDInsight:
 
-- [Use SSH with Linux-based Hadoop on HDInsight from Linux, Unix, or OS X](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix)
+- [Use SSH with Linux-based Hadoop on HDInsight from Linux, Unix, or OS X](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix/)
 
-- [Use SSH with Linux-based Hadoop on HDInsight from Windows](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows)
+- [Use SSH with Linux-based Hadoop on HDInsight from Windows](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows/)
 	
 You can view these logs as plain text by running one of the following commands:
 
@@ -72,7 +70,7 @@ You must specify the &lt;applicationId>, &lt;user-who-started-the-application>, 
 
 ##YARN ResourceManager UI
 
-The YARN ResourceManager UI runs on the cluster headnode, and can be accessed through the Ambari web UI; however, you must first [create an SSH tunnel](/documentation/articles/hdinsight-linux-ambari-ssh-tunnel) before you can access the ResourceManager UI.
+The YARN ResourceManager UI runs on the cluster headnode, and can be accessed through the Ambari web UI; however, you must first [create an SSH tunnel](/documentation/articles/hdinsight-linux-ambari-ssh-tunnel/) before you can access the ResourceManager UI.
 
 Once you have created an SSH tunnel, use the following steps to view the YARN logs:
 

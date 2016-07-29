@@ -1,7 +1,7 @@
-<!-- not suitable for Mooncake -->
+<!-- deleted in Global -->
 
 <properties
-	pageTitle="Create a VM with a template | Windows Azure"
+	pageTitle="Create a VM with a template | Azure"
 	description="Use a Resource Manager template and Azure PowerShell to create a new Windows virtual machine."
 	services="virtual-machines"
 	documentationCenter=""
@@ -17,7 +17,7 @@
 
 # Create a Windows virtual machine with a Resource Manager template and PowerShell
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the Resource Manager deployment model, which Microsoft recommends for most new deployments instead of the classic deployment model.
 
 
 You can easily create a new Windows-based Azure virtual machine (VM) using a Resource Manager template with Azure PowerShell. This template creates a single virtual machine running Windows in a new virtual network with a single subnet in a new resource group.
@@ -80,7 +80,6 @@ You should see something like this:
 											windowsOSVersion       String                     2012-R2-Datacenter
 		Outputs           :
 
-[Create a Windows virtual machine with PowerShell and Azure Service Manager](/documentation/articles/virtual-machines-create-windows-powershell-service-manager)
 
 ## Next Steps
 

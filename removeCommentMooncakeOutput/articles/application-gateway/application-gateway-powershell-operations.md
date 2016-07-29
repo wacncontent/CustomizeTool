@@ -1,5 +1,7 @@
+<!-- deleted in Global -->
+
 <properties
-   pageTitle="Create, start, or delete an Application Gateway | Windows Azure"
+   pageTitle="Create, start, or delete an Application Gateway | Azure"
    description="Create, configure, start, and delete an Azure Application Gateway"
    documentationCenter="na"
    services="application-gateway"
@@ -13,7 +15,7 @@
 
 # Create, start, or delete an Application Gateway
 
-In this release, you can create an Application Gateway by using PowerShell or REST API calls. Azure Management Portal and CLI support will be provided in an upcoming release.
+In this release, you can create an Application Gateway by using PowerShell or REST API calls. Azure portal and CLI support will be provided in an upcoming release.
 This article walks you through the steps to create and configure, start, and delete an Application Gateway.
 
 ## Before you begin
@@ -218,9 +220,9 @@ To verify that the service has been removed, you can use the `Get-AzureApplicati
 
 ## Next steps
 
-If you want to configure SSL offload, see [Configure Application Gateway for SSL offload](/documentation/articles/application-gateway-ssl).
+If you want to configure SSL offload, see [Configure Application Gateway for SSL offload](/documentation/articles/application-gateway-ssl/).
 
-If you want to configure an Application Gateway to use with ILB, see [Create an Application Gateway with an Internal Load Balancer (ILB)](/documentation/articles/application-gateway-ilb).
+If you want to configure an Application Gateway to use with ILB, see [Create an Application Gateway with an Internal Load Balancer (ILB)](/documentation/articles/application-gateway-ilb/).
 
 If you want more information about load balancing options in general, see:
 

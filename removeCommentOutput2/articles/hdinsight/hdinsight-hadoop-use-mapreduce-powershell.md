@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="02/04/2016"
+	ms.date="05/18/2016"
 	wacn.date=""/>
 
 #Run Hive queries with Hadoop on HDInsight using PowerShell
@@ -23,10 +23,11 @@ This document provides an example of using Azure PowerShell to run a MapReduce j
 
 To complete the steps in this article, you will need the following:
 
-
 - **An Azure HDInsight (Hadoop on HDInsight) cluster (Windows-based)** 
 
-- **A workstation with Azure PowerShell**. See [Install and Configure Azure PowerShell](/documentation/articles/powershell-install-configure)
+- **A workstation with Azure PowerShell**.
+
+    [AZURE.INCLUDE [upgrade-powershell](../includes/hdinsight-use-latest-powershell.md)]
 
 ##<a id="powershell"></a>Run a MapReduce job using Azure PowerShell
 
@@ -34,52 +35,46 @@ Azure PowerShell provides *cmdlets* that allow you to remotely run MapReduce job
 
 The following cmdlets are used when running MapReduce jobs in a remote HDInsight cluster.
 
-* **Login-AzureRmAccount**: Authenticates Azure PowerShell to your Azure subscription
+* **Add-AzureAccount**: Authenticates Azure PowerShell to your Azure subscription
 
-* **New-AzureRmHDInsightMapRe: Creates a new *job definition* by using the specified MapReduce information
+* **New-AzureHDInsightMapReduceJobDefinition**: Creates a new *job definition* by using the specified MapReduce information
 
-* Start-AzureRmHDInsightJob**: Sends the job definition to HDInsight, starts the job, and returns a *job* object that can be used to check the status of the job
+* **Start-AzureHDInsightJob**: Sends the job definition to HDInsight, starts the job, and returns a *job* object that can be used to check the status of the job
 
-**Wait-AzureRmHDInsightJob**: Uses the job object to check the status of the job. It waits until the job completes or the wait time is exceeded.
+* **Wait-AzureHDInsightJob**: Uses the job object to check the status of the job. It waits until the job completes or the wait time is exceeded.
 
-* **Get-AzureRmHDInsightJobOu: Used to retrieve the output of the job
+* **Get-AzureHDInsightJobOutput**: Used to retrieve the output of the job
 
 The following steps demonstrate how to use these cmdlets to run a job in your HDInsight cluster.
 
 1. Using an editor, save the following code as **mapreducejob.ps1**. You must replace **CLUSTERNAME** with the name of your HDInsight cluster.
 
-
 		#Login to your Azure subscription
-        # Is there an active Azure subscription?
-
+		# Is there an active Azure subscription?
 		$sub = Get-AzureSubscription -ErrorAction SilentlyContinue
-        if(-not($sub))
-
+		if(-not($sub))
 		{
-		    Add-AzureAccount
+		    Add-AzureAccount -Environment AzureChinaCloud
 		}
 
 		#Specify the cluster name
 		$clusterName = "CLUSTERNAME"
 
 		#Define the MapReduce job
-        #NOTE: If using an HDInsight 2.0 cluster, use hadoop-examples.jar instead.
-        # -JarFile = the JAR containing the MapReduce application
-        # -ClassName = the class of the application
-        # -Arguments = The input file, and the output directory
-
+		#NOTE: If using an HDInsight 2.0 cluster, use hadoop-examples.jar instead.
+		# -JarFile = the JAR containing the MapReduce application
+		# -ClassName = the class of the application
+		# -Arguments = The input file, and the output directory
 		$wordCountJobDefinition = New-AzureHDInsightMapReduceJobDefinition -JarFile "wasb:///example/jars/hadoop-mapreduce-examples.jar" `
 		                          -ClassName "wordcount" `
 		                          -Arguments "wasb:///example/data/gutenberg/davinci.txt", "wasb:///example/data/WordCountOutput"
 
-        #Submit the job to the cluster
-        Write-Host "Start the MapReduce job..." -ForegroundColor Green
-
+		#Submit the job to the cluster
+		Write-Host "Start the MapReduce job..." -ForegroundColor Green
 		$wordCountJob = Start-AzureHDInsightJob -Cluster $clusterName -JobDefinition $wordCountJobDefinition
 
-        #Wait for the job to complete
-        Write-Host "Wait for the job to complete..." -ForegroundColor Green
-
+		#Wait for the job to complete
+		Write-Host "Wait for the job to complete..." -ForegroundColor Green
 		Wait-AzureHDInsightJob -Job $wordCountJob -WaitTimeoutInSeconds 3600
 
 		# Print the output
@@ -107,7 +102,6 @@ The following steps demonstrate how to use these cmdlets to run a job in your HD
 	This output indicates that the job completed successfully.
 
 	> [AZURE.NOTE] If the **ExitCode** is a value other than 0, see [Troubleshooting](#troubleshooting).
-
 
 ##View output
 
@@ -161,7 +155,6 @@ If no information is returned when the job completes, an error may have occurred
 
 	# Print the output of the WordCount job.
 	Write-Host "Display the standard output ..." -ForegroundColor Green
-
 	Get-AzureHDInsightJobOutput -Cluster $clusterName -JobId $wordCountJob.JobId -StandardError
 
 This returns the information that was written to STDERR on the server when you ran the job, and it may help determine why the job is failing.
@@ -174,10 +167,10 @@ As you can see, Azure PowerShell provides an easy way to run MapReduce jobs on a
 
 For general information about MapReduce jobs in HDInsight:
 
-* [Use MapReduce on HDInsight Hadoop](/documentation/articles/hdinsight-use-mapreduce)
+* [Use MapReduce on HDInsight Hadoop](/documentation/articles/hdinsight-use-mapreduce/)
 
 For information about other ways you can work with Hadoop on HDInsight:
 
-* [Use Hive with Hadoop on HDInsight](/documentation/articles/hdinsight-use-hive)
+* [Use Hive with Hadoop on HDInsight](/documentation/articles/hdinsight-use-hive/)
 
-* [Use Pig with Hadoop on HDInsight](/documentation/articles/hdinsight-use-pig)
+* [Use Pig with Hadoop on HDInsight](/documentation/articles/hdinsight-use-pig/)

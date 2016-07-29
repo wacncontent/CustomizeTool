@@ -9,7 +9,7 @@ editor="cgronlun"/>
 
 <tags
 	ms.service="hdinsight"
-	ms.date="01/08/2016"
+	ms.date="06/06/2016"
 	wacn.date=""/>
 
 #Use DataFu with pig on HDInsight
@@ -22,7 +22,7 @@ DataFu is a collection of Open Source libraries for use with Hadoop. In this doc
 
 * An Azure HDInsight cluster (Linux or Windows based)
 
-* A basic familiarity with [using Pig on HDInsight](/documentation/articles/hdinsight-use-pig)
+* A basic familiarity with [using Pig on HDInsight](/documentation/articles/hdinsight-use-pig/)
 
 ##Install DataFu on Linux-based HDInsight
 
@@ -32,8 +32,8 @@ DataFu can be downloaded and installed from the Maven repository. Use the follow
 
 1. Connect to your Linux-based HDInsight cluster using SSH. For more information on using SSH with HDInsight, see one of the following documents:
 
-    * [Use SSH with Linux-based Hadoop on HDInsight from Linux, OS X, and Unix](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix)
-    * [Use SSH with Linux-based Hadoop on HDInsight from Windows](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix)
+    * [Use SSH with Linux-based Hadoop on HDInsight from Linux, OS X, and Unix](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix/)
+    * [Use SSH with Linux-based Hadoop on HDInsight from Windows](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix/)
     
 2. Use the following command to download the DataFu jar file using the wget utility, or copy and paste the link into your browser to begin the download.
 
@@ -47,7 +47,7 @@ DataFu can be downloaded and installed from the Maven repository. Use the follow
 
 ##Use DataFu With Pig
 
-The steps in this section assume that you are familiar with using Pig on HDInsight, and only provide the Pig Latin statements, not the steps on how to use them with the cluster. For more information on using Pig with HDInsight, see [Use Pig with HDInsight](/documentation/articles/hdinsight-use-pig).
+The steps in this section assume that you are familiar with using Pig on HDInsight, and only provide the Pig Latin statements, not the steps on how to use them with the cluster. For more information on using Pig with HDInsight, see [Use Pig with HDInsight](/documentation/articles/hdinsight-use-pig/).
 
 > [AZURE.IMPORTANT] When using DataFu from Pig on a Linux-based HDInsight cluster, you must first register the jar file using the following Pig Latin statement:
 >
@@ -101,4 +101,4 @@ For more information on DataFu or Pig, see the following documents:
 
 * [Apache DataFu Pig Guide](http://datafu.incubator.apache.org/docs/datafu/guide.html).
 
-* [Use Pig with HDInsight](/documentation/articles/hdinsight-use-pig)
+* [Use Pig with HDInsight](/documentation/articles/hdinsight-use-pig/)

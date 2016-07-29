@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="02/04/2016"
+	ms.date="05/04/2016"
 	wacn.date=""/>
 
 #Run Pig jobs using the .NET SDK for Hadoop in HDInsight
@@ -20,20 +20,17 @@ This document provides an example of using the .NET SDK for Hadoop to submit Pig
 
 The HDInsight .NET SDK provides .NET client libraries that makes it easier to work with HDInsight clusters from .NET. Pig allows you to create MapReduce operations by modeling a series of data transformations. You will learn how to use a basic C# application to submit a Pig job to an HDInsight cluster.
 
-[AZURE.INCLUDE [azure-preview-portal](../includes/hdinsight-azure-portal.md)]
-
-* [Run Pig jobs using the .NET SDK for Hadoop in HDInsight](/documentation/articles/hdinsight-hadoop-use-pig-dotnet-sdk-v1)
+> [AZURE.IMPORTANT] The steps in this document use the Azure Classic Management Portal. Microsoft does not recommend using the Classic Management Portal when creating new services. For an explanation of the advantages of the Azure Portal, see [Azure Portal](https://azure.microsoft.com/features/azure-portal/).
+>
+> This document also includes information on using the HDInsight .NET SDK. The snippets provided are based on commands that use Azure Service Management (ASM) to work with HDInsight and are __deprecated__. These commands will be removed by January 1, 2017.
+>
+>For a version of this document that uses the Azure portal, along with the HDInsight .NET SDK snippets that use Azure Resource Manager (ARM), see [Run Pig jobs using the .NET SDK for Hadoop in HDInsight](/documentation/articles/hdinsight-hadoop-use-pig-dotnet-sdk-v1/)
 
 ##<a id="prereq"></a>Prerequisites
 
 To complete the steps in this article, you will need the following.
 
-
 * An Azure HDInsight (Hadoop on HDInsight) cluster (either Windows or Linux-based)
-
-
-* An Azure HDInsight (Hadoop on HDInsight) cluster (Windows) 
-
 
 * Visual Studio 2012 or 2013
 
@@ -127,7 +124,6 @@ Save the subscription ID, as it will be used later.
 		            // Define the Pig job
 		            var parameters = new PigJobSubmissionParameters()
 		            {
-		                UserName = ExistingClusterUsername,
 		                Query = queryString,
 		            };
 		
@@ -154,10 +150,10 @@ As you can see, the .NET SDK for Hadoop allows you to create .NET applications t
 
 For general information on Pig in HDInsight.
 
-* [Use Pig with Hadoop on HDInsight](/documentation/articles/hdinsight-use-pig)
+* [Use Pig with Hadoop on HDInsight](/documentation/articles/hdinsight-use-pig/)
 
 For information on other ways you can work with Hadoop on HDInsight.
 
-* [Use Hive with Hadoop on HDInsight](/documentation/articles/hdinsight-use-hive)
+* [Use Hive with Hadoop on HDInsight](/documentation/articles/hdinsight-use-hive/)
 
-* [Use MapReduce with Hadoop on HDInsight](/documentation/articles/hdinsight-use-mapreduce)
+* [Use MapReduce with Hadoop on HDInsight](/documentation/articles/hdinsight-use-mapreduce/)

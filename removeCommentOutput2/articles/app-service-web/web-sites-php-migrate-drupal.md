@@ -1,3 +1,5 @@
+<!-- deleted in Global -->
+
 <properties linkid="migrating-drupal-to-azure-websites" urlDisplayName="Migrating Drupal to Azure  Websites" pageTitle="Migrating Drupal to Azure  Websites" metaKeywords="Drupal, PHP,  Websites" description="Migrate a Drupal PHP site to Azure  Websites." metaCanonical="" services="web-sites" documentationCenter="PHP" title="Migrating Drupal to Azure  Websites" authors="jroth" solutions="" manager="paulettm" editor="mollybos" />
 
 

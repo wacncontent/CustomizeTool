@@ -11,24 +11,24 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="01/14/2016"
+	ms.date="04/04/2016"
 	wacn.date=""/>
 
 # Create a web app in an Azure Environment
 
 ## Overview
 
-This tutorial shows how to create web apps and App Service plans in an [Azure Environment](/documentation/articles/app-service-app-service-environment-intro) (ASE). 
+This tutorial shows how to create web apps and App Service plans in an [Azure Environment](/documentation/articles/app-service-app-service-environment-intro/) (ASE). 
 
-> [AZURE.NOTE] If you want to learn how to create a web app but don't need to do it in an Azure Environment, see [Create a .NET web app](/documentation/articles/web-sites-dotnet-get-started) or one of the related tutorials for other languages and frameworks.
+> [AZURE.NOTE] If you want to learn how to create a web app but don't need to do it in an Azure Environment, see [Create a .NET web app](/documentation/articles/web-sites-dotnet-get-started/) or one of the related tutorials for other languages and frameworks.
 
 ## Prerequisites
 
-This tutorial assumes you have created an Azure Environment. If you haven't done that yet, see [Create an Azure Environment](/documentation/articles/app-service-web-how-to-create-an-app-service-environment). 
+This tutorial assumes you have created an Azure Environment. If you haven't done that yet, see [Create an Azure Environment](/documentation/articles/app-service-web-how-to-create-an-app-service-environment/). 
 
 ## Create a web app
 
-1. In the [Azure Management Portal](https://manage.windowsazure.cn/), click **New > Web + Mobile > Web App**. 
+1. In the [Azure Portal](https://portal.azure.cn/), click **New > Web + Mobile > Web App**. 
 
 	![][1]
 
@@ -42,7 +42,7 @@ This tutorial assumes you have created an Azure Environment. If you haven't done
 
 4. Select or create an App Service plan.
 
-	*App Service plans* are managed sets of web apps.  When you select pricing, the price charged is applied to the App Service plan rather than to the individual apps. To scale up the number of instances of a web app you scale up the instances of your App Service plan and it affects all of the web apps in that plan.  Some features such as site slots or VNET Integration also have quantity restrictions within the plan.  For more information, see [Azure App Service plans overview](/documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview)
+	*App Service plans* are managed sets of web apps.  When you select pricing, the price charged is applied to the App Service plan rather than to the individual apps. To scale up the number of instances of a web app you scale up the instances of your App Service plan and it affects all of the web apps in that plan.  Some features such as site slots or VNET Integration also have quantity restrictions within the plan.  For more information, see [Azure App Service plans overview](/documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview/)
 
 	You can identify the App Service plans in your ASE by looking at the location that is noted under the plan name.  
 
@@ -86,7 +86,7 @@ The following instructions show how to create an App Service plan while you are 
 
 Normally in Azure and outside of an Azure Environment, there are 3 compute sizes that are available with the selection of a dedicated price plan.  In a similar fashion, for an ASE you can define up to 3 pools of workers and specify the compute size that is used for that worker pool.  What that means for tenants of the ASE is that instead of selecting a pricing plan with compute size for your App Service plan, you select what is called a *worker pool*.  
 
-The worker pool selection UI shows the compute size used for that worker pool below the name.  The quantity available refers to how many compute instances are available for use in that pool.  The total pool may actually have more instances than this number but this value refers to simply how many are not in use.  If you need to adjust your Azure Environment to add more compute resources see [Configuring your Azure Environment](/documentation/articles/app-service-web-configure-an-app-service-environment).
+The worker pool selection UI shows the compute size used for that worker pool below the name.  The quantity available refers to how many compute instances are available for use in that pool.  The total pool may actually have more instances than this number but this value refers to simply how many are not in use.  If you need to adjust your Azure Environment to add more compute resources see [Configuring your Azure Environment](/documentation/articles/app-service-web-configure-an-app-service-environment/).
 
 ![][4]
 
@@ -98,7 +98,7 @@ There are a few considerations for running web apps and managing App Service pla
 
 As noted earlier, the owner of the ASE is responsible for the size of the system and as a result they are also responsible for ensuring that there is sufficient capacity to host the desired App Service plans. If there are no available workers, you will not be able to create your App Service plan.  This is also true to scaling up your web app.  If you need more instances then you would have to get your Azure Environment admin to add more workers.
 
-After creating your web app and App Service plan it is a good idea to scale it up.  In an ASE you always need to have at least 2 instances of your App Service plan to provide fault tolerance for your apps.  Scaling an App Service plan in an ASE is the same as normal through the App Service plan UI.  For more information about scaling, [How to scale a web app in an Azure Environment](/documentation/articles/app-service-web-scale-a-web-app-in-an-app-service-environment)
+After creating your web app and App Service plan it is a good idea to scale it up.  In an ASE you always need to have at least 2 instances of your App Service plan to provide fault tolerance for your apps.  Scaling an App Service plan in an ASE is the same as normal through the App Service plan UI.  For more information about scaling, [How to scale a web app in an Azure Environment](/documentation/articles/app-service-web-scale-a-web-app-in-an-app-service-environment/)
 
 <!--Image references-->
 [1]: ./media/app-service-web-how-to-create-a-web-app-in-an-ase/createaspnewwebapp.png
@@ -111,7 +111,7 @@ After creating your web app and App Service plan it is a good idea to scale it u
 [WhatisASE]: /documentation/articles/app-service-app-service-environment-intro/
 [Appserviceplans]: /documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview/
 [HowtoCreateASE]: /documentation/articles/app-service-web-how-to-create-an-app-service-environment/
-[HowtoScale]: /documentation/articles/app-service-web-scale-a-web-app-in-an-app-service-environment
-[HowtoConfigureASE]: /documentation/articles/app-service-web-configure-an-app-service-environment
+[HowtoScale]: /documentation/articles/app-service-web-scale-a-web-app-in-an-app-service-environment/
+[HowtoConfigureASE]: /documentation/articles/app-service-web-configure-an-app-service-environment/
 [ResourceGroups]: /documentation/articles/resource-group-portal/
 [AzurePowershell]: /documentation/articles/powershell-install-configure/

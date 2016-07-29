@@ -1,3 +1,5 @@
+<!-- rename to virtual-machines-linux-mysql-install -->
+
 <properties
 	pageTitle="Set up MySQL on a Linux VM | Azure "
 	description="Learn how to install the MySQL stack on a Linux virtual machine (Ubuntu or RedHat family OS) in Azure"
@@ -25,11 +27,11 @@ In this article, you will learn how to install and configure MySQL on an Azure v
 ##Install MySQL on your virtual machine
 
 > [AZURE.NOTE] You must already have a Azure virtual machine running Linux in order to complete this tutorial. Please see the
-[Azure Linux VM tutorial](/documentation/articles/virtual-machines-linux-tutorial-portal-rm) to create and set up a Linux VM with `mysqlnode` as the VM name and `azureuser` as user before proceeding.
+[Azure Linux VM tutorial](/documentation/articles/virtual-machines-linux-quick-create-cli/) to create and set up a Linux VM with `mysqlnode` as the VM name and `azureuser` as user before proceeding.
 
 In this case, use 3306 port as the MySQL port.  
 
-Connect to the Linux VM you created via putty. If this is the first time you use Azure Linux VM, see how to use putty connect to a Linux VM [here](/documentation/articles/virtual-machines-linux-use-ssh-key).
+Connect to the Linux VM you created via putty. If this is the first time you use Azure Linux VM, see how to use putty connect to a Linux VM [here](/documentation/articles/virtual-machines-linux-ssh-from-linux/).
 
 We will use repository package to install MySQL5.6 as an example in this article. Actually, MySQL5.6 has more improvement in performance than MySQL5.5.  More information [here](http://www.mysqlperformanceblog.com/2013/02/18/is-mysql-5-6-slower-than-mysql-5-5/).
 
@@ -131,7 +133,6 @@ We will use Linux VM with CentOS or Oracle Linux here.
 
            #[root@mysqlnode ~]#netstat  -tunlp|grep 3306
 
-
     (c) Start the MySQL server:
 
            #[root@mysqlnode ~]#service mysqld start
@@ -185,5 +186,3 @@ We will use Linux VM with OpenSUSE here.
 
 ###Next Step
 Find more usage and information regarding MySQL [Here](https://www.mysql.com/).
-
-

@@ -1,3 +1,5 @@
+<!-- deleted in Global -->
+
 <properties linkid="migrating-drupal-to-azure-websites" urlDisplayName="Migrating Drupal to Azure  Websites" pageTitle="Migrating Drupal to Azure  Websites" metaKeywords="Drupal, PHP,  Websites" description="Migrate a Drupal PHP site to Azure  Websites." metaCanonical="" services="web-sites" documentationCenter="PHP" title="Migrating Drupal to Azure  Websites" authors="jroth" solutions="" manager="paulettm" editor="mollybos" />
 
 
@@ -86,8 +88,8 @@ For more information, see the following posts and topics:
   [Modify Settings.php]: #modify-settingsphp
   [Deploy the Drupal Code]: #deploy-drupalcode
   [Related information]: #related-information
-  [Create a PHP-MySQL Azure  Website and deploy using Git]: /documentation/articles/web-sites-php-mysql-deploy-use-git
+  [Create a PHP-MySQL Azure  Website and deploy using Git]: /documentation/articles/web-sites-php-mysql-deploy-use-git/
   [Azure  Websites, a PHP Perspective]: http://blogs.msdn.com/b/silverlining/archive/2012/06/12/windows-azure-websites-a-php-perspective.aspx
-  [Azure  Websites, Cloud Services, and VMs: When to use which?]: /documentation/articles/choose-web-site-cloud-service-vm
+  [Azure  Websites, Cloud Services, and VMs: When to use which?]: /documentation/articles/choose-web-site-cloud-service-vm/
   [Configuring PHP in Azure  Websites with .user.ini Files]: http://blogs.msdn.com/b/silverlining/archive/2012/07/10/configuring-php-in-windows-azure-websites-with-user-ini-files.aspx
   [Azure Integration Module]: http://drupal.org/project/azure

@@ -11,7 +11,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="02/05/2016"
+	ms.date="04/22/2016"
 	wacn.date=""/>
 
 #Use Maven to build Java applications that use HBase with HDInsight (Hadoop)
@@ -26,13 +26,13 @@ Learn how to create and build an [Apache HBase](http://hbase.apache.org/) applic
 
 * [Maven](http://maven.apache.org/)
 
-* [An Linux-based Azure HDInsight cluster with HBase](/documentation/articles/hdinsight-hbase-tutorial-get-started-v1-linux#create-hbase-cluster)
+* [An Linux-based Azure HDInsight cluster with HBase](/documentation/articles/hdinsight-hbase-tutorial-get-started-v1-linux/#create-hbase-cluster)
 
 * **Familiarity with SSH and SCP**. For more information on using SSH and SCP with HDInsight, see the following:
 
-    * **Linux, Unix or OS X clients**: See [Use SSH with Linux-based Hadoop on HDInsight from Linux, OS X or Unix](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix)
+    * **Linux, Unix or OS X clients**: See [Use SSH with Linux-based Hadoop on HDInsight from Linux, OS X or Unix](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix/)
 
-    * **Windows clients**: See [Use SSH with Linux-based Hadoop on HDInsight from Windows](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows)
+    * **Windows clients**: See [Use SSH with Linux-based Hadoop on HDInsight from Windows](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows/)
 
 ##Create the project
 

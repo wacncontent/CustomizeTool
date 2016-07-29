@@ -9,10 +9,10 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="12/02/2015"
+	ms.date="05/27/2016"
 	wacn.date=""/>
 
-# Use Apache Phoenix and SQuirreL with HBase clusters in HDinsight  
+# Use Apache Phoenix and SQuirreL with Windows-based HBase clusters in HDinsight  
 
 Learn how to use [Apache Phoenix](http://phoenix.apache.org/) in HDInsight, and how to install and configure SQuirreL on your workstation to connect to an HBase cluster in HDInsight. For more information about Phoenix, see [Phoenix in 15 minutes or less](http://phoenix.apache.org/Phoenix-in-15-minutes-or-less.html). For the Phoenix grammar, see [Phoenix Grammar](http://phoenix.apache.org/language/index.html).
 
@@ -25,7 +25,7 @@ Learn how to use [Apache Phoenix](http://phoenix.apache.org/) in HDInsight, and 
 Before you can use SQLLine, you must have the following:
 
 - **A HBase cluster in HDInsight**. For information on provision HBase cluster, see [Get started with Apache HBase in HDInsight][hdinsight-hbase-get-started].
-- **Connect to the HBase cluster via the remote desktop protocol**. For instructions, see [Manage Hadoop clusters in HDInsight by using the Azure Management Portal][hdinsight-manage-portal].
+- **Connect to the HBase cluster via the remote desktop protocol**. For instructions, see [Manage Hadoop clusters in HDInsight by using the Azure Classic Management Portal][hdinsight-manage-portal].
 
 **To find out the host name**
 
@@ -50,7 +50,7 @@ Before you can use SQLLine, you must have the following:
 
 		CREATE TABLE Company (COMPANY_ID INTEGER PRIMARY KEY, NAME VARCHAR(225));
 		
-		!tables;
+		!tables
 		
 		UPSERT INTO Company VALUES(1, 'Microsoft');
 		
@@ -79,6 +79,7 @@ For more information, see [SQLLine manual](http://sqlline.sourceforge.net/#manua
 
 [SQuirreL SQL Client](http://squirrel-sql.sourceforge.net/) is a graphical Java program that will allow you to view the structure of a JDBC compliant database, browse the data in tables, issue SQL commands etc. It can be used to connect to Apache Phoenix on HDInsight.
 
+This section shows you how to install and configure SQuirreL on your workstation to connect to an HBase cluster in HDInsight via VPN. 
 
 ###Prerequisites
 
@@ -86,13 +87,122 @@ Before following the procedures, you must have the following:
 
 - An HBase cluster deployed to an Azure virtual network with a DNS virtual machine.  For instructions, see [Provision HBase clusters on Azure Virtual Network][hdinsight-hbase-provision-vnet-v1]. 
 
-	>[AZURE.IMPORTANT] You must install a DNS server to the virtual network. For instructions, see [Configure DNS between two Azure virtual networks](/documentation/articles/hdinsight-hbase-geo-replication-configure-DNS)
+	>[AZURE.IMPORTANT] You must install a DNS server to the virtual network. For instructions, see [Configure DNS between two Azure virtual networks](/documentation/articles/hdinsight-hbase-geo-replication-configure-DNS/)
 
 - Get the HBase cluster cluster Connection-specific DNS suffix. To get it, RDP into the cluster, and then run IPConfig.  The DNS suffix is similar to:
 
 		myhbase.b7.internal.chinacloudapp.cn
 - Download and install [Microsoft Visual Studio Express 2013 for Windows Desktop](https://www.visualstudio.com/products/visual-studio-express-vs.aspx) on your workstation. You will need makecert from the package to create your certificate.  
 - Download and install [Java Runtime Environment](http://www.oracle.com/technetwork/java/javase/downloads/jre7-downloads-1880261.html) on your workstation.  SQuirreL SQL client version 3.0 and higher requires JRE version 1.6 or higher.  
+
+
+###Configure a Point-to-Site VPN connection to the Azure virtual network
+
+There are 3 steps involved configuring a point-to-site VPN connection:
+
+1. [Configure a virtual network and a dynamic routing gateway](#Configure-a-virtual-network-and-a-dynamic-routing-gateway)
+2. [Create your certificates](#Create-your-certificates)
+3. [Configure your VPN client](#Configure-your-VPN-client)
+
+See [Configure a Point-to-Site VPN connection to an Azure Virtual Network](/documentation/articles/vpn-gateway-point-to-site-create/) for more information.
+
+#### Configure a virtual network and a dynamic routing gateway
+
+Assure you have provisioned an HBase cluster in an Azure virtual network (see the prerequisites for this section). The next step is to configure a point-to-site connection.
+
+**To configure the point-to-site connectivity**
+
+1. Sign in to the [Azure Classic Management Portal][azure-portal].
+2. On the left, click **NETWORKS**.
+3. Click the virtual network you have created (see [Provision HBase clusters on Azure Virtual Network][hdinsight-hbase-provision-vnet-v1]).
+4. Click **CONFIGURE** from the top.
+5. In the **point-to-site connectivity** section, select **Configure point-to-site connectivity**. 
+6. Configure **STARTING IP** and **CIDR** to specify the IP address range from which your VPN clients will receive an IP address when connected. The range cannot overlap with any of the ranges located on your on-premises network and the Azure virtual network you will be connecting to. For example. if you selected 10.0.0.0/20 for the virtual network, you can select 10.1.0.0/24 for the client address space. See the [Point-To-Site Connectivity][vnet-point-to-site-connectivity] page for more information.
+7. In the virtual network address spaces section, click **add gateway subnet**.
+7. Click **SAVE** on the bottom of the page.
+8. Click **YES** to confirm the change. Wait until the system has finished making the change before you proceed to the next procedure.
+
+
+**To create a dynamic routing gateway**
+
+1. From the Azure Classic Management Portal, click **DASHBOARD** from the top of the page.
+2. Click **CREATE GATEWAY** from the bottom of the page.
+3. Click **YES** to confirm. Wait until the gateway is created.
+4. Click **DASHBOARD** from the top.  You will see a visual diagram of the virtual network:
+
+	![Azure virtual network point-to-site virtual diagram][img-vnet-diagram] 
+
+	The diagram shows 0 client connections. After you make a connection to the virtual network, the number will be updated to one. 
+
+#### Create your certificates
+
+One way to create an X.509 certificate is by using the Certificate Creation Tool (makecert.exe) that comes with [Microsoft Visual Studio Express 2013 for Windows Desktop](https://www.visualstudio.com/products/visual-studio-express-vs.aspx). 
+
+
+**To create a self-signed root certificate**
+
+1. From your workstation, open a command prompt window.
+2. Navigate to the Visual Studio tools folder. 
+3. The following command in the example below will create and install a root certificate in the Personal certificate store on your workstation and also create a corresponding .cer file that you'll later upload to the Azure Classic Management Portal. 
+
+		makecert -sky exchange -r -n "CN=HBaseVnetVPNRootCertificate" -pe -a sha1 -len 2048 -ss My "C:\Users\JohnDole\Desktop\HBaseVNetVPNRootCertificate.cer"
+
+	Change to the directory that you want the .cer file to be located in, where HBaseVnetVPNRootCertificate is the name that you want to use for the certificate. 
+
+	Don't close the command prompt.  You will need it in the next procedure.
+
+	>[AZURE.NOTE] Because you have created a root certificate from which client certificates will be generated, you may want to export this certificate along with its private key and save it to a safe location where it may be recovered. 
+
+**To create a client certificate**
+
+- From the same command prompt (It has to be on the same computer where you created the root certificate. The client certificate must be generated from the root certificate), run the following command:
+
+  		makecert.exe -n "CN=HBaseVnetVPNClientCertificate" -pe -sky exchange -m 96 -ss My -in "HBaseVnetVPNRootCertificate" -is my -a sha1
+
+	HBaseVnetVPNRootCertificate is the root certificate name.  It has to match the root certificate name.  
+
+	Both the root certificate and the client certificate are stored in your Personal certificate store on your computer. Use certmgr.msc to verify.
+
+	![Azure virtual network point-to-site vpn certificate][img-certificate]
+
+	A client certificate must be installed on each computer that you want to connect to the virtual network. We recommend that you create unique client certificates for each computer that you want to connect to the virtual network. To export the client certificates, use certmgr.msc. 
+
+**To upload the root certificate to the Azure Classic Management Portal**
+
+1. From the Azure Classic Management Portal, click **NETWORK** on the left.
+2. Click the virtual network where your HBase cluster is deployed to.
+3. Click **CERTIFICATES** from the top.
+4. Click **UPLOAD** from the bottom, and specify the root certificate file you have created in the procedure before last. Wait until the certificate got imported.
+5. Click **DASHBOARD** on the top.  The virtual diagram shows the status.
+
+
+#### Configure your VPN client
+
+
+
+**To download and install the client VPN package**
+
+1. From the DASHBOARD page of the virtual network, in the quick glance section, click either **Download the 64-bit Client VPN Package** or **Download the 32-bit Client VPN Package** based on your workstation OS version.
+2. Click **Run** to install the package.
+3. At the security prompt, click **More info**, and then click **Run anyway**.
+4. Click **Yes** twice.
+
+**To connect to VPN**
+
+1. On the desktop of your workstation, click the Networks icon on the Task bar. You shall see a VPN connection with your virtual network name.
+2. Click the VPN connection name.
+3. Click **Connect**.
+
+**To test the VPN connection and domain name resolution**
+
+- From the workstation, open a command prompt and ping one of the following names given the HBase cluster's DNS suffix is myhbase.b7.internal.chinacloudapp.cn:
+
+		zookeeper0.myhbase.b7.internal.chinacloudapp.cn
+		zookeeper0.myhbase.b7.internal.chinacloudapp.cn
+		zookeeper0.myhbase.b7.internal.chinacloudapp.cn
+		headnode0.myhbase.b7.internal.chinacloudapp.cn
+		headnode1.myhbase.b7.internal.chinacloudapp.cn
+		workernode0.myhbase.b7.internal.chinacloudapp.cn
 
 ###Install and configure SQuirreL on your workstation
 
@@ -141,7 +251,7 @@ You need to copy it to your workstation under the [SQuirreL installation folder]
 	- **Name**: The name of the HBase cluster or any name you prefer.
 	- **Driver**: Phoenix.  This must match the driver name you created in the last procedure.
 	- **URL**: The URL is copied from your driver configuration. Make sure to user all lower case.
-	- **User name**: It can be any text.  
+	- **User name**: It can be any text.  Because you use VPN connectivity here, the user name is not used at all.
 	- **Password**: It can be any text.
 
 	![HDInsight HBase Phoenix SQuirreL driver][img-squirrel-alias]
@@ -169,16 +279,16 @@ In this article, you have learned how to use Apache Phoenix in HDInsight.  To le
 HBase is an Apache, open-source, NoSQL database built on Hadoop that provides random access and strong consistency for large amounts of unstructured and semistructured data.
 - [Provision HBase clusters on Azure Virtual Network][hdinsight-hbase-provision-vnet-v1]:
 With virtual network integration, HBase clusters can be deployed to the same virtual network as your applications so that applications can communicate with HBase directly.
-- [Configure HBase replication in HDInsight](/documentation/articles/hdinsight-hbase-geo-replication): Learn how to configure HBase replication across two Azure datacenters. 
+- [Configure HBase replication in HDInsight](/documentation/articles/hdinsight-hbase-geo-replication/): Learn how to configure HBase replication across two Azure datacenters. 
 
-[azure-portal]: https://manage.windowsazure.cn
+[azure-portal]: https://portal.azure.cn
 [vnet-point-to-site-connectivity]: https://msdn.microsoft.com/zh-cn/library/azure/09926218-92ab-4f43-aa99-83ab4d355555#BKMK_VNETPT
 
-[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning-v1
-[hdinsight-hbase-get-started]: /documentation/articles/hdinsight-hbase-tutorial-get-started-v1
-[hdinsight-manage-portal]: /documentation/articles/hdinsight-administer-use-management-portal-v1#connect-to-hdinsight-clusters-by-using-rdp
-[hdinsight-hbase-provision-vnet-v1]: /documentation/articles/hdinsight-hbase-provision-vnet-v1
-[hdinsight-hbase-overview]: /documentation/articles/hdinsight-hbase-overview
+[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning-v1/
+[hdinsight-hbase-get-started]: /documentation/articles/hdinsight-hbase-tutorial-get-started-v1/
+[hdinsight-manage-portal]: /documentation/articles/hdinsight-administer-use-management-portal-v1/#connect-to-hdinsight-clusters-by-using-rdp
+[hdinsight-hbase-provision-vnet-v1]: /documentation/articles/hdinsight-hbase-provision-vnet-v1/
+[hdinsight-hbase-overview]: /documentation/articles/hdinsight-hbase-overview/
 [hdinsight-hbase-phoenix-sqlline]: ./media/hdinsight-hbase-phoenix-squirrel/hdinsight-hbase-phoenix-sqlline.png
 [img-certificate]: ./media/hdinsight-hbase-phoenix-squirrel/hdinsight-hbase-vpn-certificate.png
 [img-vnet-diagram]: ./media/hdinsight-hbase-phoenix-squirrel/hdinsight-hbase-vnet-point-to-site.png

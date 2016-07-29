@@ -12,14 +12,14 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="02/03/2016"
+	ms.date="07/05/2016"
 	wacn.date=""/>
 
 #Analyze flight delay data by using Hive in HDInsight
 
 Learn how to analyze flight delay data using Hive on Linux-based HDInsight then export the data to Azure SQL Database using using Sqoop.
 
-> [AZURE.NOTE] While individual pieces of this document can be used with Windows-based HDInsight clusters (Python and Hive for example,) many steps are specific to Linux-based clusters. For steps that will work with a Windows-based cluster, see [Analyze flight delay data using Hive in HDInsight](/documentation/articles/hdinsight-analyze-flight-delay-data)
+> [AZURE.NOTE] While individual pieces of this document can be used with Windows-based HDInsight clusters (Python and Hive for example,) many steps are specific to Linux-based clusters. For steps that will work with a Windows-based cluster, see [Analyze flight delay data using Hive in HDInsight](/documentation/articles/hdinsight-analyze-flight-delay-data/)
 
 ###Prerequisites
 
@@ -27,11 +27,13 @@ Before you begin this tutorial, you must have the following:
 
 - **An Azure subscription**. See [Get Azure trial](/pricing/1rmb-trial/).
 
-- __An HDInsight cluster__. See [Get started using Hadoop with Hive in HDInsight on Linux](/documentation/articles/hdinsight-hadoop-linux-tutorial-get-started) for steps on creating a new Linux-based HDInsight cluster.
+- __An HDInsight cluster__. See [Get started using Hadoop with Hive in HDInsight on Linux](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1/) for steps on creating a new Linux-based HDInsight cluster.
 
-- __Azure SQL Database__. You will use an Azure SQL database as a destination data store. If you do not have a SQL Database already, see [SQL Database tutorial: Create a SQL database in minutes](/documentation/articles/sql-database-get-started).
+- __Azure SQL Database__. You will use an Azure SQL database as a destination data store. If you do not have a SQL Database already, see [SQL Database tutorial: Create a SQL database in minutes](/documentation/articles/sql-database-get-started/).
 
-- __Azure CLI__. If you have not installed the Azure CLI, see [Install and Configure the Azure CLI](/documentation/articles/xplat-cli-install) for more steps.
+- __Azure CLI__. If you have not installed the Azure CLI, see [Install and Configure the Azure CLI](/documentation/articles/xplat-cli-install/) for more steps.
+
+	[AZURE.INCLUDE [use-latest-version](../includes/hdinsight-use-latest-cli.md)]
 
 
 ##Download the flight data
@@ -40,6 +42,7 @@ Before you begin this tutorial, you must have the following:
 2. On the page, select the following values:
 
 	| Name | Value |
+    | ---- | ---- |
 	| Filter Year | 2013 |
 	| Filter Period | January |
 	| Fields | Year, FlightDate, UniqueCarrier, Carrier, FlightNum, OriginAirportID, Origin, OriginCityName, OriginState, DestAirportID, Dest, DestCityName, DestState, DepDelayMinutes, ArrDelay, ArrDelayMinutes, CarrierDelay, WeatherDelay, NASDelay, SecurityDelay, LateAircraftDelay. Clear all other fields |
@@ -62,9 +65,9 @@ Before you begin this tutorial, you must have the following:
 		
 	For more information on using SSH with Linux-based HDInsight, see the following articles:
 	
-	* [Use SSH with Linux-based Hadoop on HDInsight from Linux, Unix, or OS X](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix)
+	* [Use SSH with Linux-based Hadoop on HDInsight from Linux, Unix, or OS X](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix/)
 
-	* [Use SSH with Linux-based Hadoop on HDInsight from Windows](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows)
+	* [Use SSH with Linux-based Hadoop on HDInsight from Windows](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows/)
 	
 3. Once connected, use the following to unzip the .zip file:
 
@@ -74,8 +77,8 @@ Before you begin this tutorial, you must have the following:
 	
 4. Use the following to create a new directory on WASB (the distributed data store used by HDInsight,) and copy the file:
 
-	hadoop fs -mkdir -p /tutorials/flightdelays/data
-	hadoop fs -copyFromLocal FILENAME.csv /tutorials/flightdelays/data/FILENAME.csv
+	hdfs dfs -mkdir -p /tutorials/flightdelays/data
+	hdfs dfs -put FILENAME.csv /tutorials/flightdelays/data/
 	
 ##Create and run the HiveQL
 
@@ -149,13 +152,16 @@ Use the following steps to import data from the CSV file into a Hive table named
 
 3. Use the following to start Hive and run the __flightdelays.hql__ file:
 
-		hive -i flightdelays.hql
+        beeline -u 'jdbc:hive2://localhost:10001/;transportMode=http' -n admin -f flightdelays.hql
 		
-	This will run the file, then return a `hive>` prompt.
+	> [AZURE.NOTE] In this example, `localhost` is used since you are connected to the head node of the HDInsight cluster, which is where HiveServer2 is running.
 
-4. When you receive the `hive>` prompt, use the following to retrieve data from the imported flight delay data.
+4. Use the following command to open an interactive Beeline session:
+        beeline -u 'jdbc:hive2://localhost:10001/;transportMode=http' -n admin
+5. When you receive the `jdbc:hive2://localhost:10001/>` prompt, use the following to retrieve data from the imported flight delay data.
 
 		INSERT OVERWRITE DIRECTORY '/tutorials/flightdelays/output'
+        ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t'
 		SELECT regexp_replace(origin_city_name, '''', ''),
 			avg(weather_delay)
 		FROM delays
@@ -164,34 +170,21 @@ Use the following steps to import data from the CSV file into a Hive table named
 
 	This will retrieve a list of cities that experienced weather delays, along with the average delay time, and save it to `/tutorials/flightdelays/output`. Later, Sqoop will read the data from this location and export it to Azure SQL Database.
 
-##Create a SQL Database
+6. To exit Beeline, enter `!quit` at the prompt.
+## Create a SQL Database
 
-Use the following steps to create an Azure SQL Database. This will be used to hold data exported from HDInsight through Sqoop.
+If you already have a SQL Database, you must get the server name. You can find this in the [Azure Portal](https://portal.azure.cn) by selecting __SQL Databases__, and then filtering on the name of the database you wish to use. The server name is listed in the __SERVER__ column.
 
-1. From your develoment environment where Azure CLI is installed, use the following command to create a new Azure SQL Database:
+If you do not already have a SQL Database, use the information in [SQL Database tutorial: Create a SQL database in minutes](/documentation/articles/sql-database-get-started/) to create one. You will need to save the server name used for the database.
 
-		azure sql server create <adminLogin> <adminPassword> <region>
 
-	For exmaple, `azure sql server create admin password "China North"`.
 
-	When the command completes, you will receive a response similar to the following:
 
-		info:    Executing command sql server create
-		+ Creating SQL Server
-		data:    Server Name i1qwc540ts
-		info:    sql server create command OK
 
-> [AZURE.IMPORTANT] Note the server name returned by this command. This is the short name of the SQL Database server that was created. The fully qualified domain name (FQDN) is `<shortname>.database.chinacloudapi.cn`.
 
-2. Use the following command to create a database named **sqooptest** on the SQL Database server:
 
-        azure sql db create [options] <serverName> sqooptest <adminLogin> <adminPassword>
 
-    This will return an "OK" message when it completes.
 
-	> [AZURE.NOTE] If you receive an error indicating that you do not have access, you may need to add your client workstation's IP address to the SQL Database firewall using the following command:
-	>
-	> `sql firewallrule create [options] <serverName> <ruleName> <startIPAddress> <endIPAddress>`
 
 ##Create a SQL Database table
 
@@ -203,9 +196,9 @@ Use the following steps to create an Azure SQL Database. This will be used to ho
 
         sudo apt-get --assume-yes install freetds-dev freetds-bin
 
-4. Once FreeTDS has been installed, use the following command to connect to the SQL Database server you created previously:
+4. Once FreeTDS has been installed, use the following command to connect to the SQL Database server. Replace __serverName__ with the SQL Database server name. Replace __adminLogin__ and __adminPassword__ with the login for SQL Database. Replace __databaseName__ with the database name.
 
-        TDSVER=8.0 tsql -H <serverName>.database.chinacloudapi.cn -U <adminLogin> -P <adminPassword> -p 1433 -D sqooptest
+        TDSVER=8.0 tsql -H <serverName>.database.chinacloudapi.cn -U <adminLogin> -P <adminPassword> -p 1433 -D <databaseName>
 
     You will receive output similar to the following:
 
@@ -234,27 +227,25 @@ Use the following steps to create an Azure SQL Database. This will be used to ho
     You should see output similar to the following:
 
         TABLE_CATALOG   TABLE_SCHEMA    TABLE_NAME      TABLE_TYPE
-        sqooptest       dbo     delays      BASE TABLE
+        databaseName       dbo     delays      BASE TABLE
 
 8. Enter `exit` at the `1>` prompt to exit the tsql utility.
 	
 ##Export data with Sqoop
 
-1. Use the following command to create a link to the SQL Server JDBC driver from the Sqoop lib directory. This allows Sqoop to use this driver to talk to SQL Database:
 
-		sudo ln /usr/share/java/sqljdbc_4.1/enu/sqljdbc4.jar /usr/hdp/current/sqoop-client/lib/sqljdbc4.jar
 
 2. Use the following command to verify that Sqoop can see your SQL Database:
 
 		sqoop list-databases --connect jdbc:sqlserver://<serverName>.database.chinacloudapi.cn:1433 --username <adminLogin> --password <adminPassword>
 
-	This should return a list of databases, including the sqooptest database that you created earlier.
+	This should return a list of databases, including the database that you created the delays table in earlier.
 
 3. Use the following command to export data from hivesampletable to the mobiledata table:
 
-		sqoop export --connect 'jdbc:sqlserver://<serverName>.database.chinacloudapi.cn:1433;database=sqooptest' --username <adminLogin> --password <adminPassword> --table 'delays' --export-dir 'wasb:///tutorials/flightdelays/output' --fields-terminated-by '\t' -m 1
+		sqoop export --connect 'jdbc:sqlserver://<serverName>.database.chinacloudapi.cn:1433;database=<databaseName>' --username <adminLogin> --password <adminPassword> --table 'delays' --export-dir 'wasb:///tutorials/flightdelays/output' --fields-terminated-by '\t' -m 1
 
-	This instructs Sqoop to connect to SQL Database, to the sqooptest database, and export data from the wasb:///tutorials/flightdelays/output (where we stored the output of the hive query earlier,) to the delays table.
+	This instructs Sqoop to connect to SQL Database, to the database containing the delays table, and export data from the wasb:///tutorials/flightdelays/output (where we stored the output of the hive query earlier,) to the delays table.
 
 4. After the command completes, use the following to connect to the database using TSQL:
 
@@ -288,16 +279,16 @@ Now you understand how to upload a file to Azure Blob storage, how to populate a
 [rita-website]: http://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236&DB_Short_Name=On-Time
 [cindygross-hive-tables]: http://blogs.msdn.com/b/cindygross/archive/2013/02/06/hdinsight-hive-internal-and-external-tables-intro.aspx
 
-[hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie-linux-mac
-[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
-[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
-[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
-[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-linux-tutorial-get-started
-[hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop
-[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
-[hdinsight-develop-streaming]: /documentation/articles/hdinsight-hadoop-streaming-python
-[hdinsight-develop-mapreduce]: /documentation/articles/hdinsight-develop-deploy-java-mapreduce-linux
+[hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie-linux-mac/
+[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive/
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1/
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage/
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data/
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1/
+[hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop/
+[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig/
+[hdinsight-develop-streaming]: /documentation/articles/hdinsight-hadoop-streaming-python/
+[hdinsight-develop-mapreduce]: /documentation/articles/hdinsight-develop-deploy-java-mapreduce-linux/
 
 [hadoop-hiveql]: https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DDL
 

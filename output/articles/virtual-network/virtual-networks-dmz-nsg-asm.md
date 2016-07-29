@@ -13,12 +13,10 @@
 	wacn.date=""/>
 
 # Example 1 - Build a Simple DMZ with NSGs
-
 
 [Return to the Security Boundary Best Practices Page][HOME]
-
 
-This example will create a simple DMZ with four windows servers and Network Security Groups. It will also walk through each of the relevant commands to provide a deeper understanding of each step. There is a also a Traffic Scenario section to provide a in-depth step-by-step how traffic proceeds through the layers of defense in the DMZ. Finally, in the references section is the complete code and instruction to build this environment to test and experiment with various scenarios. 
+This example will create a simple DMZ with four windows servers and Network Security Groups. It will also walk through each of the relevant commands to provide a deeper understanding of each step. There is also a Traffic Scenario section to provide an in-depth step-by-step how traffic proceeds through the layers of defense in the DMZ. Finally, in the references section is the complete code and instruction to build this environment to test and experiment with various scenarios. 
 
 ![Inbound DMZ with NSG][1]
 
@@ -64,7 +62,7 @@ With these rules bound to each subnet, if a HTTP request was inbound from the In
 
 There is a default outbound rule that allows traffic out to the internet. For this example, we're allowing outbound traffic and not modifying any outbound rules. To lock down traffic in both directions, User Defined Routing is required, this is explored in "Example 3" below.
 
-Each rule is discussed in more detail as follows (Note; any item in the below list in beginning with a dollar sign (e.g.: $NSGName) is a user defined variable from the script in the reference section of this document):
+Each rule is discussed in more detail as follows (**Note**: any item in the below list in beginning with a dollar sign (e.g.: $NSGName) is a user defined variable from the script in the reference section of this document):
 
 1. First a Network Security Group must be built to hold the rules:
 
@@ -95,7 +93,7 @@ Each rule is discussed in more detail as follows (Note; any item in the below li
 	    	-DestinationPortRange '3389' `
 	    	-Protocol *
 
-4.	This rule allows inbound internet traffic to hit the web server. This doesn't change the routing behavior; it only allows traffic destine for IIS01 to pass. Thus if traffic from the Internet had the web server as its destination this rule would allow it and stop processing further rules. (In the rule at priority 140 all other inbound internet traffic is blocked). If you're only processing HTTP traffic, this rule could be further restricted to only allow Destination Port 80.
+4.	This rule allows inbound internet traffic to hit the web server. This doesn't change the routing behavior; it only allows traffic destined for IIS01 to pass. Thus if traffic from the Internet had the web server as its destination this rule would allow it and stop processing further rules. (In the rule at priority 140 all other inbound internet traffic is blocked). If you're only processing HTTP traffic, this rule could be further restricted to only allow Destination Port 80.
 
 		Get-AzureNetworkSecurityGroup -Name $NSGName | `
 		    Set-AzureNetworkSecurityRule -Name "Enable Internet to $VMName[0]" `
@@ -163,7 +161,7 @@ Each rule is discussed in more detail as follows (Note; any item in the below li
 13.	Since there are no outbound rules on the Frontend subnet the response is allowed, and the Internet User receives the web page requested.
 
 #### (*Allowed*) RDP to Backend
-1.	Server Admin on internet requests RDP session to AppVM01 on BackEnd001.CloudApp.Net:xxxxx where xxxxx is the randomly assigned port number for RDP to AppVM01 (the assigned port can be found on the Azure Management Portal or via PowerShell)
+1.	Server Admin on internet requests RDP session to AppVM01 on BackEnd001.CloudApp.Net:xxxxx where xxxxx is the randomly assigned port number for RDP to AppVM01 (the assigned port can be found on the Azure Portal or via PowerShell)
 2.	Backend subnet begins inbound rule processing:
   1.	NSG Rule 1 (DNS) doesn't apply, move to next rule
   2.	NSG Rule 2 (RDP) does apply, traffic is allowed, stop rule processing
@@ -225,10 +223,8 @@ Each rule is discussed in more detail as follows (Note; any item in the below li
 
 ## Conclusion
 This is a relatively simple and straight forward way of isolating the back end subnet from inbound traffic.
-
 
 More examples and an overview of network security boundaries can be found [here][HOME].
-
 
 ## References
 ### Main Script and Network Config
@@ -548,6 +544,6 @@ If you wish to install a sample application for this, and other DMZ Examples, on
 [1]: ./media/virtual-networks-dmz-nsg-asm/example1design.png "Inbound DMZ with NSG"
 
 <!--Link References-->
-[HOME]: /documentation/articles/best-practices-network-security
-[SampleApp]: /documentation/articles/virtual-networks-sample-app
+[HOME]: /documentation/articles/best-practices-network-security/
+[SampleApp]: /documentation/articles/virtual-networks-sample-app/
 

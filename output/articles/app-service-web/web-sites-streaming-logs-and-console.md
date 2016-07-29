@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties 
 	pageTitle="Streaming logs and console" 
 	description="Streaming logs and console overview" 
@@ -11,20 +9,20 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="02/14/2016"
+	ms.date="05/10/2016"
 	wacn.date=""/>
 
 #Streaming Logs and the Console
 
 ### Streaming Logs ###
 
-The Azure Management Portal provides an integrated streaming log viewer that 
+The Azure Portal provides an integrated streaming log viewer that 
 lets you view tracing events from your Azure Web Apps in real time.  
 
 Setting this up requires a few simple steps:
 
 - Write traces in your code
-- Enable Application Diagnostics from within the Azure Management Portal
+- Enable Application Diagnostics from within the Azure Portal
 - Click on the streaming logs part on the web app's blade
 
 ### How to write traces in your code ###
@@ -54,7 +52,7 @@ console.log("My trace statement").
 ### How to enable and view the streaming logs ###
 ![][BrowseSitesScreenshot]
 Diagnostics are enabled on a per web app basis. From within the 
-[portal](https://manage.windowsazure.cn) browse to the site you would like to enable 
+[portal](https://portal.azure.cn) browse to the site you would like to enable 
 this feature for.  
   
 ![][DiagnosticsLogs]
@@ -76,7 +74,7 @@ To view the streaming logs from within the portal click **(1) Tools** >
 should see them in the **(3)** resulting window in near real time.
 
 ## Console ##
-The Azure Management Portal provides console access to your web app environment. You can 
+The Azure Portal provides console access to your web app environment. You can 
 explore your web app's file system and run powershell/cmd scripts. You are 
 bound by the same permissions set as your running web app code when executing 
 console commands. You won't be able to access protected directories or run 

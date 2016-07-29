@@ -1,33 +1,32 @@
 <properties 
-	pageTitle="Provision a Redis Cache" 
+	pageTitle="Provision a Redis Cache | Azure" 
 	description="Use Azure Resource Manager template to deploy an Azure Redis Cache." 
 	services="app-service" 
 	documentationCenter="" 
-	authors="tfitzmac" 
-	manager="wpickett" 
+	authors="steved0x" 
+	manager="Erikre" 
 	editor=""/>
 
 <tags
 	ms.service="cache"
-	ms.date="12/16/2015"
+	ms.date="07/12/2016"
 	wacn.date=""/>
 
 # Create a Redis Cache using a template
 
-In this topic, you will learn how to create an Azure Resource Manager template that deploys an Azure Redis Cache. The cache can be used with Y You will learn how to define which resources are deployed and
+In this topic, you will learn how to create an Azure Resource Manager template that deploys an Azure Redis Cache. You will learn how to define which resources are deployed and
 how to define parameters that are specified when the deployment is executed. You can use this template for your own deployments, or customize it to meet your requirements.
 
-For more information about creating templates, see [Authoring Azure Resource Manager Templates](/documentation/articles/resource-group-authoring-templates).
+For more information about creating templates, see [Authoring Azure Resource Manager Templates](/documentation/articles/resource-group-authoring-templates/).
 
 For the complete template, see [Redis Cache template](https://github.com/Azure/azure-quickstart-templates/blob/master/101-redis-cache/azuredeploy.json).
 
->[AZURE.NOTE] ARM templates for the new [Premium tier](/documentation/articles/cache-premium-tier-intro) are available. 
+>[AZURE.NOTE] ARM templates for the new [Premium tier](/documentation/articles/cache-premium-tier-intro/) are available. 
 >
 >
 >To check for the latest templates, see [Azure Quickstart Templates](https://azure.microsoft.com/documentation/templates/) and search for `Redis Cache`.
 
 ## What you will deploy
-
 
 In this template, you will deploy an Azure Redis Cache.
 
@@ -70,7 +69,6 @@ Creates the Azure Redis Cache.
       "location": "[parameters('redisCacheLocation')]",
       "properties": {
         "enableNonSslPort": "[parameters('enableNonSslPort')]",
-        "redisVersion": "[parameters('redisCacheVersion')]",
         "sku": {
           "capacity": "[parameters('redisCacheCapacity')]",
           "family": "[parameters('redisCacheFamily')]",
@@ -78,7 +76,7 @@ Creates the Azure Redis Cache.
         }
       },
         "resources": [
-        ]
+      ]
     }
 
 ## Commands to run deployment

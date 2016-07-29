@@ -15,7 +15,7 @@
 	ms.date="12/22/2015"
 	wacn.date=""/>
 
-# Overview: Apache Spark on Azure HDInsight (Windows)
+# Overview: Apache Spark on HDInsight Windows (Preview)
  
 > [AZURE.NOTE] HDInsight now provides Spark clusters on Linux. For information on the features offered with HDInsight Spark on Linux, see [Overview: Apache Spark on Azure HDInsight (Linux)](/documentation/articles/hdinsight-apache-spark-overview).
 

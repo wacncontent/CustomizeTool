@@ -1,3 +1,5 @@
+<!-- deleted in Global -->
+
 <properties title="About Chef and Azure Virtual Machines" pageTitle="About Chef and Azure Virtual Machines" description="Describes installing and configuring Chef on a VM in Azure" metaKeywords="" services="virtual machines" solutions="" documentationCenter="" authors="kathydav" manager="timlt" videoId="" scriptId="" />
 <tags 
 	ms.service="virtual-machines" 
@@ -29,8 +31,8 @@ To install Chef client on an Azure virtual machine, you have these choices:
 
 <!--Link references-->
 [Chef and Azure]: http://www.getchef.com/solutions/azure/
-[How to Log on to a Virtual Machine Running Windows Server]: /documentation/articles/virtual-machines-log-on-windows-server/
-[How to Log on to a Virtual Machine Running Linux]: /documentation/articles/virtual-machines-linux-how-to-log-on
+[How to Log on to a Virtual Machine Running Windows Server]: /documentation/articles/virtual-machines-windows-classic-connect-logon/
+[How to Log on to a Virtual Machine Running Linux]: /documentation/articles/virtual-machines-linux-classic-log-on/
 [Manage Extensions]: https://msdn.microsoft.com/zh-cn/library/dn606311.aspx
 
 

@@ -1,4 +1,4 @@
-<!-- not suitable for Mooncake -->
+<!-- ARM: tested -->
 
 <properties 
    pageTitle="Deploy a VM with a static public IP using the Azure CLI in Resource Manager | Azure"
@@ -12,16 +12,18 @@
 />
 <tags
 	ms.service="virtual-network"
-	ms.date="12/15/2015"
+	ms.date="03/15/2016"
 	wacn.date=""/>
 
 # Deploy a VM with a static public IP using the Azure CLI
 
 [AZURE.INCLUDE [virtual-network-deploy-static-pip-arm-selectors-include.md](../includes/virtual-network-deploy-static-pip-arm-selectors-include.md)]
 
+[AZURE.INCLUDE [arm-api-version-cli](../includes/arm-api-version-cli.md)]
+
 [AZURE.INCLUDE [virtual-network-deploy-static-pip-intro-include.md](../includes/virtual-network-deploy-static-pip-intro-include.md)]
 
-[AZURE.INCLUDE [azure-arm-classic-important-include](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the Resource Manager deployment model, which Azure recommends for most new deployments instead of the classic deployment model.
 
 [AZURE.INCLUDE [virtual-network-deploy-static-pip-scenario-include.md](../includes/virtual-network-deploy-static-pip-scenario-include.md)]
 

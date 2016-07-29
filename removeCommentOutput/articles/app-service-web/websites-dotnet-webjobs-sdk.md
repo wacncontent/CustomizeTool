@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="12/14/2015"
+	ms.date="06/01/2016"
 	wacn.date=""/>
 
 # What is the Azure WebJobs SDK
@@ -18,7 +18,7 @@
 
 This article explains what the WebJobs SDK is, reviews some common scenarios it is useful for, and gives an overview of how you use it in your code.
 
-[WebJobs](/documentation/articles/websites-webjobs-resources) is a feature of Azure that enables you to run a program or script in the same context as a web app, API app, or mobile app. The purpose of the [WebJobs SDK](/documentation/articles/websites-webjobs-resources) is to simplify the code you write for common tasks that a WebJob can perform, such as image processing, queue processing, RSS aggregation, file maintenance, and sending emails. The WebJobs SDK has built-in features for working with Azure Storage and Service Bus, for scheduling tasks and handling errors, and for many other common scenarios. In addition, it's designed to be extensible, and there's an [open source repository for extensions](https://github.com/Azure/azure-webjobs-sdk-extensions/wiki/Binding-Extensions-Overview).
+[WebJobs](/documentation/articles/websites-webjobs-resources/) is a feature of Azure that enables you to run a program or script in the same context as a web app, API app, or mobile app. The purpose of the [WebJobs SDK](/documentation/articles/websites-webjobs-resources/) is to simplify the code you write for common tasks that a WebJob can perform, such as image processing, queue processing, RSS aggregation, file maintenance, and sending emails. The WebJobs SDK has built-in features for working with Azure Storage and Service Bus, for scheduling tasks and handling errors, and for many other common scenarios. In addition, it's designed to be extensible. The [WebJobs SDK is open source](https://github.com/Azure/azure-webjobs-sdk/), and there's an [open source repository for extensions](https://github.com/Azure/azure-webjobs-sdk-extensions/wiki/Binding-Extensions-Overview).
 
 The WebJobs SDK includes the following components:
 
@@ -32,7 +32,7 @@ Here are some typical scenarios you can handle more easily with the Azure WebJob
 
 * Image processing or other CPU-intensive work. A common feature of websites is the ability to upload images or videos. Often you want to manipulate the content after it's uploaded, but you don't want to make the user wait while you do that.
 
-* Queue processing. A common way for a web frontend to communicate with a backend service is to use queues. When the website needs to get work done, it pushes a message onto a queue. A backend service pulls messages from the queue and does the work. You could use queues for image processing: for example, after the user uploads a number of files, put the file names in a queue message to be picked up by the backend for processing. Or you could use queues to improve site responsiveness. For example, instead of writing directly to a SQL database, write to a queue, tell the user you're done, and let the backend service handle high-latency relational database work. For an example of queue processing with image process, see the [WebJobs SDK Get Started tutorial](/documentation/articles/websites-dotnet-webjobs-sdk-get-started).
+* Queue processing. A common way for a web frontend to communicate with a backend service is to use queues. When the website needs to get work done, it pushes a message onto a queue. A backend service pulls messages from the queue and does the work. You could use queues for image processing: for example, after the user uploads a number of files, put the file names in a queue message to be picked up by the backend for processing. Or you could use queues to improve site responsiveness. For example, instead of writing directly to a SQL database, write to a queue, tell the user you're done, and let the backend service handle high-latency relational database work. For an example of queue processing with image process, see the [WebJobs SDK Get Started tutorial](/documentation/articles/websites-dotnet-webjobs-sdk-get-started/).
 
 * RSS aggregation. If you have a site that maintains a list of RSS feeds, you could pull in all of the articles from the feeds in a background process.
 
@@ -52,7 +52,7 @@ The WebJobs SDK also makes it easy to handle common error handling scenarios. Yo
 
 The code for handling typical tasks that work with Azure Storage is simple. In your Console Application's `Main` method you create a `JobHost` object that coordinates the calls to methods you write. The WebJobs SDK framework knows when to call your methods and what parameter values to use based on the WebJobs SDK attributes you use in them. The SDK provides *triggers* that specify what conditions cause the function to be called, and *binders* that specify how to get information into and out of method parameters.
 
-For example, the [QueueTrigger](/documentation/articles/websites-dotnet-webjobs-sdk-storage-queues-how-to) attribute causes a function to be called when a message is received on a queue, and if the message format is JSON for a byte array or a custom type, the message is automatically deserialized. The [BlobTrigger](/documentation/articles/websites-dotnet-webjobs-sdk-storage-blobs-how-to) attribute triggers a process whenever a new blob is created in an Azure Storage account.
+For example, the [QueueTrigger](/documentation/articles/websites-dotnet-webjobs-sdk-storage-queues-how-to/) attribute causes a function to be called when a message is received on a queue, and if the message format is JSON for a byte array or a custom type, the message is automatically deserialized. The [BlobTrigger](/documentation/articles/websites-dotnet-webjobs-sdk-storage-blobs-how-to/) attribute triggers a process whenever a new blob is created in an Azure Storage account.
 
 Here is a simple program that polls a queue and creates a blob for each queue message received:
 
@@ -167,7 +167,7 @@ The WebJobs SDK provides several advantages even if you don't use WebJobs SDK tr
 * You can replay functions from the Dashboard.
 * You can view logs in the Dashboard, linked to the particular WebJob (application logs, written by using Console.Out, Console.Error, Trace, etc.) or linked to the particular function invocation that generated them (logs written by using a `TextWriter` object that the SDK passes to the function as a parameter). 
 
-For more information, see [How to manually invoke a function](/documentation/articles/websites-dotnet-webjobs-sdk-storage-queues-how-to#manual) and [How to write logs](/documentation/articles/websites-dotnet-webjobs-sdk-storage-queues-how-to#logs) 
+For more information, see [How to manually invoke a function](/documentation/articles/websites-dotnet-webjobs-sdk-storage-queues-how-to/#manual) and [How to write logs](/documentation/articles/websites-dotnet-webjobs-sdk-storage-queues-how-to/#logs) 
 
 ## <a id="nextsteps"></a>Next steps
 

@@ -1,3 +1,5 @@
+<!-- deleted in Global -->
+
 <properties 
 	pageTitle="Create and Deploy a PHP-MySQL web app in Azure Websites using WebMatrix" 
 	description="A tutorial that demonstrates how to use the free WebMatrix IDE to create and deploy a PHP web app in Azure Websites that stores data in MySQL."

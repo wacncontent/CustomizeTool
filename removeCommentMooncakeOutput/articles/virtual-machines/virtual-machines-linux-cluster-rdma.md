@@ -1,3 +1,5 @@
+<!-- rename to virtual-machines-linux-classic-rdma-cluster -->
+
 <properties
  pageTitle="Linux RDMA cluster to run MPI applications | Azure"
  description="Create a Linux cluster of size A8 or A9 VMs to use RDMA to run MPI apps."
@@ -14,7 +16,7 @@
 
 # Set up a Linux RDMA cluster to run MPI applications
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] 
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager model.
 
 
 This article shows you how to set up a Linux RDMA cluster in Azure to run parallel Message Passing Interface (MPI) applications. When you configure Linux-based VMs to run a supported MPI implementation, MPI applications communicate efficiently over a low latency, high throughput network in Azure that is based on remote direct memory access (RDMA) technology.
@@ -27,9 +29,11 @@ This article shows you how to set up a Linux RDMA cluster in Azure to run parall
 
 Following are methods you can use to create a Linux RDMA cluster either with or without a job scheduler.
 
-* **HPC Pack** - Create a Microsoft HPC Pack cluster in Azure and add compute nodes that run supported Linux distributions. Certain Linux nodes can be configured to access the RDMA network. See [Get started with Linux compute nodes in an HPC Pack cluster in Azure](/documentation/articles/virtual-machines-linux-cluster-hpcpack).
+* **HPC Pack** - Create a Microsoft HPC Pack cluster in Azure and add compute nodes that run supported Linux distributions. Certain Linux nodes can be configured to access the RDMA network. See [Get started with Linux compute nodes in an HPC Pack cluster in Azure](/documentation/articles/virtual-machines-linux-classic-hpcpack-cluster/).
 
-* **Azure CLI scripts** - As shown in the steps in the rest of this article, use the [Azure Command Line Interface](/documentation/articles/xplat-cli-install) (CLI) for Mac, Linux, and Windows to script the deployment of a virtual network and the other necessary components to create a Linux cluster. The CLI in the classic (Service Management) deployment mode creates the cluster nodes serially, so if you are deploying many compute nodes it might take several minutes to complete the deployment.
+* **Azure CLI scripts** - As shown in the steps in the rest of this article, use the [Azure Command Line Interface](/documentation/articles/xplat-cli-install/) (CLI) for Mac, Linux, and Windows to script the deployment of a virtual network and the other necessary components to create a Linux cluster. The CLI in the classic (Service Management) deployment mode creates the cluster nodes serially, so if you are deploying many compute nodes it might take several minutes to complete the deployment.
+
+* **Azure Resource Manager templates** - Use the Azure Resource Manager deployment model to deploy multiple A8 and A9 Linux VMs as well as define virtual networks, static IP addresses, DNS settings, and other resources for a compute cluster that can take advantage of the RDMA network to run MPI workloads. You can [create your own template](/documentation/articles/resource-group-authoring-templates/). Resource Manager templates can provide a fast and reliable way to deploy a Linux cluster.
 
 ## Deployment in Azure Service Management with Azure CLI scripts
 
@@ -43,7 +47,7 @@ The following steps will help you use the Azure CLI to deploy a SUSE Linux Enter
 
 *   **Cores quota** - You might need to increase the quota of cores to deploy a cluster. For example, you will need at least 128 cores if you want to deploy 8 VMs as shown in this article.
 
-*   **Azure CLI** - [Install](/documentation/articles/xplat-cli-install) the Azure CLI and [configure it ](/documentation/articles/xplat-cli-connect) to connect to your Azure subscription from the client computer.
+*   **Azure CLI** - [Install](/documentation/articles/xplat-cli-install/) the Azure CLI and [configure it ](/documentation/articles/xplat-cli-connect/) to connect to your Azure subscription from the client computer.
 
 *   **Intel MPI** - As part of customizing a Linux VM image for your cluster (see details later in this article), you need to download and install the Intel MPI Library 5 runtime from the [Intel.com site](https://software.intel.com/intel-mpi-library/). To prepare for this, after you register with Intel, follow the link in the confirmation email to the related web page and copy the download link for the .tgz file for the appropriate version of Intel MPI. This article is based on Intel MPI version 5.0.3.048.
 
@@ -81,7 +85,7 @@ where
 
 ### Customize the VM
 
-After the VM completes provisioning, SSH to the VM using the VM's external IP address (or DNS name) and the external port number you configured, and customize it. For connection details, see [How to Log on to a Virtual Machine Running Linux](/documentation/articles/virtual-machines-linux-how-to-log-on). You should perform commands as the user you configured on the VM, unless root access is required to complete a step.
+After the VM completes provisioning, SSH to the VM using the VM's external IP address (or DNS name) and the external port number you configured, and customize it. For connection details, see [How to Log on to a Virtual Machine Running Linux](/documentation/articles/virtual-machines-linux-classic-log-on/). You should perform commands as the user you configured on the VM, unless root access is required to complete a step.
 
 >[AZURE.IMPORTANT]Azure does not provide root access to Linux VMs. To gain administrative access when connected as a user to the VM, run commands using `sudo`.
 
@@ -142,7 +146,7 @@ To capture the image, first run the following command in the Linux VM. This depr
 
 	sudo waagent -deprovision
 
-Then, from your client computer, run the following Azure CLI commands to capture the image. See [How to capture a classic Linux virtual machine as an image](/documentation/articles/virtual-machines-linux-capture-image) for details.  
+Then, from your client computer, run the following Azure CLI commands to capture the image. See [How to capture a classic Linux virtual machine as an image](/documentation/articles/virtual-machines-linux-classic-capture-image/) for details.  
 
 	azure vm shutdown <vm-name>
 	
@@ -202,6 +206,10 @@ Update the Linux RDMA drivers on each VM by running one of the following sets of
 
 	azure vm extension set <vm-name> RDMAUpdateForLinux Microsoft.OSTCExtensions 0.1
 
+**For a VM provisioned in Azure Resource Manager**
+	azure config mode arm
+
+	azure vm extension set <resource-group> <vm-name> RDMAUpdateForLinux Microsoft.OSTCExtensions 0.1
 >[AZURE.NOTE]It might take some time to install the drivers, and the command will return without output. After the update, your VM will restart and should be ready for use in several minutes.
 
 You can script the driver update across all the nodes in your cluster. For example, the following script updates the drivers in the 8-node cluster created by the script in the previous step.
@@ -219,6 +227,10 @@ You can script the driver update across all the nodes in your cluster. For examp
 	# For ASM VMs use the following command in your script.
 
 	azure vm extension set $vmname$i RDMAUpdateForLinux Microsoft.OSTCExtensions 0.1
+
+	# For ARM VMs use the following command in your script.
+
+	# azure vm extension set <resource-group> $vmname$i RDMAUpdateForLinux Microsoft.OSTCExtensions 0.1
 
 	done
 

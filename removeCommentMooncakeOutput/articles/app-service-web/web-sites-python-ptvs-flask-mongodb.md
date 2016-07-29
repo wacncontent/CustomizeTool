@@ -1,3 +1,5 @@
+<!-- deleted in Global -->
+
 <properties 
 	pageTitle="Flask and MongoDB on Azure with Python Tools 2.1 for Visual Studio" 
 	description="Learn how to use the Python Tools for Visual Studio to create a Flask web app that stores data in a MongoDB database instance and deploy it to Azure Websites." 
@@ -17,7 +19,7 @@
 
 # Flask and MongoDB on Azure with Python Tools 2.1 for Visual Studio
 
-  	<!-- The MongoLab workflow is not yet supported in the Preview Portal -->
+  	<!-- The MongoLab workflow is not yet supported in the Portal Preview -->
 
 In this tutorial, we'll use [Python Tools for Visual Studio] to create a simple polls web app using one of the PTVS sample templates. This tutorial is also available as a [video](https://www.youtube.com/watch?v=eql-crFgrAE).
 
@@ -43,7 +45,7 @@ See the [Python Developer Center] for more articles that cover development of Az
  - [Python Tools 2.1 for Visual Studio Samples VSIX]
  - [Azure SDK Tools for VS 2013] or [Azure SDK Tools for VS 2012]
  - [Python 2.7 32-bit] or [Python 3.4 32-bit]
- - [RoboMongo](/documentation/articles/optional)
+ - [RoboMongo](/documentation/articles/optional/)
 
 [AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
 
@@ -159,7 +161,7 @@ PTVS provides an easy way to deploy your web app to Azure Websites.
 
 1.  In **Solution Explorer**, right-click on the project node and select **Publish**.
 
-1.  Click on **Microsoft Azure Web Apps**.
+1.  Click on **Azure Web Apps**.
 
 3. If you haven't signed in to Azure, click **Sign In** and use the Microsoft account for your Azure subscription to sign in.
 
@@ -223,7 +225,7 @@ Follow these links to learn more about Python Tools for Visual Studio, Flask and
 
 <!--Link references-->
 [Python Developer Center]: /develop/python/
-[Azure Cloud Services]: /documentation/articles/cloud-services-python-ptvs
+[Azure Cloud Services]: /documentation/articles/cloud-services-python-ptvs/
 <!--External Link references-->
 [Azure Management Portal]: https://manage.windowsazure.cn
 [RoboMongo]: http://robomongo.org/
@@ -242,4 +244,3 @@ Follow these links to learn more about Python Tools for Visual Studio, Flask and
 [Remote Debugging on Azure]: http://pytools.codeplex.com/wikipage?title=Features%20Azure%20Remote%20Debugging
 [Web Projects]: http://pytools.codeplex.com/wikipage?title=Features%20Web%20Project
 [Cloud Service Projects]: http://pytools.codeplex.com/wikipage?title=Features%20Cloud%20Project
- 

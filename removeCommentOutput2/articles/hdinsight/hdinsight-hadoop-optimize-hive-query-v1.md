@@ -17,21 +17,17 @@
 
 By default, Hadoop clusters are not optimized for performance. This article covers a few of the most common Hive performance optimization methods that you can apply to our queries.
 
-[AZURE.INCLUDE [portal](../includes/hdinsight-azure-portal.md)] 
-
-* [Optimize Hive queries for Hadoop in HDInsight](/documentation/articles/hdinsight-hadoop-optimize-hive-query-v1).
-
 ##Scale out worker nodes
 
 Increasing the number of worker nodes in a cluster can leverage more mappers and reducers to be run in parallel. There are two ways you can increase scale out in HDInsight:
 
-- At the provision time, you can specify the number of worker nodes using the Azure Management Portal, Azure PowerShell or Cross-platform command line interface.  For more information, see [Provision HDInsight clusters](/documentation/articles/hdinsight-provision-clusters-v1). The following screen show the worker node configuration on the Azure Management Portal:
+- At the provision time, you can specify the number of worker nodes using the Azure Classic Management Portal, Azure PowerShell or Cross-platform command line interface.  For more information, see [Provision HDInsight clusters](/documentation/articles/hdinsight-provision-clusters-v1/). The following screen show the worker node configuration on the Azure Classic Management Portal:
 
 	![scaleout_1][image-hdi-optimize-hive-scaleout_1]
 - At the run time, you can also scale out a cluster without recreating one. This is shown below.
 ![scaleout_1][image-hdi-optimize-hive-scaleout_2]
 
-For more details on the different virtual machines supported by HDInsight, see [HDInsight pricing](/home/features/hdinsight/#price).
+For more details on the different virtual machines supported by HDInsight, see [HDInsight pricing](/home/features/hdinsight/pricing/).
 
 ##Enable Tez
 
@@ -203,10 +199,10 @@ There are more optimization methods that you can consider, for example:
 ##<a id="nextsteps"></a> Next steps
 In this article, you have learned several common Hive query optimization methods. To learn more, see the following articles:
 
-- [Use Apache Hive in HDInsight](/documentation/articles/hdinsight-use-hive)
-- [Analyze flight delay data by using Hive in HDInsight](/documentation/articles/hdinsight-analyze-flight-delay-data)
-- [Analyze sensor data using the Hive Query Console on Hadoop in HDInsight](/documentation/articles/hdinsight-hive-analyze-sensor-data)
-- [Use Hive with HDInsight to analyze logs from websites](/documentation/articles/hdinsight-hive-analyze-website-log)
+- [Use Apache Hive in HDInsight](/documentation/articles/hdinsight-use-hive/)
+- [Analyze flight delay data by using Hive in HDInsight](/documentation/articles/hdinsight-analyze-flight-delay-data/)
+- [Analyze sensor data using the Hive Query Console on Hadoop in HDInsight](/documentation/articles/hdinsight-hive-analyze-sensor-data/)
+- [Use Hive with HDInsight to analyze logs from websites](/documentation/articles/hdinsight-hive-analyze-website-log/)
 
 
 [image-hdi-optimize-hive-scaleout_1]: ./media/hdinsight-hadoop-optimize-hive-query-v1/scaleout_1.png

@@ -1,3 +1,5 @@
+<!-- deleted in Global -->
+
 <properties 
    pageTitle="Backing up Azure Automation"
    description="Describes how to backup the contents of an automation account so that they can be retained after an automation account is deleted."
@@ -13,7 +15,7 @@
 
 # Backing up Azure Automation
 
-When you delete an automation account in Windows Azure, all objects in the account are deleted including runbooks, modules, settings, jobs, and assets. The objects cannot be recovered after the account is deleted.  You can use the following information to backup the contents of your automation account before deleting it. 
+When you delete an automation account in Microsoft Azure, all objects in the account are deleted including runbooks, modules, settings, jobs, and assets. The objects cannot be recovered after the account is deleted.  You can use the following information to backup the contents of your automation account before deleting it. 
 
 ## Runbooks
 

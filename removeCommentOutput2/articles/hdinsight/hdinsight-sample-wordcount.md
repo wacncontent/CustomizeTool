@@ -1,5 +1,7 @@
+<!-- deleted in Global -->
+
 <properties
-	pageTitle="Hadoop MapReduce word count example in HDInsight | Windows Azure"
+	pageTitle="Hadoop MapReduce word count example in HDInsight | Azure"
 	description="Run a MapReduce word count example on a Hadoop cluster in HDInsight. The program, written in Java, counts word occurrences in a text file."
 	editor="cgronlun"
 	manager="paulettm"
@@ -30,7 +32,7 @@ The program are installed on the clusters. The text file analyzed in this tutori
 
 **Prerequisites**:
 
-- **An HDInsight cluster**. For instructions about the various ways in which such clusters can be created, see [Get Started with Azure HDInsight][hdinsight-get-started] or [Provision HDInsight Clusters](/documentation/articles/hdinsight-provision-clusters).
+- **An HDInsight cluster**. For instructions about the various ways in which such clusters can be created, see [Get Started with Azure HDInsight][hdinsight-get-started] or [Provision HDInsight Clusters](/documentation/articles/hdinsight-provision-clusters-v1).
 - **A workstation with Azure PowerShell**. See [Install and use Azure PowerShell](/documentation/articles/powershell-install-configure).
 
 <a id="run-sample"></a>
@@ -207,7 +209,7 @@ Note that the output files of a MapReduce job are immutable. So if you rerun thi
 [hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
 [hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
 
-[hdinsight-get-started]: /documentation/articles/hdinsight-get-started
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
 
 [powershell-install-configure]: /documentation/articles/powershell-install-configure
 

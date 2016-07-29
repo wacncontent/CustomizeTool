@@ -3,40 +3,45 @@
 	description="Learn how to use RESTful API calls to back up and restore an app in Azure Web App"
 	services="app-service"
 	documentationCenter=""
-	authors="nking92"
-	manager="edlauare"
+	authors="NKing92"
+	manager="wpickett"
     editor="" />
 
 <tags
 	ms.service="app-service"
-	ms.date="11/18/2015"
+	ms.date="05/17/2016"
 	wacn.date=""/>
 
 # Use REST to back up and restore Azure Web Apps
+
+> [AZURE.SELECTOR]
+- [PowerShell](/documentation/articles/app-service-powershell-backup/)
+- [REST API](/documentation/articles/websites-csm-backup/)
+
 [Azure Web Apps](/home/features/web-site/) can be backed up as blobs in Azure storage. The backup can also contain the app's databases. If the app is ever accidentally deleted, or if the app needs to be reverted to a previous version, it can be restored from any previous backup. Backups can be done at any time on demand, or backups can be scheduled at suitable intervals.
 
-This article will explain how to backup and restore an app with RESTful API requests. If you would like to create and manage app backups graphically through the Azure Management Portal, see [Back up a web app in Azure](/documentation/articles/web-sites-backup)
+This article will explain how to backup and restore an app with RESTful API requests. If you would like to create and manage app backups graphically through the Azure Classic Management Portal, see [Back up a web app in Azure](/documentation/articles/web-sites-backup/)
 
 <a name="gettingstarted"></a>
 ## Getting Started
-To send REST requests, you will need to know your app's **name**, **resource group** (by default it's "Default-Web-ChinaEast" or "Default-Web-ChinaNorth" depending on the location of you web site), and **subscription id**. This information can be found by clicking the **Dashboard** of you web site in the [Azure Management Portal](https://manage.windowsazure.cn). For the examples in this article, we will be configuring the website `backuprestoreapiexamples.chinacloudsites.cn`. It is stored in the Default-Web-ChinaEast resource group and is running on a subscription with the ID 00001111-2222-3333-4444-555566667777.
+To send REST requests, you will need to know your app's **name**, **resource group** (by default it's "Default-Web-ChinaEast" or "Default-Web-ChinaNorth" depending on the location of you web site), and **subscription id**. This information can be found by clicking the **Dashboard** of you web site in the [Azure Classic Management Portal](https://manage.windowsazure.cn). For the examples in this article, we will be configuring the website **backuprestoreapiexamples.chinacloudsites.cn**. It is stored in the Default-Web-ChinaEast resource group and is running on a subscription with the ID 00001111-2222-3333-4444-555566667777.
 
 <a name="backup-restore-rest-api"></a>
 ## Backup and restore REST API
-We will now cover several examples of how to use the REST API to backup and restore an app. Each example will include a URL and HTTP request body. The sample URL will contain placeholders wrapped in curly braces, such as {subscriptionId}. You should replace these with the corresponding information for your app. For reference, here is an explanation of each placeholder that appears in the example URLs.
+We will now cover several examples of how to use the REST API to backup and restore an app. Each example will include a URL and HTTP request body. The sample URL will contain placeholders wrapped in curly braces, such as {subscription-id}. You should replace these with the corresponding information for your app. For reference, here is an explanation of each placeholder that appears in the example URLs.
 
-* subscriptionId - ID of the Azure subscription containing the app
-* resourceGroupName - Name of the resource group containing the app
-* sitename - Name of the app
-* backupId - ID of the app backup
+* subscription-id - ID of the Azure subscription containing the app
+* resource-group-name - Name of the resource group containing the app
+* name - Name of the app
+* backup-id - ID of the app backup
 
 <a name="backup-on-demand"></a>
 ## Backup an app on demand
-To back up an app immediately, send a **POST** request to `https://manage.windowsazure.cn/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{sitename}/backup/`.
+To back up an app immediately, send a **POST** request to **https://management.chinacloudapi.cn/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Web/sites/{name}/backup/**.
 
-Here is what the URL looks like using our example website. `https://manage.windowsazure.cn/subscriptions/00001111-2222-3333-4444-555566667777/resourceGroups/Default-Web-ChinaEast/providers/Microsoft.Web/sites/backuprestoreapiexamples/backup/` 
+Here is what the URL looks like using our example website. **https://management.chinacloudapi.cn/subscriptions/00001111-2222-3333-4444-555566667777/resourceGroups/Default-Web-ChinaEast/providers/Microsoft.Web/sites/backuprestoreapiexamples/backup/**
 
-You must supply a JSON object in the body of your request to specify which storage account to use to store the backup. The JSON object must have a property named **storageAccountUrl**, which holds a [SAS URL](/documentation/articles/storage-dotnet-shared-access-signature-part-1) granting write access to the Azure Storage container that will hold the backup blob. If you want to back up your databases, you must also supply a list containing the names, types, and connection strings of the databases to be backed up.
+You must supply a JSON object in the body of your request to specify which storage account to use to store the backup. The JSON object must have a property named **storageAccountUrl**, which holds a [SAS URL](/documentation/articles/storage-dotnet-shared-access-signature-part-1/) granting write access to the Azure Storage container that will hold the backup blob. If you want to back up your databases, you must also supply a list containing the names, types, and connection strings of the databases to be backed up.
 
 	{
     	"properties":
@@ -87,9 +92,9 @@ A backup of the app will begin immediately when the request is received. The bac
 In addition to backing up an app on demand, you can also schedule a backup to happen automatically.
 
 ### Set up a new automatic backup schedule
-To set up a backup schedule, send a **PUT** request to `https://manage.windowsazure.cn/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/config/backup`.
+To set up a backup schedule, send a **PUT** request to **https://management.chinacloudapi.cn/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Web/sites/{name}/config/backup**.
 
-Here is what the URL looks like for our example website. `https://manage.windowsazure.cn/subscriptions/00001111-2222-3333-4444-555566667777/resourceGroups/Default-Web-ChinaEast/providers/Microsoft.Web/sites/backuprestoreapiexamples/config/backup` 
+Here is what the URL looks like for our example website. **https://management.chinacloudapi.cn/subscriptions/00001111-2222-3333-4444-555566667777/resourceGroups/Default-Web-ChinaEast/providers/Microsoft.Web/sites/backuprestoreapiexamples/config/backup**
 
 The request body must have a JSON object that specifies the backup configuration. Here is an example with all of the required parameters.
 
@@ -114,17 +119,17 @@ This example configures the app to be automatically backed up every 7 days. The 
 Old backups will automatically be removed from the storage account. You can control how old the backups can be by setting the **retentionPeriodInDays** parameter. If you want to always have at least one backup saved, regardless of how old it is, set **keepAtLeastOneBackup** to true.
 
 ### Get the automatic backup schedule
-To get an app's backup configuration, send a **POST** request to the URL ` https://manage.windowsazure.cn/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/config/backup/list`.
+To get an app's backup configuration, send a **POST** request to the URL **https://management.chinacloudapi.cn/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Web/sites/{name}/config/backup/list**.
 
-The URL for our example site is `https://manage.windowsazure.cn/subscriptions/00001111-2222-3333-4444-555566667777/resourceGroups/Default-Web-ChinaEast/providers/Microsoft.Web/sites/backuprestoreapiexamples/config/backup/list`.
+The URL for our example site is **https://management.chinacloudapi.cn/subscriptions/00001111-2222-3333-4444-555566667777/resourceGroups/Default-Web-ChinaEast/providers/Microsoft.Web/sites/backuprestoreapiexamples/config/backup/list**.
 
 <a name="get-backup-status"></a>
 ## Get the status of a backup
-Depending on how large the app is, a backup may take a while to complete. Backups might also fail, time out, or partially succeed. To see the status of all of an app's backups, send a **GET** request to the URL `https://manage.windowsazure.cn/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/backups`.
+Depending on how large the app is, a backup may take a while to complete. Backups might also fail, time out, or partially succeed. To see the status of all of an app's backups, send a **GET** request to the URL **https://management.chinacloudapi.cn/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Web/sites/{name}/backups**.
 
-To see the status of a specific backup, send a GET request to the URL `https://manage.windowsazure.cn/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/backups/{backupId}`.
+To see the status of a specific backup, send a GET request to the URL **https://management.chinacloudapi.cn/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Web/sites/{name}/backups/{backup-id}**.
 
-Here is what the URL looks like for our example website. `https://manage.windowsazure.cn/subscriptions/00001111-2222-3333-4444-555566667777/resourceGroups/Default-Web-ChinaEast/providers/Microsoft.Web/sites/backuprestoreapiexamples/backups/1` 
+Here is what the URL looks like for our example website. **https://management.chinacloudapi.cn/subscriptions/00001111-2222-3333-4444-555566667777/resourceGroups/Default-Web-ChinaEast/providers/Microsoft.Web/sites/backuprestoreapiexamples/backups/1**
 
 The response body will contain a JSON object similar to this example.
 
@@ -160,9 +165,9 @@ The status of a backup is an enumerated type. Here is every possible state.
 
 <a name="restore-app"></a>
 ## Restore an app from a backup
-If your app has been deleted, or if you want to revert your app to a previous version, you can restore the app from a backup. To invoke a restore, send a **POST** request to the URL `https://manage.windowsazure.cn/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/backups/{id}/restore`.
+If your app has been deleted, or if you want to revert your app to a previous version, you can restore the app from a backup. To invoke a restore, send a **POST** request to the URL **https://management.chinacloudapi.cn/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Web/sites/{name}/backups/{backup-id}/restore**.
 
-Here is what the URL looks like for our example website. `https://manage.windowsazure.cn/subscriptions/00001111-2222-3333-4444-555566667777/resourceGroups/Default-Web-ChinaEast/providers/Microsoft.Web/sites/backuprestoreapiexamples/backups/1/restore` 
+Here is what the URL looks like for our example website. **https://management.chinacloudapi.cn/subscriptions/00001111-2222-3333-4444-555566667777/resourceGroups/Default-Web-ChinaEast/providers/Microsoft.Web/sites/backuprestoreapiexamples/backups/1/restore**
 
 In the request body, send a JSON object that contains the properties for the restore operation. Here is an example containing all required properties:
 
@@ -186,15 +191,15 @@ Sometimes you might want to create a new app when you restore a backup, instead 
 
 <a name="delete-app-backup"></a>
 ## Delete an app backup
-If you would like to delete a backup, send a **DELETE** request to the URL `https://manage.windowsazure.cn/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/backups/{backupId}`.
+If you would like to delete a backup, send a **DELETE** request to the URL **https://management.chinacloudapi.cn/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Web/sites/{name}/backups/{backup-id}**.
 
-Here is what the URL looks like for our example website. `https://manage.windowsazure.cn/subscriptions/00001111-2222-3333-4444-555566667777/resourceGroups/Default-Web-ChinaEast/providers/Microsoft.Web/sites/backuprestoreapiexamples/backups/1` 
+Here is what the URL looks like for our example website. **https://management.chinacloudapi.cn/subscriptions/00001111-2222-3333-4444-555566667777/resourceGroups/Default-Web-ChinaEast/providers/Microsoft.Web/sites/backuprestoreapiexamples/backups/1**
 
 <a name="manage-sas-url"></a>
 ## Manage a backup's SAS URL
-Azure Web App will attempt to delete your backup from Azure Storage using the SAS URL that was provided when the backup was created. If this SAS URL is no longer valid, the backup cannot be deleted through the REST API. However, you can update the SAS URL associated with a backup by sending a **POST** request to the URL `https://manage.windowsazure.cn/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/backups/{id}/list`.
+Azure will attempt to delete your backup from Azure Storage using the SAS URL that was provided when the backup was created. If this SAS URL is no longer valid, the backup cannot be deleted through the REST API. However, you can update the SAS URL associated with a backup by sending a **POST** request to the URL **https://management.chinacloudapi.cn/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/Microsoft.Web/sites/{name}/backups/{backup-id}/list**.
 
-Here is what the URL looks like for our example website. `https://manage.windowsazure.cn/subscriptions/00001111-2222-3333-4444-555566667777/resourceGroups/Default-Web-ChinaEast/providers/Microsoft.Web/sites/backuprestoreapiexamples/backups/1/list` 
+Here is what the URL looks like for our example website. **https://management.chinacloudapi.cn/subscriptions/00001111-2222-3333-4444-555566667777/resourceGroups/Default-Web-ChinaEast/providers/Microsoft.Web/sites/backuprestoreapiexamples/backups/1/list**
 
 In the request body, send a JSON object that contains the new SAS URL. Here is an example.
 

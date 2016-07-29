@@ -1,3 +1,5 @@
+<!-- deleted in Global -->
+
 <properties
 	pageTitle="Learning path for Hadoop in HDInsight | Azure"
 	description="Follow this learning path through documentation and resources to learn how to use Hadoop and its components in HDInsight."

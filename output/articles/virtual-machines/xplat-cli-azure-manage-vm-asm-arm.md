@@ -1,3 +1,5 @@
+<!-- rename to virtual-machines-windows-cli-manage -->
+
 <properties
 	pageTitle="Equivalent Azure CLI commands for VM tasks | Azure"
 	description="Equivalent Azure CLI commands to create and manage Azure VMs in Azure Resource Manager and Azure Service Management modes"
@@ -21,7 +23,7 @@ This article shows equivalent Azure command-line interface (Azure CLI) commands 
 
 
 
-* If you haven't already installed the Azure CLI and connected to your subscription, see [Install the Azure CLI](/documentation/articles/xplat-cli-install) and [Connect to an Azure subscription from the Azure CLI](/documentation/articles/xplat-cli-connect). When you want to use the Resource Manager mode commands, be sure to connect with the login method.
+* If you haven't already installed the Azure CLI and connected to your subscription, see [Install the Azure CLI](/documentation/articles/xplat-cli-install/) and [Connect to an Azure subscription from the Azure CLI](/documentation/articles/xplat-cli-connect/). When you want to use the Resource Manager mode commands, be sure to connect with the login method.
 
 * To get started with the Resource Manager mode in the Azure CLI, you might need to switch command modes. By default the CLI starts in Service Management mode. To change to Resource Manager mode, run `azure config mode arm`. To go back to Service Management mode, run `azure config mode asm`.
 
@@ -29,14 +31,12 @@ This article shows equivalent Azure command-line interface (Azure CLI) commands 
 
 ## VM tasks
 The next table compares common VM tasks you can perform with Azure CLI commands in Service Management and Resource Manager. With many Resource Manager commands you need to pass the name of an existing resource group.
-
 
-> [AZURE.NOTE] These examples don't include template-based operations which are generally recommended for VM deployments in Resource Manager. For information, see [Use the Azure CLI with Azure Resource Manager](/documentation/articles/xplat-cli-azure-resource-manager) and [Deploy and manage virtual machines by using Azure Resource Manager templates and the Azure CLI](/documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli).
-
+> [AZURE.NOTE] These examples don't include template-based operations which are generally recommended for VM deployments in Resource Manager. For information, see [Use the Azure CLI with Azure Resource Manager](/documentation/articles/xplat-cli-azure-resource-manager/) and [Deploy and manage virtual machines by using Azure Resource Manager templates and the Azure CLI](/documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli/).
 
 Task | Service Management | Resource Manager
 -------------- | ----------- | -------------------------
-Create the most basic VM | `azure vm create [options] <dns-name> <image> [userName] [password]` | `azure vm quick-create [options] <resource-group> <name> <location> <os-type> <image-urn> <admin-username> <admin-password>`<br/><br/>(Obtain the `image-urn` from the `azure vm image list` command. See [this article](/documentation/articles/resource-groups-vm-searching) for examples.)
+Create the most basic VM | `azure vm create [options] <dns-name> <image> [userName] [password]` | `azure vm quick-create [options] <resource-group> <name> <location> <os-type> <image-urn> <admin-username> <admin-password>`<br/><br/>(Obtain the `image-urn` from the `azure vm image list` command. See [this article](/documentation/articles/virtual-machines-linux-cli-ps-findimage/) for examples.)
 Create a Linux VM | `azure vm create [options] <dns-name> <image> [userName] [password]` | `azure  vm create [options] <resource-group> <name> <location> -y "Linux"`
 Create a Windows VM | `azure vm create [options] <dns-name> <image> [userName] [password]` | `azure  vm create [options] <resource-group> <name> <location> -y "Windows"`
 List VMs | `azure  vm list [options]` | `azure  vm list [options]`
@@ -65,5 +65,5 @@ Get all available VM sizes | Not available | `azure vm sizes [options]`
 
 ## Next steps
 
-* For additional examples of the CLI commands, see [Using the Azure Command-Line Interface with Azure Service Management](/documentation/articles/virtual-machines-command-line-tools) and
-[Using the Azure CLI with Azure Resource Manager](/documentation/articles/azure-cli-arm-commands).
+* For additional examples of the CLI commands, see [Using the Azure Command-Line Interface with Azure Service Management](/documentation/articles/virtual-machines-command-line-tools/) and
+[Using the Azure CLI with Azure Resource Manager](/documentation/articles/azure-cli-arm-commands/).

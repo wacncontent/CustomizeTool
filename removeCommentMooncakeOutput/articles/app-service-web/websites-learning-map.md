@@ -1,3 +1,5 @@
+<!-- deleted in Global -->
+
 <properties 
 	pageTitle="Learning Map for Azure Websites" 
 	description="Get a visual map through all the resources you need to go from 0 to 60 on Azure Websites." 
@@ -18,4 +20,3 @@ Test drive Azure Websites, quickly migrate your web assets to Azure Websites, an
 
 <object type="image/svg+xml" data="https://sidneyhcontent.blob.core.windows.net/documentation/websites-learning-map.svg" width="100%" height="100%">
 </object>
- 

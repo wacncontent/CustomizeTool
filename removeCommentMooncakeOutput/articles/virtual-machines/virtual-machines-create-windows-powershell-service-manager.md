@@ -1,3 +1,5 @@
+<!-- rename to virtual-machines-windows-classic-create-powershell -->
+
 <properties
 	pageTitle="Create and manage a Windows VM using Azure PowerShell | Azure"
 	description="Create and manage a Windows virtual machine with Azure Powershell using the classic deployment model."
@@ -26,7 +28,7 @@ If you have already installed Azure PowerShell, you must have Azure PowerShell v
 
 	Get-Module azure | format-table version
 
-If you haven't done so already, use the instructions in [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure) to install Azure PowerShell on your local computer. Then, open an Azure PowerShell command prompt.
+If you haven't done so already, use the instructions in [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure/) to install Azure PowerShell on your local computer. Then, open an Azure PowerShell command prompt.
 
 First, you must sign in to Azure by using this command:
 
@@ -195,12 +197,12 @@ To attach data disks from an existing .vhd file in blob storage, run this comman
 
 ## Additional resources
 
-[Create a Windows virtual machine with Resource Manager and Azure PowerShell](/documentation/articles/virtual-machines-create-windows-powershell-resource-manager)
+[Create a Windows virtual machine with Resource Manager and Azure PowerShell](/documentation/articles/virtual-machines-create-windows-powershell-resource-manager/)
 
-[Create a Windows virtual machine with a Resource Manager template and Azure PowerShell](/documentation/articles/virtual-machines-create-windows-powershell-resource-manager-template-simple)
+[Create a Windows virtual machine with a Resource Manager template and Azure PowerShell](/documentation/articles/virtual-machines-create-windows-powershell-resource-manager-template-simple/)
 
 [Virtual Machines documentation](/documentation/services/virtual-machines/)
 
-[How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure)
+[How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure/)
 
-[Use Azure PowerShell to create and preconfigure Windows-based virtual machines](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-vms)
+[Use Azure PowerShell to create and preconfigure Windows-based virtual machines](/documentation/articles/virtual-machines-windows-classic-create-powershell/)

@@ -1,3 +1,5 @@
+<!-- rename to virtual-machines-linux-cli-ps-findimage -->
+
 <properties
    pageTitle="Navigate and select VM images | Azure"
    description="Learn how to determine the publisher, offer, and SKU for images when creating an Azure virtual machine with the Resource Manager deployment model."
@@ -16,79 +18,225 @@
 
 # Navigate and select Azure virtual machine images with Windows PowerShell and the Azure CLI
 
-> [AZURE.NOTE] This article describes how to navigate and select virtual machine images, using a recent installation of either the Azure CLI or Azure PowerShell. As a prerequisite, you would need to change to the Service Manager mode. With the Azure CLI, enter that mode by typing `azure config mode asm`. For Azure PowerShell 0.9 or earlier, type `Switch-AzureMode AzureServiceManager`.
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the Resource Manager deployment model, which Azure recommends for most new deployments instead of the classic deployment model.
+
+
+
 
 ## Table of commonly used images
 
 
-| PublisherName | product | Name |
+| PublisherName                        | Offer                                 | Sku                         |
 |:---------------------------------|:-------------------------------------------|:---------------------------------|:--------------------|
-| OpenLogic | CentOS | f1179221e23b4dbb89e39d70e5bc9e72__OpenLogic-CentOS-70-20150904 |
-| OpenLogic | CentOS | f1179221e23b4dbb89e39d70e5bc9e72__OpenLogic-CentOS-71-20150731 |
-| Microsoft SharePoint Group | MicrosoftSharePointServer | 9619bdbee1584b6f80d684565a6eeb74__SharePoint-2013-Trial-3-26-2014 |
-| Microsoft SQL Server Group | SQL2014-WS2012R2 | 74bb2f0b8dcc47fbb2914b60ed940c35__SQL-Server-2014-RTM-12.0.2361.0-DataWarehousing-CHS-Win2012R2-cy14su05 |
-| Microsoft SQL Server Group | SQL2014-WS2012R2 | 74bb2f0b8dcc47fbb2914b60ed940c35__SQL-Server-2014-RTM-12.0.2361.0-Web-CHS-Win2012R2-cy14su05 |
-| Canonical | UbuntuServer | b549f4301d0b4295b8e76ceb65df47d4__Ubuntu-12_04_5-LTS-amd64-server-20150204-en-us-30GB |
-| Canonical | UbuntuServer | b549f4301d0b4295b8e76ceb65df47d4__Ubuntu-14_04_3-LTS-amd64-server-20151019-en-us-30GB |
-| Microsoft | WindowsServer | 55bc2b193643443bb879a78bda516fc8__Windows-Server-2012-Datacenter-20151021-zh.cn-127GB.vhd |
-| Microsoft | WindowsServer | 55bc2b193643443bb879a78bda516fc8__Windows-Server-2012-R2-20151021-zh.cn-127GB.vhd |
-| Microsoft | WindowsServer | 55bc2b193643443bb879a78bda516fc8__Win2K8R2SP1-Datacenter-20151021-zh.cn-127GB.vhd |
-| Microsoft | WindowsServer | 55bc2b193643443bb879a78bda516fc8__Windows-Server-Technical-Preview-20151118-en.us-127GB.vhd |
-| Microsoft Windows Server Essentials Group | WindowsServerEssentials | 0c5c79005aae478e8883bf950a861ce0__Windows-Server-2012-Essentials-20141204-zhcn |
-| Microsoft Windows Server HPC Pack team | WindowsServerHPCPack | 86f94d8ddf9d4aad9b064efb793ff4c2__HPC-Pack-2012R2-Update1-4.3.4660.0-WS2012R2-CHN |
-
+| OpenLogic                        | CentOS                                     | 7                                |
+| OpenLogic                        | CentOS                                     | 7.1                              |
+| CoreOS                           | CoreOS                                     | Beta                             |
+| CoreOS                           | CoreOS                                     | Stable                           |
+| MicrosoftDynamicsNAV             | DynamicsNAV                                | 2015                             |
+| MicrosoftSharePoint              | MicrosoftSharePointServer                  | 2013                             |
+| Microsoft                        | Oracle-Database-12c-Weblogic-Server-12c    | Standard                         |
+| Microsoft                        | Oracle-Database-12c-Weblogic-Server-12c    | Enterprise                       |
+| MicrosoftSQLServer               | SQL2014-WS2012R2                           | Enterprise-Optimized-for-DW      |
+| MicrosoftSQLServer               | SQL2014-WS2012R2                           | Enterprise-Optimized-for-OLTP    |
+| Canonical                        | UbuntuServer                               | 12.04.5-LTS                      |
+| Canonical                        | UbuntuServer                               | 14.04.2-LTS                      |
+| MicrosoftWindowsServer           | WindowsServer                              | 2012-Datacenter                  |
+| MicrosoftWindowsServer           | WindowsServer                              | 2012-R2-Datacenter               |
+| MicrosoftWindowsServer           | WindowsServer                              | 2008-R2-SP1 |
+| MicrosoftWindowsServer           | WindowsServer                              | Windows-Server-Technical-Preview |
+| MicrosoftWindowsServerEssentials | WindowsServerEssentials                    | WindowsServerEssentials          |
+| MicrosoftWindowsServerHPCPack    | WindowsServerHPCPack                       | 2012R2                           |
 
 
 ## Azure CLI
 
-The easiest and quickest way to locate an image is to call the `azure vm image list` command and pass the publisher name, and OS. For example, the following list is only a short example -- many lists are quite long -- if you know that "Canonical" is a publisher for the "Ubuntu". You can use the following bash command to search
+> [AZURE.NOTE] This article describes how to navigate and select virtual machine images, using a recent installation of either the Azure CLI or Azure PowerShell. As a prerequisite, you would need to change to the Resource Manager mode. With the Azure CLI, enter that mode by typing `azure config mode arm`. 
 
-	azure vm image list | cat | grep -E "data:\s*Name|data:\s*-+|data:\s*[^\s]*Ubuntu.*\s*Canonical"
+The easiest and quickest way to locate an image to use either with `azure vm quick-create` or to create a resource group template file is to call the `azure vm image list` command and pass the location, the publisher name (it's not case-sensitive!), and an offer -- if you know the offer. For example, the following list is only a short example -- many lists are quite long -- if you know that "Canonical" is a publisher for the "UbuntuServer" offer.
 
-And, you will get the following output.
+    azure vm image list chinanorth canonical ubuntuserver
+    info:    Executing command vm image list
+    warn:    The parameter --sku if specified will be ignored
+    + Getting virtual machine image skus (Publisher:"canonical" Offer:"ubuntuserver" Location:"chinanorth")
+    data:    Publisher  Offer         Sku          Version          Location  Urn
+    data:    ---------  ------------  -----------  ---------------  --------  --------------------------------------------------
+    data:    canonical  ubuntuserver  12.04-DAILY  12.04.201504201  chinanorth    canonical:ubuntuserver:12.04-DAILY:12.04.201504201
+    data:    canonical  ubuntuserver  12.04.2-LTS  12.04.201302250  chinanorth    canonical:ubuntuserver:12.04.2-LTS:12.04.201302250
+    data:    canonical  ubuntuserver  12.04.2-LTS  12.04.201303250  chinanorth    canonical:ubuntuserver:12.04.2-LTS:12.04.201303250
+    data:    canonical  ubuntuserver  12.04.2-LTS  12.04.201304150  chinanorth    canonical:ubuntuserver:12.04.2-LTS:12.04.201304150
+    data:    canonical  ubuntuserver  12.04.2-LTS  12.04.201305160  chinanorth    canonical:ubuntuserver:12.04.2-LTS:12.04.201305160
+    data:    canonical  ubuntuserver  12.04.2-LTS  12.04.201305270  chinanorth    canonical:ubuntuserver:12.04.2-LTS:12.04.201305270
+    data:    canonical  ubuntuserver  12.04.2-LTS  12.04.201306030  chinanorth    canonical:ubuntuserver:12.04.2-LTS:12.04.201306030
+    data:    canonical  ubuntuserver  12.04.2-LTS  12.04.201306240  chinanorth    canonical:ubuntuserver:12.04.2-LTS:12.04.201306240
 
-	data:    Name                                                                                                      Category  OS       Publisher
-	data:    --------------------------------------------------------------------------------------------------------  --------  -------  -----------------------------------------
-	data:    b549f4301d0b4295b8e76ceb65df47d4__Ubuntu-12_04_3-LTS-amd64-server-20140130-en-us-30GB                     Public    Linux    Canonical
-	data:    b549f4301d0b4295b8e76ceb65df47d4__Ubuntu-12_04_4-LTS-amd64-server-20140529-en-us-30GB                     Public    Linux    Canonical
-	data:    b549f4301d0b4295b8e76ceb65df47d4__Ubuntu-12_04_4-LTS-amd64-server-20140606-en-us-30GB                     Public    Linux    Canonical
-	data:    b549f4301d0b4295b8e76ceb65df47d4__Ubuntu-12_04_4-LTS-amd64-server-20140619-en-us-30GB                     Public    Linux    Canonical
-	data:    b549f4301d0b4295b8e76ceb65df47d4__Ubuntu-12_04_4-LTS-amd64-server-20140702-en-us-30GB                     Public    Linux    Canonical
-	data:    b549f4301d0b4295b8e76ceb65df47d4__Ubuntu-12_04_5-LTS-amd64-server-20140829.2-en-us-30GB                   Public    Linux    Canonical
-	data:    b549f4301d0b4295b8e76ceb65df47d4__Ubuntu-12_04_5-LTS-amd64-server-20140925.1-en-us-30GB                   Public    Linux    Canonical
-	data:    b549f4301d0b4295b8e76ceb65df47d4__Ubuntu-12_04_5-LTS-amd64-server-20150204-en-us-30GB                     Public    Linux    Canonical
-	data:    b549f4301d0b4295b8e76ceb65df47d4__Ubuntu-14_04-LTS-amd64-server-20140226.1-beta1-en-us-30GB               Public    Linux    Canonical
-	data:    b549f4301d0b4295b8e76ceb65df47d4__Ubuntu-14_04-LTS-amd64-server-20140416.1-en-us-30GB                     Public    Linux    Canonical
-	data:    b549f4301d0b4295b8e76ceb65df47d4__Ubuntu-14_04-LTS-amd64-server-20140528-en-us-30GB                       Public    Linux    Canonical
-	data:    b549f4301d0b4295b8e76ceb65df47d4__Ubuntu-14_04-LTS-amd64-server-20140606.1-en-us-30GB                     Public    Linux    Canonical
-	data:    b549f4301d0b4295b8e76ceb65df47d4__Ubuntu-14_04_1-LTS-amd64-server-20140909-en-us-30GB                     Public    Linux    Canonical
-	data:    b549f4301d0b4295b8e76ceb65df47d4__Ubuntu-14_04_1-LTS-amd64-server-20140927-en-us-30GB                     Public    Linux    Canonical
-	data:    b549f4301d0b4295b8e76ceb65df47d4__Ubuntu-14_04_1-LTS-amd64-server-20141125-en-us-30GB                     Public    Linux    Canonical
-	data:    b549f4301d0b4295b8e76ceb65df47d4__Ubuntu-14_04_1-LTS-amd64-server-20150123-en-us-30GB                     Public    Linux    Canonical
-	data:    b549f4301d0b4295b8e76ceb65df47d4__Ubuntu-14_04_2-LTS-amd64-server-20150706-en-us-30GB                     Public    Linux    Canonical
-	data:    b549f4301d0b4295b8e76ceb65df47d4__Ubuntu-14_04_3-LTS-amd64-server-20151019-en-us-30GB                     Public    Linux    Canonical
-	data:    b549f4301d0b4295b8e76ceb65df47d4__Ubuntu-14_10-amd64-server-20140826-beta1-en-us-30GB                     Public    Linux    Canonical
-	data:    b549f4301d0b4295b8e76ceb65df47d4__Ubuntu-15_04-amd64-server-20150707-en-us-30GB                           Public    Linux    Canonical
+The **Urn** column will be the form you pass to `azure vm quick-create`.
 
-More information about how to use these images, see [Create a multi-VM deployment with the Azure CLI](/documentation/articles/virtual-machines-create-multi-vm-deployment-xplat-cli)
+Often, however, you don't yet know what is available. In this case, you can navigate images by discovering publishers first by using `azure vm image list-publishers` and responding to the location prompt with a data center location you expect to use for your resource group. For example, the following lists all image publishers in the China North location (pass the location argument by lowercasing and removing spaces from the standard locations)
+
+    azure vm image list-publishers
+    info:    Executing command vm image list-publishers
+    Location: chinanorth
+    + Getting virtual machine image publishers (Location: "chinanorth")
+    data:    Publisher                                       Location
+    data:    ----------------------------------------------  --------
+    data:    a10networks                                     chinanorth  
+    data:    aiscaler-cache-control-ddos-and-url-rewriting-  chinanorth  
+    data:    alertlogic                                      chinanorth  
+    data:    AlertLogic.Extension                            chinanorth  
+
+
+These lists can be quite long, so the example list above is just a snippet. Let's say that I noticed that Canonical is, indeed, an image publisher in the China North location. You can now find their offers by calling `azure vm image list-offers` and pass the location and the publisher at the prompts, like the following example:
+
+    azure vm image list-offers
+    info:    Executing command vm image list-offers
+    Location: chinanorth
+    Publisher: canonical
+    + Getting virtual machine image offers (Publisher: "canonical" Location:"chinanorth")
+    data:    Publisher  Offer         Location
+    data:    ---------  ------------  --------
+    data:    canonical  UbuntuServer  chinanorth  
+    info:    vm image list-offers command OK
+
+Now we know that in the China North region, Canonical publishes the **UbuntuServer** offer on Azure. But what SKUs? To get those, you call `azure vm image list-skus` and respond to the prompt with the location, publisher, and offer that you have discovered.
+
+    azure vm image list-skus
+    info:    Executing command vm image list-skus
+    Location: chinanorth
+    Publisher: canonical
+    Offer: ubuntuserver
+    + Getting virtual machine image skus (Publisher:"canonical" Offer:"ubuntuserver" Location:"chinanorth")
+    data:    Publisher  Offer         sku          Location
+    data:    ---------  ------------  -----------  --------
+    data:    canonical  ubuntuserver  12.04-DAILY  chinanorth  
+    data:    canonical  ubuntuserver  12.04.2-LTS  chinanorth  
+    data:    canonical  ubuntuserver  12.04.3-LTS  chinanorth  
+    data:    canonical  ubuntuserver  12.04.4-LTS  chinanorth  
+    data:    canonical  ubuntuserver  12.04.5-LTS  chinanorth  
+    data:    canonical  ubuntuserver  12.10        chinanorth  
+    data:    canonical  ubuntuserver  14.04-beta   chinanorth  
+    data:    canonical  ubuntuserver  14.04-DAILY  chinanorth  
+    data:    canonical  ubuntuserver  14.04.0-LTS  chinanorth  
+    data:    canonical  ubuntuserver  14.04.1-LTS  chinanorth  
+    data:    canonical  ubuntuserver  14.04.2-LTS  chinanorth  
+    data:    canonical  ubuntuserver  14.10        chinanorth  
+    data:    canonical  ubuntuserver  14.10-beta   chinanorth  
+    data:    canonical  ubuntuserver  14.10-DAILY  chinanorth  
+    data:    canonical  ubuntuserver  15.04        chinanorth  
+    data:    canonical  ubuntuserver  15.04-beta   chinanorth  
+    data:    canonical  ubuntuserver  15.04-DAILY  chinanorth  
+    info:    vm image list-skus command OK
+
+With this information, you can now find exactly the image you want by calling the original call at the top.
+
+    azure vm image list chinanorth canonical ubuntuserver 14.04.2-LTS
+    info:    Executing command vm image list
+    + Getting virtual machine images (Publisher:"canonical" Offer:"ubuntuserver" Sku: "14.04.2-LTS" Location:"chinanorth")
+    data:    Publisher  Offer         Sku          Version          Location  Urn
+    data:    ---------  ------------  -----------  ---------------  --------  --------------------------------------------------
+    data:    canonical  ubuntuserver  14.04.2-LTS  14.04.201503090  chinanorth    canonical:ubuntuserver:14.04.2-LTS:14.04.201503090
+    data:    canonical  ubuntuserver  14.04.2-LTS  14.04.20150422   chinanorth    canonical:ubuntuserver:14.04.2-LTS:14.04.20150422
+    data:    canonical  ubuntuserver  14.04.2-LTS  14.04.201504270  chinanorth    canonical:ubuntuserver:14.04.2-LTS:14.04.201504270
+    info:    vm image list command OK
+
+Now you can choose precisely the image you want to use. To create a virtual machine quickly by using the URN information, which you just found, or to use a template with that URN information, see [Using the Azure CLI for Mac, Linux, and Windows with Azure Resource Manager](/documentation/articles/xplat-cli-azure-resource-manager/).
+
+### Video walkthrough
+
+This video demonstrates the above steps using the CLI.
+
+[AZURE.VIDEO resource-groups-vm-searching-cli]
+
 
 ## PowerShell
 
-When creating a new virtual machine, in some cases you need to specify an image name. And, these image name can be achieved by `Get-AzureVMImage`. However, the list is quite long, so you need to use the following PowerShell script to filter the result of `Get-AzureVMImage`.
+With PowerShell, type `Switch-AzureMode AzureResourceManager`. See [Using Azure CLI with Resource Manager](/documentation/articles/xplat-cli-azure-resource-manager/) and [Using Azure PowerShell with Azure Resource Manager](/documentation/articles/powershell-azure-resource-manager/) for more complete update and configuration details.
 
-This sample will get image with name containing **Ubuntu**, OS equal to **Linux**, Publisher equal to **Canonical**, and Label containing **14.04.3**
+> [AZURE.NOTE] With Azure PowerShell modules above 1.0, the `Switch-AzureMode` cmdlet was removed. With that version and more recent, please replace the commands below with the `Azure` portion replaced with `AzureRm`. If you are using Azure PowerShell modules below 1.0, you will use the below commands but you must first `Switch-AzureMode AzureResourceManager`. 
 
-	$images = Get-AzureVMImage
-	foreach ($image in $images){
-		if (($image.ImageName -like '*Ubuntu*') -and `
-			($image.OS -eq 'Linux') -and `
-			($image.PublisherName -eq 'Canonical') -and `
-			($image.Label -like '*14.04.3*')){
-			$image
-		}
-	}
 
-More information about how to use these images, see [Create a SQL Server Virtual Machine in Azure (PowerShell)](/documentation/articles/virtual-machines-sql-server-create-vm-with-powershell)
+When creating a new virtual machine with Azure Resource Manager, in some cases you need to specify an image with the combination of the following image properties:
+
+- Publisher
+- Offer
+- SKU
+
+For example, these values are needed for the **Set-AzureVMSourceImage** PowerShell cmdlet or with a resource group template file in which you must specify the type of virtual machine to be created.
+
+If you need to determine these values, you can navigate the images to determine these values:
+
+1. List the image publishers.
+2. For a given publisher, list their offers.
+3. For a given offer, list their SKUs.
+
+To do this in PowerShell, first switch to the Resource Manager mode of Azure PowerShell.
+
+	Switch-AzureMode AzureResourceManager
+
+For the first step above, list the publishers with these commands.
+
+	$locName="<Azure location, such as China North>"
+	Get-AzureVMImagePublisher -Location $locName | Select PublisherName
+
+Fill in your chosen publisher name and run these commands.
+
+	$pubName="<publisher>"
+	Get-AzureVMImageOffer -Location $locName -Publisher $pubName | Select Offer
+
+Fill in your chosen offer name and run these commands.
+
+	$offerName="<offer>"
+	Get-AzureVMImageSku -Location $locName -Publisher $pubName -Offer $offerName | Select Skus
+
+From the display of the **Get-AzureVMImageSku** command, you have all the information you need to specify the image for a new virtual machine.
+
+Here is an example.
+
+	PS C:\> $locName="China North"
+	PS C:\> Get-AzureVMImagePublisher -Location $locName | Select PublisherName
+
+	PublisherName
+	-------------
+	a10networks
+	aiscaler-cache-control-ddos-and-url-rewriting-
+	alertlogic
+	AlertLogic.Extension
+	Barracuda.Azure.ConnectivityAgent
+	barracudanetworks
+	basho
+	boxless
+	bssw
+	Canonical
+	...
+
+For the "MicrosoftWindowsServer" publisher:
+
+	PS C:\> $pubName="MicrosoftWindowsServer"
+	PS C:\> Get-AzureVMImageOffer -Location $locName -Publisher $pubName | Select Offer
+
+	Offer
+	-----
+	WindowsServer
+
+For the "WindowsServer" offer:
+
+	PS C:\> $offerName="WindowsServer"
+	PS C:\> Get-AzureVMImageSku -Location $locName -Publisher $pubName -Offer $offerName | Select Skus
+
+	Skus
+	----
+	2008-R2-SP1
+	2012-Datacenter
+	2012-R2-Datacenter
+	Windows-Server-Technical-Preview
+
+From this list, copy the chosen SKU name, and you have all the information for the **Set-AzureVMSourceImage** PowerShell cmdlet or for a resource group template file that requires you to specify the publisher, offer, and SKU for an image.
+
+### Video walkthrough
+
+This video demonstrates the above steps using PowerShell.
+
+[AZURE.VIDEO resource-groups-vm-searching-posh]
+
 
 <!--Image references-->
 [5]: ./media/markdown-template-for-new-articles/octocats.png

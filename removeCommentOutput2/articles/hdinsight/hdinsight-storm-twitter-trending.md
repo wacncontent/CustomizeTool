@@ -12,7 +12,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="02/05/2016"
+	ms.date="07/12/2016"
 	wacn.date=""/>
 
 #Determine Twitter trending topics with Apache Storm on HDInsight
@@ -126,14 +126,14 @@ After the topology starts, you should see debug information that contains the ha
 
 ##Next steps
 
-Now that you have tested the topology locally, discover how to deploy the topology: [Deploy and manage Apache Storm topologies on HDInsight](/documentation/articles/hdinsight-storm-deploy-monitor-topology).
+Now that you have tested the topology locally, discover how to deploy the topology: [Deploy and manage Apache Storm topologies on HDInsight](/documentation/articles/hdinsight-storm-deploy-monitor-topology/).
 
 You may also be interested in the following Storm topics:
 
-* [Develop Java topologies for Storm on HDInsight using Maven](/documentation/articles/hdinsight-storm-develop-java-topology)
+* [Develop Java topologies for Storm on HDInsight using Maven](/documentation/articles/hdinsight-storm-develop-java-topology/)
 
-* [Develop C# topologies for Storm on HDInsight using Visual Studio](/documentation/articles/hdinsight-storm-develop-csharp-visual-studio-topology)
+* [Develop C# topologies for Storm on HDInsight using Visual Studio](/documentation/articles/hdinsight-storm-develop-csharp-visual-studio-topology/)
 
 For more Storm examples for HDinsight:
 
-* [Example topologies for Storm on HDInsight](/documentation/articles/hdinsight-storm-example-topology)
+* [Example topologies for Storm on HDInsight](/documentation/articles/hdinsight-storm-example-topology/)

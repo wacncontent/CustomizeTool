@@ -12,7 +12,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="02/05/2016"
+	ms.date="04/27/2016"
 	wacn.date=""/>
 
 #Use Hive with Hadoop in HDInsight with Beeline
@@ -21,7 +21,7 @@
 
 In this article, you will learn how to use Secure Shell (SSH) to connect to a Linux-based HDInsight cluster, and then interactively submit Hive queries by using the [Beeline](https://cwiki.apache.org/confluence/display/Hive/HiveServer2+Clients#HiveServer2Clients-Beeline-NewCommandLineShell) command-line tool.
 
-> [AZURE.NOTE] Beeline used JDBC to connect to Hive. For more information on using JDBC with Hive, see [Connect to Hive on Azure HDInsight using the Hive JDBC driver](/documentation/articles/hdinsight-connect-hive-jdbc-driver).
+> [AZURE.NOTE] Beeline used JDBC to connect to Hive. For more information on using JDBC with Hive, see [Connect to Hive on Azure HDInsight using the Hive JDBC driver](/documentation/articles/hdinsight-connect-hive-jdbc-driver/).
 
 ##<a id="prereq"></a>Prerequisites
 
@@ -43,13 +43,13 @@ Connect to the fully qualified domain name (FQDN) of your HDInsight cluster by u
 
 **If you provided a password for SSH authentication** when you created the HDInsight cluster, you will need to provide the password when prompted.
 
-For more information on using SSH with HDInsight, see [Use SSH with Linux-based Hadoop on HDInsight from Linux, OS X, and Unix](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix).
+For more information on using SSH with HDInsight, see [Use SSH with Linux-based Hadoop on HDInsight from Linux, OS X, and Unix](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix/).
 
 ###PuTTY (Windows-based clients)
 
 Windows does not provide a built-in SSH client. We recommend using **PuTTY**, which can be downloaded from [http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html).
 
-For more information on using PuTTY, see [Use SSH with Linux-based Hadoop on HDInsight from Windows ](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows).
+For more information on using PuTTY, see [Use SSH with Linux-based Hadoop on HDInsight from Windows ](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows/).
 
 ##<a id="beeline"></a>Use the Beeline command
 
@@ -63,17 +63,19 @@ For more information on using PuTTY, see [Use SSH with Linux-based Hadoop on HDI
 
         beeline
 
-2. From the `beeline>` prompt, use the following to connect to the HiveServer2 service. Replace __HOSTNAME__ with the host name returned for the head node ealier:
+2. From the `beeline>` prompt, use the following to connect to the HiveServer2 service. Replace __HOSTNAME__ with the host name returned for the head node earlier:
 
         !connect jdbc:hive2://HOSTNAME:10001/;transportMode=http admin
+        
+    This instructs Beeline to connect to port __10001__ on the specified __HOSTNAME__, and that __HTTP__ is the transport method. The __admin__ account is used to authenticate the connection.
 
     When prompted, enter the password for the administrator (admin) account for your HDInsight cluster. Once the connection is established, the prompt will change to the following:
     
         jdbc:hive2://HOSTNAME:10001/>
 
-3. Beeline commands usually begin with a `!` character, for example `!help` displays help. However the `!` can often be ommited. For example, `help` will also work.
+3. Beeline commands usually begin with a `!` character, for example `!help` displays help. However the `!` can often be omitted. For example, `help` will also work.
 
-    If you view help, you will notice `!sql`, which is used to execute HiveQL statements. However, HiveQL is so commonly used that you can ommit the preceeding `!sql`. The following two statements have exactly the same results; displaying the tables currently available through Hive:
+    If you view help, you will notice `!sql`, which is used to execute HiveQL statements. However, HiveQL is so commonly used that you can omit the preceding `!sql`. The following two statements have exactly the same results; displaying the tables currently available through Hive:
     
         !sql show tables;
         show tables;
@@ -174,7 +176,7 @@ Beeline can also be used to run a file that contains HiveQL statements. Use the 
     
 3. To save the file, use __Ctrl__+___X__, then enter __Y__, and finally __Enter__.
 
-4. Use the following to run the file using Beeline. Replease __HOSTNAME__ with the name obtained earlier for the head node, and __PASSWORD__ with the password for the admin account:
+4. Use the following to run the file using Beeline. Replace __HOSTNAME__ with the name obtained earlier for the head node, and __PASSWORD__ with the password for the admin account:
 
         beeline -u 'jdbc:hive2://HOSTNAME:10001/;transportMode=http' -n admin -p PASSWORD -f query.hql
 
@@ -201,13 +203,19 @@ As you can see, the Beeline command provides an easy way to interactively run Hi
 
 For general information on Hive in HDInsight:
 
-* [Use Hive with Hadoop on HDInsight](/documentation/articles/hdinsight-use-hive)
+* [Use Hive with Hadoop on HDInsight](/documentation/articles/hdinsight-use-hive/)
 
 For information on other ways you can work with Hadoop on HDInsight:
 
-* [Use Pig with Hadoop on HDInsight](/documentation/articles/hdinsight-use-pig)
+* [Use Pig with Hadoop on HDInsight](/documentation/articles/hdinsight-use-pig/)
 
-* [Use MapReduce with Hadoop on HDInsight](/documentation/articles/hdinsight-use-mapreduce)
+* [Use MapReduce with Hadoop on HDInsight](/documentation/articles/hdinsight-use-mapreduce/)
+
+If you are using Tez with Hive, see the following documents for debugging information:
+
+* [Use the Tez UI on Windows-based HDInsight](/documentation/articles/hdinsight-debug-tez-ui/)
+
+* [Use the Ambari Tez view on Linux-based HDInsight](/documentation/articles/hdinsight-debug-ambari-tez-view/)
 
 [hdinsight-sdk-documentation]: http://msdn.microsoft.com/zh-cn/library/dn479185.aspx
 
@@ -222,15 +230,15 @@ For information on other ways you can work with Hadoop on HDInsight:
 [import-to-excel]: /documentation/articles/hdinsight-connect-excel-power-query/
 
 
-[hdinsight-use-oozie]: hdinsight-use-oozie.md
-[hdinsight-analyze-flight-data]: hdinsight-analyze-flight-delay-data.md
+[hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie/
+[hdinsight-analyze-flight-data]: /documentation/articles/hdinsight-analyze-flight-delay-data/
 
 [putty]: http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html
 
 
-[hdinsight-provision]: hdinsight-provision-clusters-v1.md
-[hdinsight-submit-jobs]: hdinsight-submit-hadoop-jobs-programmatically.md
-[hdinsight-upload-data]: hdinsight-upload-data.md
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1/
+[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data/
 
 
 [powershell-here-strings]: http://technet.microsoft.com/zh-cn/library/ee692792.aspx

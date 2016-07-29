@@ -10,14 +10,12 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="02/05/2016"
+	ms.date="05/05/2016"
 	wacn.date=""/>
 
-# Develop Java MapReduce programs for Hadoop on HDInsight
+# Develop Java MapReduce programs for Hadoop on HDInsight Linux
 
-[AZURE.INCLUDE [pig-selector](../includes/hdinsight-maven-mapreduce-selector.md)]
-
-This documents walks you through using Apache Maven to create a MapReduce application, then deploy and run it on a Linux-based Hadoop on HDInsight cluster. For information on using a Windows-based Hadoop on HDInsight cluster, see [Develop Java MapReduce programs for Hadoop on HDInsight (Windows)](/documentation/articles/hdinsight-develop-deploy-java-mapreduce)
+This documents walks you through using Apache Maven to create a MapReduce application, then deploy and run it on a Linux-based Hadoop on HDInsight cluster.
 
 ##<a name="prerequisites"></a>Prerequisites
 
@@ -29,7 +27,9 @@ Before you begin this tutorial, you must have the following:
 
 - **An Azure subscription**
 
-- **Azure CLI**: For more information, see [Install and configure Azure CLI](/documentation/articles/xplat-cli-install)
+- **Azure CLI**
+
+	[AZURE.INCLUDE [use-latest-version](../includes/hdinsight-use-latest-cli.md)]
 
 ##Configure environment variables
 
@@ -238,9 +238,9 @@ This copies the files from the local system to the head node.
 
 1. Connect to HDInsight using SSH as described in the following articles:
 
-    - [Use SSH with Linux-based Hadoop on HDInsight from Linux, Unix, or OS X](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix)
+    - [Use SSH with Linux-based Hadoop on HDInsight from Linux, Unix, or OS X](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix/)
 
-    - [Use SSH with Linux-based Hadoop on HDInsight from Windows](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows)
+    - [Use SSH with Linux-based Hadoop on HDInsight from Windows](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows/)
 
 2. From the SSH session, use the following command to run the MapReduce application:
 
@@ -264,7 +264,7 @@ In this document, you have learned how to develop a Java MapReduce job. See the 
 
 - [Use Hive with HDInsight][hdinsight-use-hive]
 - [Use Pig with HDInsight][hdinsight-use-pig]
-- [Use MapReduce with HDInsight](/documentation/articles/hdinsight-use-mapreduce)
+- [Use MapReduce with HDInsight](/documentation/articles/hdinsight-use-mapreduce/)
 
 For more information, see also the [Java Developer Center](/develop/java/).
 
@@ -272,19 +272,15 @@ For more information, see also the [Java Developer Center](/develop/java/).
 [azure-member-offers]: /pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
 
-[hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop
-[hdinsight-ODBC]: /documentation/articles/hdinsight-connect-excel-hive-ODBC-driver
-[hdinsight-power-query]: /documentation/articles/hdinsight-connect-excel-power-query
+[hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop/
+[hdinsight-ODBC]: /documentation/articles/hdinsight-connect-excel-hive-ODBC-driver/
+[hdinsight-power-query]: /documentation/articles/hdinsight-connect-excel-power-query/
 
-[hdinsight-develop-streaming]: /documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs
-
-
-
-[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
-[hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell
-[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
-[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
-[hdinsight-power-query]: /documentation/articles/hdinsight-connect-excel-power-query
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data/
+[hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell/
+[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive/
+[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig/
+[hdinsight-power-query]: /documentation/articles/hdinsight-connect-excel-power-query/
 
 [powershell-PSCredential]: http://social.technet.microsoft.com/wiki/contents/articles/4546.working-with-passwords-secure-strings-and-credentials-in-windows-powershell.aspx
 

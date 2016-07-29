@@ -1,4 +1,4 @@
-<properties
+﻿<properties
    pageTitle="Testing your Traffic Manager settings"
    description="This article will help you test your Traffic Manager settings."
    services="traffic-manager"
@@ -8,7 +8,7 @@
    editor="tysonn" />
 <tags
 	ms.service="traffic-manager"
-	ms.date="12/01/2015"
+	ms.date="06/10/2016"
 	wacn.date=""/>
 
 # Testing Traffic Manager Settings
@@ -66,5 +66,5 @@ There are free web-based DNS lookup and dig services available. Some of these gi
 
 ## Next Steps
 
-[About Traffic Manager traffic routing methods](/documentation/articles/about-traffic-manager-balancing-methods)
-[Traffic Manager](/documentation/articles/traffic-manager)
+[About Traffic Manager traffic routing methods](/documentation/articles/traffic-manager-routing-methods/)
+[Traffic Manager](/documentation/articles/traffic-manager-overview/)

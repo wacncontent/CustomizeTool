@@ -1,3 +1,5 @@
+<!-- deleted in Global -->
+
 <properties 
    pageTitle=" Traffic Manager - traffic routing methods | Azure"
    description="This articles will help you understand the different traffic routing methods used by Traffic Manager"
@@ -19,7 +21,7 @@ It's important to note that all traffic routing methods include endpoint monitor
 
 The three Traffic Manager traffic routing methods are:
 
-- **Failover**: Select Failover when you have endpoints in the same or different Azure datacenters (known as regions in the Azure Management Portal) and want to use a primary endpoint for all traffic, but provide backups in case the primary or the backup endpoints are unavailable. For more information, see [Failover traffic routing method](#failover-traffic-routing-method).
+- **Failover**: Select Failover when you have endpoints in the same or different Azure datacenters (known as regions in the Azure portal) and want to use a primary endpoint for all traffic, but provide backups in case the primary or the backup endpoints are unavailable. For more information, see [Failover traffic routing method](#failover-traffic-routing-method).
 
 - **Round Robin**: Select Round Robin when you want to distribute load across a set of endpoints in the same datacenter or across different datacenters. For more information, see [Round Robin traffic routing method](#round-robin-traffic-routing-method).
 
@@ -29,12 +31,11 @@ Note that Azure Websites already provides failover and round-robin traffic routi
 
 >[AZURE.NOTE] The DNS Time-to-Live (TTL) informs DNS clients and resolvers on DNS servers how long to cache the resolved names. Clients will continue to use a given endpoint when resolving its domain name until the local DNS cache entry for the name expires.
 
-
 ##<a name="failover-traffic-routing-method"></a> Failover traffic routing method
 
 Often an organization wants to provide reliability for its services. It does this by providing backup services in case their primary service goes down. A common pattern for service failover is to provide a set of identical endpoints and send traffic to a primary service, with a list of one or more backups. If the primary service is not available, requesting clients are referred to the next in order. If both the first and second services in the list are not available, the traffic goes to the third and so on.
 
-When configuring the Failover traffic routing method, the order of the selected endpoints is important. Using the Azure Management Portal, you can configure the failover order on the Configuration page for the profile.
+When configuring the Failover traffic routing method, the order of the selected endpoints is important. Using the Azure portal, you can configure the failover order on the Configuration page for the profile.
 
 Figure 1 shows an example of the Failover traffic routing method for a set of endpoints.
 
@@ -48,7 +49,6 @@ The following numbered steps correspond to the numbers in Figure 1.
 2. The profile contains an ordered list of endpoints. Traffic Manager checks which endpoint is first in the list. If the endpoint is online (based on the ongoing endpoint monitoring), it will specify that endpoint's DNS name in the DNS response to the client. If the endpoint is offline, Traffic Manager determines the next online endpoint in the list. In this example CS-A is offline (unavailable), but CS-B is online (available).
 3. Traffic Manager returns CS-B's domain name to the client's DNS server, which resolves the domain name to an IP address and sends it to the client.
 4. The client initiates traffic to CS-B.
-
 
 ##<a name="round-robin-traffic-routing-method"></a> Round robin traffic routing method
 
@@ -79,14 +79,13 @@ Round Robin weighted traffic routing allows you to distribute load to various en
 - Application migration to Azure: Create a profile with both Azure and external endpoints, and specify the weight of traffic that is routed to each endpoint.
 - Cloud-bursting for additional capacity: Quickly expand an on-premises deployment into the cloud by putting it behind a Traffic Manager profile. When you need extra capacity in the cloud, you can add or enable more endpoints and specify what portion of traffic goes to each endpoint.
 
-At this time, you cannot use the Azure Management Portal to configure weighted traffic routing. Azure provides programmatic access to this method using the associated Service Management REST API and Azure PowerShell cmdlets.
+At this time, you cannot use the Azure portal to configure weighted traffic routing. Azure provides programmatic access to this method using the associated Service Management REST API and Azure PowerShell cmdlets.
 
 For information about using the REST APIs, see [Operations on Traffic Manager (REST API Reference)](https://msdn.microsoft.com/zh-cn/library/hh758255.aspx).
 
 For information about using the Azure PowerShell cmdlets, see [Azure Traffic Manager Cmdlets](https://msdn.microsoft.com/zh-cn/library/dn690250.aspx). For an example configuration, see [Azure Traffic Manager External Endpoints and Weighted Round Robin via PowerShell](https://azure.microsoft.com/blog/2014/06/26/azure-traffic-manager-external-endpoints-and-weighted-round-robin-via-powershell/) in the Azure blog.
 
 To test the profile from a single client and observe the equal or weighted round robin behavior, verify that the DNS name is resolved to the different IP addresses of the endpoints according to the equal or weighted values in the profile. When testing, you must either disable client-side DNS caching or clear the DNS cache between each attempt to ensure that a new DNS name query gets sent.
-
 
 ##<a name="performance-traffic-routing-method"></a> Performance traffic routing method
 

@@ -1,3 +1,5 @@
+<!-- rename to virtual-machines-windows-classic-web-app-visual-studio -->
+
 <properties
 	pageTitle="Creating a VM for a web project using Visual Studio | Azure"
 	description="Create a virtual machine for a web application"
@@ -15,7 +17,7 @@
 
 # Creating a virtual machine for a web application with Visual Studio
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]  Resource Manager model. 
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager model.
 
 When you create a web application project for Azure, you can provision a virtual machine in Azure. You can then configure the virtual machine with additional software, or use the virtual machine for diagnostic or debugging purposes.
 
@@ -27,7 +29,6 @@ To create a virtual machine when you create a web application, follow these step
 	![][0]
 
 3. For this example, in the drop-down list under Azure, choose **Virtual Machine (v1)**, and then click the **OK** button.
-
 4. Sign in to Azure if you're prompted. The **Create Virtual Machine** dialog box appears.
 
 	![][2]
@@ -59,31 +60,7 @@ To create a virtual machine when you create a web application, follow these step
 
 ## Next steps
 
-If you want to customize the published scripts you created, read more in-depth information at [Using Windows PowerShell Scripts to Publish to Dev and Test Environments](/documentation/articles/vs-azure-tools-publishing-using-powershell-scripts).
-
-
-
-4. Click **View**, Open the **Server Explorer**, and then right click **Azure**, choose **Manage and Filter Subscriptions...**. Click tag **Certificates**. Now, you can add a certificate for you Azure Subscription.
-
-	>[AZURE.NOTE] Don't try to add an account, because, by default, the account being added must be an Azure global account. I am still trying to figure out a way to change that.
-
-5. Click [here](https://manage.windowsazure.cn/publishsettings/index?client=vsserverexplorer&schemaversion=2.0) to download a publish profile for your subscription. Click **import** in the previous step pop up windows, and choose the file just downloaded. And then, you will be able to manage most of the services WindowsAzure.cn provided.
-
-6. Right click **Virtual Machines** in **Server Explorer** under "Azure", and choose **Create Virtual Machine**. Choose the subscription just added. Select the server type you want (must be a windows server).
-
-7. Follow the step to create a VM. For Endpoints, "Web Deploy", "http" must be added. "https" can be added, if you need it.
-
-8. After the VM is created, connect it with Remote Desktop. Configure the server for Web Deploy. For more detail, take a look at [this](http://www.iis.net/learn/install/installing-publishing-technologies/installing-and-configuring-web-deploy-on-iis-80-or-later). Follow the steps, you should be able to configure your server to enable Web Deploy.
-
-	![][5]
-
-9. On the Remote Desktop of your server, in the IIS Manager, right click the site you want to deploy to, correctly configure the Web Deploy Publishing. If you have an SQL Server, Enter the connection string for your web app. And, replay the host name in the URL by "<your cloud service name>.chinacloudapp.cn". The URL would become something like this: "https://<your cloud service name>.chinacloudapp.cn:8172/msdeploy.axd". Click **Setup**, and a publish setting file is created for you.
-
-10. Go back to you Visual Studio, right click your solution, and choose publish.
-
-11. Select **Import** and choose the files copied from the server. And then enter the password, and check **Save password**. Now, you can publish your web app to the VM.
-
-
+If you want to customize the published scripts you created, read more in-depth information at [Using Windows PowerShell Scripts to Publish to Dev and Test Environments](/documentation/articles/vs-azure-tools-publishing-using-powershell-scripts/).
 
 [0]: ./media/virtual-machines-dotnet-create-visual-studio-powershell/CreateVM_NewProject.PNG
 [1]: ./media/dotnet-visual-studio-create-virtual-machine/CreateVM_SignIn.PNG

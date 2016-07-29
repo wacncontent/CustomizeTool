@@ -1,3 +1,5 @@
+<!-- deleted in Global -->
+
 <!-- not suitable for Mooncake -->
 
 <properties

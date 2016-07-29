@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Restore an app in Azure Web App" 
+	pageTitle="Restore an app in Azure" 
 	description="Learn how to restore your app from a backup." 
 	services="app-service" 
 	documentationCenter="" 
@@ -9,20 +9,25 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="01/26/2016"
+	ms.date="07/06/2016"
 	wacn.date=""/>
 
 # Restore an app in Azure
 
-This article shows you how to restore an Azure Web App that you have previously backed up by using the [Azure Web App](/documentation/services/web-sites) Backup feature. For more information, see [Azure Backups](/documentation/articles/web-sites-backup) Web App Backups](/documentation/articles/ .
+This article shows you how to restore an app in [Azure Web App](/documentation/services/web-sites) Web App 
+that you have previously backed up (see [Back up your app in Azure](/documentation/articles/web-sites-backup/)). You can restore your app 
+with its linked databases (SQL Database or MySQL) on-demand to a previous state, or create a new app based on one of 
+your original app's backup. Creating a new app that runs in parallel to the latest version can be useful for A/B 
+testing.
 
-The Azure web app Restore feature lets you restore   Restore feature lets you restore your app with its linked databases (SQL Database or MySQL) on-demand to a previous state, or create a new app based on one of your original app's backup. Creating a new app that runs in parallel to the latest version can be useful for A/B testing.
+Restoring from backups is available to apps running in **Standard** and **Premium** tier. For information about scaling 
+up your app, see [Scale up an app in Azure](/documentation/articles/web-sites-scale/). **Premium** tier allows a greater number of daily 
+backups web app to be performed than **Standard** tier.
 
-The Azure web app Restore feature, available on the  ptRestore feature, available on the **Backups** blade in the [Azure Management Portal](https://manage.windowsazure.cn), is available only in Standard and Premium pricing tiers. For information about scaling your app using Standard or Premium tier, see [Scale an app in Azure Web App](/documentation/articles/web-sites-scale). Note that the Premium tier allows a greater number of daily backups to be performed over the Standard tier.
+The Azure web app Restore feature, available on the **Backups** blade in the [Azure Classic Management Portal](https://manage.windowsazure.cn), is available only in Standard pricing tiers. For information about scaling your app using Standard tier, see [Scale an app in Azure Web App](/documentation/articles/web-sites-scale/).
 
 <a name="PreviousBackup"></a>
-## To Restore an app from a previously made backup
-
+## Restore an app from an existing backup
 
 1. On the **Backups** tab, click **Restore Now** in the command bar at the bottom of the portal page. The **Restore Now** dialog box appears.
 	
@@ -33,7 +38,6 @@ The Azure web app Restore feature, available on the  ptRestore feature, availabl
 4. Follow the steps in the [Choose Your  Website Restore Settings](#RestoreSettings) section later in this article.
 <a name="StorageAccount"></a>
 ## Download or delete a backup from a storage account
-
 
 1. On the **Backups** tab, click **Restore Now** in the command bar at the bottom of the portal page. The **Restore Now** dialog box appears.
 	
@@ -93,8 +97,7 @@ The Azure web app Restore feature, available on the  ptRestore feature, availabl
 	![Restored Contoso  Website][RestoredContoso Website]
 
 <a name="OperationLogs"></a>
-## View the Audit Logs
-
+## Monitor a restore operation
 
 1. To see details about the success or failure of the  Website restore operation, go to the  Website's Dashboard tab. In the **Quick Glance** section, under **Management Services**, click **Operation Logs**.
 	
@@ -128,4 +131,3 @@ The Azure web app Restore feature, available on the  ptRestore feature, availabl
 [ManagementServicesOperationLogsList]: ./media/web-sites-restore/11ManagementServicesOperationLogsList.png
 [DetailsButton]: ./media/web-sites-restore/12DetailsButton.png
 [OperationDetails]: ./media/web-sites-restore/13OperationDetails.png
- 

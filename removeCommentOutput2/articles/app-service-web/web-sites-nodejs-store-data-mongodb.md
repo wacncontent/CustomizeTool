@@ -1,3 +1,5 @@
+<!-- deleted in Global -->
+
 <properties
 	pageTitle="Create a Node.js web app on Azure with MongoDB in a Virtual Machine"
 	description="How to use MongoDB to store data in a Node.js application hosted on Azure."

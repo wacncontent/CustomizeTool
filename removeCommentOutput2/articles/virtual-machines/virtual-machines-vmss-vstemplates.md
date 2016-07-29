@@ -1,4 +1,4 @@
-<!-- not suitable for Mooncake -->
+<!-- rename to virtual-machines-linux-scale-sets-visual-studio -->
 
 <properties
 	pageTitle="Deploying Virtual Machine Scale Set Templates in Visual Studio | Azure"
@@ -16,7 +16,8 @@
 	wacn.date=""/>
 
 # Deploying Virtual Machine Scale Set Templates in Visual Studio
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] [classic deployment model](/documentation/articles/virtual-machines-create-windows-powershell-service-manager).
+
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the Resource Manager deployment model, which Microsoft recommends for most new deployments instead of the [classic deployment model](/documentation/articles/virtual-machines-create-windows-powershell-service-manager).
 
 This article shows you how to deploy an Azure Virtual Machine Scale Set using a Visual Studio Resource Group Deployment.
 
@@ -84,7 +85,7 @@ Now you can edit the Template to customize it for your application's needs, such
 
 ## Exploring your VM Scale Set
 
-Once the deployment completes, you can view the new VM Scale Set in the Visual Studio **Cloud Explorer** (refresh the list). Cloud Explorer lets you manage Azure resources in Visual Studio while developing applications. You can also view your VM Scale Set in the Azure Management Portal and Azure Resource Explorer.
+Once the deployment completes, you can view the new VM Scale Set in the Visual Studio **Cloud Explorer** (refresh the list). Cloud Explorer lets you manage Azure resources in Visual Studio while developing applications. You can also view your VM Scale Set in the Azure Portal and Azure Resource Explorer.
 
 ![Cloud Explorer][cloud_explorer]
 

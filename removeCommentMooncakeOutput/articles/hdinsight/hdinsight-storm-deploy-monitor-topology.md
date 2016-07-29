@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="01/22/2016"
+	ms.date="05/10/2016"
 	wacn.date=""/>
 
 #Deploy and manage Apache Storm topologies on Windows-based HDInsight
@@ -21,11 +21,11 @@ The Storm Dashboard and the Storm features in the HDInsight Tools rely on the St
 
 ##Prerequisites
 
-* **Apache Storm on HDInsight** - see <a href="/documentation/articles/hdinsight-apache-storm-tutorial-get-started" target="_blank">Get started with Apache Storm on HDInsight</a> for steps on creating a cluster
+* **Apache Storm on HDInsight** - see <a href="/documentation/articles/hdinsight-apache-storm-tutorial-get-started/" target="_blank">Get started with Apache Storm on HDInsight</a> for steps on creating a cluster
 
 * For the **Storm Dashboard**: A modern web browser that supports HTML5
 
-* For **Visual Studio** - Azure SDK 2.5.1 or newer and the HDInsight Tools for Visual Studio. See <a href="/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started" target="_blank">Get started using HDInsight Tools for Visual Studio</a> to install and configure the HDInsight tools for Visual Studio.
+* For **Visual Studio** - Azure SDK 2.5.1 or newer and the HDInsight Tools for Visual Studio. See <a href="/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/" target="_blank">Get started using HDInsight Tools for Visual Studio</a> to install and configure the HDInsight tools for Visual Studio.
 
 	One of the following versions of Visual Studio:
 
@@ -109,11 +109,11 @@ Selecting a spout from the **Spouts** or **Bolts** sections displays the followi
 
 ##HDInsight Tools for Visual Studio
 
-The HDInsight Tools can be used to submit C# or hybrid topologies to your Storm cluster. The following steps use a sample application. For information about creating your own topologies by using the HDInsight Tools, see [Develop C# topologies using the HDInsight Tools for Visual Studio](/documentation/articles/hdinsight-storm-develop-csharp-visual-studio-topology).
+The HDInsight Tools can be used to submit C# or hybrid topologies to your Storm cluster. The following steps use a sample application. For information about creating your own topologies by using the HDInsight Tools, see [Develop C# topologies using the HDInsight Tools for Visual Studio](/documentation/articles/hdinsight-storm-develop-csharp-visual-studio-topology/).
 
 Use the following steps to deploy a sample to your Storm on HDInsight cluster, then view and manage the topology.
 
-1. If you have not already installed the latest version of the HDInsight Tools for Visual Studio, see <a href="/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started" target="_blank">Get started using HDInsight Tools for Visual Studio</a>.
+1. If you have not already installed the latest version of the HDInsight Tools for Visual Studio, see <a href="/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/" target="_blank">Get started using HDInsight Tools for Visual Studio</a>.
 
 2. Open Visual Studio, select **File** > **New** > **Project**.
 
@@ -145,7 +145,7 @@ Use the following steps to deploy a sample to your Storm on HDInsight cluster, t
 
 The Storm UI is built on top of the REST API, so you can perform similar management and monitoring functionality by using the REST API. You can use the REST API to create custom tools for managing and monitoring Storm topologies.
 
-For more information, see [Storm UI REST API](https://github.com/apache/storm/blob/master/docs/documentation/ui-rest-api.md). The following information is specific to using the REST API with Apache Storm on HDInsight.
+For more information, see [Storm UI REST API](https://github.com/apache/storm/blob/0.9.3-branch/STORM-UI-REST-API.md). The following information is specific to using the REST API with Apache Storm on HDInsight.
 
 ###Base URI
 
@@ -165,11 +165,11 @@ Information that is returned from the REST API may only be usable from within th
 
 Now that you've learned how to deploy and monitor topologies by using the Storm Dashboard, learn how to:
 
-* [Develop C# topologies using the HDInsight Tools for Visual Studio](/documentation/articles/hdinsight-storm-develop-csharp-visual-studio-topology)
+* [Develop C# topologies using the HDInsight Tools for Visual Studio](/documentation/articles/hdinsight-storm-develop-csharp-visual-studio-topology/)
 
-* [Develop Java-based topologies using Maven](/documentation/articles/hdinsight-storm-develop-java-topology)
+* [Develop Java-based topologies using Maven](/documentation/articles/hdinsight-storm-develop-java-topology/)
 
-For a list of more example topologies, see [Example topologies for Storm on HDInsight](/documentation/articles/hdinsight-storm-example-topology).
+For a list of more example topologies, see [Example topologies for Storm on HDInsight](/documentation/articles/hdinsight-storm-example-topology/).
 
 [hdinsight-dashboard]: ./media/hdinsight-storm-deploy-monitor-topology/dashboard-link.png
 [storm-dashboard-submit]: ./media/hdinsight-storm-deploy-monitor-topology/submit.png

@@ -1,3 +1,5 @@
+<!-- rename to virtual-machines-linux-planned-maintenance -->
+
 <properties
 	pageTitle="Planned maintenance for Azure VMs | Azure"
 	description="Understand what Azure planned maintenance is and how it affects your virtual machines running in Azure."
@@ -24,7 +26,7 @@ Azure periodically performs updates across the globe to improve the reliability,
 
 However, some updates do require a reboot to your virtual machines to apply the required updates to the infrastructure. The virtual machines are shut down while we patch the infrastructure, and then the virtual machines are restarted.
 
-Please note that there are two types of maintenance that can impact the availability of your virtual machines: planned and unplanned. This page describes how Azure performs planned maintenance. For more information about unplanned maintenance, see [Understand planned versus unplanned maintenance](/documentation/articles/virtual-machines-manage-availability).
+Please note that there are two types of maintenance that can impact the availability of your virtual machines: planned and unplanned. This page describes how Azure performs planned maintenance. For more information about unplanned maintenance, see [Understand planned versus unplanned maintenance](/documentation/articles/virtual-machines-linux-manage-availability/).
 
 ## Memory-preserving updates
 
@@ -42,11 +44,11 @@ There are two kinds of virtual machine configurations: multi-instance and single
 
 The multi-instance configuration provides redundancy across physical machines, power, and network, and it is recommended to ensure the availability of your application. All virtual machines in the availability set should serve the same purpose to your application.
 
-For more information about configuring your virtual machines for high availability, refer to [Manage the Availability of your Virtual Machines](/documentation/articles/virtual-machines-manage-availability).
+For more information about configuring your virtual machines for high availability, refer to [Manage the Availability of your Virtual Machines](/documentation/articles/virtual-machines-linux-manage-availability/).
 
 By contrast, a single-instance configuration is used for standalone virtual machines that are not placed in an availability set. These virtual machines do not qualify for the service level agreement (SLA), which requires that two or more virtual machines are deployed under the same availability set.
 
-For more information about SLAs, refer to the "Cloud Services, Virtual Machines and Virtual Network" section of [Service Level Agreements](https://azure.m Agreements](https://azure.microsoft.com/support/legal/sla/)  .
+For more information about SLAs, refer to the "Cloud Services, Virtual Machines and Virtual Network" section of [Service Level Agreements](/support/legal/sla/).
 
 
 ## Multi-instance configuration updates
@@ -57,7 +59,7 @@ In a multi-instance configuration update, virtual machines are updated in a way 
 
 Each virtual machine in your availability set is assigned an update domain and a fault domain by the underlying Azure platform. Each update domain is a group of virtual machines that will be rebooted in the same time window. Each fault domain is a group of virtual machines that share a common power source and network switch.
 
-For more information about update domains and fault domains, see [Configure multiple virtual machines in an availability set for redundancy](/documentation/articles/virtual-machines-manage-availability#configure-multiple-virtual-machines-in-an-availability-set-for-redundancy).
+For more information about update domains and fault domains, see [Configure multiple virtual machines in an availability set for redundancy](/documentation/articles/virtual-machines-linux-manage-availability/#configure-multiple-virtual-machines-in-an-availability-set-for-redundancy).
 
 To prevent update domains from going offline at the same time, the maintenance is performed by shutting down each virtual machine in an update domain, applying the update to the host machines, restarting the virtual machines, and moving on to the next update domain. The planned maintenance event ends after all update domains have been updated.
 
@@ -68,12 +70,10 @@ After a virtual machine is restored, here is an example of what your Windows Eve
 <!--Image reference-->
 ![][image2]
 
-Use the viewer to determine which virtual machines are configured in a multi-instance configuration using the Azure Management Portal, Azure PowerShell, or Azure CLI. For example, to determine which virtual machines are in a multi-instance configuration, you can browse the list of virtual machines with the Availability Set column added to the virtual machines browse dialog. In the following example, t In the following example, the Example-VM1 and Example-VM2 virtual machines are in a muilti-instance configuration: 
-
+Use the viewer to determine which virtual machines are configured in a multi-instance configuration using the Azure portal, Azure PowerShell, or Azure CLI. For example, to determine which virtual machines are in a multi-instance configuration, you can browse the list of virtual machines with the Availability Set column added to the virtual machines browse dialog. In the following example, the Example-VM1 and Example-VM2 virtual machines are in a muilti-instance configuration:
 
 <!--Image reference-->
 ![][image4]
-
 
 ## Single-instance configuration updates
 
@@ -87,8 +87,7 @@ This planned maintenance event will impact the availability of your application 
 
 ### Email notification
 
-For single-instance and multi-instance virtual machine configurations only, Azure sends email communication in advance to alert you of the upcoming planned maintenance (1-week in advance). This email will be sent to the account administrator and co-administrator email accounts provided in the subscription. Here is an example of this  Here is an example of this type of email: 
-
+For single-instance and multi-instance virtual machine configurations only, Azure sends email communication in advance to alert you of the upcoming planned maintenance (1-week in advance). This email will be sent to the account administrator and co-administrator email accounts provided in the subscription. Here is an example of this type of email:
 
 <!--Image reference-->
 ![][image1]
@@ -103,15 +102,6 @@ Region 1 | Region 2
 :----- | ------:
 China North | China East
 China East | China North
-China East 2 | China North
-China North | West Europe
-South China East | China East
-East China | North China
-Japan East | China East
-Brazil South | China East
-Australia Southeast | Australia East
-US Gov Iowa | US Gov Virginia
-
 
 <!--Anchors-->
 [image1]: ./media/virtual-machines-planned-maintenance/vmplanned1.png
@@ -121,5 +111,5 @@ US Gov Iowa | US Gov Virginia
 
 
 <!--Link references-->
-[Virtual Machines Manage Availability]: /documentation/articles/virtual-machines-windows-tutorial-classic-portal
-[Understand planned versus unplanned maintenance]: /documentation/articles/vir /documentation/articles/virtual-machines-manage-availability#Understand-planned-versus-unplanned-maintenance  
+[Virtual Machines Manage Availability]: /documentation/articles/virtual-machines-windows-classic-tutorial/
+[Understand planned versus unplanned maintenance]: /documentation/articles/virtual-machines-linux-manage-availability/#Understand-planned-versus-unplanned-maintenance

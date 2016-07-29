@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
 	pageTitle="Enable heap dumps for Hadoop services on HDInsight | Azure"
 	description="Enable heap dumps for Hadoop services from Linux-based HDInsight clusters for debugging and analysis."
@@ -12,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="02/05/2016"
+	ms.date="07/12/2016"
 	wacn.date=""/>
 
 
@@ -22,7 +20,7 @@
 
 Heap dumps contain a snapshot of the application's memory, including the values of variables at the time the dump was created. So they are very useful for diagnosing problems that occur at run-time.
 
-> [AZURE.NOTE] The information in this article only applies to Linux-based HDInsight. For information on Windows-based HDInsight, see [Enable heap dumps for Hadoop services on Windows-based HDInsight](/documentation/articles/hdinsight-hadoop-collect-debug-heap-dumps)
+> [AZURE.NOTE] The information in this article only applies to Linux-based HDInsight. For information on Windows-based HDInsight, see [Enable heap dumps for Hadoop services on Windows-based HDInsight](/documentation/articles/hdinsight-hadoop-collect-debug-heap-dumps/)
 
 ## <a name="whichServices"></a>Services
 

@@ -4,25 +4,26 @@
 	services="redis-cache"
 	documentationCenter=""
 	authors="steved0x"
-	manager="dwrede"
+	manager="douge"
 	editor="v-lincan"/>
 
 <tags
 	ms.service="cache"
-	ms.date="12/03/2015"
+	ms.date="05/31/2016"
 	wacn.date=""/>
 
 # How to use Azure Redis Cache with Node.js
 
 > [AZURE.SELECTOR]
-- [.Net](/documentation/articles/cache-dotnet-how-to-use-azure-redis-cache)
-- [Node.js](/documentation/articles/cache-nodejs-get-started)
-- [Java](/documentation/articles/cache-java-get-started)
-- [Python](/documentation/articles/cache-python-get-started)
+- [.NET](/documentation/articles/cache-dotnet-how-to-use-azure-redis-cache/)
+- [ASP.NET](/documentation/articles/cache-web-app-howto/)
+- [Node.js](/documentation/articles/cache-nodejs-get-started/)
+- [Java](/documentation/articles/cache-java-get-started/)
+- [Python](/documentation/articles/cache-python-get-started/)
 
 Azure Redis Cache gives you access to a secure, dedicated Redis cache, managed by Microsoft. Your cache is accessible from any application within Azure.
 
-This topic shows you how to get started with Azure Redis Cache using Node.js. For another example of using Azure Redis Cache with Node.js, see [Build a Node.js Chat Application with Socket.IO on an Azure Website][].
+This topic shows you how to get started with Azure Redis Cache using Node.js. For another example of using Azure Redis Cache with Node.js, see [Build a Node.js Chat Application with Socket.IO on an Azure Website](/documentation/articles/web-sites-nodejs-chat-app-socketio/).
 
 
 ## Prerequisites
@@ -35,52 +36,45 @@ This tutorial uses [node_redis](https://github.com/mranney/node_redis), but you 
 
 ## Create a Redis cache on Azure
 
-In the [Azure Management Portal](https://manage.windowsazure.cn/), click **New**, **DATA SERVICE**, and select **Redis Cache**.
+[AZURE.INCLUDE [redis-cache-create](../includes/redis-cache-create.md)]
 
-  ![][1]
+## Retrieve the host name and access keys
 
-Enter a DNS hostname. It will have the form `<name>.redis.cache.chinacloudapi.cn`. Click **Create**.
-
-  ![][2]
+[AZURE.INCLUDE [redis-cache-create](../includes/redis-cache-access-keys.md)]
 
 
-  Once you create the cache, [browse to it](/documentation/articles/cache-configure#configure-redis-cache-settings) to view the cache settings. Click the link under **Keys** and copy the primary key. You need this to authenticate requests.
+## Enable the non-SSL endpoint
 
-  ![][4]
+Some Redis clients don't support SSL, and by default the [non-SSL port is disabled for new Azure Redis Cache instances](/documentation/articles/cache-configure/#access-ports). At the time of this writing, the [node_redis](https://github.com/mranney/node_redis) client doesn't support SSL. 
+
+[AZURE.INCLUDE [redis-cache-create](../includes/redis-cache-non-ssl-port.md)]
+
 
 ## Add something to the cache and retrieve it
 
-```js
-var redis = require("redis");
-
-// Add your cache name and access key.
-var client = redis.createClient(6380,'<name>.redis.cache.chinacloudapi.cn', {auth_pass: '<key>', tls: {servername: '<name>.redis.cache.chinacloudapi.cn'}});
-
-client.set("foo", "bar", function(err, reply) {
-  console.log(reply);
-});
-
-client.get("foo",  function(err, reply) {
-  console.log(reply);
-});
-```
+	  var redis = require("redis");
+	
+	  // Add your cache name and access key.
+	var client = redis.createClient(6380,'<name>.redis.cache.chinacloudapi.cn', {auth_pass: '<key>', tls: {servername: '<name>.redis.cache.chinacloudapi.cn'}});
+	
+	client.set("key1", "value", function(err, reply) {
+		    console.log(reply);
+		});
+	
+	client.get("key1",  function(err, reply) {
+		    console.log(reply);
+		});
 
 Output:
 
 	OK
-	bar
+	value
 
 
 ## Next steps
 
-- [Enable cache diagnostics](/documentation/articles/cache-how-to-monitor#enable-cache-diagnostics) so you can [monitor](/documentation/articles/cache-how-to-monitor) the health of your cache.
+- [Enable cache diagnostics](/documentation/articles/cache-how-to-monitor/#enable-cache-diagnostics) so you can [monitor](/documentation/articles/cache-how-to-monitor/) the health of your cache.
 - Read the official [Redis documentation](http://redis.io/documentation).
 
 
-<!--Image references-->
-[1]: ./media/cache-nodejs-get-started/cache01.png
-[2]: ./media/cache-nodejs-get-started/cache02.png
-[3]: ./media/cache-nodejs-get-started/cache03.png
-[4]: ./media/cache-nodejs-get-started/cache04.png
 
-[Build a Node.js Chat Application with Socket.IO on an Azure Website]: /documentation/articles/web-sites-nodejs-chat-app-socketio

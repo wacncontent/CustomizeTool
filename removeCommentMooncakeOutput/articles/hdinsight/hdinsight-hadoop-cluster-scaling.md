@@ -1,3 +1,5 @@
+<!-- deleted in Global -->
+
 <properties
    pageTitle="Cluster Scaling in HDInsight | Azure"
    description="Change the number of data nodes in a cluster that is running on HDInsight without having to delete and recreate the cluster."
@@ -143,4 +145,4 @@ Here is some sample code that shows how to use the synchronous version of this m
 	}
 
 
-Please refer to the [Provision Hadoop clusters in HDInsight using custom options](/documentation/articles/hdinsight-provision-clusters-v1) topic for more information on using the HDInsight .NET SDK.
+Please refer to the [Provision Hadoop clusters in HDInsight using custom options](/documentation/articles/hdinsight-provision-clusters-v1/) topic for more information on using the HDInsight .NET SDK.

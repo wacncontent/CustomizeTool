@@ -1,6 +1,8 @@
+<!-- rename to virtual-machines-windows-classic-configure-availability -->
+
 <properties
 	pageTitle="Configure an availability set for classic VMs | Azure"
-	description="Configure an availability set for a new or existing virtual machine in the classic deployment model using the Azure Management Portal and Azure PowerShell."
+	description="Configure an availability set for a new or existing virtual machine in the classic deployment model using the Azure Classic Management Portal and Azure PowerShell."
 	services="virtual-machines"
 	documentationCenter=""
 	authors="cynthn"
@@ -15,7 +17,8 @@
 
 # How to configure an availability set for virtual machines in the classic deployment model
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager model. You can also configure availability sets in Resource Manager deployments.
+
 
 An availability set helps keep your virtual machines available during downtime, such as during maintenance. Placing two or more similarly configured virtual machines in an availability set creates the redundancy needed to maintain availability of the applications or services that your virtual machine runs. For details about how this works, see [Manage the availability of virtual machines] [].
 
@@ -30,11 +33,11 @@ In the classic deployment model, you can put virtual machines into an availabili
 
 ## <a id="createset"> </a>Option 1: Create a virtual machine and an availability set at the same time##
 
-You can use either the Azure Management Portal or Azure PowerShell commands to do this.
+You can use either the Azure Classic Management Portal or Azure PowerShell commands to do this.
 
-To use the Azure Management Portal:
+To use the Azure Classic Management Portal:
 
-1. If you haven't already done so, sign in to the Azure Management Portal.
+1. If you haven't already done so, sign in to the Azure Classic Management Portal.
 
 2. On the command bar, click **New**.
 
@@ -54,7 +57,7 @@ To use the Azure Management Portal:
 
 	![Create an availability set for a new virtual machine](./media/virtual-machines-how-to-configure-availability/VMavailabilityset.png)
 
-6. On the fourth screen, click the extensions that you want to install. Extensions provide features that make it easier to manage the virtual machine, such as running antimalware or resetting passwords. For details, see [Azure VM Agent and VM Extensions](/documentation/articles/virtual-machines-extensions-agent-about).
+6. On the fourth screen, click the extensions that you want to install. Extensions provide features that make it easier to manage the virtual machine, such as running antimalware or resetting passwords. For details, see [Azure VM Agent and VM Extensions](/documentation/articles/virtual-machines-linux-classic-agents-and-extensions/).
 
 7.	Click the arrow to create the virtual machine and the availability set.
 
@@ -62,15 +65,15 @@ To use the Azure Management Portal:
 
 To use Azure PowerShell commands to create an Azure virtual machine and add it to a new or existing availability set, see the following:
 
-- [Use Azure PowerShell to create and preconfigure Windows-based virtual machines](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-vms)
-- [Use Azure PowerShell to create and preconfigure Linux-based virtual machines](/documentation/articles/virtual-machines-ps-create-preconfigure-linux-vms)
+- [Use Azure PowerShell to create and preconfigure Windows-based virtual machines](/documentation/articles/virtual-machines-windows-classic-create-powershell/)
+- [Use Azure PowerShell to create and preconfigure Linux-based virtual machines](/documentation/articles/virtual-machines-linux-classic-createpowershell/)
 
 ## <a id="addmachine"> </a>Option 2: Add an existing virtual machine to an availability set##
 
-In the Azure Management Portal, you can add existing virtual machines to an existing availability set
+In the Azure Classic Management Portal, you can add existing virtual machines to an existing availability set
  or create a new one for them. (Keep in mind that the virtual machines in the same availability set must belong to the same cloud service.) The steps are almost the same. With Azure PowerShell, you can add the virtual machine to an existing availability set.
 
-1. If you have not already done so, sign in to the Azure Management Portal.
+1. If you have not already done so, sign in to the Azure Classic Management Portal.
 
 2. On the command bar, click **Virtual Machines**.
 
@@ -102,8 +105,8 @@ To use Azure PowerShell commands, open an administrator-level Azure PowerShell s
 [Option 1: Create a virtual machine and an availability set at the same time]: #createset
 [Option 2: Add an existing virtual machine to an availability set]: #addmachine
 
-[Load balancing for Azure infrastructure services]: /documentation/articles/virtual-machines-load-balance
-[Manage the availability of virtual machines]: /documentation/articles/virtual-machines-manage-availability
-[Create a virtual machine running Windows]:/documentation/articles/virtual-machines-windows-tutorial-classic-portal
-[Virtual Network overview]: /documentation/articles/virtual-networks-overview
-[Articles for virtual machines in Service Management]: /documentation/articles/virtual-machines-service-management-articles
+[Load balancing for Azure infrastructure services]: /documentation/articles/virtual-machines-linux-load-balance/
+[Manage the availability of virtual machines]: /documentation/articles/virtual-machines-linux-manage-availability/
+[Create a virtual machine running Windows]: /documentation/articles/virtual-machines-windows-classic-tutorial/
+[Virtual Network overview]: /documentation/articles/virtual-networks-overview/
+[Articles for virtual machines in Service Management]: /documentation/articles/?tag=azure-service-management&service=virtual-machines/ 

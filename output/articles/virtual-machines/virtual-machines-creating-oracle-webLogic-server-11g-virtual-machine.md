@@ -1,3 +1,5 @@
+<!-- deleted in Global -->
+
 <properties title="Creating an Oracle WebLogic Server 12c and Oracle Database 12c Virtual Machine in Azure" pageTitle="Creating an Oracle WebLogic Server 12c and Oracle Database 12c Virtual Machine in Azure" description="Step through an example of creating an Oracle WebLogic Server 12c and Oracle Database 12c image running on Windows Server 2012 in Azure." services="virtual-machines" authors="bbenz" documentationCenter=""/>
 <tags ms.service="virtual-machines" ms.date="06/22/2015" wacn.date="" />
 #Creating an Oracle WebLogic Server 11g Virtual Machine in Azure
@@ -27,7 +29,7 @@ The following example shows you how you can create a Virtual Machine based on a 
 
 	3. Do not add any **endpoints** at this time.
 
-9. Choose or Create a [Resource Group](/documentation/articles/resource-group-portal)
+9. Choose or Create a [Resource Group](/documentation/articles/resource-group-portal/)
 
 10. Choose a **Subscription**
 
@@ -161,8 +163,8 @@ The following example shows you how you can create a Virtual Machine based on a 
 
 Now that you've set up your Virtual Machine running Oracle WebLogic Server, see the following topics for additional information.
 
-- [Oracle Virtual Machine images - Miscellaneous Considerations](/documentation/articles/virtual-machines-miscellaneous-considerations-oracle-virtual-machine-images)
+- [Oracle Virtual Machine images - Miscellaneous Considerations](/documentation/articles/virtual-machines-windows-classic-oracle-considerations/)
 
 - [Oracle WebLogic Server Product Documentation](http://www.oracle.com/technetwork/middleware/weblogic/documentation/index.html)
 
-- [Oracle Virtual Machine images for Azure](/documentation/articles/virtual-machines-oracle-list-oracle-virtual-machine-images)
+- [Oracle Virtual Machine images for Azure](/documentation/articles/virtual-machines-oracle-list-oracle-virtual-machine-images/)

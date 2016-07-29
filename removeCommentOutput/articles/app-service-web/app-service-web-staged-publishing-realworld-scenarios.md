@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="12/24/2015"
+	ms.date="05/31/2016"
 	wacn.date=""/>
 
 # Use DevOps environments effectively for your web apps
@@ -21,10 +21,10 @@ Setting up multiple development environments can be a challenging task as you ne
 Once you have a production web app up and running, the next step is to create a non-production environment. In order to use deployment slots make sure you are running in the **Standard** or **Premium** App Service plan mode. Deployment slots are actually live web apps with their own hostnames. Web app content and configuration elements can be swapped between two deployment slots, including the production slot. Deploying your application to a deployment slot has the following benefits:
 
 1. You can validate web app changes in a staging deployment slot before swapping it with the production slot.
-2. Deploying a web app to a slot first and swapping it into production ensures that all instances of the slot are warmed up before being swapped into production. This eliminates downtime when you deploy your web app. The traffic redirection is seamless, and no requests are dropped due to swap operations. This entire workflow can be automated by configuring [Auto Swap](/documentation/articles/web-sites-staged-publishing#configure-auto-swap-for-your-web-app) when pre-swap validation is not needed.
+2. Deploying a web app to a slot first and swapping it into production ensures that all instances of the slot are warmed up before being swapped into production. This eliminates downtime when you deploy your web app. The traffic redirection is seamless, and no requests are dropped due to swap operations. This entire workflow can be automated by configuring [Auto Swap](/documentation/articles/web-sites-staged-publishing/#configure-auto-swap-for-your-web-app) when pre-swap validation is not needed.
 3. After a swap, the slot with previously staged web app now has the previous production web app. If the changes swapped into the production slot are not as you expected, you can perform the same swap immediately to get your "last known good web app" back.
 
-To setup a staging deployment slot, see [Set up staging environments for web apps in Azure](/documentation/articles/web-sites-staged-publishing) . Every environment should include its own set of resources, for example if your web app uses a database then both production web app and staging web app should be using different databases.  Add staging development environment resources such as database, storage or cache for setting up your staging development environment.
+To setup a staging deployment slot, see [Set up staging environments for web apps in Azure](/documentation/articles/web-sites-staged-publishing/) . Every environment should include its own set of resources, for example if your web app uses a database then both production web app and staging web app should be using different databases.  Add staging development environment resources such as database, storage or cache for setting up your staging development environment.
 
 ## Examples of using multiple development environments
 
@@ -242,7 +242,7 @@ Any WordPress Core updates will not affect your `wp-config.php` , `wp-config.azu
 ```
 
 #### Setup a Staging Environment
-Assuming you already have a WordPress web app running on Azure Web, login to [Azure Management Portal](https://manage.windowsazure.cn/) and go to your WordPress web app. If not you can create one from the marketplace. To learn more, click [here](/documentation/articles/web-sites-php-web-site-gallery).
+Assuming you already have a WordPress web app running on Azure Web, login to [Azure Portal](https://portal.azure.cn/) and go to your WordPress web app. If not you can create one from the marketplace. To learn more, click [here](/documentation/articles/web-sites-php-web-site-gallery/).
 Click on **Settings** -> **Deployment slots** -> **Add** to create a deployment slot with the name stage. A deployment slot is another web application sharing the same resources as the primary web app created above.
 
 ![Create stage deployment slot](./media/app-service-web-staged-publishing-realworld-scenarios/1setupstage.png)
@@ -287,7 +287,7 @@ Browse and test your staging web app. Considering a scenario where the theme of 
 ![Swap preview changes for wordpress](./media/app-service-web-staged-publishing-realworld-scenarios/6swaps1.png)
 
  > [AZURE.NOTE]
- >If you have a scenario where you need to only push files (no database updates), then **Check** the **Slot Setting** for all the database  related *app settings* and *connection strings settings* in web app setting blade within the Azure Management Portal before doing the SWAP. In this case DB_NAME, DB_HOST, DB_PASSWORD, DB_USER, default connection string setting should not show up in preview changes when doing a **Swap**. At this time, when you complete the **Swap** operation the WordPress web app will have the updated files **ONLY**.
+ >If you have a scenario where you need to only push files (no database updates), then **Check** the **Slot Setting** for all the database  related *app settings* and *connection strings settings* in web app setting blade within the Azure Portal before doing the SWAP. In this case DB_NAME, DB_HOST, DB_PASSWORD, DB_USER, default connection string setting should not show up in preview changes when doing a **Swap**. At this time, when you complete the **Swap** operation the WordPress web app will have the updated files **ONLY**.
 
 Before doing a SWAP, here is the production WordPress web app
 ![Production web app before swapping slots](./media/app-service-web-staged-publishing-realworld-scenarios/7bfswap.png)
@@ -419,7 +419,7 @@ To learn more about how to use Courier, review the documentation .
 
 Courier will not help deploy with upgrading from one version of Umbraco CMS to another. When upgrading Umbraco CMS version, you must check for incompatibilities with your custom modules or third party modules and the Umbraco Core libraries. As a best practice
 
-1. ALWAYS backup your web app and database before doing an upgrade. On Azure Web App, you can set up automatic backups for your websites using the backup feature and restore your site if needed using restore feature. For more details, see [How to back up your web app](/documentation/articles/web-sites-backup) and [How to restore your web app](/documentation/articles/web-sites-restore).
+1. ALWAYS backup your web app and database before doing an upgrade. On Azure Web App, you can set up automatic backups for your websites using the backup feature and restore your site if needed using restore feature. For more details, see [How to back up your web app](/documentation/articles/web-sites-backup/) and [How to restore your web app](/documentation/articles/web-sites-restore/).
 
 2. Check if the third party packages you're using are compatible with the version you're upgrading to. On the package's download page, review the Project compatibility with Umbraco CMS version.
 
@@ -437,8 +437,8 @@ The advantage of swapping both the web app and database:
 This example shows you the flexibility of the platform where you can build custom modules similar to Umbraco Courier module to manage deployment across environments.
 
 ## References
-[Agile software development with Azure Web App](/documentation/articles/app-service-agile-software-development)
+[Agile software development with Azure Web App](/documentation/articles/app-service-agile-software-development/)
 
-[Set up staging environments for web apps in Azure](/documentation/articles/web-sites-staged-publishing)
+[Set up staging environments for web apps in Azure](/documentation/articles/web-sites-staged-publishing/)
 
 [How to block web access to non-production deployment slots](http://ruslany.net/2014/04/azure-web-sites-block-web-access-to-non-production-deployment-slots/)

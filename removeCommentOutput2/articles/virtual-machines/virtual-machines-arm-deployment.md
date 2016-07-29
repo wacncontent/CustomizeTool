@@ -1,4 +1,4 @@
-<!-- not suitable for Mooncake -->
+<!-- rename to virtual-machines-windows-csharp -->
 
 <properties
 	pageTitle="Deploy Resources Using .NET Libraries | Azure"
@@ -17,7 +17,7 @@
 
 # Deploy Azure Resources Using the Compute, Network, and Storage .NET Libraries
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the Resource Manager deployment model, which Microsoft recommends for most new deployments instead of the classic deployment model.
 
 This tutorial shows you how to use the Compute, Storage, and Network .NET libraries to create and delete resources in Azure. It also shows you how to authenticate the requests to Azure Resource Manager by using Azure Active Directory.
 
@@ -45,7 +45,7 @@ To use Azure AD to authenticate requests to Azure Resource Manager, an applicati
 
 			New-AzureRmADApplication -DisplayName "My AD Application 1" -HomePage "https://myapp1.com" -IdentifierUris "https://myapp1.com"  -Password "{password}"
 
-	>[AZURE.NOTE] Take note of the application identifer that is returned after the application is created because you'll need it for the next step. You can also find the application identifier in the client id field of the application in the Active Directory section of the Azure Management Portal.
+	>[AZURE.NOTE] Take note of the application identifer that is returned after the application is created because you'll need it for the next step. You can also find the application identifier in the client id field of the application in the Active Directory section of the Azure portal.
 
 3. Replace {application-id} with the identifier that you just recorded and then create the service principal for the application:
 
@@ -104,7 +104,7 @@ Now that the Azure Active Directory application is created and the authenticatio
 	{
 		ClientCredential cc = new ClientCredential("{application-id}", "{password}");
 		var context = new AuthenticationContext("https://login.chinacloudapi.cn/{tenant-id}");
-		var result = context.AcquireTokenAsync("https://manage.windowsazure.cn/", cc);
+		var result = context.AcquireTokenAsync("https://management.chinacloudapi.cn/", cc);
 
 		if (result == null)
 		{
@@ -540,8 +540,8 @@ Because you are charged for resources used in Azure, it is always a good practic
 
 2. Press **Enter** after each status code is returned to create each resource. After the virtual machine is created, do the next step before pressing Enter to delete all of the resources.
 
-	It should take about 5 minutes for this console application to run completely from start to finish. Before you press Enter to start deleting resources, you could take a few minutes to verify the creation of the resources in the Azure Management Portal before you delete them.
+	It should take about 5 minutes for this console application to run completely from start to finish. Before you press Enter to start deleting resources, you could take a few minutes to verify the creation of the resources in the Azure portal before you delete them.
 
-3. Browse to the Audit Logs in the Azure Management Portal to see the status of the resources:
+3. Browse to the Audit Logs in the Azure portal to see the status of the resources:
 
 	![Create an AD application](./media/virtual-machines-arm-deployment/crpportal.png)

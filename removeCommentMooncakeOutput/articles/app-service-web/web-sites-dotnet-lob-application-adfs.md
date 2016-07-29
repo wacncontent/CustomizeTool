@@ -9,14 +9,14 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="12/15/2015"
+	ms.date="02/26/2016"
 	wacn.date=""/>
 
 # Create a .NET MVC web app in Azure with AD FS authentication
 
 In this article, you will learn how to create an ASP.NET MVC line-of-business application in [Azure Web Apps](/documentation/services/web-sites/) using an on-premises [Active Directory Federation Services](http://technet.microsoft.com/zh-cn/library/hh831502.aspx) as the identity provider. This scenario can work when you want to create line-of-business applications in Azure Web Apps but your organization requires all data to be stored on-site.
 
->[AZURE.NOTE] For an overview of the different enterprise authentication and authorization options for Azure Web Apps, see [Use Active Directory for authentication in Azure Web App](/documentation/articles/web-sites-authentication-authorization).
+>[AZURE.NOTE] For an overview of the different enterprise authentication and authorization options for Azure Web Apps, see [Use Active Directory for authentication in Azure Web App](/documentation/articles/web-sites-authentication-authorization/).
 
 <a name="bkmk_build"></a>
 ## What you will build ##
@@ -30,11 +30,11 @@ You will build a basic ASP.NET application in Azure Web Apps with the following 
 <a name="bkmk_need"></a>
 ## What you will need ##
 
->[AZURE.NOTE] If you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.
+[AZURE.INCLUDE [free-trial-note](../includes/free-trial-note.md)]
 
 You need the following to complete this tutorial:
 
-- An on-premises AD FS deployment 
+- An on-premises AD FS deployment (for an end-to-end walkthrough of the test lab that I use, see [Test Lab: Standalone STS with AD FS in Azure VM (for test only)](https://blogs.msdn.microsoft.com/cephalin/2014/12/21/test-lab-standalone-sts-with-ad-fs-in-azure-vm-for-test-only/))
 - Permissions to create relying party trusts in AD FS Management
 - Visual Studio 2013
 - [Azure SDK 2.5.1](https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VWDOrVs2013AzurePack.appids) or later
@@ -116,7 +116,7 @@ Here, you will publish the application to a web app in Azure while preserving th
 	![](./media/web-sites-dotnet-lob-application-adfs/01-publish-website.png)
 
 2. Select **Import**.
-3. If you haven't download the "publish profile", go to [Azure Management Portal](https://manage.windowsazure.cn) to download. If you haven't create a web app, create one. And, in **Dashboard** page of your web app, under **quick glance**, download the "publish profile".
+3. If you haven't download the "publish profile", go to [Azure Classic Management Portal](https://manage.windowsazure.cn) to download. If you haven't create a web app, create one. And, in **Dashboard** page of your web app, under **quick glance**, download the "publish profile".
 4. Choose the previous downloaded "publish profile", and click "OK".
 7. In **Destination URL**, change **http** to **https**. Copy the entire URL to a text editor. You will use it later. Then, click **Publish**.
 
@@ -173,7 +173,7 @@ Now you need to configure an RP trust in AD FS Mangement before you can use your
 	-	Name (http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name) - used by ASP.NET to hydrate `User.Identity.Name`.
 	-	User principal name (http://schemas.xmlsoap.org/ws/2005/05/identity/claims/upn) - used to uniquely identify users in the organization.
 	-	Group memberships as roles (http://schemas.microsoft.com/ws/2008/06/identity/claims/role) - can be used with `[Authorize(Roles="role1, role2,...")]` decoration to authorize controllers/actions. In reality, this may not be the most performant approach for role authorization, especially if your AD users regularly belong to hundreds of security groups, which translates to hundreds of role claims in the SAML token. An alternative approach is to send a single role claim conditionally depending on the user's membership in a particular group. However, we'll keep it simple for this tutorial.
-	-	Name ID (http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier) - can be used for anti-forgery validation. For more information on how to make it work with anti-forgery validation, see the **Add line-of-business functionality to the sample application** section of [Create a .NET MVC web app in Azure with Azure Active Directory authentication](/documentation/articles/web-sites-dotnet-lob-application-azure-ad#bkmk_crud).
+	-	Name ID (http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier) - can be used for anti-forgery validation. For more information on how to make it work with anti-forgery validation, see the **Add line-of-business functionality to the sample application** section of [Create a .NET MVC web app in Azure with Azure Active Directory authentication](/documentation/articles/web-sites-dotnet-lob-application-azure-ad/#bkmk_crud).
 
 	> [AZURE.NOTE] The claim types you need to configure for your application is determined by your application's needs. For the list of claims supported by Azure Active Directory applications (i.e. RP trusts), for example, see [Supported Token and Claim Types](/documentation/articles/active-directory-token-and-claims/).
 
@@ -327,12 +327,14 @@ Since you have included group memberships as role claims in your RP trust config
 
 A reason that you would want to implement your line-of-business application with AD FS instead of Azure Active Directory is compliance issues with keeping organization data off-premise. This may also mean that your web app in Azure must access on-premise databases, since you are not allowed to use [SQL Database](/home/features/sql-database/) as the data tier for your web apps.
 
+Azure Web Apps supports accessing on-premise databases with two approaches: [Virtual Networks](/documentation/articles/app-service-vnet-integration-powershell/).
+
 <a name="bkmk_resources"></a>
 ## Further resources
 
-- [Protect the Application with SSL and the Authorize Attribute](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database#protect-the-application-with-ssl-and-the-authorize-attribute)
-- [Use Active Directory for authentication in Azure Web App](/documentation/articles/web-sites-authentication-authorization)
-- [Create a .NET MVC web app in Azure with Azure Active Directory authentication](/documentation/articles/web-sites-dotnet-lob-application-azure-ad)
+- [Protect the Application with SSL and the Authorize Attribute](/documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/#protect-the-application-with-ssl-and-the-authorize-attribute)
+- [Use Active Directory for authentication in Azure Web App](/documentation/articles/web-sites-authentication-authorization/)
+- [Create a .NET MVC web app in Azure with Azure Active Directory authentication](/documentation/articles/web-sites-dotnet-lob-application-azure-ad/)
 - [Use the On-Premises Organizational Authentication Option (ADFS) With ASP.NET in Visual Studio 2013](http://www.cloudidentity.com/blog/2014/02/12/use-the-on-premises-organizational-authentication-option-adfs-with-asp-net-in-visual-studio-2013/)
 - [Vittorio Bertocci's blog](http://blogs.msdn.com/b/vbertocci/)
 - [Migrate a VS2013 Web Project From WIF to Katana](http://www.cloudidentity.com/blog/2014/09/15/MIGRATE-A-VS2013-WEB-PROJECT-FROM-WIF-TO-KATANA/)

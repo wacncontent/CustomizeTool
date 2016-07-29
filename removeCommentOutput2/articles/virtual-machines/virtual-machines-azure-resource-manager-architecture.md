@@ -1,7 +1,7 @@
-<!-- not suitable for Mooncake -->
+<!-- deleted in Global -->
 
 <properties
-   pageTitle="Azure Resource Manager Architecture | Windows Azure"
+   pageTitle="Azure Resource Manager Architecture | Azure"
    description="Learn about the architecture of Resource Manager and the relationships between the compute, network, and storage resource providers."
    services="virtual-machines"
    documentationCenter=""
@@ -17,7 +17,7 @@
 
 # Azure Resource Manager Architecture
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the Resource Manager deployment model, which Microsoft recommends for most new deployments instead of the classic deployment model.
 
 
 

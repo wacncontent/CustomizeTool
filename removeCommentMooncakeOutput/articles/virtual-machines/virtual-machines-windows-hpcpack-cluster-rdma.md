@@ -1,3 +1,5 @@
+<!-- rename to virtual-machines-windows-classic-hpcpack-rdma-cluster -->
+
 <properties
  pageTitle="Set up a Windows RDMA cluster to run MPI applications | Azure"
  description="Learn how to create a Windows HPC Pack cluster with size A8 or A9 VMs to use the Azure RDMA network to run MPI apps."
@@ -14,12 +16,12 @@
 
 # Set up a Windows RDMA cluster with HPC Pack instances to run MPI applications
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager model.
 
 
 This article shows you how to set up a Windows RDMA cluster in Azure with [Microsoft HPC Pack](https://technet.microsoft.com/zh-cn/library/cc514029) to run parallel Message Passing Interface (MPI) applications. When you set up Windows Server-based instances to run in an HPC Pack cluster, MPI applications communicate efficiently over a low latency, high throughput network in Azure that is based on remote direct memory access (RDMA) technology.
 
-If you want to run MPI workloads on Linux VMs that access the Azure RDMA network, see [Set up a Linux RDMA cluster to run MPI applications](/documentation/articles/virtual-machines-linux-cluster-rdma).
+If you want to run MPI workloads on Linux VMs that access the Azure RDMA network, see [Set up a Linux RDMA cluster to run MPI applications](/documentation/articles/virtual-machines-linux-classic-rdma-cluster/).
 
 ## HPC Pack cluster deployment options
 Microsoft HPC Pack is a recommended tool to create Windows Server-based HPC clusters in Azure. HPC Pack provides an efficient way to run Windows-based MPI applications that access the RDMA network in Azure. HPC Pack includes a runtime environment for the Microsoft implementation of the Message Passing Interface for Windows (MSMPI).
@@ -50,10 +52,9 @@ existing (typically on-premises) cluster. Use similar procedures
 to add worker role instances to an HPC Pack head node that is deployed
 in an Azure VM.
 
->[AZURE.NOTE] For a tutorial to burst to Azure with HPC Pack, see [Set up a hybrid cluster with HPC Pack](/documentation/articles/cloud-services-setup-hybrid-hpcpack-cluster). Note the considerations in the steps below that apply specifically to Azure nodes.
+>[AZURE.NOTE] For a tutorial to burst to Azure with HPC Pack, see [Set up a hybrid cluster with HPC Pack](/documentation/articles/cloud-services-setup-hybrid-hpcpack-cluster/). Note the considerations in the steps below that apply specifically to Azure nodes.
 
 ![Burst to Azure][burst]
-
 
 
 ### Steps
@@ -68,7 +69,7 @@ in an Azure VM.
 
 6. **Create a new cloud service and a storage account**
 
-    Use the Azure Management Portal to create a cloud service and a storage account for the deployment in a region where the compute intensive instances are available.
+    Use the Azure Classic Management Portal to create a cloud service and a storage account for the deployment in a region where the compute intensive instances are available.
 
 7. **Create an Azure node template**
 
@@ -98,9 +99,9 @@ in an Azure VM.
 
 ## Scenario 2. Deploy compute nodes in compute-intensive VMs (IaaS)
 
-In this scenario, you deploy the HPC Pack head node and cluster compute nodes on VMs joined to an Active Directory domain in an Azure virtual network. HPC Pack provides a number of [deployment options in Azure VMs](/documentation/articles/virtual-machines-hpcpack-cluster-options), including automated deployment scripts and Azure quickstart templates. As an example, the considerations and steps below guide you to use
+In this scenario, you deploy the HPC Pack head node and cluster compute nodes on VMs joined to an Active Directory domain in an Azure virtual network. HPC Pack provides a number of [deployment options in Azure VMs](/documentation/articles/virtual-machines-linux-hpcpack-cluster-options/), including automated deployment scripts and Azure quickstart templates. As an example, the considerations and steps below guide you to use
 the [HPC Pack IaaS deployment
-script](/documentation/articles/virtual-machines-hpcpack-cluster-powershell-script) to
+script](/documentation/articles/virtual-machines-linux-classic-hpcpack-cluster-powershell-script/) to
 automate most of this process.
 
 ![Cluster in Azure VMs][iaas]
@@ -111,7 +112,7 @@ automate most of this process.
 
     Download the HPC Pack IaaS Deployment Script package from the [Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=49922).
 
-    To prepare the client computer, create the script configuration file, and run the script, see [Create an HPC Cluster with the HPC Pack IaaS deployment script](/documentation/articles/virtual-machines-hpcpack-cluster-powershell-script). To deploy compute nodes, see the additional considerations later in this article.
+    To prepare the client computer, create the script configuration file, and run the script, see [Create an HPC Cluster with the HPC Pack IaaS deployment script](/documentation/articles/virtual-machines-linux-classic-hpcpack-cluster-powershell-script/). To deploy compute nodes, see the additional considerations later in this article.
 
 2. **Bring the compute nodes online to run jobs**
 
@@ -119,7 +120,7 @@ automate most of this process.
 
 3. **Submit jobs to the cluster**
 
-    Connect to the head node to submit jobs, or set up an on-premises computer to do this. For information, see [Submit Jobs to an HPC cluster in Azure](/documentation/articles/virtual-machines-hpcpack-cluster-submit-jobs).
+    Connect to the head node to submit jobs, or set up an on-premises computer to do this. For information, see [Submit Jobs to an HPC cluster in Azure](/documentation/articles/virtual-machines-windows-hpcpack-cluster-submit-jobs/).
 
 4. **Take the nodes offline and stop (deallocate) them**
 
@@ -153,23 +154,17 @@ To run mpipingpong on the cluster:
 
 2. To estimate latency between pairs of nodes in an Azure burst deployment of 4 nodes, type the following command to submit a job to run mpipingpong with a small packet size and a large number of iterations:
 
-	
 	    job submit /nodegroup:azurenodes /numnodes:4 mpiexec -c 1 -affinity mpipingpong -p 1:100000 -op -s nul
-	    
 
     The command returns the ID of the job that is submitted.
 
     If you deployed the HPC Pack cluster deployed on Azure VMs, specify a node group that contains compute node VMs deployed in a single cloud service, and modify the **mpiexec** command as follows:
 
-	
 	    job submit /nodegroup:vmcomputenodes /numnodes:4 mpiexec -c 1 -affinity -env MSMPI\_DISABLE\_SOCK 1 -env MSMPI\_PRECONNECT all -env MPICH\_NETMASK 172.16.0.0/255.255.0.0 mpipingpong -p 1:100000 -op -s nul
-	    
 
 3. When the job completes, to view the output (in this case, the output of task 1 of the job), type the following
 
-	
 	    task view <JobID>.1
-	    
 
     where &lt;*JobID*&gt; is the ID of the job that was submitted.
 
@@ -179,9 +174,7 @@ To run mpipingpong on the cluster:
 
 4. To estimate throughput between pairs of Azure burst nodes, type the following command to submit a job to run **mpipingpong** with a large packet size and a small number of iterations:
 
-	
 	    job submit /nodegroup:azurenodes /numnodes:4 mpiexec -c 1 -affinity mpipingpong -p 4000000:1000 -op -s nul
-	    
 
     The command returns the ID of the job that is submitted.
 
@@ -189,9 +182,7 @@ To run mpipingpong on the cluster:
 
 5. When the job completes, to view the output (in this case, the output of task 1 of the job), type the following:
 
-	
 	    task view <JobID>.1
-	    
 
   The output will include throughput results similar to the following.
 
@@ -233,7 +224,7 @@ instances added in a "burst to Azure" configuration).
 
 ## Next steps
 
-* If you want to run Linux MPI applications that access the Azure RDMA network, see [Set up a Linux RDMA cluster to run MPI applications](/documentation/articles/virtual-machines-linux-cluster-rdma).
+* If you want to run Linux MPI applications that access the Azure RDMA network, see [Set up a Linux RDMA cluster to run MPI applications](/documentation/articles/virtual-machines-linux-classic-rdma-cluster/).
 
 <!--Image references-->
 [burst]: ./media/virtual-machines-windows-hpcpack-cluster-rdma/burst.png

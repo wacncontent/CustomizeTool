@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="02/01/2016"
+	ms.date="04/19/2016"
 	wacn.date=""/>
 
 #Develop Apache Storm topologies using Python on HDInsight
@@ -50,7 +50,7 @@ Both methods are described in this document, along with example projects.
 
 ##Python components with a Java topology
 
-> [AZURE.NOTE] This example is available at [https://github.com/Azure-Samples/hdinsight-python-storm-wordcount](https://github.com/Azure-Samples/hdinsight-python-storm-wordcount) in the __JavaTopology__ directory. This is a Maven based project. If you are unfamiliar with Maven, see [Develop Java-based topologies with Apache Storm on HDInsight](/documentation/articles/hdinsight-storm-develop-java-topology) for more information on creating a Maven project for a Storm topology.
+> [AZURE.NOTE] This example is available at [https://github.com/Azure-Samples/hdinsight-python-storm-wordcount](https://github.com/Azure-Samples/hdinsight-python-storm-wordcount) in the __JavaTopology__ directory. This is a Maven based project. If you are unfamiliar with Maven, see [Develop Java-based topologies with Apache Storm on HDInsight](/documentation/articles/hdinsight-storm-develop-java-topology/) for more information on creating a Maven project for a Storm topology.
 
 A Java-based topology that uses Python (or other JVM language components,) initially appears to use Java components; but if you look in each of the Java spouts/bolts, you'll see code similar to the following:
 
@@ -150,4 +150,4 @@ __To build an uberjar and deploy to HDInsight__, use the following steps:
 
 In this document, you learned how to use Python components from a Storm topology. See the following documents for other ways to use Python with HDInsight:
 
-* [How to use Python User Defined Functions (UDF) in Pig and Hive](/documentation/articles/hdinsight-python)
+* [How to use Python User Defined Functions (UDF) in Pig and Hive](/documentation/articles/hdinsight-python/)

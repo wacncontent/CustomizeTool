@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="02/05/2016"
+	ms.date="07/12/2016"
 	wacn.date=""/>
 
 # Use MapReduce in Hadoop on HDInsight with Remote Desktop
@@ -29,7 +29,7 @@ To complete the steps in this article, you will need the following:
 
 ##<a id="connect"></a>Connect with Remote Desktop
 
-Enable Remote Desktop for the HDInsight cluster, then connect to it by following the instructions at [Connect to HDInsight clusters using RDP](/documentation/articles/hdinsight-administer-use-management-portal-v1#rdp).
+Enable Remote Desktop for the HDInsight cluster, then connect to it by following the instructions at [Connect to HDInsight clusters using RDP](/documentation/articles/hdinsight-administer-use-management-portal-v1/#rdp).
 
 ##<a id="hadoop"></a>Use the Hadoop command
 
@@ -45,7 +45,7 @@ When you are connected to the desktop for the HDInsight cluster, use the followi
 
 	This starts the **wordcount** class, which is contained in the **hadoop-mapreduce-examples.jar** file in the current directory. As input, it uses the **wasb://example/data/gutenberg/davinci.txt** document, and output is stored at: **wasb:///example/data/WordCountOutput**.
 
-	> [AZURE.NOTE] for more information about this MapReduce job and the example data, see <a href="/documentation/articles/hdinsight-use-mapreduce">Use MapReduce in HDInsight Hadoop</a>.
+	> [AZURE.NOTE] for more information about this MapReduce job and the example data, see <a href="/documentation/articles/hdinsight-use-mapreduce/">Use MapReduce in HDInsight Hadoop</a>.
 
 2. The job emits details as it is processed, and it returns information similar to the following when the job is complete:
 
@@ -84,10 +84,10 @@ As you can see, the Hadoop command provides an easy way to run MapReduce jobs on
 
 For general information about MapReduce jobs in HDInsight:
 
-* [Use MapReduce on HDInsight Hadoop](/documentation/articles/hdinsight-use-mapreduce)
+* [Use MapReduce on HDInsight Hadoop](/documentation/articles/hdinsight-use-mapreduce/)
 
 For information about other ways you can work with Hadoop on HDInsight:
 
-* [Use Hive with Hadoop on HDInsight](/documentation/articles/hdinsight-use-hive)
+* [Use Hive with Hadoop on HDInsight](/documentation/articles/hdinsight-use-hive/)
 
-* [Use Pig with Hadoop on HDInsight](/documentation/articles/hdinsight-use-pig)
+* [Use Pig with Hadoop on HDInsight](/documentation/articles/hdinsight-use-pig/)

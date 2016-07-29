@@ -10,20 +10,14 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="12/01/2015"
+	ms.date="05/27/2016"
 	wacn.date=""/>
 
-#Use Sqoop with Hadoop in HDInsight (Windows)
+#Use Sqoop with Hadoop in HDInsight
 
 [AZURE.INCLUDE [sqoop-selector](../includes/hdinsight-selector-use-sqoop.md)]
 
-Learn how to use Sqoop in HDInsight to import and export between an HDInsight cluster and an Azure SQL database or SQL Server database.
-
-
-> [AZURE.NOTE] The steps in this article can be used with either a Windows-based or Linux-based HDInsight cluster; however, these steps will only work from a Windows client.
->
-> If you are using a Linux, OS X, or Unix client and a Linux-based HDInsight server, see [Use Sqoop with Hadoop in HDInsight (SSH)](/documentation/articles/hdinsight-use-sqoop)
-
+Learn how to use Sqoop in HDInsight to import and export between HDInsight cluster and Azure SQL database or SQL Server database.
 
 Although Hadoop is a natural choice for processing unstructured and semistructured data, 
 such as logs and files, there may also be a need to process structured data that is 
@@ -39,39 +33,6 @@ database for your relational database.
 For Sqoop versions that are supported on HDInsight clusters, 
 see [What's new in the cluster versions provided by HDInsight?][hdinsight-versions].
 
-
-###Prerequisites
-
-
-###<a name="prerequisites"></a> Prerequisites
-
-
-Before you begin this tutorial, you must have the following:
-
-- **A workstation with Azure PowerShell**. See [Install Azure PowerShell 1.0 and greater](/documentation/articles/hdinsight-administer-use-powershell#install-azure-powershell-10-and-greater).
-
-If you choose to use existing Azure SQL database or Microsoft SQL Server
-
-- **Azure SQL database**: You must configure a firewall rule for the Azure SQL database server to allow access from your workstation. For instructions about creating an Azure SQL database and configuring the firewall, see [Get started using Azure SQL database][sqldatabase-get-started]. 
-
-	 preview portal  > [AZURE.NOTE] By default an Azure SQL database allows connections from Azure services, such as Azure HDInsight. If this firewall setting is disabled, you must enabled it from the Azure preview portal. For instruction about creating an Azure SQL database and configuring firewall rules, see [Create and Configure SQL Database][sqldatabase-create-configue].
-
-- **SQL Server**: If your HDInsight cluster is on the same virtual network in Azure as SQL Server, you can use the steps in this article to import and export data to a SQL Server database.
-
-	> [AZURE.NOTE] HDInsight supports only location-based virtual networks, and it does not currently work with affinity group-based virtual networks.
-
-	* To create and configure a virtual network, see [Virtual Network Configuration Tasks](/home/features/virtual-machines/).
-
-		* When you are using SQL Server in your datacenter, you must configure the virtual network as *site-to-site* or *point-to-site*.
-
-			> [AZURE.NOTE] For **point-to-site** virtual networks, SQL Server must be running the VPN client configuration application, which is available from the **Dashboard** of your Azure virtual network configuration.
-
-		* When you are using SQL Server on an Azure virtual machine, any virtual network configuration can be used if the virtual machine hosting SQL Server is a member of the same virtual network as HDInsight.
-
-	* To provision an HDInsight cluster on a virtual network, see [Provision Hadoop clusters in HDInsight using custom options](/documentation/articles/hdinsight-provision-clusters-v1)
-
-	> [AZURE.NOTE] SQL Server must also allow authentication. You must use a SQL Server login to complete the steps in this article.
-	
 ##Understand the scenario
 
 HDInsight cluster comes with some sample data. You will use the following two samples:
@@ -85,18 +46,115 @@ HDInsight cluster comes with some sample data. You will use the following two sa
 
 - A Hive table named *hivesampletable*, which references the data file located at */hive/warehouse/hivesampletable*. The table contains some mobile device data. 
 
+    | Field | Data type |
+    | ----- | --------- |
+    | clientid | string |
+    | querytime | string |
+    | market | string |
+    | deviceplatform | string |
+    | devicemake | string |
+    | devicemodel | string |
+    | state | string |
+    | country | string |
+    | querydwelltime | double |
+    | sessionid | bigint |
+    | sessionpagevieworder | bigint |
+
 You will first export *sample.log* and *hivesampletable* to the Azure 
 SQL database or to SQL Server, and then import the table that contains the 
 mobile device data back to HDInsight by using the following path:
 
 	/tutorials/usesqoop/importeddata
 
-## Run Sqoop using PowerShell
+## Create cluster and SQL database
 
-The PowerShell sample in this section performs the following steps:
+This section shows you how to create a cluster and the SQL database schemas for running the tutorial using the Azure portal and an ARM template.  If you prefer to use Azure PowerShell, see [Appendix A](#appendix-a---a-powershell-sample).
+
+1. Click the following image to open an ARM template in the Azure Portal.         
+
+    <a href="https://portal.azure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fhditutorialdata.blob.core.windows.net%2Fusesqoop%2Fcreate-linux-based-hadoop-cluster-in-hdinsight-and-sql-database.json" target="_blank"><img src="https://acom.azurecomcdn.net/80C57D/cdn/mediahandler/docarticles/dpsmedia-prod/azure.microsoft.com/documentation/articles/hdinsight-hbase-tutorial-get-started-v1/20160201111850/deploy-to-azure.png" alt="Deploy to Azure"></a>
+    
+    The ARM template is located in a public blob container, *https://hditutorialdata.blob.core.windows.net/usesqoop/create-linux-based-hadoop-cluster-in-hdinsight-and-sql-database.json*. 
+    
+    The ARM template calls a bacpac package to deploy the table schemas to SQL database.  The bacpac package is also located in a public blob container, https://hditutorialdata.blob.core.windows.net/usesqoop/SqoopTutorial-2016-2-23-11-2.bacpac. If you want to use a private container for the bacpac files, use the following values in the template:
+    
+        "storageKeyType": "Primary",
+        "storageKey": "<TheAzureStorageAccountKey>",
+    
+2. From the Parameters blade, enter the following:
+
+    - **ClusterName**: Enter a name for the Hadoop cluster that you will create.
+    - **Cluster login name and password**: The default login name is admin.
+    - **SSH user name and password**.
+    - **SQL database server login name and password**.
+
+    The following values are hardcoded in the variables section:
+    
+    |Default storage account name|<CluterName>store|
+    |----------------------------|-----------------|
+    |Azure SQL database server name|<ClusterName>dbserver|
+    |Azure SQL database name|<ClusterName>db|
+    
+    Please write down these values.  You will need them later in the tutorial.
+    
+3.Click **OK** to save the parameters.
+
+4.From the **Custom deployment** blade, click **Resource group** dropdown box, and then click **New** to create a new resource group. The resource group is a container that groups the cluster, the dependent storage account and other linked resource.
+
+5.Click **Legal terms**, and then click **Create**.
+
+6.Click **Create**. You will see a new tile titled Submitting deployment for Template deployment. It takes about around 20 minutes to create the cluster and SQL database.
+
+If you choose to use existing Azure SQL database or Microsoft SQL Server
+
+- **Azure SQL database**: You must configure a firewall rule for the Azure SQL database server to allow access from your workstation. For instructions about creating an Azure SQL database and configuring the firewall, see [Get started using Azure SQL database][sqldatabase-get-started]. 
+
+    > [AZURE.NOTE] By default an Azure SQL database allows connections from Azure services, such as Azure HDInsight. If this firewall setting is disabled, you must enabled it from the Azure portal. For instruction about creating an Azure SQL database and configuring firewall rules, see [Create and Configure SQL Database][sqldatabase-create-configue].
+
+- **SQL Server**: If your HDInsight cluster is on the same virtual network in Azure as SQL Server, you can use the steps in this article to import and export data to a SQL Server database.
+
+    > [AZURE.NOTE] HDInsight supports only location-based virtual networks, and it does not currently work with affinity group-based virtual networks.
+
+    * To create and configure a virtual network, see [Virtual Network Configuration Tasks](/home/features/virtual-machines/).
+
+        * When you are using SQL Server in your datacenter, you must configure the virtual network as *site-to-site* or *point-to-site*.
+
+            > [AZURE.NOTE] For **point-to-site** virtual networks, SQL Server must be running the VPN client configuration application, which is available from the **Dashboard** of your Azure virtual network configuration.
+
+        * When you are using SQL Server on an Azure virtual machine, any virtual network configuration can be used if the virtual machine hosting SQL Server is a member of the same virtual network as HDInsight.
+
+    * To create an HDInsight cluster on a virtual network, see [Create Hadoop clusters in HDInsight using custom options](/documentation/articles/hdinsight-provision-clusters-v1/)
+
+    > [AZURE.NOTE] SQL Server must also allow authentication. You must use a SQL Server login to complete the steps in this article.
+
+
+## Run Sqoop jobs
+
+HDInsight can run Sqoop jobs by using a variety of methods. Use the following table to decide which method is right for you, then follow the link for a walkthrough.
+
+| **Use this** if you want...                                   | ...an **interactive** shell | ...**batch** processing | ...with this **cluster operating system** | ...from this **client operating system** |
+|:--------------------------------------------------------------|:---------------------------:|:-----------------------:|:------------------------------------------|:-----------------------------------------|
+| [SSH](/documentation/articles/hdinsight-use-sqoop/)                        |              ✔              |            ✔            | Linux                                     | Linux, Unix, Mac OS X, or Windows        |
+| [.NET SDK for Hadoop](/documentation/articles/hdinsight-hadoop-use-sqoop-dotnet-sdk/) |           &nbsp;            |            ✔            | Linux or Windows                          | Windows (for now)                        |
+| [Azure PowerShell](/documentation/articles/hdinsight-hadoop-use-sqoop-powershell/)  |           &nbsp;            |            ✔            | Linux or Windows                          | Windows                                  |
+
+##Next steps
+
+Now you have learned how to use Sqoop. To learn more, see:
+
+- [Use Hive with HDInsight](/documentation/articles/hdinsight-use-hive/)
+- [Use Pig with HDInsight](/documentation/articles/hdinsight-use-pig/)
+- [Use Oozie with HDInsight][hdinsight-use-oozie]: Use Sqoop action in an Oozie workflow.
+- [Analyze flight delay data using HDInsight][hdinsight-analyze-flight-data]: Use Hive to analyze flight delay data, and then use Sqoop to export data to an Azure SQL database.
+- [Upload data to HDInsight][hdinsight-upload-data]: Find other methods for uploading data to HDInsight/Azure Blob storage.
+
+
+## Appendix A - a PowerShell sample
+
+The PowerShell sample performs the following steps:
 
 1. Connect to Azure.
-2. Create an Azure resource group. For more information, see [Using Azure PowerShell with Azure Resource Manager](/documentation/articles/powershell-azure-resource-manager)
+2. Create an Azure resource group. For more information, see [Using Azure PowerShell with Azure Resource Manager](/documentation/articles/powershell-azure-resource-manager/)
 3. Create an Azure SQL Database server, an Azure SQL database, and two tables. 
 
 	If you use SQL Server instead, use the following statements to create the tables:
@@ -123,11 +181,11 @@ The PowerShell sample in this section performs the following steps:
 		 [sessionid] [bigint],
 		 [sessionpagevieworder][bigint])
 
-	The easiest way to examine the database and tables is to use Visual Studio. The database server and the database can be examined using the Azure Management Portal.
+	The easiest way to examine the database and tables is to use Visual Studio. The database server and the database can be examined using the Azure portal.
 
 4. Create an HDInsight cluster.
 
-	To examine the cluster, you can use the Azure Management Portal or Azure PowerShell.
+	To examine the cluster, you can use the Azure portal or Azure PowerShell.
 
 5. Pre-process the source data file.
 
@@ -138,7 +196,7 @@ The PowerShell sample in this section performs the following steps:
 	
 	This is fine for other examples that use this data, but we must remove these exceptions before we can import into the Azure SQL database or SQL Server. Sqoop export will fail if there is an empty string or a line with a fewer number of elements than the number of fields defined in the Azure SQL database table. The log4jlogs table has 7 string-type fields.
 
-	This procedure creates a new file on the cluster: tutorials/usesqoop/data/sample.log. To examine the modified data file, you can use the Azure Management Portal, an Azure Storage explorer tool, or Azure PowerShell. [Get started with HDInsight][hdinsight-get-started] has a code sample for using Azure PowerShell to download a file and display the file content.
+	This procedure creates a new file on the cluster: tutorials/usesqoop/data/sample.log. To examine the modified data file, you can use the Azure portal, an Azure Storage explorer tool, or Azure PowerShell. [Get started with HDInsight][hdinsight-get-started] has a code sample for using Azure PowerShell to download a file and display the file content.
 
 6. Export a data file to the Azure SQL database.
 
@@ -146,15 +204,15 @@ The PowerShell sample in this section performs the following steps:
 	
 	> [AZURE.NOTE] Other than connection string information, the steps in this section should work for an Azure SQL database or for SQL Server. These steps were tested by using the following configuration:
 	>
-	> * **Azure virtual network point-to-site configuration**: A virtual network connected the HDInsight cluster to a SQL Server in a private datacenter. See [Configure a Point-to-Site VPN in the Management Portal](/documentation/articles/vpn-gateway-point-to-site-create) for more information.
-	> * **Azure HDInsight 3.1**: See [Provision Hadoop clusters in HDInsight using custom options](/documentation/articles/hdinsight-provision-clusters-v1) for information about creating a cluster on a virtual network.
+	> * **Azure virtual network point-to-site configuration**: A virtual network connected the HDInsight cluster to a SQL Server in a private datacenter. See [Configure a Point-to-Site VPN in the Management Portal](/documentation/articles/vpn-gateway-point-to-site-create/) for more information.
+	> * **Azure HDInsight 3.1**: See [Create Hadoop clusters in HDInsight using custom options](/documentation/articles/hdinsight-provision-clusters-v1/) for information about creating a cluster on a virtual network.
 	> * **SQL Server 2014**: Configured to allow authentication and running the VPN client configuration package to connect securely to the virtual network.
 
 7. Export a Hive table to the Azure SQL database.
 
 8. Import the mobiledata table to the HDInsight cluster.
 
-	To examine the modified data file, you can use the preview portal, an Azure Storage explorer tool, or Azure PowerShell.  [Get started with HDInsight][hdinsight-get-started] has a code sample about using Azure PowerShell to download a file and display the file content.
+	To examine the modified data file, you can use the Azure portal, an Azure Storage explorer tool, or Azure PowerShell.  [Get started with HDInsight][hdinsight-get-started] has a code sample about using Azure PowerShell to download a file and display the file content.
 
 
 ### The PowerShell sample
@@ -341,9 +399,9 @@ The PowerShell sample in this section performs the following steps:
 		-Type Standard_LRS
 	
 	# Create the default Blob container
-	$defaultStorageAccountKey = Get-AzureRmStorageAccountKey `
+	$defaultStorageAccountKey = (Get-AzureRmStorageAccountKey `
 									-ResourceGroupName $resourceGroupName `
-									-Name $defaultStorageAccountName |  %{ $_.Key1 }
+									-Name $defaultStorageAccountName)[0].Value
 	$defaultStorageAccountContext = New-AzureStorageContext `
 										-StorageAccountName $defaultStorageAccountName `
 										-StorageAccountKey $defaultStorageAccountKey 
@@ -549,94 +607,24 @@ The PowerShell sample in this section performs the following steps:
 	
 	#endregion
 
-## Run Sqoop using .NET SDK
-
-In this section, you will create a C# console application to export the hivesampletable to the SQL Database table you created earlier in this tutorials.
-
-**To submit a Sqoop job**
-
-1. From the Visual Studio Package Manager Console, run the following Nuget command to import the package.
-
-		Install-Package Microsoft.Azure.Management.HDInsight.Job -Pre
-2. Use the following using statements in the Program.cs file:
-
-		using System;
-		using Microsoft.Azure.Management.HDInsight.Job;
-		using Microsoft.Azure.Management.HDInsight.Job.Models;
-		using Hyak.Common;
-3. Add the following code into the Main() function. For the general information about using the HDInsight .NET SDK, see [Submit Hadoop jobs programmatically][hdinsight-submit-jobs].
-
-		var ExistingClusterName = "<HDInsightClusterName>";
-		var ExistingClusterUri = ExistingClusterName + ".azurehdinsight.cn";
-		var ExistingClusterUsername = "<HDInsightClusterHttpUsername>";
-		var ExistingClusterPassword = "<HDInsightClusterHttpUserPassword>";
-		
-		var sqlDatabaseServerName = "<AzureSQLDatabaseServerName>";
-		var sqlDatabaseLogin = "<AzureSQLDatabaseLogin>";
-		var sqlDatabaseLoginPassword = "<AzureSQLDatabaseLoginPassword>";
-		var sqlDatabaseDatabaseName = "<AzureSQLDatabaseDatabaseName>";
-		
-		var sqlDatabaseTableName = "log4jlogs";
-		var exportDir = "/hive/warehouse/hivesampletable";
-
-		var cmdExport = @"export";
-		// Connection string for using Azure SQL Database.
-		// Comment if using SQL Server
-		cmdExport = cmdExport + @" --connect 'jdbc:sqlserver://" + sqlDatabaseServerName + ".database.chinacloudapi.cn;user=" + sqlDatabaseLogin + "@" + sqlDatabaseServerName + ";password=" + sqlDatabaseLoginPassword + ";database=" + sqlDatabaseDatabaseName +"'"; 
-		// Connection string for using SQL Server.
-		// Uncomment if using SQL Server
-		//cmdExport = cmdExport + @" --connect jdbc:sqlserver://" + sqlDatabaseServerName + ";user=" + sqlDatabaseLogin + ";password=" + sqlDatabaseLoginPassword + ";database=" + sqlDatabaseDatabaseName;
-		cmdExport = cmdExport + @" --table " + sqlDatabaseTableName;
-		cmdExport = cmdExport + @" --export-dir " + exportDir;
-		cmdExport = cmdExport + @" --input-fields-terminated-by \0x20 -m 1";
-		
-		HDInsightJobManagementClient _hdiJobManagementClient;
-		var clusterCredentials = new BasicAuthenticationCloudCredentials { Username = ExistingClusterUsername, Password = ExistingClusterPassword };
-		_hdiJobManagementClient = new HDInsightJobManagementClient(ExistingClusterUri, clusterCredentials);
-
-		var parameters = new SqoopJobSubmissionParameters
-		{
-		    UserName = ExistingClusterUsername,
-		    Command = cmdExport
-		};
-		
-		System.Console.WriteLine("Submitting the Sqoop job to the cluster...");
-		var response = _hdiJobManagementClient.JobManagement.SubmitSqoopJob(parameters);
-		System.Console.WriteLine("Validating that the response is as expected...");
-		System.Console.WriteLine("Response status code is " + response.StatusCode);
-		System.Console.WriteLine("Validating the response object...");
-		System.Console.WriteLine("JobId is " + response.JobSubmissionJsonResponse.Id);
-		Console.WriteLine("Press ENTER to continue ...");
-		Console.ReadLine();
-4. Press **F5** to run the program. 
 
 
+[azure-management-portal]: https://portal.azure.cn/
 
+[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning-v1/
+[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1/
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1/
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage/
+[hdinsight-analyze-flight-data]: /documentation/articles/hdinsight-analyze-flight-delay-data/
+[hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie/
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data/
+[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/
 
-##Next steps
-
-Now you have learned how to use Sqoop. To learn more, see:
-
-- [Use Oozie with HDInsight][hdinsight-use-oozie]: Use Sqoop action in an Oozie workflow.
-- [Analyze flight delay data using HDInsight][hdinsight-analyze-flight-data]: Use Hive to analyze flight delay data, and then use Sqoop to export data to an Azure SQL database.
-- [Upload data to HDInsight][hdinsight-upload-data]: Find other methods for uploading data to HDInsight/Azure Blob storage.
-
-[azure-management-portal]: https://manage.windowsazure.cn/
-
-[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning-v1
-[hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1
-[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
-[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
-[hdinsight-analyze-flight-data]: /documentation/articles/hdinsight-analyze-flight-delay-data
-[hdinsight-use-oozie]: /documentation/articles/hdinsight-use-oozie
-[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
-[hdinsight-submit-jobs]: /documentation/articles/hdinsight-submit-hadoop-jobs-programmatically
-
-[sqldatabase-get-started]: /documentation/articles/sql-database-get-started
-[sqldatabase-create-configue]: /documentation/articles/sql-database-get-started
+[sqldatabase-get-started]: /documentation/articles/sql-database-get-started/
+[sqldatabase-create-configue]: /documentation/articles/sql-database-get-started/
 
 [powershell-start]: http://technet.microsoft.com/zh-cn/library/hh847889.aspx
-[powershell-install]: /documentation/articles/powershell-install-configure
+[powershell-install]: /documentation/articles/powershell-install-configure/
 [powershell-script]: https://technet.microsoft.com/zh-cn/library/dn425048.aspx
 
 [sqoop-user-guide-1.4.4]: https://sqoop.apache.org/docs/1.4.4/SqoopUserGuide.html

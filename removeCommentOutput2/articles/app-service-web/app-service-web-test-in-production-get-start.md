@@ -20,7 +20,7 @@ Testing in production, or live-testing your web app using live customer traffic,
 
 ## Traffic Routing in Azure Web Apps
 
-With the Traffic Routing feature in [Azure Web App](/documentation/services/web-sites/), you can direct a portion of live user traffic to one or more [deployment slots](/documentation/articles/web-sites-staged-publishing), and then analyze your app with [Azure Application Insights](/home/features/application-insights/) or [Azure HDInsight](/home/features/hdinsight/), or a third-party tool like [New Relic](/marketplace/partners/newrelic/newrelic/) to validate your change. For example, you can implement the following scenarios with Azure Web App:
+With the Traffic Routing feature in [Azure Web App](/documentation/services/web-sites/), you can direct a portion of live user traffic to one or more [deployment slots](/documentation/articles/web-sites-staged-publishing/), and then analyze your app with [Azure Application Insights](/home/features/application-insights/) or [Azure HDInsight](/home/features/hdinsight/), or a third-party tool like [New Relic](/marketplace/partners/newrelic/newrelic/) to validate your change. For example, you can implement the following scenarios with Azure Web App:
 
 - Discover functional bugs or pinpoint performance bottlenecks in your updates prior to site-wide deployment
 - Perform "controlled test flights" of your changes by measuring usibility metrics on the beta app
@@ -37,9 +37,9 @@ With the Traffic Routing feature in [Azure Web App](/documentation/services/web-
 
 At the basic level in every TiP scenario, you route a predefined percentage of your live traffic to a non-production deployment slot. To do this, follow the steps below:
 
->[AZURE.NOTE] The steps here assumes that you already have a [non-production deployment slot](/documentation/articles/web-sites-staged-publishing) and that the desired web app content is already [deployed](/documentation/articles/web-sites-publish-source-control) to it.
+>[AZURE.NOTE] The steps here assumes that you already have a [non-production deployment slot](/documentation/articles/web-sites-staged-publishing/) and that the desired web app content is already [deployed](/documentation/articles/web-sites-publish-source-control/) to it.
 
-1. Log into the [Azure Management Portal](https://manage.windowsazure.cn/).
+1. Log into the [Azure Portal](https://portal.azure.cn/).
 2. In your web app's blade, click **Settings** > **Traffic Routing**.
   ![](./media/app-service-web-test-in-production/01-traffic-routing.png)
 3. Select the slot that you want to route traffic to and the percentage of the total traffic you desire, then click **Save**.
@@ -80,7 +80,7 @@ To let users opt in to your beta app, set the same query parameter to the name o
 
 ## More resources ##
 
--   [Set up staging environments for web apps in Azure](/documentation/articles/web-sites-staged-publishing)
--	[Deploy a complex application predictably in Azure](/documentation/articles/app-service-deploy-complex-application-predictably)
--   [Agile software development with Azure Web App](/documentation/articles/app-service-agile-software-development)
--	[Use DevOps environments effectively for your web apps](/documentation/articles/app-service-web-staged-publishing-realworld-scenarios)
+-   [Set up staging environments for web apps in Azure](/documentation/articles/web-sites-staged-publishing/)
+-	[Deploy a complex application predictably in Azure](/documentation/articles/app-service-deploy-complex-application-predictably/)
+-   [Agile software development with Azure Web App](/documentation/articles/app-service-agile-software-development/)
+-	[Use DevOps environments effectively for your web apps](/documentation/articles/app-service-web-staged-publishing-realworld-scenarios/)

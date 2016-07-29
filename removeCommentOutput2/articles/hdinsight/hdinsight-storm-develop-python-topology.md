@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="02/01/2016"
+	ms.date="07/11/2016"
 	wacn.date=""/>
 
 #Develop Apache Storm topologies using Python on HDInsight
@@ -50,7 +50,7 @@ Both methods are described in this document, along with example projects.
 
 ##Python components with a Java topology
 
-> [AZURE.NOTE] This example is available at [https://github.com/Azure-Samples/hdinsight-python-storm-wordcount](https://github.com/Azure-Samples/hdinsight-python-storm-wordcount) in the __JavaTopology__ directory. This is a Maven based project. If you are unfamiliar with Maven, see [Develop Java-based topologies with Apache Storm on HDInsight](/documentation/articles/hdinsight-storm-develop-java-topology) for more information on creating a Maven project for a Storm topology.
+> [AZURE.NOTE] This example is available at [https://github.com/Azure-Samples/hdinsight-python-storm-wordcount](https://github.com/Azure-Samples/hdinsight-python-storm-wordcount) in the __JavaTopology__ directory. This is a Maven based project. If you are unfamiliar with Maven, see [Develop Java-based topologies with Apache Storm on HDInsight](/documentation/articles/hdinsight-storm-develop-java-topology/) for more information on creating a Maven project for a Storm topology.
 
 A Java-based topology that uses Python (or other JVM language components,) initially appears to use Java components; but if you look in each of the Java spouts/bolts, you'll see code similar to the following:
 
@@ -62,17 +62,16 @@ This is where Java invokes Python and runs the script that contains the actual b
 
 The actual Python files are stored in the `/multilang/resources` directory in this example. The `/multilang` directory is referenced in the __pom.xml__:
 
-<resources>
-    <resource>
-        <!-- Where the Python bits are kept -->
-        <directory>${basedir}/multilang</directory>
-    </resource>
-</resources>
+	<resources>
+	    <resource>
+	        <!-- Where the Python bits are kept -->
+	        <directory>${basedir}/multilang</directory>
+	    </resource>
+	</resources>
 
 This includes all the files in the `/multilang` folder in the jar that will be built from this project.
 
 > [AZURE.IMPORTANT] Note that this only specifies the `/multilang` directory and not `/multilang/resources`. Storm expects non-JVM resources in a `resources` directory, so it is looked for internally already. Placing components in this folder allows you to just reference by name in the Java code. For example, `super("python", "countbolt.py");`. Another way to think of it is that Storm sees the `resources` directory as the root (/) when accessing multi-lang resources.
-
 > <p>For this example project, the `storm.py` module is included in the `/multilang/resources` directory.
 
 ###Build and run the project
@@ -103,7 +102,7 @@ To deploy the project to an HDInsight cluster running Apache Storm, use the foll
 
         Finally, select __Submit__ to start the topology.
 
-> [AZURE.NOTE] Once started, a Storm topology runs until stopped (killed.) To stop the topology, use either the `storm kill TOPOLOGYNAME` command from the command-line (SSH session to a Linux cluo or by using the Storm UI, select the topology, and then select the __Kill__ button.
+> [AZURE.NOTE] Once started, a Storm topology runs until stopped (killed.) To stop the topology, use either the `storm kill TOPOLOGYNAME` command from the command-line or by using the Storm UI, select the topology, and then select the __Kill__ button.
 
 ##Python components with a Clojure topology
 
@@ -119,7 +118,7 @@ This topology was created by using [Leiningen](http://leiningen.org) to [create 
 
 __To build and run the project locally__, use the following command:
 
-    lein do clean, run
+    lein clean, run
 
 To stop the topology, use __Ctrl+C__.
 
@@ -145,10 +144,10 @@ __To build an uberjar and deploy to HDInsight__, use the following steps:
 
             Finally, select __Submit__ to start the topology.
 
-> [AZURE.NOTE] Once started, a Storm topology runs until stopped (killed.) To stop the topology, use either the `storm kill TOPOLOGYNAME` command from the command-line (SSH session to a Linux cluo or by using the Storm UI, select the topology, and then select the __Kill__ button.
+> [AZURE.NOTE] Once started, a Storm topology runs until stopped (killed.) To stop the topology, use either the `storm kill TOPOLOGYNAME` command from the command-line or by using the Storm UI, select the topology, and then select the __Kill__ button.
 
 ##Next steps
 
 In this document, you learned how to use Python components from a Storm topology. See the following documents for other ways to use Python with HDInsight:
 
-* [How to use Python User Defined Functions (UDF) in Pig and Hive](/documentation/articles/hdinsight-python)
+* [How to use Python User Defined Functions (UDF) in Pig and Hive](/documentation/articles/hdinsight-python/)

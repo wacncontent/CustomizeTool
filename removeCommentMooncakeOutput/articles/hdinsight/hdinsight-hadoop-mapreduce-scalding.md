@@ -9,7 +9,7 @@
 	tags="azure-portal"/>
 <tags
 	ms.service="hdinsight"
-	ms.date="02/05/2016"
+	ms.date="05/18/2016"
 	wacn.date=""/>
 
 # Develop Scalding MapReduce jobs with Apache Hadoop on HDInsight
@@ -21,7 +21,7 @@ In this document, learn how to use Maven to create a basic word count MapReduce 
 ## Prerequisites
 
 - **An Azure subscription**. See [Get Azure trial](/pricing/1rmb-trial/).
-* **A Windows based Hadoop on HDInsight cluster**. See [Provision Windows-based Hadoop on HDInsight](/documentation/articles/hdinsight-provision-clusters-v1) for more information.
+* **A Windows based Hadoop on HDInsight cluster**. See [Provision Windows-based Hadoop on HDInsight](/documentation/articles/hdinsight-provision-clusters-v1/) for more information.
 
 * **[Maven](http://maven.apache.org/)**
 
@@ -181,9 +181,9 @@ In this document, learn how to use Maven to create a basic word count MapReduce 
 
 ## Run the job on a Windows-based cluster
 
-> [AZURE.NOTE] The following steps use Windows PowerShell. For other methods of running MapReduce jobs, see [Use MapReduce in Hadoop on HDInsight](/documentation/articles/hdinsight-use-mapreduce).
+> [AZURE.NOTE] The following steps use Windows PowerShell. For other methods of running MapReduce jobs, see [Use MapReduce in Hadoop on HDInsight](/documentation/articles/hdinsight-use-mapreduce/).
 
-1. [Install and configure Azure PowerShell](/documentation/articles/powershell-install-configure).
+1. [Install and configure Azure PowerShell](/documentation/articles/powershell-install-configure/).
 
 2. Download [hdinsight-tools.psm1](https://github.com/Blackmist/hdinsight-tools/blob/master/hdinsight-tools.psm1) and save to a file named **hdinsight-tools.psm1**.
 
@@ -232,8 +232,8 @@ In this document, learn how to use Maven to create a basic word count MapReduce 
 
 Now that you have learned how to use Scalding to create MapReduce jobs for HDInsight, use the following links to explore other ways to work with Azure HDInsight.
 
-* [Use Hive with HDInsight](/documentation/articles/hdinsight-use-hive)
+* [Use Hive with HDInsight](/documentation/articles/hdinsight-use-hive/)
 
-* [Use Pig with HDInsight](/documentation/articles/hdinsight-use-pig)
+* [Use Pig with HDInsight](/documentation/articles/hdinsight-use-pig/)
 
-* [Use MapReduce jobs with HDInsight](/documentation/articles/hdinsight-use-mapreduce)
+* [Use MapReduce jobs with HDInsight](/documentation/articles/hdinsight-use-mapreduce/)

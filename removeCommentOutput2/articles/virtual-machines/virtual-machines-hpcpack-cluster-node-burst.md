@@ -1,3 +1,5 @@
+<!-- rename to virtual-machines-windows-classic-hpcpack-cluster-node-burst -->
+
 <properties
  pageTitle="Add burst nodes to an HPC Pack cluster | Azure"
  description="Learn how to add worker role instances running in a cloud service on-demand as compute resources to an HPC Pack head node in Azure."
@@ -14,7 +16,7 @@
 
 # Add on-demand "burst" nodes (worker role instances) as compute resources to an HPC Pack cluster in Azure
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the classic deployment model. Microsoft recommends that most new deployments use the Resource Manager model.
 
 
 This article shows you how to add Azure "burst" nodes (worker role instances
@@ -49,7 +51,7 @@ subscription (or subscriptions).
 
 ## Step 1: Create a cloud service and a storage account to add Azure nodes
 
-Use the Azure Management Portal or equivalent tools to configure the following, which are needed to deploy
+Use the Azure classic portal or equivalent tools to configure the following, which are needed to deploy
 your Azure nodes:
 
 * A new Azure cloud service

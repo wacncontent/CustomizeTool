@@ -1,8 +1,7 @@
-<!-- not suitable for Mooncake -->
 
 <properties 
-   pageTitle="How to set a static private IP in ARM mode using PowerShell| Azure"
-   description="Understanding static IPs (DIPs) and how to manage them in ARM mode using PowerShell"
+   pageTitle="How to set a static private IP address in Azure Resource Manager by using PowerShell| Azure"
+   description="Understanding static private IP addresses and how to manage them in Azure Resource Manager by using PowerShell"
    services="virtual-network"
    documentationCenter="na"
    authors="telmosampaio"
@@ -12,20 +11,22 @@
 />
 <tags
 	ms.service="virtual-network"
-	ms.date="11/20/2015"
+	ms.date="02/23/2016"
 	wacn.date=""/>
 
-# How to set a static private IP address in PowerShell
+# How to set a static private IP address in Resource Manager by using PowerShell
 
 [AZURE.INCLUDE [virtual-networks-static-private-ip-selectors-arm-include](../includes/virtual-networks-static-private-ip-selectors-arm-include.md)]
 
+[AZURE.INCLUDE [arm-api-version-powershell](../includes/arm-api-version-powershell.md)]
+
 [AZURE.INCLUDE [virtual-networks-static-private-ip-intro-include](../includes/virtual-networks-static-private-ip-intro-include.md)]
 
-[AZURE.INCLUDE [azure-arm-classic-important-include](../includes/azure-arm-classic-important-include.md)] This article covers the Resource Manager deployment model. You can also [manage static private IP address in the classic deployment model](/documentation/articles/virtual-networks-static-private-ip-classic-ps).
+>[AZURE.IMPORTANT]Before you work with Azure resources, it's important to understand that Azure currently has two deployment models: Resource Manager, and classic. Make sure you understand [deployment models and tools](/documentation/articles/azure-classic-rm/) before working with any Azure resource. You can view the documentation for different tools by clicking the tabs at the top of this article. This article covers the Resource Manager deployment model. You can also [manage static private IP address in the classic deployment model](/documentation/articles/virtual-networks-static-private-ip-classic-ps/).
 
 [AZURE.INCLUDE [virtual-networks-static-ip-scenario-include](../includes/virtual-networks-static-ip-scenario-include.md)]
 
-The sample PowerShell commands below expect a simple environment already created based on the scenario above. If you want to run the commands as they are displayed in this document, first build the test environment described in [create a vnet](/documentation/articles/virtual-networks-create-vnet-arm-ps).
+The sample PowerShell commands below expect a simple environment already created based on the scenario above. If you want to run the commands as they are displayed in this document, first build the test environment described in [create a vnet](/documentation/articles/virtual-networks-create-vnet-arm-ps/).
 
 ## How to specify a static private IP address when creating a VM
 To create a VM named *DNS01* in the *FrontEnd* subnet of a VNet named *TestVNet* with a static private IP of *192.168.1.101*, follow the steps below:
@@ -186,6 +187,6 @@ To add a static private IP address to the VM created using the script above, run
 
 ## Next steps
 
-- Learn about [reserved public IP](/documentation/articles/virtual-networks-reserved-public-ip) addresses.
-- Learn about [instance-level public IP (ILPIP)](/documentation/articles/virtual-networks-instance-level-public-ip) addresses.
+- Learn about [reserved public IP](/documentation/articles/virtual-networks-reserved-public-ip/) addresses.
+- Learn about [instance-level public IP (ILPIP)](/documentation/articles/virtual-networks-instance-level-public-ip/) addresses.
 - Consult the [Reserved IP REST APIs](https://msdn.microsoft.com/zh-cn/library/azure/dn722420.aspx).

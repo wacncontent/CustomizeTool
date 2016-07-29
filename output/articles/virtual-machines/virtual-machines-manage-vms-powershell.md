@@ -1,3 +1,5 @@
+<!-- rename to virtual-machines-windows-classic-manage-psh -->
+
 <properties
    pageTitle="Manage your virtual machines by using Azure PowerShell | Azure"
    description="Learn commands that you can use to automate tasks in managing your virtual machines."
@@ -15,12 +17,12 @@
 
 # Manage your virtual machines by using Azure PowerShell
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager model.
 
 
 Many tasks you do each day to manage your VMs can be automated by using Azure PowerShell cmdlets. This article gives you example commands for simpler tasks, and links to articles that show the commands for more complex tasks.
 
->[AZURE.NOTE] If you haven't installed and configured Azure PowerShell yet, you can get instructions in the article [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure).
+>[AZURE.NOTE] If you haven't installed and configured Azure PowerShell yet, you can get instructions in the article [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure/).
 
 ## How to use the example commands
 You'll need to replace some of the text in the commands with text that's appropriate for your environment. The < and > symbols indicate text you need to replace. When you replace the text, remove the symbols but leave the quote marks in place.
@@ -87,7 +89,7 @@ To attach data disks from an existing .vhd file in blob storage, run this comman
 ## Create a Windows-based VM
 
 To create a new Windows-based virtual machine in Azure, use the instructions in
-[Use Azure PowerShell to create and preconfigure Windows-based virtual machines](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-vms). This topic steps you through the creation of an Azure PowerShell command set that creates a Windows-based VM that can be preconfigured:
+[Use Azure PowerShell to create and preconfigure Windows-based virtual machines](/documentation/articles/virtual-machines-windows-classic-create-powershell/). This topic steps you through the creation of an Azure PowerShell command set that creates a Windows-based VM that can be preconfigured:
 
 - With Active Directory domain membership.
 - With additional disks.
@@ -96,7 +98,7 @@ To create a new Windows-based virtual machine in Azure, use the instructions in
 
 ## Create a Linux-based VM
 
-Use the instructions in [Create and preconfigure a Linux virtual machine using Azure Powershell](/documentation/articles/virtual-machines-ps-create-preconfigure-linux-vms) to create a new Linux-based virtual machine in Azure that is preconfigured:
+Use the instructions in [Create and preconfigure a Linux virtual machine using Azure Powershell](/documentation/articles/virtual-machines-linux-classic-createpowershell/) to create a new Linux-based virtual machine in Azure that is preconfigured:
 
 - With additional disks.
 - As a member of an existing load-balanced set.

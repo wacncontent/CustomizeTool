@@ -1,3 +1,5 @@
+<!-- rename to virtual-machines-windows-detailed-troubleshoot-rdp -->
+
 <properties
 	pageTitle="Detailed Remote Desktop troubleshooting | Azure"
 	description="Detailed troubleshooting steps for RDP connections to an Azure virtual machine running Windows."
@@ -23,7 +25,7 @@ This article provides detailed troubleshooting steps to diagnose and fix complex
 
 If you get a Remote Desktop error message that does not resemble any of the specific error messages covered in [the basic Remote Desktop troubleshooting guide](/documentation/articles/virtual-machines-troubleshoot-remote-desktop-connections), you can follow these steps and try to figure out why the Remote Desktop (or [RDP](https://en.wikipedia.org/wiki/Remote_Desktop_Protocol)) client is unable to connect to the RDP service on the Azure VM.
 
-If you need more help at any point in this article, you can contact the Azure experts on [the MSDN Azure and the Stack Overflow forums](http. Alternatively, you can also file an Azure support incident. Go to the [Azure Support site](https://azure.microsoand click on **Get Support**. For information about using Azure Support, read the [Azure Support FAQ](/support/faq/).
+If you need more help at any point in this article, you can contact the Azure experts on [the MSDN Azure and the CSDN Azure forums](/support/forums/). Alternatively, you can also file an Azure support incident. Go to the [Azure Support site](/support/contact/) and click on **Get Support**. For information about using Azure Support, read the [Azure Support FAQ](/support/faq/).
 
 
 ## Components of a Remote Desktop connection
@@ -35,14 +37,14 @@ These are the components involved in an RDP connection:
 Before proceeding, it might help to mentally review what has changed since the last successful Remote Desktop connection to the VM. For example:
 
 - If the public IP address of the VM or the cloud service containing the VM (also called the virtual IP address [VIP](https://en.wikipedia.org/wiki/Virtual_IP_address)) has changed, then the RDP failure could be because your DNS client cache still has the *old IP address* registered for the DNS name. Flush your DNS client cache and try connecting the VM again. Or try connecting directly with the new VIP.
-- If you are using a third party application to manage your Remote Desktop connections instead of using any of the Azure Management Portals, verify that the application configuration includes the correct TCP port for the Remote Desktop traffic. You can check this port for a classic virtual machine in the [Azure Management Portal](https://manage.windowsazure.cn), by clicking the VM's Settings > Endpoints.
+- If you are using a third party application to manage your Remote Desktop connections instead of using any of the Azure portals, verify that the application configuration includes the correct TCP port for the Remote Desktop traffic. You can check this port for a classic virtual machine in the [Azure portal](https://portal.azure.cn), by clicking the VM's Settings > Endpoints.
 
 
 ## Preliminary steps
 
 Before proceeding to the detailed troubleshooting,
 
-- Check the status of the virtual machine in the Azure Management Portal or the Azure Management Portal for any obvious issues
+- Check the status of the virtual machine in the Azure classic portal or the Azure portal for any obvious issues
 - Follow the [quick fix steps for common RDP errors in the basic troubleshooting guide](/documentation/articles/virtual-machines-troubleshoot-remote-desktop-connections#quickfixrdp)
 
 
@@ -80,7 +82,7 @@ Verify that a computer directly connected to the Internet can make Remote Deskto
 
 ![](./media/virtual-machines-rdp-detailed-troubleshoot/tshootrdp_2.png)
 
-ccIf you do not have a computer that is directly connected to the Internet, create and test with a new Azure virtual machine in a resource group or cloud service. For more information, see [Create a virtual machine running Windows in Azure](/documentation/articles/virtual-machines-windows-tutorial-classic-portal). You can delete the virtual machine and the resource group or the cloud service, after the test.
+If you do not have a computer that is directly connected to the Internet, create and test with a new Azure virtual machine in a resource group or cloud service. For more information, see [Create a virtual machine running Windows in Azure](/documentation/articles/virtual-machines-windows-tutorial-classic-portal). You can delete the virtual machine and the resource group or the cloud service, after the test.
 
 If you can create a Remote Desktop connection with a computer directly attached to the Internet, check your organization intranet edge device for:
 
@@ -95,6 +97,8 @@ Work with your network administrator to correct the settings of your organizatio
 For virtual machines created using the classic deployment model, verify that another Azure virtual machine that is in the same cloud service or virtual network can make Remote Desktop connections to your Azure virtual machine.
 
 ![](./media/virtual-machines-rdp-detailed-troubleshoot/tshootrdp_3.png)
+
+> [AZURE.NOTE] For virtual machines created in Resource Manager, skip to [Source 4: Network Security Groups](#nsgs).
 
 If you do not have another virtual machine in the same cloud service or virtual network, you can create a new one by using the steps in [Create a virtual machine running Windows in Azure](/documentation/articles/virtual-machines-windows-tutorial-classic-portal). Delete the extra virtual machine after the test is completed.
 

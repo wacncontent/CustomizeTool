@@ -2,7 +2,7 @@
 
 <properties
    pageTitle="Create Hadoop clusters in HDInsight | Azure"
-   	description="Learn how to create clusters for Azure HDInsight by using the Azure Management Portal."
+   	description="Learn how to create clusters for Azure HDInsight by using the Azure Portal."
    services="hdinsight"
    documentationCenter=""
    tags="azure-portal"
@@ -12,16 +12,18 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="01/06/2016"
+	ms.date="06/10/2016"
 	wacn.date=""/>
 
-# Create Windows-based Hadoop clusters in HDInsight using the Azure Management Portal
+# Create Windows-based Hadoop clusters in HDInsight using the Azure Portal
 
-[AZURE.INCLUDE [selector](../includes/hdinsight-create-windows-cluster-selector.md)]
+[AZURE.INCLUDE [selector](../includes/hdinsight-selector-create-clusters.md)]
 
-Learn how to create an Hadoop cluster in HDInsight using Azure Management Portal. The Microsoft [Azure Management Portal](/documentation/articles/azure-portal-overview) is a central place where you can provision and manage your Azure resources. Azure Management Portal is one of the tools you can use to create either Linux-based or Windows-based Hadoop cluster in HDInsight. For other cluster creation tools and features click the tab select on the top of this page or see [Cluster creation methods](/documentation/articles/hdinsight-provision-clusters-v1#cluster-creation-methods).
+Learn how to create an Hadoop cluster in HDInsight using Azure Portal. The Microsoft [Azure portal](/documentation/articles/azure-portal-overview/) is a central place where you can provision and manage your Azure resources. Azure Portal is one of the tools you can use to create either Linux-based or Windows-based Hadoop cluster in HDInsight. For other cluster creation tools and features click the tab select on the top of this page or see [Cluster creation methods](/documentation/articles/hdinsight-provision-clusters-v1/#cluster-creation-methods).
 
-###Prerequisites:
+##Prerequisites:
+
+[AZURE.INCLUDE [delete-cluster-warning](../includes/hdinsight-delete-cluster-warning.md)]
 
 Before you begin the instructions in this article, you must have the following:
 
@@ -32,17 +34,17 @@ Before you begin the instructions in this article, you must have the following:
 
 **To create an HDInsight cluster**
 
-1. Sign in to the [Azure Management Portal](https://manage.windowsazure.cn).
+1. Sign in to the [Azure Portal](https://portal.azure.cn).
 2. Click **NEW**, Click **Data Analytics**, and then click **HDInsight**.
 
-    ![Creating a new cluster in the Azure Management Portal](./media/hdinsight-provision-clusters-v1/HDI.CreateCluster.1.png "Creating a new cluster in the Azure Management Portal")
+    ![Creating a new cluster in the Azure Portal](./media/hdinsight-provision-clusters-v1/HDI.CreateCluster.1.png "Creating a new cluster in the Azure Portal")
 
 3. Type or select the following values:
 
   * **Cluster Name**: Enter a name for the cluster. A green check will appear beside the cluster name if the name is available.
   * **Cluster Type**: Select **Hadoop**. Other options inclue **HBase**, **Storm**, and **Spark**.
   * **Cluster Operating System**: Select **Windows**. To create a Linux-base cluster, select **Linux**.
-  * **Version**: See [HDInsight versions](/documentation/articles/hdinsight-component-versioning-v1).
+  * **Version**: See [HDInsight versions](/documentation/articles/hdinsight-component-versioning-v1/).
   * **Subscription**: Select the Azure subscription that will be used for creating this cluster.
   * **Resource Group**: Select an existing or create a new resource group. This entry will default to one of your existing resource groups, if any are available.
   * **Credentials**: Configure the username and the password for the Hadoop user (HTTP user). If you enable remote desktop for the cluster, you will need to configure the remote desktop user username and password, and an account expiration date. Click **Select** at the bottom to save the changes.
@@ -66,12 +68,12 @@ Before you begin the instructions in this article, you must have the following:
 
   * **Optional Configuration** to select the cluster version, as well as configure other optional settings such as joining a **Virtual Network**, setting up an **External Metastore** to hold data for Hive and Oozie, use Script Actions to customize a cluster to install custom components, or use additional storage accounts with the cluster.
 
-  		* **HDInsight Version**: Select the version you want to use for the cluster. For more information, see [HDInsight cluster versions](/documentation/articles/hdinsight-component-versioning-v1).
+  		* **HDInsight Version**: Select the version you want to use for the cluster. For more information, see [HDInsight cluster versions](/documentation/articles/hdinsight-component-versioning-v1/).
   		* **Virtual Network**: Select an Azure virtual network and the subnet if you want to place the cluster into a virtual network.  
 
 			![Virtual network blade](./media/hdinsight-provision-clusters-v1/HDI.CreateCluster.6.png "Specify virtual network details")
 
-			For information on using HDInsight with a Virtual Network, including specific configuration requirements for the Virtual Network, see [Extend HDInsight capbilities by using an Azure Virtual Network](/documentation/articles/hdinsight-extend-hadoop-virtual-network).
+			For information on using HDInsight with a Virtual Network, including specific configuration requirements for the Virtual Network, see [Extend HDInsight capbilities by using an Azure Virtual Network](/documentation/articles/hdinsight-extend-hadoop-virtual-network/).
   
 
   		
@@ -86,8 +88,10 @@ Before you begin the instructions in this article, you must have the following:
 
 
 			>[AZURE.NOTE] The Azure SQL database used for the metastore must allow connectivity to other Azure services, including Azure HDInsight. On the Azure SQL database dashboard, on the right side, click the server name. This is the server on which the SQL database instance is running. Once you are on the server view, click **Configure**, and then for **Azure Services**, click **Yes**, and then click **Save**.
+            &nbsp;
+            > [AZURE.IMPORTANT] When creating a metastore, do not use a database name that contains dashes or hyphens, as this can cause the cluster creation process to fail.
 		
-  		* **Script Actions** if you want to use a custom script to customize a cluster, as the cluster is being created. For more information about script actions, see [Customize HDInsight clusters using Script Action](/documentation/articles/hdinsight-hadoop-customize-cluster-v1). On the Script Actions blade provide the details as shown in the screen capture.
+  		* **Script Actions** if you want to use a custom script to customize a cluster, as the cluster is being created. For more information about script actions, see [Customize HDInsight clusters using Script Action](/documentation/articles/hdinsight-hadoop-customize-cluster-v1/). On the Script Actions blade provide the details as shown in the screen capture.
   	
 
 			![Script action blade](./media/hdinsight-provision-clusters-v1/HDI.CreateCluster.8.png "Specify script action")
@@ -128,14 +132,14 @@ Before you begin the instructions in this article, you must have the following:
 
 ##Customize clusters
 
-- See [Customize HDInsight clusters using Bootstrap](/documentation/articles/hdinsight-hadoop-customize-cluster-bootstrap).
-- See [Customize Windows-based HDInsight clusters using Script Action](/documentation/articles/hdinsight-hadoop-customize-cluster-v1).
+- See [Customize HDInsight clusters using Bootstrap](/documentation/articles/hdinsight-hadoop-customize-cluster-bootstrap/).
+- See [Customize Windows-based HDInsight clusters using Script Action](/documentation/articles/hdinsight-hadoop-customize-cluster-v1/).
 
 ##Next steps
 In this article, you have learned several ways to create an HDInsight cluster. To learn more, see the following articles:
 
-* [Get started with Azure HDInsight](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1) - Learn how to start working with your HDInsight cluster
-* [Submit Hadoop jobs programmatically](/documentation/articles/hdinsight-submit-hadoop-jobs-programmatically) - Learn how to programmatically submit jobs to HDInsight
-* [Manage Hadoop clusters in HDInsight by using the Azure Management Portal](/documentation/articles/hdinsight-administer-use-management-portal-v1)
+* [Get started with Azure HDInsight](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1/) - Learn how to start working with your HDInsight cluster
+* [Submit Hadoop jobs programmatically](/documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/) - Learn how to programmatically submit jobs to HDInsight
+* [Manage Hadoop clusters in HDInsight by using the Azure Portal](/documentation/articles/hdinsight-administer-use-management-portal-v1/)
 
 

@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="storage"
-	ms.date="01/20/2016"
+	ms.date="06/24/2016"
 	wacn.date=""/>
 
 # Node.js web app using the Azure Table Service
@@ -49,9 +49,9 @@ Before following the instructions in this article, ensure that you have the foll
 
 Create an Azure storage account. The app will use this account to store the to-do items.
 
-1.  Log into the [Azure Management Portal](https://manage.windowsazure.cn/).
+1.  Log into the [Azure Portal](https://portal.azure.cn/).
 
-2. Click the **New** icon on the bottom left of the portal, then click **DATA SERVICE** > **Storage**. Give the storage account a unique name and create a new [resource group](/documentation/articles/resource-group-overview) for it.
+2. Click the **New** icon on the bottom left of the portal, then click **DATA SERVICE** > **Storage**. Give the storage account a unique name and create a new [resource group](/documentation/articles/resource-group-overview/) for it.
 
   	![New Button](./media/storage-nodejs-use-table-storage-web-site/configure-storage.png)
 
@@ -474,9 +474,9 @@ Even though the application is running locally, it is storing the data in the Az
 
 The steps in this section use the Azure command-line tools to create a new web app in Azure, and then use Git to deploy your application. To perform these steps you must have an Azure subscription.
 
-> [AZURE.NOTE] These steps can also be performed by using the [Azure Management Portal](https://manage.windowsazure.cn/). See [Build and deploy a Node.js web app in Azure].
+> [AZURE.NOTE] These steps can also be performed by using the [Azure Portal](https://portal.azure.cn/). See [Build and deploy a Node.js web app in Azure].
 >
-> If this is the first web app you have created, you must use the Azure Management Portal to deploy this application.
+> If this is the first web app you have created, you must use the Azure Portal to deploy this application.
 
 To get started, install the [Azure CLI] by entering the following command from the command line:
 
@@ -531,7 +531,7 @@ In this step, you will download a file containing information about your subscri
 		info:   Executing `git remote add azure https://username@tabletasklist.chinacloudsites.cn/TableTasklist.git`
 		info:   site create command OK
 
-	> [AZURE.NOTE] If this is the first Azure web app for your subscription, you will be instructed to use the Azure Management Portal to create the web app. For more information, see [Build and deploy a Node.js web app in Azure].
+	> [AZURE.NOTE] If this is the first Azure web app for your subscription, you will be instructed to use the Azure Portal to create the web app. For more information, see [Build and deploy a Node.js web app in Azure].
 
 ### Set environment variables
 
@@ -544,7 +544,7 @@ From the command line, enter the following:
 
 Replace **<storage account name>** with the name of the storage account you created earlier, and replace **<storage access key>** with the primary access key for your storage account. (Use the same values as the config.json file that you created earlier.)
 
-Alternatively, you can set environment variables in the [Azure Management Portal](https://manage.windowsazure.cn/):
+Alternatively, you can set environment variables in the [Azure Portal](https://portal.azure.cn/):
 
 1.  Open the web app's blade by clicking **Browse** > **Web Apps** > your web app name.
 
@@ -597,8 +597,8 @@ While the steps in this article describe using the Table Service to store inform
 
 <!-- URLs -->
 
-[Build and deploy a Node.js web app in Azure]: /documentation/articles/web-sites-nodejs-develop-deploy-mac
-[Continuous deployment using GIT in Azure Web App]: /documentation/articles/web-sites-publish-source-control
+[Build and deploy a Node.js web app in Azure]: /documentation/articles/web-sites-nodejs-develop-deploy-mac/
+[Continuous deployment using GIT in Azure Web App]: /documentation/articles/web-sites-publish-source-control/
 [Azure Developer Center]: /develop/nodejs/
 
 [node]: http://nodejs.org
@@ -607,18 +607,18 @@ While the steps in this article describe using the Table Service to store inform
 [for free]: http://windowsazure.cn
 [Git remote]: http://git-scm.com/docs/git-remote
 
-[Node.js web app with MongoDB]: /documentation/articles/web-sites-nodejs-store-data-mongodb
-[Azure CLI]: /documentation/articles/xplat-cli-install
+[Node.js web app with MongoDB]: /documentation/articles/web-sites-nodejs-store-data-mongodb/
+[Azure CLI]: /documentation/articles/xplat-cli-install/
 
-[Continuous deployment using GIT in Azure Web App]: /documentation/articles/web-sites-publish-source-control
+[Continuous deployment using GIT in Azure Web App]: /documentation/articles/web-sites-publish-source-control/
 [azure]: https://github.com/Azure/azure-sdk-for-node
 [node-uuid]: https://www.npmjs.com/package/node-uuid
 [nconf]: https://www.npmjs.com/package/nconf
 [async]: https://www.npmjs.com/package/async
 
-[Azure Management Portal]: https://manage.windowsazure.cn
+[Azure Portal]: https://portal.azure.cn
 
-[Create and deploy a Node.js application to an Azure Web Site]: /documentation/articles/web-sites-nodejs-develop-deploy-mac
+[Create and deploy a Node.js application to an Azure Web Site]: /documentation/articles/web-sites-nodejs-develop-deploy-mac/
  
 <!-- Image References -->
 

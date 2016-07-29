@@ -16,11 +16,11 @@
 
 Hybrid Connections can connect [Azure Web App](/documentation/services/web-sites/) Web Apps to on-premises resources that use a static TCP port. Supported resources include Microsoft SQL Server, MySQL, HTTP Web APIs, Mobile Services, and most custom Web Services.
 
-In this tutorial, you will learn how to create an Azure web app in the [Azure Management Portal](https://manage.windowsazure.cn/), connect the web app to your local on-premises SQL Server database using the new Hybrid Connection feature, create a simple ASP.NET application that will use the hybrid connection, and deploy the application to the Azure web app. The completed web app on Azure stores user credentials in a membership database that is on-premises. The tutorial assumes no prior experience using Azure or ASP.NET.
+In this tutorial, you will learn how to create an Azure web app in the [Azure Portal](https://manage.windowsazure.cn/), connect the web app to your local on-premises SQL Server database using the new Hybrid Connection feature, create a simple ASP.NET application that will use the hybrid connection, and deploy the application to the Azure web app. The completed web app on Azure stores user credentials in a membership database that is on-premises. The tutorial assumes no prior experience using Azure or ASP.NET.
 
 >[AZURE.NOTE] If you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.
 >
->The Web Apps portion of the Hybrid Connections feature is available only in the [Azure Management Portal](https://manage.windowsazure.cn). To create a connection in BizTalk Services, see [Hybrid Connections](/documentation/articles/integration-hybrid-connection-overview/).  
+>The Web Apps portion of the Hybrid Connections feature is available only in the [Azure Portal](https://portal.azure.cn). To create a connection in BizTalk Services, see [Hybrid Connections](/documentation/articles/integration-hybrid-connection-overview/).  
 
 ## Prerequisites ##
 
@@ -59,7 +59,7 @@ If you already have SQL Server installed in a configuration and in an environmen
 <a name="InstallSQL"></a>
 ## A. Install SQL Server Express, enable TCP/IP, and create a SQL Server database on-premises ##
 
-This section shows you how to install SQL Server Express, enable TCP/IP, and create a database so that your web application will work with the Azure Management Portal.
+This section shows you how to install SQL Server Express, enable TCP/IP, and create a database so that your web application will work with the Azure Portal.
 
 ### Install SQL Server Express ###
 
@@ -113,11 +113,11 @@ Your Visual Studio web application requires a membership database that can be ac
 	![MembershipDB created][SSMSMembershipDBCreated]
 
 <a name="CreateSite"></a>
-## B. Create a web app in the Azure Management Portal ##
+## B. Create a web app in the Azure Portal ##
 
-> [AZURE.NOTE] If you have already created a web app in the Azure Management Portal that you want to use for this tutorial, you can skip ahead to [Create a Hybrid Connection and a BizTalk Service](#CreateHC) and continue from there.
+> [AZURE.NOTE] If you have already created a web app in the Azure Portal that you want to use for this tutorial, you can skip ahead to [Create a Hybrid Connection and a BizTalk Service](#CreateHC) and continue from there.
 
-1. In the [Azure Management Portal](https://manage.windowsazure.cn), click **New** > **Web + Mobile** > **Web app**.
+1. In the [Azure Portal](https://portal.azure.cn), click **New** > **Web + Mobile** > **Web app**.
 
 	![New button][New]
 
@@ -236,7 +236,7 @@ Now, you'll publish your application to your Azure web app and then test it to s
 
 ### Publish the web application ###
 
-1. You can download your publishing profile for the Azure web app in the Azure Management Portal. On the blade for your web app, click **Get publish profile**, and then save the file to your computer.
+1. You can download your publishing profile for the Azure web app in the Azure Portal. On the blade for your web app, click **Get publish profile**, and then save the file to your computer.
 
 	![Download publish profile][PortalDownloadPublishProfile]
 
@@ -295,11 +295,11 @@ You have now created and deployed an ASP.NET web application that uses a hybrid 
 
 [Hybrid Connections overview](/home/features/biztalk-services/)
 
-[BizTalk Services: Dashboard, Monitor, Scale, Configure, and Hybrid Connection tabs](/documentation/articles/biztalk-dashboard-monitor-scale-tabs)
+[BizTalk Services: Dashboard, Monitor, Scale, Configure, and Hybrid Connection tabs](/documentation/articles/biztalk-dashboard-monitor-scale-tabs/)
 
 [Building a Real-World Hybrid Cloud with Seamless Application Portability (Channel 9 video)](http://channel9.msdn.com/events/TechEd/NorthAmerica/2014/DCIM-B323#fbid=)
 
-[Connect to an on-premises SQL Server from an Azure mobile service using Hybrid Connections](/documentation/articles/mobile-services-dotnet-backend-hybrid-connections-get-started)
+[Connect to an on-premises SQL Server from an Azure mobile service using Hybrid Connections](/documentation/articles/mobile-services-dotnet-backend-hybrid-connections-get-started/)
 
 [Connect to an on-premises SQL Server from Azure Mobile Services using Hybrid Connections (Channel 9 video)](http://channel9.msdn.com/Series/Windows-Azure-Mobile-Services/Connect-to-an-on-premises-SQL-Server-from-Azure-Mobile-Services-using-Hybrid-Connections)
 

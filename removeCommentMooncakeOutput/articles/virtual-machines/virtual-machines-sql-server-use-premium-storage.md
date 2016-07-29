@@ -1,3 +1,5 @@
+<!-- rename to virtual-machines-windows-classic-sql-server-premium-storage -->
+
 <properties
 	pageTitle="Use Azure Premium Storage with SQL Server | Azure"
 	description="This article uses resources created with the classic deployment model, and gives guidance on using Azure Premium Storage with SQL Server running on Azure Virtual Machines."
@@ -18,9 +20,9 @@
 
 ## Overview
 
-[Azure Premium Storage](/documentation/articles/storage-premium-storage-preview-portal) is the next generation of storage that provides low latency and high throughput IO. It works best for key IO intensive workloads, such as SQL Server on IaaS [Virtual Machines](/home/features/virtual-machines/).
+[Azure Premium Storage](/documentation/articles/storage-premium-storage/) is the next generation of storage that provides low latency and high throughput IO. It works best for key IO intensive workloads, such as SQL Server on IaaS [Virtual Machines](/home/features/virtual-machines/).
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager model.
 
 
 This article provides planning and guidance for migrating a Virtual Machine running SQL Server to use Premium Storage. This includes Azure infrastructure (networking, storage) and guest Windows VM steps. The example in the [Appendix](#appendix-migrating-a-multisite-alwayson-cluster-to-premium-storage) shows a full comphrensive end to end migration of how to move larger VMs to take advantage of improved local SSD storage with PowerShell.
@@ -33,7 +35,7 @@ It is important to understand the end-to-end process of utilizing Azure Premium 
 - Possible migration approaches.
 - Full end-to-end example showing Azure, Windows, and SQL Server steps for  the migration of an existing AlwaysOn implementation.
 
-For more background information on SQL Server in Azure Virtual Machines, see [SQL Server in Azure Virtual Machines](/documentation/articles/virtual-machines-sql-server-infrastructure-services).
+For more background information on SQL Server in Azure Virtual Machines, see [SQL Server in Azure Virtual Machines](/documentation/articles/virtual-machines-windows-sql-server-iaas-overview/).
 
 **Author:** Daniel Sol
 **Technical Reviewers:** Luis Carlos Vargas Herring, Sanjay Mishra, Pravin Mital, Juergen Thomas, Gonzalo Ruiz.
@@ -44,7 +46,7 @@ There are several prerequisites for using Premium Storage.
 
 ### Machine size
 
-For using Premium Storage you will need to use DS series Virtual Machines (VM). If you have not used DS Series machines in your cloud service before, you must delete the existing VM, keep the attached disks, and then create a new cloud service before recreating  the VM as DS* role size. For more information on Virtual Machine sizes, see [Virtual Machine and Cloud Service Sizes for Azure](/documentation/articles/virtual-machines-size-specs).
+For using Premium Storage you will need to use DS series Virtual Machines (VM). If you have not used DS Series machines in your cloud service before, you must delete the existing VM, keep the attached disks, and then create a new cloud service before recreating  the VM as DS* role size. For more information on Virtual Machine sizes, see [Virtual Machine and Cloud Service Sizes for Azure](/documentation/articles/virtual-machines-linux-sizes/).
 
 ### Cloud services
 
@@ -95,7 +97,7 @@ The following **New-AzureStorageAccountPowerShell** command with the "Premium_LR
 
 The main difference between creating disks that are part of a Premium Storage account is the disk cache setting. For SQL Server Data volume disks it is recommended that you use '**Read Caching**'. For Transaction log volumes, the disk cache setting should be set to '**None**'. This is different from the recommendations for Standard Storage accounts.
 
-Once the VHDs have been attached, the cache setting cannot be altered. You would need to detach and reattach the VHD with an updated cahce setting.
+Once the VHDs have been attached, the cache setting cannot be altered. You would need to detach and reattach the VHD with an updated cache setting.
 
 ### Windows storage spaces
 
@@ -144,9 +146,9 @@ Once you have mapped VHDs to Physical Disks in Storage Pools you can then detach
 
 ### VM storage bandwidth and VHD storage throughput
 
-The amount of storage performance depends on the DS* VM size specified and the VHD sizes. The VMs have different allowances for the number of VHDs that can be attached and the maximum bandwidth they will support (MB/s). For the specific bandwidth numbers, see [Virtual Machine and Cloud Service Sizes for Azure](/documentation/articles/virtual-machines-size-specs).
+The amount of storage performance depends on the DS* VM size specified and the VHD sizes. The VMs have different allowances for the number of VHDs that can be attached and the maximum bandwidth they will support (MB/s). For the specific bandwidth numbers, see [Virtual Machine and Cloud Service Sizes for Azure](/documentation/articles/virtual-machines-linux-sizes/).
 
-Increased IOPS are achieved with larger disk sizes. You should consider this when you think about your migration path. For details, [see the table for IOPS and Disk Types](/documentation/articles/storage-premium-storage-preview-portal#scalability-and-performance-targets-when-using-premium-storage).
+Increased IOPS are achieved with larger disk sizes. You should consider this when you think about your migration path. For details, [see the table for IOPS and Disk Types](/documentation/articles/storage-premium-storage/#scalability-and-performance-targets-when-using-premium-storage).
 
 Finally, consider that VMs have different maximum disk bandwidths they will support for all disks attached. Under high load, you could saturate the maximum disk bandwidth available for that VM role size. For example a Standard_DS14 will support up to 512MB/s; therefore, with three P30 disks you could saturate the disk bandwidth of the VM. But in this example, the throughput limit could be exceeded depending on the mix of read and write IOs.
 
@@ -195,7 +197,7 @@ The example below shows how to place the OS VHD onto premium storage and attach 
     $xiostorage = Get-AzureStorageKey -StorageAccountName $newxiostorageaccountname
 
     ##Generate storage acc contexts
-    $xioContext = New-AzureStorageContext -Environment AzureChinaCloud -StorageAccountName $newxiostorageaccountname -StorageAccountKey $xiostorage.Primary   
+    $xioContext = New-AzureStorageContext -Environment AzureChinaCloud -StorageAccountName $newxiostorageaccountname -StorageAccountKey $xiostorage.Primary
 
     #Create container
     $containerName = 'vhds'
@@ -205,7 +207,7 @@ The example below shows how to place the OS VHD onto premium storage and attach 
     #NOTE: Set up subscription and default storage account which will be used to place the OS VHD in
 
     #If you want to place the OS VHD Premium Storage Account
-    Set-AzureSubscription -Environment AzureChinaCloud -SubscriptionName $mysubscription -CurrentStorageAccount  $newxiostorageaccountname  
+    Set-AzureSubscription -Environment AzureChinaCloud -SubscriptionName $mysubscription -CurrentStorageAccount  $newxiostorageaccountname
 
     #If you wanted to place the OS VHD Standard Storage Account but attach Premium Storage VHDs then you would run this instead:
     $standardstorageaccountname = "danstdams"
@@ -276,7 +278,7 @@ This scenario demonstrates where you have existing customized images that reside
 
 
 #### Step 3: Use existing image
-You can use an existing image. Or, you can [take an image of an existing machine](/documentation/articles/virtual-machines-capture-image-windows-server). Note the machine you image does not have to be DS* machine. Once you have the image, the following steps show how to copy it to the Premium Storage account with the **Start-AzureStorageBlobCopy** PowerShell commandlet.
+You can use an existing image. Or, you can [take an image of an existing machine](/documentation/articles/virtual-machines-windows-classic-capture-image/). Note the machine you image does not have to be DS* machine. Once you have the image, the following steps show how to copy it to the Premium Storage account with the **Start-AzureStorageBlobCopy** PowerShell commandlet.
 
     #Get storage account keys:
     #Standard Storage account
@@ -1091,7 +1093,7 @@ For information for individual blobs:
     Get-AzureVM -ServiceName $destcloudsvc -Name $vmNameToMigrate  | Add-AzureEndpoint -Name $epname -Protocol $prot -LocalPort $locport -PublicPort $pubport -ProbePort 59999 -ProbeIntervalInSeconds 5 -ProbeTimeoutInSeconds 11  -ProbeProtocol "TCP" -InternalLoadBalancerName $ilb -LBSetName $ilb -DirectServerReturn $true | Update-AzureVM
 
 
-    #STOP!!! CHECK in the Azure Management Portal or Machine Endpoints through powershell that these Endpoints are created!
+    #STOP!!! CHECK in the Azure Classic Management Portal or Machine Endpoints through powershell that these Endpoints are created!
 
     #SET ACLs or Azure Network Security Groups & Windows FWs
 
@@ -1125,9 +1127,9 @@ To add in IP Address, see the [Appendix](#appendix-migrating-a-multisite-alwayso
 	![Appendix15][25]
 
 ## Additional resources
-- [Azure Premium Storage](/documentation/articles/storage-premium-storage-preview-portal)
+- [Azure Premium Storage](/documentation/articles/storage-premium-storage/)
 - [Virtual Machines](/home/features/virtual-machines/)
-- [SQL Server in Azure Virtual Machines](/documentation/articles/virtual-machines-sql-server-infrastructure-services)
+- [SQL Server in Azure Virtual Machines](/documentation/articles/virtual-machines-windows-sql-server-iaas-overview/)
 
 <!-- IMAGES -->
 [1]: ./media/virtual-machines-sql-server-use-premium-storage/1_VNET_Portal.png

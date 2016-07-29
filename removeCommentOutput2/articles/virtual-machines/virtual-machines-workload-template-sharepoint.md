@@ -1,7 +1,7 @@
-<!-- not suitable for Mooncake -->
+<!-- deleted in Global -->
 
 <properties
-	pageTitle="Deploy SharePoint farms with ARM templates | Windows Azure"
+	pageTitle="Deploy SharePoint farms with ARM templates | Azure"
 	description="Easily deploy 3-server or 9-server SharePoint farm with Resource Manager templates and the Azure Management Portal, Azure PowerShell, or the Azure CLI."
 	services="virtual-machines"
 	documentationCenter=""
@@ -17,7 +17,7 @@
 
 # Deploy SharePoint farms with Azure Resource Manager templates
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model. You can't create this resource with the classic deployment model.
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the Resource Manager deployment model, which Microsoft recommends for most new deployments instead of the classic deployment model. You can't create this resource with the classic deployment model.
 
 Use the instructions in this article to deploy a new three-server or nine-server SharePoint Server 2013 farm using Resource Manager templates.
 
@@ -29,11 +29,11 @@ For a basic SharePoint Server 2013 farm, a Resource Manager template creates thr
 
 You can run the template with the Azure Management Portal, Azure PowerShell, or the Azure CLI.
 
-> [AZURE.NOTE] You can also create this configuration using the [SharePoint 2013 non-HA Farm](https://azure.microsoft.com/marketplace/partners/sharepoint2013/sharepoint2013farmsharepoint2013-nonha/) item in the Azure gallery of the Azure Preview portal.
+> [AZURE.NOTE] You can also create this configuration using the [SharePoint 2013 non-HA Farm](https://azure.microsoft.com/marketplace/partners/sharepoint2013/sharepoint2013farmsharepoint2013-nonha/) item in the Azure gallery of the Azure Management Portal.
 
 ### Azure Management Portal
 
-To deploy this workload using a Resource Manager template and the Azure Management Portal, click [here](https://manage.windowsazure.cn#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fsharepoint-three-vm%2Fazuredeploy.json).
+To deploy this workload using a Resource Manager template and the Azure Management Portal, click [here](https://manage.windowsazure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fsharepoint-three-vm%2Fazuredeploy.json).
 
 ![](./media/virtual-machines-workload-template-sharepoint/azure-portal-template.png)
 
@@ -88,7 +88,7 @@ Next, use the following command and specify the name of your new resource group 
 
 Here is an example.
 
-	azure group create sp3serverfarm chinaeast
+	azure group create sp3serverfarm chinaeast2
 	azure group deployment create --template-uri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/sharepoint-three-vm/azuredeploy.json sp3serverfarm spdevtest
 
 When you run the **azure group deployment create** command, you will be prompted to supply the values for a series of parameters. When you have specified all the parameter values, Azure creates and configures the virtual machines.
@@ -101,11 +101,11 @@ For a high-availability SharePoint Server 2013 farm, a Resource Manager template
 
 ![](./media/virtual-machines-workload-template-sharepoint/nine-server-sharepoint-farm.png)
 
-> [AZURE.NOTE] You can also create this configuration using the [SharePoint 2013 HA Farm](https://azure.microsoft.com/marketplace/partners/sharepoint2013/sharepoint2013farmsharepoint2013-ha/) item in the Azure gallery of the Azure Preview portal.
+> [AZURE.NOTE] You can also create this configuration using the [SharePoint 2013 HA Farm](https://azure.microsoft.com/marketplace/partners/sharepoint2013/sharepoint2013farmsharepoint2013-ha/) item in the Azure gallery of the Azure Management Portal.
 
 ### Azure Management Portal
 
-To deploy this workload using a Resource Manager template and the Azure Management Portal, click [here](https://manage.windowsazure.cn#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fsharepoint-server-farm-ha%2Fazuredeploy.json).
+To deploy this workload using a Resource Manager template and the Azure Management Portal, click [here](https://manage.windowsazure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fsharepoint-server-farm-ha%2Fazuredeploy.json).
 
 ![](./media/virtual-machines-workload-template-sharepoint/azure-portal-template.png)
 

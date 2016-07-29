@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="01/28/2016"
+	ms.date="06/16/2016"
 	wacn.date=""/>
 
 #Run Hive queries using PowerShell
@@ -19,7 +19,7 @@
 
 This document provides an example of using Azure PowerShell in the Azure Resource Group mode to run Hive queries in a Hadoop on HDInsight cluster.
 
-> [AZURE.NOTE] This document does not provide a detailed description of what the HiveQL statements that are used in the examples do. For information on the HiveQL that is used in this example, see [Use Hive with Hadoop on HDInsight](/documentation/articles/hdinsight-use-hive).
+> [AZURE.NOTE] This document does not provide a detailed description of what the HiveQL statements that are used in the examples do. For information on the HiveQL that is used in this example, see [Use Hive with Hadoop on HDInsight](/documentation/articles/hdinsight-use-hive/).
 
 
 **Prerequisites**
@@ -27,7 +27,9 @@ This document provides an example of using Azure PowerShell in the Azure Resourc
 To complete the steps in this article, you will need the following.
 
 - **An Azure HDInsight (Hadoop on HDInsight) cluster (Windows-based or Linux-based)**
-- **A workstation with Azure PowerShell**. See [Install Azure PowerShell 1.0 and greater](/documentation/articles/hdinsight-administer-use-powershell#install-azure-powershell-10-and-greater).
+- **A workstation with Azure PowerShell**.
+
+    [AZURE.INCLUDE [upgrade-powershell](../includes/hdinsight-use-latest-powershell.md)]
 
 ##Run Hive queries using Azure PowerShell
 
@@ -54,47 +56,48 @@ The following steps demonstrate how to use these cmdlets to run a job in your HD
 1. Using an editor, save the following code as **hivejob.ps1**. You must replace **CLUSTERNAME** with the name of your HDInsight cluster.
 
 		#Specify the values
-		$clusterName = "CLUSTERNAME"
-		$creds=Get-Credential
-        		
-		# Login to your Azure subscription
-		# Is there an active Azure subscription?
-		$sub = Get-AzureRmSubscription -ErrorAction SilentlyContinue
-		if(-not($sub))
-		{
-		    Add-AzureRmAccount
-		}
+        $clusterName = "CLUSTERNAME"
+        $creds=Get-Credential
 
-		#HiveQL
-		$queryString = "DROP TABLE log4jLogs;" +
-				       "CREATE EXTERNAL TABLE log4jLogs(t1 string, t2 string, t3 string, t4 string, t5 string, t6 string, t7 string) ROW FORMAT DELIMITED FIELDS TERMINATED BY ' ' STORED AS TEXTFILE LOCATION 'wasb:///example/data/';" +
-				       "SELECT * FROM log4jLogs WHERE t4 = '[ERROR]';"
+        # Login to your Azure subscription
+        # Is there an active Azure subscription?
+        $sub = Get-AzureRmSubscription -ErrorAction SilentlyContinue
+        if(-not($sub))
+        {
+            Add-AzureRmAccount
+        }
 
-		#Create an HDInsight Hive job definition
-		$hiveJobDefinition = New-AzureRmHDInsightHiveJobDefinition -Query $queryString 
+        #HiveQL
+        #Note: set hive.execution.engine=tez; is not required for
+        #      Linux-based HDInsight
+        $queryString = "set hive.execution.engine=tez;" +
+                    "DROP TABLE log4jLogs;" +
+                    "CREATE EXTERNAL TABLE log4jLogs(t1 string, t2 string, t3 string, t4 string, t5 string, t6 string, t7 string) ROW FORMAT DELIMITED FIELDS TERMINATED BY ' ' STORED AS TEXTFILE LOCATION 'wasb:///example/data/';" +
+                    "SELECT * FROM log4jLogs WHERE t4 = '[ERROR]';"
 
-		#Submit the job to the cluster
-		Write-Host "Start the Hive job..." -ForegroundColor Green
+        #Create an HDInsight Hive job definition
+        $hiveJobDefinition = New-AzureRmHDInsightHiveJobDefinition -Query $queryString 
 
-		$hiveJob = Start-AzureRmHDInsightJob -ClusterName $clusterName -JobDefinition $hiveJobDefinition -ClusterCredential $creds
+        #Submit the job to the cluster
+        Write-Host "Start the Hive job..." -ForegroundColor Green
 
+        $hiveJob = Start-AzureRmHDInsightJob -ClusterName $clusterName -JobDefinition $hiveJobDefinition -ClusterCredential $creds
 
-		#Wait for the Hive job to complete
-		Write-Host "Wait for the job to complete..." -ForegroundColor Green
-		Wait-AzureRmHDInsightJob -ClusterName $clusterName -JobId $hiveJob.JobId -ClusterCredential $creds
+        #Wait for the Hive job to complete
+        Write-Host "Wait for the job to complete..." -ForegroundColor Green
+        Wait-AzureRmHDInsightJob -ClusterName $clusterName -JobId $hiveJob.JobId -ClusterCredential $creds
 
         #Get the cluster info so we can get the resource group, storage, etc.
         $clusterInfo = Get-AzureRmHDInsightCluster -ClusterName $clusterName
         $resourceGroup = $clusterInfo.ResourceGroup
         $storageAccountName=$clusterInfo.DefaultStorageAccount.split('.')[0]
         $container=$clusterInfo.DefaultStorageContainer
-        $storageAccountKey=Get-AzureRmStorageAccountKey `
+        $storageAccountKey=(Get-AzureRmStorageAccountKey `
             -Name $storageAccountName `
-            -ResourceGroupName $resourceGroup `
-            | %{ $_.Key1 }
-		# Print the output
-		Write-Host "Display the standard output..." -ForegroundColor Green
-		Get-AzureRmHDInsightJobOutput `
+        -ResourceGroupName $resourceGroup)[0].Value
+        # Print the output
+        Write-Host "Display the standard output..." -ForegroundColor Green
+        Get-AzureRmHDInsightJobOutput `
             -Clustername $clusterName `
             -JobId $hiveJob.JobId `
             -DefaultContainer $container `
@@ -123,20 +126,19 @@ The following steps demonstrate how to use these cmdlets to run a job in your HD
         $resourceGroup = $clusterInfo.ResourceGroup
         $storageAccountName=$clusterInfo.DefaultStorageAccount.split('.')[0]
         $container=$clusterInfo.DefaultStorageContainer
-        $storageAccountKey=Get-AzureRmStorageAccountKey `
+        $storageAccountKey=(Get-AzureRmStorageAccountKey `
             -Name $storageAccountName `
-            -ResourceGroupName $resourceGroup `
-            | %{ $_.Key1 }
+        -ResourceGroupName $resourceGroup)[0].Value
+        $queryString = "set hive.execution.engine=tez;" +
+                    "DROP TABLE log4jLogs;" +
+                    "CREATE EXTERNAL TABLE log4jLogs(t1 string, t2 string, t3 string, t4 string, t5 string, t6 string, t7 string) ROW FORMAT DELIMITED FIELDS TERMINATED BY ' ' STORED AS TEXTFILE LOCATION 'wasb:///example/data/';" +
+                    "SELECT * FROM log4jLogs WHERE t4 = '[ERROR]';"
         Invoke-AzureRmHDInsightHiveJob `
             -StatusFolder "statusout" `
             -DefaultContainer $container `
             -DefaultStorageAccountName $storageAccountName `
             -DefaultStorageAccountKey $storageAccountKey `
-            -Query @"
-        CREATE TABLE IF NOT EXISTS errorLogs (t1 string, t2 string, t3 string, t4 string, t5 string, t6 string, t7 string) STORED AS ORC;
-        INSERT OVERWRITE TABLE errorLogs SELECT t1, t2, t3, t4, t5, t6, t7 FROM log4jLogs WHERE t4 = '[ERROR]';
-        SELECT * FROM errorLogs;
-        "@
+            -Query $queryString
 
 	The output will look like the following:
 
@@ -174,10 +176,10 @@ As you can see, Azure PowerShell provides an easy way to run Hive queries in an 
 
 For general information about Hive in HDInsight:
 
-* [Use Hive with Hadoop on HDInsight](/documentation/articles/hdinsight-use-hive)
+* [Use Hive with Hadoop on HDInsight](/documentation/articles/hdinsight-use-hive/)
 
 For information about other ways you can work with Hadoop on HDInsight:
 
-* [Use Pig with Hadoop on HDInsight](/documentation/articles/hdinsight-use-pig)
+* [Use Pig with Hadoop on HDInsight](/documentation/articles/hdinsight-use-pig/)
 
-* [Use MapReduce with Hadoop on HDInsight](/documentation/articles/hdinsight-use-mapreduce)
+* [Use MapReduce with Hadoop on HDInsight](/documentation/articles/hdinsight-use-mapreduce/)

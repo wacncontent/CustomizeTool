@@ -10,12 +10,14 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="02/04/2016"
+	ms.date="04/27/2016"
 	wacn.date=""/>
 
 
-#Availability and reliability of Hadoop clusters in HDInsight
+#Availability and reliability of Windows-based Hadoop clusters in HDInsight
 
+
+>[AZURE.NOTE] The steps used in this document are specific to Windows-based HDInsight clusters. If you are using a Linux-based cluster, see [Availability and reliability of Linux-based Hadoop clusters in HDInsight](/documentation/articles/hdinsight-high-availability/) for Linux-specific information.
 
 HDInsight allows customers to deploy a variety of cluster types, for different data analytics workloads. Cluster types offered today are Hadoop clusters for query and analysis workloads, HBase clusters for NoSQL workloads, and Storm clusters for real time event processing workloads. Within a given cluster type, there are different roles for the various nodes. For example:
 
@@ -46,7 +48,7 @@ Standard implementations of Hadoop clusters typically have a single head node. H
 
 
 ## Check active head node service status
-To determine which head node is active and to check on the status of the services running on that head node, you must connect to the Hadoop cluster by using the Remote Desktop Protocol (RDP). For the RDP instructions, see [Manage Hadoop clusters in HDInsight by using the Azure Management Portal](/documentation/articles/hdinsight-administer-use-management-portal-v1#connect-to-hdinsight-clusters-by-using-rdp). Once you have remoted into the cluster, double-click on the **Hadoop Service Available ** icon located on the desktop to obtain status about which head node the Namenode, Jobtracker, Templeton, Oozieservice, Metastore, and Hiveserver2 services are running, or for HDI 3.0, the Namenode, Resource Manager, History Server, Templeton, Oozieservice, Metastore, and Hiveserver2 services.
+To determine which head node is active and to check on the status of the services running on that head node, you must connect to the Hadoop cluster by using the Remote Desktop Protocol (RDP). For the RDP instructions, see [Manage Hadoop clusters in HDInsight by using the Azure Portal](/documentation/articles/hdinsight-administer-use-management-portal-v1/#connect-to-hdinsight-clusters-by-using-rdp). Once you have remoted into the cluster, double-click on the **Hadoop Service Available ** icon located on the desktop to obtain status about which head node the Namenode, Jobtracker, Templeton, Oozieservice, Metastore, and Hiveserver2 services are running, or for HDI 3.0, the Namenode, Resource Manager, History Server, Templeton, Oozieservice, Metastore, and Hiveserver2 services.
 
 ![](./media/hdinsight-high-availability/Hadoop.Service.Availability.Status.png)
 
@@ -64,7 +66,7 @@ The head nodes are allocated as large virtual machines (VMs) by default. This si
 
 Extra-large VMs can be configured by using either Azure PowerShell cmdlets or the HDInsight SDK.
 
-The creation and provisioning of a cluster by using Azure PowerShell is documented in [Administer HDInsight using PowerShell](/documentation/articles/hdinsight-administer-use-powershell). The configuration of an extra-large head node requires the addition of the `-HeadNodeVMSize ExtraLarge` parameter to the `New-AzureRmHDInsightcluster` cmdlet used in this code.
+The creation and provisioning of a cluster by using Azure PowerShell is documented in [Administer HDInsight using PowerShell](/documentation/articles/hdinsight-administer-use-powershell/). The configuration of an extra-large head node requires the addition of the `-HeadNodeVMSize ExtraLarge` parameter to the `New-AzureRmHDInsightcluster` cmdlet used in this code.
 
     # Create a new HDInsight cluster in Azure PowerShell
 	# Configured with an ExtraLarge head-node VM
@@ -78,7 +80,7 @@ The creation and provisioning of a cluster by using Azure PowerShell is document
 				-DefaultStorageContainerName $containerName  `
 				-ClusterSizeInNodes $clusterNodes
 
-For the SDK, the story is similar. The creation and provisioning of a cluster by using the SDK is documented in [Using HDInsight .NET SDK](/documentation/articles/hdinsight-provision-clusters-v1#sdk). The configuration of an extra-large head node requires the addition of the `HeadNodeSize = NodeVMSize.ExtraLarge` parameter to the `ClusterCreateParameters()` method used in this code.
+For the SDK, the story is similar. The creation and provisioning of a cluster by using the SDK is documented in [Using HDInsight .NET SDK](/documentation/articles/hdinsight-provision-clusters-v1/#sdk). The configuration of an extra-large head node requires the addition of the `HeadNodeSize = NodeVMSize.ExtraLarge` parameter to the `ClusterCreateParameters()` method used in this code.
 
     # Create a new HDInsight cluster with the HDInsight SDK
 	# Configured with an ExtraLarge head-node VM
@@ -99,5 +101,5 @@ For the SDK, the story is similar. The creation and provisioning of a cluster by
 ## Next Steps
 
 - [Apache ZooKeeper](http://zookeeper.apache.org/ )
-- [Connect to HDInsight clusters using RDP](/documentation/articles/hdinsight-administer-use-management-portal-v1#rdp)
-- [Using HDInsight .NET SDK](/documentation/articles/hdinsight-provision-clusters-v1#sdk)
+- [Connect to HDInsight clusters using RDP](/documentation/articles/hdinsight-administer-use-management-portal-v1/#rdp)
+- [Using HDInsight .NET SDK](/documentation/articles/hdinsight-provision-clusters-v1/#sdk)

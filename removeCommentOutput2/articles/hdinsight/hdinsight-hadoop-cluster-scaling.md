@@ -1,3 +1,5 @@
+<!-- deleted in Global -->
+
 <properties
    pageTitle="Cluster Scaling in HDInsight | Azure"
    description="Change the number of data nodes in a cluster that is running on HDInsight without having to delete and recreate the cluster."
@@ -67,7 +69,7 @@ You can seamlessly add or remove nodes to your HBase cluster while it is running
 
 ## Prerequisites
 
-* Only clusters with HDInsight version 3.1.3 or higher are supported. If you are unsure of the version of your cluster, you can check the cluster version from the Azure Management Portal by clicking the HDInsight cluster name or by running the `Get-AzureHDInsightCluster –name <clustername>` command from Azure PowerShell.
+* Only clusters with HDInsight version 3.1.3 or higher are supported. If you are unsure of the version of your cluster, you can check the cluster version from the Azure Management Portal by clicking the HDInsight cluster name or by running the `Get-AzureHDInsightCluster -name <clustername>` command from Azure PowerShell.
 
 * Azure PowerShell version 0.8.14 or higher is required to perform the operation from Azure PowerShell. You can download the latest version of Azure PowerShell from the **Command-line tools** section on the [Azure Downloads](/downloads/) website. You can check on the Azure PowerShell version you have installed by using the following command from an Azure PowerShell window: `(get-module Azure).Version`
 
@@ -118,7 +120,7 @@ Here is some sample code that shows how to use the synchronous version of this m
 	            string certfriendlyname = "<CertificateFriendlyName>";     
 	            string subscriptionid = "<SubscriptionID>";
 	            string clustername = "<ClusterDNSName>";
-	     		string location = "<ClusterLocation>”";
+	     		string location = "<ClusterLocation>";
 				int newSize = <NewClusterSize>;
 	
 	            // Get the certificate object from certificate store by using the friendly name to identify it
@@ -143,4 +145,4 @@ Here is some sample code that shows how to use the synchronous version of this m
 	}
 
 
-Please refer to the [Provision Hadoop clusters in HDInsight using custom options](/documentation/articles/hdinsight-provision-clusters) topic for more information on using the HDInsight .NET SDK.
+Please refer to the [Provision Hadoop clusters in HDInsight using custom options](/documentation/articles/hdinsight-provision-clusters-v1) topic for more information on using the HDInsight .NET SDK.

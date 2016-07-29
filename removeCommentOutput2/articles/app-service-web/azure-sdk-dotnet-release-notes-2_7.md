@@ -24,7 +24,7 @@ The document also contain the release notes for the Azure SDK for .NET 2.7.1 rel
 
 Azure SDK 2.7 is only supported in Visual Studio 2015 and Visual Studio 2013. [Azure SDK 2.6](/downloads/) is the last supported SDK for Visual Studio 2012.
 
-For detailed information about this release, see [Azure SDK 2.7 announcement post](https://azure.microsoand [Azure SDK 2.7.1 announcement post](https://azure.microsoft.com/zh-cn/blog/announcing-the-azure-sdk-2-7-1-for-net/).
+For detailed information about this release, see [Azure SDK 2.7 announcement post](https://azure.microsoft.com/zh-cn/blog/2015/07/20/announcing-the-azure-sdk-2-7-for-net/) and [Azure SDK 2.7.1 announcement post](https://azure.microsoft.com/zh-cn/blog/announcing-the-azure-sdk-2-7-1-for-net/).
 
 ##Azure SDK for .NET 2.7
 
@@ -60,7 +60,7 @@ In this release the following updates were made. These updates are in preview. F
 
 ###Azure Web App Tools
 
-In this release the following updates were made to Web Tools Extensions. For more information see [this](https://azure.microsoft.com/zh-cn/blog/2015/07/20/announcing-the-azure-sdk-2-7-for-net/)  blog.
+In this release the following updates were made to Web Tools Extensions. For more information see [this](https://azure.microsoft.com/zh-cn/blog/2015/07/20/announcing-the-azure-sdk-2-7-for-net/) blog.
 
 - Support for DreamSpark accounts added
 - Full change to Azure Tools made to support the new Azure Resource Management APIs

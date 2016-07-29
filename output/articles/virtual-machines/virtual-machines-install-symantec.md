@@ -1,4 +1,4 @@
-<!-- not suitable for Mooncake -->
+<!-- rename to virtual-machines-windows-classic-install-symantec -->
 
 <properties
 	pageTitle="Install Symantec Endpoint Protection on a VM | Azure"
@@ -17,7 +17,7 @@
 
 # How to install and configure Symantec Endpoint Protection on a Windows VM
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager model.
 
 
 This article shows you how to install and configure the Symantec Endpoint Protection client on a new or existing virtual machine (VM) running Windows Server. This is the full client, which includes services such as virus and spyware protection, firewall, and intrusion prevention.
@@ -28,7 +28,7 @@ If you have an existing subscription from Symantec for an on-premises solution, 
 
 ## Install Symantec Endpoint Protection on a new virtual machine
 
-The [Azure Management Portal][Portal] lets you install the VM Agent and the Symantec security extension when you use the **From Gallery** option to create the virtual machine. Using this approach is an easy way to add protection from Symantec if you're creating a single virtual machine.
+The [Azure Classic Management Portal][Portal] lets you install the VM Agent and the Symantec security extension when you use the **From Gallery** option to create the virtual machine. Using this approach is an easy way to add protection from Symantec if you're creating a single virtual machine.
 
 This **From Gallery** option opens a wizard that helps you set up the virtual machine. You use the last page of the wizard to install the VM Agent and Symantec security extension.
 
@@ -86,12 +86,12 @@ To verify that the Symantec security extension has been installed and is up-to-d
 
 [Portal]: http://manage.windowsazure.cn
 
-[Create]: /documentation/articles/virtual-machines-windows-tutorial-classic-portal
+[Create]: /documentation/articles/virtual-machines-windows-classic-tutorial/
 
-[PS]: /documentation/articles/powershell-install-configure
+[PS]: /documentation/articles/powershell-install-configure/
 
 [Agent]: https://azure.microsoft.com/zh-cn/blog/vm-agent-and-extensions-part-2/
 
-[Logon]: /documentation/articles/virtual-machines-log-on-windows-server
+[Logon]: /documentation/articles/virtual-machines-windows-classic-connect-logon/
 
-[Ext]: http://go.microsoft.com/fwlink/p/?linkid=390493
+[Ext]: /documentation/articles/virtual-machines-linux-extensions-features/

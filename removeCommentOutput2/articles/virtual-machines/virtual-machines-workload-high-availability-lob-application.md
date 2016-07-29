@@ -1,3 +1,5 @@
+<!-- rename to virtual-machines-windows-lob -->
+
 <properties 
 	pageTitle="Line of business application in Azure | Azure" 
 	description="Learn the value of a line of business application in Azure, set up a test environment, and deploy a high-availability configuration." 
@@ -15,7 +17,7 @@
 
 # Azure Infrastructure Services Workload: High-availability line of business application
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the Resource Manager deployment model, which Microsoft recommends for most new deployments instead of the classic deployment model.
 
 
 Set up your first or next web-based, intranet-only line of business application in Azure and take advantage of ease of configuration and the ability to quickly expand the application to include new capacity.
@@ -36,7 +38,6 @@ A cross-premises virtual network is connected to an on-premises network with a s
 
 ![](./media/virtual-machines-workload-high-availability-LOB-application/CreateLOBAppHybridCloud_3.png)
  
-
 You can create this dev/test environment with an [Azure Trial Subscription](/pricing/1rmb-trial/).
 
 Your next step is to create a high-availability line of business application in Azure.

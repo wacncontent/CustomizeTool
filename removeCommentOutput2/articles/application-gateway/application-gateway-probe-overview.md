@@ -1,7 +1,7 @@
 
 
 <properties
-   pageTitle="Health monitoring overview for Azure Application Gateway | Windows Azure"
+   pageTitle="Health monitoring overview for Azure Application Gateway | Azure"
    description="Learn about the monitoring capabilities in Azure Application Gateway"
    services="application-gateway"
    documentationCenter="na"
@@ -12,7 +12,7 @@
 />
 <tags
 	ms.service="application-gateway"
-	ms.date="12/17/2015"
+	ms.date="03/03/2016"
 	wacn.date=""/>
 
 # Application Gateway health monitoring overview
@@ -61,4 +61,4 @@ Custom probes allow you to have a more granular control over the health monitori
 
 ## Next steps
 
-After learning about Application Gateway health monitoring, you can configure a [custom health probe](/documentation/articles/application-gateway-create-probe-ps) for Azure Resource Manager or a [custom health probe](/documentation/articles/application-gateway-create-probe-classic-ps) for the Azure classic deployment model.
+After learning about Application Gateway health monitoring, you can configure a [custom health probe](/documentation/articles/application-gateway-create-probe-ps/) for Azure Resource Manager or a [custom health probe](/documentation/articles/application-gateway-create-probe-classic-ps/) for the Azure classic deployment model.

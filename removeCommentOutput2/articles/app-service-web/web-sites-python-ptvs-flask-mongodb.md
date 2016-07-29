@@ -1,3 +1,5 @@
+<!-- deleted in Global -->
+
 <properties 
 	pageTitle="Flask and MongoDB on Azure with Python Tools 2.1 for Visual Studio" 
 	description="Learn how to use the Python Tools for Visual Studio to create a Flask web app that stores data in a MongoDB database instance and deploy it to Azure Websites." 

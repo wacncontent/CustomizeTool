@@ -1,4 +1,4 @@
-<!-- not suitable for Mooncake -->
+<!-- deleted in Global -->
 
 <properties
   pageTitle="Create a MongoDB cluster on Ubuntu | Azure"
@@ -17,12 +17,12 @@
 
 # Create a MongoDB cluster on Ubuntu using a Azure Resource Manager template
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the Resource Manager deployment model, which Azure recommends for most new deployments instead of the classic deployment model.
 
 
 MongoDB is an open-source document database that provides high performance, high availability, and automatic scaling. MongoDB can be installed as a stand-alone database or within a cluster, leveraging built-in replication capabilities. In some cases, you can use replication to increase read capacity. Clients have the ability to send read and write operations to different servers. You can also maintain copies in different data centers to increase the locality and availability of data for distributed applications. With MongoDB, replication also provides redundancy and increases data availability. With multiple copies of data on different database servers, replication protects a database from the loss of a single server. Replication also allows you to recover from hardware failure and service interruptions. With additional copies of the data, you can dedicate one to disaster recovery, reporting, or backup.
 
-In addition to the various flavors that were already available in the Azure gallery, now you can also easily deploy a new MongoDB cluster on Ubuntu VMs using a Azure Resource Manager template deployed through [Azure PowerShell](/documentation/articles/powershell-install-configure) or the [Azure CLI](/documentation/articles/xplat-cli-install).
+In addition to the various flavors that were already available in the Azure gallery, now you can also easily deploy a new MongoDB cluster on Ubuntu VMs using a Azure Resource Manager template deployed through [Azure PowerShell](/documentation/articles/powershell-install-configure/) or the [Azure CLI](/documentation/articles/xplat-cli-install/).
 
 Newly deployed clusters based on this template will have the topology described in the following diagram, although other topologies can be easily achieved by customizing the template presented in this article.
 
@@ -691,4 +691,4 @@ In essence, this approach suggests that you:
 -	For identical members of a group of resources (nodes in a cluster, etc.), create specific templates that leverage resource looping in order to deploy multiple instances with unique properties.
 -	For all post deployment tasks (for example, product installation, configurations, etc.), leverage script deployment extensions and create scripts specific to each technology.
 
-For more information, see [Azure Resource Manager Template Language](/documentation/articles/resource-group-authoring-templates).
+For more information, see [Azure Resource Manager Template Language](/documentation/articles/resource-group-authoring-templates/).

@@ -1,5 +1,7 @@
+<!-- deleted in Global -->
+
 <properties
-	pageTitle="SharePoint Server 2010 on Azure VMs | Windows Azure"
+	pageTitle="SharePoint Server 2010 on Azure VMs | Azure"
 	description="Learn the value of SharePoint on Azure virtual machines, the step-by-step process, and the supported scenarios for using SharePoint 2010."
 	services="virtual-machines"
 	documentationCenter=""
@@ -16,16 +18,16 @@
 
 # SharePoint 2010 deployment on Azure virtual machines
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] 
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the classic deployment model. Microsoft recommends that most new deployments use the 
 
 
-Microsoft SharePoint Server 2010 provides rich deployment flexibility, which can help organizations determine the appropriate deployment scenarios to align with their business needs and objectives. Hosted and managed in Windows Azure, the Azure Virtual Machines offering provides complete, reliable, and available infrastructure to support various on-demand application and database workloads, such as Microsoft SQL Server and SharePoint deployments.
+Microsoft SharePoint Server 2010 provides rich deployment flexibility, which can help organizations determine the appropriate deployment scenarios to align with their business needs and objectives. Hosted and managed in Azure, the Azure Virtual Machines offering provides complete, reliable, and available infrastructure to support various on-demand application and database workloads, such as Microsoft SQL Server and SharePoint deployments.
 
 While Azure virtual machines support multiple workloads, this article focuses on SharePoint deployments. Azure virtual machines enable organizations to create and manage their SharePoint infrastructure by quickly provisioning and accessing nearly any host universally. It allows full control and management over processors, RAM, CPU ranges, and other resources of SharePoint virtual machines.
 
 Azure virtual machines mitigate the need for hardware, so organizations can turn attention from handling high, upfront cost and complexity to building and managing infrastructure at scale. This means that they can innovate, experiment, and iterate in hours, as opposed to days and weeks with traditional deployments.
 
-> [AZURE.NOTE] For information about deploying SharePoint 2013 in Azure, see [Windows Azure Architectures for SharePoint 2013](https://technet.microsoft.com/zh-cn/library/dn635309.aspx) and [SharePoint farms hosted in Azure infrastructure services](/documentation/articles/virtual-machines-sharepoint-infrastructure-services).
+> [AZURE.NOTE] For information about deploying SharePoint 2013 in Azure, see [Azure Architectures for SharePoint 2013](https://technet.microsoft.com/zh-cn/library/dn635309.aspx) and [SharePoint farms hosted in Azure infrastructure services](/documentation/articles/virtual-machines-sharepoint-infrastructure-services).
 
 ## SharePoint on Azure virtual machines
 
@@ -69,7 +71,7 @@ On the Azure Management Portal, users also can upload an image on which the SysP
 
 **Figure 2: Overview of steps for uploading an image**
 
-## Deploying SharePoint 2010 on Azure 
+## Deploying SharePoint 2010 on Azure
 
 You can deploy SharePoint 2010 on Azure using the classic deployment model by following these steps:
 
@@ -221,7 +223,7 @@ To scale out a BI environment on Azure, follow these steps:
 1. Provision:
 	- Provision a VPN connection between on-premises and Azure using Azure Virtual Network. For more information, go to [Virtual Network overview](/documentation/articles/virtual-networks-overview).
 	- Use the Azure Management Portal to provision a new virtual machine from a stock image in the image library. You can upload SharePoint Server or SQL Server BI workload images to the image library and any authorized user can pick those BI component virtual machines to build the scaled-out environment.
-2. Install: 
+2. Install:
 	- If your organization does not have prebuilt images of SharePoint Server or SQL Server BI components, install SharePoint Server and SQL Server on the virtual machines using a Remote Desktop connection.
 	- For more information about installing SharePoint, go to [Install SharePoint Server 2010 by using Windows PowerShell](http://technet.microsoft.com/zh-cn/library/cc262839.aspx) or [CodePlex: AutoSPInstaller](http://autospinstaller.codeplex.com/).
 	- For more information about installing SQL Server, go to [Install SQL Server using SysPrep](http://msdn.microsoft.com/zh-cn/library/ee210664.aspx).

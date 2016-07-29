@@ -1,4 +1,4 @@
-<!-- not suitable for Mooncake -->
+<!-- rename to virtual-machines-windows-upload-image -->
 
 <properties
 	pageTitle="Upload a Windows VHD for Resource Manager | Azure"
@@ -17,7 +17,7 @@
 
 # Upload a Windows VM image to Azure for Resource Manager deployments
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] [classic deployment model](/documentation/articles/virtual-machines-create-upload-vhd-windows-server).
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the Resource Manager deployment model, which Microsoft recommends for most new deployments instead of the [classic deployment model](/documentation/articles/virtual-machines-create-upload-vhd-windows-server).
 
 
 This article shows you how to upload a virtual hard disk (VHD) with a Windows based operating system, so you can use it to create new Windows virtual machines using the Resource Manager deployment model. For more details about disks and VHDs in Azure, see [About Disks and VHDs for Virtual Machines](/documentation/articles/virtual-machines-disks-vhds).
@@ -69,7 +69,7 @@ You will need a storage account in Azure to upload the VM image. You can either 
 
 ### Using the portal
 
-1. Sign in to the [Azure Management Portal](https://manage.windowsazure.cn).
+1. Sign in to the [Azure portal](https://portal.azure.cn).
 
 2. Click **Browse** > **Storage accounts**.
 
@@ -248,7 +248,7 @@ For example, your workflow could look something like this:
 		--------- ------------------- ---------- ------------
 		                         True         OK OK
 
-You should see the newly created VM in either the [Azure Management Portal](https://manage.windowsazure.cn) under **Browse** > **Virtual machines**, OR by using the following PowerShell commands:
+You should see the newly created VM in either the [Azure portal](https://portal.azure.cn) under **Browse** > **Virtual machines**, OR by using the following PowerShell commands:
 
 	$vmList = Get-AzureRmVM -ResourceGroupName $rgName
 	$vmList.Name

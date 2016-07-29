@@ -1,4 +1,4 @@
-<!-- not suitable for Mooncake -->
+<!-- deleted in Global -->
 
 <properties
 	pageTitle="DataStax Enterprise on Ubuntu with a Resource Manager Template | Azure"
@@ -17,14 +17,14 @@
 
 # DataStax Enterprise on Ubuntu with a Resource Manager Template
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the Resource Manager deployment model, which Azure recommends for most new deployments instead of the classic deployment model.
 
 
 DataStax is a recognized industry leader in developing and delivering solutions based on Apache Cassandra™ - the commercially-supported, enterprise-ready NoSQL distributed database technology that is widely-acknowledged as agile, always-on, and predictably scalable to any size. DataStax offers both the Enterprise (DSE) and Community (DSC) flavors. In addition to what the Community edition provides, Datastax Enterprise is Production-certified Cassandra with capabilities like in-memory computing, enterprise-level security, fast and powerful integrated analytics, and enterprise management.
 
 >[AZURE.NOTE] Unlike the Community edition, in order to deploy DataStax Enterprise, you need to have a valid DataStax account (username and password) to pass in as parameters during template deployment. Visit the [Datastax](http://www.datastax.com) website to set up your account if you don't have one already.
 
-In addition to what is already available in Azure gallery, now you can also easily deploy a new Datastax Enterprise cluster on Ubuntu VMs using a Resource Manager template deployed through [Azure PowerShell](/documentation/articles/powershell-install-configure) or the [Azure CLI](/documentation/articles/xplat-cli-install).
+In addition to what is already available in Azure gallery, now you can also easily deploy a new Datastax Enterprise cluster on Ubuntu VMs using a Resource Manager template deployed through [Azure PowerShell](/documentation/articles/powershell-install-configure/) or the [Azure CLI](/documentation/articles/xplat-cli-install/).
 
 Newly deployed clusters based on this template will have the topology described in the following diagram, although other topologies can be easily achieved by customizing the template presented in this article.
 
@@ -500,4 +500,4 @@ This approach suggests that you:
 -	For identical members of a group of resources (for example, nodes in a cluster) create specific templates that leverage resource looping in order to deploy multiple instances with unique properties.
 -	For all post deployment tasks (for example, product installation,and configurations) leverage script deployment extensions and create scripts specific to each technology.
 
-For more information, see [Azure Resource Manager Template Language](/documentation/articles/resource-group-authoring-templates).
+For more information, see [Azure Resource Manager Template Language](/documentation/articles/resource-group-authoring-templates/).

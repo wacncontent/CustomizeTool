@@ -3,12 +3,12 @@
 	description="This article provides different procedures for working and PowerShell Workflow runbooks in Azure Automation using the textual editor."
 	services="automation"
 	documentationCenter=""
-	authors="bwren"
+	authors="mgoedtel"
 	manager="stevenka"
 	editor="tysonn" />
 <tags
 	ms.service="automation"
-	ms.date="09/23/2015"
+	ms.date="02/23/2016"
 	wacn.date=""/>
 
 # Editing textual runbooks in Azure Automation
@@ -17,14 +17,14 @@ The textual editor in Azure Automation can be used to edit PowerShell Workflow r
 
 The textual editor includes a feature to insert code for activities, assets, and child runbooks into a runbook. Rather than typing in the code yourself, you can select from a list of available resources and have the appropriate code inserted into the runbook.
 
-Each runbook in Azure Automation has two versions, Draft and Published. You edit the Draft version of the workflow and then publish it so it can be executed. The Published version cannot be edited. See [Publishing a runbook](/documentation/articles/automation-creating-importing-runbook#publishing-a-runbook) for more information.
+Each runbook in Azure Automation has two versions, Draft and Published. You edit the Draft version of the runbook and then publish it so it can be executed. The Published version cannot be edited. See [Publishing a runbook](/documentation/articles/automation-creating-importing-runbook/#publishing-a-runbook) for more information.
 
 
-## To edit a runbook with the Azure Management Portal
+## To edit a runbook with the Azure Classic Management Portal
 
 Use the following procedure to open a runbook for editing in the textual editor.
 
-1. In the Azure Management Portal, select **Automation** and then then click the name of an automation account.
+1. In the Azure Classic Management Portal, select **Automation** and then then click the name of an automation account.
 2. Select the **Runbooks** tab.
 3. Click the name of the runbook you want to edit and then select the **Author** tab.
 5. Click the **Edit** button at the bottom of the screen.
@@ -45,7 +45,7 @@ Use the following procedure to open a runbook for editing in the textual editor.
 
 ### To insert code for a child runbook into a runbook
 
-1. In the Canvas of the textual editor, position the cursor where you want to place the [child runbook](/documentation/articles/automation-child-runbooks).
+1. In the Canvas of the textual editor, position the cursor where you want to place the [child runbook](/documentation/articles/automation-child-runbooks/).
 2. At the bottom of the screen, click **Insert** and then **Runbook**.
 3. Select the runbook to insert from the center column and click the right arrow.
 4. If the runbook has parameters, they will be listed for your information.
@@ -64,7 +64,7 @@ Use the following procedure to open a runbook for editing in the textual editor.
 
 ## To edit an Azure Automation runbook using Windows PowerShell
 
-To edit a runbook with Windows PowerShell, you edit the workflow using the editor of your choice and save it to a .ps1 file. You can use the [Get-AzureAutomationRunbookDefinition](https://msdn.microsoft.com/zh-cn/library/dn690269.aspx) cmdlet to retrieve the contents of the runbook and then [Set-AzureAutomationRunbookDefinition](https://msdn.microsoft.com/zh-cn/library/dn690267.aspx) cmdlet to replace the existing draft workflow with the modified one.
+To edit a runbook with Windows PowerShell, you use the editor of your choice and save it to a .ps1 file. You can use the [Get-AzureAutomationRunbookDefinition](https://msdn.microsoft.com/zh-cn/library/dn690269.aspx) cmdlet to retrieve the contents of the runbook and then [Set-AzureAutomationRunbookDefinition](https://msdn.microsoft.com/zh-cn/library/dn690267.aspx) cmdlet to replace the existing draft runbook with the modified one.
 
 ### To Retrieve the Contents of a Runbook Using Windows PowerShell
 
@@ -81,21 +81,21 @@ The following sample commands show how to retrieve the script for a runbook and 
 
 ### To Change the Contents of a Runbook Using Windows PowerShell
 
-The following sample commands show how to replace the existing contents of a runbook with the contents of a script file containing a workflow. Note that this is the same sample procedure as in [To import a runbook from a script file with Windows PowerShell](/documentation/articles/automation-creating-importing-runbook#ImportRunbookScriptPS).
+The following sample commands show how to replace the existing contents of a runbook with the contents of a script file. Note that this is the same sample procedure as in [To import a runbook from a script file with Windows PowerShell](/documentation/articles/automation-creating-importing-runbook/#ImportRunbookScriptPS).
 
     $automationAccountName = "MyAutomationAccount"
     $runbookName = "Sample-TestRunbook"
     $scriptPath = "c:\runbooks\Sample-TestRunbook.ps1"
 
     Set-AzureAutomationRunbookDefinition -AutomationAccountName $automationAccountName -Name $runbookName -Path $scriptPath -Overwrite
-    Publish-AzureAutomationRunbook âAutomationAccountName $automationAccountName âName $runbookName
+    Publish-AzureAutomationRunbook -AutomationAccountName $automationAccountName -Name $runbookName
 
 ## Related articles
 
-- [Creating or importing a runbook in Azure Automation](/documentation/articles/automation-creatnig-importing-runbook)
-- [Learning PowerShell workflow](/documentation/articles/automation-powershell-workflow)
-- [Certificates](/documentation/articles/automation-certificates)
-- [Connections](/documentation/articles/automation-connections)
-- [Credentials](/documentation/articles/automation-credentials)
-- [Schedules](/documentation/articles/automation-schedules)
-- [Variables](/documentation/articles/automation-variables)
+- [Creating or importing a runbook in Azure Automation](/documentation/articles/automation-creating-importing-runbook/)
+- [Learning PowerShell workflow](/documentation/articles/automation-powershell-workflow/)
+- [Certificates](/documentation/articles/automation-certificates/)
+- [Connections](/documentation/articles/automation-connections/)
+- [Credentials](/documentation/articles/automation-credentials/)
+- [Schedules](/documentation/articles/automation-schedules/)
+- [Variables](/documentation/articles/automation-variables/)

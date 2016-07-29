@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="01/29/2016"
+	ms.date="04/28/2016"
 	wacn.date=""/>
 
 # Access YARN application logs on Windows-based HDInsight
@@ -19,7 +19,7 @@ This topic explains how to access the logs for YARN (Yet Another Resource Negoti
 
 ### Prerequisites
 
-- A Windows-based HDInsight cluster.  See [Create Windows-based Hadoop clusters in HDInsight](/documentation/articles/hdinsight-provision-clusters-v1).
+- A Windows-based HDInsight cluster.  See [Create Windows-based Hadoop clusters in HDInsight](/documentation/articles/hdinsight-provision-clusters-v1/).
 
 
 ## YARN Timeline Server
@@ -42,7 +42,6 @@ On your HDInsight clusters, this information will be stored by Azure Resource Ma
     GET on https://<cluster-dns-name>.azurehdinsight.cn/ws/v1/applicationhistory/apps
 
 
-
 ##<a name="YARNAppsAndLogs"></a> YARN applications and logs
 
 YARN supports multiple programming models (MapReduce being one of them) by decoupling resource management from application scheduling/monitoring. This is done through a global *ResourceManager* (RM), per-worker-node *NodeManagers* (NMs), and per-application *ApplicationMasters* (AMs). The per-application AM negotiates resources (CPU, memory, disk, network) for running your application with the RM. The RM works with NMs to grant these resources, which are granted as *containers*. The AM is responsible for tracking the progress of the containers assigned to it by the RM. An application may require many containers depending on the nature of the application.
@@ -59,7 +58,6 @@ The aggregated logs are not directly readable, as they are written in a [TFile][
 
 	yarn logs -applicationId <applicationId> -appOwner <user-who-started-the-application>
 	yarn logs -applicationId <applicationId> -appOwner <user-who-started-the-application> -containerId <containerId> -nodeAddress <worker-node-address>
-
 
 The next section talks about how you can access application-specific or container-specific logs programmatically, without having to use RDP to connect to your HDInsight clusters.
 

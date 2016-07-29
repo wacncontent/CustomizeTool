@@ -4,21 +4,22 @@
 	services="redis-cache"
 	documentationCenter=""
 	authors="steved0x"
-	manager="dwrede"
+	manager="douge"
 	editor="v-lincan"/>
 
 <tags
 	ms.service="cache"
-	ms.date="12/03/2015"
+	ms.date="05/31/2016"
 	wacn.date=""/>
 
 # How to use Azure Redis Cache with Python
 
 > [AZURE.SELECTOR]
-- [.Net](/documentation/articles/cache-dotnet-how-to-use-azure-redis-cache)
-- [Node.js](/documentation/articles/cache-nodejs-get-started)
-- [Java](/documentation/articles/cache-java-get-started)
-- [Python](/documentation/articles/cache-python-get-started)
+- [.NET](/documentation/articles/cache-dotnet-how-to-use-azure-redis-cache/)
+- [ASP.NET](/documentation/articles/cache-web-app-howto/)
+- [Node.js](/documentation/articles/cache-nodejs-get-started/)
+- [Java](/documentation/articles/cache-java-get-started/)
+- [Python](/documentation/articles/cache-python-get-started/)
 
 This topic shows you how to get started with Azure Redis Cache using Python.
 
@@ -30,35 +31,33 @@ Install [redis-py](https://github.com/andymccurdy/redis-py).
 
 ## Create a Redis cache on Azure
 
-In Azure China, Redis Cache can only be managed by Azure PowerShell or Azure CLI
+[AZURE.INCLUDE [redis-cache-create](../includes/redis-cache-create.md)]
 
-[AZURE.INCLUDE [azurerm-azurechinacloud-environment-parameter](../includes/azurerm-azurechinacloud-environment-parameter.md)]
+## Retrieve the host name and access keys
 
-Use the following PowerShell Script to create a cache:
+[AZURE.INCLUDE [redis-cache-create](../includes/redis-cache-access-keys.md)]
 
-	$VerbosePreference = "Continue"
 
-	# Create a new cache with date string to make name unique. 
-	$cacheName = "MovieCache" + $(Get-Date -Format ('ddhhmm')) 
-	$location = "China North"
-	$resourceGroupName = "Default-Web-ChinaNorth"
-	
-	$movieCache = New-AzureRmRedisCache -Location $location -Name $cacheName  -ResourceGroupName $resourceGroupName -Size 250MB -Sku Basic
+## Enable the non-SSL endpoint
+
+[AZURE.INCLUDE [redis-cache-create](../includes/redis-cache-non-ssl-port.md)]
 
 
 ## Add something to the cache and retrieve it
 
-    >>> import redis
-    >>> r = redis.StrictRedis(host='<name>.redis.cache.chinacloudapi.cn',
-          port=6380, db=0, password='<key>', ssl=True)
-    >>> r.set('foo', 'bar')
-    True
-    >>> r.get('foo')
-    b'bar'
 
-Replace *&lt;name&gt;* with your cache name and *&lt;key&gt;* with your access key.
+	>>> import redis
+	>>> r = redis.StrictRedis(host='<name>.redis.cache.chinacloudapi.cn',
+	      port=6380, db=0, password='<key>', ssl=True)
+	>>> r.set('foo', 'bar')
+	True
+	>>> r.get('foo')
+	b'bar'
+
+
+Replace `<name>` with your cache name and `key` with your access key.
 
 
 <!--Image references-->
-[1]: ./media/cache-python-get-started/cache01.png
-[2]: ./media/cache-python-get-started/cache02.png
+[1]: ./media/cache-python-get-started/redis-cache-new-cache-menu.png
+[2]: ./media/cache-python-get-started/redis-cache-cache-create.png

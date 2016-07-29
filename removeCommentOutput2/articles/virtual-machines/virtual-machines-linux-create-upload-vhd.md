@@ -1,3 +1,5 @@
+<!-- rename to virtual-machines-linux-classic-create-upload-vhd -->
+
 <properties
 	pageTitle="Create and upload a Linux VHD | Azure"
 	description="Create and upload an Azure virtual hard disk (VHD) with the classic deployment model that contains the Linux operating system."
@@ -15,13 +17,12 @@
 
 # Creating and Uploading a Virtual Hard Disk that Contains the Linux Operating System
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the classic deployment model. Microsoft recommends that most new deployments use the Resource Manager model.
 
 
 This article shows you how to create and upload a virtual hard disk (VHD) so you can use it as your own image to create virtual machines in Azure. You'll learn how to prepare the operating system so you can use it to create multiple virtual machines based on that image.
 
-
-[AZURE.INCLUDE [free-trial-note](../includes/create-account-note.md)]
+[AZURE.INCLUDE [free-trial-note](../includes/free-trial-note.md)]
 
 An Azure virtual machine runs the operating system based on the image you choose during creation. These images are stored in VHD format, in .vhd files in a storage account. For details, see [Disks in Azure](/documentation/articles/virtual-machines-disks-vhds) and [Images in Azure](/documentation/articles/virtual-machines-images).
 
@@ -82,7 +83,6 @@ Use Azure AD method to login:
 
 2. Type:
 
-
 	`azure login -e AzureChinaCloud -u <username>`
 
 	When prompted, type your username and password.
@@ -92,7 +92,6 @@ Use Azure AD method to login:
 1. Open an Azure CLI window
 
 2. Type:
-
 
 	`azure account download -e AzureChinaCloud`
 
@@ -117,7 +116,6 @@ Use Azure AD method to login:
 
 2. Type:
 
-
 	`Add-AzureAccount -Environment AzureChinaCloud`
 
 	When prompted, enter your organizational user id and password.
@@ -128,7 +126,6 @@ Use Azure AD method to login:
 
 2. Type:
 
-
 	`Get-AzurePublishSettingsFile -Environment AzureChinaCloud`
 
 	This command opens a browser window and automatically downloads a .publishsettings file that contains information and a certificate for your Azure subscription.
@@ -136,7 +133,6 @@ Use Azure AD method to login:
 3. Save the .publishsettings file.
 
 4. Type:
-
 
 	`Import-AzurePublishSettingsFile -Environment AzureChinaCloud <PathToFile>`
 
@@ -151,7 +147,7 @@ Use Azure AD method to login:
 
 You will need a storage account to upload your VHD file to. You can either pick an existing one or create a new one. To create a storage account please refer to [Create a Storage Account](/documentation/articles/storage-create-storage-account).
 
-When you upload the .vhd file, you can place the .vhd file anywhere within your blob storage. In the following command examples, **BlobStorageURL** is the URL for the storage account you plan to use, **YourImagesFolder** is the container within blob storage where you want to store your images. **VHDName** is the label that appears in the [Azure Management Portal](http://manage.windowsazure.cn) or the [Azure Management Portal](http://manage.windowsazure.cn) to identify the virtual hard disk. **PathToVHDFile** is the full path and name of the .vhd file on your machine.
+When you upload the .vhd file, you can place the .vhd file anywhere within your blob storage. In the following command examples, **BlobStorageURL** is the URL for the storage account you plan to use, **YourImagesFolder** is the container within blob storage where you want to store your images. **VHDName** is the label that appears in the [Azure portal](http://portal.azure.cn) or the [Azure classic portal](http://manage.windowsazure.cn) to identify the virtual hard disk. **PathToVHDFile** is the full path and name of the .vhd file on your machine.
 
 
 ### If using Azure CLI

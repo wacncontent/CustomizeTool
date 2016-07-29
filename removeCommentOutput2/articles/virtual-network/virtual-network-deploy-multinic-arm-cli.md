@@ -1,6 +1,5 @@
-<!-- not suitable for Mooncake -->
 
-<properties 
+<properties
    pageTitle="Deploy multi NIC VMs using the Azure CLI in Resource Manager | Azure"
    description="Learn how to deploy multi NIC VMs using the Azure CLI in Resource Manager"
    services="virtual-network"
@@ -19,23 +18,25 @@
 
 [AZURE.INCLUDE [virtual-network-deploy-multinic-arm-selectors-include.md](../includes/virtual-network-deploy-multinic-arm-selectors-include.md)]
 
+[AZURE.INCLUDE [arm-api-version-cli](../includes/arm-api-version-cli.md)]
+
 [AZURE.INCLUDE [virtual-network-deploy-multinic-intro-include.md](../includes/virtual-network-deploy-multinic-intro-include.md)]
 
-[AZURE.INCLUDE [azure-arm-classic-important-include](../includes/learn-about-deployment-models-rm-include.md)] [classic deployment model](/documentation/articles/virtual-network-deploy-multinic-classic-cli).
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the Resource Manager deployment model, which Azure recommends for most new deployments instead of the [classic deployment model](/documentation/articles/virtual-network-deploy-multinic-classic-cli/).
 
 [AZURE.INCLUDE [virtual-network-deploy-multinic-scenario-include.md](../includes/virtual-network-deploy-multinic-scenario-include.md)]
 
-Since at this point in time you cannot have VMs with a single NIC and VMs with multiple NICs in the same resource group, you will implement the back end servers in a different resource group than all other components. The steps below use a resource group named *IaaSStory* for the main resource group, and *IaaSStory-BackEnd* for the back end servers.
+Currently, you cannot have VMs with a single NIC and VMs with multiple NICs in the same resource group. Therefore, you need to implement the back end servers in a different resource group than all other components. The steps below use a resource group named *IaaSStory* for the main resource group, and *IaaSStory-BackEnd* for the back end servers.
 
-## Prerequisites
+##<a name="Prerequisites"></a> Prerequisites
 
 Before you can deploy the back end servers, you need to deploy the main resource group with all the necessary resources for this scenario. To deploy these resources, follow the steps below.
 
 1. Navigate to [the template page](https://github.com/Azure/azure-quickstart-templates/tree/master/IaaS-Story/11-MultiNIC).
 2. In the template page, to the right of **Parent resource group**, click **Deploy to Azure**.
-3. If needed, change the parameter values, then follow the steps in the Azure preview portal to deploy the resource group.
+3. If needed, change the parameter values, then follow the steps in the Azure portal preview to deploy the resource group.
 
-> [AZURE.IMPORTANT] Make sure your storage account names are unique. You cannot have duplicate storage account names in Azure. 
+> [AZURE.IMPORTANT] Make sure your storage account names are unique. You cannot have duplicate storage account names in Azure.
 
 [AZURE.INCLUDE [azure-cli-prerequisites-include.md](../includes/azure-cli-prerequisites-include.md)]
 
@@ -45,7 +46,7 @@ The backend VMs depend on the creation of the resources listed below.
 
 - **Storage account for data disks**. For better performance, the data disks on the database servers will use solid state drive (SSD) technology, which requires a premium storage account. Make sure the Azure location you deploy to support premium storage.
 - **NICs**. Each VM will have two NICs, one for database access, and one for management.
-- **Availability set**. All database servers will be added to a single availability set, to ensure at least one of the VMs is up and running during maintenance. 
+- **Availability set**. All database servers will be added to a single availability set, to ensure at least one of the VMs is up and running during maintenance.
 
 ### Step 1 - Start your script
 
@@ -58,7 +59,7 @@ You can download the full bash script used [here](https://raw.githubusercontent.
 		vnetName="WTestVNet"
 		backendSubnetName="BackEnd"
 		remoteAccessNSGName="NSG-RemoteAccess"
-		
+
 2. Change the values of the variables below based on the values you want to use for your backend deployment.
 
 		backendRGName="IaaSStory-Backend"
@@ -86,7 +87,7 @@ You can download the full bash script used [here](https://raw.githubusercontent.
 		                --name $backendSubnetName|grep Id)"
 		subnetId=${subnetId#*/}
 
->[AZURE.TIP] The first command above uses [grep](http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_04_02.html) and [string manipulation](http://tldp.org/LDP/abs/html/string-manipulation.html) (more specifically, substring removal). 
+>[AZURE.TIP] The first command above uses [grep](http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_04_02.html) and [string manipulation](http://tldp.org/LDP/abs/html/string-manipulation.html) (more specifically, substring removal).
 
 4. Retrieve the ID for the `NSG-RemoteAccess` NSG. You need to do this since the NICs to be associated to this NSG are in a different resource group.
 
@@ -105,7 +106,7 @@ You can download the full bash script used [here](https://raw.githubusercontent.
 		azure storage account create $prmStorageAccountName \
 		    --resource-group $backendRGName \
 		    --location $location \
-			--type PLRS 
+			--type PLRS
 
 3. Create an availability set for the VMs.
 
@@ -169,7 +170,7 @@ You can download the full bash script used [here](https://raw.githubusercontent.
 		        --vhd-name $dataDiskName$suffixNumber-1.vhd \
 		        --size-in-gb $diskSize \
 		        --lun 0
-		
+
 		    azure vm disk attach-new --resource-group $backendRGName \
 		        --vm-name $vmNamePrefix$suffixNumber \        
 		        --storage-account-name $prmStorageAccountName \
@@ -327,5 +328,3 @@ Now that you downloaded and changed the script based on your needs, run the scri
 		info:    New data disk location: https://wtestvnetstorageprm.blob.core.chinacloudapi.cn/vhds/datadisk2-2.vhd
 		info:    Updating VM "DB2"
 		info:    vm disk attach-new command OK
-
-

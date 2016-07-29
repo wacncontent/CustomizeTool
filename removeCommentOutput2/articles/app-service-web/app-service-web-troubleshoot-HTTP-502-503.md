@@ -17,7 +17,7 @@
 
 This article helps you troubleshoot HTTP 502/503 errors in your web app hosted in [Azure Web App](/documentation/services/web-sites/).
 
-If you need more help at any point in this article, you can contact the Azure experts on [the MSDN Azure and the Stack Overflow forums](http. Alternatively, you can also file an Azure support incident. Go to the [Azure Support site](https://azure.microsoand click on **Get Support**.
+If you need more help at any point in this article, you can contact the Azure experts on [the MSDN Azure and the CSDN Azure](/support/forums/). Alternatively, you can also file an Azure support incident. Go to the [Azure Support site](/support/contact/) and click on **Get Support**.
 
 ## Symptom
 

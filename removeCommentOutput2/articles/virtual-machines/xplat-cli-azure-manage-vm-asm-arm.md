@@ -1,3 +1,5 @@
+<!-- rename to virtual-machines-windows-cli-manage -->
+
 <properties
 	pageTitle="Equivalent Azure CLI commands for VM tasks | Azure"
 	description="Equivalent Azure CLI commands to create and manage Azure VMs in Azure Resource Manager and Azure Service Management modes"
@@ -29,6 +31,8 @@ This article shows equivalent Azure command-line interface (Azure CLI) commands 
 
 ## VM tasks
 The next table compares common VM tasks you can perform with Azure CLI commands in Service Management and Resource Manager. With many Resource Manager commands you need to pass the name of an existing resource group.
+
+> [AZURE.NOTE] These examples don't include template-based operations which are generally recommended for VM deployments in Resource Manager. For information, see [Use the Azure CLI with Azure Resource Manager](/documentation/articles/xplat-cli-azure-resource-manager) and [Deploy and manage virtual machines by using Azure Resource Manager templates and the Azure CLI](/documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli).
 
 Task | Service Management | Resource Manager
 -------------- | ----------- | -------------------------

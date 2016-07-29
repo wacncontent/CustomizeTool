@@ -1,31 +1,30 @@
 <properties
-   pageTitle="Configure an application gateway for SSL offload by using classic deployment| Windows Azure"
+   pageTitle="Configure an application gateway for SSL offload by using classic deployment| Azure"
    description="This article provides instructions to create an application gateway with SSL offload by using the Azure classic deployment model."
    documentationCenter="na"
    services="application-gateway"
    authors="joaoma"
-   manager="jdial"
+   manager="carmonm"
    editor="tysonn"/>
 <tags
 	ms.service="application-gateway"
-	ms.date="10/28/2015"
+	ms.date="04/05/2016"
 	wacn.date=""/>
 
 # Configure an application gateway for SSL offload by using the classic deployment model
 
 > [AZURE.SELECTOR]
--[Azure Classic PowerShell](/documentation/articles/application-gateway-ssl)
--[Azure Resource Manager PowerShell](/documentation/articles/application-gateway-ssl-arm)
+-[Azure Classic PowerShell](/documentation/articles/application-gateway-ssl/)
+-[Azure Resource Manager PowerShell](/documentation/articles/application-gateway-ssl-arm/)
 
 Azure Application Gateway can be configured to terminate the Secure Sockets Layer (SSL) session at the gateway to avoid costly SSL decryption tasks to happen at the web farm. SSL offload also simplifies the front-end server setup and management of the web application.
-
 
 
 ## Before you begin
 
 1. Install the latest version of the Azure PowerShell cmdlets by using the Web Platform Installer. You can download and install the latest version from the **Windows PowerShell** section of the [Downloads page](/downloads/).
-2. Verify that you have a working virtual network with a valid subnet.
-3. Verify that you have back-end servers either in the virtual network or with a public IP/VIP assigned.
+2. Verify that you have a working virtual network with a valid subnet. Make sure that no virtual machines or cloud deployments are using the subnet. The application gateway must be by itself in a virtual network subnet.
+3. The servers that you will configure to use the application gateway must exist or have their endpoints created either in the virtual network or with a public IP/VIP assigned.
 
 To configure SSL offload on an application gateway, do the following steps in the order listed:
 
@@ -37,7 +36,7 @@ To configure SSL offload on an application gateway, do the following steps in th
 6. [Verify the gateway status](#verify-the-gateway-status)
 
 
-## Create a new application gateway
+##<a name="create-a-new-application-gateway"></a> Create a new application gateway
 
 To create the gateway, use the **New-AzureApplicationGateway** cmdlet, replacing the values with your own. Note that billing for the gateway does not start at this point. Billing begins in a later step, when the gateway is successfully started.
 
@@ -52,7 +51,6 @@ This sample shows the cmdlet on the first line, followed by the output.
 	Successful OK                   55ef0460-825d-2981-ad20-b9a8af41b399
 
 To validate that the gateway was created, you can use the **Get-AzureApplicationGateway** cmdlet.
-
 
 In the sample, *Description*, *InstanceCount*, and *GatewaySize* are optional parameters. The default value for *InstanceCount* is 2, with a maximum value of 10. The default value for *GatewaySize* is Medium. Small and Large are other available values. *VirtualIPs* and *DnsName* are shown as blank because the gateway has not started yet. These will be created once the gateway is in the running state.
 
@@ -74,7 +72,7 @@ This sample shows the cmdlet on the first line, followed by the output.
 	DnsName:
 
 
-## Upload SSL certificates
+##<a name="upload-ssl-certificates"></a> Upload SSL certificates
 
 Use **Add-AzureApplicationGatewaySslCertificate** to upload the server certificate in *pfx* format to the application gateway. The certificate name is a user-chosen name and must be unique within the application gateway. This certificate is referred to by this name in all certificate management operations on the application gateway.
 
@@ -102,8 +100,9 @@ This sample shows the cmdlet on the first line, followed by the output.
 	ThumbprintAlgo : sha1RSA
 	State..........: Provisioned
 
+>[AZURE.NOTE] The certificate password has to be in between 4 to 12 characters, letters or numbers. Special characters are not accepted.
 
-## Configure the gateway
+##<a name="configure-the-gateway"></a> Configure the gateway
 
 An application gateway configuration consists of multiple values. The values can be tied together to construct the configuration.
 
@@ -175,7 +174,7 @@ To construct your configuration by using a configuration XML file, use the sampl
 	</ApplicationGatewayConfiguration>
 
 
-## Set the gateway configuration
+##<a name="set-the-gateway-configuration"></a> Set the gateway configuration
 
 Next, you'll set the application gateway. You can use the **Set-AzureApplicationGatewayConfig** cmdlet with either a configuration object or with a configuration XML file.
 
@@ -188,7 +187,7 @@ Next, you'll set the application gateway. You can use the **Set-AzureApplication
 	----       ----------------     ------------                             ----
 	Successful OK                   9b995a09-66fe-2944-8b67-9bb04fcccb9d
 
-## Start the gateway
+##<a name="start-the-gateway"></a> Start the gateway
 
 Once the gateway has been configured, use the **Start-AzureApplicationGateway** cmdlet to start the gateway. Billing for an application gateway begins after the gateway has been successfully started.
 
@@ -205,7 +204,7 @@ Once the gateway has been configured, use the **Start-AzureApplicationGateway** 
 	Successful OK                   fc592db8-4c58-2c8e-9a1d-1c97880f0b9b
 
 
-## Verify the gateway status
+##<a name="verify-the-gateway-status"></a> Verify the gateway status
 
 Use the **Get-AzureApplicationGateway** cmdlet to check the status of the gateway. If **Start-AzureApplicationGateway** succeeded in the previous step, *State* should be Running, and *VirtualIPs* and *DnsName* should have valid entries.
 
@@ -221,7 +220,14 @@ This sample shows an application gateway that is up, running, and is ready to ta
 	GatewaySize   : Medium
 	State         : Running
 	VirtualIPs    : {23.96.22.241}
+	
+	[AZURE.ACOM]{
 	DnsName       : appgw-4c960426-d1e6-4aae-8670-81fd7a519a43.chinacloudapp.cn
+	[AZURE.ACOM]}
+	
+	[AZURE.ACN]{
+	DnsName       : appgw-4c960426-d1e6-4aae-8670-81fd7a519a43.chinacloudapp.cn
+	[AZURE.ACN]}
 
 
 ## Next steps
@@ -229,7 +235,7 @@ This sample shows an application gateway that is up, running, and is ready to ta
 
 If you want more information about load balancing options in general, see:
 
-<!--- [Azure Load Balancer](/documentation/services/load-balancer/)-->
-- [Azure Traffic Manager](/documentation/services/traffic-manager)
-
-
+[AZURE.ACOM]{
+- [Azure Load Balancer](/documentation/services/load-balancer/)
+[AZURE.ACOM]}
+- [Azure Traffic Manager](/documentation/services/traffic-manager/)

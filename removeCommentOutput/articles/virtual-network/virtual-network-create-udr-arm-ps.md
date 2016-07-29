@@ -1,6 +1,6 @@
 <properties 
-   pageTitle="Control routing and use virtual appliances in Resource Manager using PowerShell | Azure"
-   description="Learn how to control routing and use virtual appliances in Azure PowerShell"
+   pageTitle="Control routing and use virtual appliances in Resource Manager by using PowerShell | Azure"
+   description="Learn how to control routing and use virtual appliances in Resource Manager by using PowerShell"
    services="virtual-network"
    documentationCenter="na"
    authors="telmosampaio"
@@ -10,16 +10,16 @@
 />
 <tags
 	ms.service="virtual-network"
-	ms.date="11/20/2015"
+	ms.date="02/23/2016"
 	wacn.date=""/>
 
-#Create User Defined Routes (UDR) in PowerShell
+#Create User Defined Routes (UDR) in Resource Manager by using PowerShell
 
 [AZURE.INCLUDE [virtual-network-create-udr-arm-selectors-include.md](../includes/virtual-network-create-udr-arm-selectors-include.md)]
 
 [AZURE.INCLUDE [virtual-network-create-udr-intro-include.md](../includes/virtual-network-create-udr-intro-include.md)]
 
-[AZURE.INCLUDE [azure-arm-classic-important-include](../includes/azure-arm-classic-important-include.md)] This article covers the Resource Manager deployment model. You can also [create UDRs in the classic deployment model](/documentation/articles/virtual-network-create-udr-classic-ps).
+[AZURE.INCLUDE [azure-arm-classic-important-include](../includes/azure-arm-classic-important-include.md)] This article covers the Resource Manager deployment model. You can also [create UDRs in the classic deployment model](/documentation/articles/virtual-network-create-udr-classic-ps/).
 
 [AZURE.INCLUDE [virtual-network-create-udr-scenario-include.md](../includes/virtual-network-create-udr-scenario-include.md)]
 
@@ -64,7 +64,7 @@ To create the route table and route needed for the front end subnet based on the
 		ResourceGroupName : TestRG
 		Location          : chinanorth
 		Id                : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/TestRG/providers/Microsoft.Network/virtualNetworks/TestVNet
-		Etag              : W/"7df26c0e-652f-4754-bc4e-733fef7d5b2b"
+		Etag              : W/"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
 		ProvisioningState : Succeeded
 		Tags              : 
 		                    Name         Value

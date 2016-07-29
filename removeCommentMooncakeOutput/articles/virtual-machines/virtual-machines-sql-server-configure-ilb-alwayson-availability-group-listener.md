@@ -1,3 +1,5 @@
+<!-- rename to virtual-machines-windows-classic-ps-sql-int-listener -->
+
 <properties
 	pageTitle="Configure an ILB Listener for AlwaysOn Availability Groups | Azure"
 	description="This tutorial uses resources created with  the classic deployment model, and creates an AlwaysOn Availability Group Listener in Azure using an Internal Load Balancer (ILB)."
@@ -15,24 +17,24 @@
 # Configure an ILB listener for AlwaysOn Availability Groups in Azure
 
 > [AZURE.SELECTOR]
-- [Internal Listener](/documentation/articles/virtual-machines-sql-server-configure-ilb-alwayson-availability-group-listener)
-- [External Listener](/documentation/articles/virtual-machines-sql-server-configure-public-alwayson-availability-group-listener)
+- [Internal Listener](/documentation/articles/virtual-machines-windows-classic-ps-sql-int-listener/)
+- [External Listener](/documentation/articles/virtual-machines-windows-classic-ps-sql-ext-listener/)
 
 ## Overview
 
 This topic shows you how to configure a listener for an AlwaysOn Availability Group by using an **Internal Load Balancer (ILB)**.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager model.
 
 
-Your Availability Group can contain replicas that are on-premises only, Azure only, or span both on-premises and Azure for hybrid configurations. Azure replicas can reside within the same region or across multiple regions using multiple virtual networks (VNets). The steps below assume you have already [configured an availability group](/documentation/articles/virtual-machines-sql-server-alwayson-availability-groups-gui) but have not configured a listener.
+Your Availability Group can contain replicas that are on-premises only, Azure only, or span both on-premises and Azure for hybrid configurations. Azure replicas can reside within the same region or across multiple regions using multiple virtual networks (VNets). The steps below assume you have already [configured an availability group](/documentation/articles/virtual-machines-windows-classic-portal-sql-alwayson-availability-groups/) but have not configured a listener.
 
 ## Guidelines and limitations for internal listeners
 Note the following guidelines on the availability group listener in Azure using ILB:
 
 - The availability group listener is supported on Windows Server 2008 R2, Windows Server 2012, and Windows Server 2012 R2.
 
-- Only one internal availability group listener is supported per cloud service, because the listener is configured to the ILB, and there is only one ILB per cloud service. However, it is possible to create multiple external listeners. For more information, see [Configure an external listener for AlwaysOn Availability Groups in Azure](/documentation/articles/virtual-machines-sql-server-configure-public-alwayson-availability-group-listener).
+- Only one internal availability group listener is supported per cloud service, because the listener is configured to the ILB, and there is only one ILB per cloud service. However, it is possible to create multiple external listeners. For more information, see [Configure an external listener for AlwaysOn Availability Groups in Azure](/documentation/articles/virtual-machines-windows-classic-ps-sql-ext-listener/).
 
 - It is not supported to create an internal listener in the same cloud service where you also have an external listener using the cloud service's public VIP.
 
@@ -40,7 +42,7 @@ Note the following guidelines on the availability group listener in Azure using 
 
 [AZURE.INCLUDE [ag-listener-accessibility](../includes/virtual-machines-ag-listener-determine-accessibility.md)]
 
-This article focuses on creating a listener that uses an **Internal Load Balancer (ILB)**. If you need an public/external listener, see the version of this article that provides steps for setting up an [external listener](/documentation/articles/virtual-machines-sql-server-configure-public-alwayson-availability-group-listener)
+This article focuses on creating a listener that uses an **Internal Load Balancer (ILB)**. If you need an public/external listener, see the version of this article that provides steps for setting up an [external listener](/documentation/articles/virtual-machines-windows-classic-ps-sql-ext-listener/)
 
 ## Create load-balanced VM endpoints with direct server return
 
@@ -60,7 +62,7 @@ For ILB, you must first create the internal load balancer. This is done in the s
 
 1. Choose one of the available addresses and use it in the **$ILBStaticIP** parameter of the following script.
 
-3. Copy the PowerShell script below into a text editor and set the variable values to suit your environment (note that defaults have been provided for some parameters). Note that existing deployments that use affinity groups cannot add ILB. For more information on ILB requirements, see [Internal Load Balancer](/documentation/articles/load-balancer-internal-overview). Also, if your availability group spans Azure regions, you must run the script once in each datacenter for the cloud service and nodes that reside in that datacenter.
+3. Copy the PowerShell script below into a text editor and set the variable values to suit your environment (note that defaults have been provided for some parameters). Note that existing deployments that use affinity groups cannot add ILB. For more information on ILB requirements, see [Internal Load Balancer](/documentation/articles/load-balancer-internal-overview/). Also, if your availability group spans Azure regions, you must run the script once in each datacenter for the cloud service and nodes that reside in that datacenter.
 
 		# Define variables
 		$ServiceName = "<MyCloudService>" # the name of the cloud service that contains the availability group nodes
@@ -80,7 +82,7 @@ For ILB, you must first create the internal load balancer. This is done in the s
 
 1. Once you have set the variables, copy the script from the text editor into your Azure PowerShell session to run it. If the prompt still shows >>, type ENTER again to make sure the script starts running.Note
 
->[AZURE.NOTE] The Azure Management Portal does not support the Internal Load Balancer at this time, so you will not see either the ILB or the endpoints in the Azure Management Portal. However, **Get-AzureEndpoint** returns an internal IP address if the Load Balancer is running on it. Otherwise, it returns null.
+>[AZURE.NOTE] The Azure Classic Management Portal does not support the Internal Load Balancer at this time, so you will not see either the ILB or the endpoints in the Azure Classic Management Portal. However, **Get-AzureEndpoint** returns an internal IP address if the Load Balancer is running on it. Otherwise, it returns null.
 
 ## Verify that KB2854082 is installed if necessary
 
@@ -133,4 +135,3 @@ For ILB, you must first create the internal load balancer. This is done in the s
 ## Next steps
 
 [AZURE.INCLUDE [Listener-Next-Steps](../includes/virtual-machines-ag-listener-next-steps.md)]
-

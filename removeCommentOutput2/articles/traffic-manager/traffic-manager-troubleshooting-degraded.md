@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="traffic-manager"
-	ms.date="12/02/2015"
+	ms.date="03/17/2016"
 	wacn.date=""/>
 
 # Troubleshooting degraded state on Azure Traffic Manager
@@ -63,9 +63,9 @@ If your probe is using HTTPs protocol you will want to add the "--no-check-certi
 ## Next Steps
 
 
-[About Traffic Manager traffic routing methods](/documentation/articles/traffic-manager-load-balancing-methods)
+[About Traffic Manager traffic routing methods](/documentation/articles/traffic-manager-routing-methods/)
 
-[What is Traffic Manager](/documentation/articles/traffic-manmager-overview)
+[What is Traffic Manager](/documentation/articles/traffic-manager-overview/)
 
 [Cloud Services](https://msdn.microsoft.com/zh-cn/library/jj155995.aspx)
 

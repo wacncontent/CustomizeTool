@@ -9,7 +9,7 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="12/10/2015"
+	ms.date="02/26/2016"
 	wacn.date=""/>
 
 
@@ -19,7 +19,6 @@
 
 
 Below is an example of a .COM website running on Azure Web Apps. It demonstrates what you can do simply by composing Web Apps together with other services with minimal technical investments. **Click on an element in the topography to read more about it.** 
-
 
 <div style="display:none">
 ![](./media/web-sites-global-web-presence-solution-overview/corp-website-visio.svg)
@@ -35,9 +34,9 @@ Below is an example of a .COM website running on Azure Web Apps. It demonstrates
 
 Quickly create new sites from a popular CMS in the gallery or bring your existing web assets to Azure Web Apps from a variety of languages and frameworks.
 
-The Azure gallery provides Y You can create a web app using your favorite CMS flavor. You can choose from various database backends to meet your needs, including [Azure SQL Database] and [MySQL].
+You can create a web app using your favorite CMS flavor. You can choose from various database backends to meet your needs, including [Azure SQL Database] and [MySQL].
 
-Your existing web assets can run on Azure Web Apps, whether they are .NET, PHP, Java, Node.js, or Python. You can move them to Web Apps using your familiar [FTP] tools or your source control management system. Web Apps supports direct publishing from popular source control options, such as [Visual Studio], [Visual Studio Team Servica and [Git] - local, GitHub, BitBucket, DropBox, Mercurial, etc..
+Your existing web assets can run on Azure Web Apps, whether they are .NET, PHP, Java, Node.js, or Python. You can move them to Web Apps using your familiar [FTP] tools or your source control management system. Web Apps supports direct publishing from popular source control options, such as [Visual Studio] and [Git] - local, GitHub, BitBucket, DropBox, Mercurial, etc..
 
 ## Publish reliably
 
@@ -53,7 +52,7 @@ Use the Azure Web Apps domain for free or map to your registered domain name, th
 
 The **\*.chinacloudsites.cn** domain is complimentary when you run your website on Web Apps. Or, you can map your website to a [custom domain] - e.g. contoso.com - which you obtained from any DNS registry, such as GoDaddy.
 
-If you collect any user information, perform ecommerce, or manage any other sensitive data, you can protect your brand reputation and your customers with [HTTPS]. The **\*.chinacloudsites.cn** domain name already comes with an SSL certificate, and if you use your custom domain, you can bring your SSL certificate for it to Web Apps. There is a monthly charge (prorated hourly) associated with each SSL certificate. For more information, see [Azure Web App Pricing Details].  Pricing Details].
+If you collect any user information, perform ecommerce, or manage any other sensitive data, you can protect your brand reputation and your customers with [HTTPS]. The **\*.chinacloudsites.cn** domain name already comes with an SSL certificate, and if you use your custom domain, you can bring your SSL certificate for it to Web Apps. There is a monthly charge (prorated hourly) associated with each SSL certificate. For more information, see [Azure Web App Pricing Details].
 
 ## Go global
 
@@ -77,7 +76,7 @@ Maintain high availability of your website using [Azure Traffic Manager]. Using 
 
 Stay up-to-date on your website's performance with Azure or third-party tools. Receive alerts on critical website events. Gain user insight easily with Application Insight or with web log analytics from HDInsight. 
 
-tGet a [quick glance] of the website's current performance metrics and resource quotas in the web app's blade in the [Azure Management Portal](https://manage.windowsazure.cn). For a 360° view of your application across availability, performance and usage, use [Azure Application Insights] to give you fast & powerful troubleshooting, diagnostics and usage insights. Or, use a third-party tool like [New Relic] to provide advanced monitoring data for your websites.
+Get a [quick glance] of the website's current performance metrics and resource quotas in the web app's blade in the [Azure Management Portal](https://manage.windowsazure.cn). For a 360° view of your application across availability, performance and usage, use [Azure Application Insights] to give you fast & powerful troubleshooting, diagnostics and usage insights. Or, use a third-party tool to provide advanced monitoring data for your websites.
 
 In the **Standard** hosting plan, monitor site responsiveness receive email notifications whenever your site becomes unresponsive. For more information, see [How to: Receive Alert Notifications and Manage Alert Rules in Azure].
 
@@ -97,12 +96,10 @@ Make your .COM site attractive with rich media, such as:
 
 [Azure Web App]: /home/features/web-site/
 
-
 [MySQL]: /documentation/articles/web-sites-php-mysql-deploy-use-git
 [Azure SQL Database]: /documentation/articles/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database
 [FTP]: /documentation/articles/web-sites-deploy#ftp
 [Visual Studio]: /documentation/articles/web-sites-dotnet-get-started
-
 [Git]: /documentation/articles/web-sites-publish-source-control
 
 [deploying to a staging slot]: /documentation/articles/web-sites-staged-publishing
@@ -111,7 +108,7 @@ Make your .COM site attractive with rich media, such as:
 
 [custom domain]: /documentation/articles/web-sites-custom-domain-name
 [HTTPS]: /documentation/articles/web-sites-configure-ssl-certificate
-[Azure Web App Pricing Details]: /home/features/  Pricing Details]: /home/features/web-site#price
+[Azure Web App Pricing Details]: /home/features/web-site#price
 
 [Azure Traffic Manager]:http://www.hanselman.com/blog/CloudPowerHowToScaleAzureWebsitesGloballyWithTrafficManager.aspx
 [integrating your web app with Azure CDN]: /documentation/articles/cdn-websites-with-cdn

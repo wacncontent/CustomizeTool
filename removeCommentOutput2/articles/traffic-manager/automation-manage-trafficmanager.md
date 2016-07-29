@@ -1,3 +1,5 @@
+<!-- deleted in Global -->
+
 <properties 
  pageTitle="Manage Azure Traffic Manager using Azure Automation" 
  description="Learn about how the Azure Automation service can be used to manage Azure Traffic Manager." 

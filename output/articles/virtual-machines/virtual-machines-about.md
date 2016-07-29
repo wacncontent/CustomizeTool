@@ -1,3 +1,5 @@
+<!-- rename to virtual-machines-linux-about -->
+
 <properties
 	pageTitle="About Azure Virtual Machines | Azure"
 	description="Learn about the basics of virtual machines in Azure using both deployment models."
@@ -30,20 +32,20 @@ This table helps you compare the choices offered by Azure.
 
 Try out a virtual machine by creating a simple virtual machine quickly. For instructions, see one of these tutorials:
 
-[Create a virtual machine running Linux](/documentation/articles/virtual-machines-linux-tutorial)
+[Create a virtual machine running Linux](/documentation/articles/virtual-machines-linux-quick-create-cli/)
 
-[Create a virtual machine running Windows in the Azure Management Portal](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)
+[Create a virtual machine running Windows in the Azure portal](/documentation/articles/virtual-machines-windows-classic-tutorial/)
 
 Because those tutorials help you create a virtual machine quickly, they show you only one way to do it instead of describing the various tools you can use to create virtual machines. For a summary of these tools and links to instructions, see:
 
-[Different ways to create a Linux virtual machine](/documentation/articles/virtual-machines-linux-choices-create-vm)
+[Different ways to create a Linux virtual machine](/documentation/articles/virtual-machines-linux-creation-choices/)
 
-[Different ways to create a Windows virtual machine](/documentation/articles/virtual-machines-windows-choices-create-vm)
+[Different ways to create a Windows virtual machine](/documentation/articles/virtual-machines-windows-creation-choices/)
 
-If you're just starting to learn about Azure virtual machines, be sure to also check out the [Frequently asked questions](/documentation/articles/virtual-machines-questions).
+If you're just starting to learn about Azure virtual machines, be sure to also check out the [Frequently asked questions](/documentation/articles/virtual-machines-linux-classic-faq/).
 
 
 <!--links-->
 [Azure Web App]: /documentation/services/web-sites
 [Virtual Machines]: #tellmevm
-[Cloud Services]: /documentation/articles/cloud-services-choose-me
+[Cloud Services]: /documentation/articles/cloud-services-choose-me/

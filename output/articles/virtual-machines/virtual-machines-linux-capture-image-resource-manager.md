@@ -1,4 +1,4 @@
-<!-- not suitable for Mooncake -->
+<!-- rename to virtual-machines-linux-capture-image -->
 
 <properties
 	pageTitle="Capture a Linux VM to use as a template | Azure"
@@ -18,7 +18,7 @@
 
 # How to capture a Linux virtual machine to use as a Resource Manager template
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] [classic deployment model](/documentation/articles/virtual-machines-linux-capture-image).
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the Resource Manager deployment model, which Azure recommends for most new deployments instead of the [classic deployment model](/documentation/articles/virtual-machines-linux-capture-image/).
 
 
 This article shows you how to use the Azure Command-Line Interface (CLI) to capture an Azure virtual machine running Linux so you can use it as an Azure Resource Manager template to create other virtual machines. This template specifies the OS disk and data disks attached to the virtual machine. It doesn't include the virtual network resources you'll need to create an Azure Resource Manager VM, so in most cases you'll need to set those up separately before you create another virtual machine that uses the template.
@@ -27,15 +27,15 @@ This article shows you how to use the Azure Command-Line Interface (CLI) to capt
 
 These steps assume that you've already created an Azure virtual machine in the Azure Resource Manager deployment model and configured the operating system, including attaching any data disks and making other customizations like installing applications. If you haven't done this yet, see these instructions for using the Azure CLI in Azure Resource Manager mode:
 
-- [Deploy and manage virtual machines by using Azure Resource Manager templates and the Azure CLI](/documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli)
+- [Deploy and manage virtual machines by using Azure Resource Manager templates and the Azure CLI](/documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli/)
 
 For example, you might create a resource group named *MyResourceGroup* in the China North region. Then use an **azure vm quick-create** command similar to the following to deploy an Ubuntu 14.04 LTS VM in the resource group.
 
  	azure vm quick-create -g MyResourceGroup -n <your-virtual-machine-name> "centralus" -y Linux -Q canonical:ubuntuserver:14.04.2-LTS:14.04.201507060 -u <your-user-name> -p <your-password>
 
-After the VM is provisioned and running, you might want to attach and mount a data disk. See instructions [here](/documentation/articles/virtual-machines-linux-tutorial#attach-and-mount-a-disk).
+After the VM is provisioned and running, you might want to attach and mount a data disk. See instructions [here](/documentation/articles/virtual-machines-linux-quick-create-cli/#attach-and-mount-a-disk).
 
-To perform other customizations, you'll need to connect to the VM using an SSH client of your choice. For details, see [Connect to your Azure Linux VM using ssh](/documentation/articles/virtual-machines-linux-tutorial-portal-rm#connect-to-your-azure-linux-vm-using-strongsshstrong).
+To perform other customizations, you'll need to connect to the VM using an SSH client of your choice. For details, see [Connect to your Azure Linux VM using ssh](/documentation/articles/virtual-machines-linux-portal-create/#connect-to-your-azure-linux-vm-using-strongsshstrong).
 
 
 ## Capture the VM
@@ -61,9 +61,9 @@ To perform other customizations, you'll need to connect to the VM using an SSH c
 
 4. Type **exit** to close the SSH client.
 
-	>[AZURE.NOTE] The next steps assume you have already [installed the Azure CLI](/documentation/articles/xplat-cli-install) on your client computer.
+	>[AZURE.NOTE] The next steps assume you have already [installed the Azure CLI](/documentation/articles/xplat-cli-install/) on your client computer.
 
-5. From your client computer, open the Azure CLI and login to your Azure subscription. For details, read [Connect to an Azure subscription from the Azure CLI](/documentation/articles/xplat-cli-connect).
+5. From your client computer, open the Azure CLI and login to your Azure subscription. For details, read [Connect to an Azure subscription from the Azure CLI](/documentation/articles/xplat-cli-connect/).
 
 6. Make sure you are in Resource Manager mode:
 
@@ -174,7 +174,7 @@ Use the captured image and template to deploy additional VMs using the steps out
 * Create a new NIC in either the same or a different virtual network
 * Create a deployment in the resource group in which you set up the virtual network, using the modified template JSON file
 
-If you want the network set up automatically when you create a VM from the image, use the [101-vm-from-user-image template](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-from-user-image) from GitHub. This template creates a VM from your custom image and the necessary virtual network, public IP address, and NIC resources. For a walkthrough of using the template in the Azure Management Portal, see [How to create a virtual machine from a custom image using an ARM template](http://codeisahighway.com/how-to-create-a-virtual-machine-from-a-custom-image-using-an-arm-template/).
+If you want the network set up automatically when you create a VM from the image, use the [101-vm-from-user-image template](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-from-user-image) from GitHub. This template creates a VM from your custom image and the necessary virtual network, public IP address, and NIC resources. For a walkthrough of using the template in the Azure portal, see [How to create a virtual machine from a custom image using an ARM template](http://codeisahighway.com/how-to-create-a-virtual-machine-from-a-custom-image-using-an-arm-template/).
 
 ## Use the azure vm create command
 
@@ -196,4 +196,4 @@ For additional command options, run `azure help vm create`.
 
 ## Next steps
 
-To manage your VMs with the CLI, see the tasks in [Deploy and manage virtual machines by using Azure Resource Manager templates and the Azure CLI](/documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli).
+To manage your VMs with the CLI, see the tasks in [Deploy and manage virtual machines by using Azure Resource Manager templates and the Azure CLI](/documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli/).

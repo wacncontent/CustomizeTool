@@ -12,18 +12,28 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="01/12/2016"
+	ms.date="06/14/2016"
 	wacn.date=""/>
 
 # Information about using HDInsight on Linux
 
 Linux-based Azure HDInsight clusters provide Hadoop on a familiar Linux environment, running in the Azure cloud. For most things, it should work exactly as any other Hadoop-on-Linux installation. This document calls out specific differences that you should be aware of.
 
+##Prerequisites
+
+Many of the steps in this document use the following utilities, which may need to be installed on your system.
+
+* [cURL](https://curl.haxx.se/) - used to communicate with web-based services
+* [jq](https://stedolan.github.io/jq/) - used to parse JSON documents
+* [Azure CLI](/documentation/articles/xplat-cli-install/) - used to remotely manage Azure services
+
+	[AZURE.INCLUDE [use-latest-version](../includes/hdinsight-use-latest-powershell-and-cli.md)] 
+
 ## Domain names
 
 The fully qualified domain name (FQDN) to use when connecting to the cluster from the internet is **&lt;clustername>.azurehdinsight.cn** or (for SSH only) **&lt;clustername-ssh>.azurehdinsight.cn**.
 
-Internally, each node in the cluster has a name that is assigned during cluster configuration. To find the cluster names, you can visit the __Hosts__ page on the Ambari Web UI, or use the following to return a list of hosts from the Ambari REST API using [cURL](http://curl.haxx.se/) and [jq](https://stedolan.github.io/jq/):
+Internally, each node in the cluster has a name that is assigned during cluster configuration. To find the cluster names, you can visit the __Hosts__ page on the Ambari Web UI, or use the following to return a list of hosts from the Ambari REST API:
 
     curl -u admin:PASSWORD -G "https://CLUSTERNAME.azurehdinsight.cn/api/v1/clusters/CLUSTERNAME/hosts" | jq '.items[].Hosts.host_name'
 
@@ -45,7 +55,7 @@ This returns a JSON document describing the service, and then jq pulls out only 
 
 	> [AZURE.IMPORTANT] While Ambari for your cluster is accessible directly over the Internet, some functionality relies on accessing nodes by the internal domain name used by the cluster. Since this is an internal domain name, and not public, you will receive "server not found" errors when trying to access some features over the Internet.
 	>
-	> To use the full functionality of the Ambari web UI, use an SSH tunnel to proxy web traffic to the cluster head node. See [Use SSH Tunneling to access Ambari web UI, ResourceManager, JobHistory, NameNode, Oozie, and other web UI's](/documentation/articles/hdinsight-linux-ambari-ssh-tunnel)
+	> To use the full functionality of the Ambari web UI, use an SSH tunnel to proxy web traffic to the cluster head node. See [Use SSH Tunneling to access Ambari web UI, ResourceManager, JobHistory, NameNode, Oozie, and other web UI's](/documentation/articles/hdinsight-linux-ambari-ssh-tunnel/)
 
 * **Ambari (REST)** - https://&lt;clustername>.azurehdinsight.cn/ambari
 
@@ -59,7 +69,7 @@ This returns a JSON document describing the service, and then jq pulls out only 
 	>
 	> Authentication is plaintext - always use HTTPS to help ensure that the connection is secure.
 
-* **SSH** - &lt;clustername>-ssh.azurehdinsight.cn on port 22 or 23. Port 22 is used to connect to head node 0, while 23 is used to connect to head node 1. For more information on the head nodes, see [Availability and reliability of Hadoop clusters in HDInsight](/documentation/articles/hdinsight-high-availability).
+* **SSH** - &lt;clustername>-ssh.azurehdinsight.cn on port 22 or 23. Port 22 is used to connect to head node 0, while 23 is used to connect to head node 1. For more information on the head nodes, see [Availability and reliability of Hadoop clusters in HDInsight](/documentation/articles/hdinsight-high-availability/).
 
 	> [AZURE.NOTE] You can only access the cluster head nodes through SSH from a client machine. Once connected, you can then access the worker nodes by using SSH from the head node.
 
@@ -74,7 +84,7 @@ Example data and JAR files can be found on Hadoop Distributed File System (HDFS)
 
 ## HDFS, Azure Blob storage, and storage best practices
 
-In most Hadoop distributions, HDFS is backed by local storage on the machines in the cluster. While this is efficient, it can be costly for a cloud-based solution where you are charged hourly for compute resources.
+In most Hadoop distributions, HDFS is backed by local storage on the machines in the cluster. While this is efficient, it can be costly for a cloud-based solution where you are charged hourly or by minute for compute resources.
 
 HDInsight uses Azure Blob storage as the default store, which provides the following benefits:
 
@@ -106,7 +116,7 @@ During cluster creation, you selected to either use an existing Azure Storage ac
 
         wasb://CONTAINER@ACCOUNTNAME.blob.core.chinacloudapi.cn
 
-1. Get the resource group for the Storage Account, use the [Azure CLI](/documentation/articles/xplat-cli-install). In the following command, replace __ACCOUNTNAME__ with the Storage Account name retrieved from Ambari:
+1. Get the resource group for the Storage Account, use the [Azure CLI](/documentation/articles/xplat-cli-install/). In the following command, replace __ACCOUNTNAME__ with the Storage Account name retrieved from Ambari:
 
         azure storage account list --json | jq '.[] | select(.name=="ACCOUNTNAME").resourceGroup'
     
@@ -122,9 +132,9 @@ During cluster creation, you selected to either use an existing Azure Storage ac
 
     This will return the primary key for the account.
 
-You can also find the storage information using the Azure Management Portal:
+You can also find the storage information using the Azure Portal:
 
-1. In the [Azure Management Portal](https://manage.windowsazure.cn/), select your HDInsight cluster.
+1. In the [Azure Portal](https://portal.azure.cn/), select your HDInsight cluster.
 
 2. From the __Essentials__ section, select __All settings__.
 
@@ -138,7 +148,7 @@ You can also find the storage information using the Azure Management Portal:
 
 Other than through the Hadoop command from the cluster, there are a variety of ways to access blobs:
 
-* [Azure CLI for Mac, Linux and Windows](/documentation/articles/xplat-cli-install): Command-Line interface commands for working with Azure. After installing, use the `azure storage` command for help on using storage, or `azure blob` for blob-specific commands.
+* [Azure CLI for Mac, Linux and Windows](/documentation/articles/xplat-cli-install/): Command-Line interface commands for working with Azure. After installing, use the `azure storage` command for help on using storage, or `azure blob` for blob-specific commands.
 
 * [blobxfer.py](https://github.com/Azure/azure-batch-samples/tree/master/Python/Storage): A python script for working with blobs in Azure Storage.
 
@@ -172,9 +182,9 @@ The different cluster types are affected by scaling as follows:
 
 	1. Connect to the HDInsight cluster using SSH. For more information on using SSH with HDInsight, see one of the following documents:
 
-		* [Use SSH with HDInsight from Linux, Unix, and Mac OS X](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix)
+		* [Use SSH with HDInsight from Linux, Unix, and Mac OS X](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix/)
 
-		* [Use SSH with HDInsight from Windows](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows)
+		* [Use SSH with HDInsight from Windows](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows/)
 
 	1. Use the following to start the HBase shell:
 
@@ -200,26 +210,25 @@ The different cluster types are affected by scaling as follows:
 
 For specific information on scaling your HDInsight cluster, see:
 
-* [Manage Hadoop clusters in HDInsight by using the Azure Management Portal](/documentation/articles/hdinsight-administer-use-portal-linux#scaling)
+* [Manage Hadoop clusters in HDInsight by using the Azure Portal](/documentation/articles/hdinsight-administer-use-portal-linux/#scaling)
 
-* [Manage Hadoop clusters in HDinsight by using Azure PowerShell](/documentation/articles/hdinsight-administer-use-command-line#scaling)
+* [Manage Hadoop clusters in HDinsight by using Azure PowerShell](/documentation/articles/hdinsight-administer-use-command-line/#scaling)
 
 ## How do I install Hue (or other Hadoop component)?
 
-HDInsight is a managed service, which means that nodes in a cluster may be destroyed and reprovisioned automatically by Azure if a problem is detected. Because of this, it is not recommended to manually install things directly on the cluster nodes. Instead, use [HDInsight Script Actions](/documentation/articles/hdinsight-hadoop-customize-cluster-v1) when you need to install the following:
+HDInsight is a managed service, which means that nodes in a cluster may be destroyed and reprovisioned automatically by Azure if a problem is detected. Because of this, it is not recommended to manually install things directly on the cluster nodes. Instead, use [HDInsight Script Actions](/documentation/articles/hdinsight-hadoop-customize-cluster-v1/) when you need to install the following:
 
 * A service or web site such as Spark or Hue.
 * A component that requires configuration changes on multiple nodes in the cluster. For example, a required environment variable, creating of a logging directory, or creation of a configuration file.
 
 Script Actions are Bash scripts that are ran during cluster provisioning, and can be used to install and configure additional components on the cluster. Example scripts are provided for installing the following components:
 
-* [Hue](/documentation/articles/hdinsight-hadoop-hue-linux)
-* [Giraph](/documentation/articles/hdinsight-hadoop-giraph-install-v1)
-* [R](/documentation/articles/hdinsight-hadoop-r-scripts-linux)
-* [Solr](/documentation/articles/hdinsight-hadoop-solr-install-v1)
-* [Spark](/documentation/articles/hdinsight-hadoop-spark-install-linux)
+* [Hue](/documentation/articles/hdinsight-hadoop-hue-linux/)
+* [Giraph](/documentation/articles/hdinsight-hadoop-giraph-install-v1/)
+* [R](/documentation/articles/hdinsight-hadoop-r-scripts-linux/)
+* [Solr](/documentation/articles/hdinsight-hadoop-solr-install-v1/)
 
-For information on developing your own Script Actions, see [Script Action development with HDInsight](/documentation/articles/hdinsight-hadoop-script-actions-linux).
+For information on developing your own Script Actions, see [Script Action development with HDInsight](/documentation/articles/hdinsight-hadoop-script-actions-linux/).
 
 ###Jar files
 
@@ -241,6 +250,7 @@ If the cluster already provides a version of a component as a standalone jar fil
 
 ## Next steps
 
-* [Use Hive with HDInsight](/documentation/articles/hdinsight-use-hive)
-* [Use Pig with HDInsight](/documentation/articles/hdinsight-use-pig)
-* [Use MapReduce jobs with HDInsight](/documentation/articles/hdinsight-use-mapreduce)
+* [Migrate from Windows-based HDInsight to Linux-based](/documentation/articles/hdinsight-migrate-from-windows-to-linux/)
+* [Use Hive with HDInsight](/documentation/articles/hdinsight-use-hive/)
+* [Use Pig with HDInsight](/documentation/articles/hdinsight-use-pig/)
+* [Use MapReduce jobs with HDInsight](/documentation/articles/hdinsight-use-mapreduce/)

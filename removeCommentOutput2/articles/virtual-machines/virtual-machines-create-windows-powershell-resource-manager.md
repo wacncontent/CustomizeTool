@@ -1,4 +1,4 @@
-<!-- not suitable for Mooncake -->
+<!-- rename to virtual-machines-windows-ps-create -->
 
 <properties
 	pageTitle="Create a Windows VM | Azure"
@@ -17,7 +17,7 @@
 
 # Create a Windows VM with Resource Manager and PowerShell
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the Resource Manager deployment model, which Microsoft recommends for most new deployments instead of the classic deployment model.
 
 This topic describes how to quickly create a Windows-based Azure virtual machine using Azure Resource Manager and PowerShell.
 

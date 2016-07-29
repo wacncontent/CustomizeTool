@@ -10,7 +10,7 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="01/29/2016"
+	ms.date="04/28/2016"
 	wacn.date=""/>
 
 # Access YARN application logs on Windows-based HDInsight
@@ -19,7 +19,7 @@ This topic explains how to access the logs for YARN (Yet Another Resource Negoti
 
 ### Prerequisites
 
-- A Windows-based HDInsight cluster.  See [Create Windows-based Hadoop clusters in HDInsight](/documentation/articles/hdinsight-provision-clusters-v1).
+- A Windows-based HDInsight cluster.  See [Create Windows-based Hadoop clusters in HDInsight](/documentation/articles/hdinsight-provision-clusters-v1/).
 
 
 ## YARN Timeline Server

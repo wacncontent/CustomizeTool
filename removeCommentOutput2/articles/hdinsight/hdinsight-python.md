@@ -10,21 +10,20 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="02/10/2016"
+	ms.date="06/27/2016"
 	wacn.date=""/>
 
 #Use Python with Hive and Pig in HDInsight
 
 Hive and Pig are great for working with data in HDInsight, but sometimes you need a more general purpose language. Both Hive and Pig allow you to create User Defined Functions (UDF) using a variety of programming languages. In this article, you will learn how to use a Python UDF from Hive and Pig.
 
-> [AZURE.NOTE] The steps in this article apply to HDInsight cluster versions 2.1, 3.0, 3.1, and 3.2.
 
 ##Requirements
-
 
 * An HDInsight cluster (Windows-based)
 
 * A text editor
+ 
 ##<a name="python"></a>Python on HDInsight
 
 Python2.7 is installed by default on HDInsight 3.0 and later clusters. Hive can be used with this version of Python for stream processing (data is passed between Hive and Python using STDOUT/STDIN).
@@ -144,7 +143,6 @@ When the data is returned to Pig, it will have a consistent schema as defined in
 
 ##<a name="running"></a>Running the examples
 
-
 If you are using a Windows-based HDInsight cluster and a Windows client, use the **PowerShell** steps.
 
 ####Hive
@@ -155,7 +153,7 @@ If you are using a Windows-based HDInsight cluster and a Windows client, use the
 
 		add file wasb:///streaming.py;
 		SELECT TRANSFORM (clientid, devicemake, devicemodel)
-		  USING 'streaming.py' AS
+		  USING 'python streaming.py' AS
 		  (clientid string, phoneLabel string, phoneHash string)
 		FROM hivesampletable
 		ORDER BY clientid LIMIT 50;
@@ -190,7 +188,9 @@ If you are using a Windows-based HDInsight cluster and a Windows client, use the
 
 ###PowerShell
 
-These steps use Azure PowerShell. If this is not already installed and configured on your development machine, see [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure) before using the following steps.
+These steps use Azure PowerShell. If this is not already installed and configured on your development machine, see [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure/) before using the following steps.
+
+[AZURE.INCLUDE [upgrade-powershell](../includes/hdinsight-use-latest-powershell.md)]
 
 1. Using the Python examples [streaming.py](#streamingpy) and [jython.py](#jythonpy), create local copies of the files on your development machine.
 
@@ -199,7 +199,6 @@ These steps use Azure PowerShell. If this is not already installed and configure
 		$clusterName = YourHDIClusterName
 		$pathToStreamingFile = "C:\path\to\streaming.py"
 		$pathToJythonFile = "C:\path\to\jython.py"
-
 
 		$hdiStore = get-azurehdinsightcluster -name $clusterName
 		$storageAccountName = $hdiStore.DefaultStorageAccount.StorageAccountName.Split(".",2)[0]
@@ -212,7 +211,7 @@ These steps use Azure PowerShell. If this is not already installed and configure
 
 	This script retrieves information for your HDInsight cluster, then extracts the account and key for the default storage account, and uploads the files to the root of the container.
 
-	> [AZURE.NOTE] Other methods of uploading the scripts can be found in the [Upload data for Hadoop jobs in HDInsight](/documentation/articles/hdinsight-upload-data) document.
+	> [AZURE.NOTE] Other methods of uploading the scripts can be found in the [Upload data for Hadoop jobs in HDInsight](/documentation/articles/hdinsight-upload-data/) document.
 
 After uploading the files, use the following PowerShell scripts to start the jobs. When the job completes, the output should be written to the PowerShell console.
 
@@ -227,18 +226,14 @@ After uploading the files, use the following PowerShell scripts to start the job
 	             "FROM hivesampletable " +
 	             "ORDER BY clientid LIMIT 50;"
 
-
 	$jobDefinition = New-AzureHDInsightHiveJobDefinition -Query $HiveQuery -StatusFolder '/hivepython'
 
 	$job = Start-AzureHDInsightJob -Cluster $clusterName -JobDefinition $jobDefinition
 	Write-Host "Wait for the Hive job to complete ..." -ForegroundColor Green
-
 	Wait-AzureHDInsightJob -Job $job
     # Uncomment the following to see stderr output
-
     # Get-AzureHDInsightJobOutput -StandardError -JobId $job.JobId -Cluster $clusterName
 	Write-Host "Display the standard output ..." -ForegroundColor Green
-
 	Get-AzureHDInsightJobOutput -Cluster $clusterName -JobId $job.JobId -StandardOutput
 
 The output for the **Hive** job should appear similar to the following:
@@ -259,18 +254,14 @@ The output for the **Hive** job should appear similar to the following:
 	            "DETAILS = foreach LOG generate myfuncs.create_structure(LINE);" +
 	            "DUMP DETAILS;"
 
-
 	$jobDefinition = New-AzureHDInsightPigJobDefinition -Query $PigQuery -StatusFolder '/pigpython'
 
 	$job = Start-AzureHDInsightJob -Cluster $clusterName -JobDefinition $jobDefinition
 	Write-Host "Wait for the Pig job to complete ..." -ForegroundColor Green
-
 	Wait-AzureHDInsightJob -Job $job
     # Uncomment the following to see stderr output
-
     # Get-AzureHDInsightJobOutput -StandardError -JobId $job.JobId -Cluster $clusterName
 	Write-Host "Display the standard output ..." -ForegroundColor Green
-
 	Get-AzureHDInsightJobOutput -Cluster $clusterName -JobId $job.JobId -StandardOutput
 
 The output for the **Pig** job should appear similar to the following:
@@ -301,7 +292,6 @@ If you are using an editor that cannot create LF line endings, or are unsure wha
 
 Both of the example PowerShell scripts used to run the examples contain a commented line that will display error output for the job. If you are not seeing the expected output for the job, uncomment the following line and see if the error information indicates a problem.
 
-
 	# Get-AzureHDInsightJobOutput -StandardError -JobId $job.JobId -Cluster $clusterName
 
 The error information (STDERR,) and the result of the job (STDOUT,) are also logged to the default blob container for your clusters at the following locations.
@@ -317,8 +307,8 @@ If you need to load Python modules that aren't provided by default, see [How to 
 
 For other ways to use Pig, Hive, and to learn about using MapReduce, see the following.
 
-* [Use Hive with HDInsight](/documentation/articles/hdinsight-use-hive)
+* [Use Hive with HDInsight](/documentation/articles/hdinsight-use-hive/)
 
-* [Use Pig with HDInsight](/documentation/articles/hdinsight-use-pig)
+* [Use Pig with HDInsight](/documentation/articles/hdinsight-use-pig/)
 
-* [Use MapReduce with HDInsight](/documentation/articles/hdinsight-use-mapreduce)
+* [Use MapReduce with HDInsight](/documentation/articles/hdinsight-use-mapreduce/)

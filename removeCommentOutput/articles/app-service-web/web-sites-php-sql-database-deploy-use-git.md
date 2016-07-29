@@ -3,13 +3,13 @@
 	description="A tutorial that demonstrates how to create a PHP web app that stores data in Azure SQL Database and use Git deployment to Azure Web App." 
 	services="app-service\web, sql-database" 
 	documentationCenter="php" 
-	authors="tfitzmac" 
+	authors="rmcmurray" 
 	manager="wpickett" 
-	editor="mollybos"/>
+	editor=""/>
 
 <tags
 	ms.service="app-service-web"
-	ms.date="02/09/2016"
+	ms.date="06/24/2016"
 	wacn.date=""/>
 
 # Create a PHP-SQL web app and deploy to Azure using Git
@@ -21,7 +21,7 @@ This tutorial shows you how to create a PHP web app in [Azure Web App](/document
 
 You will learn:
 
-* How to create an Azure web app and a SQL Database using the [Azure Management Portal](https://manage.windowsazure.cn/). Because PHP is enabled in Azure Web Apps by default, nothing special is required to run your PHP code.
+* How to create an Azure web app and a SQL Database using the [Azure Portal](https://manage.windowsazure.cn/). Because PHP is enabled in Azure Web Apps by default, nothing special is required to run your PHP code.
 * How to publish and re-publish your application to Azure using Git.
  
 By following this tutorial, you will build a simple registration web application in PHP. The application will be hosted in an Azure Website. A screenshot of the completed application is below:
@@ -36,9 +36,9 @@ By following this tutorial, you will build a simple registration web application
 
 Follow these steps to create an Azure web app and a SQL Database:
 
-1. Log in to the [Azure Management Portal](https://manage.windowsazure.cn/).
+1. Log in to the [Azure Portal](https://portal.azure.cn/).
 
-2. Open the Azure gallery by clicking the **New** icon on the top left of the dashboard, click on **Select All** next to Marketplace and selecting **Web + Mobile**.
+2. Open the Azure Marketplace by clicking the **New** icon on the top left of the dashboard, click on **Select All** next to Marketplace and selecting **Web + Mobile**.
 	
 3. In the Marketplace, select **Web + Mobile**.
 

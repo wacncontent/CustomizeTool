@@ -1,3 +1,5 @@
+<!-- deleted in Global -->
+
 <properties linkid="dev-ruby-web-app-with-linux-vm-capistrano" urlDisplayName="Ruby on Rails Azure VM Capistrano" pageTitle="Deploying a Ruby on Rails Web Site to an Azure Virtual Machine using Capistrano - tutorial" metaKeywords="ruby on rails, ruby on rails azure, rails azure, rails vm, capistrano azure vm, capistrano azure rails, unicorn azure vm, unicorn azure rails, unicorn nginx capistrano, unicorn nginx capistrano azure, nginx azure" description="Learn how to deploy a Ruby on Rails application to an Azure Virtual Machine using Capistrano, Unicorn and Nginx." metaCanonical="" disqusComments="1" umbracoNaviHide="1" title="Deploy a Ruby on Rails Web Site to an Azure VM using Capistrano" authors="larryfr" />
 
 
@@ -448,7 +450,7 @@ To learn how to use the Azure SDK for Ruby to access Azure services from your Ru
 
 * [Serve high bandwidth content with the Content Delivery Network][cdn-howto]
 
-[vm-instructions]: /documentation/articles/virtual-machines-linux-tutorial/
+[vm-instructions]: /documentation/articles/virtual-machines-linux-quick-create-cli/
 
 
 [rails-guides]: http://guides.rubyonrails.org/

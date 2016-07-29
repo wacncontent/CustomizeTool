@@ -18,7 +18,7 @@
 
 [AZURE.INCLUDE [intro](../includes/custom-dns-web-site-intro.md)]
 
-If you have purchased domain through Azure Web Apps then refer to the final step of [Buy Domain for Web Apps](/documentation/articles/custom-dns-web-site-buydomains-web-app).
+If you have purchased domain through Azure Web Apps then refer to the final step of [Buy Domain for Web Apps](/documentation/articles/custom-dns-web-site-buydomains-web-app/).
 
 This article provides instructions on using a custom domain name that was purchased directly from [GoDaddy](https://godaddy.com) with [Azure Web Apps](/documentation/services/web-sites/).
 
@@ -63,7 +63,7 @@ To associate your custom domain with a web app in Azure, you must add a new entr
 5. Click **Add Another**.
 6. Select **CNAME** as the record type, then specify a **Host** value of **awverify** and a **Points to** value of **awverify.&lt;yourwebappname&gt;.chinacloudsites.cn**.
 
-	> [AZURE.NOTE] This CNAME record is used by Azure to validate that you own the domain described by the A record or the first CNAME record. Once the domain has been mapped to the web app in the Azure Management Portal, the **awverify** entry can be removed.
+	> [AZURE.NOTE] This CNAME record is used by Azure to validate that you own the domain described by the A record or the first CNAME record. Once the domain has been mapped to the web app in the Azure Portal, the **awverify** entry can be removed.
 
 5. When you have finished adding or modifying records, click **Finish** to save changes.
 

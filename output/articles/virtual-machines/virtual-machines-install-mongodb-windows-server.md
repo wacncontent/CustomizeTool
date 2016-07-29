@@ -1,3 +1,5 @@
+<!-- rename to virtual-machines-windows-classic-install-mongodb -->
+
 <properties
 	pageTitle="Install MongoDB on a Windows VM | Azure"
 	description="Learn how to install MongoDB on an Azure VM created with the classic deployment model running Windows Server."
@@ -15,10 +17,10 @@
 
 #Install MongoDB on a Windows VM
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]  Resource Manager model. 
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager model.
 
 
-[MongoDB][MongoDB] is a popular open-source, high-performance NoSQL database.  Using the [Azure Management Portal][AzurePortal], you can create a virtual machine running Windows Server from the Image Gallery, using the classic deployment model. You can then install and configure a MongoDB database on the virtual machine.
+[MongoDB][MongoDB] is a popular open-source, high-performance NoSQL database.  Using the [Azure Classic Management Portal][AzurePortal], you can create a virtual machine running Windows Server from the Image Gallery, using the classic deployment model. You can then install and configure a MongoDB database on the virtual machine.
 
 
 ## Create a virtual machine running Windows Server
@@ -34,7 +36,7 @@ To provide storage for the virtual machine, attach a data disk and then initiali
 
 [AZURE.INCLUDE [howto-attach-disk-windows-linux](../includes/howto-attach-disk-windows-linux.md)]
 
-For instructions on initializing the disk, see "How to: Initialize a new data disk in Windows Server" in [How to attach a data disk to a Windows virtual machine](/documentation/articles/storage-windows-attach-disk).
+For instructions on initializing the disk, see "How to: Initialize a new data disk in Windows Server" in [How to attach a data disk to a Windows virtual machine](/documentation/articles/virtual-machines-windows-classic-attach-disk/).
 
 ## Install and run MongoDB on the virtual machine
 

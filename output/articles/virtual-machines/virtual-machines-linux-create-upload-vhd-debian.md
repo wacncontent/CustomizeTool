@@ -1,3 +1,5 @@
+<!-- rename to virtual-machines-linux-debian-create-upload-vhd -->
+
 <properties
 	pageTitle="Prepare Debian Linux VHD | Azure"
 	description="Learn how to create Debian 7 & 8 VHD files for deployment in Azure."
@@ -49,7 +51,7 @@ This section assumes that you have already installed a Debian Linux operating sy
 
         # apt-get install -y git parted
 
-7.	Install the Azure Linux Agent from GitHub using [guidance](/documentation/articles/virtual-machines-linux-update-agent) and choose version 2.0.14:
+7.	Install the Azure Linux Agent from GitHub using [guidance](/documentation/articles/virtual-machines-linux-update-agent/) and choose version 2.0.14:
 
 			# wget https://raw.githubusercontent.com/Azure/WALinuxAgent/WALinuxAgent-2.0.14/waagent
 			# chmod +x waagent
@@ -74,4 +76,4 @@ If any issue to use this script, just file a issue to Credativ [here](https://gi
 
 ## Next steps
 
-You're now ready to use your Debian virtual hard disk to create new virtual machines in Azure. If this is the first time that you're uploading the .vhd file to Azure, see steps 2 and 3 in [Creating and uploading a virtual hard disk that contains the Linux operating system](/documentation/articles/virtual-machines-linux-create-upload-vhd).
+You're now ready to use your Debian virtual hard disk to create new virtual machines in Azure. If this is the first time that you're uploading the .vhd file to Azure, see steps 2 and 3 in [Creating and uploading a virtual hard disk that contains the Linux operating system](/documentation/articles/virtual-machines-linux-classic-create-upload-vhd/).

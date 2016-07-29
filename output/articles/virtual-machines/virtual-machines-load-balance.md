@@ -1,3 +1,5 @@
+<!-- rename to virtual-machines-linux-load-balance -->
+
 <properties
 	pageTitle="Load balancing for infrastructure services | Azure"
 	description="Describes the two different types of load balancing supported by Azure: Load balancer for cloud services and Azure Traffic Manager for client traffic."
@@ -34,7 +36,7 @@ Traffic Manager uses three load-balancing methods to distribute traffic:
 - **Performance**:  Use this method when you have endpoints in different geographic locations and you want requesting clients to use the "closest" endpoint in terms of the lowest latency.
 - **Round Robin:**  Use this method when you want to distribute load across a set of cloud services in the same datacenter or across cloud services or websites in different datacenters.
 
-For more information, see [About Traffic Manager Load Balancing Methods](/documentation/articles/traffic-manager-load-balancing-methods).
+For more information, see [About Traffic Manager Load Balancing Methods](/documentation/articles/traffic-manager-load-balancing-methods/).
 
 The following diagram shows an example of the Round Robin load balancing method for distributing traffic between different cloud services.
 
@@ -47,7 +49,7 @@ The basic process is the following:
 3.	Traffic Manager chooses the next cloud service in the Round Robin list and sends back the DNS name. The Internet client's DNS server resolves the name to an IP address and sends it to the Internet client.
 4.	The Internet client connects with the cloud service chosen by Traffic Manager.
 
-For more information, see [Traffic Manager](/documentation/articles/traffic-manager-overview).
+For more information, see [Traffic Manager](/documentation/articles/traffic-manager-overview/).
 
 ## Azure load balancing for virtual machines ##
 
@@ -59,10 +61,6 @@ The following diagram shows a load-balanced endpoint for standard (unencrypted) 
 
 ![loadbalancing](./media/virtual-machines-load-balance/LoadBalancing.png)
 
-
-For more information, see [Azure Load Balancer](/documentation/articles/load-balancer-overview). For the steps to create a load-balanced set, see [Configure a load-balanced set](/documentation/articles/load-balancer-internet-getstarted).
-
-
 Azure can also load balance within a cloud service or virtual network. This is known as internal load balancing and can be used in the following ways:
 
 - To load balance between servers in different tiers of a multi-tier application (for example, between web and database tiers).
@@ -75,19 +73,4 @@ The following diagram shows an example of an internal load-balanced endpoint for
 
 ![loadbalancing](./media/virtual-machines-load-balance/LOBServers.png)
 
-
-## Load balancer considerations
-
-A load balancer is configured by default to timeout an idle session in 4 minutes. If your application behind a load balancer leaves a connection idle for more than 4 minutes and it doesn't have a Keep-Alive configuration, the connection will be dropped. You can change the load balancer behavior to allow a [longer timeout setting for Azure load balancer](/documentation/articles/load-balancer-tcp-idle-timeout).
-
-Other consideration is the type of distribution mode supported by Azure Load Balancer. You can configure source IP affinity (source IP, destination IP) or source IP protocol (source IP , destination IP and protocol). Check out [Azure Load Balancer distribution mode (source IP affinity)](/documentation/articles/load-balancer-distribution-mode) for more information.
-
-
-## Next steps
-
-For the steps to create a load-balanced set, see [Configure an internal load-balanced set](/documentation/articles/load-balancer-internal-getstarted).
-
-For more information about load balancer, see [Internal load balancing](/documentation/articles/load-balancer-internal-overview).
-
-
 

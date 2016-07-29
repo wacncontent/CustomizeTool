@@ -10,22 +10,24 @@ tags="azure-portal"/>
 
 <tags
 	ms.service="hdinsight"
-	ms.date="02/01/2016"
+	ms.date="06/29/2016"
 	wacn.date=""/>
 
-#Use Maven to build Java applications that use HBase with HDInsight (Hadoop)
+#Use Maven to build Java applications that use HBase with Windows-based HDInsight (Hadoop)
 
 Learn how to create and build an [Apache HBase](http://hbase.apache.org/) application in Java by using Apache Maven. Then use the application with Azure HDInsight (Hadoop).
 
 [Maven](http://maven.apache.org/) is a software project management and comprehension tool that allows you to build software, documentation, and reports for Java projects. In this article, you will learn how to use it to create a basic Java application that that creates, queries, and deletes an HBase table on an Azure HDInsight cluster.
 
+> [AZURE.NOTE] The steps in this document assume that you are using a Windows-based HDInsight cluster. For information on using a Linux-based HDInsight cluster, see [Use Maven to build Java applications that use HBase with Linux-based HDInsight](/documentation/articles/hdinsight-hbase-build-java-maven-linux/)
 ##Requirements
 
 * [Java platform JDK](http://www.oracle.com/technetwork/java/javase/downloads/index.html) 7 or later
 
 * [Maven](http://maven.apache.org/)
 
-* [An Azure HDInsight cluster with HBase](/documentation/articles/hdinsight-hbase-tutorial-get-started-v1#create-hbase-cluster)
+* [An Windows-based HDInsight cluster with HBase](/documentation/articles/hdinsight-hbase-tutorial-get-started-v1/#create-hbase-cluster)
+    > [AZURE.NOTE] The steps in this document have been tested with HDInsight cluster versions 3.2 and 3.3. The default values provided in examples are for a HDInsight 3.3 cluster.
 
 ##Create the project
 
@@ -50,10 +52,23 @@ Learn how to create and build an [Apache HBase](http://hbase.apache.org/) applic
         <dependency>
           <groupId>org.apache.hbase</groupId>
           <artifactId>hbase-client</artifactId>
-          <version>0.98.4-hadoop2</version>
+          <version>1.1.2</version>
         </dependency>
 
-    This tells Maven that the project requires __hbase-client__ version __0.98.4-hadoop2__. At compile time, this will be downloaded from the default Maven repository. You can use the [Maven Central Repository Search](http://search.maven.org/#artifactdetails%7Corg.apache.hbase%7Chbase-client%7C0.98.4-hadoop2%7Cjar) to learn more about this dependency.
+    This tells Maven that the project requires __hbase-client__ version __1.1.2__. At compile time, this will be downloaded from the default Maven repository. You can use the [Maven Central Repository Search](http://search.maven.org/#artifactdetails%7Corg.apache.hbase%7Chbase-client%7C0.98.4-hadoop2%7Cjar) to learn more about this dependency.
+    > [AZURE.IMPORTANT] The version number must match the version of HBase that is provided with your HDInsight cluster. Use the following table to find the correct version number.
+    | HDInsight cluster version | HBase version to use |
+    | ----- | ----- |
+    | 3.2 | 0.98.4-hadoop2 |
+    | 3.3 | 1.1.2 |
+    For more information on HDInsight versions and components, see [What are the different Hadoop components available with HDInsight](/documentation/articles/hdinsight-component-versioning-v1/).
+2. If you are using an HDInsight 3.3 cluster, you must also add the following to the `<dependencies>` section:
+        <dependency>
+            <groupId>org.apache.phoenix</groupId>
+            <artifactId>phoenix-core</artifactId>
+            <version>4.4.0-HBase-1.1</version>
+        </dependency>
+    This will load the phoenix-core components, which are used by Hbase version 1.1.x.
 
 2. Add the following code to the __pom.xml__ file. This must be inside the `<project>...</project>` tags in the file, for example, between `</dependencies>` and `</project>`.
 
@@ -74,8 +89,8 @@ Learn how to create and build an [Apache HBase](http://hbase.apache.org/) applic
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.3</version>
                 <configuration>
-                    <source>1.6</source>
-                    <target>1.6</target>
+                    <source>1.7</source>
+                    <target>1.7</target>
                 </configuration>
               </plugin>
             <plugin>
@@ -152,7 +167,7 @@ Learn how to create and build an [Apache HBase](http://hbase.apache.org/) applic
 
     This file will be used to load the HBase configuration for an HDInsight cluster.
 
-    > [AZURE.NOTE] This is a very minimal hbase-site.xml file, and it contains the bare minimum settings for the HDInsight cluster. For Linux-based clusters, y
+    > [AZURE.NOTE] This is a very minimal hbase-site.xml file, and it contains the bare minimum settings for the HDInsight cluster.
 
 3. Save the __hbase-site.xml__ file.
 
@@ -347,7 +362,10 @@ Learn how to create and build an [Apache HBase](http://hbase.apache.org/) applic
 
 ##Upload the JAR file and start a job
 
-> [AZURE.NOTE] There are many ways to upload a file to your HDInsight cluster, as described in [Upload data for Hadoop jobs in HDInsight](/documentation/articles/hdinsight-upload-data). The following steps use [Azure PowerShell](/documentation/articles/powershell-install-configure).
+There are many ways to upload a file to your HDInsight cluster, as described in [Upload data for Hadoop jobs in HDInsight](/documentation/articles/hdinsight-upload-data/). The following steps use Azure PowerShell.
+
+[AZURE.INCLUDE [upgrade-powershell](../includes/hdinsight-use-latest-powershell.md)]
+
 
 1. After installing and configuring Azure PowerShell, create a new file named __hbase-runner.psm1__. Use the following as the contents of this file:
 
@@ -429,9 +447,9 @@ Learn how to create and build an [Apache HBase](http://hbase.apache.org/) applic
                     -Clustername $clusterName `
                     -JobId $job.JobId `
                     -DefaultContainer $storage.container `
-                    -DefaultStorageAccountName $storage.storageAccountName `
+                    -DefaultStorageAccountName $storage.storageAccount `
                     -DefaultStorageAccountKey $storage.storageAccountKey `
-                    -HttpCredential $creds
+                    -HttpCredential $creds `
                     -DisplayOutputType StandardError
         }
         Write-Host "Display the standard output ..." -ForegroundColor Green
@@ -439,7 +457,7 @@ Learn how to create and build an [Apache HBase](http://hbase.apache.org/) applic
                     -Clustername $clusterName `
                     -JobId $job.JobId `
                     -DefaultContainer $storage.container `
-                    -DefaultStorageAccountName $storage.storageAccountName `
+                    -DefaultStorageAccountName $storage.storageAccount `
                     -DefaultStorageAccountKey $storage.storageAccountKey `
                     -HttpCredential $creds
         }
@@ -534,10 +552,9 @@ Learn how to create and build an [Apache HBase](http://hbase.apache.org/) applic
             $resourceGroup = $hdi.ResourceGroup
             $storageAccountName=$hdi.DefaultStorageAccount.split('.')[0]
             $container=$hdi.DefaultStorageContainer
-            $storageAccountKey=Get-AzureRmStorageAccountKey `
+            $storageAccountKey=(Get-AzureRmStorageAccountKey `
                 -Name $storageAccountName `
-                -ResourceGroupName $resourceGroup `
-                | %{ $_.Key1 }
+            -ResourceGroupName $resourceGroup)[0].Value
             # Get the resource group, in case we need that
             $return.resourceGroup = $resourceGroup
             # Get the storage context, as we can't depend
