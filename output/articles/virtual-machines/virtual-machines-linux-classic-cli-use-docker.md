@@ -10,12 +10,17 @@
 
 <tags
 	ms.service="virtual-machines-linux"
-	ms.date="01/04/2016"
-	wacn.date=""/>
+	ms.devlang="multiple"
+	ms.topic="article"
+	ms.tgt_pltfrm="vm-linux"
+	ms.workload="infrastructure-services"
+	ms.date="08/29/2016"
+	wacn.date=""
+	ms.author="rasquill"/>
 
 # Using the Docker VM Extension from the Azure Command-line Interface (Azure CLI)
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]
 
 
 

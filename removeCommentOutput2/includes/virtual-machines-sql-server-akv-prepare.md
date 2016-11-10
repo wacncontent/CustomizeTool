@@ -7,11 +7,11 @@ To use Azure Key Vault Integration to configure your SQL Server VM, there are se
 
 The following sections describe these prerequisites and the information you need to collect to later run the PowerShell cmdlets.
 
-###<a name="install-azure-powershell"></a> Install Azure PowerShell
+### <a name="install-azure-powershell"></a> Install Azure PowerShell
 Make sure you have installed the latest Azure PowerShell SDK. For more information, see [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure/).
 
-###<a name="create-an-azure-active-directory"></a> Create an Azure Active Directory
-First, you need to have an [Azure Active Directory](/pricing/1rmb-trial/) (AAD) in your subscription. Among many benefits, this allows you to grant permission to your key vault for certain users and applications.
+### <a name="create-an-azure-active-directory"></a> Create an Azure Active Directory
+First, you need to have an Azure Active Directory (AAD) in your subscription. Among many benefits, this allows you to grant permission to your key vault for certain users and applications.
 
 Next, register an application with AAD. This will give you a Service Principal account that has access to your key vault which your VM will need. In the Azure Key Vault article, you can find these steps in the [Register an application with Azure Active Directory](/documentation/articles/key-vault-get-started/#register) section, or you can see the steps with screen shots in the **Get an identity for the application section** of [this blog post](http://blogs.technet.com/b/kv/archive/2015/01/09/azure-key-vault-step-by-step.aspx). Before completing these steps, note that you need to collect the following information during this registration that is needed later when you enable Azure Key Vault Integration on your SQL VM.
 
@@ -23,7 +23,7 @@ Next, register an application with AAD. This will give you a Service Principal a
 	![Azure Active Directory Secret](./media/virtual-machines-sql-server-akv-prepare/aad-sp-secret.png)
 - You must authorize this new client ID to have the following access permissions: **encrypt**, **decrypt**, **wrapKey**, **unwrapKey**, **sign**, and **verify**. This is done with the [Set-AzureRmKeyVaultAccessPolicy](https://msdn.microsoft.com/zh-cn/library/azure/mt603625.aspx) cmdlet. For more information see [Authorize the application to use the key or secret](/documentation/articles/key-vault-get-started/#authorize).
 
-###<a name="create-a-key-vault"></a> Create a key vault
+### <a name="create-a-key-vault"></a> Create a key vault
 In order to use Azure Key Vault to store the keys you will use for encryption in your VM, you need access to a key vault. If you have not already set up your key vault, create one by following the steps in the [Getting Started with Azure Key Vault](/documentation/articles/key-vault-get-started/) topic. Before completing these steps, note that there is some information you need to collect during this set up that is needed later when you enable Azure Key Vault Integration on your SQL VM.
 
 When you get to the Create a key vault step, note the returned **vaultUri** property, which is the key vault URL. In the example provided in that step, shown below, the key vault name is ContosoKeyVault, therefore the key vault URL would be https://contosokeyvault.vault.chinacloudapi.cn/.

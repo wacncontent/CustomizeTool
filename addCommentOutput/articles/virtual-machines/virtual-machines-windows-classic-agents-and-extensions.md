@@ -9,17 +9,17 @@
  tags="azure-service-management"/>
 
 <tags
-	ms.service="virtual-machines-windows"
-	ms.date="04/14/2016"
-	wacn.date=""/>
+ ms.service="virtual-machines-windows"
+ ms.devlang="na"
+ ms.topic="article"
+ ms.tgt_pltfrm="vm-windows"
+ ms.workload="infrastructure-services"
+ ms.date="08/23/2016"
+ wacn.date=""
+ ms.author="rasquill"/>
 
 #About the virtual machine agent and extensions
 
-
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
-
-
-> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager model.
-
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]
 
-[AZURE.INCLUDE [virtual-machines-common-classic-agents-and-extensions](../includes/virtual-machines-common-classic-agents-and-extensions.md)]
+[AZURE.INCLUDE [virtual-machines-common-classic-agents-and-extensions](../../includes/virtual-machines-common-classic-agents-and-extensions.md)]

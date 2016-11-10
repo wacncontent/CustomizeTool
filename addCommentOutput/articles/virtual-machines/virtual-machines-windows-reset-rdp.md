@@ -1,6 +1,6 @@
 ﻿<properties
-	pageTitle="Reset the password or Remote Desktop on a Windows VM | Azure"
-	description="Reset the administrator password or Remote Desktop services on a Windows VM created with the Resource Manager deployment model."
+	pageTitle="Reset the password or Remote Desktop configuration on a Windows VM | Azure"
+	description="Learn how to reset an account password or Remote Desktop services on a Windows VM using the Azure portal or Azure PowerShell."
 	services="virtual-machines-windows"
 	documentationCenter=""
 	authors="iainfoulds"
@@ -10,25 +10,30 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="06/10/2016"
-	wacn.date=""/>
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-windows"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/01/2016"
+	wacn.date=""
+	ms.author="iainfou"/>
 
 # How to reset the Remote Desktop service or its login password in a Windows VM
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
 
-If you can't connect to a Windows virtual machine because of a forgotten password or a problem with the Remote Desktop service configuration, you can reset the local administrator password or reset the Remote Desktop service configuration. You can use either the Azure portal  Preview  or the VM Access extension in Azure PowerShell to reset the password. If you are using PowerShell, make sure you have the latest PowerShell module installed on your work computer and are signed in to your Azure subscription. For detailed steps, read [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure/).
+You can reset the local administrator password or reset the Remote Desktop service configuration if you can't connect to a Windows virtual machine. You can use either the Azure portal  Preview  or the VM Access extension in Azure PowerShell to reset the password. If you are using PowerShell, make sure you have the latest PowerShell module installed on your work computer and are signed in to your Azure subscription. For detailed steps, read [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure/).
 
 > [AZURE.TIP] You can check the version of PowerShell that you have installed by using `Import-Module Azure, AzureRM; Get-Module Azure, AzureRM | Format-Table Name, Version`
 
 ## Windows VMs in Resource Manager deployment model
 
 ### Azure Portal  Preview 
-Select your VM by clicking **Browse** > **Virtual machines** > *your Windows virtual machine* > **All settings** > **Reset password**. The password reset blade will be displayed as below:
+Select your VM by clicking **Browse** > **Virtual machines** > *your Windows virtual machine* > **All settings** > **Reset password**. The password reset blade is displayed:
 
 ![Password reset page](./media/virtual-machines-windows-reset-rdp/Portal-RM-PW-Reset-Windows.png)
 
-Enter the username and a new password, then click on **Save**. Try connecting to your VM again.
+Enter the username and a new password, then click **Save**. Try connecting to your VM again.
 
 ### VMAccess extension and PowerShell
 
@@ -47,11 +52,11 @@ If you type a different name than the current account, the following VMAccess ex
 Use the VM access extension to set the new credentials as follows:
 
 	Set-AzureRmVMAccessExtension -ResourceGroupName "myRG" -VMName "myVM" -Name "myVMAccess" `
-		-Location WestUS -UserName $cred.GetNetworkCredential().Username `
+		-Location ChinaNorth -UserName $cred.GetNetworkCredential().Username `
 		-Password $cred.GetNetworkCredential().Password -typeHandlerVersion "2.0"
 
 
-Replace `myRG`, `myVM`, `myVMAccess` and location with values relevant to your setup.
+Replace `myRG`, `myVM`, `myVMAccess`, and location with values relevant to your setup.
 
 
 #### **Reset the Remote Desktop service configuration**
@@ -59,13 +64,13 @@ Replace `myRG`, `myVM`, `myVMAccess` and location with values relevant to your s
 You can reset remote access to your VM by using either [Set-AzureRmVMExtension](https://msdn.microsoft.com/zh-cn/library/mt603745.aspx) or [Set-AzureRmVMAccessExtension](https://msdn.microsoft.com/zh-cn/library/mt619447.aspx), as follows. (Replace the `myRG`, `myVM`, `myVMAccess` and location with your own values.)
 
 	Set-AzureRmVMExtension -ResourceGroupName "myRG" -VMName "myVM" `
-		-Name "myVMAccess" -ExtensionType "VMAccessAgent" -Location WestUS `
+		-Name "myVMAccess" -ExtensionType "VMAccessAgent" -Location ChinaNorth `
 		-Publisher "Microsoft.Compute" -typeHandlerVersion "2.0"
 
 Or:<br>
 
 	Set-AzureRmVMAccessExtension -ResourceGroupName "myRG" -VMName "myVM" `
-		-Name "myVMAccess" -Location WestUS -typeHandlerVersion "2.0
+		-Name "myVMAccess" -Location ChinaNorth -typeHandlerVersion "2.0
 
 
 > [AZURE.TIP] Both commands add a new named VM access agent to the virtual machine. At any point, a VM can have only a single VM access agent. To set the VM access agent properties successfully, remove the access agent set previously by using either `Remove-AzureRmVMAccessExtension` or `Remove-AzureRmVMExtension`. Starting from Azure PowerShell version 1.2.2, you can avoid this step when using `Set-AzureRmVMExtension` with a `-ForceRerun` option. When using `-ForceRerun`, make sure to use the same name for the VM access agent as set by the previous command.
@@ -89,7 +94,7 @@ After you enter the new user name and password, click **Save**.
 
 ### VMAccess extension and PowerShell
 
-Make sure the VM Agent is installed on the virtual machine. The VMAccess extension doesn't need to be installed before you can use it, as long as the VM Agent is available. Verify that the VM Agent is already installed by using the following command. (Replace "myCloudService" and "myVM" by the names of your cloud service and your VM, respectively. You can learn these by running `Get-AzureVM` without any parameters.)
+Make sure the VM Agent is installed on the virtual machine. The VMAccess extension doesn't need to be installed before you can use it, as long as the VM Agent is available. Verify that the VM Agent is already installed by using the following command. (Replace "myCloudService" and "myVM" by the names of your cloud service and your VM, respectively. You can learn these names by running `Get-AzureVM` without any parameters.)
 
 	$vm = Get-AzureVM -ServiceName "myCloudService" -Name "myVM"
 	write-host $vm.VM.ProvisionGuestAgent
@@ -135,6 +140,6 @@ This command sets the fDenyTSConnections registry value to 0, enabling Remote De
 
 [Azure VM extensions and features](/documentation/articles/virtual-machines-windows-extensions-features/)
 
-[Connect to an Azure virtual machine with RDP or SSH](http://msdn.microsoft.com/zh-cn/library/azure/dn535788.aspx)
+[Connect to an Azure virtual machine with RDP or  SSH](http://msdn.microsoft.com/zh-cn/library/azure/dn535788.aspx)  SSH](/documentation/articles/virtual-machines-linux-about/) 
 
 [Troubleshoot Remote Desktop connections to a Windows-based Azure virtual machine](/documentation/articles/virtual-machines-windows-troubleshoot-rdp-connection/)

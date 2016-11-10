@@ -4,14 +4,19 @@
 	services="hdinsight" 
 	documentationCenter="" 
 	authors="nitinme" 
-	manager="paulettm" 
+	manager="jhubbard" 
 	editor="cgronlun"
 	tags="azure-portal"/>
 
-<tags
-	ms.service="hdinsight"
-	ms.date="06/06/2016"
-	wacn.date=""/>
+<tags 
+	ms.service="hdinsight" 
+	ms.workload="big-data" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="10/05/2016" 
+	wacn.date="" 
+	ms.author="nitinme"/>
 
 
 # Use BI tools with Apache Spark cluster on HDInsight Linux
@@ -42,7 +47,7 @@ Once your data is saved as a Hive table, in the next section we will connect to 
 
 1. From the [Azure Portal](https://portal.azure.cn/), from the startboard, click the tile for your Spark cluster (if you pinned it to the startboard). You can also navigate to your cluster under **Browse All** > **HDInsight Clusters**.   
 
-2. From the Spark cluster blade, click **Quick Links**, and then from the **Cluster Dashboard** blade, click **Jupyter Notebook**. If prompted, enter the admin credentials for the cluster.
+2. From the Spark cluster blade, click **Cluster Dashboard**, and then click **Jupyter Notebook**. If prompted, enter the admin credentials for the cluster.
 
 	> [AZURE.NOTE] You may also reach the Jupyter Notebook for your cluster by opening the following URL in your browser. Replace __CLUSTERNAME__ with the name of your cluster:
 	>
@@ -67,7 +72,7 @@ Once your data is saved as a Hive table, in the next section we will connect to 
 
 
 		# Create an RDD from sample data
-		hvacText = sc.textFile("wasb:///HdiSamples/HdiSamples/SensorSampleData/hvac/HVAC.csv")
+		hvacText = sc.textFile("wasbs:///HdiSamples/HdiSamples/SensorSampleData/hvac/HVAC.csv")
 		
 		# Create a schema for our data
 		Entry = Row('Date', 'Time', 'TargetTemp', 'ActualTemp', 'BuildingID')

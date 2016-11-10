@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Make the D drive of a VM a data disk | Azure"
+	pageTitle="Make the D: drive of a VM a data disk | Azure"
 	description="Describes how to change drive letters for a Windows VM so that you can use the D: drive as a data drive."
 	services="virtual-machines-windows"
 	documentationCenter=""
@@ -10,18 +10,23 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="06/16/2016"
-	wacn.date=""/>
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-windows"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/27/2016"
+	wacn.date=""
+	ms.author="cynthn"/>
 
-# Use the D drive as a data drive on a Windows VM 
+# Use the D: drive as a data drive on a Windows VM 
 
-If your application need to use the D drive to store data, follow these instructions to use a different drive letter for the temporary disk. Never use the temporary disk to store data that you need to keep.
+If your application needs to use the D drive to store data, follow these instructions to use a different drive letter for the temporary disk. Never use the temporary disk to store data that you need to keep.
 
 If you resize or **Stop (Deallocate)** a virtual machine, this may trigger placement of the virtual machine to a new hypervisor. A planned or unplanned maintenance event may also trigger this placement. In this scenario, the temporary disk will be reassigned to the first available drive letter. If you have an application that specifically requires the D: drive, you need to follow these steps to temporarily move the pagefile.sys, attach a new data disk and assign it the letter D and then move the pagefile.sys back to the temporary drive. Once complete, Azure will not take back the D: if the VM moves to a different hypervisor.
 
 For more information about how Azure uses the temporary disk, see [Understanding the temporary drive on Azure Virtual Machines](https://blogs.msdn.microsoft.com/mast/2013/12/06/understanding-the-temporary-drive-on-windows-azure-virtual-machines/)
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
 
 ## Attach the data disk
 

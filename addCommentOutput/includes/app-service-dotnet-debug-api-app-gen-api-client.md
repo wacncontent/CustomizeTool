@@ -2,7 +2,7 @@
 
 The API App tools in Visual Studio make it easy to generate C# code that calls to your Azure API Apps from desktop, store, and mobile apps. 
 
-1. In Visual Studio, open the solution that contains the API app from the [Create API app](/documentation/articles/app-service-dotnet-create-api-app) topic. 
+1. In Visual Studio, open the solution that contains the API app from the [Create API app](/documentation/articles/app-service-dotnet-create-api-app/) topic. 
 
 2. From **Solution Explorer**, right-click the solution and select the **Add** > **New Project**.
 
@@ -24,7 +24,7 @@ The API App tools in Visual Studio make it easy to generate C# code that calls t
 
 	![Add a new Client](./media/app-service-dotnet-debug-api-app-gen-api-client/03-add-azure-api-client-v3.png)
 	
-5. In the **Add Windows Azure API App Client** dialog, perform the following steps: 
+5. In the **Add Azure API App Client** dialog, perform the following steps: 
 
 	1. Select the **Download** option. 
 	

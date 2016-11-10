@@ -35,7 +35,7 @@ The new endpoint will be listed on the **Endpoints** page.
 ![Endpoint creation successful](./media/virtual-machines-common-classic-setup-endpoints/endpointwindowsnew.png)
 
  
-##<a name="manage-the-acl-on-an-endpoint"></a> Manage the ACL on an endpoint
+## <a name="manage-the-acl-on-an-endpoint"></a> Manage the ACL on an endpoint
 
 To define the set of computers that can send traffic, the ACL on an endpoint can restrict traffic based upon source IP address. Follow these steps to add, modify, or remove an ACL on an endpoint.
 

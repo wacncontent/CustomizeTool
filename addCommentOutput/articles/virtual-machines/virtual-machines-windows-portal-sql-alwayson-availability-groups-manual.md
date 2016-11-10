@@ -6,20 +6,23 @@
 	services="virtual-machines"
 	documentationCenter="na"
 	authors="MikeRayMSFT"
-	manager="jeffreyg"
+	manager="timlt"
 	editor="monicar"
 	tags="azure-service-management" />
 <tags
 	ms.service="virtual-machines"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="vm-windows-sql-server"
+	ms.workload="infrastructure-services"
 	ms.date="06/15/2016"
-	wacn.date=""/>
+	wacn.date=""
+	ms.author="MikeRayMSFT" />
 
 # Configure Always On availability group in Azure VM manually - Resource Manager
 
 > [AZURE.SELECTOR]
-
 - [Resource Manager: Auto](/documentation/articles/virtual-machines-windows-portal-sql-alwayson-availability-groups/)
-
 - [Resource Manager: Manual](/documentation/articles/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual/)
 - [Classic: UI](/documentation/articles/virtual-machines-windows-classic-portal-sql-alwayson-availability-groups/)
 - [Classic: PowerShell](/documentation/articles/virtual-machines-windows-classic-ps-sql-alwayson-availability-groups/)
@@ -48,22 +51,15 @@ The figure below is a graphical representation of the solution.
 
 Note that this is one possible configuration. For example, you can minimize the number of VMs for a two-replica availability group in order to save on compute hours in Azure by using the domain controller as the quorum file share witness in a 2-node WSFC cluster. This method reduces the VM count by one from the above configuration.
 
-
 >[AZURE.NOTE] Completing this tutorial takes a significant amount of time. You can also automatically build this entire solution. In the Azure Portal, there is a gallery setup for Always On availability groups with a listener. This configures everything you need for availability groups automatically. For more information, see [Portal - Resource Manager](/documentation/articles/virtual-machines-windows-portal-sql-alwayson-availability-groups/). 
 
-
-[AZURE.INCLUDE [availability-group-template](../includes/virtual-machines-windows-portal-sql-alwayson-ag-template.md)]
+[AZURE.INCLUDE [availability-group-template](../../includes/virtual-machines-windows-portal-sql-alwayson-ag-template.md)]
 
 This tutorial assumes the following:
 
 - You already have an Azure account.
 
-
 - You already know how to provision a SQL Server VM from the virtual machine gallery using the GUI. For more information, see [Provisioning a SQL Server Virtual Machine on Azure](/documentation/articles/virtual-machines-windows-portal-sql-server-provision/)
-
-
-- You already know how to provision a SQL Server VM from the virtual machine gallery. For more information, see [Provision a SQL Server virtual machine using Azure PowerShell (Resource Manager)](/documentation/articles/virtual-machines-windows-ps-sql-create/)
-
 
 - You already have a solid understanding of availability groups. For more information, see [Always On Availability Groups (SQL Server)](https://msdn.microsoft.com/zh-cn/library/hh510230.aspx).
 
@@ -71,7 +67,7 @@ This tutorial assumes the following:
 
 ## Create resource group
 
-1. Sign in to the [Azure  portal](http://portal.azure.cn)  portal Preview](http://portal.azure.cn) .
+1. Sign in to the [Azure portal](http://portal.azure.cn). 
 
 1. Click **+New** and then type **Resource group** in the **Marketplace** search window.
 
@@ -103,7 +99,7 @@ The solution uses one virtual network with two subnets. You should understand th
 
 To create the virtual network:
 
-1. On the Azure portal  Preview  click click on the new resource group and click **+** to add a new item to the resource group. Azure opens the **Everything** blade.
+1. On the Azure portal click click on the new resource group and click **+** to add a new item to the resource group. Azure opens the **Everything** blade. 
 
     ![New Item](./media/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual/02-newiteminrg.png)
 
@@ -197,7 +193,7 @@ Configure two availablity sets according to the parameters in the following tabl
 | **Fault domains** | 3 | 3 |
 | **Update domains** | 5 | 3 |
 
-After you create the availability sets, return to the resource group in the Azure portal  Preview .
+After you create the availability sets, return to the resource group in the Azure portal.
 
 ## Create domain controllers
 
@@ -225,7 +221,7 @@ The following table shows the settings for these two machines.
 | **Field** | Value 
 | ----- | ---- 
 | **User name**  | DomainAdmin
-| **Password** | Contoso!000 |
+| **Password** | Contoso!0000 |
 | **Subscription** | *your subscription* |
 | **Resource group** | SQL-HA-RG |
 | **Location** | *your location* 
@@ -254,7 +250,7 @@ In the following steps, configure the **ad-primary-dc** machine as a domain cont
 
 	![Connect to Vritual Machine](./media/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual/20-connectrdp.png)
 
-1. Log in with your configured administrator account (**\DomainAdmin**) and password (**Contoso!000**).
+1. Log in with your configured administrator account (**\DomainAdmin**) and password (**Contoso!0000**).
 
 1. By default, the **Server Manager** dashboard should be displayed.
 
@@ -289,7 +285,7 @@ In the following steps, configure the **ad-primary-dc** machine as a domain cont
 | **Page** |Setting|
 |---|---|
 |**Deployment Configuration** |**Add a new forest** = Selected<br/>**Root domain name** = corp.contoso.com|
-|**Domain Controller Options**|**DSRM Password** = Contoso!000<br/>**Confirm Password** = Contoso!000|
+|**Domain Controller Options**|**DSRM Password** = Contoso!0000<br/>**Confirm Password** = Contoso!0000|
 
 1. Click **Next** to go through the other pages in the wizard. On the **Prerequisites Check** page, verify that you see the following message: **All prerequisite checks passed successfully**. Note that you should review any applicable warning messages, but it is possible to continue with the install.
 
@@ -297,15 +293,15 @@ In the following steps, configure the **ad-primary-dc** machine as a domain cont
 
 ### Configure the second domain controller
 
-After the primary domain controller reboots, you can configure the second domain controller. This optional step is for high availability. To complete this step, you will need to know the private IP address for the domain controller. You can get this from the Azure portal  Preview .  Follow these steps to configure the second domain controller.
+After the primary domain controller reboots, you can configure the second domain controller. This optional step is for high availability. To complete this step, you will need to know the private IP address for the domain controller. You can get this from the Azure portal.  Follow these steps to configure the second domain controller.
 
 1. Log back into the **ad-primary-dc** machine. 
 
-1. Open Remote desktop and connect to the secondary domain controller by IP address. If you do not know the IP address of the secondary domain controller, go to the Azure portal  Preview  and check the address assigned to the network interface for the secondary domain controller.
+1. Open Remote desktop and connect to the secondary domain controller by IP address. If you do not know the IP address of the secondary domain controller, go to the Azure portal and check the address assigned to the network interface for the secondary domain controller. 
 
 1. Change the preferred DNS server address to the address for the domain controller. 
 
-1. Launch the RDP file to the primary domain controller (**ad-primary-dc**) and log into the VM using your configured administrator account (**BUILTIN\DomainAdmin**) and password (**Contoso!000**).
+1. Launch the RDP file to the primary domain controller (**ad-primary-dc**) and log into the VM using your configured administrator account (**BUILTIN\DomainAdmin**) and password (**Contoso!0000**).
 
 1. From the primary domain controller, launch a remote desktop to **ad-secondary-dc** using the IP address. Use the same account and password.
 
@@ -327,7 +323,7 @@ After the primary domain controller reboots, you can configure the second domain
 
 	![Use NSLOOKUP to find IP address for DC](./media/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual/IC664954.png)
 
-  >[AZURE.NOTE] After setting the DNS, you may loose the RDP session to the member server. If you do, reboot the VM from the Azure portal  Preview .
+  >[AZURE.NOTE] After setting the DNS, you may loose the RDP session to the member server. If you do, reboot the VM from the Azure portal.
 
 
 1. Click **OK** and then **Close** to commit the changes. You are now able to join the VM to **corp.contoso.com**.
@@ -337,7 +333,7 @@ After the primary domain controller reboots, you can configure the second domain
 |Page|Setting|
 |---|---|
 |**Deployment Configuration**|**Add a domain controller to an existing domain** = Selected<br/>**Root** = corp.contoso.com|
-|**Domain Controller Options**|**DSRM Password** = Contoso!000<br/>**Confirm Password** = Contoso!000|
+|**Domain Controller Options**|**DSRM Password** = Contoso!0000<br/>**Confirm Password** = Contoso!0000|
 
 
 ### Configure Domain Accounts
@@ -358,8 +354,8 @@ The next steps configure the Active Directory (AD) accounts for later use.
 |---|---|
 |**First Name**|Install|
 |**User SamAccountName**|Install|
-|**Password**|Contoso!000|
-|**Confirm password**|Contoso!000|
+|**Password**|Contoso!0000|
+|**Confirm password**|Contoso!0000|
 |**Other password options**|Selected|
 |**Password never expires**|Checked|
 
@@ -389,12 +385,12 @@ Now that you have finished configuring Active Directory and the user objects, yo
 
 ###Create and configure the SQL Server VMs
 
-Next, create three VMs, including two SQL Server VMs, and a WSFC cluster node. To create each of the VMs, go back to **HA-AG-RG** resource group, click **Add**, search for the appropriate gallery item, **Virtual Machine**, and then **From Gallery**. Then use the templates in the following table to help you create the VMs.
+Next, create three VMs, including two SQL Server VMs, and a WSFC cluster node. To create each of the VMs, go back to **SQL-HA-RG** resource group, click **Add**, search for the appropriate gallery item, **Virtual Machine**, and then **From Gallery**. Then use the templates in the following table to help you create the VMs.
 
 |Page|VM1|VM2|VM3|
 |---|---|---|---|
 |Select the appropriate gallery item|**Windows Server 2012 R2 Datacenter**|**SQL Server 2014 SP1 Enterprise on Windows Server 2012 R2**|**SQL Server 2014 SP1 Enterprise on Windows Server 2012 R2**|
-| Virtual machine configuraiton **Basics**  | **Name** = cluster-fsw<br/>**User Name** = DomainAdmin<br/>**Password** = Contoso!000<br/>**Subscription** = Your subscription<br/>**Resource group** = SQL-HA-RG<br/>**Location** = Your azure location | **Name** = sqlserver-0<br/>**User Name** = DomainAdmin<br/>**Password** = Contoso!000<br/>**Subscription** = Your subscription<br/>**Resource group** = SQL-HA-RG<br/>**Location** = Your azure location  | **Name** = sqlserver-1<br/>**User Name** = DomainAdmin<br/>**Password** = Contoso!000<br/>**Subscription** = Your subscription<br/>**Resource group** = SQL-HA-RG<br/>**Location** = Your azure location |
+| Virtual machine configuraiton **Basics**  | **Name** = cluster-fsw<br/>**User Name** = DomainAdmin<br/>**Password** = Contoso!0000<br/>**Subscription** = Your subscription<br/>**Resource group** = SQL-HA-RG<br/>**Location** = Your azure location | **Name** = sqlserver-0<br/>**User Name** = DomainAdmin<br/>**Password** = Contoso!0000<br/>**Subscription** = Your subscription<br/>**Resource group** = SQL-HA-RG<br/>**Location** = Your azure location  | **Name** = sqlserver-1<br/>**User Name** = DomainAdmin<br/>**Password** = Contoso!0000<br/>**Subscription** = Your subscription<br/>**Resource group** = SQL-HA-RG<br/>**Location** = Your azure location |
 |Virtual machine configuration **Size** |DS1 (1 core, 3.5 GB memory)|**SIZE** = DS 2 (2 cores, 7 GB memory)|**SIZE** = DS 2 (2 cores, 7 GB memory)|
 |Virtual machine configuration **Settings**|**Storage** = Premium (SSD)<br/>**NETWORK SUBNETS** = autoHAVNET<br/>**STORAGE ACCOUNT** = Use an automatically generated storage account<br/>**Subnet** = subnet-2(10.1.1.0/24)<br/>**Public IP address** = None<br/>**Network security group** = None<br/>**Monitoring Diagnostics** = Enabled<br/>**Diagnostics storage acccount** = Use an automatically generated storage account<br/>**AVAILABILITY SET** =  sqlAvailabilitySet<br/>|**Storage** = Premium (SSD)<br/>**NETWORK SUBNETS** = autoHAVNET<br/>**STORAGE ACCOUNT** = Use an automatically generated storage account<br/>**Subnet** = subnet-2(10.1.1.0/24)<br/>**Public IP address** = None<br/>**Network security group** = None<br/>**Monitoring Diagnostics** = Enabled<br/>**Diagnostics storage acccount** = Use an automatically generated storage account<br/>**AVAILABILITY SET** =  sqlAvailabilitySet<br/>|**Storage** = Premium (SSD)<br/>**NETWORK SUBNETS** = autoHAVNET<br/>**STORAGE ACCOUNT** = Use an automatically generated storage account<br/>**Subnet** = subnet-2(10.1.1.0/24)<br/>**Public IP address** = None<br/>**Network security group** = None<br/>**Monitoring Diagnostics** = Enabled<br/>**Diagnostics storage acccount** = Use an automatically generated storage account<br/>**AVAILABILITY SET** =  sqlAvailabilitySet<br/>
 |Virtual machine configuration **SQL Server settings**|Not applicable|**SQL connectivity** = Private (within Virtual Network)<br/>**Port** = 1433<br/>**SQL Authentication** = Disable<br/>**Storage configuration** = General<br/>**Automated patching** = Sunday at 2:00<br/>**Automated backup** = Disabled</br>**Azure Key Vault integration** = Disabled|**SQL connectivity** = Private (within Virtual Network)<br/>**Port** = 1433<br/>**SQL Authentication** = Disable<br/>**Storage configuration** = General<br/>**Automated patching** = Sunday at 2:00<br/>**Automated backup** = Disabled</br>**Azure Key Vault integration** = Disabled|
@@ -423,7 +419,7 @@ You will use these addresses to configure the DNS service for each VM. To do thi
 
 1. First, change the preferred DNS server address for each member server. 
 
-1. Launch the RDP file to the primary domain controller (**ad-primary-dc**) and log into the VM using your configured administrator account (**BUILTIN\DomainAdmin**) and password (**Contoso!000**).
+1. Launch the RDP file to the primary domain controller (**ad-primary-dc**) and log into the VM using your configured administrator account (**BUILTIN\DomainAdmin**) and password (**Contoso!0000**).
 
 1. From the primary domain controller, launch a remote desktop to **sqlserver-0** using the IP address. Use the same account and password.
 
@@ -445,7 +441,7 @@ You will use these addresses to configure the DNS service for each VM. To do thi
 
 	![Use NSLOOKUP to find IP address for DC](./media/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual/IC664954.png)
 
-  >[AZURE.NOTE] After setting the DNS, you may loose the RDP session to the member server. If you do, reboot the VM from the Azure portal  Preview .
+  >[AZURE.NOTE] After setting the DNS, you may loose the RDP session to the member server. If you do, reboot the VM from the Azure portal.
 
 
 1. Click **OK** and then **Close** to commit the changes. You are now able to join the VM to **corp.contoso.com**.
@@ -456,7 +452,7 @@ You will use these addresses to configure the DNS service for each VM. To do thi
 
 1. Select the **Domain** check box and type **corp.contoso.com** in the text box. Click **OK**.
 
-1. In the **Windows Security** popup dialog, specify the credentials for the default domain administrator account (**CORP\DomainAdmin**) and the password (**Contoso!000**).
+1. In the **Windows Security** popup dialog, specify the credentials for the default domain administrator account (**CORP\DomainAdmin**) and the password (**Contoso!0000**).
 
 1. When you see the "Welcome to the corp.contoso.com domain" message, click **OK**.
 
@@ -478,7 +474,7 @@ You will use these addresses to configure the DNS service for each VM. To do thi
 
 1. In the **Administrators Properties** dialog, click the **Add** button.
 
-1. Enter the user **CORP\Install**, and then click **OK**. When prompted for credentials, use the **DomainAdmin** account with the **Contoso!000** password.
+1. Enter the user **CORP\Install**, and then click **OK**. When prompted for credentials, use the **DomainAdmin** account with the **Contoso!0000** password.
 
 1. Click **OK** to close the **Administrator Properties** dialog.
 
@@ -774,7 +770,7 @@ In order to connect to the availability group directly, you need to configure an
 
 ### Create the load balancer in Azure
 
-1. In the Azure portal  Preview , go to **SQL-HA-RG** and click **+ Add**.
+1. In the Azure portal, go to **SQL-HA-RG** and click **+ Add**.
 
 1. Search for **Load Balancer**. Choose the load balancer published by Microsoft and click **Create**.
 
@@ -837,13 +833,13 @@ The next thing to do is to configure an AlwaysOn availability group listener on 
 
 1. Click the **Resources** tab, then expand the Client Access Point you just created. Right-click the IP resource and click properties. Note the name of the IP address. You will use this name in the `$IPResourceName` variable in the PowerShell script.
 
-1. Under **IP Address** click **Static IP Address** and set the static IP address to the same address that you used on the Azure Portal  Preview  for **sqlLB** load balancer. Note that you will also use this same IP address in the `$ILBIP` variable in the Powershell script.  Enable NetBIOS for this address and click OK.
+1. Under **IP Address** click **Static IP Address** and set the static IP address to the same address that you used on the Azure Portal for **sqlLB** load balancer. Note that you will also use this same IP address in the `$ILBIP` variable in the Powershell script.  Enable NetBIOS for this address and click OK. 
 
 1. On the cluster node that currently hosts the primary replica, open an elevated PowerShell ISE and paste the following commands into a new script.
 
         $ClusterNetworkName = "<MyClusterNetworkName>" # the cluster network name (Use Get-ClusterNetwork on Windows Server 2012 of higher to find the name)
         $IPResourceName = "<IPResourceName>" # the IP Address resource name
-        $ILBIP = "<X.X.X.X>" # the IP Address of the Internal Load Balancer (ILB). This is the static IP address for the load balancer you configured in the Azure portal  Preview .
+        $ILBIP = "<X.X.X.X>" # the IP Address of the Internal Load Balancer (ILB). This is the static IP address for the load balancer you configured in the Azure portal.
 
         Import-Module FailoverClusters
 

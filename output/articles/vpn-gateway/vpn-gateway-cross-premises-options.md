@@ -27,7 +27,7 @@ There are three connection options available: Site-to-Site, Point-to-Site, and E
 
 The table below can help you decide the best connectivity option for your solution.
 
-[AZURE.INCLUDE [vpn-gateway-cross-premises](../includes/vpn-gateway-cross-premises-include.md)]                                                                    
+[AZURE.INCLUDE [vpn-gateway-cross-premises](../../includes/vpn-gateway-cross-premises-include.md)]                                                                    
 
 ## Site-to-Site connections
 
@@ -48,7 +48,7 @@ A Site-to-Site VPN allows you to create a secure connection between your on-prem
 
 **Available deployment models and methods for S2S**
 
-[AZURE.INCLUDE [vpn-gateway-table-site-to-site](../includes/vpn-gateway-table-site-to-site-include.md)] 
+[AZURE.INCLUDE [vpn-gateway-table-site-to-site](../../includes/vpn-gateway-table-site-to-site-include.md)] 
 
 
 ## Point-to-Site connections
@@ -71,7 +71,7 @@ Point-to-Site and Site-to-Site configurations can exist concurrently, but unlike
 
 **Available deployment models and methods for P2S**
 
-[AZURE.INCLUDE [vpn-gateway-table-point-to-site](../includes/vpn-gateway-table-point-to-site-include.md)] 
+[AZURE.INCLUDE [vpn-gateway-table-point-to-site](../../includes/vpn-gateway-table-point-to-site-include.md)] 
 
 ## ExpressRoute connections
 

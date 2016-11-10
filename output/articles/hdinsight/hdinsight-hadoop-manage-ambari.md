@@ -4,24 +4,27 @@
    services="hdinsight"
    documentationCenter=""
    authors="Blackmist"
-   manager="paulettm"
+   manager="jhubbard"
    editor="cgronlun"
 	tags="azure-portal"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="07/12/2016"
-	wacn.date=""/>
+   ms.service="hdinsight"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="big-data"
+   ms.date="09/27/2016"
+   wacn.date=""
+   ms.author="larryfr"/>
 
 #Manage HDInsight clusters by using the Ambari Web UI
 
-[AZURE.INCLUDE [ambari-selector](../includes/hdinsight-ambari-selector.md)]
+[AZURE.INCLUDE [ambari-selector](../../includes/hdinsight-ambari-selector.md)]
 
 Apache Ambari simplifies the management and monitoring of a Hadoop cluster by providing an easy to use web UI and REST API. Ambari is included on Linux-based HDInsight clusters, and is used to monitor the cluster and make configuration changes.
 
 In this document, you will learn how to use the Ambari Web UI with an HDInsight cluster.
-
-> [AZURE.NOTE] The information in this article applies only to Linux-based HDInsight clusters. For Windows-based HDInsight clusters, only monitoring through the Ambari REST API is available. See [Monitor Windows-based Hadoop on HDInsight using the Ambari API](/documentation/articles/hdinsight-monitor-use-ambari-api/).
 
 ##<a id="whatis"></a>What is Ambari?
 

@@ -10,14 +10,15 @@
 
 <tags
 	ms.service="virtual-machines-windows"
+	ms.workload="na"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="get-started-article"
 	ms.date="06/07/2016"
-	wacn.date=""/>
+	wacn.date=""
+	ms.author="davidmu"/>
 
 # Create a Windows VM using Resource Manager and PowerShell
-
-
-[AZURE.INCLUDE [arm-api-version-powershell](../includes/arm-api-version-powershell.md)]
-
 
 This article shows you how to quickly create an Azure Virtual Machine running Windows Server and the resources it needs using [Resource Manager](/documentation/articles/resource-group-overview/) and PowerShell. 
 
@@ -46,34 +47,30 @@ First, you create a resource group.
         canadacentral
         canadaeast
         centralindia
-        centralus
-        eastasia
+
+
+        chinanorth
+
+        chinaeast
+
+        chinaeast
         chinaeast
         chinaeast2
         japaneast
         japanwest
-        northcentralus
+        northchinaeast
         northeurope
-        southcentralus
-        southeastasia
+        southchinaeast
+        southchinaeast
         southindia
         westeurope
         westindia
         chinanorth
 
-
-        China North
-        China East
-
 
 2. Replace the value of **$locName** with a location from the list. Create the variable.
 
-
-        $locName = "centralus"
-
-
-        $locName = "China North"
-
+        $locName = "chinaeast"
         
 3. Replace the value of **$rgName** with a name for the new resource group. Create the variable and the resource group.
 
@@ -133,7 +130,7 @@ Now that you have all the pieces in place, it's time to create the virtual machi
 
         $cred = Get-Credential -Message "Type the name and password of the local administrator account."
         
-    The password must be at 12-123 characters long and have at least one lower case character, one upper case character, one number, and one special character. 
+    The password must be at 8-123 characters long and meet three out of the four complexity requirements: one lower case character, one upper case character, one number, and one special character. See more about [username and password requirements](/documentation/articles/virtual-machines-windows-faq/#what-are-the-username-requirements-when-creating-a-vm).
         
 2. Replace the value of **$vmName** with a name for the virtual machine. Create the variable and the virtual machine configuration.
 

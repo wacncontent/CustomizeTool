@@ -7,7 +7,7 @@ Ever since its launch, the Custom Script extension has been used widely to confi
 Azure Resource Manager template allow you to declaratively specify the Azure IaaS infrastructure in Json language by defining the dependencies between resources. For a detailed overview of Azure Resource Manager templates, see the following articles:
 
 
-- [Resource Group Overview](../articles/documentation/articles/resource-group-overview)
+- [Resource Group Overview](/documentation/articles/resource-group-overview)
 
 
 - [Resource Group Overview](/documentation/articles/resource-group-overview/)

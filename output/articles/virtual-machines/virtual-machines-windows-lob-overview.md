@@ -59,7 +59,7 @@ To compute the estimated costs for this configuration, see the [Azure Pricing Ca
 	- **Standard** for the pricing tier
 	- The default size in the previous table or your intended size for the **Instance size**
 
-> [AZURE.NOTE] The Azure Pricing Calculator does not include the additional costs for the SQL Server license for the two virtual machines running SQL Server 2014 Enterprise. See [Virtual Machines Pricing-SQL](/home/features/virtual-machines/pricing/) for more information.
+> [AZURE.NOTE] The Azure Pricing Calculator does not include the additional costs for the SQL Server license for the two virtual machines running SQL Server 2014 Enterprise. See [Virtual Machines Pricing-SQL](/pricing/details/virtual-machines/) for more information.
 
 ## Phases of deployment
 

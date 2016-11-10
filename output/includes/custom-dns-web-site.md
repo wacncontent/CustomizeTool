@@ -6,7 +6,7 @@ Optionally, you can use Azure Traffic Manager to load balance incoming traffic t
 
 > [AZURE.NOTE] The procedures in this task apply to Azure Websites; for Cloud Services, see <a href="/develop/net/common-tasks/custom-dns/">Configuring a Custom Domain Name in Azure</a>.
 
-> [AZURE.NOTE] The steps in this task require you to configure your websites for Shared or Standard mode, which may change how much you are billed for your subscription. See <a href="/home/features/web-site/pricing/">Websites Pricing Details</a> for more information.
+> [AZURE.NOTE] The steps in this task require you to configure your websites for Shared or Standard mode, which may change how much you are billed for your subscription. See <a href="/pricing/details/web-sites/">Websites Pricing Details</a> for more information.
 
 In this article:
 

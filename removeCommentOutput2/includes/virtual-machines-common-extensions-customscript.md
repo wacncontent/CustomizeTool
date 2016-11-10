@@ -4,12 +4,12 @@ Ever since its launch, the Custom Script extension has been used widely to confi
 
 ## About Azure Resource manager templates
 
-Azure Resource Manager template allow you to declaratively specify the Azure IaaS infrastructure in Json language by defining the dependencies between resources. For a detailed overview of Azure Resource Manager templates, see the following articles:
+Azure Resource Manager templates allow you to declaratively specify the Azure IaaS infrastructure in Json language by defining the dependencies between resources. For a detailed overview of Azure Resource Manager templates, see the following articles:
 
 - [Resource Group Overview](/documentation/articles/resource-group-overview/)
 - [Deploying Templates with Azure Powershell](/documentation/articles/virtual-machines-windows-ps-manage/)
 
-### Prerequistes
+### Prerequisites
 
 1. Download the Azure command line tools for your operating system from [here](/downloads/).
 2. If the scripts will be run on an existing VM, make sure VM Agent is enabled on the VM, if not follow [the Linux](/documentation/articles/virtual-machines-linux-classic-manage-extensions/) or [Windows](/documentation/articles/virtual-machines-windows-classic-manage-extensions/) guidance to install one.
@@ -19,4 +19,4 @@ Azure Resource Manager template allow you to declaratively specify the Azure Iaa
 
 ## Using the custom script extension
 
-For deploying with templates we use the same version of  Custom Script extension that's available for Azure Service Management APIs. The extension supports the same parameters and scenarios like uploading files to Azure Storage account or Github location. The key difference while using with templates is the exact version of the extension should be specified, as opposed to specifying the version in majorversion.* format.
+For deploying with templates we use the same version of Custom Script extension that's available for Azure Service Management APIs. The extension supports the same parameters and scenarios like uploading files to Azure Storage account or Github location. The key difference while using with templates is the exact version of the extension should be specified, as opposed to specifying the version in majorversion.* format.

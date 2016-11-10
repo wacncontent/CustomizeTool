@@ -1,7 +1,7 @@
 <!-- not suitable for Mooncake -->
 
 <properties
- pageTitle="About the A8 - A11 instances and Linux | Azure"
+ pageTitle="About A8, A9, A10, A11 VM sizes with Linux | Azure"
  description="Get background information and considerations for using the Azure A8, A9, A10, and A11 compute-intensive sizes for Linux VMs"
  services="virtual-machines-linux"
  documentationCenter=""
@@ -10,29 +10,34 @@
  editor=""
  tags="azure-resource-manager,azure-service-management"/>
 <tags
-	ms.service="virtual-machines-linux"
-	ms.date="05/09/2016"
-	wacn.date=""/>
+ms.service="virtual-machines-linux"
+ ms.devlang="na"
+ ms.topic="article"
+ ms.tgt_pltfrm="vm-linux"
+ ms.workload="infrastructure-services"
+ ms.date="08/04/2016"
+ wacn.date=""
+ ms.author="danlep"/>
 
 # About the A8, A9, A10, and A11 compute-intensive instances 
 
 Here is background information and some considerations for using the Azure A8, A9, A10, and A11 instances, also known as *compute-intensive* instances. This article focuses on using these instances for Linux VMs. This article is also available for [Windows VMs](/documentation/articles/virtual-machines-windows-a8-a9-a10-a11-specs/).
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
 
-[AZURE.INCLUDE [virtual-machines-common-a8-a9-a10-a11-specs](../includes/virtual-machines-common-a8-a9-a10-a11-specs.md)]
+[AZURE.INCLUDE [virtual-machines-common-a8-a9-a10-a11-specs](../../includes/virtual-machines-common-a8-a9-a10-a11-specs.md)]
 
 ## Access to the RDMA network
 
 Within a single cloud service or an availability set, clusters of size A8 and A9 Linux VMs that run one of the following supported Linux HPC distributions and a supported MPI implementation can access the RDMA network in Azure to run Linux MPI applications. See [Set up a Linux RDMA cluster to run MPI applications](/documentation/articles/virtual-machines-linux-classic-rdma-cluster/) for deployment options and sample configuration steps.
 
-* **Distributions** - SUSE Linux Enterprise Server (SLES) 12 for HPC, SLES 12 for HPC (Premium), CentOS-based 7.1 HPC, or CentOS-based 6.5 HPC, deployed from Azure  Marketplace  gallery  image
+* **Distributions** - SUSE Linux Enterprise Server (SLES) 12 for HPC, SLES 12 for HPC (Premium), CentOS-based 7.1 HPC, or CentOS-based 6.5 HPC, deployed from an Azure Marketplace image
 
 * **MPI** - Intel MPI Library 5.x
 
-    >[AZURE.NOTE] Intel MPI 5.1.3.181 is already installed on the CentOS-based HPC images in the Marketplace. To use Intel MPI on SLES 12 HPC VMs, you must separately install it.
+    >[AZURE.NOTE] Intel MPI 5.1 is already installed on the CentOS-based HPC images in the Marketplace. To use Intel MPI on SLES 12 HPC VMs, you must separately install it.
 
-Currently, Azure Linux RDMA drivers are only installed when you deploy RDMA-enabled SLES 12 HPC and CentOS HPC images from the Azure  Marketplace  gallery . You can't install the drivers on other Linux VMs you deploy.
+Currently, Azure Linux RDMA drivers are only installed when you deploy RDMA-enabled SLES 12 HPC and CentOS HPC images from the Azure Marketplace. You can't install the drivers on other Linux VMs you deploy.
 
 >[AZURE.NOTE]On the CentOS-based HPC images from the Marketplace, kernel updates are disabled in the **yum** configuration file. This is because the Linux RDMA drivers are distributed as an RPM package, and driver updates might not work if the kernel is updated.
 
@@ -107,7 +112,7 @@ done
 
 ## Next steps
 
-* For details about availability and pricing of the A8, A9, A10, and A11 instances, see [Virtual Machines pricing](/home/features/virtual-machines/pricing/).
+* For details about availability and pricing of the A8, A9, A10, and A11 instances, see [Virtual Machines pricing](/pricing/details/virtual-machines/).
 
 * For storage capacities and disk details, see [Sizes for virtual machines](/documentation/articles/virtual-machines-linux-sizes/).
 

@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Frequently asked questions for VMs | Azure"
-	description="Provides answers to some of the common questions about Azure virtual machines created with the classic deployment model."
+	pageTitle="Frequently asked questions for classic VMs | Azure"
+	description="Provides answers to some of the common questions about Azure Windows virtual machines created with the classic deployment model."
 	services="virtual-machines-windows"
 	documentationCenter=""
 	authors="cynthn"
@@ -10,14 +10,16 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="05/05/2016"
-	wacn.date=""/>
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-windows"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="07/28/2016"
+	wacn.date=""
+	ms.author="cynthn"/>
 
-# Frequently asked question about Azure virtual machines created with the classic deployment model
+# Frequently asked question about Azure Windows virtual machines created with the classic deployment model
 
- [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model. 
-
-> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager model.
-
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]
 
-[AZURE.INCLUDE [virtual-machines-common-classic-faq](../includes/virtual-machines-common-classic-faq.md)]
+[AZURE.INCLUDE [virtual-machines-common-classic-faq](../../includes/virtual-machines-common-classic-faq.md)]

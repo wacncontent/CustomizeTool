@@ -7,15 +7,15 @@ Tags placed on Compute, Network, and Storage resources in the Resource Manager d
 
 Click on **Download usage details** to view the usage details in your subscription.
 
-![Usage details in Azure portal](./media/virtual-machines-common-tag-usage/azure-portal-tags-usage-details.png)
+![Usage details in Azure Portal Preview](./media/virtual-machines-common-tag-usage/azure-portal-tags-usage-details.png)
 
 Select your billing statement and the **Version 2** usage details:
 
-![Version 2 Preview Usage Details in Azure portal](./media/virtual-machines-common-tag-usage/azure-portal-version2-usage-details.png)
+![Version 2 Preview Usage Details in Azure Portal Preview](./media/virtual-machines-common-tag-usage/azure-portal-version2-usage-details.png)
 
 From the usage details, you can see all of the tags in the **Tags** column:
 
-![Tags column in Azure portal](./media/virtual-machines-common-tag-usage/azure-portal-tags-column.png)
+![Tags column in Azure Portal Preview](./media/virtual-machines-common-tag-usage/azure-portal-tags-column.png)
 
 By analyzing these tags along with usage, organizations will be able to gain new insights into their consumption data.
 

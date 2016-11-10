@@ -10,16 +10,17 @@
 
 <tags
 	ms.service="multiple"
-	ms.date="05/05/2016"
-	wacn.date=""/>
+	ms.workload="multiple"
+	ms.tgt_pltfrm="command-line-interface"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/05/2016"
+	wacn.date=""
+	ms.author="danlep"/>
 
 # Azure CLI commands in Resource Manager mode
-
 
-> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the Resource Manager deployment model, which Azure recommends for most new deployments instead of the [classic deployment model](/documentation/articles/virtual-machines-command-line-tools/).
-
-
-This article provides syntax and options for Azure command line interface (CLI) commands you'd commonly use to create and manage Azure resources in the Azure Resource Manager deployment model. You access these commands by running the CLI in Resource Manager (arm) mode. This is not a complete reference, and your CLI version may show slightly different commands or parameters.
+This article provides syntax and options for Azure command line interface (CLI) commands you'd commonly use to create and manage Azure resources in the Azure Resource Manager deployment model. You access these commands by running the CLI in Resource Manager (arm) mode. This is not a complete reference, and your CLI version may show slightly different commands or parameters. For a general overview of Azure resources and resource groups, see [Azure Resource Manager Overview](/documentation/articles/resource-group-overview/).  
 
 To get started, first [install the Azure CLI](/documentation/articles/xplat-cli-install/) and [connect to your Azure subscription](/documentation/articles/xplat-cli-connect/) by using a work or school account or a Microsoft account identity.
 
@@ -36,12 +37,6 @@ Use the following command to enable Azure CLI Resource Manager commands.
 	azure config mode arm
 
 >[AZURE.NOTE] The Azure Resource Manager mode and Azure Service Management mode are mutually exclusive. That is, resources created in one mode cannot be managed from the other mode.
-
-## Imperative and declarative approaches
-
-As with the [Azure Service Management mode](/documentation/articles/virtual-machines-command-line-tools/), the Resource Manager mode of the Azure CLI gives you commands that create resources imperatively on the command line. For example, if you type `azure group create <groupname> <location>` you are asking Azure to create a resource group, and with `azure group deployment create <resourcegroup> <deploymentname>` you are instructing Azure to create a deployment of any number of items and place them in a group. Because each type of resource has imperative commands, you can chain them together to create fairly complex deployments.
-
-However, using resource group _templates_ that describe a resource group is a declarative approach that is far more powerful, allowing you to automate complex deployments of (almost) any number of resources for (almost) any purpose. When using templates, the only imperative command is to deploy one. For a general overview of templates, resources, and resource groups, see [Azure Resource Group Overview](/documentation/articles/resource-group-overview/).  
 
 
 ## azure account: Manage your account information
@@ -121,20 +116,20 @@ Your Azure subscription information is used by the tool to connect to your accou
 
 **List Azure CLI configuration settings**
 
-	 config  conconfig  list [options]
+	config list [options]
 
 **Delete a config setting**
 
-	 config  conconfig  delete [options] <name>
+	config delete [options] <name>
 
 **Update a config setting**
 
-	 config  conconfig  set <name> <value>
+	config set <name> <value>
 
-
 **Sets the Azure CLI working mode to either `arm` or `asm`**
 
 	config mode [options] <modename>
+
 
 
 ## azure feature: commands to manage account features
@@ -151,11 +146,6 @@ Your Azure subscription information is used by the tool to connect to your accou
 
 	feature register [options] <providerName> <featureName>
 
-
-**Sets the Azure CLI working mode to either arm or asm**
-
-	conconfig mode [options] <modename>
-
 
 ## azure group: Commands to manage your resource groups
 
@@ -333,7 +323,7 @@ Parameter options:
 **Commands to manage virtual networks**
 
 	network vnet create [options] <resource-group> <name> <location>
-Allows to create a new virtual network. In the following example we create a virtual network named newvnet for resource group myresourcegroup in the China North region.
+Creates a new virtual network. In the following example we create a virtual network named newvnet for resource group myresourcegroup in the China North region.
 
 
 	azure network vnet create myresourcegroup newvnet "China North"
@@ -1602,7 +1592,7 @@ Parameter options:
 
 ## azure provider: Commands to manage resource provider registrations
 
-**List currently registered providers in ARM**
+**List currently registered providers in Resource Manager**
 
 	provider list [options]
 
@@ -1800,10 +1790,6 @@ Parameter options:
 
 ## azure vm: Commands to manage your Azure Virtual Machines
 
-
-[AZURE.INCLUDE [arm-api-version-cli](../includes/arm-api-version-cli.md)]
-
-
 **Create a VM**
 
 	vm create [options] <resource-group> <name> <location> <os-type>

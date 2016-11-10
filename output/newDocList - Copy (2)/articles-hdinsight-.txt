@@ -1,7 +1,6 @@
-new docs: 4, word count: {word_count_TODO}
-articles/hdinsight/hdinsight-apache-spark-eclipse-tool-plugin.md
-articles/hdinsight/hdinsight-apps-install-applications.md
-articles/hdinsight/hdinsight-hadoop-hive-java-udf.md
-articles/hdinsight/hdinsight-hadoop-manage-ambari-rest-api.md
+new docs: 2, word count: {word_count_TODO}
+articles/hdinsight/hdinsight-apache-spark-zeppelin-notebook.md
+articles/hdinsight/hdinsight-hadoop-use-interactive-hive.md
 
-new includes: 0
+new includes: 1
+includes/hdinsight-access-control-requirements.md

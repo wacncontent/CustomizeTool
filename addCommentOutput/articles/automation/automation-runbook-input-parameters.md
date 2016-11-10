@@ -7,9 +7,14 @@
    manager="stevenka"
    editor="tysonn" />
 <tags
-	ms.service="automation"
-	ms.date="04/25/2016"
-	wacn.date=""/>
+   ms.service="automation"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="04/25/2016"
+   wacn.date=""
+   ms.author="sngun"/>
 
 # Runbook input parameters
 
@@ -34,7 +39,9 @@ Input parameters can be configured in PowerShell , PowerShell  Workflow , and
 
 A parameter definition in PowerShell Workflow runbooks has the following general form, where multiple parameters are separated by commas.
 
- ``` 
+
+```
+
      Param
      (
          [Parameter (Mandatory= $true/$false)]
@@ -43,13 +50,15 @@ A parameter definition in PowerShell Workflow runbooks has the following general
          [Parameter (Mandatory= $true/$false)]
          [Type] Name2 = <Default value>
      )
- ``` 
+
+```
+
 
 >[AZURE.NOTE] When you're defining parameters, if you don't specify the **Mandatory** attribute, then by default, the parameter is considered optional. Also, if you set a default value for a parameter in PowerShell Workflow runbooks, then it will be treated by PowerShell as an optional parameter, regardless of the **Mandatory** attribute value.
 
 As an example, let's configure the input parameters for a PowerShell Workflow runbook that outputs details about virtual machines--either a single VM or all VMs within a service. This runbook has two parameters as shown in the following screenshot: the name of virtual machine and the name of the service.
-
 
+
 ![Automation PowerShell Workflow](./media/automation-runbook-input-parameters/automation_01_PowerShellWorkflow.png)
 
 
@@ -118,19 +127,19 @@ You can pass values to input parameters in runbooks in the following scenarios.
 
 ### Start a runbook and assign parameters
 
-A runbook can be started many ways: through the Azure  portal  Classic Management Portal  UI,  with a webhook,   with the PowerShell cmdlets, with the REST API, or with an SDK. Below we discuss different methods for starting a runbook and assigning parameters.
+A runbook can be started many ways: through the Azure  portal  Classic Management Portal  UI, with a webhook,  with the PowerShell cmdlets, with the REST API, or with an SDK. Below we discuss different methods for starting a runbook and assigning parameters.
 
 - **Start a published runbook by using the Azure  portal  Classic Management Portal  and assign parameters**
 
 When you [start the runbook](/documentation/articles/automation-starting-a-runbook/#starting-a-runbook-with-the-azure-portal), the **Start Runbook**  blade  Pop-up  opens and you can configure values for the parameters that you just created.
-
 
+
 ![Start using the portal](./media/automation-runbook-input-parameters/automation_04_StartRunbookUsingPortal.png)
-
 
-In the label beneath the input box, you can see the attributes that have been set for the parameter. Attributes include mandatory or optional, type, and  default value. In the help balloon next to the parameter name, you can see all the key information you need to make decisions about parameter input values. This information includes whether a parameter is mandatory or optional. It also includes the type and  default value (if any), and  other helpful notes.
 
+In the label beneath the input box, you can see the attributes that have been set for the parameter. Attributes include mandatory or optional, type, and  default value. In the help balloon next to the parameter name, you can see all the key information you need to make decisions about parameter input values. This information includes whether a parameter is mandatory or optional. It also includes the type and  default value (if any), and  other helpful notes.
 
+
 ![Help balloon](./media/automation-runbook-input-parameters/automation_05_HelpBaloon.png)
 
 
@@ -163,8 +172,8 @@ In the label beneath the input box, you can see the attributes that have been se
         Start-AzureRmAutomationRunbook -AutomationAccountName "TestAutomationRG" -Name "Get-AzureVMGraphical" -ResourceGroupName "RG1" -Parameters $params
       ```
 
+>[AZURE.NOTE] When you start a runbook by using PowerShell cmdlets, a default parameter, **MicrosoftApplicationManagementStartedBy**, is created with the value **PowerShell**. You can view this parameter in the **Job details** blade.
 
->[AZURE.NOTE] When you start a runbook by using PowerShell cmdlets, a default parameter, **MicrosoftApplicationManagementStartedBy**, is created with the value **PowerShell**.  You can view this parameter in the **Job details** blade. 
 
 - **Start a runbook by using an SDK and assign parameters**
 

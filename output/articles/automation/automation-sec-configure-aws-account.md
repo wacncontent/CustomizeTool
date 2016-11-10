@@ -8,9 +8,14 @@
    editor="tysonn"
    keywords="aws authentication, configure aws"/>
 <tags
-	ms.service="automation"
-	ms.date="05/10/2016"
-	wacn.date=""/>
+   ms.service="automation"
+   ms.workload="tbd"
+   ms.tgt_pltfrm="na"
+   ms.devlang="na"
+   ms.topic="get-started-article"
+   ms.date="09/12/2016"
+   wacn.date=""
+   ms.author="magoedte"/>
 
 # Authenticate Runbooks with Amazon Web Services
 Automating common tasks with resources in Amazon Web Services (AWS) can be accomplished with Automation runbooks in Azure.  You can automate many tasks in AWS using Automation runbooks just like you can with resources in Azure.  All that is required are two things:
@@ -28,6 +33,6 @@ After you have created and copied your AWS security keys, you will need to creat
 1. In the **Name** box, enter **AWScred** or an appropriate value following your naming standards.  
 2. In the **User name** box type your **Access ID** and your **Secret Access Key** in the **Password** and **Confirm password** box.   
 
-## Next Steps
+## Next steps
 
 - Reivew the solution article [Automating deployment of a VM in Amazon Web Services](/documentation/articles/automation-scenario-aws-deployment/) to learn how to create runbooks to automate tasks in AWS.

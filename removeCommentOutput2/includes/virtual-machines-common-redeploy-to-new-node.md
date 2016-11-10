@@ -1,30 +1,21 @@
-<!-- Ibiza portal: tested -->
+## Using Azure portal Preview 
 
-
-1. Select the VM you wish to redeploy, and click the 'Redeploy' button in the 'Settings' blade:
+1. Select the VM you wish to redeploy, and click the 'Redeploy' button in the 'Settings' blade. Scroll down to see the **Support and Troubleshooting** section that contains the 'Redeploy' button as in the following example:
 
 	![Azure VM blade](./media/virtual-machines-common-redeploy-to-new-node/vmoverview.png)
 
-2. Click the 'Redeploy' button to confirm the operation:
+2. To confirm the operation, click the 'Redeploy' button:
 
 	![Redeploy a VM blade](./media/virtual-machines-common-redeploy-to-new-node/redeployvm.png)
 
->[AZURE.NOTE] Currently, in Azure China, the Cloud Environment for Microsoft/Compute, Microsoft/Network, and Microsoft/Storage is still using API Version 2015-06-15, while the latest Azure PowerShell is already upgraded to 2016-03-30. Hence, in order to use Microsoft/Compute, Microsoft/Network, and Microsoft/Storage in Azure China, you need to downgrade your Azure PowerShell to 1.2.2. You can download a full installer from [the release page of Azure PowerShell in GitHub](https://github.com/Azure/azure-powershell/releases).
-
+3. The **Status** of the VM changes to *Updating* as the VM prepares to redeploy, as in the following example:
 
 	![VM updating](./media/virtual-machines-common-redeploy-to-new-node/vmupdating.png)
 
-4. The **Status** will then change to *Starting* as the VM boots up on a new Azure host:
+4. The **Status** then changes to *Starting* as the VM boots up on a new Azure host, as in the following example:
 
 	![VM starting](./media/virtual-machines-common-redeploy-to-new-node/vmstarting.png)
 
-5. After the VM finishes the boot process, the **Status** will then return to *Running*, indicating the VM has been successfully redeployed:
-
-
-
-
-
-
+5. After the VM finishes the boot process, the **Status** then returns to *Running*, indicating the VM has been successfully redeployed:
 
 	![VM running](./media/virtual-machines-common-redeploy-to-new-node/vmrunning.png)
-

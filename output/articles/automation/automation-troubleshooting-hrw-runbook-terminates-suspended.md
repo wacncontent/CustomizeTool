@@ -7,9 +7,14 @@
    manager="jwhit"
    editor="tysonn" />
 <tags
-	ms.service="automation"
-	ms.date="05/18/2016"
-	wacn.date=""/>
+   ms.service="automation"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="08/17/2016"
+   wacn.date=""
+   ms.author="magoedte" />
 
 # Hybrid Runbook Worker: A runbook job terminates with a status of Suspended
 
@@ -17,7 +22,7 @@
 
 Your runbook is suspended shortly after attempting to execute it three times. There are conditions which may interrupt the runbook from completing successfully and the related error message does not include any additional information indicating why. This article provides troubleshooting steps for issues related to the Hybrid Runbook Worker runbook execution failures.
 
-If your Azure issue is not addressed in this article, visit the Azure forums on [MSDN and the Stack Overflow](https://azure.microsoft.com/support/forums/). You can post your issue on these forums or to [@AzureSupport on Twitter](https://twitter.com/AzureSupport). Also, you can file an Azure support request by selecting **Get support** on the [Azure support](https://azure.microsoft.com/support/contact/) site.
+If your Azure issue is not addressed in this article, visit the Azure forums on [MSDN and the Stack Overflow](/support/forums/). You can post your issue on these forums or to [@AzureSupport on Twitter](https://twitter.com/AzureSupport). Also, you can file an Azure support request by selecting **Get support** on the [Azure support](/support/contact/) site.
 
 ## Symptom
 

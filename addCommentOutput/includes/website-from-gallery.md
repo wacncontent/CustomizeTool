@@ -1,8 +1,14 @@
-The Azure  Marketplace  gallery  makes available a wide range of popular web apps developed by Microsoft, third party companies, and open source software initiatives. Web apps created from the Azure  Marketplace  gallery  do not require installation of any software other than the browser used to connect to the [Azure Portal Preview](https://manage.windowsazure.cn/).
+<!-- not suitable for Mooncake -->
+
+
+<!-- not suitable for Mooncake -->
+
+
+The Azure Marketplace makes available a wide range of popular web apps developed by Microsoft, third party companies, and open source software initiatives. Web apps created from the Azure Marketplace do not require installation of any software other than the browser used to connect to the [Azure Portal  Preview](/documentation/articles/app-service-web-app-azure-portal/)  Preview](https://manage.windowsazure.cn/) .
 
 In this tutorial, you'll learn:
 
-- How to create a new web app through the Azure  Marketplace  gallery .
+- How to create a new web app through the Azure Marketplace.
 
 - How to deploy the web app through the Azure Portal Preview.
  
@@ -11,13 +17,13 @@ You'll build a WordPress blog that uses a default template. The following illust
 
 ![Wordpress blog][13]
 
->[AZURE.NOTE] If you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.
+>[AZURE.NOTE] If you want to get started with Azure App Service before signing up for an Azure account, go to [Try App Service](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in App Service. No credit cards required; no commitments.
 
 ## Create a web app in the portal
 
 1. Log in to the Azure Portal Preview.
 
-2. Open the Azure  Marketplace  gallery  either by clicking the **Marketplace** icon:
+2. Open the Azure Marketplace either by clicking the **Marketplace** icon:
 
     ![Marketplace icon][marketplace]
 

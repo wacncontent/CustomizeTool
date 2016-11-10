@@ -4,13 +4,18 @@ description="Learn how to add Hive libraries (jar files,) to an HDInsight cluste
 services="hdinsight"
 documentationCenter=""
 authors="Blackmist"
-manager="paulettm"
+manager="jhubbard"
 editor="cgronlun"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="04/20/2016"
-	wacn.date=""/>
+ms.service="hdinsight"
+ms.devlang="na"
+ms.topic="article"
+ms.tgt_pltfrm="na"
+ms.workload="big-data"
+ms.date="07/05/2016"
+wacn.date=""
+ms.author="larryfr"/>
 
 #Add Hive libraries during HDInsight cluster creation
 
@@ -26,8 +31,11 @@ During cluster creation, the script enumerates the files, copies them to the `/u
 
 >
 > * __Linux-based HDInsight__ - when using the __Hive command-line__, __WebHCat__ (Templeton,) and __HiveServer2__.
-
 > * __Windows-based HDInsight__ - when using the __Hive command-line__ and __WebHCat__ (Templeton).
+
+
+><p> * __Windows-based HDInsight__ - when using the __Hive command-line__ and __WebHCat__ (Templeton).
+
 
 ##The script
 
@@ -51,7 +59,7 @@ __Requirements__
     
     * By being in a container on an linked storage container. For example, in the portal you can use __Optional Configuration__, __Linked storage accounts__ to add additional storage.
 
-* The WASB path to the container must be specified as a parameter to the Script Action. For example, if the jars are stored in a container named __libs__ on a storage account named __mystorage__, the parameter would be __wasb://libs@mystorage.blob.core.chinacloudapi.cn/__.
+* The WASB path to the container must be specified as a parameter to the Script Action. For example, if the jars are stored in a container named __libs__ on a storage account named __mystorage__, the parameter would be __wasbs://libs@mystorage.blob.core.chinacloudapi.cn/__.
 
     > [AZURE.NOTE] This document assumes that you have already create a storage account, blob container, and uploaded the files to it. 
     >
@@ -82,7 +90,7 @@ __Requirements__
     * __HEAD__: Check this option
     * __WORKER__: Check this option.
     * __ZOOKEEPER__: Leave this blank.
-    * __PARAMETERS__: Enter the WASB address to the container and storage account that contains the jars. For example, __wasb://libs@mystorage.blob.core.chinacloudapi.cn/__.
+    * __PARAMETERS__: Enter the WASB address to the container and storage account that contains the jars. For example, __wasbs://libs@mystorage.blob.core.chinacloudapi.cn/__.
 
 3. At the bottom of the **Script Actions**, use the **Select** button to save the configuration.
 
@@ -96,4 +104,4 @@ Once cluster creation finishes, you will be able to use the jars added through t
 
 ##Next steps
 
-In this document you have learned how to add Hive libraries contained in jar files to a HDInsight cluster during cluster creation. For more information on working with Hive, see [Use Hive with HDInsight](/documentation/articles/hdinsight-use-hive/)
+In this document you have learned how to add Hive libraries contained in jar files to a HDInsight cluster during cluster creation. For more information on working with Hive, see [Use Hive with HDInsight](/documentation/articles/hdinsight-use-hive/)

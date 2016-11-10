@@ -1,4 +1,4 @@
-<!-- Ibiza portal: tested -->
+
 
 
 An availability set helps keep your virtual machines available during downtime, such as during maintenance. Placing two or more similarly configured virtual machines in an availability set creates the redundancy needed to maintain availability of the applications or services that your virtual machine runs. For details about how this works, see Manage the availability of [Windows](/documentation/articles/virtual-machines-windows-manage-availability/) or [Linux](/documentation/articles/virtual-machines-linux-manage-availability/) virtual machines.
@@ -18,7 +18,7 @@ You can use either the Azure portal Preview or Azure PowerShell commands to do t
 
 To use the Azure portal Preview:
 
-1. If you haven't already done so, sign in to the [Azure portal](https://portal.azure.cn) Preview.
+1. If you haven't already done so, sign in to the [Azure portal Preview](https://portal.azure.cn).
 
 2. On the hub menu, click **+ New**, and then click **Virtual Machine**.
     
@@ -49,7 +49,7 @@ To use Azure PowerShell commands to create an Azure virtual machine and add it t
 In the Azure portal Preview, you can add existing classic virtual machines to an existing availability set
  or create a new one for them. (Keep in mind that the virtual machines in the same availability set must belong to the same cloud service.) The steps are almost the same. With Azure PowerShell, you can add the virtual machine to an existing availability set.
 
-1. If you have not already done so, sign in to the [Azure portal](https://portal.azure.cn) Preview.
+1. If you have not already done so, sign in to the [Azure portal Preview](https://portal.azure.cn).
 
 2. On the Hub menu, click **Virtual Machines (classic)**.
     
@@ -72,7 +72,6 @@ To use Azure PowerShell commands, open an administrator-level Azure PowerShell s
 	Get-AzureVM -ServiceName "<VmCloudServiceName>" -Name "<VmName>" | Set-AzureAvailabilitySet -AvailabilitySetName "<AvSetName>" | Update-AzureVM
 
 >[AZURE.NOTE] The virtual machine might have to be restarted to finish adding it to the availability set.
-
 
 
 <!-- LINKS -->

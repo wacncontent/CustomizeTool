@@ -6,12 +6,17 @@
 	authors="cynthn"
 	manager="timlt"
 	editor=""
-	tags="azure-resource-manager,azure-service-management"/>
+	tags="azure-resource-manager"/>
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="03/11/2016"
-	wacn.date=""/>
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="vm-windows"
+	ms.workload="infrastructure-services"
+	ms.date="07/06/2016"
+	wacn.date=""
+	ms.author="cynthn"/>
 
 # Different ways to create a Windows virtual machine with Resource Manager
 

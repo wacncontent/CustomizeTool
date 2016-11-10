@@ -7,10 +7,15 @@
 	manager="erickson-doug" 
 	editor=""/>
 
-<tags
-	ms.service="app-service"
-	ms.date="05/24/2016"
-	wacn.date=""/>
+<tags 
+	ms.service="app-service" 
+	ms.workload="web" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="08/09/2016" 
+	wacn.date="" 
+	ms.author="sdanie"/>
 
 # Create a Web App plus Redis Cache using a template
 
@@ -34,9 +39,9 @@ To run the deployment automatically, click the following button:
 
 ## Parameters to specify
 
-[AZURE.INCLUDE [app-service-web-deploy-web-parameters](../includes/app-service-web-deploy-web-parameters.md)]
+[AZURE.INCLUDE [app-service-web-deploy-web-parameters](../../includes/app-service-web-deploy-web-parameters.md)]
 
-[AZURE.INCLUDE [cache-deploy-parameters](../includes/cache-deploy-parameters.md)]
+[AZURE.INCLUDE [cache-deploy-parameters](../../includes/cache-deploy-parameters.md)]
 
 ## Variables for names
 
@@ -52,7 +57,7 @@ resource group id.
 
 ## Resources to deploy
 
-[AZURE.INCLUDE [app-service-web-deploy-web-host](../includes/app-service-web-deploy-web-host.md)]
+[AZURE.INCLUDE [app-service-web-deploy-web-host](../../includes/app-service-web-deploy-web-host.md)]
 
 ### Redis Cache
 
@@ -120,7 +125,7 @@ Notice that the web app is configured with app setting properties that enable it
 
 ## Commands to run deployment
 
-[AZURE.INCLUDE [app-service-deploy-commands](../includes/app-service-deploy-commands.md)]
+[AZURE.INCLUDE [app-service-deploy-commands](../../includes/app-service-deploy-commands.md)]
 
 ### PowerShell
 

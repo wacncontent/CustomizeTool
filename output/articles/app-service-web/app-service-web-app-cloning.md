@@ -9,16 +9,21 @@
 
 <tags
 	ms.service="app-service-web"
+	ms.workload="web"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="01/13/2016"
-	wacn.date=""/>
+	wacn.date=""
+	ms.author="ahmedelnably"/>
 
-# Azure Web App Cloning Using PowerShell#
+# Azure App Service App Cloning Using PowerShell#
 
 With the release of Azure PowerShell version 1.1.0 a new option has been added to New-AzureRMWebApp that would give the user the ability to clone an existing Web App to a newly created app in a different region or in the same region. This will enable customers to deploy a number of apps across different regions quickly and easily.
 
-App cloning is currently only supported for premium tier app service plans. The new feature uses the same limitations as Web Apps Backup feature, see [Back up a web app in Azure](/documentation/articles/web-sites-backup/).
+App cloning is currently only supported for premium tier app service plans. The new feature uses the same limitations as Web Apps Backup feature, see [Back up a web app in Azure App Service](/documentation/articles/web-sites-backup/).
 
-[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)] 
+[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)] 
 
 To learn about using Azure Resource Manager based Azure PowerShell cmdlets to manage your Web Apps check [Azure Resource Manager based PowerShell commands for Azure Web App](/documentation/articles/app-service-web-app-azure-resource-manager-powershell/)
 
@@ -46,9 +51,9 @@ To clone an existing web app within the same region, the user will need to creat
 
     $destapp = New-AzureRmWebApp -ResourceGroupName NewAzureResourceGroup -Name dest-webapp -Location "China East" -AppServicePlan NewAppServicePlan -SourceWebApp $srcap
 
-## Cloning an existing App to an Azure Environment ##
+## Cloning an existing App to an App Service Environment ##
 
-Scenario: An existing web app in China East region, the user would like to clone the contents to a new web app to an existing Azure Environment (ASE).
+Scenario: An existing web app in China East region, the user would like to clone the contents to a new web app to an existing App Service Environment (ASE).
 
 Knowing the resource group name that contains the source web app, we can use the following PowerShell command to get the source web app's information (in this case named source-webapp):
 
@@ -109,7 +114,7 @@ This feature is currently in preview, we are working to add new capabilities ove
 ### References ###
 - [Azure Resource Manager based PowerShell commands for Azure Web App](/documentation/articles/app-service-web-app-azure-resource-manager-powershell/)
 - [Web App Cloning using Azure Portal](/documentation/articles/app-service-web-app-cloning-portal/)
-- [Back up a web app in Azure](/documentation/articles/web-sites-backup/)
+- [Back up a web app in Azure App Service](/documentation/articles/web-sites-backup/)
 - [Azure Resource Manager support for Azure Traffic Manager Preview](../../articles/traffic-manager/traffic-manager-powershell-arm.md)
-- [Introduction to Azure Environment](/documentation/articles/app-service-app-service-environment-intro/)
+- [Introduction to App Service Environment](/documentation/articles/app-service-app-service-environment-intro/)
 - [Using Azure PowerShell with Azure Resource Manager](/documentation/articles/powershell-azure-resource-manager/)

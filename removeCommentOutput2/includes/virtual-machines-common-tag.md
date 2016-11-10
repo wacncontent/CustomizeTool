@@ -1,4 +1,4 @@
-<!-- need to customize -->
+
 
 
 ## Tagging a Virtual Machine through Templates

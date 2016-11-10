@@ -1,3 +1,4 @@
-You can use the following PowerShell command to enable the non-SSL endpoint
+To enable the non-SSL port, [browse](/documentation/articles/cache-configure/#configure-redis-cache-settings) to your cache in the [Azure Portal Preview](https://portal.azure.cn) and click **Settings > Advanced settings**. Click **No** for **Allow access only via SSL** on the **Advanced settings blade** and then click **Save**.
 
-	Set-AzureRmRedisCache -Name "<your cache name>" -ResourceGroupName "<your resource group name>" -EnableNonSslPort $true
+![Redis cache settings](./media/redis-cache-non-ssl-port/redis-cache-non-ssl-port.png)
+

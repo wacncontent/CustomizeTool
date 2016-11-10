@@ -6,24 +6,27 @@
    services="hdinsight"
    documentationCenter=""
    authors="Blackmist"
-   manager="paulettm"
+   manager="jhubbard"
    editor="cgronlun"
 	tags="azure-portal"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="04/22/2016"
-	wacn.date=""/>
+   ms.service="hdinsight"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="big-data"
+   ms.date="07/12/2016"
+   wacn.date=""
+   ms.author="larryfr"/>
 
 #Manage HDInsight clusters by using the Ambari Web UI
 
-[AZURE.INCLUDE [ambari-selector](../includes/hdinsight-ambari-selector.md)]
+[AZURE.INCLUDE [ambari-selector](../../includes/hdinsight-ambari-selector.md)]
 
 Apache Ambari simplifies the management and monitoring of a Hadoop cluster by providing an easy to use web UI and REST API. Ambari is included on Linux-based HDInsight clusters, and is used to monitor the cluster and make configuration changes.
 
 In this document, you will learn how to use the Ambari Web UI with an HDInsight cluster.
-
-> [AZURE.NOTE] The information in this article applies only to Linux-based HDInsight clusters. For Windows-based HDInsight clusters, only monitoring through the Ambari REST API is available. See [Monitor Windows-based Hadoop on HDInsight using the Ambari API](/documentation/articles/hdinsight-monitor-use-ambari-api/).
 
 ##<a id="whatis"></a>What is Ambari?
 
@@ -220,4 +223,4 @@ Ambari Views allow developers to plug UI elements into the Ambari Web UI using t
 
 * Yarn Queue Manager: The queue manager provides a simple UI for viewing and modifying YARN queues.
 * Hive View: The Hive View allows you to run Hive queries directly from your web browser. You can save queries, view results, save results to the cluster storage, or download results to your local system. For more information on using Hive Views, see [Use Hive Views with HDInsight](/documentation/articles/hdinsight-hadoop-use-hive-ambari-view/).
-* Tez View: The Tez View allows you to better understand and optimize jobs by viewing information on how Tez jobs are executed and what resources are used by the job.
+* Tez View: The Tez View allows you to better understand and optimize jobs by viewing information on how Tez jobs are executed and what resources are used by the job.

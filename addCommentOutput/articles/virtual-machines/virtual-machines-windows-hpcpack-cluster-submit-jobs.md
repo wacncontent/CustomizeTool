@@ -8,15 +8,20 @@
  editor=""
  tags="azure-resource-manager,azure-service-management,hpc-pack"/>
 <tags
-	ms.service="virtual-machines-windows"
-	ms.date="04/14/2016"
-	wacn.date=""/>
+ms.service="virtual-machines-windows"
+ ms.devlang="na"
+ ms.topic="article"
+ ms.tgt_pltfrm="vm-multiple"
+ ms.workload="big-compute"
+ ms.date="07/15/2016"
+ wacn.date=""
+ ms.author="danlep"/>
 
 # Submit HPC jobs from an on-premises computer to an HPC Pack cluster deployed in Azure
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
 
-Configure an on-premises client computer running Windows to run HPC Pack job submission tools that communicate with an HPC Pack cluster in Azure over HTTPS. This provides a straightforward, flexible way for a variety of cluster users to submit jobs to a cloud-based HPC Pack cluster without needing to connect directly to the head node VM or access an Azure subscription to
+Configure an on-premises client computer running Windows to run HPC Pack job submission tools that communicate over HTTPS with an HPC Pack cluster in Azure. This provides a straightforward, flexible way for a variety of cluster users to submit jobs to a cloud-based HPC Pack cluster without needing to connect directly to the head node VM or access an Azure subscription to
 run job submission tools.
 
 ![Submit a job to a cluster in Azure][jobsubmit]
@@ -24,22 +29,21 @@ run job submission tools.
 ## Prerequisites
 
 * **HPC Pack head node deployed in an Azure VM** - We recommend that you use
-automated tools such as an  [Azure quickstart template](https://azure.microsoft.com/documentation/templates/) or  an [Azure PowerShell script](/documentation/articles/virtual-machines-windows-classic-hpcpack-cluster-powershell-script/)
+automated tools such as an [Azure quickstart template](https://github.com/Azure/azure-quickstart-templates/) or an [Azure PowerShell script](/documentation/articles/virtual-machines-windows-classic-hpcpack-cluster-powershell-script/)
 to deploy the head node and cluster. You will need the DNS
 name of the head node and the credentials of a cluster administrator to
 complete the steps in this article.
 
-* **HPC Pack installation media** - The free installation package for the
+* **Client computer** - You'll need a Windows or Windows Server client computer that can run HPC Pack client utilities (see [system requirements](https://technet.microsoft.com/zh-cn/library/dn535781.aspx)). If you only want to use the HPC Pack web portal or REST API to submit jobs, you can use any client computer of your choice.
+
+* **HPC Pack installation media** - To install the HPC Pack client utilities, the free installation package for the
 latest version of HPC Pack (HPC Pack 2012 R2) is available from the
 [Microsoft Download
 Center](http://go.microsoft.com/fwlink/?LinkId=328024). Make sure that you
 download the same version of HPC Pack that is installed on the head node
 VM.
 
-* **Client computer** - You'll need a Windows or Windows Server client computer that can run HPC Pack client utilities (see [system requirements](https://technet.microsoft.com/zh-cn/library/dn535781.aspx)). If you only want to use the HPC Pack web portal or REST API to submit jobs, you can use a client computer of your choice.
-
-
-## Step 1: Install and configure the web components on the head node
+##  Step  <a name="step-1:-install-and-configure-the-web-components-on-the-head-node"></a>Step  1: Install and configure the web components on the head node
 
 To enable a REST interface to submit jobs to the cluster over HTTPS,
 install and configure the HPC Pack web components on the HPC Pack head
@@ -84,12 +88,12 @@ you can optionally install and configure the web web components as part of the d
     .\Set-HPCWebComponents.ps1 -Service REST -enable
     ```
 
-4. When prompted to select a certificate, choose the certificate that corresponds to the public DNS name of the head node. For example, if you use the HPC Pack IaaS deployment script to create the cluster, the certificate name is of the form CN=&lt;*HeadNodeDnsName*&gt;.chinacloudapp.cn. If you use an Azure quickstart template, the certificate name is of the form CN=&lt;*HeadNodeDnsName*&gt;.&lt;*region*&gt;.cloudapp.azure.
+4. When prompted to select a certificate, choose the certificate that corresponds to the public DNS name of the head node. For example, if you deploy the head node VM using the classic deployment model, the certificate name is of the form CN=&lt;*HeadNodeDnsName*&gt;.chinacloudapp.cn. If you use the Resource Manager deployment model, the certificate name is of the form CN=&lt;*HeadNodeDnsName*&gt;.&lt;*region*&gt;.chinacloudapp.cn.
 
 
 	    .\Set-HPCWebComponents.ps1 -Service REST -enable 
 
-4. When prompted to select a certificate, choose the certificate that corresponds to the public DNS name of the head node. For example, if you use the HPC Pack IaaS deployment script to create the cluster, the certificate name is of the form CN=&lt;*HeadNodeDnsName*&gt;.chinacloudapp.cn. 
+4. When prompted to select a certificate, choose the certificate that corresponds to the public DNS name of the head node. For example, if you use the HPC Pack IaaS deployment script to create the cluster, the certificate name is of the form CN=&lt;*HeadNodeDnsName*&gt;.chinacloudapp.cn.
 
 
     >[AZURE.NOTE] You need to select this certificate to submit jobs later to the head node from an on-premises computer. Don't select or configure a certificate that corresponds to the computer name of the head node in the Active Directory domain (for example, CN=*MyHPCHeadNode.HpcAzure.local*).
@@ -156,19 +160,18 @@ To use the HPC Pack client tools to submit jobs to the head node VM, you'll also
 
 
 
->[AZURE.SECURITY] You might see a security warning, because the certification authority on the head node will not be recognized by the client computer. For testing purposes you can ignore this warning and complete the certificate import.
+>[AZURE.TIP] You might see a security warning, because the certification authority on the head node will not be recognized by the client computer. For testing purposes you can ignore this warning and complete the certificate import.
 
 ## Step 3: Run test jobs on the cluster
 
 To verify your configuration, try running jobs on the cluster in Azure
-by using the on-premises computer that is running the HPC Pack client
-utilities. For example, you can use HPC Pack GUI tools or command-line commands to submit jobs to the cluster. You can also use a web-based portal to submit jobs.
+from the on-premises computer. For example, you can use HPC Pack GUI tools or command-line commands to submit jobs to the cluster. You can also use a web-based portal to submit jobs.
 
 
 **To run job submission commands on the client computer**
 
 
-1. On the client computer, start a Command Prompt.
+1. On a client computer where the HPC Pack client utilities are installed, start a Command Prompt.
 
 2. Type a sample command. For example, to list all jobs on the cluster, type a command similar to one of the following, depending on the full DNS name of the head node:
 

@@ -4,14 +4,19 @@
  services="hdinsight"
  documentationCenter=""
  authors="Blackmist"
- manager="paulettm"
+ manager="jhubbard"
  editor="cgronlun"
  tags="azure-portal"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="07/05/2016"
-	wacn.date=""/>
+ ms.service="hdinsight"
+ ms.devlang="dotnet"
+ ms.topic="article"
+ ms.tgt_pltfrm="na"
+ ms.workload="big-data"
+ ms.date="09/27/2016"
+ wacn.date=""
+ ms.author="larryfr"/>
 
 # Correlate events over time with Storm and HBase on HDInsight
 
@@ -19,7 +24,7 @@ By using a persistent data store with Apache Storm, you can correlate data entri
 
 In this document, you will learn how to create a basic C# Storm topology that tracks login and logout events for user sessions, and calculates the duration of the session. The topology uses HBase as a persistent data store. HBase also allows you to perform batch queries on the historical data to produce additional insights, such as how many user sessions were started or ended during a specific time period.
 
-[AZURE.INCLUDE [windows-only](../includes/hdinsight-windows-only.md)]
+[AZURE.INCLUDE [windows-only](../../includes/hdinsight-windows-only.md)]
 
 ## Prerequisites
 
@@ -193,7 +198,7 @@ When you are ready to stop the topology, return to the **CorrelationTopology** p
 
 ##Delete your cluster
 
-[AZURE.INCLUDE [delete-cluster-warning](../includes/hdinsight-delete-cluster-warning.md)]
+[AZURE.INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
 
 ##Next steps
 

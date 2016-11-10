@@ -3,13 +3,18 @@
    description="This articles will help you understand the different traffic routing methods used by Traffic Manager"
    services="traffic-manager"
    documentationCenter=""
-   authors="jtuliani"
+   authors="sdwheeler"
    manager="carmonm"
    editor="tysonn" />
-<tags
-	ms.service="traffic-manager"
-	ms.date="05/25/2016"
-	wacn.date=""/>
+<tags 
+   ms.service="traffic-manager"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="05/25/2016"
+   wacn.date=""
+   ms.author="sewhee" />
 
 # Traffic Manager traffic-routing methods
 
@@ -29,7 +34,7 @@ Azure Traffic Manager supports a number of algorithms to determine how end users
 
 There are three traffic routing methods available in Traffic Manager:
 
-- **Priority:** Select 'Priority' when you want to use a primary service endpoint for all traffic, and provide backups in case the primary or the backup endpoints are unavailable. For more information, see [Priority traffic-routing  method](#wriority-traffic-routing-method)  method](#priority-traffic-routing-method) .
+- **Priority:** Select 'Priority' when you want to use a primary service endpoint for all traffic, and provide backups in case the primary or the backup endpoints are unavailable. For more information, see [Priority traffic-routing method](#priority-traffic-routing-method).
 
 - **Weighted:** Select 'Weighted' when you want to distribute traffic across a set of endpoints, either evenly or according to weights which you define. For more information, see [Weighted traffic-routing method](#weighted-traffic-routing-method).
 
@@ -44,7 +49,7 @@ Traffic-routing methods can be combined by using nested Traffic Manager profiles
 ## Priority traffic-routing method
 
 
-##<a name="priority-traffic-routing-method"></a> Priority traffic-routing method
+## <a name="priority-traffic-routing-method"></a> Priority traffic-routing method
 
 
 Often an organization wants to provide reliability for its services, and does this by providing one or more backup services in case their primary service goes down.  The 'Priority' traffic-routing method allows Azure customers to easily implement this failover pattern.
@@ -63,7 +68,7 @@ The configuration of endpoint priorities is carried out differently in the ARM A
 ## Weighted traffic-routing method
 
 
-##<a name="weighted-traffic-routing-method"></a> Weighted traffic-routing method
+## <a name="weighted-traffic-routing-method"></a> Weighted traffic-routing method
 
 
 A common approach to providing both high availability and maximizing service utilization is to provide a set of endpoints, and to distribute traffic across all endpoints, either evenly or with a pre-defined weighting. This is supported by the 'Weighted' traffic-routing method.
@@ -96,7 +101,7 @@ These DNS caching effects are common to all DNS-based traffic routing systems, n
 ## Performance traffic-routing method
 
 
-##<a name="performance-traffic-routing-method"></a> Performance traffic-routing method
+## <a name="performance-traffic-routing-method"></a> Performance traffic-routing method
 
 
 The responsiveness of many applications can be improved by deploying endpoints in two or more locations across the globe, and routing end-users to the location that is 'closest' to them.  This is the purpose of the 'Performance' traffic-routing method.

@@ -3,18 +3,24 @@ pageTitle="Prepare an Oracle Linux Virtual Machine for Azure | Azure"
 description="Step by Step configuration of an Oracle virtual machine running Linux in Azure."
 services="virtual-machines-linux"
 authors="bbenz"
+manager="timlt"
 documentationCenter="virtual-machines"
 tags="azure-service-management,azure-resource-manager"
 />
 
 <tags
-	ms.service="virtual-machines-linux"
-	ms.date="06/22/2015"
-	wacn.date=""/>
+ms.service="virtual-machines-linux"
+ms.devlang="na"
+ms.topic="article"
+ms.tgt_pltfrm="vm-linux"
+ms.workload="infrastructure-services"
+ms.date="06/22/2015"
+wacn.date=""
+ms.author="bbenz" />
 
 # Prepare an Oracle Linux virtual machine for Azure
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
 
 
 -   [Prepare an Oracle Linux 6.4+ virtual machine for Azure](/documentation/articles/virtual-machines-linux-oracle-create-upload-vhd/)

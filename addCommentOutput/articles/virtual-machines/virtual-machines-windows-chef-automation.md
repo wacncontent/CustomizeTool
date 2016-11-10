@@ -8,14 +8,17 @@
    tags="azure-service-management,azure-resource-manager"
    editor=""/>
 
-<tags
-	ms.service="virtual-machines-windows"
-	ms.date="05/19/2015"
-	wacn.date=""/>
+<tags ms.service="virtual-machines-windows" ms.workload="infrastructure-services"
+ms.tgt_pltfrm="vm-multiple"
+ms.devlang="na"
+ms.topic="article"
+ms.date="05/19/2015"
+wacn.date=""
+ms.author="diviso"/>
 
 # Automating Azure virtual machine deployment with Chef
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
 
 Chef is a great tool for delivering automation and desired state configurations.
 

@@ -6,23 +6,29 @@
    	services="hdinsight"
    	documentationCenter=""
    	authors="mumian"
-   	manager="paulettm"
+   	manager="jhubbard"
    	editor="cgronlun"
 	tags="azure-portal"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="06/01/2016"
-	wacn.date=""/>
+   	ms.service="hdinsight"
+   	ms.devlang="na"
+   	ms.topic="hero-article"
+   	ms.tgt_pltfrm="na"
+   	ms.workload="big-data"
+   	ms.date="06/29/2016"
+   	wacn.date=""
+   	ms.author="jgao"/>
 
-# Publish HDInsight applications into the Azure  Marketplace  gallery 
+# Publish HDInsight applications into the Azure Marketplace
 
-An HDInsight application is an application that users can install on a Linux-based HDInsight cluster. These applications can be developed by Microsoft, independent software vendors (ISV) or by yourself. In this article, you will learn how to publish an HDInsight application into the Azure  Marketplace  gallery .  For general information about publishing into the Azure  Marketplace  gallery , see [publish an offer to the Azure  Marketplace](/documentation/articles/marketplace-publishing-getting-started/)  gallery](/documentation/articles/marketplace-publishing-getting-started/) .
+An HDInsight application is an application that users can install on a Linux-based HDInsight cluster. These applications can be developed by Microsoft, independent software vendors (ISV) or by yourself. In this article, you will learn how to publish an HDInsight application into the Azure Marketplace.  For general information about publishing into the Azure Marketplace, see [publish an offer to the Azure Marketplace](/documentation/articles/marketplace-publishing-getting-started/).
 
 HDInsight applications use the *Bring Your Own License (BYOL)* model, where application provider is responsible for licensing the application to end-users, and end-users are only charged by Azure for the resources they create, such as the HDInsight cluster and its VMs/nodes. At this time, billing for the application itself is not done through Azure.
 
 Other HDInsight application related article:
 
+- [Install HDInsight applications](/documentation/articles/hdinsight-apps-install-applications/): Learn how to install an HDInsight application to your clusters.
 - [Install custom HDInsight applications](/documentation/articles/hdinsight-apps-install-custom-applications/): Learn how to install and test custom HDInsight applications.
 
  
@@ -32,11 +38,11 @@ In order to submit your custom application to the marketplace, you must have cre
 
 - [Install custom HDInsight applications](/documentation/articles/hdinsight-apps-install-custom-applications/): Learn how to install and test custom HDInsight applications.
 
-You must also have register your developer account. See [publish an offer to the Azure  Marketplace](/documentation/articles/marketplace-publishing-getting-started/)  gallery](/documentation/articles/marketplace-publishing-getting-started/)  and [Create a Microsoft Developer account](/documentation/articles/marketplace-publishing-accounts-creation-registration/).
+You must also have register your developer account. See [publish an offer to the Azure Marketplace](/documentation/articles/marketplace-publishing-getting-started/) and [Create a Microsoft Developer account](/documentation/articles/marketplace-publishing-accounts-creation-registration/).
 
 ## Define application
 
-There are two steps involved for publishing applications to the Azure  Marketplace  gallery .  First you define a **createUiDef.json** file to indicate which clusters your application is compatible with; and then you publish the template from the Azure portal. The following is a sample createUiDef.json file.
+There are two steps involved for publishing applications to the Azure Marketplace.  First you define a **createUiDef.json** file to indicate which clusters your application is compatible with; and then you publish the template from the Azure portal. The following is a sample createUiDef.json file.
 
 	{
 		"handler": "Microsoft.HDInsight",
@@ -62,7 +68,7 @@ Create a zip file that contains all required files for installing your HDInsight
 - [createUiDefinition.json](#define-application).
 - mainTemplate.json. See a sample at [Install custom HDInsight applications](/documentation/articles/hdinsight-apps-install-custom-applications/).
 
-	>[AZURE.IMPORTANT] The name of the application install script names must be unique for a particular cluster with the format below. 
+	>[AZURE.IMPORTANT] The name of the application install script names must be unique for a particular cluster with the format below. Additionally any install and uninstall script actions should be idempotent, meaning the scripts can be called repeatly while producing the same result.
 	
 	>	name": "[concat('hue-install-v0','-' ,uniquestring('applicationName')]"
 		
@@ -76,7 +82,7 @@ Create a zip file that contains all required files for installing your HDInsight
 
 - All required scripts.
 
-> [AZURE.NOTE] The application files (including web appliation files if there is any) can be located on any publicly accessible endpoint.
+> [AZURE.NOTE] The application files (including web application files if there is any) can be located on any publicly accessible endpoint.
 
 ## Publish application
 
@@ -92,6 +98,9 @@ Follow the following steps to publish an HDInsight application:
 
 ## Next steps
 
+- [Install HDInsight applications](/documentation/articles/hdinsight-apps-install-applications/): Learn how to install an HDInsight application to your clusters.
 - [Install custom HDInsight applications](/documentation/articles/hdinsight-apps-install-custom-applications/): learn how to deploy an un-published HDInsight application to HDInsight.
 - [Customize Linux-based HDInsight clusters using Script Action](/documentation/articles/hdinsight-hadoop-customize-cluster-v1/): learn how to use Script Action to install additional applications.
-- [Create Linux-based Hadoop clusters in HDInsight using ARM templates](/documentation/articles/hdinsight-hadoop-create-linux-clusters-arm-templates/): learn how to call ARM templates to create HDInsight clusters.
+- [Create Linux-based Hadoop clusters in HDInsight using Azure Resource Manager templates](/documentation/articles/hdinsight-hadoop-create-linux-clusters-arm-templates/): learn how to call Resource Manager templates to create HDInsight clusters.
+- [Use empty edge nodes in HDInsight](/documentation/articles/hdinsight-apps-use-edge-node/): learn how to use an empty edge node for accessing HDInsight cluster, testing HDInsight applications, and hosting HDInsight applications.
+

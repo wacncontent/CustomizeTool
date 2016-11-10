@@ -10,14 +10,15 @@
 
 <tags
 	ms.service="virtual-machines-windows"
+	ms.workload="na"
+	ms.tgt_pltfrm="vm-windows"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="06/07/2016"
-	wacn.date=""/>
+	wacn.date=""
+	ms.author="davidmu"/>
 
 # Manage Azure Virtual Machines using Resource Manager and PowerShell
-
-
-[AZURE.INCLUDE [arm-api-version-powershell](../includes/arm-api-version-powershell.md)]
-
 
 ## Install Azure PowerShell
  
@@ -43,7 +44,7 @@ It returns something like this:
                                rg1/providers/Microsoft.Compute/virtualMachines/vm1
     Name                     : vm1
     Type                     : Microsoft.Compute/virtualMachines
-    Location                 : centralus
+    Location                 : chinaeast
     Tags                     : {}
     AvailabilitySetReference : {
                                   "id": "/subscriptions/{subscription-id}/resourceGroups/
@@ -168,7 +169,7 @@ It returns something like this:
     ---------  -------------------  ----------  ------------
                               True          OK  OK
 
-## Update a virtual machine
+## Resize a virtual machine
 
 This example shows how to update the size of the virtual machine.
         

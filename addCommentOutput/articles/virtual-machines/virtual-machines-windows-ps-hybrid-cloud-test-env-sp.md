@@ -51,10 +51,6 @@ This is your current configuration.
  
 ## Phase 2: Configure the SQL server computer (SQL1)
 
-
-[AZURE.INCLUDE [arm-api-version-powershell](../includes/arm-api-version-powershell.md)]
-
-
 From the Azure portal  Preview , start the DC2 computer if needed.
 
 From the Azure portal  Preview , connect to DC2 using the CORP\User1 credentials.

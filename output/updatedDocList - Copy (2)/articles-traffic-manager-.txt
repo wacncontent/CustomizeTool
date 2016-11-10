@@ -1,4 +1,16 @@
-updated docs: 0
-
+updated docs: 13
+articles/traffic-manager/testing-traffic-manager-settings.md
+articles/traffic-manager/traffic-manager-endpoint-types.md
+articles/traffic-manager/traffic-manager-how-traffic-manager-works.md
+articles/traffic-manager/traffic-manager-manage-profiles.md
+articles/traffic-manager/traffic-manager-monitoring.md
+articles/traffic-manager/traffic-manager-nested-profiles.md
+articles/traffic-manager/traffic-manager-overview.md
+articles/traffic-manager/traffic-manager-performance-considerations.md
+articles/traffic-manager/traffic-manager-point-internet-domain.md
+articles/traffic-manager/traffic-manager-powershell-arm.md
+articles/traffic-manager/traffic-manager-routing-methods.md
+articles/traffic-manager/traffic-manager-testing-settings.md
+articles/traffic-manager/traffic-manager-troubleshooting-degraded.md
 
 updated includes: 0

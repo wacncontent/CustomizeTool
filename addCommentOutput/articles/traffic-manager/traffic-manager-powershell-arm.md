@@ -3,13 +3,18 @@
    description="Using powershell for Traffic Manager with Azure Resource Manager (ARM)"
    services="traffic-manager"
    documentationCenter="na"
-   authors="jtuliani"
+   authors="sdwheeler"
    manager="carmonm"
    editor="tysonn" />
 <tags
-	ms.service="traffic-manager"
-	ms.date="03/17/2016"
-	wacn.date=""/>
+   ms.service="traffic-manager"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="03/17/2016"
+   wacn.date=""
+   ms.author="sewhee" />
 
 # Azure Resource Manager support for Azure Traffic Manager
 Azure Resource Manager (ARM) is the new management framework for services in Azure.  Azure Traffic Manager profiles can now be managed using Azure Resource Manager-based APIs and tools. 
@@ -115,7 +120,7 @@ This cmdlet returns a Traffic Manager profile object.
 ## Update a Traffic Manager Profile [](#update-traffic-manager-profile)
 
 
-##<a name="update-traffic-manager-profile"></a> Update a Traffic Manager Profile
+## <a name="update-traffic-manager-profile"></a> Update a Traffic Manager Profile
 
 
 Modifying Traffic Manager profiles, for example to add or remove endpoints or modify profile settings, follows a 3-step process:
@@ -134,12 +139,7 @@ For example, to change the profile TTL:
 	PS C:\> $profile.Ttl = 300
 	PS C:\> Set-AzureRmTrafficManagerProfile -TrafficManagerProfile $profile
 
-
-## Add Traffic Manager Endpoints
-
-
-##<a name="adding-traffic-manager-endpoints"></a> Add Traffic Manager Endpoints
-
+##  <a name="adding-traffic-manager-endpoints"></a>  Add Traffic Manager Endpoints
 There are three types of Traffic Manager endpoints:
 
 1. Azure endpoints: these represent services hosted in Azure.<BR>

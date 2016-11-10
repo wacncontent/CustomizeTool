@@ -2,20 +2,20 @@
 
 ### What is an Azure Virtual network (VNet)?
 
-You can use VNets to provision and manage virtual private networks (VPNs) in Azure and, optionally, link the VNets with other VNets in Azure, or with your on-premises IT infrastructure to create hybrid or cross-premises solutions. Each VNet you create has its own CIDR block, and can be linked to other VNets and on-premises networks as long as the CIDR blocks do not collide. You also have controls of DNS server settings for VNets, and segmentation of the VNet into subnets. 
+You can use VNets to provision and manage virtual private networks (VPNs) in Azure and, optionally, link the VNets with other VNets in Azure, or with your on-premises IT infrastructure to create hybrid or cross-premises solutions. Each VNet you create has its own CIDR block, and can be linked to other VNets and on-premises networks as long as the CIDR blocks do not collide. You also have controls of DNS server settings for VNets, and segmentation of the VNet into subnets.
 
 Use VNets to:
 
 - Create a dedicated private cloud-only virtual network
-									
+
 	Sometimes you don't require a cross-premises configuration for your solution. When you create a VNet, your services and VMs within your VNet can communicate directly and securely with each other in the cloud. This keeps traffic securely within the VNet, but still allows you to configure endpoint connections for the VMs and services that require Internet communication as part of your solution.
 
 - Securely extend your data center
-									
+
 	With VNets, you can build traditional site-to-site (S2S) VPNs to securely scale your datacenter capacity. S2S VPNs use IPSEC to provide a secure connection between your corporate VPN gateway and Azure.
 
 - Enable hybrid cloud scenarios
-									
+
 	VNets give you the flexibility to support a range of hybrid cloud scenarios. You can securely connect cloud-based applications to any type of on-premises system such as mainframes and Unix systems.
 
 ### How do I know if I need a virtual network?
@@ -46,7 +46,7 @@ You can use the following tools to create or configure a virtual network:
 
 - PowerShell (for classic and Resource Manager VNets).
 
-- Azure CLI (for classic and Resource Manager VNets). 
+- Azure CLI (for classic and Resource Manager VNets).
 
 ### What address ranges can I use in my VNets?
 
@@ -66,7 +66,7 @@ Azure reserves some IP addresses within each subnet. The first and last IP addre
 
 ### How small and how large can VNets and subnets be?
 
-The smallest subnet we support is a /29 and the largest is a /8 (using CIDR subnet definitions). 
+The smallest subnet we support is a /29 and the largest is a /8 (using CIDR subnet definitions).
 
 ### Can I bring my VLANs to Azure using VNets?
 
@@ -122,7 +122,7 @@ No. A VNet is limited to a single region.
 
 ### Can I connect a VNet to another VNet in Azure?
 
-Yes. You can create VNet to VNet communication by using REST APIs or Windows PowerShell.
+Yes. You can create VNet to VNet communication by using REST APIs or Windows PowerShell. You can also connect VNets via VNet Peering. See more details about peering [here.](/documentation/articles/virtual-network-peering-overview/)
 
 ## Name Resolution (DNS)
 
@@ -145,7 +145,7 @@ Yes. You can change the DNS server list for your VNet at any time. If you change
 
 ### What is Azure-provided DNS and does it work with VNets?
 
-Azure-provided DNS is a multi-tenant DNS service offered by Microsoft. Azure registers all of your VMs and role instances in this service. This service provides name resolution by hostname for VMs and role instances contained within the same cloud service, and by FQDN for VMs and role instances in the same VNet. 
+Azure-provided DNS is a multi-tenant DNS service offered by Microsoft. Azure registers all of your VMs and role instances in this service. This service provides name resolution by hostname for VMs and role instances contained within the same cloud service, and by FQDN for VMs and role instances in the same VNet.
 
 > [AZURE.NOTE] There is a limitation at this time to the first 100 cloud services in the virtual network for cross-tenant name resolution using Azure-provided DNS. If you are using your own DNS server, this limitation does not apply.
 
@@ -183,7 +183,7 @@ Yes. You can deploy any distro of Linux supported by Azure.
 
 ### Can I reserve an internal IP address for a VM that I will create at a later time?
 
-No. You cannot reserve an internal IP address. If an internal IP address is available it will be assigned to a VM or role instance by the DHCP server. That VM may or may not be the one that you want the internal IP address to be assigned to. You can, however, change the internal IP address of an already created VM to any available internal IP address. 
+No. You cannot reserve an internal IP address. If an internal IP address is available it will be assigned to a VM or role instance by the DHCP server. That VM may or may not be the one that you want the internal IP address to be assigned to. You can, however, change the internal IP address of an already created VM to any available internal IP address.
 
 ### Do internal IP addresses change for VMs in a VNet?
 
@@ -195,7 +195,7 @@ No. You must not change any interface properties of VMs. Any changes may lead to
 
 ### What happens to my IP addresses if I shut down a VM?
 
-Nothing. The IP addresses (both public VIP and internal IP address) will stay with your cloud service or VM. 
+Nothing. The IP addresses (both public VIP and internal IP address) will stay with your cloud service or VM.
 
 > [AZURE.NOTE] If you want to simply shut down the VM, don't use the Management Portal to do so. Currently, the shutdown button will deallocate the virtual machine.
 
@@ -209,7 +209,7 @@ No. A MAC address cannot be statically configured.
 
 ### Will the MAC address remain the same for my VM once it has been created?
 
-No, but it will only change if the VM is put in the status Stopped (Deallocated). If you change the VM size, reboot, or in case of service healing or planned maintenance of the host server, the MAC address is retained.
+Yes, the MAC address will remain the same for a VM even though the VM has been stopped (deallocated) and relaunched.
 
 ### Can I connect to the internet from a VM in a VNet?
 
@@ -223,12 +223,12 @@ You can only use compute services within VNets. Compute services are limited to 
 
 ### Can I use Web Apps with Virtual Network?
 
-Yes. You can deploy Web Apps inside a VNet using ASE (Azure Environment). Adding to that, Web Apps can securely connect and access resources in your Azure VNet if you have point-to-site configured for your VNet. For more information, see the following:
+Yes. You can deploy Web Apps inside a VNet using ASE (App Service Environment). Adding to that, Web Apps can securely connect and access resources in your Azure VNet if you have point-to-site configured for your VNet. For more information, see the following:
 
 
-- [Creating Web Apps in an Azure Environment](/documentation/articles/app-service-web-how-to-create-a-web-app-in-an-ase/)
+- [Creating Web Apps in an App Service Environment](/documentation/articles/app-service-web-how-to-create-a-web-app-in-an-ase/)
 
-- [Web Apps Virtual Network Integration](https://azure.microsoft.com/blog/2014/09/15/azure-websites-virtual-network-integration/)
+- [Web Apps Virtual Network Integration](https://azure.microsoft.com/documentation/articles/app-service-vnet-integration-powershell/)
 
 - [Using VNet Integration and Hybrid Connections with Web Apps](https://azure.microsoft.com/blog/2014/10/30/using-vnet-or-hybrid-conn-with-websites/)
 
@@ -254,7 +254,7 @@ VNets are completely isolated from one another, and other services hosted in the
 
 ### Can I define ACLs or NSGs on my VNets?
 
-No. You cannot associate ACLs or NSGs to VNets. However, ACLs can be defined on input endpoints for VMs that have been deployed to a VNets, and NSGs can be associated to subnets or NICs. 
+No. You cannot associate ACLs or NSGs to VNets. However, ACLs can be defined on input endpoints for VMs that have been deployed to a VNets, and NSGs can be associated to subnets or NICs.
 
 ### Is there a VNet security whitepaper?
 

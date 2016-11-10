@@ -1,8 +1,6 @@
-<!-- not suitable for Mooncake -->
-
 <properties
 	pageTitle="Reference for navigating the Azure portal"
-	description="Learn the different user experiences for Azure Web between the management portal and the Azure Portal"
+	description="Learn the different user experiences for App Service Web between the management portal and the Azure Portal"
 	services="app-service"
 	documentationCenter=""
 	authors="jaime-espinosa"
@@ -11,24 +9,34 @@
 
 <tags
 	ms.service="app-service"
+	ms.workload="na"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="02/26/2016"
-	wacn.date=""/>
+	wacn.date=""
+	ms.author="jaime-espinosa"/>
 
+
 # Reference for navigating the Azure portal
+
+
+# Reference for navigating the Azure Portal Preview
+
 
-Azure Websites are now called [Azure Web Apps](/documentation/services/web-sites/). We're updating all of our documentation to reflect this name change and to provide instructions for the Azure Portal. Until that process is done, you can use this document as a guide for working with Web Apps in the Azure portal.
+Azure Websites are now called [App Service Web Apps](/documentation/articles/app-service-changes-existing-services/). We're updating all of our documentation to reflect this name change and to provide instructions for the Azure Portal  Preview . Until that process is done, you can use this document as a guide for working with Web Apps in the Azure  portal  Portal   Preview .
 
-[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)] 
+[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)] 
  
 ## The future of the Azure Classic Management Portal
 
-While you will notice the branding changes on the Azure Classic Management Portal, that portal is in the process of being replaced by the Azure Portal. As the Classic Management Portal is being phased out, the focus for new development is shifting to the Azure Portal. All upcoming new features for Web Apps will come in the Azure Portal. Start using the Azure Portal to take advantage of the latest and greatest that Web Apps have to offer.
+While you will notice the branding changes on the Azure Classic Management Portal, that portal is in the process of being replaced by the Azure Portal  Preview . As the Classic Management Portal is being phased out, the focus for new development is shifting to the Azure Portal  Preview . All upcoming new features for Web Apps will come in the Azure Portal  Preview . Start using the Azure Portal  Preview  to take advantage of the latest and greatest that Web Apps have to offer.
 
-## Layout differences between the Azure Classic Management Portal and Azure Portal
+## Layout differences between the Azure Classic Management Portal and Azure Portal  Preview 
 
 In the Classic Management Portal, all the Azure services are listed on the left hand side. Navigation in the Classic Management Portal follows a tree structure, where you start from the service and navigate into each element. This structure works well when managing independent components. However, applications built on Azure are a collection of interconnected services, and this tree structure isn't ideal for working with collections of services. 
 
-The Azure portal makes it easy to build applications end-to-end with components from multiple services. The portal is organized as *journeys*. A *journey* is a series of *blades*, which are containers for the different components. For example, setting up auto-scaling for a web app is a *journey* which takes you several blades as shown in the following example: the **web-site** blade (that blade title has not yet been updated to use the new terminology), the **Settings** blade, and the **Scale out** blade. In the example, auto scaling is being set up to depend on CPU usage, so there is also a **CPU Percentage** blade. The components within the *blades* are called *parts*, which look like tiles. 
+The Azure  portal  Portal   Preview  makes it easy to build applications end-to-end with components from multiple services. The portal is organized as *journeys*. A *journey* is a series of *blades*, which are containers for the different components. For example, setting up auto-scaling for a web app is a *journey* which takes you several blades as shown in the following example: the **web-site** blade (that blade title has not yet been updated to use the new terminology), the **Settings** blade, and the **Scale out** blade. In the example, auto scaling is being set up to depend on CPU usage, so there is also a **CPU Percentage** blade. The components within the *blades* are called *parts*, which look like tiles.
 
 ![](./media/app-service-web-app-azure-portal/AutoScaling.png)
 
@@ -38,7 +46,7 @@ Creating new web apps is still as easy as 1-2-3. The following image shows the C
 
 ![](./media/app-service-web-app-azure-portal/CreateWebApp.png)
 
-In the portal you can choose from the most common types of web apps, including popular gallery applications like WordPress. For a full list of available applications, visit the [Azure  Marketplace]  gallery] .
+In the portal you can choose from the most common types of web apps, including popular gallery applications like WordPress.  For a full list of available applications, visit the [Azure Marketplace]. 
 
 When you create a web app, you specify URL, App Service plan, and location in the portal just as you do in the Classic Management Portal. 
 
@@ -74,16 +82,18 @@ Other than the brand name, a few things in the portal have been renamed or group
 
 ## More Resources
 
-[Azure Portal]: https://portal.azure.cn
 
-[Azure Marketplace]: /marketplace/
+[Azure Portal]: https://portal.azure.cn
 
 
-[Azure gallery]: /marketplace/
+[Azure Portal Preview]: https://portal.azure.cn
 
+[Azure Marketplace]: /marketplace/
+
 
->[AZURE.NOTE] If you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.
+>[AZURE.NOTE] If you want to get started with Azure App Service before signing up for an Azure account, go to [Try App Service](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in App Service. No credit cards required; no commitments.
+
 
 ## What's changed
-* For a guide to the change from Websites to Azure see: [Azure and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
+* For a guide to the change from Websites to App Service see: [Azure App Service and Its Impact on Existing Azure Services](/documentation/articles/app-service-changes-existing-services/)
  

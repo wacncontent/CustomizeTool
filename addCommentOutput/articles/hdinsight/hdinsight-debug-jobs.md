@@ -4,18 +4,23 @@
 	services="hdinsight"
 	tags="azure-portal"
 	editor="cgronlun"
-	manager="paulettm"
+	manager="jhubbard"
 	authors="mumian"
 	documentationCenter=""/>
 
 <tags
 	ms.service="hdinsight"
-	ms.date="06/10/2016"
-	wacn.date=""/>
+	ms.workload="big-data"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/02/2016"
+	wacn.date=""
+	ms.author="jgao"/>
 
 # Analyze HDInsight logs
 
-Each Hadoop cluster in Azure HDInsight has an Azure storage account used as the default file system. The storage account is referred as the default Storage account. Cluster uses the Azure Table storage and the Blob storage on the default Storage account to store its logs.   To find out the default storage account for your cluster, see [Manage Hadoop clusters in HDInsight](/documentation/articles/hdinsight-administer-use-management-portal-v1/#find-the-default-storage-account).  The logs retain in the Storage account even after the cluster is deleted.
+Each Hadoop cluster in Azure HDInsight has an Azure storage account used as the default file system. The storage account is referred as the default Storage account. Cluster uses the Azure Table storage and the Blob storage on the default Storage account to store its logs.   To find out the default storage account for your cluster, see [Manage Hadoop clusters in HDInsight](/documentation/articles/hdinsight-administer-use-management-portal-v1/#find-the-default-storage-account).  The logs retain in the Storage account even after the cluster is deleted.
 
 
 ##Logs written to Azure Tables

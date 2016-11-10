@@ -1,23 +1,25 @@
 <properties
    pageTitle="Testing SAP NetWeaver on Azure SUSE Linux VMs | Azure"
    description="Testing SAP NetWeaver on Azure SUSE Linux VMs"
-   services="virtual-machines,virtual-network,storage"
-   documentationCenter="saponazure"
+   services="virtual-machines-linux"
+   documentationCenter=""
    authors="hermanndms"
-   manager="juergent"
+   manager="timlt"
    editor=""
    tags="azure-resource-manager"
    keywords=""/>
 <tags
-	ms.service="virtual-machines"
-	ms.date="05/30/2016"
-	wacn.date=""/>
+   ms.service="virtual-machines-linux"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="vm-linux"
+   ms.workload="infrastructure-services"
+   ms.date="09/15/2016"
+   wacn.date=""
+   ms.author="hermannd"/>
 
 # Running SAP NetWeaver on Azure SUSE Linux VMs
 
-
-[AZURE.INCLUDE [arm-api-version-powershell](../includes/arm-api-version-powershell.md)]
-
 
 This article describes various things to consider when you're running SAP NetWeaver on Azure SUSE Linux virtual machines (VMs). As of May 19 2016 SAP NetWeaver is officially supported on SUSE Linux VMs on Azure. All details regarding Linux versions, 
 SAP kernel versions and so on can be found in SAP Note 1928533 "SAP Applications on Azure: Supported Products and Azure VM types".
@@ -28,7 +30,7 @@ The following information should help you avoid some potential pitfalls.
 
 ## SUSE images on Azure for running SAP
 
-For running SAP NetWeaver on Azure, use only SUSE Linux Enterprise Server SLES 12 ( SPx ) - see also SAP note 1928533. A special SUSE image is in the Azure  Marketplace  gallery  ("SLES 11 SP3 for SAP CAL"), but this is not intended for general usage. Do not use this image because it's reserved for the [SAP Cloud Appliance Library](https://cal.sap.com/) solution.
+For running SAP NetWeaver on Azure, use only SUSE Linux Enterprise Server SLES 12 ( SPx ) - see also SAP note 1928533. A special SUSE image is in the Azure Marketplace ("SLES 11 SP3 for SAP CAL"), but this is not intended for general usage. Do not use this image because it's reserved for the [SAP Cloud Appliance Library](https://cal.sap.com/) solution.  
 
 You should use Azure Resource Manager for all new tests and installations on Azure. To look for SUSE SLES images and versions by using Azure PowerShell or the Azure command-line interface (CLI), use the following commands. You can then use the output, for example, to define the OS image in a JSON template for deploying a new SUSE Linux VM.
 These PowerShell commands are valid for Azure PowerShell version 1.0.1 and later.
@@ -66,7 +68,7 @@ These PowerShell commands are valid for Azure PowerShell version 1.0.1 and later
    ```
 
 
-   PS: Get-AzureRmVMImageSku -Location "China East" -Publisher "SUSE" -Offer "SLES"
+	   PS: Get-AzureRmVMImageSku -Location "China East" -Publisher "SUSE" -Offer "SLES"
    CLI: azure vm image list-skus chinaeast SUSE SLES
 
 
@@ -85,7 +87,7 @@ These PowerShell commands are valid for Azure PowerShell version 1.0.1 and later
 
 ## Installing WALinuxAgent in a SUSE VM
 
-The agent called WALinuxAgent is part of the SLES images in the Azure  Marketplace  gallery . For information about installing it manually (for example, when uploading a SLES OS virtual hard disk (VHD) from on-premises), see:
+The agent called WALinuxAgent is part of the SLES images in the Azure Marketplace. For information about installing it manually (for example, when uploading a SLES OS virtual hard disk (VHD) from on-premises), see:
 
 
 - [OpenSUSE] (http://software.opensuse.org/package/WALinuxAgent)
@@ -119,15 +121,15 @@ The only exception to mounting via UUID is attaching an OS disk for troubleshoot
 ## Troubleshooting a SUSE VM that isn't accessible anymore
 
 There might be situations where a SUSE VM on Azure hangs in the boot process (for example, with an error related to
-mounting disks). You can verify this issue by using the boot diagnostics feature for Azure Virtual Machines v2 in the Azure portal  Preview . For more information, see [Boot diagnostics] (https://azure.microsoft.com/blog/boot-diagnostics-for-virtual-machines-v2/).
+mounting disks). You can verify this issue by using the boot diagnostics feature for Azure Virtual Machines v2 in the Azure portal  Preview . For more information, see [Boot  diagnostics] (https://azure.microsoft.com/blog/boot-diagnostics-for-virtual-machines-v2/)  diagnostics](https://azure.microsoft.com/blog/boot-diagnostics-for-virtual-machines-v2/) .
 
 One way to solve the problem is to attach the OS disk from the damaged VM to another SUSE VM on Azure. Then make appropriate changes like editing /etc/fstab or removing network udev rules, as described in the next section.
 
-There is one important thing to consider. Deploying several SUSE VMs from the same Azure  Marketplace  gallery  image (for example, SLES 11 SP4) causes the OS disk to always be mounted by the same UUID. Therefore, using the UUID to attach an OS disk from a different VM that was deployed by using the same Azure  Marketplace  gallery  image will result in two identical UUIDs. This causes problems and could mean that the VM meant for troubleshooting will in fact boot from the attached and damaged OS disk instead of the original one.
+There is one important thing to consider. Deploying several SUSE VMs from the same Azure Marketplace image (for example, SLES 11 SP4) causes the OS disk to always be mounted by the same UUID. Therefore, using the UUID to attach an OS disk from a different VM that was deployed by using the same Azure Marketplace image will result in two identical UUIDs. This causes problems and could mean that the VM meant for troubleshooting will in fact boot from the attached and damaged OS disk instead of the original one.
 
 There are two ways to avoid this:
 
-* Use a different Azure  Marketplace  gallery  image for the troubleshooting VM (for example, SLES 11 SPx instead of SLES 12 ).
+* Use a different Azure Marketplace image for the troubleshooting VM (for example, SLES 11 SPx instead of SLES 12 ).
 * Don't attach the damaged OS disk from another VM by using UUID--use something else.
 
 ## Uploading a SUSE VM from on-premises to Azure
@@ -155,7 +157,7 @@ file is created, you can deploy the VM by using the following CLI command as an 
    azure group deployment create "<deployment name>" -g "<resource group name>" --template-file "<../../filename.json>"
 
    ```
-For more details about JSON template files, see [Authoring Azure Resource Manager templates] (resource-group-authoring-templates.md) and [Azure quickstart templates] (https://azure.microsoft.com/documentation/templates/).
+For more details about JSON template files, see [Authoring Azure Resource Manager templates] (resource-group-authoring-templates.md) and [Azure quickstart templates] (https://github.com/Azure/azure-quickstart-templates/).
 
 For more details about CLI and Azure Resource Manager, see [Use the Azure CLI for Mac, Linux, and Windows with Azure Resource Manager] (xplat-cli-azure-resource-manager.md).
 
@@ -173,9 +175,16 @@ For the official SAP-Azure certification, a new mechanism was introduced to calc
 of this. Former SAP kernel versions for Linux did not include this code change. Therefore, in certain situations (for example, Azure VM resizing), the SAP hardware key changed and the SAP license was no longer be valid. This is solved in the latest SAP Linux kernels. 
 For details please check SAP note 1928533.
 
-## SUSE sapconf package
+## SUSE sapconf package / tuned-adm
 
 SUSE provides a package called "sapconf" that manages a set of SAP-specific settings. For more details about what this package does, and how to install and use it, see [Using sapconf to prepare a SUSE Linux Enterprise Server to run SAP systems] (https://www.suse.com/communities/blog/using-sapconf-to-prepare-suse-linux-enterprise-server-to-run-sap-systems/) and [What is sapconf or how to prepare a SUSE Linux Enterprise Server for running SAP systems?] (http://scn.sap.com/community/linux/blog/2014/03/31/what-is-sapconf-or-how-to-prepare-a-suse-linux-enterprise-server-for-running-sap-systems).
+
+In the meantime there is a new tool which replaces sapconf - tuned-adm. One can find more details about this tool following the two links below.
+
+SLES documentation about tuned-adm profile sap-hana can be found [here](https://www.suse.com/documentation/sles-for-sap-12/book_s4s/data/sec_s4s_configure_sapconf.html) 
+
+Tuning Systems for SAP Workloads with tuned-adm - can be found [here](https://www.suse.com/documentation/sles-for-sap-12/pdfdoc/book_s4s/book_s4s.pdf) in chapter 6.2
+
 
 ## NFS share in distributed SAP installations
 
@@ -194,11 +203,12 @@ region and then copy the image to a different region where you want to deploy ne
 
 
    ```
-
    service guestregister restart
-
    ```
 
+
+    service guestregister restart
+
 
 ## Gnome desktop
 
@@ -212,7 +222,7 @@ If you want to use the Gnome desktop to install a complete SAP demo system insid
    ```
 
 
-	   zypper in -t pattern gnome
+    zypper in -t pattern gnome
 
 
    For SLES 12:
@@ -223,7 +233,7 @@ If you want to use the Gnome desktop to install a complete SAP demo system insid
    ```
 
 
-	   zypper in -t pattern gnome-basic
+    zypper in -t pattern gnome-basic
 
 
 ## SAP support for Oracle on Linux in the cloud

@@ -1,7 +1,7 @@
 <properties
-	pageTitle="Troubleshoot SSH connection to an Azure VM | Azure"
+	pageTitle="SSH connection to a Linux VM is refused, fails or errors out | Azure"
 	description="Troubleshoot and fix SSH errors like SSH connection failed or SSH connection refused for an Azure virtual machine running Linux."
-	keywords="ssh connection refused,ssh error,azure ssh,SSH connection failed"
+	keywords="ssh connection refused, ssh error, azure ssh, SSH connection failed"
 	services="virtual-machines-linux"
 	documentationCenter=""
 	authors="iainfoulds"
@@ -11,16 +11,21 @@
 
 <tags
 	ms.service="virtual-machines-linux"
-	ms.date="06/14/2016"
-	wacn.date=""/>
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-linux"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="07/06/2016"
+	wacn.date=""
+	ms.author="iainfou"/>
 
-# Troubleshoot SSH connection to an Azure VM
+# Troubleshoot SSH connection to a Azure Linux VM that fails, errors out or is refused
 
-There are various reasons that you might get Secure Shell (SSH) errors when you try to connect to a Linux-based Azure virtual machine (VM). This article will help you find and correct the problems.
+There are various reasons that you might get Secure Shell (SSH) errors, SSH connection fails or is refused when you try to connect to a Linux-based Azure virtual machine (VM). This article will help you find and correct the problems.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
 
-If you need more help at any point in this article, you can contact the Azure experts on [the MSDN Azure and Stack Overflow forums](/support/forums/). Alternatively, you can file an Azure support incident. Go to the [Azure support site](/support/contact/) and select **Get support**. For information about using Azure Support, read the [Azure support FAQ](/support/faq/).
+If you need more help at any point in this article, you can contact the Azure experts on [the MSDN Azure and CSDN Azure](/support/forums/). Alternatively, you can file an Azure support incident. Go to the [Azure support site](/support/contact/) and select **Get support**. For information about using Azure Support, read the [Azure support FAQ](/support/faq/).
 
 ## VMs created by using the Resource Manager deployment model
 
@@ -36,11 +41,14 @@ Make sure [Azure Linux Agent](/documentation/articles/virtual-machines-linux-age
 The SSHD configuration itself may be misconfigured or the service encountered an error. You can reset SSHD to make sure the SSH configuration itself is valid.
 
 #### Azure CLI
- ```bash 
-azure vm reset-access -g <resource group> -n <vm name> -r
 
+```bash
+azure vm reset-access -g <resource group> -n <vm name> -r
 ```
 
+
+	azure vm reset-access -g <resource group> -n <vm name> -r
+
 
 #### VM Access Extension
 Access extensions read in a json file that defines which action to carry out, such as resetting SSH, resetting an SSH key, adding a new user, etc. First, create a file named PrivateConf.json with the following content:
@@ -83,11 +91,11 @@ If using SSH key authentication, you can reset the SSH key for a given user:
 
 
 ```bash
-azure vm reset-access -g <resource group> -n <vm name> -u <usernamer> -M <~/.ssh/azure_id_rsa.pub>
+azure vm reset-access -g <resource group> -n <vm name> -u <username> -M <~/.ssh/azure_id_rsa.pub>
 ```
 
 
-	azure vm reset-access -g <resource group> -n <vm name> -u <usernamer> -M <~/.ssh/azure_id_rsa.pub>
+	azure vm reset-access -g <resource group> -n <vm name> -u <username> -M <~/.ssh/azure_id_rsa.pub>
 
 
 #### VM Access Extension
@@ -161,7 +169,7 @@ Try these steps to resolve the most common SSH connection failures for VMs that 
 
 - Check the VM's resource health for any platform issues.<br>
 	 Select **Browse** > **Virtual Machines (classic)** > *your Linux virtual machine* > **Settings** > **Check Health**.
-	 
+
 
 ## Additional resources
 

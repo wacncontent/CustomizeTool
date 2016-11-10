@@ -6,13 +6,18 @@
 	documentationCenter=""
 	tags="azure-portal"
 	authors="mumian"
-	manager="paulettm"
+	manager="jhubbard"
 	editor="cgronlun"/>
 
 <tags
 	ms.service="hdinsight"
-	ms.date="05/25/2016"
-	wacn.date=""/>
+	ms.devlang="na"
+	ms.topic="get-started-article"
+	ms.tgt_pltfrm="na"
+	ms.workload="big-data"
+	ms.date="08/10/2016"
+	wacn.date=""
+	ms.author="jgao"/>
 
 # Get started using Visual Studio Hadoop tools for HDInsight to run a Hive query
 
@@ -39,14 +44,12 @@ To complete this tutorial and use the Hadoop tools in Visual Studio, you'll need
 	>[AZURE.NOTE] Currently, the HDInsight Tools for Visual Studio only come with the English version.
 
 
-
-## Install HDInsight tools for Visual Studio
+##  <a name="installation" id="install-hdinsight-tools-for-visual-studio"></a>  Install HDInsight tools for Visual Studio
 
+
 HDInsight Tools for Visual Studio and Microsoft Hive ODBC Driver are packaged with Azure SDK for .NET version 2.5.1 or later. You can install it using the [Web Platform Installer](http://download.microsoft.com/download/F/4/2/F42AB12D-C935-4E65-9D98-4E56F9ACBC8E/wpilauncher.exe). You must choose the one that matches your version of Visual Studio. If you don't have Visual Studio installed, you can install the latest Visual Studio Community and Azure SDK using the [Web Platform Installer](http://download.microsoft.com/download/F/4/2/F42AB12D-C935-4E65-9D98-4E56F9ACBC8E/wpilauncher.exe) or using the following links:
 
 
-##<a name="installation" id="install-hdinsight-tools-for-visual-studio"></a> Install HDInsight tools for Visual Studio
-
 HDInsight Tools for Visual Studio and Microsoft Hive ODBC Driver are packaged with Azure SDK for .NET version 2.5.1 or 2.6. Currently, Global Azure has updated HDInsight to ARM model, while Azure China is still using the Classic deployment model. Hence, if you want to manage HDInsight cluster in Azure China, you have to use Azure SDK for .NET version 2.5.1 or 2.6. The following are the related download links.
 
 
@@ -92,11 +95,16 @@ After you've connected to your Azure subscription, you'll be able to do the foll
 
 - From the **Tools** menu, click **HDInsight**, and then click **MSDN Forum** to ask questions, or click **Give Feedback**.
 
-## Navigate the linked resources
+##  <a name="navigate-the-linked-resources"></a>  Navigate the linked resources
 
 From Server Explorer, you can see the default storage account and any linked storage accounts. If you expand the default storage account, you can see the containers on the storage account. The default storage account and the default container are marked. You can also right-click any of the containers to view the contents.
 
 ![HDInsight Tools for Visual Studio server explorer cluster list][2]
+
+After openning a container, you can using the following buttons to upload, delete, and download blobs:
+
+![HDInsight Tools for Visual Studio server explorer blob operations](./media/hdinsight-hadoop-visual-studio-tools-get-started/hdinsight.visual.studio.tools.blob.operations.png)
+
 
 ## Run a Hive query
 [Apache Hive][apache.hive] is a data warehouse infrastructure built on Hadoop for providing data summarization, queries, and analysis. HDInsight Tools for Visual Studio supports running Hive queries from Visual Studio. For more information about Hive, see [Use Hive with HDInsight][hdinsight.hive].

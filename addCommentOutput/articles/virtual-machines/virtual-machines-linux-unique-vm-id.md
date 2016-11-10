@@ -4,13 +4,18 @@
    services="virtual-machines-linux"
    documentationCenter="virtual-machines"
    authors="kmouss"
-   manager="drewm"
+   manager="timlt"
    editor=""/>
 
 <tags
-	ms.service="virtual-machines-linux"
-	ms.date="02/08/2016"
-	wacn.date=""/>
+   ms.service="virtual-machines-linux"
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="vm-linux"
+   ms.workload="infrastructure"
+   ms.date="02/08/2016"
+   wacn.date=""
+   ms.author="kmouss"/>
    
 # Accessing and Using Azure VM Unique ID
 
@@ -33,7 +38,7 @@ For more information, see [Create a Virtual Machine](/documentation/articles/vir
 ## Connect to the VM
  
 
-For more information, see [SSH from Linux](/documentation/articles/virtual-machines-linux-ssh-from-linux/)
+For more information, see [SSH from Linux](/documentation/articles/virtual-machines-linux-mac-create-ssh-keys/)
 
 
 ## Query VM Unique ID

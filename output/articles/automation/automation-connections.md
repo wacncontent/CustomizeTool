@@ -6,10 +6,15 @@
    authors="bwren"
    manager="stevenka"
    editor="tysonn" />
-<tags
-	ms.service="automation"
-	ms.date="01/27/2016"
-	wacn.date=""/>
+<tags 
+   ms.service="automation"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="01/27/2016"
+   wacn.date=""
+   ms.author="bwren" />
 
 # Connection assets in Azure Automation
 

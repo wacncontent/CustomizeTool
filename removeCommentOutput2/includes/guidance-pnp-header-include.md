@@ -1,1 +1,1 @@
-[![patterns & practices](./media/guidance-pnp-include/pnp-logo.png)](/documentation/articles/guidance/)
+[![patterns & practices](./media/guidance-pnp-include/pnp-logo.png)](http://aka.ms/mspnp)

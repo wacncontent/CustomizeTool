@@ -37,7 +37,7 @@ Not at this time.
 
 #### Can I advertise the exact prefixes as my Virtual Network prefixes?
 
-No, advertising the same prefixes as any one of your Virtual Network address prefixes will be blocked or filtered by the Azure platform.
+No, advertising the same prefixes as any one of your Virtual Network address prefixes will be blocked or filtered by the Azure platform. However you can advertise a prefix that is a superset of what you have inside your Virtual Network. For example, your Virtual Network could use the address space 10.10.0.0/16 and you could advertise 10.0.0.0/8.
 
 ### Can I use BGP with my VNet-to-VNet connections?
 
@@ -65,7 +65,7 @@ Not at this time.
 
 ### What address does Azure VPN gateway use for BGP Peer IP?
 
-The Azure VPN gateway will allocate a single IP address from the GatewaySubnet range defined for the virtual network. By default, it is the second last address of the range. For example, if your GatewaySubnet is 10.12.255.0.0/27, ranging from 10.42.255.0.0 to 10.42.255.31, then the BGP Peer IP address on the Azure VPN gateway will be 10.12.255.30. You can find this information when you list the Azure VPN gateway information.
+The Azure VPN gateway will allocate a single IP address from the GatewaySubnet range defined for the virtual network. By default, it is the second last address of the range. For example, if your GatewaySubnet is 10.12.255.0/27, ranging from 10.12.255.0 to 10.12.255.31, then the BGP Peer IP address on the Azure VPN gateway will be 10.12.255.30. You can find this information when you list the Azure VPN gateway information.
 
 ### What are the requirements for the BGP Peer IP addresses on my VPN device?
 

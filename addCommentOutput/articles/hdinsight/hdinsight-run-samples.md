@@ -5,17 +5,22 @@
 	documentationCenter=""
 	tags="azure-portal"
 	authors="mumian"
-	manager="paulettm"
+	manager="jhubbard"
 	editor="cgronlun"/>
 
 <tags
 	ms.service="hdinsight"
-	ms.date="05/18/2016"
-	wacn.date=""/>
+	ms.workload="big-data"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="07/25/2016"
+	wacn.date=""
+	ms.author="jgao"/>
 
 #Run Hadoop MapReduce samples in Windows-based HDInsight
 
-[AZURE.INCLUDE [samples-selector](../includes/hdinsight-run-samples-selector.md)]
+[AZURE.INCLUDE [samples-selector](../../includes/hdinsight-run-samples-selector.md)]
 
 A set of samples are provided to help you get started running MapReduce jobs on Hadoop clusters using Azure HDInsight. These samples are made available on each of the HDInsight managed clusters that you create. Running these samples will familiarize you with using Azure PowerShell cmdlets to run jobs on Hadoop clusters.
 
@@ -29,9 +34,6 @@ A set of samples are provided to help you get started running MapReduce jobs on 
 Much additional documentation exists on the web for Hadoop-related technologies, such as Java-based MapReduce programming and streaming, and documentation about the cmdlets that are used in Windows PowerShell scripting. For more information about these resources, see:
 
 - [Develop Java MapReduce programs for Hadoop in  HDInsight](/documentation/articles/hdinsight-develop-deploy-java-mapreduce-linux/)  HDInsight](/documentation/articles/hdinsight-develop-deploy-java-mapreduce/) 
-
-- [Develop C# Hadoop streaming programs for HDInsight](/documentation/articles/hdinsight-hadoop-develop-deploy-streaming-jobs/)
-
 - [Submit Hadoop jobs in HDInsight](/documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/)
 - [Introduction to Azure HDInsight][hdinsight-introduction]
 
@@ -46,11 +48,11 @@ Nowadays, a lot of people choose Hive and Pig over MapReduce.  For more informat
 - **an HDInsight cluster**. For instructions on the various ways in which such clusters can be created, see [Create Hadoop clusters in HDInsight](/documentation/articles/hdinsight-provision-clusters-v1/).
 - **A workstation with Azure PowerShell**.
 
-    [AZURE.INCLUDE [upgrade-powershell](../includes/hdinsight-use-latest-powershell.md)]
+    [AZURE.INCLUDE [upgrade-powershell](../../includes/hdinsight-use-latest-powershell.md)]
 
 ## <a name="hdinsight-sample-wordcount"></a>Word count - Java 
 
-To submit a MapReduce project, you first create a MapReduce job definition. In the job definition, you specify the MapReduce program jar file and the location of the jar file, which is **wasb:///example/jars/hadoop-mapreduce-examples.jar**, the class name, and the arguments.  The wordcount MapReduce program takes two arguments: the source file that will be used to count words, and the location for output.
+To submit a MapReduce project, you first create a MapReduce job definition. In the job definition, you specify the MapReduce program jar file and the location of the jar file, which is **wasbs:///example/jars/hadoop-mapreduce-examples.jar**, the class name, and the arguments.  The wordcount MapReduce program takes two arguments: the source file that will be used to count words, and the location for output.
 
 The source code can be found in the [Appendix A](#apendix-a---the-word-count-MapReduce-program-in-java).
 
@@ -81,9 +83,9 @@ For the procedure of developing a Java MapReduce program, see - [Develop Java Ma
 
 		$mrJobDefinition = New-AzureHDInsightMapReduceJobDefinition `
 
-									-JarFile "wasb:///example/jars/hadoop-mapreduce-examples.jar" `
+									-JarFile "wasbs:///example/jars/hadoop-mapreduce-examples.jar" `
 									-ClassName "wordcount" `
-									-Arguments "wasb:///example/data/gutenberg/davinci.txt", "wasb:///example/data/WordCountOutput1"
+									-Arguments "wasbs:///example/data/gutenberg/davinci.txt", "wasbs:///example/data/WordCountOutput1"
 		
 		# Submit the job and wait for job completion
 		$cred = Get-Credential -Message "Enter the HDInsight cluster HTTP user credential:" 
@@ -220,7 +222,7 @@ The script provided for this sample submits a Hadoop jar job and is set up to ru
 
 		$mrJobJobDefinition = New-AzureHDInsightMapReduceJobDefinition `
 
-									-JarFile "wasb:///example/jars/hadoop-mapreduce-examples.jar" `
+									-JarFile "wasbs:///example/jars/hadoop-mapreduce-examples.jar" `
 									-ClassName "pi" `
 									-Arguments "16", "10000000"
 
@@ -1079,4 +1081,4 @@ The code for the TeraSort MapReduce program is presented for inspection in this 
 
 [streamreader]: http://msdn.microsoft.com/zh-cn/library/system.io.streamreader.aspx
 [console-writeline]: http://msdn.microsoft.com/zh-cn/library/system.console.writeline
-[stdin-stdout-stderr]: https://msdn.microsoft.com/zh-cn/library/3x292kth.aspx
+[stdin-stdout-stderr]: https://msdn.microsoft.com/zh-cn/library/3x292kth.aspx

@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Configure PHP in Azure Web Apps | Azure"
-	description="Learn how to configure the default PHP installation or add a custom PHP installation for Web Apps in Azure."
+	pageTitle="Configure PHP in Azure App Service Web Apps | Azure"
+	description="Learn how to configure the default PHP installation or add a custom PHP installation for Web Apps in Azure App Service."
 	services="app-service"
 	documentationCenter="php"
 	authors="rmcmurray"
@@ -9,19 +9,24 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="06/03/2016"
-	wacn.date=""/>
+	ms.workload="web"
+	ms.tgt_pltfrm="na"
+	ms.devlang="PHP"
+	ms.topic="article"
+	ms.date="08/11/2016"
+	wacn.date=""
+	ms.author="robmcm"/>
 
-#Configure PHP in Azure Web Apps
+#Configure PHP in Azure App Service Web Apps
 
 ## Introduction
 
-This guide will show you how to configure the built-in PHP runtime for Web Apps in [Azure Web App](/documentation/services/web-sites/), provide a custom PHP runtime, and enable extensions. To use Azure Web App, sign up for the [trial]. To get the most from this guide, you should first create a PHP web app in Azure.
+This guide will show you how to configure the built-in PHP runtime for Web Apps in [Azure App Service](/documentation/articles/app-service-changes-existing-services/), provide a custom PHP runtime, and enable extensions. To use App Service, sign up for the [trial]. To get the most from this guide, you should first create a PHP web app in App Service.
 
-[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)]
+[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
 
 ## How to: Change the built-in PHP version
-By default, PHP 5.4 is installed and immediately available for use when you create an Azure web app. The best way to see the available release revision, its default configuration, and the enabled extensions is to deploy a script that calls the [phpinfo()] function.
+By default, PHP 5.4 is installed and immediately available for use when you create an App Service web app. The best way to see the available release revision, its default configuration, and the enabled extensions is to deploy a script that calls the [phpinfo()] function.
 
 PHP 5.5 and PHP 5.6 versions are also available, but not enabled by default. To update the PHP version, follow one of these methods:
 
@@ -82,6 +87,9 @@ For any built-in PHP runtime, you can change any of the configuration options by
 		; Example Settings
 		display_errors=On
 		upload_max_filesize=10M
+		
+		; OPTIONAL: Turn this on to write errors to d:\home\LogFiles\php_errors.log
+		; log_errors=On
 
 3. Deploy your web app.
 4. Restart the web app. (Restarting is necessary because the frequency with which PHP reads `.user.ini` files is governed by the `user_ini.cache_ttl` setting, which is a system level setting and is 300 seconds (5 minutes) by default. Restarting the web app forces PHP to read the new settings in the `.user.ini` file.)
@@ -137,7 +145,7 @@ Zend extensions are also supported by using a **PHP_ZENDEXTENSIONS** key. To ena
 
 
 ## How to: Use a custom PHP runtime
-Instead of the default PHP runtime, Azure Web Apps can use a PHP runtime that you provide to execute PHP scripts. The runtime that you provide can be configured by a `php.ini` file that you also provide. To use a custom PHP runtime with Web Apps, follow the steps below.
+Instead of the default PHP runtime, App Service Web Apps can use a PHP runtime that you provide to execute PHP scripts. The runtime that you provide can be configured by a `php.ini` file that you also provide. To use a custom PHP runtime with Web Apps, follow the steps below.
 
 1. Obtain a non-thread-safe, VC9 or VC11 compatible version of PHP for Windows. Recent releases of PHP for Windows can be found here: [http://windows.php.net/download/]. Older releases can be found in the archive here: [http://windows.php.net/downloads/releases/archives/].
 2. Modify the `php.ini` file for your runtime. Note that any configuration settings that are system-level-only directives will be ignored by Web Apps. (For information about system-level-only directives, see [List of php.ini directives]).
@@ -156,14 +164,13 @@ Instead of the default PHP runtime, Azure Web Apps can use a PHP runtime that yo
 
 	![Save configuration settings][save-button]
 
-<a name="composer" />
-## How to: Enable Composer automation in Azure
+## <a name="composer"></a> How to: Enable Composer automation in Azure
 
-By default, Azure doesn't do anything with composer.json, if you have one in your PHP
+By default, App Service doesn't do anything with composer.json, if you have one in your PHP
 project. If you use [Git deployment](/documentation/articles/app-service-web-php-get-started/), you can enable composer.json 
 processing during `git push` by enabling the Composer extension.
 
->[AZURE.NOTE] You can [vote for first-class Composer support in Azure here](https://feedback.azure.com/forums/169385-web-apps-formerly-websites/suggestions/6477437-first-class-support-for-composer-and-pip)!
+>[AZURE.NOTE] You can [vote for first-class Composer support in App Service here](https://feedback.azure.com/forums/169385-web-apps-formerly-websites/suggestions/6477437-first-class-support-for-composer-and-pip)!
 
 1. In your PHP web app's blade in the [Azure portal](https://portal.azure.cn), click **Tools** > **Extensions**.
 
@@ -187,7 +194,7 @@ is installing dependencies defined in composer.json.
 
 For more information, see the [PHP Developer Center](/develop/php/).
 
->[AZURE.NOTE] If you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.
+>[AZURE.NOTE] If you want to get started with Azure App Service before signing up for an Azure account, go to [Try App Service](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in App Service. No credit cards required; no commitments.
 
 [trial]: /pricing/1rmb-trial/
 [phpinfo()]: http://php.net/manual/en/function.phpinfo.php

@@ -1,7 +1,3 @@
-
-<!-- Ibiza portal: tested -->
-
-
 ## How to create a classic VNet in the Azure portal  Preview 
 
 To create a classic VNet based on the scenario above, follow the steps below.
@@ -42,4 +38,9 @@ To create a classic VNet based on the scenario above, follow the steps below.
 
 10. Click **Subnets** > **Add**, then type a **Name** and specify an **Address range (CIDR block)** for your subnet, and then click **OK**. The figure below shows the settings for our current scenario.
 
+
 	![Create VNet in Azure portal](./media/virtual-networks-create-vnet-classic-pportal-include/vnet-create-pportal-figure7.gif)
+
+
+	![Create VNet in Azure Portal Preview](./media/virtual-networks-create-vnet-classic-pportal-include/vnet-create-pportal-figure7.gif)
+

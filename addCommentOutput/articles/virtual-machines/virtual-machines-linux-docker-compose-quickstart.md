@@ -9,9 +9,14 @@
    tags="azure-resource-manager"/>
 
 <tags
-	ms.service="virtual-machines-linux"
-	ms.date="06/10/2016"
-	wacn.date=""/>
+   ms.service="virtual-machines-linux"
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="vm-linux"
+   ms.workload="infrastructure-services"
+   ms.date="06/10/2016"
+   wacn.date=""
+   ms.author="danlep"/>
 
 # Get Started with Docker and Compose to define and run a multi-container application on an Azure virtual machine
 
@@ -19,8 +24,12 @@ Get started using Docker and [Compose](http://github.com/docker/compose) to defi
 
 As an example, this article shows you how to quickly set up a WordPress blog with a backend MariaDB SQL database on an Ubuntu VM, but you can also use Compose to set up more complex applications.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
-
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)] Learn how to [perform these steps using the Resource Manager model](https://github.com/Azure/azure-quickstart-templates/tree/master/docker-wordpress-mysql).
+
+
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager model. Learn how to [perform these steps using the Resource Manager model](https://github.com/Azure/azure-quickstart-templates/tree/master/docker-wordpress-mysql).
+
 
 If you're new to Docker and containers, see the [Docker high level whiteboard](https://azure.microsoft.com/documentation/videos/docker-high-level-whiteboard/).
 
@@ -133,7 +142,7 @@ You can now connect to WordPress directly on the VM on port 80. If you used a Re
 
 * Go to the [Docker VM extension user guide](https://github.com/Azure/azure-docker-extension/blob/master/README.md) for more options to configure Docker and Compose in your Docker VM. For example, one option is to put the Compose yml file (converted to JSON) directly in the configuration of the Docker VM extension.
 * Check out the [Compose command-line reference](http://docs.docker.com/compose/reference/) and [user guide](http://docs.docker.com/compose/) for more examples of building and deploying multi-container apps.
-* Use an Azure Resource Manager template, either your own or one contributed from the  [community](https://azure.microsoft.com/documentation/templates/)  [community](https://github.com/Azure/azure-quickstart-templates/) , to deploy an Azure VM with Docker and an application set up with Compose. For example, the [Deploy a WordPress blog with Docker](https://github.com/Azure/azure-quickstart-templates/tree/master/docker-wordpress-mysql) template uses Docker and Compose to quickly deploy WordPress with a MySQL backend on an Ubuntu VM.
+* Use an Azure Resource Manager template, either your own or one contributed from the [community](https://github.com/Azure/azure-quickstart-templates/), to deploy an Azure VM with Docker and an application set up with Compose. For example, the [Deploy a WordPress blog with Docker](https://github.com/Azure/azure-quickstart-templates/tree/master/docker-wordpress-mysql) template uses Docker and Compose to quickly deploy WordPress with a MySQL backend on an Ubuntu VM.
 * Try integrating Docker Compose with a [Docker Swarm](/documentation/articles/virtual-machines-linux-docker-swarm/) cluster. See
 [Using Compose with Swarm](https://docs.docker.com/compose/swarm/) for scenarios.
 

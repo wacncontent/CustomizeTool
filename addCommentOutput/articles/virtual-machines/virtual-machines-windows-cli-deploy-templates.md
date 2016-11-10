@@ -10,8 +10,13 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="06/06/2016"
-	wacn.date=""/>
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-windows"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/23/2016"
+	wacn.date=""
+	ms.author="rasquill"/>
 
 # Deploy and manage virtual machines by using Azure Resource Manager templates and the Azure CLI
 
@@ -19,10 +24,6 @@
  - [PowerShell](/documentation/articles/virtual-machines-windows-ps-manage/)		
  - [CLI](/documentation/articles/virtual-machines-windows-cli-deploy-templates/)		
 
-
-[AZURE.INCLUDE [arm-api-version-cli](../includes/arm-api-version-cli.md)]
-
-
 </br> 
 
-[AZURE.INCLUDE [virtual-machines-common-cli-deploy-templates](../includes/virtual-machines-common-cli-deploy-templates.md)]
+[AZURE.INCLUDE [virtual-machines-common-cli-deploy-templates](../../includes/virtual-machines-common-cli-deploy-templates.md)]

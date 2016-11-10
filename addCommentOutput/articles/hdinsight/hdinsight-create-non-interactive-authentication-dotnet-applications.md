@@ -4,7 +4,7 @@
 	pageTitle="Create non-interactive authentication .NET HDInsight applciations | Azure"
 	description="Learn how to create non-interactive authentication .NET HDInsight applications."
 	editor="cgronlun"
-	manager="paulettm"
+	manager="jhubbard"
 	services="hdinsight"
 	documentationCenter=""
 	tags="azure-portal"
@@ -12,8 +12,13 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="06/13/2016"
-	wacn.date=""/>
+	ms.workload="big-data"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/02/2016"
+	wacn.date=""
+	ms.author="jgao"/>
 
 # Create non-interactive authentication .NET HDInsight applications
 
@@ -119,4 +124,4 @@ Or, Azure CLI:
 - [Submit Hadoop jobs in HDInsight](/documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/)
 - [Create Active Directory application and service principal using portal](/documentation/articles/resource-group-create-service-principal-portal/)
 - [Authenticate service principal with Azure Resource Manager](/documentation/articles/resource-group-authenticate-service-principal/)
-- [Azure Role-Based Access Control](/documentation/articles/role-based-access-control-configure/)
+- [Azure Role-Based Access Control](/documentation/articles/role-based-access-control-configure/)

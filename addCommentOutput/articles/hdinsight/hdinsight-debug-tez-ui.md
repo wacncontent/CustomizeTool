@@ -4,13 +4,18 @@ description="Learn how to use the Tez UI to debug Tez jobs on Windows-based HDIn
 services="hdinsight"
 documentationCenter=""
 authors="Blackmist"
-manager="paulettm"
+manager="jhubbard"
 editor="cgronlun"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="05/03/2016"
-	wacn.date=""/>
+ms.service="hdinsight"
+ms.devlang="na"
+ms.topic="article"
+ms.tgt_pltfrm="na"
+ms.workload="big-data"
+ms.date="07/19/2016"
+wacn.date=""
+ms.author="larryfr"/>
 
 # Use the Tez UI to debug Tez Jobs on Windows-based HDInsight
 
@@ -151,4 +156,4 @@ Use the following steps to run a Hive query that will execute using Tez.
 
 Now that you have learned how to use the Tez view, learn more about [Using Hive on HDInsight](/documentation/articles/hdinsight-use-hive/).
 
-For more detailed technical information on Tez, see the [Tez page at Hortonworks](http://hortonworks.com/hadoop/tez/).
+For more detailed technical information on Tez, see the [Tez page at Hortonworks](http://hortonworks.com/hadoop/tez/).

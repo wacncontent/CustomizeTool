@@ -1,8 +1,6 @@
-<!-- not suitable for Mooncake -->
-
 <properties
-	pageTitle="Azure web app advanced config and extensions"
-	description="Use XML Document Transformation(XDT) declarations to transform the ApplicationHost.config file in your Azure web app and to add private extensions to enable custom administration actions."
+	pageTitle="Azure App Service web app advanced config and extensions"
+	description="Use XML Document Transformation(XDT) declarations to transform the ApplicationHost.config file in your Azure App Service web app and to add private extensions to enable custom administration actions."
 	authors="cephalin"
 	writer="cephalin"
 	editor="mollybos"
@@ -12,17 +10,27 @@
 
 <tags
 	ms.service="app-service"
+	ms.workload="na"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="02/25/2016"
-	wacn.date=""/>
+	wacn.date=""
+	ms.author="cephalin"/>
 
-# Azure web app advanced config and extensions
+# Azure App Service web app advanced config and extensions
 
-By using [XML Document Transformation](http://msdn.microsoft.com/zh-cn/library/dd465326.aspx) (XDT) declarations, you can transform the [ApplicationHost.config](http://www.iis.net/learn/get-started/planning-your-iis-architecture/introduction-to-applicationhostconfig) file in your web app in Azure. You can also use XDT declarations to add private extensions to enable custom web app administration actions. This article includes a sample PHP Manager web app extension that enables management of PHP settings through a web interface.
+By using [XML Document Transformation](http://msdn.microsoft.com/zh-cn/library/dd465326.aspx) (XDT) declarations, you can transform the [ApplicationHost.config](http://www.iis.net/learn/get-started/planning-your-iis-architecture/introduction-to-applicationhostconfig) file in your web app in Azure App Service. You can also use XDT declarations to add private extensions to enable custom web app administration actions. This article includes a sample PHP Manager web app extension that enables management of PHP settings through a web interface.
 
-[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)]
+[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
 
+
 ##<a id="transform"></a>Advanced configuration through ApplicationHost.config
-The Azure platform provides flexibility and control for web app configuration. Although the standard IIS ApplicationHost.config configuration file is not available for direct editing in Azure Web App, the platform supports a declarative ApplicationHost.config transform model based on XML Document Transformation (XDT).
+
+
+## <a id="transform"></a>Advanced configuration through ApplicationHost.config
+
+The App Service platform provides flexibility and control for web app configuration. Although the standard IIS ApplicationHost.config configuration file is not available for direct editing in App Service, the platform supports a declarative ApplicationHost.config transform model based on XML Document Transformation (XDT).
 
 To leverage this transform functionality, you create an ApplicationHost.xdt file with XDT content and place under the site root (d:\home\site) in the [Kudu Console](https://github.com/projectkudu/kudu/wiki/Kudu-console). You may need to restart the Web App for changes to take effect.
 
@@ -50,13 +58,20 @@ For additional samples, see [https://github.com/projectkudu/kudu/wiki/Xdt-transf
 Elements from the list of modules under `system.webServer` cannot be removed or reordered, but additions to the list are possible.
 
 
+
 ##<a id="extend"></a> Extend your web app
 
 ###<a id="overview"></a> Overview of private web app extensions
+
+
+## <a id="extend"></a> Extend your web app
 
-Azure supports web app extensions as an extensibility point for administrative actions. In fact, some Azure platform features are implemented as pre-installed extensions. While the pre-installed platform extensions cannot be modified, you can create and configure private extensions for your own web app. This functionality also relies on XDT declarations. The key steps for creating a private web app extension are the following:
+### <a id="overview"></a> Overview of private web app extensions
+
 
-1. Web app extension **content**: create any web application supported by Azure
+App Service supports web app extensions as an extensibility point for administrative actions. In fact, some App Service platform features are implemented as pre-installed extensions. While the pre-installed platform extensions cannot be modified, you can create and configure private extensions for your own web app. This functionality also relies on XDT declarations. The key steps for creating a private web app extension are the following:
+
+1. Web app extension **content**: create any web application supported by App Service
 2. Web app extension **declaration**: create an ApplicationHost.xdt file
 3. Web app extension **deployment**: place content in the SiteExtensions folder under `root`
 
@@ -66,11 +81,16 @@ Internal links for the web app should point to a path relative to the applicatio
 
 A detailed example is included to illustrate the steps for creating and enabling a private web app extension. The source code for the PHP Manager example that follows can be downloaded from [https://github.com/projectkudu/PHPManager](https://github.com/projectkudu/PHPManager).
 
-###<a id="SiteSample"></a> Web app extension example: PHP Manager
+ ###<a  ### <a  id="SiteSample"></a> Web app extension example: PHP Manager
 
-PHP Manager is a web app extension that allows web app administrators to easily view and configure their PHP settings using a web interface instead of having to modify PHP .ini files directly. Common configuration files for PHP include the php.ini file located under Program Files and the .user.ini file located in the root folder of your web app. Since the php.ini file is not directly editable on the Azure platform, the PHP Manager extension uses the .user.ini file to apply setting changes.
+PHP Manager is a web app extension that allows web app administrators to easily view and configure their PHP settings using a web interface instead of having to modify PHP .ini files directly. Common configuration files for PHP include the php.ini file located under Program Files and the .user.ini file located in the root folder of your web app. Since the php.ini file is not directly editable on the App Service platform, the PHP Manager extension uses the .user.ini file to apply setting changes.
 
+
 ####<a id="PHPwebapp"></a> The PHP Manager web application
+
+
+#### <a id="PHPwebapp"></a> The PHP Manager web application
+
 
 The following is the home page of the PHP Manager deployment:
 
@@ -111,7 +131,12 @@ When the link is part of a web app extension, the link must be in the following 
 
 You can work around this requirement by either using only relative paths within your web application, or in the case of ASP.NET applications, by using the `@Html.ActionLink` method which creates the appropriate links for you.
 
+
 ####<a id="XDT"></a> The applicationHost.xdt file
+
+
+#### <a id="XDT"></a> The applicationHost.xdt file
+
 
 The code for your web app extension goes under %HOME%\SiteExtensions\[your-extension-name]. We'll call this the extension root.  
 
@@ -158,7 +183,12 @@ This has the effect of adding a new application path to the `system.applicationH
 	  ...
 	</system.applicationHost>
 
+
 ###<a id="deploy"></a> Web app extension deployment
+
+
+### <a id="deploy"></a> Web app extension deployment
+
 
 To install your web app extension, you can use FTP to copy all the files of your web application to the `\SiteExtensions\[your-extension-name]` folder of the web app on which you want to install the extension.  Be sure to copy the ApplicationHost.xdt file to this location as well. Restart your web app to enable the extension.
 
@@ -170,10 +200,12 @@ Note that the URL looks just like the URL for your web app, except that it uses 
 
 It is possible to disable all private (not pre-installed) extensions for your web app during development and investigations by adding an app settings with the key `WEBSITE_PRIVATE_EXTENSIONS` and a value of `0`.
 
->[AZURE.NOTE] If you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.
+
+>[AZURE.NOTE] If you want to get started with Azure App Service before signing up for an Azure account, go to [Try App Service](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in App Service. No credit cards required; no commitments.
 
+
 ## What's changed
-* For a guide to the change from Websites to Azure see: [Azure and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
+* For a guide to the change from Websites to App Service see: [Azure App Service and Its Impact on Existing Azure Services](/documentation/articles/app-service-changes-existing-services/)
 
 <!-- IMAGES -->
 [TransformSitePHPUI]: ./media/web-sites-transform-extend/TransformSitePHPUI.png

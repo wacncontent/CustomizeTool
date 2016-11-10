@@ -1,5 +1,4 @@
-<a name="tellmevm"></a>
-## Tell me about virtual machines
+## <a name="tellmevm"></a> Tell me about virtual machines
 
 Azure Virtual Machines lets you create and use virtual machines in the cloud. Providing what's known as *Infrastructure as a Service (IaaS)*, virtual machine technology can be used in variety of ways. Some examples are:
 
@@ -33,7 +32,7 @@ Along with the OS, other configuration choices you have with VMs include:
 
 Other benefits to consider for VMs include:
 
-**Pay-as-you-go** -- Azure charges an hourly price based on the VM's size and operating system. For partial hours, Azure charges only for the minutes of use. Storage is priced and charged separately. For details, see [Virtual Machines Pricing](/home/features/virtual-machines/pricing/).
+**Pay-as-you-go** -- Azure charges an hourly price based on the VM's size and operating system. For partial hours, Azure charges only for the minutes of use. Storage is priced and charged separately. For details, see [Virtual Machines Pricing](/pricing/details/virtual-machines/).
 
 **Resiliency** -- Azure monitors the physical hardware that hosts each running VM. If a physical server running a VM fails, Azure notices this, moves the VM to new hardware and restarts the VM. This process is sometimes called service healing. Azure also protects a virtual machine's data, by keeping redundant copies of the VHDs in blob storage. 
 

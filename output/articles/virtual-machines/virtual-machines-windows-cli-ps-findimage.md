@@ -10,9 +10,14 @@
    />
 
 <tags
-	ms.service="virtual-machines-windows"
-	ms.date="06/06/2016"
-	wacn.date=""/>
+   ms.service="virtual-machines-windows"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="vm-windows"
+   ms.workload="infrastructure"
+   ms.date="08/23/2016"
+   wacn.date=""
+   ms.author="rasquill"/>
 
 # Navigate and select Windows virtual machine images in Azure with PowerShell or the CLI
 
@@ -35,4 +40,4 @@ This topic describes how to find VM image publishers, offers, skus, and versions
 | MicrosoftWindowsServerHPCPack    | WindowsServerHPCPack                       | 2012R2                           |
 
 
-[AZURE.INCLUDE [virtual-machines-common-cli-ps-findimage](../includes/virtual-machines-common-cli-ps-findimage.md)]
+[AZURE.INCLUDE [virtual-machines-common-cli-ps-findimage](../../includes/virtual-machines-common-cli-ps-findimage.md)]

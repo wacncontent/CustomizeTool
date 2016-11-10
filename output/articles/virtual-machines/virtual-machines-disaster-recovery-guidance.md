@@ -4,19 +4,24 @@
 	services="virtual-machines"
 	documentationCenter=""
 	authors="kmouss"
-	manager="drewm"
+	manager="timlt"
 	editor=""/>
 
 <tags
 	ms.service="virtual-machines"
+	ms.workload="virtual-machines"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="05/16/2016"
-	wacn.date=""/>
+	wacn.date=""
+	ms.author="kmouss;aglick"/>
 
 #What to do in the event that an Azure service disruption impacts Azure virtual machines
 
 At Microsoft, we work hard to make sure that our services are always available to you when you need them. Forces beyond our control sometimes impact us in ways that cause unplanned service disruptions.
 
-Microsoft provides a Service Level Agreement (SLA) for its services as a commitment for uptime and connectivity. The SLA for individual Azure services can be found at [Azure Service Level Agreements](https://azure.microsoft.com/support/legal/sla/).
+Microsoft provides a Service Level Agreement (SLA) for its services as a commitment for uptime and connectivity. The SLA for individual Azure services can be found at [Azure Service Level Agreements](/support/legal/sla/).
 
 Azure already has many built-in platform features that support highly available applications. For more about these services, read [Disaster recovery and high availability for Azure applications](/documentation/articles/resiliency-disaster-recovery-high-availability-azure-applications/).
 

@@ -1,4 +1,4 @@
-##<a name="Network-Security-Group"></a> Network Security Group
+## <a name="Network-Security-Group"></a> Network Security Group
 An NSG resource enables the creation of security boundary for workloads, by implementing allow and deny rules. Such rules can be applied to a VM, a NIC, or a subnet.
 
 |Property|Description|Sample values|
@@ -9,7 +9,7 @@ An NSG resource enables the creation of security boundary for workloads, by impl
 
 - **Security rule** - An NSG can have multiple security rules defined. Each rule can allow or deny different types of traffic.
 
-###<a name="Security-rule"></a> Security rule
+### <a name="Security-rule"></a> Security rule
 A security rule is a child resource of an NSG containing the properties below.
 
 |Property|Description|Sample values|
@@ -67,7 +67,7 @@ Sample NSG in JSON format:
 	    }
 	}
 
-###<a name="Default-security-rules"></a> Default security rules
+### <a name="Default-security-rules"></a> Default security rules
 Default security rules have the same properties available in security rules. They exist to provide basic connectivity between resources that have NSGs applied to them. Make sure you know which [default security rules](/documentation/articles/virtual-networks-nsg/#Default-Rules) exist. 
 
 ### Additional resources

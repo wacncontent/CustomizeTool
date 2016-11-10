@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Create a web app in Azure that connects to MongoDB running on a virtual machine" 
-	description="A tutorial that teaches you how to use Git to deploy an ASP.NET app to Azure Web App, connected to MongoDB on an Azure Virtual Machine."
+	description="A tutorial that teaches you how to use Git to deploy an ASP.NET app to Azure App Service, connected to MongoDB on an Azure Virtual Machine."
 	tags="azure-portal" 
 	services="app-service\web, virtual-machines" 
 	documentationCenter=".net" 
@@ -8,17 +8,22 @@
 	manager="wpickett" 
 	editor=""/>
 
-<tags
-	ms.service="app-service-web"
-	ms.date="02/29/2016"
-	wacn.date=""/>
+<tags 
+	ms.service="app-service-web" 
+	ms.workload="web" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="dotnet" 
+	ms.topic="article" 
+	ms.date="02/29/2016" 
+	wacn.date="" 
+	ms.author="cephalin"/>
 
 
 # Create a web app in Azure that connects to MongoDB running on a virtual machine
 
-Using Git, you can deploy an ASP.NET application to Azure Web Apps. In this tutorial, you will build a simple front-end ASP.NET MVC task list application that connects to a MongoDB database running on a virtual machine in Azure.  [MongoDB][MongoDB] is a popular open source, high performance NoSQL database. After running and testing the ASP.NET application on your development computer, you will upload the application to Azure Web Apps using Git.
+Using Git, you can deploy an ASP.NET application to Azure App Service Web Apps. In this tutorial, you will build a simple front-end ASP.NET MVC task list application that connects to a MongoDB database running on a virtual machine in Azure.  [MongoDB][MongoDB] is a popular open source, high performance NoSQL database. After running and testing the ASP.NET application on your development computer, you will upload the application to App Service Web Apps using Git.
 
->[AZURE.NOTE] If you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.
+>[AZURE.NOTE] If you want to get started with Azure App Service before signing up for an Azure account, go to [Try App Service](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in App Service. No credit cards required; no commitments.
 
 
 ## Background knowledge ##
@@ -33,10 +38,10 @@ Knowledge of the following is useful for this tutorial, though not required:
 ## Prerequisites ##
 
 - [Visual Studio Express 2013 for Web] [VSEWeb] or [Visual Studio 2013] [VSUlt]
-- [Azure SDK for .NET](https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VWDOrVs2013AzurePack.appids)
+- [Azure SDK for .NET](http://go.microsoft.com/fwlink/p/?linkid=323510&clcid=0x409)
 - An active Azure subscription
 
-[AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
+[AZURE.INCLUDE [create-account-and-websites-note](../../includes/create-account-and-websites-note.md)]
 
 <a id="virtualmachine"></a> 
 ## Create a virtual machine and install MongoDB ##
@@ -48,10 +53,9 @@ This tutorial assumes you have created a virtual machine in Azure. After creatin
 
 After you have created the virtual machine in Azure and installed MongoDB, be sure to remember the DNS name of the virtual machine ("testlinuxvm.chinacloudapp.cn", for example) and the external port for MongoDB that you specified in the endpoint.  You will need this information later in the tutorial.
 
-<a id="createapp"></a>
-## Create the application ##
+## <a id="createapp"></a> Create the application ##
 
-In this section you will create an ASP.NET application called "My Task List" by using Visual Studio and perform an initial deployment to Azure Web Apps. You will run the application locally, but it will connect to your virtual machine on Azure and use the MongoDB instance that you created there.
+In this section you will create an ASP.NET application called "My Task List" by using Visual Studio and perform an initial deployment to Azure App Service Web Apps. You will run the application locally, but it will connect to your virtual machine on Azure and use the MongoDB instance that you created there.
 
 1. In Visual Studio, click **New Project**.
 
@@ -66,17 +70,17 @@ In this section you will create an ASP.NET application called "My Task List" by 
 	![Select MVC Template][VS2013SelectMVCTemplate]
 
 1. If you aren't already signed into Azure, you will be prompted to sign in. Follow the prompts to sign into Azure.
-2. Once you are signed in, you can start configuring your Azure web app. Specify the **Web App name**, **App Service plan**, **Resource group**, and **Region**, then click **Create**.
+2. Once you are signed in, you can start configuring your App Service web app. Specify the **Web App name**, **App Service plan**, **Resource group**, and **Region**, then click **Create**.
 
 	![](./media/web-sites-dotnet-store-data-mongodb-vm/VSConfigureWebAppSettings.png)
 
-1. After the project creation completes, wait for the web app to be created in Azure as indicated in the **Azure Activity** window. Then, click **Publish MyTaskListApp to this Web App now**.
+1. After the project creation completes, wait for the web app to be created in Azure App Service as indicated in the **Azure App Service Activity** window. Then, click **Publish MyTaskListApp to this Web App now**.
 
 1. Click **Publish**.
 
 	![](./media/web-sites-dotnet-store-data-mongodb-vm/VSPublishWeb.png)
 
-	Once your default ASP.NET application is published to Azure Web Apps, it will be launched in the browser.
+	Once your default ASP.NET application is published to Azure App Service Web Apps, it will be launched in the browser.
 
 ## Install the MongoDB C# driver
 
@@ -436,18 +440,18 @@ To run your application on your development computer, select **Start Debugging**
 
 ![My Task List Application][TaskListAppBlank]
 
-## Publish to Azure Web Apps
+## Publish to Azure App Service Web Apps
 
-In this section you will publish your changes to Azure Web Apps.
+In this section you will publish your changes to Azure App Service Web Apps.
 
 1. In Solution Explorer, right-click **MyTaskListApp** again and click **Publish**.
 2. Click **Publish**.
 
-	You should now see your web app running in Azure and accessing the MongoDB database in Azure Virtual Machines.
+	You should now see your web app running in Azure App Service and accessing the MongoDB database in Azure Virtual Machines.
 
 ## Summary ##
 
-You have now successfully deployed your ASP.NET application to Azure Web Apps. To view the web app:
+You have now successfully deployed your ASP.NET application to Azure App Service Web Apps. To view the web app:
 
 1. Log into the Azure Portal.
 2. Click **Web apps**. 
@@ -455,7 +459,7 @@ You have now successfully deployed your ASP.NET application to Azure Web Apps. T
 
 For more information on developing C# applications against MongoDB, see [CSharp Language Center][MongoC#LangCenter]. 
 
-[AZURE.INCLUDE [app-service-web-whats-changed](../includes/app-service-web-whats-changed.md)]
+[AZURE.INCLUDE [app-service-web-whats-changed](../../includes/app-service-web-whats-changed.md)]
  
 
 <!-- HYPERLINKS -->
@@ -467,7 +471,7 @@ For more information on developing C# applications against MongoDB, see [CSharp 
 [ASP.NET]: http://www.asp.net/
 [MongoConnectionStrings]: http://www.mongodb.org/display/DOCS/Connections
 [MongoDB]: http://www.mongodb.org
-[InstallMongoOnWindowsVM]: /documentation/articles/virtual-machines-install-mongodb-windows-server/
+[InstallMongoOnWindowsVM]: /documentation/articles/virtual-machines-windows-classic-install-mongodb/
 [VSEWeb]: http://www.visualstudio.com/zh-cn/downloads/download-visual-studio-vs#d-2013-express
 [VSUlt]: http://www.visualstudio.com/zh-cn/downloads/download-visual-studio-vs
 

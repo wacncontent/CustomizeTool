@@ -6,10 +6,15 @@
 	authors="mgoedtel"
 	manager="jwhit"
 	editor="tysonn" />
-<tags
+<tags 
 	ms.service="automation"
-	ms.date="05/24/2016"
-	wacn.date=""/>
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="infrastructure-services"
+	ms.date="09/12/2016"
+	wacn.date=""
+	ms.author="magoedte;bwren" />
 
 # Testing a runbook in Azure Automation
 When you test a runbook, the [Draft version](/documentation/articles/automation-creating-importing-runbook/#publishing-a-runbook) is executed and any actions that it performs are completed. No job history is created, but the [Output](/documentation/articles/automation-runbook-output-and-messages/#output-stream) and [Warning and Error](/documentation/articles/automation-runbook-output-and-messages/#message-streams) streams are displayed in the Test output Pane. Messages to the [Verbose Stream](/documentation/articles/automation-runbook-output-and-messages/#message-streams) are displayed in the Output Pane only if the [$VerbosePreference variable](/documentation/articles/automation-runbook-output-and-messages/#preference-variables) is set to Continue.
@@ -32,7 +37,6 @@ You can work with any [runbook type](/documentation/articles/automation-runbook-
 6. If the runbook is [PowerShell Workflow](/documentation/articles/automation-runbook-types/#powershell-workflow-runbooks) or [Graphical](/documentation/articles/automation-runbook-types/#graphical-runbooks), then you can stop or suspend it while it is being tested with the buttons underneath the Output Pane. When you suspend the runbook, it completes the current activity before being suspended. Once the runbook is suspended, you can stop it or restart it.
 
 
-
 ## To test a runbook in the Azure Classic Management Portal
 
 1. [Open the Draft version of the runbook](/documentation/articles/automation-edit-textual-runbook/#to-edit-a-runbook-with-the-azure-portal).
@@ -40,7 +44,6 @@ You can work with any [runbook type](/documentation/articles/automation-runbook-
 6. You can stop or suspend the runbook while it is being tested with the buttons underneath the Output Pane. When you suspend the runbook, it completes the current activity before being suspended. Once the runbook is suspended, you can stop it or restart it.
 
 7. Inspect the output from the runbook in the output pane.
-
 
 ## Next Steps
 

@@ -6,18 +6,23 @@
    	services="hdinsight"
    	documentationCenter=""
    	authors="Blackmist"
-   	manager="paulettm"
+   	manager="jhubbard"
    	editor="cgronlun"
 	tags="azure-portal"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="06/13/2016"
-	wacn.date=""/>
+   	ms.service="hdinsight"
+   	ms.devlang="na"
+   	ms.topic="article"
+   	ms.tgt_pltfrm="na"
+   	ms.workload="big-data"
+   	ms.date="08/30/2016"
+   	wacn.date=""
+   	ms.author="larryfr"/>
 
 #Create Linux-based clusters in HDInsight using the Azure CLI
 
-[AZURE.INCLUDE [selector](../includes/hdinsight-selector-create-clusters.md)]
+[AZURE.INCLUDE [selector](../../includes/hdinsight-selector-create-clusters.md)]
 
 The Azure CLI is a cross-platform command-line utility that allows you to manage Azure Services. It can be used, along with Azure Resource management templates, to create an HDInsight cluster, along with associated storage accounts and other services.
 
@@ -27,16 +32,16 @@ The steps in this document walk through the process of creating a new HDInsight 
 
 > [AZURE.IMPORTANT] The steps in this document use the default number of worker nodes (4) for an HDInsight cluster. If you plan on more than 32 worker nodes, either at cluster creation or by scaling the cluster after creation, then you must select a head node size with at least 8 cores and 14GB ram.
 >
-> For more information on node sizes and associated costs, see [HDInsight pricing](/home/features/hdinsight/pricing/).
+> For more information on node sizes and associated costs, see [HDInsight pricing](/pricing/details/hdinsight/).
 
 ##Prerequisites
 
-[AZURE.INCLUDE [delete-cluster-warning](../includes/hdinsight-delete-cluster-warning.md)]
+[AZURE.INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
 
 - **An Azure subscription**. See [Get Azure trial](/pricing/1rmb-trial/).
 - __Azure CLI__. The steps in this document were last tested with Azure CLI version 0.10.1.
 
-    [AZURE.INCLUDE [use-latest-version](../includes/hdinsight-use-latest-cli.md)] 
+    [AZURE.INCLUDE [use-latest-version](../../includes/hdinsight-use-latest-cli.md)] 
 
 ##Login to your Azure subscription
 

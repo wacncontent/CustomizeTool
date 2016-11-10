@@ -1,13 +1,13 @@
 
-### WordPress and Azure
-
+### WordPress and Azure App Service
+   
 - [What is WordPress? ](https://wordpress.org/)
 - [How to setup enterprise-class WordPress web app](/documentation/articles/web-sites-php-enterprise-wordpress/)
 - [How to build a WordPress Multisite web app](/documentation/articles/web-sites-php-convert-wordpress-multisite/)
 
 
-###Porting your Application to Azure 
-- [How to Plan your migration to Azure Web App](https://azure.microsoft.com/blog/how-to-plan-your-migration-to-azure-websites/)
+###Porting your Application to App Service 
+- [How to Plan your migration to Azure App Service](https://azure.microsoft.com/blog/how-to-plan-your-migration-to-azure-websites/)
 - [How to migrate your existin WordPress site to Azure web apps](https://sunithamk.wordpress.com/2013/11/06/migrate-your-existing-wordpress-site-to-windows-azure/)
 - [How to migrate your Web App from Linux to Azure web apps](https://www.movemetothecloud.net/LinuxMigration)
 - [Checklist for going live on Azure Web Apps](https://sunithamk.wordpress.com/2015/10/27/azure-web-apps-basic-operations-checklist/)

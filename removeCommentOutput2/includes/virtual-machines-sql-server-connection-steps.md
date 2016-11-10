@@ -1,16 +1,18 @@
 ### Open TCP ports in the Windows firewall for the default instance of the Database Engine
 
 1. Connect to the virtual machine with Remote Desktop. For detailed instructions on connecting to the VM, see [Open a SQL VM with Remote Desktop](/documentation/articles/virtual-machines-windows-portal-sql-server-provision/#open-the-vm-with-remote-desktop).
+
 1. Once logged in, at the Start screen, type **WF.msc**, and then hit ENTER.
 
 	![Start the Firewall Program](./media/virtual-machines-sql-server-connection-steps/12Open-WF.png)
+
 2. In the **Windows Firewall with Advanced Security**, in the left pane, right-click **Inbound Rules**, and then click **New Rule** in the action pane.
 
 	![New Rule](./media/virtual-machines-sql-server-connection-steps/13New-FW-Rule.png)
 
 3. In the **New Inbound Rule Wizard** dialog box, under **Rule Type**, select **Port**, and then click **Next**.
 
-4. In the **Protocol and Ports** dialog, use the default **TCP**. In the **Specific local ports** box, then type the port number of the instance of the Database Engine (**1433** for the default instance or your choice for the private port in the endpoint step). 
+4. In the **Protocol and Ports** dialog, use the default **TCP**. In the **Specific local ports** box, then type the port number of the instance of the Database Engine (**1433** for the default instance or your choice for the private port in the endpoint step).
 
 	![TCP Port 1433](./media/virtual-machines-sql-server-connection-steps/14Port-1433.png)
 
@@ -22,7 +24,7 @@
 
 	![Allow Connections](./media/virtual-machines-sql-server-connection-steps/15Allow-Connection.png)
 
-7. In the **Profile** dialog box, select **Public**, **Private**, and **Domain**. Then click **Next**. 
+7. In the **Profile** dialog box, select **Public**, **Private**, and **Domain**. Then click **Next**.
 
     **Security Note:**  Selecting **Public** allows access over the internet. Whenever possible, select a more restrictive profile.
 
@@ -38,7 +40,7 @@ Open additional ports for other components as needed. For more information, see 
 ### Configure SQL Server to listen on the TCP protocol
 
 1. While connected to the virtual machine, on the Start page, type **SQL Server Configuration Manager** and hit ENTER.
-	
+
 	![Open SSCM](./media/virtual-machines-sql-server-connection-steps/9Click-SSCM.png)
 
 2. In SQL Server Configuration Manager, in the console pane, expand **SQL Server Network Configuration**.
@@ -47,7 +49,7 @@ Open additional ports for other components as needed. For more information, see 
 
 	![Enable TCP](./media/virtual-machines-sql-server-connection-steps/10Enable-TCP.png)
 
-5. In the console pane, click **SQL Server Services**. In the details pane, right-click **SQL Server (_instance name_)** (the default instance is **SQL Server (MSSQLSERVER)**), and then click **Restart**, to stop and restart the instance of SQL Server. 
+5. In the console pane, click **SQL Server Services**. In the details pane, right-click **SQL Server (_instance name_)** (the default instance is **SQL Server (MSSQLSERVER)**), and then click **Restart**, to stop and restart the instance of SQL Server.
 
 	![Restart Database Engine](./media/virtual-machines-sql-server-connection-steps/11Restart.png)
 
@@ -62,7 +64,6 @@ The SQL Server Database Engine cannot use Windows Authentication without domain 
 >[AZURE.NOTE] Configuring mixed mode authentication might not be necessary if you have configured an Azure Virtual Network with a configured domain environment.
 
 1. While connected to the virtual machine, on the Start page, type **SQL Server Management Studio** and click the selected icon.
-
 
 	The first time you open Management Studio it must create the users Management Studio environment. This may take a few moments.
 
@@ -104,14 +105,11 @@ To connect to the Database Engine from another computer, you must create at leas
 
 6. Select the password enforcement options required (**Enforce password policy**, **Enforce password expiration**, and **User must change password at next login**). If you are using this login for yourself, you do not need to require a password change at the next login.
 
-
-
 9. From the **Default database** list, select a default database for the login. **master** is the default for this option. If you have not yet created a user database, leave this set to **master**.
 
-    
 	![Login Properties](./media/virtual-machines-sql-server-connection-steps/24Test-Login.png)
 
-11. If this is the first login you are creating, you may want to designate this login as a SQL Server administrator. If so, on the **Server Roles** page, check **sysadmin**. 
+11. If this is the first login you are creating, you may want to designate this login as a SQL Server administrator. If so, on the **Server Roles** page, check **sysadmin**.
 
 	>[AZURE.NOTE] Members of the sysadmin fixed server role have complete control of the Database Engine. You should carefully restrict membership in this role.
 

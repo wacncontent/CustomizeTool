@@ -7,15 +7,20 @@
 	manager="jhubbard"
 	editor="monicar" 
 	tags="azure-service-management" />
-<tags
+<tags 
 	ms.service="virtual-machines-windows"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="vm-windows-sql-server"
+	ms.workload="infrastructure-services"
 	ms.date="04/14/2016"
-	wacn.date=""/>
+	wacn.date=""
+	ms.author="asaxton" />
 
 # Use ReportViewer in a Web Site Hosted in Azure
 
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]
 
 
 

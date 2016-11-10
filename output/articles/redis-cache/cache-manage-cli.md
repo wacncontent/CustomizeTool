@@ -7,10 +7,15 @@
 	manager="douge" 
 	editor=""/>
 
-<tags
-	ms.service="cache"
-	ms.date="06/28/2016"
-	wacn.date=""/>
+<tags 
+	ms.service="cache" 
+	ms.workload="tbd" 
+	ms.tgt_pltfrm="cache-redis" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="09/15/2016" 
+	wacn.date="" 
+	ms.author="sdanie"/>
 
 # How to create and manage Azure Redis Cache using the Azure Command-Line Interface (Azure CLI)
 
@@ -189,8 +194,7 @@ For more information about this command, run the `azure rediscache show -h` comm
 	help:
 	help:    Current Mode: arm (Azure Resource Management)
 
-<a name="scale"></a>
-## Change settings of an existing Redis Cache
+## <a name="scale"></a> Change settings of an existing Redis Cache
 
 To change settings of an existing Redis Cache, use the following command:
 

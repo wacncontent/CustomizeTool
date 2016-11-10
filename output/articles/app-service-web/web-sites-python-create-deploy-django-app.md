@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Creating web apps with Django in Azure"
-	description="A tutorial that introduces you to running a Python web app in Azure."
+	description="A tutorial that introduces you to running a Python web app in Azure App Service Web Apps."
 	services="app-service\web"
 	documentationCenter="python"
 	tags="python"
@@ -10,19 +10,24 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="02/19/2016"
-	wacn.date=""/>
+	ms.workload="web"
+	ms.tgt_pltfrm="na"
+	ms.devlang="python"
+	ms.topic="hero-article" 
+	ms.date="02/19/2016" 
+	wacn.date=""
+	ms.author="huvalo"/>
 
 
 # Creating web apps with Django in Azure
 
-This tutorial describes how to get started running Python on [Azure Web Apps](/documentation/services/web-sites/). Web Apps provides limited free hosting and rapid deployment, and you can use Python! As your app grows, you can switch to paid hosting, and you can also integrate with all of the other Azure services.
+This tutorial describes how to get started running Python on [Azure App Service Web Apps](/documentation/articles/app-service-changes-existing-services/). Web Apps provides limited free hosting and rapid deployment, and you can use Python! As your app grows, you can switch to paid hosting, and you can also integrate with all of the other Azure services.
 
 You will create an application using the Django web framework (see alternate versions of this tutorial for [Flask](/documentation/articles/web-sites-python-create-deploy-flask-app/) and [Bottle](/documentation/articles/web-sites-python-create-deploy-bottle-app/)). You will create the web app from the Azure Marketplace, set up Git deployment, and clone the repository locally. Then you will run the application locally, make changes, commit and push them to Azure. The tutorial shows how to do this from Windows or Mac/Linux.
 
-[AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
+[AZURE.INCLUDE [create-account-and-websites-note](../../includes/create-account-and-websites-note.md)]
 
->[AZURE.NOTE] If you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.
+>[AZURE.NOTE] If you want to get started with Azure App Service before signing up for an Azure account, go to [Try App Service](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in App Service. No credit cards required; no commitments.
 
 
 ## Prerequisites
@@ -54,9 +59,9 @@ The first step in creating your app is to create the web app via the [Azure Port
 
 1. Log into the Azure Portal and click the **NEW** button in the bottom left corner.
 3. In the search box, type "python".
-4. In the search results, select **Django**, then click **Create**.
+4. In the search results, select **Django** (published by PTVS), then click **Create**.
 5. Configure the new Django app, such as creating a new App Service plan and a new resource group for it. Then, click **Create**.
-6. Configure Git publishing for your newly created web app by following the instructions at [Continuous deployment using GIT in Azure Web App](/documentation/articles/web-sites-publish-source-control/).
+6. Configure Git publishing for your newly created web app by following the instructions at [Local Git Deployment to Azure App Service](/documentation/articles/app-service-deploy-local-git/).
 
 ## Application Overview
 
@@ -113,11 +118,11 @@ IIS configuration files. The deployment script will use the appropriate web.x.y.
 
 ### Optional files - Customizing deployment
 
-[AZURE.INCLUDE [web-sites-python-django-customizing-deployment](../includes/web-sites-python-django-customizing-deployment.md)]
+[AZURE.INCLUDE [web-sites-python-django-customizing-deployment](../../includes/web-sites-python-django-customizing-deployment.md)]
 
 ### Optional files - Python runtime
 
-[AZURE.INCLUDE [web-sites-python-customizing-runtime](../includes/web-sites-python-customizing-runtime.md)]
+[AZURE.INCLUDE [web-sites-python-customizing-runtime](../../includes/web-sites-python-customizing-runtime.md)]
 
 ### Additional files on server
 
@@ -142,7 +147,7 @@ The next 3 sections describe how to proceed with the web app development under 3
 
 ### Clone the repository
 
-First, clone the repository using the URL provided on the Azure Portal. For more information, see [Continuous deployment using GIT in Azure Web App](/documentation/articles/web-sites-publish-source-control/).
+First, clone the repository using the URL provided on the Azure Portal. For more information, see [Local Git Deployment to Azure App Service](/documentation/articles/app-service-deploy-local-git/).
 
 Open the solution file (.sln) that is included in the root of the repository.
 
@@ -219,7 +224,7 @@ Browse to the Azure URL to view your changes.
 
 ### Clone the repository
 
-First, clone the repository using the URL provided on the Azure Portal, and add the Azure repository as a remote. For more information, see [Continuous deployment using GIT in Azure Web App](/documentation/articles/web-sites-publish-source-control/).
+First, clone the repository using the URL provided on the Azure Portal, and add the Azure repository as a remote. For more information, see [Local Git Deployment to Azure App Service](/documentation/articles/app-service-deploy-local-git/).
 
     git clone <repo-url>
     cd <repo-folder>
@@ -308,7 +313,7 @@ Browse to the Azure URL to view your changes.
 
 ### Clone the repository
 
-First, clone the repository using the URL provided on the Azure Portal, and add the Azure repository as a remote. For more information, see [Continuous deployment using GIT in Azure Web App](/documentation/articles/web-sites-publish-source-control/).
+First, clone the repository using the URL provided on the Azure Portal, and add the Azure repository as a remote. For more information, see [Local Git Deployment to Azure App Service](/documentation/articles/app-service-deploy-local-git/).
 
     git clone <repo-url>
     cd <repo-folder>
@@ -399,12 +404,12 @@ Browse to the Azure URL to view your changes.
 
 ## Troubleshooting - Package Installation
 
-[AZURE.INCLUDE [web-sites-python-troubleshooting-package-installation](../includes/web-sites-python-troubleshooting-package-installation.md)]
+[AZURE.INCLUDE [web-sites-python-troubleshooting-package-installation](../../includes/web-sites-python-troubleshooting-package-installation.md)]
 
 
 ## Troubleshooting - Virtual Environment
 
-[AZURE.INCLUDE [web-sites-python-troubleshooting-virtual-environment](../includes/web-sites-python-troubleshooting-virtual-environment.md)]
+[AZURE.INCLUDE [web-sites-python-troubleshooting-virtual-environment](../../includes/web-sites-python-troubleshooting-virtual-environment.md)]
 
 
 ## Troubleshooting - Static Files
@@ -491,7 +496,7 @@ For more information, see the [Python Developer Center](/develop/python/).
 
 
 ## What's changed
-* For a guide to the change from Websites to Azure see: [Azure and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
+* For a guide to the change from Websites to App Service see: [Azure App Service and Its Impact on Existing Azure Services](/documentation/articles/app-service-changes-existing-services/)
 
 
 <!--Link references-->

@@ -9,9 +9,14 @@
    tags="azure-resource-manager"/>
 
 <tags
-	ms.service="virtual-machines-linux"
-	ms.date="03/29/2016"
-	wacn.date=""/>
+   ms.service="virtual-machines-linux"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="vm-linux"
+   ms.workload="infrastructure-services"
+   ms.date="03/29/2016"
+   wacn.date=""
+   ms.author="kundanap"/>
 
 # Linux VM extension configuration samples
 
@@ -20,17 +25,12 @@
 - [CLI - Template](/documentation/articles/virtual-machines-linux-extensions-configuration-samples/)
 
 <br>
-
 
->[AZURE.NOTE] Templates you downloaded from the GitHub Repo "azure-quickstart-templates" must be modified in order to fit in the Azure China Cloud Environment. For example, replace some endpoints -- "blob.core.chinacloudapi.cn" by "blob.core.chinacloudapi.cn", "chinacloudapp.cn" by "chinacloudapp.cn"; change some unsupported VM images; and, changes some unsupported VM sizes.
 
+>[AZURE.NOTE] Templates you downloaded from the GitHub Repo "azure-quickstart-templates" must be modified in order to fit in the Azure China Cloud Environment. For example, replace some endpoints -- "blob.core.windows.net" by "blob.core.chinacloudapi.cn", "cloudapp.azure.com" by "chinacloudapp.cn"; change some unsupported VM images; and, changes some unsupported VM sizes.
 
+
 This article provides sample configuration for configuring Azure VM extensions for Linux VMs.
-
-
-> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the Resource Manager deployment model, which Azure recommends for most new deployments instead of the classic deployment model.
-
-
 
 To learn more about these extensions click here : [Azure VM Extensions Overview.](/documentation/articles/virtual-machines-windows-extensions-features/)
 
@@ -58,7 +58,6 @@ The template snippet for Deploying extensions looks as following:
       }
       }
       }
-
 
 ## Sample template snippet for VM Extensions with VM Scale Sets.
 
@@ -85,7 +84,6 @@ The template snippet for Deploying extensions looks as following:
 Before deploying the extension please check the latest extension version and replace the "typeHandlerVersion" with the current latest version.
 
 Rest of the article provides sample configurations for Linux VM Extensions.
-
 
 ### CloudLink SecureVM Agent
           {

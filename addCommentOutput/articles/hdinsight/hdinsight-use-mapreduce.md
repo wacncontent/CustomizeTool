@@ -4,18 +4,23 @@
    services="hdinsight"
    documentationCenter=""
    authors="Blackmist"
-   manager="paulettm"
+   manager="jhubbard"
    editor="cgronlun"
 	tags="azure-portal"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="06/06/2016"
-	wacn.date=""/>
+   ms.service="hdinsight"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="big-data"
+   ms.date="08/23/2016"
+   wacn.date=""
+   ms.author="larryfr"/>
 
 # Use MapReduce in Hadoop on HDInsight
 
-[AZURE.INCLUDE [mapreduce-selector](../includes/hdinsight-selector-use-mapreduce.md)]
+[AZURE.INCLUDE [mapreduce-selector](../../includes/hdinsight-selector-use-mapreduce.md)]
 
 In this article, you will learn how to run MapReduce jobs on Hadoop in HDInsight clusters. We run a basic word count operation implemented as a Java MapReduce job.
 
@@ -49,8 +54,8 @@ Hadoop streaming communicates with the mapper and reducer over STDIN and STDOUT 
 For more information, see [Hadoop Streaming](http://hadoop.apache.org/docs/r1.2.1/streaming.html).
 
 For examples of using Hadoop streaming with HDInsight, see the following:
-
 
+
 * [Develop Python MapReduce jobs](/documentation/articles/hdinsight-hadoop-streaming-python/)
 
 
@@ -60,17 +65,17 @@ In this example, for sample data, you will use the notebooks of Leonardo Da Vinc
 
 The sample data is stored in Azure Blob storage, which HDInsight uses as the default file system for Hadoop clusters. HDInsight can access files stored in Blob storage by using the **wasb** prefix. For example, to access the sample.log file, you would use the following syntax:
 
-	wasb:///example/data/gutenberg/davinci.txt
+	wasbs:///example/data/gutenberg/davinci.txt
 
 Because Azure Blob storage is the default storage for HDInsight, you can also access the file by using **/example/data/gutenberg/davinci.txt**.
 
-> [AZURE.NOTE] In the previous syntax, **wasb:///** is used to access files that are stored in the default storage container for your HDInsight cluster. If you specified additional storage accounts when you provisioned your cluster, and you want to access files stored in these accounts, you can access the data by specifying the container name and storage account address. For example, **wasb://mycontainer@mystorage.blob.core.chinacloudapi.cn/example/data/gutenberg/davinci.txt**.
+> [AZURE.NOTE] In the previous syntax, **wasbs:///** is used to access files that are stored in the default storage container for your HDInsight cluster. If you specified additional storage accounts when you provisioned your cluster, and you want to access files stored in these accounts, you can access the data by specifying the container name and storage account address. For example, **wasbs://mycontainer@mystorage.blob.core.chinacloudapi.cn/example/data/gutenberg/davinci.txt**.
 
 ##<a id="job"></a>About the example MapReduce
 
-The MapReduce job that is used in this example is located at **wasb://example/jars/hadoop-mapreduce-examples.jar**, and it is provided with your HDInsight cluster. This contains a word count example that you will run against **davinci.txt**.
+The MapReduce job that is used in this example is located at **wasbs://example/jars/hadoop-mapreduce-examples.jar**, and it is provided with your HDInsight cluster. This contains a word count example that you will run against **davinci.txt**.
 
-> [AZURE.NOTE] On HDInsight 2.1 clusters, the file location is **wasb:///example/jars/hadoop-examples.jar**.
+> [AZURE.NOTE] On HDInsight 2.1 clusters, the file location is **wasbs:///example/jars/hadoop-examples.jar**.
 
 For reference, the following is the Java code for the word count MapReduce job:
 

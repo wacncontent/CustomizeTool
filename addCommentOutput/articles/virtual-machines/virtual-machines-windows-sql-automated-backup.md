@@ -11,8 +11,13 @@
 	tags="azure-resource-manager"/>
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="05/18/2016"
-	wacn.date=""/>
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="vm-windows-sql-server"
+	ms.workload="infrastructure-services"
+	ms.date="07/14/2016"
+	wacn.date=""
+	ms.author="jroth" />
 
 # Automated Backup for SQL Server in Azure Virtual Machines (Resource Manager)
 
@@ -22,7 +27,7 @@
 
 Automated Backup automatically configures [Managed Backup to Azure](https://msdn.microsoft.com/zh-cn/library/dn449496.aspx) for all existing and new databases on an Azure VM running SQL Server 2014 Standard or Enterprise. This enables you to configure regular database backups that utilize durable Azure blob storage. Automated Backup depends on the [SQL Server IaaS Agent Extension](/documentation/articles/virtual-machines-windows-sql-server-agent-extension/).
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model. To view the classic version of this article, see [Automated Backup for SQL Server in Azure Virtual Machines Classic](/documentation/articles/virtual-machines-windows-classic-sql-automated-backup/).
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)] classic deployment model. To view the classic version of this article, see [Automated Backup for SQL Server in Azure Virtual Machines Classic](/documentation/articles/virtual-machines-windows-classic-sql-automated-backup/).
 
 ## Prerequisites
 
@@ -30,15 +35,13 @@ To use Automated Backup, consider the following prerequisites:
 
 **Operating System**:
 
--Windows Server 2012
+- Windows Server 2012
 - Windows Server 2012 R2
 
 **SQL Server version/edition**:
 
 - SQL Server 2014 Standard
 - SQL Server 2014 Enterprise
-- SQL Server 2016 Standard
-- SQL Server 2016 Enterprise
 
 **Database configuration**:
 
@@ -52,7 +55,7 @@ To use Automated Backup, consider the following prerequisites:
 
 ## Settings
 
-The following table describes the options that can be configured for Automated Backup.  The actual configuration steps vary depending on whether you use the Azure portal or Azure Windows PowerShell commands. 
+The following table describes the options that can be configured for Automated Backup. The actual configuration steps vary depending on whether you use the Azure portal or Azure Windows PowerShell commands.
 
 |Setting|Range (Default)|Description|
 |---|---|---|
@@ -61,11 +64,12 @@ The following table describes the options that can be configured for Automated B
 |**Storage Account**|Azure storage account (the storage account created for the specified VM)|An Azure storage account to use for storing Automated Backup files in blob storage. A container is created at this location to store all backup files. The backup file naming convention includes the date, time, and machine name.|
 |**Encryption**|Enable/Disable (Disabled)|Enables or disables encryption. When encryption is enabled, the certificates used to restore the backup are located in the specified storage account in the same automaticbackup container using the same naming convention. If the password changes, a new certificate is generated with that password, but the old certificate remains to restore prior backups.|
 |**Password**|Password text (None)|A password for encryption keys. This is only required if encryption is enabled. In order to restore an encrypted backup, you must have the correct password and related certificate that was used at the time the backup was taken.|
-
 
 ## Configuration in the Portal
+You can use the Azure Portal to configure Automated Backup during provisioning or for existing VMs.
 
-You can use the Azure portal to configure Automated Backup when you create a new SQL Server 2014 Virtual Machine in the Resource Manager deployment model.
+### New VMs
+Use the Azure Portal to configure Automated Backup when you create a new SQL Server 2014 Virtual Machine in the Resource Manager deployment model.
 
 In the **SQL Server settings** blade, select **Automated backup**. The following Azure portal screenshot shows the **SQL Automated Backup** blade.
 
@@ -73,14 +77,24 @@ In the **SQL Server settings** blade, select **Automated backup**. The following
 
 For context, see the complete topic on [provisioning a SQL Server virtual machine in Azure](/documentation/articles/virtual-machines-windows-portal-sql-server-provision/).
 
-For existing SQL Server virtual machines, you must use PowerShell to configure the Automated Backup settings.
+### Existing VMs
+For existing SQL Server virtual machines, select your SQL Server virtual machine. Then select the **SQL Server configuration** section of the **Settings** blade.
 
->[AZURE.NOTE] When you enable Automated Backup for the first time, Azure configures the SQL Server IaaS Agent in the background. During this time, the Azure portal might not show that Automated Backup is configured. Wait several minutes for the agent to be installed, configured. After that the Azure portal will reflect the new settings.
-
+![SQL Automated Backup for existing VMs](./media/virtual-machines-windows-sql-automated-backup/azure-sql-rm-autobackup-existing-vms.png)
+
+In the **SQL Server configuration** blade, click the **Edit** button in the Automated backup section.
+
+![Configure SQL Automated Backup for existing VMs](./media/virtual-machines-windows-sql-automated-backup/azure-sql-rm-autobackup-configuration.png)
+
+When finished, click the **OK** button on the bottom of the **SQL Server configuration** blade to save your changes.
+
+If you are enabling Automated Backup for the first time, Azure configures the SQL Server IaaS Agent in the background. During this time, the Azure portal might not show that Automated Backup is configured. Wait several minutes for the agent to be installed, configured. After that the Azure portal will reflect the new settings.
+
+>[AZURE.NOTE] You can also configure Automated Backup using a template. For more information, see [Azure quickstart template for Automated Backup](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-sql-existing-autobackup-update).
 
 ## Configuration with PowerShell
 
-After provisioning your SQL VM, use PowerShell to configure Automated Batching.
+After provisioning your SQL VM, use PowerShell to configure Automated Backup.
 
 In the following PowerShell example, Automated Backup is configured for an existing SQL Server 2014 VM. The **AzureRM.Compute\New-AzureVMSqlServerAutoBackupConfig** command configures the Automated Backup settings to store backups in the Azure storage account associated with the virtual machine. These backups will be retained for 10 days. The **Set-AzureRmVMSqlServerExtension** command updates the specified Azure VM with these settings.
 

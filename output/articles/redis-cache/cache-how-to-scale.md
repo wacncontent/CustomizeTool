@@ -7,16 +7,21 @@
 	manager="douge" 
 	editor=""/>
 
-<tags
-	ms.service="cache"
-	ms.date="06/16/2016"
-	wacn.date=""/>
+<tags 
+	ms.service="cache" 
+	ms.workload="tbd" 
+	ms.tgt_pltfrm="cache-redis" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="09/07/2016" 
+	wacn.date="" 
+	ms.author="sdanie"/>
 
 # How to Scale Azure Redis Cache
 
 >[AZURE.NOTE] The Azure Redis Cache scaling feature is currently in preview. 
 
-Azure Redis Cache has different cache offerings which provide flexibility in the choice of cache size and features. If the requirements of your application change after a cache is created, you can scale the size of the cache using the **Change pricing tier** blade in the [Azure Portal](https://portal.azure.cn).
+Azure Redis Cache has different cache offerings which provide flexibility in the choice of cache size and features. If the requirements of your application change after a cache is created, you can scale the size of the cache using the **Change pricing tier** blade in the [Azure portal](https://portal.azure.cn).
 
 ## When to scale
 
@@ -32,7 +37,7 @@ You can monitor the following metrics to help determine if you need to scale.
 If you determine that your cache is no longer meeting the requirements of your application, you can change to a larger or smaller cache pricing tier that is right for your application. For more information on determining which cache pricing tier to use, see [What Redis Cache offering and size should I use](/documentation/articles/cache-faq/#what-redis-cache-offering-and-size-should-i-use).
 
 ## Scale a cache
-To scale your cache, [browse to the cache](/documentation/articles/cache-configure/#configure-redis-cache-settings) in the [Azure Portal](https://portal.azure.cn) and click **Settings**, **Pricing tier**.
+To scale your cache, [browse to the cache](/documentation/articles/cache-configure/#configure-redis-cache-settings) in the [Azure portal](https://portal.azure.cn) and click **Settings**, **Pricing tier**.
 
 You can also click the **Pricing tier** part in the **Redis Cache** blade.
 
@@ -59,7 +64,7 @@ When scaling is complete, the status changes from **Scaling** to **Running**.
 
 ## How to automate a scaling operation
 
-In addition to scaling your Azure Redis Cache instances in the Azure Portal, you can scale using Azure Redis Cache PowerShell cmdlets, Azure CLI, and by using the Azure Management Libraries (MAML). 
+In addition to scaling your Azure Redis Cache instances in the Azure portal, you can scale using Azure Redis Cache PowerShell cmdlets, Azure CLI, and by using the Azure Management Libraries (MAML). 
 
 -	[Scale using PowerShell](#scale-using-powershell)
 -	[Scale using Azure CLI](#scale-using-azure-cli)
@@ -177,7 +182,7 @@ Scaling takes approximately 20 minutes, depending on how much data is in the cac
 
 ### How can I tell when scaling is complete?
 
-In the Azure Portal you can see the scaling operation in progress. When scaling is complete, the status of the cache changes to **Running**.
+In the Azure portal you can see the scaling operation in progress. When scaling is complete, the status of the cache changes to **Running**.
 
 ### Why is this feature in preview?
 

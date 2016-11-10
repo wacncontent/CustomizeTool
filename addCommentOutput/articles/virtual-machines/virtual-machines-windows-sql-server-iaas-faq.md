@@ -10,14 +10,19 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="06/03/2016"
-	wacn.date=""/>
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="vm-windows-sql-server"
+	ms.workload="infrastructure-services"
+	ms.date="09/13/2016"
+	wacn.date=""
+	ms.author="v-shysun"/>
 
 # SQL Server on Azure Virtual Machines FAQ
 
 This topic provides answers to some of the most common questions about running [SQL Server on Azure Virtual Machines](/home/features/virtual-machines/sql-server/).
 
-[AZURE.INCLUDE [support-disclaimer](../includes/support-disclaimer.md)]
+[AZURE.INCLUDE [support-disclaimer](../../includes/support-disclaimer.md)]
 
 ## Frequently Asked Questions
 
@@ -27,7 +32,7 @@ This topic provides answers to some of the most common questions about running [
 
 1. **What is the difference between SQL VMs and the SQL Database service?**
 
-	Conceptually, running SQL Server on an Azure virtual machine is not that different from running SQL Server in a remote datacenter. In contrast, [SQL Database](/documentation/articles/sql-database-technical-overview/) offers database-as-a-service. With SQL Database, you do not have access to the machines that host your databases. For a full comparison, see [Choose a cloud SQL Server option: Azure SQL (PaaS) Database or SQL Server on Azure VMs (IaaS)](../sql-database/media/data-management-azure-sql-database-and-sql-server-iaas.md).
+	Conceptually, running SQL Server on an Azure virtual machine is not that different from running SQL Server in a remote datacenter. In contrast, [SQL Database](/documentation/articles/sql-database-technical-overview/) offers database-as-a-service. With SQL Database, you do not have access to the machines that host your databases. For a full comparison, see [Choose a cloud SQL Server option: Azure SQL (PaaS) Database or SQL Server on Azure VMs (IaaS)](/documentation/articles/sql-database-paas-vs-sql-server-iaas/).
 
 1. **How can I migrate my on-premises SQL Server database to the Cloud?**
 

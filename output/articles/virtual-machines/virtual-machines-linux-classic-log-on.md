@@ -16,7 +16,12 @@
 
 #How to Log on to a Virtual Machine Running Linux #
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Learn how to [perform these steps using the Resource Manager deployment model](/documentation/articles/virtual-machines-linux-quick-create-portal/).
+
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)] Learn how to [perform these steps using the Resource Manager deployment model](/documentation/articles/virtual-machines-linux-quick-create-portal/).
+
+
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager model. Learn how to [perform these steps using the Resource Manager deployment model](/documentation/articles/virtual-machines-linux-quick-create-portal/).
+
 
 You'll need to install an SSH client on the computer you want to use to log on to the virtual machine. There are many SSH client programs that you can choose from. The following are possible choices:
 
@@ -24,11 +29,11 @@ You'll need to install an SSH client on the computer you want to use to log on t
 - On a computer running a Windows operating system, you might want to use an SSH client such as PuTTY. For more information, see the [PuTTY Download Page](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html).
 
 
->[AZURE.NOTE] For more requirements and troubleshooting tips, see [Connect to an Azure virtual machine with RDP or SSH](https://msdn.microsoft.com/zh-cn/library/azure/dn535788.aspx).
+>[AZURE.NOTE] For more requirements and troubleshooting tips, see [Connect to an Azure virtual machine with RDP or  SSH](https://msdn.microsoft.com/zh-cn/library/azure/dn535788.aspx)  SSH](/documentation/articles/virtual-machines-linux-about/) .
 
 This procedure shows you how to use the SSH client on OS X to access the virtual machine.
 
-1. Find the **Host Name** and **Port information** from the [Management Portal](http://manage.windowsazure.cn). You can find the information that you need from the dashboard of the virtual machine. Click the virtual machine name and look for the **SSH Details** in the **Quick Glance** section of the dashboard.
+1. Find the **Host Name** and **Port information** from the  [Management  [Classic Management  Portal](http://manage.windowsazure.cn). You can find the information that you need from the dashboard of the virtual machine. Click the virtual machine name and look for the **SSH Details** in the **Quick Glance** section of the dashboard.
 
 	![Obtain SSH details](./media/virtual-machines-linux-classic-log-on/portalsshdetails.png)
 
@@ -41,4 +46,4 @@ This procedure shows you how to use the SSH client on OS X to access the virtual
 You can now work with the virtual machine just as you would with any other server.
 
 <!-- LINKS -->
-[How to Reset a Password or SSH for Linux Virtual Machines]: http://go.microsoft.com/fwlink/p/?LinkId=512138
+[How to Reset a Password or SSH for Linux Virtual Machines]:  http://go.microsoft.com/fwlink/p/?LinkId=512138  /documentation/articles/virtual-machines-linux-classic-reset-access/ 

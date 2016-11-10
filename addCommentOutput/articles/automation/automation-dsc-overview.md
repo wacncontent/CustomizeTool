@@ -11,9 +11,14 @@
    keywords="powershell dsc, desired state configuration, powershell dsc azure"/>
 
 <tags
-	ms.service="automation"
-	ms.date="05/10/2016"
-	wacn.date=""/>
+   ms.service="automation"
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="powershell"
+   ms.workload="TBD" 
+   ms.date="05/10/2016" 
+   wacn.date=""
+   ms.author="magoedte;coreyp"/>
 
 # Azure Automation DSC Overview #
 
@@ -125,5 +130,5 @@ The following image illustrates detailed step-by-step process in the life cycle 
 - [Onboarding machines for management by Azure Automation DSC] (../automation/automation-dsc-onboarding.md)
 - [Compiling configurations in Azure Automation DSC] (../automation/automation-dsc-compile.md)
 - [Azure Automation DSC cmdlets] (https://msdn.microsoft.com/zh-cn/library/mt244122.aspx)
-- [Azure Automation DSC pricing] (/home/features/automation/pricing/)
+- [Azure Automation DSC pricing] (/pricing/details/automation/)
 - [Continuous Deployment to IaaS VMs Using Azure Automation DSC and Chocolatey] (automation-dsc-cd-chocolatey.md)

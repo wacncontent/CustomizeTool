@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
 	pageTitle="Web App Cloning using PowerShell"
 	description="Learn how to clone your Web Apps to new Web Apps using PowerShell."
@@ -11,16 +9,21 @@
 
 <tags
 	ms.service="app-service-web"
+	ms.workload="web"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="01/13/2016"
-	wacn.date=""/>
+	wacn.date=""
+	ms.author="ahmedelnably"/>
 
-# Azure Web App Cloning Using PowerShell#
+# Azure App Service App Cloning Using PowerShell#
 
 With the release of Azure PowerShell version 1.1.0 a new option has been added to New-AzureRMWebApp that would give the user the ability to clone an existing Web App to a newly created app in a different region or in the same region. This will enable customers to deploy a number of apps across different regions quickly and easily.
 
-App cloning is currently only supported for premium tier app service plans. The new feature uses the same limitations as Web Apps Backup feature, see [Back up a web app in Azure](/documentation/articles/web-sites-backup/).
+App cloning is currently only supported for premium tier app service plans. The new feature uses the same limitations as Web Apps Backup feature, see [Back up a web app in Azure App Service](/documentation/articles/web-sites-backup/).
 
-[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)] 
+[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)] 
 
 To learn about using Azure Resource Manager based Azure PowerShell cmdlets to manage your Web Apps check [Azure Resource Manager based PowerShell commands for Azure Web App](/documentation/articles/app-service-web-app-azure-resource-manager-powershell/)
 
@@ -47,10 +50,11 @@ To clone an existing web app including all associated deployment slots, the user
 To clone an existing web app within the same region, the user will need to create a new resource group and a new app service plan in the same region, and then using the following PowerShell command to clone the web app
 
     $destapp = New-AzureRmWebApp -ResourceGroupName NewAzureResourceGroup -Name dest-webapp -Location "China East" -AppServicePlan NewAppServicePlan -SourceWebApp $srcap
+
 
-## Cloning an existing App to an Azure Environment ##
+## Cloning an existing App to an App Service Environment ##
 
-Scenario: An existing web app in China East region, the user would like to clone the contents to a new web app to an existing Azure Environment (ASE).
+Scenario: An existing web app in China East region, the user would like to clone the contents to a new web app to an existing App Service Environment (ASE).
 
 Knowing the resource group name that contains the source web app, we can use the following PowerShell command to get the source web app's information (in this case named source-webapp):
 
@@ -61,6 +65,7 @@ Knowing the ASE's name, and the resource group name that the ASE belongs to, the
     $destapp = New-AzureRmWebApp -ResourceGroupName DestinationAzureResourceGroup -Name dest-webapp -Location "China North" -AppServicePlan DestinationAppServicePlan -ASEName DestinationASE -ASEResourceGroupName DestinationASEResourceGroupName -SourceWebApp $srcapp
 
 The Location parameter is required due to legacy reason, but in the case of creating an app in an ASE it will be ignored. 
+
 
 ## Cloning an existing App Slot ##
 
@@ -110,8 +115,15 @@ This feature is currently in preview, we are working to add new capabilities ove
 
 ### References ###
 - [Azure Resource Manager based PowerShell commands for Azure Web App](/documentation/articles/app-service-web-app-azure-resource-manager-powershell/)
+
 - [Web App Cloning using Azure Portal](/documentation/articles/app-service-web-app-cloning-portal/)
-- [Back up a web app in Azure](/documentation/articles/web-sites-backup/)
-- [Azure Resource Manager support for Azure Traffic Manager Preview](../../articles/traffic-manager/traffic-manager-powershell-arm.md)
-- [Introduction to Azure Environment](/documentation/articles/app-service-app-service-environment-intro/)
+
+
+- [Web App Cloning using Azure Portal Preview](/documentation/articles/app-service-web-app-cloning-portal/)
+
+- [Back up a web app in Azure App Service](/documentation/articles/web-sites-backup/)
+- [Azure Resource Manager support for Azure Traffic Manager  Preview](../../articles/traffic-manager/traffic-manager-powershell-arm.md)  Preview](/documentation/articles/traffic-manager-powershell-arm/) 
+
+- [Introduction to App Service Environment](/documentation/articles/app-service-app-service-environment-intro/)
+
 - [Using Azure PowerShell with Azure Resource Manager](/documentation/articles/powershell-azure-resource-manager/)

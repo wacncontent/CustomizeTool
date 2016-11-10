@@ -4,13 +4,18 @@
 	services="virtual-machines-windows, automation"
 	documentationCenter=""
 	authors="jodoglevy"
-	manager="eamono"
+	manager="timlt"
 	editor=""/>
 
 <tags
 	ms.service="virtual-machines-windows"
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="04/19/2016"
-	wacn.date=""/>
+	wacn.date=""
+	ms.author="jolevy"/>
 
 
 
@@ -38,7 +43,10 @@ Virtual machines can be managed in Azure Automation by using [Azure PowerShell](
 Now that you've learned the basics of Azure Automation and how it can be used to manage Azure virtual machines, learn more:
 
 - [Azure Automation Overview](/documentation/articles/automation-intro/)
-- [My first runbook](/documentation/articles/automation-first-runbook-graphical/)
 
+- [My first runbook](/documentation/articles/automation-first-runbook-graphical/)
 - [Azure Automation learning map](https://azure.microsoft.com/documentation/learning-paths/automation/)
 
+
+- [My first runbook](/documentation/articles/automation-first-runbook-textual/)
+

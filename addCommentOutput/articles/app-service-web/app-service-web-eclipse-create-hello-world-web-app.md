@@ -9,10 +9,15 @@
 	manager="wpickett" 
 	editor=""/>
 
-<tags
-	ms.service="app-service-web"
-	ms.date="06/07/2016"
-	wacn.date=""/>
+<tags 
+	ms.service="app-service-web" 
+	ms.workload="web" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="Java" 
+	ms.topic="article" 
+	ms.date="08/11/2016" 
+	wacn.date="" 
+	ms.author="robmcm"/>
 
 # Create a Hello World Web App for Azure in Eclipse
 
@@ -24,8 +29,8 @@ When you have completed this tutorial, your application will look similar to the
  
 ## Prerequisites
 
-* A Java Developer Kit (JDK), v 1.7 or later.
-* Eclipse IDE for Java EE Developers, Indigo or later. This can be downloaded from <http://www.eclipse.org/downloads/>.
+* A Java Developer Kit (JDK), v 1.8 or later.
+* Eclipse IDE for Java EE Developers, Luna or later. This can be downloaded from <http://www.eclipse.org/downloads/>.
 * A distribution of a Java-based web server or application server, such as Apache Tomcat or Jetty.
 * An Azure subscription, which can be acquired from <https://azure.microsoft.com/free/> or </pricing/overview/>.
 * The Azure Toolkit for Eclipse. For more information, see [Installing the Azure Toolkit for Eclipse].
@@ -44,7 +49,7 @@ First, we'll start off with creating a Java project.
 
 1. Within Eclipse's Project Explorer view, expand **MyHelloWorld**. Right-click **WebContent**, click **New**, and then click **JSP File**.
 
-1. In the **New JSP File** dialog box, name the file **index.jsp**. Keep the parent folder as **MyHelloWorld/WebContent**.
+1. In the **New JSP File** dialog box, name the file **index.jsp**, keep the parent folder as **MyHelloWorld/WebContent**, and then click **Next**.
 
 1. In the **Select JSP Template** dialog box, for purposes of this tutorial select **New JSP File (html)**, and then click **Finish**.
 
@@ -201,24 +206,27 @@ For more information about the Azure Toolkits for Java IDEs, see the following l
 - [Azure Toolkit for IntelliJ]
   - [Installing the Azure Toolkit for IntelliJ]
   - [Create a Hello World Web App for Azure in IntelliJ]
+  - [What's New in the Azure Toolkit for IntelliJ]
 
 For more information about using Azure with Java, see the [Azure Java Developer Center].
 
 For additional information about creating Azure Web Apps, see the [Web Apps Overview].
 
-[AZURE.INCLUDE [app-service-web-try-app-service](../includes/app-service-web-try-app-service.md)]
+[AZURE.INCLUDE [app-service-web-try-app-service](../../includes/app-service-web-try-app-service.md)]
 
 <!-- URL List -->
 
 [Azure Toolkit for Eclipse]: /documentation/articles/azure-toolkit-for-eclipse/
 [Azure Toolkit for IntelliJ]: /documentation/articles/azure-toolkit-for-intellij/
+[Create a Hello World Web App for Azure in Eclipse]: /documentation/articles/app-service-web-eclipse-create-hello-world-web-app/
 [Create a Hello World Web App for Azure in IntelliJ]: /documentation/articles/app-service-web-intellij-create-hello-world-web-app/
 [Installing the Azure Toolkit for Eclipse]: /documentation/articles/azure-toolkit-for-eclipse-installation/
 [Installing the Azure Toolkit for IntelliJ]: /documentation/articles/azure-toolkit-for-intellij-installation/
 [What's New in the Azure Toolkit for Eclipse]: /documentation/articles/azure-toolkit-for-eclipse-whats-new/
+[What's New in the Azure Toolkit for IntelliJ]: /documentation/articles/azure-toolkit-for-intellij-whats-new/
 
 [Azure Java Developer Center]: /develop/java/
-[Web Apps Overview]:  /home/features/web-site/  /home/features/web-site 
+[Web Apps Overview]: /documentation/articles/app-service-web-overview/
 
 <!-- IMG List -->
 

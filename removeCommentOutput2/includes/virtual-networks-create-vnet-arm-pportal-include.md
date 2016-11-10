@@ -1,8 +1,6 @@
-<!-- Ibiza portal: tested -->
-
 ## How to create a VNet in the Azure portal Preview
 
-To create a VNet based on the scenario above by using the Azure portal Preview, follow the steps below.
+To create a VNet based on the scenario above by using the Azure Portal Preview, follow the steps below.
 
 1. From a browser, navigate to http://portal.azure.cn and, if necessary, sign in with your Azure account.
 2. Click **NEW** > **Networking** > **Virtual network**, then click **Resource Manager** from the **Select a deployment model** list, and then click **Create**, as seen in the figure below.
@@ -27,7 +25,7 @@ To create a VNet based on the scenario above by using the Azure portal Preview, 
 
 8. Wait for the VNet to be created, then in the **Virtual network** blade, click **All settings** > **Subnets** > **Add** as seen below.
 
-	![Adding subnet in the Azure portal](./media/virtual-networks-create-vnet-arm-pportal-include/vnet-create-arm-pportal-figure5.gif)
+	![Adding subnet in the Azure Portal Preview](./media/virtual-networks-create-vnet-arm-pportal-include/vnet-create-arm-pportal-figure5.gif)
 
 9. Specify the subnet settings for the *BackEnd* subnet, as shown below, and then click **OK**. 
 

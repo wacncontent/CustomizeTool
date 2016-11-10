@@ -268,7 +268,7 @@ The following are errors or problems commonly encountered when using Git to publ
 ## What's changed
 * For a guide to the change from Websites to Azure see: [Azure and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
 
-[Azure Developer Center]: http://azure.microsoft.com/develop/overview/
+[Azure Developer Center]: /develop/overview/
 [Azure Portal]: https://portal.azure.cn
 [Git website]: http://git-scm.com
 [Installing Git]: http://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%AE%89%E8%A3%85-Git

@@ -3,13 +3,18 @@
    description="This article will help you create, disable, enable, delete, and view the history of a Azure Traffic Manager profile."
    services="traffic-manager"
    documentationCenter=""
-   authors="joaoma"
+   authors="sdwheeler"
    manager="carmonm"
    editor="tysonn" />
 <tags
-	ms.service="traffic-manager"
-	ms.date="03/17/2016"
-	wacn.date=""/>
+   ms.service="traffic-manager"
+   ms.devlang="na"
+   ms.topic="hero-article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="03/17/2016"
+   wacn.date=""
+   ms.author="sewhee" />
 
 # Manage an Azure Traffic Manager profile
 
@@ -21,7 +26,7 @@ You can quickly create a Traffic Manager profile by using Quick Create in the Az
 
 ### To create a new Traffic Manager profile
 
-1. **Deploy your cloud services and websites to your production environment.** For more information about cloud services, see [Cloud Services](https://msdn.microsoft.com/zh-CN/library/jj155995.aspx). For information about cloud services, see [Best practices](https://msdn.microsoft.com/zh-cn/library/azure/5229dd1c-5a91-4869-8522-bed8597d9cf5#bkmk_TrafficManagerBestPracticesProfile). For more information about websites, see [Websites](/home/features/web-site/).
+1. **Deploy your cloud services and websites to your production environment.** For more information about cloud services, see [Cloud Services](/documentation/services/cloud-services/). For information about cloud services, see [Best practices](https://msdn.microsoft.com/zh-cn/library/azure/5229dd1c-5a91-4869-8522-bed8597d9cf5#bkmk_TrafficManagerBestPracticesProfile). For more information about websites, see [Websites](/home/features/app-service/web-apps/).
 
 2. **Log in to the Azure Classic Management Portal.** To create a new Traffic Manager profile, click **New** on the lower left of the portal, click **Network Services > Traffic Manager**, and then click **Quick Create** to begin configuring your profile.
 3. **Configure the DNS prefix.** Give your traffic manager profile a unique DNS prefix name. You can specify only the prefix for a Traffic Manager domain name.

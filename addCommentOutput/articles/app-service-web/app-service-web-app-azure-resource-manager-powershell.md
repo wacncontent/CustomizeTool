@@ -9,8 +9,13 @@
 
 <tags
 	ms.service="app-service-web"
+	ms.workload="web"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="06/14/2016"
-	wacn.date=""/>
+	wacn.date=""
+	ms.author="aelnably"/>
 
 # Using Azure Resource Manager-Based PowerShell to Manage Azure Web Apps#
 
@@ -30,23 +35,23 @@ Following are descriptions of the different parameters:
 - 	**Name**: name of the app service plan.
 - 	**Location**: service plan location.
 - 	**ResourceGroupName**: resource group that includes the newly created app service plan.
-- **Tier**:  the desired pricing tier (Default is Free, other options are Shared, Basic,  Standard,  and  Premium.)  Standard.) 
-- **WorkerSize**: the size of workers (Default is small if the Tier parameter was specified as Basic,  or  Standard  or Premium . Other options are Medium, and Large.)
+- 	**Tier**:  the desired pricing tier (Default is Free, other options are Shared, Basic, Standard, and Premium.)
+- 	**WorkerSize**: the size of workers (Default is small if the Tier parameter was specified as Basic, Standard or Premium. Other options are Medium, and Large.)
 - 	**NumberofWorkers**: the number of workers in the app service plan (Default value is 1). 
 
 Example to use this cmdlet:
 
-    New-AzureRmAppServicePlan -Name ContosoAppServicePlan -Location "China East" -ResourceGroupName ContosoAzureResourceGroup -Tier  Premium  Standard  -WorkerSize Large -NumberofWorkers 10
+    New-AzureRmAppServicePlan -Name ContosoAppServicePlan -Location "China East" -ResourceGroupName ContosoAzureResourceGroup -Tier Premium -WorkerSize Large -NumberofWorkers 10
 
 
-### Create an App Service Plan in an Azure Environment ###
+### Create an App Service Plan in an App Service Environment ###
 To create a new app service plan in an app service environment, the same command **New-AzureRmAppServicePlan** command can be used with extra parameters to specify the ASE name and the resource group name that the ASE belongs to.
 
 Example to use this cmdlet:
 
     New-AzureRmAppServicePlan -Name ContosoAppServicePlan -Location "China East" -ResourceGroupName ContosoAzureResourceGroup -AseName constosoASE -AseResourceGroupName contosoASERG -Tier Premium -WorkerSize Large -NumberofWorkers 10
 
-To learn more about app service environment, check [Introduction to Azure Environment](/documentation/articles/app-service-app-service-environment-intro/)
+To learn more about app service environment, check [Introduction to App Service Environment](/documentation/articles/app-service-app-service-environment-intro/)
 
 
 ### List Existing App Service Plans ###
@@ -96,7 +101,7 @@ To delete an existing app service plan, all assigned web apps need to be moved o
 
     Remove-AzureRmAppServicePlan -Name ContosoAppServicePlan -ResourceGroupName ContosoAzureResourceGroup
 
-## Managing Azure Web Apps ##
+## Managing App Service Web Apps ##
 
 ### Create a new Web App ###
 
@@ -114,13 +119,13 @@ Example to use this cmdlet:
     New-AzureRmWebApp -Name ContosoWebApp -AppServicePlan ContosoAppServicePlan -ResourceGroupName ContosoAzureResourceGroup -Location "China East"
 
 
-### Create a new Web App in an Azure Environment ###
+### Create a new Web App in an App Service Environment ###
 
-To create a new web app in an Azure Environment (ASE), the same **New-AzureRmWebApp** command can be used with extra parameters to specify the ASE name and the resource group name that the ASE belongs to.
+To create a new web app in an App Service Environment (ASE), the same **New-AzureRmWebApp** command can be used with extra parameters to specify the ASE name and the resource group name that the ASE belongs to.
 
     New-AzureRmWebApp -Name ContosoWebApp -AppServicePlan ContosoAppServicePlan -ResourceGroupName ContosoAzureResourceGroup -Location "China East"  -ASEName ContosoASEName -ASEResourceGroupName ContosoASEResourceGroupName
 
-To learn more about app service environment, check [Introduction to Azure Environment](/documentation/articles/app-service-app-service-environment-intro/)
+To learn more about app service environment, check [Introduction to App Service Environment](/documentation/articles/app-service-app-service-environment-intro/)
 
 
 ### Delete an existing Web App ###
@@ -212,7 +217,7 @@ To learn about how to manage web app certificates, see [SSL Certificates binding
 ### Next Steps ###
 - To learn about Azure Resource Manager PowerShell support, see [Using Azure PowerShell with Azure Resource Manager.](/documentation/articles/powershell-azure-resource-manager/)
 
-- To learn about Azure Environments, see [Introduction to Azure Environment.](/documentation/articles/app-service-app-service-environment-intro/)
+- To learn about App Service Environments, see [Introduction to App Service Environment.](/documentation/articles/app-service-app-service-environment-intro/)
 
-- To learn about managing Azure SSL certificates using PowerShell, see [SSL Certificates binding using PowerShell.](/documentation/articles/app-service-web-app-powershell-ssl-binding/)
+- To learn about managing App Service SSL certificates using PowerShell, see [SSL Certificates binding using PowerShell.](/documentation/articles/app-service-web-app-powershell-ssl-binding/)
 - To learn about the full list of Azure Resource Manager-based PowerShell cmdlets for Azure Web Apps, see [Azure Cmdlet Reference of Web Apps Azure Resource Manager PowerShell Cmdlets.](https://msdn.microsoft.com/zh-cn/library/mt619237.aspx)

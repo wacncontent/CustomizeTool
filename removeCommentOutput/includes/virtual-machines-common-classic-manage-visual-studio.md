@@ -6,6 +6,8 @@ While you can create a virtual machine in the [Azure Management Portal](https://
 
 ### To create a new virtual machine
 
+>[AZURE.NOTE] You need to configure your Visual Studio Environment, in order to use Azure China in Visual Studio 2015. For more information, see [developer differerences](/documentation/articles/developerdifferences/).
+
 1. In Server Explorer, open the **Azure** node and click **Virtual Machines**.
 
 1. On the context menu, click **Create Virtual Machine**.
@@ -42,7 +44,7 @@ While you can create a virtual machine in the [Azure Management Portal](https://
 
     You'll use the new name and password to log into the machine using remote desktop, so it's a good idea to write them down in case you forget. After you create an Azure virtual machine in Visual Studio, you can change its size and other settings in the [Azure Management Portal](https://manage.windowsazure.cn/).
 
-    >[AZURE.NOTE] If you choose larger sizes for the virtual machine, extra charges may apply. See [Virtual Machines Pricing Details](/home/features/virtual-machines/pricing/) for more information.
+    >[AZURE.NOTE] If you choose larger sizes for the virtual machine, extra charges may apply. See [Virtual Machines Pricing Details](/pricing/details/virtual-machines/) for more information.
 
 1. Virtual machines created in Visual Studio require a cloud service. On the **Cloud Service Settings** page, select a cloud service for the virtual machine, or click **<Create New…>** in the dropdown list if you don't already have a cloud service or want to use a new one. A storage account is also required, so choose a storage account (or create a new storage account) in the **Storage account** dropdown list box. See [Introduction to Azure Storage](/documentation/articles/storage-introduction/) for more information.
 
@@ -122,7 +124,7 @@ As you configure your virtual machine and install software on it, it's a good id
 
 1. If you have already run Sysprep on this virtual machine, select the **I have run Sysprep on the virtual machine** box.
 
-    Sysprep is a tool that, among other things, removes systems-specific data from the virtual machine's version of Windows, making it template that others can use. See [How to Capture a Windows Virtual Machine to Use as a Template](/documentation/articles/virtual-machines-capture-image-windows-server/) for more information.
+    Sysprep is a tool that, among other things, removes systems-specific data from the virtual machine's version of Windows, making it template that others can use. See [How to Capture a Windows Virtual Machine to Use as a Template](/documentation/articles/virtual-machines-capture-image-windows-server/) for more information. Back up the VM before running Sysprep.
 
 1. After you're done configuring the capture settings, choose the **Capture** button to create the checkpoint.
 

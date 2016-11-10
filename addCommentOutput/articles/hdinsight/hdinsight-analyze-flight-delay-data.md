@@ -4,13 +4,18 @@
 	services="hdinsight"
 	documentationCenter=""
 	authors="mumian"
-	manager="paulettm"
+	manager="jhubbard"
 	editor="cgronlun"/>
 
 <tags
 	ms.service="hdinsight"
-	ms.date="05/18/2016"
-	wacn.date=""/>
+	ms.workload="big-data"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="07/25/2016"
+	wacn.date=""
+	ms.author="jgao"/>
 
 #Analyze flight delay data by using Hive in HDInsight
 
@@ -47,7 +52,7 @@ In the appendixes, you can find the instructions for uploading flight delay data
 ###Prerequisites
 
 
-###<a id="prerequisite"></a> Prerequisites
+### <a id="prerequisite"></a> Prerequisites
 
 
 Before you begin this tutorial, you must have the following:
@@ -56,7 +61,7 @@ Before you begin this tutorial, you must have the following:
 
 - **A workstation with Azure PowerShell**.
 
-    [AZURE.INCLUDE [upgrade-powershell](../includes/hdinsight-use-latest-powershell.md)]
+    [AZURE.INCLUDE [upgrade-powershell](../../includes/hdinsight-use-latest-powershell.md)]
 
 **Files used in this tutorial**
 
@@ -71,8 +76,8 @@ The following table lists the files used in this tutorial:
 
 <table border="1">
 <tr><th>Files</th><th>Description</th></tr>
-<tr><td>wasb://flightdelay@hditutorialdata.blob.core.windows.net/flightdelays.hql</td><td>The HiveQL script file used by the Hive job that you will run. This script has been uploaded to an Azure Blob storage account with the public access. <a href="#appendix-b">Appendix B</a> has instructions on preparing and uploading this file to your own Azure Blob storage account.</td></tr>
-<tr><td>wasb://flightdelay@hditutorialdata.blob.core.windows.net/2013Data</td><td>Input data for the Hive job. The data has been uploaded to an Azure Blob storage account with the public access. <a href="#appendix-a">Appendix A</a> has instructions on getting the data and uploading the data to your own Azure Blob storage account.</td></tr>
+<tr><td>wasbs://flightdelay@hditutorialdata.blob.core.windows.net/flightdelays.hql</td><td>The HiveQL script file used by the Hive job that you will run. This script has been uploaded to an Azure Blob storage account with the public access. <a href="#appendix-b">Appendix B</a> has instructions on preparing and uploading this file to your own Azure Blob storage account.</td></tr>
+<tr><td>wasbs://flightdelay@hditutorialdata.blob.core.windows.net/2013Data</td><td>Input data for the Hive job. The data has been uploaded to an Azure Blob storage account with the public access. <a href="#appendix-a">Appendix A</a> has instructions on getting the data and uploading the data to your own Azure Blob storage account.</td></tr>
 <tr><td>\tutorials\flightdelays\output</td><td>The output path for the Hive job. The default container is used for storing the output data.</td></tr>
 <tr><td>\tutorials\flightdelays\jobstatus</td><td>The Hive job status folder on the default container.</td></tr>
 </table>
@@ -82,7 +87,7 @@ The following table lists the files used in this tutorial:
 ##Create cluster and run Hive/Sqoop jobs
 
 
-##<a name="runjob"></a> Create cluster and run Hive/Sqoop jobs
+## <a name="runjob"></a> Create cluster and run Hive/Sqoop jobs
 
 
 Hadoop MapReduce is batch processing. The most cost-effective way to run a Hive job is to create a cluster for the job, 
@@ -107,21 +112,20 @@ For more information on creating an HDInsight cluster and running Hive jobs, see
 		$existingSqlDatabaseName = "<Azure SQL Database name>"
 		$localFolder = "E:\Tutorials\Downloads\" # A temp location for copying files. 
 		$azcopyPath = "C:\Program Files (x86)\Microsoft SDKs\Azure\AzCopy" # depends on the version, the folder can be different
-		
 		###########################################
 		# (Optional) configure the following variables
 		###########################################
+		
 		$namePrefix = $nameToken.ToLower() + (Get-Date -Format "MMdd")
 
 		$resourceGroupName = $namePrefix + "rg"
 		$location = "EAST US 2"
-		
 		$HDInsightClusterName = $namePrefix + "hdi"
 		$httpUserName = "admin"
 		$httpPassword = "<Enter the Password>"
+		
 		$defaultStorageAccountName = $namePrefix + "store"
 		$defaultBlobContainerName = $HDInsightClusterName # use the cluster name
-		
 		$existingSqlDatabaseTableName = "AvgDelays"
 		$sqlDatabaseConnectionString = "jdbc:sqlserver://$existingSqlDatabaseServerName.database.chinacloudapi.cn;user=$existingSqlDatabaseLogin@$existingSqlDatabaseServerName;password=$existingSqlDatabaseLogin;database=$existingSqlDatabaseName"
 		
@@ -228,7 +232,10 @@ For more information on creating an HDInsight cluster and running Hive jobs, see
 		#region - Connect to Azure subscription
 		Write-Host "`nConnecting to your Azure subscription ..." -ForegroundColor Green
 		Write-Host "`tCurrent system time: " (get-date) -ForegroundColor Yellow
-		if (-not (Get-AzureAccount)){ Add-AzureAccount -Environment AzureChinaCloud}
+		if (-not (Get-AzureAccount)){
+			Clear-AzureProfile
+			Import-AzurePublishSettingsFile -PublishSettingsFile path/to/<subscription name>-<date>-credentials.publishsettings
+		}
 		#endregion
 
 		#region - Validate user input, and provision HDInsight cluster if needed
@@ -415,7 +422,7 @@ For more information on creating an HDInsight cluster and running Hive jobs, see
 		###########################################
 		# Submit the Sqoop job
 		###########################################
-		$exportDir = "wasb://$defaultBlobContainerName@$defaultStorageAccountName.blob.core.chinacloudapi.cn/tutorials/flightdelays/output"
+		$exportDir = "wasbs://$defaultBlobContainerName@$defaultStorageAccountName.blob.core.chinacloudapi.cn/tutorials/flightdelays/output"
 		$sqoopDef = New-AzureRmHDInsightSqoopJobDefinition `
 						-Command "export --connect $sqlDatabaseConnectionString --table $sqlDatabaseTableName --export-dir $exportDir --fields-terminated-by \001 "
 		$sqoopJob = Start-AzureRmHDInsightJob `
@@ -569,7 +576,6 @@ Uploading the data file and the HiveQL script files (see [Appendix B](#appendix-
 
 		#EndRegion
 
-		
 		#Region - Connect to Azure subscription
 		Write-Host "`nConnecting to your Azure subscription ..." -ForegroundColor Green
 		try{Get-AzureRmContext}
@@ -583,7 +589,10 @@ Uploading the data file and the HiveQL script files (see [Appendix B](#appendix-
 
 
 
-		if (-not (Get-AzureAccount)){ Add-AzureAccount -Environment AzureChinaCloud}
+		if (-not (Get-AzureAccount)){
+			Clear-AzureProfile
+			Import-AzurePublishSettingsFile -PublishSettingsFile path/to/<subscription name>-<date>-credentials.publishsettings
+		}
 
 
 		if (-not (Get-AzureStorageAccount|Where-Object{$_.Label -eq $storageAccountName}))
@@ -651,7 +660,7 @@ Uploading the data file and the HiveQL script files (see [Appendix B](#appendix-
 
 If you choose to use a different method for uploading the files, please make sure the file path is tutorials/flightdelay/data. The syntax for accessing the files is:
 
-	wasb://<ContainerName>@<StorageAccountName>.blob.core.chinacloudapi.cn/tutorials/flightdelay/data
+	wasbs://<ContainerName>@<StorageAccountName>.blob.core.chinacloudapi.cn/tutorials/flightdelay/data
 
 The path tutorials/flightdelay/data is the virtual folder you created when you uploaded the files. Verify that there are 12 files, one for each month.
 
@@ -800,7 +809,7 @@ For a full list of the HiveQL commands, see [Hive Data Definition Language][hado
 			"ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' " +
 			"LINES TERMINATED BY '\n' " +
 			"STORED AS TEXTFILE " +
-			"LOCATION 'wasb://flightdelay@hditutorialdata.blob.core.windows.net/2013Data';"
+			"LOCATION 'wasbs://flightdelay@hditutorialdata.blob.core.windows.net/2013Data';"
 		
 		$hqlDropDelays = "DROP TABLE delays;"
 		
@@ -988,7 +997,8 @@ For a full list of the HiveQL commands, see [Hive Data Definition Language][hado
 		$azureAccounts= Get-AzureAccount
 		if (! $azureAccounts)
 		{
-		Add-AzureAccount -Environment AzureChinaCloud
+			Clear-AzureProfile
+			Import-AzurePublishSettingsFile -PublishSettingsFile path/to/<subscription name>-<date>-credentials.publishsettings
 		}
 		#endregion
 

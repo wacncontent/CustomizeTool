@@ -17,10 +17,10 @@
 #How to Log on to a Virtual Machine Running Linux #
 
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] [Resource Manager deployment model](/documentation/articles/virtual-machines-linux-quick-create-portal/).
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)] Learn how to [perform these steps using the Resource Manager deployment model](/documentation/articles/virtual-machines-linux-quick-create-portal/).
 
 
-> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the [Resource Manager deployment model](/documentation/articles/virtual-machines-linux-portal-create/).
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager model. Learn how to [perform these steps using the Resource Manager deployment model](/documentation/articles/virtual-machines-linux-quick-create-portal/).
 
 
 You'll need to install an SSH client on the computer you want to use to log on to the virtual machine. There are many SSH client programs that you can choose from. The following are possible choices:
@@ -38,16 +38,8 @@ This procedure shows you how to use the SSH client on OS X to access the virtual
 	![Obtain SSH details](./media/virtual-machines-linux-classic-log-on/portalsshdetails.png)
 
 2. Log on to the virtual machine using the account that you specified when the machine was created, along with the appropriate host name and port. For more details on how to create a virtual machine with user name and password, see [Create a Virtual Machine Running Linux](/documentation/articles/virtual-machines-linux-classic-createportal/).
-
 
 	![Log on to the virtual machine](./media/virtual-machines-linux-classic-log-on/sshport.png)
-
-
-
-
-
-	![Log on to the virtual machine](./media/virtual-machines-linux-classic-log-on/sshport.png)
-
 
 >[AZURE.NOTE] The VMAccess extension can help you reset the SSH key or password if you've forgotten it. If you've forgotten the user name, you can use the extension to create a new one with sudo authority. For instructions, see the [How to Reset a Password or SSH for Linux Virtual Machines].
 

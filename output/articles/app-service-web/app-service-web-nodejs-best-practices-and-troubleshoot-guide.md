@@ -9,12 +9,17 @@
 
 <tags
 	ms.service="app-service-web"
+	ms.workload="web"
+	ms.tgt_pltfrm="na"
+	ms.devlang="nodejs"
+	ms.topic="article"
 	ms.date="06/06/2016"
-	wacn.date=""/>
+	wacn.date=""
+	ms.author="ranjithr;wadeh"/>
     
 # Best practices and troubleshooting guide for node applications on Azure Web Apps
 
-[AZURE.INCLUDE [tabs](../includes/app-service-web-get-started-nav-tabs.md)]
+[AZURE.INCLUDE [tabs](../../includes/app-service-web-get-started-nav-tabs.md)]
 
 In this article, you will learn the best practices and troubleshooting steps for [node applications](/documentation/articles/app-service-web-nodejs-get-started/) running on Azure Webapps (with [iisnode](https://github.com/azure/iisnode)).
 
@@ -271,11 +276,11 @@ There is a setting within NODE.exe called NODE\_PENDING\_PIPE\_INSTANCES. By def
 
 ## More resources
 
-Follow these links to learn more about node.js applications on Azure Web App.
+Follow these links to learn more about node.js applications on Azure App Service.
 
-* [Get started with Node.js web apps in Azure](/documentation/articles/app-service-web-nodejs-get-started/)
-* [How to debug a Node.js web app in Azure](/documentation/articles/web-sites-nodejs-debug/)
+* [Get started with Node.js web apps in Azure App Service](/documentation/articles/app-service-web-nodejs-get-started/)
+* [How to debug a Node.js web app in Azure App Service](/documentation/articles/web-sites-nodejs-debug/)
 * [Using Node.js Modules with Azure applications](/documentation/articles/nodejs-use-node-modules-azure-apps/)
-* [Azure Web Apps: Node.js](https://blogs.msdn.microsoft.com/silverlining/2012/06/14/windows-azure-websites-node-js/)
+* [Azure App Service Web Apps: Node.js](https://blogs.msdn.microsoft.com/silverlining/2012/06/14/windows-azure-websites-node-js/)
 * [Node.js Developer Center](/documentation/articles/nodejs-use-node-modules-azure-apps/)
-* [Exploring the Super Secret Kudu Debug Console](https://azure.microsoft.com/documentation/videos/super-secret-kudu-debug-console-for-azure-web-sites/)
+* [Exploring the Super Secret Kudu Debug Console](https://azure.microsoft.com/documentation/articles/aog-web-app-diagnostics-kudu/)

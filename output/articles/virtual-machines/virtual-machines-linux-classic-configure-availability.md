@@ -10,14 +10,19 @@
 
 <tags
 	ms.service="virtual-machines-linux"
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-linux"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="07/12/2016"
-	wacn.date=""/>
+	wacn.date=""
+	ms.author="cynthn"/>
 
 # How to configure an availability set for Linux virtual machines in the classic deployment model
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]. You can also [configure availability sets](/documentation/articles/azure-cli-arm-commands/#azure-availset-commands-to-manage-your-availability-sets) in Resource Manager deployments.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]. You can also [configure availability sets](/documentation/articles/azure-cli-arm-commands/#azure-availset-commands-to-manage-your-availability-sets) in Resource Manager deployments.
 
-[AZURE.INCLUDE [virtual-machines-common-classic-configure-availability](../includes/virtual-machines-common-classic-configure-availability.md)]
+[AZURE.INCLUDE [virtual-machines-common-classic-configure-availability](../../includes/virtual-machines-common-classic-configure-availability.md)]
 
 
 ## Next steps 

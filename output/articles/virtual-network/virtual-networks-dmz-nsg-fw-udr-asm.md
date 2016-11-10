@@ -8,9 +8,14 @@
    editor=""/>
 
 <tags
-	ms.service="virtual-network"
-	ms.date="02/01/2016"
-	wacn.date=""/>
+   ms.service="virtual-network"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="02/01/2016"
+   wacn.date=""
+   ms.author="jonor;sivae"/>
 
 # Example 3 - Build a DMZ to Protect Networks with a Firewall, UDR, and NSG
 
@@ -72,11 +77,11 @@ If the destination didn't apply to any of the Null prefixes or the VNETLocal pre
 
 If there are two identical prefixes in the route table, the following is the order of preference based on the routes "source" attribute:
 
-1.	<blank> = A User Defined Route manually added to the table
+1.	"VirtualAppliance" = A User Defined Route manually added to the table
 2.	"VPNGateway" = A Dynamic Route (BGP when used with hybrid networks), added by a dynamic network protocol, these routes may change over time as the dynamic protocol automatically reflects changes in peered network
 3.	"Default" = The System Routes, the local VNet and the static entries as shown in the route table above.
 
->[AZURE.NOTE] There is a limitation using User Defined Routing (UDR) and ExpressRoute due to the complexity of dynamic routing used on the Azure Virtual Gateway. Subnets communicating to the Azure Gateway providing the ExpressRoute connection should not have UDR applied. Also, the Azure Gateway cannot be the NextHop device for other UDR bound subnets. The ability to fully integrate UDR and ExpressRoute will be enabled in a future Azure release.
+>[AZURE.NOTE] You can now use User Defined Routing (UDR) with ExpressRoute and VPN Gateways to force outbound and inbound cross-premise traffic to be routed to a network virtual appliance (NVA).
 
 #### Creating the local routes
 

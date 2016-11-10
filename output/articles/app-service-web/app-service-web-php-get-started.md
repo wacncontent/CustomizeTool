@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Create, configure, and deploy a PHP web app to Azure"
-	description="A tutorial that shows how to make a PHP (Laravel) web app run in Azure Web App. Learn how to configure Azure to meet the requirements of the PHP framework you choose."
+	description="A tutorial that shows how to make a PHP (Laravel) web app run in Azure App Service. Learn how to configure Azure App Service to meet the requirements of the PHP framework you choose."
 	services="app-service\web"
 	documentationCenter="php"
 	authors="cephalin"
@@ -10,16 +10,21 @@
 
 <tags
 	ms.service="app-service-web"
+	ms.workload="web"
+	ms.tgt_pltfrm="na"
+	ms.devlang="PHP"
+	ms.topic="article"
 	ms.date="06/03/2016"
-	wacn.date=""/>
+	wacn.date="" 
+	ms.author="cephalin"/>
 
 # Create, configure, and deploy a PHP web app to Azure
 
-[AZURE.INCLUDE [tabs](../includes/app-service-web-get-started-nav-tabs.md)]
+[AZURE.INCLUDE [tabs](../../includes/app-service-web-get-started-nav-tabs.md)]
 
-This tutorial shows you how to create, configure, and deploy a PHP web app for Azure, and how to configure Azure to meet the
+This tutorial shows you how to create, configure, and deploy a PHP web app for Azure, and how to configure Azure App Service to meet the
 requirements of your PHP web app. By the end of the tutorial, you will have a working [Laravel](https://www.laravel.com/) web app running 
-live in [Azure Web App](/documentation/services/web-sites/).
+live in [Azure App Service](/documentation/articles/app-service-value-prop-what-is/).
 
 As a PHP developer, you can bring your favorite PHP framework to Azure. This tutorial uses Laravel simply as a concrete 
 app example. You will learn: 
@@ -32,6 +37,8 @@ app example. You will learn:
 
 You can apply what you learn here to other PHP web apps that you deploy to Azure.
 
+>[AZURE.INCLUDE [app-service-linux](../../includes/app-service-linux.md)] 
+
 ## Prerequisites
 
 - Install [PHP 5.6.x](http://php.net/downloads.php) (PHP 7 support is beta)
@@ -42,7 +49,7 @@ You can apply what you learn here to other PHP web apps that you deploy to Azure
 [sign up for a trial](/pricing/1rmb-trial/?WT.mc_id=A261C142F) or 
 [activate your Visual Studio subscriber benefits](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F).
 
->[AZURE.NOTE] See a web app in action. [Try Azure Web App](https://tryappservice.azure.com/) immediately and create a short-lived starter app--no credit 
+>[AZURE.NOTE] See a web app in action. [Try App Service](https://tryappservice.azure.com/) immediately and create a short-lived starter app--no credit 
 card required, no commitments.
 
 ## Create a PHP (Laravel) app on your dev machine
@@ -83,11 +90,12 @@ So far, just the regular Laravel workflow, and you're not here to <a href="https
 
 >[AZURE.NOTE] "Wait! What if I want to deploy with FTP?" There's an [FTP tutorial](/documentation/articles/web-sites-php-mysql-deploy-use-ftp/) for your needs. 
 
-With the Azure CLI, you can create an web app in Azure and set it up for Git deployment with a single line
+With the Azure CLI, you can create an web app in Azure App Service and set it up for Git deployment with a single line
 of command. Let's do this.
 
-3. Log in to Azure like so:
+1. Change into ASM mode and log in to Azure:
 
+        azure config mode asm
         azure login
     
     Follow the help message to continue the login process.
@@ -101,13 +109,12 @@ of command. Let's do this.
     ![Create the Azure resource  for your PHP (Laravel) app in Azure](./media/app-service-web-php-get-started/create-site-cli.png)
     
     >[AZURE.NOTE] If you've never set up deployment credentials for your Azure subscription, you'll be prompted to create them. These credentials, not your
-    Azure account credentials, are used by Azure only for Git deployments and FTP logins. 
+    Azure account credentials, are used by App Service only for Git deployments and FTP logins. 
     
     This command creates a new Git repository on the current directory (with `git init`) 
     and connects it to the repository in Azure as a Git remote (with `git remote add`).
 
-<a name="configure"/>
-## Configure the Azure web app
+## <a name="configure"></a> Configure the Azure web app
 
 For your Laravel app to work in Azure, you need to pay attention to several things. You'll do this similar exercise
 for your PHP framework of choice.
@@ -157,7 +164,7 @@ Let's configure these tasks sequentially.
     from `.gitignore`, but we've already established that committing this file into source control is not recommended. Nevertheless, 
     you still need a way to specify these environment variables in Azure. 
     >
-    >The good news is that app settings in Azure supports [getenv()](http://php.net/manual/en/function.getenv.php) 
+    >The good news is that app settings in Azure App Service supports [getenv()](http://php.net/manual/en/function.getenv.php) 
     in PHP. So while you can use FTP or other means to manually upload a `.env` file into Azure, you can just specify the variables
     you want as Azure app settings without a `.env` in Azure, like you just did. Furthermore, if a variable is in both a `.env` file 
     and in Azure app settings, the Azure app setting wins.     
@@ -239,16 +246,14 @@ Here are some the errors you might run into when following this tutorial:
 - [Web app shows "Whoops, looks like something went wrong."](#whoops)
 - [Web app shows "No supported encryptor found."](#encryptor)
 
-<a name="clierror"></a>
-### Azure CLI shows "'site' is not an azure command"
+### <a name="clierror"></a> Azure CLI shows "'site' is not an azure command"
 
 When running `azure site *` in the command-line terminal, you see the error `error:   'site' is not an azure command. See 'azure help'.` 
 
 This is usually a result of switching in to "ARM" (Azure Resource Manager) mode. To resolve this, switch back into "ASM" (Azure Service
 Management) mode by running `azure config mode asm`.
 
-<a name="http403"></a>
-### Web app shows HTTP 403 error
+### <a name="http403"></a> Web app shows HTTP 403 error
 
 You have deployed your web app to Azure successfully, but when you browse to your Azure web app, you get an `HTTP 403` or 
 `You do not have permission to view this directory or page.`
@@ -257,8 +262,7 @@ This is most likely because the web app can't find the entry point to the Larave
 root virtual directory to point to `site\wwwroot\public`, where Laravel's `index.php` is (see 
 [Configure the Azure web app](#configure)).
 
-<a name="whoops"></a>
-### Web app shows "Whoops, looks like something went wrong."
+### <a name="whoops"></a> Web app shows "Whoops, looks like something went wrong."
 
 You have deployed your web app to Azure successfully, but when you browse to your Azure web app, you get the cryptic message 
 `Whoops, looks like something went wrong.`
@@ -266,8 +270,7 @@ You have deployed your web app to Azure successfully, but when you browse to you
 To get a more descriptive error, enable Laravel debugging by setting `APP_DEBUG` environment variable to `true` 
 (see [Configure the Azure web app](#configure)).
 
-<a name="encryptor"></a>
-### Web app shows "No supported encryptor found."
+### <a name="encryptor"></a> Web app shows "No supported encryptor found."
 
 You have deployed your web app to Azure successfully, but when you browse to your Azure web app, you get the error message 
 below:
@@ -286,6 +289,6 @@ check out more helpful links for PHP in Azure below:
 
 - [PHP Developer Center](/develop/php/).
 - [Create a web app from the Azure Marketplace](/documentation/articles/app-service-web-create-web-app-from-marketplace/)
-- [Configure PHP in Azure Web Apps](/documentation/articles/web-sites-php-configure/)
-- [Convert WordPress to Multisite in Azure Web App](/documentation/articles/web-sites-php-convert-wordpress-multisite/)
-- [Enterprise-class WordPress on Azure Web App](/documentation/articles/web-sites-php-enterprise-wordpress/)
+- [Configure PHP in Azure App Service Web Apps](/documentation/articles/web-sites-php-configure/)
+- [Convert WordPress to Multisite in Azure App Service](/documentation/articles/web-sites-php-convert-wordpress-multisite/)
+- [Enterprise-class WordPress on Azure App Service](/documentation/articles/web-sites-php-enterprise-wordpress/)

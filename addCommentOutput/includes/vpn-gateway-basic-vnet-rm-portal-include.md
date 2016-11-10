@@ -1,15 +1,6 @@
-
-To create a VNet by using the Azure portal, follow the steps below. Note that the screenshots are provided as examples. Be sure to replace the values with your own. For more information about working with virtual networks, see the [Virtual Network Overview](/documentation/articles/virtual-networks-overview/).
+To create a VNet by using the Azure portal  Preview , follow the steps below. Note that the screenshots are provided as examples. Be sure to replace the values with your own. For more information about working with virtual networks, see the [Virtual Network Overview](/documentation/articles/virtual-networks-overview/).
 
-1. From a browser, navigate to the [Azure portal](http://portal.azure.cn) and, if necessary, sign in with your Azure account.
-
-
-<!-- Ibiza Portal: tested -->
-
-To create a VNet by using the Azure portal Preview, follow the steps below. Note that the screenshots are provided as examples. Be sure to replace the values with your own. For more information about working with virtual networks, see the [Virtual Network Overview](/documentation/articles/virtual-networks-overview/).
-
-1. From a browser, navigate to the [Azure portal Preview](https://portal.azure.cn) and, if necessary, sign in with your Azure account.
-
+1. From a browser, navigate to the [Azure  portal](http://portal.azure.cn)  portal Preview](http://portal.azure.cn)  and, if necessary, sign in with your Azure account.
 
 2. Click **New** **>** **Networking** **>** **Virtual Network**.
 

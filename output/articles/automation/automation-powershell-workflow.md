@@ -6,10 +6,15 @@
    authors="mgoedtel"
    manager="jwhit"
    editor="tysonn" />
-<tags
-	ms.service="automation"
-	ms.date="06/24/2016"
-	wacn.date=""/>
+<tags 
+   ms.service="automation"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="09/12/2016"
+   wacn.date=""
+   ms.author="bwren" />
 
 # Learning Windows PowerShell Workflow
 

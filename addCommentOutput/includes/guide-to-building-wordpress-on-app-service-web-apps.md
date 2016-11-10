@@ -1,20 +1,21 @@
 
-### WordPress and Azure
+### WordPress and Azure App Service
+   
 - [What is WordPress? ](https://wordpress.org/)
 - [How to setup enterprise-class WordPress web app](/documentation/articles/web-sites-php-enterprise-wordpress/)
 
 - [How to purchase ClearDB Shared MySQL hosting for your WordPress app](http://blog.syntaxc4.net/post/2012/12/03/provisioning-a-mysql-database-from-the-windows-azure-store.aspx)
 - [How to Purchase ClearDB dedicated MySQL cluster for your WordPress app ](https://azure.microsoft.com/blog/announcing-new-mysql-premium-tiers-from-cleardb/)
-- [Deploy a WordPress web app backed with MySQL replication cluster](https://azure.microsoft.com/documentation/templates/wordpress-mysql-replication/)
-- [Build your own Master-Master MySQL Cluster using Percona Cluster](https://azure.microsoft.com/documentation/templates/mysql-ha-pxc/) and [learn more on how to manage the cluster](https://github.com/fanjeffrey/axiom.articles/tree/master/pxc)
-- [Deploy WordPress backed by MySQL replication cluster with master-slave configuration](https://azure.microsoft.com/documentation/templates/mysql-replication/)
+- [Deploy a WordPress web app backed with MySQL replication cluster](https://github.com/Azure/azure-quickstart-templates/tree/master/wordpress-mysql-replication/)
+- [Build your own Master-Master MySQL Cluster using Percona Cluster](https://github.com/Azure/azure-quickstart-templates/tree/master/mysql-ha-pxc/) and [learn more on how to manage the cluster](https://github.com/fanjeffrey/axiom.articles/tree/master/pxc)
+- [Deploy WordPress backed by MySQL replication cluster with master-slave configuration](https://github.com/Azure/azure-quickstart-templates/tree/master/mysql-replication/)
 - [Deploy a WordPress app backed by SQL Azure DB managed by ProjectNami](https://azure.microsoft.com/marketplace/partners/projectnami/projectnami/)
 
 - [How to build a WordPress Multisite web app](/documentation/articles/web-sites-php-convert-wordpress-multisite/)
 
 
-###Porting your Application to Azure 
-- [How to Plan your migration to Azure Web App](https://azure.microsoft.com/blog/how-to-plan-your-migration-to-azure-websites/)
+###Porting your Application to App Service 
+- [How to Plan your migration to Azure App Service](https://azure.microsoft.com/blog/how-to-plan-your-migration-to-azure-websites/)
 - [How to migrate your existin WordPress site to Azure web apps](https://sunithamk.wordpress.com/2013/11/06/migrate-your-existing-wordpress-site-to-windows-azure/)
 - [How to migrate your Web App from Linux to Azure web apps](https://www.movemetothecloud.net/LinuxMigration)
 - [Checklist for going live on Azure Web Apps](https://sunithamk.wordpress.com/2015/10/27/azure-web-apps-basic-operations-checklist/)

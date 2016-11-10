@@ -12,7 +12,7 @@ Take a look at these videos for more about VM scale sets:
 
 VM scale sets can be defined and deployed using JSON templates and [REST APIs](https://msdn.microsoft.com/zh-cn/library/mt589023.aspx) just like individual Azure Resource Manager VMs. Therefore, any standard Azure Resource Manager deployment methods can be used. For more information about templates, see [Authoring Azure Resource Manager templates](/documentation/articles/resource-group-authoring-templates/).
 
-A set of example templates for VM scale sets can be found in the Azure Quickstart teamplates GitHub repository here:
+A set of example templates for VM scale sets can be found in the Azure Quickstart templates GitHub repository here:
 
 [https://github.com/Azure/azure-quickstart-templates](https://github.com/Azure/azure-quickstart-templates) - look for templates with _vmss_ in the title.
 
@@ -26,7 +26,7 @@ To increase or decrease the number of virtual machines in a VM scale set, simply
 
 If you are redeploying a template to change the capacity, you could define a much smaller template which only includes the SKU and the updated capacity. An example of this is shown here: [https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-vmss-scale-in-or-out/azuredeploy.json](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-vmss-linux-nat/azuredeploy.json).
 
-To walk through the steps that create a scale set that is automatically scaled, see [Automatically Scale Machines in a Virtual Machine Scale Set](/documentation/articles/virtual-machines-windows-ps-vmss-create/)
+To walk through the steps that create a scale set that is automatically scaled, see [Automatically Scale Machines in a Virtual Machine Scale Set](/documentation/articles/virtual-machines-windows-vmss-powershell-creating/)
 
 ## Monitoring your VM scale set
 

@@ -4,13 +4,18 @@
 	services="hdinsight" 
 	documentationCenter="" 
 	authors="nitinme" 
-	manager="paulettm" 
+	manager="jhubbard" 
 	editor="cgronlun"/>
 
-<tags
-	ms.service="hdinsight"
-	ms.date="05/17/2016"
-	wacn.date=""/>
+<tags 
+	ms.service="hdinsight" 
+	ms.workload="big-data" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="05/17/2016" 
+	wacn.date="" 
+	ms.author="nitinme"/>
 
 # Install and use Solr on HDInsight Hadoop clusters
 
@@ -37,7 +42,7 @@ The sample script used in this topic creates a Windows-based Solr cluster with a
 
 ## Install Solr using portal
 
-[AZURE.INCLUDE [hdinsight-azure-portal](../includes/hdinsight-azure-portal.md)]
+[AZURE.INCLUDE [hdinsight-azure-portal](../../includes/hdinsight-azure-portal.md)]
 
 * [Install Solr on HDInsight clusters](/documentation/articles/hdinsight-hadoop-solr-install-v1/)
 

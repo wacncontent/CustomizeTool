@@ -3,21 +3,26 @@
 	description="How to setup WinRM access for use with an Azure Resource Manager virtual machine"
 	services="virtual-machines-windows"
 	documentationCenter=""
-	authors="singhkay"
-	manager="drewm"
+	authors="singhkays"
+	manager="timlt"
 	editor=""
 	tags="azure-resource-manager"/>
 
 <tags
 	ms.service="virtual-machines-windows"
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-windows"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="06/16/2016"
-	wacn.date=""/>
+	wacn.date=""
+	ms.author="singhkay"/>
 
 # Setting up WinRM access for Virtual Machines in Azure Resource Manager
 
 ## WinRM in Azure Service Management vs Azure Resource Manager
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)] classic deployment model
 
 * For an overview of the Azure Resource Manager, please see this [article](/documentation/articles/resource-group-overview/)
 * For differences between Azure Service Management and Azure Resource Manager, please see this [article](/documentation/articles/resource-manager-deployment-model/)
@@ -137,7 +142,7 @@ While creating a VM through templates, the certificate gets referenced in the se
           }
         },
 
-A sample template for the above can be found here at [201-vm-winrm-keyvault-windows](https://azure.microsoft.com/documentation/templates/201-vm-winrm-keyvault-windows)
+A sample template for the above can be found here at [201-vm-winrm-keyvault-windows](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vm-winrm-keyvault-windows)
 
 Source code for this template can be found on [GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vm-winrm-keyvault-windows)
 

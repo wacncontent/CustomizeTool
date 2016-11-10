@@ -5,13 +5,18 @@
 	services="hdinsight"
 	documentationCenter="NA"
 	authors="mumian"
-	manager="paulettm"
+	manager="jhubbard"
 	editor="cgronlun"/>
 
 <tags
 	ms.service="hdinsight"
+	ms.devlang="NA"
+	ms.topic="article"
+	ms.tgt_pltfrm="NA"
+	ms.workload="big-data"
 	ms.date="07/14/2016"
-	wacn.date=""/>
+	wacn.date=""
+	ms.author="rashimg;jgao"/>
 
 # Index of Hadoop in HDInsight troubleshooting articles
 

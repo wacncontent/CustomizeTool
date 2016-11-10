@@ -1,7 +1,6 @@
-|  | **Classic Deployment**  |  **Resource Manager Deployment**  |
-|----------------------------------------|--------------|------------------------|
-| **Classic Management Portal** | [Article](/documentation/articles/vpn-gateway-point-to-site-create/) | Not Supported |
-| **Azure Portal** |  Not Supported  |  Not Supported  |
-| **PowerShell** | Supported | [Article](/documentation/articles/vpn-gateway-howto-point-to-site-rm-ps/)|
+|**Deployment Model/Method**|**Azure Portal**| **Classic Management Portal** | **PowerShell**|
+|-------------------------------------|-----------------|---------------------|---------------|
+|**Classic** |  [Article](/documentation/articles/vpn-gateway-howto-point-to-site-classic-azure-portal/)| [Article](/documentation/articles/point-to-site-create/)  | Supported |
+|**Resource Manager** |Not Supported| Not Supported   | [Article](/documentation/articles/vpn-gateway-howto-point-to-site-rm-ps/)  |
 
 

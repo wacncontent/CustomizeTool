@@ -8,9 +8,14 @@
    editor="monicar"/>
 
 <tags
-	ms.service="virtual-machines"
-	ms.date="07/12/2016"
-	wacn.date=""/>
+   ms.service="virtual-machines"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="vm-windows-sql-server"
+   ms.workload="infrastructure-services"
+   ms.date="07/12/2016"
+   wacn.date=""
+   ms.author="MikeRayMSFT"/>
 
 # Configure an internal load balancer for an AlwaysOn availability group in Azure
 
@@ -248,7 +253,7 @@ To test the connection:
 
 1. Use **sqlcmd** utility to test the connection. For example, the following script establishes a **sqlcmd** connection to the primary replica through the listener with Windows authentication:
 
-        sqlmd -S <listenerName> -E
+        sqlcmd -S <listenerName> -E
 
 The SQLCMD connection automatically connect to whichever instance of SQL Server hosts the primary replica. 
 

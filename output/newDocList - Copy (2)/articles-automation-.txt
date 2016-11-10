@@ -1,8 +1,5 @@
-new docs: 5, word count: {word_count_TODO}
-articles/automation/automation-dsc-getting-started.md
-articles/automation/automation-integration-modules.md
-articles/automation/automation-migrate-account-subscription.md
-articles/automation/automation-scenario-start-stop-vm-wjson-tags.md
-articles/automation/automation-troubleshooting-hrw-runbook-terminates-suspended.md
+new docs: 2, word count: {word_count_TODO}
+articles/automation/automation-scenario-remove-resourcegroup.md
+articles/automation/automation-solution-vm-management.md
 
 new includes: 0

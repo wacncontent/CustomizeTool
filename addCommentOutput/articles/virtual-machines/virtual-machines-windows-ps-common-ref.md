@@ -9,15 +9,20 @@
    tags="azure-resource-manager"/>
    
 <tags
-	ms.service="virtual-machines-windows"
-	ms.date="06/07/2016"
-	wacn.date=""/>
+   ms.service="virtual-machines-windows"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="vm-windows"
+   ms.workload="infrastructure-services"
+   ms.date="06/07/2016"
+   wacn.date=""
+   ms.author="davidmu" />
 
 # Common PowerShell commands for creating and managing VMs
 
 This article covers some of the Azure PowerShell commands that you can use to create and manage virtual machines in your Azure subscription.  For more detailed help with specific command line switches and options, you can use **Get-Help** *command*.
 
-## Create resources using Azure Powershell
+## Create resources using Azure PowerShell
 
 See [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure/) for information about how to install the latest version of Azure PowerShell, select the subscription that you want to use, and sign in to your Azure account.
 
@@ -27,8 +32,8 @@ Create a VM configuration | $vm = [New-AzureRmVMConfig](https://msdn.microsoft.c
 Add configuration settings | $vm = [Set-AzureRmVMOperatingSystem](https://msdn.microsoft.com/zh-cn/library/mt603843.aspx) -VM $vm -Windows -ComputerName "computer_name" -Credential $cred -ProvisionVMAgent -EnableAutoUpdate<BR></BR><BR></BR>Operating system settings including [credentials](https://technet.microsoft.com/zh-cn/library/hh849815.aspx) are added to the configuration object that you previously created using New-AzureRmVMConfig.
 Add a network interface | $vm = [Add-AzureRmVMNetworkInterface](https://msdn.microsoft.com/zh-cn/library/mt619351.aspx) -VM $vm -Id $nic.Id<BR></BR><BR></BR>A VM must have a [network interface](/documentation/articles/virtual-machines-windows-ps-create/) to communicate in a virtual network. You can also use [Get-AzureRmNetworkInterface](https://msdn.microsoft.com/zh-cn/library/mt619434.aspx) to retrieve an existing network interface object.
 Specify a platform image | $vm = [Set-AzureRmVMSourceImage](https://msdn.microsoft.com/zh-cn/library/mt619344.aspx) -VM $vm -PublisherName "publisher_name" -Offer "publisher_offer" -Skus "product_sku" -Version "latest"<BR></BR><BR></BR>[Image information](/documentation/articles/virtual-machines-windows-cli-ps-findimage/) is added to the configuration object that you previously created using New-AzureRmVMConfig. The object returned from this command is only used when you set the OS disk to use a platform image.
-Set OS disk to use a platform image | $vm = [Set-AzureRmVMOSDisk](https://msdn.microsoft.com/zh-cn/library/mt603746.aspx) -VM $vm -Name "disk_name" -VhdUri "http://mystore1.blob.core.chinacloudapi.cn/vhds/disk_name.vhd" -CreateOption fromImage<BR></BR><BR></BR>The name of the operating system disk and where it will be located in [storage](/documentation/articles/storage-powershell-guide-full/) is added to the configuration object that you previously created.
-Set OS disk to use a generalized image | $vm = Set-AzureRmVMOSDisk -VM $vm -Name "disk_name" -SourceImageUri "https://mystore1.blob.core.chinacloudapi.cn/system/Microsoft.Compute/Images/myimages/myprefix-osDisk.{guid}.vhd" -VhdUri "https://mystore1.blob.core.chinacloudapi.cn/vhds/disk_name.vhd" -CreateOption fromImage -Windows<BR></BR><BR></BR>The name of the operating system disk, the location of the source image, and where the disk will be located in [storage](/documentation/articles/storage-powershell-guide-full/) is added to the configuration object that you previously created.
+Set OS disk to use a platform image | $vm = [Set-AzureRmVMOSDisk](https://msdn.microsoft.com/zh-cn/library/mt603746.aspx) -VM $vm -Name "disk_name" -VhdUri "http://mystore1.blob.core.chinacloudapi.cn/vhds/disk_name.vhd" -CreateOption FromImage<BR></BR><BR></BR>The name of the operating system disk and where it will be located in [storage](/documentation/articles/storage-powershell-guide-full/) is added to the configuration object that you previously created.
+Set OS disk to use a generalized image | $vm = Set-AzureRmVMOSDisk -VM $vm -Name "disk_name" -SourceImageUri "https://mystore1.blob.core.chinacloudapi.cn/system/Microsoft.Compute/Images/myimages/myprefix-osDisk.{guid}.vhd" -VhdUri "https://mystore1.blob.core.chinacloudapi.cn/vhds/disk_name.vhd" -CreateOption FromImage -Windows<BR></BR><BR></BR>The name of the operating system disk, the location of the source image, and where the disk will be located in [storage](/documentation/articles/storage-powershell-guide-full/) is added to the configuration object that you previously created.
 Set OS disk to use a specialized image | $vm = Set-AzureRmVMOSDisk -VM $vm -Name "name_of_disk" -VhdUri "http://mystore1.blob.core.chinacloudapi.cn/vhds/" -CreateOption Attach  -Windows
 Create a VM |  [New-AzureRmVM]()  [New-AzureRmVM](https://msdn.microsoft.com/zh-cn/library/mt603754.aspx)  -ResourceGroupName "resource_group_name" -Location "location_name" -VM $vm<BR></BR><BR></BR>All resources are created in a [resource group](/documentation/articles/powershell-azure-resource-manager/). The VM must be created in the same [location](https://msdn.microsoft.com/zh-cn/library/azure/dn495177.aspx) as the resource group. Before you run this command, run New-AzureRmVMConfig, Set-AzureRmVMOperatingSystem, Set-AzureRmVMSourceImage, Add-AzureRmVMNetworkInterface, and Set-AzureRmVMOSDisk.
 List VMs in a subscription| [Get-AzureRmVM](https://msdn.microsoft.com/zh-cn/library/mt603718.aspx)

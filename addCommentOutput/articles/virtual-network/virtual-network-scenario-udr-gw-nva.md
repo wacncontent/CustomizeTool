@@ -3,13 +3,18 @@
    description="Learn how to deploy virtual appliances and UDR to create a multi-tier application environment in Azure"
    services="virtual-network"
    documentationCenter="na"
-   authors="telmosampaio"
-   manager="christb"
+   authors="jimdial"
+   manager="carmonm"
    editor="tysonn" />
-<tags
-	ms.service="virtual-network"
-	ms.date="05/05/2016"
-	wacn.date=""/>
+<tags 
+   ms.service="virtual-network"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="05/05/2016"
+   wacn.date=""
+   ms.author="jdial" />
 
 # Virtual appliance scenario
 
@@ -35,7 +40,7 @@ The solution below uses firewall virtual appliances to implement a DMZ/protected
 You can deploy the environment explained above in Azure using different features available today, as follows.
 
 - **Virtual network (VNet)**. An Azure VNet acts in similar fashion to an on-premises network, and can be segmented into one or more subnets to provide traffic isolation, and separation of concerns.
-- **Virtual appliance**. Several partners provide virtual appliances in the Azure  Marketplace  gallery  that can be used for the three firewalls described above.
+- **Virtual appliance**. Several partners provide virtual appliances in the Azure Marketplace that can be used for the three firewalls described above. 
 - **User Defined Routes (UDR)**. Route tables can contain UDRs used by Azure networking to control the flow of packets within a VNet. These route tables can be applied to subnets. One of the newest features in Azure is the ability to apply a route table to the GatewaySubnet, providing the ability to forward all traffic coming into the Azure VNet from a hybrid connection to a virtual appliance.
 - **IP Forwarding**. By default, the Azure networking engine forward packets to virtual network interface cards (NICs) only if the packet destination IP address matches the NIC IP address. Therefore, if a UDR defines that a packet must be sent to a given virtual appliance, the Azure networking engine would drop that packet. To ensure the packet is delivered to a VM (in this case a virtual appliance) that is not the actual destination for the packet, you need to enable IP Forwarding for the virtual appliance.
 - **Network Security Groups (NSGs)**. The example below does not make use of NSGs, but you could use NSGs applied to the subnets and/or NICs in this solution to further filter the traffic in and out of those subnets and NICs.

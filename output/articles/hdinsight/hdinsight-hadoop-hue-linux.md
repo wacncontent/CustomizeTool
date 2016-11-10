@@ -4,13 +4,18 @@
 	services="hdinsight"
 	documentationCenter=""
 	authors="nitinme"
-	manager="paulettm"
+	manager="jhubbard"
 	editor="cgronlun"/>
 
-<tags
-	ms.service="hdinsight"
-	ms.date="05/17/2016"
-	wacn.date=""/>
+<tags 
+	ms.service="hdinsight" 
+	ms.workload="big-data" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="09/13/2016" 
+	wacn.date="" 
+	ms.author="nitinme"/>
 
 # Install and use Hue on HDInsight Hadoop clusters
 
@@ -65,15 +70,24 @@ SSH Tunneling is the only way to access Hue on the cluster once it is running. T
 
 1. Use the information in [Use SSH Tunneling to access Ambari web UI, ResourceManager, JobHistory, NameNode, Oozie, and other web UI's](/documentation/articles/hdinsight-linux-ambari-ssh-tunnel/) to create an SSH tunnel from your client system to the HDInsight cluster, and then configure your Web browser to use the SSH tunnel as a proxy.
 
-2. Once you have created an SSH tunnel and configured your browser to proxy traffic through it, you must find the host name of the head node. Use the following steps to get this information from Ambari:
+2. Once you have created an SSH tunnel and configured your browser to proxy traffic through it, you must find the host name of the primary head node. You can do this by connecting to the cluster using SSH on port 22. For example, `ssh USERNAME@CLUSTERNAME-ssh.azurehdinsight.cn` where __USERNAME__ is your SSH user name and __CLUSTERNAME__ is the name of your cluster.
 
-    1. In a browser, go to https://CLUSTERNAME.azurehdinsight.cn. When prompted, use the Admin username and password to authenticate to the site.
-    
-    2. From the menu at the top of the page, select __Hosts__.
-    
-    3. Select the entry that begins with __hn0__. When the page opens, the host name will be displayed at the top. The format of the host name is __hn0-CLUSTERNAME.randomcharacters.cx.internal.chinacloudapp.cn__. This is the host name you must use when connecting to Hue.
+    For more information on using SSH, see the following documents:
 
-2. Once you have created an SSH tunnel and configured your browser to proxy traffic through it, use the browser to open the Hue portal at http://HOSTNAME:8888. Replace HOSTNAME with the name you obtained from Ambari in the previous step.
+    * [Use SSH with Linux-based HDInsight from a Linux, Unix, or Mac OS X client](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix/)
+    * [Use SSH with Linux-based HDInsight from a Windows client](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows/)
+
+3. Once connected, use the following command to obtain the fully qualified domain name of the primary headnode:
+
+        hostname -f
+
+    This will return a name similar to the following:
+
+        hn0-myhdi-nfebtpfdv1nubcidphpap2eq2b.ex.internal.chinacloudapp.cn
+    
+    This is the hostname of the primary headnode where the Hue website is located.
+
+2. Use the browser to open the Hue portal at http://HOSTNAME:8888. Replace HOSTNAME with the name you obtained in the previous step.
 
     > [AZURE.NOTE] When you log in for the first time, you will be prompted to create an account to log into the Hue portal. The credentials you specify here will be limited to the portal and are not related to the admin or SSH user credentials you specified while provision the cluster.
 
@@ -101,11 +115,11 @@ SSH Tunneling is the only way to access Hue on the cluster once it is running. T
 
 3. Right-click on a file or folder to see the available operations. Use the **Upload** button in the right corner to upload files to the current directory. Use the **New** button to create new files or directories.
 
-> [AZURE.NOTE] The Hue file browser can only show the contents of the default container associated with the HDInsight cluster. Any additional storage accounts/containers that you might have associated with the cluster will not be accessible using the file browser. However, the additional containers associated with the cluster will always be accessible for the Hive jobs. For example, if you enter the command `dfs -ls wasb://newcontainer@mystore.blob.core.chinacloudapi.cn` in the Hive editor, you can see the contents of additional containers as well. In this command, **newcontainer** is not the default container associated with a cluster.
+> [AZURE.NOTE] The Hue file browser can only show the contents of the default container associated with the HDInsight cluster. Any additional storage accounts/containers that you might have associated with the cluster will not be accessible using the file browser. However, the additional containers associated with the cluster will always be accessible for the Hive jobs. For example, if you enter the command `dfs -ls wasbs://newcontainer@mystore.blob.core.chinacloudapi.cn` in the Hive editor, you can see the contents of additional containers as well. In this command, **newcontainer** is not the default container associated with a cluster.
 
 ## Important considerations
 
-1. The script used to install Hue installs it only on Head node 0 of the cluster.
+1. The script used to install Hue installs it only on the primary headnode of the cluster.
 
 2. During installation, multiple Hadoop services (HDFS, YARN, MR2, Oozie) are restarted for updating the configuration. After the script finishes installing Hue, it might take some time for other Hadoop services to start up. This might affect Hue's performance initially. Once all services start up, Hue will be fully functional.
 
@@ -113,13 +127,13 @@ SSH Tunneling is the only way to access Hue on the cluster once it is running. T
 
 		set hive.execution.engine=mr;
 
-4.	With Linux clusters, you can have a scenario where your services are running on head node 0 while the Resource Manager could be running on head node 1. Such a scenario might result in errors (shown below) when using Hue to view details of RUNNING jobs on the cluster. However, you can view the job details when the job has completed.
+4.	With Linux clusters, you can have a scenario where your services are running on the primary headnode while the Resource Manager could be running on the secondary. Such a scenario might result in errors (shown below) when using Hue to view details of RUNNING jobs on the cluster. However, you can view the job details when the job has completed.
 
 	![Hue portal error](./media/hdinsight-hadoop-hue-linux/HDI.Hue.Portal.Error.png "Hue portal error")
 
-	This is due to a known issue. As a workaround, modify Ambari so that the active Resource Manager also runs on head node 0.
+	This is due to a known issue. As a workaround, modify Ambari so that the active Resource Manager also runs on the primary headnode.
 
-5.	Hue understands WebHDFS while HDInsight clusters use Azure Storage using `wasb://`. So, the custom script used with script action installs WebWasb, which is a WebHDFS-compatible service for talking to WASB. So, even though the Hue portal says HDFS in places (like when you move your mouse over the **File Browser**), it should be interpreted as WASB.
+5.	Hue understands WebHDFS while HDInsight clusters use Azure Storage using `wasbs://`. So, the custom script used with script action installs WebWasb, which is a WebHDFS-compatible service for talking to WASB. So, even though the Hue portal says HDFS in places (like when you move your mouse over the **File Browser**), it should be interpreted as WASB.
 
 
 ## Next steps

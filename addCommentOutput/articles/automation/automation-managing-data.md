@@ -6,10 +6,15 @@
    authors="SnehaGunda"
    manager="stevenka"
    editor="tysonn" />
-<tags
-	ms.service="automation"
-	ms.date="05/02/2016"
-	wacn.date=""/>
+<tags 
+   ms.service="automation"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="05/02/2016"
+   wacn.date=""
+   ms.author="bwren;sngun" />
 
 # Managing Azure Automation data
 
@@ -17,7 +22,7 @@ This article contains multiple topics for managing an Azure Automation environme
 
 ## Data retention
 
-When you delete a resource in Azure Automation, it is retained for 90 days for auditing purposes before being removed permanently.  You can't see or use the resource during this time.  This policy also applies to resources that belong to an automation account that is deleted.
+When you delete a resource in Azure Automation, it is retained for 90 days for auditing purposes before being removed permanently. You can't see or use the resource during this time. This policy also applies to resources that belong to an automation account that is deleted.
 
 Azure Automation automatically deletes and permanently removes jobs older than 90 days.
 
@@ -82,7 +87,7 @@ The following table shows the available primary and secondary region pairings.
 |China East 2          |China North
 |West Europe        |China North
 |South China East    |China East
-|Japan East         |China East
+|China East         |China East
 
 
 In the unlikely event that a primary region data is lost,  Microsoft  Azure  attempts to recover it. If the primary data cannot be recovered, then geo-failover is performed and the affected customers will be notified about this through their subscription.

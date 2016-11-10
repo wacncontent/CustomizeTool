@@ -8,8 +8,13 @@
 	editor="tysonn" />
 <tags
 	ms.service="automation"
-	ms.date="06/14/2016"
-	wacn.date=""/>
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="infrastructure-services"
+	ms.date="09/18/2016"
+	wacn.date=""
+	ms.author="magoedte;bwren" />
 
 
 # Runbook and module galleries for Azure Automation

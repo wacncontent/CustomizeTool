@@ -8,15 +8,20 @@
 	editor=""
 	tags="azure-service-management,azure-resource-manager" />
 
-<tags
-	ms.service="virtual-machines-linux"
-	ms.date="03/25/2016"
-	wacn.date=""/>
+<tags 
+	ms.service="virtual-machines-linux" 
+	ms.workload="infrastructure-services" 
+	ms.tgt_pltfrm="vm-linux" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="07/13/2016" 
+	wacn.date="" 
+	ms.author="szark"/>
 
 
 # Using root privileges on Linux virtual machines in Azure
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
 
 By default, the `root` user is disabled on Linux virtual machines in Azure. Users can run commands with elevated privileges by using the `sudo` command. However, the experience may vary depending on how the system was provisioned.
 

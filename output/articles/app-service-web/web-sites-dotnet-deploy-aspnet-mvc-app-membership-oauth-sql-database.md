@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Create an ASP.NET MVC app with auth and SQL DB and deploy to Azure Web App" 
+	pageTitle="Create an ASP.NET MVC app with auth and SQL DB and deploy to Azure App Service" 
 	description="Learn how to develop an ASP.NET MVC 5 app with a SQL Database back-end, add authentication and authorization, and deploy it to Azure." 
 	services="app-service\web" 
 	documentationCenter=".net" 
@@ -8,14 +8,19 @@
 	manager="wpickett" 
 	editor=""/>
 
-<tags
-	ms.service="app-service-web"
-	ms.date="03/21/2016"
-	wacn.date=""/> 
+<tags 
+	ms.service="app-service-web" 
+	ms.workload="web" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="dotnet" 
+	ms.topic="article" 
+	ms.date="03/21/2016" 
+	wacn.date="" 
+	ms.author="riande"/> 
 
-# Create an ASP.NET MVC app with auth and SQL DB and deploy to Azure
+# Create an ASP.NET MVC app with auth and SQL DB and deploy to Azure App Service
 
-This tutorial shows how to build a secure ASP.NET MVC 5 web app that lets users log in with credentials from Facebook or Google. The app is a simple contact list that uses the ADO.NET Entity Framework for database access. You'll deploy the app to [Azure Web App](/documentation/services/web-sites/). 
+This tutorial shows how to build a secure ASP.NET MVC 5 web app that lets users log in with credentials from Facebook or Google. The app is a simple contact list that uses the ADO.NET Entity Framework for database access. You'll deploy the app to [Azure App Service](/documentation/articles/app-service-changes-existing-services/). 
 
 On completing the tutorial, you'll have a secure data-driven web application up and running in the cloud and using a cloud database. The following illustration shows the login page for the completed application.
 
@@ -29,11 +34,11 @@ You'll learn:
 * How to use the ADO.NET Entity Framework 6 Code First to read and write data in a SQL database.
 * How to use Entity Framework Code First Migrations to deploy a database.
 * How to store relational data in the cloud by using Azure SQL Database.
-* How to deploy a web project that uses a database to a [web app](/documentation/services/web-sites/) in Azure Web App.
+* How to deploy a web project that uses a database to a [web app](/documentation/articles/app-service-changes-existing-services/) in Azure App Service.
 
->[AZURE.NOTE] This is a long tutorial. If you want a quick introduction to Azure and Visual Studio web projects, see [Create an ASP.NET web app in Azure](/documentation/articles/web-sites-dotnet-get-started/). For troubleshooting info, see the [Troubleshooting](#troubleshooting) section.
+>[AZURE.NOTE] This is a long tutorial. If you want a quick introduction to Azure App Service and Visual Studio web projects, see [Create an ASP.NET web app in Azure App Service](/documentation/articles/web-sites-dotnet-get-started/). For troubleshooting info, see the [Troubleshooting](#troubleshooting) section.
 >
->Or if you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.
+>Or if you want to get started with Azure App Service before signing up for an Azure account, go to [Try App Service](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in App Service. No credit cards required; no commitments.
 
 ## Prerequisites
 
@@ -55,7 +60,7 @@ To set up your development environment, you must install [Visual Studio 2013 Upd
  
 	**Note:** Make sure you enter "ContactManager". Code blocks that you'll be copying later assume that the project name is ContactManager. 
 
-1. In the **New ASP.NET Project** dialog box, select the **MVC** template. Verify **Authentication** is set to **Individual User Accounts**, **Host in the cloud** is checked, and **App Services** is selected.
+1. In the **New ASP.NET Project** dialog box, select the **MVC** template. Verify **Authentication** is set to **Individual User Accounts**, **Host in the cloud** is checked, and **App Service** is selected.
 
 	![New ASP.NET Project dialog box](./media/web-sites-dotnet-deploy-aspnet-mvc-app-membership-oauth-sql-database/newproject.png)
 
@@ -101,7 +106,7 @@ To set up your development environment, you must install [Visual Studio 2013 Upd
 
 4. Tap **Create**.
 
-	Visual Studio creates the ContactManager web project, creates the resource group and App Service plan that you specified, and creates a web app in Azure with the name you specified.
+	Visual Studio creates the ContactManager web project, creates the resource group and App Service plan that you specified, and creates a web app in Azure App Service with the name you specified.
 
 ### Set the page header and footer
 
@@ -582,7 +587,7 @@ In this section you apply the [Authorize](http://msdn.microsoft.com/zh-cn/librar
 
 ### Stop the web app to prevent other people from registering  
 
-1. In **Server Explorer**, navigate to **Azure > Azure > {your resource group} > {your web app}**.
+1. In **Server Explorer**, navigate to **Azure > App Service > {your resource group} > {your web app}**.
 
 4. Right-click the web app and select **Stop**. 
 
@@ -694,7 +699,7 @@ This tutorial was written by [Rick Anderson](http://blogs.msdn.com/b/rickandy/) 
 
 ## What's changed
 
-* For a guide to the change from Websites to Azure see: [Azure and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
+* For a guide to the change from Websites to App Service see: [Azure App Service and Its Impact on Existing Azure Services](/documentation/articles/app-service-changes-existing-services/)
 
 <!-- bookmarks -->
 [Add an OAuth Provider]: #addOauth

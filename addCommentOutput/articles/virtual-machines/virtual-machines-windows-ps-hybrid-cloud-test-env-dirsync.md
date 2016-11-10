@@ -74,10 +74,6 @@ This is your current configuration.
 
 ## Phase 3: Configure the DirSync server (DS1)
 
-
-[AZURE.INCLUDE [arm-api-version-powershell](../includes/arm-api-version-powershell.md)]
-
-
 From the Azure portal  Preview , start the DC2 computer if needed.
 
 Next, create an Azure virtual machine for DS1 with these commands at the Azure PowerShell command prompt on your local computer. Prior to running these commands, fill in the variable values and remove the < and > characters.

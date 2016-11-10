@@ -14,10 +14,6 @@
 	wacn.date=""/>
 
 # Deploy a high-availability line of business application in Azure
-
-
-> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the Resource Manager deployment model, which Azure recommends for most new deployments instead of the classic deployment model.
-
 
 This article contains links to the step-by-step instructions for deploying a high-availability, intranet-only, web-based line of business application with SQL Server Always On Availability Groups in Azure infrastructure services. The application is hosted on these computers:
 
@@ -63,7 +59,7 @@ To compute the estimated costs for this configuration, see the [Azure Pricing Ca
 	- **Standard** for the pricing tier
 	- The default size in the previous table or your intended size for the **Instance size**
 
-> [AZURE.NOTE] The Azure Pricing Calculator does not include the additional costs for the SQL Server license for the two virtual machines running SQL Server 2014 Enterprise. See [Virtual Machines Pricing-SQL](/home/features/virtual-machines/pricing/) for more information.
+> [AZURE.NOTE] The Azure Pricing Calculator does not include the additional costs for the SQL Server license for the two virtual machines running SQL Server 2014 Enterprise. See [Virtual Machines Pricing-SQL](/pricing/details/virtual-machines/) for more information.
 
 ## Phases of deployment
 

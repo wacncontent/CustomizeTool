@@ -1,9 +1,7 @@
 new docs: 4, word count: {word_count_TODO}
-articles/app-service-web/app-service-environment-with-internal-load-balancer.md
-articles/app-service-web/app-service-web-debug-java-web-app-in-eclipse.md
-articles/app-service-web/app-service-web-debug-java-web-app-in-intellij.md
-articles/app-service-web/app-service-web-nodejs-best-practices-and-troubleshoot-guide.md
+articles/app-service-web/app-service-linux-how-to-create-a-web-app.md
+articles/app-service-web/app-service-linux-intro.md
+articles/app-service-web/app-service-linux-using-nodejs-pm2.md
+articles/app-service-web/app-service-web-app-azure-resource-manager-xplat-cli.md
 
-new includes: 2
-includes/app-service-blueprint-app-service-environment.md
-includes/app-service-blueprint-scaling-app-service-applications.md
+new includes: 0

@@ -1,0 +1,8 @@
+updated docs: 5
+articles/virtual-machine-scale-sets/virtual-machine-scale-sets-autoscale-overview.md
+articles/virtual-machine-scale-sets/virtual-machine-scale-sets-linux-autoscale.md
+articles/virtual-machine-scale-sets/virtual-machine-scale-sets-windows-autoscale.md
+articles/virtual-machine-scale-sets/virtual-machine-scale-sets-windows-create.md
+articles/virtual-machine-scale-sets/virtual-machine-scale-sets-windows-manage.md
+
+updated includes: 0

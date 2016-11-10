@@ -1,15 +1,21 @@
-new docs: 13, word count: 29536
+new docs: 19, word count: {word_count_TODO}
 articles/batch/batch-account-create-portal.md
 articles/batch/batch-api-basics.md
+articles/batch/batch-application-packages.md
 articles/batch/batch-automatic-scaling.md
 articles/batch/batch-dotnet-get-started.md
 articles/batch/batch-efficient-list-queries.md
 articles/batch/batch-hpc-solutions.md
 articles/batch/batch-job-prep-release.md
+articles/batch/batch-linux-nodes.md
 articles/batch/batch-management-dotnet.md
+articles/batch/batch-mpi.md
 articles/batch/batch-parallel-node-tasks.md
 articles/batch/batch-powershell-cmdlets-get-started.md
+articles/batch/batch-python-tutorial.md
 articles/batch/batch-quota-limit.md
+articles/batch/batch-task-dependencies.md
+articles/batch/batch-task-output.md
 articles/batch/batch-technical-overview.md
 articles/batch/big-compute-resources.md
 

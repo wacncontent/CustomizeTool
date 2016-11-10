@@ -3,17 +3,22 @@
    description="Azure virtual network (VNet) FAQ"
    services="virtual-network"
    documentationCenter="na"
-   authors="telmosampaio"
+   authors="jimdial"
    manager="carmonm"
    editor="tysonn" />
-<tags
-	ms.service="virtual-network"
-	ms.date="03/15/2016"
-	wacn.date=""/>
+<tags 
+   ms.service="virtual-network"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="03/15/2016"
+   wacn.date=""
+   ms.author="jdial" />
 
 # Virtual Network FAQ
 
-[AZURE.INCLUDE [virtual-networks-vnet-faq-include](../includes/virtual-networks-vnet-faq-include.md)]
+[AZURE.INCLUDE [virtual-networks-vnet-faq-include](../../includes/virtual-networks-vnet-faq-include.md)]
 
 ## Virtual Network Cross-premises Connectivity (VPNs)
 

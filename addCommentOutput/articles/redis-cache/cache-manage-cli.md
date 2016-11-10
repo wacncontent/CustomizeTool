@@ -7,10 +7,15 @@
 	manager="douge" 
 	editor=""/>
 
-<tags
-	ms.service="cache"
-	ms.date="04/13/2016"
-	wacn.date=""/>
+<tags 
+	ms.service="cache" 
+	ms.workload="tbd" 
+	ms.tgt_pltfrm="cache-redis" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="06/28/2016" 
+	wacn.date="" 
+	ms.author="sdanie"/>
 
 # How to create and manage Azure Redis Cache using the Azure Command-Line Interface (Azure CLI)
 
@@ -26,7 +31,7 @@ To create and manage Azure Redis Cache instances using Azure CLI, you must compl
 
 -	You must have an Azure account. If you don't have one, you can create a  [free  [trial  account](/pricing/1rmb-trial/) in just a few moments.
 -	[Install the Azure CLI](/documentation/articles/xplat-cli-install/).
--	Connect your Azure CLI installation with a personal Azure account, or with a work or school Azure account, and log in from the Azure CLI using the `azure  login`  login -e AzureChinaCloud -u <your account>`  command. To understand the differences and choose, see [Connect to an Azure subscription from the Azure Command-Line Interface (Azure CLI)](/documentation/articles/xplat-cli-connect/).
+-	Connect your Azure CLI installation with a personal Azure account, or with a work or school Azure account, and log in from the Azure CLI using the `azure  login`  login -e AzureChinaCloud`  command. To understand the differences and choose, see [Connect to an Azure subscription from the Azure Command-Line Interface (Azure CLI)](/documentation/articles/xplat-cli-connect/).
 -	Before running any of the following commands, switch the Azure CLI into Resource Manager mode by running the `azure config mode arm` command. For more information, see [Set the Azure Resource Manager mode](/documentation/articles/xplat-cli-azure-resource-manager/#set-the-azure-resource-manager-mode).
 
 ## Redis Cache properties
@@ -189,8 +194,7 @@ For more information about this command, run the `azure rediscache show -h` comm
 	help:
 	help:    Current Mode: arm (Azure Resource Management)
 
-<a name="scale"></a>
-## Change settings of an existing Redis Cache
+## <a name="scale"></a> Change settings of an existing Redis Cache
 
 To change settings of an existing Redis Cache, use the following command:
 

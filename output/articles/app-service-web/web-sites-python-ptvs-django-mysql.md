@@ -1,28 +1,33 @@
 <properties 
 	pageTitle="Django and MySQL on Azure with Python Tools 2.2 for Visual Studio" 
-	description="Learn how to use the Python Tools for Visual Studio to create a Django web app that stores data in a MySQL database instance and deploy it to Azure Web Apps." 
+	description="Learn how to use the Python Tools for Visual Studio to create a Django web app that stores data in a MySQL database instance and deploy it to Azure App Service Web Apps." 
 	services="app-service\web" 
 	documentationCenter="python" 
 	authors="huguesv" 
 	manager="wpickett" 
 	editor=""/>
 
-<tags
-	ms.service="app-service-web"
-	ms.date="07/07/2016"
-	wacn.date=""/>
+<tags 
+	ms.service="app-service-web" 
+	ms.workload="web" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="python"
+	ms.topic="get-started-article" 
+	ms.date="07/07/2016" 
+	wacn.date=""
+	ms.author="huvalo"/>
 
 # Django and MySQL on Azure with Python Tools 2.2 for Visual Studio 
 
-[AZURE.INCLUDE [tabs](../includes/app-service-web-get-started-nav-tabs.md)]
+[AZURE.INCLUDE [tabs](../../includes/app-service-web-get-started-nav-tabs.md)]
 
-In this tutorial, you'll use [Python Tools for Visual Studio] (PTVS) to create a simple polls web app using one of the PTVS sample templates. You'll learn how to use a MySQL service hosted on Azure, how to configure the web app to use MySQL, and how to publish the web app to [Azure Web Apps](/documentation/services/web-sites/).
+In this tutorial, you'll use [Python Tools for Visual Studio] (PTVS) to create a simple polls web app using one of the PTVS sample templates. You'll learn how to use a MySQL service hosted on Azure, how to configure the web app to use MySQL, and how to publish the web app to [Azure App Service Web Apps](/documentation/articles/app-service-changes-existing-services/).
 
 > [AZURE.NOTE] The information contained in this tutorial is also available in the following video:
 > 
 > [PTVS 2.1: Django app with MySQL][video]
 
-See the [Python Developer Center] for more articles that cover development of Azure Web Apps with PTVS using Bottle, Flask and Django web frameworks, with Azure Table Storage, MySQL, and SQL Database services. While this article focuses on Azure Web App, the steps are similar when developing [Azure Cloud Services].
+See the [Python Developer Center] for more articles that cover development of Azure App Service Web Apps with PTVS using Bottle, Flask and Django web frameworks, with Azure Table Storage, MySQL, and SQL Database services. While this article focuses on App Service, the steps are similar when developing [Azure Cloud Services].
 
 ## Prerequisites
 
@@ -33,11 +38,11 @@ See the [Python Developer Center] for more articles that cover development of Az
  - [Azure SDK Tools for VS 2015]
  - Django 1.9 or later
 
-[AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
+[AZURE.INCLUDE [create-account-and-websites-note](../../includes/create-account-and-websites-note.md)]
 
 <!-- This note should not render as part of the the previous include. -->
 
-> [AZURE.NOTE] If you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit card is required, and no commitments are necessary.
+> [AZURE.NOTE] If you want to get started with Azure App Service before signing up for an Azure account, go to [Try App Service](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in App Service. No credit card is required, and no commitments are necessary.
 
 ## Create the Project
 
@@ -89,7 +94,7 @@ You can create a database with a free plan by following these steps.
 
 1. Log in to the [Azure Portal].
 
-1. At the Top of the navigation pane, click **NEW**, then click **DATA SERVICE**, and then click **MySQL Database**. 
+1. At the Top of the navigation pane, click **NEW**, then click **Data + Storage**, and then click **MySQL Database**. 
 
 1. Configure the new MySQL database by creating a new resource group and select the appropriate location for it.
 
@@ -131,15 +136,15 @@ In this section, you'll configure our web app to use the MySQL database you just
 
 1. Run the application with `F5`. Polls that are created with **Create Sample Polls** and the data submitted by voting will be serialized in the MySQL database.
 
-## Publish the web app to Azure
+## Publish the web app to Azure App Service
 
-The Azure .NET SDK provides an easy way to deploy your web app to Azure.
+The Azure .NET SDK provides an easy way to deploy your web app to Azure App Service.
 
 1. In **Solution Explorer**, right-click on the project node and select **Publish**.
 
     ![Publish Web Dialog](./media/web-sites-python-ptvs-django-mysql/PollsCommonPublishWebSiteDialog.png)
 
-1. Click on **App Services**.
+1. Click on **Azure App Service**.
 
 1. Click on **New** to create a new web app.
 

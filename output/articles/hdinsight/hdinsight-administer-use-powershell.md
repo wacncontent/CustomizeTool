@@ -3,19 +3,24 @@
 	description="Learn how to perform administrative tasks for the Hadoop clusters in HDInsight using Azure PowerShell."
 	services="hdinsight"
 	editor="cgronlun"
-	manager="paulettm"
+	manager="jhubbard"
 	tags="azure-portal"
 	authors="mumian"
 	documentationCenter=""/>
 
 <tags
 	ms.service="hdinsight"
-	ms.date="05/24/2016"
-	wacn.date=""/>
+	ms.workload="big-data"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/10/2016"
+	wacn.date=""
+	ms.author="jgao"/>
 
 # Manage Hadoop clusters in HDInsight by using Azure PowerShell
 
-[AZURE.INCLUDE [selector](../includes/hdinsight-portal-management-selector.md)]
+[AZURE.INCLUDE [selector](../../includes/hdinsight-portal-management-selector.md)]
 
 Azure PowerShell is a powerful scripting environment that you can use to control and automate the deployment and management of your workloads in Azure. In this article, you will learn how to manage Hadoop clusters in Azure HDInsight by using a local Azure PowerShell console through the use of Windows PowerShell. For the list of the HDInsight PowerShell cmdlets, see [HDInsight cmdlet reference][hdinsight-powershell-reference].
 
@@ -29,7 +34,7 @@ Before you begin this article, you must have the following:
 
 ##Install Azure PowerShell
 
-[AZURE.INCLUDE [upgrade-powershell](../includes/hdinsight-use-latest-powershell.md)]
+[AZURE.INCLUDE [upgrade-powershell](../../includes/hdinsight-use-latest-powershell.md)]
 
 If you have installed Azure PowerShell version 0.9x, you must uninstall it before installing a newer version.
 
@@ -80,7 +85,7 @@ The impact of changing the number of data nodes for each type of cluster support
 
 - HBase
 
-	You can seamlessly add or remove nodes to your HBase cluster while it is running. Regional Servers are automatically balanced within a few minutes of completing the scaling operation. However, you can also manually balance the regional servers by logging into the headnode of cluster and running the following commands from a command prompt window:
+	You can seamlessly add or remove nodes to your HBase cluster while it is running. Regional Servers are automatically balanced within a few minutes of completing the scaling operation. However, you can also manually balance the regional servers by logging in to the headnode of cluster and running the following commands from a command prompt window:
 
 		>pushd %HBASE_HOME%\bin
 		>hbase shell
@@ -99,7 +104,7 @@ The impact of changing the number of data nodes for each type of cluster support
 
 	The Storm web UI is available on the HDInsight cluster:
 
-	![hdinsight storm scale rebalance](./media/hdinsight-administer-use-management-portal-v1/hdinsight.portal.scale.cluster.storm.rebalance.png)
+	![HDInsight storm scale rebalance](./media/hdinsight-administer-use-management-portal-v1/hdinsight.portal.scale.cluster.storm.rebalance.png)
 
 	Here is an example how to use the CLI command to rebalance the Storm topology:
 
@@ -146,7 +151,7 @@ To grant:
 
 >[AZURE.NOTE] By granting/revoking the access, you will reset the cluster user name and password.
 
-This can also be done via the Portal. See [Administer HDInsight by using the Azure Portal][hdinsight-admin-portal].
+This can also be done via the Portal. See [Administer HDInsight by using the Azure portal][hdinsight-admin-portal].
 
 ##Update HTTP user credentials
 
@@ -168,7 +173,7 @@ The following Powershell script demonstrates how to get the default storage acco
 
 ##Find the resource group
 
-In the ARM mode, each HDInsight cluster belongs to an Azure resource group.  To find the resource group:
+In the Resource Manager mode, each HDInsight cluster belongs to an Azure resource group.  To find the resource group:
 
 	$clusterName = "<HDInsight Cluster Name>"
 	
@@ -204,7 +209,7 @@ See [Upload data to HDInsight][hdinsight-upload-data].
 
 ## See Also
 * [HDInsight cmdlet reference documentation][hdinsight-powershell-reference]
-* [Administer HDInsight by using the Azure Portal][hdinsight-admin-portal]
+* [Administer HDInsight by using the Azure portal][hdinsight-admin-portal]
 * [Administer HDInsight using a command-line interface][hdinsight-admin-cli]
 * [Create HDInsight clusters][hdinsight-provision]
 * [Upload data to HDInsight][hdinsight-upload-data]

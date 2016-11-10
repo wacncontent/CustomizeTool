@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Local Git Deployment to Azure Web App"
-	description="Learn how to enable local Git deployment to Azure Web App."
+	pageTitle="Local Git Deployment to Azure App Service"
+	description="Learn how to enable local Git deployment to Azure App Service."
 	services="app-service"
 	documentationCenter=""
 	authors="dariagrigoriu"
@@ -9,13 +9,18 @@
 
 <tags
 	ms.service="app-service"
+	ms.workload="na"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="06/13/2016"
-	wacn.date=""/>
+	wacn.date=""
+	ms.author="dariagrigoriu"/>
     
-# Local Git Deployment to Azure
+# Local Git Deployment to Azure App Service
 
-This tutorial shows you how to deploy your app to [Azure Web App] from a Git repository on your local computer. Azure supports this approach with the **Local Git** deployment option in the [Azure  Classic Management  Portal].
-Many of the Git commands described in this article are performed automatically when creating an Azure Web App using the [Azure Command-Line Interface] as described [here](/documentation/articles/app-service-web-get-started/).
+This tutorial shows you how to deploy your app to [Azure App Service] from a Git repository on your local computer. App Service supports this approach with the **Local Git** deployment option in the [Azure  Portal]  Portal Preview] .
+Many of the Git commands described in this article are performed automatically when creating an App Service app using the [Azure Command-Line Interface] as described [here](/documentation/articles/app-service-web-get-started/).
 
 ## Prerequisites
 
@@ -23,16 +28,16 @@ To complete this tutorial, you need:
 
 - Git. You can download the installation binary [here](http://www.git-scm.com/downloads).  
 - Basic knowledge of Git.
-- A Azure account. If you don't have an account, you can 
+-  A  An  Azure account. If you don't have an account, you can
 
 [sign up for a trial](https://azure.microsoft.com/pricing/1rmb-trial) or 
 [activate your Visual Studio subscriber benefits](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details).
+
+>[AZURE.NOTE] If you want to get started with Azure App Service before signing up for an Azure account, go to [Try App Service](https://tryappservice.azure.com/), where you can immediately create a short-lived starter app in App Service. No credit cards required; no commitments.  
 
 
-[sign up for a trial](https://azure.microsoft.com/pricing/1rmb-trial).
+[sign up for a trial](/pricing/1rmb-trial).
 
-
->[AZURE.NOTE] If you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter app in Azure Web App. No credit cards required; no commitments.  
 
 ## <a id="Step1"></a>Step 1: Create a local repository
 
@@ -48,7 +53,7 @@ Perform the following tasks to create a new Git repository.
 
 ## <a id="Step2"></a>Step 2: Commit your content
 
-Azure supports applications created in a variety of programming languages. 
+App Service supports applications created in a variety of programming languages. 
 
 1. If your repository already includes content skip this point and move to point 2 below. If your repository does not already include content simply populate with a static .html file as follows: 
 
@@ -61,16 +66,16 @@ Azure supports applications created in a variety of programming languages.
 
 4. Next, commit the changes to the repository by using the following command:
 
-		git commit -m "Hello Azure Web App"
+		git commit -m "Hello Azure App Service"
 
-## <a id="Step3"></a>Step 3: Enable the Azure Web App repository
+## <a id="Step3"></a>Step 3: Enable the App Service app repository
 
-Perform the following steps to enable a Git repository for your Azure Web App.
+Perform the following steps to enable a Git repository for your App Service app.
 
 
 1. Log in to the [Azure Portal].
 
-2. In your Azure Web App's blade, click **Settings > Deployment source**. Click **Choose source**, then click **Local Git Repository**, and then click **OK**.  
+2. In your App Service app's blade, click **Settings > Deployment source**. Click **Choose source**, then click **Local Git Repository**, and then click **OK**.  
 
 	![Local Git Repository](./media/app-service-deploy-local-git/local_git_selection.png)
 
@@ -86,16 +91,11 @@ Perform the following steps to enable a Git repository for your Azure Web App.
 
 ## <a id="Step4"></a>Step 4: Deploy your project
 
-Use the following steps to publish your app to Azure using Local Git.
+Use the following steps to publish your app to App Service using Local Git.
 
-
-1. In your app's blade in the Azure Portal, click **Settings > Properties** for the **Git URL**.
+1. In your app's blade in the Azure Portal  Preview , click **Settings > Properties** for the **Git URL**.
 
 	![](./media/app-service-deploy-local-git/git_url.png)
-
-
-1. In Azure Classic Management Portal, Click **Deployments** of your web app. you can copy the Git URL there.
-
 
 	**Git URL** is the remote reference to deploy to from your local repository. You'll use this URL in the following steps.
 
@@ -106,11 +106,11 @@ Use the following steps to publish your app to Azure using Local Git.
 		git remote add azure https://<username>@localgitdeployment.scm.chinacloudsites.cn:443/localgitdeployment.git         
     > [AZURE.NOTE] The **remote** command adds a named reference to a remote repository. In this example, it creates a reference named 'azure' for your web app's repository.
 
-4. Push your content to Azure using the new **azure** remote you just created.
+4. Push your content to App Service using the new **azure** remote you just created.
 
 		git push azure master
 
-	You will be prompted for the password you created earlier when you reset your deployment credentials in the Azure  Classic Management  Portal. Enter the password (note that Gitbash does not echo asterisks to the console as you type your password).
+	You will be prompted for the password you created earlier when you reset your deployment credentials in the Azure Portal  Preview . Enter the password (note that Gitbash does not echo asterisks to the console as you type your password).
        
 
 5. Go back to your app in the Azure Portal. A log entry of your most recent push should be displayed in the **Deployments** blade. 
@@ -127,7 +127,7 @@ Use the following steps to publish your app to Azure using Local Git.
     
 ## <a id="Step5"></a>Troubleshooting
 
-The following are errors or problems commonly encountered when using Git to publish to an Azure Web App in Azure:
+The following are errors or problems commonly encountered when using Git to publish to an App Service app in Azure:
 
 ****
 
@@ -135,7 +135,7 @@ The following are errors or problems commonly encountered when using Git to publ
 
 **Cause**: This error can occur if the app is not up and running.
 
-**Resolution**: Start the app in the Azure  Classic Management  Portal. Git deployment will not work unless the app is running.
+**Resolution**: Start the app in the Azure Portal  Preview . Git deployment will not work unless the app is running.
 
 
 ****
@@ -188,22 +188,18 @@ The following are errors or problems commonly encountered when using Git to publ
 ## Additional Resources
 
 * [Git documentation](http://git-scm.com/documentation)
-
 * [Project Kudu documentation](https://github.com/projectkudu/kudu/wiki)
-* [Continous Deployment to Azure Web App](/documentation/articles/app-service-continous-deployment/)
-
+* [Continous Deployment to Azure App Service](/documentation/articles/app-service-continuous-deployment/)
 * [How to use PowerShell for Azure](/documentation/articles/powershell-install-configure/)
 * [How to use the Azure Command-Line Interface](/documentation/articles/xplat-cli-install/)
 
+[Azure App Service]: /documentation/articles/app-service-changes-existing-services/
+[Azure Developer Center]: /develop/overview/
 
-[Azure Web App]: /documentation/articles/app-service-changes-existing-services/
-[Azure Developer Center]: http://azure.microsoft.com/develop/overview/
 [Azure Portal]: https://portal.azure.cn
 
 
-[Azure Web App]: /documentation/services/web-sites/
-[Azure Developer Center]: /develop/overview/
-[Azure Classic Management Portal]: https://manage.windowsazure.cn
+[Azure Portal Preview]: https://portal.azure.cn
 
 [Git website]: http://git-scm.com
 [Installing Git]: http://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%AE%89%E8%A3%85-Git

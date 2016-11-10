@@ -1,0 +1,7 @@
+new docs: 3, word count: 2895
+articles/virtual-machine-scale-sets/virtual-machine-scale-sets-dsc.md
+articles/virtual-machine-scale-sets/virtual-machine-scale-sets-portal-create.md
+articles/virtual-machine-scale-sets/virtual-machine-scale-sets-upgrade-scale-set.md
+
+new includes: 1
+includes/insights-advanced-autoscale-virtual-machine-scale-sets.md

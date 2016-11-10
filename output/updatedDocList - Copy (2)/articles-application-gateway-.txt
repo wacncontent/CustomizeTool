@@ -1,5 +1,8 @@
-updated docs: 2
-articles/application-gateway/application-gateway-create-gateway-arm.md
-articles/application-gateway/application-gateway-create-gateway.md
+updated docs: 5
+articles/application-gateway/application-gateway-create-gateway-portal.md
+articles/application-gateway/application-gateway-create-multisite-azureresourcemanager-powershell.md
+articles/application-gateway/application-gateway-diagnostics.md
+articles/application-gateway/application-gateway-introduction.md
+articles/application-gateway/application-gateway-probe-overview.md
 
 updated includes: 0

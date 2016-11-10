@@ -50,9 +50,11 @@ Use the procedure that matches your backend project type&mdash;either [.NET back
             return CreatedAtRoute("Tables", new { id = current.Id }, current);
         }
 
+4. Republish the server project.
+
 ### <a name="nodejs"></a>Node.js backend project
 
-1. If you haven't already done so, [download the quickstart project](/documentation/articles/app-service-mobile-node-backend-how-to-use-server-sdk#download-quickstart) or else use the [online editor in the Azure Management Portal](/documentation/articles/app-service-mobile-node-backend-how-to-use-server-sdk#online-editor).
+1. If you haven't already done so, [download the quickstart project](/documentation/articles/app-service-mobile-node-backend-how-to-use-server-sdk/#download-quickstart) or else use the [online editor in the Azure portal](/documentation/articles/app-service-mobile-node-backend-how-to-use-server-sdk/#online-editor).
  
 1. Replace the existing code in the todoitem.js file with the following:
 

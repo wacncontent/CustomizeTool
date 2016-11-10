@@ -10,19 +10,21 @@
 
 <tags
 	ms.service="virtual-machines-linux"
+	ms.devlang="multiple"
+	ms.topic="article"
+	ms.tgt_pltfrm="vm-linux"
+	ms.workload="infrastructure-services"
 	ms.date="04/15/2015"
-	wacn.date=""/>
+	wacn.date=""
+	ms.author="v-ahsab"/>
 
 # MariaDB (MySQL) cluster - Azure tutorial
 
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
 
 > [AZURE.NOTE]  MariaDB Enterprise cluster is now available in the Azure Marketplace.  The new offering will automatically deploy a MariaDB Galera cluster on ARM. You should use the new offering from  https://azure.microsoft.com/marketplace/partners/mariadb/cluster-maxscale/ 
 
-
-> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager model.
-
 
 We're creating a multi-Master [Galera](http://galeracluster.com/products/) cluster of [MariaDBs](https://mariadb.org/en/about/), a robust, scalable, and reliable drop-in replacement for MySQL, to work in a highly available environment on Azure Virtual Machines.
 
@@ -136,12 +138,12 @@ this will output something like  `5112500ae3b842c8b9c604889f8753c3__OpenLogic-C
 
      - Copy the current MySQL directory into its new location and remove the old directory
 
-    		 cp  cpccp  -avr /var/lib/mysql /mnt/data
+    		cp -avr /var/lib/mysql /mnt/data  
     		rm -rf /var/lib/mysql
 
      - Set permissions on new directory accordingly
 
-        	 chown  chochown  -R mysql:mysql /mnt/data && chmod -R 755 /mnt/data/
+        	chown -R mysql:mysql /mnt/data && chmod -R 755 /mnt/data/  
 
      - Create a symlink pointing the old directory to the new location on the RAID partition
 
@@ -161,11 +163,11 @@ this will output something like  `5112500ae3b842c8b9c604889f8753c3__OpenLogic-C
 
     - Secure the MySQL installation, set the root password, remove anonymous users, disabling remote root login and removing the test database
 
-             mysql_secure_installation  mysql_smysql_secure_installation 
+            mysql_secure_installation
 
     - Create a user on the database for cluster operations and optionally, your applications
 
-			mysql  -mysql  -u root -p
+			mysql -u root -p
 			GRANT ALL PRIVILEGES ON *.* TO 'cluster'@'%' IDENTIFIED BY 'p@ssw0rd' WITH GRANT OPTION; FLUSH PRIVILEGES;
             exit
 

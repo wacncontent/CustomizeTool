@@ -6,13 +6,18 @@ description="Learn how to write data to Azure Data Lake Store from an Apache Sto
 services="hdinsight"
 documentationCenter="na"
 authors="Blackmist"
-manager="paulettm"
+manager="jhubbard"
 editor="cgronlun"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="06/17/2016"
-	wacn.date=""/>
+ms.service="hdinsight"
+ms.devlang="na"
+ms.topic="article"
+ms.tgt_pltfrm="na"
+ms.workload="big-data"
+ms.date="09/06/2016"
+wacn.date=""
+ms.author="larryfr"/>
 
 #Use Azure Data Lake Store with Apache Storm with HDInsight
 
@@ -215,7 +220,7 @@ __For Windows-based HDInsight__:
 
 ## Delete your cluster
 
-[AZURE.INCLUDE [delete-cluster-warning](../includes/hdinsight-delete-cluster-warning.md)]
+[AZURE.INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
 
 ##Next steps
 

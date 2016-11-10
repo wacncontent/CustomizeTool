@@ -1,5 +1,3 @@
-<!-- Ibiza portal: tested -->
-
 ### Configure a DNS Label for the public IP address
 
 To connect to the SQL Server Database Engine from the Internet, first configure a DNS Label for your public IP address.
@@ -15,6 +13,7 @@ To create a DNS Label, first select **Virtual machines** in the portal. Select y
 2. In the properties for your Public IP address, expand **Configuration**.
 
 3. Enter a DNS Label name. This name is an A Record that can be used to connect to your SQL Server VM by name instead of by IP Address directly.
+
 4. Click the **Save** button.
 
 	![dns label](./media/virtual-machines-sql-server-connection-steps/rm-dns-label.png)

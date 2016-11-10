@@ -4,18 +4,23 @@
    services="hdinsight"
    documentationCenter=""
    authors="Blackmist"
-   manager="paulettm"
+   manager="jhubbard"
    editor="cgronlun"
 	tags="azure-portal"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="06/16/2016"
-	wacn.date=""/>
+   ms.service="hdinsight"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="big-data"
+   ms.date="07/25/2016"
+   wacn.date=""
+   ms.author="larryfr"/>
 
 #Run Pig jobs using PowerShell
 
-[AZURE.INCLUDE [pig-selector](../includes/hdinsight-selector-use-pig.md)]
+[AZURE.INCLUDE [pig-selector](../../includes/hdinsight-selector-use-pig.md)]
 
 This document provides an example of using Azure PowerShell to submit Pig jobs to a Hadoop on HDInsight cluster. Pig allows you to write MapReduce jobs by using a language (Pig Latin,) that models data transformations, rather than map and reduce functions.
 
@@ -28,7 +33,7 @@ To complete the steps in this article, you will need the following.
 - **An Azure subscription**. See [Get Azure trial](/pricing/1rmb-trial/).
 - **A workstation with Azure PowerShell**.
 
-    [AZURE.INCLUDE [upgrade-powershell](../includes/hdinsight-use-latest-powershell.md)]
+    [AZURE.INCLUDE [upgrade-powershell](../../includes/hdinsight-use-latest-powershell.md)]
 
 
 ##<a id="powershell"></a>Run Pig jobs using PowerShell
@@ -37,7 +42,7 @@ Azure PowerShell provides *cmdlets* that allow you to remotely run Pig jobs on H
 
 The following cmdlets are used when running Pig jobs on a remote HDInsight cluster:
 
-*  **Login-AzureRmAccount**  **Add-AzureAccount** : Authenticates Azure PowerShell to your Azure Subscription
+*  **Login-AzureRmAccount**  **Import-AzurePublishSettingsFile** : Authenticates Azure PowerShell to your Azure Subscription
 
 *  **New-AzureRmHDInsightPigJobDefinition**  **New-AzureHDInsightPigJobDefinition** : Creates a new *job definition* by using the specified Pig Latin statements
 
@@ -80,7 +85,7 @@ The following steps demonstrate how to use these cmdlets to run a job on your HD
 
 
         #Store the Pig Latin into $QueryString
-        $QueryString =  "LOGS = LOAD 'wasb:///example/data/sample.log';" +
+        $QueryString =  "LOGS = LOAD 'wasbs:///example/data/sample.log';" +
         "LEVELS = foreach LOGS generate REGEX_EXTRACT(`$0, '(TRACE|DEBUG|INFO|WARN|ERROR|FATAL)', 1)  as LOGLEVEL;" +
         "FILTEREDLEVELS = FILTER LEVELS by LOGLEVEL is not null;" +
         "GROUPEDLEVELS = GROUP FILTEREDLEVELS by LOGLEVEL;" +

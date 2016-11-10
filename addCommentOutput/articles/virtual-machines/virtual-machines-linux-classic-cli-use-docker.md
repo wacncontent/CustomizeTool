@@ -10,18 +10,18 @@
 
 <tags
 	ms.service="virtual-machines-linux"
-	ms.date="01/04/2016"
-	wacn.date=""/>
+	ms.devlang="multiple"
+	ms.topic="article"
+	ms.tgt_pltfrm="vm-linux"
+	ms.workload="infrastructure-services"
+	ms.date="08/29/2016"
+	wacn.date=""
+	ms.author="rasquill"/>
 
 # Using the Docker VM Extension from the Azure Command-line Interface (Azure CLI)
 
-
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]
 
-
-
-> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager model.
-
 
 
 This topic describes how to create a VM with the Docker VM Extension from the service management (asm) mode in Azure CLI on any platform. [Docker](https://www.docker.com/) is one of the most popular virtualization approaches that uses [Linux containers](http://zh.wikipedia.org/wiki/LXC) rather than virtual machines as a way of isolating data and computing on shared resources. You can use the Docker VM extension and the [Azure Linux Agent](/documentation/articles/virtual-machines-linux-agent-user-guide/) to create a Docker VM that hosts any number of containers for your applications on Azure. To see a high-level discussion of containers and their advantages, see the [Docker High Level Whiteboard](http://channel9.msdn.com/Blogs/Regular-IT-Guy/Docker-High-Level-Whiteboard).
@@ -68,11 +68,12 @@ and select one of the image names, such as `b549f4301d0b4295b8e76ceb65df47d4__Ub
 
 
 ```
-
 azure vm docker create -e 22 -l "China North" <vm-cloudservice name> "b549f4301d0b4295b8e76ceb65df47d4__Ubuntu-14_04_3-LTS-amd64-server-20160516-en-us-30GB" <username> <password>
-
 ```
 
+
+	azure vm docker create -e 22 -l "China North" <vm-cloudservice name> "b549f4301d0b4295b8e76ceb65df47d4__Ubuntu-14_04_3-LTS-amd64-server-20160516-en-us-30GB" <username> <password>
+
 
 where:
 
@@ -186,4 +187,4 @@ The Docker daemon on the host is configured to listen for and authenticate clien
 
 [Docker User Guide]: https://docs.docker.com/userguide/
  
-[Get Started with Docker and Compose to define and run a multi-container application on an Azure virtual machine]:  /documentation/articles/virtual-machines-linux-docker-compose-quickstart/  /documentation/articles/virtual-machines-linux-docker-compose-quickstart 
+[Get Started with Docker and Compose to define and run a multi-container application on an Azure virtual machine]: /documentation/articles/virtual-machines-linux-docker-compose-quickstart/

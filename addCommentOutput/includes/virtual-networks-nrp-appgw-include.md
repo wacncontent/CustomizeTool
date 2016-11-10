@@ -1,7 +1,10 @@
 ## Application Gateway
 
 Application Gateway provides an Azure-managed HTTP load balancing solution based on layer 7 load balancing. Application load balancing allows the use of routing rules for network traffic based on HTTP. 
- <BR> 
+
+<BR>
+
+
 | Property | Description | 
 |---|---|
 | **backendAddressPools** | The list of IP addresses of the back end servers. The IP addresses listed should either belong to the virtual network subnet, or should be a public IP/VIP or private IP |
@@ -219,4 +222,4 @@ Example of an application gateway Json template:
 
 ### Additional resources
 
-Read [ application gateway REST API](https://msdn.microsoft.com/zh-cn/library/azure/mt299388.aspx) for more information.
+Read [ application gateway REST API](https://msdn.microsoft.com/zh-cn/library/azure/mt299388.aspx) for more information.

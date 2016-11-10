@@ -1,20 +1,26 @@
 <properties
-   pageTitle="Troubleshooting tips for common errors in Azure Automation| Azure"
-   description="This article provides basic troubleshooting steps to fix common errors you might hit when working with Azure Automation."
+   pageTitle="Azure automation error handling | Azure"
+   description="This article provides basic error handling steps to troubleshoot and fix common Azure Automation errors."
    services="automation"
    documentationCenter=""
    authors="mgoedtel"
    manager="stevenka"
    editor="tysonn"
-   tags="top-support-issue"/>
+   tags="top-support-issue"
+   keywords="automation error, error handling"/>
 <tags
-	ms.service="automation"
-	ms.date="03/21/2016"
-	wacn.date=""/>
+   ms.service="automation"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="07/06/2016"
+   wacn.date=""
+   ms.author="sngun; v-reagie"/>
 
-# Troubleshooting tips for common errors in Azure Automation
+# Error handling tips for common Azure Automation errors
 
-This article explains some of the common errors you might experience when working with Azure Automation and suggests possible remediation steps.
+This article explains some of the common Azure Automation errors you might experience and suggests possible error handling steps.
 
 ## Troubleshoot authentication errors when working with Azure Automation runbooks  
 
@@ -109,7 +115,7 @@ Any of the following three solutions will fix this problem:
 Your runbook job fails with the error "The quota for the monthly total job run time has been reached for this subscription".
 
 **Reason for the error:**
-This error occurs when the job execution exceeds the 500-minute free quota for your account. This quota applies to all types of job execution tasks such as testing a job, starting a job from the portal, executing a job by using webhooks and scheduling a job to execute by using either the  Azure portal or  Azure Classic Management Portal or  in your datacenter. To learn more about pricing for Automation see [Automation pricing](/home/features/automation/pricing/).
+This error occurs when the job execution exceeds the 500-minute free quota for your account. This quota applies to all types of job execution tasks such as testing a job, starting a job from the portal, executing a job by using webhooks and scheduling a job to execute by using either the  Azure portal or  Azure Classic Management Portal or  in your datacenter. To learn more about pricing for Automation see [Automation pricing](/pricing/details/automation/).
 
 **Troubleshooting tips:**
 If you want to use more than 500 minutes of processing per month you will need to change your subscription from the Free tier to the Basic tier. You can upgrade to the Basic tier by taking the following steps:  
@@ -122,7 +128,7 @@ If you want to use more than 500 minutes of processing per month you will need t
 
 
 3. Click on **Scale**  
-4. For **Automation plan** under **General**, select **Basic**    
+4. For **Automation plan** under **General**, select **Basic**   
 
 
 
@@ -248,9 +254,9 @@ You have used a credential in a configuration but didn't provide proper **Config
 
 If you have followed the troubleshooting steps above and need additional help at any point in this article, you can:
 
-- Get help from Azure experts. Submit your issue to the [MSDN Azure or  Stack Overflow forums.](https://azure.microsoft.com/support/forums/)  CSDN Azure](/support/forums). 
+- Get help from Azure experts. Submit your issue to the [MSDN Azure or CSDN  Azure.](/support/forums/)  Azure](/support/forums) 
 
-- File an Azure support incident. Go to the [Azure Support  site](https://azure.microsoft.com/support/contact/)  site](/support/contact)  and click **Get support** under **Technical and billing support**.
+- File an Azure support incident. Go to the [Azure Support  site](/support/contact/)  site](/support/contact)  and click **Get support** under **Technical and billing support**.
 
 
 - Post a Script Request on [Script Center](https://azure.microsoft.com/documentation/scripts/) if you are looking for an Azure Automation runbook solution or an integration module.

@@ -1,22 +1,27 @@
 <properties 
 	pageTitle="Upload a custom Java web app to Azure" 
-	description="This tutorial shows you how to upload a custom Java web app to Azure." 
+	description="This tutorial shows you how to upload a custom Java web app to Azure App Service Web Apps." 
 	services="app-service\web" 
 	documentationCenter="java" 
 	authors="rmcmurray" 
 	manager="wpickett" 
 	editor=""/>
 
-<tags
-	ms.service="app-service-web"
-	ms.date="05/04/2016"
-	wacn.date=""/>
+<tags 
+	ms.service="app-service-web" 
+	ms.workload="web" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="Java" 
+	ms.topic="article" 
+	ms.date="08/11/2016" 
+	wacn.date="" 
+	ms.author="robmcm"/>
 
 # Upload a custom Java web app to Azure
 
-This topic explains how to upload a custom Java web app to [Azure Web App] Web Apps. Included is information that applies to any Java website or web app, and also some examples for specific applications.
+This topic explains how to upload a custom Java web app to [Azure App Service] Web Apps. Included is information that applies to any Java website or web app, and also some examples for specific applications.
 
-Note that Azure provides a means for creating Java web apps using the Azure  Classic Management  Portal's configuration UI , and the Azure Marketplace , as documented at [Create a Java web app in Azure](/documentation/articles/web-sites-java-get-started/). This tutorial is for scenarios in which you do not want to use the Azure  Management  Portal configuration UI  or the Azure Marketplace .
+Note that Azure provides a means for creating Java web apps using the Azure  Portal's  Portal Preview's  configuration UI , and the Azure Marketplace , as documented at [Create a Java web app in Azure App Service](/documentation/articles/web-sites-java-get-started/). This tutorial is for scenarios in which you do not want to use the Azure Portal  Preview  configuration UI  or the Azure Marketplace .
 
 ## Configuration guidelines
 
@@ -76,10 +81,10 @@ Java based web apps can be deployed easily through most of the same means that a
 
 ## Application configuration Examples
 
-For the following applications, a web.config file and the application configuration is provided as examples to show how to enable your Java application on Azure Web Apps.
+For the following applications, a web.config file and the application configuration is provided as examples to show how to enable your Java application on App Service Web Apps.
 
 ### Tomcat
-While there are two variations on Tomcat that are supplied with Azure Web Apps, it is still quite possible to upload customer specific instances. Below is an example of an install of Tomcat with a different Java Virtual Machine (JVM).
+While there are two variations on Tomcat that are supplied with App Service Web Apps, it is still quite possible to upload customer specific instances. Below is an example of an install of Tomcat with a different Java Virtual Machine (JVM).
 
 	<?xml version="1.0" encoding="UTF-8"?>
 	<configuration>
@@ -107,7 +112,7 @@ On the Tomcat side, there are a few configuration changes that need to be made. 
 -	Comment out HTTPS and AJP connectors
 -	The IPv4 setting can also be set in the catalina.properties file where you can add     `java.net.preferIPv4Stack=true`
     
-Direct3d calls are not supported on Azure Web Apps. To disable those, add the following Java option should your application make such calls: `-Dsun.java2d.d3d=false`
+Direct3d calls are not supported on App Service Web Apps. To disable those, add the following Java option should your application make such calls: `-Dsun.java2d.d3d=false`
 
 ### Jetty
 
@@ -195,7 +200,7 @@ For additional information on Hudson, see [http://hudson-ci.org](http://hudson-c
 
 ### Liferay
 
-Liferay is supported on Azure Web Apps. Since Liferay can require significant memory, the web app needs to run on a medium or large dedicated worker, which can provide enough memory. Liferay also takes several minutes to start up. For that reason, it is recommended that you set the web app to **Always On**.  
+Liferay is supported on App Service Web Apps. Since Liferay can require significant memory, the web app needs to run on a medium or large dedicated worker, which can provide enough memory. Liferay also takes several minutes to start up. For that reason, it is recommended that you set the web app to **Always On**.  
 
 Using Liferay 6.1.2 Community Edition GA3 bundled with Tomcat, the following files were edited after downloading Liferay:
 
@@ -245,13 +250,13 @@ Once you make these changes, restart your web app running Liferay, Then, open ht
 For more information about Liferay, see [http://www.liferay.com](http://www.liferay.com).
 
 For more information about Java, see the [Java Developer Center](/develop/java/).
+
+[AZURE.INCLUDE [app-service-web-whats-changed](../../includes/app-service-web-whats-changed.md)]
 
 
-[AZURE.INCLUDE [app-service-web-whats-changed](../includes/app-service-web-whats-changed.md)]
-
-[AZURE.INCLUDE [app-service-web-try-app-service](../includes/app-service-web-try-app-service.md)]
+[AZURE.INCLUDE [app-service-web-try-app-service](../../includes/app-service-web-try-app-service.md)]
 
  
  
 <!-- External Links -->
-[Azure Web App]: /documentation/services/web-sites/
+[Azure App Service]: /documentation/articles/app-service-changes-existing-services/

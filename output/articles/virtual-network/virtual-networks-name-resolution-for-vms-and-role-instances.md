@@ -1,4 +1,4 @@
-<properties 
+﻿<properties 
    pageTitle="Resolution for VMs and Role Instances"
    description="Name Resolution scenarios for Azure IaaS , hybrid solutions, between different cloud services, Active Directory and using your own DNS server "
    services="virtual-network"
@@ -6,10 +6,15 @@
    authors="GarethBradshawMSFT"
    manager="carmonm"
    editor="tysonn" />
-<tags
-	ms.service="virtual-network"
-	ms.date="06/03/2016"
-	wacn.date=""/>
+<tags 
+   ms.service="virtual-network"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="08/31/2016"
+   wacn.date=""
+   ms.author="telmos" />
 
 # Name Resolution for VMs and Role Instances
 
@@ -127,7 +132,7 @@ There are a number of situations where your name resolution needs may go beyond 
 
 DNS servers within a virtual network can forward DNS queries to Azure's recursive resolvers to resolve hostnames within that virtual network.  For example, a Domain Controller (DC) running in Azure can respond to DNS queries for its domains and forward all other queries to Azure.  This allows VMs to see both your on-premise resources (via the DC) and Azure-provided hostnames (via the forwarder).  Access to Azure's recursive resolvers is provided via the virtual IP 168.63.129.16.
 
-DNS forwarding also enables inter-vnet DNS resolution and allows your on-premise machines to resolve Azure-provided hostnames.  In order to resolve a VM's hostname, the DNS server VM must reside in the same virtual network and be configured to forward hostname queries to Azure.  As the DNS suffix is different in each vnet, you can use conditional forwarding rules to send DNS queries to the correct vnet for resolution.  The following image shows two vnets and an on-premise network doing inter-vnet DNS resolution using this method.  An example DNS forwarder is available in the [Azure Quickstart Templates gallery](https://azure.microsoft.com/documentation/templates/301-dns-forwarder/) and [GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/301-dns-forwarder).
+DNS forwarding also enables inter-vnet DNS resolution and allows your on-premise machines to resolve Azure-provided hostnames.  In order to resolve a VM's hostname, the DNS server VM must reside in the same virtual network and be configured to forward hostname queries to Azure.  As the DNS suffix is different in each vnet, you can use conditional forwarding rules to send DNS queries to the correct vnet for resolution.  The following image shows two vnets and an on-premise network doing inter-vnet DNS resolution using this method.  An example DNS forwarder is available in the [Azure Quickstart Templates gallery](https://github.com/Azure/azure-quickstart-templates/tree/master/301-dns-forwarder/) and [GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/301-dns-forwarder).
 
 ![Inter-vnet DNS](./media/virtual-networks-name-resolution-for-vms-and-role-instances/inter-vnet-dns.png)
 

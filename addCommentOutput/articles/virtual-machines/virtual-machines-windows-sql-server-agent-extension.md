@@ -12,8 +12,13 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="05/16/2016"
-	wacn.date=""/>
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="vm-windows-sql-server"
+	ms.workload="infrastructure-services"
+	ms.date="07/14/2016"
+	wacn.date=""
+	ms.author="jroth"/>
 
 # SQL Server Agent Extension for SQL Server VMs (Resource Manager)
 
@@ -23,16 +28,9 @@
 
 The SQL Server IaaS Agent Extension (SQLIaaSExtension) runs on Azure virtual machines to automate administration tasks. This topic provides an overview of the services supported by the extension as well as instructions for installation, status, and removal.
 
-
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model. To view the classic version of this article, see [SQL Server Agent Extension for SQL Server VMs Classic](/documentation/articles/virtual-machines-windows-classic-sql-server-agent-extension/).
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)] classic deployment model. To view the classic version of this article, see [SQL Server Agent Extension for SQL Server VMs Classic](/documentation/articles/virtual-machines-windows-classic-sql-server-agent-extension/).
 
 ## Supported services
-
-
-> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the Resource Manager deployment model, which Azure recommends for most new deployments instead of the classic deployment model. To view the classic version of this article, see [SQL Server Agent Extension for SQL Server VMs Classic](/documentation/articles/virtual-machines-windows-classic-sql-server-agent-extension/).
-
-##<a name="supported-services"></a> Supported services
-
 
 The SQL Server IaaS Agent Extension supports the following administration tasks:
 
@@ -71,18 +69,15 @@ If you create an OS-only Windows Server virtual machine, you can install the ext
 
 If you update to the latest version of the SQL IaaS Agent Extension, you must restart your virtual machine after updating the extension.
 
+>[AZURE.NOTE] If you install the SQL Server IaaS Agent Extension manually on a Windows Server VM, you must use and manage its features using PowerShell commands. The portal interface is available only for SQL Server gallery images.
+
 ## Status
 
-
 One way to verify that the extension is installed is to view the agent status in the Azure Portal. Select **All settings** in the virtual machine blade, and then click on **Extensions**. You should see the **SQLIaaSExtension** extension listed.
 
 ![SQL Server IaaS Agent Extension in Azure Portal](./media/virtual-machines-windows-sql-server-agent-extension/azure-rm-sql-server-iaas-agent-portal.png)
 
 You can also use the **Get-AzureVMSqlServerExtension** Azure Powershell cmdlet.
-
-
-One way to verify that the extension is installed is to use the **Get-AzureVMSqlServerExtension** Azure Powershell cmdlet.
-
 
 	Get-AzureRmVMSqlServerExtension -VMName "vmname" -ResourceGroupName "resourcegroupname"
 
@@ -94,13 +89,11 @@ The previous command confirms the agent is installed and provides general status
 
 ## Removal   
 
-
 In the Azure Portal, you can uninstall the extension by clicking the ellipsis on the **Extensions** blade of your virtual machine properties. Then click **Delete**.
 
 ![Uninstall the SQL Server IaaS Agent Extension in Azure Portal](./media/virtual-machines-windows-sql-server-agent-extension/azure-rm-sql-server-iaas-agent-uninstall.png)
 
-
-You can  also  use the **Remove-AzureRmVMSqlServerExtension** Powershell cmdlet.
+You can also use the **Remove-AzureRmVMSqlServerExtension** Powershell cmdlet.
 
 	Remove-AzureRmVMSqlServerExtension -ResourceGroupName "resourcegroupname" -VMName "vmname" -Name "SQLIaasExtension"
 

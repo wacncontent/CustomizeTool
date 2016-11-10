@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Agile software development with Azure Web App"
-	description="Learn how to create high-scale complex applications with Azure in a way that supports agile software development."
+	pageTitle="Agile software development with Azure App Service"
+	description="Learn how to create high-scale complex applications with Azure App Service in a way that supports agile software development."
 	services="app-service"
 	documentationCenter=""
 	authors="cephalin"
@@ -9,31 +9,36 @@
 
 <tags
 	ms.service="app-service"
+	ms.workload="na"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="07/01/2016"
-	wacn.date=""/>
+	wacn.date=""
+	ms.author="cephalin"/>
 
 
-# Agile software development with Azure #
+# Agile software development with Azure App Service #
 
-In this tutorial, you will learn how to create high-scale complex applications with [Azure Web App](/home/features/web-site/) in a way that supports [agile software development](https://en.wikipedia.org/wiki/Agile_software_development). It assumes that you already know how to [deploy complex applications predictably in Azure](/documentation/articles/app-service-deploy-complex-application-predictably/).
+In this tutorial, you will learn how to create high-scale complex applications with [Azure App Service](/home/features/app-service/) in a way that supports [agile software development](https://en.wikipedia.org/wiki/Agile_software_development). It assumes that you already know how to [deploy complex applications predictably in Azure](/documentation/articles/app-service-deploy-complex-application-predictably/).
 
-Limitations in technical processes can often stand in the way of successful implementation of agile methodologies. Azure with features such as [continuous publishing](/documentation/articles/web-sites-publish-source-control/), [staging environments](/documentation/articles/web-sites-staged-publishing/) (slots), and [monitoring](/documentation/articles/web-sites-monitor/), when coupled wisely with the orchestration and management of deployment in [Azure Resource Manager](/documentation/articles/resource-group-overview/), can be part of a great solution for developers who embrace agile software development.
+Limitations in technical processes can often stand in the way of successful implementation of agile methodologies. Azure App Service with features such as [continuous publishing](/documentation/articles/app-service-continuous-deployment/), [staging environments](/documentation/articles/web-sites-staged-publishing/) (slots), and [monitoring](/documentation/articles/web-sites-monitor/), when coupled wisely with the orchestration and management of deployment in [Azure Resource Manager](/documentation/articles/resource-group-overview/), can be part of a great solution for developers who embrace agile software development.
 
 The following table is a short list of requirements associated with agile development, and how Azure services enables each of them.
 
 | Requirement | How Azure enables |
 |---------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| - Build with every commit<br>- Build automatically and fast | When configured with continuous deployment, Azure can function as live-running builds based on a dev branch. Every time code is pushed to the branch, it is automatically built and running live in Azure.|
+| - Build with every commit<br>- Build automatically and fast | When configured with continuous deployment, Azure App Service can function as live-running builds based on a dev branch. Every time code is pushed to the branch, it is automatically built and running live in Azure.|
 | - Make builds self-testing | Load tests, web tests, etc., can be deployed with the Azure Resource Manager template.|
 | - Perform tests in a clone of production environment | Azure Resource Manager templates can be used to create clones of the Azure production environment (including app settings, connection string templates, scaling, etc.) for testing quickly and predictably.|
 | - View result of latest build easily | Continuous deployment to Azure from a repository means that you can test new code in a live application immediately after you commit your changes. |
 | - Commit to the main branch every day<br>- Automate deployment | Continuous integration of a production application with a repository's main branch automatically deploys every commit/merge to the main branch to production. |
 
-[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)]
+[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
 
 ## What you will do ##
 
-You will walk through a typical dev-test-stage-production workflow in order to publish new changes to the [ToDoApp](https://github.com/azure-appservice-samples/ToDoApp) sample application, which consists of two [web apps](/home/features/web-site/), one being a frontend (FE) and the other being a Web API backend (BE), and a [SQL database](/home/features/sql-database/). You will work with the deployment architecture shown below:
+You will walk through a typical dev-test-stage-production workflow in order to publish new changes to the [ToDoApp](https://github.com/azure-appservice-samples/ToDoApp) sample application, which consists of two [web apps](/home/features/app-service/web-apps/), one being a frontend (FE) and the other being a Web API backend (BE), and a [SQL database](/home/features/sql-database/). You will work with the deployment architecture shown below:
 
 ![](./media/app-service-agile-software-development/what-1-architecture.png)
 
@@ -41,7 +46,7 @@ To put the picture into words :
 
 -	The deployment architecture is separated into three distinct environments (or [resource groups](/documentation/articles/resource-group-overview/) in Azure), each with its own [App Service plan](/documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview/), [scaling](/documentation/articles/web-sites-scale/) settings, and SQL database. 
 -	Each environment can be managed separately. They can even exist in different subscriptions.
--	Staging and production are implemented as two slots of the same Azure Web App. The master branch is setup for continuous integration with the staging slot.
+-	Staging and production are implemented as two slots of the same App Service app. The master branch is setup for continuous integration with the staging slot.
 -	When a commit to master branch is verified on the staging slot (with production data), the verified staging app is swapped into the production slot [with no downtime](/documentation/articles/web-sites-staged-publishing/).
 
 The production and staging environment is defined by the template at [*&lt;repository_root>*/ARMTemplates/ProdandStage.json](https://github.com/azure-appservice-samples/ToDoApp/blob/master/ARMTemplates/ProdAndStage.json).
@@ -67,13 +72,13 @@ You will also use the typical branching strategy, with code moving from the dev 
 > + You can [open an Azure account for free](/pricing/1rmb-trial/) - You get credits you can use to try out paid Azure services, and even after they're used up you can keep the account and use free Azure services, such as Web Apps.
 > + You can [activate Visual Studio subscriber benefits](/pricing/member-offers/msdn-benefits-details/) - Your Visual Studio subscription gives you credits every month that you can use for paid Azure services.
 >
-> If you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.
+> If you want to get started with Azure App Service before signing up for an Azure account, go to [Try App Service](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in App Service. No credit cards required; no commitments.
 
 ## Set up your production environment ##
 
 >[AZURE.NOTE] The script used in this tutorial will automatically configure continuous publishing from your GitHub repository. This requires that your GitHub credentials are already stored in Azure, otherwise the scripted deployment will fail when attempting to configure source control settings for the web apps. 
 >
->To store your GitHub credentials in Azure, create a web app in the [Azure Portal](https://portal.azure.cn/) and [configure GitHub deployment](/documentation/articles/web-sites-publish-source-control/#Step7). You only need to do this once. 
+>To store your GitHub credentials in Azure, create a web app in the [Azure Portal](https://portal.azure.cn/) and [configure GitHub deployment](/documentation/articles/app-service-continuous-deployment/). You only need to do this once. 
 
 In a typical DevOps scenario, you have an application that's running live in Azure, and you want to make changes to it through continuous publishing. In this scenario, you have a template that you developed, tested, and used to deploy the production environment. You will set it up in this section.
 
@@ -247,8 +252,7 @@ And now, after you've verified the update in the staging slot, the only thing le
 
 Congratulations! You've successfully published a new update to your production web application. What's more is that you've just done it by easily creating dev and test environments, and building and testing every commit. These are crucial building blocks for agile software development.
 
-<a name="delete"></a>
-## Delete dev and test enviroments ##
+## <a name="delete"></a> Delete dev and test enviroments ##
 
 Because you have purposely architected your dev and test environments to be self-contained resource groups, it is very easy to delete them. To delete the ones you created in this tutorial, both the GitHub branches and Azure artifacts, just run the following commands in Git Shell:
 
@@ -261,7 +265,7 @@ Because you have purposely architected your dev and test environments to be self
 
 ## Summary ##
 
-Agile software development is a must-have for many companies who want to adopt Azure as their application platform. In this tutorial, you have learned how to create and tear down exact replicas or near replicas of the production environment with ease, even for complex applications. You have also learned how to leverage this ability to create a development process that can build and test every single commit in Azure. This tutorial has hopefully shown you how you can best use Azure and Azure Resource Manager together to create a DevOps solution that caters to agile methodologies. Next, you can build on this scenario by performing advanced DevOps techniques such as [testing in production](/documentation/articles/app-service-web-test-in-production-get-start/). For a common testing-in-production scenario, see [Flighting deployment (beta testing) in Azure Web App](/documentation/articles/app-service-web-test-in-production-controlled-test-flight/).
+Agile software development is a must-have for many companies who want to adopt Azure as their application platform. In this tutorial, you have learned how to create and tear down exact replicas or near replicas of the production environment with ease, even for complex applications. You have also learned how to leverage this ability to create a development process that can build and test every single commit in Azure. This tutorial has hopefully shown you how you can best use Azure App Service and Azure Resource Manager together to create a DevOps solution that caters to agile methodologies. Next, you can build on this scenario by performing advanced DevOps techniques such as [testing in production](/documentation/articles/app-service-web-test-in-production-get-start/). For a common testing-in-production scenario, see [Flighting deployment (beta testing) in Azure App Service](/documentation/articles/app-service-web-test-in-production-controlled-test-flight/).
 
 ## More resources ##
 
@@ -275,5 +279,5 @@ Agile software development is a must-have for many companies who want to adopt A
 -	[David Ebbo's Blog](http://blog.davidebbo.com/)
 -	[Azure PowerShell](/documentation/articles/powershell-install-configure/)
 -	[Azure Cross-Platform Command-Line Tools](/documentation/articles/xplat-cli-install/)
--	[Create or edit users in Azure AD](https://msdn.microsoft.com/zh-cn/library/azure/hh967632.aspx#BKMK_1)
+-	[Create or edit users in Azure AD](/documentation/articles/active-directory-create-users/#BKMK_1)
 -	[Project Kudu Wiki](https://github.com/projectkudu/kudu/wiki)

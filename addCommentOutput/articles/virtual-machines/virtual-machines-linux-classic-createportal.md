@@ -10,31 +10,26 @@
 
 <tags
 	ms.service="virtual-machines-linux"
-	ms.date="03/15/2016"
-	wacn.date=""/>
-
-
-
-# Create a custom virtual machine running Linux
-
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
-
-
-
-
-
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-linux"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="07/06/2016"
+	wacn.date=""
+	ms.author="cynthn"/>
 
 
 # Create a custom virtual machine running Linux
 
-> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager model.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]
 
 
-
-[AZURE.INCLUDE [virtual-machines-common-classic-createportal](../includes/virtual-machines-common-classic-createportal.md)]
+
+[AZURE.INCLUDE [virtual-machines-common-classic-createportal](../../includes/virtual-machines-common-classic-createportal.md)]
 
 
-[AZURE.INCLUDE [virtual-machines-create-linuxvm](../includes/virtual-machines-create-linuxvm.md)]
+
+[AZURE.INCLUDE [virtual-machines-create-linuxvm](../../includes/virtual-machines-create-linuxvm.md)]
 
 ## Next steps
 

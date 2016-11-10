@@ -1,3 +1,8 @@
-new docs: 0, word count: {word_count_TODO}
+new docs: 5, word count: {word_count_TODO}
+articles/application-gateway/application-gateway-backend-ssl.md
+articles/application-gateway/application-gateway-end-to-end-ssl-powershell.md
+articles/application-gateway/application-gateway-web-application-firewall-portal.md
+articles/application-gateway/application-gateway-web-application-firewall-powershell.md
+articles/application-gateway/application-gateway-webapplicationfirewall-overview.md
 
 new includes: 0

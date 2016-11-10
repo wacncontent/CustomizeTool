@@ -3,22 +3,27 @@
    description="A complete list of Azure documentation articles for Windows virtual machines in the classic deployment model"
    services="virtual-machines-windows"
    documentationCenter=""
-   authors="dlepow"
+   authors="cynthn"
    manager="timlt"
    tags="azure-service-management"
    editor=""/>
 
 <tags
-	ms.service="virtual-machines-windows"
-	ms.date="04/20/2016"
-	wacn.date=""/>
+   ms.service="virtual-machines-windows"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="vm-windows"
+   ms.workload="infrastructure-services"
+   ms.date="08/05/2016"
+   wacn.date=""
+   ms.author="cynthn"/>
 
 # Technical articles for Windows VMs in the classic deployment model
 
 
-Find all the documentation you need to create and manage Windows-based virtual machines in the classic deployment model.
+Find all the documentation you need to create and manage Windows-based Azure virtual machines in the classic deployment model.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]
 
 
 ## Overview
@@ -27,7 +32,7 @@ Find all the documentation you need to create and manage Windows-based virtual m
 
 [Frequently asked question about Azure Virtual Machines created with the classic deployment model](/documentation/articles/virtual-machines-windows-classic-faq/)
 
-[Compare VMs, websites and cloud services](/documentation/articles/choose-web-site-cloud-service-vm/)
+[Compare VMs, websites, and cloud services](/documentation/articles/choose-web-site-cloud-service-vm/)
 
 [Virtual Machines and Containers in Azure](/documentation/articles/virtual-machines-windows-containers/)
 
@@ -58,11 +63,11 @@ Find all the documentation you need to create and manage Windows-based virtual m
 
 [Sizes for virtual machines](/documentation/articles/virtual-machines-windows-sizes/)
 
-[About the A8, A9, A10, and A11 compute-intensive instances](/documentation/articles/virtual-machines-windows-a8-a9-a10-a11-specs/)
+[About H-series and compute-intensive A-series VMs](/documentation/articles/virtual-machines-windows-a8-a9-a10-a11-specs/)
 
 [Planned maintenance for Azure virtual machines](/documentation/articles/virtual-machines-windows-planned-maintenance/)
 
-[Azure infrastructure services implementation guidelines](/documentation/articles/virtual-machines-windows-infrastructure-service-guidelines/)
+[Azure infrastructure services implementation guidelines](/documentation/articles/virtual-machines-windows-infrastructure-subscription-accounts-guidelines/)
 
 [Create an availability set for virtual machines](/documentation/articles/virtual-machines-windows-classic-configure-availability/)
 
@@ -85,10 +90,8 @@ Find all the documentation you need to create and manage Windows-based virtual m
 ## Manage
 
 [Manage your virtual machines by using Azure PowerShell](/documentation/articles/virtual-machines-windows-classic-manage-psh/)
-
-[Equivalent Resource Manager and Service Management commands for VM tasks with the Azure command-line interface](/documentation/articles/virtual-machines-windows-cli-manage/)
 	
-[Connect classic VNets to new VNets](/documentation/articles/virtual-networks-arm-asm-s2s-howto/)
+[Connect classic VNets to new VNets](/documentation/articles/vpn-gateway-connect-different-deployment-models-powershell/)
 	
 [About the virtual machine agent and extensions](/documentation/articles/virtual-machines-windows-classic-agents-and-extensions/)
 
@@ -99,6 +102,8 @@ Find all the documentation you need to create and manage Windows-based virtual m
 [Automated Backup for SQL Server in Azure Virtual Machines](/documentation/articles/virtual-machines-windows-classic-sql-automated-backup/)
 
 [Automated Patching for SQL Server in Azure Virtual Machines](/documentation/articles/virtual-machines-windows-classic-sql-automated-patching/)
+
+[Platform-supported migration from classic to Azure Resource Manager](/documentation/articles/virtual-machines-windows-migration-classic-resource-manager-deep-dive/)
 
 
 
@@ -166,6 +171,7 @@ Find all the documentation you need to create and manage Windows-based virtual m
 
 [Tomcat](/documentation/articles/virtual-machines-windows-classic-java-run-tomcat-app-server/)
 
+
 ## Reference
 [Azure CLI commands in Service Management mode](/documentation/articles/virtual-machines-command-line-tools/)
 
@@ -174,7 +180,6 @@ Find all the documentation you need to create and manage Windows-based virtual m
 [Service Management .NET API](https://msdn.microsoft.com/zh-cn/library/azure/mt420161.aspx)
 
 [Azure Service Management PowerShell cmdlet reference documentation](https://msdn.microsoft.com/zh-cn/library/azure/dn708504.aspx)
-
 
 ## Troubleshooting
 
@@ -187,3 +192,7 @@ Find all the documentation you need to create and manage Windows-based virtual m
 [Troubleshoot classic deployment issues with creating a new Windows virtual machine in Azure](/documentation/articles/virtual-machines-windows-classic-troubleshoot-deployment-new-vm/)
 
 [Troubleshoot classic deployment issues with restarting or resizing an existing Windows Virtual Machine in Azure](/documentation/articles/virtual-machines-windows-classic-restart-resize-error-troubleshooting/)
+
+
+
+

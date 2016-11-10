@@ -60,7 +60,7 @@ Yes. For more information about public IP address ranges, see [Public IP address
 
 There is no limit on the number of subnets you use within a VNet. All the subnets must be fully contained in the virtual network address space and should not overlap with one another.
 
-### Are there any restrictions on using IP addresses within these subnets?
+###  <a name="are-there-any-restrictions-on-using-ip-addresses-within-these-subnets"></a>  Are there any restrictions on using IP addresses within these subnets?
 
 Azure reserves some IP addresses within each subnet. The first and last IP addresses of the subnets are reserved for protocol conformance, along with 3 more addresses used for Azure services.
 
@@ -100,7 +100,7 @@ No.
 
 Yes. Subnets can be added to VNets at any time as long as the subnet address is not part of another subnet in the VNet.
 
-### Can I modify the size of my VNet size after I create it?
+### Can I modify the size of my subnet after I create it?
 
 You can add, remove, expand or shrink a subnet if there are no VMs or services deployed within it by using PowerShell cmdlets or the NETCFG file. You can also add, remove, expand or shrink any prefixes as long as the subnets that contain VMs or services are not affected by the change.
 
@@ -223,14 +223,19 @@ You can only use compute services within VNets. Compute services are limited to 
 
 ### Can I use Web Apps with Virtual Network?
 
-Yes. You can deploy Web Apps inside a VNet using ASE (Azure Environment). Adding to that, Web Apps can securely connect and access resources in your Azure VNet if you have point-to-site configured for your VNet. For more information, see the following:
+Yes. You can deploy Web Apps inside a VNet  using ASE (App Service Environment) . Adding to that, Web Apps can securely connect and access resources in your Azure VNet if you have point-to-site configured for your VNet. For more information, see the following:
 
 
-- [Creating Web Apps in an Azure Environment](/documentation/articles/app-service-web-how-to-create-a-web-app-in-an-ase/)
+
+- [Creating Web Apps in an App Service Environment](/documentation/articles/app-service-web-how-to-create-a-web-app-in-an-ase/)
 
-- [Web Apps Virtual Network Integration](https://azure.microsoft.com/blog/2014/09/15/azure-websites-virtual-network-integration/)
+- [Web Apps Virtual Network Integration](https://azure.microsoft.com/documentation/articles/app-service-vnet-integration-powershell/)
 
 - [Using VNet Integration and Hybrid Connections with Web Apps](https://azure.microsoft.com/blog/2014/10/30/using-vnet-or-hybrid-conn-with-websites/)
+
+
+- [Web Apps Virtual Network Integration](https://azure.microsoft.com/blog/2014/09/15/azure-websites-virtual-network-integration/)
+
 
 - [Integrate a web app with an Azure Virtual Network](/documentation/articles/web-sites-integrate-with-vnet/)
 

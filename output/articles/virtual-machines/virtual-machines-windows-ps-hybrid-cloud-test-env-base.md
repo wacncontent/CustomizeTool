@@ -41,7 +41,7 @@ There are five major phases to setting up this hybrid cloud test environment:
 
 If you do not already have an Azure subscription, you can sign up for a free account at [Try Azure](/pricing/1rmb-trial/). If you have an MSDN or Visual Studio subscription, see [Monthly Azure credit for Visual Studio subscribers](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/).
 
->[AZURE.NOTE] Virtual machines and virtual network gateways in Azure incur an ongoing monetary cost when they are running. An Azure VPN gateway is implemented as a set of two Azure virtual machines. For the details, see [Pricing - Virtual Network](/home/features/networking/pricing/). To minimize the costs of running the VPN gateway, create the test environment and perform your needed testing and demonstration as quickly as possible.
+>[AZURE.NOTE] Virtual machines and virtual network gateways in Azure incur an ongoing monetary cost when they are running. An Azure VPN gateway is implemented as a set of two Azure virtual machines. For the details, see [Pricing - Virtual Network](/pricing/details/networking/). To minimize the costs of running the VPN gateway, create the test environment and perform your needed testing and demonstration as quickly as possible.
 
 This configuration requires a test subnet of up to four computers connected directly to the Internet using a public IP address. If you don't have these resources, you can also set up a [simulated hybrid cloud environment for testing](/documentation/articles/virtual-machines-windows-ps-hybrid-cloud-test-env-sim/). The simulated hybrid cloud test environment requires only an Azure subscription.
 

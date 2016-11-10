@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Create a Node.js chat application with Socket.IO in Azure Web App"
+	pageTitle="Create a Node.js chat application with Socket.IO in Azure App Service"
 	description="A tutorial that demonstrates using socket.io in a node.js web app hosted on Azure."
 	services="app-service\web"
 	documentationCenter="nodejs"
@@ -9,14 +9,19 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="04/29/2016"
-	wacn.date=""/>
+	ms.workload="web"
+	ms.tgt_pltfrm="na"
+	ms.devlang="nodejs"
+	ms.topic="article"
+	ms.date="08/11/2016"
+	wacn.date=""
+	ms.author="robmcm"/>
 
-# Create a Node.js chat application with Socket.IO in Azure
+# Create a Node.js chat application with Socket.IO in Azure App Service
 
 Socket.IO provides real-time communication between your node.js server and clients using WebSockets. It also supports fallback to other transports (such as long polling) that work with older browsers. This tutorial will walk you through hosting a Socket.IO based chat application as an Azure web app, and show you how to scale the application using [Azure Redis Cache]. For more information on Socket.IO, see <http://socket.io/>.
 
-> [AZURE.NOTE] The procedures in this task apply to [Azure Web Apps]; for Cloud Services, see [Build a Node.js Chat Application with Socket.IO on an Azure Cloud Service].
+> [AZURE.NOTE] The procedures in this task apply to [App Service Web Apps]; for Cloud Services, see [Build a Node.js Chat Application with Socket.IO on an Azure Cloud Service].
 
 ## Download the chat example
 
@@ -95,14 +100,13 @@ Follow these steps to create an Azure web app, enable Git publishing, and then e
 	If prompted, enter the name of the web app.
 
 	>[AZURE.NOTE]
-	>The 'azure site set -w' command will work only with version 0.7.4 or higher of the Azure Command-Line Interface. You can also enable WebSocket support using the [Azure  Portal](https://portal.azure.cn)  Classic Management Portal](https://manage.windowsazure.cn) .
+	>The 'azure site set -w' command will work only with version 0.7.4 or higher of the Azure Command-Line Interface. You can also enable WebSocket support using the [Azure  Portal](https://portal.azure.cn)  Portal Preview](https://portal.azure.cn) .
 
 	>
 	>To enable WebSockets using the Azure Portal, click the web app from the Web Apps blade, click **All settings** > **Application settings**. Under **Web Sockets**, click **On**. Then click **Save**.
 
 
-	><p>To enable WebSockets using the [Azure Classic Management Portal](https://manage.windowsazure.cn), select the Configure page for your  Website, select 'ON' for the Web Sockets entry, and then click Save.
-	><p>![websockets](./media/web-sites-nodejs-chat-app-socketio/websockets.png)
+	><p>To enable WebSockets using the Azure Portal Preview, click the web app from the Web Apps blade, click **All settings** > **Application settings**. Under **Web Sockets**, click **On**. Then click **Save**.
 
 
 1. To view the web app on Azure, use the following command to launch your web browser and navigate to the hosted web app:
@@ -115,7 +119,7 @@ Your app is now running on Azure, and can relay chat messages between different 
 ## Scale out
 
 
-##<a name="scale-out"></a>Scale out
+## <a name="scale-out"></a>Scale out
 
 
 Socket.IO applications can be scaled out by using an __adapter__ to distribute messages and events between multiple application instances. While there are several adapters available, the [socket.io-redis] adapter can be easily used with the Azure Redis Cache feature.
@@ -273,31 +277,36 @@ If client browsers keep falling back to long polling instead of using WebSockets
 	If your application uses an entry point other than **app.js**, you must replace all occurrences of **app.js** with the correct entry point. For example, replacing **app.js** with **server.js**.
 
 
->[AZURE.NOTE] If you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App], where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.
+>[AZURE.NOTE] If you want to get started with Azure App Service before signing up for an Azure account, go to [Try App Service], where you can immediately create a short-lived starter web app in App Service. No credit cards required; no commitments.
 
 
 ## Next steps
 
 In this tutorial you learned how to create a chat application hosted in an Azure web app. You can also host this application as an Azure Cloud Service. For steps on how to accomplish this, see [Build a Node.js Chat Application with Socket.IO on an Azure Cloud Service].
 
-
 For more information, see also the [Node.js Developer Center].
 
 ## What's changed
 
-* For a guide to the change from Websites to Azure see: [Azure and Its Impact on Existing Azure Services].
-
+* For a guide to the change from Websites to App Service see: [Azure App Service and Its Impact on Existing Azure Services].
 
 <!-- URL List -->
 
 [Azure Redis Cache]: /documentation/services/redis-cache/
-[Azure Web Apps]: /documentation/services/web-sites/
+[App Service Web Apps]: /documentation/articles/app-service-changes-existing-services/
+
 [Web Apps Pricing page]: http://go.microsoft.com/fwlink/?LinkId=511643
+
+
+[Web Apps Pricing page]: /documentation/articles/azure-subscription-service-limits/
+
 [Build a Node.js Chat Application with Socket.IO on an Azure Cloud Service]: /documentation/articles/cloud-services-nodejs-chat-app-socketio/
 [Install and Configure the Azure CLI]: /documentation/articles/xplat-cli-install/
-[Azure and Its Impact on Existing Azure Services]: /documentation/services/web-sites/
+[Azure App Service and Its Impact on Existing Azure Services]: /documentation/articles/app-service-changes-existing-services/
 [Node.js Developer Center]: /develop/nodejs/
-[Try Azure Web App]: https://tryappservice.azure.com/
+
+[Try App Service]: https://tryappservice.azure.com/
+
 [Instance Affinity in Azure Web Sites]: https://azure.microsoft.com/blog/2013/11/18/disabling-arrs-instance-affinity-in-windows-azure-web-sites/
 [Create a cache in Azure Redis Cache]: /documentation/articles/cache-dotnet-how-to-use-azure-redis-cache/
 

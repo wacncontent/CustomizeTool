@@ -1,17 +1,15 @@
-
-<!-- Ibiza portal: tested -->
-
+
 
 
 ## Find the virtual machine
 
-1. Sign in to the Azure portal  Preview .
+1. Sign in to the [Azure  portal](https://portal.azure.cn/)  portal Preview](https://portal.azure.cn/) .
 
 2. On the Hub menu, click **Virtual Machines**.
 
 3.	Select the virtual machine from the list.
 
-4. To the right, under **Essentials**, click **All settings**, and then click **Disks**.
+4. To the Virtual machines blade, in **Essentials**, click **All settings** > **Disks**.
 
 	![Open disk settings](./media/virtual-machines-common-attach-disk-portal/find-disk-settings.png)
 

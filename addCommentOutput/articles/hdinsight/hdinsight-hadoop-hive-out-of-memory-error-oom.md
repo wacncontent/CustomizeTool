@@ -5,13 +5,18 @@
 	services="hdinsight"
 	documentationCenter=""
 	authors="rashimg"
-	manager="paulettm"
+	manager="jhubbard"
 	editor="cgronlun"/>
 
 <tags
 	ms.service="hdinsight"
-	ms.date="05/18/2016"
-	wacn.date=""/>
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="big-data"
+	ms.date="09/02/2016"
+	wacn.date=""
+	ms.author="rashimg;jgao"/>
 
 # Fix an Out of Memory (OOM) error with Hive memory settings in Hadoop in Azure HDInsight
 

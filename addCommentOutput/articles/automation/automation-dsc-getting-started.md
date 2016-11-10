@@ -10,20 +10,24 @@
    editor="tysonn"/>
 
 <tags
-	ms.service="automation"
-	ms.date="06/06/2016"
-	wacn.date=""/>
+   ms.service="automation"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="powershell"
+   ms.workload="na" 
+   ms.date="06/06/2016" 
+   wacn.date=""
+   ms.author="magoedte;eslesar"/>
    
 
 # Getting started with Azure Automation DSC
 
 This topic explains how to do the most common tasks with Azure Automation Desired State Configuration (DSC), such as creating, importing, and compiling configurations, onboarding machines to 
 manage, and viewing reports. For an overview of what Azure Automation DSC is, see [Azure Automation DSC Overview](/documentation/articles/automation-dsc-overview/). For DSC documentation, see 
-[Windows PowerShell Desired State Configuration Overview](Windows PowerShell Desired State Configuration Overview).
+[Windows PowerShell Desired State Configuration Overview](https://msdn.microsoft.com/PowerShell/dsc/overview).
 
 This topic provides a step-by-step guide to using Azure Automation DSC. If you want a sample environment that is already set up without following the steps described in this topic,
-you can use the ARM template at https://github.com/azureautomation/automation-packs/tree/master/102-sample-automation-setup. This template sets up a completed Azure Automation DSC
-environment, including an Azure VM that is managed by Azure Automation DSC.
+you can use [the following ARM template](https://github.com/azureautomation/automation-packs/tree/master/102-sample-automation-setup). This template sets up a completed Azure Automation DSC environment, including an Azure VM that is managed by Azure Automation DSC.
  
 ## Prerequisites
 
@@ -82,7 +86,7 @@ Next, we'll import the configuration into the Automation account.
 
 3. On the **Automation account** blade, click **DSC Configurations**.
 
-4. On the **DSC Configurations blade, click **Add a configuration**.
+4. On the **DSC Configurations** blade, click **Add a configuration**.
 
 5. On the **Import Configuration** blade, browse to the `TestConfig.ps1` file on your computer.
     
@@ -101,7 +105,7 @@ After you have imported a configuration, you can view it in the Azure portal.
 
 3. On the **Automation account** blade, click **DSC Configurations**
 
-4. On the **DSC Configurations blade, click **TestConfig** (this is the name of the configuration you imported in the previous procedure).
+4. On the **DSC Configurations** blade, click **TestConfig** (this is the name of the configuration you imported in the previous procedure).
 
 5. On the **TestConfig Configuration** blade, click **View configuration source**.
 
@@ -121,7 +125,7 @@ For more information about compiling configurations, see [DSC Configurations](ht
 
 3. On the **Automation account** blade, click **DSC Configurations**
 
-4. On the **DSC Configurations blade, click **TestConfig** (the name of the previously imported configuration).
+4. On the **DSC Configurations** blade, click **TestConfig** (the name of the previously imported configuration).
 
 5. On the **TestConfig Configuration** blade, click **Compile**, and then click **Yes**. This starts a compilation job.
     
@@ -141,7 +145,7 @@ compilation logs.
 
 3. On the **Automation account** blade, click **DSC Configurations**.
 
-4. On the **DSC Configurations blade, click **TestConfig** (the name of the previously imported configuration).
+4. On the **DSC Configurations** blade, click **TestConfig** (the name of the previously imported configuration).
 
 5. On the **Compilation jobs** tile of the **TestConfig Configuration** blade, click on any of the jobs listed. A **Compilation Job** blade opens, labeled with the date that the 
 compilation job was started.
@@ -230,14 +234,13 @@ for that node.
     ![Screenshot of the Report blade](./media/automation-dsc-getting-started/NodeReport.png)
 
 On the blade for an individual report, you can see the following status information for the corresponding consistency check:
-- The report status--whether the node is "Compliant", the configuration "Failed", or the node is "Not Compliant" (when the node is in **applyandmonitor** mode and the machine is not in the
-desired state).
+
+- The report status -- whether the node is "Compliant", the configuration "Failed", or the node is "Not Compliant" (when the node is in **applyandmonitor** mode and the machine is not in the desired state).
 - The start time for the consistency check.
 - The total runtime for the consistency check.
 - The type of consistency check.
 - Any errors, including the error code and error message. 
-- Any DSC resources used in the configuration, and the state of each resource (whether the node is in the desired state for that resource)--you can click on each resource to get more 
-detailed information for that resource.
+- Any DSC resources used in the configuration, and the state of each resource (whether the node is in the desired state for that resource) -- you can click on each resource to get more detailed information for that resource.
 - The name, IP address, and configuration mode of the node.
 
 You can also click **View raw report** to see the actual data that the node sends to the server. For more information about using that data, see 
@@ -275,7 +278,7 @@ If you no longer want a node to be managed by Azure Automation DSC, you can unre
 
 3. On the **Automation account** blade, click **DSC Nodes**.
 
-4. On the **DSC Nodes** blade, click on the name of the node you want to reassign.
+4. On the **DSC Nodes** blade, click on the name of the node you want to unregister.
 
 5. On the blade for that node, click **Unregister**.
 
@@ -286,5 +289,5 @@ If you no longer want a node to be managed by Azure Automation DSC, you can unre
 * [Onboarding machines for management by Azure Automation DSC](/documentation/articles/automation-dsc-onboarding/)
 * [Windows PowerShell Desired State Configuration Overview](https://msdn.microsoft.com/powershell/dsc/overview)
 * [Azure Automation DSC cmdlets](https://msdn.microsoft.com/zh-cn/library/mt244122.aspx)
-* [Azure Automation DSC pricing](/home/features/automation/pricing/)
+* [Azure Automation DSC pricing](/pricing/details/automation/)
 

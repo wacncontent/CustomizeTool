@@ -10,8 +10,13 @@
 
 <tags
 	ms.service="virtual-machines-linux"
-	ms.date="01/29/2016"
-	wacn.date=""/>
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-linux"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/26/2016"
+	wacn.date=""
+	ms.author="v-livech"/>
 
 # Disable SSH passwords on your Linux VM by configuring SSHD
 
@@ -44,7 +49,7 @@ For this article it is very important to keep one login to your Linux VM open fo
 
 ## Prerequisites
 
-- [Create SSH keys on Linux and Mac for Linux VMs in Azure](/documentation/articles/link/)
+- [Create SSH keys on Linux and Mac for Linux VMs in Azure](/documentation/articles/virtual-machines-linux-mac-create-ssh-keys/)
 - Azure account
   - [trial signup](/pricing/1rmb-trial/)
 
@@ -128,17 +133,17 @@ username@macbook$ sudo vim /etc/ssh/sshd_config
 
 
 	username@macbook$ sudo vim /etc/ssh/sshd_config
-	
 
+
 # Change PubkeyAuthentication to this:
 PubkeyAuthentication yes
 
 ```
+
 
-
 #### Disable Root Login
-
 
+
 ```
 username@macbook$ sudo vim /etc/ssh/sshd_config
 

@@ -8,9 +8,14 @@
    editor=""/>
 
 <tags
-	ms.service="app-service"
-	ms.date="05/31/2016"
-	wacn.date=""/>
+   ms.service="app-service"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="web"
+   ms.date="05/31/2016"
+   wacn.date=""
+   ms.author="sumuth"/>
 
 # Use DevOps environments effectively for your web apps
 
@@ -18,13 +23,13 @@ This article shows you how to setup and manage web application deployments  for 
 Setting up multiple development environments can be a challenging task as you need to track and manage the resources (compute, web app, database, cache etc.) across these environments and deploy content from one environment to another.
 
 ## Setting up a non-production environment (stage,dev,QA)
-Once you have a production web app up and running, the next step is to create a non-production environment. In order to use deployment slots make sure you are running in the **Standard**  or **Premium**  App Service plan mode. Deployment slots are actually live web apps with their own hostnames. Web app content and configuration elements can be swapped between two deployment slots, including the production slot. Deploying your application to a deployment slot has the following benefits:
+Once you have a production web app up and running, the next step is to create a non-production environment. In order to use deployment slots make sure you are running in the **Standard** or **Premium** App Service plan mode. Deployment slots are actually live web apps with their own hostnames. Web app content and configuration elements can be swapped between two deployment slots, including the production slot. Deploying your application to a deployment slot has the following benefits:
 
 1. You can validate web app changes in a staging deployment slot before swapping it with the production slot.
-2. Deploying a web app to a slot first and swapping it into production ensures that all instances of the slot are warmed up before being swapped into production. This eliminates downtime when you deploy your web app. The traffic redirection is seamless, and no requests are dropped due to swap operations.  This entire workflow can be automated by configuring [Auto Swap](/documentation/articles/web-sites-staged-publishing/#configure-auto-swap-for-your-web-app) when pre-swap validation is not needed. 
+2. Deploying a web app to a slot first and swapping it into production ensures that all instances of the slot are warmed up before being swapped into production. This eliminates downtime when you deploy your web app. The traffic redirection is seamless, and no requests are dropped due to swap operations. This entire workflow can be automated by configuring [Auto Swap](/documentation/articles/web-sites-staged-publishing/#configure-auto-swap-for-your-web-app) when pre-swap validation is not needed.
 3. After a swap, the slot with previously staged web app now has the previous production web app. If the changes swapped into the production slot are not as you expected, you can perform the same swap immediately to get your "last known good web app" back.
 
-To setup a staging deployment slot, see [Set up staging environments for web apps in Azure](/documentation/articles/web-sites-staged-publishing/) . Every environment should include its own set of resources, for example if your web app uses a database then both production web app and staging web app should be using different databases.  Add staging development environment resources such as database, storage or cache for setting up your staging development environment.
+To setup a staging deployment slot, see [Set up staging environments for web apps in Azure App Service](/documentation/articles/web-sites-staged-publishing/) . Every environment should include its own set of resources, for example if your web app uses a database then both production web app and staging web app should be using different databases.  Add staging development environment resources such as database, storage or cache for setting up your staging development environment.
 
 ## Examples of using multiple development environments
 
@@ -38,7 +43,7 @@ Any project should follow a source code management with at least two environment
 There are many ways to setup a multiple environment for your project and the examples below are just one such method for the respective applications.
 
 ### WordPress
-In this section you will learn how to setup a deployment workflow using slots for WordPress. WordPress like most CMS solutions does not support working with multiple development environments out of the box. Azure Web Apps have a few features that make it easier to store configuration settings outside of your code.
+In this section you will learn how to setup a deployment workflow using slots for WordPress. WordPress like most CMS solutions does not support working with multiple development environments out of the box. App Service Web Apps have a few features that make it easier to store configuration settings outside of your code.
 
 Before creating a staging slot, setup your application code to support multiple environments. To support multiple environments in WordPress you need to edit `wp-config.php` on your local development web app add the following code at the beginning of the file. This will allow your application to pick the correct configuration based on the selected environment.
 
@@ -258,27 +263,26 @@ Any WordPress Core updates will not affect your `wp-config.php` , `wp-config.azu
 
 
 #### Setup a Staging Environment
- Assuming you already have a WordPress web app running on Azure Web, login to [Azure Portal](https://portal.azure.cn/) and go to your WordPress web app. If not you can create one from the marketplace. To learn more, click [here](/documentation/articles/web-sites-php-web-site-gallery/). 
-
+Assuming you already have a WordPress web app running on Azure Web, login to [Azure  Portal](https://portal.azure.cn/)  Portal Preview](https://portal.azure.cn/)  and go to your WordPress web app. If not you can create one from the marketplace. To learn more, click [here](/documentation/articles/web-sites-php-web-site-gallery/).
 Click on **Settings** -> **Deployment slots** -> **Add** to create a deployment slot with the name stage. A deployment slot is another web application sharing the same resources as the primary web app created above.
 
 ![Create stage deployment slot](./media/app-service-web-staged-publishing-realworld-scenarios/1setupstage.png)
 
+
 Add another MySQL database, say `wordpress-stage-db` to your resource group `wordpressapp-group`.
 
- ![Add MySQL database to resourec group](./media/app-service-web-staged-publishing-realworld-scenarios/2addmysql.png)
-
-Update the Connection strings for your stage deployment slot to point to newly created database, `wordpress-stage-db`. Note that your production web app , `wordpressprodapp` and staging web app `wordpressprodapp-stage` must point to different databases.
+![Add MySQL database to resourec group](./media/app-service-web-staged-publishing-realworld-scenarios/2addmysql.png)
 
 
-Assuming you already have a WordPress web app running on Azure Web, login to [Azure Classic Management Portal](https://manage.windowsazure.cn/) and go to your WordPress web app.
-Click on **Dashboard** -> **quick glance** -> **Add a new deployment slot** with the name stage. A deployment slot is another web app sharing the same resources as the primary web app created above.
+Add another MySQL database, say `wordpress-stage-db` through Classic Management Portal.
 
-
+![Add MySQL database to resourec group](./media/app-service-web-staged-publishing-realworld-scenarios/2addmysql.png)
 
 
+Update the Connection strings for your stage deployment slot to point to newly created database, `wordpress-stage-db`. Note that your production web app , `wordpressprodapp` and staging web app `wordpressprodapp-stage` must point to different databases.
+
 #### Configure environment-specific app settings
-Developers can store key-value string pairs in Azure as part of the configuration information associated with a web app called App Settings. At runtime, Azure Web Apps automatically retrieve these values for you and make them available to code running in your web app.  From a security perspective that is a benefit since sensitive information such as database connection strings with passwords should never show up as clear text in a file such as `wp-config.php`.
+Developers can store key-value string pairs in Azure as part of the configuration information associated with a web app called App Settings. At runtime, App Service Web Apps automatically retrieve these values for you and make them available to code running in your web app.  From a security perspective that is a benefit since sensitive information such as database connection strings with passwords should never show up as clear text in a file such as `wp-config.php`.
 
 This process  defined below is useful when you perform updates as it includes both file changes and database changes for WordPress app:
 
@@ -292,9 +296,7 @@ Configure app settings for:
 - turning on/off  WordPress logging
 - WordPress security settings
 
-
 ![App Setings for Wordpress web app](./media/app-service-web-staged-publishing-realworld-scenarios/3configure.png)
-
 
 Make sure you have added the following app settings for your production web app and stage slot. Note that the production web app and Staging web app use different databases.
 Uncheck **Slot Setting** checkbox for all the settings parameters except WP_ENV. This will swap the configuration for your web app, along with file content and database. If **Slot Setting** is **Checked**, the web app's app settings and connection string configuration will NOT move across environments when doing a SWAP operation and hence if any database changes are present this will not break your production web app.
@@ -308,69 +310,12 @@ Browse and test your staging web app. Considering a scenario where the theme of 
 ![Browse staging web app before swapping slots](./media/app-service-web-staged-publishing-realworld-scenarios/5wpstage.png)
 
 
-
  If all looks good, click on the **Swap** button on your staging web app to move your content to the production environment. In this case you swap the web app and the database across environments during every **Swap** operation.
+
 ![Swap preview changes for wordpress](./media/app-service-web-staged-publishing-realworld-scenarios/6swaps1.png)
-
-
-If all looks good, use the following PowerShell script to swap you web site slot.
-
-
-	try{
-	    $acct = Get-AzureRmSubscription
-	}
-	catch{
-	    Login-AzureRmAccount -EnvironmentName AzureChinaCloud
-	}
-	
-	# this is the resource group of you web site.
-	# If you didn't specify during creation, by default, it's "Default-Web-ChinaEast" or "Default-Web-ChinaNorth"
-	$myResourceGroup = '<your resource Group>'
-	$mySite = '<your web site name>'
-	$stageSlot = '<your source slot>'
-	
-	
-	$props = (Invoke-AzureRmResourceAction -ResourceGroupName $myResourceGroup `
-	            -ResourceType Microsoft.Web/sites/Config -Name $mySite/appsettings `
-	            -Action list -ApiVersion 2015-08-01 -Force).Properties
-
-	$props_stage = (Invoke-AzureRmResourceAction -ResourceGroupName $myResourceGroup `
-	            -ResourceType Microsoft.Web/sites/slots/Config -Name $mySite/$stageSlot/appsettings `
-	            -Action list -ApiVersion 2015-08-01 -Force).Properties 
-	
-	$hash = @{}
-	$props | Get-Member -MemberType NoteProperty | % { $hash[$_.Name] = $props.($_.Name) }
-	
-	$hash_stage = @{}
-	$props_stage | Get-Member -MemberType NoteProperty | % { $hash_stage[$_.Name] = $props_stage.($_.Name) }
-	
-	Set-AzureRMWebAppSlot -ResourceGroupName $myResourceGroup `
-	            -Name $mySite -Slot $stageSlot -AppSettings $hash
-	
-	$ParametersObject = @{targetSlot = 'production'}
-	Invoke-AzureRmResourceAction -ResourceGroupName $myResourceGroup `
-	            -ResourceType Microsoft.Web/sites/slots `
-	            -ResourceName $mySite/$stageSlot `
-	            -Action slotsswap `
-	            -Parameters $ParametersObject `
-	            -ApiVersion 2015-08-01
-
-	Set-AzureRMWebAppSlot -ResourceGroupName $myResourceGroup `
-	            -Name $mySite -Slot $stageSlot -AppSettings $hash_stage
-
-> [AZURE.NOTE] The above script is written for Azure PowerShell 1.0.2 or greater. For lower version, please change the commands correspondingly. For more detail, see the blog [Azure PowerShell 1.0.0 or greater in China](http://blogs.msdn.com/b/azchina/archive/2015/12/18/azure-powershell-1.0.0_e54e0a4e48722c6728572d4efd56_azure_7f4f28758476e86c0f618b4e7998_.aspx).
-
-You must use this PowerShell script (or some other similar way, such as Azure CLI) to swap, in order to keep the app settings for each slot. If you swap on Azure Classic Management Portal, the web site's app settings, connection strings configuration will NOT move across environments when doing a SWAP operation and hence if any database changes are present this will not be visible breaking your production web site.
-
-
 
  > [AZURE.NOTE]
-
- >If you have a scenario where you need to only push files (no database updates), then **Check** the **Slot Setting** for all the database  related *app settings* and *connection strings settings* in web app setting blade within the Azure Portal before doing the SWAP. In this case DB_NAME, DB_HOST, DB_PASSWORD, DB_USER, default connection string setting should not show up in preview changes when doing a **Swap**. At this time, when you complete the **Swap** operation the WordPress web app will have the updated files **ONLY**.
-
-
- >If you need to swap some of the app settings while keep other app settings, you can manipulate the variables `$hash` and `$hash_stage` in the above script.
-
+ >If you have a scenario where you need to only push files (no database updates), then **Check** the **Slot Setting** for all the database  related *app settings* and *connection strings settings* in web app setting blade within the Azure Portal  Preview  before doing the SWAP. In this case DB_NAME, DB_HOST, DB_PASSWORD, DB_USER, default connection string setting should not show up in preview changes when doing a **Swap**. At this time, when you complete the **Swap** operation the WordPress web app will have the updated files **ONLY**.
 
 Before doing a SWAP, here is the production WordPress web app
 ![Production web app before swapping slots](./media/app-service-web-staged-publishing-realworld-scenarios/7bfswap.png)
@@ -386,7 +331,7 @@ To generalize the process for any application with a database
 
 1. Install application on your local environment
 2. Include environment specific configuration (local and Azure Web App )
-3. Setup  your environments in Azure Web Apps- Staging , Production
+3. Setup  your environments in App Service Web Apps- Staging , Production
 4. If you have a production application already running on Azure, sync your production content (files/code + database) to local and staging environment.
 5. Develop your application on your local environment
 6. Place your production web app under maintenance or locked mode and sync database content from production to staging and dev environments
@@ -394,7 +339,6 @@ To generalize the process for any application with a database
 8. Deploy to Production environment
 9. Repeat steps 4 through 6
 
-
 ### Umbraco
 In this section you will learn how the Umbraco CMS uses a custom module to deploy from across multiple DevOps environment. This example provides you with a different approach to managing multiple development environments.
 
@@ -442,8 +386,13 @@ Upload the courier2 package using the installer.
 
 To configure you need to update courier.config file under **Config** folder of your web app.
 
+
 ```xml
 <!-- Repository connection settings -->
+
+
+	<!-- Repository connection settings -->
+
   <!-- For each site, a custom repository must be configured, so Courier knows how to connect and authenticate-->
   <repositories>
         <!-- If a custom Umbraco Membership provider is used, specify login & password + set the passwordEncoding to clear:  -->
@@ -455,23 +404,35 @@ To configure you need to update courier.config file under **Config** folder of y
            <!-- <passwordEncoding>Clear</passwordEncoding>-->
            </repository>
   </repositories>
+
  ```
+
 
 Under `<repositories>`, enter the production site URL and user information. If you are using default Umbraco Membership provider, then add the ID for the Administration user in <user> section . If you are using a custom Umbraco membership provider, use `<login>`,`<password>` to Courier2 module know how to connect to the production site. For more details, review the [documentation](http://umbraco.com/help-and-support/customer-area/courier-2-support-and-download/developer-documentation) for Courier module.
 
 Similarly, install Courier module on your production site and configure it point to stage web app in its respective courier.config file as shown here
 
+
 ```xml
+
   <!-- Repository connection settings -->
   <!-- For each site, a custom repository must be configured, so Courier knows how to connect and authenticate-->
   <repositories>
         <!-- If a custom Umbraco Membership provider is used, specify login & password + set the passwordEncoding to clear:  -->
         <repository name="Stage web app" alias="stage" type="CourierWebserviceRepositoryProvider" visible="true">
             <url>http://umbracositecms-1-stage.chinacloudsites.cn</url>
+
             <user>0</user>
            </repository>
+
+
+				<user>0</user>
+			</repository>
+
   </repositories>
+
 ```
+
 
 Click on Courier2 tab in Umbraco CMS web app  dashboard and select locations. You should see the repository name as mentioned in `courier.config`. Do this on both your production and staging web apps.
 
@@ -516,14 +477,15 @@ Once your local development site is upgraded, publish the changes to staging web
 The advantage of swapping both the web app and database:
 1. Gives you the ability to roll back to the previous version of your web app with another **Swap** if there are any application issues.
 2. For an upgrade you need to deploy files and database from staging web app to production web app and database. There are many things that can go wrong when deploying files and database. By using the **Swap** feature of slots, we can reduces downtime during an upgrade and reduce the risk of failures that can occur when deploying changes.
-3. Gives you the ability to do **A/B testing** using [Testing in production](https://azure.microsoft.com/documentation/videos/introduction-to-azure-websites-testing-in-production-with-galin-iliev/) feature
+3. Gives you the ability to do **A/B testing**  using [Testing in production](https://azure.microsoft.com/documentation/videos/introduction-to-azure-websites-testing-in-production-with-galin-iliev/) feature 
 
 This example shows you the flexibility of the platform where you can build custom modules similar to Umbraco Courier module to manage deployment across environments.
 
-
 ## References
-[Agile software development with Azure Web App](/documentation/articles/app-service-agile-software-development/)
+[Agile software development with Azure App Service](/documentation/articles/app-service-agile-software-development/)
 
-[Set up staging environments for web apps in Azure](/documentation/articles/web-sites-staged-publishing/)
+[Set up staging environments for web apps in Azure App Service](/documentation/articles/web-sites-staged-publishing/)
+
 
 [How to block web access to non-production deployment slots](http://ruslany.net/2014/04/azure-web-sites-block-web-access-to-non-production-deployment-slots/)
+

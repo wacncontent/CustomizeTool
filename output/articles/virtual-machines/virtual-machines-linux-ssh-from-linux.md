@@ -19,9 +19,19 @@
 - [Windows](/documentation/articles/virtual-machines-linux-ssh-from-windows/)
 - [Linux/Mac](/documentation/articles/virtual-machines-linux-ssh-from-linux/)
 
+
+
 This topic describes how to use **ssh-keygen** and **openssl** on Linux and Mac to create and use **ssh-rsa** format and **.pem** format files to secure communication with Azure VMs based on Linux. Creating Linux-based Azure Virtual Machines using the Resource Manager deployment model is recommended for new deployments and takes an *ssh-rsa* type public key file or string (depending on the deployment client). The [Azure portal](https://portal.azure.cn) currently accepts only the **ssh-rsa** format strings, whether for classic or Resource Manager deployments.
 
-> [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
+
+> [AZURE.NOTE] If you have a few moments, please help us to improve the Azure Linux VM documentation by taking this [quick survey](https://aka.ms/linuxdocsurvey) of your experiences. Every answer helps us help you get your work done.
+
+
+
+This topic describes how to use **ssh-keygen** and **openssl** on Linux and Mac to create and use **ssh-rsa** format and **.pem** format files to secure communication with Azure VMs based on Linux. Creating Linux-based Azure Virtual Machines using the Resource Manager deployment model is recommended for new deployments and takes an *ssh-rsa* type public key file or string (depending on the deployment client). The [Azure portal Preview](https://portal.azure.cn) currently accepts only the **ssh-rsa** format strings, whether for classic or Resource Manager deployments.
+
+
+> [AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
 To create these types of files for use on a Windows computer to communicate securely with Linux VMs in Azure, see [Use SSH keys on Windows](/documentation/articles/virtual-machines-linux-ssh-from-windows/). 
 
 ## Which files do you need?
@@ -30,7 +40,7 @@ A basic ssh setup for Azure includes an **ssh-rsa** public and private key pair 
 
 Here are the deployment scenarios, and the types of files you use in each:
 
-1. **ssh-rsa** keys are required for any deployment using the [Azure portal](https://portal.azure.cn), regardless of the deployment model.
+1. **ssh-rsa** keys are required for any deployment using the [Azure  portal](https://portal.azure.cn)  portal Preview](https://portal.azure.cn) , regardless of the deployment model.
 2. .pem file are required to create VMs using the [Classic Management Portal](https://manage.windowsazure.cn). .pem files are also supported in classic deployments that use the [Azure CLI](/documentation/articles/xplat-cli-install/). 
 
 ## Create keys for use with SSH
@@ -91,13 +101,29 @@ The most common usage is when imperatively creating a VM -- or uploading a templ
 	--image-urn canonical:UbuntuServer:14.04.3-LTS:latest \
 	--username ops \
 	-ssh-publickey-file ~/.ssh/id_rsa.pub \
+
 	testrg testvm westeurope linux
+
+
+	testrg testvm chinaeast linux
+
 
 The next example shows the use of the **ssh-rsa** format with a Resource Manager template and the Azure CLI to create an Ubuntu VM that is secured by a username and the contents of the `~/.ssh/id_rsa.pub` as a string. (In this case, the public key string is shortened to be more readable.) 
+
+
+You can download the template from [GitHub](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-vm-sshkey/azuredeploy.json) and run the following command.
+
+>[AZURE.NOTE] Templates you downloaded from the GitHub Repo "azure-quickstart-templates" must be modified in order to fit in the Azure China Cloud Environment. For example, replace some endpoints -- "blob.core.windows.net" by "blob.core.chinacloudapi.cn", "cloudapp.azure.com" by "chinacloudapp.cn"; change some unsupported VM images; and, changes some unsupported VM sizes.
+
 
 	azure group deployment create \
 	--resource-group test-sshtemplate \
+
 	--template-uri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-vm-sshkey/azuredeploy.json \
+
+
+	--template-file /path/to/azuredeploy.json \
+
 	--name mysshdeployment
 	info:    Executing command group deployment create
 	info:    Supply values for the following parameters
@@ -105,7 +131,12 @@ The next example shows the use of the **ssh-rsa** format with a Resource Manager
 	adminUserName: ops
 	sshKeyData: ssh-rsa AAAAB3NzaC1yc2EAAAADAQA+/L+rHIjz+nXTzxApgnP+iKDZco9 user@macbookpro
 	dnsNameForPublicIP: testsshvmtemplate
+
 	location: West Europe
+
+
+	location: China East
+
 	vmName: sshvm
 	+ Initializing template configurations and parameters
 	+ Creating a deployment
@@ -116,15 +147,21 @@ The next example shows the use of the **ssh-rsa** format with a Resource Manager
 	data:    ProvisioningState  : Succeeded
 	data:    Timestamp          : 2015-10-08T00:12:12.2529678Z
 	data:    Mode               : Incremental
+
 	data:    TemplateLink       : https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-vm-sshkey/azuredeploy.json
 	data:    ContentVersion     : 1.0.0.0
+
+
+	data:    CorrelationId      : xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+	data:    DeploymentParameters :
+
 	data:    Name                   Type    Value
 
 	data:    newStorageAccountName  String  testtestsshvmtemplate3
 	data:    adminUserName          String  ops
 	data:    sshKeyData             String  ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDAkek3P6V3EhmD+xP+iKDZco9 user@macbookpro
 	data:    dnsNameForPublicIP     String  testsshvmtemplate
-	data:    location               String  West Europe
+	data:    location               String   West Europe  China East 
 	data:    vmSize                 String  Standard_A2
 	data:    vmName                 String  sshvm
 	data:    ubuntuOSVersion        String  14.04.3-LTS
@@ -217,11 +254,11 @@ Examine the network profile section:
 	data:          MAC Address               :00-0D-3A-21-8E-AE
 	data:          Provisioning State        :Succeeded
 	data:          Name                      :testnic
-	data:          Location                  :westeurope
+	data:          Location                   :westeurope  :chinaeast 
 	data:            Private IP alloc-method :Static
 	data:            Private IP address      :192.168.1.101
 	data:            Public IP address       :40.115.48.189
-	data:            FQDN                    :testsubdomain.westeurope.chinacloudapp.cn
+	data:            FQDN                     :testsubdomain.westeurope.chinacloudapp.cn  :testsubdomain.chinaeast.chinacloudapp.cn 
 	data:
 	data:    Diagnostics Instance View:
 	info:    vm show command OK
@@ -234,7 +271,7 @@ If you didn't use the default SSH port of 22 when you created the VM, you can di
 	data:    Id                              : /subscriptions/<guid>/resourceGroups/testrg/providers/Microsoft.Network/networkSecurityGroups/testnsg
 	data:    Name                            : testnsg
 	data:    Type                            : Microsoft.Network/networkSecurityGroups
-	data:    Location                        : westeurope
+	data:    Location                        :  westeurope  chinaeast 
 	data:    Provisioning state              : Succeeded
 	data:    Security group rules:
 	data:    Name                           Source IP          Source Port  Destination IP  Destination Port  Protocol  Direction  Access  Priority

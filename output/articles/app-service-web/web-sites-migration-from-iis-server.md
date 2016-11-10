@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Migrate an enterprise web app to Azure" 
-	description="Shows how to use Web Apps Migration Assistant to quickly migrate existing IIS websites to Azure Web Apps" 
+	pageTitle="Migrate an enterprise web app to Azure App Service" 
+	description="Shows how to use Web Apps Migration Assistant to quickly migrate existing IIS websites to Azure App Service Web Apps" 
 	services="app-service" 
 	documentationCenter="" 
 	authors="cephalin" 
@@ -8,23 +8,28 @@
 	manager="wpickett" 
 	editor=""/>
 
-<tags
-	ms.service="app-service"
-	ms.date="07/01/2016"
-	wacn.date=""/>
+<tags 
+	ms.service="app-service" 
+	ms.workload="na" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="07/01/2016" 
+	wacn.date="" 
+	ms.author="cephalin"/>
 
-# Migrate an enterprise web app to Azure
+# Migrate an enterprise web app to Azure App Service
 
-You can easily migrate your existing websites that run on Internet Information Service (IIS) 6 or later to [Azure Web Apps](/documentation/services/web-sites/). 
+You can easily migrate your existing websites that run on Internet Information Service (IIS) 6 or later to [App Service Web Apps](/documentation/articles/app-service-changes-existing-services/). 
 
 >[AZURE.IMPORTANT] Windows Server 2003 reached end of support on July 14th 2015. If you are currently hosting your websites on an IIS server that is Windows Server 2003, Web Apps is a low-risk, low-cost, and low-friction way to keep your websites online, and Web Apps Migration Assistant can help automate the migration process for you. 
 
-[Web Apps Migration Assistant](https://www.movemetothecloud.net/) can analyze your IIS server installation, identify which sites can be migrated to Azure Web App, highlight any elements that cannot be migrated or are unsupported on the platform, and then migrate your websites and associated databases to Azure.
+[Web Apps Migration Assistant](https://www.movemetothecloud.net/) can analyze your IIS server installation, identify which sites can be migrated to App Service, highlight any elements that cannot be migrated or are unsupported on the platform, and then migrate your websites and associated databases to Azure.
 
-[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)]
+[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
 
 ## Elements Verified During Compatibility Analysis ##
-The Migration Assistant creates a readiness report to identify any potential causes for concern or blocking issues which may prevent a successful migration from on-premises IIS to Azure Web Apps. Some of the key items to be aware of are:
+The Migration Assistant creates a readiness report to identify any potential causes for concern or blocking issues which may prevent a successful migration from on-premises IIS to Azure App Service Web Apps. Some of the key items to be aware of are:
 
 -	Port Bindings - Web Apps only supports Port 80 for HTTP and Port 443 for HTTPS traffic. Different port configurations will be ignored and traffic will be routed to 80 or 443. 
 -	Authentication - Web Apps supports Anonymous Authentication by default and Forms Authentication where specified by an application. Windows Authentication can be used by integrating with Azure Active Directory and ADFS only. All other forms of authentication - for example, Basic Authentication - are not currently supported. 
@@ -62,7 +67,7 @@ This section steps through an example to to migrate a few websites that use a SQ
 
 	![](./media/web-sites-migration-from-iis-server/install-page.png)
 
-	>[AZURE.NOTE] You can also click **Download for offline install** to download a ZIP file for installing on servers not connected to the interent. Or, you can click **Upload an existing migration readiness report**, which is an advanced option to work with an existing migration readiness report that you previously generated (explained later).
+	>[AZURE.NOTE] You can also click **Download for offline install** to download a ZIP file for installing on servers not connected to the internet. Or, you can click **Upload an existing migration readiness report**, which is an advanced option to work with an existing migration readiness report that you previously generated (explained later).
 
 5.	In the **Application Install** screen, click **Install** to install on your machine. It will also install corresponding dependencies like Web Deploy, DacFX, and IIS, if needed. 
 
@@ -119,14 +124,14 @@ This section steps through an example to to migrate a few websites that use a SQ
  
 20.	Click the links to the Azure web apps and verify that the migration has succeeded.
 
-21. You can now manage the migrated web apps in Azure. To do this, log into the [Azure Portal](https://portal.azure.cn).
+21. You can now manage the migrated web apps in Azure App Service. To do this, log into the [Azure Portal](https://portal.azure.cn).
 
 22. In the Azure Portal, open the Web Apps blade to see your migrated websites (shown as web apps), then click on any one of them to start managing the web app, such as configuring continuous publishing, creating backups, autoscaling, and monitoring usage or performance.
 
 	![](./media/web-sites-migration-from-iis-server/TimeTrackerMigrated.png)
 
->[AZURE.NOTE] If you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.
+>[AZURE.NOTE] If you want to get started with Azure App Service before signing up for an Azure account, go to [Try App Service](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in App Service. No credit cards required; no commitments.
 
 ## What's changed
-* For a guide to the change from Websites to Azure see: [Azure and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
+* For a guide to the change from Websites to App Service see: [Azure App Service and Its Impact on Existing Azure Services](/documentation/articles/app-service-changes-existing-services/)
  

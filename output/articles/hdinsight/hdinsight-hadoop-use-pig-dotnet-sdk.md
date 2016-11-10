@@ -4,24 +4,29 @@
    services="hdinsight"
    documentationCenter=".net"
    authors="Blackmist"
-   manager="paulettm"
+   manager="jhubbard"
    editor="cgronlun"
    tags="azure-portal"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="06/17/2016"
-	wacn.date=""/>
+   ms.service="hdinsight"
+   ms.devlang="dotnet"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="big-data"
+   ms.date="09/06/2016"
+   wacn.date=""
+   ms.author="larryfr"/>
 
 #Run Pig jobs using the .NET SDK for Hadoop in HDInsight
 
-[AZURE.INCLUDE [pig-selector](../includes/hdinsight-selector-use-pig.md)]
+[AZURE.INCLUDE [pig-selector](../../includes/hdinsight-selector-use-pig.md)]
 
 This document provides an example of using the .NET SDK for Hadoop to submit Pig jobs to a Hadoop on HDInsight cluster.
 
 The HDInsight .NET SDK provides .NET client libraries that makes it easier to work with HDInsight clusters from .NET. Pig allows you to create MapReduce operations by modeling a series of data transformations. You will learn how to use a basic C# application to submit a Pig job to an HDInsight cluster.
 
-[AZURE.INCLUDE [azure-portal](../includes/hdinsight-azure-portal.md)]
+[AZURE.INCLUDE [azure-portal](../../includes/hdinsight-azure-portal.md)]
 
 * [Run Pig jobs using the .NET SDK for Hadoop in HDInsight](/documentation/articles/hdinsight-hadoop-use-pig-dotnet-sdk-v1/)
 
@@ -99,7 +104,7 @@ The HDInsight .NET SDK provides .NET client libraries, which makes it easier to 
                 {
                     var parameters = new PigJobSubmissionParameters
                     {
-                        Query = @"LOGS = LOAD 'wasb:///example/data/sample.log';
+                        Query = @"LOGS = LOAD 'wasbs:///example/data/sample.log';
                                     LEVELS = foreach LOGS generate REGEX_EXTRACT($0, '(TRACE|DEBUG|INFO|WARN|ERROR|FATAL)', 1)  as LOGLEVEL;
                                     FILTEREDLEVELS = FILTER LEVELS by LOGLEVEL is not null;
                                     GROUPEDLEVELS = GROUP FILTEREDLEVELS by LOGLEVEL;

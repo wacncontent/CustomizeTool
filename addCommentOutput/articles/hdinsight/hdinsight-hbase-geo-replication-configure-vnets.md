@@ -4,13 +4,18 @@
    services="hdinsight,virtual-network" 
    documentationCenter="" 
    authors="mumian" 
-   manager="paulettm" 
+   manager="jhubbard" 
    editor="cgronlun"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="03/04/2016"
-	wacn.date=""/>
+   ms.service="hdinsight"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="big-data" 
+   ms.date="06/28/2016" 
+   wacn.date=""
+   ms.author="jgao"/>
 
 # Configure a VPN connection between two Azure virtual networks  
 
@@ -58,13 +63,19 @@ Before you begin this tutorial, you must have the following:
 
 	Before running PowerShell scripts, make sure you are connected to your Azure subscription using the following cmdlet:
 
+
 		Add-AzureAccount
+
+
+		Clear-AzureProfile
+		Import-AzurePublishSettingsFile -PublishSettingsFile path/to/<subscription name>-<date>-credentials.publishsettings
+
 
 	If you have multiple Azure subscriptions, use the following cmdlet to set the current subscription:
 
 		Select-AzureSubscription <AzureSubscriptionName>
 		
-	[AZURE.INCLUDE [upgrade-powershell](../includes/hdinsight-use-latest-powershell.md)]
+	[AZURE.INCLUDE [upgrade-powershell](../../includes/hdinsight-use-latest-powershell.md)]
 
 
 >[AZURE.NOTE] Azure service names and virtual machine names must be unique. The name used in this tutorial is Contoso-[Azure Service/VM name]-[CN/CE]. For example, Contoso-VNet-CN is the Azure virtual network in the China North data center; Contoso-DNS-CE is the DNS server VM in the East U.S. datacenter. You must come up with your own names.
@@ -202,7 +213,7 @@ There are two parts in this configuration. First you configure a VNet site-to-si
 
 **To create a VPN gateway for Contoso-VNet-CN**
 
-- Repeat the last two procedure to configure the Contoso-VNet-CE site-to-site connectivity to Contoso-LNet-CN, and the creat a VPN gateway for Contoso-Vnet-US. When you are done, you will have the VPN gateway IP address for Contoso-VNet-CE.
+- Repeat the last two procedure to configure the Contoso-VNet-CE site-to-site connectivity to Contoso-LNet-CN, and the creat a VPN gateway for  Contoso-Vnet-US  Contoso-Vnet-CE . When you are done, you will have the VPN gateway IP address for Contoso-VNet-CE.
 
 
 ### Set the VPN device IP addresses for local networks
@@ -213,7 +224,7 @@ In the last section, you create a VPN gateway for each of the VNets. You have go
 1.	From the Azure Classic Management Portal, click **NETWORKS** on the left pane.
 2.	Click **LOCAL NETWORKS** from the top.
 3.	Click **Contoso-LNet-CN**, and then click **EDIT** on the bottom.
-4.	Update **VPN DEVICE IP ADDRESS**.  This is the address you get from the DASHBOARD tab of Contoso-VNET-EU.
+4.	Update **VPN DEVICE IP ADDRESS**.  This is the address you get from the DASHBOARD tab of  Contoso-VNET-EU  Contoso-VNET-CN .
 5.	Click the right button.
 6.	Click the check button.
 
@@ -232,8 +243,14 @@ The Vnet gateways use a shared key to authenticate connections between the virtu
 
 		Add-AuzreAccount
 		Select-AzureSubscription -[AzureSubscriptionName]
+
 		Set-AzureVNetGatewayKey -VNetName ContosoVNet-EU -LocalNetworkSiteName Contoso-LNet-CE -SharedKey A1b2C3D4
 		Set-AzureVNetGatewayKey -VNetName ContosoVNet-US -LocalNetworkSiteName Contoso-LNet-CN -SharedKey A1b2C3D4 
+
+
+		Set-AzureVNetGatewayKey -VNetName ContosoVNet-CN -LocalNetworkSiteName Contoso-LNet-CE -SharedKey A1b2C3D4
+		Set-AzureVNetGatewayKey -VNetName ContosoVNet-CE -LocalNetworkSiteName Contoso-LNet-CN -SharedKey A1b2C3D4 
+
 
 
 ##Check the VPN connection 

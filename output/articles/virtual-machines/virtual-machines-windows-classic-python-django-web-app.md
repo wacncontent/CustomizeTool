@@ -9,10 +9,15 @@
 	tags="azure-service-management"/>
 
 
-<tags
-	ms.service="virtual-machines-windows"
-	ms.date="08/04/2015"
-	wacn.date=""/>
+<tags 
+	ms.service="virtual-machines-windows" 
+	ms.workload="web" 
+	ms.tgt_pltfrm="vm-windows" 
+	ms.devlang="python" 
+	ms.topic="article" 
+	ms.date="08/04/2015" 
+	wacn.date="" 
+	ms.author="huvalo"/>
 
 
 # Django Hello World web application on a Windows Server VM
@@ -23,7 +28,7 @@
 
 <br>
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]
  
 
 This tutorial describes how to host a Django-based website on Microsoft
@@ -41,7 +46,7 @@ A screenshot of the completed application appears next.
 
 ![A browser window displaying the hello world page on Azure][1]
 
-[AZURE.INCLUDE [create-account-and-vms-note](../includes/create-account-and-vms-note.md)]
+[AZURE.INCLUDE [create-account-and-vms-note](../../includes/create-account-and-vms-note.md)]
 
 ## Creating and configuring an Azure virtual machine to host Django
 

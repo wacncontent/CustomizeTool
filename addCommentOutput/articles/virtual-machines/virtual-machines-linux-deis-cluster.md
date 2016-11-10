@@ -6,14 +6,19 @@
    services="virtual-machines-linux"
    documentationCenter=""
    authors="HaishiBai"
-   manager="larar"
+   manager="timlt"
    editor=""
    tags="azure-resource-manager"/>
 
 <tags
-	ms.service="virtual-machines-linux"
-	ms.date="06/24/2015"
-	wacn.date=""/>
+   ms.service="virtual-machines-linux"
+   ms.devlang="multiple"
+   ms.topic="article"
+   ms.tgt_pltfrm="vm-linux"
+   ms.workload="infrastructure-services"
+   ms.date="06/24/2015"
+   wacn.date=""
+   ms.author="hbai"/>
 
 # Deploy a 3-node Deis cluster
 

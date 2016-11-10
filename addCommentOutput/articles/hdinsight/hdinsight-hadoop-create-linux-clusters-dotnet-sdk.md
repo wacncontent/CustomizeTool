@@ -6,28 +6,33 @@
    	services="hdinsight"
    	documentationCenter=""
    	authors="mumian"
-   	manager="paulettm"
+   	manager="jhubbard"
    	editor="cgronlun"
 	tags="azure-portal"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="06/07/2016"
-	wacn.date=""/>
+   	ms.service="hdinsight"
+   	ms.devlang="na"
+   	ms.topic="article"
+   	ms.tgt_pltfrm="na"
+   	ms.workload="big-data"
+   	ms.date="09/02/2016"
+   	wacn.date=""
+   	ms.author="jgao"/>
 
 #Create Linux-based clusters in HDInsight using the .NET SDK
 
-[AZURE.INCLUDE [selector](../includes/hdinsight-selector-create-clusters.md)]
+[AZURE.INCLUDE [selector](../../includes/hdinsight-selector-create-clusters.md)]
 
 The HDInsight .NET SDK provides .NET client libraries that make it easier to work with HDInsight from a .NET Framework application. This document demonstrates how to create a Linux-based HDInsight cluster using the .NET SDK.
 
 > [AZURE.IMPORTANT] The steps in this document create a cluster with one worker node. If you plan on more than 32 worker nodes, either at cluster creation or by scaling the cluster after creation, then you must select a head node size with at least 8 cores and 14GB ram.
 >
-> For more information on node sizes and associated costs, see [HDInsight pricing](/home/features/hdinsight/pricing/).
+> For more information on node sizes and associated costs, see [HDInsight pricing](/pricing/details/hdinsight/).
 
 ##Prerequisites
 
-[AZURE.INCLUDE [delete-cluster-warning](../includes/hdinsight-delete-cluster-warning.md)]
+[AZURE.INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
 
 - **An Azure subscription**. See [Get Azure trial](/pricing/1rmb-trial/).
 - __Visual Studio 2013 or 2015__
@@ -214,7 +219,7 @@ Modify the sample in [Create clusters](#create-clusters) to configure a Hive set
 
         var coreConfigs = new Dictionary<string, string>
         {
-            {"fs.defaultFS", string.Format("wasb://{0}@{1}", ExistingBlobContainer, ExistingStorageName)},
+            {"fs.defaultFS", string.Format("wasbs://{0}@{1}", ExistingBlobContainer, ExistingStorageName)},
             {
                 string.Format("fs.azure.account.key.{0}", ExistingStorageName),
                 ExistingStorageKey

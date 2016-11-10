@@ -1,5 +1,7 @@
+<!-- not suitable for Mooncake -->
+
 
-<!-- Ibiza portal: not suitable for Mooncake -->
+<!-- not suitable for Mooncake -->
 
 
 ## Deploy the ARM template by using click to deploy

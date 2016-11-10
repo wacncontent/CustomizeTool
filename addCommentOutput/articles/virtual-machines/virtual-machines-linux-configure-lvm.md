@@ -8,10 +8,15 @@
 	editor="tysonn"
 	tag="azure-service-management,azure-resource-manager" />
 
-<tags
-	ms.service="virtual-machines-linux"
-	ms.date="05/06/2016"
-	wacn.date=""/>
+<tags 
+	ms.service="virtual-machines-linux" 
+	ms.workload="infrastructure-services" 
+	ms.tgt_pltfrm="vm-linux" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="08/24/2016" 
+	wacn.date="" 
+	ms.author="szark"/>
 
 
 # Configure LVM on a Linux VM in Azure

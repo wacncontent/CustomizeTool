@@ -10,15 +10,15 @@ VNets contain the following properties.
 |Property|Description|Sample values|
 |---|---|---|
 |**addressSpace**|Collection of address prefixes that make up the VNet in CIDR notation|192.168.0.0/16|
-
 |**subnets**|Collection of subnets that make up the VNet|see [subnets](#Subnets) below.|
-
-
-|**subnets**|Collection of subnets that make up the VNet| |
-
 |**ipAddress**|IP address assigned to object. This is a read-only property.|104.42.233.77|
 
+
 ### Subnets
+
+
+### <a name="Subnets"></a> Subnets
+
 A subnet is a child resource of a VNet, and helps define segments of address spaces within a CIDR block, using IP address prefixes. NICs can be added to subnets, and connected to VMs, providing connectivity for various workloads.
 
 Subnets contain the following properties. 

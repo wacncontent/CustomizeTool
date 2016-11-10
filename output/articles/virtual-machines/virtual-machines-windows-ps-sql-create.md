@@ -8,9 +8,14 @@
     editor=""
     tags="azure-resource-manager" />
 <tags
-	ms.service="virtual-machines-windows"
+    ms.service="virtual-machines-windows"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="vm-windows-sql-server"
+	ms.workload="infrastructure-services"
 	ms.date="07/15/2016"
-	wacn.date=""/>
+	wacn.date=""
+	ms.author="jroth"/>
 
 # Provision a SQL Server virtual machine using Azure PowerShell (Resource Manager)
 

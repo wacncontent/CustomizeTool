@@ -9,16 +9,21 @@
 
 <tags
 	ms.service="app-service-web"
+	ms.workload="web"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="03/08/2016"
-	wacn.date=""/>
+	wacn.date=""
+	ms.author="ahmedelnably"/>
 
-# Azure Web App Cloning Using Azure Portal#
+# Azure App Service App Cloning Using Azure Portal#
 
-The cloning feature in [Azure Web Apps](/documentation/services/web-sites/) lets you easily clone existing web apps to a newly created app in a different region or in the same region. This will enable customers to deploy a number of apps across different regions quickly and easily.
+The cloning feature in [Azure App Service Web Apps](/documentation/articles/app-service-changes-existing-services/) lets you easily clone existing web apps to a newly created app in a different region or in the same region. This will enable customers to deploy a number of apps across different regions quickly and easily.
 
-App cloning is currently only supported for premium tier app service plans. The new feature uses the same limitations as Web Apps Backup feature, see [Back up a web app in Azure](/documentation/articles/web-sites-backup/).
+App cloning is currently only supported for premium tier app service plans. The new feature uses the same limitations as Web Apps Backup feature, see [Back up a web app in Azure App Service](/documentation/articles/web-sites-backup/).
 
-[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)] 
+[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)] 
 
 
 ## Cloning an existing App ##
@@ -39,9 +44,9 @@ The web app must be running in the **Premium** mode in order for you to create a
 
 4. After clicking **create** the platform will start working on creating a clone of the source web app.
 
-## Cloning an existing App to an Azure Environment##
+## Cloning an existing App to an App Service Environment##
 
-In the **Clone App** blade the customer will have the option to choose an app pool in an existing Azure Environment.
+In the **Clone App** blade the customer will have the option to choose an app pool in an existing App Service Environment.
 
 ## Current Restrictions ##
 
@@ -60,10 +65,10 @@ This feature is currently in preview, we are working to add new capabilities ove
 
 ### References ###
 - [Web App Cloning using PowerShell](/documentation/articles/app-service-web-app-cloning/)
-- [Back up a web app in Azure](/documentation/articles/web-sites-backup/)
-- [How to Create an Azure Environment](/documentation/articles/app-service-web-how-to-create-an-app-service-environment/)
-- [Create a web app in an Azure Environment](/documentation/articles/app-service-web-how-to-create-a-web-app-in-an-ase/)
-- [Introduction to Azure Environment](/documentation/articles/app-service-app-service-environment-intro/)
+- [Back up a web app in Azure App Service](/documentation/articles/web-sites-backup/)
+- [How to Create an App Service Environment](/documentation/articles/app-service-web-how-to-create-an-app-service-environment/)
+- [Create a web app in an App Service Environment](/documentation/articles/app-service-web-how-to-create-a-web-app-in-an-ase/)
+- [Introduction to App Service Environment](/documentation/articles/app-service-app-service-environment-intro/)
 
 <!--Image references-->
 [1]: ./media/app-service-web-app-cloning-portal/CloningBlade.png

@@ -17,7 +17,7 @@
 
 #Install the LAMP Stack on a Linux virtual machine in Azure
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
 
 
 A LAMP stack consists of the following different elements:
@@ -101,7 +101,7 @@ Setting Up
 
 		- CentOS & Oracle: `sudo service httpd restart`
 
-	- Apache listens on port 80 by default. You may need to open an endpoint to access your Apache server remotely.  Please see the documentation on [configuring endpoints](/documentation/articles/virtual-machines-windows-classic-setup-endpoints/) for more detailed instructions.
+	- Apache listens on port 80 by default. You may need to open an endpoint to access your Apache server remotely.  Please see the documentation on [configuring  endpoints](/documentation/articles/virtual-machines-windows-classic-setup-endpoints/)  endpoints](/documentation/articles/virtual-machines-linux-classic-setup-endpoints/)  for more detailed instructions.
 
 	- You can now check to see that Apache is running and serving content. Point your browser to `http://[MYSERVICE].chinacloudapp.cn`, where **[MYSERVICE]** is the name of the cloud service in which your virtual machine resides. On some distributions you may be greeted by a default web page that simply states "It works!". On others you may see a more complete web page with links to additional documentation and content for configuring the Apache server.
 

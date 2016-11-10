@@ -3,13 +3,18 @@
    description="This article explains the 'Nested Profiles' feature of Azure Traffic Manager"
    services="traffic-manager"
    documentationCenter=""
-   authors="jtuliani"
+   authors="sdwheeler"
    manager="carmonm"
    editor="tysonn" />
-<tags
-	ms.service="traffic-manager"
-	ms.date="05/25/2016"
-	wacn.date=""/>
+<tags 
+   ms.service="traffic-manager"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="05/25/2016"
+   wacn.date=""
+   ms.author="sewhee" />
 
 # Nested Traffic Manager profiles
 
@@ -73,7 +78,7 @@ Since the  West Europe  China East site 1  endpoint has higher priority than
 
 You can repeat this pattern for all regions, replacing all 3 endpoints in the parent profile with 3 child profiles, each providing a prioritized failover sequence.
 
- ##  ##<a name="example-4-controlling-performance-traffic-routing-between-multiple-endpoints-in-the-same-region"></a>  Example 4: Controlling 'Performance' traffic routing between multiple endpoints in the same region
+##  <a name="example-4-controlling-performance-traffic-routing-between-multiple-endpoints-in-the-same-region"></a>  Example 4: Controlling 'Performance' traffic routing between multiple endpoints in the same region
 
 Suppose the 'Performance' traffic-routing method is used in a profile that has more than one endpoint in a particular region, say China North.  By default, traffic directed to that region will be distributed evenly across all available endpoints in that region.
 
@@ -83,12 +88,7 @@ This default can be changed using nested Traffic Manager profiles.  Instead of a
 
 !['Performance' traffic routing with custom in-region traffic distribution][8]
 
-
-## Example 5: Per-endpoint monitoring settings
-
-
-##<a name="example-5-per-endpoint-monitoring-settings"></a> Example 5: Per-endpoint monitoring settings
-
+##  <a name="example-5-per-endpoint-monitoring-settings"></a>  Example 5: Per-endpoint monitoring settings
 
 Suppose you are using Traffic Manager to smoothly migrate traffic between a legacy on-premises web site and a new Cloud-based version hosted on Azure.  For the legacy site, you want to use the home page (path '/') to monitor site health, but for the new Cloud-based version you are implementing a custom monitoring page that includes additional checks (path '/monitor.aspx').
 
@@ -102,7 +102,7 @@ The monitoring settings in a Traffic Manager profile apply to all endpoints with
 ## FAQ
 
 
-##<a name="faq"></a> FAQ
+## <a name="faq"></a> FAQ
 
 
 ### How do I configure nested profiles?
@@ -120,7 +120,7 @@ Yes. There are no restrictions on how you combine endpoints of different types w
 
 There is no negative pricing impact of using nested profiles.
 
-Traffic Manager billing has two components: endpoint health checks and millions of DNS queries (for full details, see our [pricing page](/home/features/traffic-manager/pricing/).) Here's how this applies to Nested profiles:
+Traffic Manager billing has two components: endpoint health checks and millions of DNS queries (for full details, see our [pricing page](/pricing/details/traffic-manager/).) Here's how this applies to Nested profiles:
 
 - Endpoint health checks: There is no charge for a child profile when configured as an endpoint in a parent profile. Endpoints in the child profile that are monitoring the underlying services are billed in the usual way.
 

@@ -4,18 +4,23 @@
    services="hdinsight"
    documentationCenter=""
    authors="Blackmist"
-   manager="paulettm"
+   manager="jhubbard"
    editor="cgronlun"
 	tags="azure-portal"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="04/07/2016"
-	wacn.date=""/>
+   ms.service="hdinsight"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="big-data"
+   ms.date="09/14/2016"
+   wacn.date=""
+   ms.author="larryfr"/>
 
 # Use Pig with Hadoop on HDInsight
 
-[AZURE.INCLUDE [pig-selector](../includes/hdinsight-selector-use-pig.md)]
+[AZURE.INCLUDE [pig-selector](../../includes/hdinsight-selector-use-pig.md)]
 
 [Apache Pig](http://pig.apache.org/) is a platform for creating programs for Hadoop by using a procedural language known as *Pig Latin*. Pig is an alternative to Java for creating *MapReduce* solutions, and it is included with Azure HDInsight.
 
@@ -57,18 +62,18 @@ In the previous example, the log level is ERROR.
 
 The sample data is stored in Azure Blob storage, which HDInsight uses as the default file system for Hadoop clusters. HDInsight can access files stored in blobs by using the **wasb** prefix. For example, to access the sample.log file, you would use the following syntax:
 
-	wasb:///example/data/sample.log
+	wasbs:///example/data/sample.log
 
 Because WASB is the default storage for HDInsight, you can also access the file by using **/example/data/sample.log** from Pig Latin.
 
-> [AZURE.NOTE] The syntax, **wasb:///**, is used to access files stored in the default storage container for your HDInsight cluster. If you specified additional storage accounts when you provisioned your cluster, and you want to access files stored in these accounts, you can access the data by specifying the container name and storage account address, for example: **wasb://mycontainer@mystorage.blob.core.chinacloudapi.cn/example/data/sample.log**.
+> [AZURE.NOTE] The syntax, **wasbs:///**, is used to access files stored in the default storage container for your HDInsight cluster. If you specified additional storage accounts when you provisioned your cluster, and you want to access files stored in these accounts, you can access the data by specifying the container name and storage account address, for example: **wasbs://mycontainer@mystorage.blob.core.chinacloudapi.cn/example/data/sample.log**.
 
 
 ##<a id="job"></a>About the sample job
 
 The following Pig Latin job loads the **sample.log** file from the default storage for your HDInsight cluster. Then it performs a series of transformations that result in a count of how many times each log level occurred in the input data. The results are dumped into STDOUT.
 
-	LOGS = LOAD 'wasb:///example/data/sample.log';
+	LOGS = LOAD 'wasbs:///example/data/sample.log';
 	LEVELS = foreach LOGS generate REGEX_EXTRACT($0, '(TRACE|DEBUG|INFO|WARN|ERROR|FATAL)', 1)  as LOGLEVEL;
 	FILTEREDLEVELS = FILTER LEVELS by LOGLEVEL is not null;
 	GROUPEDLEVELS = GROUP FILTEREDLEVELS by LOGLEVEL;

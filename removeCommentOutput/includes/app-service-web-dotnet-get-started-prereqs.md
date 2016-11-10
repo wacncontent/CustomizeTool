@@ -1,6 +1,6 @@
 * The tutorial assumes you have worked with ASP.NET MVC. If you need an introduction, see [Getting Started with ASP.NET MVC 5](http://www.asp.net/mvc/overview/getting-started/introduction/getting-started).
 
-* You need an Azure account. You can [open a free Azure account](/pricing/1rmb-trial/?WT.mc_id=A261C142F) or [Activate Visual Studio subscriber benefits](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F). If you want to get started with Azure before you sign up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/). There, you can immediately create a short-lived starter  app in Azure -- no credit card required, and no commitments.
+* You need an Azure account. You can [open a free Azure account](/pricing/1rmb-trial/?WT.mc_id=A261C142F) or [Activate Visual Studio subscriber benefits](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F). If you want to get started with Azure App Service before you sign up for an Azure account, go to [Try App Service](https://tryappservice.azure.com/). There, you can immediately create a short-lived starter  app in App Service -- no credit card required, and no commitments.
 
 ### <a name="setupdevenv"></a>Visual Studio 2015 with the Azure SDK for .NET
 

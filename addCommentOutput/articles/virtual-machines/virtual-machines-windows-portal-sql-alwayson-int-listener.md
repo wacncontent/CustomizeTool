@@ -10,9 +10,14 @@
    editor="monicar"/>
 
 <tags
-	ms.service="virtual-machines"
-	ms.date="04/17/2016"
-	wacn.date=""/>
+   ms.service="virtual-machines"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="vm-windows-sql-server"
+   ms.workload="infrastructure-services"
+   ms.date="07/12/2016"
+   wacn.date=""
+   ms.author="MikeRayMSFT"/>
 
 # Configure an internal load balancer for an AlwaysOn availability group in Azure
 
@@ -32,11 +37,11 @@ Related topics include:
 
 ## Steps
 
-By walking through this document you will create and configure a load balancer in the Azure portal  Preview . After that is complete, you will configure the cluster to use the IP address from the load balancer for the AlwaysOn availability group listener.
+By walking through this document you will create and configure a load balancer in the Azure portal. After that is complete, you will configure the cluster to use the IP address from the load balancer for the AlwaysOn availability group listener.
 
-## Create and configure the load balancer in the Azure portal  Preview 
+## Create and configure the load balancer in the Azure portal
 
-In this portion of the task you will do the following steps in the Azure portal  Preview :
+In this portion of the task you will do the following steps in the Azure portal:
 
 1. Create the load balancer and configure the IP address
 
@@ -50,7 +55,7 @@ In this portion of the task you will do the following steps in the Azure portal 
 
 ## 1. Create the load balancer and configure the IP address
 
-The first step is to create the load balancer. In the Azure portal  Preview , open the resource group that contains the SQL Server virtual machines. In the resource group, click **Add**.
+The first step is to create the load balancer. In the Azure portal, open the resource group that contains the SQL Server virtual machines. In the resource group, click **Add**.
 
 - Search for **load balancer**. From the search results select **Load Balancer**, which is published by **Microsoft**.
 
@@ -195,13 +200,13 @@ In this step, you manually create the availability group listener in Failover Cl
 
 - Click the **Resources** tab, then expand the Client Access Point you just created. Right-click the IP resource and click properties. Note the name of the IP address. You will use this name in the `$IPResourceName` variable in the PowerShell script.
 
-- Under **IP Address** click **Static IP Address** and set the static IP address to the same address that you used when you set the load balancer IP address on the Azure portal  Preview . Enable NetBIOS for this address and click **OK**. Repeat this step for each IP resource if your solution spans multiple Azure VNets.
+- Under **IP Address** click **Static IP Address** and set the static IP address to the same address that you used when you set the load balancer IP address on the Azure portal. Enable NetBIOS for this address and click **OK**. Repeat this step for each IP resource if your solution spans multiple Azure VNets. 
 
 - On the cluster node that currently hosts the primary replica, open an elevated PowerShell ISE and paste the following commands into a new script.
 
         $ClusterNetworkName = "<MyClusterNetworkName>" # the cluster network name (Use Get-ClusterNetwork on Windows Server 2012 of higher to find the name)
         $IPResourceName = "<IPResourceName>" # the IP Address resource name
-        $ILBIP = "<X.X.X.X>" # the IP Address of the Internal Load Balancer (ILB). This is the static IP address for the load balancer you configured in the Azure portal  Preview .
+        $ILBIP = "<X.X.X.X>" # the IP Address of the Internal Load Balancer (ILB). This is the static IP address for the load balancer you configured in the Azure portal.
     
         Import-Module FailoverClusters
     
@@ -250,7 +255,7 @@ To test the connection:
 
 1. Use **sqlcmd** utility to test the connection. For example, the following script establishes a **sqlcmd** connection to the primary replica through the listener with Windows authentication:
 
-        sqlmd -S <listenerName> -E
+        sqlcmd -S <listenerName> -E
 
 The SQLCMD connection automatically connect to whichever instance of SQL Server hosts the primary replica. 
 

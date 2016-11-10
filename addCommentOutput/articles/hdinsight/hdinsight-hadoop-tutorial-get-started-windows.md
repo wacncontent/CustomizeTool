@@ -7,14 +7,19 @@
    services="hdinsight"
    documentationCenter=""
    authors="nitinme"
-   manager="paulettm"
+   manager="jhubbard"
    editor="cgronlun"
    tags="azure-portal"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="03/07/2016"
-	wacn.date=""/>
+   ms.service="hdinsight"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="big-data"
+   ms.date="03/07/2016"
+   wacn.date=""
+   ms.author="nitinme"/>
 
 
 # Hadoop tutorial: Get started using Hadoop in HDInsight on Windows
@@ -46,7 +51,7 @@ HDInsight Emulator for Azure, formerly known as *Microsoft HDInsight Developer P
 The Emulator targets developer scenarios and only supports single-node deployments. For 
 information about using HDInsight Emulator, see [Get Started with the HDInsight Emulator][hdinsight-emulator].
 
-[AZURE.INCLUDE [delete-cluster-warning](../includes/hdinsight-delete-cluster-warning.md)]
+[AZURE.INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
 
 ### Prerequisites
 
@@ -193,7 +198,7 @@ Sample | What does it do?
 
 ##Delete the cluster
 
-[AZURE.INCLUDE [delete-cluster-warning](../includes/hdinsight-delete-cluster-warning.md)]
+[AZURE.INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
 
 ##Next steps
 In this Hadoop tutorial, you learned how to create a Hadoop cluster on Windows in HDInsight, run a Hive query on data, and import the results into Excel, where they can be further processed and graphically displayed with business intelligence tools. To learn more, see the following tutorials:
@@ -263,3 +268,4 @@ In this Hadoop tutorial, you learned how to create a Hadoop cluster on Windows i
 
 [image-hdi-gettingstarted-powerquery-importdata]: ./media/hdinsight-hadoop-tutorial-get-started-windows-v1/HDI.GettingStarted.PowerQuery.ImportData.png
 [image-hdi-gettingstarted-powerquery-importdata2]: ./media/hdinsight-hadoop-tutorial-get-started-windows-v1/HDI.GettingStarted.PowerQuery.ImportData2.png
+ 

@@ -1,5 +1,5 @@
 <properties 
-   pageTitle="Connect multiple on-premises sites to a virtual network using a VPN Gateway"
+   pageTitle="Connect a virtual network to multiple sites using VPN Gateway and PowerShell | Azure"
    description="This article will walk you through connecting multiple local on-premises sites to a virtual network using a VPN Gateway for the classic deployment model."
    services="vpn-gateway"
    documentationCenter="na"
@@ -8,22 +8,34 @@
    editor=""
    tags="azure-service-management"/>
 
-<tags
-	ms.service="vpn-gateway"
-	ms.date="05/11/2016"
-	wacn.date=""/>
+<tags 
+   ms.service="vpn-gateway"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="05/11/2016"
+   wacn.date=""
+   ms.author="yushwang" />
 
-# Connect multiple on-premises sites to a virtual network
+# Add a Site-to-Site connection to a VNet with an existing VPN gateway connection
 
-This article applies to connecting multiple on-premises sites to a VNet created using the classic deployment model (also known as Service Management). When we have an article with steps for VNets created using the Resource Manager model, I'll link to it from this page. 
+> [AZURE.SELECTOR]
+- [Resource Manager - Portal](/documentation/articles/vpn-gateway-howto-multi-site-to-site-resource-manager-portal/)
+- [Classic - PowerShell](/documentation/articles/vpn-gateway-multi-site/)
 
-**About Azure deployment models**
+This article walks you through using PowerShell to add Site-to-Site (S2S) connections to a VPN gateway that has an existing connection. This type of connection is often referred to as a "multi-site" configuration. 
 
-[AZURE.INCLUDE [vpn-gateway-clasic-rm](../includes/vpn-gateway-classic-rm-include.md)] 
+This article applies to virtual networks created using the classic deployment model (also known as Service Management). These steps do not apply to ExpressRoute/Site-to-Site coexisting connection configurations. See [ExpressRoute/S2S coexisting connections](/documentation/articles/expressroute-howto-coexist-classic/) for information about coexisting connections.
 
-**Deployment models and tools for multi-site connections**
+### Deployment models and methods
 
-[AZURE.INCLUDE [vpn-gateway-table-multi-site](../includes/vpn-gateway-table-multisite-include.md)] 
+[AZURE.INCLUDE [vpn-gateway-clasic-rm](../../includes/vpn-gateway-classic-rm-include.md)] 
+
+We update this table as new articles and additional tools become available for this configuration. When an article is available, we link directly to it from this table.
+
+[AZURE.INCLUDE [vpn-gateway-table-multi-site](../../includes/vpn-gateway-table-multisite-include.md)] 
+
 
 
 ## About connecting
@@ -166,7 +178,7 @@ For example:
 
 	Get-AzureVNetGatewayKey -VNetName "VNet1" -LocalNetworkSiteName "Site2"
 
-If you prefer, you can also use the *Get Virual Network Gateway Shared Key* REST API to get the pre-shared keys.
+If you prefer, you can also use the *Get Virtual Network Gateway Shared Key* REST API to get the pre-shared keys.
 
 ## 7. Verify your connections
 

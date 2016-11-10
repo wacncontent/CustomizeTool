@@ -6,19 +6,24 @@
 	services="hdinsight"
 	documentationCenter=""
 	authors="Blackmist"
-	manager="paulettm"
+	manager="jhubbard"
 	editor="cgronlun"
 	tags="azure-portal"/>
 
 <tags
 	ms.service="hdinsight"
-	ms.date="04/22/2016"
-	wacn.date=""/>
+	ms.workload="big-data"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="07/12/2016"
+	wacn.date=""
+	ms.author="larryfr"/>
 
 
 #Enable heap dumps for Hadoop services on Linux-based HDInsight (Preview)
 
-[AZURE.INCLUDE [heapdump-selector](../includes/hdinsight-selector-heap-dump.md)]
+[AZURE.INCLUDE [heapdump-selector](../../includes/hdinsight-selector-heap-dump.md)]
 
 Heap dumps contain a snapshot of the application's memory, including the values of variables at the time the dump was created. So they are very useful for diagnosing problems that occur at run-time.
 

@@ -6,14 +6,19 @@
    authors="bwren"
    manager="stevenka"
    editor="tysonn" />
-<tags
-	ms.service="automation"
-	ms.date="01/27/2016"
-	wacn.date=""/>
+<tags 
+   ms.service="automation"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="01/27/2016"
+   wacn.date=""
+   ms.author="bwren" />
 
 # Connection assets in Azure Automation
 
-An Automation connection asset contains the information required to connect to an external service or application from a runbook  or DSC configuration .This may include information required for authentication such as a username and password in addition to connection information such as a URL or a port. The value of a connection is keeping all of the properties for connecting to a particular application in one asset as opposed to creating multiple variables. The user can edit the values for a connection in one place, and you can pass the name of a connection to a runbook  or DSC configuration  in a single parameter. The properties for a connection can be accessed in the runbook  or DSC configuration  with the **Get-AutomationConnection** activity.
+An Automation connection asset contains the information required to connect to an external service or application from a runbook  or DSC configuration . This may include information required for authentication such as a username and password in addition to connection information such as a URL or a port. The value of a connection is keeping all of the properties for connecting to a particular application in one asset as opposed to creating multiple variables. The user can edit the values for a connection in one place, and you can pass the name of a connection to a runbook  or DSC configuration  in a single parameter. The properties for a connection can be accessed in the runbook  or DSC configuration  with the **Get-AutomationConnection** activity.
 
 When you create a connection, you must specify a *connection type*. The connection type is a template that defines a set of properties. The connection defines values for each property defined in its connection type. Connection types are added to Azure Automation in integration modules or created with the [Azure Automation API](http://msdn.microsoft.com/zh-cn/library/azure/mt163818.aspx). The only connection types that are available when you create a connection are those installed in your Automation account.
 
@@ -38,7 +43,7 @@ The activities in the following table are used to access connections in a runboo
 |---|---|
 |Get-AutomationConnection|Gets a connection to use. Returns a hash table with the properties of the connection.|
 
->[AZURE.NOTE] You should avoid using variables in the -Name parameter of **Get- AutomationConnection** since this can complicate discovering dependencies between runbooks  or DSC configurations,  and connection assets at design time.
+>[AZURE.NOTE] You should avoid using variables in the -Name parameter of  **Get- AutomationConnection**  **Get-AutomationConnection**  since this can complicate discovering dependencies between runbooks  or DSC configurations,  and connection assets at design time.
 
 ## Creating a New Connection
 
@@ -49,8 +54,8 @@ The activities in the following table are used to access connections in a runboo
 1. Click **Add Connection**.
 2. In the **Connection Type** dropdown, select the type of connection you want to create.  The wizard will present the properties for that particular type.
 1. Complete the wizard and click the checkbox to save the new connection.
-
 
+
 
 ### To create a new connection with the Azure portal
 
@@ -59,8 +64,8 @@ The activities in the following table are used to access connections in a runboo
 1. Click **Add a connection** at the top of the blade.
 2. In the **Type** dropdown, select the type of connection you want to create. The form will present the properties for that particular type.
 1. Complete the form and click **Create** to save the new connection.
-
 
+
 
 
 ### To create a new connection with Windows PowerShell
@@ -94,8 +99,8 @@ The following sample commands show how to use the Twilio connection in the previ
 
 	#Send text with connection properties.
 	Send-TwilioSMS -AccountSid $Con.AccountSid -AuthToken $Con.AuthToken -From $NumFrom -To $NumTo -Body $Body
-
 
+
 ### Graphical runbook samples
 
 You add a **Get-AutomationConnection** activity to a graphical runbook by right-clicking on the connection in the Library pane of the graphical editor and selecting **Add to canvas**.

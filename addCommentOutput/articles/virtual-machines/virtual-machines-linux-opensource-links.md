@@ -10,8 +10,13 @@
 
 <tags
 	ms.service="virtual-machines-linux"
-	ms.date="05/10/2016"
-	wacn.date=""/>
+	ms.devlang="NA"
+	ms.topic="article"
+	ms.tgt_pltfrm="vm-linux"
+	ms.workload="infrastructure-services"
+	ms.date="06/27/2016"
+	wacn.date=""
+	ms.author="rasquill"/>
 
 
 
@@ -19,14 +24,14 @@
 
 Find all the documentation you need to create and manage Linux-based virtual machines in the classic deployment model.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]
 
 ## Get Started
 - [Introduction for Linux on Azure](/documentation/articles/virtual-machines-linux-intro-on-azure/)
 - [Frequently asked question about Azure Virtual Machines created with the classic deployment model](/documentation/articles/virtual-machines-linux-classic-faq/)
 - [About images for virtual machines](/documentation/articles/virtual-machines-linux-classic-about-images/)
 - [Uploading your own Distro Image](/documentation/articles/virtual-machines-linux-classic-create-upload-vhd/) (and also instructions using an [Azure-Endorsed Distribution](/documentation/articles/virtual-machines-linux-endorsed-distros/))
-- [Log on to a Linux VM Using the Azure Classic Management Portal](/documentation/articles/virtual-machines-linux-classic-log-on/)
+- [Log on to a Linux VM Using the Azure Classic Management Portal](/documentation/articles/virtual-machines-linux-mac-create-ssh-keys/)
 
 ## Set up
 
@@ -35,7 +40,7 @@ Find all the documentation you need to create and manage Linux-based virtual mac
 
 ## Tutorials
 
-- [Install the LAMP Stack on a Linux virtual machine in Azure](/documentation/articles/virtual-machines-linux-install-lamp-stack/)
+- [Install the LAMP Stack on a Linux virtual machine in Azure](/documentation/articles/virtual-machines-linux-create-lamp-stack/)
 - [Ruby on Rails Web application on an Azure VM](/documentation/articles/virtual-machines-linux-classic-ruby-rails-web-app/)
 - [How to: Install Apache Qpid Proton-C for AMQP and Service Bus](/documentation/articles/service-bus-amqp-apache/)
 
@@ -55,8 +60,9 @@ Find all the documentation you need to create and manage Linux-based virtual mac
 ### Docker
 - [Using the Docker VM Extension from the Azure Command-line Interface (Azure CLI)](/documentation/articles/virtual-machines-linux-classic-cli-use-docker/)
 - [Using the Docker VM Extension from the Azure  portal](/documentation/articles/virtual-machines-linux-classic-portal-use-docker/)  Classic Management Portal](/documentation/articles/virtual-machines-linux-classic-portal-use-docker/) 
-- [Getting Started Quickly with Docker in the Azure  Marketplace](/documentation/articles/virtual-machines-linux-classic-docker-quickstart/)  gallery](/documentation/articles/virtual-machines-linux-classic-docker-quickstart/) 
+
 - [How to use docker-machine on Azure](/documentation/articles/virtual-machines-linux-docker-machine/)
+
 
 ### Ubuntu
 - [How to: MySQL Clusters](/documentation/articles/virtual-machines-linux-classic-mysql-cluster/)
@@ -70,7 +76,7 @@ Find all the documentation you need to create and manage Linux-based virtual mac
 
 
 ## Planning
-- [Azure infrastructure services implementation guidelines](/documentation/articles/virtual-machines-linux-infrastructure-service-guidelines/)
+- [Azure infrastructure services implementation guidelines](/documentation/articles/virtual-machines-linux-infrastructure-subscription-accounts-guidelines/)
 - [Selecting Linux Usernames](/documentation/articles/virtual-machines-linux-usernames/)
 - [How to configure an availability set for virtual machines in the classic deployment model](/documentation/articles/virtual-machines-linux-classic-configure-availability/)
 - [How to Schedule Planned Maintenance on Azure VMs](/documentation/articles/virtual-machines-linux-planned-maintenance-schedule/)
@@ -86,7 +92,7 @@ Find all the documentation you need to create and manage Linux-based virtual mac
 
 ## Management
 
-- [SSH](/documentation/articles/virtual-machines-linux-ssh-from-linux/)
+- [SSH](/documentation/articles/virtual-machines-linux-mac-create-ssh-keys/)
 - [How to Reset a Password or SSH Properties for Linux](/documentation/articles/virtual-machines-linux-classic-reset-access/)
 - [Using Root](/documentation/articles/virtual-machines-linux-use-root-privileges/)
 
@@ -124,7 +130,7 @@ Find all the documentation you need to create and manage Linux-based virtual mac
 
 
 ## General Links
-The following links are for Microsoft blogs, Technet pages, and external sites rather than Azure.com documentation as above. As both Azure and the open-source computing world are fast-moving targets, it is almost certain that the following links are out of date, *despite* the fact that we shall do our best to continually add newer topics and remove out-of-date ones. If we've missed one, please let us know in the comments, or submit a pull request to our [GitHub repo](https://github.com/Azure/azure-content/).
+The following links are for Microsoft blogs, Technet pages, and external sites rather than  Azure.com  Azure.cn  documentation as above. As both Azure and the open-source computing world are fast-moving targets, it is almost certain that the following links are out of date, *despite* the fact that we shall do our best to continually add newer topics and remove out-of-date ones. If we've missed one, please let us know in the comments, or submit a pull request to our [GitHub repo](https://github.com/Azure/azure-content/).
 
 - [Running ASP.NET 5 on Linux using Docker Containers](http://blogs.msdn.com/b/webdev/archive/2015/01/14/running-asp-net-5-applications-in-linux-containers-with-docker.aspx)
 - [How to Deploy a CentOS VM Image from OpenLogic](https://azure.microsoft.com/blog/2013/01/11/deploying-openlogic-centos-images-on-windows-azure-virtual-machines/)
@@ -149,7 +155,7 @@ The following links are for Microsoft blogs, Technet pages, and external sites r
 - [Redis on Windows in the Azure Redis Cache Service](http://msopentech.com/blog/2014/05/12/redis-on-windows/)
 - [Announcing ASP.NET Session State Provider for Redis Preview Release](http://blogs.msdn.com/b/webdev/archive/2014/05/12/announcing-asp-net-session-state-provider-for-redis-preview-release.aspx)
 
-- [Blog: RavenHQ Now Available in the Azure  Marketplace](https://azure.microsoft.com/blog/2014/08/12/ravenhq-now-available-in-the-azure-store/)  gallery](https://azure.microsoft.com/blog/2014/08/12/ravenhq-now-available-in-the-azure-store/) 
+- [Blog: RavenHQ Now Available in the Azure Marketplace](https://azure.microsoft.com/blog/2014/08/12/ravenhq-now-available-in-the-azure-store/)
 
 ### Big Data
 - [Installing Hadoop on Azure Linux VMs](http://blogs.msdn.com/b/benjguin/archive/2013/04/05/how-to-install-hadoop-on-windows-azure-linux-virtual-machines.aspx)
@@ -163,7 +169,7 @@ The following links are for Microsoft blogs, Technet pages, and external sites r
 
 - [Quickstart template: Spin up a SLURM cluster](https://github.com/Azure/azure-quickstart-templates/tree/master/slurm)
  (and [blog post](http://blogs.technet.com/b/windowshpc/archive/2015/06/06/deploy-a-slurm-cluster-on-azure.aspx))
-- [Quickstart template: Create an HPC cluster with Linux compute nodes](https://azure.microsoft.com/documentation/templates/create-hpc-cluster-linux-cn/)
+- [Quickstart template: Create an HPC cluster with Linux compute nodes](https://github.com/Azure/azure-quickstart-templates/tree/master/create-hpc-cluster-linux-cn/)
 
 ### Devops, management, and optimization
 
@@ -187,6 +193,4 @@ As the world of devops, management, and optimization is quite expansive and chan
 - [Blog: How to do Powershell DSC for Linux](http://blogs.technet.com/b/privatecloud/archive/2014/05/19/powershell-dsc-for-linux-step-by-step.aspx)
 - [GitHub: Docker Client DSC](https://github.com/anweiss/DockerClientDSC)
 
-- [Ubuntu Juju](https://juju.ubuntu.com/docs/config-azure.html)
-
-- [Packer plugin for Azure](https://github.com/msopentech/packer-azure)
+- [Packer plugin for Azure](https://github.com/msopentech/packer-azure)

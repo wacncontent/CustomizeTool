@@ -10,8 +10,13 @@
 
 <tags
 	ms.service="virtual-machines-linux"
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-linux"
+	ms.devlang="python"
+	ms.topic="article"
 	ms.date="11/10/2015"
-	wacn.date=""/>
+	wacn.date=""
+	ms.author="crwilcox"/>
 
 # Jupyter Notebook on Azure
 
@@ -30,7 +35,7 @@ resources without the need for administration and configuration by the user.
 
 If the notebook service does not work for your scenario please continue to read this article which will will show you how to deploy the Jupyter Notebook on Azure, using Linux virtual machines (VMs).
 
-[AZURE.INCLUDE [create-account-and-vms-note](../includes/create-account-and-vms-note.md)]
+[AZURE.INCLUDE [create-account-and-vms-note](../../includes/create-account-and-vms-note.md)]
 
 ## Create and configure a VM on Azure
 

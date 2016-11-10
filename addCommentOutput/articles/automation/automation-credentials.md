@@ -6,10 +6,15 @@
    authors="mgoedtel"
    manager="jwhit"
    editor="tysonn" />
-<tags
-	ms.service="automation"
-	ms.date="06/09/2016"
-	wacn.date=""/>
+<tags 
+   ms.service="automation"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="06/09/2016"
+   wacn.date=""
+   ms.author="bwren" />
 
 # Credential assets in Azure Automation
 
@@ -36,7 +41,7 @@ The activities in the following table are used to access credentials in a runboo
 |:---|:---|
 |Get-AutomationPSCredential|Gets a credential to use in a runbook  or DSC configuration . Returns a [System.Management.Automation.PSCredential](http://msdn.microsoft.com/zh-cn/library/system.management.automation.pscredential) object.|
 
->[AZURE.NOTE] You should avoid using variables in the -Name parameter of Get-AutomationPSCredential since this can complicate discovering dependencies between runbooks  or DSC configurations , and credential assets at design time.
+>[AZURE.NOTE] You should avoid using variables in the -Name parameter of Get-AutomationPSCredential since this can complicate discovering dependencies between runbooks  or DSC configurations,  and credential assets at design time.
 
 ## Creating a new credential asset
 
@@ -49,17 +54,17 @@ The activities in the following table are used to access credentials in a runboo
 2. In the **Credential Type** dropdown, select **PowerShell Credential**.
 1. Complete the wizard and click the checkbox to save the new credential.
 
-
 
+
 ### To create a new credential asset with the Azure portal
 
 1. From your automation account, click the **Assets** part to open the **Assets** blade.
 1. Click the **Credentials** part to open the **Credentials** blade.
 1. Click **Add a credential** at the top of the blade.
 1. Complete the form and click **Create** to save the new credential.
+
+
 
-
-
 ### To create a new credential asset with Windows PowerShell
 
 The following sample commands show how to create a new automation credential. A PSCredential object is first created with the name and password and then used to create the credential asset. Alternatively, you could use the **Get-Credential** cmdlet to be prompted to type in a name and password.
@@ -81,9 +86,9 @@ The following sample commands show how to use a PowerShell credential in a runbo
 	$userName = $myCredential.UserName
 	$securePassword = $myCredential.Password
 	$password = $myCredential.GetNetworkCredential().Password
-
-
 
+
+
 ### Graphical runbook sample
 
 You add a **Get-AutomationPSCredential** activity to a graphical runbook by right-clicking on the credential in the Library pane of the graphical editor and selecting **Add to canvas**.

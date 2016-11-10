@@ -13,7 +13,7 @@ You can use the Azure CLI to manage your Azure resources from the command prompt
 
 3. If necessary, run the **azure group create** to create a new resource group, as shown below. Notice the output of the command. The list shown after the output explains the parameters used. For more information about resource groups, visit [Azure Resource Manager Overview](/documentation/articles/resource-group-overview/#resource-groups).
 
-		azure group create -n TestRG -l centralus
+		azure group create -n TestRG -l chinaeast
 
 	Here is the expected output for the command above:
 
@@ -23,18 +23,18 @@ You can use the Azure CLI to manage your Azure resources from the command prompt
 		info:    Created resource group TestRG
 		data:    Id:                  /subscriptions/628dad04-b5d1-4f10-b3a4-dc61d88cf97c/resourceGroups/TestRG
 		data:    Name:                TestRG
-		data:    Location:            centralus
+		data:    Location:            chinaeast
 		data:    Provisioning State:  Succeeded
 		data:    Tags: null
 		data:
 		info:    group create command OK
 
 	- **-n (or --name)**. Name for the new resource group. For our scenario, *TestRG*.
-	- **-l (or --location)**. Azure region where the new resource group will be created. For our scenario, *centralus*.
+	- **-l (or --location)**. Azure region where the new resource group will be created. For our scenario, *chinaeast*.
 
 4. Run the **azure network vnet create** command to create a VNet and a subnet, as shown below. 
 
-		azure network vnet create -g TestRG -n TestVNet -a 192.168.0.0/16 -l centralus
+		azure network vnet create -g TestRG -n TestVNet -a 192.168.0.0/16 -l chinaeast
 
 	Here is the expected output for the command above:
 
@@ -45,7 +45,7 @@ You can use the Azure CLI to manage your Azure resources from the command prompt
 		data:    Id                              : /subscriptions/628dad04-b5d1-4f10-b3a4-dc61d88cf97c/resourceGroups/TestRG/providers/Microsoft.Network/virtualNetworks/TestVNet2
 		data:    Name                            : TestVNet
 		data:    Type                            : Microsoft.Network/virtualNetworks
-		data:    Location                        : centralus
+		data:    Location                        : chinaeast
 		data:    ProvisioningState               : Succeeded
 		data:    Address prefixes:
 		data:      192.168.0.0/16
@@ -54,7 +54,7 @@ You can use the Azure CLI to manage your Azure resources from the command prompt
 	- **-g (or --resource-group)**. Name of the resource group where the VNet will be created. For our scenario, *TestRG*.
 	- **-n (or --name)**. Name of the VNet to be created. For our scenario, *TestVNet*
 	- **-a (or --address-prefixes)**. List of CIDR blocks used for the VNet address space. For our scenario, *192.168.0.0/16*
-	- **-l (or --location)**. Azure region where the VNet will be created. For our scenario, *centralus*.
+	- **-l (or --location)**. Azure region where the VNet will be created. For our scenario, *chinaeast*.
 
 5. Run the **azure network vnet subnet create** command to create a subnet as shown below. Notice the output of the command. The list shown after the output explains the parameters used.
 
@@ -93,7 +93,7 @@ You can use the Azure CLI to manage your Azure resources from the command prompt
 		data:    Id                              : /subscriptions/628dad04-b5d1-4f10-b3a4-dc61d88cf97c/resourceGroups/TestRG/providers/Microsoft.Network/virtualNetworks/TestVNet
 		data:    Name                            : TestVNet
 		data:    Type                            : Microsoft.Network/virtualNetworks
-		data:    Location                        : centralus
+		data:    Location                        : chinaeast
 		data:    ProvisioningState               : Succeeded
 		data:    Address prefixes:
 		data:      192.168.0.0/16

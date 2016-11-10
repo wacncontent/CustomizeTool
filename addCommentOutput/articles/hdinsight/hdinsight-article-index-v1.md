@@ -8,9 +8,14 @@
    editor=""/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="08/17/2015"
-	wacn.date=""/>
+   ms.service="hdinsight"
+   ms.devlang="na"
+   ms.topic="index-page"
+   ms.tgt_pltfrm="na"
+   ms.workload="big-data"
+   ms.date="08/17/2015"
+   wacn.date=""
+   ms.author="cjgronlund"/>
 
 # HDInsight article index for the Azure Classic Management Portal
 

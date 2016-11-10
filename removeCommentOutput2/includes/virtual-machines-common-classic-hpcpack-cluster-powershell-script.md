@@ -36,7 +36,7 @@ For background information about planning an HPC Pack cluster, see the [Product 
 
 * **AdminPassword** - Specifies the administrator's password. If not specified in the command line, the script will prompt you to input the password.
 
-* **HPCImageName** (optional) - Specifies the HPC Pack VM image name used to deploy the HPC cluster. It must be a Microsoft-provided HPC Pack image from the Azure gallery. If not specified (recommended in most cases), the script chooses the latest published [HPC Pack image](https://azure.microsoft.com/marketplace/partners/microsoft/hpcpack2012r2onwindowsserver2012r2/). The latest image is based on Windows Server 2012 R2 Datacenter with HPC Pack 2012 R2 Update 3 installed.
+* **HPCImageName** (optional) - Specifies the HPC Pack VM image name used to deploy the HPC cluster. It must be a Microsoft-provided HPC Pack image from the Azure Marketplace. If not specified (recommended in most cases), the script chooses the latest published HPC Pack image. The latest image is based on Windows Server 2012 R2 Datacenter with HPC Pack 2012 R2 Update 3 installed.
 
     >[AZURE.NOTE] Deployment will fail if you don't specify a valid HPC Pack image.
 
@@ -56,11 +56,9 @@ The following example creates a new HPC Pack cluster using the
 configuration file *MyConfigFile.xml*, and specifies administrative
 credentials for installing the cluster.
 
-	New-HPCIaaSCluster.ps1 -ConfigFile MyConfigFile.xml -AdminUserName <username> -AdminPassword <password>
+	.\New-HPCIaaSCluster.ps1 -ConfigFile MyConfigFile.xml -AdminUserName <username> -AdminPassword <password>
 
 ### Additional considerations
-
-
 
 * The script can optionally enable job submission through the HPC Pack web portal or the HPC Pack REST API.
 

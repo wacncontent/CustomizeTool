@@ -6,10 +6,15 @@
 	authors="mgoedtel"
 	manager="jwhit"
 	editor="tysonn" />
-<tags
+<tags 
 	ms.service="automation"
-	ms.date="06/14/2016"
-	wacn.date=""/>
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="infrastructure-services"
+	ms.date="07/06/2016"
+	wacn.date=""
+	ms.author="bwren" />
 
 # Azure Automation scenario - starting and stopping virtual machines
 
@@ -28,7 +33,7 @@ This Azure Automation scenario includes runbooks to start and stop classic virtu
 This is the PowerShell Workflow runbook version of this scenario. It is also available using [graphical runbooks](/documentation/articles/automation-solution-startstopvm-graphical/).
 
 
-[AZURE.INCLUDE [automation-azurechinacloud-environment-parameter](../includes/automation-azurechinacloud-environment-parameter.md)]
+[AZURE.INCLUDE [automation-azurechinacloud-environment-parameter](../../includes/automation-azurechinacloud-environment-parameter.md)]
 
 
 ## Getting the scenario
@@ -41,12 +46,7 @@ This scenario consists of two PowerShell Workflow runbooks that you can download
 | Stop-AzureVMs | [Stop Azure Classic VMs](https://gallery.technet.microsoft.com/Stop-Azure-Classic-VMs-7a4ae43e) | PowerShell Workflow | Stops all virtual machines in an automation account or all virtual machines with a particular service name.  |
 
 
-
-## Installing and configuring the scenario
-
-
-##<a id="installing-the-solution"></a> Installing and configuring the scenario
-
+##  <a id="installing-the-solution"></a>  Installing and configuring the scenario
 
 ### 1. Install the runbooks
 
@@ -67,7 +67,7 @@ The runbooks require the following assets that you must create and populate with
 ## Using the scenario
 
 
-##<a id="using-the-solution"></a> Using the scenario
+## <a id="using-the-solution"></a> Using the scenario
 
 
 ### Parameters
@@ -200,7 +200,7 @@ The variable asset with the subscription ID is then retrieved with **Get-Automat
 The next lines step through each virtual machine.  First the **PowerState** of the virtual machine is checked to see if it is already running or stopped, depending on the runbook.  If it is already in the target state, then a message is sent to output, and the runbook ends.  If not, then **Start-AzureVM** or **Stop-AzureVM** is used to attempt to start or stop the virtual machine with the result of the request stored to a variable.  A message is then sent to output specifying whether the request to start or stop was submitted successfully.
 
 
-## Next Steps
+## Next steps
 
-- [Child runbooks in Azure Automation](/documentation/articles/automation-child-runbooks/) 
-- [Runbook output and messages in Azure Automation](/documentation/articles/automation-runbook-output-and-messages/)
+- To learn more about working with child runbooks, see [Child runbooks in Azure Automation](/documentation/articles/automation-child-runbooks/) 
+- To learn more about output messages during runbook execution and logging to help troubleshoot, see [Runbook output and messages in Azure Automation](/documentation/articles/automation-runbook-output-and-messages/)

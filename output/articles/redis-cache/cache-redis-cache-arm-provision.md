@@ -4,32 +4,37 @@
 	services="app-service" 
 	documentationCenter="" 
 	authors="steved0x" 
-	manager="Erikre" 
+	manager="douge" 
 	editor=""/>
 
-<tags
-	ms.service="cache"
-	ms.date="07/12/2016"
-	wacn.date=""/>
+<tags 
+	ms.service="cache" 
+	ms.workload="web" 
+	ms.tgt_pltfrm="cache-redis" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="09/27/2016" 
+	wacn.date="" 
+	ms.author="sdanie"/>
 
 # Create a Redis Cache using a template
 
-In this topic, you will learn how to create an Azure Resource Manager template that deploys an Azure Redis Cache. The cache can be used with an existing storage account to keep diagnostic data. You will learn how to define which resources are deployed and 
+In this topic, you learn how to create an Azure Resource Manager template that deploys an Azure Redis Cache. The cache can be used with an existing storage account to keep diagnostic data. You also learn how to define which resources are deployed and 
 how to define parameters that are specified when the deployment is executed. You can use this template for your own deployments, or customize it to meet your requirements.
 
-Currently, diagnostic settings are shared for all caches in the same region for a subscription. Updating one cache in the region will affect all other caches in the region.
+Currently, diagnostic settings are shared for all caches in the same region for a subscription. Updating one cache in the region affects all other caches in the region.
 
 For more information about creating templates, see [Authoring Azure Resource Manager Templates](/documentation/articles/resource-group-authoring-templates/).
 
 For the complete template, see [Redis Cache template](https://github.com/Azure/azure-quickstart-templates/blob/master/101-redis-cache/azuredeploy.json).
 
->[AZURE.NOTE] ARM templates for the new [Premium tier](/documentation/articles/cache-premium-tier-intro/) are available. 
+>[AZURE.NOTE] Resource Manager templates for the new [Premium tier](/documentation/articles/cache-premium-tier-intro/) are available. 
 >
->-    [Create a Premium Redis Cache with clustering](https://azure.microsoft.com/documentation/templates/201-redis-premium-cluster-diagnostics/)
->-    [Create Premium Redis Cache with data persistence](https://azure.microsoft.com/documentation/templates/201-redis-premium-persistence/)
->-    [Create Premium Redis Cache with VNet and optional clustering](https://azure.microsoft.com/documentation/templates/201-redis-premium-vnet-cluster-diagnostics/)
+>-    [Create a Premium Redis Cache with clustering](https://github.com/Azure/azure-quickstart-templates/tree/master/201-redis-premium-cluster-diagnostics/)
+>-    [Create Premium Redis Cache with data persistence](https://github.com/Azure/azure-quickstart-templates/tree/master/201-redis-premium-persistence/)
+>-    [Create Premium Redis Cache with VNet and optional clustering](https://github.com/Azure/azure-quickstart-templates/tree/master/201-redis-premium-vnet-cluster-diagnostics/)
 >
->To check for the latest templates, see [Azure Quickstart Templates](https://azure.microsoft.com/documentation/templates/) and search for `Redis Cache`.
+>To check for the latest templates, see [Azure Quickstart Templates](https://github.com/Azure/azure-quickstart-templates/) and search for `Redis Cache`.
 
 ## What you will deploy
 
@@ -42,16 +47,15 @@ To run the deployment automatically, click the following button:
 ## Parameters
 
 With Azure Resource Manager, you define parameters for values you want to specify when the template is deployed. The template includes a section called Parameters that contains all of the parameter values.
-You should define a parameter for those values that will vary based on the project you are deploying or based on the 
-environment you are deploying to. Do not define parameters for values that will always stay the same. Each parameter value is used in the template to define the resources that are deploy. 
+You should define a parameter for those values that vary based on the project you are deploying or based on the 
+environment you are deploying to. Do not define parameters for values that always stay the same. Each parameter value is used in the template to define the resources that are deployed. 
 
-We will describe each parameter in the template.
 
-[AZURE.INCLUDE [app-service-web-deploy-redis-parameters](../includes/cache-deploy-parameters.md)]
+[AZURE.INCLUDE [app-service-web-deploy-redis-parameters](../../includes/cache-deploy-parameters.md)]
 
 ### redisCacheLocation
 
-The location of the Redics Cache. For best perfomance, use the same location as the app to be used with the cache.
+The location of the Redis Cache. For best performance, use the same location as the app to be used with the cache.
 
     "redisCacheLocation": {
       "type": "string"
@@ -75,7 +79,7 @@ A boolean value that indicates whether to allow access via non-SSL ports.
 
 ### diagnosticsStatus
 
-A value that indicates whether diagnostices is enabled. Use ON or OFF.
+A value that indicates whether diagnostics is enabled. Use ON or OFF.
 
     "diagnosticsStatus": {
       "type": "string",
@@ -123,9 +127,10 @@ Creates the Azure Redis Cache.
     }
 
 
+
 ## Commands to run deployment
 
-[AZURE.INCLUDE [app-service-deploy-commands](../includes/app-service-deploy-commands.md)] 
+[AZURE.INCLUDE [app-service-deploy-commands](../../includes/app-service-deploy-commands.md)] 
 
 ### PowerShell
 

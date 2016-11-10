@@ -6,14 +6,19 @@
 	services="virtual-machines-windows"
 	documentationCenter=""
 	authors="danielsollondon"
-	manager="guybo"
+	manager="timlt"
 	editor=""
 	tags="azure-resource-manager"/>
 
 <tags
 	ms.service="virtual-machines-windows"
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="03/30/2016"
-	wacn.date=""/>
+	wacn.date=""
+	ms.author="danielsollondon"/>
 
 # Creating Virtual Machine Scale Sets using PowerShell cmdlets
 

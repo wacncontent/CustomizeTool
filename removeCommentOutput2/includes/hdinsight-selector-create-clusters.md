@@ -4,4 +4,4 @@
 - [Windows | Azure CLI](/documentation/articles/hdinsight-hadoop-create-windows-clusters-cli/)
 - [Windows | Azure PowerShell](/documentation/articles/hdinsight-hadoop-create-windows-clusters-powershell/)
 - [Windows | .NET SDK](/documentation/articles/hdinsight-hadoop-create-windows-clusters-dotnet-sdk.md/)
-- [Windows | ARM templates](/documentation/articles/hdinsight-hadoop-create-windows-clusters-arm-templates/)
+- [Windows | Resource Manager templates](/documentation/articles/hdinsight-hadoop-create-windows-clusters-arm-templates/)

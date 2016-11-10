@@ -4,18 +4,23 @@
    services="hdinsight"
    documentationCenter=""
    authors="Blackmist"
-   manager="paulettm"
+   manager="jhubbard"
    editor="cgronlun"
 	tags="azure-portal"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="05/18/2016"
-	wacn.date=""/>
+   ms.service="hdinsight"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="big-data"
+   ms.date="08/29/2016"
+   wacn.date=""
+   ms.author="larryfr"/>
 
-#Run Hive queries with Hadoop on HDInsight using PowerShell
+# Run MapReduce jobs with Hadoop on HDInsight using PowerShell
 
-[AZURE.INCLUDE [mapreduce-selector](../includes/hdinsight-selector-use-mapreduce.md)]
+[AZURE.INCLUDE [mapreduce-selector](../../includes/hdinsight-selector-use-mapreduce.md)]
 
 This document provides an example of using Azure PowerShell to run a MapReduce job in a Hadoop on HDInsight cluster.
 
@@ -27,7 +32,7 @@ To complete the steps in this article, you will need the following:
 
 - **A workstation with Azure PowerShell**.
 
-    [AZURE.INCLUDE [upgrade-powershell](../includes/hdinsight-use-latest-powershell.md)]
+    [AZURE.INCLUDE [upgrade-powershell](../../includes/hdinsight-use-latest-powershell.md)]
 
 ##<a id="powershell"></a>Run a MapReduce job using Azure PowerShell
 
@@ -82,11 +87,11 @@ The following steps demonstrate how to use these cmdlets to run a job in your HD
         # -ClassName = the class of the application
         # -Arguments = The input file, and the output directory
         $wordCountJobDefinition = New-AzureRmHDInsightMapReduceJobDefinition `
-            -JarFile "wasb:///example/jars/hadoop-mapreduce-examples.jar" `
+            -JarFile "wasbs:///example/jars/hadoop-mapreduce-examples.jar" `
             -ClassName "wordcount" `
             -Arguments `
-                "wasb:///example/data/gutenberg/davinci.txt", `
-                "wasb:///example/data/WordCountOutput"
+                "wasbs:///example/data/gutenberg/davinci.txt", `
+                "wasbs:///example/data/WordCountOutput"
 
         #Submit the job to the cluster
         Write-Host "Start the MapReduce job..." -ForegroundColor Green
@@ -138,11 +143,11 @@ The following steps demonstrate how to use these cmdlets to run a job in your HD
 
 	> [AZURE.NOTE] If the **ExitCode** is a value other than 0, see [Troubleshooting](#troubleshooting).
 
-    This example will also store the downloaded files to the  **example/data/WordCountOutput** folder in the directory that you run the script from.
+    This example will also store the downloaded files to an **output.txt** file in the directory that you run the script from.
 
-##View output
+###View output
 
-The output of the MapReduce job is stored in files with the name *part-r-#####*. Open the **example/data/WordCountOutput/part-r-00000** file in a text editor to see the words and counts produced by the job.
+Open the **output.txt** file in a text editor to see the words and counts produced by the job.
 
 > [AZURE.NOTE] The output files of a MapReduce job are immutable. So if you rerun this sample, you need to change the name of the output file.
 

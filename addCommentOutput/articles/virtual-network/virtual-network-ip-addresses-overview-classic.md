@@ -3,14 +3,19 @@
    description="Learn about public and private IP addressing in Azure"
    services="virtual-network"
    documentationCenter="na"
-   authors="telmosampaio"
+   authors="jimdial"
    manager="carmonm"
    editor="tysonn"
    tags="azure-service-management" />
 <tags
-	ms.service="virtual-network"
-	ms.date="02/11/2016"
-	wacn.date=""/>
+   ms.service="virtual-network"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="02/11/2016"
+   wacn.date=""
+   ms.author="jdial" />
 
 # IP addresses (classic) in Azure
 You can assign IP addresses to Azure resources to communicate with other Azure resources, your on-premises network, and the Internet. There are two types of IP addresses you can use in Azure: public and private.
@@ -20,14 +25,14 @@ Public IP addresses are used for communication with the Internet, including Azur
 Private IP addresses are used for communication within an Azure virtual network (VNet), a cloud service, and your on-premises network when you use a VPN gateway or ExpressRoute circuit to extend your network to Azure.
 
 
-[AZURE.INCLUDE [azure-arm-classic-important-include](../includes/learn-about-deployment-models-classic-include.md)] [Resource Manager deployment model](/documentation/articles/virtual-network-ip-addresses-overview-arm/).
+[AZURE.INCLUDE [azure-arm-classic-important-include](../../includes/learn-about-deployment-models-classic-include.md)] Learn how to [perform these steps using the Resource Manager deployment model](/documentation/articles/virtual-network-ip-addresses-overview-arm/).
 
 
-> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the [Resource Manager deployment model](/documentation/articles/virtual-network-ip-addresses-overview-arm/).
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager model. Learn how to [perform these steps using the Resource Manager deployment model](/documentation/articles/virtual-network-ip-addresses-overview-arm/).
 
 
 ## Public IP addresses
-Public IP addresses allow Azure resources to communicate with Internet and Azure public-facing services such as [Azure Redis  Cache](/home/features/cache/)  Cache](/home/features/redis-cache/) , [Azure Event Hubs](/home/features/event-hubs/), [SQL databases](/documentation/articles/sql-database-technical-overview/), and [Azure storage](/documentation/articles/storage-introduction/).
+Public IP addresses allow Azure resources to communicate with Internet and Azure public-facing services such as [Azure Redis Cache](/home/features/redis-cache/), [Azure Event Hubs](/home/features/event-hubs/), [SQL databases](/documentation/articles/sql-database-technical-overview/), and [Azure storage](/documentation/articles/storage-introduction/).
 
 A public IP address is associated with the following resource types:
 
@@ -45,7 +50,12 @@ When a public IP address needs to be assigned to an Azure resource, it is *dynam
 ### DNS hostname resolution
 When you create a cloud service or an IaaS VM, you need to provide a cloud service DNS name which is unique across all resources in Azure. This creates a mapping in the Azure-managed DNS servers for *dnsname*.chinacloudapp.cn to the public IP address of the resource. For instance, when you create a cloud service with a cloud service DNS name of **contoso**, the fully-qualified domain name (FQDN) **contoso.chinacloudapp.cn** will resolve to a public IP address (VIP) of the cloud service. You can use this FQDN to create a custom domain CNAME record pointing to the public IP address in Azure.
 
+
 ### Cloud services
+
+
+### <a name="Cloud-services"></a> Cloud services
+
 A cloud service always has a public IP address referred to as a virtual IP address (VIP). You can create endpoints in a cloud service to associate different ports in the VIP to internal ports on VMs and role instances within the cloud service. 
 
 A cloud service can contain multiple IaaS VMs, or PaaS role instances, all exposed through the same cloud service VIP. You can also assign [multiple VIPs to a cloud service](/documentation/articles/load-balancer-multivip/), which enables multi-VIP scenarios like multi-tenant environment with SSL-based websites.
@@ -135,7 +145,7 @@ The table below shows each resource type with the possible allocation methods (d
 
 ## Limits
 
-The table below shows the limits imposed on IP addressing in Azure per subscription. You can [contact support](https://portal.azure.cn/#blade/Microsoft_Azure_Support/HelpAndSupportBlade) to increase the default limits up to the maximum limits based on your business needs.
+The table below shows the limits imposed on IP addressing in Azure per subscription. You can [contact  support](https://portal.azure.cn/#blade/Microsoft_Azure_Support/HelpAndSupportBlade)  support](/support/contact/)  to increase the default limits up to the maximum limits based on your business needs.
 
 ||Default limit|Maximum limit|
 |---|---|---|
@@ -148,9 +158,9 @@ Make sure you read the full set of [limits for Networking](/documentation/articl
 
 ## Pricing
 
-In most cases, public IP addresses are free. There is a nominal charge to use additional and/or static public IP addresses. Make sure you understand the [pricing structure for public IPs](/home/features/ip-addresses/pricing/).
+In most cases, public IP addresses are free. There is a nominal charge to use additional and/or static public IP addresses. Make sure you understand the [pricing structure for public IPs](/pricing/details/reserved-ip-addresses/).
 
-## Differences between Resource Manager and classic deployments
+##  <a name="Differences-between-Resource-Manager-and-classic-deployments"></a>  Differences between Resource Manager and classic deployments
 Below is a comparison of IP addressing features in Resource Manager and the classic deployment model.
 
 ||Resource|Classic|Resource Manager|

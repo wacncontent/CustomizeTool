@@ -1,6 +1,6 @@
 <properties 
-	pageTitle="Create a Web App in Azure using the Azure SDK for Java" 
-	description="Learn how to create a Web App on Azure programmatically using the Azure SDK for Java." 
+	pageTitle="Create a Web App in Azure App Service using the Azure SDK for Java" 
+	description="Learn how to create a Web App on Azure App Service programmatically using the Azure SDK for Java." 
 	tags="azure-classic-portal"
 	services="app-service\web" 
 	documentationCenter="Java" 
@@ -8,22 +8,27 @@
 	manager="wpickett" 
 	editor="jimbe"/>
 
-<tags
-	ms.service="multiple"
-	ms.date="02/25/2016"
-	wacn.date=""/>
+<tags 
+	ms.service="multiple" 
+	ms.workload="na" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="Java" 
+	ms.topic="article" 
+	ms.date="02/25/2016" 
+	wacn.date="" 
+	ms.author="v-donntr"/>
 
 
-# Create a Web App in Azure using the Azure SDK for Java
+# Create a Web App in Azure App Service using the Azure SDK for Java
 
-<!-- Azure Active Directory workflow is not yet available on the Azure Portal -->
+<!-- Azure Active Directory workflow is not yet available on the Azure Portal  Preview  -->
 
 ## Overview
 
-This walkthrough shows you how to create an Azure SDK for Java application that creates a Web App in [Azure Web App][], then deploy an application to it. It consists of two parts:
+This walkthrough shows you how to create an Azure SDK for Java application that creates a Web App in [Azure App Service][], then deploy an application to it. It consists of two parts:
 
 - Part 1 demonstrates how to build a Java application that creates a web app.
-- Part 2 demonstrates how to create a simple JSP "Hello World" application, then use an FTP client to deploy code to Azure Web App.
+- Part 2 demonstrates how to create a simple JSP "Hello World" application, then use an FTP client to deploy code to App Service.
 
 
 ## Prerequisites
@@ -153,7 +158,7 @@ In this section you create a workspace and a Maven project for the web app creat
     
     This step can take several minutes depending on the speed of your connection. When the index rebuilds, you should see the Azure packages in the **central** Maven repository.
 
-6. In **Dependencies**, click **Add**. In **Enter Group ID...** enter `azure-management`. Select the packages for base management and Azure Web Apps management:
+6. In **Dependencies**, click **Add**. In **Enter Group ID...** enter `azure-management`. Select the packages for base management and App Service Web Apps management:
 
         com.microsoft.azure  azure-management
         com.microsoft.azure  azure-management-websites
@@ -168,7 +173,7 @@ Click **OK**. The Azure packages then appear in the **Dependencies** list.
 
 ### Writing Java Code to Create a Web App by Calling the Azure SDK
 
-Next, write the code that calls APIs in the Azure SDK for Java to create the Azure web app.
+Next, write the code that calls APIs in the Azure SDK for Java to create the App Service web app.
 
 1. Create a Java class to contain the main entry point code. In Project Explorer, right-click on the project node and select **New > Class**.
 
@@ -179,7 +184,7 @@ Next, write the code that calls APIs in the Azure SDK for Java to create the Azu
 3. Click **Finish**. The WebCreator.java file appears in Project Explorer.
 
 
-### Calling the Azure API to Create an Azure Web App
+### Calling the Azure API to Create an App Service Web App
 
 
 #### Add necessary imports
@@ -197,11 +202,11 @@ In WebCreator.java, add the following imports; these imports provide access to c
     import com.microsoft.windowsazure.exception.ServiceException;
     import org.xml.sax.SAXException;
     
-    // Imports for Azure  Web App  management configuration
+    // Imports for Azure App Service management configuration
     import com.microsoft.windowsazure.Configuration;
     import com.microsoft.windowsazure.management.configuration.ManagementConfiguration;
     
-    // Service management imports for Azure Web Apps creation
+    // Service management imports for App Service Web Apps creation
     import com.microsoft.windowsazure.management.websites.*;
     import com.microsoft.windowsazure.management.websites.models.*;
     
@@ -211,7 +216,7 @@ In WebCreator.java, add the following imports; these imports provide access to c
 
 #### Define the main entry point class
 
-Because the purpose of the AzureWebDemo application is to create an Azure Web App, name the main class for this application `WebAppCreator`. This class provides the main entry point code that calls the Azure Service Management API to create the web app.
+Because the purpose of the AzureWebDemo application is to create an App Service Web App, name the main class for this application `WebAppCreator`. This class provides the main entry point code that calls the Azure Service Management API to create the web app.
 
 Add the following parameter definitions for the web app and webspace. You will need to provide your own Azure subscription ID and certificate information.
 
@@ -240,18 +245,18 @@ where:
 - `appServicePlanName` should be specified as shown above.
 
 > **Note:** Each time you run this application, you need to change the value 
-> of `webAppName` and `appServicePlanName` (or delete the web app on the Azure  Classic Management 
+> of `webAppName` and `appServicePlanName` (or delete the web app on the Azure 
 > Portal) before running the application again. Otherwise, execution will 
 > fail because the same resource already exists on Azure.
 
 
 #### Define the web creation method
 
-Next, define a method to create the web app. This method, `createWebApp`, specifies the parameters of the web app and the webspace. It also creates and configures the Azure Web Apps management client, which is defined by the [WebSiteManagementClient][] object. The management client is key to creating Web Apps. It provides RESTful web services that allow applications to manage web apps (performing operations such as create, update, and delete) by calling the service management API.
+Next, define a method to create the web app. This method, `createWebApp`, specifies the parameters of the web app and the webspace. It also creates and configures the App Service Web Apps management client, which is defined by the [WebSiteManagementClient][] object. The management client is key to creating Web Apps. It provides RESTful web services that allow applications to manage web apps (performing operations such as create, update, and delete) by calling the service management API.
 
     private static void createWebApp() throws Exception {
 
-        // Specify configuration settings for the Azure management client.
+        // Specify configuration settings for the App Service management client.
         Configuration config = ManagementConfiguration.configure(
             new URI(uri),
             subscriptionId,
@@ -260,8 +265,8 @@ Next, define a method to create the web app. This method, `createWebApp`, specif
             KeyStoreType.jks   // Flag that you are using a JKS keystore
         );
 
-        // Create the Azure Web Apps management client to call Azure APIs
-        // and pass it the Azure  Web App  management configuration object.
+        // Create the App Service Web Apps management client to call Azure APIs
+        // and pass it the App Service management configuration object.
         WebSiteManagementClient webAppManagementClient = WebSiteManagementService.create(config);
 
         // Create an App Service plan for the web app with the specified parameters.
@@ -356,7 +361,7 @@ Next you will create a "Hello World" application and deploy it to the web app.
 
 #### Create the application
 
-In order to demonstrate how to deploy an application to the web, the following procedure shows you how to create a simple "Hello World" Java application and upload it to the Azure Web App that your application created.
+In order to demonstrate how to deploy an application to the web, the following procedure shows you how to create a simple "Hello World" Java application and upload it to the App Service Web App that your application created.
 
 1. Click **File > New > Dynamic Web Project**. Name it `JSPHello`. You do not need to change any other settings in this dialog. Click **Finish**.
 
@@ -427,18 +432,18 @@ Export the web project files as a web archive (WAR) file so that you can deploy 
 
     `<project-path>/JSPHello/src/JSPHello.war`
 
-For more information on deploying WAR files, see [Add a Java application to Azure Web Apps](/documentation/articles/web-sites-java-add-app/).
+For more information on deploying WAR files, see [Add a Java application to Azure App Service Web Apps](/documentation/articles/web-sites-java-add-app/).
 
 
 ### Deploying the Hello World Application Using FTP
 
-Select a third-party FTP client to publish the application. This procedure describes  two options: the Kudu console built into Azure; and  FileZilla, a popular tool with a convenient, graphical UI.
+Select a third-party FTP client to publish the application. This procedure describes two options: the Kudu console built into Azure; and FileZilla, a popular tool with a convenient, graphical UI.
 
-> **Note:** The Azure Toolkit for Eclipse supports deployment to storage accounts and cloud services, but does not currently support deployment to web apps. You can deploy to storage accounts and cloud services using an Azure Deployment Project  as described in [Creating a Hello World Application for Azure in Eclipse](http://msdn.microsoft.com/zh-cn/library/azure/hh690944.aspx) , but not to web apps. Use other methods such as FTP or GitHub to transfer files to your web app.
+> **Note:** The Azure Toolkit for Eclipse supports deployment to storage accounts and cloud services, but does not currently support deployment to web apps. You can deploy to storage accounts and cloud services using an Azure Deployment Project as described in [Creating a Hello World Application for Azure in Eclipse](/documentation/articles/azure-toolkit-for-eclipse-creating-a-hello-world-application/), but not to web apps. Use other methods such as FTP or GitHub to transfer files to your web app.
 
 > **Note:** We do not recommend using FTP from the Windows command prompt (the command-line FTP.EXE utility that ships with Windows). FTP clients that use active FTP, such as FTP.EXE, often fail to work over firewalls. Active FTP specifies an internal LAN-based address, to which an FTP server will likely fail to connect.
 
-For more information on deployment to an Azure web app using FTP, see the following topics:
+For more information on deployment to an App Service web app using FTP, see the following topics:
 
 - [Deploy using an FTP utility](/documentation/articles/web-sites-deploy/)
 
@@ -456,31 +461,17 @@ Make sure you have run the **AzureWebDemo** application to create a web app. You
 
 #### Get FTP connection information
 
-To use FTP to deploy application files to the newly created web app, you need to obtain connection information. There are two ways to obtain connection information. One way is to visit the web app's **Dashboard** page; the other way is to download the web app's publish profile. The publish profile is an XML file that provides information such as FTP host name and logon credentials for your web apps in Azure. You can use this username and password to deploy to any web app in all subscriptions associated with the Azure account, not only this one.
+To use FTP to deploy application files to the newly created web app, you need to obtain connection information. There are two ways to obtain connection information. One way is to visit the web app's **Dashboard** page; the other way is to download the web app's publish profile. The publish profile is an XML file that provides information such as FTP host name and logon credentials for your web apps in Azure App Service. You can use this username and password to deploy to any web app in all subscriptions associated with the Azure account, not only this one.
 
-To obtain FTP connection information from the web app's  blade  page  in the [Azure  Classic Management  Portal][]:
+To obtain FTP connection information from the web app's blade in the [Azure  Portal][]  Portal Preview][] :
 
-
 1. Under **Essentials**, find and copy the **FTP hostname**. This is a URI similar to `ftp://waws-prod-bay-NNN.ftp.azurewebsites.chinacloudapi.cn`.
 
 2. Under **Essentials**, find and copy **FTP/Deployment username**. This will have the form *webappname\deployment-username*; for example `WebDemoWebApp\deployer77`.
-
-
-To obtain FTP connection information from the website's **Dashboard** page:
 
-1. Under **Quick Glance**, find and copy the **FTP host name**. This is a URI similar to `ftp://cnws-prod-sha-001.ftp.chinacloudsites.chinacloudapi.cn`.
+To obtain FTP connection information from the publish profile:
 
-2. Under **Quick Glance**, find and copy **Deployment / FTP user**. This will have the form *WebsiteName\DeploymentUsername*; for example `WebDemoWebsite\deployer77`.
-
-
-To obtain FTP connection information from the  website's  publish profile:
-
-
 1. In the web app's blade, click **Get publish profile**. This will download a .publishsettings file to your local drive.
-
-
-1. In the website's **Dashboard**, under **Quick Glance**, click **Download the publish profile**. This will download a .publishsettings file to your local drive.
-
 
 2. Open the .publishsettings file in an XML editor or text editor and find the `<publishProfile>` element containing `publishMethod="FTP"`. It should look like the following:
 
@@ -514,11 +505,10 @@ Before you publish the application, you need to change a few configuration setti
 
 4. Click **Save**.
 
-
 
 #### Publish your application using Kudu
 
-One way to publish the application is to use the Kudu debug console built into Azure. Kudu is known to be stable and consistent with Azure Web Apps and Tomcat Server. You access the console for the web app by browsing to a URL of the following form:
+One way to publish the application is to use the Kudu debug console built into Azure. Kudu is known to be stable and consistent with App Service Web Apps and Tomcat Server. You access the console for the web app by browsing to a URL of the following form:
 
 `https://<webappname>.scm.chinacloudsites.cn/DebugConsole`
 
@@ -551,7 +541,6 @@ In a short time (probably less than 5 minutes) Tomcat Server will unzip the WAR 
   ![][10]
 
 
-
 #### Publish your application using FileZilla (optional)
 
 Another tool you can use to publish the application is FileZilla, a popular third-party FTP client with a convenient, graphical UI. You can download and install FileZilla from [http://filezilla-project.org/](http://filezilla-project.org/) if you do not already have it. For more information on using the client, see the [FileZilla documentation](https://wiki.filezilla-project.org/Documentation) and this blog entry on [FTP Clients - Part 4: FileZilla](http://blogs.msdn.com/b/robert_mcmurray/archive/2008/12/17/ftp-clients-part-4-filezilla.aspx).
@@ -599,12 +588,12 @@ Another tool you can use to publish the application is FileZilla, a popular thir
 
 #### Clean up Azure resources
 
-This procedure creates an Azure web app. You will be billed for the resource as long as it exists. Unless you plan to continue using the web app for testing or development, you should consider stopping or deleting it. A web app that has been stopped will still incur a small charge, but you can restart it at any time. Deleting a web app erases all data you have uploaded to it.
+This procedure creates an App Service web app. You will be billed for the resource as long as it exists. Unless you plan to continue using the web app for testing or development, you should consider stopping or deleting it. A web app that has been stopped will still incur a small charge, but you can restart it at any time. Deleting a web app erases all data you have uploaded to it.
+
+[AZURE.INCLUDE [app-service-web-whats-changed](../../includes/app-service-web-whats-changed.md)]
 
 
-[AZURE.INCLUDE [app-service-web-whats-changed](../includes/app-service-web-whats-changed.md)]
-
-[AZURE.INCLUDE [app-service-web-try-app-service](../includes/app-service-web-try-app-service.md)]
+[AZURE.INCLUDE [app-service-web-try-app-service](../../includes/app-service-web-try-app-service.md)]
 
 
   [1]: ./media/java-create-azure-website-using-java-sdk/eclipse-maven-repositories-rebuild-index.png
@@ -619,7 +608,7 @@ This procedure creates an Azure web app. You will be billed for the resource as 
   [10]: ./media/java-create-azure-website-using-java-sdk/kudu-console-jsphello-war-2.png
  
 
-[Azure Web App]: /documentation/services/web-sites/
+[Azure App Service]: /documentation/articles/app-service-changes-existing-services/
 [Web Platform Installer]: http://go.microsoft.com/fwlink/?LinkID=252838
 [Azure Toolkit for Eclipse]: /documentation/articles/azure-toolkit-for-eclipse-installation/
 [Azure Classic Management Portal]: https://manage.windowsazure.cn

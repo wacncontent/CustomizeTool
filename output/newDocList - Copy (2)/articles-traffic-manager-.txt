@@ -1,4 +1,5 @@
-new docs: 0, word count: {word_count_TODO}
-
+new docs: 2, word count: {word_count_TODO}
+articles/traffic-manager/traffic-manager-configure-routing-method.md
+articles/traffic-manager/traffic-manager-manage-endpoints.md
 
 new includes: 0

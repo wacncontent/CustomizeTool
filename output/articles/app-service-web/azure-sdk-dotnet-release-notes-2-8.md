@@ -9,9 +9,14 @@
    editor=""/>
 
 <tags
-	ms.service="app-service"
-	ms.date="04/25/2016"
-	wacn.date=""/>
+   ms.service="app-service"
+   ms.devlang="multiple"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="integration" 
+   ms.date="10/10/2016" 
+   wacn.date=""
+   ms.author="juliako"/>
  
 # Azure SDK for .NET 2.8, 2.8.1 and 2.8.2
 
@@ -60,8 +65,8 @@ The 2.8 SDK requires version 1.0 of the Azure PowerShell cmdlets.  All other ver
 
 The following known issues will be addressed in the following release.
 
-- Azure related Cloud and Server Explorer gesture for non-production environments (like Azure China or Azure Stack customers) do not work. For customers in these impacted areas, downloading the publish profile from the Azure portal will enable publishing ability. A future release will repair gestures such as "Attach Debugger" and "View Streaming Logs" for Azure China and Stack customers. 
-- Customers may see errors during Azure creation when the App Insights instance to which they are deploying is in a region other than China East. In these scenarios, creating an Azure in the portal and downloading the publish profile will enable publishing scenarios. 
+- App Service related Cloud and Server Explorer gesture for non-production environments (like Azure China or Azure Stack customers) do not work. For customers in these impacted areas, downloading the publish profile from the Azure portal will enable publishing ability. A future release will repair gestures such as "Attach Debugger" and "View Streaming Logs" for Azure China and Stack customers. 
+- Customers may see errors during App Service creation when the App Insights instance to which they are deploying is in a region other than China East. In these scenarios, creating an App Service in the portal and downloading the publish profile will enable publishing scenarios. 
 
 ###Azure HDInsight Tools
 
@@ -78,7 +83,7 @@ For information, see [Azure SDK 2.8 for Visual Studio 2013 and Visual Studio 201
  
 1. Triggered WebJob publishes to slots will show and error and won't set a schedule, but it will push the WebJob to Azure. Customers who are in need of a Scheduled job can then use the Azure Portal to set up the schedule for the WebJob. 
 2. Python customers may experience debugger issues. Service team is rolling out a fix for this but if customers are affected, please let Microsoft know in the forums or on the announcement blog or release notes comments section. 
-3. Customers in certain regions (such as South India) will experience Azure provisioning errors. This is consistent with the portal, and customers who experience this issue can use the Azure portal to request access to publish to these geo-regions. Once they request access to these regions using the Azure portal provisioning should work. 
+3. Customers in certain regions (such as South India) will experience App Service provisioning errors. This is consistent with the portal, and customers who experience this issue can use the Azure portal to request access to publish to these geo-regions. Once they request access to these regions using the Azure portal provisioning should work. 
 
 ##Azure SDK for .NET 2.8.2
 

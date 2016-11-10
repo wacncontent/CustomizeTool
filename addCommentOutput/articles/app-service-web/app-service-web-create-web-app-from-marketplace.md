@@ -11,35 +11,40 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="05/10/2016"
-	wacn.date=""/>
+	ms.workload="na"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="get-started-article"
+	ms.date="07/11/2016"
+	wacn.date=""
+	ms.author="robmcm"/>
 
 <!-- Note: This article replaces web-sites-php-web-site-gallery.md -->
 
-# Create a web app from the Azure  Marketplace  gallery 
+# Create a web app from the Azure Marketplace
 
-[AZURE.INCLUDE [tabs](../includes/app-service-web-get-started-nav-tabs.md)]
+[AZURE.INCLUDE [tabs](../../includes/app-service-web-get-started-nav-tabs.md)]
 
-The Azure  Marketplace  gallery  makes available a wide range of popular web apps developed by Microsoft, third party companies, and open source software initiatives. For example, WordPress, Umbraco CMS, Drupal, etc. These web apps are built on a wide range of popular frameworks, such as [PHP] in this WordPress example, [.NET], [Node.js], [Java], and [Python], to name a few. To create a web app from the Azure  Marketplace  gallery  the only software you need is the browser that you use for the [Azure Portal].
+The Azure Marketplace makes available a wide range of popular web apps developed by Microsoft, third party companies, and open source software initiatives. For example, WordPress, Umbraco CMS, Drupal, etc. These web apps are built on a wide range of popular frameworks, such as [PHP] in this WordPress example, [.NET], [Node.js], [Java], and [Python], to name a few. To create a web app from the Azure Marketplace the only software you need is the browser that you use for the [Azure Portal].
 
 In this tutorial you'll learn how to:
 
-* Find an application template in the Azure  Marketplace  gallery .
-* Create a web app in Azure that is based on the template.
-* Configure Azure settings for the new web app and database.
+* Find and create web app in Azure App Service that is based on an Azure Marketplace template.
+* Configure Azure App Service settings for the new web app.
+* Launch and manage your web app.
 
-For the purpose of this tutorial, you will deploy a WordPress blog site from the Azure  Marketplace  gallery . When you have completed the steps in this tutorial, you'll have your own WordPress site up and running in the cloud.
+For the purpose of this tutorial, you will deploy a WordPress blog site from the Azure Marketplace. When you have completed the steps in this tutorial, you'll have your own WordPress site up and running in the cloud.
 
-![Example WordPress wep app dashboard][WordPressDashboard]
+![Example WordPress wep app dashboard][WordPressDashboard1]
 
-The WordPress site that you'll deploy in this tutorial uses MySQL for the database. If you wish to instead use SQL Database for the database, see [Project Nami], which is also available through the Azure  Marketplace  gallery .
+The WordPress site that you'll deploy in this tutorial uses MySQL for the database. If you wish to instead use SQL Database for the database, see [Project Nami], which is also available through the Azure Marketplace.
 
 > [AZURE.NOTE]
 > To complete this tutorial, you need a Azure account. If you don't have an account, you can [activate your Visual Studio subscriber benefits][activate] or [sign up for a trial][trial].
 >
-> If you want to get started with Azure before you sign up for an Azure account, go to [Try Azure Web App]. From there you can immediately create a short-lived starter web app in Azure -- no credit card is required, and there are no commitments.
+> If you want to get started with Azure App Service before you sign up for an Azure account, go to [Try App Service]. From there you can immediately create a short-lived starter web app in App Service -- no credit card is required, and there are no commitments.
 
-## Select WordPress and configure for Azure
+## Find and Create a Web App in Azure App Service
 
 1. Log in to the [Azure Portal].
 
@@ -55,7 +60,9 @@ The WordPress site that you'll deploy in this tutorial uses MySQL for the databa
 
 	![Create WordPress web app][MarketplaceCreate]
 
-1. The WordPress settings blade will be displayed, which you will use to complete the following steps:
+## Configure Azure App Service Settings for your New Web App
+
+1. After you have created a new web app, the WordPress settings blade will be displayed, which you will use to complete the following steps:
 
 	![Configure WordPress web app settings][ConfigStart]
 
@@ -71,7 +78,7 @@ The WordPress site that you'll deploy in this tutorial uses MySQL for the databa
 
 1. Select a **Resource Group** or create a new one.
 
-	For more information about resource groups, see [Using the Azure Portal to manage your Azure resources][ResourceGroups].
+	For more information about resource groups, see [Azure Resource Manager overview][ResourceGroups].
 
 	![Configure the resource group for the web app][ConfigResourceGroup]
 
@@ -99,7 +106,7 @@ The WordPress site that you'll deploy in this tutorial uses MySQL for the databa
 
 	![Finish the web app settings and click OK][ConfigFinished]
 
-	Azure creates the web app, typically in less than a minute. You can watch the progress by clicking the bell icon at the top of the portal page.
+	Azure App Service creates the web app, typically in less than a minute. You can watch the progress by clicking the bell icon at the top of the portal page.
 
 	![Progress indicator][ConfigProgress]
 
@@ -129,15 +136,15 @@ The WordPress site that you'll deploy in this tutorial uses MySQL for the databa
 
 1. Your site Dashboard page will open and display the information that you provided.    
 
-	![View your WordPress dashboard][WordPressDashboard]
+	![View your WordPress dashboard][WordPressDashboard2]
 
 ## Next steps
 
-In this tutorial you've seen how to create and deploy an example web app from the Azure  Marketplace  gallery .
+In this tutorial you've seen how to create and deploy an example web app from the Azure Marketplace.
 
-For more information about how to work with Azure Web Apps, see the links on the left side of the page (for wide browser windows) or at the top of the page (for narrow browser windows).
+For more information about how to work with App Service Web Apps, see the links on the left side of the page (for wide browser windows) or at the top of the page (for narrow browser windows).
 
-For more information about developing WordPress web apps on Azure, see [Developing WordPress on Azure Web App][WordPressOnAzure]. 
+For more information about developing WordPress web apps on Azure, see [Developing WordPress on Azure App Service][WordPressOnAzure]. 
 
 <!-- URL List -->
 
@@ -148,8 +155,8 @@ For more information about developing WordPress web apps on Azure, see [Developi
 [Python]: /develop/python/
 [activate]: https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/
 [trial]: /pricing/1rmb-trial/
-[Try Azure Web App]: https://tryappservice.azure.com/
-[ResourceGroups]: /documentation/articles/resource-group-portal/
+[Try App Service]: https://tryappservice.azure.com/
+[ResourceGroups]: /documentation/articles/resource-group-overview/
 [AzureAppServicePlans]: /documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview/
 [ApplicationInsights]: https://azure.microsoft.com/services/application-insights/
 [Azure Portal]: https://portal.azure.cn/
@@ -172,5 +179,6 @@ For more information about developing WordPress web apps on Azure, see [Developi
 [WordPressSelect]: ./media/app-service-web-create-web-app-from-marketplace/wpselect.png
 [WordPressBrowse]: ./media/app-service-web-create-web-app-from-marketplace/wpbrowse.png
 [WordPressLanguage]: ./media/app-service-web-create-web-app-from-marketplace/wplanguage.png
-[WordPressDashboard]: ./media/app-service-web-create-web-app-from-marketplace/wpdashboard.png
+[WordPressDashboard1]: ./media/app-service-web-create-web-app-from-marketplace/wpdashboard1.png
+[WordPressDashboard2]: ./media/app-service-web-create-web-app-from-marketplace/wpdashboard2.png
 [WordPressConfigure]: ./media/app-service-web-create-web-app-from-marketplace/wpconfigure.png

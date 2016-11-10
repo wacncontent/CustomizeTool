@@ -5,13 +5,18 @@
 	documentationCenter=""
 	tags="azure-portal"
 	authors="mumian"
-	manager="paulettm"
+	manager="jhubbard"
 	editor="cgronlun"/>
 
 <tags
 	ms.service="hdinsight"
-	ms.date="05/18/2016"
-	wacn.date=""/>
+	ms.workload="big-data"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/10/2016"
+	wacn.date=""
+	ms.author="jgao"/>
 
 
 
@@ -58,7 +63,7 @@ Microsoft provides the following utilities to work with Azure Blob storage:
 
 The Azure CLI is a cross-platform tool that allows you to manage Azure services. Use the following steps to upload data to Azure Blob storage:
 
-[AZURE.INCLUDE [use-latest-version](../includes/hdinsight-use-latest-cli.md)]
+[AZURE.INCLUDE [use-latest-version](../../includes/hdinsight-use-latest-cli.md)]
 
 1. [Install and configure the Azure CLI for Mac, Linux and Windows](/documentation/articles/xplat-cli-install/).
 
@@ -102,7 +107,7 @@ The Azure CLI is a cross-platform tool that allows you to manage Azure services.
 
 Azure PowerShell is a scripting environment that you can use to control and automate the deployment and management of your workloads in Azure. For information about configuring your workstation to run Azure PowerShell, see [Install and configure Azure PowerShell](/documentation/articles/powershell-install-configure/).
 
-[AZURE.INCLUDE [use-latest-version](../includes/hdinsight-use-latest-powershell.md)]
+[AZURE.INCLUDE [use-latest-version](../../includes/hdinsight-use-latest-powershell.md)]
 
 **To upload a local file to Azure Blob storage**
 
@@ -157,7 +162,7 @@ For example, `hadoop fs -copyFromLocal data.txt /example/data/data.txt`
 
 Because the default file system for HDInsight is in Azure Blob storage, /example/data.txt is actually in Azure Blob storage. You can also refer to the file as:
 
-	wasb:///example/data/data.txt
+	wasbs:///example/data/data.txt
 
 or
 
@@ -171,12 +176,16 @@ There are also several applications that provide a graphical interface for worki
 
 | Client | Linux | OS X | Windows |
 | ------ |:-----:|:----:|:-------:|
+| [Microsoft Visual Studio Tools for HDInsight](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/#navigate-the-linked-resources) | ✔ | ✔ | ✔ |
 | [Azure Storage Explorer](http://storageexplorer.com/) | ✔ | ✔ | ✔ |
 | [Cloud Storage Studio 2](http://www.cerebrata.com/Products/CloudStorageStudio/) | | | ✔ |
 | [CloudXplorer](http://clumsyleaf.com/products/cloudxplorer) | | | ✔ |
 | [Azure Explorer](http://www.cloudberrylab.com/free-microsoft-azure-explorer.aspx) | | | ✔ |
-| [Zudio](https://zudio.co/) | ✔ | ✔ | ✔ |
 | [Cyberduck](https://cyberduck.io/) |  | ✔ | ✔ |
+
+###Visual Studio Tools for HDInsight
+
+For more information, see [Navigate the linked resources](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/#navigate-the-linked-resources).
 
 ###<a id="storageexplorer"></a>Azure Storage Explorer
 

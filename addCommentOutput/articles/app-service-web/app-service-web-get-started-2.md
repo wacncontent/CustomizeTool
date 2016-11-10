@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties 
 	pageTitle="Add functionality to your first web app" 
 	description="Add cool features to your first web app in a few minutes." 
@@ -10,15 +8,21 @@
 	editor="" 
 />
 
-<tags
-	ms.service="app-service-web"
+<tags 
+	ms.service="app-service-web" 
+	ms.workload="web" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="hero-article"
 	ms.date="05/12/2016"
-	wacn.date=""/>
+	wacn.date="" 
+	ms.author="cephalin"
+/>
 
 # Add functionality to your first web app
 
 In [Deploy a web app to Azure in 5 minutes](/documentation/articles/app-service-web-get-started/), you deployed a sample web app to 
-[Azure Web  App](/documentation/services/web-sites/)  App](/documentation/services/web-sites) . In this article, you'll quickly add some
+[Azure App Service](/documentation/articles/app-service-value-prop-what-is/). In this article, you'll quickly add some 
 great functionalities to your deployed web app. In a few minutes, you will:
 
 - enforce authentication for your users
@@ -27,18 +31,23 @@ great functionalities to your deployed web app. In a few minutes, you will:
 
 Regardless of which sample app you deployed in the previous article, you can follow along in the tutorial.
 
-The three activities in this tutorial are only a few examples of the many useful features you get when you put your web app in Azure. Many of the features are 
+The three activities in this tutorial are only a few examples of the many useful features you get when you put your web app in App Service. Many of the features are 
 available in the **Free** tier (which is what your first web app is running on), and you can use your trial credits to try out features
 that require higher pricing tiers. Rest assured that your web app remains in **Free** tier unless you explicitly changes it to a different
 pricing tier.
 
 >[AZURE.NOTE] The web app you created with Azure CLI runs in **Free** tier, which only allows one shared VM instance with resource quotas. For more
-information on what you get with **Free** tier, see [Azure limits](/documentation/articles/azure-subscription-service-limits/#app-service-limits).
+information on what you get with **Free** tier, see [App Service limits](/documentation/articles/azure-subscription-service-limits/#app-service-limits).
 
+
 ## Authenticate your users
+
+
+## <a name="authenticate-your-users"></a> Authenticate your users
+
 
 Now, let's see how easy it is to add authentication to your app (further reading at 
-[Azure Authentication/Authorization](https://azure.microsoft.com/blog/announcing-app-service-authentication-authorization/)).
+[App Service Authentication/Authorization](https://azure.microsoft.com/blog/announcing-app-service-authentication-authorization/)).
 
 1. In the portal blade for your app, which you just opened, click **Settings** > **Authentication / Authorization**.  
     ![Authenticate - settings blade](./media/app-service-web-get-started/aad-login-settings.png)
@@ -76,13 +85,13 @@ You may have noticed in the **Authentication / Authorization** blade that you ca
 - Enable multiple login options
 - Change the default behavior when people first navigate to your app
 
-Azure provides a turn-key solution for some of the common authentication needs so you don't need to provide the authentication logic yourself. 
-For more information, see [Azure Authentication/Authorization](https://azure.microsoft.com/blog/announcing-app-service-authentication-authorization/).
+App Service provides a turn-key solution for some of the common authentication needs so you don't need to provide the authentication logic yourself. 
+For more information, see [App Service Authentication/Authorization](https://azure.microsoft.com/blog/announcing-app-service-authentication-authorization/).
 
 ## Scale your app automatically based on demand
 
 Next, let's autoscale your app so that it will automatically adjust it capacity to respond to user demand (further reading at 
-[Scale pricing tier in Azure Web App](/documentation/articles/app-service-scale/) and 
+[Scale up your app in Azure](/documentation/articles/web-sites-scale/) and 
 [Scale instance count manually or automatically](/documentation/articles/insights-how-to-scale/)). 
 
 Briefly, you scale your web app in two ways:
@@ -126,7 +135,7 @@ You may have noticed in the **Scale Settings** blade that you can do a lot more,
 - Autoscale on a schedule
 - Set autoscaling behavior for a future event
 
-For more information on scaling up your app, see [Scale pricing tier in Azure Web App](/documentation/articles/app-service-scale/). For more information on
+For more information on scaling up your app, see [Scale up your app in Azure](/documentation/articles/web-sites-scale/). For more information on
 scaling out, see [Scale instance count manually or automatically](/documentation/articles/insights-how-to-scale/).
 
 ## Receive alerts for your app
@@ -169,17 +178,25 @@ each one of these tools to discover the simple yet powerful tools at your finger
 
 Find out how to do more with your deployed app. Here's only a partial list:
 
+
 - [Buy and configure a custom domain name](/documentation/articles/custom-dns-web-site-buydomains-web-app/) - Buy an attractive domain for your web app instead of the 
 *.chinacloudsites.cn domain. Or use a domain that you already have.
+
 - [Set up staging environments](/documentation/articles/web-sites-staged-publishing/) - Deploy your app to a staging URL before putting it into production. Update your live
 web app with confidence. Set up an elaborate DevOps solution with multiple deployment slots. 
-- [Set up continuous deployment](/documentation/articles/web-sites-publish-source-control/) - Integrate app deployment into your source control system. Deploy to 
+- [Set up continuous deployment](/documentation/articles/app-service-continuous-deployment/) - Integrate app deployment into your source control system. Deploy to 
 Azure with every commit.
+
 - [Access on-premises resources](/documentation/articles/web-sites-hybrid-connection-get-started/) - Access an existing on-premises database or CRM system.
+
 - [Back up your app](/documentation/articles/web-sites-backup/) - Set up back up and restore for your web app. Prepare for unexpected failures and recover from them.
-- [Enable diagnostic logs](/documentation/articles/web-sites-enable-diagnostic-log/) - Read the IIS logs from Azure or application traces. Read them in a 
+- [Enable diagnostic logs](/documentation/articles/web-sites-enable-diagnostic-log/) - Read the IIS logs from Azure or application traces.  Read them in a 
+
 stream, download them, or port them into [Application Insights](/documentation/articles/app-insights-overview/) for turn-key analysis.
+
 - [Scan your app for vulnerabilities](https://azure.microsoft.com/blog/web-vulnerability-scanning-for-azure-app-service-powered-by-tinfoil-security/) -
 Scan your web app against modern threats using service provided by [Tinfoil Security](https://www.tinfoilsecurity.com/).
+
 - [Run background jobs](/documentation/articles/functions-overview/) - Run jobs for data processing, reporting, etc.
-- [Learn how Azure works](/documentation/articles/app-service-how-works-readme/)
+
+- [Learn how App Service works](/documentation/articles/app-service-how-works-readme/)

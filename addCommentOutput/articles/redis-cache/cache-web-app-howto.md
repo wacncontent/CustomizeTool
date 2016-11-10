@@ -7,10 +7,15 @@
 	manager="douge" 
 	editor=""/>
 
-<tags
-	ms.service="cache"
-	ms.date="05/18/2016"
-	wacn.date=""/>
+<tags 
+	ms.service="cache" 
+	ms.workload="tbd" 
+	ms.tgt_pltfrm="cache-redis" 
+	ms.devlang="na" 
+	ms.topic="hero-article" 
+	ms.date="07/22/2016" 
+	wacn.date="" 
+	ms.author="sdanie"/>
 
 # How to create a Web App with Redis Cache
 
@@ -21,7 +26,7 @@
 - [Java](/documentation/articles/cache-java-get-started/)
 - [Python](/documentation/articles/cache-python-get-started/)
 
-This tutorial shows how to create and deploy an ASP.NET web application to a web app in Azure using Visual Studio 2015. The sample application displays a list of team statistics from a database and shows different ways to use Azure Redis Cache to store and retrieve data from the cache. When you complete the tutorial you'll have a running web app that reads and writes to a database, optimized with Azure Redis Cache, and hosted in Azure.
+This tutorial shows how to create and deploy an ASP.NET web application to a web app in Azure App Service using Visual Studio 2015. The sample application displays a list of team statistics from a database and shows different ways to use Azure Redis Cache to store and retrieve data from the cache. When you complete the tutorial you'll have a running web app that reads and writes to a database, optimized with Azure Redis Cache, and hosted in Azure.
 
 You'll learn:
 
@@ -43,7 +48,7 @@ To complete the tutorial, you must have the following prerequisites.
 ### Azure account
 
 
-###<a name="azure-account"></a> Azure account
+### <a name="azure-account"></a> Azure account
 
 
 You need an Azure account to complete the tutorial. You can:
@@ -56,7 +61,7 @@ You need an Azure account to complete the tutorial. You can:
 
 
 
-###<a name="visual-studio-2015-with-the-azure-sdk-for-net"></a> Visual Studio 2015 with the Azure SDK for .NET
+### <a name="visual-studio-2015-with-the-azure-sdk-for-net"></a> Visual Studio 2015 with the Azure SDK for.NET
 
 
 The tutorial is written for Visual Studio 2015 with the [Azure SDK for .NET](/documentation/articles/dotnet-sdk/) 2.8.2 or later. [Download the latest Azure SDK for Visual Studio 2015 here](http://go.microsoft.com/fwlink/?linkid=518003). Visual Studio is automatically installed with the SDK if you don't already have it.
@@ -73,7 +78,7 @@ If you have Visual Studio 2013, you can [download the latest Azure SDK for Visua
  
     ![Create project][cache-create-project]
 
-3. Select **MVC** as the project type. Clear the **Host in the cloud** checkbox. You'll [provision the Azure resources](#provision-the-azure-resources) and [publish the application to Azure](#publish-the-application-to-azure) in subsequent steps in the tutorial. For an example of provisioning an Azure web app from Visual Studio by leaving **Host in the cloud** checked, see [Get started with Web Apps in Azure, using ASP.NET and Visual Studio](/documentation/articles/web-sites-dotnet-get-started/).
+3. Select **MVC** as the project type. Clear the **Host in the cloud** checkbox. You'll [provision the Azure resources](#provision-the-azure-resources) and [publish the application to Azure](#publish-the-application-to-azure) in subsequent steps in the tutorial. For an example of provisioning an App Service web app from Visual Studio by leaving **Host in the cloud** checked, see [Get started with Web Apps in Azure App Service, using ASP.NET and Visual Studio](/documentation/articles/web-sites-dotnet-get-started/).
 
     ![Select project template][cache-select-template]
 
@@ -91,7 +96,7 @@ In this section of the tutorial, you'll create the basic application that reads 
 ### Add the model
 
 
-###<a name="add-the-model"></a> Add the model
+### <a name="add-the-model"></a> Add the model
 
 
 1. Right-click **Models** in **Solution Explorer**, and choose **Add**, **Class**. 
@@ -204,7 +209,7 @@ In this section of the tutorial, you'll create the basic application that reads 
 ### Add the controller
 
 
-###<a name="add-the-controller"></a> Add the controller
+### <a name="add-the-controller"></a> Add the controller
 
 
 1. Press **F6** to build the project. 
@@ -255,7 +260,7 @@ In this section of the tutorial, you'll create the basic application that reads 
 ### Configure the views
 
 
-###<a name="configure-the-views"></a> Configure the views
+### <a name="configure-the-views"></a> Configure the views
 
 
 1. In **Solution Explorer**, expand the **Views** folder and then the **Shared** folder, and double-click **_Layout.cshtml**. 
@@ -278,12 +283,7 @@ In this section of the tutorial, you'll create the basic application that reads 
 
 ![Starter application][cache-starter-application]
 
-
-## Configure the application to use Redis Cache
-
-
-##<a name="configure-the-application-to-use-redis-cache"></a> Configure the application to use Redis Cache
-
+##  <a name="configure-the-application-to-use-redis-cache"></a>  Configure the application to use Redis Cache
 
 In this section of the tutorial, you'll configure the sample application to store and retrieve Contoso team statistics from an Azure Redis Cache instance by using the [StackExchange.Redis](https://github.com/StackExchange/StackExchange.Redis) cache client.
 
@@ -293,12 +293,7 @@ In this section of the tutorial, you'll configure the sample application to stor
 -	[Update the Teams Index view to work with the cache](#update-the-teams-index-view-to-work-with-the-cache)
 
 
-
-### Configure the application to use StackExchange.Redis
-
-
-###<a name="configure-the-application-to-use-stackexchangeredis"></a> Configure the application to use StackExchange.Redis
-
+###  <a name="configure-the-application-to-use-stackexchangeredis"></a>  Configure the application to use StackExchange.Redis
 
 1. To configure a client application in Visual Studio using the StackExchange.Redis NuGet package, right-click the project in **Solution Explorer** and choose **Manage NuGet Packages**. 
 
@@ -354,10 +349,10 @@ In this section of the tutorial, you'll configure the sample application to stor
 	-	Before: `<appSettings>`
 	-	After: ` <appSettings file="C:\AppSecrets\WebAppPlusCacheAppSecrets.config">`
 
-    The ASP.NET runtime merges the contents of the external file with the markup in the `<appSettings>` element. The runtime ignores the file attribute if the specified file cannot be found. Your secrets (the connection string to your cache) are not included as part of the source code for the application. When you deploy your web app to Azure, the `WebAppPlusCacheAppSecrests.config` file won't be deployed (that's what you want). There are several ways to specify these secrets in Azure, and in this tutorial they are configured automatically for you when you [provision the Azure resources](#provision-the-azure-resources) in a subsequent tutorial step. For more information about working with secrets in Azure, see [Best practices for deploying passwords and other sensitive data to ASP.NET and Azure Web App](http://www.asp.net/identity/overview/features-api/best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure).
+    The ASP.NET runtime merges the contents of the external file with the markup in the `<appSettings>` element. The runtime ignores the file attribute if the specified file cannot be found. Your secrets (the connection string to your cache) are not included as part of the source code for the application. When you deploy your web app to Azure, the `WebAppPlusCacheAppSecrests.config` file won't be deployed (that's what you want). There are several ways to specify these secrets in Azure, and in this tutorial they are configured automatically for you when you [provision the Azure resources](#provision-the-azure-resources) in a subsequent tutorial step. For more information about working with secrets in Azure, see [Best practices for deploying passwords and other sensitive data to ASP.NET and Azure App Service](http://www.asp.net/identity/overview/features-api/best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure).
 
 
- ###  ###<a   name="update-the-teamscontroller-class-to-return-results-from-the-cache-or-the-database"></a>  Update the TeamsController class to return results from the cache or the database
+###  <a name="update-the-teamscontroller-class-to-return-results-from-the-cache-or-the-database"></a>  Update the TeamsController class to return results from the cache or the database
 
 In this sample, team statistics can be retrieved from the database or from the cache. Team statistics are stored in the cache as a serialized `List<Team>`, and also as a sorted set using Redis data types. When retrieving items from a sorted set, you can retrieve some, all, or query for certain items. In this sample you'll query the sorted set for the top 5 teams ranked by number of wins.
 
@@ -582,7 +577,7 @@ In this sample, team statistics can be retrieved from the database or from the c
         }
 
 
- ###  ###<a   name="update-the-create-edit-and-delete-methods-to-work-with-the-cache"></a>  Update the Create, Edit, and Delete methods to work with the cache
+###  <a name="update-the-create-edit-and-delete-methods-to-work-with-the-cache"></a>  Update the Create, Edit, and Delete methods to work with the cache
 
 The scaffolding code that was generated as part of this sample includes methods to add, edit, and delete teams. Anytime a team is added, edited, or removed, the data in the cache becomes outdated. In this section you'll modify these three methods to clear the cached teams so that the cache won't be out of sync with the database.
 
@@ -651,7 +646,7 @@ The scaffolding code that was generated as part of this sample includes methods 
 	    }
 
 
- ###  ###<a   name="update-the-teams-index-view-to-work-with-the-cache"></a>  Update the Teams Index view to work with the cache
+###  <a name="update-the-teams-index-view-to-work-with-the-cache"></a>  Update the Teams Index view to work with the cache
 
 1. In **Solution Explorer**, expand the **Views** folder, then the **Teams** folder, and double-click **Index.cshtml**.
 
@@ -704,24 +699,22 @@ The scaffolding code that was generated as part of this sample includes methods 
 
 4. Press **F6** to build the project.
 
-
-## Provision the Azure resources
-
-
-##<a name="provision-the-azure-resources"></a> Provision the Azure resources
-
+##  <a name="provision-the-azure-resources"></a>  Provision the Azure resources
 
 To host your application in Azure, you must first provision the Azure services that your application requires. The sample application in this tutorial uses the following Azure services.
 
 -	Azure Redis Cache
--	Azure Web App
+-	App Service Web App
 -	SQL Database
 
-
 To deploy these services to a new or existing resource group of your choice, click the following **Deploy to Azure** button.
 
 [![Deploy to Azure][deploybutton]](https://portal.azure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F201-web-app-redis-cache-sql-database%2Fazuredeploy.json)
 
+
+>[AZURE.NOTE] Templates you are deploying from the GitHub Repo "azure-quickstart-templates" must be modified in order to fit in the Azure China Cloud Environment. For example, replace some endpoints -- "blob.core.windows.net" by "blob.core.chinacloudapi.cn", "cloudapp.azure.com" by "chinacloudapp.cn".
+
+
 This **Deploy to Azure** button uses the [Create a Web App plus Redis Cache plus SQL Database](https://github.com/Azure/azure-quickstart-templates/tree/master/201-web-app-redis-cache-sql-database) [Azure Quickstart](https://github.com/Azure/azure-quickstart-templates) template to provision these services and set the connection string for the SQL Database and the application setting for the Azure Redis Cache connection string.
 
 >[AZURE.NOTE] If you don't have an Azure account, you can [create a free Azure account](/pricing/1rmb-trial/?WT.mc_id=redis_cache_hero) in just a couple of minutes.
@@ -731,7 +724,7 @@ Clicking the **Deploy to Azure** button takes you to the Azure portal and initia
 ![Deploy to Azure][cache-deploy-to-azure-step-1]
 
 1. On the **Custom deployment** blade, select the Azure subscription to use, and select an existing resource group or create a new one, and specify the resource group location.
-2. On the **Parameters** blade, specify an administrator account name (**ADMINISTRATORLOGIN** - don't use **admin**), administrator login password (**ADMINISTRATORLOGINPASSWORD**), and database name (**DATABASENAME**). The other parameters are configured for a free Azure hosting plan, and lower cost options for the SQL Database and Azure Redis Cache, which don't come with a free tier.
+2. On the **Parameters** blade, specify an administrator account name (**ADMINISTRATORLOGIN** - don't use **admin**), administrator login password (**ADMINISTRATORLOGINPASSWORD**), and database name (**DATABASENAME**). The other parameters are configured for a free App Service hosting plan, and lower cost options for the SQL Database and Azure Redis Cache, which don't come with a free tier.
 3. Change any of the other settings if desired, or keep the defaults, and click **OK**.
 
 
@@ -751,26 +744,9 @@ You can view the status of your deployment on the **Microsoft.Template** blade.
 
 When provisioning is complete, you can publish your application to Azure from Visual Studio.
 
->[AZURE.NOTE] Any errors that may occur during the provisioning process are displayed on the **Microsoft.Template** blade. Common errors are too many SQL Servers or too many Free Azure hosting plans per subscription. Resolve any errors and restart the process by clicking **Redeploy** on the **Microsoft.Template** blade or the **Deploy to Azure** button in this tutorial.
+>[AZURE.NOTE] Any errors that may occur during the provisioning process are displayed on the **Microsoft.Template** blade. Common errors are too many SQL Servers or too many Free App Service hosting plans per subscription. Resolve any errors and restart the process by clicking **Redeploy** on the **Microsoft.Template** blade or the **Deploy to Azure** button in this tutorial.
 
-## Publish the application to Azure
-
-
-Download [this ARM template](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-web-app-redis-cache-sql-database/azuredeploy.json) from GitHub, and do the following modification.
-
-For parameter **skuName**, delete the allowed values "P1", "P2", "P3", and "P4", because Premium Web App is not available in Azure China yet.
-
-
-After the modification is done, use the following PowerShell commands to deploy your template.
-
-	New-AzureRmResourceGroup -Name MyWebAppPlusCache -Location "China East"
-
-    New-AzureRmResourceGroupDeployment -ResourceGroupName MyWebAppPlusCache -TemplateFile azuredeploy.json
-
-Note: you can use a parameter object to specify parameters. See [Deploy resources with Azure Resource Manager templates](/documentation/articles/resource-group-template-deploy/) for more details.
-
-##<a name="publish-the-application-to-azure"></a> Publish the application to Azure
-
+##  <a name="publish-the-application-to-azure"></a>  Publish the application to Azure
 
 In this step of the tutorial, you'll publish the application to Azure and run it in the cloud.
 
@@ -779,7 +755,7 @@ In this step of the tutorial, you'll publish the application to Azure and run it
     ![Publish][cache-publish-app]
 
 
-2. Click **App Services**.
+2. Click **Azure App Service**.
 
     ![Publish][cache-publish-to-app-service]
 
@@ -845,20 +821,11 @@ To run the application locally on your machine, you need an Azure Redis Cache in
 -	If you have another existing Azure Redis Cache instance, you can use that to run this sample locally.
 -	If you need to create an Azure Redis Cache instance, you can follow the steps in [Create a cache](/documentation/articles/cache-dotnet-how-to-use-azure-redis-cache/#create-a-cache).
 
-
 Once you have selected or created the cache to use, browse to the cache in the Azure portal and retrieve the [host name](/documentation/articles/cache-configure/#properties) and [access keys](/documentation/articles/cache-configure/#access-keys) for your cache. For instructions, see [Configure Redis cache settings](/documentation/articles/cache-configure/#configure-redis-cache-settings).
-
-
-Once you have selected or created the cache to use, you can use the following PowerShell Commands to get the properties and the access key of your cache.
-
-    Get-AzureRmRedisCache -Name <cache name> -ResourceGroupName <resource group name>
-
-    Get-AzureRmRedisCacheKey -Name <cache name> -ResourceGroupName <resource group name>
-
 
 1. Open the `WebAppPlusCacheAppSecrets.config` file that you created during the [Configure the application to use Redis Cache](#configure-the-application-to-use-redis-cache) step of this tutorial using the editor of your choice.
 
-2. Edit the `value` attribute and replace `MyCache.redis.cache.chinacloudapi.cn` with the  [host name](/documentation/articles/cache-configure/#properties)  host name  of your cache, and specify either the  [primary  primary  or secondary  key](/documentation/articles/cache-configure/#access-keys)  key  of your cache as the password.
+2. Edit the `value` attribute and replace `MyCache.redis.cache.chinacloudapi.cn` with the [host name](/documentation/articles/cache-configure/#properties) of your cache, and specify either the [primary or secondary key](/documentation/articles/cache-configure/#access-keys) of your cache as the password.
 
 
 		<appSettings>
@@ -873,17 +840,18 @@ Once you have selected or created the cache to use, you can use the following Po
 ## Next steps
 
 -	Learn more about [Getting Started with ASP.NET MVC 5](http://www.asp.net/mvc/overview/getting-started/introduction/getting-started) on the [ASP.NET](http://asp.net/) site.
+-	For more examples of creating an ASP.NET Web App in App Service, see [Create and deploy an ASP.NET web app in Azure App Service](https://github.com/Microsoft/HealthClinic.biz/wiki/Create-and-deploy-an-ASP.NET-web-app-in-Azure-App-Service) from the [HealthClinic.biz](https://github.com/Microsoft/HealthClinic.biz) 2015 Connect [demo](https://blogs.msdn.microsoft.com/visualstudio/2015/12/08/connectdemos-2015-healthclinic-biz/).
+	-	For more quickstarts from the HealthClinic.biz demo, see [Azure Developer Tools Quickstarts](https://github.com/Microsoft/HealthClinic.biz/wiki/Azure-Developer-Tools-Quickstarts).
 -	Learn more about the [Code first to a new database](https://msdn.microsoft.com/data/jj193542) approach to Entity Framework that's used in this tutorial.
--	Learn more about [web apps in  Azure](/home/features/web-site/)  Azure](/home/features/web-site) .
-
+-	Learn more about [web apps in Azure App Service](/documentation/articles/app-service-web-overview/).
 -	Learn how to [monitor](/documentation/articles/cache-how-to-monitor/) your cache in the Azure portal.
-
 
 -	Explore Azure Redis Cache premium features
 	-	[How to configure persistence for a Premium Azure Redis Cache](/documentation/articles/cache-how-to-premium-persistence/)
 	-	[How to configure clustering for a Premium Azure Redis Cache](/documentation/articles/cache-how-to-premium-clustering/)
 	-	[How to configure Virtual Network support for a Premium Azure Redis Cache](/documentation/articles/cache-how-to-premium-vnet/)
 	-	See the [Azure Redis Cache FAQ](/documentation/articles/cache-faq/#what-redis-cache-offering-and-size-should-i-use) for more details about size, throughput, and bandwidth with premium caches.
+
 
 
 <!-- IMAGES -->

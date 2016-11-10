@@ -10,17 +10,22 @@
  editor=""
  tags="azure-resource-manager,azure-service-management,hpc-pack"/>
 <tags
-	ms.service="virtual-machines-linux"
-	ms.date="06/17/2016"
-	wacn.date=""/>
+ms.service="virtual-machines-linux"
+ ms.devlang="na"
+ ms.topic="article"
+ ms.tgt_pltfrm="vm-linux"
+ ms.workload="big-compute"
+ ms.date="06/17/2016"
+ wacn.date=""
+ ms.author="danlep"/>
 
 # Options to create and manage a high performance computing (HPC) cluster in Azure with Microsoft HPC Pack
 
-[AZURE.INCLUDE [virtual-machines-common-hpcpack-cluster-options](../includes/virtual-machines-common-hpcpack-cluster-options.md)]
+[AZURE.INCLUDE [virtual-machines-common-hpcpack-cluster-options](../../includes/virtual-machines-common-hpcpack-cluster-options.md)]
 
 This article focuses on options to use HPC Pack to run Linux workloads. There are also options for running [Windows HPC workloads with HPC Pack](/documentation/articles/virtual-machines-windows-hpcpack-cluster-options/).
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
 
 ## Run an HPC Pack cluster in Azure VMs
 

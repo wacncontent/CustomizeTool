@@ -13,8 +13,8 @@ To reduce the impact of downtime due to one or more of these events, we recommen
 * [Combine the Load Balancer with availability sets]
 
 
- ###  ###<a   name="configure-multiple-virtual-machines-in-an-availability-set-for-redundancy"></a>  Configure multiple virtual machines in an availability set for redundancy
-To provide redundancy to your application, we recommend that you group two or more virtual machines in an availability set. This configuration ensures that during either a planned or unplanned maintenance event, at least one virtual machine will be available and meet the 99.95% Azure SLA. For more information, see the [SLA for Virtual Machines](https://azure.microsoft.com/support/legal/sla/virtual-machines/).
+###  <a name="configure-multiple-virtual-machines-in-an-availability-set-for-redundancy"></a>  Configure multiple virtual machines in an availability set for redundancy
+To provide redundancy to your application, we recommend that you group two or more virtual machines in an availability set. This configuration ensures that during either a planned or unplanned maintenance event, at least one virtual machine will be available and meet the 99.95% Azure SLA. For more information, see the [SLA for Virtual Machines](/support/sla/virtual-machines/).
 
 > [AZURE.IMPORTANT] Avoid leaving a single instance virtual machine in an availability set by itself. Virtual machines in this configuration do not qualify for a SLA guarantee and will face downtime during Azure planned maintenance events.
 
@@ -26,12 +26,7 @@ Fault domains define the group of virtual machines that share a common power sou
    ![Conceptual drawing of the update domain and fault domain configuration](./media/virtual-machines-common-manage-availability/ud-fd-configuration.png)
 
 
-
-### Configure each application tier into separate availability sets
-
-
-###<a name="configure-each-application-tier-into-separate-availability-sets"></a> Configure each application tier into separate availability sets
-
+###  <a name="configure-each-application-tier-into-separate-availability-sets"></a>  Configure each application tier into separate availability sets
 
 If your virtual machines are all nearly identical and serve the same purpose for your application, we recommend that you configure an availability set for each tier of your application.  If you place two different tiers in the same availability set, all virtual machines in the same application tier can be rebooted at once. By configuring at least two virtual machines in an availability set for each tier, you guarantee that at least one virtual machine in each tier will be available.
 
@@ -41,14 +36,8 @@ For example, you could put all the virtual machines in the front-end of your app
    ![Application tiers](./media/virtual-machines-common-manage-availability/application-tiers.png)
 
 
-
-### Combine a load balancer with availability sets
-Combine the [Azure Load Balancer](/documentation/articles/load-balancer-overview/) with an availability set to get the most application resiliency. The Azure Load Balancer distributes traffic between multiple virtual machines. For our Standard tier virtual machines, the Azure Load Balancer is included. Note that not all virtual machine tiers include the Azure Load Balancer. For more information about load balancing your virtual machines, see [Load Balancing  virtual machines](/documentation/articles/virtual-machines-linux-load-balance/).
-
-
-###<a name="combine-the-load-balancer-with-availability-sets"></a> Combine a load balancer with availability sets
-Combine the [Azure Load Balancer](/documentation/articles/load-balancer-overview/) with an availability set to get the most application resiliency. The Azure Load Balancer distributes traffic between multiple virtual machines. For our Standard tier virtual machines, the Azure Load Balancer is included. Note that not all virtual machine tiers include the Azure Load Balancer. For more information about load balancing your virtual machines, see Load Balancing [Windows](/documentation/articles/virtual-machines-windows-load-balance/) or [Linux](/documentation/articles/virtual-machines-linux-load-balance/) virtual machines.
-
+###  <a name="combine-the-load-balancer-with-availability-sets"></a>  Combine a load balancer with availability sets
+Combine the [Azure Load Balancer](/documentation/articles/load-balancer-overview/) with an availability set to get the most application resiliency. The Azure Load Balancer distributes traffic between multiple virtual machines. For our Standard tier virtual machines, the Azure Load Balancer is included. Note that not all virtual machine tiers include the Azure Load Balancer. For more information about load balancing your virtual machines, see  [Load  Load  Balancing  [Windows](/documentation/articles/virtual-machines-windows-load-balance/) or [Linux](/documentation/articles/virtual-machines-linux-load-balance/)  virtual  machines](/documentation/articles/virtual-machines-linux-load-balance/)  machines .
 
 If the load balancer is not configured to balance traffic across multiple virtual machines, then any planned maintenance event will affect the only traffic-serving virtual machine, causing an outage to your application tier. Placing multiple virtual machines of the same tier under the same load balancer and availability set enables traffic to be continuously served by at least one instance.
 

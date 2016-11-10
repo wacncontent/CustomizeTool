@@ -72,7 +72,7 @@ You can then manage the overall life cycle of the group's resources by using Azu
 - Audit operations.
 - Tag resources with additional metadata for better tracking.
 
-You can learn lots more about Azure resource groups and what they can do for you in the [Azure Resource Manager overview](../articles/documentation/articles/resource-group-overview). If you're interested in authoring templates, see [Authoring Azure Resource Manager templates](/documentation/articles/resource-group-authoring-templates/).
+You can learn lots more about Azure resource groups and what they can do for you in the [Azure Resource Manager overview](/documentation/articles/resource-group-overview). If you're interested in authoring templates, see [Authoring Azure Resource Manager templates](/documentation/articles/resource-group-authoring-templates/).
 
 ## <a id="quick-create-a-vm-in-azure"></a>Task: Quick-create a VM in Azure
 
@@ -222,6 +222,8 @@ In this case, the template below will ask for:
 - A password.
 - A domain name for the outside world to use.
 - An Ubuntu Server version number -- but it will accept only one of a list.
+
+See more about [username and password requirements](/documentation/articles/virtual-machines-linux-faq/#what-are-the-username-requirements-when-creating-a-vm).
 
 Once you decide on these values, you're ready to create a group for and deploy this template into your Azure subscription.
 
@@ -1143,7 +1145,7 @@ Now use the `azure group deployment create` command and the `--template-uri` opt
     data:    vmSize                 String        Standard_A1
     info:    group deployment create command OK
 
-Note that this template deploys a Windows Server image; however, it could easily be replaced by any Linux image. Want to create a Docker cluster with multiple swarm managers? [You can do it](https://azure.microsoft.com/documentation/templates/docker-swarm-cluster/).
+Note that this template deploys a Windows Server image; however, it could easily be replaced by any Linux image. Want to create a Docker cluster with multiple swarm managers? [You can do it](https://github.com/Azure/azure-quickstart-templates/tree/master/docker-swarm-cluster/).
 
 ## <a id="remove-a-resource-group"></a>Task: Remove a resource group
 
@@ -1240,7 +1242,7 @@ And then, looking up myVM1:
 
 ## <a id="log-on-to-a-linux-based-virtual-machine"></a>Task: Log on to a Linux-based virtual machine
 
-Typically Linux machines are connected to through SSH. For more information, see [How to use SSH with Linux on Azure](/documentation/articles/virtual-machines-linux-ssh-from-linux/).
+Typically Linux machines are connected to through SSH. For more information, see [How to use SSH with Linux on Azure](/documentation/articles/virtual-machines-linux-mac-create-ssh-keys/).
 
 ## <a id="stop-a-virtual-machine"></a>Task: Stop a VM
 
@@ -1273,8 +1275,8 @@ Then you'll need to mount the disk, as you normally would in Linux.
 
 ## Next steps
 
-For far more examples of Azure CLI usage with the **arm** mode, see [Using the Azure CLI for Mac, Linux, and Windows with Azure Resource Manager](/documentation/articles/xplat-cli-azure-resource-manager/). To learn more about Azure resources and their concepts, see [Azure Resource Manager overview](../articles/documentation/articles/resource-group-overview).
+For far more examples of Azure CLI usage with the **arm** mode, see [Using the Azure CLI for Mac, Linux, and Windows with Azure Resource Manager](/documentation/articles/xplat-cli-azure-resource-manager/). To learn more about Azure resources and their concepts, see [Azure Resource Manager overview](/documentation/articles/resource-group-overview).
 
 
-For more templates you can use, see [Azure Quickstart templates](https://azure.microsoft.com/documentation/templates/) and [Application frameworks using templates](/documentation/articles/virtual-machines-linux-app-frameworks/).
+For more templates you can use, see [Azure Quickstart templates](https://github.com/Azure/azure-quickstart-templates/) and [Application frameworks using templates](/documentation/articles/virtual-machines-linux-app-frameworks/).
 

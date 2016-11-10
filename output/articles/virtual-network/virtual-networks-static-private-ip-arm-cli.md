@@ -3,25 +3,30 @@
    description="Understanding static IPs (DIPs) and how to manage them in ARM mode using the CLI"
    services="virtual-network"
    documentationCenter="na"
-   authors="telmosampaio"
+   authors="jimdial"
    manager="carmonm"
    editor="tysonn"
    tags="azure-resource-manager"
 />
-<tags
-	ms.service="virtual-network"
-	ms.date="03/15/2016"
-	wacn.date=""/>
+<tags 
+   ms.service="virtual-network"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="03/15/2016"
+   wacn.date=""
+   ms.author="jdial" />
 
 # How to set a static private IP address in Azure CLI
 
-[AZURE.INCLUDE [virtual-networks-static-private-ip-selectors-arm-include](../includes/virtual-networks-static-private-ip-selectors-arm-include.md)]
+[AZURE.INCLUDE [virtual-networks-static-private-ip-selectors-arm-include](../../includes/virtual-networks-static-private-ip-selectors-arm-include.md)]
 
-[AZURE.INCLUDE [virtual-networks-static-private-ip-intro-include](../includes/virtual-networks-static-private-ip-intro-include.md)]
+[AZURE.INCLUDE [virtual-networks-static-private-ip-intro-include](../../includes/virtual-networks-static-private-ip-intro-include.md)]
 
-[AZURE.INCLUDE [azure-arm-classic-important-include](../includes/azure-arm-classic-important-include.md)] This article covers the Resource Manager deployment model. You can also [manage static private IP address in the classic deployment model](/documentation/articles/virtual-networks-static-private-ip-classic-cli/).
+[AZURE.INCLUDE [azure-arm-classic-important-include](../../includes/azure-arm-classic-important-include.md)] This article covers the Resource Manager deployment model. You can also [manage static private IP address in the classic deployment model](/documentation/articles/virtual-networks-static-private-ip-classic-cli/).
 
-[AZURE.INCLUDE [virtual-networks-static-ip-scenario-include](../includes/virtual-networks-static-ip-scenario-include.md)]
+[AZURE.INCLUDE [virtual-networks-static-ip-scenario-include](../../includes/virtual-networks-static-ip-scenario-include.md)]
 
 The sample Azure CLI commands below expect a simple environment already created. If you want to run the commands as they are displayed in this document, first build the test environment described in [create a vnet](/documentation/articles/virtual-networks-create-vnet-arm-cli/).
 
@@ -40,7 +45,7 @@ To create a VM named *DNS01* in the *FrontEnd* subnet of a VNet named *TestVNet*
 
 3. Run the **azure network public-ip create** to create a public IP for the VM. The list shown after the output explains the parameters used.
 
-		azure network public-ip create -g TestRG -n TestPIP -l centralus
+		azure network public-ip create -g TestRG -n TestPIP -l chinaeast
 	
 	Expected output:
 
@@ -51,7 +56,7 @@ To create a VM named *DNS01* in the *FrontEnd* subnet of a VNet named *TestVNet*
 		data:    Id                              : /subscriptions/628dad04-b5d1-4f10-b3a4-dc61d88cf97c/resourceGroups/TestRG/providers/Microsoft.Network/publicIPAddresses/TestPIP
 		data:    Name                            : TestPIP
 		data:    Type                            : Microsoft.Network/publicIPAddresses
-		data:    Location                        : centralus
+		data:    Location                        : chinaeast
 		data:    Provisioning state              : Succeeded
 		data:    Allocation method               : Dynamic
 		data:    Idle timeout                    : 4
@@ -59,11 +64,11 @@ To create a VM named *DNS01* in the *FrontEnd* subnet of a VNet named *TestVNet*
 
 	- **-g (or --resource-group)**. Name of the resource group the public IP will be created in.
 	- **-n (or --name)**. Name of the public IP.
-	- **-l (or --location)**. Azure region where the public IP will be created. For our scenario, *centralus*.
+	- **-l (or --location)**. Azure region where the public IP will be created. For our scenario, *chinaeast*.
 
 3. Run the **azure network nic create** command to create a NIC with a static private IP. The list shown after the output explains the parameters used.
 
-		azure network nic create -g TestRG -n TestNIC -l centralus -a 192.168.1.101 -m TestVNet -k FrontEnd
+		azure network nic create -g TestRG -n TestNIC -l chinaeast -a 192.168.1.101 -m TestVNet -k FrontEnd
 
 	Expected output:
 
@@ -74,7 +79,7 @@ To create a VM named *DNS01* in the *FrontEnd* subnet of a VNet named *TestVNet*
 		data:    Id                              : /subscriptions/628dad04-b5d1-4f10-b3a4-dc61d88cf97c/resourceGroups/TestRG/providers/Microsoft.Network/networkInterfaces/TestNIC
 		data:    Name                            : TestNIC
 		data:    Type                            : Microsoft.Network/networkInterfaces
-		data:    Location                        : centralus
+		data:    Location                        : chinaeast
 		data:    Provisioning state              : Succeeded
 		data:    Enable IP forwarding            : false
 		data:    IP configurations:
@@ -92,7 +97,7 @@ To create a VM named *DNS01* in the *FrontEnd* subnet of a VNet named *TestVNet*
 
 4. Run the **azure vm create** command to create the VM using the public IP and NIC created above. The list shown after the output explains the parameters used.
 
-		azure vm create -g TestRG -n DNS01 -l centralus -y Windows -f TestNIC -i TestPIP -F TestVNet -j FrontEnd -o vnetstorage -q bd507d3a70934695bc2128e3e5a255ba__RightImage-Windows-2012R2-x64-v14.2 -u adminuser -p AdminP@ssw0rd
+		azure vm create -g TestRG -n DNS01 -l chinaeast -y Windows -f TestNIC -i TestPIP -F TestVNet -j FrontEnd -o vnetstorage -q bd507d3a70934695bc2128e3e5a255ba__RightImage-Windows-2012R2-x64-v14.2 -u adminuser -p AdminP@ssw0rd
 
 	Expected output:
 
@@ -135,7 +140,7 @@ Expected output:
 	data:    Id                              :/subscriptions/628dad04-b5d1-4f10-b3a4-dc61d88cf97c/resourceGroups/TestRG/providers/Microsoft.Compute/virtualMachines/DNS01
 	data:    ProvisioningState               :Succeeded
 	data:    Name                            :DNS01
-	data:    Location                        :centralus
+	data:    Location                        :chinaeast
 	data:    Type                            :Microsoft.Compute/virtualMachines
 	data:
 	data:    Hardware Profile:
@@ -168,7 +173,7 @@ Expected output:
 	data:          MAC Address               :00-0D-3A-90-1A-A8
 	data:          Provisioning State        :Succeeded
 	data:          Name                      :TestNIC
-	data:          Location                  :centralus
+	data:          Location                  :chinaeast
 	data:            Private IP alloc-method :Static
 	data:            Private IP address      :192.168.1.101
 	data:            Public IP address       :40.122.213.159
@@ -179,7 +184,7 @@ You cannot remove a static private IP address from a NIC in Azure CLI for Resour
 	
 1. Run the **azure network nic create** command to create a new NIC using dynamic IP allocation. Notice how you do not need to specify the IP address this time.
 
-		azure network nic create -g TestRG -n TestNIC2 -l centralus -m TestVNet -k FrontEnd
+		azure network nic create -g TestRG -n TestNIC2 -l chinaeast -m TestVNet -k FrontEnd
 
 	Expected output:
 
@@ -191,7 +196,7 @@ You cannot remove a static private IP address from a NIC in Azure CLI for Resour
 		data:    Id                              : /subscriptions/628dad04-b5d1-4f10-b3a4-dc61d88cf97c/resourceGroups/TestRG/providers/Microsoft.Network/networkInterfaces/TestNIC2
 		data:    Name                            : TestNIC2
 		data:    Type                            : Microsoft.Network/networkInterfaces
-		data:    Location                        : centralus
+		data:    Location                        : chinaeast
 		data:    Provisioning state              : Succeeded
 		data:    Enable IP forwarding            : false
 		data:    IP configurations:
@@ -240,7 +245,7 @@ Expected output:
 	data:    Id                              : /subscriptions/628dad04-b5d1-4f10-b3a4-dc61d88cf97c/resourceGroups/TestRG/providers/Microsoft.Network/networkInterfaces/TestNIC2
 	data:    Name                            : TestNIC2
 	data:    Type                            : Microsoft.Network/networkInterfaces
-	data:    Location                        : centralus
+	data:    Location                        : chinaeast
 	data:    Provisioning state              : Succeeded
 	data:    MAC address                     : 00-0D-3A-90-29-25
 	data:    Enable IP forwarding            : false

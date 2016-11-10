@@ -1,5 +1,30 @@
-updated docs: 1
-articles/vpn-gateway/vpn-gateway-about-vpn-devices.md
+updated docs: 14
+articles/vpn-gateway/vpn-gateway-about-vpn-gateway-settings.md
+articles/vpn-gateway/vpn-gateway-about-vpngateways.md
+articles/vpn-gateway/vpn-gateway-connect-different-deployment-models-portal.md
+articles/vpn-gateway/vpn-gateway-connect-different-deployment-models-powershell.md
+articles/vpn-gateway/vpn-gateway-create-site-to-site-rm-powershell.md
+articles/vpn-gateway/vpn-gateway-howto-point-to-site-rm-ps.md
+articles/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal.md
+articles/vpn-gateway/vpn-gateway-multi-site.md
+articles/vpn-gateway/vpn-gateway-plan-design.md
+articles/vpn-gateway/vpn-gateway-point-to-site-create.md
+articles/vpn-gateway/vpn-gateway-resetgw-classic.md
+articles/vpn-gateway/vpn-gateway-site-to-site-create.md
+articles/vpn-gateway/vpn-gateway-verify-connection-resource-manager.md
+articles/vpn-gateway/vpn-gateway-vnet-vnet-rm-ps.md
 
-
-updated includes: 0
+updated includes: 13
+includes/vpn-gateway-add-gw-rm-portal-include.md
+includes/vpn-gateway-add-gwsubnet-rm-portal-include.md
+includes/vpn-gateway-add-lng-rm-portal-include.md
+includes/vpn-gateway-basic-vnet-rm-portal-include.md
+includes/vpn-gateway-no-nsg-include.md
+includes/vpn-gateway-table-forcedtunnel-include.md
+includes/vpn-gateway-table-gwtype-aggtput-include.md
+includes/vpn-gateway-table-multisite-include.md
+includes/vpn-gateway-table-point-to-site-include.md
+includes/vpn-gateway-table-vnet-to-vnet-include.md
+includes/vpn-gateway-verify-connection-rm-include.md
+includes/vpn-gateway-vnetpeeringlink-include.md
+includes/vpn-gateway-vpntype-include.md

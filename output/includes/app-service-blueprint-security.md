@@ -11,7 +11,7 @@
 * [Remove standard server headers to avoid tools from fingerprinting your app](https://azure.microsoft.com/blog/removing-standard-server-headers-on-windows-azure-web-sites/)
 * [Securely connect your app with resources in a private network using Point-To-Site VPN](/documentation/articles/web-sites-integrate-with-vnet/)
 * [Securely connect your app with resources in a private network using Hybrid Connections](/documentation/articles/web-sites-hybrid-connection-get-started/)
-* [Achieve security isolation for your apps using Azure Environments (ASE)](/documentation/articles/app-service-app-service-environment-intro/)
+* [Achieve security isolation for your apps using App Service Environments (ASE)](/documentation/articles/app-service-app-service-environment-intro/)
   * [Configure a Web Application Firewall (WAF) in front of your ASE ](/documentation/articles/app-service-app-service-environment-web-application-firewall/)
   * [Configure access control for inbound network traffic for your ASE](/documentation/articles/app-service-app-service-environment-control-inbound-traffic/)
   * [Securely connect to backend resources from your ASE](/documentation/articles/app-service-app-service-environment-securely-connecting-to-backend-resources/)

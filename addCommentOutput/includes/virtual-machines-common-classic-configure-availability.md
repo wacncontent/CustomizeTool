@@ -1,19 +1,9 @@
-
 
 
 
-An availability set helps keep your virtual machines available during downtime, such as during maintenance. Placing two or more similarly configured virtual machines in an availability set creates the redundancy needed to maintain availability of the applications or services that your virtual machine runs. For details about how this works, see [Manage the availability of virtual machines] [].
+An availability set helps keep your virtual machines available during downtime, such as during maintenance. Placing two or more similarly configured virtual machines in an availability set creates the redundancy needed to maintain availability of the applications or services that your virtual machine runs. For details about how this works, see  [Manage  Manage  the availability of  [Windows](/documentation/articles/virtual-machines-windows-manage-availability/) or [Linux](/documentation/articles/virtual-machines-linux-manage-availability/)  virtual  machines] []  machines .
 
-It's a best practice to use both availability sets and load-balancing endpoints to help ensure that your application is always available and running efficiently. For details about load-balanced endpoints, see [Load balancing for Azure infrastructure services] [].
-
-
-<!-- Ibiza portal: tested -->
-
-
-An availability set helps keep your virtual machines available during downtime, such as during maintenance. Placing two or more similarly configured virtual machines in an availability set creates the redundancy needed to maintain availability of the applications or services that your virtual machine runs. For details about how this works, see Manage the availability of [Windows](/documentation/articles/virtual-machines-windows-manage-availability/) or [Linux](/documentation/articles/virtual-machines-linux-manage-availability/) virtual machines.
-
-It's a best practice to use both availability sets and load-balancing endpoints to help ensure that your application is always available and running efficiently. For details about load-balanced endpoints, "see Load balancing for Azure infrastructure services", [Windows](/documentation/articles/virtual-machines-windows-load-balance/) or [Linux](/documentation/articles/virtual-machines-linux-load-balance/).
-
+It's a best practice to use both availability sets and load-balancing endpoints to help ensure that your application is always available and running efficiently. For details about load-balanced endpoints,  see [Load  "see Load  balancing for Azure infrastructure  services] []  services", [Windows](/documentation/articles/virtual-machines-windows-load-balance/) or [Linux](/documentation/articles/virtual-machines-linux-load-balance/) .
 
 You can add classic virtual machines into an availability set by using one of two options:
 
@@ -28,7 +18,7 @@ You can use either the Azure portal  Preview  or Azure PowerShell commands to 
 
 To use the Azure portal  Preview :
 
-1. If you haven't already done so, sign in to the Azure portal  Preview .
+1. If you haven't already done so, sign in to the [Azure  portal](https://portal.azure.cn)  portal Preview](https://portal.azure.cn) .
 
 2. On the hub menu, click **+ New**, and then click **Virtual Machine**.
     
@@ -59,7 +49,7 @@ To use Azure PowerShell commands to create an Azure virtual machine and add it t
 In the Azure portal  Preview , you can add existing classic virtual machines to an existing availability set
  or create a new one for them. (Keep in mind that the virtual machines in the same availability set must belong to the same cloud service.) The steps are almost the same. With Azure PowerShell, you can add the virtual machine to an existing availability set.
 
-1. If you have not already done so, sign in to the Azure portal  Preview .
+1. If you have not already done so, sign in to the [Azure  portal](https://portal.azure.cn)  portal Preview](https://portal.azure.cn) .
 
 2. On the Hub menu, click **Virtual Machines (classic)**.
     
@@ -83,9 +73,6 @@ To use Azure PowerShell commands, open an administrator-level Azure PowerShell s
 
 >[AZURE.NOTE] The virtual machine might have to be restarted to finish adding it to the availability set.
 
-## Additional resources
-
-[Articles for classic virtual machines] []
 
 <!-- LINKS -->
 [Option 1: Create a virtual machine and an availability set at the same time]: #createset
@@ -96,4 +83,4 @@ To use Azure PowerShell commands, open an administrator-level Azure PowerShell s
 
 [Create a virtual machine running Windows]: /documentation/articles/virtual-machines-windows-hero-tutorial/
 [Virtual Network overview]: /documentation/articles/virtual-networks-overview/
-[Articles for classic virtual machines]:  /documentation/articles/?tag=azure-service-management&service=virtual-machines  /documentation/articles/?tag=azure-service-management&service=virtual-machines/ 
+

@@ -6,10 +6,15 @@
 	authors="steved0x"
 	manager="douge"
 	editor="tysonn" />
-<tags
+<tags 
 	ms.service="cache"
-	ms.date="07/07/2016"
-	wacn.date=""/>
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="cache-redis"
+	ms.workload="tbd"
+	ms.date="08/25/2016"
+	wacn.date=""
+	ms.author="sdanie" />
 
 # How to configure Azure Redis Cache
 
@@ -19,7 +24,7 @@ This topic describes how to review and update the configuration for your Azure R
 
 ## Configure Redis cache settings
 
-[AZURE.INCLUDE [redis-cache-create](../includes/redis-cache-browse.md)]
+[AZURE.INCLUDE [redis-cache-create](../../includes/redis-cache-browse.md)]
 
 Azure Redis Cache provides the following settings on the **Settings** blade.
 
@@ -31,9 +36,7 @@ Azure Redis Cache provides the following settings on the **Settings** blade.
 -	[General settings](#general-settings)
 	-	[Properties](#properties)
 	-	[Access keys](#access-keys)
-	-	[Access ports](#access-ports)
-	-	[Maxmemory policy](#maxmemory-policy-and-maxmemory-reserved)
-	-	[Advanced settings (keyspace notifications)](#keyspace-notifications-advanced-settings)
+	-	[Advanced settings](#advanced-settings)
 	-	[Redis Cache Advisor](#redis-cache-advisor)
 -	[Scale settings](#scale-settings)
 	-	[Pricing tier](#pricing-tier)
@@ -54,9 +57,9 @@ The settings in the **Support + troubleshooting** section provide you with optio
 
 ![Support + troubleshooting](./media/cache-configure/redis-cache-support-troubleshooting.png)
 
-Click **Troubleshoot** to be provided with common issues and strategies for resolving them.
+Click **Diagnose and solve problems** to be provided with common issues and strategies for resolving them.
 
-Click **Audit logs** to view actions performed on your cache. You can also use filtering to expand this view to include other resources. For more information on working with audit logs, see [View events and audit logs](/documentation/articles/insights-debugging-with-events/) and [Audit operations with Resource Manager](/documentation/articles/resource-group-audit/). For more information on monitoring Azure Redis Cache events, see [Operations and alerts](/documentation/articles/cache-how-to-monitor/#operations-and-alerts).
+Click **Activity log** to view actions performed on your cache. You can also use filtering to expand this view to include other resources. For more information on working with audit logs, see [View events and audit logs](/documentation/articles/insights-debugging-with-events/) and [Audit operations with Resource Manager](/documentation/articles/resource-group-audit/). For more information on monitoring Azure Redis Cache events, see [Operations and alerts](/documentation/articles/cache-how-to-monitor/#operations-and-alerts).
 
 **Resource health** watches your resource and tells you if it's running as expected. For more information about the Azure Resource health service, see [Azure Resource health overview](/documentation/articles/resource-health-overview/).
 
@@ -72,9 +75,7 @@ The settings in the **General** section allow you to access and configure the fo
 
 -	[Properties](#properties)
 -	[Access keys](#access-keys)
--	[Access ports](#access-ports)
--	[Maxmemory policy](#maxmemory-policy-and-maxmemory-reserved)
--	[Advanced settings (keyspace notifications)](#keyspace-notifications-advanced-settings)
+-	[Advanced settings](#advanced-settings)
 -	[Redis Cache Advisor](#redis-cache-advisor)
 
 ### Properties
@@ -89,15 +90,29 @@ Click **Access keys** to view or regenerate the access keys for your cache. Thes
 
 ![Redis Cache Access Keys](./media/cache-configure/redis-cache-manage-keys.png)
 
+
+
+
+
+
+### Advanced settings
+
+The following settings are configure on the **Advanced settings** blade.
+
+-	[Access Ports](#access-ports)
+-	[Maxmemory-policy and maxmemory-reserved](#maxmemory-policy-and-maxmemory-reserved)
+-	[Keyspace notifications (advanced settings)](#keyspace-notifications-advanced-settings)
+
+
 ### Access Ports
 
-By default, non-SSL access is disabled for new caches. To enable the non-SSL port, click **Access Ports** blade and then click **No**.
+By default, non-SSL access is disabled for new caches. To enable the non-SSL port, click **No** for **Allow access only via SSL** on the **Advanced settings blade** and then click **Save**.
 
 ![Redis Cache Access Ports](./media/cache-configure/redis-cache-access-ports.png)
 
 ### Maxmemory-policy and maxmemory-reserved
 
-Click **Maxmemory policy** to configure the memory policies for the cache. The **maxmemory-policy** setting configures the eviction policy for the cache and **maxmemory-reserved** configures the memory reserved for non-cache processes.
+The **Maxmemory policy** and **maxmemory-reserved** settings on the **Advanced settings** blade configure the memory policies for the cache. The **maxmemory-policy** setting configures the eviction policy for the cache and **maxmemory-reserved** configures the memory reserved for non-cache processes.
 
 ![Redis Cache Maxmemory Policy](./media/cache-configure/redis-cache-maxmemory-policy.png)
 
@@ -118,7 +133,7 @@ The **maxmemory-reserved** setting configures the amount of memory in MB that is
 
 ### Keyspace notifications (advanced settings)
 
-Click **Advanced settings** to configure Redis keyspace notifications. Keyspace notifications allows clients to receive notifications when certain events occur.
+Redis keyspace notifications are configured on the **Advanced settings** blade. Keyspace notifications allow clients to receive notifications when certain events occur.
 
 ![Redis Cache Advanced Settings](./media/cache-configure/redis-cache-advanced-settings.png)
 
@@ -126,8 +141,7 @@ Click **Advanced settings** to configure Redis keyspace notifications. Keyspace 
 
 For more information, see [Redis Keyspace Notifications](http://redis.io/topics/notifications). For sample code, see the [KeySpaceNotifications.cs](https://github.com/rustd/RedisSamples/blob/master/HelloWorld/KeySpaceNotifications.cs) file in the [Hello world](https://github.com/rustd/RedisSamples/tree/master/HelloWorld) sample.
 
-<a name="recommendations"></a>
-## Redis Cache Advisor
+## <a name="recommendations"></a> Redis Cache Advisor
 
 The **Recommendations** blade displays recommendations for your cache. During normal operations, no recommendations are displayed. 
 
@@ -169,8 +183,7 @@ Click **Pricing tier** to view or change the pricing tier for your cache. For mo
 
 ![Redis Cache pricing tier](./media/cache-configure/pricing-tier.png)
 
-<a name="cluster-size"></a>
-### Redis Cluster Size
+### <a name="cluster-size"></a> Redis Cluster Size
 
 Click **(PREVIEW) Redis Cluster Size** to change the cluster size for a running premium cache with clustering enabled.
 
@@ -287,7 +300,7 @@ The **Tags** section helps you organize your resources. For more information, se
 
 The **Locks** section allows you to lock a subscription, resource group or resource to prevent other users in your organization from accidentally deleting or modifying critical resources. For more information, see [Lock resources with Azure Resource Manager](/documentation/articles/resource-group-lock-resources/).
 
-The **Users** section provides support for role-based access control (RBAC) in the Azure Portal to help organizations meet their access management requirements simply and precisely. For more information, see [Role-based access control in the Azure Portal](/documentation/articles/role-based-access-control-configure/).
+The **Users** section provides support for role-based access control (RBAC) in the Azure portal to help organizations meet their access management requirements simply and precisely. For more information, see [Role-based access control in the Azure portal](/documentation/articles/role-based-access-control-configure/).
 
 Click **Export template** to build and export a template of your deployed resources for future deployments. For more information about working with templates, see [Deploy resources with Azure Resource Manager templates](/documentation/articles/resource-group-template-deploy/).
 
@@ -299,7 +312,7 @@ New Azure Redis Cache instances are configured with the following default Redis 
 >
 >`StackExchange.Redis.RedisServerException: ERR unknown command 'CONFIG'`
 >  
->Any values that are configurable, such as **max-memory-policy**, are configurable through the Azure Portal or command line management tools such as Azure CLI or PowerShell.
+>Any values that are configurable, such as **max-memory-policy**, are configurable through the Azure portal or command line management tools such as Azure CLI or PowerShell.
 
 |Setting|Default value|Description|
 |---|---|---|
@@ -370,10 +383,11 @@ For more information about Redis commands, see [http://redis.io/commands](http:/
 
 You can securely issue commands to your Azure Redis Cache instances using the **Redis Console**, which is available for Standard and Premium caches.
 
->[AZURE.IMPORTANT] The Redis Console does not work with VNET or clustering. 
+>[AZURE.IMPORTANT] The Redis Console does not work with VNET, clustering, and databases other than 0. 
 >
 >-	[VNET](/documentation/articles/cache-how-to-premium-vnet/) - When your cache is part of a VNET, only clients in the VNET can access the cache. Because the Redis Console uses the redis-cli.exe client hosted on VMs that are not part of your VNET, it can't connect to your cache.
 >-	[Clustering](/documentation/articles/cache-how-to-premium-clustering/) - The Redis Console uses the redis-cli.exe client which does not support clustering at this time. The redis-cli utility in the [unstable](http://redis.io/download) branch of the Redis repository at GitHub implements basic support when started with the `-c` switch. For more information see [Playing with the cluster](http://redis.io/topics/cluster-tutorial#playing-with-the-cluster) on [http://redis.io](http://redis.io) in the [Redis cluster tutorial](http://redis.io/topics/cluster-tutorial).
+>-	The Redis Console makes a new connection to database 0 each time you submit a command. You can't use the `SELECT` command to select a different database, because the database is reset to 0 with each command. For information on running Redis commands, including changing to a different database, see [How can I run Redis commands?](/documentation/articles/cache-faq/#how-can-i-run-redis-commands)
 
 To access the Redis Console, click **Console** from the **Redis Cache** blade.
 

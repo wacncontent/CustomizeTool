@@ -18,7 +18,7 @@ To connect virtual machines in a virtual network:
 
 ![Selecting a cloud service for a virtual machine](./media/virtual-machines-common-classic-connect-vms/VMConfig1.png)
 
-## Connect VMs in a standalone cloud service
+## <a name="connect-vms-in-a-standalone-cloud-service"></a>Connect VMs in a standalone cloud service
 
 To connect virtual machines in a standalone cloud service:
 

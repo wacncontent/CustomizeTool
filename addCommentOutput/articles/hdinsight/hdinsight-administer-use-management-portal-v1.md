@@ -4,26 +4,32 @@
 	services="hdinsight"
 	documentationCenter=""
 	authors="mumian"
-	manager="paulettm"
+	manager="jhubbard"
 	editor="cgronlun"/>
 
 <tags
 	ms.service="hdinsight"
-	ms.date="04/28/2016"
-	wacn.date=""/>
+	ms.workload="big-data"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="07/25/2016"
+	wacn.date=""
+	ms.author="jgao"/>
 
 # Manage Hadoop clusters in HDInsight by using the Azure Classic Management Portal
 
 Using the [Azure Classic Management Portal](https://manage.windowsazure.cn), you can provision Hadoop clusters in Azure HDInsight, change Hadoop user password, and enable Remote Desktop Protocol (RDP) so you can access the Hadoop command console on the cluster.
-
 
-[AZURE.INCLUDE [hdinsight-azure-portal](../includes/hdinsight-azure-portal.md)]
+
+[AZURE.INCLUDE [hdinsight-azure-portal](../../includes/hdinsight-azure-portal.md)]
 
 * [Manage Hadoop clusters in HDInsight by using the Azure Portal](/documentation/articles/hdinsight-administer-use-management-portal-v1/)
-
 
+
 ## Other tools for administering HDInsight
 There are also other tools available for administering HDInsight in addition to the Azure Classic Management Portal.
+
 
 - For more information on administering HDInsight by using Azure PowerShell, see [Administer HDInsight Using Azure PowerShell](/documentation/articles/hdinsight-administer-use-powershell/).
 
@@ -48,7 +54,7 @@ You can provision HDInsight clusters from the Azure Classic Management Portal by
 - [Provision a cluster by using Quick Create](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1/)
 - [Provision a cluster by using Custom Create](/documentation/articles/hdinsight-provision-clusters-v1/#portal)
 
-[AZURE.INCLUDE [data center list](../includes/hdinsight-pricing-data-centers-clusters.md)]
+[AZURE.INCLUDE [data center list](../../includes/hdinsight-pricing-data-centers-clusters.md)]
 
 
 ##Customize HDInsight clusters
@@ -60,9 +66,8 @@ HDInsight works with a wide range of Hadoop components. For the list of the comp
 - Some native Java components, like Mahout and Cascading, can be run on the cluster as JAR files. These JAR files can be distributed to Azure Blob storage, and submitted to HDInsight clusters through Hadoop job submission mechanisms. For more information, see [Submit Hadoop jobs programmatically](/documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/).
 
 
-	>[AZURE.NOTE] If you have issues deploying JAR files to HDInsight clusters or calling JAR files on HDInsight clusters, contact  [Microsoft Support](https://azure.microsoft.com/support/contact/)  [Azure.cn Support](/support/contact/) .
-
-	> Cascading is not supported by HDInsight, and is not eligible for  Microsoft  Azure.cn  Support. For lists of supported components, see [What's new in the cluster versions provided by HDInsight?](/documentation/articles/hdinsight-component-versioning-v1/).
+	>[AZURE.NOTE] If you have issues deploying JAR files to HDInsight clusters or calling JAR files on HDInsight clusters, contact  [Microsoft  [Azure.cn  Support](/support/contact/).
+	 >  ><p>  Cascading is not supported by HDInsight, and is not eligible for  Microsoft  Azure.cn  Support. For lists of supported components, see [What's new in the cluster versions provided by HDInsight?](/documentation/articles/hdinsight-component-versioning-v1/).
 
 
 Installation of custom software on the cluster by using Remote Desktop Connection is not supported. You should avoid storing any files on the drives of the head node, as they will be lost if you need to re-create the clusters. We recommend storing files on Azure Blob storage. Blob storage is persistent.
@@ -87,7 +92,7 @@ An HDInsight cluster can have two user accounts. The HDInsight cluster user acco
 ##Connect to HDInsight clusters by using RDP
 
 
-##<a id="connect-to-hdinsight-clusters-by-using-rdp" name="rdp"></a><a name="connect-to-clusters-using-rdp"></a> Connect to HDInsight clusters by using RDP
+## <a id="connect-to-hdinsight-clusters-by-using-rdp" name="rdp"></a><a name="connect-to-clusters-using-rdp"></a> Connect to HDInsight clusters by using RDP
 
 
 The credentials for the cluster that you provided at its creation give access to the services on the cluster, but not to the cluster itself through Remote Desktop. Remote Desktop access is turned off by default, and so direct access to the cluster using it requires some additional, post-creation configuration.
@@ -105,10 +110,13 @@ The credentials for the cluster that you provided at its creation give access to
 
 
 > [AZURE.NOTE] You can also use the HDInsight .NET SDK to enable Remote Desktop on a cluster. Use the **EnableRdp** method on the HDInsight client object in the following manner: **client.EnableRdp(clustername, location, "rdpuser", "rdppassword", DateTime.Now.AddDays(6))**. Similarly, to disable Remote Desktop on the cluster, you can use **client.DisableRdp(clustername, location)**. For more information on these methods, see [HDInsight .NET SDK Reference](https://msdn.microsoft.com/zh-cn/library/azure/dn469975.aspx). This is applicable only for HDInsight clusters running on Windows.
+
 
-
-
-> [AZURE.NOTE] Once RDP is enabled for a cluster, you must refresh the page before you can connect to the cluster.
+> Once RDP is enabled for a cluster, you must refresh the page before you can connect to the cluster.
+
+
+> <p>Once RDP is enabled for a cluster, you must refresh the page before you can connect to the cluster.
+
 
 **To connect to a cluster by using RDP**
 

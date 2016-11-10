@@ -8,9 +8,14 @@
    editor=""/>
 
 <tags
-	ms.service="app-service"
-	ms.date="05/31/2016"
-	wacn.date=""/>
+   ms.service="app-service"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="web"
+   ms.date="05/31/2016"
+   wacn.date=""
+   ms.author="sumuth"/>
 
 # Use DevOps environments effectively for your web apps
 
@@ -24,7 +29,7 @@ Once you have a production web app up and running, the next step is to create a 
 2. Deploying a web app to a slot first and swapping it into production ensures that all instances of the slot are warmed up before being swapped into production. This eliminates downtime when you deploy your web app. The traffic redirection is seamless, and no requests are dropped due to swap operations. This entire workflow can be automated by configuring [Auto Swap](/documentation/articles/web-sites-staged-publishing/#configure-auto-swap-for-your-web-app) when pre-swap validation is not needed.
 3. After a swap, the slot with previously staged web app now has the previous production web app. If the changes swapped into the production slot are not as you expected, you can perform the same swap immediately to get your "last known good web app" back.
 
-To setup a staging deployment slot, see [Set up staging environments for web apps in Azure](/documentation/articles/web-sites-staged-publishing/) . Every environment should include its own set of resources, for example if your web app uses a database then both production web app and staging web app should be using different databases.  Add staging development environment resources such as database, storage or cache for setting up your staging development environment.
+To setup a staging deployment slot, see [Set up staging environments for web apps in Azure App Service](/documentation/articles/web-sites-staged-publishing/) . Every environment should include its own set of resources, for example if your web app uses a database then both production web app and staging web app should be using different databases.  Add staging development environment resources such as database, storage or cache for setting up your staging development environment.
 
 ## Examples of using multiple development environments
 
@@ -38,7 +43,7 @@ Any project should follow a source code management with at least two environment
 There are many ways to setup a multiple environment for your project and the examples below are just one such method for the respective applications.
 
 ### WordPress
-In this section you will learn how to setup a deployment workflow using slots for WordPress. WordPress like most CMS solutions does not support working with multiple development environments out of the box. Azure Web Apps have a few features that make it easier to store configuration settings outside of your code.
+In this section you will learn how to setup a deployment workflow using slots for WordPress. WordPress like most CMS solutions does not support working with multiple development environments out of the box. App Service Web Apps have a few features that make it easier to store configuration settings outside of your code.
 
 Before creating a staging slot, setup your application code to support multiple environments. To support multiple environments in WordPress you need to edit `wp-config.php` on your local development web app add the following code at the beginning of the file. This will allow your application to pick the correct configuration based on the selected environment.
 
@@ -254,7 +259,7 @@ Add another MySQL database, say `wordpress-stage-db` to your resource group `wor
 Update the Connection strings for your stage deployment slot to point to newly created database, `wordpress-stage-db`. Note that your production web app , `wordpressprodapp` and staging web app `wordpressprodapp-stage` must point to different databases.
 
 #### Configure environment-specific app settings
-Developers can store key-value string pairs in Azure as part of the configuration information associated with a web app called App Settings. At runtime, Azure Web Apps automatically retrieve these values for you and make them available to code running in your web app.  From a security perspective that is a benefit since sensitive information such as database connection strings with passwords should never show up as clear text in a file such as `wp-config.php`.
+Developers can store key-value string pairs in Azure as part of the configuration information associated with a web app called App Settings. At runtime, App Service Web Apps automatically retrieve these values for you and make them available to code running in your web app.  From a security perspective that is a benefit since sensitive information such as database connection strings with passwords should never show up as clear text in a file such as `wp-config.php`.
 
 This process  defined below is useful when you perform updates as it includes both file changes and database changes for WordPress app:
 
@@ -303,7 +308,7 @@ To generalize the process for any application with a database
 
 1. Install application on your local environment
 2. Include environment specific configuration (local and Azure Web App )
-3. Setup  your environments in Azure Web Apps- Staging , Production
+3. Setup  your environments in App Service Web Apps- Staging , Production
 4. If you have a production application already running on Azure, sync your production content (files/code + database) to local and staging environment.
 5. Develop your application on your local environment
 6. Place your production web app under maintenance or locked mode and sync database content from production to staging and dev environments
@@ -437,8 +442,8 @@ The advantage of swapping both the web app and database:
 This example shows you the flexibility of the platform where you can build custom modules similar to Umbraco Courier module to manage deployment across environments.
 
 ## References
-[Agile software development with Azure Web App](/documentation/articles/app-service-agile-software-development/)
+[Agile software development with Azure App Service](/documentation/articles/app-service-agile-software-development/)
 
-[Set up staging environments for web apps in Azure](/documentation/articles/web-sites-staged-publishing/)
+[Set up staging environments for web apps in Azure App Service](/documentation/articles/web-sites-staged-publishing/)
 
 [How to block web access to non-production deployment slots](http://ruslany.net/2014/04/azure-web-sites-block-web-access-to-non-production-deployment-slots/)

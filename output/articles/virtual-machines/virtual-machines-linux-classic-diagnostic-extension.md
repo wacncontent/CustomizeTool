@@ -10,9 +10,14 @@
   		tags="azure-service-management"/>
 
 <tags
-	ms.service="virtual-machines-linux"
-	ms.date="12/15/2015"
-	wacn.date=""/>
+		ms.service="virtual-machines-linux"
+		ms.workload="infrastructure-services"
+		ms.tgt_pltfrm="vm-linux"
+		ms.devlang="na"
+		ms.topic="article"
+		ms.date="12/15/2015"
+		wacn.date=""
+		ms.author="Ning"/>
 
 
 # Use the Linux Diagnostic Extension to monitor the performance and diagnostic data of a Linux VM

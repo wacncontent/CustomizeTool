@@ -8,8 +8,13 @@
 	tags="azure-service-management"/>
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="06/23/2016"
-	wacn.date=""/>
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="vm-windows-sql-server"
+	ms.workload="infrastructure-services"
+	ms.date="09/22/2016"
+	wacn.date=""
+	ms.author="jroth" />
 
 # Connect to a SQL Server Virtual Machine on Azure (Classic Deployment)
 
@@ -21,7 +26,7 @@
 
 This topic describes how to connect to your SQL Server instance running on an Azure virtual machine. It covers some [general connectivity scenarios](#connection-scenarios) and then provides [detailed steps for configuring SQL Server connectivity in an Azure VM](#steps-for-configuring-sql-server-connectivity-in-an-azure-vm).
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] If you are using Resource Manager VMs, see [Connect to a SQL Server Virtual Machine on Azure using Resource Manager](/documentation/articles/virtual-machines-windows-sql-connect/).
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)] If you are using Resource Manager VMs, see [Connect to a SQL Server Virtual Machine on Azure using Resource Manager](/documentation/articles/virtual-machines-windows-sql-connect/).
 
 ## Connection scenarios
 
@@ -81,13 +86,13 @@ Before you can connect to the instance of SQL Server from another VM or the inte
 
 The connection path is summarized by the following diagram:
 
-![Connecting to a SQL Server virtual machine](./media/virtual-machines-sql-server-connection-steps/SQLServerinVMConnectionMap.png)
+![Connecting to a SQL Server virtual machine](../../includes/media/virtual-machines-sql-server-connection-steps/SQLServerinVMConnectionMap.png)
 
-[AZURE.INCLUDE [Connect to SQL Server in a VM Classic TCP Endpoint](../includes/virtual-machines-sql-server-connection-steps-classic-tcp-endpoint.md)]
+[AZURE.INCLUDE [Connect to SQL Server in a VM Classic TCP Endpoint](../../includes/virtual-machines-sql-server-connection-steps-classic-tcp-endpoint.md)]
 
-[AZURE.INCLUDE [Connect to SQL Server in a VM](../includes/virtual-machines-sql-server-connection-steps.md)]
+[AZURE.INCLUDE [Connect to SQL Server in a VM](../../includes/virtual-machines-sql-server-connection-steps.md)]
 
-[AZURE.INCLUDE [Connect to SQL Server in a VM Classic Steps](../includes/virtual-machines-sql-server-connection-steps-classic.md)]
+[AZURE.INCLUDE [Connect to SQL Server in a VM Classic Steps](../../includes/virtual-machines-sql-server-connection-steps-classic.md)]
 
 ## Next Steps
 

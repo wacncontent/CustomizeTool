@@ -37,10 +37,6 @@ Ensure that you meet the following prerequisites before you start the steps:
 
 ## Copy VHDs to your Resource Manager storage account
 
-
-[AZURE.INCLUDE [arm-api-version-cli](../includes/arm-api-version-cli.md)]
-
-
 1. Free up the VHDs used by the source VM, by doing either of the following:
 
 	- If you want to copy your source virtual machine, stop and deallocate it. In the portal, click **Browse** > **Virtual machines** or **Virtual machines (classic)** > *your VM* > **Stop**.	For VMs created in the Resource Manager deployment model, you can also use the Azure CLI command `azure vm stop <yourResourceGroup> <yourVmName>`, followed by `azure vm deallocate <yourResourceGroup> <yourVmName>`. Notice that the status of the VM in the portal changes from **Running** to **Stopped (deallocated)**.
@@ -49,9 +45,9 @@ Ensure that you meet the following prerequisites before you start the steps:
 
 1. Find the access key for the storage account that contains your source VHD. For more information about access keys, see [About Azure storage accounts](/documentation/articles/storage-create-storage-account/).
 
-	- If your source VM was created by using the classic deployment model, click **Browse** > **Storage accounts (classic)** > *your storage account* > **Configure** > **Keys**. Copy the key labeled as **PRIMARY ACCESS KEY**. Or in Azure CLI, change to classic mode by using `azure config mode asm`, and then use `azure storage account keys list <yourSourceStorageAccountName>`.
+	- If your source VM was created by using the classic deployment model, click **Browse** > **Storage accounts (classic)** > *your storage account* >  **Configure**  **All Settings**  > **Keys**. Copy the key labeled as **PRIMARY ACCESS KEY**. Or in Azure CLI, change to classic mode by using `azure config mode asm`, and then use `azure storage account keys list <yourSourceStorageAccountName>`.
 
-	- If your source VM was created by using the Resource Manager deployment model, click **Browse** > **Storage accounts** > *your storage account* > **Configure** > **Access keys**. Copy the text labeled as **key1**. Or in Azure CLI, make sure you are in Resource Manager mode by using `azure config mode arm`, and then use `azure storage account keys list -g <yourDestinationResourceGroup> <yourDestinationStorageAccount>`.
+	- If your source VM was created by using the Resource Manager deployment model, click **Browse** > **Storage accounts** > *your storage account* >  **Configure**  **All Settings**  > **Access keys**. Copy the text labeled as **key1**. Or in Azure CLI, make sure you are in Resource Manager mode by using `azure config mode arm`, and then use `azure storage account keys list -g <yourDestinationResourceGroup> <yourDestinationStorageAccount>`.
 
 1. Copy the VHD files by using the [Azure CLI commands for Storage](/documentation/articles/storage-azure-cli/), as described in the following steps. Alternatively, if you prefer a user interface, you can use the [Azure Storage Explorer](http://storageexplorer.com/ ) instead.
 </br>

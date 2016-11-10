@@ -8,19 +8,26 @@ description="Learn how to generate and use SSH keys on a Windows computer to con
 	editor=""
 	tags="azure-service-management,azure-resource-manager" />
 
-<tags
-	ms.service="virtual-machines-linux"
-	ms.date="04/15/2016"
-	wacn.date=""/>
+<tags 
+	ms.service="virtual-machines-linux" 
+	ms.workload="infrastructure-services" 
+	ms.tgt_pltfrm="vm-linux" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="08/29/2016" 
+	wacn.date="" 
+	ms.author="rasquill"/>
 
 #How to Use SSH with Windows on Azure
 
 > [AZURE.SELECTOR]
 - [Windows](/documentation/articles/virtual-machines-linux-ssh-from-windows/)
-- [Linux/Mac](/documentation/articles/virtual-machines-linux-ssh-from-linux/)
+- [Linux/Mac](/documentation/articles/virtual-machines-linux-mac-create-ssh-keys/)
+
 
 This topic describes how to create and use **ssh-rsa** and **.pem** format public and private key files on Windows that you can use to connect to your Linux VMs on Azure with the **ssh** command. If you already have **.pem** files created, you can use those to create Linux VMs to which you can connect using **ssh**. Several other commands use the **SSH** protocol and key files to perform work securely, notably **scp** or [Secure Copy](https://en.wikipedia.org/wiki/Secure_copy), which can securely copy files to and from computers that support **SSH** connections. 
 
+> [AZURE.NOTE] If you have a few moments, please help us to improve the Azure Linux VM documentation by taking this [quick survey](https://aka.ms/linuxdocsurvey) of your experiences. Every answer helps us help you get your work done.
 
 ## What SSH and key-creation programs do you need?
 
@@ -35,7 +42,7 @@ Common clients you can install include:
 
 If you're feeling especially geeky, you can also try out the [new port of the **OpenSSH** toolset to Windows](http://blogs.msdn.com/b/powershell/archive/2015/10/19/openssh-for-windows-update.aspx). Be aware, however, that this is code that is currently in development, and you should review the codebase before you use it for production systems.
 
-> [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
+> [AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
 
 ## Which key files do you need to create?
 
@@ -138,13 +145,13 @@ The easiest way to resolve this is to set the `OPENSSL_CONF` environment variabl
 
 6. Click **Open**. You will receive a prompt which should look like this:
 
-	![linuxgoodforeignkey](./media/virtual-machines-linux-ssh-from-linux/linuxgoodforeignkey.png)
+	![linuxgoodforeignkey](./media/virtual-machines-linux-ssh-from-windows/linuxgoodforeignkey.png)
 
 7. Click **OK**
 
 8. Click **Save Private Key**, which is highlighted in the screenshot below:
 
-	![linuxputtyprivatekey](./media/virtual-machines-linux-ssh-from-linux/linuxputtygenprivatekey.png)
+	![linuxputtyprivatekey](./media/virtual-machines-linux-ssh-from-windows/linuxputtygenprivatekey.png)
 
 9. Save the file as a PPK
 
@@ -155,11 +162,11 @@ The easiest way to resolve this is to set the `OPENSSL_CONF` environment variabl
 2.	Run putty.exe
 3.	Fill in the host name using the IP from the Management Portal:
 
-	![linuxputtyconfig](./media/virtual-machines-linux-ssh-from-linux/linuxputtyconfig.png)
+	![linuxputtyconfig](./media/virtual-machines-linux-ssh-from-windows/linuxputtyconfig.png)
 
-4.	Before selecting **Open**, click the Connection > SSH > Auth tab to choose your key. See the screenshot below for the field to fill in:
+4.	Before selecting **Open**, click the Connection > SSH > Auth tab to choose your private key. See the screenshot below for the field to fill in:
 
-	![linuxputtyprivatekey](./media/virtual-machines-linux-ssh-from-linux/linuxputtyprivatekey.png)
+	![linuxputtyprivatekey](./media/virtual-machines-linux-ssh-from-windows/linuxputtyprivatekey.png)
 
 5.	Click **Open** to connect to your virtual machine
  

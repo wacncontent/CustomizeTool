@@ -6,10 +6,15 @@
    authors="mgoedtel"
    manager="stevenka"
    editor="tysonn" />
-<tags
-	ms.service="automation"
-	ms.date="02/23/2016"
-	wacn.date=""/>
+<tags 
+   ms.service="automation"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="02/23/2016"
+   wacn.date=""
+   ms.author="magoedte;bwren" />
 
 # Certificate assets in Azure Automation
 
@@ -56,9 +61,9 @@ When you create a new certificate, you upload a .cer or .pfx file to Azure Autom
 3. Type a name for the certificate in the **Name** box and click the right arrow.
 4. Browse for a .cer or .pfx file.  If you select a .pfx file, specify a password and whether it should be allowed to be exported.
 1. Click the check mark to upload the certificate file and save the new certificate asset.
-
-
 
+
+
 ### To create a new certificate with the Azure portal
 
 1. From your automation account, click the **Assets** part to open the **Assets** blade.
@@ -67,8 +72,8 @@ When you create a new certificate, you upload a .cer or .pfx file to Azure Autom
 2. Type a name for the certificate in the **Name** box.
 2. Click **Select a file** under **Upload a certificate file** to browse for a .cer or .pfx file.  If you select a .pfx file, specify a password and whether it should be allowed to be exported.
 1. Click **Create** to save the new certificate asset.
-
 
+
 
 ### To create a new certificate with Windows PowerShell
 
@@ -92,8 +97,8 @@ The following sample code shows how to add a certificate to a cloud service in a
 	$cert = Get-AutomationCertificate -Name 'MyCertificate'
 	$certPwd = Get-AutomationVariable -Name 'MyCertPassword'
 	Add-AzureCertificate -ServiceName $serviceName -CertToDeploy $cert
-
 
+
 ### Graphical runbook sample
 
 You add a **Get-AutomationCertificate** to a graphical runbook by right-clicking on the certificate in the Library pane of the graphical editor and selecting **Add to canvas**.

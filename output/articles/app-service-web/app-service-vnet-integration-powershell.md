@@ -9,14 +9,19 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="04/07/2016"
-	wacn.date=""/>
+	ms.workload="na"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/29/2016"
+	wacn.date=""
+	ms.author="ccompy"/>
 
 # Connect your app to your virtual network by using PowerShell #
 
 ## Overview ##
 
-In Azure Web App, you can connect your app (web, mobile, or API) to an Azure virtual network (VNet) in your subscription. This feature is called VNet Integration. The VNet Integration feature should not be confused with the Azure Environment feature, which allows you to run an instance of Azure in your virtual network.
+In Azure App Service, you can connect your app (web, mobile, or API) to an Azure virtual network (VNet) in your subscription. This feature is called VNet Integration. The VNet Integration feature should not be confused with the App Service Environment feature, which allows you to run an instance of Azure App Service in your virtual network.
 
 The VNet Integration feature has a user interface (UI) in the new portal that you can use to integrate with virtual networks that are deployed by using either the classic deployment model or the Azure Resource Manager deployment model. If you want to learn more about the feature, see [Integrate your app with an Azure virtual network](/documentation/articles/web-sites-integrate-with-vnet/).
 
@@ -25,7 +30,7 @@ This article is not about how to use the UI but rather about how to enable integ
 Before you continue with this article, ensure that you have:
 
 - The latest Azure PowerShell SDK installed. You can install this with the Web Platform Installer.
-- An app in Azure running in a Standard or Premium SKU.
+- An app in Azure App Service running in a Standard or Premium SKU.
 
 ## Classic virtual networks ##
 
@@ -94,7 +99,7 @@ To see what you set, type **$Configuration**.
 	VnetResourceGroup              testase1-rg
 	VnetName                       TestNetwork
 	WebAppName                     vnetintdemoapp
-	WebAppLocation                 centralus
+	WebAppLocation                 chinaeast
 
 The rest of this section assumes that you have a variable created as just described.
 
@@ -108,7 +113,7 @@ If this command succeeds, **$vnet** should have a **Properties** variable in it.
 
 ##### Upload the web app certificate to the virtual network #####
 
-A manual, one-time step is required for each subscription and virtual network combination. That is, if you are connecting apps in Subscription A to Virtual Network A, you will need to do this step only once regardless of how many apps you configure. If you are adding a new app to another virtual network, you'll need to do this again. The reason for this is that a set of certificates is generated at a subscription level in Azure Web App, and the set is generated once for each virtual network that the apps will connect to.
+A manual, one-time step is required for each subscription and virtual network combination. That is, if you are connecting apps in Subscription A to Virtual Network A, you will need to do this step only once regardless of how many apps you configure. If you are adding a new app to another virtual network, you'll need to do this again. The reason for this is that a set of certificates is generated at a subscription level in Azure App Service, and the set is generated once for each virtual network that the apps will connect to.
 
 The certificates will have already been set if you followed these steps or if you integrated with the same virtual network by using the portal.
 
@@ -206,7 +211,7 @@ Resource Manager virtual networks have Azure Resource Manager APIs, which simpli
 - Integrate your app with a preexisting Resource Manager virtual network that has a gateway and point-to-site connectivity enabled.
 - Disconnect your app from your virtual network.
 
-### Resource Manager VNet Azure integration script ###
+### Resource Manager VNet App Service integration script ###
 
 Copy the following script and save it to a file. If you don't want to use the script, feel free to learn from it to see how to set things up with a Resource Manager virtual network.
 
@@ -496,7 +501,7 @@ Copy the following script and save it to a file. If you don't want to use the sc
 
 		    Write-Host "Creating App association to VNET"
 		    $propertiesObject = @{
-		     "vnetResourceId" = "/subscriptions/$($subscriptionId)/resourceGroups/$($vnet.ResourceGroupName)/providers/Microsoft.Network/virtualNetworks/$($vnetName)"
+		     "vnetResourceId" = "/subscriptions/$($subscriptionId)/resourceGroups/$($vnet.ResourceGroupName)/providers/Microsoft.Network/virtualNetworks/$($vnet.Name)"
 		    }
 
 		    $virtualNetwork = New-AzureRmResource -Location $location -Properties $PropertiesObject -ResourceName "$($webAppName)/$($vnet.Name)" -ResourceType "Microsoft.Web/sites/virtualNetworkConnections" -ApiVersion 2015-08-01 -ResourceGroupName $resourceGroupName -Force

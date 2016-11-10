@@ -3,18 +3,23 @@
    description="Understanding ILPIP (PIP) and how to manage them"
    services="virtual-network"
    documentationCenter="na"
-   authors="telmosampaio"
+   authors="jimdial"
    manager="carmonm"
    editor="tysonn" />
-<tags
-	ms.service="virtual-network"
-	ms.date="02/10/2016"
-	wacn.date=""/>
+<tags 
+   ms.service="virtual-network"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="02/10/2016"
+   wacn.date=""
+   ms.author="jdial" />
 
 # Instance level public IP overview
 An instance level public IP (ILPIP) is a public IP address that you can assign directly to your VM or role instance, rather than to the cloud service that your VM or role instance reside in. This doesn't take the place of the VIP (virtual IP) that is assigned to your cloud service. Rather, it's an additional IP address that you can use to connect directly to your VM or role instance.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Learn how to [perform these steps using the Resource Manager model](/documentation/articles/virtual-network-ip-addresses-overview-arm/). 
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)] Learn how to [perform these steps using the Resource Manager model](/documentation/articles/virtual-network-ip-addresses-overview-arm/). 
 
 Make sure you understand how [IP addresses](/documentation/articles/virtual-network-ip-addresses-overview-classic/) work in Azure.
 

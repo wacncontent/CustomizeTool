@@ -8,18 +8,23 @@
 	editor=""
 	tags="azure-service-management,azure-resource-manager" />
 
-<tags
-	ms.service="virtual-machines-linux"
-	ms.date="03/25/2016"
-	wacn.date=""/>
+<tags 
+	ms.service="virtual-machines-linux" 
+	ms.workload="infrastructure-services" 
+	ms.tgt_pltfrm="vm-linux" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="07/13/2016" 
+	wacn.date="" 
+	ms.author="szark"/>
 
 
 
 #Selecting User Names for Linux on Azure#
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
 
-When you provision a Linux virtual machine on Azure you must specify the name of a non-root user that you can later use to log into the VM. You may choose the name of the new user, or if provisioning via the  Azure  Classic Management Portal you can accept the default name "azureuser".
+When you provision a Linux virtual machine on Azure you must specify the name of a non-root user that you can later use to log into the VM. You may choose the name of the new user, or if provisioning via the Azure Classic Management Portal you can accept the default name "azureuser".
 
 In most cases this user won't exist on the base image and will be created during the provisioning process. If the user exists on the base VM image, then the Azure Linux agent simply configures the password and/or SSH key for that user based on the information you specified when creating the VM.
 
@@ -27,112 +32,9 @@ In most cases this user won't exist on the base image and will be created during
 
  - See also: [Linux Standard Base - User ID Ranges](http://refspecs.linuxfoundation.org/LSB_4.1.0/LSB-Core-generic/LSB-Core-generic/uidrange.html)
 
-The following are user names that you should avoid using when provisioning a Linux virtual machine. We recommended that you **do not use these usernames**, otherwise the VM provisioning process might fail.
+The following is a list of common built-in system users for CentOS and Ubuntu that you should avoid using when provisioning a Linux virtual machine on Azure. This list is just an example, please refer to the documentation for your distribution to ensure that the username you choose does not conflict with an existing system user.
 
 
-## openSUSE
-- abrt
-- adm
-- audio
-- bin
-- bin
-- cdrom
-- cgred
-- daemon
-- dbus
-- dialout
-- dip
-- disk
-- floppy
-- ftp
-- games
-- gopher
-- haldaemon
-- halt
-- kmem
-- lock
-- lp
-- mail
-- man
-- mem
-- nfsnobody
-- nobody
-- ntp
-- operator
-- oprofile
-- postdrop
-- postfix
-- qpidd
-- root
-- rpc
-- rpcuser
-- saslauth
-- shutdown
-- slocate
-- sshd
-- stapdev
-- stapusr
-- sync
-- sys
-- tape
-- test
-- tcpdump
-- tty
-- users
-- utempter
-- utmp
-- uucp
-- vcsa
-- video
-- wheel
-
-
-## SLES
-- audio
-- bin
-- cdrom
-- console
-- daemon
-- dialout
-- disk
-- floppy
-- ftp
-- ftp
-- games
-- haldaemon
-- kmem
-- lp
-- lp
-- mail
-- maildrop
-- man
-- messagebus
-- modem
-- news
-- news
-- nobody
-- nogroup
-- polkituser
-- postfix
-- public
-- root
-- shadow
-- sshd
-- sys
-- test
-- trusted
-- tty
-- users
-- utmp
-- uucp
-- uuidd
-- video
-- wheel
-- www
-- wwwrun
-- xok
-
- 
 ## CentOS
 - abrt
 - adm

@@ -1,7 +1,7 @@
 ###<a name="server-auth"></a>How to: Authenticate with a Provider (Server Flow)
 
-To have Mobile Services manage the authentication process in your app, you must register your app with your identity
-provider. Then in your Azure Web App, you need to configure the application ID and secret provided by your provider.
+To have Mobile Apps manage the authentication process in your app, you must register your app with your identity
+provider. Then in your Azure App Service, you need to configure the application ID and secret provided by your provider.
 For more information, see the tutorial [Add authentication to your app].
 
 Once you have registered your identity provider, simply call the .login() method with the name of your provider. For
@@ -18,14 +18,14 @@ client.login("facebook").done(function (results) {
 If you are using an identity provider other than Facebook, change the value passed to the login method above to one of
 the following: `microsoftaccount`, `facebook`, `twitter`, `google`, or `aad`.
 
-In this case, Azure manages the OAuth 2.0 authentication flow by displaying the login page of the selected
-provider and generating a Azure authentication token after successful login with the identity provider. The login
-function, when complete, returns a JSON object (user) that exposes both the user ID and Azure authentication token
+In this case, Azure App Service manages the OAuth 2.0 authentication flow by displaying the login page of the selected
+provider and generating a App Service authentication token after successful login with the identity provider. The login
+function, when complete, returns a JSON object (user) that exposes both the user ID and App Service authentication token
 in the userId and authenticationToken fields, respectively. This token can be cached and re-used until it expires.
 
 ###<a name="client-auth"></a>How to: Authenticate with a Provider (Client Flow)
 
-Your app can also independently contact the identity provider and then provide the returned token to your Azure for
+Your app can also independently contact the identity provider and then provide the returned token to your App Service for
 authentication. This client flow enables you to provide a single sign-in experience for users or to retrieve additional
 user data from the identity provider.
 
@@ -63,7 +63,7 @@ WL.login({ scope: "wl.basic"}).then(function (result) {
 });
 ```
 
-This example gets a token from Live Connect, which is supplied to your Azure by calling the login function.
+This example gets a token from Live Connect, which is supplied to your App Service by calling the login function.
 
 ###<a name="auth-getinfo"></a>How to: Obtain information about the authenticated user
 

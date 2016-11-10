@@ -12,10 +12,6 @@
 	wacn.date=""/>
 
 # Connecting classic VNets to new VNets
-
-
-[AZURE.INCLUDE [arm-api-version-powershell](../includes/arm-api-version-powershell.md)]
-
 
 Azure currently has two management modes: Azure Service Manager (referred to as classic), and Azure Resource Manager (ARM). If you have been using Azure for some time, you probably have Azure VMs and instance roles running on a classic VNet. And your newer VMs and role instances may be running on a VNet created in ARM.
 
@@ -204,7 +200,12 @@ To create the ARM VNet, with two subnets, and a local network for the classic VN
 
 5. To create the ARM VNet, and its related objects, in a new resource group named **RG1**, run the following PowerShell commands. Make sure you change the path for the template file and the parameters file.  
 
+
+		New-AzureRmResourceGroup -Name RG1 -Location chinaeast
+
+
 		New-AzureRmResourceGroup -Name RG1 -Location centralus
+
 
 		New-AzureRmResourceGroupDeployment -Name deployment01 `
 		    -TemplateFile C:\Azure\azuredeploy.json `
@@ -263,7 +264,7 @@ You need to configure the classic VNet to use the IP address of the gateway crea
 
 		Name                     : ArmAsmS2sGatewayIp
 		ResourceGroupName        : RG1
-		Location                 : centralus
+		Location                :  chinaeast  centralus 
 		Id                       : /subscriptions/628dad04-b5d1-4f10-b3a4-dc61d88cf97c/resourceGroups/RG1/providers/Microsoft.Network/publicIPAddresses/ArmAsmS2sGatewayIp
 		Etag                     : W/"1ee6c1bd-8be1-488e-a571-77b05b49e33a"
 		ProvisioningState        : Succeeded

@@ -7,10 +7,15 @@
 	manager="douge" 
 	editor=""/>
 
-<tags
-	ms.service="cache"
-	ms.date="06/09/2016"
-	wacn.date=""/>
+<tags 
+	ms.service="cache" 
+	ms.workload="tbd" 
+	ms.tgt_pltfrm="cache-redis" 
+	ms.devlang="multiple" 
+	ms.topic="article" 
+	ms.date="08/30/2016" 
+	wacn.date="" 
+	ms.author="sdanie"/>
 
 # Azure Redis Cache samples 
 
@@ -60,7 +65,7 @@ The [Manage Azure Redis Cache using Azure Management Libraries](https://github.c
 
 ## Custom monitoring sample
 
-The [Access Redis Cache Monitoring data](https://github.com/rustd/RedisSamples/tree/master/CustomMonitoring) sample demonstrates how you can access monitoring data for your Azure Redis Cache  outside of the Azure Portal .
+The [Access Redis Cache Monitoring data](https://github.com/rustd/RedisSamples/tree/master/CustomMonitoring) sample demonstrates how you can access monitoring data for your Azure Redis Cache outside of the Azure Portal  Preview .
 
 ## A Twitter-style clone written using PHP and Redis
 

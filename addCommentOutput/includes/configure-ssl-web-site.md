@@ -1,5 +1,5 @@
 
-<!-- new to rollback -->
+<!-- deleted in Global -->
 
 
 
@@ -9,20 +9,29 @@ By default, Azure already enables HTTPS for your app with a wildcard certificate
 
 The rest of this document provides details on enabling HTTPS for custom domains, such as **contoso.com**, **www.contoso.com**, or **\*.contoso.com**
 
-<a name="bkmk_domainname"></a>
+ ##  <a name="bkmk_domainname"></a>  Enable SSL for your custom domain 
+
 ## Enable SSL for your custom domain
+
 
 To enable HTTPS for a custom domain, such as **contoso.com**, you must first [configure a custom domain name in Azure Web App](/documentation/articles/web-sites-custom-domain-name/). Then, you do the following:
 
 1. [Get an SSL certificate](#bkmk_getcert)
+
 2. [Configure Standard or Premium pricing tier](#bkmk_standardmode)
+
+
+2. [Configure Standard tier](#bkmk_standardmode)
+
 2. [Configure SSL in your app](#bkmk_configuressl)
 3. [Enforce SSL on your app](#bkmk_enforce) (Optional)
 
-If you need more help at any point in this article, you can contact the Azure experts on [the MSDN Azure and the Stack Overflow forums](https://azure.microsoft.com/support/forums/). Alternatively, you can also file an Azure support incident. Go to the [Azure Support site](https://azure.microsoft.com/support/contact/) and click on **Get Support**.
+If you need more help at any point in this article, you can contact the Azure experts on [the MSDN Azure and  the  CSDN  Azure](https://azure.microsoft.com/support/forums/)  Azure](/support/forums/) . Alternatively, you can also file an Azure support incident. Go to the [Azure Support site](/support/contact/) and click on **Get Support**.
 
-<a name="bkmk_getcert"></a>
+ ##  <a name="bkmk_getcert"></a>  1. Get an SSL certificate 
+
 ## 1. Get an SSL certificate
+
 
 Before requesting an SSL certificate you must first determine which domain names will be secured by the certificate. This will determine what type of certificate you must obtain. If you just need to secure a single domain name such as **contoso.com** or **www.contoso.com** a basic certificate is sufficient. If you need to secure multiple domain names, such as **contoso.com**, **www.contoso.com**, and **mail.contoso.com**, then you can get a [wildcard certificate](http://en.wikipedia.org/wiki/Wildcard_certificate), or a certificate with [Subject Alternate Name](http://en.wikipedia.org/wiki/SubjectAltName) (subjectAltName).
 
@@ -54,8 +63,13 @@ You may also need to obtain **[intermediate certificates](http://en.wikipedia.or
 >
 > In case your CA uses intermediate certificates each of them must be installed along with the certificate issued for your domain. Failing to install any of the intermediate certificates may cause hard to reproduce interoperability problems for some clients.
 
+
+### <a name="bkmk_certreq"></a> Get a certificate using Certreq.exe (Windows only)
+
+
 <a name="bkmk_certreq"></a>
-### Get a certificate using Certreq.exe (Windows only)
+###  Get a certificate using Certreq.exe (Windows only)
+
 
 Certreq.exe is Windows utility for creating certificate requests. It has been part of the base Windows installation since Windows XP/Windows Server 2000, so should be available on recent Windows systems. Use the following steps to obtain an SSL certificate using certreq.exe.
 
@@ -122,8 +136,10 @@ Certreq.exe is Windows utility for creating certificate requests. It has been pa
 
 You can now upload the exported PFX file to your app in Azure Web App.
 
-<a name="bkmk_openssl"></a>
+ ###  <a name="bkmk_openssl"></a>  Get a certificate using OpenSSL 
+
 ### Get a certificate using OpenSSL
+
 
 1. Generate a private key and Certificate Signing Request by using the following from a command-line, bash or terminal session:
 
@@ -194,8 +210,13 @@ You can now upload the exported PFX file to your app in Azure Web App.
 
 	After running this command, you should have a **myserver.pfx** file suitable for use with Azure Web App.
 
+
+### <a name="bkmk_iismgr"></a> Get a certificate using the IIS Manager
+
+
 <a name="bkmk_iismgr"></a>
-### Get a certificate using the IIS Manager
+###  Get a certificate using the IIS Manager
+
 
 If you are familiar with IIS Manager, you can use it to generate a certificate that can be used with Azure Web App.
 
@@ -220,8 +241,10 @@ If you are familiar with IIS Manager, you can use it to generate a certificate t
 	><p> During the export process, be sure to select the option **include all certs in the certification path** and **Export all extended properties**. This will include any intermediate certificates in the exported certificate.
 
 
-<a name="bkmk_subjectaltname"></a>
+ ###  <a name="bkmk_subjectaltname"></a>  Get a SubjectAltName certificate using OpenSSL 
+
 ### Get a SubjectAltName certificate using OpenSSL
+
 
 OpenSSL can be used to create a certificate request that uses the SubjectAltName extension to support multiple domain names with a single certificate, however it requires a configuration file. The following steps walk through creating a configuration file, and then using it to request a certificate.
 
@@ -325,16 +348,26 @@ OpenSSL can be used to create a certificate request that uses the SubjectAltName
 
 	After running this command, you should have a **myserver.pfx** file suitable for use with Azure Web App.
 
+
+### <a name="bkmk_selfsigned"></a> Generate a self-signed certificate (for testing only)
+
+
 <a name="bkmk_selfsigned"></a>
-### Generate a self-signed certificate (for testing only)
+###  Generate a self-signed certificate (for testing only)
+
 
 In some cases you may wish to obtain a certificate for testing, and delay purchasing one from a trusted CA until you go into production. Self-signed certificates can fill this gap. A self-signed certificate is a certificate you create and sign as if you were a Certificate Authority. While this certificate can be used to secure an app, most browsers will return errors when visiting the app as the certificate was not signed by a trusted CA. Some browsers may even refuse to allow you to view the app.
 
 - [Generate a self-signed certificate using makecert](#bkmk_ssmakecert)
 - [Generate a self-signed certificate using OpenSSL](#bkmk_ssopenssl)
 
+
+#### <a name="bkmk_ssmakecert"></a> Generate a self-signed certificate using makecert ####
+
+
 <a name="bkmk_ssmakecert"></a>
-#### Generate a self-signed certificate using makecert ####
+####  Generate a self-signed certificate using makecert ####
+
 
 You can create a test certificate from a Windows system that has Visual Studio installed by performing the following steps:
 
@@ -357,8 +390,13 @@ You can create a test certificate from a Windows system that has Visual Studio i
 
 	This stores the specified password as a secure string in $mypwd, then finds the certificate by using the DNS name specified by the **dnsname** parameter, and exports to the file specified by the **filepath** parameter. The secure string containing the password is used to secure the exported file.
 
+
+#### <a name="bkmk_ssopenssl"></a>Generate a self-signed certificate using OpenSSL ####
+
+
 <a name="bkmk_ssopenssl"></a>
 ####Generate a self-signed certificate using OpenSSL ####
+
 
 1. Create a new document named **serverauth.cnf**, using the following as the contents of this file:
 
@@ -410,10 +448,12 @@ You can create a test certificate from a Windows system that has Visual Studio i
 
 	The **myserver.pfx** produced by this command can be used to secure your app for testing purposes.
 
-<a name="bkmk_standardmode"></a>
-## 2. Configure Standard or Premium pricing tier
+ ##  <a name="bkmk_standardmode"></a>  2. Configure Standard or Premium pricing tier 
+
+## 2. Configure Standard pricing tier
+
 
-Enabling HTTPS for a custom domain is only available for the **Standard** and **Premium** pricing tiers in Azure Web App. Use the following steps to switch your App Service plan to **Standard** tier.
+Enabling HTTPS for a custom domain is only available for the **Standard**  and **Premium**  pricing  tiers  tier  in Azure Web App. Use the following steps to switch your App Service plan to **Standard** tier.
 
 > [AZURE.NOTE] Before switching an app from the **Free** tier to **Standard** tier, you should remove spending caps in place for your subscription, otherwise you risk your app becoming unavailable if you reach your caps before the billing period ends. For more information on shared and **Standard** tier, see [Pricing Details][pricing].
 
@@ -433,8 +473,10 @@ Enabling HTTPS for a custom domain is only available for the **Standard** and **
 
 	> [AZURE.NOTE] If you receive a "Configuring scale for web app '&lt;app name&gt;' failed" error you can use the details button to get more information. You may receive a "Not enough available standard instance servers to satisfy this request." error. If you receive this error, please contact [Azure support](/support/contact/).
 
-<a name="bkmk_configuressl"></a>
+ ##  <a name="bkmk_configuressl"></a>  3. Configure SSL in your app 
+
 ## 3. Configure SSL in your app
+
 
 Before performing the steps in this section, you must have associated a custom domain name with your app. For more information, see [Configuring a custom domain name for a web app][customdomain].
 
@@ -491,8 +533,10 @@ For such cases we created one more DNS entry: sni.&lt;nameofyourWebApp&gt;.china
 
 At this point, you should be able to visit your app using `HTTPS://` instead of `HTTP://` to verify that the certificate has been configured correctly.
 
-<a name="bkmk_enforce"></a>
+ ##  <a name="bkmk_enforce"></a>  4. Enforce HTTPS on your app 
+
 ## 4. Enforce HTTPS on your app
+
 
 Azure do *not* enforce HTTPS. Visitors may still access your app using HTTP, which may compromise your app's security. If you want to enforce HTTPS for your app, you can use the **URL Rewrite** module. The URL Rewrite module is included with Azure Web App, and enables you to define rules that are applied to incoming requests before the requests are handed to your application. **It can be used for applications written in any programming language supported by Azure .**
 

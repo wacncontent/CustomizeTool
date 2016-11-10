@@ -1,6 +1,6 @@
 <properties
-   pageTitle="Allow external access to a Linux VM | Azure"
-   description="Learn how to open a port / create an endpoint that allows external access to your Linux VM using the resource manager deployment model and the Azure CLI"
+   pageTitle="Open ports to a Linux VM | Azure"
+   description="Learn how to open a port / create an endpoint to your Linux VM using the Azure resource manager deployment model and the Azure CLI"
    services="virtual-machines-linux"
    documentationCenter=""
    authors="iainfoulds"
@@ -8,15 +8,20 @@
    editor=""/>
 
 <tags
-	ms.service="virtual-machines-linux"
-	ms.date="05/24/2016"
-	wacn.date=""/>
+   ms.service="virtual-machines-linux"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="vm-linux"
+   ms.workload="infrastructure-services"
+   ms.date="08/08/2016"
+   wacn.date=""
+   ms.author="iainfou"/>
 
-# Allow external access to your VM
-[AZURE.INCLUDE [virtual-machines-common-nsg-quickstart](../includes/virtual-machines-common-nsg-quickstart.md)]
+# Opening ports to a Linux VM in Azure
+You open a port, or create an endpoint, to a virtual machine (VM) in Azure by creating a network filter on a subnet or VM network interface. You place these filters, which control both inbound and outbound traffic, on a Network Security Group attached to the resource that receives the traffic. Let's use a common example of web traffic on port 80.
 
 ## Quick commands
-To create a Network Security Group and rules you will need [the Azure CLI](/documentation/articles/xplat-cli-install/) in resource manager mode (`azure config mode arm`).
+To create a Network Security Group and rules you need [the Azure CLI](/documentation/articles/xplat-cli-install/) in Resource Manager mode (`azure config mode arm`).
 
 Create your Network Security Group, entering your own names and location appropriately:
 
@@ -29,7 +34,7 @@ azure network nsg create --resource-group TestRG --name TestNSG --location china
 	azure network nsg create --resource-group TestRG --name TestNSG --location chinanorth
 
 
-Add a rule to allow HTTP traffic to your webserver (this can be adjusted for your own scenario, such as SSH access or database connectivity):
+Add a rule to allow HTTP traffic to your webserver (or adjust for your own scenario, such as SSH access or database connectivity):
 
 
 ```
@@ -60,19 +65,17 @@ Alternatively, you can associate your Network Security Group with a virtual netw
 ```
 azure network vnet subnet set --resource-group TestRG --name TestSubnet --network-security-group-name TestNSG
 ```
-
-## More information on Network Security Groups
 
 
 	azure network vnet subnet set --resource-group TestRG --name TestSubnet --network-security-group-name TestNSG
-
-##<a name="more-information-on-network-security-groups"></a> More information on Network Security Groups
 
-The quick commands here allow you to get up and running with traffic flowing to your VM. Network Security Groups provide a lot of great features and granularity for controlling access to the your resources. You can read more about [creating a Network Security Group and ACL rules here](/documentation/articles/virtual-networks-create-nsg-arm-cli/).
 
-Network Security Groups and ACL rules can also be defined as part of Azure Resource Manager templates. Read more about [creating Network Security Groups with templates](/documentation/articles/virtual-networks-create-nsg-arm-template/).
+##  <a name="more-information-on-network-security-groups"></a>  More information on Network Security Groups
+The quick commands here allow you to get up and running with traffic flowing to your VM. Network Security Groups provide many great features and granularity for controlling access to your resources. You can read more about [creating a Network Security Group and ACL rules here](/documentation/articles/virtual-networks-create-nsg-arm-cli/).
 
-If you need to use port-forwarding to map a unique external port to an internal port on your VM, you need to use a load balancer and Network Address Translation (NAT) rules. For example, you may want to expose TCP port 8080 externally and have traffic directed to TCP port 80 on a VM.  You can learn about [creating an Internet-facing load balancer](/documentation/articles/load-balancer-get-started-internet-arm-cli/). 
+You can define Network Security Groups and ACL rules as part of Azure Resource Manager templates. Read more about [creating Network Security Groups with templates](/documentation/articles/virtual-networks-create-nsg-arm-template/).
+
+If you need to use port-forwarding to map a unique external port to an internal port on your VM, use a load balancer and Network Address Translation (NAT) rules. For example, you may want to expose TCP port 8080 externally and have traffic directed to TCP port 80 on a VM. You can learn about [creating an Internet-facing load balancer](/documentation/articles/load-balancer-get-started-internet-arm-cli/).
 
 ## Next steps
 In this example, you created a simple rule to allow HTTP traffic. You can find information on creating more detailed environments in the following articles:
@@ -82,3 +85,6 @@ In this example, you created a simple rule to allow HTTP traffic. You can find i
 
 - [Azure Resource Manager Overview for Load Balancers](../load-balancer2    /load-balancer-arm.md)
 
+
+- [Azure Resource Manager Overview for Load Balancers](/documentation/articles/load-balancer-arm/)
+

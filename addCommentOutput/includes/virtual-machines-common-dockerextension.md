@@ -12,7 +12,7 @@ To create Docker-enabled VMs right now, see:
 
 + [How to use the Docker VM Extension from the Azure Command-line Interface (Azure CLI)]
 + [How to use the Docker VM Extension with the Azure Classic Management Portal]
-+ [How to Get Started Quickly with Docker in the Azure  Marketplace]  gallery] 
++ [How to Get Started Quickly with Docker in the Azure Marketplace]
 
 To learn more about the extension and how it works, see the [Docker Extension User Guide](https://github.com/Azure/azure-docker-extension/blob/master/README.md).
 
@@ -64,7 +64,7 @@ For a complete list, see Azure [Windows](/documentation/articles/virtual-machine
 <!--Anchors-->
 [How to use the Docker VM Extension from the Azure Command-line Interface (Azure CLI)]:  /documentation/articles/virtual-machines-docker-with-xplat-cli/  /documentation/articles/virtual-machines-linux-classic-cli-use-docker/ 
 [How to use the Docker VM Extension with the Azure Classic Management Portal]: /documentation/articles/virtual-machines-docker-with-portal/
-[How to Get Started Quickly with Docker in the Azure  Marketplace]  gallery] : /documentation/articles/virtual-machines-docker-ubuntu-quickstart/
+[How to Get Started Quickly with Docker in the Azure Marketplace]: /documentation/articles/virtual-machines-docker-ubuntu-quickstart/
 [Docker and Linux Containers]: #Docker-and-Linux-Containers
 [How to use the Docker VM Extension with Azure]: #How-to-use-the-Docker-VM-Extension-with-Azure
 [Virtual Machine Extensions for Linux and Windows]: #Virtual-Machine-Extensions-For-Linux-and-Windows

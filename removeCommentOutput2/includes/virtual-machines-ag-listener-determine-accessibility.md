@@ -7,4 +7,4 @@ It is important to realize that there are two ways to configure an Availability 
 
 >[AZURE.IMPORTANT] For a listener using the cloud service's public VIP (external load balancer), as long as the client, listener, and databases are in the same Azure region you will not incur egress charges. Otherwise, any data returned through the listener is considered egress and charged at normal data transfer rates. 
 
-ILB can only be configured on virtual networks with a regional scope. Existing virtual networks that have been configured for an affinity group cannot use ILB.
+ILB can only be configured on virtual networks with a regional scope. Existing virtual networks that have been configured for an affinity group cannot use ILB. For more information, see [Internal Load Balancer](/documentation/articles/load-balancer-internal-overview/).

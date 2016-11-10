@@ -185,7 +185,7 @@ To create the ARM VNet, with two subnets, and a local network for the classic VN
 
 5. To create the ARM VNet, and its related objects, in a new resource group named **RG1**, run the following PowerShell commands. Make sure you change the path for the template file and the parameters file.  
 
-		New-AzureRmResourceGroup -Name RG1 -Location centralus
+		New-AzureRmResourceGroup -Name RG1 -Location chinaeast
 
 		New-AzureRmResourceGroupDeployment -Name deployment01 `
 		    -TemplateFile C:\Azure\azuredeploy.json `
@@ -239,7 +239,7 @@ You need to configure the classic VNet to use the IP address of the gateway crea
 
 		Name                     : ArmAsmS2sGatewayIp
 		ResourceGroupName        : RG1
-		Location                 : centralus
+		Location                 : chinaeast
 		Id                       : /subscriptions/628dad04-b5d1-4f10-b3a4-dc61d88cf97c/resourceGroups/RG1/providers/Microsoft.Network/publicIPAddresses/ArmAsmS2sGatewayIp
 		Etag                     : W/"1ee6c1bd-8be1-488e-a571-77b05b49e33a"
 		ProvisioningState        : Succeeded

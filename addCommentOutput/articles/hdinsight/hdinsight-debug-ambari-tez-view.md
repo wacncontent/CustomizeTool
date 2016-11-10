@@ -6,13 +6,18 @@ description="Learn how to use the Ambari Tez view to debug Tez jobs on HDInsight
 services="hdinsight"
 documentationCenter=""
 authors="Blackmist"
-manager="paulettm"
+manager="jhubbard"
 editor="cgronlun"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="05/03/2016"
-	wacn.date=""/>
+ms.service="hdinsight"
+ms.devlang="na"
+ms.topic="article"
+ms.tgt_pltfrm="na"
+ms.workload="big-data"
+ms.date="07/19/2016"
+wacn.date=""
+ms.author="larryfr"/>
 
 # Use Ambari Views to debug Tez Jobs on HDInsight
 
@@ -137,4 +142,4 @@ Now that you have learned how to use the Tez view, learn more about [Using Hive 
 
 For more detailed technical information on Tez, see the [Tez page at Hortonworks](http://hortonworks.com/hadoop/tez/).
 
-For more information on using Ambari with HDInsight, see [Manage HDInsight clusters using the Ambari Web UI](/documentation/articles/hdinsight-hadoop-manage-ambari/)
+For more information on using Ambari with HDInsight, see [Manage HDInsight clusters using the Ambari Web UI](/documentation/articles/hdinsight-hadoop-manage-ambari/)

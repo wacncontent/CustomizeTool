@@ -1,4 +1,4 @@
-<!-- Ibiza portal: tested -->
+
 
 ## Memory-preserving updates
 
@@ -42,7 +42,7 @@ After a virtual machine is restored, here is an example of what your Windows Eve
 <!--Image reference-->
 ![][image2]
 
-Use the viewer to determine which virtual machines are configured in a multi-instance configuration using the Azure portal, Azure PowerShell, or Azure CLI. For example, to determine which virtual machines are in a multi-instance configuration, you can browse the list of virtual machines with the Availability Set column added to the virtual machines browse dialog. In the following example, the Example-VM1 and Example-VM2 virtual machines are in a muilti-instance configuration:
+Use the viewer to determine which virtual machines are configured in a multi-instance configuration using the Azure Portal Preview, Azure PowerShell, or Azure CLI. For example, to determine which virtual machines are in a multi-instance configuration, you can browse the list of virtual machines with the Availability Set column added to the virtual machines browse dialog. In the following example, the Example-VM1 and Example-VM2 virtual machines are in a muilti-instance configuration:
 
 <!--Image reference-->
 ![][image4]

@@ -8,17 +8,21 @@
  editor=""
  tags="azure-resource-manager,azure-service-management,hpc-pack"/>
 <tags
-	ms.service="virtual-machines-windows"
-	ms.date="06/17/2016"
-	wacn.date=""/>
+ms.service="virtual-machines-windows"
+ ms.devlang="na"
+ ms.topic="article"
+ ms.tgt_pltfrm="vm-windows"
+ ms.workload="big-compute"
+ ms.date="09/26/2016"
+ wacn.date=""
+ ms.author="danlep"/>
 
-# Options to create and manage a Windows high performance computing (HPC) cluster in Azure with Microsoft HPC Pack
+# Options with HPC Pack to create and manage a Windows HPC cluster in Azure
 
-[AZURE.INCLUDE [virtual-machines-common-hpcpack-cluster-options](../includes/virtual-machines-common-hpcpack-cluster-options.md)]
+[AZURE.INCLUDE [virtual-machines-common-hpcpack-cluster-options](../../includes/virtual-machines-common-hpcpack-cluster-options.md)]
 
-This article focuses on options to use HPC Pack to run Windows workloads. There are also options for running [Linux HPC workloads with HPC Pack](/documentation/articles/virtual-machines-linux-hpcpack-cluster-options/).
+This article focuses on options to create HPC Pack clusters to run Windows workloads. There are also options for creating clusters to run [Linux HPC workloads with HPC Pack](/documentation/articles/virtual-machines-linux-hpcpack-cluster-options/).
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
 
 ## Run an HPC Pack cluster in Azure VMs
 
@@ -60,10 +64,11 @@ This article focuses on options to use HPC Pack to run Windows workloads. There 
 
 * [Manage compute nodes in an HPC Pack cluster in Azure](/documentation/articles/virtual-machines-windows-classic-hpcpack-cluster-node-manage/)
 
-
 * [Grow and shrink Azure compute resources in an HPC Pack cluster](/documentation/articles/virtual-machines-windows-classic-hpcpack-cluster-node-autogrowshrink/)
 
 * [Submit jobs to an HPC Pack cluster in Azure](/documentation/articles/virtual-machines-windows-hpcpack-cluster-submit-jobs/)
+
+* [Job management in HPC Pack](https://technet.microsoft.com/zh-cn/library/jj899585.aspx)
 
 
 ## Add worker role nodes to an HPC Pack cluster
@@ -75,7 +80,6 @@ This article focuses on options to use HPC Pack to run Windows workloads. There 
 
 * [Add Azure "burst" nodes to an HPC Pack head node in Azure](/documentation/articles/virtual-machines-windows-classic-hpcpack-cluster-node-burst/)
 
-* [Grow and shrink Azure compute resources in an HPC Pack cluster](/documentation/articles/virtual-machines-windows-classic-hpcpack-cluster-node-autogrowshrink/)
 
 ## Integrate with Azure Batch 
 

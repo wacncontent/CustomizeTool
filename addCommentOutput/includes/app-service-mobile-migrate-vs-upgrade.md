@@ -1,4 +1,4 @@
-There are two options for moving from Mobile Services to Azure Websites: migration or upgrade. Either option will give you access to all of the hosting capabilities of Azure Websites:
+There are two options for moving from Mobile Services to App Service: migration or upgrade. Either option will give you access to all of the hosting capabilities of App Service:
 
 - *Migrating* a service just changes the underlying environment that hosts your mobile backend. It requires **no code changes** to either the mobile client or the mobile server project. If you use the automated migration option, this preserves your **service.azure-mobile.cn** URL. 
 

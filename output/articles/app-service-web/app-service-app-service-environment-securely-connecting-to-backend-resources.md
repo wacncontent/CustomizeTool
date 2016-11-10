@@ -1,38 +1,43 @@
 <properties 
-	pageTitle="Securely Connecting to BackEnd Resources from an Azure Environment" 
-	description="Learn about how to securely connect to backend resources from an Azure Environment." 
+	pageTitle="Securely Connecting to BackEnd Resources from an App Service Environment" 
+	description="Learn about how to securely connect to backend resources from an App Service Environment." 
 	services="app-service" 
 	documentationCenter="" 
-	authors="ccompy" 
+	authors="stefsch" 
 	manager="wpickett" 
 	editor=""/>
 
-<tags
-	ms.service="app-service"
-	ms.date="07/11/2016"
-	wacn.date=""/>	
+<tags 
+	ms.service="app-service" 
+	ms.workload="na" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="10/04/2016" 
+	wacn.date="" 
+	ms.author="stefsch"/>	
 
-# Securely Connecting to Backend Resources from an Azure Environment #
+# Securely Connecting to Backend Resources from an App Service Environment #
 
 ## Overview ##
-Since an Azure Environment is always created in **either** an Azure Resource Manager virtual network, **or** a classic deployment model [virtual network][virtualnetwork], outbound connections from an Azure Environment to other backend resources can flow exclusively over the virtual network.  With a recent change made in June 2016, ASEs can also be deployed into virtual networks that use either public address ranges, or RFC1918 address spaces (i.e. private addresses).  
+Since an App Service Environment is always created in **either** an Azure Resource Manager virtual network, **or** a classic deployment model [virtual network][virtualnetwork], outbound connections from an App Service Environment to other backend resources can flow exclusively over the virtual network.  With a recent change made in June 2016, ASEs can also be deployed into virtual networks that use either public address ranges, or RFC1918 address spaces (i.e. private addresses).  
 
 For example, there may be a SQL Server running on a cluster of virtual machines with port 1433 locked down.  The endpoint may be ACLd to only allow access from other resources on the same virtual network.  
 
 As another example, sensitive endpoints may run on-premises and be connected to Azure via either [Site-to-Site][SiteToSite] or [Azure ExpressRoute][ExpressRoute] connections.  As a result, only resources in virtual networks connected to the Site-to-Site or ExpressRoute tunnels will be able to access on-premises endpoints.
 
-For all of these scenarios, apps running on an Azure Environment will be able to securely connect to the various servers and resources.  Outbound traffic from apps running in an Azure Environment to private endpoints in the same virtual network (or connected to the same virtual network), will only flow over the virtual network.  Outbound traffic to private endpoints will not flow over the public Internet.
+For all of these scenarios, apps running on an App Service Environment will be able to securely connect to the various servers and resources.  Outbound traffic from apps running in an App Service Environment to private endpoints in the same virtual network (or connected to the same virtual network), will only flow over the virtual network.  Outbound traffic to private endpoints will not flow over the public Internet.
 
-One caveat applies to outbound traffic from an Azure Environment to endpoints within a virtual network.  Azure Environments cannot reach endpoints of virtual machines located in the **same** subnet as the Azure Environment.  This normally should not be a problem as long as Azure Environments are deployed into a subnet reserved for exclusive use by only the Azure Environment.
+One caveat applies to outbound traffic from an App Service Environment to endpoints within a virtual network.  App Service Environments cannot reach endpoints of virtual machines located in the **same** subnet as the App Service Environment.  This normally should not be a problem as long as App Service Environments are deployed into a subnet reserved for exclusive use by only the App Service Environment.
 
-[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)] 
+[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)] 
 
 ## Outbound Connectivity and DNS Requirements ##
-For an Azure Environment to function properly, it requires outbound access to various endpoints. A full list of the external endpoints used by an ASE is in the "Required Network Connectivity" section of the [Network Configuration for ExpressRoute](/documentation/articles/app-service-app-service-environment-network-configuration-expressroute/#required-network-connectivity) article.
+For an App Service Environment to function properly, it requires outbound access to various endpoints. A full list of the external endpoints used by an ASE is in the "Required Network Connectivity" section of the [Network Configuration for ExpressRoute](/documentation/articles/app-service-app-service-environment-network-configuration-expressroute/#required-network-connectivity) article.
 
-Azure Environments require a valid DNS infrastructure configured for the virtual network.  If for any reason the DNS configuration is changed after an Azure Environment has been created, developers can force an Azure Environment to pick up the new DNS configuration.  Triggering a rolling environment reboot using the "Restart" icon located at the top of the Azure Environment management blade in the portal will cause the environment to pick up the new DNS configuration.
+App Service Environments require a valid DNS infrastructure configured for the virtual network.  If for any reason the DNS configuration is changed after an App Service Environment has been created, developers can force an App Service Environment to pick up the new DNS configuration.  Triggering a rolling environment reboot using the "Restart" icon located at the top of the App Service Environment management blade in the portal will cause the environment to pick up the new DNS configuration.
 
-It is also recommended that any custom DNS servers on the vnet be setup ahead of time prior to creating an Azure Environment.  If a virtual network's DNS configuration is changed while an Azure Environment is being created, that will result in the Azure Environment creation process failing.  In a similar vein, if a custom DNS server exists on the other end of a VPN gateway, and the DNS server is unreachable or unavailable, the Azure Environment creation process will also fail.
+It is also recommended that any custom DNS servers on the vnet be setup ahead of time prior to creating an App Service Environment.  If a virtual network's DNS configuration is changed while an App Service Environment is being created, that will result in the App Service Environment creation process failing.  In a similar vein, if a custom DNS server exists on the other end of a VPN gateway, and the DNS server is unreachable or unavailable, the App Service Environment creation process will also fail.
 
 ## Connecting to a SQL Server
 A common SQL Server configuration has an endpoint listening on port 1433:
@@ -53,7 +58,7 @@ Port 1433 can be secured using a network access control list.  The example below
 
 ![Network Access Control List Example][NetworkAccessControlListExample]
 
-Any applications running in Azure Environment in the same virtual network as the SQL Server will be able to connect to the SQL Server instance using the **VNet internal** IP address for the SQL Server virtual machine.  
+Any applications running in App Service Environment in the same virtual network as the SQL Server will be able to connect to the SQL Server instance using the **VNet internal** IP address for the SQL Server virtual machine.  
 
 The example connection string below references the SQL Server using its private IP address.
 
@@ -82,17 +87,17 @@ The end result is a set of security rules that block external access, while allo
 
 
 ## Getting started
-All articles and How-To's for Azure Environments are available in the [README for Application Service Environments](/documentation/articles/app-service-app-service-environments-readme/).
+All articles and How-To's for App Service Environments are available in the [README for Application Service Environments](/documentation/articles/app-service-app-service-environments-readme/).
 
-To get started with Azure Environments, see [Introduction to Azure Environment][IntroToAppServiceEnvironment]
+To get started with App Service Environments, see [Introduction to App Service Environment][IntroToAppServiceEnvironment]
 
-For details around controlling inbound traffic to your Azure Environment, see [Controlling inbound traffic to an Azure Environment][ControlInboundASE]
+For details around controlling inbound traffic to your App Service Environment, see [Controlling inbound traffic to an App Service Environment][ControlInboundASE]
 
-For more information about the Azure platform, see [Azure Web App][AzureAppService].
+For more information about the Azure App Service platform, see [Azure App Service][AzureAppService].
 
-[AZURE.INCLUDE [app-service-web-whats-changed](../includes/app-service-web-whats-changed.md)]
+[AZURE.INCLUDE [app-service-web-whats-changed](../../includes/app-service-web-whats-changed.md)]
 
-[AZURE.INCLUDE [app-service-web-try-app-service](../includes/app-service-web-try-app-service.md)]
+[AZURE.INCLUDE [app-service-web-try-app-service](../../includes/app-service-web-try-app-service.md)]
  
 
 <!-- LINKS -->
@@ -103,7 +108,7 @@ For more information about the Azure platform, see [Azure Web App][AzureAppServi
 [NetworkAccessControlLists]: /documentation/articles/virtual-networks-acl/
 [NetworkSecurityGroups]: /documentation/articles/virtual-networks-nsg/
 [IntroToAppServiceEnvironment]:  /documentation/articles/app-service-app-service-environment-intro/
-[AzureAppService]: /documentation/services/web-sites/ 
+[AzureAppService]: /documentation/articles/app-service-value-prop-what-is/ 
 [ControlInboundASE]:  /documentation/articles/app-service-app-service-environment-control-inbound-traffic/ 
 
 <!-- IMAGES -->

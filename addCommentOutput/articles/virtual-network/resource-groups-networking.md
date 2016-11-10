@@ -3,13 +3,18 @@
    description="Learn about the new Network Resource Provider in Azure Resource Manager"
    services="virtual-network"
    documentationCenter="na"
-   authors="telmosampaio"
+   authors="jimdial"
    manager="carmonm"
    editor="tysonn" />
 <tags
-	ms.service="virtual-network"
-	ms.date="03/15/2016"
-	wacn.date=""/>
+   ms.service="virtual-network"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="03/15/2016"
+   wacn.date=""
+   ms.author="jdial" />
 
 # Network Resource Provider
 An underpinning need in today's business success, is the ability to build and manage large scale network aware applications in an agile, flexible, secure and repeatable way. Azure Resource Manager (ARM) enables you to create such applications, as a single collection of resources in resource groups. Such resources are managed through various resource providers under ARM.
@@ -50,31 +55,31 @@ Every resource contains a common set of properties, and their individual propert
 
 You can check the individual properties of resources in the sections below.
 
-[AZURE.INCLUDE [virtual-networks-nrp-pip-include](../includes/virtual-networks-nrp-pip-include.md)]
+[AZURE.INCLUDE [virtual-networks-nrp-pip-include](../../includes/virtual-networks-nrp-pip-include.md)]
 
-[AZURE.INCLUDE [virtual-networks-nrp-nic-include](../includes/virtual-networks-nrp-nic-include.md)]
+[AZURE.INCLUDE [virtual-networks-nrp-nic-include](../../includes/virtual-networks-nrp-nic-include.md)]
 
-[AZURE.INCLUDE [virtual-networks-nrp-nsg-include](../includes/virtual-networks-nrp-nsg-include.md)]
+[AZURE.INCLUDE [virtual-networks-nrp-nsg-include](../../includes/virtual-networks-nrp-nsg-include.md)]
 
-[AZURE.INCLUDE [virtual-networks-nrp-udr-include](../includes/virtual-networks-nrp-udr-include.md)]
+[AZURE.INCLUDE [virtual-networks-nrp-udr-include](../../includes/virtual-networks-nrp-udr-include.md)]
 
-[AZURE.INCLUDE [virtual-networks-nrp-vnet-include](../includes/virtual-networks-nrp-vnet-include.md)]
+[AZURE.INCLUDE [virtual-networks-nrp-vnet-include](../../includes/virtual-networks-nrp-vnet-include.md)]
 
-[AZURE.INCLUDE [virtual-networks-nrp-dns-include](../includes/virtual-networks-nrp-dns-include.md)]
+[AZURE.INCLUDE [virtual-networks-nrp-dns-include](../../includes/virtual-networks-nrp-dns-include.md)]
 
-[AZURE.INCLUDE [virtual-networks-nrp-lb-include](../includes/virtual-networks-nrp-lb-include.md)]
+[AZURE.INCLUDE [virtual-networks-nrp-lb-include](../../includes/virtual-networks-nrp-lb-include.md)]
 
-[AZURE.INCLUDE [virtual-networks-nrp-appgw-include](../includes/virtual-networks-nrp-appgw-include.md)]
+[AZURE.INCLUDE [virtual-networks-nrp-appgw-include](../../includes/virtual-networks-nrp-appgw-include.md)]
 
-[AZURE.INCLUDE [virtual-networks-nrp-vpn-include](../includes/virtual-networks-nrp-vpn-include.md)]
+[AZURE.INCLUDE [virtual-networks-nrp-vpn-include](../../includes/virtual-networks-nrp-vpn-include.md)]
 
-[AZURE.INCLUDE [virtual-networks-nrp-tm-include](../includes/virtual-networks-nrp-tm-include.md)]
+[AZURE.INCLUDE [virtual-networks-nrp-tm-include](../../includes/virtual-networks-nrp-tm-include.md)]
 
 ## Management interfaces
 You can manage your Azure networking resources using different interfaces. In this document we will focus on tow of those interfaces: REST API, and templates.
 
 ### REST API
-As mentioned earlier, network resources can be managed via a variety of interfaces, including REST API,.NET SDK, Node.JS SDK, Java SDK, PowerShell, CLI, Azure Portal and templates.
+As mentioned earlier, network resources can be managed via a variety of interfaces, including REST API,.NET SDK, Node.JS SDK, Java SDK, PowerShell, CLI, Azure Portal  Preview  and templates.
 
 The Rest API's conform to the HTTP 1.1 protocol specification. The general URI structure of the API is presented below:
 
@@ -116,7 +121,12 @@ The template is primarily a JSON description of the resources and the instance v
 	    "parameters" : {
 	      "location": {
 	        "type": "String",
+
 	        "allowedValues": ["China East", "China North", "West Europe", "China East", "South China East"],
+
+
+	        "allowedValues": ["China East", "China North"],
+
 	        "metadata" : {
 	          "Description" : "Deployment location"
 	        }
@@ -237,9 +247,10 @@ The sample template above uses the virtual network and subnet resources. There a
 
 ### Using a template
 
+
 You can deploy services to Azure from a template by using PowerShell, AzureCLI, or by performing a click to deploy from GitHub. To deploy services from a template in GitHub, execute the following steps:
 
-1. Open the template3 file from GitHub.  As an example, open [Virtual network with two subnets](https://github.com/Azure/azure-quickstart-templates/tree/master/101-virtual-network). 
+1. Open the template3 file from GitHub. As an example, open [Virtual network with two subnets](https://github.com/Azure/azure-quickstart-templates/tree/master/101-virtual-network).
 2. Click on **Deploy to Azure**, and then sign in on to the Azure portal with your credentials.
 3. Verify the template, and then click **Save**.
 4. Click **Edit parameters** and select a location, such as *China North*, for the vnet and subnets.
@@ -248,6 +259,12 @@ You can deploy services to Azure from a template by using PowerShell, AzureCLI, 
 3. Click **Create**. Notice the tile displaying **Provisioning Template deployment**. Once the deployment is done, you will see a screen similar to one below.
 
 ![Sample template deployment](./media/resource-groups-networking/Figure6.png)
+
+
+You can deploy services to Azure from a template by using PowerShell or AzureCLI. To deploy services from a template in GitHub, download [the template](https://github.com/Azure/azure-quickstart-templates/tree/master/101-virtual-network), do some necessary modification, and deploy it with Azure CLI.
+
+>[AZURE.NOTE] Templates you downloaded from the GitHub Repo "azure-quickstart-templates" must be modified in order to fit in the Azure China Cloud Environment. For example, replace some endpoints -- "blob.core.windows.net" by "blob.core.chinacloudapi.cn", "cloudapp.azure.com" by "chinacloudapp.cn"; change some unsupported VM images; and, changes some unsupported VM sizes.
+
 
 
 ## Next steps

@@ -3,13 +3,18 @@
    description="This article will help you understand what Traffic Manager is, and whether it is the right traffic routing choice for your application"
    services="traffic-manager"
    documentationCenter=""
-   authors="jtuliani"
+   authors="sdwheeler"
    manager="carmonm"
    editor="tysonn" />
-<tags
-	ms.service="traffic-manager"
-	ms.date="06/09/2016"
-	wacn.date=""/>
+<tags 
+   ms.service="traffic-manager"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="06/09/2016"
+   wacn.date=""
+   ms.author="sewhee" />
 
 # What is Traffic Manager?
 
@@ -31,7 +36,7 @@ Traffic Manager can help you:
 - **Combine on-premises and Cloud-based applications** - Traffic Manager supports external, non-Azure endpoints enabling it to be used with hybrid cloud and on-premises deployments, including the "burst-to-cloud," "migrate-to-cloud," and "failover-to-cloud" scenarios.
 - **Distribute traffic for large, complex deployments** - Traffic-routing methods can be combined using [nested Traffic Manager profiles](/documentation/articles/traffic-manager-nested-profiles/) to create sophisticated and flexible traffic-routing configurations to meet the needs of larger, more complex deployments. 
 
-[AZURE.INCLUDE [load-balancer-compare-tm-ag-lb-include.md](../includes/load-balancer-compare-tm-ag-lb-include.md)]
+[AZURE.INCLUDE [load-balancer-compare-tm-ag-lb-include.md](../../includes/load-balancer-compare-tm-ag-lb-include.md)]
 
 ## Next Steps
 

@@ -5,15 +5,20 @@
 	description="Learn how Linux-based HDInsight clusters improve reliability and availability by using an additional head node. You will learn how this impacts Hadoop services such as Ambari and Hive, as well as how to individually connect to each head node using SSH."
 	services="hdinsight"
 	editor="cgronlun"
-	manager="paulettm"
+	manager="jhubbard"
 	authors="Blackmist"
 	documentationCenter=""
 	tags="azure-portal"/>
 
 <tags
 	ms.service="hdinsight"
-	ms.date="04/18/2016"
-	wacn.date=""/>
+	ms.workload="big-data"
+	ms.tgt_pltfrm="na"
+	ms.devlang="multiple"
+	ms.topic="article"
+	ms.date="09/13/2016"
+	wacn.date=""
+	ms.author="larryfr"/>
 
 #Availability and reliability of Hadoop clusters in HDInsight
 
@@ -39,6 +44,10 @@ HDInsight clusters provide a secondary head node, which allows master services a
 
 > [AZURE.IMPORTANT] Both head nodes are active and running within the cluster simultaneously. Some services, such as HDFS or YARN, are only 'active' on one head node at any given time (and 'standby' on the other head node). Other services such as HiveServer2 or Hive MetaStore are active on both head nodes at the same time.
 
+Head nodes (and other nodes in HDInsight,) have a numeric value as part of the hostname of the node. For example, `hn0-CLUSTERNAME` or `hn4-CLUSTERNAME`. 
+
+> [AZURE.IMPORTANT] Do not associate the numeric value with whether a node is primary or secondary; the numeric value is only present to provide a unique name for each node.
+
 ###Nimbus Nodes
 
 For Storm clusters, the Nimbus nodes provide similar functionality to the Hadoop JobTracker by distributing and monitoring processing across worker nodes. HDInsight provides 2 Nimbus nodes for the Storm cluster type.
@@ -57,14 +66,14 @@ An edge node does not actively participate in data analysis within the cluster, 
 
 Currently, R Server on HDInsight is the only cluster type that provides an edge node by default. For R Server on HDInsight, the edge node is used test R code locally on the node before submitting it to the cluster for distributed processing.
 
-[Create a Linux-based HDInsight cluster with Hue on an Edge Node](https://azure.microsoft.com/documentation/templates/hdinsight-linux-with-hue-on-edge-node/) is an example template that can be used to create a Hadoop cluster type that has an Edge node.
+[Create a Linux-based HDInsight cluster with Hue on an Edge Node](https://github.com/Azure/azure-quickstart-templates/tree/master/hdinsight-linux-with-hue-on-edge-node/) is an example template that can be used to create a Hadoop cluster type that has an Edge node.
 
 
 ## Accessing the nodes
 
-Access to the cluster over the internet is provided through a public gateway, and is limited to connecting to the head nodes and (if an R Server on HDInsight cluster,) the edge node. Access to services running on the head nodes is not effected by having multiple head nodes, as the public gateway routes requests to the head node that hosts the requested service. For example, if Ambari is currently hosted on head node 1, the gateway will route incoming requests for Ambari to that node.
+Access to the cluster over the internet is provided through a public gateway, and is limited to connecting to the head nodes and (if an R Server on HDInsight cluster,) the edge node. Access to services running on the head nodes is not effected by having multiple head nodes, as the public gateway routes requests to the head node that hosts the requested service. For example, if Ambari is currently hosted on the secondary head node, the gateway will route incoming requests for Ambari to that node.
 
-When accessing the cluster using SSH, connecting through port 22 (the default for SSH,) will connect to head node 0; connecting through port 23 will connect to head node 1. For example, `ssh username@mycluster-ssh.azurehdinsight.cn` will connect to head node 0 of the cluster named __mycluster__.
+When accessing the cluster using SSH, connecting through port 22 (the default for SSH,) will connect to the primary head node; connecting through port 23 will connect to the secondary head node. For example, `ssh username@mycluster-ssh.azurehdinsight.cn` will connect to the primary head node of the cluster named __mycluster__.
 
 > [AZURE.NOTE] This also applies to protocols based on SSH, such as the SSH File Transfer Protocol (SFTP).
 
@@ -141,7 +150,7 @@ The response will be similar to the following:
 	  }
 	}
 
-The URL tells us that the service is currently running on **head node 0**.
+The URL tells us that the service is currently running on a head node named __hn0-CLUSTERNAME__.
 
 The state tells us that the service is currently running, or **STARTED**.
 
@@ -193,7 +202,7 @@ From the Ambari Web UI, select the service you wish to view logs for (for exampl
 
 ## How to configure the node size ##
 
-The size of the a node can only be selected during cluster creation. You can find a list of the different VM sizes available for HDInsight, including the core, memory, and local storage for each, on the [HDInsight pricing page](/home/features/hdinsight/pricing/).
+The size of the a node can only be selected during cluster creation. You can find a list of the different VM sizes available for HDInsight, including the core, memory, and local storage for each, on the [HDInsight pricing page](/pricing/details/hdinsight/).
 
 When creating a new cluster, you can specify the size of the nodes. The following provide information on how to specify the size using the [Azure Portal][preview-portal], [Azure PowerShell][azure-powershell], and the [Azure CLI][azure-cli]:
 

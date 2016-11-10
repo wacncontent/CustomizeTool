@@ -10,12 +10,17 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="06/16/2016"
-	wacn.date=""/>
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-windows"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/27/2016"
+	wacn.date=""
+	ms.author="cynthn"/>
 
 #Capture an image of an Azure Windows virtual machine created with the classic deployment model.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Learn how to [perform these steps using the Resource Manager model](/documentation/articles/virtual-machines-windows-capture-image/).
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)] For Resource Manager model information, see [Create a copy Windows VM running in Azure](/documentation/articles/virtual-machines-windows-vhd-copy/).
 
 
 This article shows you how to capture an Azure virtual machine running Windows so you can use it as an image to create other virtual machines. This image includes the operating system disk and any data disks that are attached to the virtual machine. It doesn't include networking configurations, so you'll need to configure those when you create the other virtual machines that use the image.
@@ -28,6 +33,7 @@ These steps assume that you've already created an Azure virtual machine and conf
 
 - [Create a virtual machine from an image](/documentation/articles/virtual-machines-windows-classic-createportal/)
 - [How to attach a data disk to a virtual machine](/documentation/articles/virtual-machines-windows-classic-attach-disk/)
+- Make sure the server roles are supported with Sysprep. For more information, see [Sysprep Support for Server Roles](https://msdn.microsoft.com/windows/hardware/commercialize/manufacture/desktop/sysprep-support-for-server-roles).
 
 > [AZURE.WARNING] This process deletes the original virtual machine after it's captured. 
 

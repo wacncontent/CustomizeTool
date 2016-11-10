@@ -4,14 +4,14 @@ To deploy the ARM template you downloaded by using PowerShell, follow the steps 
 
 1. If you have never used Azure PowerShell, see [How to Install and Configure Azure PowerShell](/documentation/articles/powershell-install-configure/) and follow the instructions all the way to the end to sign into Azure and select your subscription.
 
-3. If necessary, run the **`New-AzureRmResourceGroup`** cmdlet to create a new resource group. The command below creates a resource group named *TestRG* in the *China North* azure region. For more information about resource groups, visit [Azure Resource Manager  Overview](../articles/documentation/articles/resource-group-overview)  Overview](../articles/documentation/articles/resource-group-overview/) .
+3. If necessary, run the **`New-AzureRmResourceGroup`** cmdlet to create a new resource group. The command below creates a resource group named *TestRG* in the *China North* azure region. For more information about resource groups, visit [Azure Resource Manager  Overview](/documentation/articles/resource-group-overview)  Overview](/documentation/articles/resource-group-overview/) .
 
-		New-AzureRmResourceGroup -Name TestRG -Location centralus
+		New-AzureRmResourceGroup -Name TestRG -Location chinaeast
 		
 	Here is the expected output for the command above:
 
 		ResourceGroupName : TestRG
-		Location          : centralus
+		Location          : chinaeast
 		ProvisioningState : Succeeded
 		Tags              :
 		Permissions       :
@@ -55,7 +55,7 @@ To deploy the ARM template you downloaded by using PowerShell, follow the steps 
 		
 		Name              : TestVNet
 		ResourceGroupName : TestRG
-		Location          : centralus
+		Location          : chinaeast
 		Id                : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/TestRG/providers/Microsoft.Network/virtualNetworks/TestVNet
 		Etag              : W/"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
 		ProvisioningState : Succeeded

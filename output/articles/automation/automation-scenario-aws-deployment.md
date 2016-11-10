@@ -7,9 +7,14 @@
    manager="jwhit"
    editor="" />
 <tags
-	ms.service="automation"
-	ms.date="06/21/2016"
-	wacn.date=""/>
+   ms.service="automation"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="na"
+   ms.date="08/17/2016"
+   wacn.date=""
+   ms.author="tiandert; bwren" />
 
 # Azure Automation scenario - provision an AWS virtual machine 
 
@@ -100,7 +105,7 @@ Before we proceed with testing the runbook, we need to verify a few things. Spec
 4. We can view progress of the job and view output **Streams** by selecting the **All Logs** tile from the runbook job blade.<br> ![Stream output](./media/automation-scenario-aws-deployment/runbook-job-streams-output.png)
 5. To confirm the VM is being provisioned, log into the AWS Management Console if you are not currently logged in.<br> ![AWS console deployed VM](./media/automation-scenario-aws-deployment/aws-instances-status.png)
 
-## Next Steps
+## Next steps
 -   To get started with Graphical runbooks, see [My first graphical runbook](/documentation/articles/automation-first-runbook-graphical/)
 -	To get started with PowerShell workflow runbooks, see [My first PowerShell workflow runbook](/documentation/articles/automation-first-runbook-textual/)
 -	To know more about runbook types, their advantages and limitations, see [Azure Automation runbook types](/documentation/articles/automation-runbook-types/)

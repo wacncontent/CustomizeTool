@@ -4,14 +4,19 @@
    	services="hdinsight"
    	documentationCenter=""
    	authors="mumian"
-   	manager="paulettm"
+   	manager="jhubbard"
    	editor="cgronlun"
 	tags="azure-portal"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="06/29/2016"
-	wacn.date=""/>
+   	ms.service="hdinsight"
+   	ms.devlang="na"
+   	ms.topic="hero-article"
+   	ms.tgt_pltfrm="na"
+   	ms.workload="big-data"
+   	ms.date="06/29/2016"
+   	wacn.date=""
+   	ms.author="jgao"/>
 
 # Publish HDInsight applications into the Azure Marketplace
 
@@ -75,7 +80,7 @@ Create a zip file that contains all required files for installing your HDInsight
 
 - All required scripts.
 
-> [AZURE.NOTE] The application files (including web appliation files if there is any) can be located on any publicly accessible endpoint.
+> [AZURE.NOTE] The application files (including web application files if there is any) can be located on any publicly accessible endpoint.
 
 ## Publish application
 
@@ -95,3 +100,5 @@ Follow the following steps to publish an HDInsight application:
 - [Install custom HDInsight applications](/documentation/articles/hdinsight-apps-install-custom-applications/): learn how to deploy an un-published HDInsight application to HDInsight.
 - [Customize Linux-based HDInsight clusters using Script Action](/documentation/articles/hdinsight-hadoop-customize-cluster-v1/): learn how to use Script Action to install additional applications.
 - [Create Linux-based Hadoop clusters in HDInsight using Azure Resource Manager templates](/documentation/articles/hdinsight-hadoop-create-linux-clusters-arm-templates/): learn how to call Resource Manager templates to create HDInsight clusters.
+- [Use empty edge nodes in HDInsight](/documentation/articles/hdinsight-apps-use-edge-node/): learn how to use an empty edge node for accessing HDInsight cluster, testing HDInsight applications, and hosting HDInsight applications.
+

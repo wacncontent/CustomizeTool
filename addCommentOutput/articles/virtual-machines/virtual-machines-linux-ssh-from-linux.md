@@ -19,9 +19,19 @@
 - [Windows](/documentation/articles/virtual-machines-linux-ssh-from-windows/)
 - [Linux/Mac](/documentation/articles/virtual-machines-linux-ssh-from-linux/)
 
-This topic describes how to use **ssh-keygen** and **openssl** on Linux and Mac to create and use **ssh-rsa** format and **.pem** format files to secure communication with Azure VMs based on Linux. Creating Linux-based Azure Virtual Machines using the Resource Manager deployment model is recommended for new deployments and takes an *ssh-rsa* type public key file or string (depending on the deployment client). The [Azure  portal](https://portal.azure.cn)  portal Preview](https://portal.azure.cn)  currently accepts only the **ssh-rsa** format strings, whether for classic or Resource Manager deployments.
+
 
-> [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
+This topic describes how to use **ssh-keygen** and **openssl** on Linux and Mac to create and use **ssh-rsa** format and **.pem** format files to secure communication with Azure VMs based on Linux. Creating Linux-based Azure Virtual Machines using the Resource Manager deployment model is recommended for new deployments and takes an *ssh-rsa* type public key file or string (depending on the deployment client). The [Azure portal](https://portal.azure.cn) currently accepts only the **ssh-rsa** format strings, whether for classic or Resource Manager deployments.
+
+
+> [AZURE.NOTE] If you have a few moments, please help us to improve the Azure Linux VM documentation by taking this [quick survey](https://aka.ms/linuxdocsurvey) of your experiences. Every answer helps us help you get your work done.
+
+
+
+This topic describes how to use **ssh-keygen** and **openssl** on Linux and Mac to create and use **ssh-rsa** format and **.pem** format files to secure communication with Azure VMs based on Linux. Creating Linux-based Azure Virtual Machines using the Resource Manager deployment model is recommended for new deployments and takes an *ssh-rsa* type public key file or string (depending on the deployment client). The [Azure portal Preview](https://portal.azure.cn) currently accepts only the **ssh-rsa** format strings, whether for classic or Resource Manager deployments.
+
+
+> [AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
 To create these types of files for use on a Windows computer to communicate securely with Linux VMs in Azure, see [Use SSH keys on Windows](/documentation/articles/virtual-machines-linux-ssh-from-windows/). 
 
 ## Which files do you need?
@@ -72,7 +82,7 @@ If you need to create the files:
 
 ## Use SSH keys you already have
 
-You can use ssh-rsa (`.pub`) keys for all new work, especially with the Resource Manager deployment model and the  Portal  portal  Preview; you may need to create a `.pem` file from your keys if you need to use the Classic Management Portal.
+You can use ssh-rsa (`.pub`) keys for all new work, especially with the Resource Manager deployment model and the Portal Preview; you may need to create a `.pem` file from your keys if you need to use the Classic Management Portal.
 
 ## Create a VM with your public key file
 
@@ -103,7 +113,7 @@ The next example shows the use of the **ssh-rsa** format with a Resource Manager
 
 You can download the template from [GitHub](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-vm-sshkey/azuredeploy.json) and run the following command.
 
->[AZURE.NOTE] Templates you downloaded from the GitHub Repo "azure-quickstart-templates" must be modified in order to fit in the Azure China Cloud Environment. For example, replace some endpoints -- "blob.core.chinacloudapi.cn" by "blob.core.chinacloudapi.cn", "chinacloudapp.cn" by "chinacloudapp.cn"; change some unsupported VM images; and, changes some unsupported VM sizes.
+>[AZURE.NOTE] Templates you downloaded from the GitHub Repo "azure-quickstart-templates" must be modified in order to fit in the Azure China Cloud Environment. For example, replace some endpoints -- "blob.core.windows.net" by "blob.core.chinacloudapi.cn", "cloudapp.azure.com" by "chinacloudapp.cn"; change some unsupported VM images; and, changes some unsupported VM sizes.
 
 
 	azure group deployment create \

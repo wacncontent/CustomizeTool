@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Create a Node.js chat application with Socket.IO in Azure Web App"
+	pageTitle="Create a Node.js chat application with Socket.IO in Azure App Service"
 	description="A tutorial that demonstrates using socket.io in a node.js web app hosted on Azure."
 	services="app-service\web"
 	documentationCenter="nodejs"
@@ -9,14 +9,19 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="06/24/2016"
-	wacn.date=""/>
+	ms.workload="web"
+	ms.tgt_pltfrm="na"
+	ms.devlang="nodejs"
+	ms.topic="article"
+	ms.date="08/11/2016"
+	wacn.date=""
+	ms.author="robmcm"/>
 
-# Create a Node.js chat application with Socket.IO in Azure
+# Create a Node.js chat application with Socket.IO in Azure App Service
 
 Socket.IO provides real-time communication between your node.js server and clients using WebSockets. It also supports fallback to other transports (such as long polling) that work with older browsers. This tutorial will walk you through hosting a Socket.IO based chat application as an Azure web app, and show you how to scale the application using [Azure Redis Cache]. For more information on Socket.IO, see <http://socket.io/>.
 
-> [AZURE.NOTE] The procedures in this task apply to [Azure Web Apps]; for Cloud Services, see [Build a Node.js Chat Application with Socket.IO on an Azure Cloud Service].
+> [AZURE.NOTE] The procedures in this task apply to [App Service Web Apps]; for Cloud Services, see [Build a Node.js Chat Application with Socket.IO on an Azure Cloud Service].
 
 ## Download the chat example
 
@@ -256,7 +261,7 @@ If client browsers keep falling back to long polling instead of using WebSockets
 
 	If your application uses an entry point other than **app.js**, you must replace all occurrences of **app.js** with the correct entry point. For example, replacing **app.js** with **server.js**.
 
->[AZURE.NOTE] If you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App], where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.
+>[AZURE.NOTE] If you want to get started with Azure App Service before signing up for an Azure account, go to [Try App Service], where you can immediately create a short-lived starter web app in App Service. No credit cards required; no commitments.
 
 ## Next steps
 
@@ -266,18 +271,18 @@ For more information, see also the [Node.js Developer Center].
 
 ## What's changed
 
-* For a guide to the change from Websites to Azure see: [Azure and Its Impact on Existing Azure Services].
+* For a guide to the change from Websites to App Service see: [Azure App Service and Its Impact on Existing Azure Services].
 
 <!-- URL List -->
 
 [Azure Redis Cache]: /documentation/services/redis-cache/
-[Azure Web Apps]: /documentation/services/web-sites/
+[App Service Web Apps]: /documentation/articles/app-service-changes-existing-services/
 [Web Apps Pricing page]: http://go.microsoft.com/fwlink/?LinkId=511643
 [Build a Node.js Chat Application with Socket.IO on an Azure Cloud Service]: /documentation/articles/cloud-services-nodejs-chat-app-socketio/
 [Install and Configure the Azure CLI]: /documentation/articles/xplat-cli-install/
-[Azure and Its Impact on Existing Azure Services]: /documentation/services/web-sites/
+[Azure App Service and Its Impact on Existing Azure Services]: /documentation/articles/app-service-changes-existing-services/
 [Node.js Developer Center]: /develop/nodejs/
-[Try Azure Web App]: https://tryappservice.azure.com/
+[Try App Service]: https://tryappservice.azure.com/
 [Instance Affinity in Azure Web Sites]: https://azure.microsoft.com/blog/2013/11/18/disabling-arrs-instance-affinity-in-windows-azure-web-sites/
 [Create a cache in Azure Redis Cache]: /documentation/articles/cache-dotnet-how-to-use-azure-redis-cache/
 

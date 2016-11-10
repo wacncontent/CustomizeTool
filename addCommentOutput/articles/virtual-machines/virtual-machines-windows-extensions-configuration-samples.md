@@ -9,9 +9,14 @@
    tags="azure-resource-manager"/>
 
 <tags
-	ms.service="virtual-machines-windows"
-	ms.date="03/29/2016"
-	wacn.date=""/>
+   ms.service="virtual-machines-windows"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="vm-windows"
+   ms.workload="infrastructure-services"
+   ms.date="03/29/2016"
+   wacn.date=""
+   ms.author="kundanap"/>
 
 # Azure Windows VM Extension Configuration Samples
 
@@ -19,19 +24,8 @@
 - [PowerShell - Template](/documentation/articles/virtual-machines-windows-extensions-configuration-samples/)
 - [CLI - Template](/documentation/articles/virtual-machines-linux-extensions-configuration-samples/)
 
-
-[AZURE.INCLUDE [arm-api-version-powershell](../includes/arm-api-version-powershell.md)]
-
-
 <br>
 
-
-
-> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the Resource Manager deployment model, which Azure recommends for most new deployments instead of the classic deployment model.
-
-
-
-
 This article provides sample configuration for configuring Azure VM Extensions for Windows VMs.
 
 To learn more about these extensions, see [Azure VM Extensions Overview.](/documentation/articles/virtual-machines-windows-extensions-features/)
@@ -98,7 +92,7 @@ Before deploying the extension please check the latest extension version and rep
               "fileUris": [
                   "http: //Yourstorageaccount.blob.core.chinacloudapi.cn/customscriptfiles/start.ps1"
               ],
-              "commandToExecute": "powershell.exe-ExecutionPolicyUnrestricted -start.ps1"
+              "commandToExecute": "powershell.exe -ExecutionPolicy Unrestricted -start.ps1"
           },
           "protectedSettings": {
             "storageAccountName": "yourStorageAccountName",
@@ -125,10 +119,10 @@ Please refer to CustomScript version 1.4 for parameter description. Version 1.7 
                 "fileUris": [
                     "http: //Yourstorageaccount.blob.core.chinacloudapi.cn/customscriptfiles/start.ps1"
                 ],
-                "commandToExecute": "powershell.exe-ExecutionPolicyUnrestricted -start.ps1"
+                "commandToExecute": "powershell.exe -ExecutionPolicy Unrestricted -start.ps1"
             },
             "protectedSettings": {
-              "commandToExecute": "powershell.exe-ExecutionPolicyUnrestricted -start.ps1",
+              "commandToExecute": "powershell.exe -ExecutionPolicy Unrestricted -start.ps1",
               "storageAccountName": "yourStorageAccountName",
               "storageAccountKey": "yourStorageAccountKey"
             }

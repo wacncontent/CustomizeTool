@@ -7,10 +7,15 @@
 	manager="wpickett" 
 	editor=""/>
 
-<tags
-	ms.service="app-service-web"
-	ms.date="06/27/2016"
-	wacn.date=""/>
+<tags 
+	ms.service="app-service-web" 
+	ms.workload="web" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="Java" 
+	ms.topic="article" 
+	ms.date="09/20/2016" 
+	wacn.date="" 
+	ms.author="asirveda;robmcm"/>
 
 # Debug a Java Web App on Azure in Eclipse
 
@@ -27,7 +32,7 @@ When you have completed this tutorial, your application will look similar to the
 * A distribution of a Java-based web server or application server, such as Apache Tomcat or Jetty.
 * An Azure subscription, which can be acquired from <https://azure.microsoft.com/free/> or </pricing/overview/>.
 * The Azure Toolkit for Eclipse. For more information, see [Installing the Azure Toolkit for Eclipse].
-* A Dynamic Web Project created and deployed to Azure Web App; for example see [Create a Hello World Web App for Azure in Eclipse].
+* A Dynamic Web Project created and deployed to Azure App Service; for example see [Create a Hello World Web App for Azure in Eclipse].
 
 ## To Debug a Java Web App on Azure
 
@@ -45,7 +50,7 @@ To complete these steps in this section, you can use an existing Dynamic Web Pro
 
     1. Click **OK** to close the **Preferences** dialog.
 
-1. In  Eclipse's Project Explorer view, right click the Dynamic Web Project which you have deployed to Azure. When the context menu appears, select **Debug As**, and then click **App Services**.
+1. In  Eclipse's Project Explorer view, right click the Dynamic Web Project which you have deployed to Azure. When the context menu appears, select **Debug As**, and then click **Azure Web App**.
 
     ![][03]
 
@@ -78,18 +83,18 @@ For more information about using Azure with Java, see the [Azure Java Developer 
 
 For additional information about creating Azure Web Apps, see the [Web Apps Overview].
 
-[AZURE.INCLUDE [app-service-web-try-app-service](../includes/app-service-web-try-app-service.md)]
+[AZURE.INCLUDE [app-service-web-try-app-service](../../includes/app-service-web-try-app-service.md)]
 
 <!-- URL List -->
 
-[Azure Web App]: /documentation/services/web-sites/
+[Azure App Service]: /documentation/articles/app-service-changes-existing-services/
 [Azure Toolkit for Eclipse]: /documentation/articles/azure-toolkit-for-eclipse/
 [Installing the Azure Toolkit for Eclipse]: /documentation/articles/azure-toolkit-for-eclipse-installation/
 [Create a Hello World Web App for Azure in Eclipse]: /documentation/articles/app-service-web-eclipse-create-hello-world-web-app/
 [Sample Dynamic Web Project]: http://go.microsoft.com/fwlink/?LinkId=817337
 
 [Azure Java Developer Center]: /develop/java/
-[Web Apps Overview]: /home/features/web-site/
+[Web Apps Overview]: /documentation/articles/app-service-web-overview/
 
 <!-- IMG List -->
 

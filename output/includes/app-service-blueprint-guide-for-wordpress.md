@@ -1,4 +1,4 @@
-## WordPress and Azure
+## WordPress and Azure App Service
 
 * [What is WordPress?](https://wordpress.org/)
 * [How to setup enterprise-class WordPress web app](/documentation/articles/web-sites-php-enterprise-wordpress/)

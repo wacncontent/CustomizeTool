@@ -4,17 +4,22 @@
    services="hdinsight"
    documentationCenter=".net"
    authors="Blackmist"
-   manager="paulettm"
+   manager="jhubbard"
    editor="cgronlun"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="05/04/2016"
-	wacn.date=""/>
+   ms.service="hdinsight"
+   ms.devlang="dotnet"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="big-data"
+   ms.date="05/04/2016"
+   wacn.date=""
+   ms.author="larryfr"/>
 
 #Run Pig jobs using the .NET SDK for Hadoop in HDInsight
 
-[AZURE.INCLUDE [pig-selector](../includes/hdinsight-selector-use-pig.md)]
+[AZURE.INCLUDE [pig-selector](../../includes/hdinsight-selector-use-pig.md)]
 
 This document provides an example of using the .NET SDK for Hadoop to submit Pig jobs to a Hadoop on HDInsight cluster.
 
@@ -118,7 +123,7 @@ Save the subscription ID, as it will be used later.
 					var ExistingClusterPassword = "<HDInsightClusterHttpUserPassword>";
 		
 		            // The Pig Latin statements to run
-		            string queryString = "LOGS = LOAD 'wasb:///example/data/sample.log';" +
+		            string queryString = "LOGS = LOAD 'wasbs:///example/data/sample.log';" +
 		                "LEVELS = foreach LOGS generate REGEX_EXTRACT($0, '(TRACE|DEBUG|INFO|WARN|ERROR|FATAL)', 1)  as LOGLEVEL;" +
 		                "FILTEREDLEVELS = FILTER LEVELS by LOGLEVEL is not null;" +
 		                "GROUPEDLEVELS = GROUP FILTEREDLEVELS by LOGLEVEL;" +

@@ -4,13 +4,18 @@ description="Information on the various ways that you can delete an HDInsight cl
 services="hdinsight"
 documentationCenter=""
 authors="Blackmist"
-manager="paulettm"
+manager="jhubbard"
 editor="cgronlun"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="05/20/2016"
-	wacn.date=""/>
+ms.service="hdinsight"
+ms.devlang="na"
+ms.topic="article"
+ms.tgt_pltfrm="na"
+ms.workload="big-data"
+ms.date="08/09/2016"
+wacn.date=""
+ms.author="larryfr"/>
 
 #How to delete an HDInsight cluster
 

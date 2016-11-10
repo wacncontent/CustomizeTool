@@ -1,9 +1,4 @@
-
-## How to create a VNet using a network config file in the Azure portal
-
-
-##<a name="how-to-create-a-vnet-using-a-network-config-file-in-the-azure-portal"></a> How to create a VNet using a network config file in the Azure Classic Management Portal
-
+##  <a name="how-to-create-a-vnet-using-a-network-config-file-in-the-azure-portal"></a>  How to create a VNet using a network config file in the  Azure portal  Azure Classic Management Portal 
 
 Azure uses an xml file to define all VNets available to a subscription. You can download this file, and edit it to modify or delete existing VNets, and create new ones. In this document, you will learn how to download this file, referred to as network configuration (or netcgf) file, and edit it to create a new VNet. Check the [Azure virtual network configuration schema](https://msdn.microsoft.com/zh-cn/library/azure/jj157100.aspx) to learn more about the network configuration file.
 

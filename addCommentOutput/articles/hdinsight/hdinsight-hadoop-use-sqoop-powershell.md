@@ -2,7 +2,7 @@
 	pageTitle="Use Hadoop Sqoop in HDInsight | Azure"
 	description="Learn how to use Azure PowerShell from a workstation to run Sqoop import and export between an Hadoop cluster and an Azure SQL database."
 	editor="cgronlun"
-	manager="paulettm"
+	manager="jhubbard"
 	services="hdinsight"
 	documentationCenter=""
 	tags="azure-portal"
@@ -10,12 +10,17 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="05/27/2016"
-	wacn.date=""/>
+	ms.workload="big-data"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/02/2016"
+	wacn.date=""
+	ms.author="jgao"/>
 
 # Run Sqoop jobs using Azure PowerShell for Hadoop in HDInsight
 
-[AZURE.INCLUDE [sqoop-selector](../includes/hdinsight-selector-use-sqoop.md)]
+[AZURE.INCLUDE [sqoop-selector](../../includes/hdinsight-selector-use-sqoop.md)]
 
 Learn how to use Azure PowerShell to run Sqoop jobs in HDInsight to import and export between HDInsight cluster and Azure SQL database or SQL Server database.
 
@@ -30,7 +35,7 @@ Before you begin this tutorial, you must have the following:
 
 - **A workstation with Azure PowerShell**.
 
-    [AZURE.INCLUDE [upgrade-powershell](../includes/hdinsight-use-latest-powershell.md)]
+    [AZURE.INCLUDE [upgrade-powershell](../../includes/hdinsight-use-latest-powershell.md)]
 
 - **A Hadoop cluster in HDInsight**. See [Create cluster and SQL database](/documentation/articles/hdinsight-use-sqoop/#create-cluster-and-sql-database).
 
@@ -62,7 +67,10 @@ The following PowerShell script pre-processes the source file, and exports it to
 
 
     try{Get-AzureSubscription}
-    catch{Add-AzureAccount -Environment AzureChinaCloud}
+    catch{
+			Clear-AzureProfile
+			Import-AzurePublishSettingsFile -PublishSettingsFile path/to/<subscription name>-<date>-credentials.publishsettings
+		}
 
     #endregion
         
@@ -208,8 +216,14 @@ The following PowerShell script pre-processes the source file, and exports it to
     Get-AzureHDInsightJobOutput -Cluster $hdinsightClusterName -JobId $sqoopJob.JobId -StandardOutput
 
     #endregion
+
 
+##Limitations
 
+* Bulk export - With Linux-based HDInsight, the Sqoop connector used to export data to Microsoft SQL Server or Azure SQL Database does not currently support bulk inserts.
+
+* Batching - With Linux-based HDInsight, When using the `-batch` switch when performing inserts, Sqoop will perform multiple inserts instead of batching the insert operations.
+
 
 ##Next steps
 

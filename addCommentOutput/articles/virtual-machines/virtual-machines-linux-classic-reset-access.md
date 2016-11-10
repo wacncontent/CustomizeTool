@@ -9,9 +9,14 @@
         tags="azure-service-management"/>
 
 <tags
-	ms.service="virtual-machines-linux"
-	ms.date="06/14/2016"
-	wacn.date=""/>
+        ms.service="virtual-machines-linux"
+        ms.workload="infrastructure-services"
+        ms.tgt_pltfrm="vm-linux"
+        ms.devlang="na"
+        ms.topic="article"
+        ms.date="06/14/2016"
+        wacn.date=""
+        ms.author="cynthn"/>
 
 # How to reset a Linux VM password or SSH key, fix the SSH configuration, and check disk consistency using the VMAccess extension
 
@@ -19,10 +24,10 @@
 If you can't connect to a Linux virtual machine on Azure because of a forgotten password, an incorrect Secure Shell (SSH) key, or a problem with the SSH configuration, use the VMAccessForLinux extension with the Azure CLI to reset the password or SSH key, fix the SSH configuration, and check disk consistency. 
 
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] [Resource Manager model](https://github.com/Azure/azure-linux-extensions/tree/master/VMAccess).
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)] Learn how to [perform these steps using the Resource Manager model](https://github.com/Azure/azure-linux-extensions/tree/master/VMAccess).
 
 
-> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the [Resource Manager model](https://github.com/Azure/azure-linux-extensions/tree/master/VMAccess).
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager model. Learn how to [perform these steps using the Resource Manager model](https://github.com/Azure/azure-linux-extensions/tree/master/VMAccess).
 
 
 With the Azure CLI, you use the **azure vm extension set** command from your command-line interface (Bash, Terminal, Command prompt) to access commands. Run **azure help vm extension set** for detailed extension usage.

@@ -87,4 +87,4 @@ All the automation and scripts that you've built will continue to work for the e
 
 **Where can I find examples of Azure Resource Manager templates?**
 
-A comprehensive set of starter templates can be found on [Azure Resource Manager QuickStart Templates](https://azure.microsoft.com/documentation/templates/).
+A comprehensive set of starter templates can be found on [Azure Resource Manager QuickStart Templates](https://github.com/Azure/azure-quickstart-templates/).

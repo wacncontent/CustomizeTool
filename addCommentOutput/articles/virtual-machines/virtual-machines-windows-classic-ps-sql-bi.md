@@ -9,19 +9,20 @@
 	tags="azure-service-management"/>
 <tags
 	ms.service="virtual-machines-windows"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="vm-windows-sql-server"
+	ms.workload="infrastructure-services"
 	ms.date="05/13/2016"
-	wacn.date=""/>
+	wacn.date=""
+	ms.author="asaxton" />
 
 # SQL Server Business Intelligence in Azure Virtual Machines
 
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]
+
 
-
-> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager model.
-
-
-
 The Azure Virtual Machine gallery includes images that contain SQL Server installations. The SQL Server editions supported in the gallery images are the same installation files you can install to on-premises computers and virtual machines. This topic summarizes the SQL Server Business Intelligence (BI) Features installed on the images and configuration steps required after a virtual machine is provisioned. This topic also describes supported deployment topologies for BI features and best practices.
 
 ## License Considerations
@@ -30,9 +31,11 @@ There are two ways to license SQL Server in Azure Virtual Machines:
 
 1. License mobility benefits that are part of Software Assurance. For more information, see [License Mobility through Software Assurance on  Azure](https://azure.microsoft.com/pricing/license-mobility/)  Azure](/pricing/license-mobility/) .
 
-1. Pay per hour rate of Azure Virtual Machines with SQL Server installed. See the "SQL Server" section in [Virtual Machines Pricing](/home/features/virtual-machines/pricing/).
+1. Pay per hour rate of Azure Virtual Machines with SQL Server installed. See the "SQL Server" section in [Virtual Machines Pricing](/pricing/details/virtual-machines/).
+
 
-For more information on licensing and current rates, see [Virtual Machines Licensing  FAQ](https://azure.microsoft.com/pricing/licensing-faq/%20/)  FAQ](/pricing/licensing-faq/%20/) .
+For more information on licensing and current rates, see [Virtual Machines Licensing FAQ](https://azure.microsoft.com/pricing/licensing-faq/%20/).
+
 
 ## SQL Server Images Available in Azure Virtual Machine Gallery
 
@@ -323,7 +326,7 @@ Or run C:\SQLServer_13.0_full\setup.exe, C:\SQLServer_12.0_full\setup.exe or C:\
 >[AZURE.NOTE] The first time you run SQL Server setup, more setup files may be downloaded and require a reboot of the virtual machine and a restart of SQL Server setup.
 
 >
->If you need to repeatedly customize the image selected from the Azure Virtual Machine, consider creating your own SQL Server image. Analysis Services SysPrep functionality was enabled with SQL Server 2012 SP1 CU2. For more information, see [Considerations for Installing SQL Server Using SysPrep](https://msdn.microsoft.com/zh-cn/library/ee210754.aspx).
+>If you need to repeatedly customize the image selected from the Azure Virtual Machine, consider creating your own SQL Server image. Analysis Services SysPrep functionality was enabled with SQL Server 2012 SP1 CU2. For more information, see [Considerations for Installing SQL Server Using SysPrep](https://msdn.microsoft.com/zh-cn/library/ee210754.aspx) and [Sysprep Support for Server Roles](https://msdn.microsoft.com/windows/hardware/commercialize/manufacture/desktop/sysprep-support-for-server-roles).
 
 
 ><p>If you need to repeatedly customize the image selected from the Azure Virtual Machine, consider creating your own SQL Server image. Analysis Services SysPrep functionality was enabled with SQL Server 2012 SP1 CU2. For more information, see [Considerations for Installing SQL Server Using SysPrep](https://msdn.microsoft.com/zh-cn/library/ee210754.aspx).

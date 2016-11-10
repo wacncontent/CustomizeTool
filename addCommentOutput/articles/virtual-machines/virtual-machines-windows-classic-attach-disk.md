@@ -10,16 +10,21 @@
 
 <tags
 	ms.service="virtual-machines-windows"
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-windows"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="05/17/2016"
-	wacn.date=""/>
+	wacn.date=""
+	ms.author="cynthn"/>
 
 # Attach a data disk to a Windows virtual machine created with the classic deployment model
 
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] [Resource Manager model](/documentation/articles/virtual-machines-windows-attach-disk-portal/).
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)] Learn how to [perform these steps using the Resource Manager model](/documentation/articles/virtual-machines-windows-attach-disk-portal/).
 
 
-> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the [Resource Manager model](/documentation/articles/virtual-machines-windows-attach-disk-portal/).
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager model. Learn how to [perform these steps using the Resource Manager model](/documentation/articles/virtual-machines-windows-attach-disk-portal/).
 
 
 If you need an additional data disk, you can attach an empty disk or an existing disk with data to a VM. In both cases, the disks are .vhd files that reside in an Azure storage account. In the case of a new disk, after you attach the disk, you'll also need to initialize it so it's ready for use by a Windows VM.
@@ -33,13 +38,13 @@ Here's a [video walkthrough](https://azure.microsoft.com/documentation/videos/at
 
 
 
-[AZURE.INCLUDE [howto-attach-disk-windows-linux](../includes/howto-attach-disk-windows-linux.md)]
+[AZURE.INCLUDE [howto-attach-disk-windows-linux](../../includes/howto-attach-disk-windows-linux.md)]
 
 
 ## Initialize the disk
 
 
-##<a id="initializeinWS"></a> Initialize the disk
+## <a id="initializeinWS"></a> Initialize the disk
 
 
 1. Connect to the virtual machine. For instructions, see [How to log on to a virtual machine running Windows Server][logon].

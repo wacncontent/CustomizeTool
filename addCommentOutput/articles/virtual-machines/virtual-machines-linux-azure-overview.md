@@ -3,62 +3,172 @@
    description="Describes Azure Compute, Storage, and Networking services with Linux virtual machines."
    services="virtual-machines-linux"
    documentationCenter="virtual-machines-linux"
-   authors="rickstercdn"
+   authors="vlivech"
    manager="timlt"
    editor=""/>
 
 <tags
-	ms.service="virtual-machines-linux"
-	ms.date="05/24/2016"
-	wacn.date=""/>
+   ms.service="virtual-machines-linux"
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="vm-linux"
+   ms.workload="infrastructure"
+   ms.date="09/14/2016"
+   wacn.date=""
+   ms.author="v-livech"/>
 
 # Azure and Linux
+
 Azure is a growing collection of integrated public cloud services including analytics, Virtual Machines, databases, mobile, networking, storage, and web -- ideal for hosting your solutions.  Azure provides a scalable computing platform that allows you to only pay for what you use, when you want it - without having to invest in on premises hardware.  Azure is ready when you are to scale your solutions up and out to whatever scale you require to service the needs of your clients.
- 
-## Azure Virtual Machines
-Azure virtual machines allow you to deploy a wide range of computing solutions in an agile way. You can deploy virtually any workload and any language on nearly any operating system - Windows, Linux, or a custom created one from any one of our growing list of partners. Still don't see what you are looking for?  Don't worry - you can also bring your own images from on-premises. 
- 
-## Getting Started with Linux in Azure
-
-Use Azure Virtual Machines, Storage, and Networking together to provide "infrastructure-as-a-service" at Internet scale for your Linux computing needs. To get started using Linux on Azure, you're going to need:
-
-1. A trial account. [Go get one](/pricing/1rmb-trial/).
-2. The Azure Command-line Interface for Linux, Mac, and Windows (the Azure CLI). [Install it](/documentation/articles/xplat-cli-install/).
-3. A Linux VM. [Create it](/documentation/articles/virtual-machines-linux-quick-create-cli/).
-4. More information about Linux and Azure, including how to qualify for the  [Service  Service  Level Agreement  (SLA)](https://azure.microsoft.com/support/legal/sla/virtual-machines/v1_0/)  (SLA) . **Read this document, even if you hate legal documents**.
-
-## Logistics: Regions, Distributions, Availability, VM Sizes and Quotas
 
-### Regions
-Azure resources are distributed across multiple geographical regions around the world.  A "region" represents multiple data centers in a single geographical area.  As of January 1, 2016, this includes: 8 in America, 2 in Europe, 6 in Asia Pacific, 2 in mainland China and 3 in India.  If you want a complete list of all Azure regions, we maintain a list of existing and newly announced regions **[here](https://azure.microsoft.com/regions/)**.  
+
+If you are familiar with the various features of Amazon's AWS, you can examine the Azure vs AWS [definition mapping document](https://azure.microsoft.com/campaigns/azure-vs-aws/mapping/).
+
+
+## Regions
+Azure resources are distributed across multiple geographical regions around the world.  A "region" represents multiple data centers in a single geographical area.  As of January 1, 2016, this includes: 8 in America, 2 in Europe, 6 in Asia Pacific, 2 in mainland China and 3 in India.  If you want a complete list of all Azure regions, we maintain a list of existing and newly announced regions.
+
+- [Azure Regions](https://azure.microsoft.com/regions/)
 
 
-### Distributions
-Azure supports running a number of popular Linux distributions provided and maintained by a number of partners.  You will find distributions such as CentOS, Debian, Red Hat Enterprise, Ubuntu, FreeBSD and more in the Azure  Marketplace  gallery . We actively work with various Linux communities to add even more flavors to the Endorsed Distribution list. **[Check out Current Distros](/documentation/articles/virtual-machines-linux-endorsed-distros/)**
-If your preferred Linux distro of choice is not currently present in the gallery, you can "Bring your own Linux" VM by following the guidelines **[on this page.](/documentation/articles/virtual-machines-linux-create-upload-generic/)**
+## Availability
+In order for your deployment to qualify for our 99.95 VM Service Level Agreement, you need to deploy two or more VMs running your workload inside of an availability set. This will ensure your VMs are distributed across multiple fault domains in our data centers as well as deployed onto hosts with different maintenance windows. The full [Azure SLA](/support/sla/virtual-machines/) explains the guaranteed availability of Azure as a whole.
 
-## Availability and the Azure SLA
-In order for your deployment to qualify for our 99.95 VM Service Level Agreement, you need to deploy two or more VMs running your workload inside of an availability set. This will ensure your VMs are distributed across multiple fault domains in our data centers as well as deployed onto hosts with different maintenance windows. For full details of our SLA you can view it **[online here](https://azure.microsoft.com/support/legal/sla/virtual-machines/v1_0/)**.  
+## Azure Virtual Machines & Instances
+Azure supports running a number of popular Linux distributions provided and maintained by a number of partners.  You will find distributions such as Red Hat Enterprise, CentOS, Debian, Ubuntu, CoreOS, RancherOS, FreeBSD, and more in the Azure Marketplace. We actively work with various Linux communities to add even more flavors to the [Azure endorsed Linux Distros](/documentation/articles/virtual-machines-linux-endorsed-distros/) list.
 
-## VM Sizes and Quotas
-When you deploy a VM in Azure, you will select a VM size within one of our series of sizes that is suitable to your workload. The size also affects the processing power, memory and storage capacity of the virtual machine. You are billed based on the amount of time the VM is running and consuming its allocated resources. For a more complete list, see the following article on [Sizes of Virtual Machines](/documentation/articles/virtual-machines-linux-sizes/).
+If your preferred Linux distro of choice is not currently present in the gallery, you can "Bring your own Linux" VM by [creating and uploading a Linux VHD in Azure](/documentation/articles/virtual-machines-linux-create-upload-generic/).
 
-Here are some basic guidelines for selecting a VM size from one of our series (A, D,  DS, G  and  GS)  Dv2) .
+Azure virtual machines allow you to deploy a wide range of computing solutions in an agile way. You can deploy virtually any workload and any language on nearly any operating system - Windows, Linux, or a custom created one from any one of our growing list of partners. Still don't see what you are looking for?  Don't worry - you can also bring your own images from on-premises.
+
+## VM Sizes
+When you deploy a VM in Azure, you are going to select a VM size within one of our series of sizes that is suitable to your workload. The size also affects the processing power, memory, and storage capacity of the virtual machine. You are billed based on the amount of time the VM is running and consuming its allocated resources. A complete list of [sizes of Virtual Machines](/documentation/articles/virtual-machines-linux-sizes/).
+
+Here are some basic guidelines for selecting a VM size from one of our series (A, D, DS, G and GS).
 
 * A-series VMs are our value priced entry-level VMs for light workloads and Dev/Test scenarios. They are widely available in all regions and can connect and use all standard resources available to virtual machines.
 
 * A-series sizes (A8 - A11) are special compute intensive configurations suitable for high-performance computing cluster applications.
 
-* D-series VMs are designed to run applications that demand higher compute power and temporary disk performance. D-series VMs provide faster processors, a higher memory-to-core ratio, and a solid-state drive (SSD) for the temporary disk. 
-* Dv2-series, is the latest version of our D-series, features a more powerful CPU. The Dv2-series CPU is about 35% faster than the D-series CPU. It is based on the latest generation 2.4 GHz Intel Xeon® E5-2673 v3 (Haswell) processor, and with the Intel Turbo Boost Technology 2.0, can go up to 3.2 GHz. The Dv2-series has the same memory and disk configurations as the D-series.
+* D-series VMs are designed to run applications that demand higher compute power and temporary disk performance. D-series VMs provide faster processors, a higher memory-to-core ratio, and a solid-state drive (SSD) for the temporary disk.
+* Dv2-series, is the latest version of our D-series, features a more powerful CPU. The Dv2-series CPU is about 35% faster than the D-series CPU. It is based on the latest generation 2.4 GHz Intel Xeon® E5-2673 v3 (Haskell) processor, and with the Intel Turbo Boost Technology 2.0, can go up to 3.2 GHz. The Dv2-series has the same memory and disk configurations as the D-series.
 
 * G-series VMs offer the most memory and run on hosts that have Intel Xeon E5 V3 family processors.
 
 
-Note: DS-series  and GS-series  VMs have access to Premium Storage - our SSD backed high-performance, low-latency storage for I/O intensive workloads. Premium Storage is available in certain regions. For details, see **[Premium Storage: High-performance storage for Azure virtual machine workloads](/documentation/articles/storage-premium-storage/)**.
+Note: DS-series  and GS-series  VMs have access to Premium Storage - our SSD backed high-performance, low-latency storage for I/O intensive workloads. Premium Storage is available in certain regions. For details, see:
 
-Each Azure Subscription has default quota limits in place that could impact the deployment of a large number of VMs for your project. The current limit on a per subscription basis is 20 VMs per region.  This quota limits can be raised by filing a support ticket requesting a limit increase.  For more details on quota limits, please see **[Azure Subscription Service Limits](/documentation/articles/azure-subscription-service-limits/)**
+- [Premium Storage: High-performance storage for Azure virtual machine workloads](/documentation/articles/storage-premium-storage/)
+
+## Automation
+To achieve a proper DevOps culture, all infrastructure must be code.  When all the infrastructure lives in code it can easily be recreated (Phoenix Servers).  Azure works with all the major automation tooling like Ansible, Chef, SaltStack, and Puppet.  Azure also has its own tooling for automation:
+
+- [Azure Templates](/documentation/articles/virtual-machines-linux-create-ssh-secured-vm-from-template/)
+
+- [Azure VMAccess](/documentation/articles/virtual-machines-linux-using-vmaccess-extension/)
+
+Azure is rolling out support for [cloud-init](http://cloud-init.io/) across most Linux Distros that support it.  Currently Canonical's Ubuntu VMs are deployed with cloud-init enabled by default.  RedHats RHEL, CentOS, and Fedora support cloud-init, however the Azure images maintained by RedHat do not have cloud-init installed.  To use cloud-init on a RedHat family OS, you must create a custom image with cloud-init installed.
+
+- [Using cloud-init on Azure Linux VMs](/documentation/articles/virtual-machines-linux-using-cloud-init/)
+
+## Quotas
+Each Azure Subscription has default quota limits in place that could impact the deployment of a large number of VMs for your project. The current limit on a per subscription basis is 20 VMs per region.  Quota limits can be raised by filing a support ticket requesting a limit increase.  For more details on quota limits:
+
+- [Azure Subscription Service Limits](/documentation/articles/azure-subscription-service-limits/)
+
+
+## Partners
+
+Microsoft works closely with our partners to ensure the images available are updated and optimized for an Azure runtime.  For more information on our partners check their marketplace pages below.
+
+- [Linux on Azure-Endorsed Distributions](/documentation/articles/virtual-machines-linux-endorsed-distros/)
+
+
+Redhat - [Azure Marketplace - RedHat Enterprise Linux 7.2](https://azure.microsoft.com/marketplace/partners/redhat/redhatenterpriselinux72/)
+
+Canonical - [Azure Marketplace - Ubuntu Server 16.04 LTS](https://azure.microsoft.com/marketplace/partners/canonical/ubuntuserver1604lts/)
+
+Debian - [Azure Marketplace - Debian 8 "Jessie"](https://azure.microsoft.com/marketplace/partners/credativ/debian8/)
+
+FreeBSD - [Azure Marketplace - FreeBSD 10.3](https://azure.microsoft.com/marketplace/partners/microsoft/freebsd103/)
+
+CoreOS - [Azure Marketplace - CoreOS (Stable)](https://azure.microsoft.com/marketplace/partners/coreos/coreosstable/)
+
+RancherOS - [Azure Marketplace - RancherOS](https://azure.microsoft.com/marketplace/partners/rancher/rancheros/)
+
+Bitnami - [Bitnami Library for Azure](https://azure.bitnami.com/)
+
+Mesosphere - [Azure Marketplace - Mesosphere DC/OS on Azure](https://azure.microsoft.com/marketplace/partners/mesosphere/dcosdcos/)
+
+Docker - [Azure Marketplace - Azure Container Service with Docker Swarm](https://azure.microsoft.com/marketplace/partners/microsoft/acsswarms/)
+
+Jenkins - [Azure Marketplace - CloudBees Jenkins Platform](https://azure.microsoft.com/marketplace/partners/cloudbees/jenkins-platformjenkins-platform/)
+
+
+
+## Getting Setup on Azure
+To begin using Azure you need an Azure account, the Azure cli installed, and a pair of SSH public and private keys.
+
+## Signup for an account
+The first step in using the Azure Cloud is to signup for an Azure account.  Go to the [Azure Account Signup](/pricing/1rmb-trial/) page to get started.
+
+## Install the CLI
+With your new Azure account, you can get started immediately using the Azure portal, which is a web-based admin panel.  To manage the Azure Cloud via the command line, you install the `azure-cli`.  Install the [Azure CLI ](/documentation/articles/xplat-cli-install/)on your Mac or Linux workstation.
+
+## Create an SSH key pair
+Now you have an Azure account, the Azure web portal, and the Azure CLI.  The next step is to create an SSH key pair that is used to SSH into Linux without using a password.  [Create SSH keys on Linux and Mac](/documentation/articles/virtual-machines-linux-mac-create-ssh-keys/) to enable password-less logins and better security.
+
+## Getting Started with Linux on Azure
+With your Azure account setup, the Azure CLI installed and SSH keys created you are now ready to start building out an infrastructure in the Azure Cloud.  The first task is to create a couple VMs.
+
+## Create a VM on the cli
+Creating a Linux VM on the cli is a quick way to deploy a VM without leaving the terminal you are working in.  Everything you can specify on the web portal is available via a command line flag or switch.  
+
+- [Create a Linux VM using the CLI](/documentation/articles/virtual-machines-linux-quick-create-cli/)
+
+## Create a VM in the portal
+Creating a Linux VM on the Azure web portal is a way to easily point and click through the various options to get to a deployment.  Instead of using command line flags or switches, you are able to view a nice web layout of various options and settings.  Everything available via the command line interface is also available on the portal.
+
+- [Create a Linux VM using the Portal](/documentation/articles/virtual-machines-linux-quick-create-portal/)
+
+## Login using SSH without a password
+The VM is now running on Azure and you are ready to login.  Using passwords to login via SSH is insecure and time consuming.  Using SSH keys is the most secure way and also the quickest way to login.  When you create you Linux VM via the portal or the CLI, you have two authentication choices.  If you choose a password for SSH, Azure configures the VM to allow logins via passwords.  If you chose to use an SSH public key, Azure configures the VM to only allow logins via SSH keys and disables password logins. To secure your Linux VM by only allowing SSH key logins, use the SSH public key option during the VM creation on the portal or cli.
+
+- [Disable SSH passwords on your Linux VM by configuring SSHD](/documentation/articles/virtual-machines-linux-mac-disable-ssh-password-usage/)
+
+## Related Azure Components
+
+## Storage
+
+- [Introduction to Azure Storage](/documentation/articles/storage-introduction/)
+
+- [Add a disk to a Linux VM using the azure-cli](/documentation/articles/virtual-machines-linux-add-disk/)
+
+- [How to attach a data disk to a Linux VM in the Azure portal](/documentation/articles/virtual-machines-linux-attach-disk-portal/)
+
+## Networking
+
+- [Virtual Network Overview](/documentation/articles/virtual-networks-overview/)
+
+- [IP addresses in Azure](/documentation/articles/virtual-network-ip-addresses-overview-arm/)
+
+- [Opening ports to a Linux VM in Azure](/documentation/articles/virtual-machines-linux-nsg-quickstart/)
+
+- [Create a Fully Qualified Domain Name in the Azure portal](/documentation/articles/virtual-machines-linux-portal-create-fqdn/)
+
+
+## Containers
+
+- [Virtual Machines and Containers in Azure](/documentation/articles/virtual-machines-linux-containers/)
+
+- [Azure Container Service introduction](/documentation/articles/container-service-intro/)
+
+- [Deploy an Azure Container Service cluster](/documentation/articles/container-service-deployment/)
 
 ## Next steps
 
-A trial account. **[Go get one.](/pricing/1rmb-trial/)** If you already have one, to try it out, **[install the Azure CLI.](/documentation/articles/xplat-cli-install/)**. If you've done that, then [go create your Linux VM now](/documentation/articles/virtual-machines-linux-quick-create-cli/).
+You now have an overview of Linux on Azure.  The next step is to dive in and create a few VM'S!
+
+- [Create a Linux VM on Azure using the Portal](/documentation/articles/virtual-machines-linux-quick-create-portal/)
+
+- [Create a Linux VM on Azure by using the CLI](/documentation/articles/virtual-machines-linux-quick-create-cli/)

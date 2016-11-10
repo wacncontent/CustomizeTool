@@ -1,20 +1,25 @@
 <properties 
-	pageTitle="Manage a web app in Azure" 
-	description="Links to resources for managing a web app in Azure." 
+	pageTitle="Manage a web app in Azure App Service" 
+	description="Links to resources for managing a web app in Azure App Service." 
 	services="app-service\web" 
 	documentationCenter="" 
 	authors="erikre" 
 	manager="wpickett" 
 	editor=""/>
 
-<tags
-	ms.service="app-service-web"
-	ms.date="04/27/2016"
-	wacn.date=""/>
+<tags 
+	ms.service="app-service-web" 
+	ms.workload="web" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="08/24/2016" 
+	wacn.date="" 
+	ms.author="rachelap"/>
 
-# Manage a web app in Azure
+# Manage a web app in Azure App Service
 
-This topic contains links to resources for managing a web app in [Azure Web App](/documentation/services/web-sites/). Management includes all of the tasks that keep your web app running smoothly. 
+This topic contains links to resources for managing a web app in [Azure App Service](/documentation/articles/app-service-changes-existing-services/). Management includes all of the tasks that keep your web app running smoothly. 
 
 Over the lifetime of a web app, you will perform different management tasks, as you move from initial deployment to normal operation, maintenance, and updates.
 
@@ -24,14 +29,14 @@ Many web app management tasks can be performed in the Azure Portal.
 
 ### Choose a tier
 
-Azure is offered in five tiers: Free, Shared, Basic, Standard, and Premium. For information about the features and pricing for each tier, see [Pricing details](/home/features/web-site/pricing/). 
+Azure App Service is offered in five tiers: Free, Shared, Basic, Standard, and Premium. For information about the features and pricing for each tier, see [Pricing details](/pricing/details/app-service/). 
 
 - [App Service plans](/documentation/articles/azure-web-sites-web-hosting-plans-in-depth-overview/) let you group multiple web apps under the same tier.
 - You can always [switch tiers](/documentation/articles/web-sites-scale/) after you create your web app.
 
 ### Configuration
 
-Use the [Azure Portal](https://portal.azure.cn/) to set various configuration options. For details, see [Configure web apps in Azure](/documentation/articles/web-sites-configure/). Here is a quick checklist:
+Use the [Azure Portal](https://portal.azure.cn/) to set various configuration options. For details, see [Configure web apps in Azure App Service](/documentation/articles/web-sites-configure/). Here is a quick checklist:
 
 - Select **runtime versions** for .NET, PHP, Java, or Python, if needed.
 - Enable **WebSockets** if your web app uses the WebSocket protocol. (This includes apps that use [ASP.NET SignalR](http://www.asp.net/signalr) or [socket.io](/documentation/articles/web-sites-nodejs-chat-app-socketio/).)
@@ -40,13 +45,13 @@ Use the [Azure Portal](https://portal.azure.cn/) to set various configuration op
 
 In addition to these basic configuration settings, you may want to configure the following:
 
-- **Secure Socket Layer (SSL)** encryption. To use SSL with a custom domain name, you must get an SSL certificate and configure your web app to use it. See [Enable HTTPS for a web app in Azure](/documentation/articles/web-sites-configure-ssl-certificate/).
-- **Custom domain name.** Your web app automatically has a subdomain under chinacloudsites.cn. You can associate a custom domain name, such as contoso.com. See [Configure a custom domain name in Azure Web App](/documentation/articles/web-sites-custom-domain-name/).
+- **Secure Socket Layer (SSL)** encryption. To use SSL with a custom domain name, you must get an SSL certificate and configure your web app to use it. See [Enable HTTPS for a web app in Azure App Service](/documentation/articles/web-sites-configure-ssl-certificate/).
+- **Custom domain name.** Your web app automatically has a subdomain under chinacloudsites.cn. You can associate a custom domain name, such as contoso.com. See [Configure a custom domain name in Azure App Service](/documentation/articles/web-sites-custom-domain-name/).
 
 Language-specific configuration:
 
-- **PHP**: [Configure PHP in Azure Web Apps](/documentation/articles/web-sites-php-configure/).
-- **Python**: [Configuring Python with Azure Web Apps](/documentation/articles/web-sites-python-configure/)
+- **PHP**: [Configure PHP in Azure App Service Web Apps](/documentation/articles/web-sites-php-configure/).
+- **Python**: [Configuring Python with Azure App Service Web Apps](/documentation/articles/web-sites-python-configure/)
 
 
 ## While your web app is running
@@ -66,8 +71,8 @@ While your web app is running, you want to make sure it is available, and that i
 ### Troubleshooting
 
 - If something goes wrong, you can [troubleshoot in Visual Studio](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/#remotedebug), using diagnostic logs and live debugging in the cloud. 
-- Outside of Visual Studio, there are various ways to collect diagnostic logs. See [Enable diagnostics logging for web apps in Azure](/documentation/articles/web-sites-enable-diagnostic-log/).
-- For Node.js applications, see [How to debug a Node.js web app in Azure](/documentation/articles/web-sites-nodejs-debug/).
+- Outside of Visual Studio, there are various ways to collect diagnostic logs. See [Enable diagnostics logging for web apps in Azure App Service](/documentation/articles/web-sites-enable-diagnostic-log/).
+- For Node.js applications, see [How to debug a Node.js web app in Azure App Service](/documentation/articles/web-sites-nodejs-debug/).
 
 ### Restoring Data
 

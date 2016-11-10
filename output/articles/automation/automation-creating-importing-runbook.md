@@ -8,8 +8,13 @@
 	editor="tysonn" />
 <tags
 	ms.service="automation"
-	ms.date="05/31/2016"
-	wacn.date=""/>
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="infrastructure-services"
+	ms.date="09/12/2016"
+	wacn.date=""
+	ms.author="magoedte;bwren" />
 
 # Creating or importing a runbook in Azure Automation
 
@@ -119,7 +124,7 @@ When you create or import a new runbook, you must publish it before you can run 
 
 You can use the [Publish-AzureRmAutomationRunbook](https://msdn.microsoft.com/zh-cn/library/mt603705.aspx) cmdlet to publish a runbook with Windows PowerShell. The following sample commands show how to publish a sample runbook.
 
-	$automationAccountName =  "AutomationAccount"
+	$automationAccountName =  AutomationAccount"
     $runbookName = "Sample_TestRunbook"
     $RGName = "ResourceGroup"
 

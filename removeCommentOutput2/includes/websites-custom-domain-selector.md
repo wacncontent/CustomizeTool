@@ -1,3 +1,3 @@
 > [AZURE.SELECTOR]
-- [Web Apps with External Domains](/documentation/articles/web-sites-custom-domain-name/)
-- [Web Apps with Traffic Manager](/documentation/articles/web-sites-traffic-manager-custom-domain-name/)
+- [Map an external domain](/documentation/articles/web-sites-custom-domain-name/)
+- [Map to a Traffic Manager profile](/documentation/articles/web-sites-traffic-manager-custom-domain-name/)

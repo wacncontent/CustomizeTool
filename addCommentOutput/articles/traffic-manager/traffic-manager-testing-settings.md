@@ -3,13 +3,18 @@
    description="This article will help you test Traffic Manager settings"
    services="traffic-manager"
    documentationCenter=""
-   authors="joaoma"
+   authors="sdwheeler"
    manager="carmonm"
    editor="tysonn" />
-<tags
-	ms.service="traffic-manager"
-	ms.date="03/17/2016"
-	wacn.date=""/>
+<tags 
+   ms.service="traffic-manager"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="03/17/2016"
+   wacn.date=""
+   ms.author="sewhee" />
 
 # Test your Traffic Manager settings
 

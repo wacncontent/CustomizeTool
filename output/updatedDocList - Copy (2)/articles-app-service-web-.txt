@@ -1,28 +1,19 @@
-updated docs: 24
-articles/app-service-web/app-service-app-service-environment-control-inbound-traffic.md
+updated docs: 16
+articles/app-service-web/app-service-app-service-environment-create-ilb-ase-resourcemanager.md
 articles/app-service-web/app-service-app-service-environment-intro.md
-articles/app-service-web/app-service-app-service-environment-network-architecture-overview.md
-articles/app-service-web/app-service-app-service-environment-network-configuration-expressroute.md
-articles/app-service-web/app-service-app-service-environment-securely-connecting-to-backend-resources.md
-articles/app-service-web/app-service-best-practices.md
+articles/app-service-web/app-service-web-app-azure-resource-manager-powershell.md
 articles/app-service-web/app-service-web-configure-an-app-service-environment.md
-articles/app-service-web/app-service-web-create-web-app-from-marketplace.md
 articles/app-service-web/app-service-web-eclipse-create-hello-world-web-app.md
-articles/app-service-web/app-service-web-how-to-create-a-web-app-in-an-ase.md
+articles/app-service-web/app-service-web-get-started-dotnet.md
+articles/app-service-web/app-service-web-get-started-html.md
+articles/app-service-web/app-service-web-get-started-nodejs.md
+articles/app-service-web/app-service-web-get-started-php.md
+articles/app-service-web/app-service-web-get-started-python.md
+articles/app-service-web/app-service-web-get-started.md
 articles/app-service-web/app-service-web-how-to-create-an-app-service-environment.md
-articles/app-service-web/app-service-web-intellij-create-hello-world-web-app.md
-articles/app-service-web/app-service-web-troubleshoot-http-502-http-503.md
-articles/app-service-web/app-service-web-troubleshoot-performance-degradation.md
-articles/app-service-web/web-sites-backup.md
-articles/app-service-web/web-sites-create-web-app-using-vscode.md
-articles/app-service-web/web-sites-dotnet-troubleshoot-visual-studio.md
-articles/app-service-web/web-sites-python-ptvs-bottle-table-storage.md
-articles/app-service-web/web-sites-python-ptvs-django-mysql.md
-articles/app-service-web/web-sites-python-ptvs-django-sql.md
-articles/app-service-web/web-sites-python-ptvs-flask-table-storage.md
-articles/app-service-web/web-sites-restore.md
-articles/app-service-web/web-sites-scale.md
+articles/app-service-web/app-service-web-nodejs-get-started.md
+articles/app-service-web/app-service-web-nodejs-sails.md
+articles/app-service-web/web-sites-streaming-logs-and-console.md
 articles/app-service-web/web-sites-traffic-manager-custom-domain-name.md
 
-updated includes: 1
-includes/app-service-blueprint-app-service-environment.md
+updated includes: 0

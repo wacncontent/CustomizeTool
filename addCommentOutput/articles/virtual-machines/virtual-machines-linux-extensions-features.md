@@ -9,11 +9,16 @@
  tags="azure-service-management,azure-resource-manager"/>
 
 <tags
-	ms.service="virtual-machines-linux"
-	ms.date="05/27/2016"
-	wacn.date=""/>
+ ms.service="virtual-machines-linux"
+ ms.devlang="na"
+ ms.topic="article"
+ ms.tgt_pltfrm="vm-linux"
+ ms.workload="infrastructure-services"
+ ms.date="08/23/2016"
+ wacn.date=""
+ ms.author="rasquill"/>
 
 #About virtual machine extensions and features
 
 
-[AZURE.INCLUDE [virtual-machines-common-extensions-features](../includes/virtual-machines-common-extensions-features.md)]
+[AZURE.INCLUDE [virtual-machines-common-extensions-features](../../includes/virtual-machines-common-extensions-features.md)]

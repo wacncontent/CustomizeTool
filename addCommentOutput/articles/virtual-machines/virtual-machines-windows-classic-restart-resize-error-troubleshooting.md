@@ -9,9 +9,14 @@
    tags="top-support-issue"/>
 
 <tags
-	ms.service="virtual-machines-windows"
-	ms.date="06/16/2016"
-	wacn.date=""/>
+   ms.service="virtual-machines-windows"
+   ms.topic="support-article"
+   ms.tgt_pltfrm="vm-windows"
+   ms.workload="required"
+   ms.date="06/16/2016"
+   wacn.date=""
+   ms.devlang="na"
+   ms.author="delhan"/>
 
 # Troubleshoot classic deployment issues with restarting or resizing an existing Windows Virtual Machine in Azure
 
@@ -21,14 +26,9 @@
 
 When you try to start a stopped Azure Virtual Machine (VM), or resize an existing Azure VM, the common error you encounter is an allocation failure. This error results when the cluster or region either does not have resources available or cannot support the requested VM size.
 
-
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
-
-
-> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager model.
-
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]
 
-[AZURE.INCLUDE [support-disclaimer](../includes/support-disclaimer.md)]
+[AZURE.INCLUDE [support-disclaimer](../../includes/support-disclaimer.md)]
 
 ## Collect audit logs
 

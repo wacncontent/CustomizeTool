@@ -7,10 +7,15 @@
    manager="jwhit"
    editor="tysonn"
    keywords="automation rbac, role based access control, azure rbac" />
-<tags
-	ms.service="automation"
-	ms.date="06/20/2016"
-	wacn.date=""/>
+<tags 
+   ms.service="automation"
+   ms.devlang="na"
+   ms.topic="get-started-article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="09/12/2016"
+   wacn.date=""
+   ms.author="magoedte;sngun"/>
 
 # Role-based access control in Azure Automation
 

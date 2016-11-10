@@ -8,8 +8,13 @@
 	editor="tysonn" />
 <tags
 	ms.service="automation"
-	ms.date="06/14/2016"
-	wacn.date=""/>
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="infrastructure-services"
+	ms.date="09/18/2016"
+	wacn.date=""
+	ms.author="magoedte;bwren" />
 
 
 # Runbook and module galleries for Azure Automation
@@ -25,7 +30,7 @@ You can get runbooks from the [Runbook Gallery](#runbooks-in-runbook-gallery) an
 ##<a name="runbooks-in-runbook-gallery"></a> Runbooks in Runbook Gallery
 
 
-The [Runbook Gallery](http://gallery.technet.microsoft.com/scriptcenter/site/search?f[0].Type=RootCategory&f[0].Value=WindowsAzure&f[1].Type=SubCategory&f[1].Value=WindowsAzure_automation&f[1].Text=Automation) provides a variety of runbooks from Microsoft and the community that you can import into Azure Automation. You can either download a runbook from the gallery which is hosted in the [TechNet Script  Center](http://gallery.technet.microsoft.com/)  Center](http://gallery.technet.microsoft.com) , or you can directly import runbooks from the gallery from  either  the Azure Classic Management Portal  or Azure portal .
+The [Runbook Gallery](http://gallery.technet.microsoft.com/scriptcenter/site/search?f[0].Type=RootCategory&f[0].Value=WindowsAzure&f[1].Type=SubCategory&f[1].Value=WindowsAzure_automation&f[1].Text=Automation) provides a variety of runbooks from Microsoft and the community that you can import into Azure Automation. You can either download a runbook from the gallery which is hosted in the [TechNet Script Center](http://gallery.technet.microsoft.com/), or you can directly import runbooks from the gallery from  either  the Azure Classic Management Portal  or Azure portal .
 
 You can only import directly from the Runbook Gallery using the Azure Classic Management Portal  or Azure portal . You cannot perform this function using Windows PowerShell.
 
@@ -67,7 +72,6 @@ You can only import directly from the Runbook Gallery using the Azure Classic Ma
 ### Adding a runbook to the runbook gallery
 
 
-
 ###<a name="AddRunbook"></a> Adding a runbook to the runbook gallery
 
 
@@ -80,11 +84,8 @@ Microsoft encourages you to add runbooks to the Runbook Gallery that you think w
 
 - Add the tag "GraphicalPS" if you are publishing a **Graphical runbook** (not a Graphical Workflow). 
 
-- Insert either a PowerShell or PowerShell Workflow code snippet into the description using **Insert code section** icon.
 
-
-- Insert a PowerShell Workflow code snippet into the description using **Insert code section** icon.
-
+- Insert  either a PowerShell or  PowerShell Workflow code snippet into the description using **Insert code section** icon.
 
 - The Summary for the upload will be displayed in the Runbook Gallery results so you should provide detailed information that will help a user identify the functionality of the runbook.
 
@@ -103,7 +104,7 @@ Microsoft encourages you to add runbooks to the Runbook Gallery that you think w
  - VM Lifecycle Management
 
 
-- Automation updates the Gallery once an hour, so you won't see your contributions immediately.   If you don't see your runbook in the gallery after an hour, check the requirements in the [Adding a Runbook to the Runbook Gallery](#AddRunbook) section. 
+- Automation updates the Gallery once an hour, so you won't see your contributions immediately.
 
 
 ## Modules in PowerShell Gallery
@@ -142,11 +143,11 @@ When you drill into a specific module, you can view more information about the m
     This may take a couple of minutes since each activity needs to be extracted.
 10. You will receive a notification that the module is being deployed and a notification when it has completed.
 11. After the module is imported, you will see the available activities, and you can use its resources in your runbooks and Desired State Configuration.
-
 
+
 ## Requesting a runbook or module
 
-You can send requests to [User  Voice](https://feedback.azure.com/forums/246290-azure-automation/)  Voice](/product-feedback) .  If you need help writing a runbook or have a question about PowerShell, post a question to our [forum](http://social.msdn.microsoft.com/Forums/zh-cn/home?forum=windowsazurezhchsen-US/home?forum=azureautomation&filter=alltypes&sort=lastpostdesc).
+You can send requests to [User  Voice](https://feedback.azure.com/forums/246290-azure-automation/)  Voice](/product-feedback) .  If you need help writing a runbook or have a question about PowerShell, post a question to our  [forum](http://social.msdn.microsoft.com/Forums/zh-cn/home?forum=windowsazurezhchsen-US/home?forum=azureautomation&filter=alltypes&sort=lastpostdesc)  [forum](http://social.msdn.microsoft.com/Forums/windowsazure/en-US/home?forum=azureautomation&filter=alltypes&sort=lastpostdesc) .
 
 ## Next Steps
 

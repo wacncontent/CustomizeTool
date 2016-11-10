@@ -77,7 +77,7 @@ You can then manage the overall life cycle of the group's resources by using Azu
 - Audit operations.
 - Tag resources with additional metadata for better tracking.
 
-You can learn lots more about Azure resource groups and what they can do for you in the [Azure Resource Manager  overview](../articles/documentation/articles/resource-group-overview)  overview](/documentation/articles/resource-group-overview/) . If you're interested in authoring templates, see [Authoring Azure Resource Manager templates](/documentation/articles/resource-group-authoring-templates/).
+You can learn lots more about Azure resource groups and what they can do for you in the [Azure Resource Manager  overview](/documentation/articles/resource-group-overview)  overview](/documentation/articles/resource-group-overview/) . If you're interested in authoring templates, see [Authoring Azure Resource Manager templates](/documentation/articles/resource-group-authoring-templates/).
 
 ## <a id="quick-create-a-vm-in-azure"></a>Task: Quick-create a VM in Azure
 
@@ -85,13 +85,27 @@ Sometimes you know what image you need, and you need a VM from that image right 
 
 First, create your resource group.
 
+
     azure group create coreos-quick chinanorth
+
+
+    azure group create centos-quick chinanorth
+
     info:    Executing command group create
+
     + Getting resource group coreos-quick
     + Creating resource group coreos-quick
     info:    Created resource group coreos-quick
     data:    Id:                  /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/coreos-quick
     data:    Name:                coreos-quick
+
+
+    + Getting resource group centos-quick
+    + Creating resource group centos-quick
+    info:    Created resource group centos-quick
+    data:    Id:                  /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/centos-quick
+    data:    Name:                centos-quick
+
     data:    Location:            chinanorth
     data:    Provisioning State:  Succeeded
     data:    Tags:
@@ -99,7 +113,7 @@ First, create your resource group.
     info:    group create command OK
 
 
-Second, you'll need an image. To find an image with the Azure CLI, see [Navigating and selecting Azure virtual machine images with PowerShell and the Azure CLI](/documentation/articles/virtual-machines-linux-cli-ps-findimage/). But for this article, here's a short list of popular images. We'll use CoreOS's  Stable  7.1  image for this quick-create.
+Second, you'll need an image. To find an image with the Azure CLI, see [Navigating and selecting Azure virtual machine images with PowerShell and the Azure CLI](/documentation/articles/virtual-machines-linux-cli-ps-findimage/). But for this article, here's a short list of popular images. We'll use  CoreOS's Stable  CentOS's 7.1  image for this quick-create.
 
 > [AZURE.NOTE] For ComputeImageVersion, you can also simply supply 'latest' as the parameter in both the template language and in the Azure CLI. This will allow you to always use the latest and patched version of the image without having to modify your scripts or templates. This is shown below.
 
@@ -131,20 +145,31 @@ Just create your VM by entering the `azure vm quick-create` command and being re
 
     azure vm quick-create
     info:    Executing command vm quick-create
+
     Resource group name: coreos-quick
     Virtual machine name: coreos
+
+
+    Resource group name: centos-quick
+    Virtual machine name: centos
+
     Location name: chinanorth
     Operating system Type [Windows, Linux]: linux
 
     ImageURN (format: "publisherName:offer:skus:version"): coreos:coreos:stable:latest
 
 
-    ImageURN (format: "publisherName:offer:skus:version"): OpenLogic:coreos:7.1:latest
+    ImageURN (format: "publisherName:offer:skus:version"): OpenLogic:centos:7.1:latest
 
     User name: ops
     Password: *********
     Confirm password: *********
+
     + Looking up the VM "coreos"
+
+
+    + Looking up the VM "centos"
+
     info:    Using the VM Size "Standard_A1"
     info:    The [OS, Data] Disk or image configuration requires storage account
     + Retrieving storage accounts
@@ -157,9 +182,9 @@ Just create your VM by entering the `azure vm quick-create` command and being re
     + Looking up the virtual network "coreo-westu-1430261891570-vnet"
 
 
-    + Looking up the NIC "coreo-china-1430261891570-nic"
-    info:    An nic with given name "coreo-china-1430261891570-nic" not found, creating a new one
-    + Looking up the virtual network "coreo-china-1430261891570-vnet"
+    + Looking up the NIC "cento-china-1430261891570-nic"
+    info:    An nic with given name "cento-china-1430261891570-nic" not found, creating a new one
+    + Looking up the virtual network "cento-china-1430261891570-vnet"
 
     info:    Preparing to create new virtual network and subnet
 
@@ -168,9 +193,9 @@ Just create your VM by entering the `azure vm quick-create` command and being re
     + Looking up the subnet "coreo-westu-1430261891570-snet" under the virtual network "coreo-westu-1430261891570-vnet"
 
 
-    / Creating a new virtual network "coreo-china-1430261891570-vnet" [address prefix: "10.0.0.0/16"] with subnet "coreo-china-1430261891570-sne+" [address prefix: "10.0.1.0/24"]
-    + Looking up the virtual network "coreo-china-1430261891570-vnet"
-    + Looking up the subnet "coreo-china-1430261891570-snet" under the virtual network "coreo-china-1430261891570-vnet"
+    / Creating a new virtual network "cento-china-1430261891570-vnet" [address prefix: "10.0.0.0/16"] with subnet "cento-china-1430261891570-sne+" [address prefix: "10.0.1.0/24"]
+    + Looking up the virtual network "cento-china-1430261891570-vnet"
+    + Looking up the subnet "cento-china-1430261891570-snet" under the virtual network "cento-china-1430261891570-vnet"
 
     info:    Found public ip parameters, trying to setup PublicIP profile
 
@@ -180,30 +205,29 @@ Just create your VM by entering the `azure vm quick-create` command and being re
     + Looking up the public ip "coreo-westu-1430261891570-pip"
     + Creating NIC "coreo-westu-1430261891570-nic"
     + Looking up the NIC "coreo-westu-1430261891570-nic"
-
-
-    + Looking up the public ip "coreo-china-1430261891570-pip"
-    info:    PublicIP with given name "coreo-china-1430261891570-pip" not found, creating a new one
-    + Creating public ip "coreo-china-1430261891570-pip"
-    + Looking up the public ip "coreo-china-1430261891570-pip"
-    + Creating NIC "coreo-china-1430261891570-nic"
-    + Looking up the NIC "coreo-china-1430261891570-nic"
-
     + Creating VM "coreos"
     + Looking up the VM "coreos"
-
     + Looking up the NIC "coreo-westu-1430261891570-nic"
     + Looking up the public ip "coreo-westu-1430261891570-pip"
+    data:    Id                             :/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/coreos-quick/providers/Microsoft.Compute/virtualMachines/coreos
 
 
-    + Looking up the NIC "coreo-china-1430261891570-nic"
-    + Looking up the public ip "coreo-china-1430261891570-pip"
+    + Looking up the public ip "cento-china-1430261891570-pip"
+    info:    PublicIP with given name "cento-china-1430261891570-pip" not found, creating a new one
+    + Creating public ip "cento-china-1430261891570-pip"
+    + Looking up the public ip "cento-china-1430261891570-pip"
+    + Creating NIC "cento-china-1430261891570-nic"
+    + Looking up the NIC "cento-china-1430261891570-nic"
+    + Creating VM "centos"
+    + Looking up the VM "centos"
+    + Looking up the NIC "cento-china-1430261891570-nic"
+    + Looking up the public ip "cento-china-1430261891570-pip"
+    data:    Id                            :/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/centos-quick/providers/Microsoft.Compute/virtualMachines/centos
 
-    data:    Id                              :/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/coreos-quick/providers/Microsoft.Compute/virtualMachines/coreos
     data:    ProvisioningState               :Succeeded
-    data:    Name                            :coreos
+    data:    Name                             :coreos  :centos 
     data:    Location                        :chinanorth
-    data:    FQDN                             :coreo-westu-1430261891570-pip.chinanorth.chinacloudapp.cn  :coreo-china-1430261891570-pip.chinanorth.chinacloudapp.cn 
+    data:    FQDN                             :coreo-westu-1430261891570-pip.chinanorth.chinacloudapp.cn  :cento-china-1430261891570-pip.chinanorth.chinacloudapp.cn 
     data:    Type                            :Microsoft.Compute/virtualMachines
     data:
     data:    Hardware Profile:
@@ -212,7 +236,7 @@ Just create your VM by entering the `azure vm quick-create` command and being re
     data:    Storage Profile:
     data:      Image reference:
     data:        Publisher                    :coreos  :OpenLogic 
-    data:        Offer                       :coreos
+    data:        Offer                        :coreos  :centos 
     data:        Sku                          :stable  :7.1 
     data:        Version                      :633.1.0  :7.1.20160329 
     data:
@@ -225,7 +249,7 @@ Just create your VM by entering the `azure vm quick-create` command and being re
     data:          Uri                       :https://cli9fd3fce49e9a9b3d14302.blob.core.chinacloudapi.cn/vhds/cli9fd3fce49e9a9b3d-os-1430261892283.vhd
     data:
     data:    OS Profile:
-    data:      Computer Name                 :coreos
+    data:      Computer Name                  :coreos  :centos 
     data:      User Name                     :ops
     data:      Linux Configuration:
     data:        Disable Password Auth       :false
@@ -233,16 +257,16 @@ Just create your VM by entering the `azure vm quick-create` command and being re
     data:    Network Profile:
     data:      Network Interfaces:
     data:        Network Interface #1:
-    data:          Id                         :/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/coreos-quick/providers/Microsoft.Network/networkInterfaces/coreo-westu-1430261891570-nic  :/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/coreos-quick/providers/Microsoft.Network/networkInterfaces/coreo-china-1430261891570-nic 
+    data:          Id                         :/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/coreos-quick/providers/Microsoft.Network/networkInterfaces/coreo-westu-1430261891570-nic  :/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/centos-quick/providers/Microsoft.Network/networkInterfaces/cento-china-1430261891570-nic 
     data:          Primary                   :true
     data:          MAC Address               :00-0D-3A-30-72-E3
     data:          Provisioning State        :Succeeded
-    data:          Name                       :coreo-westu-1430261891570-nic  :coreo-china-1430261891570-nic 
+    data:          Name                       :coreo-westu-1430261891570-nic  :cento-china-1430261891570-nic 
     data:          Location                  :chinanorth
     data:            Private IP alloc-method :Dynamic
     data:            Private IP address      :10.0.1.4
     data:            Public IP address       :104.40.24.124
-    data:            FQDN                     :coreo-westu-1430261891570-pip.chinanorth.chinacloudapp.cn  :coreo-china-1430261891570-pip.chinanorth.chinacloudapp.cn 
+    data:            FQDN                     :coreo-westu-1430261891570-pip.chinanorth.chinacloudapp.cn  :cento-china-1430261891570-pip.chinanorth.chinacloudapp.cn 
     info:    vm quick-create command OK
 
 And away you go with your new VM.
@@ -258,7 +282,7 @@ Use the instructions in these sections to deploy a new Azure VM by using a templ
 Here are the contents of the JSON file for the template. (The template is also located in [GitHub](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-vm-simple-linux/azuredeploy.json).)
 
 
->[AZURE.NOTE] Templates you downloaded from the GitHub Repo "azure-quickstart-templates" must be modified in order to fit in the Azure China Cloud Environment. For example, replace some endpoints -- "blob.core.chinacloudapi.cn" by "blob.core.chinacloudapi.cn", "chinacloudapp.cn" by "chinacloudapp.cn"; change some unsupported VM images; and, changes some unsupported VM sizes.
+>[AZURE.NOTE] Templates you downloaded from the GitHub Repo "azure-quickstart-templates" must be modified in order to fit in the Azure China Cloud Environment. For example, replace some endpoints -- "blob.core.windows.net" by "blob.core.chinacloudapi.cn", "cloudapp.azure.com" by "chinacloudapp.cn"; change some unsupported VM images; and, changes some unsupported VM sizes.
 
 
 Templates are flexible, so the designer may have chosen to give you lots of parameters or chosen to offer only a few by creating a template that is more fixed. In order to collect the information you need to pass the template as parameters, open the template file (this topic has a template inline, below) and examine the **parameters** values.
@@ -270,6 +294,8 @@ In this case, the template below will ask for:
 - A password.
 - A domain name for the outside world to use.
 - An Ubuntu Server version number -- but it will accept only one of a list.
+
+See more about [username and password requirements](/documentation/articles/virtual-machines-linux-faq/#what-are-the-username-requirements-when-creating-a-vm).
 
 Once you decide on these values, you're ready to create a group for and deploy this template into your Azure subscription.
 
@@ -484,7 +510,7 @@ Here is an example:
     azure group deployment create --template-uri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-vm-simple-linux/azuredeploy.json myResourceGroup firstDeployment
 
 
-Download this [azuredeploy.json](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-vm-simple-linux/azuredeploy.json), replace "blob.core.chinacloudapi.cn" by "blob.core.chinacloudapi.cn", "chinacloudapp.cn" by "chinacloudapp.cn", and run the following command.
+Download this [azuredeploy.json](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-vm-simple-linux/azuredeploy.json), replace "blob.core.windows.net" by "blob.core.chinacloudapi.cn", "cloudapp.azure.com" by "chinacloudapp.cn", and run the following command.
 
     azure group deployment create --template-file /path/to/azuredeploy.json myResourceGroup firstDeployment
 
@@ -540,11 +566,11 @@ You will receive the following type of information:
     data:     dnsNameForPublicIP      dnsLabelPrefix  String        newdomainname
     data:    ubuntuOSVersion        String         14.10  14.04.2-LTS 
 
-	data:    Outputs            :
-	data:    Name        Type    Value
-	data:    ----------  ------  -----------------------------------------------
-	data:    hostname    String  newdomainname.chinanorth.chinacloudapp.cn
-	data:    sshCommand  String  ssh ops@newdomainname.chinanorth.chinacloudapp.cn
+    data:    Outputs            :
+    data:    Name        Type    Value
+    data:    ----------  ------  -----------------------------------------------
+    data:    hostname    String  newdomainname.chinanorth.chinacloudapp.cn
+    data:    sshCommand  String  ssh ops@newdomainname.chinanorth.chinacloudapp.cn
 
     info:    group deployment create command OK
 
@@ -559,7 +585,7 @@ You've seen the basic usage of templates above, so now we can use similar instru
 Here are the contents of the JSON file for the template that this section uses as an example. (The template is also located in [GitHub](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-vm-from-user-image/azuredeploy.json).)
 
 
->[AZURE.NOTE] Templates you downloaded from the GitHub Repo "azure-quickstart-templates" must be modified in order to fit in the Azure China Cloud Environment. For example, replace some endpoints -- "blob.core.chinacloudapi.cn" by "blob.core.chinacloudapi.cn", "chinacloudapp.cn" by "chinacloudapp.cn"; change some unsupported VM images; and, changes some unsupported VM sizes.
+>[AZURE.NOTE] Templates you downloaded from the GitHub Repo "azure-quickstart-templates" must be modified in order to fit in the Azure China Cloud Environment. For example, replace some endpoints -- "blob.core.windows.net" by "blob.core.chinacloudapi.cn", "cloudapp.azure.com" by "chinacloudapp.cn"; change some unsupported VM images; and, changes some unsupported VM sizes.
 
 
 Again, you will need to find the values you want to enter for the parameters that do not have default values. When you run the `azure group deployment create` command, the Azure CLI will prompt you to enter those values.
@@ -773,7 +799,7 @@ Now you're ready to create a new virtual machine based on the .vhd. Create a gro
 Then create the deployment by using the `--template-uri` option to call in the template directly (or you can use the `--template-file` option to use a file that you have saved locally). Note that because the template has defaults specified, you are prompted for only a few things. If you deploy the template in different places, you may find that some naming collisions occur with the default values (particularly the DNS name you create).
 
 
->[AZURE.NOTE] Templates you downloaded from the GitHub Repo "azure-quickstart-templates" must be modified in order to fit in the Azure China Cloud Environment. For example, replace some endpoints -- "blob.core.chinacloudapi.cn" by "blob.core.chinacloudapi.cn", "chinacloudapp.cn" by "chinacloudapp.cn"; change some unsupported VM images; and, changes some unsupported VM sizes.
+>[AZURE.NOTE] Templates you downloaded from the GitHub Repo "azure-quickstart-templates" must be modified in order to fit in the Azure China Cloud Environment. For example, replace some endpoints -- "blob.core.windows.net" by "blob.core.chinacloudapi.cn", "cloudapp.azure.com" by "chinacloudapp.cn"; change some unsupported VM images; and, changes some unsupported VM sizes.
 
 
     azure group deployment create \
@@ -814,8 +840,8 @@ Output looks something like the following:
     data:    ContentVersion     : 1.0.0.0
 
 
-	data:    CorrelationId      : xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
-	data:    DeploymentParameters :
+    data:    CorrelationId      : xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+    data:    DeploymentParameters :
 
     data:    Name                           Type          Value
     data:    -----------------------------  ------------  ------------------------------------
@@ -849,7 +875,7 @@ Follow these steps to deploy a multi-VM application that uses a virtual network 
 Here are the contents of the JSON file for the template. If you want the most recent version, it's located [at the Github repository for templates](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-2-vms-loadbalancer-lbrules/azuredeploy.json). This topic uses the `--template-uri` switch to call in the template, but you can also use the `--template-file` switch to pass a local version.
 
 
->[AZURE.NOTE] Templates you downloaded from the GitHub Repo "azure-quickstart-templates" must be modified in order to fit in the Azure China Cloud Environment. For example, replace some endpoints -- "blob.core.chinacloudapi.cn" by "blob.core.chinacloudapi.cn", "chinacloudapp.cn" by "chinacloudapp.cn"; change some unsupported VM images; and, changes some unsupported VM sizes.
+>[AZURE.NOTE] Templates you downloaded from the GitHub Repo "azure-quickstart-templates" must be modified in order to fit in the Azure China Cloud Environment. For example, replace some endpoints -- "blob.core.windows.net" by "blob.core.chinacloudapi.cn", "cloudapp.azure.com" by "chinacloudapp.cn"; change some unsupported VM images; and, changes some unsupported VM sizes.
 
 
     {
@@ -1240,8 +1266,8 @@ Now use the `azure group deployment create` command and the  `--template-uri` 
     data:    ContentVersion     : 1.0.0.0
 
 
-	data:    CorrelationId      : xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
-	data:    DeploymentParameters :
+    data:    CorrelationId      : xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+    data:    DeploymentParameters :
 
     data:    Name                   Type          Value
     data:    ---------------------  ------------  ----------------------
@@ -1262,7 +1288,7 @@ Now use the `azure group deployment create` command and the  `--template-uri` 
     data:    vmSize                 String        Standard_A1
     info:    group deployment create command OK
 
-Note that this template deploys a Windows Server image; however, it could easily be replaced by any Linux image. Want to create a Docker cluster with multiple swarm managers? [You can do it](https://azure.microsoft.com/documentation/templates/docker-swarm-cluster/).
+Note that this template deploys a Windows Server image; however, it could easily be replaced by any Linux image. Want to create a Docker cluster with multiple swarm managers? [You can do it](https://github.com/Azure/azure-quickstart-templates/tree/master/docker-swarm-cluster/).
 
 ## <a id="remove-a-resource-group"></a>Task: Remove a resource group
 
@@ -1359,7 +1385,7 @@ And then, looking up myVM1:
 
 ## <a id="log-on-to-a-linux-based-virtual-machine"></a>Task: Log on to a Linux-based virtual machine
 
-Typically Linux machines are connected to through SSH. For more information, see [How to use SSH with Linux on Azure](/documentation/articles/virtual-machines-linux-ssh-from-linux/).
+Typically Linux machines are connected to through SSH. For more information, see [How to use SSH with Linux on Azure](/documentation/articles/virtual-machines-linux-mac-create-ssh-keys/).
 
 ## <a id="stop-a-virtual-machine"></a>Task: Stop a VM
 
@@ -1392,8 +1418,8 @@ Then you'll need to mount the disk, as you normally would in Linux.
 
 ## Next steps
 
-For far more examples of Azure CLI usage with the **arm** mode, see [Using the Azure CLI for Mac, Linux, and Windows with Azure Resource Manager](/documentation/articles/xplat-cli-azure-resource-manager/). To learn more about Azure resources and their concepts, see [Azure Resource Manager  overview](../articles/documentation/articles/resource-group-overview)  overview](/documentation/articles/resource-group-overview/) .
+For far more examples of Azure CLI usage with the **arm** mode, see [Using the Azure CLI for Mac, Linux, and Windows with Azure Resource Manager](/documentation/articles/xplat-cli-azure-resource-manager/). To learn more about Azure resources and their concepts, see [Azure Resource Manager  overview](/documentation/articles/resource-group-overview)  overview](/documentation/articles/resource-group-overview/) .
 
 
-For more templates you can use, see [Azure Quickstart templates](https://azure.microsoft.com/documentation/templates/) and [Application frameworks using templates](/documentation/articles/virtual-machines-linux-app-frameworks/).
+For more templates you can use, see [Azure Quickstart templates](https://github.com/Azure/azure-quickstart-templates/) and [Application frameworks using templates](/documentation/articles/virtual-machines-linux-app-frameworks/).
 

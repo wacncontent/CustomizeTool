@@ -10,18 +10,24 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="05/05/2016"
-	wacn.date=""/>
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-windows"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="07/28/2016"
+	wacn.date=""
+	ms.author="cynthn"/>
 
 
 # Log on to a Windows virtual machine using the Azure Classic Management Portal
 
 In the Azure Classic Management Portal, you use the **Connect** button to start a Remote Desktop session and log on to a Windows VM.
 
-Do you want to connect to a Linux VM? See [How to log on to a virtual machine running Linux](/documentation/articles/virtual-machines-linux-classic-log-on/).
+Do you want to connect to a Linux VM? See [How to log on to a virtual machine running Linux](/documentation/articles/virtual-machines-linux-mac-create-ssh-keys/).
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Learn how to [perform these steps using the Resource Manager model](/documentation/articles/virtual-machines-windows-connect-logon/).
+Learn how to [perform these steps using new Azure portal](/documentation/articles/virtual-machines-windows-connect-logon/).
 
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)] 
 
 ## Video walkthrough
 
@@ -40,11 +46,11 @@ Here's a video walkthrough of the steps in this tutorial. It also covers endpoin
 
 	![Log on to the virtual machine](./media/virtual-machines-windows-classic-connect-logon/connectwindows.png)
 	
-> [AZURE.TIP] If the Connect button isn't available, see the troubleshooting tips at the end of this article.
+> [AZURE.TIP] If the **Connect** button isn't available, see the troubleshooting tips at the end of this article.
 
 ## Log on to the virtual machine
 
-[AZURE.INCLUDE [virtual-machines-log-on-win-server](../includes/virtual-machines-log-on-win-server.md)]
+[AZURE.INCLUDE [virtual-machines-log-on-win-server](../../includes/virtual-machines-log-on-win-server.md)]
 
 ## Next steps
 

@@ -18,4 +18,4 @@
 
 - VNet-to-VNet traffic travels across the Microsoft Network, not the Internet.
 
-- VNet-to-VNet traffic within the same region is free for both directions; cross region VNet-to-VNet egress traffic is charged with the outbound inter-VNet data transfer rates based on the source regions. Please refer to the [pricing page](/home/features/vpn-gateway/pricing/) for details.
+- VNet-to-VNet traffic within the same region is free for both directions; cross region VNet-to-VNet egress traffic is charged with the outbound inter-VNet data transfer rates based on the source regions. Please refer to the [pricing page](/pricing/details/vpn-gateway/) for details.

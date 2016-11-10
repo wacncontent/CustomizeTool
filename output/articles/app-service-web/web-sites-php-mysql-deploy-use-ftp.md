@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Create a PHP-MySQL web app in Azure and deploy using FTP" 
+	pageTitle="Create a PHP-MySQL web app in Azure App Service and deploy using FTP" 
 	description="A tutorial that demonstrates how to create a PHP web app that stores data in MySQL and use FTP deployment to Azure." 
 	services="app-service\web" 
 	documentationCenter="php" 
@@ -7,13 +7,18 @@
 	manager="wpickett" 
 	editor=""/>
 
-<tags
-	ms.service="app-service-web"
-	ms.date="06/24/2016"
-	wacn.date=""/>
+<tags 
+	ms.service="app-service-web" 
+	ms.workload="web" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="PHP" 
+	ms.topic="article" 
+	ms.date="08/11/2016" 
+	wacn.date="" 
+	ms.author="robmcm"/>
 
 
-#Create a PHP-MySQL web app in Azure and deploy using FTP
+#Create a PHP-MySQL web app in Azure App Service and deploy using FTP
 
 This tutorial shows you how to create a PHP-MySQL web app and how to deploy it using FTP. This tutorial assumes you have [PHP][install-php], [MySQL][install-mysql], a web server, and an FTP client installed on your computer. The instructions in this tutorial can be followed on any operating system, including Windows, Mac, and  Linux. Upon completing this guide, you will have a PHP/MySQL web app running in Azure.
  
@@ -26,7 +31,7 @@ By following this tutorial, you will build a simple registration web app in PHP.
 
 ![Azure PHP Web Site][running-app]
 
->[AZURE.NOTE] If you want to get started with Azure before signing up for an account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required, no commitments. 
+>[AZURE.NOTE] If you want to get started with Azure App Service before signing up for an account, go to [Try App Service](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in App Service. No credit cards required, no commitments. 
 
 
 ##Create a web app and set up FTP publishing

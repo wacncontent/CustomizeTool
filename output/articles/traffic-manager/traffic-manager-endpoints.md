@@ -3,17 +3,22 @@
    description="This article will help you add, remove, enable and disable endpoints from Azure Traffic Manager."
    services="traffic-manager"
    documentationCenter=""
-   authors="joaoma"
+   authors="sdwheeler"
    manager="carmonm"
    editor="tysonn" />
 <tags
-	ms.service="traffic-manager"
-	ms.date="03/17/2016"
-	wacn.date=""/>
+   ms.service="traffic-manager"
+   ms.devlang="na"
+   ms.topic="get-started-article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="03/17/2016"
+   wacn.date=""
+   ms.author="sewhee" />
 
 # Add, disable, enable or delete endpoints
 
-The Web Apps feature in Azure already provides failover and round-robin traffic routing functionality for websites within a datacenter, regardless of the website mode. Azure Traffic Manager allows you to specify failover and round-robin traffic routing for websites and cloud services in different datacenters. The first step necessary to provide that functionality is to add the cloud service or website endpoint to Traffic Manager.
+The Web Apps feature in Azure App Service already provides failover and round-robin traffic routing functionality for websites within a datacenter, regardless of the website mode. Azure Traffic Manager allows you to specify failover and round-robin traffic routing for websites and cloud services in different datacenters. The first step necessary to provide that functionality is to add the cloud service or website endpoint to Traffic Manager.
 
 >[AZURE.NOTE] You cannot add external locations or Traffic Manager profiles as endpoints using the Azure Classic Management Portal. You must use the REST API [Create Definition](https://msdn.microsoft.com/zh-cn/library/azure/hh758257.aspx) or Windows PowerShell [Add-AzureTrafficManagerEndpoint](https://msdn.microsoft.com/zh-cn/library/dn690257.aspx).
 
@@ -69,4 +74,4 @@ You can also disable individual endpoints that are part of a Traffic Manager pro
 
 [Troubleshooting Traffic Manager degraded state](/documentation/articles/traffic-manager-troubleshooting-degraded/)
 
-[Operations on Traffic Manager (REST API Reference)](https://msdn.microsoft.com/zh-CN/library/hh758255.aspx)
+[Operations on Traffic Manager (REST API Reference)](https://msdn.microsoft.com/zh-cn/library/hh758255.aspx)

@@ -3,14 +3,19 @@
    description="Understand performance on Traffic Manager and how to test performance of your website when using Traffic Manager"
    services="traffic-manager"
    documentationCenter=""
-   authors="kwill-MSFT"
+   authors="sdwheeler"
    manager="carmonm"
    editor="joaoma" />
 
-<tags
-	ms.service="traffic-manager"
-	ms.date="06/10/2016"
-	wacn.date=""/>
+<tags 
+   ms.service="traffic-manager"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="06/10/2016"
+   wacn.date=""
+   ms.author="sewhee" />
 
 
 # Performance considerations for Traffic Manager

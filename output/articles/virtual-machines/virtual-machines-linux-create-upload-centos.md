@@ -10,15 +10,20 @@
 
 <tags
 	ms.service="virtual-machines-linux"
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-linux"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="05/09/2016"
-	wacn.date=""/>
+	wacn.date=""
+	ms.author="szarkos"/>
 
 # Prepare a CentOS-based virtual machine for Azure
 
-- [Prepare a CentOS 6.x virtual machine for Azure](#centos-6.x)
-- [Prepare a CentOS 7.0+ virtual machine for Azure](#centos-7.0+)
+- [Prepare a CentOS 6.x virtual machine for Azure](#centos-6x)
+- [Prepare a CentOS 7.0+ virtual machine for Azure](#centos-70)
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
 
 ## Prerequisites ##
 

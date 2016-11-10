@@ -1,4 +1,7 @@
-updated docs: 1
-articles/virtual-network/virtual-networks-udr-overview.md
+updated docs: 3
+articles/virtual-network/virtual-network-ip-addresses-overview-arm.md
+articles/virtual-network/virtual-network-peering-overview.md
+articles/virtual-network/virtual-networks-create-nsg-arm-ps.md
 
-updated includes: 0
+updated includes: 1
+includes/virtual-networks-vnet-faq-include.md

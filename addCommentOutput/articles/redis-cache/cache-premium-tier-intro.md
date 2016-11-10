@@ -7,10 +7,15 @@
 	manager="douge" 
 	editor=""/>
 
-<tags
-	ms.service="cache"
-	ms.date="05/18/2016"
-	wacn.date=""/>
+<tags 
+	ms.service="cache" 
+	ms.workload="tbd" 
+	ms.tgt_pltfrm="cache-redis" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="06/29/2016" 
+	wacn.date="" 
+	ms.author="sdanie"/>
 
 # Introduction to the Azure Redis Cache Premium tier
 Azure Redis Cache is a distributed, managed cache that helps you build highly scalable and responsive applications by providing super-fast access to your data. 
@@ -37,6 +42,7 @@ If you want to create caches larger than 53 GB or want to shard data across mult
 To get started with clustering, see [How to configure clustering for a Premium Azure Redis Cache](/documentation/articles/cache-how-to-premium-clustering/).
 
 ##Enhanced security and isolation
+
 Caches created in the Basic or Standard tier are accessible on the public internet. Access to the Cache is restricted based on the access key. With the Premium tier you can further ensure that only clients within a specified network can access the Cache. You can deploy Redis Cache in an [Azure Virtual Network (VNet)](/home/features/networking/). You can use all the features of VNet such as subnets, access control policies, and other features to further restrict access to Redis.
 
 For more information, see [How to configure Virtual Network support for a Premium Azure Redis Cache](/documentation/articles/cache-how-to-premium-vnet/).
@@ -51,6 +57,29 @@ Export allows you to export the data stored in Azure Redis Cache to Redis compat
 
 For more information, see [How to import data into and export data from Azure Redis Cache](/documentation/articles/cache-how-to-import-export-data/).
 
+## Reboot
+
+The premium tier allows you to reboot one or more nodes of your cache on-demand. This allows you to test your application for resiliency in the event of a failure. You can reboot the following nodes.
+
+-	Master node of your cache
+-	Slave node of your cache
+-	Both master and slave nodes of your cache
+-	When using a premium cache with clustering, you can reboot the master, slave, or both nodes for individual shards in the cache
+
+For more information, see [Reboot](/documentation/articles/cache-administration/#reboot) and [Reboot FAQ](/documentation/articles/cache-administration/#reboot-faq).
+
+## Schedule updates
+
+The scheduled updates feature allows you to designate a maintenance window for your cache. When the maintenance window is specified, any Redis server updates are made during this window. To designate a maintenance window, select the desired days and specify the maintenance window start hour for each day. Note that the maintenance window time is in UTC. 
+
+For more information, see [Schedule updates](/documentation/articles/cache-administration/#schedule-updates) and [Schedule updates FAQ](/documentation/articles/cache-administration/#schedule-updates-faq).
+
+>[AZURE.NOTE] Only Redis server updates are made during the scheduled maintenance window. The maintenance window does not apply to Azure updates or updates to the VM operating system.
+
+## To scale to the premium tier
+
+To scale to the premium tier, simply choose one of the premium tiers in the **Change pricing tier** blade. You can also scale your cache to the premium tier using PowerShell and CLI. For step-by-step instructions, see [How to Scale Azure Redis Cache](/documentation/articles/cache-how-to-scale/) and [How to automate a scaling operation](/documentation/articles/cache-how-to-scale/#how-to-automate-a-scaling-operation).
+
 ## Next steps
 
 Create a cache and explore the new premium tier features.
@@ -59,5 +88,6 @@ Create a cache and explore the new premium tier features.
 -	[How to configure Virtual Network support for a Premium Azure Redis Cache](/documentation/articles/cache-how-to-premium-vnet/)
 -	[How to configure clustering for a Premium Azure Redis Cache](/documentation/articles/cache-how-to-premium-clustering/)
 -	[How to import data into and export data from Azure Redis Cache](/documentation/articles/cache-how-to-import-export-data/)
+-	[How to administer Azure Redis Cache](/documentation/articles/cache-administration/)
   
 

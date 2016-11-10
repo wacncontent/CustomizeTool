@@ -7,10 +7,15 @@
 	manager="douge" 
 	editor=""/>
 
-<tags
-	ms.service="cache"
-	ms.date="06/01/2016"
-	wacn.date=""/>
+<tags 
+	ms.service="cache" 
+	ms.workload="tbd" 
+	ms.tgt_pltfrm="cache-redis" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="07/12/2016" 
+	wacn.date="" 
+	ms.author="sdanie"/>
 
 # How to configure Virtual Network Support for a Premium Azure Redis Cache
 Azure Redis Cache has different cache offerings which provide flexibility in the choice of cache size and features, including the new Premium tier.
@@ -25,17 +30,11 @@ For information on other premium cache features, see [How to configure persisten
 [Azure Virtual Network (VNet)](/home/features/networking/) deployment provides enhanced security and isolation for your Azure Redis Cache, as well as subnets, access control policies, and other features to further restrict access to Azure Redis Cache.
 
 ## Virtual network support
- Virtual Network (VNet) support is configured on the **New Redis Cache** blade during cache creation. 
-
-In Azure China, Redis Cache can only be managed by Azure PowerShell or Azure CLI
+Virtual Network (VNet) support is configured on the **New Redis Cache** blade during cache creation. 
 
-[AZURE.INCLUDE [azurerm-azurechinacloud-environment-parameter](../includes/azurerm-azurechinacloud-environment-parameter.md)]
-
+[AZURE.INCLUDE [redis-cache-create](../../includes/redis-cache-premium-create.md)]
 
-[AZURE.INCLUDE [redis-cache-create](../includes/redis-cache-premium-create.md)]
-
-
-Once you have selected a premium pricing tier, you can configure Azure Redis Cache VNet integration by selecting a VNet that is in the same subscription and location as your cache. To use a new VNet, create it first  by following the steps in [Create a virtual network using the Azure portal](/documentation/articles/virtual-networks-create-vnet-arm-pportal/) or [Create a virtual network (classic) by using the Azure Portal](/documentation/articles/virtual-networks-create-vnet-classic-portal/) and then return to the **New Redis Cache** blade to create and configure your premium cache.
+Once you have selected a premium pricing tier, you can configure Azure Redis Cache VNet integration by selecting a VNet that is in the same subscription and location as your cache. To use a new VNet, create it first  by following the steps in [Create a virtual network using the Azure  portal](/documentation/articles/virtual-networks-create-vnet-arm-pportal/)  Portal Preview](/documentation/articles/virtual-networks-create-vnet-arm-pportal/)  or [Create a virtual network (classic) by using the Azure  Portal](/documentation/articles/virtual-networks-create-vnet-classic-portal/)  Portal Preview](/documentation/articles/virtual-networks-create-vnet-classic-portal/)  and then return to the **New Redis Cache** blade to create and configure your premium cache.
 
 To configure the VNet for your new cache, click **Virtual Network** on the **New Redis Cache** blade, and select the desired VNet from the drop-down list.
 
@@ -55,26 +54,6 @@ After the cache is created, you can view the configuration for the VNet by click
 
 
 To connect to your Azure Redis cache instance when using a VNet, specify the host name of your cache in the connection string as shown in the following example.
-
-
-
-Use the following PowerShell Script to create a cache:
-
-	$VerbosePreference = "Continue"
-
-	# Create a new cache with date string to make name unique. 
-	$cacheName = "MovieCache" + $(Get-Date -Format ('ddhhmm')) 
-	$location = "China North"
-	$resourceGroupName = "Default-Web-ChinaNorth"
-	
-	$movieCache = New-AzureRmRedisCache -Location $location -Name $cacheName  -ResourceGroupName $resourceGroupName -Size 6GB -Sku Premium -VirtualNetwork /subscriptions/{subid}/Microsoft.ClassicNetwork/VirtualNetworks/vnet1 -Subnet Front -StaticIP 10.10.1.5
-
-The **-StaticIP** Parameter is optional. If the selected static IP is already use, an error message is displayed. If none is specified here, one will be chosen from the selected subnet.
-
-Once the cache is created, it can be accessed only by clients within the same VNET.
-
->[AZURE.IMPORTANT] To access your Azure Redis cache instance when using a VNET, pass the static IP address of the cache in the VNET as the first parameter, and pass in an `sslhost` parameter with the endpoint of your cache. In the following example the static IP address is `172.160.0.99` and the cache endpoint is `contoso5.redis.cache.chinacloudapi.cn`.
-
 
 	private static Lazy<ConnectionMultiplexer> lazyConnection = new Lazy<ConnectionMultiplexer>(() =>
 	{
@@ -96,6 +75,7 @@ The following list contains answers to commonly asked questions about the Azure 
 -	[What are some common misconfiguration issues with Azure Redis Cache and VNets?](#what-are-some-common-misconfiguration-issues-with-azure-redis-cache-and-vnets)
 -	[Can I use VNets with a standard or basic cache?](#can-i-use-vnets-with-a-standard-or-basic-cache)
 -	[Why does creating a Redis cache fail in some subnets but not others?](#why-does-creating-a-redis-cache-fail-in-some-subnets-but-not-others)
+-	[Do all cache features work when hosting a cache in a VNET?](#do-all-cache-features-work-when-hosting-a-cache-in-a-vnet)
 
 
 ## What are some common misconfiguration issues with Azure Redis Cache and VNets?
@@ -133,6 +113,13 @@ VNets can only be used with premium caches.
 If you are deploying an Azure Redis Cache to an ARM VNet, the cache must be in a dedicated subnet that contains no other resource type. If an attempt is made to deploy an Azure Redis Cache to an ARM VNet subnet that contains other resources, the deployment will fail. You must delete the existing resources inside the subnet before you can create a new Redis cache.
 
 You can deploy multiple types of resources to a classic VNet as long as you have enough IP addresses available.
+
+###  Do  <a name="do-all-cache-features-work-when-hosting-a-cache-in-a-vnet"></a>Do  all cache features work when hosting a cache in a VNET?
+
+When your cache is part of a VNET, only clients in the VNET can access the cache, and as a result the following cache management features don't work at this time.
+
+-	Redis Console - Because Redis Console uses the redis-cli.exe client hosted on VMs that are not part of your VNET, it can't connect to your cache.
+
 
 ## Use ExpressRoute with Azure Redis Cache
 

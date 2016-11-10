@@ -10,9 +10,14 @@
     editor=""
     tags="azure-resource-manager" />
 <tags
-	ms.service="virtual-machines-windows"
-	ms.date="04/20/2016"
-	wacn.date=""/>
+    ms.service="virtual-machines-windows"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="vm-windows-sql-server"
+	ms.workload="infrastructure-services"
+	ms.date="07/15/2016"
+	wacn.date=""
+	ms.author="jroth"/>
 
 # Provision a SQL Server virtual machine using Azure PowerShell (Resource Manager)
 
@@ -20,10 +25,6 @@
 - [Portal](/documentation/articles/virtual-machines-windows-portal-sql-server-provision/)
 - [PowerShell](/documentation/articles/virtual-machines-windows-ps-sql-create/)
 
-
-[AZURE.INCLUDE [arm-api-version-powershell](../includes/arm-api-version-powershell.md)]
-
-
 ## Overview
 
 This tutorial shows you how to create a single Azure virtual machine using the **Azure Resource Manager** deployment model using Azure PowerShell cmdlets. In this tutorial, we will create a single virtual machine using a single disk drive from an image in the SQL Gallery. We will create new providers for the storage, network, and compute resources that will be used by the virtual machine. If you have existing providers for any of these resources, you can use those providers instead.
@@ -40,9 +41,9 @@ For this tutorial you'll need:
 
 ## Configure your subscription
 
-Open Windows PowerShell and establish access to your Azure account by running the following cmdlet. You will be presented with a sign in screen to enter your credentials. Use the same email and password that you use to sign in to the Azure portal  Preview .
+Open Windows PowerShell and establish access to your Azure account by running the following cmdlet. You will be presented with a sign in screen to enter your credentials. Use the same email and password that you use to sign in to the Azure portal.
 
-	Add-AzureRmAccount  -EnvironmentName AzureChinaCloud 
+	Add-AzureRmAccount
 
 After successfully signing in you will see some information on screen that includes the SubscriptionId with which you signed in. This is the subscription in which the resources for this tutorial will be created unless you change to a different subscription. If you have multiple SubscriptionIds, run the following cmdlet to return a list of all of your SubscriptionIds:
 
@@ -247,7 +248,7 @@ Execute the following cmdlet to create your virtual machine.
 
 The virtual machine is created. Notice that a standard storage account is created for boot diagnostics because the specified storage account for the virtual machine's disk is a premium storage account.
 
-You can now view this machine in the Azure Portal  Preview  to see [its public IP address and its fully qualified domain name](/documentation/articles/virtual-machines-windows-portal-sql-server-provision/#Connect).
+You can now view this machine in the Azure Portal to see [its public IP address and its fully qualified domain name](/documentation/articles/virtual-machines-windows-portal-sql-server-provision/#Connect).  
 
 ## Example script
 

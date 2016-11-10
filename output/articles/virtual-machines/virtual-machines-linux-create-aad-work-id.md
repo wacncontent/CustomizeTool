@@ -9,9 +9,14 @@
    tags="azure-service-management,azure-resource-manager"/>
 
 <tags
-	ms.service="virtual-machines-linux"
-	ms.date="06/06/2016"
-	wacn.date=""/>
+   ms.service="virtual-machines-linux"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="vm-linux"
+   ms.workload="infrastructure"
+   ms.date="08/23/2016"
+   wacn.date=""
+   ms.author="rasquill"/>
 
 # Creating a Work or School identity in Azure Active Directory to use with Linux VMs
 
@@ -19,6 +24,6 @@ If you created a personal Azure account or have a personal MSDN subscription and
 
 However, recent changes make it possible to manage your subscription with any type of Azure account using the `azure login` interactive login method described [here](/documentation/articles/xplat-cli-connect/). You can either use that mechanism, or you can follow the instructions that follow. You can also [create a work or school identity in Azure Active Directory to use with Windows VMs](/documentation/articles/virtual-machines-windows-create-aad-work-id/).
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
 
-[AZURE.INCLUDE [virtual-machines-common-create-aad-work-id](../includes/virtual-machines-common-create-aad-work-id.md)]
+[AZURE.INCLUDE [virtual-machines-common-create-aad-work-id](../../includes/virtual-machines-common-create-aad-work-id.md)]

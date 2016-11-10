@@ -12,21 +12,18 @@ The easiest and quickest way to locate an image to use either with `azure vm qui
     warn:    The parameter --sku if specified will be ignored
 
     + Getting virtual machine image skus (Publisher:"canonical" Offer:"ubuntuserver" Location:"chinanorth")
-    data:    Publisher  Offer         Sku           OS      Version          LocationUrn
-    data:    ---------  ------------  -----------   -----   ---------------   --------  ----------   --------------------------------------------------
+    data:    Publisher  Offer         Sku                  OS     Version          LocationUrn
 
-    data:    canonical  ubuntuserver  12.04-DAILY  12.04.201504201  chinanorth    canonical:ubuntuserver:12.04-DAILY:12.04.201504201
-    data:    canonical  ubuntuserver  12.04.2-LTS  12.04.201302250  chinanorth    canonical:ubuntuserver:12.04.2-LTS:12.04.201302250
-    data:    canonical  ubuntuserver  12.04.2-LTS  12.04.201303250  chinanorth    canonical:ubuntuserver:12.04.2-LTS:12.04.201303250
-    data:    canonical  ubuntuserver  12.04.2-LTS  12.04.201304150  chinanorth    canonical:ubuntuserver:12.04.2-LTS:12.04.201304150
-    data:    canonical  ubuntuserver  12.04.2-LTS  12.04.201305160  chinanorth    canonical:ubuntuserver:12.04.2-LTS:12.04.201305160
-    data:    canonical  ubuntuserver  12.04.2-LTS  12.04.201305270  chinanorth    canonical:ubuntuserver:12.04.2-LTS:12.04.201305270
-    data:    canonical  ubuntuserver  12.04.2-LTS  12.04.201306030  chinanorth    canonical:ubuntuserver:12.04.2-LTS:12.04.201306030
-    data:    canonical  ubuntuserver  12.04.2-LTS  12.04.201306240  chinanorth    canonical:ubuntuserver:12.04.2-LTS:12.04.201306240
+    data:    ---------  ------------  -----------------  -----  ---------------  --------  --------------------------------------------------------
+    data:    canonical  ubuntuserver  16.04.0-LTS        Linux  16.04.201604203  chinanorth    canonical:ubuntuserver:16.04.0-LTS:16.04.201604203
+    data:    canonical  ubuntuserver  16.04.0-LTS        Linux  16.04.201605161  chinanorth    canonical:ubuntuserver:16.04.0-LTS:16.04.201605161
+    data:    canonical  ubuntuserver  16.04.0-LTS        Linux  16.04.201606100  chinanorth    canonical:ubuntuserver:16.04.0-LTS:16.04.201606100
 
 
+	data:    ---------  ------------  -----------  -----  ---------------  ----------  --------------------------------------------------
 	data:    canonical  ubuntuserver  12.04.5-LTS  Linux  12.04.201601140  chinanorth  canonical:ubuntuserver:12.04.5-LTS:12.04.201601140
 	data:    canonical  ubuntuserver  12.04.5-LTS  Linux  12.04.201602010  chinanorth  canonical:ubuntuserver:12.04.5-LTS:12.04.201602010
+	data:    canonical  ubuntuserver  12.04.5-LTS  Linux  12.04.201606270  chinanorth  canonical:ubuntuserver:12.04.5-LTS:12.04.201606270
 	data:    canonical  ubuntuserver  14.04.2-LTS  Linux  14.04.201507060  chinanorth  canonical:ubuntuserver:14.04.2-LTS:14.04.201507060
 	data:    canonical  ubuntuserver  14.04.3-LTS  Linux  14.04.201510190  chinanorth  canonical:ubuntuserver:14.04.3-LTS:14.04.201510190
 	data:    canonical  ubuntuserver  14.04.3-LTS  Linux  14.04.201601190  chinanorth  canonical:ubuntuserver:14.04.3-LTS:14.04.201601190
@@ -35,14 +32,16 @@ The easiest and quickest way to locate an image to use either with `azure vm qui
 	data:    canonical  ubuntuserver  14.04.3-LTS  Linux  14.04.201602220  chinanorth  canonical:ubuntuserver:14.04.3-LTS:14.04.201602220
 	data:    canonical  ubuntuserver  14.04.3-LTS  Linux  14.04.201603140  chinanorth  canonical:ubuntuserver:14.04.3-LTS:14.04.201603140
 	data:    canonical  ubuntuserver  14.04.3-LTS  Linux  14.04.201604060  chinanorth  canonical:ubuntuserver:14.04.3-LTS:14.04.201604060
-	data:    canonical  ubuntuserver  15.10        Linux  15.10.201601230  chinanorth  canonical:ubuntuserver:15.10:15.10.201601230
-	data:    canonical  ubuntuserver  15.10        Linux  15.10.201602040  chinanorth  canonical:ubuntuserver:15.10:15.10.201602040
-	data:    canonical  ubuntuserver  15.10        Linux  15.10.201602171  chinanorth  canonical:ubuntuserver:15.10:15.10.201602171
-	data:    canonical  ubuntuserver  15.10        Linux  15.10.201602220  chinanorth  canonical:ubuntuserver:15.10:15.10.201602220
-	data:    canonical  ubuntuserver  15.10        Linux  15.10.201602260  chinanorth  canonical:ubuntuserver:15.10:15.10.201602260
-	data:    canonical  ubuntuserver  15.10        Linux  15.10.201603150  chinanorth  canonical:ubuntuserver:15.10:15.10.201603150
-	data:    canonical  ubuntuserver  15.10        Linux  15.10.201604050  chinanorth  canonical:ubuntuserver:15.10:15.10.201604050
+	data:    canonical  ubuntuserver  14.04.3-LTS  Linux  14.04.201606270  chinanorth  canonical:ubuntuserver:14.04.3-LTS:14.04.201606270
 
+    data:    canonical  ubuntuserver  16.04.0-LTS          Linux  16.04.201606270  chinanorth      canonical:ubuntuserver:16.04.0-LTS:16.04.201606270
+
+    data:    canonical  ubuntuserver  16.04.0-LTS        Linux  16.04.201607210  chinanorth    canonical:ubuntuserver:16.04.0-LTS:16.04.201607210
+    data:    canonical  ubuntuserver  16.04.0-LTS        Linux  16.04.201608150  chinanorth    canonical:ubuntuserver:16.04.0-LTS:16.04.201608150
+    data:    canonical  ubuntuserver  16.10-DAILY        Linux  16.10.201607220  chinanorth    canonical:ubuntuserver:16.10-DAILY:16.10.201607220
+    data:    canonical  ubuntuserver  16.10-DAILY        Linux  16.10.201607230  chinanorth    canonical:ubuntuserver:16.10-DAILY:16.10.201607230
+    data:    canonical  ubuntuserver  16.10-DAILY        Linux  16.10.201607240  chinanorth    canonical:ubuntuserver:16.10-DAILY:16.10.201607240
+
 
 The **Urn** column will be the form you pass to `azure vm quick-create`.
 
@@ -51,7 +50,7 @@ Often, however, you don't yet know what is available. In this case, you can navi
     azure vm image list-publishers
     info:    Executing command vm image list-publishers
     Location: chinanorth
-    + Getting virtual machine  and/or extension  image publishers (Location: "chinanorth")
+    + Getting virtual machine  and/or extension  and/or extension image publishers (Location: "chinanorth")
     data:    PublisherLocation
 
     data:    ----------------------------------------------  --------
@@ -63,6 +62,8 @@ Often, however, you don't yet know what is available. In this case, you can navi
 
 	data:    -----------------------------------------------  ----------
     data:    Canonical                                        chinanorth
+	data:    CoreOS                                           chinanorth
+	data:    credativ                                         chinanorth
 	data:    Microsoft.Azure.Diagnostics                      chinanorth
 	data:    Microsoft.Azure.Extensions                       chinanorth
 	data:    Microsoft.Azure.RecoveryServices                 chinanorth
@@ -74,8 +75,11 @@ Often, however, you don't yet know what is available. In this case, you can navi
 	data:    Microsoft.OSTCExtensions                         chinanorth
 	data:    Microsoft.OSTCExtensions1                        chinanorth
 	data:    Microsoft.Powershell                             chinanorth
+	data:    Microsoft.Powershell.Test                        chinanorth
 	data:    Microsoft.SqlServer.Management                   chinanorth
 	data:    Microsoft.VisualStudio.Azure.RemoteDebug         chinanorth
+	data:    MicrosoftOSTC                                    chinanorth
+	data:    MicrosoftWindowsServer                           chinanorth
 	data:    MicrosoftWindowsServerHPCPack                    chinanorth
 	data:    MSOpenTech.Extensions                            chinanorth
     data:    OpenLogic                                        chinanorth
@@ -91,9 +95,20 @@ These lists can be quite long, so the example list above is just a snippet. Let'
     Location: chinanorth
     Publisher: canonical
     + Getting virtual machine image offers (Publisher: "canonical" Location:"chinanorth")
-    data:    Publisher  Offer         Location
-    data:    ---------  ------------  --------
-    data:    canonical  UbuntuServer  chinanorth  
+    data:    Publisher  Offer                        Location
+
+    data:    ---------  -------------------------  --------
+    data:    canonical  Ubuntu15.04Snappy          chinanorth
+    data:    canonical  Ubuntu15.04SnappyDocker    chinanorth
+    data:    canonical  UbunturollingSnappy        chinanorth
+    data:    canonical  UbuntuServer               chinanorth
+    data:    canonical  Ubuntu_Snappy_Core         chinanorth
+    data:    canonical  Ubuntu_Snappy_Core_Docker  chinanorth
+
+
+	data:    ---------  ------------  ----------
+	data:    canonical  UbuntuServer  chinanorth
+
     info:    vm image list-offers command OK
 
 Now we know that in the China North region, Canonical publishes the **UbuntuServer** offer on Azure. But what SKUs? To get those, you call `azure vm image list-skus` and respond to the prompt with the location, publisher, and offer that you have discovered.
@@ -104,63 +119,81 @@ Now we know that in the China North region, Canonical publishes the **UbuntuServ
     Publisher: canonical
     Offer: ubuntuserver
     + Getting virtual machine image skus (Publisher:"canonical" Offer:"ubuntuserver" Location:"chinanorth")
-    data:    Publisher  Offer         sku          Location
-    data:    ---------  ------------  -----------   --------  ---------- 
+    data:    Publisher  Offer         sku                  Location
 
-    data:    canonical  ubuntuserver  12.04-DAILY  chinanorth  
-    data:    canonical  ubuntuserver  12.04.2-LTS  chinanorth  
-    data:    canonical  ubuntuserver  12.04.3-LTS  chinanorth  
-    data:    canonical  ubuntuserver  12.04.4-LTS  chinanorth  
+    data:    ---------  ------------  -----------------  --------
+    data:    canonical  ubuntuserver  12.04.2-LTS        chinanorth
+    data:    canonical  ubuntuserver  12.04.3-LTS        chinanorth
+    data:    canonical  ubuntuserver  12.04.4-LTS        chinanorth
+    data:    canonical  ubuntuserver  12.04.5-DAILY-LTS  chinanorth
+    data:    canonical  ubuntuserver  12.04.5-LTS        chinanorth
+    data:    canonical  ubuntuserver  12.10              chinanorth
+    data:    canonical  ubuntuserver  14.04-beta         chinanorth
+    data:    canonical  ubuntuserver  14.04.0-LTS        chinanorth
+    data:    canonical  ubuntuserver  14.04.1-LTS        chinanorth
 
-    data:    canonical  ubuntuserver  12.04.5-LTS  chinanorth  
-
-    data:    canonical  ubuntuserver  12.10        chinanorth  
-    data:    canonical  ubuntuserver  14.04-beta   chinanorth  
-    data:    canonical  ubuntuserver  14.04-DAILY  chinanorth  
-    data:    canonical  ubuntuserver  14.04.0-LTS  chinanorth  
-    data:    canonical  ubuntuserver  14.04.1-LTS  chinanorth  
-
-    data:    canonical  ubuntuserver  14.04.2-LTS  chinanorth  
 
-	data:    canonical  ubuntuserver  14.04.3-LTS  chinanorth
+	data:    ---------  ------------  -----------  ----------
+    data:    canonical  ubuntuserver  12.04.5-LTS  chinanorth
 
-    data:    canonical  ubuntuserver  14.10        chinanorth  
+    data:    canonical  ubuntuserver  14.04.2-LTS          chinanorth
+    data:    canonical  ubuntuserver  14.04.3-LTS          chinanorth
 
-    data:    canonical  ubuntuserver  14.10-beta   chinanorth  
-    data:    canonical  ubuntuserver  14.10-DAILY  chinanorth  
+    data:    canonical  ubuntuserver  14.04.3-DAILY-LTS  chinanorth
+    data:    canonical  ubuntuserver  14.04.3-LTS        chinanorth
+    data:    canonical  ubuntuserver  14.04.5-DAILY-LTS  chinanorth
+    data:    canonical  ubuntuserver  14.04.5-LTS        chinanorth
 
-    data:    canonical  ubuntuserver  15.04        chinanorth  
-    data:    canonical  ubuntuserver   15.04-beta  15.10         chinanorth
+    data:    canonical  ubuntuserver  14.10                chinanorth
 
-    data:    canonical  ubuntuserver  15.04-DAILY  chinanorth  
+    data:    canonical  ubuntuserver  14.10-beta         chinanorth
+    data:    canonical  ubuntuserver  14.10-DAILY        chinanorth
 
+    data:    canonical  ubuntuserver  15.04                chinanorth
+
+    data:    canonical  ubuntuserver  15.04-beta         chinanorth
+    data:    canonical  ubuntuserver  15.04-DAILY        chinanorth
+
+    data:    canonical  ubuntuserver  15.10                chinanorth
+
+    data:    canonical  ubuntuserver  15.10-alpha        chinanorth
+    data:    canonical  ubuntuserver  15.10-beta         chinanorth
+    data:    canonical  ubuntuserver  15.10-DAILY        chinanorth
+    data:    canonical  ubuntuserver  16.04-alpha        chinanorth
+    data:    canonical  ubuntuserver  16.04-beta         chinanorth
+    data:    canonical  ubuntuserver  16.04.0-DAILY-LTS  chinanorth
+    data:    canonical  ubuntuserver  16.04.0-LTS        chinanorth
+    data:    canonical  ubuntuserver  16.10-DAILY        chinanorth
+
+
+    data:    canonical  ubuntuserver  16.04.0-LTS  chinanorth
+
     info:    vm image list-skus command OK
 
 With this information, you can now find exactly the image you want by calling the original call at the top.
 
-    azure vm image list chinanorth canonical ubuntuserver 14.04.2-LTS
+    azure vm image list chinanorth canonical ubuntuserver 16.04.0-LTS
     info:    Executing command vm image list
-    + Getting virtual machine images (Publisher:"canonical" Offer:"ubuntuserver" Sku: "14.04.2-LTS" Location:"chinanorth")
-    data:    Publisher  Offer         Sku           OS          Version          LocationUrn
-    data:    ---------  ------------  -----------   ---------   ---------------   --------  ----------   --------------------------------------------------
+    + Getting virtual machine images (Publisher:"canonical" Offer:"ubuntuserver" Sku: "16.04.0-LTS" Location:"chinanorth")
+    data:    Publisher  Offer         Sku          OS     Version          LocationUrn
+    data:    ---------  ------------  -----------  -----  ---------------   --------  ----------   --------------------------------------------------
 
-    data:    canonical  ubuntuserver  14.04.2-LTS  14.04.201503090  chinanorth    canonical:ubuntuserver:14.04.2-LTS:14.04.201503090
-    data:    canonical  ubuntuserver  14.04.2-LTS  14.04.20150422   chinanorth    canonical:ubuntuserver:14.04.2-LTS:14.04.20150422
-    data:    canonical  ubuntuserver  14.04.2-LTS  14.04.201504270  chinanorth    canonical:ubuntuserver:14.04.2-LTS:14.04.201504270
+    data:    canonical  ubuntuserver  16.04.0-LTS  Linux  16.04.201604203  chinanorth    canonical:ubuntuserver:16.04.0-LTS:16.04.201604203
+    data:    canonical  ubuntuserver  16.04.0-LTS  Linux  16.04.201605161  chinanorth    canonical:ubuntuserver:16.04.0-LTS:16.04.201605161
+    data:    canonical  ubuntuserver  16.04.0-LTS  Linux  16.04.201606100  chinanorth    canonical:ubuntuserver:16.04.0-LTS:16.04.201606100
 
-
-	data:    canonical  ubuntuserver  14.04.2-LTS  undefined  14.04.201507060  chinanorth  canonical:ubuntuserver:14.04.2-LTS:14.04.201507060
-
+    data:    canonical  ubuntuserver  16.04.0-LTS  Linux  16.04.201606270  chinanorth      canonical:ubuntuserver:16.04.0-LTS:16.04.201606270
+
+    data:    canonical  ubuntuserver  16.04.0-LTS  Linux  16.04.201607210  chinanorth    canonical:ubuntuserver:16.04.0-LTS:16.04.201607210
+    data:    canonical  ubuntuserver  16.04.0-LTS  Linux  16.04.201608150  chinanorth    canonical:ubuntuserver:16.04.0-LTS:16.04.201608150
+
     info:    vm image list command OK
 
 Now you can choose precisely the image you want to use. To create a virtual machine quickly by using the URN information, which you just found, or to use a template with that URN information, see [Using the Azure CLI for Mac, Linux, and Windows with Azure Resource Manager](/documentation/articles/xplat-cli-azure-resource-manager/).
 
 ## PowerShell
 
-With PowerShell, type `Switch-AzureMode AzureResourceManager`. See [Using Azure CLI with Resource Manager](/documentation/articles/xplat-cli-azure-resource-manager/) and [Using Azure PowerShell with Azure Resource Manager](/documentation/articles/powershell-azure-resource-manager/) for more complete update and configuration details.
-
-> [AZURE.NOTE] With Azure PowerShell modules above 1.0, the `Switch-AzureMode` cmdlet was removed. With that version and more recent, please replace the commands below with the `Azure` portion replaced with `AzureRm`. If you are using Azure PowerShell modules below 1.0, you will use the below commands but you must first `Switch-AzureMode AzureResourceManager`. 
-
+> [AZURE.NOTE] Install and configure the [latest Azure PowerShell](/documentation/articles/powershell-install-configure/). If you are using Azure PowerShell modules below 1.0, you still use the following commands but you must first `Switch-AzureMode AzureResourceManager`. 
 
 When creating a new virtual machine with Azure Resource Manager, in some cases you need to specify an image with the combination of the following image properties:
 
@@ -168,7 +201,7 @@ When creating a new virtual machine with Azure Resource Manager, in some cases y
 - Offer
 - SKU
 
-For example, these values are needed for the **Set-AzureVMSourceImage** PowerShell cmdlet or with a resource group template file in which you must specify the type of virtual machine to be created.
+For example, these values are needed for the `Set-AzureRMVMSourceImage` PowerShell cmdlet or with a resource group template file in which you must specify the type of virtual machine to be created.
 
 If you need to determine these values, you can navigate the images to determine these values:
 
@@ -176,69 +209,141 @@ If you need to determine these values, you can navigate the images to determine 
 2. For a given publisher, list their offers.
 3. For a given offer, list their SKUs.
 
-To do this in PowerShell, first switch to the Resource Manager mode of Azure PowerShell.
 
-	Switch-AzureMode AzureResourceManager
+First, list the publishers with the following commands:
 
-For the first step above, list the publishers with these commands.
-
+
+```powershell
+$locName="<Azure location, such as China North>"
+
+
 	$locName="<Azure location, such as China North>"
-	Get-AzureVMImagePublisher -Location $locName | Select PublisherName
+
+Get-AzureRMVMImagePublisher -Location $locName | Select PublisherName
+
+```
+
 
-Fill in your chosen publisher name and run these commands.
+Fill in your chosen publisher name and run the following commands:
 
+
+```powershell
+$pubName="<publisher>"
+
+
 	$pubName="<publisher>"
-	Get-AzureVMImageOffer -Location $locName -Publisher $pubName | Select Offer
+
+Get-AzureRMVMImageOffer -Location $locName -Publisher $pubName | Select Offer
+
+```
+
 
-Fill in your chosen offer name and run these commands.
+Fill in your chosen offer name and run the following commands:
 
+
+```powershell
+$offerName="<offer>"
+
+
 	$offerName="<offer>"
-	Get-AzureVMImageSku -Location $locName -Publisher $pubName -Offer $offerName | Select Skus
+
+Get-AzureRMVMImageSku -Location $locName -Publisher $pubName -Offer $offerName | Select Skus
+
+```
+
 
-From the display of the **Get-AzureVMImageSku** command, you have all the information you need to specify the image for a new virtual machine.
+From the display of the `Get-AzureRMVMImageSku` command, you have all the information you need to specify the image for a new virtual machine.
 
-Here is an example.
+The following shows a full example:
 
+
+```powershell
+PS C:\> $locName="China North"
+
+
 	PS C:\> $locName="China North"
-	PS C:\> Get-AzureVMImagePublisher -Location $locName | Select PublisherName
+
+PS C:\> Get-AzureRMVMImagePublisher -Location $locName | Select PublisherName
 
-	PublisherName
-	-------------
-	a10networks
-	aiscaler-cache-control-ddos-and-url-rewriting-
-	alertlogic
-	AlertLogic.Extension
-	Barracuda.Azure.ConnectivityAgent
-	barracudanetworks
-	basho
-	boxless
-	bssw
+PublisherName
+-------------
+
+a10networks
+aiscaler-cache-control-ddos-and-url-rewriting-
+alertlogic
+AlertLogic.Extension
+Barracuda.Azure.ConnectivityAgent
+barracudanetworks
+basho
+boxless
+bssw
+Canonical
+
+
 	Canonical
-	...
+	CoreOS
+	credativ
+
+...
+
+```
+
 
 For the "MicrosoftWindowsServer" publisher:
 
+
+```powershell
+PS C:\> $pubName="MicrosoftWindowsServer"
+
+
 	PS C:\> $pubName="MicrosoftWindowsServer"
-	PS C:\> Get-AzureVMImageOffer -Location $locName -Publisher $pubName | Select Offer
+
+PS C:\> Get-AzureRMVMImageOffer -Location $locName -Publisher $pubName | Select Offer
 
-	Offer
-	-----
-	WindowsServer
+Offer
+-----
+WindowsServer
+
+```
+
 
 For the "WindowsServer" offer:
 
+
+```powershell
+PS C:\> $offerName="WindowsServer"
+
+
 	PS C:\> $offerName="WindowsServer"
-	PS C:\> Get-AzureVMImageSku -Location $locName -Publisher $pubName -Offer $offerName | Select Skus
+
+PS C:\> Get-AzureRMVMImageSku -Location $locName -Publisher $pubName -Offer $offerName | Select Skus
 
-	Skus
-	----
-	2008-R2-SP1
-	2012-Datacenter
-	2012-R2-Datacenter
-	Windows-Server-Technical-Preview
+Skus
+----
+2008-R2-SP1
+
+	2008-R2-SP1-zhcn
+
+2012-Datacenter
+
+	2012-Datacenter-zhcn
+
+2012-R2-Datacenter
+
+2016-Nano-Server-Technical-Previe
+2016-Technical-Preview-with-Conta
+
+
+	2012-R2-Datacenter-zhcn
+2016-Nano-Server-Technical-Preview
+2016-Technical-Preview-with-Containers
+
+Windows-Server-Technical-Preview
+
+```
+
 
-From this list, copy the chosen SKU name, and you have all the information for the **Set-AzureVMSourceImage** PowerShell cmdlet or for a resource group template file that requires you to specify the publisher, offer, and SKU for an image.
-
+From this list, copy the chosen SKU name, and you have all the information for the `Set-AzureRMVMSourceImage` PowerShell cmdlet or for a resource group template.
 
 
 <!--Image references-->

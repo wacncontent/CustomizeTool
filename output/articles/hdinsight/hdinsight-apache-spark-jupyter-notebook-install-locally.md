@@ -4,14 +4,19 @@
 	services="hdinsight" 
 	documentationCenter="" 
 	authors="nitinme" 
-	manager="paulettm" 
+	manager="jhubbard" 
 	editor="cgronlun"
 	tags="azure-portal"/>
 
-<tags
-	ms.service="hdinsight"
-	ms.date="06/06/2016"
-	wacn.date=""/>
+<tags 
+	ms.service="hdinsight" 
+	ms.workload="big-data" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="09/26/2016" 
+	wacn.date="" 
+	ms.author="nitinme"/>
 
 
 # Install Jupyter notebook on your computer and connect to Apache Spark cluster on HDInsight Linux
@@ -47,24 +52,7 @@ You  must install Python before you can install Jupyter notebooks. Both Python a
 
 ## Install the kernels and Spark magic
 
-In this section you install the Spark magic, the PySpark and Spark kernels, and then configure the kernels to connect to an Apache Spark cluster running in Azure HDInsight.
-
-1. Download the latest public preview of the Spark magic from [Github](https://github.com/jupyter-incubator/sparkmagic/archive/publicpreview0.5.zip).
-
-2. Unzip the downloaded file to a location on the disk. In the instructions here, we refer to this path as `$SPARKMAGIC_PATH`.
-
-2. Run the following command
-
-		pip install -r $SPARKMAGIC_PATH/requirements.txt  
-
-3. Run the following command to install the Spark magic.
-
-		pip install -e $SPARKMAGIC_PATH
-
-4. Install the PySpark and Spark kernels. Run the following commands.
-
-		jupyter-kernelspec install $SPARKMAGIC_PATH/remotespark/kernels/sparkkernel
-		jupyter-kernelspec install $SPARKMAGIC_PATH/remotespark/kernels/pysparkkernel
+For instructions on how to install the Spark magic, the PySpark and Spark kernels, see the [sparkmagic documentation](https://github.com/jupyter-incubator/sparkmagic#installation) on GitHub.
 
 ## Configure Spark magic to access the HDInsight Spark cluster
 
@@ -93,7 +81,7 @@ In this section you configure the Spark magic that you installed earlier to conn
 		  },
 		  "kernel_scala_credentials" : {
 		    "username": "{USERNAME}",
-		    " base64_password ": "{BASE64ENCODEDPASSWORD}",
+		    "base64_password": "{BASE64ENCODEDPASSWORD}",
 		    "url": "https://{CLUSTERDNSNAME}.azurehdinsight.cn/livy"
 		  }
 		}

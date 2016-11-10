@@ -6,14 +6,19 @@
 	services="hdinsight"
 	documentationCenter=""
 	authors="Blackmist"
-	manager="paulettm"
+	manager="jhubbard"
 	editor="cgronlun"
 	tags="azure-portal"/>
 
 <tags
 	ms.service="hdinsight"
-	ms.date="06/03/2016"
-	wacn.date=""/>
+	ms.workload="big-data"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/06/2016"
+	wacn.date=""
+	ms.author="larryfr"/>
 
 # Customize Linux-based HDInsight clusters using Script Action
 
@@ -21,7 +26,7 @@ HDInsight provides a configuration option called **Script Action** that invokes 
 
 > [AZURE.NOTE] The ability to use script actions on an already running cluster is only available for Linux-based HDInsight clusters. For information on using script actions with Windows-based clusters, see [Customize HDInsight clusters using Script Action (Windows)](/documentation/articles/hdinsight-hadoop-customize-cluster-v1/).
 
-Script actions can also be published to the Azure  Marketplace  gallery  as an HDInsight application. Some of the examples in this document show how you can install an HDInsight application using script action commands from PowerShell and the .NET SDK. For more information on HDInsight applications, see [Publish HDInsight applications into the Azure  Marketplace](/documentation/articles/hdinsight-apps-publish-applications/)  gallery](/documentation/articles/hdinsight-apps-publish-applications/) .
+Script actions can also be published to the Azure Marketplace as an HDInsight application. Some of the examples in this document show how you can install an HDInsight application using script action commands from PowerShell and the .NET SDK. For more information on HDInsight applications, see [Publish HDInsight applications into the Azure Marketplace](/documentation/articles/hdinsight-apps-publish-applications/). 
 
 ## Understanding Script Actions
 
@@ -57,9 +62,9 @@ A Script Action is simply a Bash script that you provide a URL to, and parameter
 
 * Are ran with __root level privileges__ on the cluster nodes.
 
-* Can be used through the __Azure Portal__, __Azure PowerShell__, __Azure CLI__, or __HDInsight .NET SDK__
+* Can be used through the __Azure portal__, __Azure PowerShell__, __Azure CLI__, or __HDInsight .NET SDK__
 
-    [AZURE.INCLUDE [upgrade-powershell](../includes/hdinsight-use-latest-powershell-cli-and-dotnet-sdk.md)]
+    [AZURE.INCLUDE [upgrade-powershell](../../includes/hdinsight-use-latest-powershell-cli-and-dotnet-sdk.md)]
 
 To assist in understanding what scripts have been applied to a cluster, and in determining the ID of scripts for promotion or demotion, the cluster keeps a history of all scripts that have been ran.
 
@@ -106,10 +111,11 @@ When applying a script to a cluster, the cluster state will change to from __Run
 
 ## Example Script Action scripts
 
-Script Action scripts can be used from the Azure Portal, Azure PowerShell, Azure CLI, or the HDInsight .NET SDK. HDInsight provides scripts to install the following components on HDInsight clusters:
+Script Action scripts can be used from the Azure portal, Azure PowerShell, Azure CLI, or the HDInsight .NET SDK. HDInsight provides scripts to install the following components on HDInsight clusters:
 
 Name | Script
 ----- | -----
+**Add an Azure Storage account** | https://hdiconfigactions.blob.core.windows.net/linuxaddstorageaccountv01/add-storage-account-v01.sh. See [Apply a Script Action to a running cluster](#apply-a-script-action-to-a-running-cluster).
 **Install Hue** | https://hdiconfigactions.blob.core.windows.net/linuxhueconfigactionv02/install-hue-uber-v02.sh. See [Install and use Hue on HDInsight clusters](/documentation/articles/hdinsight-hadoop-hue-linux/).
 **Install R** | https://hdiconfigactions.blob.core.windows.net/linuxrconfigactionv01/r-installer-v01.sh. See [Install and use R on HDInsight clusters](/documentation/articles/hdinsight-hadoop-r-scripts-linux/).
 **Install Solr** | https://hdiconfigactions.blob.core.windows.net/linuxsolrconfigactionv01/solr-installer-v01.sh. See [Install and use Solr on HDInsight clusters](/documentation/articles/hdinsight-hadoop-solr-install-v1/).
@@ -118,9 +124,9 @@ Name | Script
 
 ## Use a Script Action during cluster creation
 
-This section provides examples on the different ways you can use script actions when creating an HDInsight cluster- from the Azure Portal, using an ARM template, using PowerShell CMDlets, and using the .NET SDK.
+This section provides examples on the different ways you can use script actions when creating an HDInsight cluster- from the Azure portal, using an Azure Resource Manager template, using PowerShell CMDlets, and using the .NET SDK.
 
-### Use a Script Action during cluster creation from the Azure Portal
+### Use a Script Action during cluster creation from the Azure portal
 
 1. Start creating a cluster as described at [Create Hadoop clusters in HDInsight](/documentation/articles/hdinsight-provision-clusters-v1/#portal).
 
@@ -141,19 +147,19 @@ This section provides examples on the different ways you can use script actions 
 
 ### Use a Script Action from Azure Resource Manager templates
 
-In this section, we use Azure Resource Manager (ARM) templates to create an HDInsight cluster and also use a script action to install custom components (R, in this example) on the cluster. This section provides a sample ARM template to create a cluster using script action.
+In this section, we use Azure Resource Manager templates to create an HDInsight cluster and also use a script action to install custom components (R, in this example) on the cluster. This section provides a sample template to create a cluster using script action.
 
-> [AZURE.NOTE] The steps in this section demonstrate creating a cluster using a script action. For an example of creating a cluster from an ARM template using an HDInsight application, see [Install custom HDInsight applications](/documentation/articles/hdinsight-apps-install-custom-applications/).
+> [AZURE.NOTE] The steps in this section demonstrate creating a cluster using a script action. For an example of creating a cluster from a template using an HDInsight application, see [Install custom HDInsight applications](/documentation/articles/hdinsight-apps-install-custom-applications/).
 
 #### Before you begin
 
 * For information about configuring a workstation to run HDInsight Powershell cmdlets, see [Install and configure Azure PowerShell](/documentation/articles/powershell-install-configure/).
-* For instructions on how to create ARM templates, see [Authoring Azure Resource Manager templates](/documentation/articles/resource-group-authoring-templates/).
+* For instructions on how to create templates, see [Authoring Azure Resource Manager templates](/documentation/articles/resource-group-authoring-templates/).
 * If you have not previously used Azure PowerShell with Resource Manager, see [Using Azure PowerShell with Azure Resource Manager](/documentation/articles/powershell-azure-resource-manager/).
 
 #### Create clusters using Script Action
 
-1. Copy the following template to a location on your computer. This template installs R on headnode as well as worker nodes in the cluster. You can also verify if the JSON template is valid. Paste your template content into [JSONLint](http://jsonlint.com/), an online JSON validaton tool.
+1. Copy the following template to a location on your computer. This template installs Giraph on the headnodes as well as worker nodes in the cluster. You can also verify if the JSON template is valid. Paste your template content into [JSONLint](http://jsonlint.com/), an online JSON validation tool.
 
 			{
 		    "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
@@ -250,7 +256,7 @@ In this section, we use Azure Resource Manager (ARM) templates to create an HDIn
 		                            "name": "[concat(parameters('clusterStorageAccountName'),'.blob.core.chinacloudapi.cn')]",
 		                            "isDefault": true,
 		                            "container": "[parameters('clusterStorageAccountContainer')]",
-		                            "key": "[listKeys(resourceId(parameters('clusterStorageAccountResourceGroup'), 'Microsoft.Storage/storageAccounts', parameters('clusterStorageAccountName')), providers('Microsoft.Storage', 'storageAccounts').apiVersions[0]).key1]"
+		                            "key": "[listKeys(resourceId('Microsoft.Storage/storageAccounts', parameters('clusterStorageAccountName')), '2015-05-01-preview').key1]"
 		                        }
 		                    ]
 		                },
@@ -270,8 +276,8 @@ In this section, we use Azure Resource Manager (ARM) templates to create an HDIn
 		                            },
 		                            "scriptActions": [
 		                                {
-		                                    "name": "installR",
-		                                    "uri": "https://hdiconfigactions.blob.core.windows.net/linuxrconfigactionv01/r-installer-v01.sh",
+		                                    "name": "installGiraph",
+		                                    "uri": "https://hdiconfigactions.blob.core.windows.net/linuxgiraphconfigactionv01/giraph-installer-v01.sh",
 		                                    "parameters": ""
 		                                }
 		                            ]
@@ -388,11 +394,11 @@ Perform the following steps:
 		$config.DefaultStorageAccountName="$storageAccountName.blob.core.chinacloudapi.cn"
 		$config.DefaultStorageAccountKey=$storageAccountKey
 
-3. Use **Add-AzureRmHDInsightScriptAction** cmdlet to invoke the script. The following example uses a script that installs R on the cluster:
+3. Use **Add-AzureRmHDInsightScriptAction** cmdlet to invoke the script. The following example uses a script that installs Giraph on the cluster:
 
 		# INVOKE THE SCRIPT USING THE SCRIPT ACTION FOR HEADNODE AND WORKERNODE
-		$config = Add-AzureRmHDInsightScriptAction -Config $config -Name "Install R"  -NodeType HeadNode -Uri https://hdiconfigactions.blob.core.windows.net/linuxrconfigactionv01/r-installer-v01.sh
-        $config = Add-AzureRmHDInsightScriptAction -Config $config -Name "Install R"  -NodeType WorkerNode -Uri https://hdiconfigactions.blob.core.windows.net/linuxrconfigactionv01/r-installer-v01.sh
+		$config = Add-AzureRmHDInsightScriptAction -Config $config -Name "Install Giraph"  -NodeType HeadNode -Uri https://hdiconfigactions.blob.core.windows.net/linuxgiraphconfigactionv01/giraph-installer-v01.sh
+        $config = Add-AzureRmHDInsightScriptAction -Config $config -Name "Install Giraph"  -NodeType WorkerNode -Uri https://hdiconfigactions.blob.core.windows.net/linuxgiraphconfigactionv01/giraph-installer-v01.sh
 
 	The **Add-AzureRmHDInsightScriptAction** cmdlet takes the following parameters:
 
@@ -432,9 +438,9 @@ The HDInsight .NET SDK provides client libraries that makes it easier to work wi
 
 ## Apply a Script Action to a running cluster
 
-This section provides examples on the different ways you can apply script actions to a running HDInsight cluster; from the Azure Portal, using PowerShell CMDlets, using the cross-platform Azure CLI, and using the .NET SDK.
+This section provides examples on the different ways you can apply script actions to a running HDInsight cluster; from the Azure portal, using PowerShell CMDlets, using the cross-platform Azure CLI, and using the .NET SDK. The persisted script action used in this section adds an existing Azure storage account to a running cluster. You can also use other script actions, See [Example Script Action scripts](#example-script-action-scripts).
 
-### Apply a Script Action to a running cluster from the Azure Portal
+### Apply a Script Action to a running cluster from the Azure portal
 
 1. From the [Azure portal](https://portal.azure.cn), select your HDInsight cluster.
 
@@ -450,10 +456,14 @@ This section provides examples on the different ways you can apply script action
 
 5. From the Add Script Action blade, enter the following information.
 
-    * __Name__: The friendly name to use for this Script Action. In this example, `R`.
-    * __SCRIPT URI__: The URI to the script. In this example, `https://hdiconfigactions.blob.core.windows.net/linuxrconfigactionv01/r-installer-v01.sh`
-    * __Head__, __Worker__, and __Zookeeper__: Check the nodes that this script should be applied to. In this example, Head and Worker are checked.
-    * __PARAMETERS__: If the script accepts parameters, enter them here.
+    * __Name__: The friendly name to use for this Script Action. In this example, `Add Storage account`.
+    * __SCRIPT URI__: The URI to the script. In this example, `https://hdiconfigactions.blob.core.windows.net/linuxaddstorageaccountv01/add-storage-account-v01.sh`
+    * __Head__, __Worker__, and __Zookeeper__: Check the nodes that this script should be applied to. In this example, Head, Worker and Zookeeper are checked.
+    * __PARAMETERS__: If the script accepts parameters, enter them here. In this example, enter the storage account name, and the storage account key:
+
+		![hdinsight persisted script action acc storage account to running clusters](./media/hdinsight-hadoop-customize-cluster-v1/hdinsight-persisted-script-action-add-storage-account.png)
+
+		On the screenshot, `contosodata` is an existing Azure Storage account, the second line is the Storage account key.
     * __PERSISTED__: Check this entry if you want to persist the script so it will be applied to new worker nodes when you scale up the cluster.
 
 6. Finally, use the __Create__ button to apply the script to the cluster.
@@ -483,8 +493,8 @@ Before proceeding, make sure you have installed and configured Azure PowerShell.
 
         OperationState  : Succeeded
         ErrorMessage    :
-        Name            : R
-        Uri             : https://hdiconfigactions.blob.core.windows.net/linuxrconfigactionv01/r-installer-v01.sh
+        Name            : Giraph
+        Uri             : https://hdiconfigactions.blob.core.windows.net/linuxgiraphconfigactionv01/giraph-installer-v01.sh
         Parameters      :
         NodeTypes       : {HeadNode, WorkerNode}
 
@@ -492,7 +502,7 @@ Before proceeding, make sure you have installed and configured Azure PowerShell.
 
 Before proceeding, make sure you have installed and configured the Azure CLI. For more information, see [Install the Azure CLI](/documentation/articles/xplat-cli-install/).
 
-	[AZURE.INCLUDE [use-latest-version](../includes/hdinsight-use-latest-cli.md)] 
+	[AZURE.INCLUDE [use-latest-version](../../includes/hdinsight-use-latest-cli.md)] 
 
 1. Open a shell session, terminal, command-prompt or other command-line for your system and use the following command to switch to Azure Resource Manager mode.
 
@@ -522,13 +532,16 @@ Before proceeding, make sure you have installed and configured the Azure CLI. Fo
         data:    Operation ID:  b707b10e-e633-45c0-baa9-8aed3d348c13
         info:    hdinsight script-action create command OK
 
+### Apply a Script Action to a running cluster using REST API
+
+See [Run Script Actions on a running cluster](https://msdn.microsoft.com/zh-cn/library/azure/mt668441.aspx).
 ### Apply a Script Action to a running cluster from the HDInsight .NET SDK
 
 For an example of using the .NET SDK to apply scripts to a cluster, see [https://github.com/Azure-Samples/hdinsight-dotnet-script-action](https://github.com/Azure-Samples/hdinsight-dotnet-script-action).
 
 ## View history, promote, and demote Script Actions
 
-### Using the Azure Portal
+### Using the Azure portal
 
 1. From the [Azure portal](https://portal.azure.cn), select your HDInsight cluster.
 
@@ -588,7 +601,7 @@ The following example script demonstrates using the cmdlets to promote, then dem
 | `azure hdinsight script-action persisted list <clustername>` | Retrieve a list of persisted script actions |
 | `azure hdinsight script-action persisted show <clustername> <scriptname>` | Retrieve information on a specific persisted script action |
 | `azure hdinsight script-action history list <clustername>` | Retrieve a history of script actions applied to the cluster |
-| `azure hdinsight script-action history show <clustername> <scriptname>` | Retrive information on a specific script action |
+| `azure hdinsight script-action history show <clustername> <scriptname>` | Retrieve information on a specific script action |
 | `azure hdinsight script action persisted set <clustername> <scriptexecutionid>` | Promotes an ad hoc script action to a persisted script action |
 | `azure hdinsight script-action persisted delete <clustername> <scriptname>` | Demotes a persisted script action to an ad hoc action |
 
@@ -628,7 +641,7 @@ If the cluster creation failed due to an error in script action, the script acti
 
 	![Screenshot of operations](./media/hdinsight-hadoop-customize-cluster-v1/script_action_logs_in_storage.png)
 
-	Under this, the logs are organized separately for headnode, workdernode, and zookeeper nodes. Some examples are:
+	Under this, the logs are organized separately for headnode, workernode, and zookeeper nodes. Some examples are:
 	* **Headnode** - `<uniqueidentifier>AmbariDb-hn0-<generated_value>.chinacloudapp.cn`
 	* **Worker node** - `<uniqueidentifier>AmbariDb-wn0-<generated_value>.chinacloudapp.cn`
 	* **Zookeeper node** - `<uniqueidentifier>AmbariDb-zk0-<generated_value>.chinacloudapp.cn`
@@ -689,7 +702,6 @@ There are two exceptions:
 See the following for information and examples on creating and using scripts to customize a cluster:
 
 - [Develop Script Action scripts for HDInsight](/documentation/articles/hdinsight-hadoop-script-actions-linux/)
-- [Install and use R on HDInsight clusters](/documentation/articles/hdinsight-hadoop-r-scripts-linux/)
 - [Install and use Solr on HDInsight clusters](/documentation/articles/hdinsight-hadoop-solr-install-v1/)
 - [Install and use Giraph on HDInsight clusters](/documentation/articles/hdinsight-hadoop-giraph-install-v1/)
 

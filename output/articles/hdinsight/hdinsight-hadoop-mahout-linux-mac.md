@@ -4,18 +4,23 @@
 	services="hdinsight"
 	documentationCenter=""
 	authors="Blackmist"
-	manager="paulettm"
+	manager="jhubbard"
 	editor="cgronlun"
 	tags="azure-portal"/>
 
 <tags
 	ms.service="hdinsight"
-	ms.date="06/14/2016"
-	wacn.date=""/>
+	ms.workload="big-data"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/30/2016"
+	wacn.date=""
+	ms.author="larryfr"/>
 
 #Generate movie recommendations by using Apache Mahout with Linux-based Hadoop in HDInsight
 
-[AZURE.INCLUDE [mahout-selector](../includes/hdinsight-selector-mahout.md)]
+[AZURE.INCLUDE [mahout-selector](../../includes/hdinsight-selector-mahout.md)]
 
 Learn how to use the [Apache Mahout](http://mahout.apache.org) machine learning library with Azure HDInsight to generate movie recommendations.
 

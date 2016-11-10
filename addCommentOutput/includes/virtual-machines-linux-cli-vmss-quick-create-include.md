@@ -1,9 +1,17 @@
 If you haven't already, you can get an [Azure subscription trial](/pricing/1rmb-trial/) and the [Azure CLI](/documentation/articles/xplat-cli-install/) [connected to your Azure account](/documentation/articles/xplat-cli-connect/). Once you do, you can run the following commands to quick-create a scale set:
 
+
 ```bash
 # make sure we are in Resource Manager mode (/documentation/articles/resource-manager-deployment-model/)
 azure config mode arm
 
+
+
+
+    # make sure we are in Resource Manager mode (/documentation/articles/resource-manager-deployment-model/)
+    azure config mode arm
+
+
 # quick-create a scale set
 #
 # generic syntax:
@@ -11,14 +19,21 @@ azure config mode arm
 #
 # example:
 azure vmss quick-create -n negatvmss -g negatvmssrg -l chinanorth -u negat -p P4ssw0rd -C 5 -Q Canonical:UbuntuServer:14.04.3-LTS:latest
+
 ```
+
 
 If you want to customize the location or image-urn, please look into the commands `azure location list` and `azure vm image {list-publishers|list-offers|list-skus|list|show}`.
 
 Once this command has returned, the scale set will have been created. This scale set will have a load balancer with NAT rules mapping port 50,000+i on the load balancer to port 22 on VM i. Thus, once we figure out the FQDN of the load balancer, we will be able to connect via ssh to our VMs:
 
+
 ```bash
 # (if you decide to run this as a script, please invoke using bash)
+
+
+    # (if you decide to run this as a script, please invoke using bash)
+
 
 # list load balancers in the resource group we created
 #
@@ -54,4 +69,6 @@ FQDN=${split_line[3]}
 #
 # example to connct via ssh into VM "0":
 ssh -p 50000 negat@$FQDN
+
 ```
+

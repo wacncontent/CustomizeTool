@@ -7,7 +7,7 @@ The steps are simple. You need to locate your signed on identity in the Azure Cl
 
 ## Locate your default directory in the Azure Classic Management Portal
 
-Start by logging in to the [Azure Classic Management Portal](https://manage.windowsazure.cn) with your personal Microsoft account identity. After you are logged in, scroll down the blue panel on the left side and click **ACTIVE DIRECTORY**.
+Start by logging in to the [Azure Classic Management Portal](https://manage.windowsazure.cn) with your personal Azure.cn account identity. After you are logged in, scroll down the blue panel on the left side and click **ACTIVE DIRECTORY**.
 
 ![Azure Active Directory](./media/virtual-machines-common-create-aad-work-id/azureactivedirectorywidget.png)
 
@@ -27,7 +27,7 @@ Here you should be able to see that when the Azure account was created, Azure Ac
 
 ## Creating a new user in the default domain
 
-Click **USERS** and look for your single personal account. You should see in the **SOURCED FROM** column that it is a **Microsoft account**. We want to create a user in your default .partner.onmschina.cn Azure Active Directory domain.
+Click **USERS** and look for your single personal account. You should see in the **SOURCED FROM** column that it is a **Azure.cn account**. We want to create a user in your default .partner.onmschina.cn Azure Active Directory domain.
 
 ![](./media/virtual-machines-common-create-aad-work-id/defaultdirectoryuserslisting.png)
 
@@ -63,7 +63,7 @@ Now you need to add the new user as a co-administrator of your subscription so t
 
 ![](./media/virtual-machines-common-create-aad-work-id/thesettingswidget.png)
 
-In the main settings area, click **ADMINISTRATORS** at the top and you should see only your personal Microsoft account identity. At the bottom of the page, click **+ADD** to specify a co-administrator. Here, enter the email address of the new user you had created, including your default domain. As shown in the next screenshot, a green check mark appears next to the user for the default directory. Remember to select all of the subscriptions that you would like this user to be able to administer.
+In the main settings area, click **ADMINISTRATORS** at the top and you should see only your personal Azure.cn account identity. At the bottom of the page, click **+ADD** to specify a co-administrator. Here, enter the email address of the new user you had created, including your default domain. As shown in the next screenshot, a green check mark appears next to the user for the default directory. Remember to select all of the subscriptions that you would like this user to be able to administer.
 
 ![](./media/virtual-machines-common-create-aad-work-id/addingnewuserascoadmin.png)
 

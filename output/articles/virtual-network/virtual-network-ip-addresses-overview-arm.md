@@ -3,14 +3,19 @@
    description="Learn about public and private IP addressing in Azure Resource Manager"
    services="virtual-network"
    documentationCenter="na"
-   authors="telmosampaio"
+   authors="jimdial"
    manager="carmonm"
    editor="tysonn"
    tags="azure-resource-manager" />
 <tags
-	ms.service="virtual-network"
-	ms.date="04/27/2016"
-	wacn.date=""/>
+   ms.service="virtual-network"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="04/27/2016"
+   wacn.date=""
+   ms.author="jdial" />
 
 # IP addresses in Azure
 You can assign IP addresses to Azure resources to communicate with other Azure resources, your on-premises network, and the Internet. There are two types of IP addresses you can use in Azure:
@@ -18,12 +23,12 @@ You can assign IP addresses to Azure resources to communicate with other Azure r
 - **Public IP addresses**: Used for communication with the Internet, including Azure public-facing services
 - **Private IP addresses**: Used for communication within an Azure virtual network (VNet), and your on-premises network when you use a VPN gateway or ExpressRoute circuit to extend your network to Azure.
 
-[AZURE.INCLUDE [azure-arm-classic-important-include](../includes/learn-about-deployment-models-rm-include.md)] [classic deployment model](/documentation/articles/virtual-network-ip-addresses-overview-classic/).
+[AZURE.INCLUDE [azure-arm-classic-important-include](../../includes/learn-about-deployment-models-rm-include.md)] [classic deployment model](/documentation/articles/virtual-network-ip-addresses-overview-classic/).
 
 If you are familiar with the classic deployment model, check the [differences in IP addressing between classic and Resource Manager](/documentation/articles/virtual-network-ip-addresses-overview-classic/#Differences-between-Resource-Manager-and-classic-deployments).
 
 ## Public IP addresses
-Public IP addresses allow Azure resources to communicate with Internet and Azure public-facing services such as [Azure Redis Cache](/home/features/cache/), [Azure Event Hubs](/home/features/event-hubs/), [SQL databases](/documentation/articles/sql-database-technical-overview/), and [Azure storage](/documentation/articles/storage-introduction/).
+Public IP addresses allow Azure resources to communicate with Internet and Azure public-facing services such as [Azure Redis Cache](/home/features/redis-cache/), [Azure Event Hubs](/home/features/event-hubs/), [SQL databases](/documentation/articles/sql-database-technical-overview/), and [Azure storage](/documentation/articles/storage-introduction/).
 
 In Azure Resource Manager, a [public IP](/documentation/articles/resource-groups-networking/#public-ip-address) address is a resource that has its own properties. You can associate a public IP address resource with any of the following resources:
 
@@ -125,7 +130,7 @@ The limits imposed on IP addressing are indicated in the full set of [limits for
 
 ## Pricing
 
-In most cases, public IP addresses are free. There is a nominal charge to use additional and/or static public IP addresses. Make sure you understand the [pricing structure for public IPs](/home/features/ip-addresses/pricing/).
+Public IP addresses may have a nominal charge. To learn more about IP address pricing in Azure, review the [IP address pricing](/pricing/details/reserved-ip-addresses/) page.
 
 ## Next steps
 - [Deploy a VM with a static public IP using the Azure portal](/documentation/articles/virtual-network-deploy-static-pip-arm-portal/)

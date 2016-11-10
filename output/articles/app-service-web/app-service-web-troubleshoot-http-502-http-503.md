@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Fix 502 bad gateway, 503 service unavailable errors | Azure"
-	description="Troubleshoot 502 bad gateway and 503 service unavailable errors in your web app hosted in Azure Web App."
+	description="Troubleshoot 502 bad gateway and 503 service unavailable errors in your web app hosted in Azure App Service."
 	services="app-service\web"
 	documentationCenter=""
 	authors="cephalin"
@@ -11,14 +11,19 @@
 
 <tags
 	ms.service="app-service-web"
+	ms.workload="web"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="07/06/2016"
-	wacn.date=""/>
+	wacn.date=""
+	ms.author="cephalin"/>
 
 # Troubleshoot HTTP errors of "502 bad gateway" and "503 service unavailable" in your Azure web apps
 
-"502 bad gateway" and "503 service unavailable" are common errors in your web app hosted in [Azure Web App](/documentation/services/web-sites/). This article helps you troubleshoot these errors.
+"502 bad gateway" and "503 service unavailable" are common errors in your web app hosted in [Azure App Service](/documentation/articles/app-service-changes-existing-services/). This article helps you troubleshoot these errors.
 
-If you need more help at any point in this article, you can contact the Azure experts on [the MSDN Azure and the Stack Overflow forums](https://azure.microsoft.com/support/forums/). Alternatively, you can also file an Azure support incident. Go to the [Azure Support site](https://azure.microsoft.com/support/contact/) and click on **Get Support**.
+If you need more help at any point in this article, you can contact the Azure experts on [the MSDN Azure and the CSDN Azure](/support/forums/). Alternatively, you can also file an Azure support incident. Go to the [Azure Support site](/support/contact/) and click on **Get Support**.
 
 ## Symptom
 
@@ -40,10 +45,9 @@ Troubleshooting can be divided into three distinct tasks, in sequential order:
 2.	[Collect data](#collect)
 3.	[Mitigate the issue](#mitigate)
 
-[Azure Web Apps](/home/features/web-site/) gives you various options at each step.
+[App Service Web Apps](/home/features/app-service/web-apps/) gives you various options at each step.
 
-<a name="observe" />
-### 1. Observe and monitor application behavior
+### <a name="observe"></a> 1. Observe and monitor application behavior
 
 ####	Track Service health
 
@@ -65,17 +69,16 @@ Some of the metrics that you might want to monitor for your web app are
 
 For more information, see:
 
--	[Monitor Web Apps in Azure](/documentation/articles/web-sites-monitor/)
+-	[Monitor Web Apps in Azure App Service](/documentation/articles/web-sites-monitor/)
 -	[Receive alert notifications](/documentation/articles/insights-receive-alert-notifications/)
 
-<a name="collect" />
-### 2. Collect data
+### <a name="collect"></a> 2. Collect data
 
-####	Use the Azure Support Portal
+####	Use the Azure App Service Support Portal
 
 Web Apps provides you with the ability to troubleshoot issues related to your web app by looking at HTTP logs, event logs, process dumps, and more. You can access all this information using our Support portal at **http://&lt;your app name>.scm.chinacloudsites.cn/Support**
 
-The Azure Support portal provides you with three separate tabs to support the three steps of a common troubleshooting scenario:
+The Azure App Service Support portal provides you with three separate tabs to support the three steps of a common troubleshooting scenario:
 
 1.	Observe current behavior
 2.	Analyze by collecting diagnostics information and running the built-in analyzers
@@ -87,7 +90,7 @@ Once the data is collected, it will also run an analysis on the data and provide
 
 In case you want to download the data, by default, it would be stored in the D:\home\data\DaaS folder.
 
-For more information on the Azure Support portal, see [New Updates to Support Site Extension for Azure Websites](/blog/new-updates-to-support-site-extension-for-azure-websites).
+For more information on the Azure App Service Support portal, see [New Updates to Support Site Extension for Azure Websites](/blog/new-updates-to-support-site-extension-for-azure-websites).
 
 ####	Use the Kudu Debug Console
 
@@ -108,14 +111,13 @@ Another useful feature of Kudu is that, in case your application is throwing fir
 For more information on features available in Kudu, see
 [Azure Websites online tools you should know about](/blog/windows-azure-websites-online-tools-you-should-know-about/).
 
-<a name="mitigate" />
-### 3. Mitigate the issue
+### <a name="mitigate"></a> 3. Mitigate the issue
 
 ####	Scale the web app
 
-In Azure Web App, for increased performance and throughput,  you can adjust the scale at which you are running your application. Scaling up a web app involves two related actions: changing your App Service plan to a higher pricing tier, and configuring certain settings after you have switched to the higher pricing tier.
+In Azure App Service, for increased performance and throughput,  you can adjust the scale at which you are running your application. Scaling up a web app involves two related actions: changing your App Service plan to a higher pricing tier, and configuring certain settings after you have switched to the higher pricing tier.
 
-For more information on scaling, see [Scale a web app in Azure](/documentation/articles/web-sites-scale/).
+For more information on scaling, see [Scale a web app in Azure App Service](/documentation/articles/web-sites-scale/).
 
 Additionally, you can choose to run your application on more than one instance . This not only provides you with more processing capability, but also gives you some amount of fault tolerance. If the process goes down on one instance, the other instance will still continue serving requests.
 

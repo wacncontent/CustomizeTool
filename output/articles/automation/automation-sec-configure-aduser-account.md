@@ -8,9 +8,14 @@
    editor="tysonn"
    keywords="azure active directory user, azure service management, azure ad user account" />
 <tags
-	ms.service="automation"
-	ms.date="05/10/2016"
-	wacn.date=""/>
+   ms.service="automation"
+   ms.devlang="na"
+   ms.topic="get-started-article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="09/12/2016"
+   wacn.date=""
+   ms.author="magoedte" />
 
 # Authenticate Runbooks with Azure Service Management and Resource Manager
 

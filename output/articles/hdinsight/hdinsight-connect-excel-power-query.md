@@ -5,13 +5,18 @@
 	documentationCenter=""
 	tags="azure-portal"
 	authors="mumian"
-	manager="paulettm"
+	manager="jhubbard"
 	editor="cgronlun"/>
 
 <tags
 	ms.service="hdinsight"
-	ms.date="04/28/2016"
-	wacn.date=""/>
+	ms.workload="big-data"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="07/25/2016"
+	wacn.date=""
+	ms.author="jgao"/>
 
 
 #Connect Excel to Hadoop by using Power Query
@@ -74,7 +79,7 @@ In this article, you learned how to use Power Query to retrieve data from HDInsi
 * [Connect Excel to HDInsight with the Microsoft Hive ODBC Driver][hdinsight-ODBC]
 * [Upload Data to HDInsight][hdinsight-upload-data]
 
-[hdinsight-ODBC]: /documentation/articles/hdinsight-connect-excel-hive-ODBC-driver/
+[hdinsight-ODBC]: /documentation/articles/hdinsight-connect-excel-hive-odbc-driver/
 [hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1/
 [hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data/
 
@@ -82,4 +87,4 @@ In this article, you learned how to use Power Query to retrieve data from HDInsi
 [image-hdi-powerquery-importdata]: ./media/hdinsight-connect-excel-power-query/HDI.PowerQuery.ImportData.png
 [image-hdi-powerquery-imported-table]: ./media/hdinsight-connect-excel-power-query/HDI.PowerQuery.ImportedTable.PNG
 
-[powerquery-download]: http://www.microsoft.com/zh-cn/download/details.aspx?id=39379
+[powerquery-download]: https://www.microsoft.com/zh-cn/download/details.aspx?id=39379

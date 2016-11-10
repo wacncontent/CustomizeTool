@@ -8,9 +8,14 @@
    editor=""/>
 
 <tags
-	ms.service="app-service"
-	ms.date="04/25/2016"
-	wacn.date=""/>
+   ms.service="app-service"
+   ms.devlang="multiple"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="integration" 
+   ms.date="07/18/2016" 
+   wacn.date=""
+   ms.author="juliako"/>
 
 # Azure SDK for .NET 2.9 Release Notes
 
@@ -29,7 +34,7 @@ This update includes the following bug fixes:
 
 This update includes the following new feature:
 
-- Support for secondary Azure in the "Services" tab of the Azure provisioning dialog. 
+- Support for secondary App Services in the "Services" tab of the App Service provisioning dialog. 
 
 ##Azure Data Lake Tools for Visual Studio 2015 Update 2
  

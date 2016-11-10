@@ -4,14 +4,19 @@
 	services="virtual-machines-linux"
 	documentationCenter="virtual-machines"
 	authors="jluk"
-	manager="squillace"
+	manager="timlt"
 	editor=""
 	tags="azure-resource-manager"/>
 
 <tags
 	ms.service="virtual-machines-linux"
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-linux"
+	ms.devlang="NA"
+	ms.topic="article"
 	ms.date="06/07/2016"
-	wacn.date=""/>
+	wacn.date=""
+	ms.author="jluk"/>
 
 # Deploy LAMP Stack on Azure
 This article will walk you through how to deploy an Apache web server, MySQL, and PHP (the LAMP stack) on Azure. You will need an Azure Account ([get a trial](/pricing/1rmb-trial/)) and the [Azure CLI](/documentation/articles/xplat-cli-install/) that is [connected to your Azure account](/documentation/articles/xplat-cli-connect/).

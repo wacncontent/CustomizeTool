@@ -3,34 +3,39 @@
    description="Learn how to control routing in VNets using the Azure CLI in the classic deployment model"
    services="virtual-network"
    documentationCenter="na"
-   authors="telmosampaio"
+   authors="jimdial"
    manager="carmonm"
    editor=""
    tags="azure-service-management"
 />
-<tags
-	ms.service="virtual-network"
-	ms.date="03/15/2016"
-	wacn.date=""/>
+<tags  
+   ms.service="virtual-network"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="03/15/2016"
+   wacn.date=""
+   ms.author="jdial" />
 
 #Control routing and use virtual appliances (classic) using the Azure CLI
 
-[AZURE.INCLUDE [virtual-network-create-udr-classic-selectors-include.md](../includes/virtual-network-create-udr-classic-selectors-include.md)]
+[AZURE.INCLUDE [virtual-network-create-udr-classic-selectors-include.md](../../includes/virtual-network-create-udr-classic-selectors-include.md)]
 
-[AZURE.INCLUDE [virtual-network-create-udr-intro-include.md](../includes/virtual-network-create-udr-intro-include.md)]
+[AZURE.INCLUDE [virtual-network-create-udr-intro-include.md](../../includes/virtual-network-create-udr-intro-include.md)]
 
 
-[AZURE.INCLUDE [azure-arm-classic-important-include](../includes/azure-arm-classic-important-include.md)] This article covers the classic deployment model. You can also [control routing and use virtual appliances in the Resource Manager deployment model](/documentation/articles/virtual-network-create-udr-arm-cli/).
+[AZURE.INCLUDE [azure-arm-classic-important-include](../../includes/azure-arm-classic-important-include.md)] This article covers the classic deployment model. You can also [control routing and use virtual appliances in the Resource Manager deployment model](/documentation/articles/virtual-network-create-udr-arm-cli/).
 
 
 >[AZURE.IMPORTANT]Before you work with Azure resources, it's important to understand that Azure currently has two deployment models: Resource Manager, and classic. Make sure you understand [deployment models and tools](/documentation/articles/azure-classic-rm/) before working with any Azure resource. You can view the documentation for different tools by clicking the tabs at the top of this article. This article covers the classic deployment model. You can also [control routing and use virtual appliances in the Resource Manager deployment model](/documentation/articles/virtual-network-create-udr-arm-cli/).
 
 
-[AZURE.INCLUDE [virtual-network-create-udr-scenario-include.md](../includes/virtual-network-create-udr-scenario-include.md)]
+[AZURE.INCLUDE [virtual-network-create-udr-scenario-include.md](../../includes/virtual-network-create-udr-scenario-include.md)]
 
 The sample Azure CLI commands below expect a simple environment already created based on the scenario above. If you want to run the commands as they are displayed in this document, create the environment shown in [create a VNet (classic) using the Azure CLI](/documentation/articles/virtual-networks-create-vnet-classic-cli/).
 
-[AZURE.INCLUDE [azure-cli-prerequisites-include.md](../includes/azure-cli-prerequisites-include.md)]
+[AZURE.INCLUDE [azure-cli-prerequisites-include.md](../../includes/azure-cli-prerequisites-include.md)]
 
 ## Create the UDR for the front end subnet
 To create the route table and route needed for the front end subnet based on the scenario above, follow the steps below.
@@ -45,7 +50,7 @@ To create the route table and route needed for the front end subnet based on the
 
 3. Run the **`azure network route-table create`** command to create a route table for the front end subnet.
 
-		azure network route-table create -n UDR-FrontEnd -l uswest
+		azure network route-table create -n UDR-FrontEnd -l chinanorth
 
 	Output:
 
@@ -103,7 +108,7 @@ To create the route table and route needed for the back end subnet based on the 
 
 3. Run the **`azure network route-table create`** command to create a route table for the back end subnet.
 
-		azure network route-table create -n UDR-BackEnd -l uswest
+		azure network route-table create -n UDR-BackEnd -l chinanorth
 
 4. Run the **`azure network route-table route set`** command to create a route in the route table created above to send all traffic destined to the front end subnet (192.168.1.0/24) to the **FW1** VM (192.168.0.4).
 

@@ -2,7 +2,7 @@
 ## Public IP address
 
 
-##<a name="Public-IP-address"></a> Public IP address
+## <a name="Public-IP-address"></a> Public IP address
 
 A public IP address resource provides either a reserved or dynamic Internet facing IP address. Although you can create a public IP address as a stand alone object, you need to associate it to another object to actually use the address. You can associate a public IP address to a load balancer, application  gateway, or a NIC to provide Internet access to those resources.  
 
@@ -16,7 +16,7 @@ A public IP address resource provides either a reserved or dynamic Internet faci
 ### DNS settings
 
 
-###<a name="DNS-settings"></a> DNS settings
+### <a name="DNS-settings"></a> DNS settings
 
 Public IP addresses have a child object named **dnsSettings** containing the following properties:
 

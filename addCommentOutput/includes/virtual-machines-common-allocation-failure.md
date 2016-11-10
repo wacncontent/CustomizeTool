@@ -1,5 +1,5 @@
 
-If your Azure issue is not addressed in this article, visit the [Azure forums on MSDN and  Stack Overflow](https://azure.microsoft.com/support/forums/)  CSDN Azure](/support/forums/) . You can post your issue on these forums  or to @AzureSupport on Twitter . Also, you can file an Azure support request by selecting **Get support** on the [Azure  support](https://azure.microsoft.com/support/contact/)  support](/support/contact/)  site.
+If your Azure issue is not addressed in this article, visit the [Azure forums on MSDN and  Stack Overflow](/support/forums/)  CSDN Azure](/support/forums/) . You can post your issue on these forums  or to @AzureSupport on Twitter . Also, you can file an Azure support request by selecting **Get support** on the [Azure support](/support/contact/) site.
 
 ## General troubleshooting steps
 ### Troubleshoot common allocation failures in the classic deployment model

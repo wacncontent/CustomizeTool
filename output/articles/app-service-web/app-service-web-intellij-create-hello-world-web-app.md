@@ -7,10 +7,15 @@
 	manager="wpickett" 
 	editor=""/>
 
-<tags
-	ms.service="app-service-web"
-	ms.date="06/24/2016"
-	wacn.date=""/>
+<tags 
+	ms.service="app-service-web" 
+	ms.workload="web" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="Java" 
+	ms.topic="article" 
+	ms.date="08/11/2016" 
+	wacn.date="" 
+	ms.author="asirveda;robmcm"/>
 
 # Create a Hello World Web App for Azure in IntelliJ
 
@@ -226,7 +231,7 @@ For more information about using Azure with Java, see the [Azure Java Developer 
 
 For additional information about creating Azure Web Apps, see the [Web Apps Overview].
 
-[AZURE.INCLUDE [app-service-web-try-app-service](../includes/app-service-web-try-app-service.md)]
+[AZURE.INCLUDE [app-service-web-try-app-service](../../includes/app-service-web-try-app-service.md)]
 
 <!-- URL List -->
 
@@ -240,7 +245,7 @@ For additional information about creating Azure Web Apps, see the [Web Apps Over
 [What's New in the Azure Toolkit for IntelliJ]: /documentation/articles/azure-toolkit-for-intellij-whats-new/
 
 [Azure Java Developer Center]: /develop/java/
-[Web Apps Overview]: /home/features/web-site/
+[Web Apps Overview]: /documentation/articles/app-service-web-overview/
 
 <!-- IMG List -->
 

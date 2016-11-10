@@ -2,7 +2,7 @@ The Domain Name System (DNS) is used to locate resources on the internet. For ex
 
 The DNS system is based on *records*. Records associate a specific *name*, such as **contoso.com**, with either an IP address or another DNS name. When an application, such as a web browser, looks up a name in DNS, it finds the record, and uses whatever it points to as the address. If the value it points to is an IP address, the browser will use that value. If it points to another DNS name, then the application has to do resolution again. Ultimately, all name resolution will end in an IP address.
 
-When you create an web app in Azure, a DNS name is automatically assigned to the web app. This name takes the form of **&lt;yourwebappname&gt;.chinacloudsites.cn**. There is also a virtual IP address available for use when creating DNS records, so you can either create records that point to the **.chinacloudsites.cn**, or you can point to the IP address.
+When you create an web app in App Service, a DNS name is automatically assigned to the web app. This name takes the form of **&lt;yourwebappname&gt;.chinacloudsites.cn**. There is also a virtual IP address available for use when creating DNS records, so you can either create records that point to the **.chinacloudsites.cn**, or you can point to the IP address.
 
 > [AZURE.NOTE] The IP address of your web app will change if you delete and recreate your web app, or change the App Service plan mode to **Free** after it has been set to **Basic**, **Shared**, or **Standard**.
 
@@ -10,7 +10,7 @@ There are also multiple types of records, each with their own functions and limi
 
 ###Address record (A record)
 
-An A record maps a domain, such as **contoso.com** or **www.contoso.com**, *or a wildcard domain* such as **\*.contoso.com**, to an IP address. In the case of a web app in Azure, either the virtual IP of the service or a specific IP address that you purchased for your web app.
+An A record maps a domain, such as **contoso.com** or **www.contoso.com**, *or a wildcard domain* such as **\*.contoso.com**, to an IP address. In the case of a web app in App Service, either the virtual IP of the service or a specific IP address that you purchased for your web app.
 
 The main benefits of an A record over a CNAME record are:
 
@@ -22,34 +22,32 @@ The main benefits of an A record over a CNAME record are:
 
 ###Alias record (CNAME record)
 
-A CNAME record maps a *specific* DNS name, such as **mail.contoso.com** or **www.contoso.com**, to another (canonical) domain name. In the case of Azure Web Apps, the canonical domain name is the **&lt;yourwebappname>.chinacloudsites.cn** domain name of your web app. Once created, the CNAME creates an alias for the **&lt;yourwebappname>.chinacloudsites.cn** domain name. The CNAME entry will resolve to the IP address of your **&lt;yourwebappname>.chinacloudsites.cn** domain name automatically, so if the IP address of the web app changes, you do not have to take any action.
+A CNAME record maps a *specific* DNS name, such as **mail.contoso.com** or **www.contoso.com**, to another (canonical) domain name. In the case of App Service Web Apps, the canonical domain name is the **&lt;yourwebappname>.chinacloudsites.cn** domain name of your web app. Once created, the CNAME creates an alias for the **&lt;yourwebappname>.chinacloudsites.cn** domain name. The CNAME entry will resolve to the IP address of your **&lt;yourwebappname>.chinacloudsites.cn** domain name automatically, so if the IP address of the web app changes, you do not have to take any action.
 
 > [AZURE.NOTE] Some domain registrars only allow you to map subdomains when using a CNAME record, such as **www.contoso.com**, and not root names, such as **contoso.com**. For more information on CNAME records, see the documentation provided by your registrar, <a href="http://en.wikipedia.org/wiki/CNAME_record">the Wikipedia entry on CNAME record</a>, or the <a href="http://tools.ietf.org/html/rfc1035">IETF Domain Names - Implementation and Specification</a> document.
 
 ###Web app DNS specifics
 
-Using an A record with Web Apps requires you to first create one of the following CNAME records:
+Using an A record with Web Apps requires you to first create one of the following TXT records:
 
-* **For the root domain or wildcard sub-dodmains** - A DNS name of **awverify** to  **awverify.&lt;yourwebappname&gt;.chinacloudsites.cn**.
+* **For the root domain** - A DNS TXT record of **@** to  **&lt;yourwebappname&gt;.chinacloudsites.cn**.
 
-* **For a specific sub-domain** - A DNS name of **awverify.&lt;sub-domain>** to **awverify.&lt;yourwebappname&gt;.chinacloudsites.cn**. For example, **awverify.blogs** if the A record is for **blogs.contoso.com**.
+* **For a specific sub-domain** - A DNS name of **&lt;sub-domain>** to **&lt;yourwebappname&gt;.chinacloudsites.cn**. For example, **blogs** if the A record is for **blogs.contoso.com**.
 
-This CNAME record is used to verify that you own the domain you are attempting to use. This is in addition to creating an A record pointing to the virtual IP address of your web ap.
+* **For the wildcard sub-dodmains** - A DNS TXT record of ***** to  **&lt;yourwebappname&gt;.chinacloudsites.cn**.
 
-You can find the IP address, as well as the **awverify** name and **.chinacloudsites.cn** names for your web app by performing the following steps:
+This TXT record is used to verify that you own the domain you are attempting to use. This is in addition to creating an A record pointing to the virtual IP address of your web app.
+
+You can find the IP address and **.chinacloudsites.cn** names for your web app by performing the following steps:
 
 1. In your browser, open the [Azure Portal](https://portal.azure.cn).
 
-2. In the **Web Apps** blade, click the name of your web app, select **Configure**, and then select **Custom domains and SSL** from the bottom of the page.
+2. In the **Web Apps** blade, click the name of your web app, and then select **Custom domains** from the bottom of the page.
 
 	![](./media/custom-dns-web-site/dncmntask-cname-6.png)
 
-3. In the **Custom Domains and SSL** blade, click **Bring external domains**.
+3. In the **Custom domains** blade, you will see the virtual IP address. Save this information, as it will be used when creating DNS records
 
-	![](./media/custom-dns-web-site/dncmntask-cname-7.png)
+	![](./media/custom-dns-web-site/virtual-ip-address.png)
 
 	> [AZURE.NOTE] You cannot use custom domain names with a **Free** web app, and must upgrade the App Service plan to **Shared**, **Basic**, **Standard**, or **Premium** tier. For more information on the App Service plan's pricing tiers, including how to change the pricing tier of your web app, see [How to scale web apps](/documentation/articles/web-sites-scale/).
-
-6. In the **Bring external domains** blade, you will see the **awverify** information, the currently assigned **.chinacloudsites.cn** domain name, and the virtual IP address. Save this information, as it will be used when creating DNS records.
-
-	![](./media/custom-dns-web-site/dncmntask-cname-8.png)

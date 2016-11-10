@@ -6,10 +6,15 @@
 	authors="mgoedtel"
 	manager="jwhit"
 	editor="tysonn" />
-<tags
+<tags 
 	ms.service="automation"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="infrastructure-services"
 	ms.date="07/06/2016"
-	wacn.date=""/>
+	wacn.date=""
+	ms.author="bwren" />
 
 # Azure Automation scenario - starting and stopping virtual machines
 
@@ -83,9 +88,9 @@ The runbooks will [output a message](/documentation/articles/automation-runbook-
 | Start-AzureVMs | Virtual machine is already running  | MyVM is already running |
 | Start-AzureVMs | Start request for virtual machine successfully submitted | MyVM has been started |
 | Start-AzureVMs | Start request for virtual machine failed  | MyVM failed to start |
-| Stop-AzureVMs | Virtual machine is already running  | MyVM is already stopped |
-| Stop-AzureVMs | Start request for virtual machine successfully submitted | MyVM has been started |
-| Stop-AzureVMs | Start request for virtual machine failed  | MyVM failed to start |
+| Stop-AzureVMs | Virtual machine is already stopped  | MyVM is already stopped |
+| Stop-AzureVMs | Stop request for virtual machine successfully submitted | MyVM has been stopped |
+| Stop-AzureVMs | Stop request for virtual machine failed  | MyVM failed to stop |
 
 For example, the following code snippet from a runbook attempts to start all virtual machines with the service name *MyServiceName*.  If any of the start requests fail, then error actions can be taken. 
 

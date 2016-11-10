@@ -10,9 +10,14 @@
    editor="tysonn"/>
 
 <tags
-	ms.service="automation"
-	ms.date="01/25/2016"
-	wacn.date=""/>
+   ms.service="automation"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="powershell"
+   ms.workload="na" 
+   ms.date="01/25/2016" 
+   wacn.date=""
+   ms.author="coreyp"/>
    
 #Compiling configurations in Azure Automation DSC#
 
@@ -183,7 +188,7 @@ Asset references are the same in Azure Automation DSC configurations and runbook
 - [Variables](/documentation/articles/automation-variables/)
 
 ###Credential Assets###
-While DSC configurations in Azure Automation can reference credential assets using **Get-AutomationPSCredential**, credential assets can also be passed in via parameters, if desired. If a configuration takes a parameter of **PSCredential** type, then you need to pass the string name of a Azure Automation credential asset as that parameter's value, rather than a PSCredential object. Behind the scenes, the Azure Automation credential asset with that name will be retrieved and passed to the configuration.
+While DSC configurations in Azure Automation can reference credential assets using **Get-AzureRmAutomationCredential**, credential assets can also be passed in via parameters, if desired. If a configuration takes a parameter of **PSCredential** type, then you need to pass the string name of an Azure Automation credential asset as that parameter's value, rather than a PSCredential object. Behind the scenes, the Azure Automation credential asset with that name will be retrieved and passed to the configuration.
 
 Keeping credentials secure in node configurations (MOF configuration documents) requires encrypting the credentials in the node configuration MOF file. Azure Automation takes this one step further and encrypts the entire MOF file. However, currently you must tell PowerShell DSC it is okay for credentials to be outputted in plain text during node configuration MOF generation, because PowerShell DSC doesn't know that Azure Automation will be encrypting the entire MOF file after its generation via a compilation job.
 
@@ -193,7 +198,7 @@ The following example shows a DSC configuration that uses an Automation credenti
 
     Configuration CredentialSample
     {
-       $Cred = Get-AutomationPSCredential -Name "SomeCredentialAsset"
+       $Cred = Get-AzureRmAutomationCredential -Name "SomeCredentialAsset"
     
     	Node $AllNodes.NodeName
     	{ 

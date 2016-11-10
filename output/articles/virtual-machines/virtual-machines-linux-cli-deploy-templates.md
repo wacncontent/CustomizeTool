@@ -10,12 +10,17 @@
 
 <tags
 	ms.service="virtual-machines-linux"
-	ms.date="03/31/2016"
-	wacn.date=""/>
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-linux"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/23/2016"
+	wacn.date=""
+	ms.author="rasquill"/>
 
 # Deploy and manage virtual machines by using Azure Resource Manager templates and the Azure CLI
 
-This article shows you how to use Azure Resource Manager templates and the Azure CLI to do the following common tasks for deploying and managing Azure virtual machines. For more templates you can use, see [Azure Quickstart templates](https://azure.microsoft.com/documentation/templates/) and [Application frameworks using templates](/documentation/articles/virtual-machines-linux-app-frameworks/).
+This article shows you how to use Azure Resource Manager templates and the Azure CLI to do the following common tasks for deploying and managing Azure virtual machines. For more templates you can use, see [Azure Quickstart templates](https://github.com/Azure/azure-quickstart-templates/) and [Application frameworks using templates](/documentation/articles/virtual-machines-linux-app-frameworks/).
 
 
-[AZURE.INCLUDE [virtual-machines-common-cli-deploy-templates](../includes/virtual-machines-common-cli-deploy-templates.md)]
+[AZURE.INCLUDE [virtual-machines-common-cli-deploy-templates](../../includes/virtual-machines-common-cli-deploy-templates.md)]

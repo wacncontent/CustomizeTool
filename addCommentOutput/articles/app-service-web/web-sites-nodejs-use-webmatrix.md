@@ -1,41 +1,46 @@
 <properties 
 	pageTitle="Build and deploy a Node.js web app to Azure using WebMatrix" 
-	description="A tutorial that teaches you how to use WebMatrix to develop a Node.js application and deploy it to Azure Web Apps." 
+	description="A tutorial that teaches you how to use WebMatrix to develop a Node.js application and deploy it to Azure App Service Web Apps." 
 	services="app-service\web" 
 	documentationCenter="nodejs" 
 	authors="rmcmurray" 
 	manager="wpickett" 
 	editor=""/>
 
-<tags
-	ms.service="app-service-web"
-	ms.date="05/04/2016"
-	wacn.date=""/>
+<tags 
+	ms.service="app-service-web" 
+	ms.workload="web" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="nodejs" 
+	ms.topic="article" 
+	ms.date="08/11/2016" 
+	wacn.date=""
+	ms.author="robmcm"/>
 
 
 # Build and deploy a Node.js web app to Azure using WebMatrix
 
-This tutorial shows you how to use WebMatrix to develop a Node.js application and deploy it to [Azure Web App](/documentation/services/web-sites/) Web Apps. WebMatrix is a free web development tool from Microsoft that includes everything you need for website or web app development. WebMatrix includes several features that make it easy to use Node.js including code completion, pre-built templates, and editor support for Jade, LESS, and CoffeeScript. Learn more about [WebMatrix](https://www.microsoft.com/web/webmatrix/).
+This tutorial shows you how to use WebMatrix to develop a Node.js application and deploy it to [Azure App Service](/documentation/articles/app-service-changes-existing-services/) Web Apps. WebMatrix is a free web development tool from Microsoft that includes everything you need for website or web app development. WebMatrix includes several features that make it easy to use Node.js including code completion, pre-built templates, and editor support for Jade, LESS, and CoffeeScript. Learn more about [WebMatrix](https://www.microsoft.com/web/webmatrix/).
 
-Upon completing this guide, you will have a Node.js web app running in Azure Web App.
+Upon completing this guide, you will have a Node.js web app running in Azure App Service.
  
 A screenshot of the completed application is below:
 
 ![Azure node Web site][webmatrix-node-completed]
 
-[AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
+[AZURE.INCLUDE [create-account-and-websites-note](../../includes/create-account-and-websites-note.md)]
 
 
->[AZURE.NOTE] If you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.
+>[AZURE.NOTE] If you want to get started with Azure App Service before signing up for an Azure account, go to [Try App Service](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in App Service. No credit cards required; no commitments.
 
 
 ## Sign into Azure
 
-Follow these steps to create a web app in Azure.
+Follow these steps to create a web app in Azure App Service.
 
 1. Launch WebMatrix
 
-2. If this is the first time you've used WebMatrix, you will be prompted to sign into Azure.  Otherwise, you can click on the **Sign In** button, and choose **Add Account**.  Select to **Sign in** using your Microsoft Account , and select the profile downloaded in the previous step .
+2. If this is the first time you've used WebMatrix, you will be prompted to sign into Azure.  Otherwise, you can click on the **Sign In** button, and choose **Add Account**.  Select to **Sign in** using your Microsoft Account.
 
 	![Add Account][addaccount]
 
@@ -44,8 +49,8 @@ Follow these steps to create a web app in Azure.
 	![Sign into Azure][signin]	
 
 
-2. Log into the [Azure Classic Management Portal], and click [publish profile](https://manage.windowsazure.cn/publishsettings/index?client=powershell&schemaversion=1.0) to download the publish profile for your account.
-2. If this is the first time you've used WebMatrix, you will be prompted to sign into Azure.  Otherwise, you can click on the **Sign In** button, and choose **Add Account**.  Select to **Import an account** using your Microsoft Account , and select the profile downloaded in the previous step .
+2. Log into the [Azure Classic Management Portal](https://manage.windowsazure.cn), and click [publish profile](https://manage.windowsazure.cn/publishsettings/index?client=powershell&schemaversion=1.0) to download the publish profile for your account.
+2. If this is the first time you've used WebMatrix, you will be prompted to sign into Azure. Otherwise, you can click on the **Sign In** button, and choose **Add Account**. Click **Import an account**, and select the profile downloaded in the previous step.
 
 	![Add Account][addaccount]
 
@@ -63,11 +68,11 @@ Follow these steps to create a web app in Azure.
 
 	![select express template][webmatrix-templates]
 
-3. If you are signed into Azure, you now have the option to create an Azure web app for your local site.  Choose a unique name, and select the datacenter where you would like your Azure web app to be created: 
+3. If you are signed into Azure, you now have the option to create an App Service web app for your local site.  Choose a unique name, and select the datacenter where you would like your App Service web app to be created: 
 
 	![Create site on Azure][nodesitefromtemplateazure]
 	
-4. After WebMatrix finishes building the local site and creating the Azure web app, the WebMatrix IDE is displayed.
+4. After WebMatrix finishes building the local site and creating the App Service web app, the WebMatrix IDE is displayed.
 
 	![webmatrix ide][webmatrix-ide]
 
@@ -77,11 +82,11 @@ Follow these steps to create a web app in Azure.
 
 	![publish preview][webmatrix-node-publishpreview]
 
-2. Click **Continue**. When publishing is complete, the URL for the Azure web app is displayed at the bottom of the WebMatrix IDE
+2. Click **Continue**. When publishing is complete, the URL for the App Service web app is displayed at the bottom of the WebMatrix IDE
 
 	![publish complete][webmatrix-publish-complete]
 
-3. Click the link to open the Azure web app in your browser.
+3. Click the link to open the App Service web app in your browser.
 
 	![Express web app][webmatrix-node-express-site]
 
@@ -101,7 +106,7 @@ You can easily modify and republish your application. Here, you will make a simp
 
 	![publish preview][webmatrix-republish]
 
-4. When publishing has completed, use the link returned when the publish process is complete to see the updated Azure web app.
+4. When publishing has completed, use the link returned when the publish process is complete to see the updated App Service web app.
 
 	![Azure node web app][webmatrix-node-completed]
 
@@ -109,18 +114,11 @@ You can easily modify and republish your application. Here, you will make a simp
 
 To learn more about the versions of Node.js that are provided with Azure and how to specify the version to be used with your application, see [Specifying a Node.js version in an Azure application](/documentation/articles/nodejs-specify-node-version-azure-apps/).
 
-If you encounter problems with your application after it has been deployed to Azure, see [How to debug a Node.js web app in Azure](/documentation/articles/web-sites-nodejs-debug/) for information on diagnosing the problem.
-
+If you encounter problems with your application after it has been deployed to Azure, see [How to debug a Node.js web app in Azure App Service](/documentation/articles/web-sites-nodejs-debug/) for information on diagnosing the problem.
 
 ## What's changed
-* For a guide to the change from Websites to Azure see: [Azure and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
+* For a guide to the change from Websites to App Service see: [Azure App Service and Its Impact on Existing Azure Services](/documentation/articles/app-service-changes-existing-services/)
 
-
-
-[Azure Classic Management Portal]: http://manage.windowsazure.cn
-[Publishing an Azure  Website using Git]: /documentation/articles/web-sites-publish-source-control/
-[for free]: /zh-cn/pricing/1rmb-trial
-
 [WebMatrix WebSite]: http://www.microsoft.com/click/services/Redirect2.ashx?CR_CC=200106398
 [WebMatrix for Azure]: http://go.microsoft.com/fwlink/?LinkID=253622&clcid=0x409
 

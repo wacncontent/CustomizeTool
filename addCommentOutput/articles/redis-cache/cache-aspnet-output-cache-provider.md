@@ -8,8 +8,13 @@
 	editor="tysonn" />
 <tags
 	ms.service="cache"
-	ms.date="04/27/2016"
-	wacn.date=""/>
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="cache-redis"
+	ms.workload="tbd"
+	ms.date="07/12/2016"
+	wacn.date=""
+	ms.author="sdanie" />
 
 # ASP.NET Output Cache Provider for Azure Redis Cache
 
@@ -32,7 +37,7 @@ The Redis Output Cache Provider NuGet package has a dependency on the StackExcha
 The NuGet package downloads and adds the required assembly references and adds the following section into your web.config file that contains the required configuration for your ASP.NET application to use the Redis Output Cache Provider.
 
     <caching>
-      <outputCachedefaultProvider="MyRedisOutputCache">
+      <outputCachedefault Provider="MyRedisOutputCache">
         <providers>
           <!--
           <add name="MyRedisOutputCache"
@@ -46,14 +51,14 @@ The NuGet package downloads and adds the required assembly references and adds t
             operationTimeoutInMilliseconds = "5000" [number]
           />
           -->
-          <add name="MyRedisOutputCache"type="Microsoft.Web.Redis.RedisOutputCacheProvider"host="127.0.0.1"accessKey="" ssl="false"/>
+          <add name="MyRedisOutputCache" type="Microsoft.Web.Redis.RedisOutputCacheProvider" host="127.0.0.1" accessKey="" ssl="false"/>
         </providers>
       </outputCache>
     </caching>
 
 The commented section provides an example of the attributes and sample settings for each attribute.
 
-Configure the attributes with the values from your cache blade in the Azure portal, and configure the other values as desired. For instructions on accessing your cache properties, see [Configure Redis cache settings](/documentation/articles/cache-configure/#configure-redis-cache-settings).
+Configure the attributes with the values from your cache blade in the Azure  portal  Portal   Preview , and configure the other values as desired. For instructions on accessing your cache properties, see [Configure Redis cache settings](/documentation/articles/cache-configure/#configure-redis-cache-settings).
 
 -	**host** - specify your cache endpoint.
 -	**port** - use either your non-SSL port or your SSL port, depending on the ssl settings.

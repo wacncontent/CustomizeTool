@@ -4,13 +4,18 @@
    services="virtual-machines-windows"
    documentationCenter=""
    authors="mscurrell"
-   manager="asutton"
+   manager="timlt"
    editor=""/>
 
 <tags
-	ms.service="virtual-machines-windows"
-	ms.date="05/09/2016"
-	wacn.date=""/>
+   ms.service="virtual-machines-windows"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="Windows"
+   ms.workload="infrastructure-services"
+   ms.date="05/09/2016"
+   wacn.date=""
+   ms.author="markscu"/>
 
 # Create MATLAB Distributed Computing Server clusters on Azure VMs 
 

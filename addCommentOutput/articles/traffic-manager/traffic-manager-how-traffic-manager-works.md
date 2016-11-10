@@ -3,14 +3,19 @@
    description="This articles will help you understand how Azure Traffic Manager works"
    services="traffic-manager"
    documentationCenter=""
-   authors="jtuliani"
+   authors="sdwheeler"
    manager="carmonm"
    editor="tysonn"/>
 
 <tags
-	ms.service="traffic-manager"
-	ms.date="06/07/2016"
-	wacn.date=""/>
+   ms.service="traffic-manager"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="06/07/2016"
+   wacn.date=""
+   ms.author="sewhee"/>
 
 # How Traffic Manager works
 
@@ -29,7 +34,7 @@ When an end user attempts to connect to a service endpoint, their client (PC, ph
 ## Traffic Manager example
 
 
-##<a name="traffic-manager-example"></a> Traffic Manager example
+## <a name="traffic-manager-example"></a> Traffic Manager example
 
 
 Contoso Corp have developed a new partner portal.  The URL for this portal will be https://partners.contoso.com/login.aspx.  The application is hosted in Azure, and to improve availability and maximize global performance, they wish to deploy the application to 3 regions worldwide and use Traffic Manager to distribute end users to their closest available endpoint.
@@ -48,12 +53,7 @@ To achieve this configuration:
 
 > Thus you cannot use Traffic Manager directly with a naked domain.  To work around this, we recommend using a simple HTTP re-direct to direct requests for 'contoso.com' to an alternative name such as 'www.contoso.com'.
 
-
-## How clients connect using Traffic Manager
-
-
-##<a name="how-clients-connect-using-traffic-manager"></a> How clients connect using Traffic Manager
-
+##  <a name="how-clients-connect-using-traffic-manager"></a>  How clients connect using Traffic Manager
 
 When an end user requests the page https://partners.contoso.com/login.aspx (as described in the above example), their client performs the following steps to resolve the DNS name and establish a connection.
 
@@ -61,7 +61,7 @@ When an end user requests the page https://partners.contoso.com/login.aspx (as d
 
 1.	The client (PC, phone, etc) make a DNS query for 'partners.contoso.com' to its configured recursive DNS service.  (A recursive DNS service, sometimes called a 'local DNS' service, does not host DNS domains directly.  Rather, it is used by the client to off-load the work of contacting the various authoritative DNS services across the Internet needed to resolve a DNS name.)
 2.	The recursive DNS service now resolves the 'partners.contoso.com' DNS name. Firstly, the recursive DNS service finds the name servers for the 'contoso.com' domain.  It then contacts those name servers to request the 'partners.contoso.com' DNS record.  The CNAME to contoso.trafficmanager.cn is returned.
-3.	The recursive DNS service now finds the name servers for the 'trafficmanager,net' domain, which are provided by the Azure Traffic Manager service.  It contacts those name servers to request the 'contoso.trafficmanager.cn' DNS record.
+3.	The recursive DNS service now finds the name servers for the 'trafficmanager.cn' domain, which are provided by the Azure Traffic Manager service.  It contacts those name servers to request the 'contoso.trafficmanager.cn' DNS record.
 4.	The Traffic Manager name servers receive the request.  They then choose which endpoint should be returned, based on:
 a.	The enabled/disabled state of each endpoint (disabled endpoints are not returned)
 b.	The current health of each endpoint, as determined by the Traffic Manager health checks.  For more information, see Traffic Manager Endpoint Monitoring.
@@ -99,7 +99,7 @@ Further investigation should therefore focus on the application.
 
 A common problem is that when using Traffic Manager, the 'host' HTTP header passed by the browser to the application will show the domain name used in the browser.  This may be the Traffic Manager domain name (e.g. myprofile.trafficmanager.cn) if you are using that domain name during testing, or may be the vanity domain CNAME configured to point to the Traffic Manager domain name.  In either case, check that the application is configured to accept this host header.
 
-If your application is hosted in the Azure Web App, please see [configuring a custom domain name for a web app in Azure using Traffic Manager](/documentation/articles/web-sites-traffic-manager-custom-domain-name/).
+If your application is hosted in the Azure App Service, please see [configuring a custom domain name for a web app in Azure App Service using Traffic Manager](/documentation/articles/web-sites-traffic-manager-custom-domain-name/).
 
 ### What is the performance impact of using Traffic Manager?
 

@@ -1,4 +1,4 @@
-<!-- Ibiza portal: tested -->
+
 
 
 ## Advantages of integrating Compute, Network, and Storage under the Azure Resource Manager deployment model
@@ -85,8 +85,6 @@ The quotas for the Virtual Machines, Virtual Networks, and Storage Accounts crea
 
 All the automation and scripts that you've built will continue to work for the existing Virtual Machines, Virtual Networks created under the Azure Service Management mode. However, the scripts have to be updated to use the new schema for creating the same resources through the new Azure Resource Manager mode.
 
-
-
 **Where can I find examples of Azure Resource Manager templates?**
 
-A comprehensive set of starter templates can be found on [Azure Resource Manager QuickStart Templates](https://azure.microsoft.com/documentation/templates/).
+A comprehensive set of starter templates can be found on [Azure Resource Manager QuickStart Templates](https://github.com/Azure/azure-quickstart-templates/).

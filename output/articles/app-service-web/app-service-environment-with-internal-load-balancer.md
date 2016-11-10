@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Creating and using an Internal Load Balancer with an Azure Environment | Azure"
+	pageTitle="Creating and using an Internal Load Balancer with an App Service Environment | Azure"
 	description="Creating and using an ASE with an ILB"
 	services="app-service"
 	documentationCenter=""
@@ -9,12 +9,17 @@
 
 <tags
 	ms.service="app-service"
+	ms.workload="na"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="07/12/2016"
-	wacn.date=""/>
+	wacn.date=""
+	ms.author="ccompy"/>
 
-# Using an Internal Load Balancer with an Azure Environment #
+# Using an Internal Load Balancer with an App Service Environment #
 
-The Azure Environments(ASE) feature is a Premium service option of Azure that delivers an enhanced configuration capability that is not available in the multi-tenant stamps.  The ASE feature essentially deploys the Azure in your Azure Virtual Network(VNet).  To gain a greater understanding of the capabilities offered by Azure Environments read the [What is an Azure Environment][WhatisASE] documentation.  If you don't know the benefits of operating in a VNet read the [Azure Virtual Network FAQ][virtualnetwork].  
+The App Service Environments(ASE) feature is a Premium service option of Azure App Service that delivers an enhanced configuration capability that is not available in the multi-tenant stamps.  The ASE feature essentially deploys the Azure App Service in your Azure Virtual Network(VNet).  To gain a greater understanding of the capabilities offered by App Service Environments read the [What is an App Service Environment][WhatisASE] documentation.  If you don't know the benefits of operating in a VNet read the [Azure Virtual Network FAQ][virtualnetwork].  
 
 
 ## Overview ##
@@ -45,9 +50,9 @@ There are some things that you cannot do when using an ILB ASE.  Those things in
 
 ## Creating an ILB ASE ##
 
-Creating an ILB ASE is not much different from creating an ASE normally.  For a deeper discussion on creating an ASE read [How to Create an Azure Environment][HowtoCreateASE].  The process to create an ILB ASE is the same between creating a VNet during ASE creation or selecting a pre-existing VNet.  To create an ILB ASE: 
+Creating an ILB ASE is not much different from creating an ASE normally.  For a deeper discussion on creating an ASE read [How to Create an App Service Environment][HowtoCreateASE].  The process to create an ILB ASE is the same between creating a VNet during ASE creation or selecting a pre-existing VNet.  To create an ILB ASE: 
 
-1.	In the Azure portal select **New -> Web + Mobile -> Azure Environment**
+1.	In the Azure portal select **New -> Web + Mobile -> App Service Environment**
 2.	Select your subscription
 3.	Select or create a resource group
 4.	Select or create a VNet
@@ -123,7 +128,7 @@ The IP address for your ILB is listed in your Properties as the Virtual IP Addre
 An ILB ASE enables network isolation for your apps as the apps are not accessible or even known by the internet.  This is excellent for hosting intranet sites such as line of business applications.  When you need to restrict access even further you can still use Network Security Groups(NSGs) to control access at the network level. 
 
 
-If you wish to use NSGs to further restrict access then you need to make sure you do not break the communication that the ASE needs in order to operate.  Even though the HTTP/HTTPS access is only through the ILB used by the ASE the ASE still depends on resource outside of the VNet.  To see what network access is still required look at the information in the document on [Controlling Inbound Traffic to an Azure Environment][ControlInbound] and the document on [Network Configuration Details for Azure Environments with ExpressRoute][ExpressRoute].  
+If you wish to use NSGs to further restrict access then you need to make sure you do not break the communication that the ASE needs in order to operate.  Even though the HTTP/HTTPS access is only through the ILB used by the ASE the ASE still depends on resource outside of the VNet.  To see what network access is still required look at the information in the document on [Controlling Inbound Traffic to an App Service Environment][ControlInbound] and the document on [Network Configuration Details for App Service Environments with ExpressRoute][ExpressRoute].  
 
 
 To configure your NSGs you need to know the IP address that is used by Azure to manage your ASE.  That IP address is also the outbound IP address from your ASE if it makes internet requests.  To find this IP address go to **Settings -> Properties** and find the **Outbound IP Address**.  
@@ -133,7 +138,7 @@ To configure your NSGs you need to know the IP address that is used by Azure to 
 
 #### General ILB ASE management ####
 
-Managing an ILB ASE is largely the same as managing an ASE normally.  You need to scale up your worker pools to host more ASP instances and scale up your Front End servers to handle increased amounts of HTTP/HTTPS traffic.  For general information on managing the configuration of an ASE, read the document on [Configuring an Azure Environment][ASEConfig].  
+Managing an ILB ASE is largely the same as managing an ASE normally.  You need to scale up your worker pools to host more ASP instances and scale up your Front End servers to handle increased amounts of HTTP/HTTPS traffic.  For general information on managing the configuration of an ASE, read the document on [Configuring an App Service Environment][ASEConfig].  
 
 
 The additional management items are certificate management and DNS management.  You need to obtain and upload the certificate used for HTTPS after ILB ASE creation and replace it before it expires.  Because Azure owns the base domain we can provide certificates for ASEs with an External VIP.  Since the subdomain used by an ILB ASE can be anything, you need to provide your own certificate for HTTPS. 
@@ -150,15 +155,15 @@ When using an External VIP the DNS is managed by Azure.  Any app created in your
 
 
 ## Getting started
-All articles and How-To's for Azure Environments are available in the [README for Application Service Environments](/documentation/articles/app-service-app-service-environments-readme/).
+All articles and How-To's for App Service Environments are available in the [README for Application Service Environments](/documentation/articles/app-service-app-service-environments-readme/).
 
-To get started with Azure Environments, see [Introduction to Azure Environments][WhatisASE]
+To get started with App Service Environments, see [Introduction to App Service Environments][WhatisASE]
 
-For more information about the Azure platform, see [Azure Web App][AzureAppService].
+For more information about the Azure App Service platform, see [Azure App Service][AzureAppService].
 
-[AZURE.INCLUDE [app-service-web-whats-changed](../includes/app-service-web-whats-changed.md)]
+[AZURE.INCLUDE [app-service-web-whats-changed](../../includes/app-service-web-whats-changed.md)]
 
-[AZURE.INCLUDE [app-service-web-try-app-service](../includes/app-service-web-try-app-service.md)]
+[AZURE.INCLUDE [app-service-web-try-app-service](../../includes/app-service-web-try-app-service.md)]
  
 
 <!--Image references-->
@@ -174,8 +179,8 @@ For more information about the Azure platform, see [Azure Web App][AzureAppServi
 [HowtoCreateASE]: /documentation/articles/app-service-web-how-to-create-an-app-service-environment/
 [ControlInbound]: /documentation/articles/app-service-app-service-environment-control-inbound-traffic/
 [virtualnetwork]: /documentation/articles/virtual-networks-faq/
-[AppServicePricing]: /home/features/web-site/pricing/
-[AzureAppService]: /documentation/services/web-sites/
+[AppServicePricing]: /pricing/overview/app-service/
+[AzureAppService]: /documentation/articles/app-service-value-prop-what-is/
 [ASEAutoscale]: /documentation/articles/app-service-environment-auto-scale/
 [ExpressRoute]: /documentation/articles/app-service-app-service-environment-network-configuration-expressroute/
 [vnetnsgs]: /documentation/articles/virtual-networks-nsg/

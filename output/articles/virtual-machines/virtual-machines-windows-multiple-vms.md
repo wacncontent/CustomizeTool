@@ -10,8 +10,13 @@
 
 <tags
 	ms.service="virtual-machines-windows"
+	ms.workload="na"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="05/02/2016"
-	wacn.date=""/>
+	wacn.date=""
+	ms.author="guybo"/>
 
 # Create multiple Azure virtual machines
 
@@ -23,7 +28,7 @@ One way to create many similar VMs is to use the Azure Resource Manager construc
 
 ## Resource loops
 
-Resource loops are a syntactical shorthand in Azure Resource Manager templates. Resource loops can create a set of similarly configured resources in a loop. You can use resource loops to create multiple storage accounts, network interfaces, or virtual machines. For more information about resource loops, refer to [Create VMs in availability sets using resource loops](https://azure.microsoft.com/documentation/templates/201-vm-copy-index-loops/).
+Resource loops are a syntactical shorthand in Azure Resource Manager templates. Resource loops can create a set of similarly configured resources in a loop. You can use resource loops to create multiple storage accounts, network interfaces, or virtual machines. For more information about resource loops, refer to [Create VMs in availability sets using resource loops](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vm-copy-index-loops/).
 
 ## Challenges of scale
 

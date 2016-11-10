@@ -8,9 +8,14 @@
    editor="tysonn"
    keywords="azure active directory user, azure service management, azure ad user account" />
 <tags
-	ms.service="automation"
-	ms.date="05/10/2016"
-	wacn.date=""/>
+   ms.service="automation"
+   ms.devlang="na"
+   ms.topic="get-started-article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="09/12/2016"
+   wacn.date=""
+   ms.author="magoedte" />
 
 # Authenticate Runbooks with Azure Service Management and Resource Manager
 
@@ -33,12 +38,16 @@ This article describes the steps you must perform to configure an Azure AD User 
 
 
 ## Create an Automation account in Azure Classic Management Portal
-In this section, you will perform the following steps to create a new Azure Automation account in the Azure  Classic Management  Portal that will be used with your runbooks managing resources in ASM and ARM mode.
 
+In this section, you will perform the following steps to create a new Azure Automation account in the Azure Portal that will be used with your runbooks managing resources in ASM and ARM mode.  
 
 >[AZURE.NOTE] Automation accounts created with the Azure Classic Management Portal can be managed by both the Azure Classic and Azure Portal and either set of cmdlets. Once the account is created, it makes no difference how you create and manage resources within the account. If you are planning to continue to use the Azure Classic Management Portal, then you should use it instead of the Azure Portal to create any Automation accounts.
 
 
+
+
+In this section, you will perform the following steps to create a new Azure Automation account in the Azure Classic Management Portal that will be used with your runbooks managing resources in ASM mode.  
+
 
 1. Log in to the Azure Classic Management Portal as a service administrator for the Azure subscription you want to manage.
 2. Select **Automation**.
@@ -84,12 +93,13 @@ You can retrieve the credential in a runbook using the  [Get-AutomationPSCreden
 
 
 	Add-AzureAccount -Environment AzureChinaCloud -Credential $cred
+
 
 	Select-AzureSubscription -SubscriptionName "My Subscription"
 
 You should repeat these lines after any [checkpoints](http://technet.microsoft.com/zh-cn/library/dn469257.aspx#bk_Checkpoints) in your runbook. If the runbook is suspended and then resumes on another worker, then it will need to perform the authentication again.
-
 
+
 ## Next Steps
 * Review the different runbook types and steps for creating your own runbooks from the following article [Azure Automation runbook types](/documentation/articles/automation-runbook-types/)
 

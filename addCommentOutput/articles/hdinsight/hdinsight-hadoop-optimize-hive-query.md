@@ -11,9 +11,14 @@
    tags="azure-portal"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="07/28/2015"
-	wacn.date=""/>
+   ms.service="hdinsight"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="big-data"
+   ms.date="07/28/2015"
+   wacn.date=""
+   ms.author="rashimg"/>
 
 
 # Optimize Hive queries for Hadoop in HDInsight
@@ -31,7 +36,7 @@ Increasing the number of worker nodes in a cluster can leverage more mappers and
 - At the run time, you can also scale out a cluster without recreating one. This is shown below.
 ![scaleout_1][image-hdi-optimize-hive-scaleout_2]
 
-For more details on the different virtual machines supported by HDInsight, see [HDInsight pricing](/home/features/hdinsight/pricing/).
+For more details on the different virtual machines supported by HDInsight, see [HDInsight pricing](/pricing/details/hdinsight/).
 
 ##Enable Tez
 
@@ -56,7 +61,7 @@ You can make any Hive query Tez enabled by prefixing the query with the setting 
 
 For Windows-based HDInsight clusters, Tez must be enabled at the provision time. The following is a sample Azure PowerShell script for provisioning a Hadoop cluster with Tez enabled:
 
-[AZURE.INCLUDE [upgrade-powershell](../includes/hdinsight-use-latest-powershell.md)]
+[AZURE.INCLUDE [upgrade-powershell](../../includes/hdinsight-use-latest-powershell.md)]
 
 	$clusterName = "[HDInsightClusterName]"
 	$location = "[AzureDataCenter]" #i.e. China North
@@ -122,7 +127,7 @@ Once the partitioned table is created, you can either create static partitioning
 	    WHERE lineitem.L_SHIPDATE = '5/23/1996 12:00:00 AM'
 
 	    ALTER TABLE lineitem_part ADD PARTITION (L_SHIPDATE = '5/23/1996 12:00:00 AM'))
-	    LOCATION 'wasb://sampledata@ignitedemo.blob.core.chinacloudapi.cn/partitions/5_23_1996/'
+	    LOCATION 'wasbs://sampledata@ignitedemo.blob.core.chinacloudapi.cn/partitions/5_23_1996/'
 
 - **Dynamic partitioning** means that you want Hive to create partitions automatically for you. Since we have already created the partitioning table from the staging table, all we need to do is insert data to the partitioned table as shown below:
 

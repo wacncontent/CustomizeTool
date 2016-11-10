@@ -11,9 +11,9 @@ To deploy the ARM template you downloaded by using Azure CLI, follow the steps b
 
 		info:    New mode is arm
 
-3. If necessary, run the **`azure group create`** to create a new resource group, as shown below. Notice the output of the command. The list shown after the output explains the parameters used. For more information about resource groups, visit [Azure Resource Manager Overview](../articles/documentation/articles/resource-group-overview/).
+3. If necessary, run the **`azure group create`** to create a new resource group, as shown below. Notice the output of the command. The list shown after the output explains the parameters used. For more information about resource groups, visit [Azure Resource Manager Overview](/documentation/articles/resource-group-overview/).
 
-		azure group create -n TestRG -l centralus
+		azure group create -n TestRG -l chinaeast
 
 	Here is the expected output for the command above:
 
@@ -23,14 +23,14 @@ To deploy the ARM template you downloaded by using Azure CLI, follow the steps b
 		info:    Created resource group TestRG
 		data:    Id:                  /subscriptions/628dad04-b5d1-4f10-b3a4-dc61d88cf97c/resourceGroups/TestRG
 		data:    Name:                TestRG
-		data:    Location:            centralus
+		data:    Location:            chinaeast
 		data:    Provisioning State:  Succeeded
 		data:    Tags: null
 		data:
 		info:    group create command OK
 
 	- **-n (or --name)**. Name for the new resource group. For our scenario, *TestRG*.
-	- **-l (or --location)**. Azure region where the new resource group will be created. For our scenario, *centralus*.
+	- **-l (or --location)**. Azure region where the new resource group will be created. For our scenario, *chinaeast*.
 
 4. Run the **`azure group deployment create`** cmdlet to deploy the new VNet by using the template and parameter files you downloaded and modified above. The list shown after the output explains the parameters used.
 
@@ -76,7 +76,7 @@ To deploy the ARM template you downloaded by using Azure CLI, follow the steps b
 		data:    Id                              : /subscriptions/628dad04-b5d1-4f10-b3a4-dc61d88cf97c/resourceGroups/TestRG/providers/Microsoft.Network/virtualNetworks/TestVNet
 		data:    Name                            : TestVNet
 		data:    Type                            : Microsoft.Network/virtualNetworks
-		data:    Location                        : centralus
+		data:    Location                        : chinaeast
 		data:    ProvisioningState               : Succeeded
 		data:    Address prefixes:
 		data:      192.168.0.0/16

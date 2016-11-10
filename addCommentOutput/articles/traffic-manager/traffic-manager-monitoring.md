@@ -3,13 +3,18 @@
    description="This article can help you understand how Traffic Manager uses endpoint monitoring and automatic endpoint failover to help Azure customers deploy high-availability applications"
    services="traffic-manager"
    documentationCenter=""
-   authors="jtuliani"
+   authors="sdwheeler"
    manager="carmonm"
    editor="tysonn" />
 <tags
-	ms.service="traffic-manager"
-	ms.date="06/04/2016"
-	wacn.date=""/>
+   ms.service="traffic-manager"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="07/01/2016"
+   wacn.date=""
+   ms.author="sewhee" />
 
 # Traffic Manager endpoint monitoring and failover
 
@@ -33,12 +38,7 @@ A common practice is to implement a custom page within your application, for exa
 
 Endpoint monitoring settings are configured at the Traffic Manager profile level, not per endpoint. Therefore, the same settings are used to check the health of all endpoints. If you need to use different monitoring settings for different endpoints, you can do this by using [nested Traffic Manager profiles](/documentation/articles/traffic-manager-nested-profiles/#example-5-per-endpoint-monitoring-settings).
 
-
-## Endpoint and profile status
-
-
-##<a name="endpoint-and-profile-status"></a> Endpoint and profile status
-
+##  <a name="endpoint-and-profile-status"></a>  Endpoint and profile status
 
 You can enable and disable Traffic Manager profiles and endpoints. However, a change in endpoint status also might occur as a result of Traffic Manager automated settings and processes. The following parameters describe how this works.
 

@@ -9,8 +9,13 @@
 	keywords="what is automation, azure automation, azure automation examples"/>
 <tags
 	ms.service="automation"
-	ms.date="05/10/2016"
-	wacn.date=""/>
+	ms.workload="tbd"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="get-started-article" 
+	ms.date="05/10/2016" 
+	wacn.date=""
+	ms.author="magoedte;bwren"/>
 
 # Azure Automation overview
 
