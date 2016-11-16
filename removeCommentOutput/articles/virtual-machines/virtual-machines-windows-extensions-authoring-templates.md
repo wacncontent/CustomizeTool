@@ -9,13 +9,18 @@
    tags="azure-resource-manager"/>
 
 <tags
-	ms.service="virtual-machines-windows"
-	ms.date="03/29/2016"
-	wacn.date=""/>
+   ms.service="virtual-machines-windows"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="vm-windows"
+   ms.workload="infrastructure-services"
+   ms.date="03/29/2016"
+   wacn.date=""
+   ms.author="kundanap"/>
 
 # Authoring Azure Resource Manager templates with Windows VM extensions
 
-[AZURE.INCLUDE [virtual-machines-common-extensions-authoring-templates](../includes/virtual-machines-common-extensions-authoring-templates.md)]
+[AZURE.INCLUDE [virtual-machines-common-extensions-authoring-templates](../../includes/virtual-machines-common-extensions-authoring-templates.md)]
 
 From Azure PowerShell, run the following Azure PowerShell cmdlet:
 

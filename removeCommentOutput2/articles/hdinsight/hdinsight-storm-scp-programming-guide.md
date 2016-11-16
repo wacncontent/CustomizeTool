@@ -4,14 +4,19 @@ pageTitle="SCP.NET programming guide | Azure"
 description="Learn how to use SCP.NET to create .NET-based Storm topologies for use with Storm on HDInsight."
 services="hdinsight"
 documentationCenter=""
-authors="rperi"
-manager="paulettm"
+authors="raviperi"
+manager="jhubbard"
 editor="cgronlun"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="05/16/2016"
-	wacn.date=""/>
+ms.service="hdinsight"
+ms.devlang="dotnet"
+ms.topic="article"
+ms.tgt_pltfrm="na"
+ms.workload="big-data"
+ms.date="05/16/2016"
+wacn.date=""
+ms.author="raviperi"/>
 
 #SCP programming guide
 
@@ -684,7 +689,6 @@ For examples of Storm topologies created using SCP, see the following:
 
 * [Develop C# topologies for Apache Storm on HDInsight using Visual Studio](/documentation/articles/hdinsight-storm-develop-csharp-visual-studio-topology/)
 * [Process events from Azure Event Hubs with Storm on HDInsight](/documentation/articles/hdinsight-storm-develop-csharp-event-hub-topology/)
-* [Create multiple data streams in a C# Storm topology](/documentation/articles/hdinsight-storm-twitter-trending/)
 * [Use Power Bi to visualize data from a Storm topology](/documentation/articles/hdinsight-storm-power-bi-topology/)
 * [Process vehicle sensor data from Event Hubs using Storm on HDInsight](https://github.com/hdinsight/hdinsight-storm-examples/tree/master/IotExample)
 * [Extract, Transform, and Load (ETL) from Azure Event Hubs to HBase](https://github.com/hdinsight/hdinsight-storm-examples/blob/master/RealTimeETLExample)

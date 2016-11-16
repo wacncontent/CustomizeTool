@@ -4,13 +4,18 @@
 	services="virtual-machines-windows, automation"
 	documentationCenter=""
 	authors="jodoglevy"
-	manager="eamono"
+	manager="timlt"
 	editor=""/>
 
 <tags
 	ms.service="virtual-machines-windows"
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="04/19/2016"
-	wacn.date=""/>
+	wacn.date=""
+	ms.author="jolevy"/>
 
 
 

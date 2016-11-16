@@ -8,17 +8,22 @@
    editor=""
    tags="azure-service-management,hpc-pack"/>
 <tags
-	ms.service="virtual-machines-linux"
-	ms.date="07/07/2016"
-	wacn.date=""/>
+   ms.service="virtual-machines-linux"
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="vm-linux"
+   ms.workload="big-compute"
+   ms.date="07/07/2016"
+   wacn.date=""
+   ms.author="danlep"/>
 
 # Create a Linux high performance computing (HPC) cluster with the HPC Pack IaaS deployment script
 
-Run the HPC Pack IaaS deployment PowerShell script to deploy a complete HPC cluster for Linux workloads in Azure virtual machines. The cluster consists of an Active Directory-joined head node running Windows Server and Microsoft HPC Pack, and compute nodes that run one of the Linux distributions supported by HPC Pack. If you want to deploy an HPC Pack cluster in Azure for Windows workloads, see [Create a Windows HPC cluster with the HPC Pack IaaS deployment script](/documentation/articles/virtual-machines-windows-classic-hpcpack-cluster-powershell-script/). You can also use an Azure Resource Manager template to deploy an HPC Pack cluster. For an example, see [Create an HPC cluster with Linux compute nodes](https://azure.microsoft.com/documentation/templates/create-hpc-cluster-linux-cn/).
+Run the HPC Pack IaaS deployment PowerShell script to deploy a complete HPC cluster for Linux workloads in Azure virtual machines. The cluster consists of an Active Directory-joined head node running Windows Server and Microsoft HPC Pack, and compute nodes that run one of the Linux distributions supported by HPC Pack. If you want to deploy an HPC Pack cluster in Azure for Windows workloads, see [Create a Windows HPC cluster with the HPC Pack IaaS deployment script](/documentation/articles/virtual-machines-windows-classic-hpcpack-cluster-powershell-script/). You can also use an Azure Resource Manager template to deploy an HPC Pack cluster. For an example, see [Create an HPC cluster with Linux compute nodes](https://github.com/Azure/azure-quickstart-templates/tree/master/create-hpc-cluster-linux-cn/).
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]
 
-[AZURE.INCLUDE [virtual-machines-common-classic-hpcpack-cluster-powershell-script](../includes/virtual-machines-common-classic-hpcpack-cluster-powershell-script.md)]
+[AZURE.INCLUDE [virtual-machines-common-classic-hpcpack-cluster-powershell-script](../../includes/virtual-machines-common-classic-hpcpack-cluster-powershell-script.md)]
 
 ## Example configuration file
 

@@ -15,7 +15,7 @@
 
 #Capture an image of an Azure Windows virtual machine created with the classic deployment model.
 
-> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the [Resource Manager model](/documentation/articles/virtual-machines-windows-capture-image/).
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager model. Learn how to [perform these steps using the Resource Manager model](/documentation/articles/virtual-machines-windows-capture-image/).
 
 
 This article shows you how to capture an Azure virtual machine running Windows so you can use it as an image to create other virtual machines. This image includes the operating system disk and any data disks that are attached to the virtual machine. It doesn't include networking configurations, so you'll need to configure those when you create the other virtual machines that use the image.
@@ -28,10 +28,11 @@ These steps assume that you've already created an Azure virtual machine and conf
 
 - [Create a virtual machine from an image](/documentation/articles/virtual-machines-windows-classic-createportal/)
 - [How to attach a data disk to a virtual machine](/documentation/articles/virtual-machines-windows-classic-attach-disk/)
+- Make sure the server roles are supported with Sysprep. For more information, see [Sysprep Support for Server Roles](https://msdn.microsoft.com/windows/hardware/commercialize/manufacture/desktop/sysprep-support-for-server-roles).
 
 > [AZURE.WARNING] This process deletes the original virtual machine after it's captured. 
 
-Prior to caputuring an image of an Azure virtual machine, it is recommended the target virtual machine be backed up. Azure virtual machines can be backed up using Azure Backup. For details, see [Back up Azure virtual machines](/documentation/articles/backup-azure-vms/). Other solutions are available from certified partners. To find out what's currently available, search the Azure gallery.
+Prior to caputuring an image of an Azure virtual machine, it is recommended the target virtual machine be backed up. Azure virtual machines can be backed up using Azure Backup. For details, see [Back up Azure virtual machines](/documentation/articles/backup-azure-vms/). Other solutions are available from certified partners. To find out what's currently available, search the Azure gallery or Marketplace.
 
 
 ##Capture the virtual machine

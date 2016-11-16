@@ -5,14 +5,20 @@
    services="HDInsight"
    documentationCenter=""
    authors="jeffstokes72"
-   manager="paulettem"
+   manager="jhubbard"
    editor="cgronlun"
 />
 
 <tags
-	ms.service="HDInsight"
-	ms.date="06/01/2016"
-	wacn.date=""/>
+   ms.service="HDInsight"
+   ms.devlang="R"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="data-services"
+   ms.date="09/01/2016"
+   wacn.date=""
+   ms.author="jeffstok"
+/>
 
 # Azure Storage options for R Server on HDInsight (preview)
 
@@ -29,17 +35,17 @@ If necessary, you can access multiple Azure storage accounts or containers with 
 2. Specify an additional storage account called **storage2**.  
 3. Copy the mycsv.csv file to the /share directory, and perform analysis on that file.  
 
-````
-hadoop fs -mkdir /share
-hadoop fs -copyFromLocal myscsv.scv /share  
-````
+    ````
+    hadoop fs -mkdir /share
+    hadoop fs -copyFromLocal myscsv.scv /share  
+    ````
 
 3.	In R code, set the name node to **default,** and set your directory and file to process.  
 
-````
-myNameNode <- "default"
-myPort <- 0
-````
+    ````
+    myNameNode <- "default"
+    myPort <- 0
+    ````
 
   Location of the data:  
 
@@ -61,13 +67,13 @@ myPort <- 0
 
     inputFile <-file.path(bigDataDirRoot,"mycsv.csv")
 
-All of the directory and file references point to the storage account wasb://container1@storage1.blob.core.chinacloudapi.cn. This is the **default storage account** that's associated with the HDInsight cluster.
+All of the directory and file references point to the storage account wasbs://container1@storage1.blob.core.chinacloudapi.cn. This is the **default storage account** that's associated with the HDInsight cluster.
 
 Now, suppose you want to process a file called mySpecial.csv that's located in the  /private directory of **container2** in **storage2**.
 
 In your R code, point the name node reference to the **storage2** storage account.
 
-    myNameNode <- "wasb://container2@storage2.blob.core.chinacloudapi.cn"
+    myNameNode <- "wasbs://container2@storage2.blob.core.chinacloudapi.cn"
     myPort <- 0
 
   Location of the data:
@@ -76,7 +82,7 @@ In your R code, point the name node reference to the **storage2** storage accoun
 
   Define Spark compute context:
 
-    mySparkCluster <- RxSpark(consoleOutput=TRUE)
+    mySparkCluster <- RxSpark(consoleOutput=TRUE, nameNode=myNameNode, port=myPort)
 
   Set compute context:
 
@@ -90,13 +96,13 @@ In your R code, point the name node reference to the **storage2** storage accoun
 
     inputFile <-file.path(bigDataDirRoot,"mySpecial.csv")
 
-All of the directory and file references now point to the storage account wasb://container2@storage2.blob.core.chinacloudapi.cn. This is the **Name Node** that you've specified.
+All of the directory and file references now point to the storage account wasbs://container2@storage2.blob.core.chinacloudapi.cn. This is the **Name Node** that you've specified.
 
 Note that you will have to configure the /user/RevoShare/<SSH username> directory on **storage2** as follows:
 
-    hadoop fs -mkdir wasb://container2@storage2.blob.core.chinacloudapi.cn/user
-    hadoop fs -mkdir wasb://container2@storage2.blob.core.chinacloudapi.cn/user/RevoShare
-    hadoop fs -mkdir wasb://container2@storage2.blob.core.chinacloudapi.cn/user/RevoShare/<RDP username>
+    hadoop fs -mkdir wasbs://container2@storage2.blob.core.chinacloudapi.cn/user
+    hadoop fs -mkdir wasbs://container2@storage2.blob.core.chinacloudapi.cn/user/RevoShare
+    hadoop fs -mkdir wasbs://container2@storage2.blob.core.chinacloudapi.cn/user/RevoShare/<RDP username>
 
 ## Use an Azure Data Lake store
 
@@ -131,7 +137,7 @@ myPort <- 0
 bigDataDirRoot <- "/share"  
 
 # Define Spark compute context
-mySparkCluster <- RxSpark(consoleOutput=TRUE)
+mySparkCluster <- RxSpark(consoleOutput=TRUE, nameNode=myNameNode, port=myPort)
 
 # Set compute context
 rxSetComputeContext(mySparkCluster)

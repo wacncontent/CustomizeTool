@@ -6,10 +6,15 @@
    authors="SnehaGunda"
    manager="stevenka"
    editor="tysonn" />
-<tags
-	ms.service="automation"
-	ms.date="05/02/2016"
-	wacn.date=""/>
+<tags 
+   ms.service="automation"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="05/02/2016"
+   wacn.date=""
+   ms.author="bwren;sngun" />
 
 # Managing Azure Automation data
 

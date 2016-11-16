@@ -5,20 +5,25 @@
 	documentationCenter=""
 	tags="azure-portal"
 	authors="mumian" 
-	manager="paulettm"
+	manager="jhubbard"
 	editor="cgronlun"/>
 
 <tags
 	ms.service="hdinsight"
-	ms.date="05/04/2016"
-	wacn.date=""/>
+	ms.workload="big-data"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/14/2016"
+	wacn.date=""
+	ms.author="jgao"/>
 
 
 # Serialize data in Hadoop with the Microsoft Avro Library
 
 This topic shows how to use the <a href="https://hadoopsdk.codeplex.com/wikipage?title=Avro%20Library" target="_blank">Microsoft Avro Library</a> to serialize objects and other data structures into streams in order to persist them to memory, a database, or a file, and also how to deserialize them to recover the original objects.
 
-[AZURE.INCLUDE [windows-only](../includes/hdinsight-windows-only.md)]
+[AZURE.INCLUDE [windows-only](../../includes/hdinsight-windows-only.md)]
 
 ##Apache Avro
 The <a href="https://hadoopsdk.codeplex.com/wikipage?title=Avro%20Library" target="_blank">Microsoft Avro Library</a> implements the Apache Avro data serialization system for the Microsoft.NET environment. Apache Avro provides a compact binary data interchange format for serialization. It uses <a href="http://www.json.org" target="_blank">JSON</a> to define a language-agnostic schema that underwrites language interoperability. Data serialized in one language can be read in another. Currently C, C++, C#, Java, PHP, Python, and Ruby are supported. Detailed information on the format can be found in the <a href="http://avro.apache.org/docs/current/spec.html" target="_blank">Apache Avro Specification</a>. Note that the current version of the Microsoft Avro Library does not support the remote procedure calls (RPCs) part of this specification.
@@ -39,7 +44,7 @@ When the data schema is known to both the writer and reader of the stream, the d
 
 ## Install Avro Library
 
-The following are required before you install the libary:
+The following are required before you install the library:
 
 - <a href="http://www.microsoft.com/download/details.aspx?id=17851" target="_blank">Microsoft .NET Framework 4</a>
 - <a href="http://james.newtonking.com/json" target="_blank">Newtonsoft Json.NET</a> (6.0.4 or later)
@@ -64,7 +69,7 @@ The Microsoft Avro Library source code is available at the <a href="https://hado
 
 The Microsoft Avro Library contains a code generation utility that allows creating C# types automatically based on the previously defined JSON schema. The code generation utility is not distributed as a binary executable, but can be easily built via the following procedure:
 
-1. Download the .zip file with the latest version of HDInsight SDK source code from <a href="http://hadoopsdk.codeplex.com/SourceControl/latest" target="_blank">Microsoft .NET SDK For Hadoop</a>. (Click the **Download** icon.)
+1. Download the .zip file with the latest version of HDInsight SDK source code from <a href="http://hadoopsdk.codeplex.com/SourceControl/latest#" target="_blank">Microsoft .NET SDK For Hadoop</a>. (Click the **Download** icon, not the **Downloads** tab.)
 
 2. Extract the HDInsight SDK to a directory on the machine with .NET Framework 4 installed and connected to the Internet for downloading necessary dependency NuGet packages. Below we will assume that the source code is extracted to C:\SDK.
 

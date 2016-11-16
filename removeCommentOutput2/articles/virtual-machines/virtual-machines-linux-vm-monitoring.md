@@ -1,17 +1,21 @@
-
 <properties
    pageTitle="Enable or Disabling Azure VM Monitoring"
    description="Describes How to Enable or Disable Azure VM Monitoring"
    services="virtual-machines-linux"
    documentationCenter="virtual-machines"
    authors="kmouss"
-   manager="drewm"
+   manager="timlt"
    editor=""/>
 
 <tags
-	ms.service="virtual-machines-linux"
-	ms.date="02/08/2016"
-	wacn.date=""/>
+   ms.service="virtual-machines-linux"
+   ms.devlang="NA"
+   ms.topic="article"
+   ms.tgt_pltfrm="vm-linux"
+   ms.workload="infrastructure"
+   ms.date="02/08/2016"
+   wacn.date=""
+   ms.author="kmouss"/>
    
 # Enable or Disable Azure VM Monitoring
 

@@ -7,14 +7,19 @@
 	manager="wpickett" 
 	editor="jimbe"/>
 
-<tags
-	ms.service="app-service"
-	ms.date="07/06/2016"
-	wacn.date=""/>
+<tags 
+	ms.service="app-service" 
+	ms.workload="na" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="07/06/2016" 
+	wacn.date="" 
+	ms.author="cephalin"/>
 
 # Restore an app in Azure
 
-This article shows you how to restore an app in [Azure Web App](/documentation/services/web-sites/) 
+This article shows you how to restore an app in [Azure App Service](/documentation/articles/app-service-value-prop-what-is/) 
 that you have previously backed up (see [Back up your app in Azure](/documentation/articles/web-sites-backup/)). You can restore your app 
 with its linked databases (SQL Database or MySQL) on-demand to a previous state, or create a new app based on one of 
 your original app's backup. Creating a new app that runs in parallel to the latest version can be useful for A/B 
@@ -24,8 +29,7 @@ Restoring from backups is available to apps running in **Standard** and **Premiu
 up your app, see [Scale up an app in Azure](/documentation/articles/web-sites-scale/). **Premium** tier allows a greater number of daily 
 backups to be performed than **Standard** tier.
 
-<a name="PreviousBackup"></a>
-## Restore an app from an existing backup
+## <a name="PreviousBackup"></a> Restore an app from an existing backup
 
 1. On the **Settings** blade of your app in the Azure Portal, click **Backups** to display the **Backups** blade. Then click **Restore Now** in the command bar. 
 	
@@ -52,8 +56,7 @@ backups to be performed than **Standard** tier.
 	
 5. Click **OK**.
 
-<a name="StorageAccount"></a>
-## Download or delete a backup from a storage account
+## <a name="StorageAccount"></a> Download or delete a backup from a storage account
 	
 1. From the main **Browse** blade of the Azure Portal, select **Storage accounts**.
 	
@@ -73,8 +76,7 @@ backups to be performed than **Standard** tier.
 
 5. Click **Download** or **Delete** depending on what you want to do.  
 
-<a name="OperationLogs"></a>
-## Monitor a restore operation
+## <a name="OperationLogs"></a> Monitor a restore operation
 	
 1. To see details about the success or failure of the app restore operation, navigate to the **Audit Log** blade in the Azure portal. 
 	
@@ -86,9 +88,9 @@ The details blade will display the available information related to the restore 
 	
 ## Next Steps
 
-You can also backup and restore Azure Web Apps using REST API (see [Use REST to back up and restore Azure Web Apps](/documentation/articles/websites-csm-backup/)).
+You can also backup and restore App Service apps using REST API (see [Use REST to back up and restore App Service apps](/documentation/articles/websites-csm-backup/)).
 
->[AZURE.NOTE] If you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.
+>[AZURE.NOTE] If you want to get started with Azure App Service before signing up for an Azure account, go to [Try App Service](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in App Service. No credit cards required; no commitments.
 
 
 <!-- IMAGES -->

@@ -5,17 +5,22 @@
    documentationCenter=""
    tags="azure-portal"
    authors="mumian"
-   manager="paulettm"
+   manager="jhubbard"
    editor="cgronlun"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="06/07/2016"
-	wacn.date=""/>
+   ms.service="hdinsight"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="big-data"
+   ms.date="09/02/2016"
+   wacn.date=""
+   ms.author="jgao"/>
 
 # Create Windows-based Hadoop clusters in HDInsight using .NET SDK
 
-[AZURE.INCLUDE [selector](../includes/hdinsight-selector-create-clusters.md)]
+[AZURE.INCLUDE [selector](../../includes/hdinsight-selector-create-clusters.md)]
 
 
 Learn how to create HDInsight clusters using .NET SDK. For other cluster creation tools and features click the tab select on the top of this page or see [Cluster creation methods](/documentation/articles/hdinsight-provision-clusters-v1/#cluster-creation-methods).
@@ -23,12 +28,16 @@ Learn how to create HDInsight clusters using .NET SDK. For other cluster creatio
 
 ##Prerequisites:
 
-[AZURE.INCLUDE [delete-cluster-warning](../includes/hdinsight-delete-cluster-warning.md)]
+[AZURE.INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
 
 Before you begin the instructions in this article, you must have the following:
 
 - An Azure subscription. See [Get Azure trial](/pricing/1rmb-trial/).
 - Visual Studio 2013 or 2015.
+
+### Access control requirements
+
+[AZURE.INCLUDE [access-control](../../includes/hdinsight-access-control-requirements.md)]
 
 ## Create clusters
 
@@ -176,7 +185,7 @@ In this article, you have learned several ways to create an HDInsight cluster. T
 
 The following Azure PowerShell script can be use to create the dependent components needed by the .NET application in this tutorial.
 
-[AZURE.INCLUDE [upgrade-powershell](../includes/hdinsight-use-latest-powershell.md)]
+[AZURE.INCLUDE [upgrade-powershell](../../includes/hdinsight-use-latest-powershell.md)]
 
     ####################################
     # Set these variables

@@ -3,13 +3,18 @@
    description="Learn how to move VMs and role instances to a different subnet"
    services="virtual-network"
    documentationCenter="na"
-   authors="telmosampaio"
+   authors="jimdial"
    manager="carmonm"
    editor="tysonn" />
-<tags
-	ms.service="virtual-network"
-	ms.date="03/22/2016"
-	wacn.date=""/>
+<tags 
+   ms.service="virtual-network"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="03/22/2016"
+   wacn.date=""
+   ms.author="jdial" />
 
 # How to move a VM or role instance to a different subnet
 

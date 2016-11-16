@@ -4,17 +4,91 @@
 	services="hdinsight"
 	documentationCenter=""
 	editor="cgronlun"
-	manager="paulettm"
+	manager="jhubbard"
 	authors="nitinme"
 	tags="azure-portal"/>
 
 <tags
 	ms.service="hdinsight"
-	ms.date="07/07/2016"
-	wacn.date=""/>
+	ms.workload="big-data"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/31/2016"
+	wacn.date=""
+	ms.author="nitinme"/>
 
 
 # Release notes for Hadoop components on Azure HDInsight
+
+## Notes for 03/22/2016 release of HDInsight
+
+The full version numbers for HDInsight clusters deployed with this release:
+
+* HDInsight	(Windows)	 	2.1.10.875.2159884 (HDP 1.3.12.0-01795 - unchanged)
+* HDInsight	(Windows)	 	3.0.6.875.2159884 (HDP 2.0.13.0-2117 - unchanged)
+* HDInsight	(Windows)	 	3.1.4.875.2159884  (HDP 2.1.15.0-2374 - unchanged)
+* HDInsight	(Windows)		3.2.7.875.2159884  (HDP 2.2.9.1-7 - unchanged)
+* HDInsight (Windows)		3.3.0.875.2159884  (HDP 2.3.3.1-16)
+* SDK			1.5.8
+
+This release contains the following updates.
+
+| Title                                           | Description                                          | Impacted Area (for example, Service, component, or SDK) | Cluster Type (for example, Hadoop, HBase, or Storm) | JIRA (if applicable) |
+|-------------------------------------------------|------------------------------------------------------|---------------------------------------------------------|-----------------------------------------------------|----------------------|
+| Updated HDInsight versions for all HDInsight clusters | With this release, we have updated HDInsight versions for all HDInsight clusters| Service    | All| N/A
+
+
+## Notes for 03/10/2016 release of HDInsight
+
+The full version numbers for HDInsight clusters deployed with this release:
+
+* HDInsight	(Windows)	 	2.1.10.859.2123216 (HDP 1.3.12.0-01795 - unchanged)
+* HDInsight	(Windows)	 	3.0.6.859.2123216 (HDP 2.0.13.0-2117 - unchanged)
+* HDInsight	(Windows)	 	3.1.4.859.2123216  (HDP 2.1.15.0-2374 - unchanged)
+* HDInsight	(Windows)		3.2.7.859.2123216  (HDP 2.2.9.1-7)
+* HDInsight (Windows)		3.3.0.859.2123216  (HDP 2.3.3.1-5 - unchanged)
+* SDK			1.5.8
+
+This release contains the following updates.
+
+| Title                                           | Description                                          | Impacted Area (for example, Service, component, or SDK) | Cluster Type (for example, Hadoop, HBase, or Storm) | JIRA (if applicable) |
+|-------------------------------------------------|------------------------------------------------------|---------------------------------------------------------|-----------------------------------------------------|----------------------|
+| Updated HDInsight versions for all HDInsight clusters | With this release, we have updated HDInsight versions for all HDInsight clusters| Service    | All| N/A
+
+## Notes for 01/27/2016 release of HDInsight
+
+The full version numbers for HDInsight clusters deployed with this release:
+
+* HDInsight	(Windows)	 	2.1.10.817.2028315 (HDP 1.3.12.0-01795 - unchanged)
+* HDInsight	(Windows)	 	3.0.6.817.2028315 (HDP 2.0.13.0-2117 - unchanged)
+* HDInsight	(Windows)	 	3.1.4.817.2028315  (HDP 2.1.15.0-2374 - unchanged)
+* HDInsight	(Windows)		3.2.7.817.2028315  (HDP 2.2.9.1-1)
+* HDInsight (Windows)		3.3.0.817.2028315  (HDP 2.3.3.1-5 - unchanged)
+* SDK			1.5.8
+
+This release contains the following updates.
+
+| Title                                           | Description                                          | Impacted Area (for example, Service, component, or SDK) | Cluster Type (for example, Hadoop, HBase, or Storm) | JIRA (if applicable) |
+|-------------------------------------------------|------------------------------------------------------|---------------------------------------------------------|-----------------------------------------------------|----------------------|
+| Updated HDInsight versions for all HDInsight clusters | With this release, we have updated HDInsight versions for all HDInsight clusters| Service    | All| N/A
+
+## Notes for 12/02/2015 release of HDInsight
+
+The full version numbers for HDInsight clusters deployed with this release:
+
+* HDInsight	(Windows)	 	2.1.10.763.1931434 (HDP 1.3.12.0-01795 - unchanged)
+* HDInsight	(Windows)	 	3.0.6.763.1931434 (HDP 2.0.13.0-2117 - unchanged)
+* HDInsight	(Windows)	 	3.1.4.763.1931434  (HDP 2.1.15.0-2374 - unchanged)
+* HDInsight	(Windows)		3.2.7.763.1931434  (HDP 2.2.7.1-34 - unchanged)
+* HDInsight (Windows)		3.3.1000.0		   (HDP 2.3.3.1-5)
+* SDK			1.5.8
+
+This release contains the following updates.
+
+| Title                                           | Description                                          | Impacted Area (for example, Service, component, or SDK) | Cluster Type (for example, Hadoop, HBase, or Storm) | JIRA (if applicable) |
+|-------------------------------------------------|------------------------------------------------------|---------------------------------------------------------|-----------------------------------------------------|----------------------|
+| Added HDInsight 3.3 version and updated HDP versions for all HDInsight clusters | With this release, we have added HDInsight v3.3 (based on HDP 2.3) and have also updated other HDP versions. HDP 2.3 release notes are available [here](http://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.3.0/bk_HDP_RelNotes/content/ch_relnotes_v230.html) and more information on HDInsight versions can be found [here](/documentation/articles/hdinsight-component-versioning-v1/).| Service    | All| N/A
 
 ## Notes for 11/30/2015 release of HDInsight
 
@@ -1249,7 +1323,7 @@ Oozie metastores are attached to specific clusters, and they cannot be shared ac
 ###Breaking changes
 
 **Prefix syntax**:
-Only the "wasb://" syntax is supported in HDInsight 3.1 and 3.0 clusters. The older "asv://" syntax is supported in HDInsight 2.1 and 1.6 clusters, but it is not supported in HDInsight 3.1 or 3.0 clusters. This means that any jobs submitted to an HDInsight 3.1  or 3.0 cluster that explicitly use the "asv://" syntax will fail. The "wasb://" syntax should be used instead. Also, jobs submitted to any HDInsight 3.1 or 3.0 clusters that are created with an existing metastore that contains explicit references to resources using the "asv://" syntax will fail. These metastores need to be re-created using the "wasb://" syntax to address resources.
+Only the "wasbs://" syntax is supported in HDInsight 3.1 and 3.0 clusters. The older "asv://" syntax is supported in HDInsight 2.1 and 1.6 clusters, but it is not supported in HDInsight 3.1 or 3.0 clusters. This means that any jobs submitted to an HDInsight 3.1  or 3.0 cluster that explicitly use the "asv://" syntax will fail. The "wasbs://" syntax should be used instead. Also, jobs submitted to any HDInsight 3.1 or 3.0 clusters that are created with an existing metastore that contains explicit references to resources using the "asv://" syntax will fail. These metastores need to be re-created using the "wasbs://" syntax to address resources.
 
 
 **Ports**: The ports used by the HDInsight service have changed. The port numbers that were being used were within the ephemeral port range of the Windows operating system. Ports are allocated automatically from a predefined ephemeral range for short-lived Internet protocol-based communications. The new set of allowed Hortonworks Data Platform (HDP) service port numbers are outside this range to avoid encountering conflicts that could arise with the ports used by services running on the head node. The new port numbers should not cause any breaking changes. The numbers used are as follows:

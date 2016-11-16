@@ -1,7 +1,6 @@
-
 <properties
-   pageTitle="Create a Linux VM on Azure using the CLI | Azure"
-   description="Create a Linux VM on Azure using the CLI."
+   pageTitle="Create a Linux VM on Azure by using the CLI | Azure"
+   description="Create a Linux VM on Azure by using the CLI."
    services="virtual-machines-linux"
    documentationCenter=""
    authors="vlivech"
@@ -9,159 +8,188 @@
    editor=""/>
 
 <tags
-	ms.service="virtual-machines-linux"
-	ms.date="05/03/2016"
-	wacn.date=""/>
+   ms.service="virtual-machines-linux"
+   ms.devlang="NA"
+   ms.topic="hero-article"
+   ms.tgt_pltfrm="vm-linux"
+   ms.workload="infrastructure"
+   ms.date="09/08/2016"
+   wacn.date=""
+   ms.author="v-livech"/>
 
 
-# Create a Linux VM on Azure using the CLI
+# Create a Linux VM on Azure by using the CLI
 
-[AZURE.INCLUDE [arm-api-version-cli](../includes/arm-api-version-cli.md)]
+This article shows how to quickly deploy a Linux virtual machine (VM) on Azure by using the `azure vm quick-create` command in the Azure command-line interface (CLI). The `quick-create` command deploys a VM inside a basic, secure infrastructure that you can use to prototype or test a concept rapidly. The article requires:
 
-This article shows how to quickly deploy a Linux Virtual Machine on Azure using the Azure CLI's `azure vm quick-create` command. The `quick-create` command deploys a VM with a basic infrastructure surrounding it that you can use to prototype or test a concept very rapidly (you can think of it as the quickest way to a Linux bash shell).  The article requires an Azure account ([get a trial](/pricing/1rmb-trial/)), and [the Azure CLI](/documentation/articles/xplat-cli-install/) logged in (`azure login -e AzureChinaCloud`) and in resource manager mode (`azure config mode arm`).  You can also quickly deploy a Linux VM using the [Azure Portal](/documentation/articles/virtual-machines-linux-quick-create-portal/).
+- an Azure account ([get a trial](/pricing/1rmb-trial/)).
 
-## Quick Command Summary
+- the [Azure CLI](/documentation/articles/xplat-cli-install/) logged in with `azure login`
 
-One command to deploy a CoreOS VM and attach your SSH key:
+- the Azure CLI _must be in_ Azure Resource Manager mode `azure config mode arm`
 
-```bash
-azure vm quick-create -M ~/.ssh/azure_id_rsa.pub -Q OpenLogic:Centos:7.2:latest
-```
+You can also quickly deploy a Linux VM by using the [Azure portal](/documentation/articles/virtual-machines-linux-quick-create-portal/).
 
-## Deploy the Linux VM
+## Quick commands
 
-Using the same command from above, the following shows each prompt along with the output you should expect to see.  
+The following example shows how to deploy a Centos VM and attach your Secure Shell (SSH) key (your arguments might be different):
 
-## Use an ImageUR
+    azure vm quick-create -M ~/.ssh/azure_id_rsa.pub -Q Centos
 
-The following table lists the distribution Linux (as of Azure CLI version 0.9).
+The following sections explain the command and its requirements using Ubuntu Server 14.04 LTS as the Linux distribution.  
 
-| Publisher | Offer        | SKU         | Version |
-|:----------|:-------------|:------------|:--------|
-| OpenLogic | Centos       | 7.2         | latest  |
-| SUSE      | openSUSE     | 13.2        | latest  |
-| Canonical | UbuntuServer | 14.04.3-LTS | latest  |
+## VM quick-create aliases
+
+A quick way to choose a distribution is to use the Azure CLI aliases mapped to the most common OS distributions. The following table lists the aliases (as of Azure CLI version 0.10). All deployments that use `quick-create` default to VMs that are backed by solid-state drive (SSD) storage, which offers faster provisioning and high-performance disk access. (These aliases represent a tiny portion of the available distributions on Azure. Find more images in the Azure Marketplace by [searching for an image](/documentation/articles/virtual-machines-linux-cli-ps-findimage/), or [upload your own custom image](/documentation/articles/virtual-machines-linux-create-upload-generic/).)
+
+| Alias     | Publisher | Offer        | SKU         | Version |
+|:----------|:----------|:-------------|:------------|:--------|
+| CentOS    | OpenLogic | CentOS       | 7.2         | latest  |
+| openSUSE  | SUSE      | openSUSE     | 13.2        | latest  |
+| SLES      | SUSE      | SLES         | 12-SP1      | latest  |
+| UbuntuLTS | Canonical | Ubuntu Server | 14.04.3-LTS | latest  |
+
+The following sections use the `UbuntuLTS` alias for the **ImageURN** option (`-Q`) to deploy an Ubuntu 14.04.3 LTS Server.
+
+## Detailed walkthrough
+
+The previous `quick-create` example only called out the `-M` flag to identify the SSH public key to upload while disabling SSH passwords, so you are prompted for the following arguments:
+
+- resource group name (any string is typically fine for your first Azure resource group)
+- VM name
+- location (`chinanorth` or `westeurope` are good defaults)
+- linux (to let Azure know which OS you want)
+- username
+
+The following example specifies all the values so that no further prompting is required. So long as you have an `~/.ssh/id_rsa.pub` as a ssh-rsa format public key file, it works as is:
+
+    azure vm quick-create \
+    -g exampleResourceGroup \
+    -n exampleVMName \
+    -l chinanorth \
+    -y Linux \
+    -u exampleAdminUser \
+    -M ~/.ssh/id_rsa.pub \
+    -Q UbuntuLTS
+
+The output should look like the following output block:
+
+    info:    Executing command vm quick-create
+    + Listing virtual machine sizes available in the location "chinanorth"
+    + Looking up the VM "exampleVMName"
+    info:    Verifying the public key SSH file: /Users/ahmet/.ssh/id_rsa.pub
+    info:    Using the VM Size "Standard_DS1"
+    info:    The [OS, Data] Disk or image configuration requires storage account
+    + Looking up the storage account cli16330708391032639673
+    + Looking up the NIC "examp-china-1633070839-nic"
+    info:    An nic with given name "examp-china-1633070839-nic" not found, creating a new one
+    + Looking up the virtual network "examp-china-1633070839-vnet"
+    info:    Preparing to create new virtual network and subnet
+    / Creating a new virtual network "examp-china-1633070839-vnet" [address prefix: "10.0.0.0/16"] with subnet "examp-china-1633070839-snet" [address prefix: "10.+.1.0/24"]
+    + Looking up the virtual network "examp-china-1633070839-vnet"
+    + Looking up the subnet "examp-china-1633070839-snet" under the virtual network "examp-china-1633070839-vnet"
+    info:    Found public ip parameters, trying to setup PublicIP profile
+    + Looking up the public ip "examp-china-1633070839-pip"
+    info:    PublicIP with given name "examp-china-1633070839-pip" not found, creating a new one
+    + Creating public ip "examp-china-1633070839-pip"
+    + Looking up the public ip "examp-china-1633070839-pip"
+    + Creating NIC "examp-china-1633070839-nic"
+    + Looking up the NIC "examp-china-1633070839-nic"
+    + Looking up the storage account clisto1710997031examplev
+    + Creating VM "exampleVMName"
+    + Looking up the VM "exampleVMName"
+    + Looking up the NIC "examp-china-1633070839-nic"
+    + Looking up the public ip "examp-china-1633070839-pip"
+    data:    Id                              :/subscriptions/2<--snip-->d/resourceGroups/exampleResourceGroup/providers/Microsoft.Compute/virtualMachines/exampleVMName
+    data:    ProvisioningState               :Succeeded
+    data:    Name                            :exampleVMName
+    data:    Location                        :chinanorth
+    data:    Type                            :Microsoft.Compute/virtualMachines
+    data:
+    data:    Hardware Profile:
+    data:      Size                          :Standard_DS1
+    data:
+    data:    Storage Profile:
+    data:      Image reference:
+    data:        Publisher                   :Canonical
+    data:        Offer                       :UbuntuServer
+    data:        Sku                         :14.04.3-LTS
+    data:        Version                     :latest
+    data:
+    data:      OS Disk:
+    data:        OSType                      :Linux
+    data:        Name                        :clic7fadb847357e9cf-os-1473374894359
+    data:        Caching                     :ReadWrite
+    data:        CreateOption                :FromImage
+    data:        Vhd:
+    data:          Uri                       :https://cli16330708391032639673.blob.core.chinacloudapi.cn/vhds/clic7fadb847357e9cf-os-1473374894359.vhd
+    data:
+    data:    OS Profile:
+    data:      Computer Name                 :exampleVMName
+    data:      User Name                     :exampleAdminUser
+    data:      Linux Configuration:
+    data:        Disable Password Auth       :true
+    data:
+    data:    Network Profile:
+    data:      Network Interfaces:
+    data:        Network Interface #1:
+    data:          Primary                   :true
+    data:          MAC Address               :00-0D-3A-33-42-FB
+    data:          Provisioning State        :Succeeded
+    data:          Name                      :examp-china-1633070839-nic
+    data:          Location                  :chinanorth
+    data:            Public IP address       :138.91.247.29
+    data:            FQDN                    :examp-china-1633070839-pip.chinanorth.chinacloudapp.cn
+    data:
+    data:    Diagnostics Profile:
+    data:      BootDiagnostics Enabled       :true
+    data:      BootDiagnostics StorageUri    :https://clisto1710997031examplev.blob.core.chinacloudapi.cn/
+    data:
+    data:      Diagnostics Instance View:
+    info:    vm quick-create command OK
+
+Log in to your VM by using the public IP address listed in the output. You can also use the fully qualified domain name (FQDN) that's listed:
+
+    ssh -i ~/.ssh/id_rsa.pub exampleAdminUser@138.91.247.29
+
+The login process should look something like the following output block:
+
+    Warning: Permanently added '138.91.247.29' (ECDSA) to the list of known hosts.
+    Welcome to Ubuntu 14.04.3 LTS (GNU/Linux 3.19.0-65-generic x86_64)
+
+    * Documentation:  https://help.ubuntu.com/
+
+      System information as of Thu Sep  8 22:50:57 UTC 2016
+
+      System load: 0.63              Memory usage: 2%   Processes:       81
+      Usage of /:  39.6% of 1.94GB   Swap usage:   0%   Users logged in: 0
+
+      Graph this data and manage this system at:
+        https://landscape.canonical.com/
+
+      Get cloud support with Ubuntu Advantage Cloud Guest:
+        http://www.ubuntu.com/business/services/cloud
+
+    0 packages can be updated.
+    0 updates are security updates.
 
 
 
-For the **ImageURN** option (`-Q`) we will use  `Canonical:UbuntuServer:14.04.3-LTS:latest` to deploy a Canonical Ubuntu 14.04.3-LTS. (These 3 images represent a tiny portion of the available OS on Azure; find more images in the marketplace by [searching for an image](/documentation/articles/virtual-machines-linux-cli-ps-findimage/), or you can [upload your own custom image](/documentation/articles/virtual-machines-linux-create-upload-generic/).)
+    The programs included with the Ubuntu system are free software;
+    the exact distribution terms for each program are described in the
+    individual files in /usr/share/doc/*/copyright.
 
-In the following command walk through, please replace the prompts with values from your own environment, we are using "example" values.  
+    Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+    applicable law.
 
-Follow the prompts and enter your own names
+    exampleAdminUser@exampleVMName:~$
 
-```bash
-azure vm quick-create -M ~/.ssh/id_rsa.pub -Q Canonical:UbuntuServer:14.04.3-LTS:latest
-```
+## Next steps
 
-The output should look like the following output block.
+The `azure vm quick-create` command is the way to quickly deploy a VM so you can log in to a bash shell and get working. However, using `vm quick-create` does not give you extensive control nor does it enable you to create a more complex environment.  To deploy a Linux VM that's customized for your infrastructure, you can follow any of these articles:
 
-```bash
-info:    Executing command vm quick-create
-Resource group name: rhel-quick
-Virtual machine name: rhel
-Location name: chinanorth
-Operating system Type [Windows, Linux]: linux
-User name: ops
-+ Listing virtual machine sizes available in the location "chinanorth"
-+ Looking up the VM "rhel"
-info:    Verifying the public key SSH file: /Users/ops/.ssh/id_rsa.pub
-info:    Using the VM Size "Standard_D1"
-info:    The [OS, Data] Disk or image configuration requires storage account
-+ Looking up the storage account cli1630678171193501687
-info:    Could not find the storage account "cli1630678171193501687", trying to create new one
-+ Creating storage account "cli1630678171193501687" in "chinanorth"
-+ Looking up the storage account cli1630678171193501687
-+ Looking up the NIC "rhel-china-1630678171-nic"
-info:    An nic with given name "rhel-china-1630678171-nic" not found, creating a new one
-+ Looking up the virtual network "rhel-china-1630678171-vnet"
-info:    Preparing to create new virtual network and subnet
-+ Creating a new virtual network "rhel-china-1630678171-vnet" [address prefix: "10.0.0.0/16"] with subnet "rhel-china-1630678171-snet" [address prefix: "10.0.1.0/24"]
-+ Looking up the virtual network "rhel-china-1630678171-vnet"
-+ Looking up the subnet "rhel-china-1630678171-snet" under the virtual network "rhel-china-1630678171-vnet"
-info:    Found public ip parameters, trying to setup PublicIP profile
-+ Looking up the public ip "rhel-china-1630678171-pip"
-info:    PublicIP with given name "rhel-china-1630678171-pip" not found, creating a new one
-+ Creating public ip "rhel-china-1630678171-pip"
-+ Looking up the public ip "rhel-china-1630678171-pip"
-+ Creating NIC "rhel-china-1630678171-nic"
-+ Looking up the NIC "rhel-china-1630678171-nic"
-+ Looking up the storage account clisto909893658rhel
-+ Creating VM "rhel"
-+ Looking up the VM "rhel"
-+ Looking up the NIC "rhel-china-1630678171-nic"
-+ Looking up the public ip "rhel-china-1630678171-pip"
-data:    Id                              :/subscriptions/<guid>/resourceGroups/rhel-quick/providers/Microsoft.Compute/virtualMachines/rhel
-data:    ProvisioningState               :Succeeded
-data:    Name                            :rhel
-data:    Location                        :chinanorth
-data:    Type                            :Microsoft.Compute/virtualMachines
-data:
-data:    Hardware Profile:
-data:      Size                          :Standard_D1
-data:
-data:    Storage Profile:
-data:      Image reference:
-data:        Publisher                   :Canonical
-data:        Offer                       :UbuntuServer
-data:        Sku                         :14.04.3-LTS
-data:        Version                     :latest
-data:
-data:      OS Disk:
-data:        OSType                      :Linux
-data:        Name                        :clic5abbc145c0242c1-os-1462425492101
-data:        Caching                     :ReadWrite
-data:        CreateOption                :FromImage
-data:        Vhd:
-data:          Uri                       :https://cli1630678171193501687.blob.core.chinacloudapi.cn/vhds/clic5abbc145c0242c1-os-1462425492101.vhd
-data:
-data:    OS Profile:
-data:      Computer Name                 :rhel
-data:      User Name                     :ops
-data:      Linux Configuration:
-data:        Disable Password Auth       :true
-data:
-data:    Network Profile:
-data:      Network Interfaces:
-data:        Network Interface #1:
-data:          Primary                   :true
-data:          MAC Address               :00-0D-3A-32-0F-DD
-data:          Provisioning State        :Succeeded
-data:          Name                      :rhel-china-1630678171-nic
-data:          Location                  :chinanorth
-data:            Public IP address       :104.42.236.196
-data:            FQDN                    :rhel-china-1630678171-pip.chinanorth.chinacloudapp.cn
-data:
-data:    Diagnostics Profile:
-data:      BootDiagnostics Enabled       :true
-data:      BootDiagnostics StorageUri    :https://clisto909893658rhel.blob.core.chinacloudapi.cn/
-data:
-data:      Diagnostics Instance View:
-info:    vm quick-create command OK
-```
+- [Use an Azure Resource Manager template to create a specific deployment](/documentation/articles/virtual-machines-linux-cli-deploy-templates/)
+- [Create your own custom environment for a Linux VM using Azure CLI commands directly](/documentation/articles/virtual-machines-linux-create-cli-complete/)
+- [Create an SSH Secured Linux VM on Azure using templates](/documentation/articles/virtual-machines-linux-create-ssh-secured-vm-from-template/)
 
-You can now SSH into your VM on the default SSH port 22 and the fully qualified domain name (FQDN) listed in the output above. (You can also use the IP address listed.)
-
-```bash
-ssh ops@rhel-china-1630678171-pip.chinanorth.chinacloudapp.cn
-```
-The login process should look something like the following:
-
-```bash
-The authenticity of host 'rhel-china-1630678171-pip.chinanorth.chinacloudapp.cn (104.42.236.196)' can't be established.
-RSA key fingerprint is 0e:81:c4:36:2d:eb:3c:5a:dc:7e:65:8a:3f:3e:b0:cb.
-Are you sure you want to continue connecting (yes/no)? yes
-Warning: Permanently added 'rhel-china-1630678171-pip.chinanorth.chinacloudapp.cn,104.42.236.196' (RSA) to the list of known hosts.
-[ops@rhel ~]$ ls -a
-.  ..  .bash_logout  .bash_profile  .bashrc  .cache  .config  .ssh
-```
-
-## Next Steps
-
-The `azure vm quick-create` is the way to quickly deploy a VM so you can log in  to a bash shell and get working. Using `vm quick-create` does not give you the additional benefits of a complex environment.  To deploy a Linux VM customized for your infrastructure you can follow any of the articles below.
-
-- [Use an Azure resource manager template to create a specific deployment](/documentation/articles/virtual-machines-linux-cli-deploy-templates/)
-- [Create your own custom environment for a Linux VM using Azure CLI commands directly](/documentation/articles/virtual-machines-linux-create-cli-complete/).
-- [Create a SSH Secured Linux VM on Azure using Templates](/documentation/articles/virtual-machines-linux-create-ssh-secured-vm-from-template/)
-
-Those articles will get you started in building an Azure infrastructure as well as any number of proprietary and open-source infrastructure deployment, configuration, and orchestration tools.
+You can also [use the `docker-machine` Azure driver with various commands to quickly create a Linux VM as a docker host](/documentation/articles/virtual-machines-linux-docker-machine/).

@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Reference for navigating the Azure portal"
-	description="Learn the different user experiences for Azure Web between the management portal and the Azure Portal"
+	description="Learn the different user experiences for App Service Web between the management portal and the Azure Portal"
 	services="app-service"
 	documentationCenter=""
 	authors="jaime-espinosa"
@@ -9,14 +9,19 @@
 
 <tags
 	ms.service="app-service"
+	ms.workload="na"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="02/26/2016"
-	wacn.date=""/>
+	wacn.date=""
+	ms.author="jaime-espinosa"/>
 
 # Reference for navigating the Azure portal
 
-Azure Websites are now called [Azure Web Apps](/documentation/services/web-sites/). We're updating all of our documentation to reflect this name change and to provide instructions for the Azure Portal. Until that process is done, you can use this document as a guide for working with Web Apps in the Azure portal.
+Azure Websites are now called [App Service Web Apps](/documentation/articles/app-service-changes-existing-services/). We're updating all of our documentation to reflect this name change and to provide instructions for the Azure Portal. Until that process is done, you can use this document as a guide for working with Web Apps in the Azure portal.
 
-[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)] 
+[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)] 
  
 ## The future of the Azure Classic Management Portal
 
@@ -75,8 +80,8 @@ Other than the brand name, a few things in the portal have been renamed or group
 [Azure Portal]: https://portal.azure.cn
 [Azure Marketplace]: /marketplace/
 
->[AZURE.NOTE] If you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.
+>[AZURE.NOTE] If you want to get started with Azure App Service before signing up for an Azure account, go to [Try App Service](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in App Service. No credit cards required; no commitments.
 
 ## What's changed
-* For a guide to the change from Websites to Azure see: [Azure and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
+* For a guide to the change from Websites to App Service see: [Azure App Service and Its Impact on Existing Azure Services](/documentation/articles/app-service-changes-existing-services/)
  

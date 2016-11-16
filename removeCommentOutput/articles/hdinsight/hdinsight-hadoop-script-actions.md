@@ -5,13 +5,18 @@
 	documentationCenter=""
 	tags="azure-portal"
 	authors="mumian"
-	manager="paulettm"
+	manager="jhubbard"
 	editor="cgronlun"/>
 
 <tags
 	ms.service="hdinsight"
-	ms.date="04/28/2016"
-	wacn.date=""/>
+	ms.workload="big-data"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="07/25/2016"
+	wacn.date=""
+	ms.author="jgao"/>
 
 # Develop Script Action scripts for HDInsight
 
@@ -28,7 +33,7 @@ Script Action can be used to install additional software running on a Hadoop clu
 
 For creating HDInsight clusters on Windows operating system, the Script Action is Azure PowerShell script.The following is a sample script for configure the site configuration files:
 
-[AZURE.INCLUDE [upgrade-powershell](../includes/hdinsight-use-latest-powershell.md)]
+[AZURE.INCLUDE [upgrade-powershell](../../includes/hdinsight-use-latest-powershell.md)]
 
 	param (
 	    [parameter(Mandatory)][string] $ConfigFileName,
@@ -171,7 +176,7 @@ When you develop a custom script for an HDInsight cluster, there are several bes
 
 	HDInsight has an active-passive architecture for high availability, in which one head node is in active mode (where the HDInsight services are running) and the other head node is in standby mode (in which HDInsight services are not running). The nodes switch active and passive modes if HDInsight services are interrupted. If a script action is used to install services on both head nodes for high availability, note that the HDInsight failover mechanism will not be able to automatically fail over these user-installed services. So user-installed services on HDInsight head nodes that are expected to be highly available must either have their own failover mechanism if in active-passive mode or be in active-active mode.
 
-	An HDInsight Script Action command runs on both head nodes when the head-node role is specified as a value in the *ClusterRoleCollection* parameter (documented below in the section [How to run a script action](#runScriptAction)). So when you design a custom script, make sure that your script is aware of this setup. You should not run into problems where the same services are installed and started on both of the head nodes and they end up competing with each other. Also, be aware that data will be lost during re-imaging, so software installed via Script Action has to be resilient to such events. Applications should be designed to work with highly available data that is distributed across many nodes. Note that as many as 1/5 of the nodes in a cluster can be re-imaged at the same time.
+	An HDInsight Script Action command runs on both head nodes when the head-node role is specified as a value in the *ClusterRoleCollection* parameter. So when you design a custom script, make sure that your script is aware of this setup. You should not run into problems where the same services are installed and started on both of the head nodes and they end up competing with each other. Also, be aware that data will be lost during re-imaging, so software installed via Script Action has to be resilient to such events. Applications should be designed to work with highly available data that is distributed across many nodes. Note that as many as 1/5 of the nodes in a cluster can be re-imaged at the same time.
 
 
 - Configure the custom components to use Azure Blob storage
@@ -203,7 +208,7 @@ In this example, you must ensure that the container 'somecontainer' in storage a
 
 To pass multiple parameters to the Add-AzureRmHDInsightScriptAction cmdlet, you need to format the string value to contain all parameters for the script. For example:
 
-	"-CertifcateUri wasb:///abc.pfx -CertificatePassword 123456 -InstallFolderName MyFolder"
+	"-CertifcateUri wasbs:///abc.pfx -CertificatePassword 123456 -InstallFolderName MyFolder"
  
 or
 
@@ -242,40 +247,6 @@ Here are the steps we took when preparing to deploy these scripts:
 4. Use a temporary file folder, such as $env:TEMP, to keep the downloaded file used by the scripts and then clean them up after scripts have executed.
 5. Install custom software only at D:\ or C:\apps. Other locations on the C: drive should not be used as they are reserved. Note that installing files on the C: drive outside of the C:\apps folder may result in setup failures during re-images of the node.
 6. In the event that OS-level settings or Hadoop service configuration files were changed, you may want to restart HDInsight services so that they can pick up any OS-level settings, such as the environment variables set in the scripts.
-
-
-
-## Test custom scripts with the HDInsight Emulator
-
-A straight-forward way to test a custom script before using it in the HDInsight Script Action command is to run it on the HDInsight Emulator. You can install the HDInsight Emulator locally or on an Azure infrastructure as a service (IaaS) Windows Server 2012 R2 VM or on a local machine and observe if the script behaves correctly. Note that the Windows Server 2012 R2 VM is the same VM that HDInsight uses for its nodes.
-
-This section outlines the procedure for using the HDInsight Emulator locally for testing purposes, but the procedure for using a VM is similar.
-
-**Install the HDInsight Emulator** - To run Script Action locally, you must have the HDInsight Emulator installed. For instructions on how to install it, see [Get started with the HDInsight Emulator](/documentation/articles/hdinsight-hadoop-emulator-get-started/).
-
-**Set the execution policy for Azure PowerShell** - Open Azure PowerShell and run (as administrator) the following command to set the execution policy to *LocalMachine* and to be *Unrestricted*:
-
-	Set-ExecutionPolicy Unrestricted -Scope LocalMachine
-
-We need this policy to be unrestricted as scripts are not signed.
-
-**Download the script action** that you want to run to a local destination. The following sample scripts are available to download from the following locations:
-
-* **Spark**. https://hdiconfigactions.blob.core.windows.net/sparkconfigactionv02/spark-installer-v02.ps1
-* **R**. https://hdiconfigactions.blob.core.windows.net/rconfigactionv02/r-installer-v02.ps1
-* **Solr**. https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1
-* **Giraph**. https://hdiconfigactions.blob.core.windows.net/giraphconfigactionv01/giraph-installer-v01.ps1
-
-**Run the script action** - Open a new Azure PowerShell window in admin mode and run the Spark or R installation script from the local location where they were saved.
-
-**Usage examples**
-When you're using the Spark and R clusters, data files needed may not be present in the HDInsight Emulator. So you may need to upload relevant .txt files that contain data to a path in HDFS and then use that path to access the data. For example:
-
-	val file = sc.textFile("/example/data/gutenberg/davinci.txt")
-
-
-Note that in some cases a custom script may actually depend on HDInsight components, such as detecting whether certain Hadoop services are up. In this case, you will have to test your custom scripts by deploying them on an actual HDInsight cluster.
-
 
 ## Debug custom scripts
 

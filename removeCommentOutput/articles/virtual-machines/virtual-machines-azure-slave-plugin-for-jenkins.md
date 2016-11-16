@@ -9,8 +9,13 @@
 
 <tags
 	ms.service="virtual-machines-linux"
-	ms.date="06/27/2016"
-	wacn.date=""/>
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-multiple"
+	ms.devlang="java"
+	ms.topic="article"
+	ms.date="09/20/2016"
+	wacn.date=""
+	ms.author="robmcm"/>
 
 # How to use the Azure slave plug-in with Jenkins Continuous Integration
 

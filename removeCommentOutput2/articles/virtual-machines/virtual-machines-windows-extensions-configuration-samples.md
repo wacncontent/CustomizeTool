@@ -1,4 +1,3 @@
-
 <properties
    pageTitle="Sample configuration for Windows VM extensions | Azure"
    description="Sample configuration for authoring templates with extensions"
@@ -10,9 +9,14 @@
    tags="azure-resource-manager"/>
 
 <tags
-	ms.service="virtual-machines-windows"
-	ms.date="03/29/2016"
-	wacn.date=""/>
+   ms.service="virtual-machines-windows"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="vm-windows"
+   ms.workload="infrastructure-services"
+   ms.date="03/29/2016"
+   wacn.date=""
+   ms.author="kundanap"/>
 
 # Azure Windows VM Extension Configuration Samples
 
@@ -20,17 +24,9 @@
 - [PowerShell - Template](/documentation/articles/virtual-machines-windows-extensions-configuration-samples/)
 - [CLI - Template](/documentation/articles/virtual-machines-linux-extensions-configuration-samples/)
 
-[AZURE.INCLUDE [arm-api-version-powershell](../includes/arm-api-version-powershell.md)]
-
 <br>
 
-
-> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the Resource Manager deployment model, which Azure recommends for most new deployments instead of the classic deployment model.
-
-
-
 This article provides sample configuration for configuring Azure VM Extensions for Windows VMs.
-
 
 To learn more about these extensions, see [Azure VM Extensions Overview.](/documentation/articles/virtual-machines-windows-extensions-features/)
 

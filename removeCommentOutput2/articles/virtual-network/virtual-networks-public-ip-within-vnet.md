@@ -3,13 +3,18 @@
    description="Learn how to configure a virtual network to use public IP addresses"
    services="virtual-network"
    documentationCenter="na"
-   authors="telmosampaio"
+   authors="jimdial"
    manager="carmonm"
    editor="tysonn" />
-<tags
-	ms.service="virtual-network"
-	ms.date="04/27/2016"
-	wacn.date=""/>
+<tags 
+   ms.service="virtual-network"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="04/27/2016"
+   wacn.date=""
+   ms.author="jdial" />
 
 # Public IP address space in a Virtual Network (VNet)
 

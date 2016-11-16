@@ -1,4 +1,3 @@
-
 <properties
 	pageTitle="Create a Linux VM using a Azure template | Azure"
 	description="Create a Linux VM on Azure using an Azure Resource Manager template."
@@ -16,8 +15,6 @@
 
 # Create a Linux VM using an Azure template
 
-[AZURE.INCLUDE [arm-api-version-cli](../includes/arm-api-version-cli.md)]
-
 This article shows how to quickly deploy a Linux Virtual Machine on Azure using an Azure Template.  The article requires an Azure account ([get a trial](/pricing/1rmb-trial/)] and [the Azure CLI](/documentation/articles/xplat-cli-install/) logged in (`azure login -e AzureChinaCloud`) and in resource manager mode (`azure config mode arm`).  You can also quickly deploy a Linux VM using the [Azure Portal Preview](/documentation/articles/virtual-machines-linux-quick-create-portal/) or the [Azure CLI](/documentation/articles/virtual-machines-linux-quick-create-cli/).
 
 
@@ -27,7 +24,7 @@ In the following command examples, replace the values between &lt; and &gt; with
 
 You can download the template from [GitHub](https://raw.githubusercontent.com/azure/azure-quickstart-templates/master/101-vm-sshkey/azuredeploy.json) and run the following command.
 
->[AZURE.NOTE] Templates you downloaded from the GitHub Repo "azure-quickstart-templates" must be modified in order to fit in the Azure China Cloud Environment. For example, replace some endpoints -- "blob.core.chinacloudapi.cn" by "blob.core.chinacloudapi.cn", "chinacloudapp.cn" by "chinacloudapp.cn"; change some unsupported VM images; and, changes some unsupported VM sizes.
+>[AZURE.NOTE] Templates you downloaded from the GitHub Repo "azure-quickstart-templates" must be modified in order to fit in the Azure China Cloud Environment. For example, replace some endpoints -- "blob.core.windows.net" by "blob.core.chinacloudapi.cn", "cloudapp.azure.com" by "chinacloudapp.cn"; change some unsupported VM images; and, changes some unsupported VM sizes.
 
 	azure group create \
 	-n quicksecuretemplate \
@@ -44,8 +41,8 @@ Azure Resource Manager templates are JSON files that can be used for simple one-
 
 The following code example shows how to call `azure group create` to create a resource group and deploy an SSH-secured Linux VM at the same time using [this Azure Resource Manager template](https://raw.githubusercontent.com/azure/azure-quickstart-templates/master/101-vm-sshkey/azuredeploy.json). Remember that in your example you need to use names that are unique to your environment. This example uses `quicksecuretemplate` as the resource group name, `securelinux` as the VM name, and `quicksecurelinux` as a subdomain name.
 
+>[AZURE.NOTE] Templates you downloaded from the GitHub Repo "azure-quickstart-templates" must be modified in order to fit in the Azure China Cloud Environment. For example, replace some endpoints -- "blob.core.windows.net" by "blob.core.chinacloudapi.cn", "cloudapp.azure.com" by "chinacloudapp.cn"; change some unsupported VM images; and, changes some unsupported VM sizes.
 
->[AZURE.NOTE] Templates you downloaded from the GitHub Repo "azure-quickstart-templates" must be modified in order to fit in the Azure China Cloud Environment. For example, replace some endpoints -- "blob.core.chinacloudapi.cn" by "blob.core.chinacloudapi.cn", "chinacloudapp.cn" by "chinacloudapp.cn"; change some unsupported VM images; and, changes some unsupported VM sizes.
 	azure group create \
 	-n quicksecuretemplate \
 	-l chinaeast \

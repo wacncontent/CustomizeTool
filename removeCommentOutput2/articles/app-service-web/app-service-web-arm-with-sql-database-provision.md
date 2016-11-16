@@ -7,10 +7,15 @@
 	manager="wpickett" 
 	editor=""/>
 
-<tags
-	ms.service="app-service"
-	ms.date="04/27/2016"
-	wacn.date=""/>
+<tags 
+	ms.service="app-service" 
+	ms.workload="na" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="04/27/2016" 
+	wacn.date="" 
+	ms.author="cephalin"/>
 
 # Provision a web app with a SQL Database
 
@@ -19,7 +24,11 @@ how to define parameters that are specified when the deployment is executed. You
 
 For more information about creating templates, see [Authoring Azure Resource Manager Templates](/documentation/articles/resource-group-authoring-templates/).
 
+For more information about deploying apps, see [Deploy a complex application predictably in Azure](/documentation/articles/app-service-deploy-complex-application-predictably/).
+
 For the complete template, see [Web App With SQL Database template](https://github.com/Azure/azure-quickstart-templates/blob/master/201-web-app-sql-database/azuredeploy.json).
+
+[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)] 
 
 ## What you will deploy
 
@@ -30,15 +39,16 @@ In this template, you will deploy:
 - SQL Database
 - AutoScale settings
 - Alert rules
-- App Insights
 
 To run the deployment automatically, click the following button:
 
 [![Deploy to Azure](./media/app-service-web-arm-with-sql-database-provision/deploybutton.png)](https://portal.azure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F201-web-app-sql-database%2Fazuredeploy.json)
 
+>[AZURE.NOTE] Templates you are deploying from the GitHub Repo "azure-quickstart-templates" must be modified in order to fit in the Azure China Cloud Environment. For example, replace some endpoints -- "blob.core.windows.net" by "blob.core.chinacloudapi.cn", "cloudapp.azure.com" by "chinacloudapp.cn".
+
 ## Parameters to specify
 
-[AZURE.INCLUDE [app-service-web-deploy-web-parameters](../includes/app-service-web-deploy-web-parameters.md)]
+[AZURE.INCLUDE [app-service-web-deploy-web-parameters](../../includes/app-service-web-deploy-web-parameters.md)]
 
 ### administratorLogin
 
@@ -178,7 +188,7 @@ you must provide a login name and password for the database server administrator
             "[variables('sqlserverName')]"
           ],
           "location": "[resourceGroup().location]",
-          "name": "AllowAllWindowsAzureIps",
+          "name": "AllowAllAzureIps",
           "properties": {
             "endIpAddress": "0.0.0.0",
             "startIpAddress": "0.0.0.0"
@@ -187,7 +197,7 @@ you must provide a login name and password for the database server administrator
       ]
     },
 
-[AZURE.INCLUDE [app-service-web-deploy-web-host](../includes/app-service-web-deploy-web-host.md)]
+[AZURE.INCLUDE [app-service-web-deploy-web-host](../../includes/app-service-web-deploy-web-host.md)]
 
 
 ### Web app
@@ -435,37 +445,18 @@ you must provide a login name and password for the database server administrator
         }
       }
     },
-    
-### App Insights
-
-    {
-      "apiVersion": "2014-04-01",
-      "name": "[concat('AppInsights', variables('webSiteName'))]",
-      "type": "Microsoft.Insights/components",
-      "location": "China North",
-      "dependsOn": [
-        "[variables('webSiteName')]"
-      ],
-      "tags": {
-        "[concat('hidden-link:', resourceId('Microsoft.Web/sites', variables('webSiteName')))]": "Resource",
-        "displayName": "AppInsightsComponent"
-      },
-      "properties": {
-        "ApplicationId": "[variables('webSiteName')]"
-      }
-    }
 
 ## Commands to run deployment
 
-[AZURE.INCLUDE [app-service-deploy-commands](../includes/app-service-deploy-commands.md)]
+[AZURE.INCLUDE [app-service-deploy-commands](../../includes/app-service-deploy-commands.md)]
 
 ### PowerShell
 
-    New-AzureRmResourceGroupDeployment -TemplateUri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-web-app-sql-database/azuredeploy.json
+    New-AzureRmResourceGroupDeployment -TemplateFile path/to/azuredeploy.json
 
 ### Azure CLI
 
-    azure group deployment create --template-uri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/201-web-app-sql-database/azuredeploy.json
+    azure group deployment create --template-file path/to/azuredeploy.json
 
 
  

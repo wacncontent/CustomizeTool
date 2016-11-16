@@ -9,10 +9,15 @@
    manager="jwhit"
    editor="tysonn"
    keywords="automation rbac, role based access control, azure rbac" />
-<tags
-	ms.service="automation"
-	ms.date="06/20/2016"
-	wacn.date=""/>
+<tags 
+   ms.service="automation"
+   ms.devlang="na"
+   ms.topic="get-started-article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="09/12/2016"
+   wacn.date=""
+   ms.author="magoedte;sngun"/>
 
 # Role-based access control in Azure Automation
 
@@ -33,9 +38,13 @@ In Azure Automation, access is granted by assigning the appropriate RBAC role to
 | User Access Administrator | The User Access Administrator role allows you to manage user access to Azure Automation accounts. |
 
 >[AZURE.NOTE] You cannot grant access rights to a specific runbook or runbooks, only to the resources and actions within the Automation account.  
+
 In this article we will walk you through how to set up RBAC in Azure Automation. But first, let's take a closer look at the individual permissions granted to the Contributor, Reader, Automation Operator and User Access Administrator so that we gain a good understanding before granting anyone rights to the Automation account.  Otherwise it could result in unintended or undesirable consequences.     
+
 ## Contributor role permissions
+
 The following table presents the specific actions that can be performed by the Contributor role in Automation.
+
 | **Resource Type** | **Read** | **Write** | **Delete** | **Other Actions** |
 |:--- |:---|:--- |:---|:--- |
 | Azure Automation Account | ![Green Status](./media/automation-role-based-access-control/green-checkmark.png) | ![Green Status](./media/automation-role-based-access-control/green-checkmark.png) | ![Green Status](./media/automation-role-based-access-control/green-checkmark.png) | | 
@@ -55,8 +64,11 @@ The following table presents the specific actions that can be performed by the C
 | Automation Runbook Draft | ![Green Status](./media/automation-role-based-access-control/green-checkmark.png) | | | ![Green Status](./media/automation-role-based-access-control/green-checkmark.png) |
 | Automation Runbook Draft Test Job | ![Green Status](./media/automation-role-based-access-control/green-checkmark.png) | ![Green Status](./media/automation-role-based-access-control/green-checkmark.png) | | ![Green Status](./media/automation-role-based-access-control/green-checkmark.png) | 
 | Automation Webhook | ![Green Status](./media/automation-role-based-access-control/green-checkmark.png) | ![Green Status](./media/automation-role-based-access-control/green-checkmark.png) | ![Green Status](./media/automation-role-based-access-control/green-checkmark.png) | ![Green Status](./media/automation-role-based-access-control/green-checkmark.png) |
+
 ## Reader role permissions
+
 The following table presents the specific actions that can be performed by the Reader role in Automation.
+
 | **Resource Type** | **Read** | **Write** | **Delete** | **Other Actions** |
 |:--- |:---|:--- |:---|:--- |
 | Classic subscription administrator | ![Green Status](./media/automation-role-based-access-control/green-checkmark.png) | | | 
@@ -65,8 +77,11 @@ The following table presents the specific actions that can be performed by the R
 | Provider operations | ![Green Status](./media/automation-role-based-access-control/green-checkmark.png) | | | 
 | Role assignment | ![Green Status](./media/automation-role-based-access-control/green-checkmark.png) | | | 
 | Role definition | ![Green Status](./media/automation-role-based-access-control/green-checkmark.png) | | | 
+
 ## Automation Operator role permissions
+
 The following table presents the specific actions that can be performed by the Automation Operator role in Automation.
+
 | **Resource Type** | **Read** | **Write** | **Delete** | **Other Actions** |
 |:--- |:---|:--- |:---|:--- |
 | Azure Automation Account | ![Green Status](./media/automation-role-based-access-control/green-checkmark.png) | | | 
@@ -86,9 +101,13 @@ The following table presents the specific actions that can be performed by the A
 | Automation Runbook Draft | | | |
 | Automation Runbook Draft Test Job | | | |  
 | Automation Webhook | | | |
+
 For further details, the [Automation operator actions](/documentation/articles/role-based-access-built-in-roles/#automation-operator) lists the actions supported by the Automation operator role on the Automation account and its resources.
+
 ## User Access Administrator role permissions
+
 The following table presents the specific actions that can be performed by the User Access Administrator role in Automation.
+
 | **Resource Type** | **Read** | **Write** | **Delete** | **Other Actions** |
 |:--- |:---|:--- |:---|:--- |
 | Azure Automation Account | ![Green Status](./media/automation-role-based-access-control/green-checkmark.png) | | | |
@@ -133,20 +152,21 @@ The following table presents the specific actions that can be performed by the U
 
     ![Add users](./media/automation-role-based-access-control/automation-04-add-users.png)  
  
-Now you should see the user added to the **Users** blade with the **Reader** role assigned.  
+    Now you should see the user added to the **Users** blade with the **Reader** role assigned.  
 
-![List users](./media/automation-role-based-access-control/automation-05-list-users.png)  
+    ![List users](./media/automation-role-based-access-control/automation-05-list-users.png)  
 
     You can also assign a role to the user from the **Roles** blade. 
 
 1. Click **Roles** from the Users blade to open the **Roles blade**. From this blade, you can view the name of the role, the number of users and groups assigned to that role.
-   
 
     ![Assign role from users blade](./media/automation-role-based-access-control/automation-06-assign-role-from-users-blade.png)  
+   
     >[AZURE.NOTE] Role-based access control can only be set at the Automation Account level and not at any resource below the Automation Account.
 
     You can assign more than one role to a user, group, or application. For example, if we add the **Automation Operator** role along with the **Reader role** to the user, then they can view all the Automation resources, as well as execute the runbook jobs. You can expand the dropdown to view a list of roles assigned to the user.  
-![View multiple roles](./media/automation-role-based-access-control/automation-07-view-multiple-roles.png)  
+
+    ![View multiple roles](./media/automation-role-based-access-control/automation-07-view-multiple-roles.png)  
  
 ### Remove a user
 

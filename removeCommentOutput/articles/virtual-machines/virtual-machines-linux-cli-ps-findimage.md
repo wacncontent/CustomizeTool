@@ -10,9 +10,14 @@
    />
 
 <tags
-	ms.service="virtual-machines-linux"
-	ms.date="06/06/2016"
-	wacn.date=""/>
+   ms.service="virtual-machines-linux"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="vm-linux"
+   ms.workload="infrastructure"
+   ms.date="08/23/2016"
+   wacn.date=""
+   ms.author="rasquill"/>
 
 # Select Linux VM images with the Azure CLI
 
@@ -32,4 +37,4 @@ This topic describes how to find publishers, offers, skus, and versions for each
 | CoreOS                           | CoreOS                                     | Stable                           |
 
 
-[AZURE.INCLUDE [virtual-machines-common-cli-ps-findimage](../includes/virtual-machines-common-cli-ps-findimage.md)]
+[AZURE.INCLUDE [virtual-machines-common-cli-ps-findimage](../../includes/virtual-machines-common-cli-ps-findimage.md)]

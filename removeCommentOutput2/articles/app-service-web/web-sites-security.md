@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Secure an app in Azure Web App"
-	description="Learn how to secure a web app, mobile app backend, or API app in Azure Web App."
+	pageTitle="Secure an app in Azure App Service"
+	description="Learn how to secure a web app, mobile app backend, or API app in Azure App Service."
 	services="app-service"
 	documentationCenter=""
 	authors="cephalin"
@@ -9,28 +9,33 @@
 
 <tags
 	ms.service="app-service"
+	ms.workload="na"
+	ms.tgt_pltfrm="na"
+	ms.devlang="multiple"
+	ms.topic="article"
 	ms.date="01/12/2016"
-	wacn.date=""/>
+	wacn.date=""
+	ms.author="cephalin"/>
 
 
-#Secure an app in Azure
+#Secure an app in Azure App Service
 
-This article helps you get started on securing your web app, mobile app backend, or API app in Azure Web App. 
+This article helps you get started on securing your web app, mobile app backend, or API app in Azure App Service. 
 
-Security in Azure has two levels: 
+Security in Azure App Service has two levels: 
 
 - **Infrastructure and platform security** - You trust Azure to have the services you need to actually run things securely in the cloud.
 - **Application security** - You need to design the app itself securely. This includes how you integrate with Azure Active Directory, how you manage certificates, and how you make sure that you can securely talk to different services. 
 
 #### Infrastructure and platform security
-Because Azure maintains the Azure VMs, storage, network connections, web frameworks, management and integration features and much more, it is actively secured and hardened and goes 
+Because App Service maintains the Azure VMs, storage, network connections, web frameworks, management and integration features and much more, it is actively secured and hardened and goes 
 through vigorous compliance and checks on a continuous basis to make sure that:
 
-- Your Azure Web Apps are isolated from both the Internet and from the other customers' Azure resources.
-- Communication of secrets (e.g. connection strings) between your Azure Web App and other Azure resources (e.g. SQL Database) in a resource group stays within Azure and doesn't cross any network boundaries. Secrets are 
+- Your App Service apps are isolated from both the Internet and from the other customers' Azure resources.
+- Communication of secrets (e.g. connection strings) between your App Service app and other Azure resources (e.g. SQL Database) in a resource group stays within Azure and doesn't cross any network boundaries. Secrets are 
 always encrypted.
-- All communication between your Azure Web App and external resources, such as PowerShell management, command-line interface, Azure SDKs, REST APIs, and hybrid connections, are properly encrypted.
-- 24-hour threat management protects Azure resources from malware, distributed denial-of-service (DDoS), man-in-the-middle (MITM), and other threats. 
+- All communication between your App Service app and external resources, such as PowerShell management, command-line interface, Azure SDKs, and REST APIs, are properly encrypted.
+- 24-hour threat management protects App Service resources from malware, distributed denial-of-service (DDoS), man-in-the-middle (MITM), and other threats. 
 
 For more information on infrastructure and platform security in Azure, see [Azure Trust Center](/support/trust-center/security/).
 
@@ -49,18 +54,25 @@ A full discussion of security considerations for web-based applications is beyon
 see the [Open Web Application Security Project (OWASP)](https://www.owasp.org/index.php/Main_Page), specifically the [top 10 project.](https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project), 
 which lists the current top 10 critical web application security flaws, as determined by OWASP members.
 
+## Perform penetration testing on your app
+
+One of the easiest ways to yet started with testing for vulnerabilities on your App Service app is to use the [integration with Tinfoil Security](https://azure.microsoft.com/blog/web-vulnerability-scanning-for-azure-app-service-powered-by-tinfoil-security/)
+to perform one-click vulnerability scanning on your app. You can view the test results in an easy-to-understand report, and learn how to fix each vulnerability with step-by-step instructions.
+
+If you prefer to perform your own penetration tests or want to use another scanner suite or provider, you must follow the Azure penetration testing approval process and 
+obtain prior approval to perform the desired penetration tests.
+
 ##<a name="https"></a> Secure communication with customers
 
-If you use the **\*.chinacloudsites.cn** domain name created for your Azure Web App, you can immediately use HTTPS, as an SSL certificate is provided for all **\*.chinacloudsites.cn** domain names. If your site uses a [custom domain name](/documentation/articles/web-sites-custom-domain-name/), you can upload an SSL certificate to [enable HTTPS](/documentation/articles/web-sites-configure-ssl-certificate/) for the custom domain.
+If you use the **\*.chinacloudsites.cn** domain name created for your App Service app, you can immediately use HTTPS, as an SSL certificate is provided for all **\*.chinacloudsites.cn** domain names. If your site uses a [custom domain name](/documentation/articles/web-sites-custom-domain-name/), you can upload an SSL certificate to [enable HTTPS](/documentation/articles/web-sites-configure-ssl-certificate/) for the custom domain.
 
 Enabling [HTTPS](https://en.wikipedia.org/wiki/HTTPS) can help protect against MITM attacks on the communication between your app and its users.
 
 ## Secure data tier
 
-Azure highly integrates with SQL Database, such that all the connection strings are encrypted across the board and are only decrypted on the VM that the app runs on *and* only when the app runs. 
+App Service highly integrates with SQL Database, such that all the connection strings are encrypted across the board and are only decrypted on the VM that the app runs on *and* only when the app runs. 
 In addition, Azure SQL Database includes many security features to help you secure your application data from cyber threats, including 
-[at-rest encryption](https://msdn.microsoft.com/zh-cn/library/dn948096.aspx), [Always Encrypted](https://msdn.microsoft.com/zh-cn/library/mt163865.aspx),
-[Dynamic Data Masking](/documentation/articles/sql-database-dynamic-data-masking-get-started/). 
+[at-rest encryption](https://msdn.microsoft.com/zh-cn/library/dn948096.aspx) and [Always Encrypted](https://msdn.microsoft.com/zh-cn/library/mt163865.aspx). 
 If you have sensitive data or compliance requirements, see [Securing your SQL Database](/documentation/articles/sql-database-security/) for more information on how to secure 
 your data.
 
@@ -93,33 +105,39 @@ Additionally, you should make sure the imported credentials are secured. For exa
 It's common practice to store connection strings, authentication credentials, and other sensitive information in configuration files. Unfortunately, these files may be exposed on your website, or checked into a public repository, 
 exposing this information. A simple search on [GitHub](https://github.com), for example, can uncover countless configuration files with exposed secrets in the public repositories.
 
-The best practice is to keep this information out of your app's configuration files. Azure lets you store configuration information as part of the runtime environment as **app settings** and **connection strings**. The values 
+The best practice is to keep this information out of your app's configuration files. App Service lets you store configuration information as part of the runtime environment as **app settings** and **connection strings**. The values 
 are exposed to your application at runtime through *environment variables* for most programming languages. For .NET applications, these values are injected into your .NET configuration at runtime. Apart from these situations, these
-configuration settings will remain encrypted unless you view or configure them using the [Azure Classic Management Portal](https://manage.windowsazure.cn) or utilities such as PowerShell or the Azure CLI. 
+configuration settings will remain encrypted unless you view or configure them using the [Azure Portal Preview](https://portal.azure.cn) or utilities such as PowerShell or the Azure CLI. 
 
-Storing configuration information in Azure makes it possible for the app's administrator to lock down sensitive information for the production apps. Developers can use a separate set of configuration settings
-for app development and the settings can be automatically superseded by the settings configured in Azure Web App. Not even the developers need to know the secrets configured for the production app. For more information on 
-configuring app settings and connection strings in Azure Web App, see [Configuring web apps](/documentation/articles/web-sites-configure/).
+Storing configuration information in App Service makes it possible for the app's administrator to lock down sensitive information for the production apps. Developers can use a separate set of configuration settings
+for app development and the settings can be automatically superseded by the settings configured in App Service. Not even the developers need to know the secrets configured for the production app. For more information on 
+configuring app settings and connection strings in App Service, see [Configuring web apps](/documentation/articles/web-sites-configure/).
 
 ### FTPS
 
-Azure provides secure FTP access to the file system for your app through **FTPS**. This allows you to securely access the application code on the web app as well as diagnostics logs. It is recommended that you
+Azure App Service provides secure FTP access to the file system for your app through **FTPS**. This allows you to securely access the application code on the web app as well as diagnostics logs. It is recommended that you
 always use FTPS instead of FTP. 
 
 The FTPS link for your app can be found with the following steps:
 
-1. Open the [Azure Classic Management Portal](https://manage.windowsazure.cn).
-2. Select **Web Apps**.
-4. Select the desired app.
-5. Click **Dashboard**
-6. You can find the **FTPS HOST NAME** there.
+1. Open the [Azure Portal Preview](https://portal.azure.cn).
+2. Select **Browse All**.
+3. From the **Browse** blade, select **App Services**.
+4. From the **App Services** blade, Select the desired app.
+5. From the app's blade, select **All settings**.
+6. From the **Settings** blade, select **Properties**.
+7. The FTP and FTPS links are provided on the **Settings** blade. 
 
 For more information on FTPS, see [File Transfer Protocol](http://en.wikipedia.org/wiki/File_Transfer_Protocol).
 
-##<a name="next"></a> Next steps
+## Next steps
 
 For more information on the security of the Azure platform, information on reporting a **security incident or abuse**, or to inform Microsoft that you will be performing **penetration testing** of your site, see the security section of the [Azure Trust Center](/support/trust-center/security/).
 
-For more information on **web.config** or **applicationhost.config** files in Azure Web Apps, see [Configuration options unlocked in Azure web apps](/blog/2014/01/28/more-to-explore-configuration-options-unlocked-in-windows-azure-web-sites/).
+For more information on **web.config** or **applicationhost.config** files in App Service apps, see [Configuration options unlocked in Azure App Service web apps](https://azure.microsoft.com/blog/2014/01/28/more-to-explore-configuration-options-unlocked-in-windows-azure-web-sites/).
 
-For information on logging information for Azure Web Apps, which may be useful in detecting attacks, see [Enable diagnostic logging](/documentation/articles/web-sites-enable-diagnostic-log/).
+For information on logging information for App Service apps, which may be useful in detecting attacks, see [Enable diagnostic logging](/documentation/articles/web-sites-enable-diagnostic-log/).
+
+## What's changed
+
+* For a guide to the change from Websites to App Service see: [Azure App Service and Its Impact on Existing Azure Services](/documentation/articles/app-service-changes-existing-services/)

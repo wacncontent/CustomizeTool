@@ -1,17 +1,22 @@
 <properties
    pageTitle="Testing SAP NetWeaver on Azure SUSE Linux VMs | Azure"
    description="Testing SAP NetWeaver on Azure SUSE Linux VMs"
-   services="virtual-machines,virtual-network,storage"
-   documentationCenter="saponazure"
+   services="virtual-machines-linux"
+   documentationCenter=""
    authors="hermanndms"
-   manager="juergent"
+   manager="timlt"
    editor=""
    tags="azure-resource-manager"
    keywords=""/>
 <tags
-	ms.service="virtual-machines"
-	ms.date="05/30/2016"
-	wacn.date=""/>
+   ms.service="virtual-machines-linux"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="vm-linux"
+   ms.workload="infrastructure-services"
+   ms.date="09/15/2016"
+   wacn.date=""
+   ms.author="hermannd"/>
 
 # Running SAP NetWeaver on Azure SUSE Linux VMs
 
@@ -98,7 +103,7 @@ There are two ways to avoid this:
 
 ## Uploading a SUSE VM from on-premises to Azure
 
-For a description of the steps to upload a SUSE VM from on-premises to Azure, see [Prepare a SLES or openSUSE virtual machine for Azure] (virtual-machines-linux-create-upload-vhd-suse.md).
+For a description of the steps to upload a SUSE VM from on-premises to Azure, see [Prepare a SLES or openSUSE virtual machine for Azure] (virtual-machines-linux-suse-create-upload-vhd.md).
 
 If you want to upload a VM without the deprovision step at the end (for example, to keep an existing SAP installation, as well as the host name), check the following items:
 
@@ -120,7 +125,7 @@ file is created, you can deploy the VM by using the following CLI command as an 
    azure group deployment create "<deployment name>" -g "<resource group name>" --template-file "<../../filename.json>"
 
    ```
-For more details about JSON template files, see [Authoring Azure Resource Manager templates] (resource-group-authoring-templates.md) and [Azure quickstart templates] (https://azure.microsoft.com/documentation/templates/).
+For more details about JSON template files, see [Authoring Azure Resource Manager templates] (resource-group-authoring-templates.md) and [Azure quickstart templates] (https://github.com/Azure/azure-quickstart-templates/).
 
 For more details about CLI and Azure Resource Manager, see [Use the Azure CLI for Mac, Linux, and Windows with Azure Resource Manager] (xplat-cli-azure-resource-manager.md).
 
@@ -130,9 +135,16 @@ For the official SAP-Azure certification, a new mechanism was introduced to calc
 of this. Former SAP kernel versions for Linux did not include this code change. Therefore, in certain situations (for example, Azure VM resizing), the SAP hardware key changed and the SAP license was no longer be valid. This is solved in the latest SAP Linux kernels. 
 For details please check SAP note 1928533.
 
-## SUSE sapconf package
+## SUSE sapconf package / tuned-adm
 
 SUSE provides a package called "sapconf" that manages a set of SAP-specific settings. For more details about what this package does, and how to install and use it, see [Using sapconf to prepare a SUSE Linux Enterprise Server to run SAP systems] (https://www.suse.com/communities/blog/using-sapconf-to-prepare-suse-linux-enterprise-server-to-run-sap-systems/) and [What is sapconf or how to prepare a SUSE Linux Enterprise Server for running SAP systems?] (http://scn.sap.com/community/linux/blog/2014/03/31/what-is-sapconf-or-how-to-prepare-a-suse-linux-enterprise-server-for-running-sap-systems).
+
+In the meantime there is a new tool which replaces sapconf - tuned-adm. One can find more details about this tool following the two links below.
+
+SLES documentation about tuned-adm profile sap-hana can be found [here](https://www.suse.com/documentation/sles-for-sap-12/book_s4s/data/sec_s4s_configure_sapconf.html) 
+
+Tuning Systems for SAP Workloads with tuned-adm - can be found [here](https://www.suse.com/documentation/sles-for-sap-12/pdfdoc/book_s4s/book_s4s.pdf) in chapter 6.2
+
 
 ## NFS share in distributed SAP installations
 

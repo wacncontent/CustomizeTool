@@ -8,14 +8,19 @@
 	editor=""
 	tags="azure-service-management"/>
 
-<tags
-	ms.service="virtual-machines-linux"
-	ms.date="06/24/2016"
-	wacn.date=""/>
+<tags 
+	ms.service="virtual-machines-linux" 
+	ms.workload="infrastructure-services" 
+	ms.tgt_pltfrm="vm-linux" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="08/11/2016" 
+	wacn.date="" 
+	ms.author="hanuk;robmcm"/>
 
 # Running Cassandra with Linux on Azure and Accessing it from Node.js 
 
-> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager model.
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](../articles/resource-manager-deployment-model.md).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager model. Learn how to [perform these steps using the Resource Manager model](https://github.com/Azure/azure-quickstart-templates/tree/master/datastax-on-ubuntu/).
 
 ## Overview
 Azure is an open cloud platform that runs both Microsoft as well as non-Microsoft software which  includes operating systems, application servers, messaging middleware as well as SQL and NoSQL databases from both commercial and open source models. Building resilient services on public clouds including Azure requires careful planning and deliberate architecture for both applications servers as well storage layers. Cassandra's distributed storage architecture naturally helps in building highly available systems that are fault tolerant for cluster failures. Cassandra is a cloud scale NoSQL database maintained by Apache Software Foundation at cassandra.apache.org; Cassandra is written in Java and hence runs on both on Windows as well as Linux platforms. 
@@ -47,7 +52,7 @@ Figure 1: Single region deployment
 
 Note that at the time of this writing, Azure doesn't allow the explicit mapping of a group of VMs to a specific fault domain; consequently, even with the deployment model shown in Figure 1, it is statistically probable that all the virtual machines may be mapped to two fault domains instead of four. 
 
-**Load Balancing Thrift Traffic:** Thrift client libraries inside the web server connect to the cluster through an internal load balancer. This requires the process of adding the internal load balancer to the "data" subnet (refer Figure 1) in the context of the cloud service hosting the Cassandra cluster. Once the internal load balancer is defined, each node requires the load balanced endpoint to be added with the annotations of a load balanced set with previously defined load balancer name.
+**Load Balancing Thrift Traffic:** Thrift client libraries inside the web server connect to the cluster through an internal load balancer. This requires the process of adding the internal load balancer to the "data" subnet (refer Figure 1) in the context of the cloud service hosting the Cassandra cluster. Once the internal load balancer is defined, each node requires the load balanced endpoint to be added with the annotations of a load balanced set with previously defined load balancer name. See [Azure Internal Load Balancing ](/documentation/articles/load-balancer-internal-overview/)for more details.
 
 **Cluster Seeds:** It is important to select the most highly available nodes for seeds as the new nodes will communicate with seed nodes to discover the topology of the cluster. One node from each availability set is designated as seed nodes to avoid single point of failure. 
 
@@ -462,11 +467,11 @@ You should see a display like the one below:
 
 Please note that the keyspace created in step 4 uses SimpleStrategy with a  replication_factor of 3. SimpleStrategy is recommended for single data center deployments whereas NetworkTopologyStrategy for multi-data center deployments. A replication_factor of 3 will give tolerance for node failures. 
 
-##<a id="tworegion"> </a>Multi-Region Deployment Process
+## <a id="tworegion"></a>Multi-Region Deployment Process
 Will leverage the single region deployment completed and repeat the same process for installing the second region. The key difference between the single and multiple region deployment is the VPN tunnel setup for inter-region communication; we will start with the network installation, provision the VMs and configure Cassandra. 
 
 ###Step 1: Create the Virtual Network at the 2nd Region
-Log into the Azure Classic Management Portal and create a Virtual Network with the attributes show in the table. See [Configure a Cloud-Only Virtual Network in the Azure Classic Management Portal](/documentation/articles/virtual-networks-create-vnet-classic-portal/) for detailed steps of the process.      
+Log into the Azure Classic Management Portal and create a Virtual Network with the attributes show in the table. See [Configure a Cloud-Only Virtual Network in the Azure Classic Management Portal](/documentation/articles/virtual-networks-create-vnet-classic-pportal/) for detailed steps of the process.      
 
 <table>
 <tr><th>Attribute Name    </th><th>Value	</th><th>Remarks</th></tr>

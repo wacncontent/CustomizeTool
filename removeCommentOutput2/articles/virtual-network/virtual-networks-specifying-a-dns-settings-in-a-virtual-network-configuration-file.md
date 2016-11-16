@@ -3,14 +3,19 @@
    description="How to change DNS server settings in a virtual network using a virtual network configuration file in the classic deployment model"
    services="virtual-network"
    documentationCenter="na"
-   authors="telmosampaio"
+   authors="jimdial"
    manager="carmonm"
    editor="tysonn" 
    tags="azure-service-management" />
-<tags
-	ms.service="virtual-network"
-	ms.date="02/23/2016"
-	wacn.date=""/> 
+<tags 
+   ms.service="virtual-network"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="02/23/2016"
+   wacn.date=""
+   ms.author="jdial" /> 
 
 
 # Specifying DNS settings in a virtual network configuration file

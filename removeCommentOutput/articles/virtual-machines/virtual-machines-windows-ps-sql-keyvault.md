@@ -10,8 +10,13 @@
 
 <tags
 	ms.service="virtual-machines-windows"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="vm-windows-sql-server"
+	ms.workload="infrastructure-services"
 	ms.date="07/14/2016"
-	wacn.date=""/>
+	wacn.date=""
+	ms.author="jroth"/>
 
 # Configure Azure Key Vault Integration for SQL Server on Azure VMs (Resource Manager)
 
@@ -26,7 +31,7 @@ If you running SQL Server with on-premises machines, there are [steps you can fo
 
 When this feature is enabled, it automatically installs the SQL Server Connector, configures the EKM provider to access Azure Key Vault, and creates the credential to allow you to access your vault. If you looked at the steps in the previously mentioned on-premises documentation, you can see that this feature automates steps 2 and 3. The only thing you would still need to do manually is to create the key vault and keys. From there, the entire setup of your SQL VM is automated. Once this feature has completed this setup, you can execute T-SQL statements to begin encrypting your databases or backups as you normally would.
 
-[AZURE.INCLUDE [AKV Integration Prepare](../includes/virtual-machines-sql-server-akv-prepare.md)]
+[AZURE.INCLUDE [AKV Integration Prepare](../../includes/virtual-machines-sql-server-akv-prepare.md)]
 
 ## Enabling and configuring AKV integration
 You can enable AKV integration during provisioning or configure it for existing VMs.
@@ -51,4 +56,4 @@ When finished, click the **OK** button on the bottom of the **SQL Server configu
 
 >[AZURE.NOTE] You can also configure AKV integration using a template. For more information, see [Azure quickstart template for Azure Key Vault integration](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-sql-existing-keyvault-update).
 
-[AZURE.INCLUDE [AKV Integration Next Steps](../includes/virtual-machines-sql-server-akv-next-steps.md)]
+[AZURE.INCLUDE [AKV Integration Next Steps](../../includes/virtual-machines-sql-server-akv-next-steps.md)]

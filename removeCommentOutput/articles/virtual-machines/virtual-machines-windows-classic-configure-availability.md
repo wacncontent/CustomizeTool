@@ -10,14 +10,19 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="07/12/2016"
-	wacn.date=""/>
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-windows"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/27/2016"
+	wacn.date=""
+	ms.author="cynthn"/>
 
 # How to configure an availability set for Windows virtual machines in the classic deployment model
 
-> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager model. You can also [configure availability sets](/documentation/articles/virtual-machines-windows-create-availability-set/) in Resource Manager deployments.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]. You can also [configure availability sets](/documentation/articles/virtual-machines-windows-create-availability-set/) in Resource Manager deployments.
 
-[AZURE.INCLUDE [virtual-machines-common-classic-configure-availability](../includes/virtual-machines-common-classic-configure-availability.md)]
+[AZURE.INCLUDE [virtual-machines-common-classic-configure-availability](../../includes/virtual-machines-common-classic-configure-availability.md)]
 
 ## Next steps
 

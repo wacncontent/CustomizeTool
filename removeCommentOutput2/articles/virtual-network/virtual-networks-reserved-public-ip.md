@@ -3,20 +3,25 @@
    description="Understand reserved IPs and how to manage them"
    services="virtual-network"
    documentationCenter="na"
-   authors="telmosampaio"
+   authors="jimdial"
    manager="carmonm"
    editor="tysonn" />
 <tags
-	ms.service="virtual-network"
-	ms.date="02/10/2016"
-	wacn.date=""/>
+   ms.service="virtual-network"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="02/10/2016"
+   wacn.date=""
+   ms.author="jdial" />
 
 # Reserved IP Overview
 IP addresses in Azure fall into two categories: dynamic and reserved. Public IP addresses managed by Azure are dynamic by default. That means that the IP address used for a given cloud service (VIP) or to access a VM or role instance directly (ILPIP) can change from time to time, when resources are shutdown or deallocated.
 
 To prevent IP addresses from changing, you can reserve an IP address. Reserved IPs can be used only as a VIP, ensuring that the IP address for the cloud service will be the same even as resources are shutdown or deallocated. Furthermore, you can convert existing dynamic IPs used as a VIP to a reserved IP address.
 
-> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the [Resource Manager model](/documentation/articles/virtual-network-ip-addresses-overview-arm/).
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager model. Learn how to reserve a static public IP address using the [Resource Manager deployment model](/documentation/articles/virtual-network-ip-addresses-overview-arm/).
 
 Make sure you understand how [IP addresses](/documentation/articles/virtual-network-ip-addresses-overview-classic/) work in Azure.
 
@@ -31,7 +36,7 @@ Make sure you understand how [IP addresses](/documentation/articles/virtual-netw
 1. How many reserved IPs can I have?  
   - At this time, all Azure subscriptions are authorized to use 20 reserved IPs. However, you can request additional reserved IPs. See the [Subscription and Service Limits](/documentation/articles/azure-subscription-service-limits/) page for more information.
 1. Is there a charge for reserved IPs?
-  - See [Reserved IP Address Pricing Details](/pricing/details/reserved-ip-addresses) for pricing information.
+  - See [Reserved IP Address Pricing Details](/pricing/details/reserved-ip-addresses/) for pricing information.
 1. How do I reserve an IP address?
   - You can use PowerShell or the [Azure Management REST API](https://msdn.microsoft.com/zh-cn/library/azure/dn722420.aspx) to reserve an IP address in a particular region. This reserved IP address is associated to your subscription. You cannot reserve an IP address by using the Classic Management Portal.
 1. Can I use this with affinity group based VNets?

@@ -7,10 +7,15 @@
 	manager="douge" 
 	editor=""/>
 
-<tags
-	ms.service="cache"
-	ms.date="06/30/2016"
-	wacn.date=""/>
+<tags 
+	ms.service="cache" 
+	ms.workload="tbd" 
+	ms.tgt_pltfrm="cache-redis" 
+	ms.devlang="na" 
+	ms.topic="hero-article" 
+	ms.date="10/11/2016" 
+	wacn.date="" 
+	ms.author="sdanie"/>
 
 # How to create a Web App with Redis Cache
 
@@ -21,7 +26,7 @@
 - [Java](/documentation/articles/cache-java-get-started/)
 - [Python](/documentation/articles/cache-python-get-started/)
 
-This tutorial shows how to create and deploy an ASP.NET web application to a web app in Azure using Visual Studio 2015. The sample application displays a list of team statistics from a database and shows different ways to use Azure Redis Cache to store and retrieve data from the cache. When you complete the tutorial you'll have a running web app that reads and writes to a database, optimized with Azure Redis Cache, and hosted in Azure.
+This tutorial shows how to create and deploy an ASP.NET web application to a web app in Azure App Service using Visual Studio 2015. The sample application displays a list of team statistics from a database and shows different ways to use Azure Redis Cache to store and retrieve data from the cache. When you complete the tutorial you'll have a running web app that reads and writes to a database, optimized with Azure Redis Cache, and hosted in Azure.
 
 You'll learn:
 
@@ -29,7 +34,7 @@ You'll learn:
 -	How to access data from a database using Entity Framework.
 -	How to improve data throughput and reduce database load by storing and retrieving data using Azure Redis Cache.
 -	How to use a Redis sorted set to retrieve the top 5 teams.
--	How to provision the Azure resources for the application using an ARM template.
+-	How to provision the Azure resources for the application using a Resource Manager template.
 -	How to publish the application to Azure using Visual Studio.
 
 ## Prerequisites
@@ -62,7 +67,7 @@ If you have Visual Studio 2013, you can [download the latest Azure SDK for Visua
  
     ![Create project][cache-create-project]
 
-3. Select **MVC** as the project type. Clear the **Host in the cloud** checkbox. You'll [provision the Azure resources](#provision-the-azure-resources) and [publish the application to Azure](#publish-the-application-to-azure) in subsequent steps in the tutorial. For an example of provisioning an Azure web app from Visual Studio by leaving **Host in the cloud** checked, see [Get started with Web Apps in Azure, using ASP.NET and Visual Studio](/documentation/articles/web-sites-dotnet-get-started/).
+3. Select **MVC** as the project type. Clear the **Host in the cloud** checkbox. You'll [provision the Azure resources](#provision-the-azure-resources) and [publish the application to Azure](#publish-the-application-to-azure) in subsequent steps in the tutorial. For an example of provisioning an App Service web app from Visual Studio by leaving **Host in the cloud** checked, see [Get started with Web Apps in Azure App Service, using ASP.NET and Visual Studio](/documentation/articles/web-sites-dotnet-get-started/).
 
     ![Select project template][cache-select-template]
 
@@ -318,7 +323,7 @@ In this section of the tutorial, you'll configure the sample application to stor
 	-	Before: `<appSettings>`
 	-	After: ` <appSettings file="C:\AppSecrets\WebAppPlusCacheAppSecrets.config">`
 
-    The ASP.NET runtime merges the contents of the external file with the markup in the `<appSettings>` element. The runtime ignores the file attribute if the specified file cannot be found. Your secrets (the connection string to your cache) are not included as part of the source code for the application. When you deploy your web app to Azure, the `WebAppPlusCacheAppSecrests.config` file won't be deployed (that's what you want). There are several ways to specify these secrets in Azure, and in this tutorial they are configured automatically for you when you [provision the Azure resources](#provision-the-azure-resources) in a subsequent tutorial step. For more information about working with secrets in Azure, see [Best practices for deploying passwords and other sensitive data to ASP.NET and Azure Web App](http://www.asp.net/identity/overview/features-api/best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure).
+    The ASP.NET runtime merges the contents of the external file with the markup in the `<appSettings>` element. The runtime ignores the file attribute if the specified file cannot be found. Your secrets (the connection string to your cache) are not included as part of the source code for the application. When you deploy your web app to Azure, the `WebAppPlusCacheAppSecrests.config` file won't be deployed (that's what you want). There are several ways to specify these secrets in Azure, and in this tutorial they are configured automatically for you when you [provision the Azure resources](#provision-the-azure-resources) in a subsequent tutorial step. For more information about working with secrets in Azure, see [Best practices for deploying passwords and other sensitive data to ASP.NET and Azure App Service](http://www.asp.net/identity/overview/features-api/best-practices-for-deploying-passwords-and-other-sensitive-data-to-aspnet-and-azure).
 
 
 ### Update the TeamsController class to return results from the cache or the database
@@ -673,7 +678,7 @@ The scaffolding code that was generated as part of this sample includes methods 
 To host your application in Azure, you must first provision the Azure services that your application requires. The sample application in this tutorial uses the following Azure services.
 
 -	Azure Redis Cache
--	Azure Web App
+-	App Service Web App
 -	SQL Database
 
 To deploy these services to a new or existing resource group of your choice, click the following **Deploy to Azure** button.
@@ -689,7 +694,7 @@ Clicking the **Deploy to Azure** button takes you to the Azure portal and initia
 ![Deploy to Azure][cache-deploy-to-azure-step-1]
 
 1. On the **Custom deployment** blade, select the Azure subscription to use, and select an existing resource group or create a new one, and specify the resource group location.
-2. On the **Parameters** blade, specify an administrator account name (**ADMINISTRATORLOGIN** - don't use **admin**), administrator login password (**ADMINISTRATORLOGINPASSWORD**), and database name (**DATABASENAME**). The other parameters are configured for a free Azure hosting plan, and lower cost options for the SQL Database and Azure Redis Cache, which don't come with a free tier.
+2. On the **Parameters** blade, specify an administrator account name (**ADMINISTRATORLOGIN** - don't use **admin**), administrator login password (**ADMINISTRATORLOGINPASSWORD**), and database name (**DATABASENAME**). The other parameters are configured for a free App Service hosting plan, and lower cost options for the SQL Database and Azure Redis Cache, which don't come with a free tier.
 3. Change any of the other settings if desired, or keep the defaults, and click **OK**.
 
 
@@ -709,9 +714,11 @@ You can view the status of your deployment on the **Microsoft.Template** blade.
 
 When provisioning is complete, you can publish your application to Azure from Visual Studio.
 
->[AZURE.NOTE] Any errors that may occur during the provisioning process are displayed on the **Microsoft.Template** blade. Common errors are too many SQL Servers or too many Free Azure hosting plans per subscription. Resolve any errors and restart the process by clicking **Redeploy** on the **Microsoft.Template** blade or the **Deploy to Azure** button in this tutorial.
+>[AZURE.NOTE] Any errors that may occur during the provisioning process are displayed on the **Microsoft.Template** blade. Common errors are too many SQL Servers or too many Free App Service hosting plans per subscription. Resolve any errors and restart the process by clicking **Redeploy** on the **Microsoft.Template** blade or the **Deploy to Azure** button in this tutorial.
 
 ## Publish the application to Azure
+
+>[AZURE.NOTE] You need to configure your Visual Studio Environment, in order to use Azure China in Visual Studio 2015. For more information, see [developer differerences](/documentation/articles/developerdifferences/).
 
 In this step of the tutorial, you'll publish the application to Azure and run it in the cloud.
 
@@ -719,7 +726,7 @@ In this step of the tutorial, you'll publish the application to Azure and run it
 
     ![Publish][cache-publish-app]
 
-2. Click **App Services**.
+2. Click **Azure App Service**.
 
     ![Publish][cache-publish-to-app-service]
 
@@ -798,8 +805,10 @@ Once you have selected or created the cache to use, browse to the cache in the A
 ## Next steps
 
 -	Learn more about [Getting Started with ASP.NET MVC 5](http://www.asp.net/mvc/overview/getting-started/introduction/getting-started) on the [ASP.NET](http://asp.net/) site.
+-	For more examples of creating an ASP.NET Web App in App Service, see [Create and deploy an ASP.NET web app in Azure App Service](https://github.com/Microsoft/HealthClinic.biz/wiki/Create-and-deploy-an-ASP.NET-web-app-in-Azure-App-Service) from the [HealthClinic.biz](https://github.com/Microsoft/HealthClinic.biz) 2015 Connect [demo](https://blogs.msdn.microsoft.com/visualstudio/2015/12/08/connectdemos-2015-healthclinic-biz/).
+	-	For more quickstarts from the HealthClinic.biz demo, see [Azure Developer Tools Quickstarts](https://github.com/Microsoft/HealthClinic.biz/wiki/Azure-Developer-Tools-Quickstarts).
 -	Learn more about the [Code first to a new database](https://msdn.microsoft.com/data/jj193542) approach to Entity Framework that's used in this tutorial.
--	Learn more about [web apps in Azure](/home/features/web-site/).
+-	Learn more about [web apps in Azure App Service](/documentation/articles/app-service-web-overview/).
 -	Learn how to [monitor](/documentation/articles/cache-how-to-monitor/) your cache in the Azure portal.
 
 -	Explore Azure Redis Cache premium features
@@ -807,6 +816,7 @@ Once you have selected or created the cache to use, browse to the cache in the A
 	-	[How to configure clustering for a Premium Azure Redis Cache](/documentation/articles/cache-how-to-premium-clustering/)
 	-	[How to configure Virtual Network support for a Premium Azure Redis Cache](/documentation/articles/cache-how-to-premium-vnet/)
 	-	See the [Azure Redis Cache FAQ](/documentation/articles/cache-faq/#what-redis-cache-offering-and-size-should-i-use) for more details about size, throughput, and bandwidth with premium caches.
+
 
 
 <!-- IMAGES -->

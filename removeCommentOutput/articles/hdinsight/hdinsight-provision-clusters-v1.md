@@ -4,13 +4,18 @@
    services="hdinsight" 
    documentationCenter="" 
    authors="mumian" 
-   manager="paulettm" 
+   manager="jhubbard" 
    editor="cgronlun"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="04/28/2016"
-	wacn.date=""/>
+   ms.service="hdinsight"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="big-data" 
+   ms.date="07/25/2016" 
+   wacn.date=""
+   ms.author="jgao"/>
 
 #Provision Hadoop clusters in HDInsight
 
@@ -47,7 +52,7 @@ Before you begin the instructions in this article, you must have the following:
 
 	You can provision HDInsight clusters on one of the following two operating systems:
 	- **HDInsight on Windows (Windows Server 2012 R2 Datacenter)**:
-	- **HDInsight on Linux (Ubuntu 12.04 LTS for Linux)**: HDInsight provides the option of configuring Linux clusters on Azure. Configure a Linux cluster if you are familiar with Linux or Unix, migrating from an existing Linux-based Hadoop solution, or want easy integration with Hadoop ecosystem components built for Linux. For more information, see [Get started with Hadoop on Linux in HDInsight](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1/). 
+	- **HDInsight on Linux**: HDInsight provides the option of configuring Linux clusters on Azure. Configure a Linux cluster if you are familiar with Linux or Unix, migrating from an existing Linux-based Hadoop solution, or want easy integration with Hadoop ecosystem components built for Linux. For more information, see [Get started with Hadoop on Linux in HDInsight](/documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1/). 
 
 
 - **HDInsight version**
@@ -98,7 +103,7 @@ Before you begin the instructions in this article, you must have the following:
 	- Worker node (at least 1 node)
 	- Zookeeper nodes (3 nodes) (Free for A1 Zookeepers)
 
-	Customers are billed for the usage of those nodes for the duration of the cluster's life. Billing starts once a cluster is created and stops when the cluster is deleted (clusters can't be de-allocated or put on hold). The cluster size affects the cluster price. For learning purposes, it is recommended to use 1 data node. For more information about HDInsight pricing, see [HDInsight pricing](/home/features/hdinsight/pricing/).
+	Customers are billed for the usage of those nodes for the duration of the cluster's life. Billing starts once a cluster is created and stops when the cluster is deleted (clusters can't be de-allocated or put on hold). The cluster size affects the cluster price. For learning purposes, it is recommended to use 1 data node. For more information about HDInsight pricing, see [HDInsight pricing](/pricing/details/hdinsight/).
 
 
 	>[AZURE.NOTE] The cluster size limit varies among Azure subscriptions. Contact billing support to increase the limit.
@@ -107,7 +112,7 @@ Before you begin the instructions in this article, you must have the following:
 
 	![Azure regions](./media/hdinsight-provision-clusters-v1/Azure.regions.png)
 
-	For a list of supported regions, click the **Region** drop-down list on [HDInsight pricing](/home/features/hdinsight/pricing/).
+	For a list of supported regions, click the **Region** drop-down list on [HDInsight pricing](/pricing/details/hdinsight/).
 
 - **Node size**
 
@@ -115,7 +120,7 @@ Before you begin the instructions in this article, you must have the following:
 
 	Select the VM size for the nodes. For more information, see [Sizes for Cloud Services](/documentation/articles/cloud-services-sizes-specs/)
 
-	Based on the choice of VMs, your cost might vary. HDInsight uses all standard-tier VMs for cluster nodes. For information on how VM sizes affect your prices, see <a href="/home/features/hdinsight/pricing/" target="_blank">HDInsight Pricing</a>.
+	Based on the choice of VMs, your cost might vary. HDInsight uses all standard-tier VMs for cluster nodes. For information on how VM sizes affect your prices, see <a href="/pricing/details/hdinsight/" target="_blank">HDInsight Pricing</a>.
 
 
 - **HDInsight users**

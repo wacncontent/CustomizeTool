@@ -12,14 +12,19 @@
 
 <tags
 	ms.service="virtual-machines-linux"
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-linux"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="12/15/2015"
-	wacn.date=""/>
+	wacn.date=""
+	ms.author="ningk"/>
 
 #How to Set Up Tomcat7 on a Linux Virtual Machine with Azure
 
 Apache Tomcat (or simply Tomcat, formerly also Jakarta Tomcat) is an open source web server and servlet container developed by the Apache Software Foundation (ASF). Tomcat implements the Java Servlet and the JavaServer Pages (JSP) specifications from Sun Microsystems, and provides a pure Java HTTP web server environment in which to run Java code. In the simplest configuration, Tomcat runs in a single operating system process. This process runs a Java virtual machine (JVM). Every HTTP request from a browser to Tomcat is processed as a separate thread in the Tomcat process.  
 
-> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager model.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]
 
 
 In this guide, you will install tomcat7 on a Linux image and deploy it in Azure.  
@@ -30,7 +35,7 @@ You will learn:
 -	How to prepare the virtual machine for tomcat7.
 -	How to install tomcat7.
 
-It is assumed that the reader already has an Azure subscription.  If not you can sign up for a 1rmb trial at [http://azure.cn](http://azure.cn). If you have an MSDN subscription. To learn more about Azure, see [What is Azure?](https://azure.microsoft.com/overview/what-is-azure/).
+It is assumed that the reader already has an Azure subscription.  If not you can sign up for a trial at [http://azure.microsoft.com](https://azure.microsoft.com/). If you have an MSDN subscription, see [Azure Special Pricing: MSDN, MPN, and Bizspark Benefits](https://azure.microsoft.com/pricing/member-offers/msdn-benefits/?c=14-39). To learn more about Azure, see [What is Azure?](https://azure.microsoft.com/overview/what-is-azure/).
 
 This topic assumes that you have basic working knowledge of tomcat and Linux.  
 
@@ -57,8 +62,8 @@ Follow these steps to generate the SSH authentication key.
 5.	Select and copy the public key in **Key** and save it in a file named publicKey.pem. Don't click **Save public key**, because the saved public key's file format is different from the public key we want.
 6.	Click **Save private key** and save it in a file named privateKey.ppk.
 
-###Step 2: Create the image in the Azure portal Preview.
-In the [Azure portal Preview](https://portal.azure.cn/), click **New** in the task bar to create an image, choosing the Linux image based on your needs. The following example uses the Ubuntu 14.04 image.
+###Step 2: Create the image in the Azure portal.
+In the [Azure portal](https://portal.azure.cn/), click **New** in the task bar to create an image, choosing the Linux image based on your needs. The following example uses the Ubuntu 14.04 image.
 ![][3]
 
 For **Host Name** specify the name for the URL that you and Internet clients will use to access this virtual machine. Define the last part of the DNS name, for example tomcatdemo, and Azure will generate the URL as tomcatdemo.chinacloudapp.cn.  
@@ -75,7 +80,7 @@ Endpoints in Azure consist of a protocol (TCP or UDP), along with a public and p
 
 TCP port 8080 is the default port number on which tomcat listens. Opening this port with an Azure endpoint will allow you and other Internet clients access to tomcat pages.  
 
-1.	In the Azure portal Preview, click **Browse** -> **Virtual Machine**, and then click the virtual machine that you created.  
+1.	In the Azure portal, click **Browse** -> **Virtual Machine**, and then click the virtual machine that you created.  
 ![][5]
 2.	To add an endpoint to your virtual machine, click the **Endpoints** box.
 ![][6]
@@ -95,7 +100,7 @@ TCP port 8080 is the default port number on which tomcat listens. Opening this p
 ###Step 2: Connect to the image you created.
 You can choose any SSH tool to connect to your virtual machine. In this example, we use Putty.  
 
-First, get the DNS name of your virtual machine from the Azure portal Preview. **Click Browse** -> **Virtual machines** -> the name of your virtual machine -> **Properties**, and then look in the **Domain Name** field of the **Properties** tile.  
+First, get the DNS name of your virtual machine from the Azure portal. **Click Browse** -> **Virtual machines** -> the name of your virtual machine -> **Properties**, and then look in the **Domain Name** field of the **Properties** tile.  
 
 Get the port number for SSH connections from the **SSH** field. Here is an example.  
 ![][8]

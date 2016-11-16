@@ -4,18 +4,23 @@
    services="hdinsight"
    documentationCenter=""
    authors="Blackmist"
-   manager="paulettm"
+   manager="jhubbard"
    editor="cgronlun"
 	tags="azure-portal"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="06/16/2016"
-	wacn.date=""/>
+   ms.service="hdinsight"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="big-data"
+   ms.date="09/06/2016"
+   wacn.date=""
+   ms.author="larryfr"/>
 
 #Run Hive queries using the HDInsight tools for Visual Studio
 
-[AZURE.INCLUDE [hive-selector](../includes/hdinsight-selector-use-hive.md)]
+[AZURE.INCLUDE [hive-selector](../../includes/hdinsight-selector-use-hive.md)]
 
 In this article, you will learn how to submit Hive queries to an HDInsight cluster using the HDInsight tools for Visual Studio.
 
@@ -45,7 +50,7 @@ To complete the steps in this article, you will need the following.
         DROP TABLE log4jLogs;
         CREATE EXTERNAL TABLE log4jLogs (t1 string, t2 string, t3 string, t4 string, t5 string, t6 string, t7 string)
         ROW FORMAT DELIMITED FIELDS TERMINATED BY ' '
-        STORED AS TEXTFILE LOCATION 'wasb:///example/data/';
+        STORED AS TEXTFILE LOCATION 'wasbs:///example/data/';
         SELECT t4 AS sev, COUNT(*) AS count FROM log4jLogs WHERE t4 = '[ERROR]' AND INPUT__FILE__NAME LIKE '%.log' GROUP BY t4;
 
     These statements perform the following actions:

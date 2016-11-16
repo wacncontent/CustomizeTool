@@ -7,22 +7,27 @@
 	manager="wpickett" 
 	editor="jimbe"/>
 
-<tags
-	ms.service="app-service"
-	ms.date="04/27/2016"
-	wacn.date=""/>
+<tags 
+	ms.service="app-service" 
+	ms.workload="na" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="04/27/2016" 
+	wacn.date="" 
+	ms.author="tdykstra"/>
 
 # Azure WebJobs documentation resources
 
 ## Overview
 
-This topic links to documentation resources about how to use Azure WebJobs and the Azure WebJobs SDK. Azure WebJobs provide an easy way to run scripts or programs as background processes in the context of an [Azure web app, API app, or mobile app](/documentation/services/web-sites). You can upload and run an executable file such as as cmd, bat, exe (.NET), ps1, sh, php, py, js and jar. These programs run as WebJobs on a schedule (cron) or continuously.
+This topic links to documentation resources about how to use Azure WebJobs and the Azure WebJobs SDK. Azure WebJobs provide an easy way to run scripts or programs as background processes in the context of an [App Service web app, API app, or mobile app](/documentation/articles/app-service-value-prop-what-is/). You can upload and run an executable file such as as cmd, bat, exe (.NET), ps1, sh, php, py, js and jar. These programs run as WebJobs on a schedule (cron) or continuously.
 
 The purpose of the [WebJobs SDK](/documentation/articles/websites-webjobs-resources/) is to simplify the code you write for common tasks that a WebJob can perform, such as image processing, queue processing, RSS aggregation, file maintenance, and sending emails. The WebJobs SDK has built-in features for working with Azure Storage and Service Bus, for scheduling tasks and handling errors, and for many other common scenarios. In addition, it's designed to be extensible, and there's an [open source repository for extensions](https://github.com/Azure/azure-webjobs-sdk-extensions/wiki/Binding-Extensions-Overview).
 
 Creating, deploying, and managing WebJobs is seamless with integrated tooling in Visual Studio. You can create WebJobs from templates, publish, and manage (run/stop/monitor/debug) them. 
 
-The WebJobs dashboard in the Azure Classic Management Portal provides powerful management capabilities that give you full control over the execution of WebJobs, including the ability to invoke individual functions within WebJobs. The dashboard also displays function runtimes and logging output. 
+The WebJobs dashboard in the Azure Portal Preview provides powerful management capabilities that give you full control over the execution of WebJobs, including the ability to invoke individual functions within WebJobs. The dashboard also displays function runtimes and logging output. 
 
 ##<a name="getstarted"></a>Getting started with WebJobs and the WebJobs SDK
 
@@ -46,7 +51,7 @@ See also the following sections on [Deploying WebJobs](#deploy) and [Testing and
 ##<a name="deploy" id="deploying"></a>Deploying WebJobs
 
 * [How to Deploy Azure WebJobs using Visual Studio](/documentation/articles/websites-dotnet-deploy-webjobs/)
-* [How to deploy WebJobs using the Azure Classic Management Portal](/documentation/articles/web-sites-create-web-jobs/)
+* [How to deploy WebJobs using the Azure Portal Preview](/documentation/articles/web-sites-create-web-jobs/)
 * [Enabling Command-line or Continuous Delivery of Azure WebJobs](https://azure.microsoft.com/blog/2014/08/18/enabling-command-line-or-continuous-delivery-of-azure-webjobs/)
 * [Git deploying a .NET console app to Azure using WebJobs](http://blog.amitapple.com/post/73574681678/git-deploy-console-app/)
 * [Deploying an F# WebJob to Azure](http://blogs.msdn.com/b/dave_crooks_dev_blog/archive/2015/02/18/deploying-f-web-job-to-azure.aspx)
@@ -55,7 +60,7 @@ See also the following sections on [Deploying WebJobs](#deploy) and [Testing and
 ##<a name="schedule"></a>Scheduling WebJobs
 
 * [The Add Azure WebJob Dialog](/documentation/articles/websites-dotnet-deploy-webjobs/#configure)
-* [Create a Scheduled WebJob in the Azure Classic Management Portal](/documentation/articles/web-sites-create-web-jobs/#CreateScheduled)
+* [Create a Scheduled WebJob in the Azure Portal Preview](/documentation/articles/web-sites-create-web-jobs/#CreateScheduled)
 * [Hooking up a scheduler job to a WebJob](http://blog.davidebbo.com/2015/05/scheduled-webjob.html)
 * [Scheduling Azure WebJobs with cron expressions](http://blog.amitapple.com/post/2015/06/scheduling-azure-webjobs/)
 * [Scheduling individual WebJob functions using the WebJobs SDK TimerTrigger](/documentation/articles/websites-dotnet-webjobs-sdk/#schedule)
@@ -74,12 +79,12 @@ See also the following sections on [Deploying WebJobs](#deploy) and [Testing and
 ##<a name="scale"></a>Scaling WebJobs
 
 * [Scaling Your Web Application with Azure Websites](http://msdn.microsoft.com/magazine/dn786914.aspx)
-* [Azure Web App: Architecting Massive-Scale Ready-For-Business Web Apps](https://channel9.msdn.com/Events/Build/2014/3-626). Covers scaling of web apps with WebJobs, including the WebJobs SDK.
+* [Azure App Service: Architecting Massive-Scale Ready-For-Business Web Apps](https://channel9.msdn.com/Events/Build/2014/3-626). Covers scaling of web apps with WebJobs, including the WebJobs SDK.
 
 ##<a name="additional"></a>Additional WebJobs resources
 
 * [Azure WebJobs GA blog post by Magnus Mårtensson](http://magnusmartensson.com/azure-webjobs-ga)
-* [Running Powershell Web Jobs on Azure Web App](http://blogs.msdn.com/b/nicktrog/archive/2014/01/22/running-powershell-web-jobs-on-azure-websites.aspx)
+* [Running Powershell Web Jobs on Azure App Service](http://blogs.msdn.com/b/nicktrog/archive/2014/01/22/running-powershell-web-jobs-on-azure-websites.aspx)
 * [Getting notified when your Azure triggered WebJobs completes](http://blog.amitapple.com/post/2014/03/webjobs-notification/)
 * [Simple Web App Backup retention policy with WebJobs](https://azure.microsoft.com/blog/2014/04/28/simple-web-site-backup-retention-policy-with-webjobs/)
 * [Azure Web Apps and Cloud Services Slow on First Request](http://wp.sjkp.dk/windows-azure-websites-and-cloud-services-slow-on-first-request/). Shows how to use WebJobs to simulate the AlwaysOn feature that is only available for the Standard pricing tier.
@@ -112,7 +117,7 @@ See also the following sections on [Deploying WebJobs](#deploy) and [Testing and
 
 * [StackOverflow for Azure Functions](http://stackoverflow.com/questions/tagged/azure-functions)
 * [Azure and ASP.NET forum](http://forums.asp.net/1247.aspx)
-* [Azure Web Apps forum](http://social.msdn.microsoft.com/Forums/zh-CN/home?forum=windowsazurezhchs)
-* [Azure Product Feedback](/product-feedback)
+* [Azure App Service Web Apps forum](http://social.msdn.microsoft.com/Forums/zh-CN/home?forum=windowsazurezhchs)
+* [Azure Web Apps User Voice site](https://feedback.azure.com/forums/169385-websites/)
 * [Report a WebJobs bug or issue](https://github.com/projectkudu/kudu/wiki/Reporting-WebJobs-issues)
 

@@ -9,8 +9,13 @@
 	tags="azure-service-management" />
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="07/14/2016"
-	wacn.date=""/>
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="vm-windows-sql-server"
+	ms.workload="infrastructure-services"
+	ms.date="09/26/2016"
+	wacn.date=""
+	ms.author="jroth" />
 
 # Automated Backup for SQL Server in Azure Virtual Machines (Classic)
 
@@ -30,19 +35,21 @@ To use Automated Backup, consider the following prerequisites:
 - SQL Server 2014 Standard
 - SQL Server 2014 Enterprise
 
+>[AZURE.NOTE] SQL Server 2016 is not yet supported for Automated Backup.
 **Database configuration**:
 
-- Target databases must use the full recovery model
+- Target databases must use the full recovery model.
 
 **Azure PowerShell**:
 
-- [Install the latest Azure PowerShell commands](/documentation/articles/powershell-install-configure/) if you plan to configure Automated Backup with PowerShell.
+- [Install the latest Azure PowerShell commands](/documentation/articles/powershell-install-configure/).
 
->[AZURE.NOTE] Automated Backup relies on the SQL Server IaaS Agent Extension. Current SQL virtual machine gallery images add this extension by default. For more information, see [SQL Server IaaS Agent Extension](/documentation/articles/virtual-machines-windows-classic-sql-server-agent-extension/).
+**SQL Server IaaS Extension**:
+- [Install the SQL Server IaaS Extension](/documentation/articles/virtual-machines-windows-classic-sql-server-agent-extension/).
 
 ## Settings
 
-The following table describes the options that can be configured for Automated Backup.
+The following table describes the options that can be configured for Automated Backup. For classic VMs, you must use PowerShell to configure these settings.
 
 |Setting|Range (Default)|Description|
 |---|---|---|

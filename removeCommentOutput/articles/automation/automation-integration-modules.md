@@ -8,9 +8,14 @@
    editor="" />
 
 <tags
-	ms.service="automation"
-	ms.date="07/14/2016"
-	wacn.date=""/>
+   ms.service="automation"
+   ms.workload="tbd"
+   ms.tgt_pltfrm="na"
+   ms.devlang="na"
+   ms.topic="get-started-article"
+   ms.date="09/12/2016"
+   wacn.date=""
+   ms.author="magoedte" />
 
 # Azure Automation Integration Modules
 

@@ -4,19 +4,24 @@
    services="hdinsight,virtual-network" 
    documentationCenter="" 
    authors="mumian" 
-   manager="paulettm" 
+   manager="jhubbard" 
    editor="cgronlun"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="06/28/2016"
-	wacn.date=""/>
+   ms.service="hdinsight"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="big-data" 
+   ms.date="07/25/2016" 
+   wacn.date=""
+   ms.author="jgao"/>
 
 # Configure HBase geo-replication in HDInsight
 
 > [AZURE.SELECTOR]
-- [Configure VPN connectivity](/documentation/articles/hdinsight-hbase-geo-replication-configure-VNETs/)
-- [Configure DNS](/documentation/articles/hdinsight-hbase-geo-replication-configure-DNS/)
+- [Configure VPN connectivity](/documentation/articles/hdinsight-hbase-geo-replication-configure-vnets/)
+- [Configure DNS](/documentation/articles/hdinsight-hbase-geo-replication-configure-dns/)
 - [Configure HBase replication](/documentation/articles/hdinsight-hbase-geo-replication/) 
  
 Learn how to configure HBase replication across two data centers. Some use cases for cluster replication include:
@@ -49,7 +54,7 @@ Before you begin this tutorial, you must have the following:
 
     To execute PowerShell scripts, you must run Azure PowerShell as administrator and set the execution policy to *RemoteSigned*. See Using the Set-ExecutionPolicy cmdlet.
 	
-	[AZURE.INCLUDE [upgrade-powershell](../includes/hdinsight-use-latest-powershell.md)]
+	[AZURE.INCLUDE [upgrade-powershell](../../includes/hdinsight-use-latest-powershell.md)]
 
 - **Two Azure virtual network with VPN connectivity and with DNS configured**.  For instructions, see [Configure a VPN connection between two Azure virtual networks][hdinsight-hbase-replication-vnet], and [Configure DNS between two Azure virtual networks][hdinsight-hbase-replication-dns].
 
@@ -245,7 +250,7 @@ Create HBase tables with the same names and column families on both the source a
 
 A sample data file has been uploaded to a public Azure Blob container with the following URL:
 
-		wasb://hbasecontacts@hditutorialdata.blob.core.windows.net/contacts.txt
+		wasbs://hbasecontacts@hditutorialdata.blob.core.windows.net/contacts.txt
 
 The content of the file:
 
@@ -270,7 +275,7 @@ You can upload the same data file into your HBase cluster and import the data fr
 
 4. upload the data:
 
-		hbase org.apache.hadoop.hbase.mapreduce.ImportTsv -Dimporttsv.columns="HBASE_ROW_KEY,Personal:Name, Personal:HomePhone, Office:Address" -Dimporttsv.bulk.output=/tmpOutput Contacts wasb://hbasecontacts@hditutorialdata.blob.core.windows.net/contacts.txt
+		hbase org.apache.hadoop.hbase.mapreduce.ImportTsv -Dimporttsv.columns="HBASE_ROW_KEY,Personal:Name, Personal:HomePhone, Office:Address" -Dimporttsv.bulk.output=/tmpOutput Contacts wasbs://hbasecontacts@hditutorialdata.blob.core.windows.net/contacts.txt
 
 		hbase org.apache.hadoop.hbase.mapreduce.LoadIncrementalHFiles /tmpOutput Contacts
 
@@ -294,7 +299,7 @@ In this tutorial, you have learned how to configure HBase replication across two
 - [Analyze real-time Twitter sentiment with HBase][hdinsight-hbase-twitter-sentiment]
 - [Analyzing sensor data with Storm and HBase in HDInsight (Hadoop)][hdinsight-sensor-data]
 
-[hdinsight-hbase-geo-replication-vnet]: /documentation/articles/hdinsight-hbase-geo-replication-configure-VNets/
+[hdinsight-hbase-geo-replication-vnet]: /documentation/articles/hdinsight-hbase-geo-replication-configure-vnets/
 [hdinsight-hbase-geo-replication-dns]: /documentation/articles/hdinsight-hbase-geo-replication-configure-VNet/
 
 
@@ -304,8 +309,8 @@ In this tutorial, you have learned how to configure HBase replication across two
 [hdinsight-hbase-get-started]: /documentation/articles/hdinsight-hbase-tutorial-get-started-v1/
 [hdinsight-manage-portal]: /documentation/articles/hdinsight-administer-use-management-portal-v1/
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1/
-[hdinsight-hbase-replication-vnet]: /documentation/articles/hdinsight-hbase-geo-replication-configure-VNets/
-[hdinsight-hbase-replication-dns]: /documentation/articles/hdinsight-hbase-geo-replication-configure-DNS/
+[hdinsight-hbase-replication-vnet]: /documentation/articles/hdinsight-hbase-geo-replication-configure-vnets/
+[hdinsight-hbase-replication-dns]: /documentation/articles/hdinsight-hbase-geo-replication-configure-dns/
 [hdinsight-hbase-twitter-sentiment]: /documentation/articles/hdinsight-hbase-analyze-twitter-sentiment/
 [hdinsight-sensor-data]: /documentation/articles/hdinsight-storm-sensor-data-analysis/
 [hdinsight-hbase-overview]: /documentation/articles/hdinsight-hbase-overview/

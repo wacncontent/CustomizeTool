@@ -7,16 +7,21 @@
 	manager="wpickett" 
 	editor="jimbe"/>
 
-<tags
-	ms.service="app-service"
-	ms.date="04/27/2016"
-	wacn.date=""/>
+<tags 
+	ms.service="app-service" 
+	ms.workload="na" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="04/27/2016" 
+	wacn.date="" 
+	ms.author="tdykstra"/>
 
 # Azure WebJobs documentation resources
 
 ## Overview
 
-This topic links to documentation resources about how to use Azure WebJobs and the Azure WebJobs SDK. Azure WebJobs provide an easy way to run scripts or programs as background processes in the context of an [Azure web app, API app, or mobile app](/documentation/services/web-sites/). You can upload and run an executable file such as as cmd, bat, exe (.NET), ps1, sh, php, py, js and jar. These programs run as WebJobs on a schedule (cron) or continuously.
+This topic links to documentation resources about how to use Azure WebJobs and the Azure WebJobs SDK. Azure WebJobs provide an easy way to run scripts or programs as background processes in the context of an [App Service web app, API app, or mobile app](/documentation/articles/app-service-value-prop-what-is/). You can upload and run an executable file such as as cmd, bat, exe (.NET), ps1, sh, php, py, js and jar. These programs run as WebJobs on a schedule (cron) or continuously.
 
 The purpose of the [WebJobs SDK](/documentation/articles/websites-webjobs-resources/) is to simplify the code you write for common tasks that a WebJob can perform, such as image processing, queue processing, RSS aggregation, file maintenance, and sending emails. The WebJobs SDK has built-in features for working with Azure Storage and Service Bus, for scheduling tasks and handling errors, and for many other common scenarios. In addition, it's designed to be extensible, and there's an [open source repository for extensions](https://github.com/Azure/azure-webjobs-sdk-extensions/wiki/Binding-Extensions-Overview). [Azure Functions](/documentation/articles/functions-overview/) (currently in preview) is based on a version of the WebJobs SDK that works with C# script, Node.js, and other languages. 
 
@@ -85,14 +90,14 @@ See also the following sections on [Deploying WebJobs](#deploy) and [Testing and
 ##<a name="scale"></a>Scaling WebJobs
 
 * [Scaling Your Web Application with Azure Websites](http://msdn.microsoft.com/magazine/dn786914.aspx)
-* [Azure Web App: Architecting Massive-Scale Ready-For-Business Web Apps](https://channel9.msdn.com/Events/Build/2014/3-626). Covers scaling of web apps with WebJobs, including the WebJobs SDK.
+* [Azure App Service: Architecting Massive-Scale Ready-For-Business Web Apps](https://channel9.msdn.com/Events/Build/2014/3-626). Covers scaling of web apps with WebJobs, including the WebJobs SDK.
 * Videos
 	* [Scaling out WebJobs](http://channel9.msdn.com/Shows/Azure-Friday/Azure-WebJobs-105-Scaling-out-Web-Jobs)
 
 ##<a name="additional"></a>Additional WebJobs resources
 
 * [Azure WebJobs GA blog post by Magnus Mårtensson](http://magnusmartensson.com/azure-webjobs-ga)
-* [Running Powershell Web Jobs on Azure Web App](http://blogs.msdn.com/b/nicktrog/archive/2014/01/22/running-powershell-web-jobs-on-azure-websites.aspx)
+* [Running Powershell Web Jobs on Azure App Service](http://blogs.msdn.com/b/nicktrog/archive/2014/01/22/running-powershell-web-jobs-on-azure-websites.aspx)
 * [Getting notified when your Azure triggered WebJobs completes](http://blog.amitapple.com/post/2014/03/webjobs-notification/)
 * [Simple Web App Backup retention policy with WebJobs](https://azure.microsoft.com/blog/2014/04/28/simple-web-site-backup-retention-policy-with-webjobs/)
 * [Azure Web Apps and Cloud Services Slow on First Request](http://wp.sjkp.dk/windows-azure-websites-and-cloud-services-slow-on-first-request/). Shows how to use WebJobs to simulate the AlwaysOn feature that is only available for the Standard pricing tier.
@@ -133,7 +138,7 @@ See also the following sections on [Deploying WebJobs](#deploy) and [Testing and
 * [StackOverflow for the WebJobs SDK](http://stackoverflow.com/questions/tagged/azure-webjobssdk)
 * [StackOverflow for Azure Functions](http://stackoverflow.com/questions/tagged/azure-functions)
 * [Azure and ASP.NET forum](http://forums.asp.net/1247.aspx)
-* [Azure Web Apps forum](http://social.msdn.microsoft.com/Forums/zh-CN/home?forum=windowsazurezhchs)
+* [Azure App Service Web Apps forum](http://social.msdn.microsoft.com/Forums/zh-CN/home?forum=windowsazurezhchs)
 * [Azure Web Apps User Voice site](https://feedback.azure.com/forums/169385-websites/)
 * [Twitter](http://twitter.com/). Use the hashtag #AzureWebJobs.
 * [Report a WebJobs bug or issue](https://github.com/projectkudu/kudu/wiki/Reporting-WebJobs-issues)

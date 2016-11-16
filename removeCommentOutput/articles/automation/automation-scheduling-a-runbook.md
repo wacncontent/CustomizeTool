@@ -1,15 +1,20 @@
 <properties 
-   pageTitle="Scheduling a runbook in Azure Automation"
+   pageTitle="Scheduling a runbook in Azure Automation | Azure"
    description="Describes how to create a schedule in Azure Automation so that you can automatically start a runbook at a particular time or on a recurring schedule."
    services="automation"
    documentationCenter=""
    authors="mgoedtel"
    manager="jwhit"
    editor="tysonn" />
-<tags
-	ms.service="automation"
-	ms.date="07/12/2016"
-	wacn.date=""/>
+<tags 
+   ms.service="automation"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="08/05/2016"
+   wacn.date=""
+   ms.author="bwren" />
 
 # Scheduling a runbook in Azure Automation
 
@@ -28,7 +33,7 @@ You can create a new schedule for runbooks in the Azure portal, in the Classic M
 1. Select the **Assets** tab.
 1. At the bottom of the window, click **Add Setting**.
 1. Click **Add Schedule**.
-1. Type a **Name** and optionally a **Description** for the new schedule.your schedule will run **One Time**, **Hourly**, or **Daily**.
+1. Type a **Name** and optionally a **Description** for the new schedule.your schedule will run **One Time**, **Hourly**, **Daily**, **Weekly**, or **Monthly**.
 1. Specify a **Start Time** and other options depending on the type of schedule that you selected.
 
 ### To create a new schedule in the Azure portal

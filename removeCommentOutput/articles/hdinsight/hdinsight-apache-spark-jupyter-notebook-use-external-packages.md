@@ -4,14 +4,19 @@
 	services="hdinsight" 
 	documentationCenter="" 
 	authors="nitinme" 
-	manager="paulettm" 
+	manager="jhubbard" 
 	editor="cgronlun"
 	tags="azure-portal"/>
 
-<tags
-	ms.service="hdinsight"
-	ms.date="06/06/2016"
-	wacn.date=""/>
+<tags 
+	ms.service="hdinsight" 
+	ms.workload="big-data" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="07/25/2016" 
+	wacn.date="" 
+	ms.author="nitinme"/>
 
 
 # Use external packages with Jupyter notebooks in Apache Spark clusters on HDInsight Linux
@@ -72,7 +77,7 @@ You must have the following:
 		val df = sqlContext.read.format("com.databricks.spark.csv").
         option("header", "true").
         option("inferSchema", "true").
-        load("wasb:///HdiSamples/HdiSamples/SensorSampleData/hvac/HVAC.csv")
+        load("wasbs:///HdiSamples/HdiSamples/SensorSampleData/hvac/HVAC.csv")
 
 7. You can then run the snippets, like shown below, to view the data from the dataframe you created in the previous step.
 

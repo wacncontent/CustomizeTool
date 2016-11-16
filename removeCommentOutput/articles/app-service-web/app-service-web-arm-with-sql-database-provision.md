@@ -7,10 +7,15 @@
 	manager="wpickett" 
 	editor=""/>
 
-<tags
-	ms.service="app-service"
-	ms.date="04/27/2016"
-	wacn.date=""/>
+<tags 
+	ms.service="app-service" 
+	ms.workload="na" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="04/27/2016" 
+	wacn.date="" 
+	ms.author="cephalin"/>
 
 # Provision a web app with a SQL Database
 
@@ -23,7 +28,7 @@ For more information about deploying apps, see [Deploy a complex application pre
 
 For the complete template, see [Web App With SQL Database template](https://github.com/Azure/azure-quickstart-templates/blob/master/201-web-app-sql-database/azuredeploy.json).
 
-[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)] 
+[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)] 
 
 ## What you will deploy
 
@@ -42,7 +47,7 @@ To run the deployment automatically, click the following button:
 
 ## Parameters to specify
 
-[AZURE.INCLUDE [app-service-web-deploy-web-parameters](../includes/app-service-web-deploy-web-parameters.md)]
+[AZURE.INCLUDE [app-service-web-deploy-web-parameters](../../includes/app-service-web-deploy-web-parameters.md)]
 
 ### administratorLogin
 
@@ -182,7 +187,7 @@ you must provide a login name and password for the database server administrator
             "[variables('sqlserverName')]"
           ],
           "location": "[resourceGroup().location]",
-          "name": "AllowAllWindowsAzureIps",
+          "name": "AllowAllAzureIps",
           "properties": {
             "endIpAddress": "0.0.0.0",
             "startIpAddress": "0.0.0.0"
@@ -191,7 +196,7 @@ you must provide a login name and password for the database server administrator
       ]
     },
 
-[AZURE.INCLUDE [app-service-web-deploy-web-host](../includes/app-service-web-deploy-web-host.md)]
+[AZURE.INCLUDE [app-service-web-deploy-web-host](../../includes/app-service-web-deploy-web-host.md)]
 
 
 ### Web app
@@ -461,7 +466,7 @@ you must provide a login name and password for the database server administrator
 
 ## Commands to run deployment
 
-[AZURE.INCLUDE [app-service-deploy-commands](../includes/app-service-deploy-commands.md)]
+[AZURE.INCLUDE [app-service-deploy-commands](../../includes/app-service-deploy-commands.md)]
 
 ### PowerShell
 

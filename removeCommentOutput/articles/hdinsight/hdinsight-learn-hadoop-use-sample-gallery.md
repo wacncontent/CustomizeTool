@@ -5,13 +5,18 @@
    documentationCenter=""
    tags="azure-portal"
    authors="mumian"
-   manager="paulettm"
+   manager="jhubbard"
    editor="cgronlun"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="04/27/2016"
-	wacn.date=""/>
+   ms.service="hdinsight"
+   ms.workload="big-data"
+   ms.tgt_pltfrm="na"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.date="07/25/2016"
+   wacn.date=""
+   ms.author="jgao"/>
 
 # Learn Hadoop by using the Azure HDInsight Getting Started Gallery
 

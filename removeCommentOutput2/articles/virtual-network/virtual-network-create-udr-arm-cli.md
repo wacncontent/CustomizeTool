@@ -1,36 +1,38 @@
-
 <properties 
    pageTitle="Control routing and use virtual appliances in Resource Manager using the Azure CLI | Azure"
    description="Learn how to control routing and use virtual appliances using the Azure CLI"
    services="virtual-network"
    documentationCenter="na"
-   authors="telmosampaio"
+   authors="jimdial"
    manager="carmonm"
    editor=""
    tags="azure-resource-manager"
 />
-<tags
-	ms.service="virtual-network"
-	ms.date="03/15/2016"
-	wacn.date=""/>
+<tags  
+   ms.service="virtual-network"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="03/15/2016"
+   wacn.date=""
+   ms.author="jdial" />
 
 #Create User Defined Routes (UDR) in the Azure CLI
 
-[AZURE.INCLUDE [virtual-network-create-udr-arm-selectors-include.md](../includes/virtual-network-create-udr-arm-selectors-include.md)]
+[AZURE.INCLUDE [virtual-network-create-udr-arm-selectors-include.md](../../includes/virtual-network-create-udr-arm-selectors-include.md)]
 
-[AZURE.INCLUDE [arm-api-version-cli](../includes/arm-api-version-cli.md)]
-
-[AZURE.INCLUDE [virtual-network-create-udr-intro-include.md](../includes/virtual-network-create-udr-intro-include.md)]
+[AZURE.INCLUDE [virtual-network-create-udr-intro-include.md](../../includes/virtual-network-create-udr-intro-include.md)]
 
 >[AZURE.IMPORTANT]Before you work with Azure resources, it's important to understand that Azure currently has two deployment models: Resource Manager, and classic. Make sure you understand [deployment models and tools](/documentation/articles/azure-classic-rm/) before working with any Azure resource. You can view the documentation for different tools by clicking the tabs at the top of this article. This article covers the Resource Manager deployment model. You can also [create UDRs in the classic deployment model](/documentation/articles/virtual-network-create-udr-classic-cli/).
 
-[AZURE.INCLUDE [virtual-network-create-udr-scenario-include.md](../includes/virtual-network-create-udr-scenario-include.md)]
+[AZURE.INCLUDE [virtual-network-create-udr-scenario-include.md](../../includes/virtual-network-create-udr-scenario-include.md)]
 
 The sample Azure CLI commands below expect a simple environment already created based on the scenario above. If you want to run the commands as they are displayed in this document, first build the test environment by deploying [this template](http://github.com/telmosampaio/azure-templates/tree/master/IaaS-NSG-UDR-Before). Download the template, do some necessary modification, and deploy it with Azure CLI.
 
->[AZURE.NOTE] Templates you downloaded from the GitHub Repo "azure-quickstart-templates" must be modified in order to fit in the Azure China Cloud Environment. For example, replace some endpoints -- "blob.core.chinacloudapi.cn" by "blob.core.chinacloudapi.cn", "chinacloudapp.cn" by "chinacloudapp.cn"; change some unsupported VM images; and, changes some unsupported VM sizes.
+>[AZURE.NOTE] Templates you downloaded from the GitHub Repo "azure-quickstart-templates" must be modified in order to fit in the Azure China Cloud Environment. For example, replace some endpoints -- "blob.core.windows.net" by "blob.core.chinacloudapi.cn", "cloudapp.azure.com" by "chinacloudapp.cn"; change some unsupported VM images; and, changes some unsupported VM sizes.
 
-[AZURE.INCLUDE [azure-cli-prerequisites-include.md](../includes/azure-cli-prerequisites-include.md)]
+[AZURE.INCLUDE [azure-cli-prerequisites-include.md](../../includes/azure-cli-prerequisites-include.md)]
 
 ## Create the UDR for the front end subnet
 To create the route table and route needed for the front end subnet based on the scenario above, follow the steps below.
@@ -54,9 +56,9 @@ To create the route table and route needed for the front end subnet based on the
 		info:    network route-table create command OK
 
 	Parameters:
-	- **-g (or --resource-group)**. Name of the resource group where the NSG will be created. For our scenario, *TestRG*.
-	- **-l (or --location)**. Azure region where the new NSG will be created. For our scenario, *chinanorth*.
-	- **-n (or --name)**. Name for the new NSG. For our scenario, *NSG-FrontEnd*.
+	- **-g (or --resource-group)**. Name of the resource group where the UDR will be created. For our scenario, *TestRG*.
+	- **-l (or --location)**. Azure region where the new UDR will be created. For our scenario, *chinanorth*.
+	- **-n (or --name)**. Name for the new UDR. For our scenario, *UDR-FrontEnd*.
 
 4. Run the **`azure network route-table route create`** command to create a route in the route table created above to send all traffic destined to the back end subnet (192.168.2.0/24) to the **FW1** VM (192.168.0.4).
 

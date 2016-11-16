@@ -1,30 +1,32 @@
-
 <properties 
    pageTitle="How to set a static private IP in ARM mode using the CLI| Azure"
    description="Understanding static IPs (DIPs) and how to manage them in ARM mode using the CLI"
    services="virtual-network"
    documentationCenter="na"
-   authors="telmosampaio"
+   authors="jimdial"
    manager="carmonm"
    editor="tysonn"
    tags="azure-resource-manager"
 />
-<tags
-	ms.service="virtual-network"
-	ms.date="03/15/2016"
-	wacn.date=""/>
+<tags 
+   ms.service="virtual-network"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="03/15/2016"
+   wacn.date=""
+   ms.author="jdial" />
 
 # How to set a static private IP address in Azure CLI
 
-[AZURE.INCLUDE [virtual-networks-static-private-ip-selectors-arm-include](../includes/virtual-networks-static-private-ip-selectors-arm-include.md)]
+[AZURE.INCLUDE [virtual-networks-static-private-ip-selectors-arm-include](../../includes/virtual-networks-static-private-ip-selectors-arm-include.md)]
 
-[AZURE.INCLUDE [arm-api-version-cli](../includes/arm-api-version-cli.md)]
-
-[AZURE.INCLUDE [virtual-networks-static-private-ip-intro-include](../includes/virtual-networks-static-private-ip-intro-include.md)]
+[AZURE.INCLUDE [virtual-networks-static-private-ip-intro-include](../../includes/virtual-networks-static-private-ip-intro-include.md)]
 
 >[AZURE.IMPORTANT]Before you work with Azure resources, it's important to understand that Azure currently has two deployment models: Resource Manager, and classic. Make sure you understand [deployment models and tools](/documentation/articles/azure-classic-rm/) before working with any Azure resource. You can view the documentation for different tools by clicking the tabs at the top of this article. This article covers the Resource Manager deployment model. You can also [manage static private IP address in the classic deployment model](/documentation/articles/virtual-networks-static-private-ip-classic-cli/).
 
-[AZURE.INCLUDE [virtual-networks-static-ip-scenario-include](../includes/virtual-networks-static-ip-scenario-include.md)]
+[AZURE.INCLUDE [virtual-networks-static-ip-scenario-include](../../includes/virtual-networks-static-ip-scenario-include.md)]
 
 The sample Azure CLI commands below expect a simple environment already created. If you want to run the commands as they are displayed in this document, first build the test environment described in [create a vnet](/documentation/articles/virtual-networks-create-vnet-arm-cli/).
 

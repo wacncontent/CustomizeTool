@@ -4,18 +4,23 @@
  services="virtual-machines-linux"
  documentationCenter=""
  authors="xpillons"
- manager="kateh"
+ manager="timlt"
  editor=""
  tags="azure-service-management,azure-resource-manager,hpc-pack"/>
 <tags
-	ms.service="virtual-machines-linux"
-	ms.date="06/28/2016"
-	wacn.date=""/>
+ ms.service="virtual-machines-linux"
+ ms.devlang="na"
+ ms.topic="article"
+ ms.tgt_pltfrm="vm-linux"
+ ms.workload="big-compute"
+ ms.date="09/13/2016"
+ wacn.date=""
+ ms.author="xpillons"/>
 
 # Run STAR-CCM+ with Microsoft HPC Pack on a Linux RDMA cluster in Azure
 This article shows you how to deploy a Microsoft HPC Pack cluster on Azure and run a [CD-adapco STAR-CCM+](http://www.cd-adapco.com/products/star-ccm%C2%AE) job on multiple Linux compute nodes that are interconnected with InfiniBand.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
 
 Microsoft HPC Pack provides features to run a variety of large-scale HPC and parallel applications, including MPI applications, on clusters of Azure virtual machines. HPC Pack also supports running Linux HPC applications on Linux compute-node VMs that are deployed in an HPC Pack cluster. For an introduction to using Linux compute nodes with HPC Pack, see [Get started with Linux compute nodes in an HPC Pack cluster in Azure](/documentation/articles/virtual-machines-linux-classic-hpcpack-cluster/).
 

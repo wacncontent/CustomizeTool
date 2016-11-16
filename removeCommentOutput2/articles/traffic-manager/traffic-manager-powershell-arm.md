@@ -3,7 +3,7 @@
    description="Using powershell for Traffic Manager with Azure Resource Manager (ARM)"
    services="traffic-manager"
    documentationCenter="na"
-   authors="jtuliani"
+   authors="sdwheeler"
    manager="carmonm"
    editor="tysonn" />
 <tags

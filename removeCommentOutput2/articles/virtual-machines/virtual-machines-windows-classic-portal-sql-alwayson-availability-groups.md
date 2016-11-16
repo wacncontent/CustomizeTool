@@ -9,8 +9,13 @@
 	tags="azure-service-management" />
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="06/09/2016"
-	wacn.date=""/>
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="vm-windows-sql-server"
+	ms.workload="infrastructure-services"
+	ms.date="09/22/2016"
+	wacn.date=""
+	ms.author="mikeray" />
 
 # Configure Always On availability group in Azure VM - Classic
 
@@ -19,9 +24,6 @@
 - [Classic: PowerShell](/documentation/articles/virtual-machines-windows-classic-ps-sql-alwayson-availability-groups/)
 
 <br/>
-
-> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager model.
-
 
 This end-to-end tutorial shows you how to implement Availability Groups using SQL Server Always On running on Azure virtual machines.
 

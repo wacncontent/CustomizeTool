@@ -10,18 +10,23 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="05/25/2016"
-	wacn.date=""/>
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-windows"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/27/2016"
+	wacn.date=""
+	ms.author="cynthn"/>
 
 # Manage the availability of virtual machines
 
 Learn ways to set up and manage multiple virtual machines to ensure high availability for your Windows application in Azure. You can also [manage the availability of Linux virtual machines](/documentation/articles/virtual-machines-linux-manage-availability/).
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
 
 For instructions on creating and using availability sets when using the classic deployment model, see [How to Configure an Availability Set](/documentation/articles/virtual-machines-windows-classic-configure-availability/).
 
-[AZURE.INCLUDE [virtual-machines-common-manage-availability](../includes/virtual-machines-common-manage-availability.md)]
+[AZURE.INCLUDE [virtual-machines-common-manage-availability](../../includes/virtual-machines-common-manage-availability.md)]
 
 ## Next steps
 

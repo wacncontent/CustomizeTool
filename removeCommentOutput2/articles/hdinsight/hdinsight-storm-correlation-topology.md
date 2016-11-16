@@ -4,14 +4,19 @@
  services="hdinsight"
  documentationCenter=""
  authors="Blackmist"
- manager="paulettm"
+ manager="jhubbard"
  editor="cgronlun"
  tags="azure-portal"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="07/05/2016"
-	wacn.date=""/>
+ ms.service="hdinsight"
+ ms.devlang="dotnet"
+ ms.topic="article"
+ ms.tgt_pltfrm="na"
+ ms.workload="big-data"
+ ms.date="09/27/2016"
+ wacn.date=""
+ ms.author="larryfr"/>
 
 # Correlate events over time with Storm and HBase on HDInsight
 
@@ -25,7 +30,7 @@ In this document, you will learn how to create a basic C# Storm topology that tr
 
 -	Apache Storm on HDInsight cluster (Windows-based). This runs the Storm topology, which processes incoming data and stores it to HBase.
 
--	Apache HBase on HDInsight cluster (Windows or Linux-based). This is the data store for this example.
+-	Apache HBase on HDInsight cluster (Windows-based). This is the data store for this example.
 
 ## Architecture
 
@@ -191,7 +196,7 @@ When you are ready to stop the topology, return to the **CorrelationTopology** p
 
 ##Delete your cluster
 
-[AZURE.INCLUDE [delete-cluster-warning](../includes/hdinsight-delete-cluster-warning.md)]
+[AZURE.INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
 
 ##Next steps
 

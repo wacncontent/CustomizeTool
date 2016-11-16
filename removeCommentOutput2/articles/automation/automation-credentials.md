@@ -6,10 +6,15 @@
    authors="mgoedtel"
    manager="jwhit"
    editor="tysonn" />
-<tags
-	ms.service="automation"
-	ms.date="06/09/2016"
-	wacn.date=""/>
+<tags 
+   ms.service="automation"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="06/09/2016"
+   wacn.date=""
+   ms.author="bwren" />
 
 # Credential assets in Azure Automation
 
@@ -36,7 +41,7 @@ The activities in the following table are used to access credentials in a runboo
 |:---|:---|
 |Get-AutomationPSCredential|Gets a credential to use in a runbook. Returns a [System.Management.Automation.PSCredential](http://msdn.microsoft.com/zh-cn/library/system.management.automation.pscredential) object.|
 
->[AZURE.NOTE] You should avoid using variables in the -Name parameter of Get-AutomationPSCredential since this can complicate discovering dependencies between runbooks, and credential assets at design time.
+>[AZURE.NOTE] You should avoid using variables in the -Name parameter of Get-AutomationPSCredential since this can complicate discovering dependencies between runbooks and credential assets at design time.
 
 ## Creating a new credential asset
 
@@ -48,10 +53,6 @@ The activities in the following table are used to access credentials in a runboo
 1. Click **Add Credential**.
 2. In the **Credential Type** dropdown, select **PowerShell Credential**.
 1. Complete the wizard and click the checkbox to save the new credential.
-
-
-
-
 
 ### To create a new credential asset with Windows PowerShell
 
@@ -74,6 +75,3 @@ The following sample commands show how to use a PowerShell credential in a runbo
 	$userName = $myCredential.UserName
 	$securePassword = $myCredential.Password
 	$password = $myCredential.GetNetworkCredential().Password
-
-
-

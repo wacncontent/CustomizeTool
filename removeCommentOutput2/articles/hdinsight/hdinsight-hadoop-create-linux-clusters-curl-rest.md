@@ -6,35 +6,40 @@
    	services="hdinsight"
    	documentationCenter=""
    	authors="Blackmist"
-   	manager="paulettm"
+   	manager="jhubbard"
    	editor="cgronlun"
 	tags="azure-portal"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="05/16/2016"
-	wacn.date=""/>
+   	ms.service="hdinsight"
+   	ms.devlang="na"
+   	ms.topic="article"
+   	ms.tgt_pltfrm="na"
+   	ms.workload="big-data"
+   	ms.date="10/11/2016"
+   	wacn.date=""
+   	ms.author="larryfr"/>
 
 #Create Linux-based clusters in HDInsight using cURL and the Azure REST API
 
-[AZURE.INCLUDE [selector](../includes/hdinsight-selector-create-clusters.md)]
+[AZURE.INCLUDE [selector](../../includes/hdinsight-selector-create-clusters.md)]
 
 The Azure REST API allows you to perform management operations on services hosted in the Azure platform, including the creation of new resources such as Linux-based HDInsight clusters. In this document, you will learn how to create Azure Resource Manager templates to configure an HDInsight cluster and associated storage, then use cURL to deploy the template to the Azure REST API to create a new HDInsight cluster.
 
 > [AZURE.IMPORTANT] The steps in this document use the default number of worker nodes (4) for an HDInsight cluster. If you plan on more than 32 worker nodes, either at cluster creation or by scaling the cluster after creation, then you must select a head node size with at least 8 cores and 14GB ram.
 >
-> For more information on node sizes and associated costs, see [HDInsight pricing](/home/features/hdinsight/pricing/).
+> For more information on node sizes and associated costs, see [HDInsight pricing](/pricing/details/hdinsight/).
 
 ##Prerequisites
 
-[AZURE.INCLUDE [delete-cluster-warning](../includes/hdinsight-delete-cluster-warning.md)]
+[AZURE.INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
 
 
 - **An Azure subscription**. See [Get Azure trial](/pricing/1rmb-trial/).
 
 - __Azure CLI__. The Azure CLI is used to create a service principal, which is then used to generate authentication tokens for requests to the Azure REST API.
 
-    [AZURE.INCLUDE [use-latest-version](../includes/hdinsight-use-latest-cli.md)]
+    [AZURE.INCLUDE [use-latest-version](../../includes/hdinsight-use-latest-cli.md)]
 
 - __cURL__. This utility is available through your package management system, or can be downloaded from [http://curl.haxx.se/](http://curl.haxx.se/).
 
@@ -45,6 +50,8 @@ The Azure REST API allows you to perform management operations on services hoste
     > `Remove-item alias:curl`
     >
     > Once the alias has been removed, you should be able to use the version of cURL that you have installed on your system.
+### Access control requirements
+[AZURE.INCLUDE [access-control](../../includes/hdinsight-access-control-requirements.md)]
 
 ##Create a template
 
@@ -77,7 +84,7 @@ For example, the following is a merger of the template and parameters files from
                         "allowedValues": ["China North",
                         "China East",
                         "China East",
-                        "Japan East",
+                        "China East",
                         "China East",
                         "China North",
                         "China East",

@@ -10,8 +10,13 @@
 
 <tags
 	ms.service="virtual-machines-linux"
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-linux"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="04/26/2016"
-	wacn.date=""/>
+	wacn.date=""
+	ms.author="drewm"/>
 
 # Planned maintenance for Linux virtual machines in Azure
 
@@ -19,7 +24,7 @@ Understand what Azure planned maintenance is and how it can affect the availabil
 
 This article provides a background as to the Azure planned maintenance process. If you are wanting to troubleshoot why your VM rebooted, you can [read this blog post detailing viewing VM reboot logs](https://azure.microsoft.com/blog/viewing-vm-reboot-logs/).
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
 
 ## Why Azure performs planned maintenance
 
@@ -29,4 +34,4 @@ However, some updates do require a reboot to your virtual machines to apply the 
 
 Please note that there are two types of maintenance that can impact the availability of your virtual machines: planned and unplanned. This page describes how Azure performs planned maintenance. For more information about unplanned maintenance, see [Understand planned versus unplanned maintenance](/documentation/articles/virtual-machines-linux-manage-availability/).
 
-[AZURE.INCLUDE [virtual-machines-common-planned-maintenance](../includes/virtual-machines-common-planned-maintenance.md)]
+[AZURE.INCLUDE [virtual-machines-common-planned-maintenance](../../includes/virtual-machines-common-planned-maintenance.md)]

@@ -10,18 +10,23 @@
 
 <tags
 	ms.service="virtual-machines-linux"
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-linux"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="05/25/2016"
-	wacn.date=""/>
+	wacn.date=""
+	ms.author="cynthn"/>
 
 # Manage the availability of virtual machines
 
 Learn ways to set up and manage multiple virtual machines to ensure high availability for your Linux application in Azure. You can also [manage the availability of Windows virtual machines](/documentation/articles/virtual-machines-windows-manage-availability/).
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
 
 For instructions on creating an availability set using CLI in the Resource Manager deployment model, see [azure availset: commands to manage your availability sets](/documentation/articles/azure-cli-arm-commands/#azure-availset-commands-to-manage-your-availability-sets).
 
-[AZURE.INCLUDE [virtual-machines-common-manage-availability](../includes/virtual-machines-common-manage-availability.md)]
+[AZURE.INCLUDE [virtual-machines-common-manage-availability](../../includes/virtual-machines-common-manage-availability.md)]
 
 ## Next steps
 

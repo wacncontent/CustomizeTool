@@ -3,13 +3,18 @@
    description="This article will help disable or enable your Traffic Manager profile endpoints."
    services="traffic-manager"
    documentationCenter="na"
-   authors="joaoma"
+   authors="sdwheeler"
    manager="carmonm"
    editor="tysonn" />
-<tags
-	ms.service="traffic-manager"
-	ms.date="06/10/2016"
-	wacn.date=""/>
+<tags 
+   ms.service="traffic-manager"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="06/10/2016"
+   wacn.date=""
+   ms.author="sewhee" />
 
 # Disable or Enable a Traffic Manager Endpoint
 

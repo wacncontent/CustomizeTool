@@ -1,42 +1,44 @@
-
 <properties 
    pageTitle="Control routing and use virtual appliances in Resource Manager by using PowerShell | Azure"
    description="Learn how to control routing and use virtual appliances in Resource Manager by using PowerShell"
    services="virtual-network"
    documentationCenter="na"
-   authors="telmosampaio"
+   authors="jimdial"
    manager="carmonm"
    editor=""
    tags="azure-resource-manager"
 />
-<tags
-	ms.service="virtual-network"
-	ms.date="02/23/2016"
-	wacn.date=""/>
+<tags  
+   ms.service="virtual-network"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="02/23/2016"
+   wacn.date=""
+   ms.author="jdial" />
 
 #Create User Defined Routes (UDR) in Resource Manager by using PowerShell
 
-[AZURE.INCLUDE [virtual-network-create-udr-arm-selectors-include.md](../includes/virtual-network-create-udr-arm-selectors-include.md)]
+[AZURE.INCLUDE [virtual-network-create-udr-arm-selectors-include.md](../../includes/virtual-network-create-udr-arm-selectors-include.md)]
 
-[AZURE.INCLUDE [arm-api-version-powershell](../includes/arm-api-version-powershell.md)]
-
-[AZURE.INCLUDE [virtual-network-create-udr-intro-include.md](../includes/virtual-network-create-udr-intro-include.md)]
+[AZURE.INCLUDE [virtual-network-create-udr-intro-include.md](../../includes/virtual-network-create-udr-intro-include.md)]
 
 >[AZURE.IMPORTANT]Before you work with Azure resources, it's important to understand that Azure currently has two deployment models: Resource Manager, and classic. Make sure you understand [deployment models and tools](/documentation/articles/azure-classic-rm/) before working with any Azure resource. You can view the documentation for different tools by clicking the tabs at the top of this article. This article covers the Resource Manager deployment model. You can also [create UDRs in the classic deployment model](/documentation/articles/virtual-network-create-udr-classic-ps/).
 
-[AZURE.INCLUDE [virtual-network-create-udr-scenario-include.md](../includes/virtual-network-create-udr-scenario-include.md)]
+[AZURE.INCLUDE [virtual-network-create-udr-scenario-include.md](../../includes/virtual-network-create-udr-scenario-include.md)]
 
 The sample PowerShell commands below expect a simple environment already created based on the scenario above. If you want to run the commands as they are displayed in this document, first build the test environment by deploying [this template](http://github.com/telmosampaio/azure-templates/tree/master/IaaS-NSG-UDR-Before). Download the template, do some necessary modification, and deploy it with Azure PowerShell.
 
->[AZURE.NOTE] Templates you downloaded from the GitHub Repo "azure-quickstart-templates" must be modified in order to fit in the Azure China Cloud Environment. For example, replace some endpoints -- "blob.core.chinacloudapi.cn" by "blob.core.chinacloudapi.cn", "chinacloudapp.cn" by "chinacloudapp.cn"; change some unsupported VM images; and, changes some unsupported VM sizes.
+>[AZURE.NOTE] Templates you downloaded from the GitHub Repo "azure-quickstart-templates" must be modified in order to fit in the Azure China Cloud Environment. For example, replace some endpoints -- "blob.core.windows.net" by "blob.core.chinacloudapi.cn", "cloudapp.azure.com" by "chinacloudapp.cn"; change some unsupported VM images; and, changes some unsupported VM sizes.
 
 
-[AZURE.INCLUDE [azure-ps-prerequisites-include.md](../includes/azure-ps-prerequisites-include.md)]
+[AZURE.INCLUDE [azure-ps-prerequisites-include.md](../../includes/azure-ps-prerequisites-include.md)]
 
 ## Create the UDR for the front end subnet
 To create the route table and route needed for the front end subnet based on the scenario above, follow the steps below.
 
-[AZURE.INCLUDE [powershell-preview-include.md](../includes/powershell-preview-include.md)]
+[AZURE.INCLUDE [powershell-preview-include.md](../../includes/powershell-preview-include.md)]
 
 3. Create a route used to send all traffic destined to the back end subnet (192.168.2.0/24) to be routed to the **FW1** virtual appliance (192.168.0.4).
 
@@ -121,7 +123,7 @@ To create the route table and route needed for the back end subnet based on the 
 		    -AddressPrefix 192.168.1.0/24 -NextHopType VirtualAppliance `
 		    -NextHopIpAddress 192.168.0.4
 
-4. Create a route table named **UDR-BackEnd** in the **uswest** region that contains the route created above.
+4. Create a route table named **UDR-BackEnd** in the **chinanorth** region that contains the route created above.
 
 		$routeTable = New-AzureRmRouteTable -ResourceGroupName TestRG -Location chinanorth `
 		    -Name UDR-BackEnd -Route $route

@@ -9,14 +9,19 @@
 
 <tags
 	ms.service="app-service-web"
+	ms.workload="web"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="01/13/2016"
-	wacn.date=""/>
+	wacn.date=""
+	ms.author="ahmedelnably"/>
 
-# Azure SSL Certificate Binding using PowerShell #
+# Azure App Service SSL Certificate Binding using PowerShell #
 
 With the release of Azure PowerShell version 1.1.0 a new cmdlet has been added that would give the user the ability to bind existing or new SSL certificates to an existing Web App.
 
-[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)] 
+[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)] 
 
 To learn about using Azure Resource Manager based Azure PowerShell cmdlets to manage your Web Apps check [Azure Resource Manager based PowerShell commands for Azure Web App](/documentation/articles/app-service-web-app-azure-resource-manager-powershell/)
 
@@ -65,5 +70,5 @@ Note that if the removed SSL binding was the last binding using that certificate
 
 ### References ###
 - [Azure Resource Manager based PowerShell commands for Azure Web App](/documentation/articles/app-service-web-app-azure-resource-manager-powershell/)
-- [Introduction to Azure Environment](/documentation/articles/app-service-app-service-environment-intro/)
+- [Introduction to App Service Environment](/documentation/articles/app-service-app-service-environment-intro/)
 - [Using Azure PowerShell with Azure Resource Manager](/documentation/articles/powershell-azure-resource-manager/)

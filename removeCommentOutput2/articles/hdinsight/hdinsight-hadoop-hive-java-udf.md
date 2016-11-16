@@ -4,15 +4,20 @@ description="Learn how to create and use a Java user-defined function (UDF) from
 services="hdinsight"
 documentationCenter=""
 authors="Blackmist"
-manager="paulettm"
+manager="jhubbard"
 editor="cgronlun"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="07/07/2016"
-	wacn.date=""/>
+ms.service="hdinsight"
+ms.devlang="java"
+ms.topic="article"
+ms.tgt_pltfrm="na"
+ms.workload="big-data"
+ms.date="09/27/2016"
+wacn.date=""
+ms.author="larryfr"/>
 
-#Use a Java UDF with Hive in HDInsight
+# Use a Java UDF with Hive in HDInsight
 
 Hive is great for working with data in HDInsight, but sometimes you need a more general purpose language. Hive allows you to create user-defined functions (UDF) using a variety of programming languages. In this document, you will learn how to use a Java UDF from Hive.
 
@@ -20,17 +25,13 @@ Hive is great for working with data in HDInsight, but sometimes you need a more 
 
 * An Azure subscription
 
-* An HDInsight cluster (Windows or Linux-based)
-
-    > [AZURE.NOTE] Most steps in this document will work on both cluster types; however, the steps used to upload the compiled UDF to the cluster and run it are specific to Linux-based clusters. Links are provided to information that can be used with Windows-based clusters.
+* An HDInsight cluster (Windows)
 
 * [Java JDK](http://www.oracle.com/technetwork/java/javase/downloads/) 7 or later (or an equivalent, such as OpenJDK)
 
 * [Apache Maven](http://maven.apache.org/)
 
 * A text editor or Java IDE
-
-    > [AZURE.IMPORTANT] If you are using a Linux-based HDInsight server, but creating the Python files on a Windows client, you must use an editor that uses LF as a line ending. If you are not sure whether your editor uses LF or CRLF, see the [Troubleshooting](#troubleshooting) section for steps on removing the CR character using utilities on the HDInsight cluster.
 
 ## Create an example UDF
 
@@ -63,7 +64,58 @@ Hive is great for working with data in HDInsight, but sometimes you need a more 
 
     These entries specify the version of Hadoop and Hive included with HDInsight 3.3 and 3.4 clusters. You can find information on the versions of Hadoop and Hive provided with HDInsight from the [HDInsight component versioning](/documentation/articles/hdinsight-component-versioning-v1/) document.
 
-    Save the file after making this change.
+    Add a `<build>` section before the `</project>` line at the end of the file. This section should contain the following:
+        <build>
+            <plugins>
+                <!-- build for Java 1.7, even if you're on a later version -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.3</version>
+                    <configuration>
+                        <source>1.7</source>
+                        <target>1.7</target>
+                    </configuration>
+                </plugin>
+                <!-- build an uber jar -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-shade-plugin</artifactId>
+                    <version>2.3</version>
+                    <configuration>
+                        <!-- Keep us from getting a can't overwrite file error -->
+                        <transformers>
+                            <transformer
+                                    implementation="org.apache.maven.plugins.shade.resource.ApacheLicenseResourceTransformer">
+                            </transformer>
+                            <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer">
+                            </transformer>
+                        </transformers>
+                        <!-- Keep us from getting a bad signature error -->
+                        <filters>
+                            <filter>
+                                <artifact>*:*</artifact>
+                                <excludes>
+                                    <exclude>META-INF/*.SF</exclude>
+                                    <exclude>META-INF/*.DSA</exclude>
+                                    <exclude>META-INF/*.RSA</exclude>
+                                </excludes>
+                            </filter>
+                        </filters>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <phase>package</phase>
+                            <goals>
+                                <goal>shade</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </build>
+    These entries define how to build the project. Specifically, the version of Java that the project uses and how to build an uberjar for deployment to the cluster.
+    Save the file once the changes have been made.
 
 4. Rename __exampleudf/src/main/java/com/microsoft/examples/App.java__ to __ExampleUDF.java__, and then open the file in your editor.
 
@@ -94,34 +146,6 @@ Hive is great for working with data in HDInsight, but sometimes you need a more 
 
     This implements a UDF that accepts a string value, and returns a lowercase version of the string.
 
-## Build and install the UDF
-
-1. Use the following command to compile and package the UDF:
-
-        mvn compile package
-
-    This will build, then package the UDF into __exampleudf/target/ExampleUDF-1.0-SNAPSHOT.jar__.
-
-2. Use the `scp` command to copy the file to the HDInsight cluster.
-
-        scp ./target/ExampleUDF-1.0-SNAPSHOT.jar myuser@mycluster-ssh.azurehdinsight
-
-    Replace __myuser__ with the SSH user account for your cluster. Replace __mycluster__ with the cluster name. If you used a password to secure the SSH account, you will be prompted to enter the password. If you used a certificate, you may need to use the `-i` parameter to specify the private key file.
-
-3. Connect to the cluster using SSH. 
-
-        ssh myuser@mycluster-ssh.azurehdinsight.cn
-
-    For more information on using SSH with HDInsight, see the following documents.
-
-    * [Use SSH with Linux-based Hadoop on HDInsight from Linux, Unix, or OS X](/documentation/articles/hdinsight-hadoop-linux-use-ssh-unix/)
-
-    * [Use SSH with Linux-based Hadoop on HDInsight from Windows](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows/)
-
-4. From the SSH session, copy the jar file to HDInsight storage.
-
-        hdfs dfs -put ExampleUDF-1.0-SNAPSHOT.jar /example/jars
-
 ## Use the UDF from Hive
 
 1. Use the following to start the Beeline client from the SSH session.
@@ -132,7 +156,7 @@ Hive is great for working with data in HDInsight, but sometimes you need a more 
 
 2. Once you arrive at the `jdbc:hive2://localhost:10001/>` prompt, enter the following to add the UDF to Hive and expose it as a function.
 
-        ADD JAR wasb:///example/jar/ExampleUDF-1.0-SNAPSHOT.jar;
+        ADD JAR wasbs:///example/jars/ExampleUDF-1.0-SNAPSHOT.jar;
         CREATE TEMPORARY FUNCTION tolower as 'com.microsoft.examples.ExampleUDF';
 
 3. Use the UDF to convert values retrieved from a table to lower case strings.

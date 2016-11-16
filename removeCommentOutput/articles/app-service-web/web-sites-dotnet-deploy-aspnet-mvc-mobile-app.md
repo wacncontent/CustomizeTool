@@ -1,27 +1,32 @@
 <properties 
-	pageTitle="Deploy an ASP.NET MVC 5 mobile web app in Azure" 
-	description="A tutorial that teaches you how to deploy a web app to Azure using mobile features in ASP.NET MVC 5 web application." 
+	pageTitle="Deploy an ASP.NET MVC 5 mobile web app in Azure App Service" 
+	description="A tutorial that teaches you how to deploy a web app to Azure App Service using mobile features in ASP.NET MVC 5 web application." 
 	services="app-service" 
 	documentationCenter=".net" 
 	authors="cephalin" 
 	manager="wpickett" 
 	editor="jimbe"/>
 
-<tags
-	ms.service="app-service"
-	ms.date="01/12/2016"
-	wacn.date=""/>
+<tags 
+	ms.service="app-service" 
+	ms.workload="na" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="dotnet" 
+	ms.topic="article" 
+	ms.date="01/12/2016" 
+	wacn.date="" 
+	ms.author="cephalin;riande"/>
 
 
-# Deploy an ASP.NET MVC 5 mobile web app in Azure
+# Deploy an ASP.NET MVC 5 mobile web app in Azure App Service
 
 This tutorial will teach you the basics of how to build an ASP.NET MVC 5
-web app that is mobile-friendly and deploy it to Azure Web App. For this tutorial, you need 
+web app that is mobile-friendly and deploy it to Azure App Service. For this tutorial, you need 
 [Visual Studio Express 2013 for Web][Visual Studio Express 2013]
 or the professional edition of Visual Studio if you already
 have that. You can use [Visual Studio 2015] but the screen shots will be different and you must use the ASP.NET 4.x templates.
 
-[AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
+[AZURE.INCLUDE [create-account-and-websites-note](../../includes/create-account-and-websites-note.md)]
 
 ## What You'll Build
 
@@ -40,7 +45,7 @@ application. 
 
 Here's what you'll learn:
 
--	How to use Visual Studio 2013 to publish your web application directly to a web app in Azure.
+-	How to use Visual Studio 2013 to publish your web application directly to a web app in Azure App Service.
 -   How the ASP.NET MVC 5 templates use the CSS Bootstrap framework to
     improve display on mobile devices
 -   How to create mobile-specific views to target specific mobile
@@ -71,6 +76,8 @@ this topic:
 
 ##<a name="bkmk_DeployStarterProject"></a>Deploy the starter project to an Azure web app
 
+>[AZURE.NOTE] You need to configure your Visual Studio Environment, in order to use Azure China in Visual Studio 2015. For more information, see [developer differerences](/documentation/articles/developerdifferences/).
+
 1.	Download the conference-listing application [starter project][StarterProject].
 
 2. 	Then in Windows Explorer, right-click the downloaded ZIP file and choose *Properties*.
@@ -89,7 +96,7 @@ unzip the file.
 
 	![][DeployClickPublish]
 
-7.	In Publish Web, click **App Services**.
+7.	In Publish Web, click **Azure App Service**.
 
 	![][DeployClickWebSites]
 
@@ -99,7 +106,7 @@ unzip the file.
 
 9.	Follow the prompts to log into your Azure account.
 
-11. The Azure dialog should now show you as signed in. Click **New**.
+11. The App Service dialog should now show you as signed in. Click **New**.
 
 	![][DeployNewWebsite]  
 
@@ -111,7 +118,7 @@ unzip the file.
 
     ![](./media/web-sites-dotnet-deploy-aspnet-mvc-mobile-app/deploy-to-azure-website-7a.png)
 
-13. Back in the Create Azure dialog, click **Create**.
+13. Back in the Create App Service dialog, click **Create**.
 
     ![](./media/web-sites-dotnet-deploy-aspnet-mvc-mobile-app/deploy-to-azure-website-7b.png) 
 
@@ -695,7 +702,7 @@ changes that you just made:
 This tutorial has shown you how to use ASP.NET MVC 5 to develop
 mobile-friendly Web applications. These include:
 
--	Deploy an ASP.NET MVC 5 application to an Azure web app
+-	Deploy an ASP.NET MVC 5 application to an App Service web app
 -   Use Bootstrap to create responsive web layout in your MVC 5
     application
 -   Override layout, views, and partial views, both globally and for an
@@ -717,7 +724,7 @@ mobile-friendly Web applications. These include:
 -   [W3C Candidate Recommendation for media queries][]
 
 ## What's changed
-* For a guide to the change from Websites to Azure see: [Azure and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
+* For a guide to the change from Websites to App Service see: [Azure App Service and Its Impact on Existing Azure Services](/documentation/articles/app-service-changes-existing-services/)
 
 <!-- Internal Links -->
 [Deploy the starter project to an Azure web app]: #bkmk_DeployStarterProject
@@ -733,7 +740,7 @@ mobile-friendly Web applications. These include:
 <!-- External Links -->
 [Visual Studio Express 2013]: http://www.visualstudio.com/downloads/download-visual-studio-vs#d-express-web
 [Visual Studio 2015]: https://www.visualstudio.com/downloads/download-visual-studio-vs
-[AzureSDKVs2013]: https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VWDOrVs2013AzurePack.appids
+[AzureSDKVs2013]: http://go.microsoft.com/fwlink/p/?linkid=323510&clcid=0x409
 [Fiddler]: http://www.fiddler2.com/fiddler2/
 [EmulatorIE11]: http://msdn.microsoft.com/zh-cn/library/ie/dn255001.aspx
 [EmulatorChrome]: https://developers.google.com/chrome-developer-tools/docs/mobile-emulation

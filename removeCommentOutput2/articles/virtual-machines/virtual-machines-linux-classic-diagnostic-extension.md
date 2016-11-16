@@ -10,9 +10,14 @@
   		tags="azure-service-management"/>
 
 <tags
-	ms.service="virtual-machines-linux"
-	ms.date="12/15/2015"
-	wacn.date=""/>
+		ms.service="virtual-machines-linux"
+		ms.workload="infrastructure-services"
+		ms.tgt_pltfrm="vm-linux"
+		ms.devlang="na"
+		ms.topic="article"
+		ms.date="12/15/2015"
+		wacn.date=""
+		ms.author="Ning"/>
 
 
 # Use the Linux Diagnostic Extension to monitor the performance and diagnostic data of a Linux VM
@@ -20,6 +25,7 @@
 ## Introduction
 
 (**Note**: The Linux Diagnostic Extension is open-sourced on [Github](https://github.com/Azure/azure-linux-extensions/tree/master/Diagnostic) where the most current information on the extension is first published. You might want to check the [Github page](https://github.com/Azure/azure-linux-extensions/tree/master/Diagnostic) first.)
+
 The Linux Diagnostic Extension helps a user monitor the Linux VMs that are running on Azure. It has the following capabilities:
 
 - Collects and uploads the system performance information from the Linux VM to the user's storage table, including diagnostic and syslog information.
@@ -33,7 +39,9 @@ In the current version 2.3, the data includes:
 - User-specified log files.
 
 This extension works with both the classic and Resource Manager deployment models.
+
 ### Current version of the extension and deprecation of old versions
+
 The latest version of the extension is **2.3**, and **any old versions (2.0, 2.1, and 2.2) will be deprecated and unpublished by end of this year (2016)**. If you installed the Linux Diagnostic extension with automatic minor version upgrade disabled, it's strongly recommended that you uninstall the extension and reinstall it with automatic minor version upgrade enabled. On classic (ASM) VMs, you can achieve this by specifying '2.*' as the version if you are installing the extension through Azure XPLAT CLI or Powershell. On ARM VMs, you can achieve this by including '"autoUpgradeMinorVersion": true' in the VM deployment template. Also, any new installation of the extension should have the auto minor version upgrade option turned on.
 
 
@@ -66,7 +74,7 @@ Step 1. Create a file named PrivateConfig.json with the following content:
 
     {
         "storageAccountName" : "the storage account to receive data",
-        "storageAccountKey" : "the key of the account"，
+        "storageAccountKey": "the key of the account", 
     	"endpoint":"table.core.chinacloudapi.cn"
     }
 

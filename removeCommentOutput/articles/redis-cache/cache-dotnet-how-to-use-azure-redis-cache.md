@@ -7,10 +7,15 @@
 	manager="douge" 
 	editor=""/>
 
-<tags
-	ms.service="cache"
-	ms.date="06/09/2016"
-	wacn.date=""/>
+<tags 
+	ms.service="cache" 
+	ms.workload="tbd" 
+	ms.tgt_pltfrm="cache-redis" 
+	ms.devlang="dotnet" 
+	ms.topic="hero-article" 
+	ms.date="08/25/2016" 
+	wacn.date="" 
+	ms.author="sdanie"/>
 
 # How to Use Azure Redis Cache
 
@@ -33,34 +38,30 @@ Each tier differs in terms of features and pricing. For information on pricing, 
 
 This guide shows you how to use the [StackExchange.Redis][] client using C\# code. The scenarios covered include **creating and configuring a cache**, **configuring cache clients**, and **adding and removing objects from the cache**. For more information on using Azure Redis Cache, refer to the [Next Steps][] section. For a step-by-step tutorial of building an ASP.NET MVC web app with Redis Cache, see [How to create a Web App with Redis Cache](/documentation/articles/cache-web-app-howto/).
 
-<a name="getting-started-cache-service"></a>
-## Get Started with Azure Redis Cache
+## <a name="getting-started-cache-service"></a> Get Started with Azure Redis Cache
 
 Getting started with Azure Redis Cache is easy. To get started, you provision and configure a cache. Next, you configure the cache clients so they can access the cache. Once the cache clients are configured, you can begin working with them.
 
 -	[Create the cache][]
 -	[Configure the cache clients][]
 
-<a name="create-cache"></a>
-## Create a cache
+## <a name="create-cache"></a> Create a cache
 
-[AZURE.INCLUDE [redis-cache-create](../includes/redis-cache-create.md)]
+[AZURE.INCLUDE [redis-cache-create](../../includes/redis-cache-create.md)]
 
 ### To access your cache after it's created
 
-[AZURE.INCLUDE [redis-cache-create](../includes/redis-cache-browse.md)]
+[AZURE.INCLUDE [redis-cache-create](../../includes/redis-cache-browse.md)]
 
 For more information about configuring your cache, see [How to configure Azure Redis Cache](/documentation/articles/cache-configure/).
 
-<a name="NuGet"></a>
-## Configure the cache clients
+## <a name="NuGet"></a> Configure the cache clients
 
-[AZURE.INCLUDE [redis-cache-configure](../includes/redis-cache-configure-stackexchange-redis-nuget.md)]
+[AZURE.INCLUDE [redis-cache-configure](../../includes/redis-cache-configure-stackexchange-redis-nuget.md)]
 
 Once your client project is configured for caching, you can use the techniques described in the following sections for working with your cache.
 
-<a name="working-with-caches"></a>
-## Working with Caches
+## <a name="working-with-caches"></a> Working with Caches
 
 The steps in this section describe how to perform common tasks with Cache.
 
@@ -68,8 +69,7 @@ The steps in this section describe how to perform common tasks with Cache.
 -   [Add and retrieve objects from the cache][]
 -   [Work with .NET objects in the cache](#work-with-net-objects-in-the-cache)
 
-<a name="connect-to-cache"></a>
-## Connect to the cache
+## <a name="connect-to-cache"></a> Connect to the cache
 
 In order to programmatically work with a cache, you need a reference to the cache. Add the following to the top of any file from which you want to use the StackExchange.Redis client to access an Azure Redis Cache.
 
@@ -106,7 +106,7 @@ One approach to sharing a `ConnectionMultiplexer` instance in your application i
 
 For more information on advanced connection configuration options, see [StackExchange.Redis configuration model][].
 
-[AZURE.INCLUDE [redis-cache-create](../includes/redis-cache-access-keys.md)]
+[AZURE.INCLUDE [redis-cache-create](../../includes/redis-cache-access-keys.md)]
 
 Once the connection is established, return a reference to the redis cache database by calling the `ConnectionMultiplexer.GetDatabase` method. The object returned from the `GetDatabase` method is a lightweight pass-through object and does not need to be stored.
 
@@ -125,8 +125,7 @@ Once the connection is established, return a reference to the redis cache databa
 
 Now that you know how to connect to an Azure Redis Cache instance and return a reference to the cache database, let's take a look at working with the cache.
 
-<a name="add-object"></a>
-## Add and retrieve objects from the cache
+## <a name="add-object"></a> Add and retrieve objects from the cache
 
 Items can be stored in and retrieved from a cache by using the `StringSet` and `StringGet` methods.
 
@@ -178,8 +177,7 @@ One simple way to serialize objects is to use the `JsonConvert` serialization me
     // Retrieve from cache
     Employee e25 = JsonConvert.DeserializeObject<Employee>(cache.StringGet("e25"));
 
-<a name="next-steps"></a>
-## Next Steps
+## <a name="next-steps"></a> Next Steps
 
 Now that you've learned the basics, follow these links to learn more about Azure Redis Cache.
 
@@ -189,7 +187,9 @@ Now that you've learned the basics, follow these links to learn more about Azure
 -	[Enable cache diagnostics](/documentation/articles/cache-how-to-monitor/#enable-cache-diagnostics) so you can [monitor](/documentation/articles/cache-how-to-monitor/) the health of your cache. You can view the metrics in the Azure Portal and you can also [download and review](https://github.com/rustd/RedisSamples/tree/master/CustomMonitoring) them using the tools of your choice.
 -	Check out the [StackExchange.Redis cache client documentation][].
 	-	Azure Redis Cache can be accessed from many Redis clients and development languages. For more information, see [http://redis.io/clients][].
-	-	Azure Redis Cache can also be used with services such as Redsmin. For more information, see  [How to retrieve an Azure Redis connection string and use it with Redsmin][].
+-	Azure Redis Cache can also be used with third-party services and tools such as Redsmin and Redis Desktop Manager.
+	-	For more information about Redsmin, see  [How to retrieve an Azure Redis connection string and use it with Redsmin][].
+	-	Access and inspect your data in Azure Redis Cache with a GUI using [RedisDesktopManager](https://github.com/uglide/RedisDesktopManager).
 -	See the [redis][] documentation and read about [redis data types][] and [a fifteen minute introduction to Redis data types][].
 
 
@@ -261,7 +261,7 @@ Now that you've learned the basics, follow these links to learn more about Azure
 
 
 [NuGet Package Manager Installation]: http://go.microsoft.com/fwlink/?LinkId=240311
-[Cache Pricing Details]: /home/features/cache/pricing/
+[Cache Pricing Details]: /pricing/details/redis-cache/
 [Azure Portal]: https://portal.azure.cn/
 
 [Overview of Azure Redis Cache]: http://go.microsoft.com/fwlink/?LinkId=320830

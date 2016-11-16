@@ -3,25 +3,30 @@
    description="Learn how to deploy multi NIC VMs using the Azure CLI in Resource Manager"
    services="virtual-network"
    documentationCenter="na"
-   authors="telmosampaio"
+   authors="jimdial"
    manager="carmonm"
    editor=""
    tags="azure-resource-manager"
 />
-<tags
-	ms.service="virtual-network"
-	ms.date="02/02/2016"
-	wacn.date=""/>
+<tags  
+   ms.service="virtual-network"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="02/02/2016"
+   wacn.date=""
+   ms.author="jdial" />
 
 #Deploy multi NIC VMs using the Azure CLI
 
-[AZURE.INCLUDE [virtual-network-deploy-multinic-arm-selectors-include.md](../includes/virtual-network-deploy-multinic-arm-selectors-include.md)]
+[AZURE.INCLUDE [virtual-network-deploy-multinic-arm-selectors-include.md](../../includes/virtual-network-deploy-multinic-arm-selectors-include.md)]
 
-[AZURE.INCLUDE [virtual-network-deploy-multinic-intro-include.md](../includes/virtual-network-deploy-multinic-intro-include.md)]
+[AZURE.INCLUDE [virtual-network-deploy-multinic-intro-include.md](../../includes/virtual-network-deploy-multinic-intro-include.md)]
 
-[AZURE.INCLUDE [azure-arm-classic-important-include](../includes/learn-about-deployment-models-rm-include.md)] [classic deployment model](/documentation/articles/virtual-network-deploy-multinic-classic-cli/).
+[AZURE.INCLUDE [azure-arm-classic-important-include](../../includes/learn-about-deployment-models-rm-include.md)] [classic deployment model](/documentation/articles/virtual-network-deploy-multinic-classic-cli/).
 
-[AZURE.INCLUDE [virtual-network-deploy-multinic-scenario-include.md](../includes/virtual-network-deploy-multinic-scenario-include.md)]
+[AZURE.INCLUDE [virtual-network-deploy-multinic-scenario-include.md](../../includes/virtual-network-deploy-multinic-scenario-include.md)]
 
 Currently, you cannot have VMs with a single NIC and VMs with multiple NICs in the same resource group. Therefore, you need to implement the back end servers in a different resource group than all other components. The steps below use a resource group named *IaaSStory* for the main resource group, and *IaaSStory-BackEnd* for the back end servers.
 
@@ -35,7 +40,7 @@ Before you can deploy the back end servers, you need to deploy the main resource
 
 > [AZURE.IMPORTANT] Make sure your storage account names are unique. You cannot have duplicate storage account names in Azure.
 
-[AZURE.INCLUDE [azure-cli-prerequisites-include.md](../includes/azure-cli-prerequisites-include.md)]
+[AZURE.INCLUDE [azure-cli-prerequisites-include.md](../../includes/azure-cli-prerequisites-include.md)]
 
 ## Deploy the back end VMs
 
@@ -84,7 +89,7 @@ You can download the full bash script used [here](https://raw.githubusercontent.
 		                --name $backendSubnetName|grep Id)"
 		subnetId=${subnetId#*/}
 
->[AZURE.TIP] The first command above uses [grep](http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_04_02.html) and [string manipulation](http://tldp.org/LDP/abs/html/string-manipulation.html) (more specifically, substring removal).
+	>[AZURE.TIP] The first command above uses [grep](http://tldp.org/LDP/Bash-Beginners-Guide/html/sect_04_02.html) and [string manipulation](http://tldp.org/LDP/abs/html/string-manipulation.html) (more specifically, substring removal).
 
 4. Retrieve the ID for the `NSG-RemoteAccess` NSG. You need to do this since the NICs to be associated to this NSG are in a different resource group.
 

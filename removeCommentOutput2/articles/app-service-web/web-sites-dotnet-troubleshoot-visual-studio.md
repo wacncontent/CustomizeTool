@@ -1,7 +1,7 @@
 <!-- not suitable for Mooncake -->
 
 <properties 
-	pageTitle="Troubleshoot a web app in Azure using Visual Studio" 
+	pageTitle="Troubleshoot a web app in Azure App Service using Visual Studio" 
 	description="Learn how to troubleshoot an Azure web app by using remote debugging, tracing, and logging tools that are built in to Visual Studio 2013." 
 	services="app-service" 
 	documentationCenter=".net" 
@@ -9,18 +9,24 @@
 	manager="wpickett" 
 	editor=""/>
 
-<tags
-	ms.service="app-service"
-	ms.date="04/28/2016"
-	wacn.date=""/>
+<tags 
+	ms.service="app-service" 
+	ms.workload="na" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="dotnet" 
+	ms.topic="article" 
+	ms.date="08/29/2016" 
+	wacn.date="" 
+	ms.author="rachelap"/>
 
-# Troubleshoot a web app in Azure using Visual Studio
+# Troubleshoot a web app in Azure App Service using Visual Studio
 
 ## Overview
 
-This tutorial shows how to use Visual Studio tools that help debug a web app in [Azure Web App](/documentation/services/web-sites/), by running in [debug mode](http://www.visualstudio.com/get-started/debug-your-app-vs.aspx) remotely or by viewing application logs and web server logs.
+This tutorial shows how to use Visual Studio tools that help debug a web app in [App Service](/documentation/articles/app-service-changes-existing-services/), by running in [debug mode](http://www.visualstudio.com/get-started/debug-your-app-vs.aspx) remotely or by viewing application logs and web server logs.
 
-[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)]
+[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
+
 You'll learn:
 
 * Which Azure web app management functions are available in Visual Studio.
@@ -44,7 +50,7 @@ The streaming logs feature only works for applications that target .NET Framewor
 
 ## <a name="sitemanagement"></a>Web app configuration and management
 
-Visual Studio provides access to a subset of the web app management functions and configuration settings available in the [Azure Portal](https://manage.windowsazure.cn/). In this section you'll see what's available by using **Server Explorer**. To see the latest Azure integration features, try out **Cloud Explorer** also. You can open both windows from the **View** menu. 
+Visual Studio provides access to a subset of the web app management functions and configuration settings available in the [Azure Portal](/documentation/articles/app-service-web-app-azure-portal/). In this section you'll see what's available by using **Server Explorer**. To see the latest Azure integration features, try out **Cloud Explorer** also. You can open both windows from the **View** menu. 
 
 1. If you aren't already signed in to Azure in Visual Studio, click the **Connect to Azure** button in **Server Explorer**.
 
@@ -54,13 +60,14 @@ Visual Studio provides access to a subset of the web app management functions an
 	> If you download a subscription file, save it to a folder outside your source code directories (for example, in the Downloads folder), and then delete it once the import has completed. A malicious user who gains access to the subscription file can edit, create, and delete your Azure services.
 
 	For more information about connecting to Azure resources from Visual Studio, see [Manage Accounts, Subscriptions, and Administrative Roles](https://msdn.microsoft.com/zh-cn/library/azure/hh531793.aspx).
-2. In **Server Explorer**, expand **Azure** and expand **App Services**.
+
+2. In **Server Explorer**, expand **Azure** and expand **App Service**.
 
 3. Expand the resource group that includes the web app that you created in [Getting started with Azure and ASP.NET][GetStarted], and then right-click the web app node and click **View Settings**.
 
 	![View Settings in Server Explorer](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-viewsettings.png)
 
-	The **App Services** tab appears, and you can see there the web app management and configuration tasks that are available in Visual Studio.
+	The **Azure Web App** tab appears, and you can see there the web app management and configuration tasks that are available in Visual Studio.
 
 	![Azure Web App window](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-configtab.png)
 
@@ -88,7 +95,7 @@ You typically deploy a web project with the `customErrors` flag in the Web.confi
 
 Frequently the easiest way to find the cause of the error is to enable detailed error messages, which the first of the preceding screenshots explains how to do. That requires a change in the deployed Web.config file. You could edit the *Web.config* file in the project and redeploy the project, or create a [Web.config transform](http://www.asp.net/mvc/tutorials/deployment/visual-studio-web-deployment/web-config-transformations) and deploy a debug build, but there's a quicker way: in **Solution Explorer** you can directly view and edit files in the remote web app by using the *remote view* feature.
 
-1. In **Server Explorer**, expand **Azure**, expand **App Services**, expand the resource group that your web app is located in, and then expand the node for your web app.
+1. In **Server Explorer**, expand **Azure**, expand **App Service**, expand the resource group that your web app is located in, and then expand the node for your web app.
 
 	You see nodes that give you access to the web app's content files and log files.
 
@@ -100,7 +107,7 @@ Frequently the easiest way to find the cause of the error is to enable detailed 
 
 3. Add the following line to the `system.web` element:
 
-	`<customErrors mode="off"></customErrors>`
+	`<customErrors mode="Off"></customErrors>`
 
 	![Edit Web.config](./media/web-sites-dotnet-troubleshoot-visual-studio/webconfigedit.png)
 
@@ -195,7 +202,7 @@ Remote debugging only works with continuous WebJobs. Scheduled and on-demand Web
 
 	Visual Studio deploys the web and WebJob projects, and your browser opens to the Azure URL of your web app.
 
-5. In **Server Explorer** expand **Azure > Azure > your resource group > your web app > WebJobs > Continuous**, and then right-click **ContosoAdsWebJob**.
+5. In **Server Explorer** expand **Azure > App Service > your resource group > your web app > WebJobs > Continuous**, and then right-click **ContosoAdsWebJob**.
 
 7. Click **Attach Debugger**. 
 
@@ -501,7 +508,7 @@ Any logs that you can monitor in the **Output** window can also be downloaded as
 
 ## <a name="storagelogs"></a>View storage logs
 
-Application tracing logs can also be sent to an Azure storage account, and you can view them in Visual Studio. To do that you'll create a storage account, enable storage logs in the Classic Management Portal, and view them in the **Logs** tab of the **App Services** window.
+Application tracing logs can also be sent to an Azure storage account, and you can view them in Visual Studio. To do that you'll create a storage account, enable storage logs in the Classic Management Portal, and view them in the **Logs** tab of the **Azure Web App** window.
 
 You can send logs to any or all of three destinations:
 
@@ -539,7 +546,7 @@ Storage accounts offer more storage and longer-lasting retention for logs compar
 
 	![New storage account](./media/web-sites-dotnet-troubleshoot-visual-studio/newstorage.png)	
 
-1. In the Visual Studio **App Services** window, click the **Logs** tab, and then click **Configure Logging in Management Portal**.
+1. In the Visual Studio **Azure Web App** window, click the **Logs** tab, and then click **Configure Logging in Management Portal**.
 
     <!-- todo:screenshot of new portal if the VS page link goes to new portal -->
 	![Configure logging](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-configlogging.png)
@@ -566,7 +573,7 @@ Storage accounts offer more storage and longer-lasting retention for logs compar
 
 	The logging information produced by browsing these web pages will be written to the storage account.
 
-8. In the **Logs** tab of the **App Services** window in Visual Studio, click **Refresh** under **Diagnostic Summary**.
+8. In the **Logs** tab of the **Azure Web App** window in Visual Studio, click **Refresh** under **Diagnostic Summary**.
 
 	![Click Refresh](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-refreshstorage.png)
 
@@ -602,7 +609,7 @@ You can enable failed request tracing by using Visual Studio, but you can't view
 
 You can view failed request tracing logs in a browser directly via FTP or locally after using an FTP tool to download them to your local computer. In this section you'll view them in a browser directly.
 
-1. In the **Configuration** tab of the **App Services** window that you opened from **Server Explorer**, change **Failed Request Tracing** to **On**, and then click **Save**.
+1. In the **Configuration** tab of the **Azure Web App** window that you opened from **Server Explorer**, change **Failed Request Tracing** to **On**, and then click **Save**.
 
 	![Enable failed request tracing](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-failedrequeston.png)
 
@@ -610,11 +617,9 @@ You can view failed request tracing logs in a browser directly via FTP or locall
 
 	This causes a failed request tracing log to be created, and the following steps show how to view or download the log.
 
-2. In Visual Studio, in the **Configuration** tab of the **App Services** window, click **Open in Management Portal**.
+2. In Visual Studio, in the **Configuration** tab of the **Azure Web App** window, click **Open in Management Portal**.
 
 3. In the [Azure Portal](https://portal.azure.cn) **Settings** blade for your web app, click **Deployment credentials**, and then enter a new user name and password.
-
-
 
 	![New FTP user name and password](./media/web-sites-dotnet-troubleshoot-visual-studio/tws-enterftpcredentials.png)
 
@@ -659,7 +664,7 @@ You've seen how Visual Studio makes it easy to view logs created by an Azure web
 
 ### Azure web app troubleshooting
 
-For more information about troubleshooting web apps in Azure, see the following resources:
+For more information about troubleshooting web apps in Azure App Service, see the following resources:
 
 * [How to monitor web apps](/documentation/articles/web-sites-monitor/)
 * [Investigating Memory Leaks in Azure Web Apps with Visual Studio 2013](http://blogs.msdn.com/b/visualstudioalm/archive/2013/12/20/investigating-memory-leaks-in-azure-web-sites-with-visual-studio-2013.aspx). Microsoft ALM blog post about Visual Studio features for analyzing managed memory issues.
@@ -674,12 +679,16 @@ For help with a specific troubleshooting question, start a thread in one of the 
 ### Debugging in Visual Studio 
 
 For more information about how to use debug mode in Visual Studio, see the [Debugging in Visual Studio](http://msdn.microsoft.com/zh-cn/library/vstudio/sc65sadd.aspx) MSDN topic and [Debugging Tips with Visual Studio 2010](http://weblogs.asp.net/scottgu/archive/2010/08/18/debugging-tips-with-visual-studio-2010.aspx).
+
 ### Remote debugging in Azure
+
 For more information about remote debugging for Azure web apps and WebJobs, see the following resources:
-* [Introduction to Remote Debugging Azure Web Apps](/blog/2014/05/06/introduction-to-remote-debugging-on-azure-web-sites/).
-* [Introduction to Remote Debugging Azure Web Apps part 2 - Inside Remote debugging](/blog/2014/05/07/introduction-to-remote-debugging-azure-web-sites-part-2-inside-remote-debugging/)
-* [Introduction to Remote Debugging on Azure Web Apps part 3 - Multi-Instance environment and GIT](/blog/2014/05/08/introduction-to-remote-debugging-on-azure-web-sites-part-3-multi-instance-environment-and-git/)
+
+* [Introduction to Remote Debugging Azure App Service Web Apps](/blog/2014/05/06/introduction-to-remote-debugging-on-azure-web-sites/).
+* [Introduction to Remote Debugging Azure App Service Web Apps part 2 - Inside Remote debugging](/blog/2014/05/07/introduction-to-remote-debugging-azure-web-sites-part-2-inside-remote-debugging/)
+* [Introduction to Remote Debugging on Azure App Service Web Apps part 3 - Multi-Instance environment and GIT](/blog/2014/05/08/introduction-to-remote-debugging-on-azure-web-sites-part-3-multi-instance-environment-and-git/)
 * [WebJobs Debugging (video)](https://www.youtube.com/watch?v=ncQm9q5ZFZs&list=UU_SjTh-ZltPmTYzAybypB-g&index=1)
+
 If your web app uses an Azure Web API or Mobile Services back-end and you need to debug that, see [Debugging .NET Backend in Visual Studio](http://blogs.msdn.com/b/azuremobile/archive/2014/03/14/debugging-net-backend-in-visual-studio.aspx).
 
 ### Tracing in ASP.NET applications

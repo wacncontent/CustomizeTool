@@ -10,8 +10,13 @@
 
 <tags
 	ms.service="virtual-machines-linux"
+	ms.devlang="NA"
+	ms.topic="article"
+	ms.tgt_pltfrm="vm-linux"
+	ms.workload="infrastructure-services"
 	ms.date="06/27/2016"
-	wacn.date=""/>
+	wacn.date=""
+	ms.author="rasquill"/>
 
 
 
@@ -19,14 +24,14 @@
 
 Find all the documentation you need to create and manage Linux-based virtual machines in the classic deployment model.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]
 
 ## Get Started
 - [Introduction for Linux on Azure](/documentation/articles/virtual-machines-linux-intro-on-azure/)
 - [Frequently asked question about Azure Virtual Machines created with the classic deployment model](/documentation/articles/virtual-machines-linux-classic-faq/)
 - [About images for virtual machines](/documentation/articles/virtual-machines-linux-classic-about-images/)
 - [Uploading your own Distro Image](/documentation/articles/virtual-machines-linux-classic-create-upload-vhd/) (and also instructions using an [Azure-Endorsed Distribution](/documentation/articles/virtual-machines-linux-endorsed-distros/))
-- [Log on to a Linux VM Using the Azure Classic Management Portal](/documentation/articles/virtual-machines-linux-classic-log-on/)
+- [Log on to a Linux VM Using the Azure Classic Management Portal](/documentation/articles/virtual-machines-linux-mac-create-ssh-keys/)
 
 ## Set up
 
@@ -35,7 +40,7 @@ Find all the documentation you need to create and manage Linux-based virtual mac
 
 ## Tutorials
 
-- [Install the LAMP Stack on a Linux virtual machine in Azure](/documentation/articles/virtual-machines-linux-install-lamp-stack/)
+- [Install the LAMP Stack on a Linux virtual machine in Azure](/documentation/articles/virtual-machines-linux-create-lamp-stack/)
 - [Ruby on Rails Web application on an Azure VM](/documentation/articles/virtual-machines-linux-classic-ruby-rails-web-app/)
 - [How to: Install Apache Qpid Proton-C for AMQP and Service Bus](/documentation/articles/service-bus-amqp-apache/)
 
@@ -67,7 +72,7 @@ Find all the documentation you need to create and manage Linux-based virtual mac
 
 
 ## Planning
-- [Azure infrastructure services implementation guidelines](/documentation/articles/virtual-machines-linux-infrastructure-service-guidelines/)
+- [Azure infrastructure services implementation guidelines](/documentation/articles/virtual-machines-linux-infrastructure-subscription-accounts-guidelines/)
 - [Selecting Linux Usernames](/documentation/articles/virtual-machines-linux-usernames/)
 - [How to configure an availability set for virtual machines in the classic deployment model](/documentation/articles/virtual-machines-linux-classic-configure-availability/)
 - [How to Schedule Planned Maintenance on Azure VMs](/documentation/articles/virtual-machines-linux-planned-maintenance-schedule/)
@@ -83,7 +88,7 @@ Find all the documentation you need to create and manage Linux-based virtual mac
 
 ## Management
 
-- [SSH](/documentation/articles/virtual-machines-linux-ssh-from-linux/)
+- [SSH](/documentation/articles/virtual-machines-linux-mac-create-ssh-keys/)
 - [How to Reset a Password or SSH Properties for Linux](/documentation/articles/virtual-machines-linux-classic-reset-access/)
 - [Using Root](/documentation/articles/virtual-machines-linux-use-root-privileges/)
 
@@ -160,7 +165,7 @@ The following links are for Microsoft blogs, Technet pages, and external sites r
 
 - [Quickstart template: Spin up a SLURM cluster](https://github.com/Azure/azure-quickstart-templates/tree/master/slurm)
  (and [blog post](http://blogs.technet.com/b/windowshpc/archive/2015/06/06/deploy-a-slurm-cluster-on-azure.aspx))
-- [Quickstart template: Create an HPC cluster with Linux compute nodes](https://azure.microsoft.com/documentation/templates/create-hpc-cluster-linux-cn/)
+- [Quickstart template: Create an HPC cluster with Linux compute nodes](https://github.com/Azure/azure-quickstart-templates/tree/master/create-hpc-cluster-linux-cn/)
 
 ### Devops, management, and optimization
 

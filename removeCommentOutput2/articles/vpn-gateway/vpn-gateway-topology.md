@@ -9,18 +9,16 @@
    tags="azure-resource-manager,azure-service-management"/>
 <tags
 	ms.service="vpn-gateway"
-	ms.date="07/13/2016"
+	ms.date="07/19/2016"
 	wacn.date=""/>
 
-# Azure VPN Gateway connection topologies
+# Azure VPN Gateway connections
 
 This article shows the baseline VPN gateway connection topologies. You can use the graphics and descriptions to help select the configuration topology to match your requirements. While this article goes through the main baseline topologies, it's possible to build more complex topologies using the diagrams as a guideline.
 
 Each topology contains a table listing the deployment model that the topology is available for, the deployment tools that you can use to configure each topology, and will link directly to an article if an article is available. We update the tables frequently as new articles and deployment tools become available for you to use.
 
-If you want more information about VPN gateways, see [About VPN Gateways](/documentation/articles/vpn-gateway-about-vpngateways/).
-
-
+After deciding on the connection that you want to create, the instructions that you use to create your VPN gateway will depend on the deployment model that you used to create your virtual network. For example, if you created your VNet using the classic deployment model, you'll use the guidelines and instructions for the classic deployment model to create and configure your VPN gateway. You can't create a Resource Manager VPN gateway for a classic deployment model virtual network. See [Understanding Resource Manager and classic deployment models](/documentation/articles/resource-manager-deployment-model/) for more information about deployment models.
 
 ## Site-to-Site and Multi-Site
 
@@ -41,7 +39,7 @@ You can create and configure more than one S2S VPN connections to your on-premis
 
 **Available deployment models and methods**
 
-[AZURE.INCLUDE [vpn-gateway-table-site-to-site](../includes/vpn-gateway-table-site-to-site-include.md)] 
+[AZURE.INCLUDE [vpn-gateway-table-site-to-site](../../includes/vpn-gateway-table-site-to-site-include.md)] 
 
 ## VNet-to-VNet
 
@@ -57,7 +55,29 @@ Azure currently has two deployment models: Azure Service Management (referred to
 
 **Available deployment models and methods**
 
-[AZURE.INCLUDE [vpn-gateway-table-vnet-to-vnet](../includes/vpn-gateway-table-vnet-to-vnet-include.md)] 
+[AZURE.INCLUDE [vpn-gateway-table-vnet-to-vnet](../../includes/vpn-gateway-table-vnet-to-vnet-include.md)] 
+
+
+## Point-to-Site
+
+A Point-to-Site configuration allows you to create a secure connection to your virtual network from a client computer, individually. A VPN connection is established by starting the connection from the client computer. This is a useful solution when you want to connect to your VNet from a remote location, such as from home or a conference, or when you only have a few clients that need to connect to a virtual network. 
+
+A Point-to-Site connection is a VPN connection over SSTP (Secure Socket Tunneling Protocol). Point-to-Site connections do not require a VPN device or a public-facing IP address to work. 
+
+**P2S diagram**
+
+![Point-to-site connection](./media/vpn-gateway-topology/point2site.png "point-to-site")
+
+**Available deployment models and methods**
+
+[AZURE.INCLUDE [vpn-gateway-table-point-to-site](../../includes/vpn-gateway-table-point-to-site-include.md)] 
+
+
+##ExpressRoute
+
+[AZURE.INCLUDE [expressroute-intro](../../includes/expressroute-intro-include.md)]
+
+For more information about ExpressRoute, see the [ExpressRoute technical overview](/documentation/articles/expressroute-introduction/).
 
 
 
@@ -73,26 +93,14 @@ ExpressRoute is a direct, dedicated connection to Microsoft Services, including 
 
 **Available deployment models and methods**
 
-[AZURE.INCLUDE [vpn-gateway-table-coexist](../includes/vpn-gateway-table-coexist-include.md)] 
+[AZURE.INCLUDE [vpn-gateway-table-coexist](../../includes/vpn-gateway-table-coexist-include.md)] 
 
 
-## Point-to-Site
 
-A Point-to-Site configuration allows you to create a secure connection to your virtual network from a client computer, individually. A VPN connection is established by starting the connection from the client computer. This is a useful solution when you want to connect to your VNet from a remote location, such as from home or a conference, or when you only have a few clients that need to connect to a virtual network. 
-
-A Point-to-Site connection is a VPN connection over SSTP (Secure Socket Tunneling Protocol). Point-to-Site connections do not require a VPN device or a public-facing IP address to work. 
-
-**P2S diagram**
-
-![Point-to-site connection](./media/vpn-gateway-topology/point2site.png "point-to-site")
-
-**Available deployment models and methods**
-
-[AZURE.INCLUDE [vpn-gateway-table-point-to-site](../includes/vpn-gateway-table-point-to-site-include.md)] 
 
 ## Next steps
 
-You'll want to become familiar with the items in the [About VPN Gateways](/documentation/articles/vpn-gateway-about-vpngateways/) and [VPN Gateway FAQ](/documentation/articles/vpn-gateway-vpn-faq/) articles to better understand VPN gateways before moving forward with planning and designing your connection.
+You'll want to become familiar with the items in the [About VPN Gateways](/documentation/articles/vpn-gateway-about-vpngateways/) and [VPN Gateway FAQ](/documentation/articles/vpn-gateway-vpn-faq/) articles to better understand VPN Gateway settings.
 
 
 

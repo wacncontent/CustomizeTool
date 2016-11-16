@@ -10,17 +10,22 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="05/09/2016"
-	wacn.date=""/>
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-windows"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/27/2016"
+	wacn.date=""
+	ms.author="cynthn"/>
 
 
 
 # How to detach a disk from a Windows virtual machine
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]
 
 
-[AZURE.INCLUDE [howto-detach-disk-windows-linux](../includes/howto-detach-disk-windows-linux.md)]
+[AZURE.INCLUDE [howto-detach-disk-windows-linux](../../includes/howto-detach-disk-windows-linux.md)]
 
 ## Additional resources
 

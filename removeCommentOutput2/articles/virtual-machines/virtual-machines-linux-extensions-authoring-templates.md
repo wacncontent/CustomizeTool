@@ -1,4 +1,3 @@
-
 <properties
    pageTitle="Authoring templates with Linux VM extensions | Azure"
    description="Learn about authoring Azure Resource Manager templates with extensions for Linux VMs"
@@ -10,18 +9,18 @@
    tags="azure-resource-manager"/>
 
 <tags
-	ms.service="virtual-machines-linux"
-	ms.date="03/29/2016"
-	wacn.date=""/>
+   ms.service="virtual-machines-linux"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="vm-linux"
+   ms.workload="infrastructure-services"
+   ms.date="03/29/2016"
+   wacn.date=""
+   ms.author="kundanap"/>
 
 # Authoring Azure Resource Manager templates with Linux VM extensions
 
-[AZURE.INCLUDE [arm-api-version-cli](../includes/arm-api-version-cli.md)]
-
-> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the Resource Manager deployment model, which Azure recommends for most new deployments instead of the classic deployment model.
- 
-
-[AZURE.INCLUDE [virtual-machines-common-extensions-authoring-templates](../includes/virtual-machines-common-extensions-authoring-templates.md)]
+[AZURE.INCLUDE [virtual-machines-common-extensions-authoring-templates](../../includes/virtual-machines-common-extensions-authoring-templates.md)]
 
 From Azure CLI, run the following commnad:
 

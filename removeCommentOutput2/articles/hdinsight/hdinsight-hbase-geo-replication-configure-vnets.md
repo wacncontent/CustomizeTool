@@ -4,19 +4,24 @@
    services="hdinsight,virtual-network" 
    documentationCenter="" 
    authors="mumian" 
-   manager="paulettm" 
+   manager="jhubbard" 
    editor="cgronlun"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="06/28/2016"
-	wacn.date=""/>
+   ms.service="hdinsight"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="big-data" 
+   ms.date="06/28/2016" 
+   wacn.date=""
+   ms.author="jgao"/>
 
 # Configure a VPN connection between two Azure virtual networks  
 
 > [AZURE.SELECTOR]
-- [Configure VPN connectivity](/documentation/articles/hdinsight-hbase-geo-replication-configure-VNETs/)
-- [Configure DNS](/documentation/articles/hdinsight-hbase-geo-replication-configure-DNS/)
+- [Configure VPN connectivity](/documentation/articles/hdinsight-hbase-geo-replication-configure-vnets/)
+- [Configure DNS](/documentation/articles/hdinsight-hbase-geo-replication-configure-dns/)
 - [Configure HBase replication](/documentation/articles/hdinsight-hbase-geo-replication/) 
 
 Azure virtual network site-to-site connectivity uses a VPN gateway to provide a secure tunnel using Ipsec/IKE. The VNets can be in different subscriptions and different regions. You can even combine VNet to VNet communication with multi-site configurations. There are several reasons for VNet to VNet connectivity:
@@ -47,13 +52,14 @@ Before you begin this tutorial, you must have the following:
 
 	Before running PowerShell scripts, make sure you are connected to your Azure subscription using the following cmdlet:
 
-		Add-AzureAccount
+		Clear-AzureProfile
+		Import-AzurePublishSettingsFile -PublishSettingsFile path/to/<subscription name>-<date>-credentials.publishsettings
 
 	If you have multiple Azure subscriptions, use the following cmdlet to set the current subscription:
 
 		Select-AzureSubscription <AzureSubscriptionName>
 		
-	[AZURE.INCLUDE [upgrade-powershell](../includes/hdinsight-use-latest-powershell.md)]
+	[AZURE.INCLUDE [upgrade-powershell](../../includes/hdinsight-use-latest-powershell.md)]
 
 
 >[AZURE.NOTE] Azure service names and virtual machine names must be unique. The name used in this tutorial is Contoso-[Azure Service/VM name]-[CN/CE]. For example, Contoso-VNet-CN is the Azure virtual network in the China North data center; Contoso-DNS-CE is the DNS server VM in the East U.S. datacenter. You must come up with your own names.
@@ -191,7 +197,7 @@ There are two parts in this configuration. First you configure a VNet site-to-si
 
 **To create a VPN gateway for Contoso-VNet-CN**
 
-- Repeat the last two procedure to configure the Contoso-VNet-CE site-to-site connectivity to Contoso-LNet-CN, and the creat a VPN gateway for Contoso-Vnet-US. When you are done, you will have the VPN gateway IP address for Contoso-VNet-CE.
+- Repeat the last two procedure to configure the Contoso-VNet-CE site-to-site connectivity to Contoso-LNet-CN, and the creat a VPN gateway for Contoso-Vnet-CE. When you are done, you will have the VPN gateway IP address for Contoso-VNet-CE.
 
 
 ### Set the VPN device IP addresses for local networks
@@ -202,7 +208,7 @@ In the last section, you create a VPN gateway for each of the VNets. You have go
 1.	From the Azure Classic Management Portal, click **NETWORKS** on the left pane.
 2.	Click **LOCAL NETWORKS** from the top.
 3.	Click **Contoso-LNet-CN**, and then click **EDIT** on the bottom.
-4.	Update **VPN DEVICE IP ADDRESS**.  This is the address you get from the DASHBOARD tab of Contoso-VNET-EU.
+4.	Update **VPN DEVICE IP ADDRESS**.  This is the address you get from the DASHBOARD tab of Contoso-VNET-CN.
 5.	Click the right button.
 6.	Click the check button.
 
@@ -221,8 +227,8 @@ The Vnet gateways use a shared key to authenticate connections between the virtu
 
 		Add-AuzreAccount
 		Select-AzureSubscription -[AzureSubscriptionName]
-		Set-AzureVNetGatewayKey -VNetName ContosoVNet-EU -LocalNetworkSiteName Contoso-LNet-CE -SharedKey A1b2C3D4
-		Set-AzureVNetGatewayKey -VNetName ContosoVNet-US -LocalNetworkSiteName Contoso-LNet-CN -SharedKey A1b2C3D4 
+		Set-AzureVNetGatewayKey -VNetName ContosoVNet-CN -LocalNetworkSiteName Contoso-LNet-CE -SharedKey A1b2C3D4
+		Set-AzureVNetGatewayKey -VNetName ContosoVNet-CE -LocalNetworkSiteName Contoso-LNet-CN -SharedKey A1b2C3D4 
 
 
 ##Check the VPN connection 
@@ -257,9 +263,9 @@ In this tutorial you have learned how to configure a VPN connection between two 
 
 
 [hdinsight-hbase-replication]: /documentation/articles/hdinsight-hbase-geo-replication/
-[hdinsight-hbase-dns]: /documentation/articles/hdinsight-hbase-geo-replication-configure-DNS/
+[hdinsight-hbase-dns]: /documentation/articles/hdinsight-hbase-geo-replication-configure-dns/
 
 
-[img-vnet-diagram]: ./media/hdinsight-hbase-geo-replication-configure-VNets/HDInsight.HBase.VPN.diagram.png
-[img-vnet-lnet-diagram]: ./media/hdinsight-hbase-geo-replication-configure-VNets/HDInsight.HBase.VPN.LNet.diagram.png
-[img-vpn-status]: ./media/hdinsight-hbase-geo-replication-configure-VNets/HDInsight.HBase.VPN.status.png 
+[img-vnet-diagram]: ./media/hdinsight-hbase-geo-replication-configure-vnets/hdinsight-hbase-vpn-diagram.png
+[img-vnet-lnet-diagram]: ./media/hdinsight-hbase-geo-replication-configure-vnets/hdinsight-hbase-vpn-lnet-diagram.png
+[img-vpn-status]: ./media/hdinsight-hbase-geo-replication-configure-vnets/hdinsight-hbase-vpn-status.png 

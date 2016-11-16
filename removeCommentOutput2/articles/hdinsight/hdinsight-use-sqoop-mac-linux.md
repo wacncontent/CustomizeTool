@@ -4,7 +4,7 @@
 	pageTitle="Use Hadoop Sqoop in Linux-based HDInsight | Azure"
 	description="Learn how to run Sqoop import and export between a Linux-based Hadoop on HDInsight cluster and an Azure SQL database."
 	editor="cgronlun"
-	manager="paulettm"
+	manager="jhubbard"
 	services="hdinsight"
 	documentationCenter=""
 	authors="Blackmist"
@@ -12,12 +12,17 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="05/24/2016"
-	wacn.date=""/>
+	ms.workload="big-data"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="10/03/2016"
+	wacn.date=""
+	ms.author="larryfr"/>
 
 #Use Sqoop with Hadoop in HDInsight (SSH)
 
-[AZURE.INCLUDE [sqoop-selector](../includes/hdinsight-selector-use-sqoop.md)]
+[AZURE.INCLUDE [sqoop-selector](../../includes/hdinsight-selector-use-sqoop.md)]
 
 Learn how to use Sqoop to import and export between a Linux-based HDInsight cluster and Azure SQL Database or SQL Server database.
 
@@ -104,9 +109,9 @@ Before you begin this tutorial, you must have the following:
 
 4. Use the following command to export data from **hivesampletable** to the **mobiledata** table:
 
-        sqoop export --connect 'jdbc:sqlserver://<serverName>.database.chinacloudapi.cn:1433;database=sqooptest' --username <adminLogin> --password <adminPassword> --table 'mobiledata' --export-dir 'wasb:///hive/warehouse/hivesampletable' --fields-terminated-by '\t' -m 1
+        sqoop export --connect 'jdbc:sqlserver://<serverName>.database.chinacloudapi.cn:1433;database=sqooptest' --username <adminLogin> --password <adminPassword> --table 'mobiledata' --export-dir 'wasbs:///hive/warehouse/hivesampletable' --fields-terminated-by '\t' -m 1
 
-    This instructs Sqoop to connect to SQL Database, to the **sqooptest** database, and export data from the **wasb:///hive/warehouse/hivesampletable** (physical files for the *hivesampletable*,) to the **mobiledata** table.
+    This instructs Sqoop to connect to SQL Database, to the **sqooptest** database, and export data from the **wasbs:///hive/warehouse/hivesampletable** (physical files for the *hivesampletable*,) to the **mobiledata** table.
 
 5. After the command completes, use the following to connect to the database using TSQL:
 
@@ -121,15 +126,15 @@ Before you begin this tutorial, you must have the following:
 
 ##Sqoop import
 
-1. Use the following to import data from the **mobiledata** table in SQL Database, to the **wasb:///tutorials/usesqoop/importeddata** directory on HDInsight:
+1. Use the following to import data from the **mobiledata** table in SQL Database, to the **wasbs:///tutorials/usesqoop/importeddata** directory on HDInsight:
 
-        sqoop import --connect 'jdbc:sqlserver://<serverName>.database.chinacloudapi.cn:1433;database=sqooptest' --username <adminLogin> --password <adminPassword> --table 'mobiledata' --target-dir 'wasb:///tutorials/usesqoop/importeddata' --fields-terminated-by '\t' --lines-terminated-by '\n' -m 1
+        sqoop import --connect 'jdbc:sqlserver://<serverName>.database.chinacloudapi.cn:1433;database=sqooptest' --username <adminLogin> --password <adminPassword> --table 'mobiledata' --target-dir 'wasbs:///tutorials/usesqoop/importeddata' --fields-terminated-by '\t' --lines-terminated-by '\n' -m 1
 
     The imported data will have fields that are separated by a tab character, and the lines will be terminated by a new-line character.
 
 2. Once the import has completed, use the following command to list out the data in the new directory:
 
-        hadoop fs -text wasb:///tutorials/usesqoop/importeddata/part-m-00000
+        hadoop fs -text wasbs:///tutorials/usesqoop/importeddata/part-m-00000
 
 ##Using SQL Server
 
@@ -143,7 +148,7 @@ You can also use Sqoop to import and export data from SQL Server, either in your
 
     > [AZURE.NOTE] For **point-to-site** virtual networks, SQL Server must be running the VPN client configuration application, which is available from the **Dashboard** of your Azure virtual network configuration.
 
-    For more information on creating and configuring a virtual network, see [Virtual Network Configuration Tasks](/home/features/virtual-machines/).
+    For more information Azure Virtual Network, see [Virtual Network Overview](/documentation/articles/virtual-networks-overview/).
 
 * SQL Server must be configured to allow SQL authentication. For more information, see [Choose an Authentication Mode](https://msdn.microsoft.com/ms144284.aspx)
 
@@ -168,7 +173,13 @@ You can also use Sqoop to import and export data from SQL Server, either in your
 
 * When connecting to the SQL Server from HDInsight, you may have to use the IP address of the SQL Server unless you have configured a Domain Name System (DNS) to resolve names on the Azure Virtual Network. For example:
 
-        sqoop import --connect 'jdbc:sqlserver://10.0.1.1:1433;database=sqooptest' --username <adminLogin> --password <adminPassword> --table 'mobiledata' --target-dir 'wasb:///tutorials/usesqoop/importeddata' --fields-terminated-by '\t' --lines-terminated-by '\n' -m 1
+        sqoop import --connect 'jdbc:sqlserver://10.0.1.1:1433;database=sqooptest' --username <adminLogin> --password <adminPassword> --table 'mobiledata' --target-dir 'wasbs:///tutorials/usesqoop/importeddata' --fields-terminated-by '\t' --lines-terminated-by '\n' -m 1
+
+##Limitations
+
+* Bulk export - With Linux-based HDInsight, the Sqoop connector used to export data to Microsoft SQL Server or Azure SQL Database does not currently support bulk inserts.
+
+* Batching - With Linux-based HDInsight, When using the `-batch` switch when performing inserts, Sqoop will perform multiple inserts instead of batching the insert operations.
 
 ##Next steps
 

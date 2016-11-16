@@ -10,12 +10,17 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="06/24/2016"
-	wacn.date=""/>
+	ms.workload="web"
+	ms.tgt_pltfrm="vm-windows"
+	ms.devlang="Java"
+	ms.topic="article"
+	ms.date="08/11/2016"
+	wacn.date=""
+	ms.author="robmcm"/>
 
 # How to run a Java application server on a virtual machine created with the classic deployment model
 
-> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager model.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]
 
 
 With Azure, you can use a virtual machine to provide server capabilities. As an example, a virtual machine running on Azure can be configured to host a Java application server, such as Apache Tomcat. After you complete this guide, you will have an understanding of how to create a virtual machine running on Azure and configure it to run a Java application server.
@@ -32,7 +37,7 @@ For the purposes of this tutorial, an Apache Tomcat application server will be i
 
 ![Virtual machine running Apache Tomcat][virtual_machine_tomcat]
 
-[AZURE.INCLUDE [create-account-and-vms-note](../includes/create-account-and-vms-note.md)]
+[AZURE.INCLUDE [create-account-and-vms-note](../../includes/create-account-and-vms-note.md)]
 
 ## To create a virtual machine
 

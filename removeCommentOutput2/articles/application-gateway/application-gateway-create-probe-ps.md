@@ -3,76 +3,66 @@
    description="Learn how to create a custom probe for Application Gateway by using PowerShell in Resource Manager"
    services="application-gateway"
    documentationCenter="na"
-   authors="joaoma"
+   authors="georgewallace"
    manager="carmonm"
    editor=""
    tags="azure-resource-manager"
 />
-<tags
-	ms.service="application-gateway"
-	ms.date="06/07/2016"
-	wacn.date=""/>
+<tags  
+   ms.service="application-gateway"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="09/06/2016"
+   wacn.date=""
+   ms.author="gwallace" />
 
 # Create a custom probe for Azure Application Gateway by using PowerShell for Azure Resource Manager
 
-[AZURE.INCLUDE [azure-probe-intro-include](../includes/application-gateway-create-probe-intro-include.md)]
+> [AZURE.SELECTOR]
+- [Azure Portal Preview](/documentation/articles/application-gateway-create-probe-portal/)
+- [Azure Resource Manager PowerShell](/documentation/articles/application-gateway-create-probe-ps/)
+- [Azure Classic PowerShell](/documentation/articles/application-gateway-create-probe-classic-ps/)
+
+[AZURE.INCLUDE [azure-probe-intro-include](../../includes/application-gateway-create-probe-intro-include.md)]
 
 
 > [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the Resource Manager deployment model, which Azure recommends for most new deployments instead of the [classic deployment model](/documentation/articles/application-gateway-create-probe-classic-ps/).
 
 
-[AZURE.INCLUDE [azure-ps-prerequisites-include.md](../includes/azure-ps-prerequisites-include.md)]
+[AZURE.INCLUDE [azure-ps-prerequisites-include.md](../../includes/azure-ps-prerequisites-include.md)]
 
 
 ### Step 1
 
 Use Login-AzureRmAccount to authenticate.
 
-	[AZURE.ACOM]{
-	Login-AzureRmAccount
-	[AZURE.ACOM]}
-
-	[AZURE.ACN]{
 	Login-AzureRmAccount -EnvironmentName AzureChinaCloud
-	[AZURE.ACN]}
 
 ### Step 2
 
 Check the subscriptions for the account.
 
-		get-AzureRmSubscription
-
-You will be prompted to authenticate with your credentials.<BR>
+	Get-AzureRmSubscription
 
 ### Step 3
 
 Choose which of your Azure subscriptions to use. <BR>
 
 
-		Select-AzureRmSubscription -Subscriptionid "GUID of subscription"
+	Select-AzureRmSubscription -Subscriptionid "GUID of subscription"
 
 
 ### Step 4
 
-Create a new resource group (skip this step if you're using an existing resource group).
+Create a resource group (skip this step if you're using an existing resource group).
 
-    [AZURE.ACOM]{
     New-AzureRmResourceGroup -Name appgw-rg -location "China North"
-    [AZURE.ACOM]}
-    
-    [AZURE.ACN]{
-    New-AzureRmResourceGroup -Name appgw-rg -location "China North"
-    [AZURE.ACN]}
 
-Azure Resource Manager requires that all resource groups specify a location. This is used as the default location for resources in that resource group. Make sure that all commands to create an application gateway will use the same resource group.
+Azure Resource Manager requires that all resource groups specify a location. This location is used as the default location for resources in that resource group. Make sure that all commands to create an application gateway use the same resource group.
 
-[AZURE.ACOM]{
 In the example above, we created a resource group called "appgw-RG" and location "China North".
-[AZURE.ACOM]}
-
-[AZURE.ACN]{
-In the example above, we created a resource group called "appgw-RG" and location "China North".
-[AZURE.ACN]}
 
 ## Create a virtual network and a subnet for the application gateway
 
@@ -87,50 +77,32 @@ Assign the address range 10.0.0.0/24 to a subnet variable to be used to create a
 
 ### Step 2
 
-[AZURE.ACOM]{
 Create a virtual network named "appgwvnet" in resource group "appgw-rg" for the China North region using the prefix 10.0.0.0/16 with subnet 10.0.0.0/24.
 
 	$vnet = New-AzureRmVirtualNetwork -Name appgwvnet -ResourceGroupName appgw-rg -Location "China North" -AddressPrefix 10.0.0.0/16 -Subnet $subnet
-[AZURE.ACOM]}
-
-[AZURE.ACN]{
-Create a virtual network named "appgwvnet" in resource group "appgw-rg" for the China North region using the prefix 10.0.0.0/16 with subnet 10.0.0.0/24.
-
-	$vnet = New-AzureRmVirtualNetwork -Name appgwvnet -ResourceGroupName appgw-rg -Location "China North" -AddressPrefix 10.0.0.0/16 -Subnet $subnet
-[AZURE.ACN]}
 
 
 ### Step 3
 
 Assign a subnet variable for the next steps, which create an application gateway.
 
-	$subnet=$vnet.Subnets[0]
+	$subnet = $vnet.Subnets[0]
 
 ## Create a public IP address for the front-end configuration
 
 
-[AZURE.ACOM]{
 Create a public IP resource "publicIP01" in resource group "appgw-rg" for the China North region.
 
 	$publicip = New-AzureRmPublicIpAddress -ResourceGroupName appgw-rg -name publicIP01 -location "China North" -AllocationMethod Dynamic
-[AZURE.ACOM]}
-
-[AZURE.ACN]{
-Create a public IP resource "publicIP01" in resource group "appgw-rg" for the China North region.
-
-	$publicip = New-AzureRmPublicIpAddress -ResourceGroupName appgw-rg -name publicIP01 -location "China North" -AllocationMethod Dynamic
-[AZURE.ACN]}
 
 
 ## Create an application gateway configuration object with a custom probe
 
-You need to set up all configuration items before creating the
-application gateway. The following steps create the configuration items that are needed for an application gateway resource.
-
+You set up all configuration items before creating the application gateway. The following steps create the configuration items that are needed for an application gateway resource.
 
 ### Step 1
 
-Create an application gateway IP configuration named "gatewayIP01". When Application Gateway starts, it will pick up an IP address from the subnet configured and route network traffic to the IP addresses in the back-end IP pool. Keep in mind that each instance will take one IP address.
+Create an application gateway IP configuration named "gatewayIP01". When Application Gateway starts, it picks up an IP address from the subnet configured and route network traffic to the IP addresses in the back-end IP pool. Keep in mind that each instance takes one IP address.
 
 	$gipconfig = New-AzureRmApplicationGatewayIPConfiguration -Name gatewayIP01 -Subnet $subnet
 
@@ -138,7 +110,7 @@ Create an application gateway IP configuration named "gatewayIP01". When Applica
 ### Step 2
 
 
-Configure the back-end IP address pool named "pool01" with IP addresses "134.170.185.46, 134.170.188.221,134.170.185.50". Those will be the IP addresses that receive the network traffic that comes from the front-end IP endpoint. You will replace the IP addresses above to add your own application IP address endpoints.
+Configure the back-end IP address pool named "pool01" with IP addresses "134.170.185.46, 134.170.188.221,134.170.185.50". Those values are the IP addresses that receive the network traffic that comes from the front-end IP endpoint. You replace the IP addresses above to add your own application IP address endpoints.
 
 	$pool = New-AzureRmApplicationGatewayBackendAddressPool -Name pool01 -BackendIPAddresses 134.170.185.46, 134.170.188.221,134.170.185.50
 
@@ -150,22 +122,20 @@ The custom probe is configured in this step.
 
 The parameters used are:
 
-- **-Interval** - Configures the probe interval checks in seconds.
-- **-Timeout** - Defines the probe time-out for an HTTP response check.
-- **-Hostname and -path** - Complete URL path that is invoked by Application Gateway to determine the health of the instance. For example, if you have a website http://contoso.com/, then the custom probe can be configured for "http://contoso.com/path/custompath.htm" for probe checks to have a successful HTTP response.
-- **-UnhealthyThreshold** - The number of failed HTTP responses needed to flag the back-end instance as *unhealthy*.
+- **Interval** - Configures the probe interval checks in seconds.
+- **Timeout** - Defines the probe time-out for an HTTP response check.
+- **-Hostname and path** - Complete URL path that is invoked by Application Gateway to determine the health of the instance. For example, if you have a website http://contoso.com/, then the custom probe can be configured for "http://contoso.com/path/custompath.htm" for probe checks to have a successful HTTP response.
+- **UnhealthyThreshold** - The number of failed HTTP responses needed to flag the back-end instance as *unhealthy*.
 
 <BR>
 
 	$probe = New-AzureRmApplicationGatewayProbeConfig -Name probe01 -Protocol Http -HostName "contoso.com" -Path "/path/path.htm" -Interval 30 -Timeout 120 -UnhealthyThreshold 8
 
-
 ### Step 4
 
-Configure application gateway setting "poolsetting01" for the traffic in the back-end pool. This step also has a time-out configuration that is for the back-end pool response to an application gateway request. When a back-end response hits a time-out limit, Application Gateway will cancel the request. This is different from a probe time-out that is only for the back-end response to probe checks.
+Configure application gateway setting "poolsetting01" for the traffic in the back-end pool. This step also has a time-out configuration that is for the back-end pool response to an application gateway request. When a back-end response hits a time-out limit, Application Gateway cancels the request. This value is different from a probe time-out that is only for the back-end response to probe checks.
 
 	$poolSetting = New-AzureRmApplicationGatewayBackendHttpSettings -Name poolsetting01 -Port 80 -Protocol Http -CookieBasedAffinity Disabled -Probe $probe -RequestTimeout 80
-
 
 ### Step 5
 
@@ -205,13 +175,7 @@ Configure the instance size of the application gateway.
 
 Create an application gateway with all configuration items from the steps above. In this example, the application gateway is called "appgwtest".
 
-	[AZURE.ACOM]{
 	$appgw = New-AzureRmApplicationGateway -Name appgwtest -ResourceGroupName appgw-rg -Location "China North" -BackendAddressPools $pool -Probes $probe -BackendHttpSettingsCollection $poolSetting -FrontendIpConfigurations $fipconfig  -GatewayIpConfigurations $gipconfig -FrontendPorts $fp -HttpListeners $listener -RequestRoutingRules $rule -Sku $sku
-	[AZURE.ACOM]}
-	
-	[AZURE.ACN]{
-	$appgw = New-AzureRmApplicationGateway -Name appgwtest -ResourceGroupName appgw-rg -Location "China North" -BackendAddressPools $pool -Probes $probe -BackendHttpSettingsCollection $poolSetting -FrontendIpConfigurations $fipconfig  -GatewayIpConfigurations $gipconfig -FrontendPorts $fp -HttpListeners $listener -RequestRoutingRules $rule -Sku $sku
-	[AZURE.ACN]}
 
 ## Add a probe to an existing application gateway
 
@@ -243,7 +207,7 @@ Add the probe to the back-end pool setting configuration and time-out by using *
 
 Save the configuration to the application gateway by using **Set-AzureRmApplicationGateway**.
 
-	Set-AzureRmApplicationGateway -ApplicationGateway $getgw -verbose
+	Set-AzureRmApplicationGateway -ApplicationGateway $getgw
 
 ## Remove a probe from an existing application gateway
 
@@ -267,10 +231,15 @@ Remove the probe configuration from the application gateway by using **Remove-Az
 Update the back-end pool setting to remove the probe and time-out setting by using **-Set-AzureRmApplicationGatewayBackendHttpSettings**.
 
 
-	 $getgw=Set-AzureRmApplicationGatewayBackendHttpSettings -ApplicationGateway $getgw -Name $getgw.BackendHttpSettingsCollection.name -Port 80 -Protocol http -CookieBasedAffinity Disabled
+	 $getgw = Set-AzureRmApplicationGatewayBackendHttpSettings -ApplicationGateway $getgw -Name $getgw.BackendHttpSettingsCollection.name -Port 80 -Protocol http -CookieBasedAffinity Disabled
 
 ### Step 4
 
-Save the configuration to the application gateway by using **Set-AzureRmApplicationGateway**.
+Save the configuration to the application gateway by using **Set-AzureRmApplicationGateway**. 
 
-	Set-AzureRmApplicationGateway -ApplicationGateway $getgw -verbose
+	Set-AzureRmApplicationGateway -ApplicationGateway $getgw
+
+## Next steps
+
+Learn to configure SSL offloading by visiting [Configure SSL Offload](/documentation/articles/application-gateway-ssl-arm/)
+

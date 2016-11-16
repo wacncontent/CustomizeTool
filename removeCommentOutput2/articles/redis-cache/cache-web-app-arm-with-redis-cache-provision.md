@@ -7,10 +7,15 @@
 	manager="erickson-doug" 
 	editor=""/>
 
-<tags
-	ms.service="app-service"
-	ms.date="05/24/2016"
-	wacn.date=""/>
+<tags 
+	ms.service="app-service" 
+	ms.workload="web" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="08/09/2016" 
+	wacn.date="" 
+	ms.author="sdanie"/>
 
 # Create a Web App plus Redis Cache using a template
 
@@ -28,11 +33,17 @@ In this template, you will deploy:
 - Azure Web App
 - Azure Redis Cache.
 
+To run the deployment automatically, click the following button:
+
+[![Deploy to Azure](./media/cache-web-app-arm-with-redis-cache-provision/deploybutton.png)](https://portal.azure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F201-web-app-with-redis-cache%2Fazuredeploy.json)
+
+>[AZURE.NOTE] Templates you are deploying from the GitHub Repo "azure-quickstart-templates" must be modified in order to fit in the Azure China Cloud Environment. For example, replace some endpoints -- "blob.core.windows.net" by "blob.core.chinacloudapi.cn", "cloudapp.azure.com" by "chinacloudapp.cn".
+
 ## Parameters to specify
 
-[AZURE.INCLUDE [app-service-web-deploy-web-parameters](../includes/app-service-web-deploy-web-parameters.md)]
+[AZURE.INCLUDE [app-service-web-deploy-web-parameters](../../includes/app-service-web-deploy-web-parameters.md)]
 
-[AZURE.INCLUDE [cache-deploy-parameters](../includes/cache-deploy-parameters.md)]
+[AZURE.INCLUDE [cache-deploy-parameters](../../includes/cache-deploy-parameters.md)]
 
 ## Variables for names
 
@@ -48,7 +59,7 @@ resource group id.
 
 ## Resources to deploy
 
-[AZURE.INCLUDE [app-service-web-deploy-web-host](../includes/app-service-web-deploy-web-host.md)]
+[AZURE.INCLUDE [app-service-web-deploy-web-host](../../includes/app-service-web-deploy-web-host.md)]
 
 ### Redis Cache
 
@@ -116,7 +127,7 @@ Notice that the web app is configured with app setting properties that enable it
 
 ## Commands to run deployment
 
-[AZURE.INCLUDE [app-service-deploy-commands](../includes/app-service-deploy-commands.md)]
+[AZURE.INCLUDE [app-service-deploy-commands](../../includes/app-service-deploy-commands.md)]
 
 ### PowerShell
 

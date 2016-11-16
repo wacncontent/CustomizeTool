@@ -4,14 +4,19 @@
 	services="hdinsight"
 	documentationCenter=""
 	authors="nitinme"
-	manager="paulettm"
+	manager="jhubbard"
 	editor="cgronlun"
 	tags="azure-portal"/>
 
 <tags
 	ms.service="hdinsight"
-	ms.date="06/07/2016"
-	wacn.date=""/>
+	ms.workload="big-data"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="get-started-article"
+	ms.date="10/05/2016"
+	wacn.date=""
+	ms.author="nitinme"/>
 
 
 # Get started: Create Apache Spark cluster on HDInsight Linux and run interactive queries using Spark SQL
@@ -20,9 +25,9 @@ Learn how to create an Apache Spark cluster in HDInsight and then use [Jupyter](
 
    ![Get started using Apache Spark in HDInsight](./media/hdinsight-apache-spark-jupyter-spark-sql/hdispark.getstartedflow.png  "Get started using Apache Spark in HDInsight tutorial. Steps illustrated: create a storage account; create a cluster; run Spark SQL statements")
 
-[AZURE.INCLUDE [delete-cluster-warning](../includes/hdinsight-delete-cluster-warning.md)]
+[AZURE.INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
 
-**Prerequisites:**
+## Prerequisites
 
 - **An Azure subscription**. Before you begin this tutorial, you must have an Azure subscription. See [Get Azure trial](/pricing/1rmb-trial/).
 
@@ -34,18 +39,21 @@ Learn how to create an Apache Spark cluster in HDInsight and then use [Jupyter](
     
 	-  From a Windows computer - [Use SSH with Linux-based HDInsight (Hadoop) from Windows](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows/).
 
->[AZURE.NOTE] This article uses an ARM template to create a Spark cluster that uses [Azure Storage Blobs as the cluster storage](/documentation/articles/hdinsight-hadoop-use-blob-storage/). You can also create a Spark cluster that uses [Azure Data Lake Store](/documentation/articles/data-lake-store-overview/) as an additional storage, in addition to Azure Storage Blobs as the default storage. For instructions, see [Create an HDInsight cluster with Data Lake Store](/documentation/articles/data-lake-store-hdinsight-hadoop-use-portal/).
+>[AZURE.NOTE] This article uses an Azure resource manager template to create a Spark cluster that uses [Azure Storage Blobs as the cluster storage](/documentation/articles/hdinsight-hadoop-use-blob-storage/). You can also create a Spark cluster that uses [Azure Data Lake Store](/documentation/articles/data-lake-store-overview/) as an additional storage, in addition to Azure Storage Blobs as the default storage. For instructions, see [Create an HDInsight cluster with Data Lake Store](/documentation/articles/data-lake-store-hdinsight-hadoop-use-portal/).
 
+### Access control requirements
+
+[AZURE.INCLUDE [access-control](../../includes/hdinsight-access-control-requirements.md)]
 
 ## Create Spark cluster
 
-In this section, you create an HDInsight version 3.4 cluster (Spark version 1.6.1) using an Azure ARM template. For information about HDInsight versions and their SLAs, see [HDInsight component versioning](/documentation/articles/hdinsight-component-versioning-v1/). For other cluster creation methods, see [Create HDInsight clusters](/documentation/articles/hdinsight-provision-clusters-v1/).
+In this section, you create an HDInsight version 3.4 cluster (Spark version 1.6.1) using an Azure resource manager template. For information about HDInsight versions and their SLAs, see [HDInsight component versioning](/documentation/articles/hdinsight-component-versioning-v1/). For other cluster creation methods, see [Create HDInsight clusters](/documentation/articles/hdinsight-provision-clusters-v1/).
 
-1. Click the following image to open an ARM template in the Azure Portal.         
+1. Click the following image to open the template in the Azure Portal.         
 
     <a href="https://portal.azure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fhditutorialdata.blob.core.windows.net%2Farmtemplates%2Fcreate-linux-based-spark-cluster-in-hdinsight.json" target="_blank"><img src="https://acom.azurecomcdn.net/80C57D/cdn/mediahandler/docarticles/dpsmedia-prod/azure.microsoft.com/documentation/articles/hdinsight-hbase-tutorial-get-started-v1/20160201111850/deploy-to-azure.png" alt="Deploy to Azure"></a>
     
-    The ARM template is located in a public blob container, *https://hditutorialdata.blob.core.windows.net/armtemplates/create-linux-based-spark-cluster-in-hdinsight.json*. 
+    The template is located in a public blob container, *https://hditutorialdata.blob.core.windows.net/armtemplates/create-linux-based-spark-cluster-in-hdinsight.json*. 
    
 2. From the Parameters blade, enter the following:
 
@@ -92,7 +100,7 @@ In this article, you will use the PySpark kernel. In the article [Kernels availa
 
 1. From the [Azure Portal](https://portal.azure.cn/), from the startboard, click the tile for your Spark cluster (if you pinned it to the startboard). You can also navigate to your cluster under **Browse All** > **HDInsight Clusters**.   
 
-2. From the Spark cluster blade, click **Quick Links**, and then from the **Cluster Dashboard** blade, click **Jupyter Notebook**. If prompted, enter the admin credentials for the cluster.
+2. From the Spark cluster blade, click **Cluster Dashboard**, and then click **Jupyter Notebook**. If prompted, enter the admin credentials for the cluster.
 
 	> [AZURE.NOTE] You may also reach the Jupyter Notebook for your cluster by opening the following URL in your browser. Replace __CLUSTERNAME__ with the name of your cluster:
 	>
@@ -119,7 +127,7 @@ In this article, you will use the PySpark kernel. In the article [Kernels availa
 	In an empty cell, paste the following code example and press **SHIFT + ENTER**. This code example registers the data into a temporary table called **hvac**.
 
 		# Load the data
-		hvacText = sc.textFile("wasb:///HdiSamples/HdiSamples/SensorSampleData/hvac/HVAC.csv")
+		hvacText = sc.textFile("wasbs:///HdiSamples/HdiSamples/SensorSampleData/hvac/HVAC.csv")
 		
 		# Create the schema
 		hvacSchema = StructType([StructField("date", StringType(), False),StructField("time", StringType(), False),StructField("targettemp", IntegerType(), False),StructField("actualtemp", IntegerType(), False),StructField("buildingID", StringType(), False)])
@@ -151,7 +159,7 @@ In this article, you will use the PySpark kernel. In the article [Kernels availa
 
 ##Delete the cluster
 
-[AZURE.INCLUDE [delete-cluster-warning](../includes/hdinsight-delete-cluster-warning.md)]
+[AZURE.INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
 
 
 ## See also
@@ -170,6 +178,8 @@ In this article, you will use the PySpark kernel. In the article [Kernels availa
 * [Spark Streaming: Use Spark in HDInsight for building real-time streaming applications](/documentation/articles/hdinsight-apache-spark-eventhub-streaming/)
 
 * [Website log analysis using Spark in HDInsight](/documentation/articles/hdinsight-apache-spark-custom-library-website-log-analysis/)
+
+* [Application Insight telemetry data analysis using Spark in HDInsight](/documentation/articles/hdinsight-spark-analyze-application-insight-logs/)
 
 ### Create and run applications
 

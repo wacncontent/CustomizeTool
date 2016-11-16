@@ -10,12 +10,17 @@
 
 <tags
 	ms.service="virtual-machines-linux"
-	ms.date="06/22/2016"
-	wacn.date=""/>
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-linux"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/08/2016"
+	wacn.date=""
+	ms.author="iainfou"/>
 
 # Virtual machines guidelines
 
-[AZURE.INCLUDE [virtual-machines-linux-infrastructure-guidelines-intro](../includes/virtual-machines-linux-infrastructure-guidelines-intro.md)] 
+[AZURE.INCLUDE [virtual-machines-linux-infrastructure-guidelines-intro](../../includes/virtual-machines-linux-infrastructure-guidelines-intro.md)] 
 
 This article focuses on understanding the required planning steps for creating and managing virtual machines (VMs) within your Azure environment.
 
@@ -27,7 +32,7 @@ Decisions:
 
 Tasks:
 
-- Define the workloads for your application and the resources the VM will require.
+- Define the workloads for your application and the resources the VMs require.
 - Align the resource demands for each VM with the appropriate VM size and storage type.
 - Define your resource groups for the different tiers and components of your infrastructure.
 - Define your VM naming convention.
@@ -35,11 +40,11 @@ Tasks:
 
 ## Virtual machines
 
-One of the main components within your Azure environment will likely be VMs. This is where you will run your applications, databases, authentication services, etc.
+One of the main components within your Azure environment is likely VMs. This is where you run your applications, databases, authentication services, etc.
 
-It is important to understand the [different VM sizes](/documentation/articles/virtual-machines-linux-sizes/) in order to correctly size your environment from a performance and cost perspective. If your VMs do not have an adequate amount of CPU cores or memory, performance of your application will suffer regardless of how well it is designed and developed. Review the suggested workloads for each VM series as a starting point as you decide which size VM to use for each component in your infrastructure. You can [change the size of a VM](/documentation/articles/virtual-machines-linux-change-vm-size/) after deployment.
+It is important to understand the [different VM sizes](/documentation/articles/virtual-machines-linux-sizes/) to correctly size your environment from a performance and cost perspective. If your VMs do not have enough CPU cores or memory, performance of your application suffers regardless of how well it is designed and developed. Review the suggested workloads for each VM series as a starting point as you decide which size VM to use for each component in your infrastructure. You can [change the size of a VM](/documentation/articles/virtual-machines-linux-change-vm-size/) after deployment.
 
-Storage plays a key role in VM performance. You can use Standard storage that use regular spinning disks, or Premium storage for high I/O workloads and peak performance that use SSD disks. As with the VM size, there are cost considerations when it comes to selecting the storage medium. You can read the [storage infrastructure guidelines article](/documentation/articles/virtual-machines-linux-infrastructure-storage-solutions-guidelines/) to understand how to design appropriate storage for optimum performance of your VMs.
+Storage plays a key role in VM performance. You can use Standard storage, that uses regular spinning disks, or Premium storage for high I/O workloads and peak performance, that use SSD disks. As with the VM size, there are cost considerations to selecting the storage medium. You can read the [storage infrastructure guidelines article](/documentation/articles/virtual-machines-linux-infrastructure-storage-solutions-guidelines/) to understand how to design appropriate storage for optimum performance of your VMs.
 
 
 ## Resource groups
@@ -47,8 +52,8 @@ Components such as VMs are logically grouped together for ease of management and
 
 
 ## Templates 
-You can build templates, defined by declarative JSON files, to create your VMs. Templates will typically also build out the required storage, networking, network interfaces, IP addressing, etc. along with the VMs themselves. You can use templates to create consistent, reproducible environments for development and testing purposes to easily replicate production environments and vice versa. You can read more about [building and using templates](/documentation/articles/resource-group-overview/#template-deployment) to understand how you can use them for creating and deploying your VMs.
+You can build templates, defined by declarative JSON files, to create your VMs. Templates typically also build the required storage, networking, network interfaces, IP addressing, etc. along with the VMs themselves. You can use templates to create consistent, reproducible environments for development and testing purposes to easily replicate production environments and vice versa. You can read more about [building and using templates](/documentation/articles/resource-group-overview/#template-deployment) to understand how you can use them for creating and deploying your VMs.
 
 
 ## Next steps
-[AZURE.INCLUDE [virtual-machines-linux-infrastructure-guidelines-next-steps](../includes/virtual-machines-linux-infrastructure-guidelines-next-steps.md)]
+[AZURE.INCLUDE [virtual-machines-linux-infrastructure-guidelines-next-steps](../../includes/virtual-machines-linux-infrastructure-guidelines-next-steps.md)]

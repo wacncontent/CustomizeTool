@@ -4,13 +4,18 @@
 	services="hdinsight" 
 	documentationCenter="" 
 	authors="nitinme" 
-	manager="paulettm" 
+	manager="jhubbard" 
 	editor="cgronlun"/>
 
-<tags
-	ms.service="hdinsight"
-	ms.date="02/25/2016"
-	wacn.date=""/>
+<tags 
+	ms.service="hdinsight" 
+	ms.workload="big-data" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="02/25/2016" 
+	wacn.date="" 
+	ms.author="nitinme"/>
 
 
 # Azure HDInsight PowerShell cmdlet cheat sheet for common Hadoop tasks

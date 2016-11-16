@@ -4,14 +4,19 @@
  services="hdinsight"
  documentationCenter=""
  authors="Blackmist"
- manager="paulettm"
+ manager="jhubbard"
  editor="cgronlun"
 	tags="azure-portal"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="06/06/2016"
-	wacn.date=""/>
+ ms.service="hdinsight"
+ ms.devlang="na"
+ ms.topic="article"
+ ms.tgt_pltfrm="na"
+ ms.workload="big-data"
+ ms.date="08/23/2016"
+ wacn.date=""
+ ms.author="larryfr"/>
 
 # Example Storm toplogies and components for Apache Storm on HDInsight
 
@@ -55,3 +60,4 @@ The following is a list of examples created and maintained by Microsoft for use 
   [d6c540e3]: https://github.com/hdinsight/hdinsight-storm-examples/blob/master/EventCountExample "Several topologies to demonstrate throughput when reading from Azure Event Hubs and storing to SQL Database using Apache Storm on HDInsight."
   [b4b68194]: https://github.com/hdinsight/hdinsight-storm-examples/blob/master/RealTimeETLExample "Learn how to read data from Azure Event Hubs, aggregate & transform the data, then store it to HBase on HDInsight."
   [ce0c02a2]: https://github.com/hdinsight/hdinsight-storm-examples/tree/master/templates/HDInsightStormExamples "This project contains templates for spouts, bolts and topologies to interact with various Azure services like Event Hubs, DocumentDB, and SQL Database."
+ 

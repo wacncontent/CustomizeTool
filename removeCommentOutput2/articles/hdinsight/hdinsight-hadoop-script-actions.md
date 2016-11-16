@@ -5,13 +5,18 @@
 	documentationCenter=""
 	tags="azure-portal"
 	authors="mumian"
-	manager="paulettm"
+	manager="jhubbard"
 	editor="cgronlun"/>
 
 <tags
 	ms.service="hdinsight"
-	ms.date="04/28/2016"
-	wacn.date=""/>
+	ms.workload="big-data"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="07/25/2016"
+	wacn.date=""
+	ms.author="jgao"/>
 
 # Develop Script Action scripts for HDInsight
 
@@ -27,7 +32,7 @@ Script Action can be used to install additional software running on a Hadoop clu
 
 For creating HDInsight clusters on Windows operating system, the Script Action is Azure PowerShell script.The following is a sample script for configure the site configuration files:
 
-[AZURE.INCLUDE [upgrade-powershell](../includes/hdinsight-use-latest-powershell.md)]
+[AZURE.INCLUDE [upgrade-powershell](../../includes/hdinsight-use-latest-powershell.md)]
 
 	param (
 	    [parameter(Mandatory)][string] $ConfigFileName,
@@ -96,7 +101,7 @@ Script Action can be deployed from the Azure Classic Management Portal, Azure Po
 
 
 
-##<a name="helper-methods-for-custom-scripts"></a> Helper methods for custom scripts
+## <a name="helper-methods-for-custom-scripts"></a> Helper methods for custom scripts
 
 Script Action helper methods are utilities that you can use while writing custom scripts. These are defined in [https://hdiconfigactions.blob.core.windows.net/configactionmodulev05/HDInsightUtilities-v05.psm1](https://hdiconfigactions.blob.core.windows.net/configactionmodulev05/HDInsightUtilities-v05.psm1), and can be included in your scripts using the following:
 
@@ -201,7 +206,7 @@ In this example, you must ensure that the container 'somecontainer' in storage a
 
 To pass multiple parameters to the Add-AzureHDInsightScriptAction cmdlet, you need to format the string value to contain all parameters for the script. For example:
 
-	"-CertifcateUri wasb:///abc.pfx -CertificatePassword 123456 -InstallFolderName MyFolder"
+	"-CertifcateUri wasbs:///abc.pfx -CertificatePassword 123456 -InstallFolderName MyFolder"
  
 or
 
@@ -241,39 +246,6 @@ Here are the steps we took when preparing to deploy these scripts:
 5. Install custom software only at D:\ or C:\apps. Other locations on the C: drive should not be used as they are reserved. Note that installing files on the C: drive outside of the C:\apps folder may result in setup failures during re-images of the node.
 6. In the event that OS-level settings or Hadoop service configuration files were changed, you may want to restart HDInsight services so that they can pick up any OS-level settings, such as the environment variables set in the scripts.
 
-
-
-## Test custom scripts with the HDInsight Emulator
-
-A straight-forward way to test a custom script before using it in the HDInsight Script Action command is to run it on the HDInsight Emulator. You can install the HDInsight Emulator locally or on an Azure infrastructure as a service (IaaS) Windows Server 2012 R2 VM or on a local machine and observe if the script behaves correctly. Note that the Windows Server 2012 R2 VM is the same VM that HDInsight uses for its nodes.
-
-This section outlines the procedure for using the HDInsight Emulator locally for testing purposes, but the procedure for using a VM is similar.
-
-**Install the HDInsight Emulator** - To run Script Action locally, you must have the HDInsight Emulator installed. For instructions on how to install it, see [Get started with the HDInsight Emulator](/documentation/articles/hdinsight-hadoop-emulator-get-started/).
-
-**Set the execution policy for Azure PowerShell** - Open Azure PowerShell and run (as administrator) the following command to set the execution policy to *LocalMachine* and to be *Unrestricted*:
-
-	Set-ExecutionPolicy Unrestricted -Scope LocalMachine
-
-We need this policy to be unrestricted as scripts are not signed.
-
-**Download the script action** that you want to run to a local destination. The following sample scripts are available to download from the following locations:
-
-* **R**. https://hdiconfigactions.blob.core.windows.net/rconfigactionv02/r-installer-v02.ps1
-* **Solr**. https://hdiconfigactions.blob.core.windows.net/solrconfigactionv01/solr-installer-v01.ps1
-* **Giraph**. https://hdiconfigactions.blob.core.windows.net/giraphconfigactionv01/giraph-installer-v01.ps1
-
-**Run the script action** - Open a new Azure PowerShell window in admin mode and run the R installation script from the local location where they were saved.
-
-**Usage examples**
-When you're using the R clusters, data files needed may not be present in the HDInsight Emulator. So you may need to upload relevant .txt files that contain data to a path in HDFS and then use that path to access the data. For example:
-
-	val file = sc.textFile("/example/data/gutenberg/davinci.txt")
-
-
-Note that in some cases a custom script may actually depend on HDInsight components, such as detecting whether certain Hadoop services are up. In this case, you will have to test your custom scripts by deploying them on an actual HDInsight cluster.
-
-
 ## Debug custom scripts
 
 The script error logs are stored, along with other output, in the default Storage account that you specified for the cluster at its creation. The logs are stored in a table with the name *u<\cluster-name-fragment><\time-stamp>setuplog*. These are aggregated logs that have records from all of the nodes (head node and worker nodes) on which the script runs in the cluster.
@@ -281,9 +253,12 @@ An easy way to check the logs is to use HDInsight Tools for Visual Studio. For i
 
 **To check the log using Visual Studio**
 
+>[AZURE.NOTE] For Azure China, you need to use Azure SDK 2.5 or 2.5.1 in order to manage HDInsight cluster with Visual Studio.
+
 1. Open Visual Studio.
 2. Click **View**, and then click **Server Explorer**.
-3. Right-click "Azure", click Connect to **Azure Subscriptions**, and then enter your credentials.
+3. Click [here](https://manage.windowsazure.cn/publishsettings/index?client=vsserverexplorer&schemaversion=2.0) to download a publish setting profile of your Azure Subscription
+3. Right-click "Azure", click **Manage and Filter Subscriptions...**, and then click **Certificates** > **Import** to import the publish setting profile you downloaded in the previous step.
 4. Expand **Storage**, expand the Azure storage account used as the default file system, expand **Tables**, and then double-click the table name.
 
 

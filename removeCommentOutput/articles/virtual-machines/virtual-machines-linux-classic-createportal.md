@@ -10,22 +10,24 @@
 
 <tags
 	ms.service="virtual-machines-linux"
-	ms.date="07/06/2016"
-	wacn.date=""/>
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-linux"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/27/2016"
+	wacn.date=""
+	ms.author="cynthn"/>
 
 
 # Create a custom virtual machine running Linux
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)] For information about creating a Linux virtual machine using the new Azure portal, see [Create a Linux VM on Azure using the Portal.md](/documentation/articles/virtual-machines-linux-quick-create-portal/).
 
 
 
-[AZURE.INCLUDE [virtual-machines-common-classic-createportal](../includes/virtual-machines-common-classic-createportal.md)]
+[AZURE.INCLUDE [virtual-machines-common-classic-createportal](../../includes/virtual-machines-common-classic-createportal.md)]
 
 
 
-[AZURE.INCLUDE [virtual-machines-create-linuxvm](../includes/virtual-machines-create-linuxvm.md)]
+[AZURE.INCLUDE [virtual-machines-create-linuxvm](../../includes/virtual-machines-create-linuxvm.md)]
 
-## Next steps
-
-You can also [create a custom virtual machine running Windows](/documentation/articles/virtual-machines-windows-classic-createportal/) using the Classic Management Portal.

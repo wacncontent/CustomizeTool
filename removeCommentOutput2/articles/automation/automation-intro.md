@@ -9,8 +9,13 @@
 	keywords="what is automation, azure automation, azure automation examples"/>
 <tags
 	ms.service="automation"
-	ms.date="05/10/2016"
-	wacn.date=""/>
+	ms.workload="tbd"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="get-started-article" 
+	ms.date="05/10/2016" 
+	wacn.date=""
+	ms.author="magoedte;bwren"/>
 
 # Azure Automation overview
 
@@ -26,8 +31,7 @@ For example, you might have an existing manual process for truncating a SQL data
 
 ## What can runbooks automate?
 
-Runbooks in Azure Automation are based on Windows PowerShell Workflow, so they do anything that PowerShell can do. If an application or service has an API, then a runbook can work with it. If you have a PowerShell module for the application, then you can load that module into Azure Automation and include those cmdlets in your runbook. Azure Automation runbooks run in the Azure cloud and can access any cloud resources or external resources that can be accessed from the cloud. 
-
+Runbooks in Azure Automation are based on Windows PowerShell Workflow, so they do anything that PowerShell can do. If an application or service has an API, then a runbook can work with it. If you have a PowerShell module for the application, then you can load that module into Azure Automation and include those cmdlets in your runbook. Azure Automation runbooks run in the Azure cloud and can access any cloud resources or external resources that can be accessed from the cloud.
 
 ## Getting runbooks from the community
 
@@ -38,10 +42,9 @@ The [Runbook Gallery](/documentation/articles/automation-runbook-gallery/#runboo
 
 You can [create your own runbooks](/documentation/articles/automation-creating-importing-runbook/) from scratch or modify runbooks from the [Runbook Gallery](/documentation/articles/automation-runbook-gallery/) for your own requirements. There is only one runbook type in WindowsAzure.cn. You can use a PowerShell Workflow runbook that you edit offline or with the [textual editor](/documentation/articles/automation-edit-textual-runbook/) in the Azure Classic Management Portal.
 
-
 ## Getting modules and configurations 
 
-You can get [PowerShell modules](/documentation/articles/automation-runbook-gallery/#modules-in-powershell-gallery) containing cmdlets that you can use in your runbooks from the [PowerShell Gallery](http://www.powershellgallery.com/). You can download and import them manually. You cannot install the modules directly from the Azure Classic Management Portal, but you can download them install them as you would any other module. 
+You can get [PowerShell modules](/documentation/articles/automation-runbook-gallery/#modules-in-powershell-gallery) containing cmdlets that you can use in your runbooks from the [PowerShell Gallery](http://www.powershellgallery.com/). you can download and import them manually. You cannot install the modules directly from the Azure Classic Management Portal, but you can download them install them as you would any other module. 
 
 
 ## Example practical applications of Azure Automation 
@@ -57,6 +60,7 @@ Following are just a few examples of what are the kinds of automation scenarios 
 * Truncate a table in a SQL database if DB is approaching maximum size. 
 * Remotely update environment settings for an Azure website. 
 
+
 ## Where can I get more information? 
 
 A variety of resources are available for you to learn more about Azure Automation and creating your own runbooks. 
@@ -64,8 +68,8 @@ A variety of resources are available for you to learn more about Azure Automatio
 * **Azure Automation Library** is where you are right now. The articles in this library provide complete documentation on the configuration and administration of Azure Automation and for authoring your own runbooks. 
 * [Azure PowerShell cmdlets](http://msdn.microsoft.com/zh-cn/library/jj156055.aspx) provides information for automating Azure operations using Windows PowerShell. Runbooks use these cmdlets to work with Azure resources. 
 * [Automation Forum](https://social.msdn.microsoft.com/Forums/azure/zh-cn/home?forum=azureautomation) allows you to post questions about Azure Automation to be addressed by Microsoft and the Automation community. 
-* [Azure Automation Cmdlets](https://msdn.microsoft.com/zh-cn/library/dn690262.aspx) provides information for automating administration tasks. It contains cmdlets to manage Automation accounts, assets, runbooks.
 
+* [Azure Automation Cmdlets](https://msdn.microsoft.com/zh-cn/library/dn690262.aspx) provides information for automating administration tasks. It contains cmdlets to manage Automation accounts, assets, runbooks.
 
 ## Can I provide feedback? 
 

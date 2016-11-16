@@ -4,18 +4,23 @@
    services="hdinsight"
    documentationCenter=""
    authors="Blackmist"
-   manager="paulettm"
+   manager="jhubbard"
    editor="cgronlun"
 	tags="azure-portal"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="07/12/2016"
-	wacn.date=""/>
+   ms.service="hdinsight"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="big-data"
+   ms.date="09/27/2016"
+   wacn.date=""
+   ms.author="larryfr"/>
 
 # Use MapReduce in Hadoop on HDInsight with Remote Desktop
 
-[AZURE.INCLUDE [mapreduce-selector](../includes/hdinsight-selector-use-mapreduce.md)]
+[AZURE.INCLUDE [mapreduce-selector](../../includes/hdinsight-selector-use-mapreduce.md)]
 
 In this article, you will learn how to connect to a Hadoop on HDInsight cluster by using Remote Desktop and then run MapReduce jobs by using the Hadoop command.
 
@@ -41,9 +46,9 @@ When you are connected to the desktop for the HDInsight cluster, use the followi
 
 2. To use the **Hadoop** command to run an example MapReduce job, use the following command:
 
-		hadoop jar hadoop-mapreduce-examples.jar wordcount wasb:///example/data/gutenberg/davinci.txt wasb:///example/data/WordCountOutput
+		hadoop jar hadoop-mapreduce-examples.jar wordcount wasbs:///example/data/gutenberg/davinci.txt wasbs:///example/data/WordCountOutput
 
-	This starts the **wordcount** class, which is contained in the **hadoop-mapreduce-examples.jar** file in the current directory. As input, it uses the **wasb://example/data/gutenberg/davinci.txt** document, and output is stored at: **wasb:///example/data/WordCountOutput**.
+	This starts the **wordcount** class, which is contained in the **hadoop-mapreduce-examples.jar** file in the current directory. As input, it uses the **wasbs://example/data/gutenberg/davinci.txt** document, and output is stored at: **wasbs:///example/data/WordCountOutput**.
 
 	> [AZURE.NOTE] for more information about this MapReduce job and the example data, see <a href="/documentation/articles/hdinsight-use-mapreduce/">Use MapReduce in HDInsight Hadoop</a>.
 
@@ -54,9 +59,9 @@ When you are connected to the desktop for the HDInsight cluster, use the followi
 		File Output Format Counters
         Bytes Written=337623
 
-3. When the job is complete, use the following command to list the output files stored at **wasb://example/data/WordCountOutput**:
+3. When the job is complete, use the following command to list the output files stored at **wasbs://example/data/WordCountOutput**:
 
-		hadoop fs -ls wasb:///example/data/WordCountOutput
+		hadoop fs -ls wasbs:///example/data/WordCountOutput
 
 	This should display two files, **_SUCCESS** and **part-r-00000**. The **part-r-00000** file contains the output for this job.
 
@@ -64,9 +69,9 @@ When you are connected to the desktop for the HDInsight cluster, use the followi
 
 4. To view the output, use the following command:
 
-		hadoop fs -cat wasb:///example/data/WordCountOutput/part-r-00000
+		hadoop fs -cat wasbs:///example/data/WordCountOutput/part-r-00000
 
-	This displays a list of the words that are contained in the **wasb://example/data/gutenberg/davinci.txt** file, along with the number of times each word occured. The following is an example of the data that will be contained in the file:
+	This displays a list of the words that are contained in the **wasbs://example/data/gutenberg/davinci.txt** file, along with the number of times each word occured. The following is an example of the data that will be contained in the file:
 
 		wreathed        3
 		wreathing       1

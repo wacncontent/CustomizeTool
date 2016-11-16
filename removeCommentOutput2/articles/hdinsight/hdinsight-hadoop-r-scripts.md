@@ -5,17 +5,22 @@
 	documentationCenter=""
 	tags="azure-portal"
 	authors="mumian"
-	manager="paulettm"
+	manager="jhubbard"
 	editor="cgronlun"/>
 
 <tags
 	ms.service="hdinsight"
-	ms.date="06/28/2016"
-	wacn.date=""/>
+	ms.workload="big-data"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+    ms.date="09/14/2016"
+    wacn.date=""
+	ms.author="jgao"/>
 
 # Install and use R on HDInsight Hadoop clusters
 
-Learn how to customize Windows based HDInsight cluster with R using Script Action, and how to use R on HDInsight clusters. The [premium tier](/home/features/hdinsight/pricing/) offering for HDInsight includes R Server as part of your HDInsight cluster. This allows R scripts to use MapReduce to run distributed computations.
+Learn how to customize Windows based HDInsight cluster with R using Script Action, and how to use R on HDInsight clusters. The [premium tier](/pricing/details/hdinsight/) offering for HDInsight includes R Server as part of your HDInsight cluster. This allows R scripts to use MapReduce to run distributed computations.
  
 You can install R on any type of cluster (Hadoop, Storm, HBase) on Azure HDInsight by using *Script Action*. A sample script to install R on an HDInsight cluster is available from a read-only Azure storage blob at [https://hdiconfigactions.blob.core.windows.net/rconfigactionv02/r-installer-v02.ps1](https://hdiconfigactions.blob.core.windows.net/rconfigactionv02/r-installer-v02.ps1).
 

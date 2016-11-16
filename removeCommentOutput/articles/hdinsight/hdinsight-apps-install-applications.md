@@ -4,14 +4,19 @@
    	services="hdinsight"
    	documentationCenter=""
    	authors="mumian"
-   	manager="paulettm"
+   	manager="jhubbard"
    	editor="cgronlun"
 	tags="azure-portal"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="06/29/2016"
-	wacn.date=""/>
+   	ms.service="hdinsight"
+   	ms.devlang="na"
+   	ms.topic="hero-article"
+   	ms.tgt_pltfrm="na"
+   	ms.workload="big-data"
+   	ms.date="09/14/2016"
+   	wacn.date=""
+   	ms.author="jgao"/>
 
 # Install HDInsight applications
 
@@ -23,7 +28,7 @@ Currently there is one published application:
 
 >[AZURE.NOTE] Datameer is currently only supported in Azure HDInsight version 3.2 clusters.
 
-The instructions provided in this article use Azure Portal. You can also export the Azure Resouce Manager template from the portal or obtain a copy of the Resouce Manager template from vendors, and use Azure PowerShell and Azure CLI to deploy the template.  See [Create Linux-based Hadoop clusters in HDInsight using Resource Manager templates](/documentation/articles/hdinsight-hadoop-create-linux-clusters-arm-templates/).
+The instructions provided in this article use Azure portal. You can also export the Azure Resource Manager template from the portal or obtain a copy of the Resource Manager template from vendors, and use Azure PowerShell and Azure CLI to deploy the template.  See [Create Linux-based Hadoop clusters in HDInsight using Resource Manager templates](/documentation/articles/hdinsight-hadoop-create-linux-clusters-arm-templates/).
 
 ## Prerequisites
 
@@ -117,3 +122,5 @@ See [Troubleshoot the installation](/documentation/articles/hdinsight-apps-insta
 - [MSDN: Install an HDInsight application](https://msdn.microsoft.com/zh-cn/library/mt706515.aspx): Learn how to define HDInsight applications.
 - [Customize Linux-based HDInsight clusters using Script Action](/documentation/articles/hdinsight-hadoop-customize-cluster-v1/): learn how to use Script Action to install additional applications.
 - [Create Linux-based Hadoop clusters in HDInsight using Resource Manager templates](/documentation/articles/hdinsight-hadoop-create-linux-clusters-arm-templates/): learn how to call Resource Manager templates to create HDInsight clusters.
+- [Use empty edge nodes in HDInsight](/documentation/articles/hdinsight-apps-use-edge-node/): learn how to use an empty edge node for accessing HDInsight cluster, testing HDInsight applications, and hosting HDInsight applications.
+

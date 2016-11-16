@@ -4,18 +4,20 @@
 	services="virtual-machines-windows"
 	documentationCenter="na"
 	authors="guyinacube"
-	manager="mblythe"
+	manager="erikre"
 	editor="monicar" 
 	tags="azure-service-management"/>
-<tags
+<tags 
 	ms.service="virtual-machines-windows"
-	ms.date="05/13/2016"
-	wacn.date=""/>
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="vm-windows-sql-server"
+	ms.workload="infrastructure-services"
+	ms.date="10/04/2016"
+	wacn.date=""
+	ms.author="asaxton" />
 
 # Use PowerShell to Create an Azure VM With a Native Mode Report Server
-
-> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager model.
- 
 
 This topic describes and walks you through the deployment and configuration of a SQL Server Reporting Services native mode report server in an Azure Virtual Machine. The steps in this document use a combination of manual steps to create the virtual machine and a Windows PowerShell script to configure Reporting Services on the VM. The configuration script includes opening a firewall port for HTTP or HTTPs.
 
@@ -66,7 +68,7 @@ This topic describes and walks you through the deployment and configuration of a
 	
 	- **Tier**: Standard
 	
-	- **Size:A3** is the recommended VM size for SQL Server workloads. If a VM is only used as a report server, a VM size of A2 is sufficient unless the report server experiences a large workload. For VM pricing information, see [Virtual Machines Pricing](/home/features/virtual-machines/pricing/).
+	- **Size:A3** is the recommended VM size for SQL Server workloads. If a VM is only used as a report server, a VM size of A2 is sufficient unless the report server experiences a large workload. For VM pricing information, see [Virtual Machines Pricing](/pricing/details/virtual-machines/).
 	
 	- **New User Name**: the name you provide is created as an administrator on the VM.
 	
@@ -678,7 +680,7 @@ The following table summarizes some of the options available to publish existing
 
 ## Minimize cost if you are not using the VM
 
->[AZURE.NOTE] To minimize charges for your Azure Virtual Machines when not in use, shut down the VM from the Azure Classic Management Portal. If you use the Windows power options inside a VM to shut down the VM, you are still charged the same amount for the VM. To reduce charges, you need to shut down the VM in the Azure Classic Management Portal. If you no longer need the VM, remember to delete the VM and the associated .vhd files to avoid storage charges.For more information, see the FAQ section at [Virtual Machines Pricing Details](/home/features/virtual-machines/pricing/).
+>[AZURE.NOTE] To minimize charges for your Azure Virtual Machines when not in use, shut down the VM from the Azure Classic Management Portal. If you use the Windows power options inside a VM to shut down the VM, you are still charged the same amount for the VM. To reduce charges, you need to shut down the VM in the Azure Classic Management Portal. If you no longer need the VM, remember to delete the VM and the associated .vhd files to avoid storage charges.For more information, see the FAQ section at [Virtual Machines Pricing Details](/pricing/details/virtual-machines/).
 
 ## More Information
 
@@ -690,7 +692,7 @@ The following table summarizes some of the options available to publish existing
 
 - For General information related to deployments of SQL Server Business Intelligence in Azure Virtual Machines, see [SQL Server Business Intelligence in Azure Virtual Machines](/documentation/articles/virtual-machines-windows-classic-ps-sql-bi/).
 
-- For more information about the cost of Azure compute charges, see the Virtual Machines tab of [Azure pricing calculator](/pricing/calculator/?scenario=virtual-machines).
+- For more information about the cost of Azure compute charges, see the Virtual Machines tab of [Azure pricing calculator](/pricing/calculator/).
 
 ### Community Content
 

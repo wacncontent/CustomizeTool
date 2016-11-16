@@ -3,19 +3,24 @@
    description="Learn commands that you can use to automate tasks in managing your virtual machines."
    services="virtual-machines-windows"
    documentationCenter="windows"
-   authors="singhkay"
+   authors="singhkays"
    manager="timlt"
    editor=""
    tags="azure-service-management"/>
 
    <tags
-	ms.service="virtual-machines-windows"
-	ms.date="07/01/2016"
-	wacn.date=""/>
+   ms.service="virtual-machines-windows"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="vm-windows"
+   ms.workload="infrastructure-services"
+   ms.date="10/12/2016"
+   wacn.date=""
+   ms.author="kasing"/>
 
 # Manage your virtual machines by using Azure PowerShell
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]
 
 
 Many tasks you do each day to manage your VMs can be automated by using Azure PowerShell cmdlets. This article gives you example commands for simpler tasks, and links to articles that show the commands for more complex tasks.

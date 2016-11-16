@@ -10,14 +10,19 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="07/01/2016"
-	wacn.date=""/>
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-windows"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/08/2016"
+	wacn.date=""
+	ms.author="iainfou"/>
 
 # Example Azure infrastructure walkthrough
 
-[AZURE.INCLUDE [virtual-machines-windows-infrastructure-guidelines-intro](../includes/virtual-machines-windows-infrastructure-guidelines-intro.md)] 
+[AZURE.INCLUDE [virtual-machines-windows-infrastructure-guidelines-intro](../../includes/virtual-machines-windows-infrastructure-guidelines-intro.md)] 
 
-This article walks through building out an example application infrastructure. We'll detail designing an infrastructure for a simple on-line store that brings together all of the guidelines and decisions around naming conventions, availability sets, virtual networks and load balancers, and actually deploying your virtual machines (VMs).
+This article walks through building out an example application infrastructure. We detail designing an infrastructure for a simple on-line store that brings together all the guidelines and decisions around naming conventions, availability sets, virtual networks and load balancers, and actually deploying your virtual machines (VMs).
 
 
 ## Example workload
@@ -28,13 +33,13 @@ Adventure Works Cycles wants to build an on-line store application in Azure that
 - Two IIS servers processing data and orders in an application tier
 - Two Microsoft SQL Server instances with AlwaysOn availability groups (two SQL Servers and a majority node witness) for storing product data and orders in a database tier
 - Two Active Directory domain controllers for customer accounts and suppliers in an authentication tier
-- All of the servers are located in two subnets:
-	- a front end subnet for the web servers 
-	- a back end subnet for the application servers, SQL cluster, and domain controllers
+- All the servers are located in two subnets:
+	- a front-end subnet for the web servers 
+	- a back-end subnet for the application servers, SQL cluster, and domain controllers
 
 ![Diagram of different tiers for application infrastructure](./media/virtual-machines-common-infrastructure-service-guidelines/example-tiers.png)
 
-Incoming secure web traffic needs to be load-balanced among the web servers as customers browse the on-line store. Order processing traffic in the form of HTTP requests from the web servers needs to be balanced among the application servers. Additionally, the infrastructure must be designed for high availability.
+Incoming secure web traffic must be load-balanced among the web servers as customers browse the on-line store. Order processing traffic in the form of HTTP requests from the web servers must be balanced among the application servers. Additionally, the infrastructure must be designed for high availability.
 
 The resulting design must incorporate:
 
@@ -45,15 +50,15 @@ The resulting design must incorporate:
 - Availability sets for the VMs with a similar role
 - Virtual machines
 
-All of the above will follow these naming conventions:
+All the above follow these naming conventions:
 
 - Adventure Works Cycles uses **[IT workload]-[location]-[Azure resource]** as a prefix
-	- For this example, "**azos**" (Azure On-line Store) is the IT workload name and "**use**" (China East 2) is the location
-- Storage accounts use adventureazosusesa**[description]**
-	- Note that 'adventure' was added to the prefix to provide uniqueness, and storage account names do not support the use of hyphens.
-- Virtual networks use AZOS-USE-VN**[number]**
-- Availability sets use azos-use-as-**[role]**
-- Virtual machine names use azos-use-vm-**[vmname]**
+	- For this example, "**azos**" (Azure On-line Store) is the IT workload name and "**che**" (China East) is the location
+- Storage accounts use adventureazoschesa**[description]**
+	- 'adventure' was added to the prefix to provide uniqueness, and storage account names do not support the use of hyphens.
+- Virtual networks use AZOS-CHE-VN**[number]**
+- Availability sets use azos-che-as-**[role]**
+- Virtual machine names use azos-che-vm-**[vmname]**
 
 
 ## Azure subscriptions and accounts
@@ -65,18 +70,18 @@ Adventure Works Cycles is using their Enterprise subscription, named Adventure W
 
 Adventure Works Cycles determined that they needed two storage accounts:
 
-- **adventureazosusesawebapp** for the standard storage of the web servers, application servers, and domain controllers and their data disks.
-- **adventureazosusesasql** for the Premium storage of the SQL Server VMs and their data disks.
+- **adventureazoschesawebapp** for the standard storage of the web servers, application servers, and domain controllers and their data disks.
+- **adventureazoschesasql** for the Premium storage of the SQL Server VMs and their data disks.
 
 
 ## Virtual network and subnets
 
 Because the virtual network does not need ongoing connectivity to the Adventure Work Cycles on-premises network, they decided on a cloud-only virtual network.
 
-They created a cloud-only virtual network with the following settings using the Azure portal:
+They created a cloud-only virtual network with the following settings using the Azure Portal Preview:
 
-- Name: AZOS-USE-VN01
-- Location: China East 2
+- Name: AZOS-CHE-VN01
+- Location: China East
 - Virtual network address space: 10.0.0.0/8
 - First subnet:
 	- Name: FrontEnd
@@ -90,24 +95,24 @@ They created a cloud-only virtual network with the following settings using the 
 
 To maintain high availability of all four tiers of their on-line store, Adventure Works Cycles decided on four availability sets:
 
-- **azos-use-as-web** for the web servers
-- **azos-use-as-app** for the application servers
-- **azos-use-as-sql** for the SQL Servers
-- **azos-use-as-dc** for the domain controllers
+- **azos-che-as-web** for the web servers
+- **azos-che-as-app** for the application servers
+- **azos-che-as-sql** for the SQL Servers
+- **azos-che-as-dc** for the domain controllers
 
 
 ## Virtual machines
 
 Adventure Works Cycles decided on the following names for their Azure VMs:
 
-- **azos-use-vm-web01** for the first web server
-- **azos-use-vm-web02** for the second web server
-- **azos-use-vm-app01** for the first application server
-- **azos-use-vm-app02** for the second application server
-- **azos-use-vm-sql01** for the first SQL Server server in the cluster
-- **azos-use-vm-sql02** for the second SQL Server server in the cluster
-- **azos-use-vm-dc01** for the first domain controller
-- **azos-use-vm-dc02** for the second domain controller
+- **azos-che-vm-web01** for the first web server
+- **azos-che-vm-web02** for the second web server
+- **azos-che-vm-app01** for the first application server
+- **azos-che-vm-app02** for the second application server
+- **azos-che-vm-sql01** for the first SQL Server server in the cluster
+- **azos-che-vm-sql02** for the second SQL Server server in the cluster
+- **azos-che-vm-dc01** for the first domain controller
+- **azos-che-vm-dc02** for the second domain controller
 
 Here is the resulting configuration.
 
@@ -124,6 +129,6 @@ This configuration incorporates:
 - A single resource group
 
 
-## Next steps
+## <a name="next-steps"></a>Next steps
 
-[AZURE.INCLUDE [virtual-machines-windows-infrastructure-guidelines-next-steps](../includes/virtual-machines-windows-infrastructure-guidelines-next-steps.md)]
+[AZURE.INCLUDE [virtual-machines-windows-infrastructure-guidelines-next-steps](../../includes/virtual-machines-windows-infrastructure-guidelines-next-steps.md)]

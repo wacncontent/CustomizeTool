@@ -1,23 +1,25 @@
-
 <properties
    pageTitle="How to resize a Linux VM | Azure"
    description="How to scale up or scale down a Linux virtual machine, by changing the VM size."
    services="virtual-machines-linux"
    documentationCenter="na"
    authors="mikewasson"
-   manager="roshar"
+   manager="timlt"
    editor=""
    tags=""/>
 
 <tags
-	ms.service="virtual-machines-linux"
-	ms.date="05/16/2016"
-	wacn.date=""/>
+   ms.service="virtual-machines-linux"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="05/16/2016"
+   wacn.date=""
+   ms.author="mikewasson"/>
 
 
 # How to resize a Linux VM
-
-[AZURE.INCLUDE [arm-api-version-cli](../includes/arm-api-version-cli.md)]
 
 ## Overview 
 
@@ -55,9 +57,14 @@ To resize a VM, perform the following steps.
 	    azure vm start -g <resource-group> <vm-name>
 
    > [AZURE.WARNING] Deallocating the VM also releases any dynamic IP addresses assigned to the VM. The OS and data disks are not affected.
+   
+## Next steps
+
+For additional scalability, run multiple VM instances and scale out. For more information, see [Automatically scale Linux machines in a Virtual Machine Scale Set][scale-set]. 
 
 <!-- links -->
    
 [azure-cli]: /documentation/articles/xplat-cli-install/
 [boot-diagnostics]: https://azure.microsoft.com/blog/boot-diagnostics-for-virtual-machines-v2/
-[vm-sizes]: /documentation/articles/virtual-machines-linux-sizes
+[scale-set]: /documentation/articles/virtual-machine-scale-sets-linux-autoscale/
+[vm-sizes]: /documentation/articles/virtual-machines-linux-sizes/

@@ -9,9 +9,14 @@
    editor=""/>
 
 <tags
-	ms.service="app-service"
-	ms.date="04/25/2016"
-	wacn.date=""/>
+   ms.service="app-service"
+   ms.devlang="multiple"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="integration" 
+   ms.date="10/10/2016" 
+   wacn.date=""
+   ms.author="juliako"/>
 
 # Azure SDK for .NET 2.7 and .NET 2.7.1 Release Notes
 
@@ -56,20 +61,20 @@ In this release the following updates were made. These updates are in preview. F
 - Old **Storm** project must be upgraded when using this version of the tools. For more information, see [this blog](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/).
 - Visual Studio Web Express is no longer supported. For more information, see [this blog](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/).
 
-###Azure Tools
+###Azure App Service Tools
 
 In this release the following updates were made to Web Tools Extensions. For more information see [this](https://azure.microsoft.com/blog/2015/07/20/announcing-the-azure-sdk-2-7-for-net/)  blog. 
 
 - Support for DreamSpark accounts added
 - Full change to Azure Tools made to support the new Azure Resource Management APIs
-- Support for Azure added to [Cloud Explorer](/documentation/articles/azure-sdk-dot-net-release-notes-2_7/#cloud_explorer)
+- Support for Azure App Service added to [Cloud Explorer](#cloud_explorer)
 
 ####Known issues
 
 Web App deployment slot nodes don't appear under the Slots node in Server Explorer, and Web App deployment slot child nodes don't load under Cloud Explorer. This issue has been resolved and prepared for the next SDK release. 
 
 
-###<a id="cloud_explorer"></a>Cloud Explorer for Visual Studio 2015
+###<a name="cloud_explorer"></a>Cloud Explorer for Visual Studio 2015
 
 Azure SDK 2.7 includes Cloud Explorer for Visual Studio 2015 which enables you to view your Azure resources, inspect their properties, and perform key developer actions from within Visual Studio. 
 
@@ -82,7 +87,7 @@ Cloud explorer supports the following:
 - Integrated Properties panel which shows developer-focused properties commonly needed during dev/test 
 - Quick switching of the account to use when enumerating resources (use Settings command on toolbar) 
 - Filtering of subscriptions to use when enumerating resources (use Settings command on toolbar) 
-- Deep links to the Azure Portal for management of resources and resource groups 
+- Deep links to the Azure Portal Preview for management of resources and resource groups 
  
  
 ###Azure Resource Manager Tools 
@@ -114,7 +119,7 @@ For more detailed explanation about HDInsight tools updates, see [this blog](htt
 
 	Visualizing is very important when you want to see if your topology is working as expected. In this release we added visualization for Storm graphs. You can visualize the important metrics for your topology (for example, a color indicates weather a certain Bolt is "busy" or not). You can also double click the Bolt/Spout to view more details.
 
-- Support for HDInsight clusters that were created in the Azure Portal (a bug fix)
+- Support for HDInsight clusters that were created in the Azure Portal Preview (a bug fix)
 
 	You can now use Visual Studio to view and submit jobs to all your HDInsight clusters no matter where the cluster were created.
 

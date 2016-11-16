@@ -1,4 +1,3 @@
-
 <properties
    pageTitle="Troubleshooting Linux VM extension failures | Azure"
    description="Learn about troubleshooting Azure Linux VM extension failures"
@@ -10,17 +9,18 @@
    tags="top-support-issue,azure-resource-manager"/>
 
 <tags
-	ms.service="virtual-machines-linux"
-	ms.date="03/29/2016"
-	wacn.date=""/>
+   ms.service="virtual-machines-linux"
+   ms.devlang="na"
+   ms.topic="support-article"
+   ms.tgt_pltfrm="vm-linux"
+   ms.workload="infrastructure-services"
+   ms.date="03/29/2016"
+   wacn.date=""
+   ms.author="kundanap"/>
 
 # Troubleshooting Azure Linux VM extension failures
 
-[AZURE.INCLUDE [arm-api-version-cli](../includes/arm-api-version-cli.md)]
-
-> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the Resource Manager deployment model, which Azure recommends for most new deployments instead of the classic deployment model.
-
-[AZURE.INCLUDE [virtual-machines-common-extensions-troubleshoot](../includes/virtual-machines-common-extensions-troubleshoot.md)]
+[AZURE.INCLUDE [virtual-machines-common-extensions-troubleshoot](../../includes/virtual-machines-common-extensions-troubleshoot.md)]
 
 ## Viewing extension status
 Azure Resource Manager templates can be executed from the  Azure CLI. Once the template is executed, the extension status can be viewed from Azure Resource Explorer or the command line tools.

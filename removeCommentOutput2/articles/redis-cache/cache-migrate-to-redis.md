@@ -6,10 +6,15 @@
     authors="steved0x"
     manager="douge"
     editor="tysonn" />
-<tags
-	ms.service="cache"
-	ms.date="06/09/2016"
-	wacn.date=""/>
+<tags 
+    ms.service="cache"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.tgt_pltfrm="cache-redis"
+    ms.workload="tbd"
+    ms.date="09/30/2016"
+    wacn.date=""
+    ms.author="sdanie" />
 
 # Migrate from Managed Cache Service to Azure Redis Cache
 
@@ -38,7 +43,7 @@ Azure Managed Cache Service and Azure Redis Cache are similar but implement some
 |Managed Cache Service feature|Managed Cache Service support|Azure Redis Cache support|
 |---|---|---|
 |Named caches|A default cache is configured, and in the Standard and Premium cache offerings, up to nine additional named caches can be configured if desired.|Azure Redis caches have a configurable number of databases (default of 16) that can be used to implement a similar functionality to named caches. For more information, see [Default Redis server configuration](/documentation/articles/cache-configure/#default-redis-server-configuration).|
-|High Availability|Provides high availability for items in the cache in the Standard and Premium cache offerings. If items are lost due to a failure, backup copies of the items in the cache are still available. Writes to the secondary cache are made synchronously.|High availability is available in the Standard and Premium cache offerings, which have a two node Primary/Replica configuration (each shard in a Premium cache has a primary/replica pair). Writes to the replica are made asynchronously. For more information, see [Azure Redis Cache pricing](/home/features/redis-cache/pricing/).| 
+|High Availability|Provides high availability for items in the cache in the Standard and Premium cache offerings. If items are lost due to a failure, backup copies of the items in the cache are still available. Writes to the secondary cache are made synchronously.|High availability is available in the Standard and Premium cache offerings, which have a two node Primary/Replica configuration (each shard in a Premium cache has a primary/replica pair). Writes to the replica are made asynchronously. For more information, see [Azure Redis Cache pricing](/pricing/details/redis-cache/).|
 |Notifications|Allows clients to receive asynchronous notifications when a variety of cache operations occur on a named cache.|Client applications can use Redis pub/sub or [Keyspace notifications](/documentation/articles/cache-configure/#keyspace-notifications-advanced-settings) to achieve a similar functionality to notifications.|
 |Local cache|Stores a copy of cached objects locally on the client for extra-fast access.|Client applications would need to implement this functionality using a dictionary or similar data structure.|
 |Eviction Policy|None or LRU. The default policy is LRU.|Azure Redis Cache supports the following eviction policies: volatile-lru, allkeys-lru, volatile-random, allkeys-random, volatile-ttl, noeviction. The default policy is volatile-lru. For more information, see [Default Redis server configuration](/documentation/articles/cache-configure/#default-redis-server-configuration).|
@@ -55,13 +60,13 @@ Azure Redis Cache is available in the following tiers:
 -	**Standard** - Two-node Primary/Replica. Multiple sizes up to 53 GB. 99.9% SLA.
 -	**Premium** - Two-node Primary/Replica with up to 10 shards. Multiple sizes from 6 GB to 530 GB (contact us for more). All Standard tier features and more including support for [Redis cluster](/documentation/articles/cache-how-to-premium-clustering/), [Redis persistence](/documentation/articles/cache-how-to-premium-persistence/), and [Azure Virtual Network](/documentation/articles/cache-how-to-premium-vnet/). 99.9% SLA.
 
-Each tier differs in terms of features and pricing. The features are covered later in this guide, and for more information on pricing, see [Cache Pricing Details](/home/features/redis-cache/pricing/).
+Each tier differs in terms of features and pricing. The features are covered later in this guide, and for more information on pricing, see [Cache Pricing Details](/pricing/details/redis-cache/).
 
 A starting point for migration is to pick the size that matches the size of your previous Managed Cache Service cache, and then scale up or down depending on the requirements of your application. For more guidance on choosing the right Azure Redis Cache offering, see [What Redis Cache offering and size should I use?](/documentation/articles/cache-faq/#what-redis-cache-offering-and-size-should-i-use).
 
 ## Create a Cache
 
-[AZURE.INCLUDE [redis-cache-create](../includes/redis-cache-create.md)]
+[AZURE.INCLUDE [redis-cache-create](../../includes/redis-cache-create.md)]
 
 ## Configure the Cache Clients
 
@@ -76,7 +81,7 @@ Before the client applications can be configured for Azure Redis Cache, the exis
 
 To uninstall the Managed Cache Service NuGet package, right-click the client project in **Solution Explorer** and choose **Manage NuGet Packages**. Select the **Installed packages** node, and type W**indowsAzure.Caching** into the Search installed packages box. Select **Windows** **Azure Cache** (or **Windows** **Azure Caching** depending on the version of the NuGet package), click **Uninstall**, and then click **Close**.
 
-![Uninstall Azure Managed Cache Service NuGet Packag](./media/cache-migrate-to-redis/IC757666.jpg)
+![Uninstall Azure Managed Cache Service NuGet Package](./media/cache-migrate-to-redis/IC757666.jpg)
 
 Uninstalling the Managed Cache Service NuGet package removes the Managed Cache Service assemblies and the Managed Cache Service entries in the app.config or web.config of the client application. Because some customized settings may not be removed when uninstalling the NuGet package, open web.config or app.config and ensure that the following elements are completely removed.
 
@@ -107,7 +112,7 @@ Once the Managed Cache Service configuration is removed, you can configure the c
 
 ### Configure a cache client using the StackExchange.Redis NuGet Package
 
-[AZURE.INCLUDE [redis-cache-configure](../includes/redis-cache-configure-stackexchange-redis-nuget.md)]
+[AZURE.INCLUDE [redis-cache-configure](../../includes/redis-cache-configure-stackexchange-redis-nuget.md)]
 
 ## Migrate Managed Cache Service code
 

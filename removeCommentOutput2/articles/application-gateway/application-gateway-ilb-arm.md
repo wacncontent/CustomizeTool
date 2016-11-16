@@ -3,13 +3,18 @@
    description="This page provides instructions to create, configure, start, and delete an Azure application gateway with internal load balancer (ILB) for Azure Resource Manager"
    documentationCenter="na"
    services="application-gateway"
-   authors="joaoma"
+   authors="georgewallace"
    manager="carmonm"
    editor="tysonn"/>
 <tags
-	ms.service="application-gateway"
-	ms.date="04/05/2016"
-	wacn.date=""/>
+   ms.service="application-gateway"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="08/19/2016"
+   wacn.date=""
+   ms.author="gwallace"/>
 
 
 # Create an application gateway with an internal load balancer (ILB) by using Azure Resource Manager
@@ -20,13 +25,13 @@
 
 Azure Application Gateway can be configured with an Internet-facing VIP or with an internal endpoint that is not exposed to the Internet, also known as an internal load balancer (ILB) endpoint. Configuring the gateway with an ILB is useful for internal line-of-business applications that are not exposed to the Internet. It's also useful for services and tiers within a multi-tier application that sit in a security boundary that is not exposed to the Internet but still require round-robin load distribution, session stickiness, or Secure Sockets Layer (SSL) termination.
 
-This article will walk you through the steps to configure an application gateway with an ILB.
+This article walks you through the steps to configure an application gateway with an ILB.
 
 ## Before you begin
 
 1. Install the latest version of the Azure PowerShell cmdlets by using the Web Platform Installer. You can download and install the latest version from the **Windows PowerShell** section of the [Downloads page](/downloads/).
-2. You will create a virtual network and a subnet for Application Gateway. Make sure that no virtual machines or cloud deployments are using the subnet. Application Gateway must be by itself in a virtual network subnet.
-3. The servers that you will configure to use the application gateway must exist or have their endpoints created either in the virtual network or with a public IP/VIP assigned.
+2. You create a virtual network and a subnet for Application Gateway. Make sure that no virtual machines or cloud deployments are using the subnet. Application Gateway must be by itself in a virtual network subnet.
+3. The servers that you configure to use the application gateway must exist or have their endpoints created either in the virtual network or with a public IP/VIP assigned.
 
 ## What is required to create an application gateway?
 
@@ -39,10 +44,10 @@ This article will walk you through the steps to configure an application gateway
 
 
 
-## Create a new application gateway
+## Create an application gateway
 
-The difference between using Azure Classic and Azure Resource Manager is the order in which you will create the application gateway and the items that need to be configured.
-With Resource Manager, all items that will make an application gateway will be configured individually and then put together to create the application gateway resource.
+The difference between using Azure Classic and Azure Resource Manager is the order in which you create the application gateway and the items that need to be configured.
+With Resource Manager, all items that make an application gateway is configured individually and then put together to create the application gateway resource.
 
 
 Here are the steps that are needed to create an application gateway:
@@ -59,51 +64,33 @@ Make sure that you switch PowerShell mode to use the Azure Resource Manager cmdl
 
 ### Step 1
 
-		[AZURE.ACOM]{
-		PS C:\> Login-AzureRmAccount
-		[AZURE.ACOM]}
-		
-		[AZURE.ACN]{
-		PS C:\> Login-AzureRmAccount -EnvironmentName AzureChinaCloud
-		[AZURE.ACN]}
+	Login-AzureRmAccount -EnvironmentName AzureChinaCloud 
 
 ### Step 2
 
 Check the subscriptions for the account.
 
-		PS C:\> get-AzureRmSubscription
+	Get-AzureRmSubscription
 
-You will be prompted to authenticate with your credentials.<BR>
+You are prompted to authenticate with your credentials.<BR>
 
 ### Step 3
 
 Choose which of your Azure subscriptions to use. <BR>
 
 
-		PS C:\> Select-AzureRmSubscription -Subscriptionid "GUID of subscription"
+	Select-AzureRmSubscription -Subscriptionid "GUID of subscription"
 
 
 ### Step 4
 
 Create a new resource group (skip this step if you're using an existing resource group).
 
-    [AZURE.ACOM]{
     New-AzureRmResourceGroup -Name appgw-rg -location "China North"
-    [AZURE.ACOM]}
-    
-    [AZURE.ACN]{
-    New-AzureRmResourceGroup -Name appgw-rg -location "China North"
-    [AZURE.ACN]}
 
-Azure Resource Manager requires that all resource groups specify a location. This is used as the default location for resources in that resource group. Make sure that all commands to create an application gateway will use the same resource group.
+Azure Resource Manager requires that all resource groups specify a location. This is used as the default location for resources in that resource group. Make sure that all commands to create an application gateway uses the same resource group.
 
-[AZURE.ACOM]{
 In the example above, we created a resource group called "appgw-rg" and location "China North".
-[AZURE.ACOM]}
-
-[AZURE.ACN]{
-In the example above, we created a resource group called "appgw-rg" and location "China North".
-[AZURE.ACN]}
 
 ## Create a virtual network and a subnet for the application gateway
 
@@ -117,25 +104,13 @@ This assigns the address range 10.0.0.0/24 to a subnet variable to be used to cr
 
 ### Step 2
 
-	[AZURE.ACOM]{
 	$vnet = New-AzureRmVirtualNetwork -Name appgwvnet -ResourceGroupName appgw-rg -Location "China North" -AddressPrefix 10.0.0.0/16 -Subnet $subnetconfig
-	[AZURE.ACOM]}
-	
-	[AZURE.ACN]{
-	$vnet = New-AzureRmVirtualNetwork -Name appgwvnet -ResourceGroupName appgw-rg -Location "China North" -AddressPrefix 10.0.0.0/16 -Subnet $subnetconfig
-	[AZURE.ACN]}
 
-[AZURE.ACOM]{
 This creates a virtual network named "appgwvnet" in resource group "appgw-rg" for the China North region using the prefix 10.0.0.0/16 with subnet 10.0.0.0/24.
-[AZURE.ACOM]}
-
-[AZURE.ACN]{
-This creates a virtual network named "appgwvnet" in resource group "appgw-rg" for the China North region using the prefix 10.0.0.0/16 with subnet 10.0.0.0/24.
-[AZURE.ACN]}
 
 ### Step 3
 
-	$subnet=$vnet.subnets[0]
+	$subnet = $vnet.subnets[0]
 
 This assigns the subnet object to variable $subnet for the next steps.
 
@@ -145,14 +120,14 @@ This assigns the subnet object to variable $subnet for the next steps.
 
 	$gipconfig = New-AzureRmApplicationGatewayIPConfiguration -Name gatewayIP01 -Subnet $subnet
 
-This creates an application gateway IP configuration named "gatewayIP01". When Application Gateway starts, it will pick up an IP address from the subnet configured and route network traffic to the IP addresses in the back-end IP pool. Keep in mind that each instance will take one IP address.
+This creates an application gateway IP configuration named "gatewayIP01". When Application Gateway starts, it picks up an IP address from the subnet configured and route network traffic to the IP addresses in the back-end IP pool. Keep in mind that each instance takes one IP address.
 
 
 ### Step 2
 
 	$pool = New-AzureRmApplicationGatewayBackendAddressPool -Name pool01 -BackendIPAddresses 134.170.185.46, 134.170.188.221,134.170.185.50
 
-This configures the back-end IP address pool named "pool01" with IP addresses "134.170.185.46, 134.170.188.221,134.170.185.50". Those will be the IP addresses that receive the network traffic that comes from the front-end IP endpoint. You will replace the IP addresses above to add your own application IP address endpoints.
+This configures the back-end IP address pool named "pool01" with IP addresses "134.170.185.46, 134.170.188.221,134.170.185.50". Those are the IP addresses that receive the network traffic that comes from the front-end IP endpoint. You replace the IP addresses above to add your own application IP address endpoints.
 
 ### Step 3
 
@@ -197,13 +172,7 @@ This configures the instance size of the application gateway.
 Creates an application gateway with all configuration items from the steps above. In this example, the application gateway is called "appgwtest".
 
 
-	[AZURE.ACOM]{
 	$appgw = New-AzureRmApplicationGateway -Name appgwtest -ResourceGroupName appgw-rg -Location "China North" -BackendAddressPools $pool -BackendHttpSettingsCollection $poolSetting -FrontendIpConfigurations $fipconfig  -GatewayIpConfigurations $gipconfig -FrontendPorts $fp -HttpListeners $listener -RequestRoutingRules $rule -Sku $sku
-	[AZURE.ACOM]}
-	
-	[AZURE.ACN]{
-	$appgw = New-AzureRmApplicationGateway -Name appgwtest -ResourceGroupName appgw-rg -Location "China North" -BackendAddressPools $pool -BackendHttpSettingsCollection $poolSetting -FrontendIpConfigurations $fipconfig  -GatewayIpConfigurations $gipconfig -FrontendPorts $fp -HttpListeners $listener -RequestRoutingRules $rule -Sku $sku
-	[AZURE.ACN]}
 
 This creates an application gateway with all configuration items from the steps above. In the example, the application gateway is called "appgwtest".
 
@@ -267,7 +236,5 @@ If you want to configure an application gateway to use with an ILB, see [Create 
 
 If you want more information about load balancing options in general, see:
 
-[AZURE.ACOM]{
 - [Azure Load Balancer](/documentation/services/load-balancer/)
-[AZURE.ACOM]}
 - [Azure Traffic Manager](/documentation/services/traffic-manager/)

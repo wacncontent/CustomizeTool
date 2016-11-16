@@ -4,17 +4,22 @@
 	services="virtual-machines-linux"
 	documentationCenter=""
 	authors="TomArcher"
-	manager="douge"
+	manager="timlt"
 	editor=""
 	tags="azure-service-management"/>
 
 <tags
 	ms.service="virtual-machines-linux"
-	ms.date="06/01/2016"
-	wacn.date=""/>
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-linux"
+	ms.devlang="dotnet"
+	ms.topic="article"
+	ms.date="08/15/2016"
+	wacn.date=""
+	ms.author="tarcher"/>
 
 # Creating a virtual machine for a web application with Visual Studio
 
-> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager model.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]
 
-[AZURE.INCLUDE [virtual-machines-common-classic-web-app-visual-studio](../includes/virtual-machines-common-classic-web-app-visual-studio.md)]
+[AZURE.INCLUDE [virtual-machines-common-classic-web-app-visual-studio](../../includes/virtual-machines-common-classic-web-app-visual-studio.md)]

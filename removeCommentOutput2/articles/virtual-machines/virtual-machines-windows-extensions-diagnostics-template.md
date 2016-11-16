@@ -1,4 +1,3 @@
-
 <properties
 	pageTitle="Create a Windows Virtual machine with monitoring and diagnostics using Azure Resource Manager Template | Azure"
 	description="Use a Azure resource manager template to create a new Windows virtual machine with Azure diagnostics extension."
@@ -11,12 +10,15 @@
 
 <tags
 	ms.service="virtual-machines-windows"
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-windows"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="12/15/2015"
-	wacn.date=""/>
+	wacn.date=""
+	ms.author="saurabh"/>
 
 # Create a Windows Virtual machine with monitoring and diagnostics using Azure Resource Manager Template
-
-> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the Resource Manager deployment model, which Azure recommends for most new deployments instead of the classic deployment model. 
 
 The Azure Diagnostics Extension provides the monitoring and diagnostics capabilities on a Windows based Azure virtual machine. You can enable these capabilities on the virtual machine by including the extension as part of the azure resource manager template. See [Authoring Azure Resource Manager Templates with VM Extensions](/documentation/articles/virtual-machines-windows-extensions-authoring-templates/) for more information on including any extension as part of a virtual machine template. This article describes how you can add the Azure Diagnostics extension to a windows virtual machine template.  
   
@@ -80,7 +82,7 @@ The properties in *protectedSettings* (sometimes referred to as private configur
 ## Specifying diagnostics storage account as parameters 
 
 The diagnostics extension json snippet above assumes two parameters *existingdiagnosticsStorageAccountName* and
-*existingdiagnosticsStorageAccountName* to specify the diagnostics storage account where diagnostics data will be stored. Specifying the diagnostics storage account as a parameter makes it easy to change the diagnostics storage account across different environments e.g. you may want to use a different diagnostics storage account for testing and a different one for your production deployment.  
+*existingdiagnosticsStorageResourceGroup* to specify the diagnostics storage account where diagnostics data will be stored. Specifying the diagnostics storage account as a parameter makes it easy to change the diagnostics storage account across different environments e.g. you may want to use a different diagnostics storage account for testing and a different one for your production deployment.  
 
         "existingdiagnosticsStorageAccountName": {
             "type": "string",

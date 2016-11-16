@@ -1,9 +1,8 @@
-
 <properties
 	pageTitle="Use Hadoop Sqoop in HDInsight | Azure"
 	description="Learn how to use Azure PowerShell from a workstation to run Sqoop import and export between an Hadoop cluster and an Azure SQL database."
 	editor="cgronlun"
-	manager="paulettm"
+	manager="jhubbard"
 	services="hdinsight"
 	documentationCenter=""
 	tags="azure-portal"
@@ -11,12 +10,17 @@
 
 <tags
 	ms.service="hdinsight"
-	ms.date="05/27/2016"
-	wacn.date=""/>
+	ms.workload="big-data"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/02/2016"
+	wacn.date=""
+	ms.author="jgao"/>
 
-#Use Sqoop with Hadoop in HDInsight
+# Use Sqoop with Hadoop in HDInsight
 
-[AZURE.INCLUDE [sqoop-selector](../includes/hdinsight-selector-use-sqoop.md)]
+[AZURE.INCLUDE [sqoop-selector](../../includes/hdinsight-selector-use-sqoop.md)]
 
 Learn how to use Sqoop in HDInsight to import and export between HDInsight cluster and Azure SQL database or SQL Server database.
 
@@ -34,7 +38,7 @@ database for your relational database.
 For Sqoop versions that are supported on HDInsight clusters, 
 see [What's new in the cluster versions provided by HDInsight?][hdinsight-versions].
 
-##Understand the scenario
+## Understand the scenario
 
 HDInsight cluster comes with some sample data. You will use the following two samples:
 
@@ -69,15 +73,13 @@ mobile device data back to HDInsight by using the following path:
 
 ## Create cluster and SQL database
 
-This section shows you how to create a cluster and the SQL database schemas for running the tutorial using the Azure portal and an ARM template.  If you prefer to use Azure PowerShell, see [Appendix A](#appendix-a---a-powershell-sample).
+This section shows you how to create a cluster and the SQL database schemas for running the tutorial using the Azure portal and an Azure Resource Manager template.  If you prefer to use Azure PowerShell, see [Appendix A](#appendix-a---a-powershell-sample).
 
-1. Click the following image to open an ARM template in the Azure Portal.         
+1. Download the ARM template from [https://hditutorialdata.blob.core.windows.net/usesqoop/create-linux-based-hadoop-cluster-in-hdinsight-and-sql-database.json](https://hditutorialdata.blob.core.windows.net/usesqoop/create-linux-based-hadoop-cluster-in-hdinsight-and-sql-database.json), do some modification, and deploy it with Azure PowerShell.
 
-    <a href="https://portal.azure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fhditutorialdata.blob.core.windows.net%2Fusesqoop%2Fcreate-linux-based-hadoop-cluster-in-hdinsight-and-sql-database.json" target="_blank"><img src="https://acom.azurecomcdn.net/80C57D/cdn/mediahandler/docarticles/dpsmedia-prod/azure.microsoft.com/documentation/articles/hdinsight-hbase-tutorial-get-started-v1/20160201111850/deploy-to-azure.png" alt="Deploy to Azure"></a>
-    
-    The ARM template is located in a public blob container, *https://hditutorialdata.blob.core.windows.net/usesqoop/create-linux-based-hadoop-cluster-in-hdinsight-and-sql-database.json*. 
-    
-    The ARM template calls a bacpac package to deploy the table schemas to SQL database.  The bacpac package is also located in a public blob container, https://hditutorialdata.blob.core.windows.net/usesqoop/SqoopTutorial-2016-2-23-11-2.bacpac. If you want to use a private container for the bacpac files, use the following values in the template:
+>[AZURE.NOTE] Templates you downloaded must be modified in order to fit in the Azure China Cloud Environment. For example, replace some endpoints -- "blob.core.windows.net" by "blob.core.chinacloudapi.cn", "cloudapp.azure.com" by "chinacloudapp.cn"; change some unsupported VM images; and, changes some unsupported VM sizes.
+
+    The resource manager template calls a bacpac package to deploy the table schemas to SQL database.  The bacpac package is also located in a public blob container, https://hditutorialdata.blob.core.windows.net/usesqoop/SqoopTutorial-2016-2-23-11-2.bacpac. If you want to use a private container for the bacpac files, use the following values in the template:
     
         "storageKeyType": "Primary",
         "storageKey": "<TheAzureStorageAccountKey>",
@@ -117,7 +119,7 @@ If you choose to use existing Azure SQL database or Microsoft SQL Server
 
     > [AZURE.NOTE] HDInsight supports only location-based virtual networks, and it does not currently work with affinity group-based virtual networks.
 
-    * To create and configure a virtual network, see [Virtual Network Configuration Tasks](/home/features/virtual-machines/).
+    * To create and configure a virtual network, see [Create a virtual network using the Azure portal](/documentation/articles/virtual-networks-create-vnet-arm-pportal/).
 
         * When you are using SQL Server in your datacenter, you must configure the virtual network as *site-to-site* or *point-to-site*.
 
@@ -139,7 +141,7 @@ HDInsight can run Sqoop jobs by using a variety of methods. Use the following ta
 | [.NET SDK for Hadoop](/documentation/articles/hdinsight-hadoop-use-sqoop-dotnet-sdk/) |           &nbsp;            |            ✔            | Windows                          | Windows (for now)                        |
 | [Azure PowerShell](/documentation/articles/hdinsight-hadoop-use-sqoop-powershell/)  |           &nbsp;            |            ✔            | Windows                          | Windows                                  |
 
-##Next steps
+## Next steps
 
 Now you have learned how to use Sqoop. To learn more, see:
 
@@ -290,7 +292,13 @@ The PowerShell sample performs the following steps:
 	#region - Connect to Azure subscription
 	Write-Host "`nConnecting to your Azure subscription ..." -ForegroundColor Green
 	try{Get-AzureRmContext}
-	catch{Login-AzureRmAccount}
+	catch{Login-AzureRmAccount -EnvironmentName AzureChinaCloud}
+
+    try{Get-AzureSubscription}
+	catch{
+			Clear-AzureProfile
+			Import-AzurePublishSettingsFile -PublishSettingsFile path/to/<subscription name>-<date>-credentials.publishsettings
+		}
 	#endregion
 	
 	#region - Create Azure resouce group
@@ -393,16 +401,14 @@ The PowerShell sample performs the following steps:
 	Write-Host "Creating the HDInsight cluster and the dependent services ..." -ForegroundColor Green
 	
 	# Create the default storage account
-	New-AzureRmStorageAccount `
-		-ResourceGroupName $resourceGroupName `
-		-Name $defaultStorageAccountName `
+	New-AzureStorageAccount `
+		-StorageAccountName $defaultStorageAccountName `
 		-Location $location `
 		-Type Standard_LRS
 	
 	# Create the default Blob container
-	$defaultStorageAccountKey = (Get-AzureRmStorageAccountKey `
-									-ResourceGroupName $resourceGroupName `
-									-Name $defaultStorageAccountName)[0].Value
+	$defaultStorageAccountKey = Get-AzureStorageAccountKey `
+									-StorageAccountName $defaultStorageAccountName |  %{ $_.primary }
 	$defaultStorageAccountContext = New-AzureStorageContext `
 										-StorageAccountName $defaultStorageAccountName `
 										-StorageAccountKey $defaultStorageAccountKey 
@@ -414,20 +420,19 @@ The PowerShell sample performs the following steps:
 	$pw = ConvertTo-SecureString -String $httpPassword -AsPlainText -Force
 	$httpCredential = New-Object System.Management.Automation.PSCredential($httpUserName,$pw)
 	
-	New-AzureRmHDInsightCluster `
-		-ResourceGroupName $resourceGroupName `
-		-ClusterName $HDInsightClusterName `
+	New-AzureHDInsightCluster `
+		-Name $HDInsightClusterName `
 		-Location $location `
 		-ClusterType Hadoop `
 		-OSType Windows `
 		-ClusterSizeInNodes 2 `
-		-HttpCredential $httpCredential `
+		-Credential $httpCredential `
 		-DefaultStorageAccountName "$defaultStorageAccountName.blob.core.chinacloudapi.cn" `
 		-DefaultStorageAccountKey $defaultStorageAccountKey `
-		-DefaultStorageContainer $defaultBlobContainerName 
+		-DefaultStorageContainerName $defaultBlobContainerName 
 	
 	# Validate the cluster
-	Get-AzureRmHDInsightCluster -ClusterName $hdinsightClusterName
+	Get-AzureHDInsightCluster -Name $hdinsightClusterName
 	#endregion
 	
 	#region - pre-process the source file
@@ -505,22 +510,21 @@ The PowerShell sample performs the following steps:
 	$exportDir_log4j = "/tutorials/usesqoop/data"
 	
 	# Submit a Sqoop job
-	$sqoopDef = New-AzureRmHDInsightSqoopJobDefinition `
+	$sqoopDef = New-AzureHDInsightSqoopJobDefinition `
 		-Command "export --connect $connectionString --table $tableName_log4j --export-dir $exportDir_log4j --input-fields-terminated-by \0x20 -m 1"
-	$sqoopJob = Start-AzureRmHDInsightJob `
-					-ClusterName $hdinsightClusterName `
-					-HttpCredential $httpCredential `
+	$sqoopJob = Start-AzureHDInsightJob `
+					-Cluster $hdinsightClusterName `
+					-Credential $httpCredential `
 					-JobDefinition $sqoopDef #-Debug -Verbose
-	Wait-AzureRmHDInsightJob `
-		-ResourceGroupName $resourceGroupName `
-		-ClusterName $hdinsightClusterName `
-		-HttpCredential $httpCredential `
+	Wait-AzureHDInsightJob `
+		-Cluster $hdinsightClusterName `
+		-Credential $httpCredential `
 		-JobId $sqoopJob.JobId
 	
 	Write-Host "Standard Error" -BackgroundColor Green
-	Get-AzureRmHDInsightJobOutput -ResourceGroupName $resourceGroupName -ClusterName $hdinsightClusterName -DefaultStorageAccountName $defaultStorageAccountName -DefaultStorageAccountKey $defaultStorageAccountKey -DefaultContainer $defaultBlobContainerName -HttpCredential $httpCredential -JobId $sqoopJob.JobId -DisplayOutputType StandardError
+	Get-AzureHDInsightJobOutput -Cluster $hdinsightClusterName -JobId $sqoopJob.JobId -StandardError
 	Write-Host "Standard Output" -BackgroundColor Green
-	Get-AzureRmHDInsightJobOutput -ResourceGroupName $resourceGroupName -ClusterName $hdinsightClusterName -DefaultStorageAccountName $defaultStorageAccountName -DefaultStorageAccountKey $defaultStorageAccountKey -DefaultContainer $defaultBlobContainerName -HttpCredential $httpCredential -JobId $sqoopJob.JobId -DisplayOutputType StandardOutput
+	Get-AzureHDInsightJobOutput -Cluster $hdinsightClusterName -JobId $sqoopJob.JobId -StandardOutput
 	
 	#endregion
 	
@@ -529,40 +533,29 @@ The PowerShell sample performs the following steps:
 	$tableName_mobile = "mobiledata"
 	$exportDir_mobile = "/hive/warehouse/hivesampletable"
 	
-	$sqoopDef = New-AzureRmHDInsightSqoopJobDefinition `
+	$sqoopDef = New-AzureHDInsightSqoopJobDefinition `
 		-Command "export --connect $connectionString --table $tableName_mobile --export-dir $exportDir_mobile --fields-terminated-by \t -m 1"
-	$sqoopJob = Start-AzureRmHDInsightJob `
-					-ClusterName $hdinsightClusterName `
-					-HttpCredential $httpCredential `
+	$sqoopJob = Start-AzureHDInsightJob `
+					-Cluster $hdinsightClusterName `
+					-Credential $httpCredential `
 					-JobDefinition $sqoopDef #-Debug -Verbose
 	
-	Wait-AzureRmHDInsightJob `
-		-ResourceGroupName $resourceGroupName `
-		-ClusterName $hdinsightClusterName `
-		-HttpCredential $httpCredential `
+	Wait-AzureHDInsightJob `
+		-Cluster $hdinsightClusterName `
+		-Credential $httpCredential `
 		-JobId $sqoopJob.JobId
 	
 	Write-Host "Standard Error" -BackgroundColor Green
-	Get-AzureRmHDInsightJobOutput `
-		-ResourceGroupName $resourceGroupName `
-		-ClusterName $hdinsightClusterName `
-		-DefaultStorageAccountName $defaultStorageAccountName `
-		-DefaultStorageAccountKey $defaultStorageAccountKey `
-		-DefaultContainer $defaultBlobContainerName `
-		-HttpCredential $httpCredential `
+	Get-AzureHDInsightJobOutput `
+		-Cluster $hdinsightClusterName `
 		-JobId $sqoopJob.JobId `
-		-DisplayOutputType StandardError
+		-StandardError
 	
 	Write-Host "Standard Output" -BackgroundColor Green
-	Get-AzureRmHDInsightJobOutput `
-		-ResourceGroupName $resourceGroupName `
-		-ClusterName $hdinsightClusterName `
-		-DefaultStorageAccountName $defaultStorageAccountName `
-		-DefaultStorageAccountKey $defaultStorageAccountKey `
-		-DefaultContainer $defaultBlobContainerName `
-		-HttpCredential $httpCredential `
+	Get-AzureHDInsightJobOutput `
+		-Cluster $hdinsightClusterName `
 		-JobId $sqoopJob.JobId `
-		-DisplayOutputType StandardOutput
+		-StandardOutput
 	
 	#endregion
 	
@@ -570,41 +563,30 @@ The PowerShell sample performs the following steps:
 	
 	$targetDir_mobile = "/tutorials/usesqoop/importeddata/"
 	
-	$sqoopDef = New-AzureRmHDInsightSqoopJobDefinition `
+	$sqoopDef = New-AzureHDInsightSqoopJobDefinition `
 		-Command "import --connect $connectionString --table $tableName_mobile --target-dir $targetDir_mobile --fields-terminated-by \t --lines-terminated-by \n -m 1"
 	
-	$sqoopJob = Start-AzureRmHDInsightJob `
-					-ClusterName $hdinsightClusterName `
-					-HttpCredential $httpCredential `
+	$sqoopJob = Start-AzureHDInsightJob `
+					-Cluster $hdinsightClusterName `
+					-Credential $httpCredential `
 					-JobDefinition $sqoopDef #-Debug -Verbose
 	
-	Wait-AzureRmHDInsightJob `
-		-ResourceGroupName $resourceGroupName `
-		-ClusterName $hdinsightClusterName `
-		-HttpCredential $httpCredential `
+	Wait-AzureHDInsightJob `
+		-Cluster $hdinsightClusterName `
+		-Credential $httpCredential `
 		-JobId $sqoopJob.JobId
 	
 	Write-Host "Standard Error" -BackgroundColor Green
-	Get-AzureRmHDInsightJobOutput `
-		-ResourceGroupName $resourceGroupName `
-		-ClusterName $hdinsightClusterName `
-		-DefaultStorageAccountName $defaultStorageAccountName `
-		-DefaultStorageAccountKey $defaultStorageAccountKey `
-		-DefaultContainer $defaultBlobContainerName `
-		-HttpCredential $httpCredential `
+	Get-AzureHDInsightJobOutput `
+		-Cluster $hdinsightClusterName `
 		-JobId $sqoopJob.JobId `
-		-DisplayOutputType StandardError
+		-StandardError
 	
 	Write-Host "Standard Output" -BackgroundColor Green
-	Get-AzureRmHDInsightJobOutput `
-		-ResourceGroupName $resourceGroupName `
-		-ClusterName $hdinsightClusterName `
-		-DefaultStorageAccountName $defaultStorageAccountName `
-		-DefaultStorageAccountKey $defaultStorageAccountKey `
-		-DefaultContainer $defaultBlobContainerName `
-		-HttpCredential $httpCredential `
+	Get-AzureHDInsightJobOutput `
+		-Cluster $hdinsightClusterName `
 		-JobId $sqoopJob.JobId `
-		-DisplayOutputType StandardOutput
+		-StandardOutput
 	
 	#endregion
 

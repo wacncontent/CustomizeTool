@@ -1,18 +1,22 @@
-
 <properties
 	pageTitle="Apply policies to Azure Resource Manager Virtual Machines | Azure"
 	description="How to apply a policy to an Azure Resource Manager Windows Virtual Machine"
 	services="virtual-machines-windows"
 	documentationCenter=""
-	authors="singhkay"
-	manager="drewm"
+	authors="singhkays"
+	manager="timlt"
 	editor=""
 	tags="azure-resource-manager"/>
 
 <tags
 	ms.service="virtual-machines-windows"
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-windows"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="04/13/2016"
-	wacn.date=""/>
+	wacn.date=""
+	ms.author="singhkay"/>
 
 # Apply policies to Azure Resource Manager Virtual Machines
 

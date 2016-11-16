@@ -3,13 +3,18 @@
    description="Learn how to add and remove DNS servers in a virtual network (vnet)"
    services="virtual-network"
    documentationCenter="na"
-   authors="telmosampaio"
+   authors="jimdial"
    manager="carmonm"
    editor="tysonn" />
-<tags
-	ms.service="virtual-network"
-	ms.date="03/15/2016"
-	wacn.date=""/>
+<tags 
+   ms.service="virtual-network"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="03/15/2016"
+   wacn.date=""
+   ms.author="jdial" />
 
 # Manage DNS servers used by a virtual network (VNet)
 
@@ -52,11 +57,3 @@ To edit a DNS server list by using a network configuration file, you'll first ex
 1. Import the network configuration file. For more information and steps to import your network configuration file, see [Import a Network Configuration File](/documentation/articles/virtual-networks-using-network-configuration-file/).
 
 1. Restart the virtual machines located in the virtual network to allow them to acquire the new DNS settings.
-
-## Next Steps
-
-[How to manage Virtual Network (VNet) Properties](/documentation/articles/virtual-networks-settings/)
-
-[How to use public IP addresses in a virtual network](/documentation/articles/virtual-networks-public-ip-within-vnet/)
-
-[How to delete a Virtual Network (VNet)](/documentation/articles/virtual-networks-delete-vnet/) 

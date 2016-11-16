@@ -1,5 +1,5 @@
 <properties 
-	pageTitle="Create a REST service using ASP.NET Web API and SQL Database in Azure Web App" 
+	pageTitle="Create a REST service using ASP.NET Web API and SQL Database in Azure App Service" 
 	description="A tutorial that teaches you how to deploy an app that uses the ASP.NET Web API to an Azure web app by using Visual Studio." 
 	services="app-service\web" 
 	documentationCenter=".net" 
@@ -8,14 +8,19 @@
 	manager="wpickett" 
 	editor=""/>
 
-<tags
-	ms.service="app-service-web"
-	ms.date="02/29/2016"
-	wacn.date=""/>
+<tags 
+	ms.service="app-service-web" 
+	ms.workload="web" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="dotnet" 
+	ms.topic="article" 
+	ms.date="02/29/2016" 
+	wacn.date="" 
+	ms.author="riande"/>
 
-# Create a REST service using ASP.NET Web API and SQL Database in Azure
+# Create a REST service using ASP.NET Web API and SQL Database in Azure App Service
 
-This tutorial shows how to deploy an ASP.NET web app to an [Azure Web App](/documentation/services/web-sites/) by using the Publish Web wizard in Visual Studio 2013 or Visual Studio 2013 Community Edition. 
+This tutorial shows how to deploy an ASP.NET web app to an [Azure App Service](/documentation/articles/app-service-changes-existing-services/) by using the Publish Web wizard in Visual Studio 2013 or Visual Studio 2013 Community Edition. 
 
 You can open an Azure account for free, and if you don't already have Visual Studio 2013, the SDK automatically installs Visual Studio 2013 for Web Express. So you can start developing for Azure entirely for free.
 
@@ -34,9 +39,11 @@ You'll build a simple contact list web application that is built on ASP.NET MVC 
 ![screenshot of web site][intro001]
 
 <!-- the next line produces the "Set up the development environment" section as see at /documentation/articles/web-sites-dotnet-get-started/ -->
-[AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
+[AZURE.INCLUDE [create-account-and-websites-note](../../includes/create-account-and-websites-note.md)]
 
 ### Create the project
+
+>[AZURE.NOTE] You need to configure your Visual Studio Environment, in order to use Azure China in Visual Studio 2015. For more information, see [developer differerences](/documentation/articles/developerdifferences/).
 
 1. Start Visual Studio 2013.
 1. From the **File** menu click **New Project**.
@@ -720,7 +727,7 @@ When you see that the item you enter is saved and appears on the contact manager
 
 The application is now running in the cloud, using SQL Database to store its data. After you finish testing the application in Azure, delete it. The application is public and doesn't have a mechanism to limit access.
 
->[AZURE.NOTE] If you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.
+>[AZURE.NOTE] If you want to get started with Azure App Service before signing up for an Azure account, go to [Try App Service](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in App Service. No credit cards required; no commitments.
 
 ## Next Steps
 
@@ -739,7 +746,7 @@ This tutorial and the sample application was written by [Rick Anderson](http://b
 Please leave feedback on what you liked or what you would like to see improved, not only about the tutorial itself but also about the products that it demonstrates. Your feedback will help us prioritize improvements. We are especially interested in finding out how much interest there is in more automation for the process of configuring and deploying the membership database. 
 
 ## What's changed
-* For a guide to the change from Websites to Azure see: [Azure and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
+* For a guide to the change from Websites to App Service see: [Azure App Service and Its Impact on Existing Azure Services](/documentation/articles/app-service-changes-existing-services/)
 
 <!-- bookmarks -->
 [Add an OAuth Provider]: #addOauth

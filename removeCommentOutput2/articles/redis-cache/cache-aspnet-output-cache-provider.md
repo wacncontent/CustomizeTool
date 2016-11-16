@@ -4,12 +4,17 @@
 	services="redis-cache"
 	documentationCenter="na"
 	authors="steved0x"
-	manager="erikre"
+	manager="douge"
 	editor="tysonn" />
 <tags
 	ms.service="cache"
-	ms.date="07/12/2016"
-	wacn.date=""/>
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="cache-redis"
+	ms.workload="tbd"
+	ms.date="09/27/2016"
+	wacn.date=""
+	ms.author="sdanie" />
 
 # ASP.NET Output Cache Provider for Azure Redis Cache
 
@@ -53,7 +58,7 @@ The NuGet package downloads and adds the required assembly references and adds t
 
 The commented section provides an example of the attributes and sample settings for each attribute.
 
-Configure the attributes with the values from your cache blade in the Azure portal, and configure the other values as desired. For instructions on accessing your cache properties, see [Configure Redis cache settings](/documentation/articles/cache-configure/#configure-redis-cache-settings).
+Configure the attributes with the values from your cache blade in the Azure Portal Preview, and configure the other values as desired. For instructions on accessing your cache properties, see [Configure Redis cache settings](/documentation/articles/cache-configure/#configure-redis-cache-settings).
 
 -	**host** - specify your cache endpoint.
 -	**port** - use either your non-SSL port or your SSL port, depending on the ssl settings.
@@ -69,7 +74,7 @@ Add an OutputCache directive to each page for which you wish to cache the output
 
     <%@ OutputCache Duration="60" VaryByParam="*" %>
 
-In this example the cached page data will remain in the cache for 60 seconds, and a different version of the page will be cached for each parameter combination. For more information about the OutputCache directive, see [@OutputCache](https://msdn.microsoft.com/zh-cn/library/hdxfb6cy(v=vs.100).aspx).
+In this example the cached page data will remain in the cache for 60 seconds, and a different version of the page is cached for each parameter combination. For more information about the OutputCache directive, see [@OutputCache](https://msdn.microsoft.com/zh-cn/library/hdxfb6cy(v=vs.100).aspx).
 
 Once these steps are performed, your application is configured to use the Redis Output Cache Provider.
 

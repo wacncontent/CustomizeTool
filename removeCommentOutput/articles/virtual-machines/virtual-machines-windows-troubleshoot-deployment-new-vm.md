@@ -3,23 +3,26 @@
    description="Troubleshoot Resource Manager deployment issues when you create a new Windows virtual machine in Azure"
    services="virtual-machines-windows, azure-resource-manager"
    documentationCenter=""
-   authors="jiangchen79"
+   authors="JiangChen79"
    manager="felixwu"
    editor=""
    tags="top-support-issue, azure-resource-manager"/>
 
 <tags
-	ms.service="virtual-machines-windows"
-	ms.date="06/20/2016"
-	wacn.date=""/>
+  ms.service="virtual-machines-windows"
+  ms.workload="na"
+  ms.tgt_pltfrm="vm-windows"
+  ms.devlang="na"
+  ms.topic="article"
+  ms.date="09/09/2016"
+  wacn.date=""
+  ms.author="cjiang"/>
 
 # Troubleshoot Resource Manager deployment issues with creating a new Windows virtual machine in Azure
 
-[AZURE.INCLUDE [virtual-machines-troubleshoot-deployment-new-vm-selectors](../includes/virtual-machines-windows-troubleshoot-deployment-new-vm-selectors-include.md)]
+[AZURE.INCLUDE [virtual-machines-troubleshoot-deployment-new-vm-opening](../../includes/virtual-machines-troubleshoot-deployment-new-vm-opening-include.md)]
 
-[AZURE.INCLUDE [virtual-machines-troubleshoot-deployment-new-vm-opening](../includes/virtual-machines-troubleshoot-deployment-new-vm-opening-include.md)]
-
-[AZURE.INCLUDE [support-disclaimer](../includes/support-disclaimer.md)]
+[AZURE.INCLUDE [support-disclaimer](../../includes/support-disclaimer.md)]
 
 ## Collect audit logs
 
@@ -29,9 +32,9 @@ To start troubleshooting, collect the audit logs to identify the error associate
 
 [Audit operations with Resource Manager](/documentation/articles/resource-group-audit/)
 
-[AZURE.INCLUDE [virtual-machines-troubleshoot-deployment-new-vm-issue1](../includes/virtual-machines-troubleshoot-deployment-new-vm-issue1-include.md)]
+[AZURE.INCLUDE [virtual-machines-troubleshoot-deployment-new-vm-issue1](../../includes/virtual-machines-troubleshoot-deployment-new-vm-issue1-include.md)]
 
-[AZURE.INCLUDE [virtual-machines-windows-troubleshoot-deployment-new-vm-table](../includes/virtual-machines-windows-troubleshoot-deployment-new-vm-table.md)]
+[AZURE.INCLUDE [virtual-machines-windows-troubleshoot-deployment-new-vm-table](../../includes/virtual-machines-windows-troubleshoot-deployment-new-vm-table.md)]
 
 **Y:** If the OS is Windows generalized, and it is uploaded and/or captured with the generalized setting, then there won't be any errors. Similarly, if the OS is Windows specialized, and it is uploaded and/or captured with the specialized setting, then there won't be any errors.
 
@@ -43,19 +46,19 @@ To start troubleshooting, collect the audit logs to identify the error associate
 
 **Resolution**
 
-To resolve both these errors, use [Add-AzureRMVhd to upload the original VHD](https://msdn.microsoft.com/zh-cn/library/mt603554.aspx), available on-prem, with the same setting as that for the OS (generalized/specialized). To upload as generalized, remember to run sysprep first.
+To resolve both these errors, use [Add-AzureRmVhd to upload the original VHD](https://msdn.microsoft.com/zh-cn/library/mt603554.aspx), available on-premises, with the same setting as that for the OS (generalized/specialized). To upload as generalized, remember to run sysprep first.
 
 **Capture Errors:**
 
 **N<sup>3</sup>:** If the OS is Windows generalized, and it is captured as specialized, you will get a provisioning timeout error because the original VM is not usable as it is marked as generalized.
 
-**N<sup>4</sup>:** If the OS is Windows specialized, and it is captured as generalized, you will get a provisioning failure error because the new VM is running with the original computer name, username and password. Also, the original VM is not usable because it is marked as specialized.
+**N<sup>4</sup>:** If the OS is Windows specialized, and it is captured as generalized, you will get a provisioning failure error because the new VM is running with the original computer name, username, and password. Also, the original VM is not usable because it is marked as specialized.
 
 **Resolution**
 
-To resolve both these errors, delete the current image from the portal, and [recapture it from the current VHDs](/documentation/articles/virtual-machines-windows-capture-image/) with the same setting as that for the OS (generalized/specialized).
+To resolve both these errors, delete the current image from the portal, and [recapture it from the current VHDs](/documentation/articles/virtual-machines-windows-vhd-copy/) with the same setting as that for the OS (generalized/specialized).
 
-## Issue: Custom/ gallery/ marketplace image; allocation failure
+## Issue: Custom/gallery/marketplace image; allocation failure
 This error arises in situations when the new VM request is pinned to a cluster that either cannot support the VM size being requested, or does not have available free space to accommodate the request.
 
 **Cause 1:** The cluster cannot support the requested VM size.

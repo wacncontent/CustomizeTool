@@ -10,12 +10,17 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="07/06/2016"
-	wacn.date=""/>
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-windows"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/27/2016"
+	wacn.date=""
+	ms.author="cynthn"/>
 
 # Connect Windows virtual machines created with the classic deployment model with a virtual network or cloud service
 
-> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager model.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]
 
 Windows virtual machines created with the classic deployment model are always placed in a cloud service. The cloud service acts as a container and provides a unique public DNS name, a public IP address, and a set of endpoints to access the virtual machine over the Internet. The cloud service can be in a virtual network, but that's not a requirement. You can also [connect Linux virtual machines with a virtual network or cloud service](/documentation/articles/virtual-machines-linux-classic-connect-vms/).
 
@@ -23,7 +28,7 @@ If a cloud service isn't in a virtual network, it's called a *standalone* cloud 
 
 If you place your virtual machines in the same standalone cloud service, you can still use load balancing and availability sets. For details, see [Load balancing virtual machines](/documentation/articles/virtual-machines-windows-load-balance/) and [Manage the availability of virtual machines](/documentation/articles/virtual-machines-windows-manage-availability/). However, you can't organize the virtual machines on subnets or connect a standalone cloud service to your on-premises network. Here's an example:
 
-[AZURE.INCLUDE [virtual-machines-common-classic-connect-vms](../includes/virtual-machines-common-classic-connect-vms.md)]
+[AZURE.INCLUDE [virtual-machines-common-classic-connect-vms](../../includes/virtual-machines-common-classic-connect-vms.md)]
 
 ## Next steps
 

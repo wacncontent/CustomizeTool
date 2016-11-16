@@ -7,10 +7,15 @@
 	manager="wpickett" 
 	editor=""/>
 
-<tags
-	ms.service="app-service"
-	ms.date="04/27/2016"
-	wacn.date=""/>
+<tags 
+	ms.service="app-service" 
+	ms.workload="na" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="04/27/2016" 
+	wacn.date="" 
+	ms.author="cephalin"/>
 
 # Deploy a web app linked to a GitHub repository
 
@@ -21,7 +26,7 @@ For more information about creating templates, see [Authoring Azure Resource Man
 
 For the complete template, see [Web App Linked to GitHub template](https://github.com/Azure/azure-quickstart-templates/blob/master/201-web-app-github-deploy/azuredeploy.json).
 
-[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)] 
+[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)] 
 
 ## What you will deploy
 
@@ -33,7 +38,7 @@ To run the deployment automatically, click the following button:
 
 ## Parameters
 
-[AZURE.INCLUDE [app-service-web-deploy-web-parameters](../includes/app-service-web-deploy-web-parameters.md)]
+[AZURE.INCLUDE [app-service-web-deploy-web-parameters](../../includes/app-service-web-deploy-web-parameters.md)]
 
 ### repoURL
 
@@ -55,7 +60,7 @@ The branch of the repository to use when deploying the application. The default 
     
 ## Resources to deploy
 
-[AZURE.INCLUDE [app-service-web-deploy-web-host](../includes/app-service-web-deploy-web-host.md)]
+[AZURE.INCLUDE [app-service-web-deploy-web-host](../../includes/app-service-web-deploy-web-host.md)]
 
 ### Web app
 
@@ -100,7 +105,7 @@ Instead of hard-coding the repository URL, you can add a parameter for the repos
 
 ## Commands to run deployment
 
-[AZURE.INCLUDE [app-service-deploy-commands](../includes/app-service-deploy-commands.md)]
+[AZURE.INCLUDE [app-service-deploy-commands](../../includes/app-service-deploy-commands.md)]
 
 ### PowerShell
 

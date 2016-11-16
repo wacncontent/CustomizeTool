@@ -1,36 +1,41 @@
 <properties 
-	pageTitle="Create a PHP-SQL web app and deploy to Azure using Git" 
-	description="A tutorial that demonstrates how to create a PHP web app that stores data in Azure SQL Database and use Git deployment to Azure Web App." 
+	pageTitle="Create a PHP-SQL web app and deploy to Azure App Service using Git" 
+	description="A tutorial that demonstrates how to create a PHP web app that stores data in Azure SQL Database and use Git deployment to Azure App Service." 
 	services="app-service\web, sql-database" 
 	documentationCenter="php" 
 	authors="rmcmurray" 
 	manager="wpickett" 
 	editor=""/>
 
-<tags
-	ms.service="app-service-web"
-	ms.date="06/24/2016"
-	wacn.date=""/>
+<tags 
+	ms.service="app-service-web" 
+	ms.workload="web" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="PHP" 
+	ms.topic="article" 
+	ms.date="08/11/2016" 
+	wacn.date="" 
+	ms.author="robmcm"/>
 
-# Create a PHP-SQL web app and deploy to Azure using Git
+# Create a PHP-SQL web app and deploy to Azure App Service using Git
 
-This tutorial shows you how to create a PHP web app in [Azure Web App](/documentation/services/web-sites/) that connects to Azure SQL Database and how to deploy it using Git. This tutorial assumes you have [PHP][install-php], [SQL Server Express][install-SQLExpress], the [Microsoft Drivers for SQL Server for PHP](http://www.microsoft.com/download/en/details.aspx?id=20098), and [Git][install-git] installed on your computer. Upon completing this guide, you will have a PHP-SQL web app running in Azure.
+This tutorial shows you how to create a PHP web app in [Azure App Service](/documentation/articles/app-service-changes-existing-services/) that connects to Azure SQL Database and how to deploy it using Git. This tutorial assumes you have [PHP][install-php], [SQL Server Express][install-SQLExpress], the [Microsoft Drivers for SQL Server for PHP](http://www.microsoft.com/download/en/details.aspx?id=20098), and [Git][install-git] installed on your computer. Upon completing this guide, you will have a PHP-SQL web app running in Azure.
 
 > [AZURE.NOTE]
 > You can install and configure PHP, SQL Server Express, and the Microsoft Drivers for SQL Server for PHP using the [Microsoft Web Platform Installer](http://www.microsoft.com/web/downloads/platform.aspx).
 
 You will learn:
 
-* How to create an Azure web app and a SQL Database using the [Azure Portal](https://manage.windowsazure.cn/). Because PHP is enabled in Azure Web Apps by default, nothing special is required to run your PHP code.
+* How to create an Azure web app and a SQL Database using the [Azure Portal](/documentation/articles/app-service-web-app-azure-portal/). Because PHP is enabled in App Service Web Apps by default, nothing special is required to run your PHP code.
 * How to publish and re-publish your application to Azure using Git.
  
 By following this tutorial, you will build a simple registration web application in PHP. The application will be hosted in an Azure Website. A screenshot of the completed application is below:
 
 ![Azure PHP Web Site](./media/web-sites-php-sql-database-deploy-use-git/running_app_3.png)
 
-[AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
+[AZURE.INCLUDE [create-account-and-websites-note](../../includes/create-account-and-websites-note.md)]
 
->[AZURE.NOTE] If you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.
+>[AZURE.NOTE] If you want to get started with Azure App Service before signing up for an Azure account, go to [Try App Service](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in App Service. No credit cards required; no commitments.
 
 ##Create an Azure web app and set up Git publishing
 
@@ -82,7 +87,7 @@ To connect to the SQL Database instance that is linked to your web app, your wil
 
 	![View database properties](./media/web-sites-php-sql-database-deploy-use-git/view-database-properties.png)
 	
-3. From the **PHP** section of the resulting dialog, make note of the values for `Server`, `SQL Database`, and `User Name`. You will use these values later when publishing your PHP web app to Azure.
+3. From the **PHP** section of the resulting dialog, make note of the values for `Server`, `SQL Database`, and `User Name`. You will use these values later when publishing your PHP web app to Azure App Service.
 
 ##Build and test your application locally
 
@@ -233,7 +238,7 @@ You can now browse to **http://localhost:8000/index.php** to test the applicatio
 
 ##Publish your application
 
-After you have tested your application locally, you can publish it to Azure Web Apps using Git. However, you first need to update the database connection information in the application. Using the database connection information you obtained earlier (in the **Get SQL Database connection information** section), update the following information in **both** the `createdatabase.php` and `index.php` files with the appropriate values:
+After you have tested your application locally, you can publish it to App Service Web Apps using Git. However, you first need to update the database connection information in the application. Using the database connection information you obtained earlier (in the **Get SQL Database connection information** section), update the following information in **both** the `createdatabase.php` and `index.php` files with the appropriate values:
 
 	// DB connection info
 	$host = "tcp:<value of Server>";
@@ -282,7 +287,7 @@ To publish changes to application, follow these steps:
 3. Browse to **http://[web app name].chinacloudsites.cn/index.php** to see your changes.
 
 ## What's changed
-* For a guide to the change from Websites to Azure see: [Azure and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
+* For a guide to the change from Websites to App Service see: [Azure App Service and Its Impact on Existing Azure Services](/documentation/articles/app-service-changes-existing-services/)
 
 
 

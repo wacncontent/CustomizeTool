@@ -9,12 +9,18 @@
 />
 	
 
-<tags
-	ms.service="virtual-machines-linux"
-	ms.date="06/06/2016"
-	wacn.date=""/>
+<tags 
+	ms.service="virtual-machines-linux" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.tgt_pltfrm="vm-linux"
+	ms.workload="infrastructure" 
+	ms.date="08/23/2016" 
+	wacn.date="" 
+	ms.author="rasquill" 
+/>
 
 
 # Virtual Machines and Containers in Azure
 
-[AZURE.INCLUDE [virtual-machines-common-and-containers](../includes/virtual-machines-common-containers.md)]
+[AZURE.INCLUDE [virtual-machines-common-and-containers](../../includes/virtual-machines-common-containers.md)]

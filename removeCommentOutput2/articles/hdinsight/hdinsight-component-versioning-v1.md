@@ -3,14 +3,19 @@
 	description="HDInsight supports multiple deployable Hadoop cluster versions. See the Hadoop and HortonWorks Data Platform (HDP) distribution versions supported."
 	services="hdinsight"
 	editor="cgronlun"
-	manager="paulettm"
+	manager="jhubbard"
 	authors="mumian"
 	documentationCenter=""/>
 
 <tags
 	ms.service="hdinsight"
-	ms.date="04/28/2016"
-	wacn.date=""/>
+	ms.workload="big-data"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="07/25/2016"
+	wacn.date=""
+	ms.author="jgao"/>
 
 
 #What's new in the Hadoop cluster versions provided by HDInsight?
@@ -20,19 +25,19 @@ Azure HDInsight supports multiple Hadoop cluster versions that can be deployed a
 
 
 <table border="1">
-<tr><th>Component</th><th>HDInsight Version 3.2</th><th>HDInsight Version 3.1 (Default)</th><th>HDInsight Version 3.0</th><th>HDInsight Version 2.1</th></tr>
-<tr><td>Hortonworks Data Platform</td><td>2.2</td><td>2.1.7</td><td>2.0</td><td>1.3</td></tr>
-<tr><td>Apache Hadoop & YARN</td><td>2.6.0</td><td>2.4.0</td><td>2.2.0</td><td>1.2.0</td></tr>
-<tr><td>Apache Tez</td><td>0.5.2</td><td>0.4.0</td><td></td><td></td></tr>
-<tr><td>Apache Pig</td><td>0.14.0</td><td>0.12.1</td><td>0.12.0</td><td>0.11.0</td></tr>
-<tr><td>Apache Hive & HCatalog</td><td>0.14.0</td><td>0.13.1</td><td>0.12.0</td><td>0.11.0</td></tr>
-<tr><td>Apazhe HBase </td><td>0.98.4</td><td>0.98.0</td><td></td><td></td></tr>
-<tr><td>Apache Sqoop</td><td>1.4.5</td><td>1.4.4</td><td>1.4.4</td><td>1.4.3</td></tr>
-<tr><td>Apache Oozie</td><td>4.1.0</td><td>4.0.0</td><td>4.0.0</td><td>3.3.2</td></tr>
-<tr><td>Apache Zookeeper</td><td>3.4.6</td><td>3.4.5</td><td>3.4.5</td><td></td></tr>
-<tr><td>Apache Storm</td><td>0.9.3</td><td>0.9.1</td><td></td><td></td></tr>
-<tr><td>Apache Mahout</td><td>0.9.0</td><td>0.9.0</td><td></td><td></td></tr>
-<tr><td>Apache Phoenix</td><td>4.2.0</td><td>4.0.0.2.1.7.0-2162</td><td></td><td></td></tr>
+<tr><th>Component</th><th>HDInsight Version 3.3</th><th>HDInsight Version 3.2</th><th>HDInsight Version 3.1 (Default)</th><th>HDInsight Version 3.0</th><th>HDInsight Version 2.1</th></tr>
+<tr><td>Hortonworks Data Platform</td><td>2.3</td><td>2.2</td><td>2.1.7</td><td>2.0</td><td>1.3</td></tr>
+<tr><td>Apache Hadoop & YARN</td><td>2.7.1</td><td>2.6.0</td><td>2.4.0</td><td>2.2.0</td><td>1.2.0</td></tr>
+<tr><td>Apache Tez</td><td>0.7.0</td><td>0.5.2</td><td>0.4.0</td><td></td><td></td></tr>
+<tr><td>Apache Pig</td><td>0.15.0</td><td>0.14.0</td><td>0.12.1</td><td>0.12.0</td><td>0.11.0</td></tr>
+<tr><td>Apache Hive & HCatalog</td><td>1.2.1</td><td>0.14.0</td><td>0.13.1</td><td>0.12.0</td><td>0.11.0</td></tr>
+<tr><td>Apazhe HBase </td><td>1.1.1</td><td>0.98.4</td><td>0.98.0</td><td></td><td></td></tr>
+<tr><td>Apache Sqoop</td><td>1.4.6</td><td>1.4.5</td><td>1.4.4</td><td>1.4.4</td><td>1.4.3</td></tr>
+<tr><td>Apache Oozie</td><td>4.2.0</td><td>4.1.0</td><td>4.0.0</td><td>4.0.0</td><td>3.3.2</td></tr>
+<tr><td>Apache Zookeeper</td><td>3.4.6</td><td>3.4.6</td><td>3.4.5</td><td>3.4.5</td><td></td></tr>
+<tr><td>Apache Storm</td><td>0.10.0</td><td>0.9.3</td><td>0.9.1</td><td></td><td></td></tr>
+<tr><td>Apache Mahout</td><td>0.9.0+</td><td>0.9.0</td><td>0.9.0</td><td></td><td></td></tr>
+<tr><td>Apache Phoenix</td><td>4.4.0</td><td>4.2.0</td><td>4.0.0.2.1.7.0-2162</td><td></td><td></td></tr>
 </table>
 
 
@@ -53,7 +58,6 @@ If you use the **Quick Create** option, you will get version 3.1 of HDInsight, w
 
 ##Feature highlights
 Some of the salient features of the HDInsight platform include:
-
 
 - **Storm** - Storm on Azure HDInsight is now generally available, giving a fast and easy way to deploy real-time analytics in just a few clicks and within minutes. Apache Storm on Azure HDInsight is an open-source project in the Apache Hadoop ecosystem that provides access to an analytics platform capable of reliably processing millions of events. Now Hadoop users can gain insights as events happen, along with insights from past events. Microsoft is also providing built-in integration with Visual Studio, making developer interaction with Storm easy. You can now develop, deploy, and debug Storm topologies from within Visual Studio.
 
@@ -94,6 +98,7 @@ The following table lists the versions of HDInsight currently available, the cor
 
 <table border="1">
 <tr><th>HDInsight Version</th><th>HDP Version</a><th>High Availability</th></th><th>Release Date</th><th>Available on Azure Classic Management Portal</th><th>Support Expiration Date</th><th>Deprecation Date</th></tr>
+<tr><td>HDI 3.3</td><td>HDP 2.3</td><td>Yes</td><td>12/02/2015</td><td>Yes</td><td></td><td></td></tr> 
 <tr><td>HDI 3.2</td><td>HDP 2.2</td><td>Yes</td><td>2/18/2015</td><td>Yes</td><td></td><td></td></tr>
 <tr><td>HDI 3.1</td><td>HDP 2.1</td><td>Yes</td><td>6/24/2014</td><td>Yes</td><td></td><td></td></tr>
 <tr><td>HDI 3.0</td><td>HDP 2.0</td><td>Yes</td><td>02/11/2014</td><td>Yes</td><td>09/17/2014</td><td>06/30/2015</td></tr>

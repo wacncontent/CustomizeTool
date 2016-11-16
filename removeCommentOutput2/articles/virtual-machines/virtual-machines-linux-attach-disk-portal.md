@@ -1,4 +1,3 @@
-
 <properties
 	pageTitle="Attach a data disk to a Linux VM | Azure"
 	description="How to attach new or existing data disk to a Linux VM in the Azure portal using the Resource Manager deployment model."
@@ -11,8 +10,13 @@
 
 <tags
 	ms.service="virtual-machines-linux"
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-linux"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="07/06/2016"
-	wacn.date=""/>
+	wacn.date=""
+	ms.author="cynthn"/>
 
 # How to attach a data disk to a Linux VM in the Azure portal Preview
 
@@ -25,7 +29,7 @@ This article shows you how to attach both new and existing disks to a Linux virt
 - For an existing disk, the .vhd file must be available in an Azure storage account. You can use a .vhd that's already there, if it's not attached to another virtual machine, or upload your own .vhd file to the storage account.
 
 
-[AZURE.INCLUDE [virtual-machines-common-attach-disk-portal](../includes/virtual-machines-common-attach-disk-portal.md)]
+[AZURE.INCLUDE [virtual-machines-common-attach-disk-portal](../../includes/virtual-machines-common-attach-disk-portal.md)]
 
 ## Next steps
 

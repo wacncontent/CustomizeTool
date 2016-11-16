@@ -1,28 +1,35 @@
-
 <properties 
    pageTitle="Manage NSGs using the Portal Preview in Resource Manager | Azure"
    description="Learn how to manage exising NSGs using the Portal Preview in Resource Manager"
    services="virtual-network"
    documentationCenter="na"
-   authors="telmosampaio"
+   authors="jimdial"
    manager="carmonm"
    editor=""
    tags="azure-resource-manager"
 />
-<tags
-	ms.service="virtual-network"
-	ms.date="03/14/2016"
-	wacn.date=""/>
+<tags  
+   ms.service="virtual-network"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="03/14/2016"
+   wacn.date=""
+   ms.author="jdial" />
 
-# Manage NSGs using the portal preview
+# Manage NSGs using the Portal Preview
 
-[AZURE.INCLUDE [virtual-network-manage-arm-selectors-include.md](../includes/virtual-network-manage-nsg-arm-selectors-include.md)]
+> [AZURE.SELECTOR]
+- [Portal](/documentation/articles/virtual-network-manage-nsg-arm-portal/)
+- [PowerShell](/documentation/articles/virtual-network-manage-nsg-arm-ps/)
+- [Azure CLI](/documentation/articles/virtual-network-manage-nsg-arm-cli/)
 
-[AZURE.INCLUDE [virtual-network-manage-nsg-intro-include.md](../includes/virtual-network-manage-nsg-intro-include.md)]
+[AZURE.INCLUDE [virtual-network-manage-nsg-intro-include.md](../../includes/virtual-network-manage-nsg-intro-include.md)]
 
-[AZURE.INCLUDE [azure-arm-classic-important-include](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
+[AZURE.INCLUDE [azure-arm-classic-important-include](../../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
 
-[AZURE.INCLUDE [virtual-network-manage-nsg-arm-scenario-include.md](../includes/virtual-network-manage-nsg-arm-scenario-include.md)]
+[AZURE.INCLUDE [virtual-network-manage-nsg-arm-scenario-include.md](../../includes/virtual-network-manage-nsg-arm-scenario-include.md)]
 
 ## Retrieve Information
 
@@ -129,7 +136,7 @@ To associate the **NSG-FrontEnd** NSG to the **TestNICWeb1** NIC, follow the ste
 
 ![Azure portal preview - NSGs](./media/virtual-network-manage-nsg-arm-portal/figure12.png)
 
-###<a name="Dissociate-an-NSG-from-a-NIC"></a> Dissociate an NSG from a NIC
+### <a name="Dissociate-an-NSG-from-a-NIC"></a> Dissociate an NSG from a NIC
 
 To dissociate the **NSG-FrontEnd** NSG from the **TestNICWeb1** NIC, follow the steps below.
 
@@ -140,7 +147,7 @@ To dissociate the **NSG-FrontEnd** NSG from the **TestNICWeb1** NIC, follow the 
 
 >[AZURE.NOTE] You can also use this blade to associate the NIC to any existing NSG.
 
-###<a name="Dissociate-an-NSG-from-a-subnet"></a> Dissociate an NSG from a subnet
+### <a name="Dissociate-an-NSG-from-a-subnet"></a> Dissociate an NSG from a subnet
 
 To dissociate the **NSG-FrontEnd** NSG from the **FrontEnd** subnet, follow the steps below.
 

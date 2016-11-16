@@ -1,18 +1,22 @@
-
 <properties
 	pageTitle="Vertically scale Azure virtual machines with Azure Automation | Azure"
 	description="How to vertically scale a Windows Virtual Machine in response to monitoring alerts with Azure Automation"
 	services="virtual-machines-windows"
 	documentationCenter=""
-	authors="singhkay"
-	manager="drewm"
+	authors="singhkays"
+	manager="timlt"
 	editor=""
 	tags="azure-resource-manager"/>
 
 <tags
 	ms.service="virtual-machines-windows"
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-windows"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="03/29/2016"
-	wacn.date=""/>
+	wacn.date=""
+	ms.author="singhkay"/>
 
 # Vertically scale Azure virtual machines with Azure Automation
 

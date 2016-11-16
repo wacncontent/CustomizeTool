@@ -4,13 +4,18 @@
    services="hdinsight"
    documentationCenter=""
    authors="Blackmist"
-   manager="paulettm"
+   manager="jhubbard"
    editor="cgronlun"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="07/11/2016"
-	wacn.date=""/>
+   ms.service="hdinsight"
+   ms.devlang="python"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="big-data"
+   ms.date="09/27/2016"
+   wacn.date=""
+   ms.author="larryfr"/>
 
 #Develop Apache Storm topologies using Python on HDInsight
 

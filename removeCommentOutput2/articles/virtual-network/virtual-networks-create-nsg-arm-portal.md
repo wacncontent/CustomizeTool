@@ -1,32 +1,36 @@
-
 <properties 
    pageTitle="How to create NSGs in ARM mode using the Azure portal | Azure"
    description="Learn how to create and deploy NSGs in ARM using the Azure portal"
    services="virtual-network"
    documentationCenter="na"
-   authors="telmosampaio"
+   authors="jimdial"
    manager="carmonm"
    editor="tysonn"
    tags="azure-resource-manager"
 />
-<tags
-	ms.service="virtual-network"
-	ms.date="02/04/2016"
-	wacn.date=""/>
+<tags 
+   ms.service="virtual-network"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="02/04/2016"
+   wacn.date=""
+   ms.author="jdial" />
 
 # How to manage NSGs using the Azure portal Preview
 
-[AZURE.INCLUDE [virtual-networks-create-nsg-selectors-arm-include](../includes/virtual-networks-create-nsg-selectors-arm-include.md)]
+[AZURE.INCLUDE [virtual-networks-create-nsg-selectors-arm-include](../../includes/virtual-networks-create-nsg-selectors-arm-include.md)]
 
-[AZURE.INCLUDE [virtual-networks-create-nsg-intro-include](../includes/virtual-networks-create-nsg-intro-include.md)]
+[AZURE.INCLUDE [virtual-networks-create-nsg-intro-include](../../includes/virtual-networks-create-nsg-intro-include.md)]
 
-[AZURE.INCLUDE [azure-arm-classic-important-include](../includes/azure-arm-classic-important-include.md)] This article covers the Resource Manager deployment model. You can also [create NSGs in the classic deployment model](/documentation/articles/virtual-networks-create-nsg-classic-ps/).
+[AZURE.INCLUDE [azure-arm-classic-important-include](../../includes/azure-arm-classic-important-include.md)] This article covers the Resource Manager deployment model. You can also [create NSGs in the classic deployment model](/documentation/articles/virtual-networks-create-nsg-classic-ps/).
 
-[AZURE.INCLUDE [virtual-networks-create-nsg-scenario-include](../includes/virtual-networks-create-nsg-scenario-include.md)]
+[AZURE.INCLUDE [virtual-networks-create-nsg-scenario-include](../../includes/virtual-networks-create-nsg-scenario-include.md)]
 
 The sample PowerShell commands below expect a simple environment already created based on the scenario above. If you want to run the commands as they are displayed in this document, first build the test environment by deploying [this template](http://github.com/telmosampaio/azure-templates/tree/master/201-IaaS-WebFrontEnd-SQLBackEnd), click **Deploy to Azure**, replace the default parameter values if necessary, and follow the instructions in the portal. The steps below use **RG-NSG** as the name of the resource group the template was deployed to.
 
-##<a name="Create-the-NSG-FrontEnd-NSG"></a> Create the NSG-FrontEnd NSG
+## <a name="Create-the-NSG-FrontEnd-NSG"></a> Create the NSG-FrontEnd NSG
 
 To create the **NSG-FrontEnd** NSG as shown in the scenario above, follow the steps below.
 
@@ -43,7 +47,7 @@ To create the **NSG-FrontEnd** NSG as shown in the scenario above, follow the st
 
 	![Azure portal Preview - NSGs](./media/virtual-networks-create-nsg-arm-pportal/figure13.png)
 
-##<a name="Create-rules-in-an-existing-NSG"></a> Create rules in an existing NSG
+## <a name="Create-rules-in-an-existing-NSG"></a> Create rules in an existing NSG
 
 To create rules in an existing NSG from the Azure portal, follow the steps below.
 
@@ -67,7 +71,7 @@ To create rules in an existing NSG from the Azure portal, follow the steps below
 
 7. Repeat steps  to 6 to create an inbound rule named *rdp-rule* with a priority of *250* allowing access via *TCP* to port *3389* to any VM from any source.
 
-##<a name="Associate-the-NSG-to-the-FrontEnd-subnet"></a> Associate the NSG to the FrontEnd subnet
+## <a name="Associate-the-NSG-to-the-FrontEnd-subnet"></a> Associate the NSG to the FrontEnd subnet
 
 1. Click **Browse >** > **Resource groups** > **RG-NSG**.
 2. In the **RG-NSG** blade, click **...** > **TestVNet**.

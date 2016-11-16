@@ -5,15 +5,20 @@
 	description="Learn how to develop Java MapReduce programs and deploy them to Linux-based HDInsight."
 	services="hdinsight"
 	editor="cgronlun"
-	manager="paulettm"
+	manager="jhubbard"
 	authors="Blackmist"
 	documentationCenter=""
 	tags="azure-portal"/>
 
 <tags
 	ms.service="hdinsight"
-	ms.date="05/05/2016"
-	wacn.date=""/>
+	ms.workload="big-data"
+	ms.tgt_pltfrm="na"
+	ms.devlang="Java"
+	ms.topic="article"
+	ms.date="10/11/2016"
+	wacn.date=""
+	ms.author="larryfr"/>
 
 # Develop Java MapReduce programs for Hadoop on HDInsight Linux
 
@@ -31,7 +36,7 @@ Before you begin this tutorial, you must have the following:
 
 - **Azure CLI**
 
-	[AZURE.INCLUDE [use-latest-version](../includes/hdinsight-use-latest-cli.md)]
+	[AZURE.INCLUDE [use-latest-version](../../includes/hdinsight-use-latest-cli.md)]
 
 ##Configure environment variables
 
@@ -246,13 +251,13 @@ This copies the files from the local system to the head node.
 
 2. From the SSH session, use the following command to run the MapReduce application:
 
-		yarn jar wordcountjava.jar org.apache.hadoop.examples.WordCount wasb:///example/data/gutenberg/davinci.txt wasb:///example/data/wordcountout
+		yarn jar wordcountjava.jar org.apache.hadoop.examples.WordCount wasbs:///example/data/gutenberg/davinci.txt wasbs:///example/data/wordcountout
 
-	This will use the WordCount MapReduce application to count the words in the davinci.txt file, and store the results to __wasb:///example/data/wordcountout__. Both the input file and output are stored to the default storage for the cluster.
+	This will use the WordCount MapReduce application to count the words in the davinci.txt file, and store the results to __wasbs:///example/data/wordcountout__. Both the input file and output are stored to the default storage for the cluster.
 
 3. Once the job completes, use the following to view the results:
 
-		hdfs dfs -cat wasb:///example/data/wordcountout/*
+		hdfs dfs -cat wasbs:///example/data/wordcountout/*
 
 	You should receive a list of words and counts, with values similar to the following:
 

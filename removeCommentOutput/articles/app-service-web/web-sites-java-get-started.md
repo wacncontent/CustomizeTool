@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Create a Java web app in Azure | Azure"
-	description="This tutorial shows you how to deploy a Java web app to Azure."
+	pageTitle="Create a Java web app in Azure App Service | Azure"
+	description="This tutorial shows you how to deploy a Java web app to Azure App Service."
 	services="app-service\web"
 	documentationCenter="java"
 	authors="rmcmurray"
@@ -9,26 +9,31 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="06/01/2016"
-	wacn.date=""/>
+	ms.workload="web"
+	ms.tgt_pltfrm="na"
+	ms.devlang="Java"
+	ms.topic="get-started-article"
+	ms.date="08/11/2016"
+	wacn.date=""
+	ms.author="robmcm"/>
 
-# Create a Java web app in Azure
+# Create a Java web app in Azure App Service
 
-[AZURE.INCLUDE [tabs](../includes/app-service-web-get-started-nav-tabs.md)]
+[AZURE.INCLUDE [tabs](../../includes/app-service-web-get-started-nav-tabs.md)]
 
-This tutorial shows how to create a Java [web app in Azure] by using the [Azure Portal]. The Azure Portal is a web interface that you can use to manage your Azure resources.
+This tutorial shows how to create a Java [web app in Azure App Service] by using the [Azure Portal]. The Azure Portal is a web interface that you can use to manage your Azure resources.
 
 > [AZURE.NOTE] To complete this tutorial, you need a Azure account. If you don't have an account, you can [activate your Visual Studio subscriber benefits] or [sign up for a trial].
 >
-> If you want to get started with Azure before you sign up for an Azure account, go to [Try Azure Web App]. There, you can immediately create a short-lived starter web app in Azure; no credit card is required, and no commitments.
+> If you want to get started with Azure App Service before you sign up for an Azure account, go to [Try App Service]. There, you can immediately create a short-lived starter web app in App Service; no credit card is required, and no commitments.
 
 ## Java application options
 
-There are several ways you can set up a Java application in an Azure web app. 
+There are several ways you can set up a Java application in an App Service web app. 
 
 1. Create an app and then configure **Application settings**.
 
-	Azure provides several Tomcat and Jetty versions, with default configuration. If the application that you will be hosting will work with one of the built-in versions, this method of setting up a web container is the easiest, and is perfect when all you want to do is upload a war file to a web container. For this method, you create an app in the Azure Portal, and then go to the **Application settings** blade for your app to choose your version of Java along with the desired Java web container. When you use this method both Java and your web container are run from Program Files. The other methods put the web container and potentially the JVM in your disk space. When you use this model, you don't have access to edit files in this part of the file system. This means you can't do things like configure the *server.xml* file or place library files in the */lib* folder. For more information, see the [Create and configure a Java web app](#appsettings) section later in this tutorial.
+	App Service provides several Tomcat and Jetty versions, with default configuration. If the application that you will be hosting will work with one of the built-in versions, this method of setting up a web container is the easiest, and is perfect when all you want to do is upload a war file to a web container. For this method, you create an app in the Azure Portal, and then go to the **Application settings** blade for your app to choose your version of Java along with the desired Java web container. When you use this method both Java and your web container are run from Program Files. The other methods put the web container and potentially the JVM in your disk space. When you use this model, you don't have access to edit files in this part of the file system. This means you can't do things like configure the *server.xml* file or place library files in the */lib* folder. For more information, see the [Create and configure a Java web app](#appsettings) section later in this tutorial.
 	
 2. Use a template from the Azure Marketplace.
 
@@ -36,12 +41,12 @@ There are several ways you can set up a Java application in an Azure web app.
   
 3. Create an app and then manually copy and edit configuration files 
 
-	You might want to host a custom Java application that does not deploy in any of the web containers provided by Azure Web App. For example:
+	You might want to host a custom Java application that does not deploy in any of the web containers provided by App Service. For example:
 	
-	* Your Java application requires a version of Tomcat or Jetty that isn't directly supported by Azure or provided in the gallery.
+	* Your Java application requires a version of Tomcat or Jetty that isn't directly supported by App Service or provided in the gallery.
 	* Your Java application takes HTTP requests and does not deploy as a WAR into a pre-existing web container.
 	* You want to configure the web container from scratch yourself. 
-	* You want to use a version of Java that isn't supported in Azure and want to upload it yourself.
+	* You want to use a version of Java that isn't supported in App Service and want to upload it yourself.
 
 	For cases like these, you can create an app using the Azure Portal, and then provide the appropriate runtime files manually. In this case, the files will be counted against your storage space quotas for your App Service plan. For more information, see [Upload a custom Java web app to Azure].
 
@@ -81,9 +86,9 @@ This section shows how to create a web app and configure it for Java using the *
 
 11. Choose the desired **Java version**. 
 
-12. Choose the desired **Java minor version**. If you select **Newest**, your app will use the newest minor version that is available in Azure for that Java major version. The **Newest** item is unique to Java apps created from the **Application settings**. If you create your Java app from the gallery, then you have to manage your own container and JVM changes. 
+12. Choose the desired **Java minor version**. If you select **Newest**, your app will use the newest minor version that is available in App Service for that Java major version. The **Newest** item is unique to Java apps created from the **Application settings**. If you create your Java app from the gallery, then you have to manage your own container and JVM changes. 
 
-12. Choose the desired **Web container**. If you select a container name that starts with **Newest**, your app will be kept at the latest version of that web container major version that is available in Azure Web App. 
+12. Choose the desired **Web container**. If you select a container name that starts with **Newest**, your app will be kept at the latest version of that web container major version that is available in App Service. 
 
 	![Web Container Versions][versions]
 
@@ -157,7 +162,7 @@ Now that you've created the web app with an app container, see the [Next steps](
 
 ## Next steps
 
-At this point, you have a Java application server running in your web app in Azure. To deploy your own code to the web app, see [Add an application or webpage to your Java web app].
+At this point, you have a Java application server running in your web app in Azure App Service. To deploy your own code to the web app, see [Add an application or webpage to your Java web app].
 
 For more information about developing Java applications in Azure, see the [Java Developer Center].
 
@@ -168,8 +173,8 @@ For more information about developing Java applications in Azure, see the [Java 
 [Azure Portal]: https://portal.azure.cn/
 [activate your Visual Studio subscriber benefits]: /pricing/1rmb-trial/
 [sign up for a trial]: /pricing/1rmb-trial/
-[Try Azure Web App]: https://tryappservice.azure.com/
-[web app in Azure]: /documentation/services/web-sites/
+[Try App Service]: https://tryappservice.azure.com/
+[web app in Azure App Service]: /documentation/articles/app-service-changes-existing-services/
 [Java Developer Center]: /develop/java/
 [Using the Azure Portal to manage your Azure resources]: /documentation/articles/resource-group-portal/
 [Upload a custom Java web app to Azure]: /documentation/articles/web-sites-java-custom-upload/

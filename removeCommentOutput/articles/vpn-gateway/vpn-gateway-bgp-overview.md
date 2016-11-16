@@ -9,9 +9,14 @@
    tags=""/>
 
 <tags
-	ms.service="vpn-gateway"
-	ms.date="06/16/2016"
-	wacn.date=""/>
+   ms.service="vpn-gateway"
+   ms.devlang="na"
+   ms.topic="get-started-article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="06/16/2016"
+   wacn.date=""
+   ms.author="yushwang"/>
 
 # Overview of BGP with Azure VPN Gateways
 
@@ -54,7 +59,7 @@ The following diagram shows an example of a multi-hop topology with multiple pat
 ## BGP FAQs
 
 
-[AZURE.INCLUDE [vpn-gateway-bgp-faq-include](../includes/vpn-gateway-bpg-faq-include.md)] 
+[AZURE.INCLUDE [vpn-gateway-bgp-faq-include](../../includes/vpn-gateway-bpg-faq-include.md)] 
 
 
 

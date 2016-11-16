@@ -1,39 +1,46 @@
 <!-- not suitable for Mooncake -->
 
-<properties 
-	pageTitle="How to Configure an Azure Environment | Azure"
-	description="Configuration, management, and monitoring of Azure Environments"
-	services="app-service" 
-	documentationCenter="" 
-	authors="ccompy" 
-	manager="stefsch" 
+<properties
+	pageTitle="How to Configure an App Service Environment | Azure"
+	description="Configuration, management, and monitoring of App Service Environments"
+	services="app-service"
+	documentationCenter=""
+	authors="ccompy"
+	manager="stefsch"
 	editor=""/>
 
 <tags
 	ms.service="app-service"
-	ms.date="07/12/2016"
-	wacn.date=""/>
+	ms.workload="na"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="10/17/2016"
+	wacn.date=""
+	ms.author="ccompy"/>
 
 
-# Configuring an Azure Environment #
+# Configuring an App Service Environment #
 
 ## Overview ##
 
-At a high level, an Azure Environment consists of several major components:
+At a high level, an Azure App Service Environment consists of several major components:
 
-- Compute resources that are running in the Azure Environment hosted service
+- Compute resources that are running in the App Service Environment hosted service
 - Storage
 - A database
 - A Classic(V1) or Resource Manager(V2) Azure Virtual Network (VNet) 
-- A subnet with the Azure Environment hosted service running in it
+- A subnet with the App Service Environment hosted service running in it
 
 ### Compute resources
 
-You use the compute resources for your four resource pools.  Each Azure Environment (ASE) has a set of front ends and three possible worker pools. You don't need to use all three worker pools--if you want, you can just use one or two.
+You use the compute resources for your four resource pools.  Each App Service Environment (ASE) has a set of front ends and three possible worker pools. You don't need to use all three worker pools--if you want, you can just use one or two.
 
 The hosts in the resource pools (front ends and workers) are not directly accessible to tenants. You can't use Remote Desktop Protocol (RDP) to connect to them, change their provisioning, or act as an admin on them.
-You can set resource pool quantity and size. In an ASE, you have four size options, which are labeled P1 through P4. For details about those sizes and their pricing, see [Azure pricing](/documentation/services/web-sites/).
+
+You can set resource pool quantity and size. In an ASE, you have four size options, which are labeled P1 through P4. For details about those sizes and their pricing, see [App Service pricing](/documentation/articles/app-service-value-prop-what-is/).
 Changing the quantity or size is called a scale operation.  Only one scale operation can be in progress at a time.
+
 **Front ends**: The front ends are the HTTP/HTTPS endpoints for your apps that are held in your ASE. You don't run workloads in the front ends.
 
 - An ASE starts with two P2s, which is sufficient for dev/test workloads and low-level production workloads. We strongly recommend P3s for moderate to heavy production workloads.
@@ -59,7 +66,8 @@ If your apps require a larger compute resource size, you can't take advantage of
 - Scale down the first worker pool if you don't need those unused instances anymore. This operation takes about 30 minutes to complete.
 
 **Autoscaling**: One of the tools that can help you to manage your compute resource consumption is autoscaling. You can use autoscaling for front-end or worker pools. You can do things such as increase your instances of any pool type in the morning and reduce it in the evening. Or perhaps you can add instances when the number of workers that are available in a worker pool drops below a certain threshold.
-If you want to set autoscale rules around compute resource pool metrics, then keep in mind the time that provisioning requires. For more details about autoscaling Azure Environments, see [How to configure autoscale in an Azure Environment][ASEAutoscale].
+
+If you want to set autoscale rules around compute resource pool metrics, then keep in mind the time that provisioning requires. For more details about autoscaling App Service Environments, see [How to configure autoscale in an App Service Environment][ASEAutoscale].
 
 ### Storage
 
@@ -71,23 +79,9 @@ The database holds the information that defines the environment, as well as the 
 
 ### Network
 
-The VNet that is used with your ASE can be one that you made when you created the ASE or one that you made ahead of time. If you want your virtual network to be in a resource group that is separate from the one used for your ASE, then you need to make your virtual network separately from the ASE creation flow. If you create the subnet during ASE creation, it forces the ASE to be in the same resource group as the virtual network. 
+The VNet that is used with your ASE can be one that you made when you created the ASE or one that you made ahead of time. When you create the subnet during ASE creation, it forces the ASE to be in the same resource group as the virtual network. If you need the resource group used by your ASE to be different than that of your VNet, then you need to create your ASE using a resource manager template.
 
 There are some restrictions on the virtual network that is used for an ASE:
-
-
-
-
-
-
-
-
-
-
-
-
-
-
  
 - The virtual network must be a regional virtual network.
 - There needs to be a subnet with 8 or more addresses where the ASE is deployed.
@@ -95,26 +89,48 @@ There are some restrictions on the virtual network that is used for an ASE:
 - There can be nothing else in the subnet but the ASE.
 
 Unlike the hosted service that contains the ASE, the [virtual network][virtualnetwork] and subnet are under user control.  You can administer your virtual network through the Virtual Network UI or PowerShell.  An ASE can be deployed in a Classic or Resource Manager VNet.  The portal and API experiences are slightly different between Classic and Resource Manager VNets but the ASE experience is the same.
+
 The VNet that is used to host an ASE can use either private RFC1918 IP addresses or it can use public IP addresses.  If you wish to use an IP range that is not covered by RFC1918 (10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16) then you need to create your VNet and subnet to be used by your ASE ahead of ASE creation.
-Because this capability places the Azure into your virtual network, it means that your apps that are hosted in your ASE can now access resources that are made available through ExpressRoute or site-to-site virtual private networks (VPNs) directly. The apps that are within your Azure Environment don't require additional networking features to access resources available to the virtual network that is hosting your Azure Environment. This means that you don't need to use VNET Integration or Hybrid Connections to get to resources in or connected to your virtual network. You can still use both of those features though to access resources in networks that are not connected to your virtual network.
+
+Because this capability places the Azure App Service into your virtual network, it means that your apps that are hosted in your ASE can now access resources that are made available through ExpressRoute or site-to-site virtual private networks (VPNs) directly. The apps that are within your App Service Environment don't require additional networking features to access resources available to the virtual network that is hosting your App Service Environment. This means that you don't need to use VNET Integration or Hybrid Connections to get to resources in or connected to your virtual network. You can still use both of those features though to access resources in networks that are not connected to your virtual network.
+
 For example, you can use VNET Integration to integrate with a virtual network that is in your subscription but isn't connected to the virtual network that your ASE is in. You can still also use Hybrid Connections to access resources that are in other networks, just like you normally can.  
-If you do have your virtual network configured with an ExpressRoute VPN, you should be aware of some of the routing needs that an ASE has. There are some user-defined route (UDR) configurations that are incompatible with an ASE. For more details about running an ASE in a virtual network with ExpressRoute, see [Running an Azure Environment in a virtual network with ExpressRoute][ExpressRoute].
+
+If you do have your virtual network configured with an ExpressRoute VPN, you should be aware of some of the routing needs that an ASE has. There are some user-defined route (UDR) configurations that are incompatible with an ASE. For more details about running an ASE in a virtual network with ExpressRoute, see [Running an App Service Environment in a virtual network with ExpressRoute][ExpressRoute].
+
 #### Securing inbound traffic
-There are two primary methods to control inbound traffic to your ASE.  You can use Network Security Groups(NSGs) to control what IP addresses can access your ASE as described here [How to control inbound traffic in an Azure Environment](/documentation/articles/app-service-app-service-environment-control-inbound-traffic/) and you can also configure your ASE with an Internal Load Balancer(ILB).  These features can also be used together if you want to restrict access using NSGs to your ILB ASE.
+
+There are two primary methods to control inbound traffic to your ASE.  You can use Network Security Groups(NSGs) to control what IP addresses can access your ASE as described here [How to control inbound traffic in an App Service Environment](/documentation/articles/app-service-app-service-environment-control-inbound-traffic/) and you can also configure your ASE with an Internal Load Balancer(ILB).  These features can also be used together if you want to restrict access using NSGs to your ILB ASE.
+
 When you create an ASE, it will create a VIP in your VNet.  There are two VIP types, external and internal.  When you create an ASE with an external VIP then your apps in your ASE will be accessible via an internet routable IP address. When you select Internal your ASE will be configured with an ILB and will not be directly internet accessible.  An ILB ASE still requires an external VIP but it is only used for Azure management and maintenance access.  
-During ILB ASE creation you provide the subdomain used by the ILB ASE and will have to manage your own DNS for the subdomain you specify.  Because you set the subdomain name you also need to manage the certificate used for HTTPS access.  After ASE creation you are prompted to provide the certificate.  To learn more about creating and using an ILB ASE read [Using an Internal Load Balancer with an Azure Environment][ILBASE]. 
+
+During ILB ASE creation you provide the subdomain used by the ILB ASE and will have to manage your own DNS for the subdomain you specify.  Because you set the subdomain name you also need to manage the certificate used for HTTPS access.  After ASE creation you are prompted to provide the certificate.  To learn more about creating and using an ILB ASE read [Using an Internal Load Balancer with an App Service Environment][ILBASE]. 
+
+
 ## Portal
-You can manage and monitor your Azure Environment by using the UI in the Azure portal. If you have an ASE, then you are likely to see the Azure symbol on your sidebar. This symbol is used to represent Azure Environments in the Azure portal:
-![Azure Environment symbol][1]
-To open the UI that lists all of your Azure Environments, you can use the icon or select the chevron (">" symbol) at the bottom of the sidebar to select Azure Environments. By selecting one of the ASEs listed, you open the UI that is used to monitor and manage it.
-![UI for monitoring and managing your Azure Environment][2]
+
+You can manage and monitor your App Service Environment by using the UI in the Azure portal. If you have an ASE, then you are likely to see the App Service symbol on your sidebar. This symbol is used to represent App Service Environments in the Azure portal:
+
+![App Service Environment symbol][1]
+
+To open the UI that lists all of your App Service Environments, you can use the icon or select the chevron (">" symbol) at the bottom of the sidebar to select App Service Environments. By selecting one of the ASEs listed, you open the UI that is used to monitor and manage it.
+
+![UI for monitoring and managing your App Service Environment][2]
+
 This first blade shows some properties of your ASE, along with a metric chart per resource pool. Some of the properties that are shown in the **Essentials** block are also hyperlinks that will open up the blade that is associated with it. For example, you can select the **Virtual Network** name to open up the UI associated with the virtual network that your ASE is running in. **App Service plans** and **Apps** each open up blades that list these items that are in your ASE.  
+
 ### Monitoring
+
 The charts allow you to see a variety of performance metrics in each resource pool. For the front-end pool, you can monitor the average CPU and memory. For worker pools, you can monitor the quantity that is used and the quantity that is available.
+
 Multiple App Service plans can make use of the workers in a worker pool. The workload is not distributed in the same fashion as with the front-end servers, so the CPU and memory usage don't provide much in the way of useful information. It's more important to track how many workers that you have used and are available--especially if you're managing this system for others to use.  
-You can also use all of the metrics that can be tracked in the charts to set up alerts. Setting up alerts here works the same as elsewhere in Azure Web App. You can set an alert from either the **Alerts** UI part or from drilling into any metrics UI and selecting **Add Alert**.
+
+You can also use all of the metrics that can be tracked in the charts to set up alerts. Setting up alerts here works the same as elsewhere in App Service. You can set an alert from either the **Alerts** UI part or from drilling into any metrics UI and selecting **Add Alert**.
+
 ![Metrics UI][3]
-The metrics that were just discussed are the Azure Environment metrics. There are also metrics that are available at the App Service plan level. This is where monitoring CPU and memory makes a lot of sense.
+
+The metrics that were just discussed are the App Service Environment metrics. There are also metrics that are available at the App Service plan level. This is where monitoring CPU and memory makes a lot of sense.
+
 In an ASE, all of the App Service plans are dedicated App Service plans. That means that the only apps that are running on the hosts allocated to that App Service plan are the apps in that App Service plan. To see details on your App Service plan, bring up your App Service plan from any of the lists in the ASE UI or from **Browse App Service plans** (which lists all of them).   
 
 ### Settings
@@ -125,7 +141,7 @@ Within the ASE blade, there is a **Settings** section that contains several impo
 
 ![Settings blade and Properties][4]
 
-**Settings** > **IP Addresses**: When you create an IP Secure Sockets Layer (SSL) app in your ASE, you need an IP SSL address. In order to obtain one, your ASE needs IP SSL addresses that it owns that can be allocated. When an ASE is created, it has one IP SSL address for this purpose, but you can add more. There is a charge for additional IP SSL addresses, as shown in [Azure pricing][AppServicePricing] (in the section on SSL connections). The additional price is the IP SSL price.
+**Settings** > **IP Addresses**: When you create an IP Secure Sockets Layer (SSL) app in your ASE, you need an IP SSL address. In order to obtain one, your ASE needs IP SSL addresses that it owns that can be allocated. When an ASE is created, it has one IP SSL address for this purpose, but you can add more. There is a charge for additional IP SSL addresses, as shown in [App Service pricing][AppServicePricing] (in the section on SSL connections). The additional price is the IP SSL price.
 
 **Settings** > **Front End Pool** / **Worker Pools**: Each of these resource pool blades offers the ability to see information only on that resource pool, in addition to providing controls to fully scale that resource pool.  
 
@@ -157,7 +173,7 @@ To use the manual or autoscale capabilities in a specific resource pool, go to *
 
 ## Fault-tolerance considerations
 
-You can configure an Azure Environment to use up to 55 total compute resources. Of those 55 compute resources, only 50 can be used to host workloads. The reason for this is twofold. There is a minimum of 2 front-end compute resources.  That leaves up to 53 to support the worker-pool allocation. In order to provide fault tolerance, you need to have an additional compute resource that is allocated according to the following rules:
+You can configure an App Service Environment to use up to 55 total compute resources. Of those 55 compute resources, only 50 can be used to host workloads. The reason for this is twofold. There is a minimum of 2 front-end compute resources.  That leaves up to 53 to support the worker-pool allocation. In order to provide fault tolerance, you need to have an additional compute resource that is allocated according to the following rules:
 
 - Each worker pool needs at least 1 additional compute resource that is not available to be assigned a workload.
 - When the quantity of compute resources in a worker pool goes above a certain value, then another compute resource is required for fault tolerance. This is not the case in the front-end pool.
@@ -177,21 +193,21 @@ The minimum footprint has 2 front-end servers and 2 workers.  With the above sta
 
 The fault-tolerance aspect is important, but you need to keep it in mind as you scale above certain thresholds. If you want to add more capacity going from 20 instances, then go to 22 or higher because 21 doesn't add any more capacity. The same is true going above 40, where the next number that adds capacity is 42.  
 
-## Deleting an Azure Environment ##
+## Deleting an App Service Environment ##
 
-If you want to delete an Azure Environment, then simply use the **Delete** action at the top of the Azure Environment blade. When you do this, you'll be prompted to enter the name of your Azure Environment to confirm that you really want to do this. Note that when you delete an Azure Environment, you delete all of the content within it as well.  
+If you want to delete an App Service Environment, then simply use the **Delete** action at the top of the App Service Environment blade. When you do this, you'll be prompted to enter the name of your App Service Environment to confirm that you really want to do this. Note that when you delete an App Service Environment, you delete all of the content within it as well.  
 
-![Delete an Azure Environment UI][9]  
+![Delete an App Service Environment UI][9]  
 
 ## Getting started
 
-To get started with Azure Environments, see [How to create an Azure Environment](/documentation/articles/app-service-web-how-to-create-an-app-service-environment/).
+To get started with App Service Environments, see [How to create an App Service Environment](/documentation/articles/app-service-web-how-to-create-an-app-service-environment/).
 
-For more information about the Azure platform, see [Azure Web App](/documentation/services/web-sites/).
+For more information about the Azure App Service platform, see [Azure App Service](/documentation/articles/app-service-value-prop-what-is/).
 
-[AZURE.INCLUDE [app-service-web-whats-changed](../includes/app-service-web-whats-changed.md)]
+[AZURE.INCLUDE [app-service-web-whats-changed](../../includes/app-service-web-whats-changed.md)]
 
-[AZURE.INCLUDE [app-service-web-try-app-service](../includes/app-service-web-try-app-service.md)]
+[AZURE.INCLUDE [app-service-web-try-app-service](../../includes/app-service-web-try-app-service.md)]
 
 <!--Image references-->
 [1]: ./media/app-service-web-configure-an-app-service-environment/ase-icon.png
@@ -211,8 +227,8 @@ For more information about the Azure platform, see [Azure Web App](/documentatio
 [HowtoScale]: /documentation/articles/app-service-web-scale-a-web-app-in-an-app-service-environment/
 [ControlInbound]: /documentation/articles/app-service-app-service-environment-control-inbound-traffic/
 [virtualnetwork]: /documentation/articles/virtual-networks-faq/
-[AppServicePricing]: /home/features/web-site/pricing/ 
-[AzureAppService]: /documentation/services/web-sites/
+[AppServicePricing]: /pricing/overview/app-service/
+[AzureAppService]: /documentation/articles/app-service-value-prop-what-is/
 [ASEAutoscale]: /documentation/articles/app-service-environment-auto-scale/
 [ExpressRoute]: /documentation/articles/app-service-app-service-environment-network-configuration-expressroute/
 [ILBASE]: /documentation/articles/app-service-environment-with-internal-load-balancer/

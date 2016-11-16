@@ -5,14 +5,19 @@
 	services="hdinsight"
 	documentationCenter=""
 	authors="Blackmist"
-	manager="paulettm"
+	manager="jhubbard"
 	editor="cgronlun"
 	tags="azure-portal"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="06/22/2016"
-	wacn.date=""/>
+   ms.service="hdinsight"
+   ms.devlang="java"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="big-data"
+   ms.date="09/07/2016"
+   wacn.date=""
+   ms.author="larryfr"/>
 
 
 # Apache Storm tutorial: Get started with the Storm Starter samples for big data analytics on HDInsight
@@ -21,13 +26,17 @@ Apache Storm is a scalable, fault-tolerant, distributed, real-time computation s
 
 > [AZURE.NOTE] The steps in this article create a Windows-based HDInsight cluster. For steps to create a Linux-based Storm on HDInsight cluster, see [Apache Storm tutorial: Get started with the Storm Starter sample using data analytics on HDInsight](/documentation/articles/hdinsight-apache-storm-tutorial-get-started/)
 
-## Before you begin
+## Prerequisites
 
-[AZURE.INCLUDE [delete-cluster-warning](../includes/hdinsight-delete-cluster-warning.md)]
+[AZURE.INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
 
 You must have the following to successfully complete this Apache Storm tutorial:
 
 - **An Azure subscription**. See [Get Azure trial](/pricing/1rmb-trial/).
+
+### Access control requirements
+
+[AZURE.INCLUDE [access-control](../../includes/hdinsight-access-control-requirements.md)]
 
 ## Create a Storm cluster
 
@@ -203,7 +212,7 @@ Return to the **Topology summary** page for the word-count topology, and then se
 
 ##Delete the cluster
 
-[AZURE.INCLUDE [delete-cluster-warning](../includes/hdinsight-delete-cluster-warning.md)]
+[AZURE.INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
 
 ## Summary
 

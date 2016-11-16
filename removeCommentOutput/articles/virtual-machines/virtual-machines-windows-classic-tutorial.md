@@ -10,8 +10,13 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="07/12/2016"
-	wacn.date=""/>
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-windows"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/27/2016"
+	wacn.date=""
+	ms.author="cynthn"/>
 
 # Create a virtual machine running Windows in the Azure Classic Management Portal
 
@@ -21,7 +26,7 @@
 
 <br>
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Learn how to [perform these steps using the Resource Manager deployment model](/documentation/articles/virtual-machines-windows-hero-tutorial/).
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)] Learn how to [perform these steps using the Resource Manager deployment model](/documentation/articles/virtual-machines-windows-hero-tutorial/). If you want to use the new Azure portal, see [Create your first Windows virtual machine in the Azure portal](/documentation/articles/virtual-machines-windows-hero-tutorial/).
 
 This tutorial shows you how easy it is to create an Azure virtual machine (VM) running Windows in the Azure Classic Management Portal. We'll use a Windows Server image as an example, but that's just one of the many images Azure offers. Note that your image choices depend on your subscription. For example, Windows desktop images may be available to MSDN subscribers.
 
@@ -39,7 +44,7 @@ Here's a walkthrough of this tutorial.
 
 ## <a id="createvirtualmachine"> </a>Create the virtual machine
 
-[AZURE.INCLUDE [virtual-machines-create-WindowsVM](../includes/virtual-machines-create-windowsvm.md)]
+[AZURE.INCLUDE [virtual-machines-create-WindowsVM](../../includes/virtual-machines-create-windowsvm.md)]
 
 ## Next steps
 

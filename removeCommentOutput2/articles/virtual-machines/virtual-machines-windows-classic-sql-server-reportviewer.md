@@ -4,13 +4,18 @@
 	services="virtual-machines-windows"
 	documentationCenter="na"
 	authors="guyinacube"
-	manager="jhubbard"
+	manager="erikre"
 	editor="monicar" 
 	tags="azure-service-management" />
-<tags
+<tags 
 	ms.service="virtual-machines-windows"
-	ms.date="04/14/2016"
-	wacn.date=""/>
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="vm-windows-sql-server"
+	ms.workload="infrastructure-services"
+	ms.date="10/04/2016"
+	wacn.date=""
+	ms.author="asaxton" />
 
 # Use ReportViewer in a Web Site Hosted in Azure
 

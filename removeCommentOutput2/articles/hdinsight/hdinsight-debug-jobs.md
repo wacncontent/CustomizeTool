@@ -4,14 +4,19 @@
 	services="hdinsight"
 	tags="azure-portal"
 	editor="cgronlun"
-	manager="paulettm"
+	manager="jhubbard"
 	authors="mumian"
 	documentationCenter=""/>
 
 <tags
 	ms.service="hdinsight"
-	ms.date="06/10/2016"
-	wacn.date=""/>
+	ms.workload="big-data"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/02/2016"
+	wacn.date=""
+	ms.author="jgao"/>
 
 # Analyze HDInsight logs
 

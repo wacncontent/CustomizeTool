@@ -4,13 +4,18 @@
 	services="hdinsight" 
 	documentationCenter="" 
 	authors="nitinme" 
-	manager="paulettm" 
+	manager="jhubbard" 
 	editor="cgronlun"/> 
 
-<tags
-	ms.service="hdinsight"
-	ms.date="05/17/2016"
-	wacn.date=""/> 
+<tags 
+	ms.service="hdinsight" 
+	ms.workload="big-data" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="05/17/2016" 
+	wacn.date="" 
+	ms.author="nitinme"/> 
 
 # Customize HDInsight clusters using Script Action
 
@@ -174,3 +179,4 @@ See [Develop Script Action scripts for HDInsight][hdinsight-write-script].
 
 
 [img-hdi-cluster-states]: ./media/hdinsight-hadoop-customize-cluster-v1/HDI-Cluster-state.png "Stages during cluster provisioning"
+ 

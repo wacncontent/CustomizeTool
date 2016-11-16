@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Deploy your app to Azure Web App"
-	description="Learn how to deploy your app to Azure Web App."
+	pageTitle="Deploy your app to Azure App Service"
+	description="Learn how to deploy your app to Azure App Service."
 	services="app-service"
 	documentationCenter=""
 	authors="cephalin"
@@ -9,41 +9,54 @@
 
 <tags
 	ms.service="app-service"
-	ms.date="04/21/2016"
-	wacn.date=""/>
+	ms.workload="na"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/06/2016"
+	wacn.date=""
+	ms.author="cephalin;dariac"/>
     
-# Deploy your app to Azure
+# Deploy your app to Azure App Service
 
 This article helps you determine the best option to deploy the files for your web app, mobile app backend, or API app to 
-[Azure Web App](/documentation/services/web-sites/), and then guides you to appropriate resources with instructions specific to your preferred option.
+[Azure App Service](/documentation/articles/app-service-changes-existing-services/), and then guides you to appropriate resources with instructions specific to your preferred option.
 
-## <a name="overview"></a>Azure Web App deployment overview
+## <a name="overview"></a>Azure App Service deployment overview
 
-Azure Web App maintains the application framework for you (ASP.NET, PHP, Node.js, etc). Some frameworks are enabled by default
+Azure App Service maintains the application framework for you (ASP.NET, PHP, Node.js, etc). Some frameworks are enabled by default
 while others, like Java and Python, may need a simple checkmark configuration to enable it. In addition, you can customize your
 application framework, such as the PHP version or the bitness of your runtime. For more information, see 
-[Configure your app in Azure Web App](/documentation/articles/web-sites-configure/).
+[Configure your app in Azure App Service](/documentation/articles/web-sites-configure/).
 
-Since you don't have to worry about the web server or application framework, deploying your app to Azure Web App is 
+Since you don't have to worry about the web server or application framework, deploying your app to App Service is 
 a matter of deploying your code, binaries, content files, and their respective directory structure, to the 
-**/site/wwwroot** directory in Azure (or the **/site/wwwroot/App_Data/Jobs/** directory 
-for WebJobs). Azure Web App supports the following deployment options: 
+[**/site/wwwroot** directory](https://github.com/projectkudu/kudu/wiki/File-structure-on-azure) in Azure (or the **/site/wwwroot/App_Data/Jobs/** directory 
+for WebJobs). App Service supports the following deployment options: 
 
 - [FTP or FTPS](https://en.wikipedia.org/wiki/File_Transfer_Protocol): Use your favorite FTP or FTPS enabled tool to move your 
 files to Azure, from [FileZilla](https://filezilla-project.org) to full-featured IDEs like [NetBeans](https://netbeans.org). This is strictly
-a file upload process. No additional services are provided by Azure Web App, such as version control, file structure management, etc. 
+a file upload process. No additional services are provided by App Service, such as version control, file structure management, etc. 
 
-- [Web Deploy](http://www.iis.net/learn/publish/using-web-deploy/introduction-to-web-deploy): Deploy code to Azure directly from your favorite Microsoft tools
+- [Kudu (Git/Mercurial or OneDrive/Dropbox)](https://github.com/projectkudu/kudu/wiki/Deployment): Use the [deployment engine](https://github.com/projectkudu/kudu/wiki) 
+in App Service. Push your code to Kudu directly from any repository. Kudu also provides added services whenever code is 
+pushed to it, including version control, package restore, MSBuild, and [web hooks](https://github.com/projectkudu/kudu/wiki/Web-hooks) 
+for continuous deployment and other automation tasks. The Kudu deployment engine supports 3 different types of deployment sources:   
+    * Content sync from OneDrive and Dropbox   
+    * Repository-based continuous deployment with auto-sync from GitHub, Bitbucket, and Visual Studio Team Services  
+    * Repository-based deployment with manual sync from local Git  
+
+- [Web Deploy](http://www.iis.net/learn/publish/using-web-deploy/introduction-to-web-deploy): Deploy code to App Service directly from your favorite Microsoft tools
 such as Visual Studio using the same tooling that automates deployment to IIS servers. This tool supports diff-only deployment, database creation, transforms of 
-connection strings, etc. For Web Deploy , application binaries are built before they are deployed to Azure.
-Similar to FTP, no additional services are provided by Azure Web App.
+connection strings, etc. Web Deploy differs from Kudu in that application binaries are built before they are deployed to Azure. 
+Similar to FTP, no additional services are provided by App Service.
 
 Popular web development tools support one or more of these deployment processes. While the tool you choose determines the deployment 
 processes you can leverage, the actual DevOps functionality at your disposal depends on the combination of the deployment process and the 
-specific tools you choose. For example, if you perform Web Deploy from [Visual Studio with Azure SDK](#vspros), you get package restore and MSBuild automation in Visual Studio. Azure SDK also provides an easy-to-use wizard to 
+specific tools you choose. For example, if you perform Web Deploy from [Visual Studio with Azure SDK](#vspros), even though you don't get automation 
+from Kudu, you do get package restore and MSBuild automation in Visual Studio. 
 
->[AZURE.NOTE] These deployment processes don't actually [provision the Azure resources](/documentation/articles/resource-group-template-deploy-portal/) that your app may need. However, most of the linked how-to articles show you how to provision the app AND deploy
->[AZURE.NOTE] These deployment processes don't actually provision the Azure resources that your app may need, such as 
+>[AZURE.NOTE] These deployment processes don't actually [provision the Azure resources](/documentation/articles/resource-group-template-deploy-portal/) that your app may need. However, most of the linked how-to articles show you how to provision the app AND deploy 
 your code to it end-to-end. You can also find additional options for provisioning Azure resources in the 
 [Automate deployment by using command-line tools](#automate) section.
      
@@ -59,7 +72,7 @@ The pros of copying files manually are:
 
 The cons of copying files manually are:
 
-- Having to know how to deploy files to the correct directories in Azure Web App. 
+- Having to know how to deploy files to the correct directories in App Service. 
 - No version control for rollback when failures occur.
 - No built-in deployment history for troubleshooting deployment issues.
 - Potential long deployment times because many FTP tools don't provide diff-only copying and simply copy all the files.  
@@ -68,10 +81,10 @@ The cons of copying files manually are:
 Copying files to Azure involves a few simple steps:
 
 1. Assuming you already established deployment credentials, obtain the FTP connection information by going to **Settings** > **Properties**, and then
-copying the values for **FTP/Deployment User**, **FTP Host Name**, and **FTPS Host Name**. Please copy the **FTP/Deployment User** user value as displayed by the Azure Classic Management Portal including the app name in order to provide proper context for the FTP server.
+copying the values for **FTP/Deployment User**, **FTP Host Name**, and **FTPS Host Name**. Please copy the **FTP/Deployment User** user value as displayed by the Azure Portal Preview including the app name in order to provide proper context for the FTP server.
 2. From your FTP client, use the connection information you gathered to connect to your app.
 3. Copy your files and their respective directory structure to the 
-**/site/wwwroot** directory in Azure (or the **/site/wwwroot/App_Data/Jobs/** directory 
+[**/site/wwwroot** directory](https://github.com/projectkudu/kudu/wiki/File-structure-on-azure) in Azure (or the **/site/wwwroot/App_Data/Jobs/** directory 
 for WebJobs).
 4. Browse to your app's URL to verify the app is running properly. 
 
@@ -79,13 +92,49 @@ For more information, see the following resource:
 
 * [Create a PHP-MySQL web app and deploy using FTP](/documentation/articles/web-sites-php-mysql-deploy-use-ftp/).
 
+## <a name="dropbox"></a>Deploy by syncing with a cloud folder
+A good alternative to [copying files manually](#ftp) is syncing files and folders to App Service from a cloud storage service
+like OneDrive and Dropbox. Syncing with a cloud folder utilizes the Kudu process for deployment (see [Overview of deployment processes](#overview)).
+
+The pros of syncing with a cloud folder are:
+
+- Simplicity of deployment. Services like OneDrive and Dropbox provide desktop sync clients, so your local working
+directory is also your deployment directory.
+- One-click deployment.
+- All functionality in the Kudu deployment engine is available (e.g. package restore, automation).
+
+The cons of syncing with a cloud folder are:
+
+- No version control for rollback when failures occur.
+- No automated deployment, manual sync is required.
+
+## <a name="continuousdeployment"></a>Deploy continuously from a cloud-based source control service
+If your development team uses a cloud-based source code management (SCM) service like [Visual Studio Team Services](http://www.visualstudio.com/), [GitHub](https://www.github.com), or [BitBucket](https://bitbucket.org/), you can configure App Service to integrate with your repository and deploy continuously. 
+
+Pros of deploying from a cloud-based source control service are:
+
+- Version control to enable rollback.
+- Ability to configure continuous deployment for Git (and Mercurial where applicable) repositories. 
+- Branch-specific deployment, can deploy different branches to different [slots](/documentation/articles/web-sites-staged-publishing/).
+- All functionality in the Kudu deployment engine is available (e.g. deployment versioning, rollback, package restore, automation).
+
+Con of deploying from a cloud-based source control service is:
+
+- Some knowledge of the respective SCM service required.
+
+###<a name="vsts"></a>How to deploy continuously from a cloud-based source control service
+In the [Azure Portal Preview](https://portal.azure.cn), you can configure continuous deployment from GitHub, Bitbucket, and Visual Studio Team Services.
+
+* [Continous Deployment to Azure App Service](/documentation/articles/app-service-continuous-deployment/). 
+
 ## <a name="localgitdeployment"></a>Deploy from local Git
-If your development team uses an on-premises local source code management (SCM) service based on Git, you can configure this as a deployment source to Azure Web App. 
+If your development team uses an on-premises local source code management (SCM) service based on Git, you can configure this as a deployment source to App Service. 
 
 Pros of deploying from local Git are:
 
 - Version control to enable rollback.
 - Branch-specific deployment, can deploy different branches to different [slots](/documentation/articles/web-sites-staged-publishing/).
+- All functionality in the Kudu deployment engine is available (e.g. deployment versioning, rollback, package restore, automation).
 
 Con of deploying from local Git is:
 
@@ -93,9 +142,9 @@ Con of deploying from local Git is:
 - No turn-key solutions for continuous deployment. 
 
 ###<a name="vsts"></a>How to deploy from local Git
-In the [Azure Classic Management Portal](https://manage.windowsazure.cn/), you can configure local Git deployment.
+In the [Azure Portal Preview](https://portal.azure.cn), you can configure local Git deployment.
 
-* [Local Git Deployment to Azure Web App](/documentation/articles/app-service-deploy-local-git/). 
+* [Local Git Deployment to Azure App Service](/documentation/articles/app-service-deploy-local-git/). 
 * [Publishing to Web Apps from any git/hg repo](http://blog.davidebbo.com/2013/04/publishing-to-azure-web-sites-from-any.html).  
 
 ## Deploy using an IDE
@@ -103,7 +152,7 @@ If you are already using [Visual Studio](https://www.visualstudio.com/products/v
 with an [Azure SDK](/downloads/), or other IDE suites like [Xcode](https://developer.apple.com/xcode/), [Eclipse](https://www.eclipse.org), and [IntelliJ IDEA](https://www.jetbrains.com/idea/), you can deploy to Azure directly from within your IDE. This option is ideal for an individual developer.
 
 Visual Studio supports all three deployment processes (FTP, Git, and Web Deploy), depending on your preference, while other IDEs can 
-deploy to Azure if they have FTP or Git integration (see [Overview of deployment processes](#overview)).
+deploy to App Service if they have FTP or Git integration (see [Overview of deployment processes](#overview)).
 
 The pros of deploying using an IDE are:
 
@@ -141,6 +190,14 @@ features have been added since the tutorial was written, but notes added later e
 Explains how to deploy an ASP.NET web project in Visual Studio, using the Git plug-in to commit the code to Git and connecting Azure to 
 the Git repository. Starting in Visual Studio 2013, Git support is built-in and doesn't require installation of a plug-in.
 
+###<a name="aztk"></a>How to deploy using the Azure Toolkits for Eclipse and IntelliJ IDEA
+
+Microsoft makes it possible to deploy Web Apps to Azure directly from Eclipse and IntelliJ via the [Azure Toolkit for Eclipse](/documentation/articles/azure-toolkit-for-eclipse/) and [Azure Toolkit for IntelliJ](/documentation/articles/azure-toolkit-for-intellij/). The following tutorials illustrate the steps that are involved in deploying simple a "Hello" world Web App to Azure using either IDE:
+
+*  [Create a Hello World Web App for Azure in Eclipse](/documentation/articles/app-service-web-eclipse-create-hello-world-web-app/). This tutorial shows you how to use the Azure Toolkit for Eclipse to create and deploy a Hello World Web App for Azure.
+*  [Create a Hello World Web App for Azure in IntelliJ](/documentation/articles/app-service-web-intellij-create-hello-world-web-app/). This tutorial shows you how to use the Azure Toolkit for IntelliJ to create and deploy a Hello World Web App for Azure.
+
+
 ## <a name="automate"></a>Automate deployment by using command-line tools
 
 * [Automate deployment with MSBuild](#msbuild)
@@ -168,7 +225,11 @@ You can perform MSBuild or FTP deployment functions from [Windows PowerShell](ht
 
 For more information, see the following resources:
 
+* [Deploy a web app linked to a GitHub repository](/documentation/articles/app-service-web-arm-from-github-provision/)
+* [Provision a web app with a SQL Database](/documentation/articles/app-service-web-arm-with-sql-database-provision/)
+* [Provision and deploy microservices predictably in Azure](/documentation/articles/app-service-deploy-complex-application-predictably/)
 * [Building Real-World Cloud Apps with Azure - Automate Everything](http://asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/automate-everything). E-book chapter that explains how the sample application shown in the e-book uses Windows PowerShell scripts to create an Azure test environment and deploy to it. See the [Resources](http://asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/automate-everything#resources) section for links to additional Azure PowerShell documentation.
+* [Using Windows PowerShell Scripts to Publish to Dev and Test Environments](/documentation/articles/vs-azure-tools-publishing-using-powershell-scripts/). How to use Windows PowerShell deployment scripts that Visual Studio generates.
 
 ###<a name="api"></a>Automate deployment with .NET management API
 
@@ -184,7 +245,7 @@ You can use the command line in Windows, Mac or Linux machines to deploy by usin
 
 For more information, see the following resource:
 
-* [Azure Command line tools](/downloads/#cmd-line-tools). Portal page in Azure.cn for command line tool information.
+* [Azure Command line tools](/downloads/#cmd-line-tools). Portal page in Azure.com for command line tool information.
 
 ###<a name="webdeploy"></a>Deploy from Web Deploy command line
 
@@ -201,7 +262,9 @@ For more information, see the following resource:
 
 In some scenarios you might want to be able to easily switch back and forth between a staging and a production version of your app. For more information, see [Staged Deployment on Web Apps](/documentation/articles/web-sites-staged-publishing/).
 
-Having a backup and restore plan in place is an important part of any deployment workflow. For information about the Azure backup and restore feature, see [Web Apps Backups](/documentation/articles/web-sites-backup/).  
+Having a backup and restore plan in place is an important part of any deployment workflow. For information about the App Service backup and restore feature, see [Web Apps Backups](/documentation/articles/web-sites-backup/).  
+
+For information about how to use Azure's Role-Based Access Control to manage access to App Service deployment, see [RBAC and Web App Publishing](https://azure.microsoft.com/blog/2015/01/05/rbac-and-azure-websites-publishing/).
 
 
  

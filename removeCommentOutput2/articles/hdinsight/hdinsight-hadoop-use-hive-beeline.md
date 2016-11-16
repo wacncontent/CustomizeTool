@@ -6,18 +6,23 @@
    services="hdinsight"
    documentationCenter=""
    authors="Blackmist"
-   manager="paulettm"
+   manager="jhubbard"
    editor="cgronlun"
 	tags="azure-portal"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="07/12/2016"
-	wacn.date=""/>
+   ms.service="hdinsight"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="big-data"
+   ms.date="10/10/2016"
+   wacn.date=""
+   ms.author="larryfr"/>
 
 #Use Hive with Hadoop in HDInsight with Beeline
 
-[AZURE.INCLUDE [hive-selector](../includes/hdinsight-selector-use-hive.md)]
+[AZURE.INCLUDE [hive-selector](../../includes/hdinsight-selector-use-hive.md)]
 
 In this article, you will learn how to use Secure Shell (SSH) to connect to a Linux-based HDInsight cluster, and then interactively submit Hive queries by using the [Beeline](https://cwiki.apache.org/confluence/display/Hive/HiveServer2+Clients#HiveServer2Clients-Beeline-NewCommandLineShell) command-line tool.
 
@@ -55,17 +60,11 @@ For more information on using PuTTY, see [Use SSH with Linux-based Hadoop on HDI
 
 1. Once connected, use the following to start Beeline:
 
-    
-    
-
-
         beeline -u 'jdbc:hive2://localhost:10001/;transportMode=http' -n admin
 
-    This will start the Beeline client, and connect to the JDBC url. Here, `localhost` is used since HiveServer2 runs on both head nodes in the cluster, and we're running Beeline directly on head node 0.
-        
-    Once the command completes, you will arrive at a `jdbc:hive2://localhost:10001/>` prompt.
-
+    This will start the Beeline client, and connect to the JDBC url. Here, `localhost` is used since HiveServer2 runs on both head nodes in the cluster, and we're running Beeline directly on the primary headnode.
     
+    Once the command completes, you will arrive at a `jdbc:hive2://localhost:10001/>` prompt.
 
 3. Beeline commands usually begin with a `!` character, for example `!help` displays help. However the `!` can often be omitted. For example, `help` will also work.
 
@@ -105,7 +104,7 @@ For more information on using PuTTY, see [Use SSH with Linux-based Hadoop on HDI
         DROP TABLE log4jLogs;
         CREATE EXTERNAL TABLE log4jLogs (t1 string, t2 string, t3 string, t4 string, t5 string, t6 string, t7 string)
         ROW FORMAT DELIMITED FIELDS TERMINATED BY ' '
-        STORED AS TEXTFILE LOCATION 'wasb:///example/data/';
+        STORED AS TEXTFILE LOCATION 'wasbs:///example/data/';
         SELECT t4 AS sev, COUNT(*) AS count FROM log4jLogs WHERE t4 = '[ERROR]' AND INPUT__FILE__NAME LIKE '%.log' GROUP BY t4;
 
     These statements perform the following actions:
@@ -175,6 +174,7 @@ Beeline can also be used to run a file that contains HiveQL statements. Use the 
         beeline -u 'jdbc:hive2://localhost:10001/;transportMode=http' -n admin -i query.hql
 
     > [AZURE.NOTE] The `-i` parameter starts Beeline, runs the statements in the query.hql file, and remains in Beeline at the `jdbc:hive2://localhost:10001/>` prompt. You can also run a file using the `-f` parameter, which returns you to Bash after the file has been processed.
+
 5. To verify that the **errorLogs** table was created, use the following statement to return all the rows from **errorLogs**:
 
         SELECT * from errorLogs;
@@ -190,11 +190,16 @@ Beeline can also be used to run a file that contains HiveQL statements. Use the 
         +---------------+---------------+---------------+---------------+---------------+---------------+---------------+--+
         3 rows selected (1.538 seconds)
 
-##<a id="summary"></a>Summary
+## More about Beeline connectivity
+The steps in this document use `localhost` to connect to HiveServer2 running on the cluster headnode. While you can also use the hostname or the fully qualified domain name of the headnode those require additional steps to the process (steps to find the hostname or FQDN). Using `localhost` is sufficient when using Beeline from the headnode.
+If you have an edge node in your cluster, with Beeline installed, you will need to use the hostname or FQDN of the headnode to connect.
+If you have Beeline installed on a client outside of your cluster, you can connect using the following command. Replace __CLUSTERNAME__ with the name of your HDInsight cluster. Replace __PASSWORD__ with the password for the admin (HTTP login) account.
+    beeline -u 'jdbc:hive2://CLUSTERNAME.azurehdinsight.cn:443/default;ssl=true?hive.server2.transport.mode=http;hive.server2.thrift.http.path=hive2' -n admin -p PASSWORD
+Note that the parameters/URI is different than when running directly on a headnode or from an edge node within the cluster. This is because connecting to the cluster from the internet uses a public gateway that routes traffic over port 443. Also, several other services are exposed through the public gateway on port 443, so the URI is different than when connecting directly. When connecting from the internet you must also authenticate the session by providing the password.
+##<a id="summary"></a><a id="nextsteps"></a>Next steps
 
 As you can see, the Beeline command provides an easy way to interactively run Hive queries on an HDInsight cluster.
 
-##<a id="nextsteps"></a>Next steps
 
 For general information on Hive in HDInsight:
 

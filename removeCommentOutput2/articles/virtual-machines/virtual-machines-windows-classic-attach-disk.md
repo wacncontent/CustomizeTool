@@ -15,15 +15,15 @@
 
 # Attach a data disk to a Windows virtual machine created with the classic deployment model
 
-> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the [Resource Manager model](/documentation/articles/virtual-machines-windows-attach-disk-portal/).
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager model. Learn how to [perform these steps using the Resource Manager model](/documentation/articles/virtual-machines-windows-attach-disk-portal/).
 
 If you need an additional data disk, you can attach an empty disk or an existing disk with data to a VM. In both cases, the disks are .vhd files that reside in an Azure storage account. In the case of a new disk, after you attach the disk, you'll also need to initialize it so it's ready for use by a Windows VM.
 
 For more details about disks, see [About Disks and VHDs for Virtual Machines](/documentation/articles/virtual-machines-windows-about-disks-vhds/).
 
-[AZURE.INCLUDE [howto-attach-disk-windows-linux](../includes/howto-attach-disk-windows-linux.md)]
+[AZURE.INCLUDE [howto-attach-disk-windows-linux](../../includes/howto-attach-disk-windows-linux.md)]
 
-##<a id="initializeinWS"></a> Initialize the disk
+## <a id="initializeinWS"></a> Initialize the disk
 
 1. Connect to the virtual machine. For instructions, see [How to log on to a virtual machine running Windows Server][logon].
 

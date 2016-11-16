@@ -4,14 +4,19 @@
 	services="hdinsight"
 	documentationCenter=""
 	authors="mumian"
-	manager="paulettm"
+	manager="jhubbard"
 	editor="cgronlun"
 	tags="azure-portal"/>
 
 <tags
 	ms.service="hdinsight"
-	ms.date="06/09/2016"
-	wacn.date=""/>
+	ms.workload="big-data"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/02/2016"
+	wacn.date=""
+	ms.author="jgao"/>
 
 # Customize HDInsight clusters using Bootstrap
 
@@ -40,7 +45,9 @@ To keep the changes through the clusters' lifetime, you can use HDInsight cluste
 There are 2 methods to use bootstrap:
 
 - Use Azure PowerShell
-    [AZURE.INCLUDE [upgrade-powershell](../includes/hdinsight-use-latest-powershell.md)]
+
+    [AZURE.INCLUDE [upgrade-powershell](../../includes/hdinsight-use-latest-powershell.md)]
+    
 - Use .NET SDK
 
 For information on installing additional components on HDInsight cluster during the creation time, see :
@@ -86,13 +93,12 @@ Some more samples on customizing other configuration files:
 	# oozie-site.xml configuration
 	$OozieConfigValues = @{ "oozie.service.coord.normal.default.timeout"="150" }  # default 120
 
-For more information, see Azim Uddin's blog titled [Customizing HDInsight Cluster creationg](http://blogs.msdn.com/b/bigdatasupport/archive/2014/04/15/customizing-hdinsight-cluster-provisioning-via-powershell-and-net-sdk.aspx).
+For more information, see Azim Uddin's blog titled [Customizing HDInsight Cluster creation](http://blogs.msdn.com/b/bigdatasupport/archive/2014/04/15/customizing-hdinsight-cluster-provisioning-via-powershell-and-net-sdk.aspx).
 
 ## See also
 
 - [Create Hadoop clusters in HDInsight][hdinsight-provision-cluster] provides instructions on how to create an HDInsight cluster by using other custom options.
 - [Develop Script Action scripts for HDInsight][hdinsight-write-script]
-- [Install and use Spark on HDInsight clusters][hdinsight-install-spark]
 - [Install and use R on HDInsight clusters][hdinsight-install-r]
 - [Install and use Solr on HDInsight clusters](/documentation/articles/hdinsight-hadoop-solr-install-v1/).
 - [Install and use Giraph on HDInsight clusters](/documentation/articles/hdinsight-hadoop-giraph-install-v1/).
@@ -147,7 +153,10 @@ This PowerShell script creates an HDInsight cluster and customizes a Hive settin
     #region - Connect to Azure subscription
     Write-Host "`nConnecting to your Azure subscription ..." -ForegroundColor Green
     try{Get-AzureContext}
-    catch{Add-AzureAccount -Environment AzureChinaCloud}
+    catch{
+			Clear-AzureProfile
+			Import-AzurePublishSettingsFile -PublishSettingsFile path/to/<subscription name>-<date>-credentials.publishsettings
+		}
     #endregion
 
     Write-Host "Creating the default storage account and default blob container ..."  -ForegroundColor Green

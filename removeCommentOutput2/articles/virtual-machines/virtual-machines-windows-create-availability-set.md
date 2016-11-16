@@ -1,4 +1,3 @@
-
 <properties
 	pageTitle="Create an VM availability set | Azure"
 	description="Learn how to create an availability set for your virtual machines using Azure portal or PowerShell using the Resource Manager deployment model."
@@ -11,8 +10,13 @@
 	tags="azure-resource-manager"/>
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="06/17/2016"
-	wacn.date=""/>
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-windows"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/27/2016"
+	wacn.date=""
+	ms.author="cynthn"/>
 
 
 # Create an availability set 

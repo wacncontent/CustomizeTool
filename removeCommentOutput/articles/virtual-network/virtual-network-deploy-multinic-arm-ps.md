@@ -3,27 +3,32 @@
    description="Learn how to deploy multi NIC VMs using PowerShell in Resource Manager"
    services="virtual-network"
    documentationCenter="na"
-   authors="telmosampaio"
+   authors="jimdial"
    manager="carmonm"
    editor=""
    tags="azure-resource-manager"
 />
-<tags
-	ms.service="virtual-network"
-	ms.date="02/02/2016"
-	wacn.date=""/>
+<tags  
+   ms.service="virtual-network"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="02/02/2016"
+   wacn.date=""
+   ms.author="jdial" />
 
 #Deploy multi NIC VMs using PowerShell
 
-[AZURE.INCLUDE [virtual-network-deploy-multinic-arm-selectors-include.md](../includes/virtual-network-deploy-multinic-arm-selectors-include.md)]
+[AZURE.INCLUDE [virtual-network-deploy-multinic-arm-selectors-include.md](../../includes/virtual-network-deploy-multinic-arm-selectors-include.md)]
 
-[AZURE.INCLUDE [virtual-network-deploy-multinic-intro-include.md](../includes/virtual-network-deploy-multinic-intro-include.md)]
+[AZURE.INCLUDE [virtual-network-deploy-multinic-intro-include.md](../../includes/virtual-network-deploy-multinic-intro-include.md)]
 
-[AZURE.INCLUDE [azure-arm-classic-important-include](../includes/learn-about-deployment-models-rm-include.md)] [classic deployment model](/documentation/articles/virtual-network-deploy-multinic-classic-ps/).
+[AZURE.INCLUDE [azure-arm-classic-important-include](../../includes/learn-about-deployment-models-rm-include.md)] [classic deployment model](/documentation/articles/virtual-network-deploy-multinic-classic-ps/).
 
-[AZURE.INCLUDE [virtual-network-deploy-multinic-scenario-include.md](../includes/virtual-network-deploy-multinic-scenario-include.md)]
+[AZURE.INCLUDE [virtual-network-deploy-multinic-scenario-include.md](../../includes/virtual-network-deploy-multinic-scenario-include.md)]
 
-Currently, you cannot have VMs with a single NIC and VMs with multiple NICs in the same resource group. Therefore, you need to implement the back end servers in a different resource group than all other components. The steps below use a resource group named *IaaSStory* for the main resource group, and *IaaSStory-BackEnd* for the back end servers.
+Currently, you cannot have VMs with a single NIC and VMs with multiple NICs in the same availability set. Therefore, you need to implement the back end servers in a different resource group than all other components. The steps below use a resource group named *IaaSStory* for the main resource group, and *IaaSStory-BackEnd* for the back end servers.
 
 ## Prerequisites
 
@@ -35,7 +40,7 @@ Before you can deploy the back end servers, you need to deploy the main resource
 
 > [AZURE.IMPORTANT] Make sure your storage account names are unique. You cannot have duplicate storage account names in Azure.
 
-[AZURE.INCLUDE [azure-ps-prerequisites-include.md](../includes/azure-ps-prerequisites-include.md)]
+[AZURE.INCLUDE [azure-ps-prerequisites-include.md](../../includes/azure-ps-prerequisites-include.md)]
 
 ## Deploy the back end VMs
 
@@ -49,7 +54,7 @@ The backend VMs depend on the creation of the resources listed below.
 
 You can download the full PowerShell script used [here](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/IaaS-Story/11-MultiNIC/arm/virtual-network-deploy-multinic-arm-ps.ps1). Follow the steps below to change the script to work in your environment.
 
-[AZURE.INCLUDE [powershell-preview-include.md](../includes/powershell-preview-include.md)]
+[AZURE.INCLUDE [powershell-preview-include.md](../../includes/powershell-preview-include.md)]
 
 1. Change the values of the variables below based on your existing resource group deployed above in [Prerequisites](#Prerequisites).
 

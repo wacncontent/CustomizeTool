@@ -9,11 +9,16 @@
    tags="azure-resource-manager"/>
    
 <tags
-	ms.service="virtual-machines-linux"
-	ms.date="07/12/2016"
-	wacn.date=""/>
+   ms.service="virtual-machines-linux"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="vm-linux"
+   ms.workload="infrastructure-services"
+   ms.date="08/23/2016"
+   wacn.date=""
+   ms.author="rclaus" />
 
 # Common Azure CLI commands on Linux and Mac
 
-[AZURE.INCLUDE [virtual-machines-common-cli-manage](../includes/virtual-machines-common-cli-manage.md)]
+[AZURE.INCLUDE [virtual-machines-common-cli-manage](../../includes/virtual-machines-common-cli-manage.md)]
 

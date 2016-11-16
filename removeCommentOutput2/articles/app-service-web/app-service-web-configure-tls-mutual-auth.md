@@ -7,10 +7,15 @@
 	manager="wpickett" 
 	editor="jimbe"/>
 
-<tags
-	ms.service="app-service"
-	ms.date="02/27/2016"
-	wacn.date=""/>	
+<tags 
+	ms.service="app-service" 
+	ms.workload="na" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="08/08/2016" 
+	wacn.date="" 
+	ms.author="naziml"/>	
 
 # How To Configure TLS Mutual Authentication for Web App
 
@@ -19,8 +24,11 @@ You can restrict access to your Azure web app by enabling different types of aut
 
 > **Note:** If you access your site over HTTP and not HTTPS, you will not receive any client certificate. So if your application requires client certificates you should not allow requests to your application over HTTP.
 
+
+[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)] 
+
 ## Configure Web App for Client Certificate Authentication ##
-To setup your web app to require client certificates you need to add the clientCertEnabled site setting for your web app and set it to true. This setting is not currently available through the management experience in the Classic Management Portal, and the REST API will need to be used to accomplish this.
+To setup your web app to require client certificates you need to add the clientCertEnabled site setting for your web app and set it to true. This setting is not currently available through the management experience in the Portal, and the REST API will need to be used to accomplish this.
 
 You can use the [ARMClient tool](https://github.com/projectkudu/ARMClient) to make it easy to craft the REST API call. After you log in with the tool you will need to issue the following command:
 
@@ -38,9 +46,9 @@ replacing everything in {} with information for your web app and creating a file
 		}
 > }  
 
-
 Make sure to change the value of "location" to wherever your web app is located e.g. China North or China East.
 
+> **Note:** If you run ARMClient from Powershell, you will need to escape the @ symbol for the JSON file with a back tick `.
 
 ## Accessing the Client Certificate From Your Web App ##
 If you are using ASP.NET and configure your app to use client certificate authentication, the certificate will be available through the **HttpRequest.ClientCertificate** property. For other application stacks, the client cert will be available in your app through a base64 encoded value in the "X-ARR-ClientCert" request header. Your application can create a certificate from this value and then use it for authentication and authorization purposes in your application.

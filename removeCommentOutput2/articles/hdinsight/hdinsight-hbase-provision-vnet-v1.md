@@ -5,13 +5,18 @@
 	services="hdinsight,virtual-network"
 	documentationCenter=""
 	authors="mumian"
-	manager="paulettm"
+	manager="jhubbard"
 	editor="cgronlun"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="05/27/2016"
-	wacn.date=""/>
+   ms.service="hdinsight"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="big-data"
+   ms.date="09/02/2016"
+   wacn.date=""
+   ms.author="jgao"/>
 
 # Provision HBase clusters on Azure Virtual Network
 
@@ -28,11 +33,12 @@ Before you begin this tutorial, you must have the following:
 
 - **An Azure subscription**. See [Get Azure trial](/pricing/1rmb-trial/).
 
-- **A workstation with Azure PowerShell**. See [Install and use Azure PowerShell](/documentation/articles/powershell-install-configure/). For instructions, see [Install and configure Azure PowerShell](/documentation/articles/powershell-install-configure/). To execute Azure PowerShell scripts, you must run Azure PowerShell as administrator and set the execution policy to *RemoteSigned*. See [Using the Set-ExecutionPolicy cmdlet][2].
+- **A workstation with Azure PowerShell**. For instructions, see [Install and configure Azure PowerShell](/documentation/articles/powershell-install-configure/). To execute Azure PowerShell scripts, you must run Azure PowerShell as administrator and set the execution policy to *RemoteSigned*. See [Using the Set-ExecutionPolicy cmdlet][2].
 
 	Before running Azure PowerShell scripts, make sure you are connected to your Azure subscription by using the following cmdlet:
 
-		Add-AzureAccount
+		Clear-AzureProfile
+		Import-AzurePublishSettingsFile -PublishSettingsFile path/to/<subscription name>-<date>-credentials.publishsettings
 
 	If you have multiple Azure subscriptions, use the following cmdlet to set the current subscription:
 
@@ -127,7 +133,7 @@ Like other HDInsight clusters, HBase cluster requires an Azure Storage account a
 		<tr><td>Zookeeper Size</td><td><p>Select a VM size for the Zookeeper node.</p></td></tr>
 	</table>
 
-	>[AZURE.NOTE] Based on the choice of VMs, your cost might vary. HDInsight uses all standard-tier VMs for cluster nodes. For information on how VM sizes affect your prices, see <a href="/home/features/hdinsight/pricing/" target="_blank">HDInsight Pricing</a>.
+	>[AZURE.NOTE] Based on the choice of VMs, your cost might vary. HDInsight uses all standard-tier VMs for cluster nodes. For information on how VM sizes affect your prices, see <a href="/pricing/details/hdinsight/" target="_blank">HDInsight Pricing</a>.
 
 	Click the right button.
 
@@ -416,7 +422,7 @@ In this tutorial you learned how to provision an HBase cluster. To learn more, s
 [hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop/
 [hdinsight-power-query]: /documentation/articles/hdinsight-connect-excel-power-query/
 [hdinsight-hive-odbc]: /documentation/articles/hdinsight-connect-excel-hive-ODBC-driver/
-[hdinsight-hbase-replication-dns]: /documentation/articles/hdinsight-hbase-geo-replication-configure-DNS/
+[hdinsight-hbase-replication-dns]: /documentation/articles/hdinsight-hbase-geo-replication-configure-dns/
 
 [img-dns-surffix]: ./media/hdinsight-hbase-provision-vnet-v1/DNSSuffix.png
 [img-primary-dns-suffix]: ./media/hdinsight-hbase-provision-vnet-v1/PrimaryDNSSuffix.png

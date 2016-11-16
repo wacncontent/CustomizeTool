@@ -1,18 +1,22 @@
-
 <properties
 	pageTitle="Deploy LAMP on a Linux virtual machine | Azure"
 	description="Learn how to install the LAMP stack on a Linux VM"
 	services="virtual-machines-linux"
 	documentationCenter="virtual-machines"
 	authors="jluk"
-	manager="squillace"
+	manager="timlt"
 	editor=""
 	tags="azure-resource-manager"/>
 
 <tags
 	ms.service="virtual-machines-linux"
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-linux"
+	ms.devlang="NA"
+	ms.topic="article"
 	ms.date="06/07/2016"
-	wacn.date=""/>
+	wacn.date=""
+	ms.author="jluk"/>
 
 # Deploy LAMP Stack on Azure
 This article will walk you through how to deploy an Apache web server, MySQL, and PHP (the LAMP stack) on Azure. You will need an Azure Account ([get a trial](/pricing/1rmb-trial/)) and the [Azure CLI](/documentation/articles/xplat-cli-install/) that is [connected to your Azure account](/documentation/articles/xplat-cli-connect/).
@@ -28,14 +32,13 @@ There are two methods for installing LAMP covered in this article:
 
 2) Deploy LAMP on existing VM
 
-
-	# Two commands: one updates packages, the other installs Apache, MySQL, and PHP
+# Two commands: one updates packages, the other installs Apache, MySQL, and PHP
 user@ubuntu$ sudo apt-get update
 user@ubuntu$ sudo apt-get install apache2 mysql-server php5 php5-mysql
 
 ## Deploy LAMP on new VM Walkthrough
 
-You can start by creating a new [resource group](/documentation/articles/resource-group-overview/) that will contain the VM:
+You can start by creating a new [resource group](../azure-resource-manager/documentation/articles/resource-group-overview) that will contain the VM:
 
     $ azure group create uniqueResourceGroup chinanorth
     info:    Executing command group create
@@ -92,8 +95,8 @@ You have now created a Linux VM with LAMP already installed on it. If you wish, 
 
 ## Deploy LAMP on existing VM Walkthrough
 
-If you need help creating a Linux VM you can head [here to learn how to create a Linux VM] (./virtual-machines-linux-quick-create-cli.md). 
-Next, you will need to SSH into the Linux VM. If you need help with creating an SSH key you can head [here to learn how to create an SSH key on Linux/Mac] (./virtual-machines-linux-mac-create-ssh-keys.md).
+If you need help creating a Linux VM you can head [here to learn how to create a Linux VM](/documentation/articles/virtual-machines-linux-quick-create-cli/). 
+Next, you will need to SSH into the Linux VM. If you need help with creating an SSH key you can head [here to learn how to create an SSH key on Linux/Mac](/documentation/articles/virtual-machines-linux-mac-create-ssh-keys/).
 If you have an SSH key already, go ahead and SSH into your Linux VM with `ssh username@uniqueDNS`.
 
 Now that you are working within your Linux VM, we will walk through installing the LAMP stack on Debian-based distributions. The exact commands might differ for other Linux distros.

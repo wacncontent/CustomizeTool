@@ -6,14 +6,19 @@
    	services="hdinsight"
    	documentationCenter=""
    	authors="mumian"
-   	manager="paulettm"
+   	manager="jhubbard"
    	editor="cgronlun"
 	tags="azure-portal"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="06/13/2016"
-	wacn.date=""/>
+   	ms.service="hdinsight"
+   	ms.devlang="na"
+   	ms.topic="hero-article"
+   	ms.tgt_pltfrm="na"
+   	ms.workload="big-data"
+   	ms.date="09/14/2016"
+   	wacn.date=""
+   	ms.author="jgao"/>
 
 # Hadoop tutorial: Get started using Linux-based Hadoop in HDInsight
 
@@ -23,25 +28,27 @@
 
 Learn how to create Linux-based [Hadoop](http://hadoop.apache.org/) clusters in HDInsight, and how to run Hive jobs in HDInsight. [Apache Hive](https://hive.apache.org/) is the most popular component in the Hadoop ecosystem. Currently HDInsight comes with 4 different cluster types: [Hadoop](/documentation/articles/hdinsight-hadoop-introduction/), [Spark](/documentation/articles/hdinsight-apache-spark-overview/), [HBase](/documentation/articles/hdinsight-hbase-overview/) and [Storm](/documentation/articles/hdinsight-storm-overview/).  Each cluster type supports a different set of components. All 4 cluster types support Hive. For a list of supported components in HDInsight, see [What's new in the Hadoop cluster versions provided by HDInsight?](/documentation/articles/hdinsight-component-versioning-v1/)  
 
-[AZURE.INCLUDE [delete-cluster-warning](../includes/hdinsight-delete-cluster-warning.md)]
+[AZURE.INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
 
-### Prerequisites
+## Prerequisites
 
 Before you begin this tutorial, you must have:
 
 - **Azure subscription**: To create a free one-month trial account, browse to [azure.microsoft.com/free](https://azure.microsoft.com/free).
+### Access control requirements
+[AZURE.INCLUDE [access-control](../../includes/hdinsight-access-control-requirements.md)]
 
 ## Create cluster
 
-Most of Hadoop jobs are batch jobs. You create a cluster, run some jobs, and then delete the cluster. In this section, you will create a Linux-based Hadoop cluster in HDInsight using [Azure ARM template](/documentation/articles/resource-group-template-deploy/). ARM template is fully customizable; it makes easy to create Azure resources like HDInsight. Azure ARM template experience is not required for following this tutorial. For other cluster creation methods and understanding the properties used in this tutorial, see [Create HDInsight clusters](/documentation/articles/hdinsight-provision-clusters-v1/). The ARM template used in this tutorial is located in a public blob container, [https://hditutorialdata.blob.core.windows.net/armtemplates/create-linux-based-hadoop-cluster-in-hdinsight.json](https://hditutorialdata.blob.core.windows.net/armtemplates/create-linux-based-hadoop-cluster-in-hdinsight.json). 
+Most of Hadoop jobs are batch jobs. You create a cluster, run some jobs, and then delete the cluster. In this section, you will create a Linux-based Hadoop cluster in HDInsight using [Azure Resource Manager template](/documentation/articles/resource-group-template-deploy/). Resource Manager template is fully customizable; it makes easy to create Azure resources like HDInsight. Resource Manager template experience is not required for following this tutorial. For other cluster creation methods and understanding the properties used in this tutorial, see [Create HDInsight clusters](/documentation/articles/hdinsight-provision-clusters-v1/). The Resource Manager template used in this tutorial is located in a public blob container, [https://hditutorialdata.blob.core.windows.net/armtemplates/create-linux-based-hadoop-cluster-in-hdinsight.json](https://hditutorialdata.blob.core.windows.net/armtemplates/create-linux-based-hadoop-cluster-in-hdinsight.json). 
 
-1. Click the following image to sign in to Azure and open the ARM template in the Azure Portal. 
+1. Click the following image to sign in to Azure and open the Resource Manager template in the Azure Portal. 
 
     <a href="https://portal.azure.cn/#create/Microsoft.Template/uri/https%3A%2F%2Fhditutorialdata.blob.core.windows.net%2Farmtemplates%2Fcreate-linux-based-hadoop-cluster-in-hdinsight.json" target="_blank"><img src="https://acom.azurecomcdn.net/80C57D/cdn/mediahandler/docarticles/dpsmedia-prod/azure.microsoft.com/documentation/articles/hdinsight-hbase-tutorial-get-started-v1/20160201111850/deploy-to-azure.png" alt="Deploy to Azure"></a>
 
 2. From the **Parameters** blade, enter the following:
 
-    ![HDInsight Linux get started arm template on portal](./media/hdinsight-hadoop-linux-tutorial-get-started/hdinsight-linux-get-started-arm-template-on-portal.png).
+    ![HDInsight Linux get started Resource Manager template on portal](./media/hdinsight-hadoop-linux-tutorial-get-started/hdinsight-linux-get-started-arm-template-on-portal.png).
 
     - **ClusterName**: Enter a name for the Hadoop cluster that you will create.
     - **Cluster login name and password**: The default login name is **admin**.
@@ -69,7 +76,7 @@ Most of Hadoop jobs are batch jobs. You create a cluster, run some jobs, and the
 2. Enter the Hadoop username and password that you specified in the previous section. The default username is **admin**.
 3. Open **Hive View** as shown in the following screenshot:
 
-    ![Selecting ambari views](./media/hdinsight-hadoop-linux-tutorial-get-started/selecthiveview.png).
+    ![Selecting Ambari views](./media/hdinsight-hadoop-linux-tutorial-get-started/selecthiveview.png).
 4. In the __Query Editor__ section of the page, paste the following HiveQL statements into the worksheet:
 
 		SHOW TABLES;
@@ -106,7 +113,7 @@ After you complete the tutorial, you may want to delete the cluster. With HDInsi
 
 ## Next steps
 
-In this tutorial, you have learned how to create a Linux-based HDInsight cluster using an ARM template, and how to perform basic Hive queries.
+In this tutorial, you have learned how to create a Linux-based HDInsight cluster using a Resource Manager template, and how to perform basic Hive queries.
 
 To learn more about analyzing data with HDInsight, see the following:
 

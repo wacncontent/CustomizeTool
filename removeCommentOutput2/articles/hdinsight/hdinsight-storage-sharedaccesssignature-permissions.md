@@ -4,13 +4,18 @@ description="Learn how to use Shared Access Signatures to restrict HDInsight acc
 services="hdinsight"
 documentationCenter=""
 authors="Blackmist"
-manager="paulettm"
+manager="jhubbard"
 editor="cgronlun"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="07/05/2016"
-	wacn.date=""/>
+ms.service="hdinsight"
+ms.devlang="na"
+ms.topic="article"
+ms.tgt_pltfrm="na"
+ms.workload="big-data"
+ms.date="10/11/2016"
+wacn.date=""
+ms.author="larryfr"/>
 
 #Use Azure Storage Shared Access Signatures to restrict access to data with HDInsight
 
@@ -147,8 +152,9 @@ An example of creating an HDInsight cluster that uses the SAS is included in the
 
 2. From the prompt, use the following to authenticate to your Azure subscription:
 
-        Add-AzureAccount -Environment AzureChinaCloud
-    
+        Clear-AzureProfile
+		Import-AzurePublishSettingsFile -PublishSettingsFile path/to/<subscription name>-<date>-credentials.publishsettings
+
     When prompted, login with the account for your Azure subscription.
     
     If your login is associated with multiple Azure subscriptions, you may need to use `Select-AzureSubscription` to select the subscription you wish to use.
@@ -160,11 +166,10 @@ An example of creating an HDInsight cluster that uses the SAS is included in the
     As the script runs, it will log output to the PowerShell prompt as it creates storage accounts. It will then prompt you to enter the HTTP user for the HDInsight cluster. This is the user account used to secure HTTP/s access to the cluster.
 
     > [AZURE.IMPORTANT] When prompted for the HTTP/s user name and password, you must provide a password that meets the following criteria:
-    >
-    > - Must be at least 10 characters in length
-    > - Must contain at least one digit
-    > - Must contain at least one non-alphanumeric character
-    > - Must contain at least one upper or lower case letter
+    ><p> - Must be at least 10 characters in length
+    ><p> - Must contain at least one digit
+    ><p> - Must contain at least one non-alphanumeric character
+    ><p> - Must contain at least one upper or lower case letter
 
 
 It will take a while for this script to complete, usually around 15 minutes. When the script completes without any errors, the cluster has been created.
@@ -181,25 +186,25 @@ Once connected to the cluster, use the following steps to verify that you can on
 
 1. From the prompt, type the following. Replace __SASCONTAINER__ with the name of the container created for the SAS storage account. Replace __SASACCOUNTNAME__ with the name of the storage account used for the SAS:
 
-        hdfs dfs -ls wasb://SASCONTAINER@SASACCOUNTNAME.blob.core.chinacloudapi.cn/
+        hdfs dfs -ls wasbs://SASCONTAINER@SASACCOUNTNAME.blob.core.chinacloudapi.cn/
     
     This will list the contents of the container, which should include the file that was uploaded when the container and SAS was created.
     
 2. Use the following to verify that you can read the contents of the file. Replace the __SASCONTAINER__ and __SASACCOUNTNAME__ as in the previous step. Replace __FILENAME__ with the name of the file displayed in the previous command:
 
-        hdfs dfs -text wasb://SASCONTAINER@SASACCOUNTNAME.blob.core.chinacloudapi.cn/FILENAME
+        hdfs dfs -text wasbs://SASCONTAINER@SASACCOUNTNAME.blob.core.chinacloudapi.cn/FILENAME
         
     This will list the contents of the file.
     
 3. Use the following to download the file to the local file system:
 
-        hdfs dfs -get wasb://SASCONTAINER@SASACCOUNTNAME.blob.core.chinacloudapi.cn/FILENAME testfile.txt
+        hdfs dfs -get wasbs://SASCONTAINER@SASACCOUNTNAME.blob.core.chinacloudapi.cn/FILENAME testfile.txt
     
     This will download the file to a local file named __testfile.txt__.
 
 4. Use the following to upload the local file to a new file named __testupload.txt__ on the SAS storage:
 
-        hdfs dfs -put testfile.txt wasb://SASCONTAINER@SASACCOUNTNAME.blob.core.chinacloudapi.cn/testupload.txt
+        hdfs dfs -put testfile.txt wasbs://SASCONTAINER@SASACCOUNTNAME.blob.core.chinacloudapi.cn/testupload.txt
     
     You will receive a message similar to the following:
     
@@ -207,7 +212,7 @@ Once connected to the cluster, use the following steps to verify that you can on
         
     This error occurs because the storage location is read+list only. Use the following to put the data on the default storage for the cluster, which is writable:
     
-        hdfs dfs -put testfile.txt wasb:///testupload.txt
+        hdfs dfs -put testfile.txt wasbs:///testupload.txt
         
     This time, the operation should complete successfully.
     

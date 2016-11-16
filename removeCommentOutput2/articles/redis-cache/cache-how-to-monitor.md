@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties 
 	pageTitle="How to monitor Azure Redis Cache | Azure" 
 	description="Learn how to monitor the health and performance your Azure Redis Cache instances" 
@@ -9,10 +7,15 @@
 	manager="douge" 
 	editor=""/>
 
-<tags
-	ms.service="cache"
-	ms.date="06/15/2016"
-	wacn.date=""/>
+<tags 
+	ms.service="cache" 
+	ms.workload="tbd" 
+	ms.tgt_pltfrm="cache-redis" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="08/30/2016" 
+	wacn.date="" 
+	ms.author="sdanie"/>
 
 # How to monitor Azure Redis Cache
 
@@ -22,7 +25,7 @@ When cache diagnostics are enabled, metrics for Azure Redis Cache instances are 
 
 Cache metrics are collected using the Redis [INFO](http://redis.io/commands/info) command. For more information about the different INFO values used for each cache metric, see [Available metrics and reporting intervals](#available-metrics-and-reporting-intervals).
 
-To view cache metrics, [browse](/documentation/articles/cache-configure/) to your cache instance in the [Azure Portal](https://portal.azure.cn). Metrics for Azure Redis Cache instances are accessed on the **Redis metrics** blade.
+To view cache metrics, [browse](/documentation/articles/cache-configure/#configure-redis-cache-settings) to your cache instance in the [Azure portal](https://portal.azure.cn). Metrics for Azure Redis Cache instances are accessed on the **Redis metrics** blade.
 
 ![Redis metrics][redis-cache-redis-metrics-blade]
 
@@ -32,9 +35,11 @@ To view cache metrics, [browse](/documentation/articles/cache-configure/) to you
 
 The **Redis metrics** blade has **Monitoring** charts that display cache metrics. Each chart can be customized by adding or removing metrics and changing the reporting interval. For viewing and configuring operations and alerts, the **Redis Cache** blade has an **Operations** section that displays cache **Events** and **Alert rules**.
 
-## Enable cache diagnostics
+## <a name="enable-cache-diagnostics" id="EnableDiagnostics"></a>Enable cache diagnostics
 
-Azure Redis Cache provides you the ability to have diagnostics data stored in a storage account so you can use any tools you want to access and process the data directly. In order for cache diagnostics to be collected, stored, and displayed in the Azure Portal, a storage account must be configured. Caches in the same region and subscription share the same diagnostics storage account, and when the configuration is changed it applies to all caches in the subscription that are in that region.
+>[AZURE.NOTE] If you want to enable cache diagnostics in Azure China, you need to set the `rdb-storage-connection-string` with Azure PowerShell or Azure CLI.
+
+Azure Redis Cache provides you the ability to have diagnostics data stored in a storage account so you can use any tools you want to access and process the data directly. In order for cache diagnostics to be collected, stored, and displayed in the Azure portal, a storage account must be configured. Caches in the same region and subscription share the same diagnostics storage account, and when the configuration is changed it applies to all caches in the subscription that are in that region.
 
 To enable and configure cache diagnostics, navigate to the **Redis Cache** blade for your cache instance. If diagnostics are not yet enabled, a message is displayed instead of a diagnostics chart.
 
@@ -54,11 +59,11 @@ Once the diagnostic settings are configured, click **Save** to save the configur
 
 >[AZURE.IMPORTANT] Caches in the same region and subscription share the same diagnostics storage settings, and when the configuration is changed (diagnostics enabled/disabled or changing the storage account) it applies to all caches in the subscription that are in that region.
 
-To view the stored metrics, examine the tables in your storage account with names that start with `WADMetrics`. For more information about accessing the stored metrics outside of the Azure Portal, see the [Access Redis Cache Monitoring data](https://github.com/rustd/RedisSamples/tree/master/CustomMonitoring) sample.
+To view the stored metrics, examine the tables in your storage account with names that start with `WADMetrics`. For more information about accessing the stored metrics outside of the Azure portal Preview, see the [Access Redis Cache Monitoring data](https://github.com/rustd/RedisSamples/tree/master/CustomMonitoring) sample.
 
->[AZURE.NOTE] Only metrics that are stored in the selected storage account are displayed in the Azure Portal. If you change storage accounts, the data in the previously configured storage account remains available for download, but it is not displayed in the Azure Portal.  
+>[AZURE.NOTE] Only metrics that are stored in the selected storage account are displayed in the Azure portal Preview. If you change storage accounts, the data in the previously configured storage account remains available for download, but it is not displayed in the Azure portal Preview.
 
-## Available metrics and reporting intervals
+## <a name="available-metrics-and-reporting-intervals"></a>Available metrics and reporting intervals
 
 Cache metrics are reported using several reporting intervals, including **Past hour**, **Today**, **Past week**, and **Custom**. The **Metric** blade for each metrics chart displays the average, minimum, and maximum values for each metric in the chart, and some metrics display a total for the reporting interval. 
 
@@ -84,7 +89,7 @@ Each metric includes two versions. One metric measures performance for the entir
 | Cache Write       | The amount of data written to the cache in Megabytes per second (MB/s) during the specified reporting interval. This value is derived from the network interface cards that support the virtual machine that hosts the cache and is not Redis specific. This value corresponds to the network bandwidth of data sent to the cache from the client.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 
 
-## How to view metrics and customize charts
+## <a name="how-to-view-metrics-and-customize-charts"></a>How to view metrics and customize charts
 
 You can view an overview of the metrics for your cache on the **Redis metrics** blade. To access the **Redis metrics** blade choose **All settings** > **Redis metrics**.
 
@@ -157,7 +162,7 @@ By default each chart includes the top-level cache performance counter as well a
 For more information on the available performance counters, see [Available metrics and reporting intervals](#available-metrics-and-reporting-intervals).
 
 
-## Operations and alerts
+## <a name="operations-and-alerts"></a>Operations and alerts
 
 The **Operations** section on the **Redis Cache** blade has **Events** and **Alert rules** sections.
 
@@ -218,7 +223,7 @@ The **Redis Cache** blade displays the following categories of metrics.
 -	[Monitoring charts](#monitoring-charts)
 -	[Usage charts](#usage-charts)
 
-### Monitoring charts
+### <a name="monitoring-charts"></a>Monitoring charts
 
 The **Monitoring** section has **Hits and Misses**, **Gets and Sets**, **Connections**, and **Total Commands** charts.
 
@@ -237,7 +242,7 @@ The **Monitoring** charts display the following metrics.
 
 For information on viewing the metrics and customizing the individual charts in this section, see the following [How to view metrics and customize metrics charts](#how-to-view-metrics-and-customize-charts) section.
 
-### Usage charts
+### <a name="usage-charts"></a>Usage charts
 
 The **Usage** section has **Redis Server Load**, **Memory Usage**, **Network Bandwith**, and **CPU Usage** charts, and also displays the **Pricing tier** for the cache instance.
 

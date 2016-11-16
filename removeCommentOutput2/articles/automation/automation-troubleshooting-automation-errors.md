@@ -9,9 +9,14 @@
    tags="top-support-issue"
    keywords="automation error, error handling"/>
 <tags
-	ms.service="automation"
-	ms.date="07/06/2016"
-	wacn.date=""/>
+   ms.service="automation"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="07/06/2016"
+   wacn.date=""
+   ms.author="sngun; v-reagie"/>
 
 # Error handling tips for common Azure Automation errors
 
@@ -95,7 +100,8 @@ Any of the following three solutions will fix this problem:
 Your runbook job fails with the error "The quota for the monthly total job run time has been reached for this subscription".
 
 **Reason for the error:**
-This error occurs when the job execution exceeds the 500-minute free quota for your account. This quota applies to all types of job execution tasks such as testing a job, starting a job from the portal, executing a job by using webhooks and scheduling a job to execute by using either the Azure Classic Management Portal or in your datacenter. To learn more about pricing for Automation see [Automation pricing](/home/features/automation/pricing/).
+
+This error occurs when the job execution exceeds the 500-minute free quota for your account. This quota applies to all types of job execution tasks such as testing a job, starting a job from the portal, executing a job by using webhooks and scheduling a job to execute by using either the Azure Classic Management Portal or in your datacenter. To learn more about pricing for Automation see [Automation pricing](/pricing/details/automation/).
 
 **Troubleshooting tips:**
 If you want to use more than 500 minutes of processing per month you will need to change your subscription from the Free tier to the Basic tier. You can upgrade to the Basic tier by taking the following steps:  
@@ -103,7 +109,7 @@ If you want to use more than 500 minutes of processing per month you will need t
 1. Sign in to your Azure subscription  
 2. Select the Automation account you wish to upgrade  
 3. Click on **Scale**  
-4. For **Automation plan** under **General**, select **Basic**    
+4. For **Automation plan** under **General**, select **Basic**   
 
 
 ### Scenario: Cmdlet not recognized when executing a runbook
@@ -153,6 +159,7 @@ Some common reasons that a module might not successfully import to Azure Automat
 
 - The **New-AzureAutomationModule** cmdlet is being used to upload the module, and you have not given the full storage path or have not loaded the module by using a publicly accessible URL.  
 
+
 **Troubleshooting tips:**  
 Any of the following solutions will fix the problem:  
 
@@ -167,7 +174,7 @@ ModuleName.Zip **->** ModuleName or Version Number **->** (ModuleName.psm1, Modu
 
 If you have followed the troubleshooting steps above and need additional help at any point in this article, you can:
 
-- Get help from Azure experts. Submit your issue to the [MSDN Azure or CSDN Azure](/support/forums).
+- Get help from Azure experts. Submit your issue to the [MSDN Azure or CSDN Azure](/support/forums)
 
 - File an Azure support incident. Go to the [Azure Support site](/support/contact) and click **Get support** under **Technical and billing support**.
 

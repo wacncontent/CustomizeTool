@@ -4,14 +4,19 @@
 	services="hdinsight" 
 	documentationCenter="" 
 	authors="nitinme" 
-	manager="paulettm" 
+	manager="jhubbard" 
 	editor="cgronlun"
 	tags="azure-portal"/>
 
-<tags
-	ms.service="hdinsight"
-	ms.date="05/17/2016"
-	wacn.date=""/>
+<tags 
+	ms.service="hdinsight" 
+	ms.workload="big-data" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="05/17/2016" 
+	wacn.date="" 
+	ms.author="nitinme"/>
 
 # Use Hive with HDInsight to analyze logs from websites
 
@@ -55,3 +60,4 @@ Try the following sample: [Analyzing sensor data using Hive with HDInsight](/doc
 [hdinsight-sensor-data-sample]: /documentation/articles/hdinsight-use-hive-sensor-data-analysis/
 
 [img-hdi-weblogs-sample]: ./media/hdinsight-hive-analyze-website-log/hdinsight-weblogs-sample.png
+ 

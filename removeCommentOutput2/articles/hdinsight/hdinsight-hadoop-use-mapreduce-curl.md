@@ -4,18 +4,23 @@
    services="hdinsight"
    documentationCenter=""
    authors="Blackmist"
-   manager="paulettm"
+   manager="jhubbard"
    editor="cgronlun"
 	tags="azure-portal"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="07/12/2016"
-	wacn.date=""/>
+   ms.service="hdinsight"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="big-data"
+   ms.date="09/27/2016"
+   wacn.date=""
+   ms.author="larryfr"/>
 
 #Run MapReduce jobs with Hadoop on HDInsight using Curl
 
-[AZURE.INCLUDE [mapreduce-selector](../includes/hdinsight-selector-use-mapreduce.md)]
+[AZURE.INCLUDE [mapreduce-selector](../../includes/hdinsight-selector-use-mapreduce.md)]
 
 In this document, you will learn how to use Curl to run MapReduce jobs on a Hadoop on HDInsight cluster.
 
@@ -54,7 +59,7 @@ To complete the steps in this article, you will need the following:
 
 2. To submit a MapReduce job, use the following command:
 
-		curl -u USERNAME:PASSWORD -d user.name=USERNAME -d jar=wasb:///example/jars/hadoop-mapreduce-examples.jar -d class=wordcount -d arg=wasb:///example/data/gutenberg/davinci.txt -d arg=wasb:///example/data/CurlOut https://CLUSTERNAME.azurehdinsight.cn/templeton/v1/mapreduce/jar
+		curl -u USERNAME:PASSWORD -d user.name=USERNAME -d jar=wasbs:///example/jars/hadoop-mapreduce-examples.jar -d class=wordcount -d arg=wasbs:///example/data/gutenberg/davinci.txt -d arg=wasbs:///example/data/CurlOut https://CLUSTERNAME.azurehdinsight.cn/templeton/v1/mapreduce/jar
 
     The end of the URI (/mapreduce/jar) tells WebHCat that this request will start a MapReduce job from a class in a jar file. The parameters used in this command are as follows:
 
@@ -77,7 +82,7 @@ To complete the steps in this article, you will need the following:
 
     > [AZURE.NOTE] This Curl request returns a JSON document with information about the job; jq is used to retrieve only the state value.
 
-4. When the state of the job has changed to **SUCCEEDED**, you can retrieve the results of the job from Azure Blob storage. The `statusdir` parameter that is passed with the query contains the location of the output file; in this case, **wasb:///example/curl**. This address stores the output of the job in the **example/curl** directory in the default storage container used by your HDInsight cluster.
+4. When the state of the job has changed to **SUCCEEDED**, you can retrieve the results of the job from Azure Blob storage. The `statusdir` parameter that is passed with the query contains the location of the output file; in this case, **wasbs:///example/curl**. This address stores the output of the job in the **example/curl** directory in the default storage container used by your HDInsight cluster.
 
 You can list and download these files by using the [Azure CLI](/documentation/articles/xplat-cli-install/). For example, to list files in the **example/curl**, use the following command:
 

@@ -3,17 +3,22 @@
    description="Learn about virtual networks (VNets) in Azure."
    services="virtual-network"
    documentationCenter="na"
-   authors="telmosampaio"
+   authors="jimdial"
    manager="carmonm"
    editor="tysonn" />
 <tags
-	ms.service="virtual-network"
-	ms.date="03/15/2016"
-	wacn.date=""/>
+   ms.service="virtual-network"
+   ms.devlang="na"
+   ms.topic="get-started-article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="03/15/2016"
+   wacn.date=""
+   ms.author="jdial" />
 
 # Virtual Network Overview
 
-An Azure virtual network (VNet) is a representation of your own network in the cloud.  It is a logical isolation of the Azure cloud dedicated to your subscription. You can fully control the IP address blocks, DNS settings, security policies, and route tables within this network. You can also further segment your VNet into subnets and launch Azure IaaS virtual machines (VMs) and/or [Cloud services (PaaS role instances)](/documentation/articles/cloud-services-choose-me/). Additionally, you can connect the virtual network to your on-premises network using one of the [connectivity options](/documentation/articles/vpn-gateway-cross-premises-options/) available in Azure. In essence, you can expand your network to Azure, with complete control on IP address blocks with the benefit of enterprise scale Azure provides.
+An Azure virtual network (VNet) is a representation of your own network in the cloud.  It is a logical isolation of the Azure cloud dedicated to your subscription. You can fully control the IP address blocks, DNS settings, security policies, and route tables within this network. You can also further segment your VNet into subnets and launch Azure IaaS virtual machines (VMs) and/or [Cloud services (PaaS role instances)](/documentation/articles/cloud-services-choose-me/). Additionally, you can connect the virtual network to your on-premises network using one of the [connectivity options](/documentation/articles/vpn-gateway-about-vpngateways/#site-to-site-and-multi-site) available in Azure. In essence, you can expand your network to Azure, with complete control on IP address blocks with the benefit of enterprise scale Azure provides.
 
 To better understand VNets, take a look at the figure below, which shows a simplified on-premises network.
 
@@ -64,6 +69,8 @@ Virtual machines and cloud services in a Virtual network can be exposed to Inter
 
 - **Internal load balancer**. You can use an internal load balancer to provide high availability for IaaS VMs and PaaS role instances accessed from other services in your VNet.
 
+To learn more about load balancing in Azure, visit [Load balancer overview](/documentation/articles/load-balancer-overview/).
+
 ## Network Security Group (NSG)
 
 You can create NSGs to control inbound and outbound access to network interfaces (NICs), VMs, and subnets. Each NSG contains one or more rules specifying whether or not traffic is approved or denied based on source IP address, source port, destination IP address, and destination port. To learn more about NSGs, visit [What is a Network Security Group](/documentation/articles/virtual-networks-nsg/).
@@ -80,7 +87,7 @@ Virtual appliances depend on [user defined routes and IP forwarding](/documentat
 There are limits on the number of Virtual Networks allowed in a subscription, please refer to [Azure Networking limits](/documentation/articles/azure-subscription-service-limits/#networking-limits) for more information.
 
 ## Pricing
-There is no extra cost for using Virtual Networks in Azure. The compute instances launched within the Vnet will be charged the standard rates as described in [Azure VM Pricing](/home/features/virtual-machines/pricing/). The [VPN Gateways](/home/features/vpn-gateway/pricing/) and Public IP Addresses used in the VNet will also be charged standard rates.
+There is no extra cost for using Virtual Networks in Azure. The compute instances launched within the Vnet will be charged the standard rates as described in [Azure VM Pricing](/pricing/details/virtual-machines/). The [VPN Gateways](/pricing/details/vpn-gateway/) and [Public IP Addresses](/pricing/details/reserved-ip-addresses/) used in the VNet will also be charged standard rates.
 
 ## Next steps
 

@@ -4,13 +4,18 @@
    services="hdinsight"
    documentationCenter=""
    authors="mumian"
-   manager="paulettm"
+   manager="jhubbard"
    editor="cgronlun"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="05/27/2016"
-	wacn.date=""/>
+   ms.service="hdinsight"
+   ms.workload="big-data"
+   ms.tgt_pltfrm="na"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.date="09/02/2016"
+   wacn.date=""
+   ms.author="jgao"/>
 
 # Learn Hadoop by using the HDInsight Getting Started Gallery
 

@@ -1,3 +1,4 @@
+<!-- not suitable for Mooncake -->
 
 <properties
 	pageTitle="Configure Always On availability group in Azure VM automatically - Resource Manager"
@@ -10,13 +11,18 @@
 	tags="azure-resource-manager" />
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="06/12/2016"
-	wacn.date=""/>
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="vm-windows-sql-server"
+	ms.workload="infrastructure-services"
+	ms.date="09/22/2016"
+	wacn.date=""
+	ms.author="mikeray" />
 
 # Configure Always On availability group in Azure VM automatically - Resource Manager
 
 > [AZURE.SELECTOR]
-- [Resource Manager: Auto](/documentation/articles/virtual-machines-windows-portal-sql-alwayson-availability-groups/)
+- [Resource Manager: Template](/documentation/articles/virtual-machines-windows-portal-sql-alwayson-availability-groups/)
 - [Resource Manager: Manual](/documentation/articles/virtual-machines-windows-portal-sql-alwayson-availability-groups-manual/)
 - [Classic: UI](/documentation/articles/virtual-machines-windows-classic-portal-sql-alwayson-availability-groups/)
 - [Classic: PowerShell](/documentation/articles/virtual-machines-windows-classic-ps-sql-alwayson-availability-groups/)
@@ -63,7 +69,7 @@ In this tutorial you will use the Azure portal to:
 
 - Connect to one of the domain controllers and then to one of the SQL Servers
 
-[AZURE.INCLUDE [availability-group-template](../includes/virtual-machines-windows-portal-sql-alwayson-ag-template.md)]
+[AZURE.INCLUDE [availability-group-template](../../includes/virtual-machines-windows-portal-sql-alwayson-ag-template.md)]
 
 
 ## Provision the cluster from the gallery
@@ -144,7 +150,7 @@ On **VM size, storage settings** choose a SQL Server virtual machine size and re
 
 - **SQL Server virtual machine size** is the Azure virtual machine size for both SQL Servers. Choose a virtual machine size appropriate for your workload. If you are building this environment for the tutorial use **DS2**. For production workloads choose a virtual machine size that can support the workload. Many production workloads will require **DS4** or larger. The template will build two virtual machines of this size and install SQL Server on each one. For more information, see [Sizes for virtual machines](/documentation/articles/virtual-machines-linux-sizes/).
 
->[AZURE.NOTE]Azure will install Enterprise Edition of SQL Server. The cost depends on the edition and the virtual machine size. For detailed information about current costs, see [virtual machines Pricing](/home/features/virtual-machines/pricing/).
+>[AZURE.NOTE]Azure will install Enterprise Edition of SQL Server. The cost depends on the edition and the virtual machine size. For detailed information about current costs, see [virtual machines Pricing](/pricing/details/virtual-machines/).
 
 - **Domain controller virtual machine size** is the virtual machine size for the domain controllers. For this tutorial use **D2**.
 

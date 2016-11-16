@@ -1,6 +1,6 @@
 <properties
-	pageTitle="How to debug a Node.js web app in Azure"
-	description="Learn how to debug a Node.js web app in Azure."
+	pageTitle="How to debug a Node.js web app in Azure App Service"
+	description="Learn how to debug a Node.js web app in Azure App Service."
 	tags="azure-portal"
 	services="app-service\web"
 	documentationCenter="nodejs"
@@ -10,19 +10,24 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="06/24/2016"
-	wacn.date=""/>
+	ms.workload="web"
+	ms.tgt_pltfrm="na"
+	ms.devlang="nodejs"
+	ms.topic="article"
+	ms.date="08/11/2016"
+	wacn.date=""
+	ms.author="robmcm"/>
 
-# How to debug a Node.js web app in Azure
+# How to debug a Node.js web app in Azure App Service
 
-Azure provides built-in diagnostics to assist with debugging Node.js applications hosted in [Azure Web App](/documentation/services/web-sites/) Web Apps. In this article, you will learn how to enable logging of stdout and stderr, display error information in the browser, and how to download and view log files.
+Azure provides built-in diagnostics to assist with debugging Node.js applications hosted in [Azure App Service](/documentation/articles/app-service-changes-existing-services/) Web Apps. In this article, you will learn how to enable logging of stdout and stderr, display error information in the browser, and how to download and view log files.
 
 Diagnostics for Node.js applications hosted on Azure is provided by [IISNode]. While this article discusses the most common settings for gathering diagnostics information, it does not provide a complete reference for working with IISNode. For more information on working with IISNode, see the [IISNode Readme] on GitHub.
 
 <a id="enablelogging"></a>
 ## Enable logging
 
-By default, an Azure web app only captures diagnostic information about deployments, such as when you deploy a web app using Git. This information is useful if you are having problems during deployment, such as a failure when installing a module referenced in **package.json**, or if you are using a custom deployment script.
+By default, an App Service web app only captures diagnostic information about deployments, such as when you deploy a web app using Git. This information is useful if you are having problems during deployment, such as a failure when installing a module referenced in **package.json**, or if you are using a custom deployment script.
 
 To enable the logging of stdout and stderr streams, you must create an **IISNode.yml** file at the root of your Node.js application and add the following:
 
@@ -42,7 +47,7 @@ If the **IISNode.yml** file did not already exist within your application, you m
 
 > [AZURE.NOTE] If your web app was created using the Azure Command-Line Tools or Azure PowerShell Cmdlets, a default **IISNode.yml** file is automatically created.
 
-To restart the web app, select the web app in the [Azure Classic Management Portal](https://manage.windowsazure.cn), and then click **RESTART** button:
+To restart the web app, select the web app in the [Azure Portal Preview](https://portal.azure.cn), and then click **RESTART** button:
 
 ![restart button][restart-button]
 
@@ -63,7 +68,7 @@ Once installed, the tools can be accessed using the 'azure' command. The command
 
 ###FTP
 
-To access the diagnostic information through FTP, visit the [Azure Classic Management Portal](https://manage.windowsazure.cn), select your web app, and then select the **DASHBOARD**. In the **quick links** section, the **FTP DIAGNOSTIC LOGS** and **FTPS DIAGNOSTIC LOGS** links provide access to the logs using the FTP protocol.
+To access the diagnostic information through FTP, visit the [Azure Portal Preview](https://portal.azure.cn), select your web app, and then select the **DASHBOARD**. In the **quick links** section, the **FTP DIAGNOSTIC LOGS** and **FTPS DIAGNOSTIC LOGS** links provide access to the logs using the FTP protocol.
 
 > [AZURE.NOTE] If you have not previously configured user name and password for FTP or deployment, you can do so from the **QuickStart** management page by selecting **Set up deployment credentials**.
 
@@ -100,7 +105,7 @@ This will return a stream of log events that are updated as they occur on the se
 <a id="nextsteps"></a>
 ## Next Steps
 
-In this article you learned how to enable and access diagnostics information for Azure. While this information is useful in understanding problems that occur with your application, it may point to a problem with a module you are using or that the version of Node.js used by Azure Web Apps is different than the one used in your deployment environment.
+In this article you learned how to enable and access diagnostics information for Azure. While this information is useful in understanding problems that occur with your application, it may point to a problem with a module you are using or that the version of Node.js used by App Service Web Apps is different than the one used in your deployment environment.
 
 For information in working with modules on Azure, see [Using Node.js Modules with Azure Applications](/documentation/articles/nodejs-use-node-modules-azure-apps/).
 
@@ -108,10 +113,14 @@ For information on specifying a Node.js version for your application, see [Speci
 
 For more information, see also the [Node.js Developer Center](/develop/nodejs/).
 
+## What's changed
+* For a guide to the change from Websites to App Service see: [Azure App Service and Its Impact on Existing Azure Services](/documentation/articles/app-service-changes-existing-services/)
+
 [IISNode]: https://github.com/tjanczuk/iisnode
 [IISNode Readme]: https://github.com/tjanczuk/iisnode#readme
 [How to Use The Azure Command-Line Interface]: /documentation/articles/xplat-cli-install/
 [Using Node.js Modules with Azure Applications]: /documentation/articles/nodejs-use-node-modules-azure-apps/
 [Specifying a Node.js version in an Azure application]: /documentation/articles/nodejs-specify-node-version-azure-apps/
+
 [restart-button]: ./media/web-sites-nodejs-debug/restartbutton.png
  

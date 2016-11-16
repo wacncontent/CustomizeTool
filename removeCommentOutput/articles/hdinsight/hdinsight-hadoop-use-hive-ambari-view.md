@@ -4,18 +4,23 @@
    services="hdinsight"
    documentationCenter=""
    authors="Blackmist"
-   manager="paulettm"
+   manager="jhubbard"
    editor="cgronlun"
 	tags="azure-portal"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="05/20/2016"
-	wacn.date=""/>
+   ms.service="hdinsight"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="big-data"
+   ms.date="08/09/2016"
+   wacn.date=""
+   ms.author="larryfr"/>
 
 #Use the Hive View with Hadoop in HDInsight
 
-[AZURE.INCLUDE [hive-selector](../includes/hdinsight-selector-use-hive.md)]
+[AZURE.INCLUDE [hive-selector](../../includes/hdinsight-selector-use-hive.md)]
 
 Ambari is a management and monitoring utility provided with Linux-based HDInsight clusters. One of the features provided through Ambari is a Web UI that can be used to run Hive queries. This is the __Hive View__, part of the Ambari Views provided with your HDInsight cluster.
 
@@ -58,7 +63,7 @@ Use the following steps from the Hive view to run a Hive query against data incl
 		DROP TABLE log4jLogs;
 		CREATE EXTERNAL TABLE log4jLogs(t1 string, t2 string, t3 string, t4 string, t5 string, t6 string, t7 string)
 		ROW FORMAT DELIMITED FIELDS TERMINATED BY ' '
-		STORED AS TEXTFILE LOCATION 'wasb:///example/data/';
+		STORED AS TEXTFILE LOCATION 'wasbs:///example/data/';
 		SELECT t4 AS sev, COUNT(*) AS cnt FROM log4jLogs WHERE t4 = '[ERROR]' GROUP BY t4;
 
 	These statements perform the following actions:
@@ -165,13 +170,13 @@ Once you have added a UDF to the Hive View, an __Insert udfs__ button will appea
 For example, if you have defined a UDF with the following properties:
 
 * Resource name: myudfs
-* Resource path: wasb:///myudfs.jar
+* Resource path: wasbs:///myudfs.jar
 * UDF name: myawesomeudf
 * UDF class name: com.myudfs.Awesome
 
 Using the __Insert udfs__ button will display an entry named __myudfs__, with another drop-down for each UDF defined for that resource. In this case, __myawesomeudf__. Selecting this entry will add the following to the beginning of the query:
 
-    add jar wasb:///myudfs.jar;
+    add jar wasbs:///myudfs.jar;
 
     create temporary function myawesomeudf as 'com.myudfs.Awesome';
 

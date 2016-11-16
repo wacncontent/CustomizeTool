@@ -5,17 +5,22 @@
   documentationCenter="virtual-machines"
   authors="ahmetalpbalkan"
   editor="squillace"
-  manager="" 
+  manager="timlt"
   tags="azure-service-management,azure-resource-manager" />
 
 <tags
-	ms.service="virtual-machines-linux"
-	ms.date="07/11/2016"
-	wacn.date=""/>
+  ms.service="virtual-machines-linux"
+  ms.devlang="multiple"
+  ms.topic="article"
+  ms.tgt_pltfrm="vm-linux"
+  ms.workload="infrastructure-services"
+  ms.date="09/27/2016"
+  wacn.date="" 
+  ms.author="ahmetb" />
 
 # Deploying Your Own Private Docker Registry on Azure
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
 
 
 
@@ -25,7 +30,7 @@ container image to a Docker private registry on Azure using Azure Blob Storage.
 This document assumes:
 
 1. You know how to use Docker and have Docker images to store. (You don't? [Learn about Docker](https://www.docker.com))
-2. You have a server that has Docker engine installed. (You don't? [Do it quickly on Azure.](https://azure.microsoft.com/documentation/templates/docker-simple-on-ubuntu/))
+2. You have a server that has Docker engine installed. (You don't? [Do it quickly on Azure.](https://github.com/Azure/azure-quickstart-templates/tree/master/docker-simple-on-ubuntu/))
 
 
 ## What is a Private Docker Registry?

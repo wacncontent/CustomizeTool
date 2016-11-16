@@ -10,8 +10,13 @@
 	tags="azure-resource-manager"/>
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="06/17/2016"
-	wacn.date=""/>
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-windows"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/27/2016"
+	wacn.date=""
+	ms.author="cynthn"/>
 
 
 # Create an availability set 

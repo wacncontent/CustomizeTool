@@ -3,15 +3,20 @@
    description="Learn how to enable counters, events, and operational logging for NSGs"
    services="virtual-network"
    documentationCenter="na"
-   authors="telmosampaio"
+   authors="jimdial"
    manager="carmonm"
    editor="tysonn"
    tags="azure-resource-manager"
 />
 <tags
-	ms.service="virtual-network"
-	ms.date="07/14/2016"
-	wacn.date=""/>
+   ms.service="virtual-network"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="07/14/2016"
+   wacn.date=""
+   ms.author="jdial" />
 
 #Log analytics for network security groups (NSGs)
 
@@ -39,7 +44,7 @@ Audit logging is automatically enabled at all times for every Resource Manager r
 4. In the **Settings** blade, click **Diagnostics**, and then in the **Diagnostics** pane, next to **Status**, click **On**
 5. In the **Settings** blade, click **Storage Account**, and either select an existing storage account, or create a new one.  
 
->[AZURE.INFORMATION] Audit logs do not require a separate storage account. The use of storage for event and rule logging will incur service charges.
+>[AZURE.NOTE] Audit logs do not require a separate storage account. The use of storage for event and rule logging will incur service charges.
 
 6. In the drop-down list just under **Storage Account**, select whether you want to log events, counters, or both, and then click **Save**.
 

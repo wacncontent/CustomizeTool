@@ -3,25 +3,30 @@
    description="Learn how to create and deploy NSGs in ARM using a template"
    services="virtual-network"
    documentationCenter="na"
-   authors="telmosampaio"
+   authors="jimdial"
    manager="carmonm"
    editor="tysonn"
    tags="azure-resource-manager"
 />
 <tags
-	ms.service="virtual-network"
-	ms.date="02/02/2016"
-	wacn.date=""/>
+   ms.service="virtual-network"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="02/02/2016"
+   wacn.date=""
+   ms.author="jdial" />
 
 # How to create NSGs using a template
 
-[AZURE.INCLUDE [virtual-networks-create-nsg-selectors-arm-include](../includes/virtual-networks-create-nsg-selectors-arm-include.md)]
+[AZURE.INCLUDE [virtual-networks-create-nsg-selectors-arm-include](../../includes/virtual-networks-create-nsg-selectors-arm-include.md)]
 
-[AZURE.INCLUDE [virtual-networks-create-nsg-intro-include](../includes/virtual-networks-create-nsg-intro-include.md)]
+[AZURE.INCLUDE [virtual-networks-create-nsg-intro-include](../../includes/virtual-networks-create-nsg-intro-include.md)]
 
-[AZURE.INCLUDE [azure-arm-classic-important-include](../includes/azure-arm-classic-important-include.md)] This article covers the Resource Manager deployment model. You can also [create NSGs in the classic deployment model](/documentation/articles/virtual-networks-create-nsg-classic-ps/).
+[AZURE.INCLUDE [azure-arm-classic-important-include](../../includes/azure-arm-classic-important-include.md)] This article covers the Resource Manager deployment model. You can also [create NSGs in the classic deployment model](/documentation/articles/virtual-networks-create-nsg-classic-ps/).
 
-[AZURE.INCLUDE [virtual-networks-create-nsg-scenario-include](../includes/virtual-networks-create-nsg-scenario-include.md)]
+[AZURE.INCLUDE [virtual-networks-create-nsg-scenario-include](../../includes/virtual-networks-create-nsg-scenario-include.md)]
 
 ## NSG resources in a template file
 
@@ -92,13 +97,13 @@ The sample template available in the public repository uses a parameter file con
 
 To deploy the ARM template you downloaded by using PowerShell, follow the steps below.
 
-[AZURE.INCLUDE [powershell-preview-include.md](../includes/powershell-preview-include.md)]
+[AZURE.INCLUDE [powershell-preview-include.md](../../includes/powershell-preview-include.md)]
 
 1. If you have never used Azure PowerShell, see [How to Install and Configure Azure PowerShell](/documentation/articles/powershell-install-configure/) and follow the instructions all the way to the end to sign into Azure and select your subscription.
 
 3. Run the **`New-AzureRmResourceGroup`** cmdlet to create a resource group using the template.
 
-		New-AzureRmResourceGroup -Name TestRG -Location uswest `
+		New-AzureRmResourceGroup -Name TestRG -Location chinanorth `
 		    -TemplateFile 'https://raw.githubusercontent.com/telmosampaio/azure-templates/master/201-IaaS-WebFrontEnd-SQLBackEnd/azuredeploy.json' `
 		    -TemplateParameterFile 'https://raw.githubusercontent.com/telmosampaio/azure-templates/master/201-IaaS-WebFrontEnd-SQLBackEnd/azuredeploy.parameters.json'
 

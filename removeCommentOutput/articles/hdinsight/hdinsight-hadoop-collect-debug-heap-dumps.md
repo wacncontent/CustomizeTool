@@ -5,18 +5,23 @@
 	documentationCenter=""
 	tags="azure-portal"
 	authors="mumian"
-	manager="paulettm"
+	manager="jhubbard"
 	editor="cgronlun"/>
 
 <tags
 	ms.service="hdinsight"
-	ms.date="04/28/2016"
-	wacn.date=""/>
+	ms.workload="big-data"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="07/25/2016"
+	wacn.date=""
+	ms.author="jgao"/>
 
 
 # Collect heap dumps in Blob storage to debug and analyze Hadoop services
 
-[AZURE.INCLUDE [heapdump-selector](../includes/hdinsight-selector-heap-dump.md)]
+[AZURE.INCLUDE [heapdump-selector](../../includes/hdinsight-selector-heap-dump.md)]
 
 Heap dumps contain a snapshot of the application's memory, including the values of variables 
 at the time the dump was created. So they are very useful for diagnosing problems that occur 
@@ -57,7 +62,7 @@ tempelton, hiveserver2, metastore, derbyserver, jobhistoryserver, resourcemanage
 
 For example, to turn on heap dumps by using Azure PowerShell for jobhistoryserver, you would do the following:
 
-[AZURE.INCLUDE [upgrade-powershell](../includes/hdinsight-use-latest-powershell.md)]
+[AZURE.INCLUDE [upgrade-powershell](../../includes/hdinsight-use-latest-powershell.md)]
 
 	$MapRedConfigValues = new-object 'Microsoft.WindowsAzure.Management.HDInsight.Cmdlet.DataObjects.AzureHDInsightMapReduceConfiguration'
 

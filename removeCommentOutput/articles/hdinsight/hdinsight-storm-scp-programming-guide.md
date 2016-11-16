@@ -4,14 +4,19 @@ pageTitle="SCP.NET programming guide | Azure"
 description="Learn how to use SCP.NET to create .NET-based Storm topologies for use with Storm on HDInsight."
 services="hdinsight"
 documentationCenter=""
-authors="rperi"
-manager="paulettm"
+authors="raviperi"
+manager="jhubbard"
 editor="cgronlun"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="05/16/2016"
-	wacn.date=""/>
+ms.service="hdinsight"
+ms.devlang="dotnet"
+ms.topic="article"
+ms.tgt_pltfrm="na"
+ms.workload="big-data"
+ms.date="05/16/2016"
+wacn.date=""
+ms.author="raviperi"/>
 
 #SCP programming guide
 

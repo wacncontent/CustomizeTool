@@ -6,14 +6,19 @@
    services="virtual-machines-linux"
    documentationCenter=""
    authors="HaishiBai"
-   manager="larar"
+   manager="timlt"
    editor=""
    tags="azure-resource-manager"/>
 
 <tags
-	ms.service="virtual-machines-linux"
-	ms.date="06/24/2015"
-	wacn.date=""/>
+   ms.service="virtual-machines-linux"
+   ms.devlang="multiple"
+   ms.topic="article"
+   ms.tgt_pltfrm="vm-linux"
+   ms.workload="infrastructure-services"
+   ms.date="06/24/2015"
+   wacn.date=""
+   ms.author="hbai"/>
 
 # Deploy a 3-node Deis cluster
 
@@ -35,7 +40,7 @@ In order to run through the following steps, you'll need:
 
 ## Provision the cluster
 
-In this section, you'll use an [Azure Resource Manager](/documentation/articles/resource-group-overview/) template from the open source repository [azure-quickstart-templates](https://github.com/Azure/azure-quickstart-templates). First, you'll copy down the template. Then, you'll create a new SSH key pair for authentication. And then, you'll configure a new identifier for you cluster. And finally, you'll use either the Shell script or the PowerShell script to provision the cluster.
+In this section, you'll use an [Azure Resource Manager](../azure-resource-manager/documentation/articles/resource-group-overview) template from the open source repository [azure-quickstart-templates](https://github.com/Azure/azure-quickstart-templates). First, you'll copy down the template. Then, you'll create a new SSH key pair for authentication. And then, you'll configure a new identifier for you cluster. And finally, you'll use either the Shell script or the PowerShell script to provision the cluster.
 
 1. Clone the repository: [https://github.com/Azure/azure-quickstart-templates](https://github.com/Azure/azure-quickstart-templates).
 

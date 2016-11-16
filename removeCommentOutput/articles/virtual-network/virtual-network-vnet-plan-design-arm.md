@@ -3,13 +3,18 @@
    description="Learn how to plan and design virtual networks in Azure based on your isolation, connectivity, and location requirements."
    services="virtual-network"
    documentationCenter="na"
-   authors="telmosampaio"
+   authors="jimdial"
    manager="carmonm"
    editor="tysonn" />
 <tags
-	ms.service="virtual-network"
-	ms.date="02/08/2016"
-	wacn.date=""/>
+   ms.service="virtual-network"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="02/08/2016"
+   wacn.date=""
+   ms.author="jdial" />
 
 # Plan and design Azure Virtual Networks
 
@@ -26,7 +31,7 @@ Before answering the planning questions below, consider the following:
 - Everything you create in Azure is composed of one or more resources. A virtual machine (VM) is a resource, the network adapter interface (NIC) used by a VM is a resource, the public IP address used by a NIC is a resource, the VNet the NIC is connected to is a resource.
 - You create resources within an [Azure region](https://azure.microsoft.com/regions/#services) and subscription. And resources can only be connected to a VNet that exists in the same region and subscription they are in. 
 - You can connect VNets to each other by using an Azure [VPN Gateway](/documentation/articles/vpn-gateway-vnet-vnet-rm-ps/). You can also connect VNets across regions and subscriptions this way.
-- You can connect VNets to your on-premises network by using one of the [connectivity options](/documentation/articles/vpn-gateway-cross-premises-options/) available in Azure. 
+- You can connect VNets to your on-premises network by using one of the [connectivity options](/documentation/articles/vpn-gateway-about-vpngateways/#site-to-site-and-multi-site) available in Azure. 
 - Different resources can be grouped together in [resource groups](/documentation/articles/resource-group-overview/#resource-groups), making it easier to manage the resource as a unit. A resource group can contain resources from multiple regions, as long as the resources belong to the same subscription.
 
 ### Define requirements
@@ -119,7 +124,7 @@ You should consider multiple subnets in a VNet in the following scenarios:
 
 - **Not enough private IP addresses for all NICs in a subnet**. If your subnet address space does not contain enough IP addresses for the number of NICs in the subnet, you need to create multiple subnets. Keep in mind that Azure reserves 5 private IP addresses from each subnet that cannot be used: the first and last addresses of the address space (for the subnet address, and multicast) and 3 addresses to be used internally (for DHCP and DNS purposes). 
 - **Security**. You can use subnets to separate groups of VMs from one another for workloads that have a multi-layer structure, and apply different [network security groups (NSGs)](/documentation/articles/virtual-networks-nsg/#subnets) for those subnets.
-- **Hybrid connectivity**. You can use VPN gateways and ExpressRoute circuits to [connect](/documentation/articles/vpn-gateway-cross-premises-options/) your VNets to one another, and to your on-premises data center(s). VPN gateways and ExpressRoute circuits require a subnet of their own to be created.
+- **Hybrid connectivity**. You can use VPN gateways and ExpressRoute circuits to [connect](/documentation/articles/vpn-gateway-about-vpngateways/#site-to-site-and-multi-site) your VNets to one another, and to your on-premises data center(s). VPN gateways and ExpressRoute circuits require a subnet of their own to be created.
 - **Virtual appliances**. You can use a virtual appliance, such as a firewall, WAN accelerator, or VPN gateway in an Azure VNet. When you do so, you need to [route traffic](/documentation/articles/virtual-networks-udr-overview/) to those appliances and isolate them in their own subnet.
 
 ### Subnet and NSG design patterns
@@ -259,5 +264,4 @@ Based on those requirements, you could add users from the networking team to the
 - [Deploy a virtual network](/documentation/articles/virtual-networks-create-vnet-arm-template-click/) based on a scenario.
 - Understand how to [load balance](/documentation/articles/load-balancer-overview/) IaaS VMs and [manage routing over multiple Azure regions](/documentation/articles/traffic-manager-overview/).
 - Learn more about [NSGs and how to plan and design](/documentation/articles/virtual-networks-nsg/) an NSG solution.
-- Learn more about your [cross-premises and VNet connectivity options](/documentation/articles/vpn-gateway-cross-premises-options/).  
-
+- Learn more about your [cross-premises and VNet connectivity options](/documentation/articles/vpn-gateway-about-vpngateways/#site-to-site-and-multi-site).

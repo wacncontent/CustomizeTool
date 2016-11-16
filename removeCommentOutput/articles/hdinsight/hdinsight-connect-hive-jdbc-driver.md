@@ -4,18 +4,23 @@
  services="hdinsight"
  documentationCenter=""
  authors="Blackmist"
- manager="paulettm"
+ manager="jhubbard"
  editor="cgronlun"
 	tags="azure-portal"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="06/03/2016"
-	wacn.date=""/>
+ ms.service="hdinsight"
+ ms.devlang="java"
+ ms.topic="article"
+ ms.tgt_pltfrm="na"
+ ms.workload="big-data"
+ ms.date="08/23/2016"
+ wacn.date=""
+ ms.author="larryfr"/>
 
 #Connect to Hive on Azure HDInsight using the Hive JDBC driver
 
-[AZURE.INCLUDE [ODBC-JDBC-selector](../includes/hdinsight-selector-odbc-jdbc.md)]
+[AZURE.INCLUDE [ODBC-JDBC-selector](../../includes/hdinsight-selector-odbc-jdbc.md)]
 
 In this document, you will learn how to use JDBC from a Java application to remotely submit Hive queries to an HDInsight cluster. You will learn how to connect from the SQuirreL SQL client, and how to connect programmatically from Java.
 

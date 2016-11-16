@@ -3,21 +3,26 @@
    description="Understanding static private IPs (DIPs) and how to manage them in classic mode using the CLI"
    services="virtual-network"
    documentationCenter="na"
-   authors="telmosampaio"
+   authors="jimdial"
    manager="carmonm"
    editor="tysonn"
    tags="azure-service-management"
 />
-<tags
-	ms.service="virtual-network"
-	ms.date="03/15/2016"
-	wacn.date=""/>
+<tags 
+   ms.service="virtual-network"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="03/15/2016"
+   wacn.date=""
+   ms.author="jdial" />
 
 # How to set a static private IP address (classic) in Azure CLI
 
-[AZURE.INCLUDE [virtual-networks-static-private-ip-selectors-classic-include](../includes/virtual-networks-static-private-ip-selectors-classic-include.md)]
+[AZURE.INCLUDE [virtual-networks-static-private-ip-selectors-classic-include](../../includes/virtual-networks-static-private-ip-selectors-classic-include.md)]
 
-[AZURE.INCLUDE [virtual-networks-static-private-ip-intro-include](../includes/virtual-networks-static-private-ip-intro-include.md)]
+[AZURE.INCLUDE [virtual-networks-static-private-ip-intro-include](../../includes/virtual-networks-static-private-ip-intro-include.md)]
 
 >[AZURE.IMPORTANT]Before you work with Azure resources, it's important to understand that Azure currently has two deployment models: Resource Manager, and classic. Make sure you understand [deployment models and tools](/documentation/articles/azure-classic-rm/) before working with any Azure resource. You can view the documentation for different tools by clicking the tabs at the top of this article. This article covers the classic deployment model. You can also [manage a static private IP address in the Resource Manager deployment model](/documentation/articles/virtual-networks-static-private-ip-arm-cli/).
 
@@ -40,7 +45,7 @@ To create a new VM named *DNS01* in a new cloud service named *TestService* base
 	
 2. Run the **azure create vm** command to create the VM. Notice the value for a static private IP address. The list shown after the output explains the parameters used.
 
-		azure vm create -l centralus -n DNS01 -w TestVNet -S "192.168.1.101" TestService bd507d3a70934695bc2128e3e5a255ba__RightImage-Windows-2012R2-x64-v14.2 adminuser AdminP@ssw0rd
+		azure vm create -l chinaeast -n DNS01 -w TestVNet -S "192.168.1.101" TestService bd507d3a70934695bc2128e3e5a255ba__RightImage-Windows-2012R2-x64-v14.2 adminuser AdminP@ssw0rd
 
 	Expected output:
 
@@ -57,7 +62,7 @@ To create a new VM named *DNS01* in a new cloud service named *TestService* base
 		info:    OK
 		info:    vm create command OK
 
-	- **-l (or --location)**. Azure region where the VM will be created. For our scenario, *centralus*.
+	- **-l (or --location)**. Azure region where the VM will be created. For our scenario, *chinaeast*.
 	- **-n (or --vm-name)**. Name of the VM to be created.
 	- **-w (or --virtual-network-name)**. Name of the VNet where the VM will be created. 
 	- **-S (or --static-ip)**. Static private IP address for the VM.

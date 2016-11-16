@@ -3,19 +3,24 @@
 	description="Learn how to perform administrative tasks for the Hadoop clusters in HDInsight using Azure PowerShell."
 	services="hdinsight"
 	editor="cgronlun"
-	manager="paulettm"
+	manager="jhubbard"
 	tags="azure-portal"
 	authors="mumian"
 	documentationCenter=""/>
 
 <tags
 	ms.service="hdinsight"
-	ms.date="05/24/2016"
-	wacn.date=""/>
+	ms.workload="big-data"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/10/2016"
+	wacn.date=""
+	ms.author="jgao"/>
 
 # Manage Hadoop clusters in HDInsight by using Azure PowerShell
 
-[AZURE.INCLUDE [selector](../includes/hdinsight-portal-management-selector.md)]
+[AZURE.INCLUDE [selector](../../includes/hdinsight-portal-management-selector.md)]
 
 Azure PowerShell is a powerful scripting environment that you can use to control and automate the deployment and management of your workloads in Azure. In this article, you will learn how to manage Hadoop clusters in Azure HDInsight by using a local Azure PowerShell console through the use of Windows PowerShell. For the list of the HDInsight PowerShell cmdlets, see [HDInsight cmdlet reference][hdinsight-powershell-reference].
 
@@ -27,9 +32,9 @@ Before you begin this article, you must have the following:
 
 - **An Azure subscription**. See [Get Azure trial](/pricing/1rmb-trial/).
 
-##<a id="install-azure-powershell-10-and-greater"></a>Install Azure PowerShell
+## <a id="install-azure-powershell-10-and-greater"></a>Install Azure PowerShell
 
-[AZURE.INCLUDE [upgrade-powershell](../includes/hdinsight-use-latest-powershell.md)]
+[AZURE.INCLUDE [upgrade-powershell](../../includes/hdinsight-use-latest-powershell.md)]
 
 If you have installed Azure PowerShell version 0.9x, you must uninstall it before installing a newer version.
 
@@ -46,15 +51,16 @@ HDInsight cluster requires a Blob container on an Azure Storage account:
 
 - HDInsight uses a Blob container of an Azure Storage account as the default file system. An Azure Storage account and a storage container are required before you can create an HDInsight cluster. The default storage account and the HDInsight cluster have to be in the same location.
 
-[AZURE.INCLUDE [provisioningnote](../includes/hdinsight-provisioning.md)]
+[AZURE.INCLUDE [provisioningnote](../../includes/hdinsight-provisioning.md)]
 
 **To connect to Azure**
 
-	Add-AzureAccount -Environment AzureChinaCloud
-	Get-AzureSubscription  # list your subscriptions and get your subscription ID
-	Select-AzureSubscription -SubscriptionId "<Your Azure Subscription ID>"
+	Get-AzurePublishSettingsFile -Environment AzureChinaCloud
+    Clear-AzureProfile
 
-**Select-AzureSubscription** is called in case you have multiple Azure subscriptions.
+	Import-AzurePublishSettingsFile -PublishSettingsFile path/to/<subscription name>-<date>-credentials.publishsettings
+
+**Select-AzureSubscription** could be called in case you have multiple Azure subscriptions.
 
 **To create an Azure Storage account**
 
@@ -62,7 +68,7 @@ HDInsight cluster requires a Blob container on an Azure Storage account:
 	
 Don't use **Standard_ZRS** because it deson't support Azure Table.  HDInsight uses Azure Table to logging. For a full list of the storage account types, see [https://msdn.microsoft.com/zh-cn/library/azure/hh264518.aspx](https://msdn.microsoft.com/zh-cn/library/azure/hh264518.aspx).
 
-[AZURE.INCLUDE [data center list](../includes/hdinsight-pricing-data-centers-clusters.md)]
+[AZURE.INCLUDE [data center list](../../includes/hdinsight-pricing-data-centers-clusters.md)]
 
 
 For information on creating an Azure Storage account by using the Azure Portal Preview, see [About Azure storage accounts](/documentation/articles/storage-create-storage-account/).
@@ -144,7 +150,7 @@ The impact of changing the number of data nodes for each type of cluster support
 
 - HBase
 
-	You can seamlessly add or remove nodes to your HBase cluster while it is running. Regional Servers are automatically balanced within a few minutes of completing the scaling operation. However, you can also manually balance the regional servers by logging into the headnode of cluster and running the following commands from a command prompt window:
+	You can seamlessly add or remove nodes to your HBase cluster while it is running. Regional Servers are automatically balanced within a few minutes of completing the scaling operation. However, you can also manually balance the regional servers by logging in to the headnode of cluster and running the following commands from a command prompt window:
 
 		>pushd %HBASE_HOME%\bin
 		>hbase shell
@@ -163,7 +169,7 @@ The impact of changing the number of data nodes for each type of cluster support
 
 	The Storm web UI is available on the HDInsight cluster:
 
-	![hdinsight storm scale rebalance](./media/hdinsight-administer-use-management-portal-v1/hdinsight.portal.scale.cluster.storm.rebalance.png)
+	![HDInsight storm scale rebalance](./media/hdinsight-administer-use-management-portal-v1/hdinsight.portal.scale.cluster.storm.rebalance.png)
 
 	Here is an example how to use the CLI command to rebalance the Storm topology:
 
@@ -178,7 +184,7 @@ To change the Hadoop cluster size by using Azure PowerShell, run the following c
 	Set-AzureHDInsightClusterSize -Cluster <Cluster Name> -ClusterSizeInNodes <NewSize>
 	
 
-##<a name="grant/revoke-access"></a>Grant/revoke access
+## <a name="grant/revoke-access"></a>Grant/revoke access
 
 HDInsight clusters have the following HTTP web services (all of these services have RESTful endpoints):
 
@@ -209,7 +215,7 @@ To grant:
 
 >[AZURE.NOTE] By granting/revoking the access, you will reset the cluster user name and password.
 
-This can also be done via the Portal. See [Administer HDInsight by using the Azure Classic Management Portal][hdinsight-admin-portal].
+This can also be done via the Portal. See [Administer HDInsight by using the Azure Classic Management portal][hdinsight-admin-portal].
 
 ##Update HTTP user credentials
 
@@ -257,7 +263,7 @@ See [Upload data to HDInsight][hdinsight-upload-data].
 
 ## See Also
 * [HDInsight cmdlet reference documentation][hdinsight-powershell-reference]
-* [Administer HDInsight by using the Azure Classic Management Portal][hdinsight-admin-portal]
+* [Administer HDInsight by using the Azure Classic Management portal][hdinsight-admin-portal]
 * [Administer HDInsight using a command-line interface][hdinsight-admin-cli]
 * [Create HDInsight clusters][hdinsight-provision]
 * [Upload data to HDInsight][hdinsight-upload-data]

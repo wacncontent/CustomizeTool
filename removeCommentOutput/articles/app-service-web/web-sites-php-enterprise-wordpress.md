@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Enterprise-class WordPress on Azure | Azure"
-	description="Learn how to host an enterprise-class WordPress site on Azure Web App"
+	pageTitle="Enterprise-class WordPress on Azure App Service | Azure"
+	description="Learn how to host an enterprise-class WordPress site on Azure App Service"
 	services="app-service\web"
 	documentationCenter=""
 	authors="sunbuild"
@@ -9,12 +9,17 @@
 
 <tags
 	ms.service="app-service-web"
+	ms.devlang="php"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="web"
 	ms.date="07/06/2016"
-	wacn.date=""/>
+	wacn.date=""
+	ms.author="sumuth"/>
 
-# Enterprise-class WordPress on Azure
+# Enterprise-class WordPress on Azure App Service
 
-Azure provides a scalable, secure and easy to use environment for mission critical, large scale [WordPress][wordpress] sites. Microsoft itself runs enterprise-class sites such as the [Office][officeblog] and [Bing][bingblog] blogs. This document shows you how you can use Azure Web Apps to establish and maintain an enterprise-class, cloud-based WordPress site that can handle a large volume of visitors.
+Azure App Service provides a scalable, secure and easy to use environment for mission critical, large scale [WordPress][wordpress] sites. Microsoft itself runs enterprise-class sites such as the [Office][officeblog] and [Bing][bingblog] blogs. This document shows you how you can use Azure App Service Web Apps to establish and maintain an enterprise-class, cloud-based WordPress site that can handle a large volume of visitors.
 
 ## Architecture and planning
 
@@ -24,7 +29,7 @@ A basic WordPress installation has only two requirements.
 
     > [AZURE.NOTE] ClearDB provides several MySQL configurations, with different performance characteristics for each configuration. See the [Azure Store][cdbnstore] for information on offerings provided through the Azure store or [ClearDB pricing](http://www.cleardb.com/pricing.view) for offerings directly from ClearDB.
 
-* **PHP 5.2.4 or greater** - Azure currently provide [PHP versions 5.4, 5.5, and 5.6][phpwebsite].
+* **PHP 5.2.4 or greater** - Azure App Service currently provide [PHP versions 5.4, 5.5, and 5.6][phpwebsite].
 
 	> [AZURE.NOTE] We recommend always running on the latest version of PHP to ensure you have the latest security fixes.
 
@@ -63,18 +68,18 @@ To do this... | Use this...
 ------------------------|-----------
 **Upload or store large files** | [WordPress plugin for using Blob storage][storageplugin]
 **Send email** | [SendGrid][storesendgrid] and the [WordPress plugin for using SendGrid][sendgridplugin]
-**Custom domain names** | [Configure a custom domain name in Azure Web App][customdomain]
-**HTTPS** | [Enable HTTPS for a web app in Azure][httpscustomdomain]
-**Pre-production validation** | [Set up staging environments for web apps in Azure][staging] <p>Note that switching a web app from staging to production also moves the WordPress configuration. You should ensure that all settings are updated to the requirements for your production app before switching the staged app into production.</p>
-**Monitoring and troubleshooting** | [Enable diagnostics logging for web apps in Azure][log] and [Monitor Web Apps in Azure][monitor]
-**Deploy your site** | [Deploy a web app in Azure][deploy]
+**Custom domain names** | [Configure a custom domain name in Azure App Service][customdomain]
+**HTTPS** | [Enable HTTPS for a web app in Azure App Service][httpscustomdomain]
+**Pre-production validation** | [Set up staging environments for web apps in Azure App Service][staging] <p>Note that switching a web app from staging to production also moves the WordPress configuration. You should ensure that all settings are updated to the requirements for your production app before switching the staged app into production.</p>
+**Monitoring and troubleshooting** | [Enable diagnostics logging for web apps in Azure App Service][log] and [Monitor Web Apps in Azure App Service][monitor]
+**Deploy your site** | [Deploy a web app in Azure App Service][deploy]
 
 #### Availability and disaster recovery
 
 To do this... | Use this...
 ------------------------|-----------
 **Load balance sites** or **geo-distribute sites** | [Route traffic with Azure Traffic Manager][trafficmanager]
-**Backup and restore** | [Back up a web app in Azure][backup] and [Restore a web app in Azure][restore]
+**Backup and restore** | [Back up a web app in Azure App Service][backup] and [Restore a web app in Azure App Service][restore]
 
 #### Performance
 
@@ -82,19 +87,19 @@ Performance in the cloud is achieved primarily through caching and scale out; ho
 
 To do this... | Use this...
 ------------------------|-----------
-**Understand Azure instance capabilities** |  [Pricing details, including capabilities of Azure tiers][websitepricing]
+**Understand App Service instance capabilities** |  [Pricing details, including capabilities of App Service tiers][websitepricing]
 **Cache resources** | [Redis cache][rediscache], [Memcache Cloud](https://azure.microsoft.com/marketplace/partners/garantiadata/memcached/), [MemCachier](https://azure.microsoft.com/marketplace/partners/memcachier/memcachier/), or one of the other caching offerings in the [Azure Store](/gallery/store/)
-**Scale your application** | [Scale a web app in Azure][websitescale] and [ClearDB High Availability Routing][cleardbscale]. If you choose to host and manage your own MySQL installation, you should consider [MySQL Cluster CGE][cge] for scale out
+**Scale your application** | [Scale a web app in Azure App Service][websitescale] and [ClearDB High Availability Routing][cleardbscale]. If you choose to host and manage your own MySQL installation, you should consider [MySQL Cluster CGE][cge] for scale out
 
 #### Migration
 
-There are two methods of migrating an existing WordPress site to Azure Web App.
+There are two methods of migrating an existing WordPress site to Azure App Service.
 
-* **[WordPress export][export]** - This exports the content of your blog, which can then be imported to a new WordPress site on Azure using the [WordPress importer plugin][import].
+* **[WordPress export][export]** - This exports the content of your blog, which can then be imported to a new WordPress site on Azure App Service using the [WordPress importer plugin][import].
 
 	> [AZURE.NOTE] While this process allows you to migrate your content, it does not migrate any plugins, themes or other customizations. These must be installed again manually.
 
-* **Manual migration** - [Back up your site][wordpressbackup] and [database][wordpressdbbackup], then manually restore it to a web app in Azure and associated MySQL database to migrate highly customized sites and avoid the tedium of manually installing plugins, themes, and other customizations.
+* **Manual migration** - [Back up your site][wordpressbackup] and [database][wordpressdbbackup], then manually restore it to a web app in Azure App Service and associated MySQL database to migrate highly customized sites and avoid the tedium of manually installing plugins, themes, and other customizations.
 
 ## Step-by-step instructions
 
@@ -102,7 +107,7 @@ There are two methods of migrating an existing WordPress site to Azure Web App.
 
 1. Use the [Azure Marketplace][cdbnstore] to create a MySQL database of the size you identified in the [Architecture and planning](#planning) section, in the region(s) that you will host your site.
 
-2. Follow the steps in [Create a WordPress web app in Azure][createwordpress] to create a new WordPress web app. When creating the web app, select **Use an existing MySQL Database** and select the database created in step 1.
+2. Follow the steps in [Create a WordPress web app in Azure App Service][createwordpress] to create a new WordPress web app. When creating the web app, select **Use an existing MySQL Database** and select the database created in step 1.
 
 If you are migrating an existing WordPress site, see [Migrate an existing WordPress site to Azure](#Migrate-an-existing-WordPress-site-to-Azure) after creating a new web app.
 
@@ -153,7 +158,7 @@ If you were using this... | Do this...
 
 	2. Using a MySQL client like [MySQL Workbench][workbench], connect to the new database and import your WordPress database.
 
-	3. Update the database to change the domain entries to your new Azure domain. For example, mywordpress.chinacloudsites.cn. Use the [Search and Replace for WordPress Databases Script][searchandreplace] to safely change all instances.
+	3. Update the database to change the domain entries to your new Azure App Service domain. For example, mywordpress.chinacloudsites.cn. Use the [Search and Replace for WordPress Databases Script][searchandreplace] to safely change all instances.
 
 4. Create a new web app in the Azure Portal and publish the WordPress backup.
 
@@ -169,9 +174,9 @@ If you were using this... | Do this...
 
 		After changing these entries, save and close the **wp-config.php** file.
 
-	3. Use the [Deploy a web app in Azure][deploy] information to enable the deployment method you wish to use, and then deploy your WordPress backup to your web app in Azure.
+	3. Use the [Deploy a web app in Azure App Service][deploy] information to enable the deployment method you wish to use, and then deploy your WordPress backup to your web app in Azure App Service.
 
-5. Once the WordPress site has been deployed, you should be able to access the new site (as an Azure web app) using the *.azurewebsite.net URL for the site.
+5. Once the WordPress site has been deployed, you should be able to access the new site (as an App Service web app) using the *.azurewebsite.net URL for the site.
 
 ### Configure your site
 
@@ -179,26 +184,26 @@ After the WordPress site has been created or migrated, use the following informa
 
 To do this... | Use this...
 ------------- | -----------
-**Set App Service plan mode, size, and enable scaling** | [Scale a web app in Azure][websitescale]
+**Set App Service plan mode, size, and enable scaling** | [Scale a web app in Azure App Service][websitescale]
 **Enable persistent database connections** <p>By default, WordPress does not use persistent database connections, which may cause your connection to the database to become throttled after multiple connections.</p>  | <ol><li><p>Edit the <strong>wp-includes/wp-db.php</strong> file.</p></li><li><p>Find the following line.</p><code>$this->dbh = mysql_connect( $this->dbhost, $this->dbuser, $this->dbpassword, $new_link, $client_flags );</code></li><li><p>Replace the previous line with the following.</p><code>$this->dbh = mysql_pconnect( $this->dbhost, $this->dbuser, $this->dbpassword,  $client_flags ); <br/>if ( false !== $error_reporting ) { /br/>&nbsp;&nbsp;error_reporting( $error_reporting ); <br/>} </code></li><li><p>Find the following line.</p><code>$this->dbh = @mysql_connect( $this->dbhost, $this->dbuser, $this->dbpassword, $new_link, $client_flags ); </code></li><li><p>Replace the above line with the following.</p><code>$this->dbh = @mysql_pconnect( $this->dbhost, $this->dbuser, $this->dbpassword,  $client_flags ); </code></li><li><p>Save the file <strong>wp-includes/wp-db.php</strong> file and redeploy the site.</p></li></ol><div class="wa-note"><span class="wa-icon-bulb"></span><p>These changes may be overwritten when WordPress is updated.</p><p>WordPress defaults to automatic updates, which can be disabled by editing the <strong>wp-config.php</strong> file and adding <code>define ( 'WP_AUTO_UPDATE_CORE', false );</code></p><p>Another way of addressing updates would be to use a WebJob that monitors the <strong>wp-db.php</strong> file and performs the above modifications each time the file is updated. See [Introduction to WebJobs](http://www.hanselman.com/blog/IntroducingWindowsAzureWebJobs.aspx) for more information.</p></div>
-**Improve performance** | <ul><li><p>[Disable the ARR cookie](http://ppe.blogs.msdn.com/b/windowsazure/archive/2013/11/18/disabling-arr-s-instance-affinity-in-windows-azure-web-sites.aspx) - can improve performance when running WordPress on multiple Web Apps instances</p></li><li><p>Enable caching. [Redis cache](/documentation/services/redis-cache) can be used with the [Redis object cache WordPress plugin](https://wordpress.org/plugins/redis-object-cache/), or use one of the other caching offerings from the [Azure Store](/gallery/store/)</p></li><li><p>[How to make WordPress faster with Wincache](http://ruslany.net/2010/03/make-wordpress-faster-on-iis-with-wincache-1-1/) - Wincache is enabled by default for Web Apps</p></li><li><p>[Scale a web app in Azure](/documentation/articles/web-sites-scale/) and use [ClearDB High Availability Routing](http://www.cleardb.com/developers/cdbr/introduction) or [MySQL Cluster CGE](http://www.mysql.com/products/cluster/)</p></li></ul>
+**Improve performance** | <ul><li><p>[Disable the ARR cookie](http://ppe.blogs.msdn.com/b/windowsazure/archive/2013/11/18/disabling-arr-s-instance-affinity-in-windows-azure-web-sites.aspx) - can improve performance when running WordPress on multiple Web Apps instances</p></li><li><p>Enable caching. [Redis cache](/documentation/services/redis-cache) can be used with the [Redis object cache WordPress plugin](https://wordpress.org/plugins/redis-object-cache/), or use one of the other caching offerings from the [Azure Store](/gallery/store/)</p></li><li><p>[How to make WordPress faster with Wincache](http://ruslany.net/2010/03/make-wordpress-faster-on-iis-with-wincache-1-1/) - Wincache is enabled by default for Web Apps</p></li><li><p>[Scale a web app in Azure App Service](/documentation/articles/web-sites-scale/) and use [ClearDB High Availability Routing](http://www.cleardb.com/developers/cdbr/introduction) or [MySQL Cluster CGE](http://www.mysql.com/products/cluster/)</p></li></ul>
 **Use blobs for storage** | <ol><li><p>[Create an Azure Storage account](/documentation/articles/storage-create-storage-account/)</p></li><li><p>Learn how to [Use the Content Distribution Network (CDN)][cdn] to geo-distribute data stored in blobs.</p></li><li><p>Install and configure the [Azure Storage for WordPress plugin](https://wordpress.org/plugins/windows-azure-storage/).</p><p>For detailed setup and configuration information for the plugin, see the [user guide](http://plugins.svn.wordpress.org/windows-azure-storage/trunk/UserGuide.docx).</p> </li></ol>
 **Enable email** | <ol><li><p>[Enable SendGrid using the Azure Store](/gallery/store/sendgrid/sendgrid-azure/)</p></li><li><p>[Install the SendGrid plugin for WordPress](http://wordpress.org/plugins/sendgrid-email-delivery-simplified/)</p></li></ol>
-**Configure a custom domain name** | [Configure a custom domain name in Azure Web App][customdomain]
-**Enable HTTPS for a custom domain name** | [Enable HTTPS for a web app in Azure][httpscustomdomain]
-**Load balance or geo-distribute your site** | [Route traffic with Azure Traffic Manager][trafficmanager]. If you are using a custom domain, see [Configure a custom domain name in Azure Web App][customdomain] for information on using Traffic Manager with custom domain names
-**Enable automated backups** | [Back up a web app in Azure][backup]
-**Enable diagnostic logging** | [Enable diagnostics logging for web apps in Azure][log]
+**Configure a custom domain name** | [Configure a custom domain name in Azure App Service][customdomain]
+**Enable HTTPS for a custom domain name** | [Enable HTTPS for a web app in Azure App Service][httpscustomdomain]
+**Load balance or geo-distribute your site** | [Route traffic with Azure Traffic Manager][trafficmanager]. If you are using a custom domain, see [Configure a custom domain name in Azure App Service][customdomain] for information on using Traffic Manager with custom domain names
+**Enable automated backups** | [Back up a web app in Azure App Service][backup]
+**Enable diagnostic logging** | [Enable diagnostics logging for web apps in Azure App Service][log]
 
 ## Next Steps
 
 * [WordPress optimization](http://codex.wordpress.org/WordPress_Optimization)
 
-* [Convert WordPress to Multisite in Azure Web App](/documentation/articles/web-sites-php-convert-wordpress-multisite/)
+* [Convert WordPress to Multisite in Azure App Service](/documentation/articles/web-sites-php-convert-wordpress-multisite/)
 
 * [ClearDB upgrade wizard for Azure](http://www.cleardb.com/store/azure/upgrade)
 
-* [Hosting WordPress in a subfolder of your web app in Azure](http://blogs.msdn.com/b/webapps/archive/2013/02/13/hosting-wordpress-in-a-subfolder-of-your-windows-azure-web-site.aspx)
+* [Hosting WordPress in a subfolder of your web app in Azure App Service](http://blogs.msdn.com/b/webapps/archive/2013/02/13/hosting-wordpress-in-a-subfolder-of-your-windows-azure-web-site.aspx)
 
 * [Step-By-Step: Create a WordPress site using Azure](http://blogs.technet.com/b/blainbar/archive/2013/08/07/article-create-a-wordpress-site-using-windows-azure-read-on.aspx)
 
@@ -206,9 +211,9 @@ To do this... | Use this...
 
 * [Enabling pretty permalinks in WordPress](http://www.iis.net/learn/extensions/url-rewrite-module/enabling-pretty-permalinks-in-wordpress)
 
-* [How to migrate and run your WordPress blog on Azure Web App](http://www.kefalidis.me/2012/06/how-to-migrate-and-run-your-wordpress-blog-on-windows-azure-websites/)
+* [How to migrate and run your WordPress blog on Azure App Service](http://www.kefalidis.me/2012/06/how-to-migrate-and-run-your-wordpress-blog-on-windows-azure-websites/)
 
-* [How to run WordPress on Azure for free](http://architects.dzone.com/articles/how-run-wordpress-azure)
+* [How to run WordPress on Azure App Service for free](http://architects.dzone.com/articles/how-run-wordpress-azure)
 
 * [WordPress on Azure in 2 minutes or less](http://www.sitepoint.com/wordpress-windows-azure-2-minutes-less/)
 
@@ -228,10 +233,10 @@ To do this... | Use this...
 
 * [Tips for WordPress on Azure](http://www.johnpapa.net/azurecleardbmysql/)
 
->[AZURE.NOTE] If you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.
+>[AZURE.NOTE] If you want to get started with Azure App Service before signing up for an Azure account, go to [Try App Service](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in App Service. No credit cards required; no commitments.
 
 ## What's changed
-* For a guide to the change from Websites to Azure see: [Azure and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
+* For a guide to the change from Websites to App Service see: [Azure App Service and Its Impact on Existing Azure Services](/documentation/articles/app-service-changes-existing-services/)
 
 <!-- URL List -->
 
@@ -261,7 +266,7 @@ To do this... | Use this...
 [mysqlwindows]: /documentation/articles/virtual-machines-windows-classic-mysql-2008r2/
 [mysqllinux]: /documentation/articles/virtual-machines-linux-classic-mysql-on-opensuse/
 [cge]: http://www.mysql.com/products/cluster/
-[websitepricing]: /home/features/web-site/pricing/
+[websitepricing]: /pricing/overview/app-service/
 [export]: http://en.support.wordpress.com/export/
 [import]: http://wordpress.org/plugins/wordpress-importer/
 [wordpressbackup]: http://wordpress.org/plugins/wordpress-importer/

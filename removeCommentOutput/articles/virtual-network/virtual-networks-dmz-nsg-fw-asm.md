@@ -8,9 +8,14 @@
    editor=""/>
 
 <tags
-	ms.service="virtual-network"
-	ms.date="02/01/2016"
-	wacn.date=""/>
+   ms.service="virtual-network"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="02/01/2016"
+   wacn.date=""
+   ms.author="jonor;sivae"/>
 
 # Example 2 - Build a DMZ to protect applications with a Firewall and NSGs
 

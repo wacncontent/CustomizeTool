@@ -7,10 +7,15 @@
 	manager="douge" 
 	editor=""/>
 
-<tags
-	ms.service="cache"
-	ms.date="06/09/2016"
-	wacn.date=""/>
+<tags 
+	ms.service="cache" 
+	ms.workload="tbd" 
+	ms.tgt_pltfrm="cache-redis" 
+	ms.devlang="multiple" 
+	ms.topic="article" 
+	ms.date="08/30/2016" 
+	wacn.date="" 
+	ms.author="sdanie"/>
 
 # Azure Redis Cache samples 
 

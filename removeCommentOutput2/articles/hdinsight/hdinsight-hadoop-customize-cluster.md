@@ -6,14 +6,19 @@
 	services="hdinsight"
 	documentationCenter=""
 	authors="nitinme"
-	manager="paulettm"
+	manager="jhubbard"
 	editor="cgronlun"
 	tags="azure-portal"/>
 
 <tags
 	ms.service="hdinsight"
-	ms.date="06/07/2016"
-	wacn.date=""/>
+	ms.workload="big-data"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="10/05/2016"
+	wacn.date=""
+	ms.author="nitinme"/>
 
 # Customize Windows-based HDInsight clusters using Script Action
 
@@ -29,7 +34,7 @@ in the cluster. These customizations can be done through Azure PowerShell, the A
 HDInsight .NET SDK, or the Azure Portal. For more information, see 
 [Create Hadoop clusters in HDInsight][hdinsight-provision-cluster].
 
-[AZURE.INCLUDE [upgrade-powershell](../includes/hdinsight-use-latest-powershell-cli-and-dotnet-sdk.md)]
+[AZURE.INCLUDE [upgrade-powershell](../../includes/hdinsight-use-latest-powershell-cli-and-dotnet-sdk.md)]
 
 ## Script Action in the cluster creation process
 

@@ -1,31 +1,36 @@
 <!-- not suitable for Mooncake -->
 
 <properties 
-	pageTitle="Access on-premises resources using hybrid connections in Azure Web App" 
-	description="Create a connection between a web app in Azure and an on-premises resource that uses a static TCP port" 
+	pageTitle="Access on-premises resources using hybrid connections in Azure App Service" 
+	description="Create a connection between a web app in Azure App Service and an on-premises resource that uses a static TCP port" 
 	services="app-service" 
 	documentationCenter="" 
 	authors="cephalin" 
 	manager="wpickett" 
 	editor="mollybos"/>
 
-<tags
-	ms.service="app-service"
-	ms.date="02/03/2016"
-	wacn.date=""/>
+<tags 
+	ms.service="app-service" 
+	ms.workload="na" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="02/03/2016" 
+	wacn.date="" 
+	ms.author="cephalin"/>
 
-#Access on-premises resources using hybrid connections in Azure
+#Access on-premises resources using hybrid connections in Azure App Service
 
-You can connect an Azure Web App to any on-premises resource that uses a static TCP port, such as SQL Server, MySQL, HTTP Web APIs, and most custom Web Services. This article shows you how to create a hybrid connection between Azure and an on-premises SQL Server database.
+You can connect an Azure App Service app to any on-premises resource that uses a static TCP port, such as SQL Server, MySQL, HTTP Web APIs, and most custom Web Services. This article shows you how to create a hybrid connection between App Service and an on-premises SQL Server database.
 
 > [AZURE.NOTE] The Web Apps portion of the Hybrid Connections feature is available only in the [Azure Portal](https://portal.azure.cn). To create a connection in BizTalk Services, see [Hybrid Connections](/documentation/articles/integration-hybrid-connection-overview/). 
 > 
-> This content also applies to Mobile Apps in Azure Web App. 
+> This content also applies to Mobile Apps in Azure App Service. 
 
 ## Prerequisites
 - An Azure subscription. For a free subscription, see [Azure Trial](/pricing/1rmb-trial/). 
  
-	If you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.
+	If you want to get started with Azure App Service before signing up for an Azure account, go to [Try App Service](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in App Service. No credit cards required; no commitments.
 
 - To use an on-premises SQL Server or SQL Server Express database with a hybrid connection, TCP/IP needs to be enabled on a static port. Using a default instance on SQL Server is recommended because it uses static port 1433. For information on installing and configuring SQL Server Express for use with hybrid connections, see [Connect to an on-premises SQL Server from an Azure web site using Hybrid Connections](/documentation/articles/web-sites-hybrid-connection-connect-on-premises-sql-server/).
 
@@ -61,8 +66,7 @@ You can connect an Azure Web App to any on-premises resource that uses a static 
 	
 Next, you will create a hybrid connection and a BizTalk service for the web app.
 
-<a name="CreateHC"></a>
-## Create a Hybrid Connection and a BizTalk Service ##
+## <a name="CreateHC"></a> Create a Hybrid Connection and a BizTalk Service ##
 
 1. In your web app blade click on **All settings** > **Networking** > **Configure your hybrid connection endpoints**.
 	
@@ -113,8 +117,7 @@ Next, you will create a hybrid connection and a BizTalk service for the web app.
 	
 At this point, you have completed an important part of the cloud hybrid connection infrastructure. Next, you will create a corresponding on-premises piece.
 
-<a name="InstallHCM"></a>
-## Install the on-premises Hybrid Connection Manager to complete the connection ##
+## <a name="InstallHCM"></a> Install the on-premises Hybrid Connection Manager to complete the connection ##
 
 1. On the web app's blade, click **All settings** > **Networking** > **Configure your hybrid connection endpoints**. 
 	
@@ -162,7 +165,7 @@ Now that the hybrid connection infrastructure is complete, you can create a hybr
 
 ## Configure the Mobile App .NET backend project to connect to the SQL Server database
 
-In Azure Web App, a Mobile Apps .NET backend project is just an ASP.NET web app with an additional Mobile Apps SDK installed and initialized. To use your web app as a Mobile Apps backend, you must [download and initialize the Mobile Apps .NET backend SDK](/documentation/articles/app-service-mobile-dotnet-backend-how-to-use-server-sdk/#install-sdk).  
+In App Service, a Mobile Apps .NET backend project is just an ASP.NET web app with an additional Mobile Apps SDK installed and initialized. To use your web app as a Mobile Apps backend, you must [download and initialize the Mobile Apps .NET backend SDK](/documentation/articles/app-service-mobile-dotnet-backend-how-to-use-server-sdk/#install-sdk).  
 
 For Mobile Apps, you also need to define a connection string for the on-premises database and modify the backend to use this connection. 
 
@@ -212,8 +215,7 @@ Next, you need to add an app setting for this new connection string so that it c
 
 At this point you can republish the server project and test the new connection with your existing Mobile Apps clients. Data will be read from and written to the on-premises database using the hybrid connection.
 
-<a name="NextSteps"></a>
-## Next Steps ##
+## <a name="NextSteps"></a> Next Steps ##
 
 - For information on creating an ASP.NET web application that uses a hybrid connection, see [Connect to an on-premises SQL Server from an Azure web site using Hybrid Connections](/documentation/articles/web-sites-hybrid-connection-connect-on-premises-sql-server/). 
 
@@ -232,7 +234,7 @@ At this point you can republish the server project and test the new connection w
 [Connect to an on-premises SQL Server from Azure Mobile Services using Hybrid Connections (Channel 9 video)](http://channel9.msdn.com/Series/Windows-Azure-Mobile-Services/Connect-to-an-on-premises-SQL-Server-from-Azure-Mobile-Services-using-Hybrid-Connections)
 
 ## What's changed
-* For a guide to the change from Websites to Azure see: [Azure and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
+* For a guide to the change from Websites to App Service see: [Azure App Service and Its Impact on Existing Azure Services](/documentation/articles/app-service-changes-existing-services/)
 
 <!-- IMAGES -->
 [New]:./media/web-sites-hybrid-connection-get-started/B01New.png

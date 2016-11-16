@@ -6,10 +6,15 @@
    authors="bwren"
    manager="stevenka"
    editor="tysonn" />
-<tags
-	ms.service="automation"
-	ms.date="01/27/2016"
-	wacn.date=""/>
+<tags 
+   ms.service="automation"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="01/27/2016"
+   wacn.date=""
+   ms.author="bwren" />
 
 # Connection assets in Azure Automation
 
@@ -38,7 +43,7 @@ The activities in the following table are used to access connections in a runboo
 |---|---|
 |Get-AutomationConnection|Gets a connection to use. Returns a hash table with the properties of the connection.|
 
->[AZURE.NOTE] You should avoid using variables in the -Name parameter of **Get- AutomationConnection** since this can complicate discovering dependencies between runbooks and connection assets at design time.
+>[AZURE.NOTE] You should avoid using variables in the -Name parameter of **Get-AutomationConnection** since this can complicate discovering dependencies between runbooks and connection assets at design time.
 
 ## Creating a New Connection
 
@@ -49,8 +54,6 @@ The activities in the following table are used to access connections in a runboo
 1. Click **Add Connection**.
 2. In the **Connection Type** dropdown, select the type of connection you want to create.  The wizard will present the properties for that particular type.
 1. Complete the wizard and click the checkbox to save the new connection.
-
-
 
 
 ### To create a new connection with Windows PowerShell
@@ -84,4 +87,3 @@ The following sample commands show how to use the Twilio connection in the previ
 
 	#Send text with connection properties.
 	Send-TwilioSMS -AccountSid $Con.AccountSid -AuthToken $Con.AuthToken -From $NumFrom -To $NumTo -Body $Body
-

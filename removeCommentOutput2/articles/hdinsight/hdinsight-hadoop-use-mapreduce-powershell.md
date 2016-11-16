@@ -4,18 +4,23 @@
    services="hdinsight"
    documentationCenter=""
    authors="Blackmist"
-   manager="paulettm"
+   manager="jhubbard"
    editor="cgronlun"
 	tags="azure-portal"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="05/18/2016"
-	wacn.date=""/>
+   ms.service="hdinsight"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="big-data"
+   ms.date="08/29/2016"
+   wacn.date=""
+   ms.author="larryfr"/>
 
-#Run Hive queries with Hadoop on HDInsight using PowerShell
+# Run MapReduce jobs with Hadoop on HDInsight using PowerShell
 
-[AZURE.INCLUDE [mapreduce-selector](../includes/hdinsight-selector-use-mapreduce.md)]
+[AZURE.INCLUDE [mapreduce-selector](../../includes/hdinsight-selector-use-mapreduce.md)]
 
 This document provides an example of using Azure PowerShell to run a MapReduce job in a Hadoop on HDInsight cluster.
 
@@ -27,7 +32,7 @@ To complete the steps in this article, you will need the following:
 
 - **A workstation with Azure PowerShell**.
 
-    [AZURE.INCLUDE [upgrade-powershell](../includes/hdinsight-use-latest-powershell.md)]
+    [AZURE.INCLUDE [upgrade-powershell](../../includes/hdinsight-use-latest-powershell.md)]
 
 ##<a id="powershell"></a>Run a MapReduce job using Azure PowerShell
 
@@ -35,7 +40,7 @@ Azure PowerShell provides *cmdlets* that allow you to remotely run MapReduce job
 
 The following cmdlets are used when running MapReduce jobs in a remote HDInsight cluster.
 
-* **Add-AzureAccount**: Authenticates Azure PowerShell to your Azure subscription
+* **Import-AzurePublishSettingsFile**: Authenticates Azure PowerShell to your Azure subscription
 
 * **New-AzureHDInsightMapReduceJobDefinition**: Creates a new *job definition* by using the specified MapReduce information
 
@@ -54,7 +59,8 @@ The following steps demonstrate how to use these cmdlets to run a job in your HD
 		$sub = Get-AzureSubscription -ErrorAction SilentlyContinue
 		if(-not($sub))
 		{
-		    Add-AzureAccount -Environment AzureChinaCloud
+			Clear-AzureProfile
+			Import-AzurePublishSettingsFile -PublishSettingsFile path/to/<subscription name>-<date>-credentials.publishsettings
 		}
 
 		#Specify the cluster name
@@ -121,7 +127,8 @@ The following example retrieves the storage information, then downloads the outp
 		$sub = Get-AzureSubscription -ErrorAction SilentlyContinue
 		if(-not($sub))
 		{
-		    Add-AzureAccount
+			Clear-AzureProfile
+			Import-AzurePublishSettingsFile -PublishSettingsFile path/to/<subscription name>-<date>-credentials.publishsettings
 		}
 
 		#Specify the cluster name
@@ -145,7 +152,7 @@ The following example retrieves the storage information, then downloads the outp
 > [AZURE.NOTE] This example will store the downloaded files to the  **example/data/WordCountOutput** folder in the directory that you run the script from.
 
 
-The output of the MapReduce job is stored in files with the name *part-r-#####*. Open the **example/data/WordCountOutput/part-r-00000** file in a text editor to see the words and counts produced by the job.
+Open the **output.txt** file in a text editor to see the words and counts produced by the job.
 
 > [AZURE.NOTE] The output files of a MapReduce job are immutable. So if you rerun this sample, you need to change the name of the output file.
 

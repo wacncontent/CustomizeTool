@@ -4,48 +4,53 @@ description="Learn how to use Apache Maven to build a Java-based Apache HBase ap
 services="hdinsight"
 documentationCenter=""
 authors="Blackmist"
-manager="paulettm"
+manager="jhubbard"
 editor="cgronlun"
 tags="azure-portal"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="06/29/2016"
-	wacn.date=""/>
+ms.service="hdinsight"
+ms.workload="big-data"
+ms.tgt_pltfrm="na"
+ms.devlang="na"
+ms.topic="article"
+ms.date="10/03/2016"
+wacn.date=""
+ms.author="larryfr"/>
 
-#Use Maven to build Java applications that use HBase with Windows-based HDInsight (Hadoop)
+# Use Maven to build Java applications that use HBase with Windows-based HDInsight (Hadoop)
 
 Learn how to create and build an [Apache HBase](http://hbase.apache.org/) application in Java by using Apache Maven. Then use the application with Azure HDInsight (Hadoop).
 
-[Maven](http://maven.apache.org/) is a software project management and comprehension tool that allows you to build software, documentation, and reports for Java projects. In this article, you will learn how to use it to create a basic Java application that that creates, queries, and deletes an HBase table on an Azure HDInsight cluster.
+[Maven](http://maven.apache.org/) is a software project management and comprehension tool that allows you to build software, documentation, and reports for Java projects. In this article, you learn how to use it to create a basic Java application that that creates, queries, and deletes an HBase table on an Azure HDInsight cluster.
 
-> [AZURE.NOTE] The steps in this document assume that you are using a Windows-based HDInsight cluster. For information on using a Linux-based HDInsight cluster, see [Use Maven to build Java applications that use HBase with Linux-based HDInsight](/documentation/articles/hdinsight-hbase-build-java-maven-linux/)
-##Requirements
+## Requirements
 
 * [Java platform JDK](http://www.oracle.com/technetwork/java/javase/downloads/index.html) 7 or later
 
 * [Maven](http://maven.apache.org/)
 
-* [An Windows-based HDInsight cluster with HBase](/documentation/articles/hdinsight-hbase-tutorial-get-started-v1/#create-hbase-cluster)
+* [A Windows-based HDInsight cluster with HBase](/documentation/articles/hdinsight-hbase-tutorial-get-started-v1/#create-hbase-cluster)
+
     > [AZURE.NOTE] The steps in this document have been tested with HDInsight cluster versions 3.2 and 3.3. The default values provided in examples are for a HDInsight 3.3 cluster.
 
-##Create the project
+## Create the project
 
-1. From the command-line in your development environment, change directories to the location where you want to create the project, for example, `cd code\hdinsight`.
+1. From the command line in your development environment, change directories to the location where you want to create the project, for example, `cd code\hdinsight`.
 
 2. Use the __mvn__ command, which is installed with Maven, to generate the scaffolding for the project.
 
         mvn archetype:generate -DgroupId=com.microsoft.examples -DartifactId=hbaseapp -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
 
-    This creates a new directory in the current directory, with the name specified by the __artifactID__ parameter (**hbaseapp** in this example.) This directory will contain the following items:
+    This command creates a directory in the current location, with the name specified by the __artifactID__ parameter (**hbaseapp** in this example.) This directory contains the following items:
 
     * __pom.xml__:  The Project Object Model ([POM](http://maven.apache.org/guides/introduction/introduction-to-the-pom.html)) contains information and configuration details used to build the project.
 
     * __src__: The directory that contains the __main\java\com\microsoft\examples__ directory, where you will author the application.
 
-3. Delete the __src\test\java\com\microsoft\examples\apptest.java__ file because it will not be used in this example.
+3. Delete the __src\test\java\com\microsoft\examples\apptest.java__ file because it is not used in this example.
 
-##Update the Project Object Model
+## Update the Project Object Model
 
 1. Edit the __pom.xml__ file and add the following code inside the `<dependencies>` section:
 
@@ -55,22 +60,28 @@ Learn how to create and build an [Apache HBase](http://hbase.apache.org/) applic
           <version>1.1.2</version>
         </dependency>
 
-    This tells Maven that the project requires __hbase-client__ version __1.1.2__. At compile time, this will be downloaded from the default Maven repository. You can use the [Maven Central Repository Search](http://search.maven.org/#artifactdetails%7Corg.apache.hbase%7Chbase-client%7C0.98.4-hadoop2%7Cjar) to learn more about this dependency.
+    This section tells Maven that the project requires __hbase-client__ version __1.1.2__. At compile time, this dependency is downloaded from the default Maven repository. You can use the [Maven Central Repository Search](http://search.maven.org/#artifactdetails%7Corg.apache.hbase%7Chbase-client%7C0.98.4-hadoop2%7Cjar) to learn more about this dependency.
+
     > [AZURE.IMPORTANT] The version number must match the version of HBase that is provided with your HDInsight cluster. Use the following table to find the correct version number.
+
     | HDInsight cluster version | HBase version to use |
     | ----- | ----- |
     | 3.2 | 0.98.4-hadoop2 |
     | 3.3 | 1.1.2 |
+
     For more information on HDInsight versions and components, see [What are the different Hadoop components available with HDInsight](/documentation/articles/hdinsight-component-versioning-v1/).
+
 2. If you are using an HDInsight 3.3 cluster, you must also add the following to the `<dependencies>` section:
+
         <dependency>
             <groupId>org.apache.phoenix</groupId>
             <artifactId>phoenix-core</artifactId>
             <version>4.4.0-HBase-1.1</version>
         </dependency>
-    This will load the phoenix-core components, which are used by Hbase version 1.1.x.
+    
+    This dependency will load the phoenix-core components, which are used by Hbase version 1.1.x.
 
-2. Add the following code to the __pom.xml__ file. This must be inside the `<project>...</project>` tags in the file, for example, between `</dependencies>` and `</project>`.
+2. Add the following code to the __pom.xml__ file. This section must be inside the `<project>...</project>` tags in the file, for example, between `</dependencies>` and `</project>`.
 
         <build>
           <sourceDirectory>src</sourceDirectory>
@@ -115,17 +126,17 @@ Learn how to create and build an [Apache HBase](http://hbase.apache.org/) applic
           </plugins>
         </build>
 
-    This configures a resource (__conf\hbase-site.xml__,) that contains configuration information for HBase.
+    The `<resources>` section configures a resource (__conf\hbase-site.xml__) that contains configuration information for HBase.
 
     > [AZURE.NOTE] You can also set configuration values via code. See the comments in the __CreateTable__ example that follows for how to do this.
 
-    This also configures the [Maven Compiler Plugin](http://maven.apache.org/plugins/maven-compiler-plugin/) and [Maven Shade Plugin](http://maven.apache.org/plugins/maven-shade-plugin/). The compiler plug-in is used to compile the topology. The shade plug-in is used to prevent license duplication in the JAR package that is built by Maven. The reason this is used is that the duplicate license files cause an error at run time on the HDInsight cluster. Using maven-shade-plugin with the `ApacheLicenseResourceTransformer` implementation prevents this error.
+    This `<plugins>` section configures the [Maven Compiler Plugin](http://maven.apache.org/plugins/maven-compiler-plugin/) and [Maven Shade Plugin](http://maven.apache.org/plugins/maven-shade-plugin/). The compiler plug-in is used to compile the topology. The shade plug-in is used to prevent license duplication in the JAR package that is built by Maven. The reason this is used is that the duplicate license files cause an error at run time on the HDInsight cluster. Using maven-shade-plugin with the `ApacheLicenseResourceTransformer` implementation prevents this error.
 
-    The maven-shade-plugin also produces an uber jar (or fat jar,) that contains all the dependencies required by the application.
+    The maven-shade-plugin also produces an uber jar (or fat jar) that contains all the dependencies required by the application.
 
 3. Save the __pom.xml__ file.
 
-4. Create a new directory named __conf__ in the __hbaseapp__ directory. In the __conf__ directory, create a new file named __hbase-site.xml__ and use the following as the contents:
+4. Create a new directory named __conf__ in the __hbaseapp__ directory. In the __conf__ directory, create a file named __hbase-site.xml__. Use the following as the contents of the file:
 
         <?xml version="1.0"?>
         <?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
@@ -167,15 +178,15 @@ Learn how to create and build an [Apache HBase](http://hbase.apache.org/) applic
 
     This file will be used to load the HBase configuration for an HDInsight cluster.
 
-    > [AZURE.NOTE] This is a very minimal hbase-site.xml file, and it contains the bare minimum settings for the HDInsight cluster.
+    > [AZURE.NOTE] This is a minimal hbase-site.xml file, and it contains the bare minimum settings for the HDInsight cluster.
 
 3. Save the __hbase-site.xml__ file.
 
-##Create the application
+## Create the application
 
 1. Go to the __hbaseapp\src\main\java\com\microsoft\examples__ directory and rename the app.java file to __CreateTable.java__.
 
-2. Open the __CreateTable.java__ file and replace the existing contents with the following:
+2. Open the __CreateTable.java__ file and replace the existing contents with the following code:
 
         package com.microsoft.examples;
         import java.io.IOException;
@@ -243,7 +254,7 @@ Learn how to create and build an [Apache HBase](http://hbase.apache.org/) applic
 
 3. Save the __CreateTable.java__ file.
 
-4. In the __hbaseapp\src\main\java\com\microsoft\examples__ directory, create a new file named __SearchByEmail.java__. Use the following as the contents of this file:
+4. In the __hbaseapp\src\main\java\com\microsoft\examples__ directory, create a new file named __SearchByEmail.java__. Use the following code as the contents of this file:
 
         package com.microsoft.examples;
         import java.io.IOException;
@@ -320,7 +331,7 @@ Learn how to create and build an [Apache HBase](http://hbase.apache.org/) applic
 
 5. Save the __SearchByEmail.java__ file.
 
-6. In the __hbaseapp\src\main\hava\com\microsoft\examples__ directory, create a new file named __DeleteTable.java__. Use the following as the contents of this file:
+6. In the __hbaseapp\src\main\hava\com\microsoft\examples__ directory, create a new file named __DeleteTable.java__. Use the following code as the contents of this file:
 
         package com.microsoft.examples;
         import java.io.IOException;
@@ -346,7 +357,7 @@ Learn how to create and build an [Apache HBase](http://hbase.apache.org/) applic
 
 7. Save the __DeleteTable.java__ file.
 
-##Build and package the application
+## Build and package the application
 
 1. Open a command prompt and change directories to the __hbaseapp__ directory.
 
@@ -356,15 +367,15 @@ Learn how to create and build an [Apache HBase](http://hbase.apache.org/) applic
 
     This cleans any previous build artifacts, downloads any dependencies that have not already been installed, then builds and packages the application.
 
-3. When the command completes, the __hbaseapp\target__ directory will contain a file named __hbaseapp-1.0-SNAPSHOT.jar__.
+3. When the command completes, the __hbaseapp\target__ directory contains a file named __hbaseapp-1.0-SNAPSHOT.jar__.
 
     > [AZURE.NOTE] The __hbaseapp-1.0-SNAPSHOT.jar__ file is an uber jar (sometimes called a fat jar,) which contains all the dependencies required to run the application.
 
-##Upload the JAR file and start a job
+## Upload the JAR file and start a job
 
 There are many ways to upload a file to your HDInsight cluster, as described in [Upload data for Hadoop jobs in HDInsight](/documentation/articles/hdinsight-upload-data/). The following steps use Azure PowerShell.
 
-[AZURE.INCLUDE [upgrade-powershell](../includes/hdinsight-use-latest-powershell.md)]
+[AZURE.INCLUDE [upgrade-powershell](../../includes/hdinsight-use-latest-powershell.md)]
 
 
 1. After installing and configuring Azure PowerShell, create a new file named __hbase-runner.psm1__. Use the following as the contents of this file:
@@ -422,44 +433,38 @@ There are many ways to upload a file to your HDInsight cluster, as described in 
         $storage = GetStorage -clusterName $clusterName
         
         # The JAR
-        $jarFile = "wasb:///example/jars/hbaseapp-1.0-SNAPSHOT.jar"
+        $jarFile = "wasbs:///example/jars/hbaseapp-1.0-SNAPSHOT.jar"
         
         # The job definition
-        $jobDefinition = New-AzureRmHDInsightMapReduceJobDefinition `
+        $jobDefinition = New-AzureHDInsightMapReduceJobDefinition `
             -JarFile $jarFile `
             -ClassName $className `
             -Arguments $emailRegex
         
         # Get the job output
-        $job = Start-AzureRmHDInsightJob `
-            -ClusterName $clusterName `
+        $job = Start-AzureHDInsightJob `
+            -Cluster $clusterName `
             -JobDefinition $jobDefinition `
-            -HttpCredential $creds
+            -Credential $creds
         Write-Host "Wait for the job to complete ..." -ForegroundColor Green
-        Wait-AzureRmHDInsightJob `
-            -ClusterName $clusterName `
+        Wait-AzureHDInsightJob `
+            -Cluster $clusterName `
             -JobId $job.JobId `
-            -HttpCredential $creds
+            -Credential $creds
         if($showErr)
         {
         Write-Host "STDERR"
-        Get-AzureRmHDInsightJobOutput `
-                    -Clustername $clusterName `
+        Get-AzureHDInsightJobOutput `
+                    -Cluster $clusterName `
                     -JobId $job.JobId `
-                    -DefaultContainer $storage.container `
-                    -DefaultStorageAccountName $storage.storageAccount `
-                    -DefaultStorageAccountKey $storage.storageAccountKey `
-                    -HttpCredential $creds `
-                    -DisplayOutputType StandardError
+                    -Credential $creds
+                    -StandardError
         }
         Write-Host "Display the standard output ..." -ForegroundColor Green
-        Get-AzureRmHDInsightJobOutput `
-                    -Clustername $clusterName `
+        Get-AzureHDInsightJobOutput `
+                    -Cluster $clusterName `
                     -JobId $job.JobId `
-                    -DefaultContainer $storage.container `
-                    -DefaultStorageAccountName $storage.storageAccount `
-                    -DefaultStorageAccountKey $storage.storageAccountKey `
-                    -HttpCredential $creds
+                    -Credential $creds
         }
         
         <#
@@ -526,10 +531,10 @@ There are many ways to upload a file to your HDInsight cluster, as described in 
         
         function FindAzure {
             # Is there an active Azure subscription?
-            $sub = Get-AzureRmSubscription -ErrorAction SilentlyContinue
+            $sub = Get-AzureSubscription -ErrorAction SilentlyContinue
             if(-not($sub))
             {
-                throw "No active Azure subscription found! If you have a subscription, use the Login-AzureRmAccount cmdlet to login to your subscription."
+                throw "No active Azure subscription found! If you have a subscription, use the Import-AzurePublishSettingsFile cmdlet to login to your subscription."
             }
         }
         
@@ -538,7 +543,7 @@ There are many ways to upload a file to your HDInsight cluster, as described in 
                 [Parameter(Mandatory = $true)]
                 [String]$clusterName
             )
-            $hdi = Get-AzureRmHDInsightCluster -ClusterName $clusterName
+            $hdi = Get-AzureHDInsightCluster -Name $clusterName
             # Does the cluster exist?
             if (!$hdi)
             {
@@ -552,11 +557,9 @@ There are many ways to upload a file to your HDInsight cluster, as described in 
             $resourceGroup = $hdi.ResourceGroup
             $storageAccountName=$hdi.DefaultStorageAccount.split('.')[0]
             $container=$hdi.DefaultStorageContainer
-            $storageAccountKey=(Get-AzureRmStorageAccountKey `
-                -Name $storageAccountName `
-            -ResourceGroupName $resourceGroup)[0].Value
-            # Get the resource group, in case we need that
-            $return.resourceGroup = $resourceGroup
+            $storageAccountKey=Get-AzureStorageKey `
+                -StorageAccountName $storageAccountName `
+                | %{ $_.Primary }
             # Get the storage context, as we can't depend
             # on using the default storage context
             $return.context = New-AzureStorageContext -StorageAccountName $storageAccountName -StorageAccountKey $storageAccountKey
@@ -591,9 +594,9 @@ There are many ways to upload a file to your HDInsight cluster, as described in 
 
         Add-HDInsightFile -localPath target\hbaseapp-1.0-SNAPSHOT.jar -destinationPath example/jars/hbaseapp-1.0-SNAPSHOT.jar -clusterName hdinsightclustername
 
-    Replace __hdinsightclustername__ with the name of your HDInsight cluster. The command will then upload the __hbaseapp-1.0-SNAPSHOT.jar__ to the __example/jars__ location in the primary storage for your HDInsight cluster.
+    Replace __hdinsightclustername__ with the name of your HDInsight cluster. The command uploads the __hbaseapp-1.0-SNAPSHOT.jar__ to the __example/jars__ location in the primary storage for your HDInsight cluster.
 
-3. After the files are uploaded, use the following code to create a new table using the __hbaseapp__:
+3. After the files are uploaded, use the following code to create a table using the __hbaseapp__:
 
         Start-HBaseExample -className com.microsoft.examples.CreateTable -clusterName hdinsightclustername
 
@@ -616,9 +619,9 @@ There are many ways to upload a file to your HDInsight cluster, as described in 
           Gabriela Ingram - ID: 6
           Gabriela Ingram - gabriela@contoso.com - ID: 6
 
-    Using __fabrikam.com__ for the `-emailRegex` value will return the users that have __fabrikam.com__ in the email field. Since this search is implemented by using a regular expression-based filter, you can also enter regular expressions, such as __^r__, which will return entries where the email begins with the letter 'r'.
+    Using __fabrikam.com__ for the `-emailRegex` value returns the users that have __fabrikam.com__ in the email field. Since this search is implemented by using a regular expression-based filter, you can also enter regular expressions, such as __^r__, which returns entries where the email begins with the letter 'r'.
 
-##Delete the table
+## Delete the table
 
 When you are done with the example, use the following command from the Azure PowerShell session to delete the __people__ table used in this example:
 
@@ -626,8 +629,8 @@ When you are done with the example, use the following command from the Azure Pow
 
 Replace __hdinsightclustername__ with the name of your HDInsight cluster.
 
-##Troubleshooting
+## Troubleshooting
 
-###No results or unexpected results when using Start-HBaseExample
+### No results or unexpected results when using Start-HBaseExample
 
 Use the `-showErr` parameter to view the standard error (STDERR) that is produced while running the job.

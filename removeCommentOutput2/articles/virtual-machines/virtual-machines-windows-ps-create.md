@@ -1,4 +1,3 @@
-
 <properties
 	pageTitle="Create an Azure VM using PowerShell | Azure"
 	description="Use Azure PowerShell and Azure Resource Manager to easily create a new VM running Windows Server."
@@ -11,20 +10,23 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="06/07/2016"
-	wacn.date=""/>
+	ms.workload="na"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="get-started-article"
+	ms.date="09/27/2016"
+	wacn.date=""
+	ms.author="davidmu"/>
 
 # Create a Windows VM using Resource Manager and PowerShell
 
-[AZURE.INCLUDE [arm-api-version-powershell](../includes/arm-api-version-powershell.md)]
+This article shows you how to quickly create an Azure Virtual Machine running Windows Server and the resources it needs using [Resource Manager](../azure-resource-manager/documentation/articles/resource-group-overview) and PowerShell. 
 
-This article shows you how to quickly create an Azure Virtual Machine running Windows Server and the resources it needs using [Resource Manager](/documentation/articles/resource-group-overview/) and PowerShell. 
-
-All of the steps in this article are required to create a virtual machine and it should take about 30 minutes to do the steps.
+All the steps in this article are required to create a virtual machine and it should take about 30 minutes to do the steps.
 
 ## Step 1: Install Azure PowerShell
 
-See [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure/) for information about how to install the latest version of Azure PowerShell, select the subscription that you want to use, and sign in to your Azure account.
+See [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure/) for information about installing the latest version of Azure PowerShell, selecting your subscription, and signing in to your account.
         
 ## Step 2: Create a resource group
 
@@ -34,16 +36,16 @@ First, you create a resource group.
 
 	    Get-AzureRmLocation | sort Location | Select Location
         
-    You should see something like this:
+    You should see something like this example:
     
         Location
         --------
-        China North
-        China East
+        chinanorth
+        chinaeast
 
 2. Replace the value of **$locName** with a location from the list. Create the variable.
 
-        $locName = "China North"
+        $locName = "chinaeast"
         
 3. Replace the value of **$rgName** with a name for the new resource group. Create the variable and the resource group.
 
@@ -79,7 +81,7 @@ All virtual machines are part of a [virtual network](/documentation/articles/vir
         $vnetName = "myvnet1"
         $vnet = New-AzureRmVirtualNetwork -Name $vnetName -ResourceGroupName $rgName -Location $locName -AddressPrefix 10.0.0.0/16 -Subnet $singleSubnet
         
-    You should use values that make sense for your application and environment.
+    Use values that make sense for your application and environment.
         
 ## Step 5: Create a public IP address and network interface
 
@@ -121,13 +123,13 @@ Now that you have all the pieces in place, it's time to create the virtual machi
 
         $vm = Set-AzureRmVMSourceImage -VM $vm -PublisherName MicrosoftWindowsServer -Offer WindowsServer -Skus 2012-R2-Datacenter -Version "latest"
         
-    See [Navigate and select Windows virtual machine images in Azure with PowerShell or the CLI](/documentation/articles/virtual-machines-windows-cli-ps-findimage/) for more information about selecting images to use.
+    For more information about selecting images to use, see [Navigate and select Windows virtual machine images in Azure with PowerShell or the CLI](/documentation/articles/virtual-machines-windows-cli-ps-findimage/) .
         
 5. Add the network interface that you created to the configuration.
 
         $vm = Add-AzureRmVMNetworkInterface -VM $vm -Id $nic.Id
         
-6. Replace the value of **$blobPath** with a path and filename in storage that the virtual hard disk will use. The virtual hard disk file is usually stored in a container, for example **vhds/WindowsVMosDisk.vhd**. Create the variables.
+6. Replace the value of **$blobPath** with a path and filename in storage of the virtual hard disk. The virtual hard disk file is usually stored in a container, for example **vhds/WindowsVMosDisk.vhd**. Create the variables.
 
         $blobPath = "vhds/WindowsVMosDisk.vhd"
         $osDiskUri = $storageAcc.PrimaryEndpoints.Blob.ToString() + $blobPath
@@ -149,6 +151,6 @@ Now that you have all the pieces in place, it's time to create the virtual machi
                                   
 ## Next Steps
 
-- If there were issues with the deployment, a next step would be to look at [Troubleshooting resource group deployments with Azure Portal Preview](/documentation/articles/resource-manager-troubleshoot-deployments-portal/)
-- Learn how to manage the virtual machine that you just created by reviewing [Manage virtual machines using Azure Resource Manager and PowerShell](/documentation/articles/virtual-machines-windows-ps-manage/).
+- If there were issues with the deployment, a next step would be to look at [Troubleshooting resource group deployments with Azure portal](/documentation/articles/resource-manager-troubleshoot-deployments-portal/)
+- Learn how to manage the virtual machine that you created by reviewing [Manage virtual machines using Azure Resource Manager and PowerShell](/documentation/articles/virtual-machines-windows-ps-manage/).
 - Take advantage of using a template to create a virtual machine by using the information in [Create a Windows virtual machine with a Resource Manager template](/documentation/articles/virtual-machines-windows-ps-template/)

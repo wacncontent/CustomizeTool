@@ -1,24 +1,26 @@
-
 <properties
 	pageTitle="Use PowerShell to enable Azure Diagnostics in a virtual machine running Windows | Azure"
 	services="virtual-machines-windows"
 	documentationCenter=""
 	description="Learn how to use PowerShell to enable Azure Diagnostics in a virtual machine running Windows"
 	authors="sbtron"
-	manager=""
+ 	manager="timlt"
 	editor=""/>
 
 <tags
 	ms.service="virtual-machines-windows"
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-windows"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="12/15/2015"
-	wacn.date=""/>
+	wacn.date=""
+	ms.author="saurabh"/>
 
 
 # Use PowerShell to enable Azure Diagnostics in a virtual machine running Windows
 
-[AZURE.INCLUDE [arm-api-version-powershell](../includes/arm-api-version-powershell.md)]
-
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
 
 Azure Diagnostics is the capability within Azure that enables the collection of diagnostic data on a deployed application. You can use the diagnostics extension to collect diagnostic data like application logs or performance counters from an Azure virtual machine (VM) that is running Windows. This article describes how to use Windows PowerShell to enable the diagnostics extension for a VM. See [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure/) for the prerequisites needed for this article.
 
@@ -84,7 +86,7 @@ The configuration needs to be updated to include the following:
 	- The resource ID can be constructed by using the following pattern: "/subscriptions/{*subscription ID for the subscription with the VM*}/resourceGroups/{*The resourcegroup name for the VM*}/providers/Microsoft.Compute/virtualMachines/{*The VM Name*}".
 	- For example, if the subscription ID for the subscription where the VM is running is **11111111-1111-1111-1111-111111111111**, the resource group name for the resource group is **MyResourceGroup**, and the VM Name is **MyWindowsVM**, then the value for *resourceID* would be:
 
-		<Metrics resourceId="/subscriptions/11111111-1111-1111-1111-111111111111/resourceGroups/MyResourceGroup/providers/Microsoft.Compute/virtualMachines/MyWindowsVM" >
+			<Metrics resourceId="/subscriptions/11111111-1111-1111-1111-111111111111/resourceGroups/MyResourceGroup/providers/Microsoft.Compute/virtualMachines/MyWindowsVM" >
 
 	- For more information on how metrics are generated based on the performance counters and metrics configuration, see [Azure Diagnostics metrics table in storage](/documentation/articles/virtual-machines-windows-extensions-diagnostics-template/#wadmetrics-tables-in-storage).
 

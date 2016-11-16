@@ -4,18 +4,23 @@
    services="hdinsight"
    documentationCenter=""
    authors="Blackmist"
-   manager="paulettm"
+   manager="jhubbard"
    editor="cgronlun"
 	tags="azure-portal"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="06/06/2016"
-	wacn.date=""/>
+   ms.service="hdinsight"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="big-data"
+   ms.date="08/23/2016"
+   wacn.date=""
+   ms.author="larryfr"/>
 
 #Run Pig jobs with Hadoop on HDInsight by using Curl
 
-[AZURE.INCLUDE [pig-selector](../includes/hdinsight-selector-use-pig.md)]
+[AZURE.INCLUDE [pig-selector](../../includes/hdinsight-selector-use-pig.md)]
 
 In this document, you will learn how to use Curl to run Pig Latin jobs on an Azure HDInsight cluster. The Pig Latin programming language allows you to describe transformations that are applied to the input data to produce the desired output.
 
@@ -56,7 +61,7 @@ To complete the steps in this article, you will need the following:
 
 2. Use the following code to submit a Pig Latin job to the cluster:
 
-        curl -u USERNAME:PASSWORD -d user.name=USERNAME -d execute="LOGS=LOAD+'wasb:///example/data/sample.log';LEVELS=foreach+LOGS+generate+REGEX_EXTRACT($0,'(TRACE|DEBUG|INFO|WARN|ERROR|FATAL)',1)+as+LOGLEVEL;FILTEREDLEVELS=FILTER+LEVELS+by+LOGLEVEL+is+not+null;GROUPEDLEVELS=GROUP+FILTEREDLEVELS+by+LOGLEVEL;FREQUENCIES=foreach+GROUPEDLEVELS+generate+group+as+LOGLEVEL,COUNT(FILTEREDLEVELS.LOGLEVEL)+as+count;RESULT=order+FREQUENCIES+by+COUNT+desc;DUMP+RESULT;" -d statusdir="wasb:///example/pigcurl" https://CLUSTERNAME.azurehdinsight.cn/templeton/v1/pig
+        curl -u USERNAME:PASSWORD -d user.name=USERNAME -d execute="LOGS=LOAD+'wasbs:///example/data/sample.log';LEVELS=foreach+LOGS+generate+REGEX_EXTRACT($0,'(TRACE|DEBUG|INFO|WARN|ERROR|FATAL)',1)+as+LOGLEVEL;FILTEREDLEVELS=FILTER+LEVELS+by+LOGLEVEL+is+not+null;GROUPEDLEVELS=GROUP+FILTEREDLEVELS+by+LOGLEVEL;FREQUENCIES=foreach+GROUPEDLEVELS+generate+group+as+LOGLEVEL,COUNT(FILTEREDLEVELS.LOGLEVEL)+as+count;RESULT=order+FREQUENCIES+by+COUNT+desc;DUMP+RESULT;" -d statusdir="wasbs:///example/pigcurl" https://CLUSTERNAME.azurehdinsight.cn/templeton/v1/pig
 
     The parameters used in this command are as follows:
 
@@ -82,7 +87,7 @@ To complete the steps in this article, you will need the following:
 
 ##<a id="results"></a>View results
 
-When the state of the job has changed to **SUCCEEDED**, you can retrieve the results of the job from Azure Blob storage. The `statusdir` parameter passed with the query contains the location of the output file; in this case, **wasb:///example/pigcurl**. This address stores the output of the job in the **example/pigcurl** directory in the default storage container used by your HDInsight cluster.
+When the state of the job has changed to **SUCCEEDED**, you can retrieve the results of the job from Azure Blob storage. The `statusdir` parameter passed with the query contains the location of the output file; in this case, **wasbs:///example/pigcurl**. This address stores the output of the job in the **example/pigcurl** directory in the default storage container used by your HDInsight cluster.
 
 You can list and download these files by using the [Azure CLI](/documentation/articles/xplat-cli-install/). For example, to list files in **example/pigcurl**, use the following command:
 

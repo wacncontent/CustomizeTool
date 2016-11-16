@@ -1,29 +1,33 @@
 <properties 
 	pageTitle="Back up your app in Azure" 
-	description="Learn how to create backups of your apps in Azure Web App." 
+	description="Learn how to create backups of your apps in Azure App Service." 
 	services="app-service" 
 	documentationCenter="" 
 	authors="cephalin" 
 	manager="wpickett" 
 	editor="jimbe"/>
 
-<tags
-	ms.service="app-service"
-	ms.date="07/06/2016"
-	wacn.date=""/>
+<tags 
+	ms.service="app-service" 
+	ms.workload="na" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="07/06/2016" 
+	wacn.date="" 
+	ms.author="cephalin"/>
 
 # Back up your app in Azure
 
 
-The Backup and Restore feature in [Azure Web App](/documentation/services/web-sites/) lets you easily
+The Backup and Restore feature in [Azure App Service](/documentation/articles/app-service-value-prop-what-is/) lets you easily
 create app backups manually or automatically. You can restore your app to a previous state, or create a new app based on 
 one of your original app's backups. 
 
 For information on restoring an app from backup, see [Restore an app in Azure](/documentation/articles/web-sites-restore/).
 
-<a name="whatsbackedup"></a>
-## What gets backed up 
-Azure can back up the following information:
+## <a name="whatsbackedup"></a> What gets backed up 
+App Service can back up the following information:
 
 * App configuration
 * File content
@@ -34,8 +38,7 @@ This information is backed up to the Azure storage account and container that yo
 
 > [AZURE.NOTE] Each backup is a complete offline copy of your app, not an incremental update.
 
-<a name="requirements"></a>
-## Requirements and restrictions
+## <a name="requirements"></a> Requirements and restrictions
 
 * The Backup and Restore feature requires the App Service plan to be in the **Standard** tier or higher. For more information 
 about scaling your App Service plan to use a higher tier, see [Scale up an app in Azure](/documentation/articles/web-sites-scale/). Note that 
@@ -43,10 +46,9 @@ about scaling your App Service plan to use a higher tier, see [Scale up an app i
 * You need an Azure storage account and container in the same subscription as the app that 
 you want to back up. For more information on Azure storage accounts, see the 
 [links](#moreaboutstorage) at the end of this article.
-* You can back up up to 10GB of app and database content. You will get an error if the backup size exceeds this limit. 
+* Backups can be up to 10GB of app and database content. You will get an error if the backup size exceeds this limit. 
 
-<a name="manualbackup"></a>
-## Create a manual backup
+## <a name="manualbackup"></a> Create a manual backup
 
 2. In the [Azure Portal](https://portal.azure.cn), navigate to your app's blade, select **Settings**, then **Backups**. The **Backups** blade will be displayed.
 	
@@ -80,8 +82,7 @@ you want to back up. For more information on Azure storage accounts, see the
 
 After you have configured a storage account and container for backups, you can make a manual backup at any time.  
 
-<a name="automatedbackups"></a>
-## Configure automated backups
+## <a name="automatedbackups"></a> Configure automated backups
 
 1. In the **Backups** blade, click **Schedule: Not configured**. 
 
@@ -103,8 +104,7 @@ After you have configured a storage account and container for backups, you can m
 
 6. In the **Configure Backup Settings** blade, click **Save**.	
 
-<a name="partialbackups"></a>
-## Backup just part of your app
+## <a name="partialbackups"></a> Backup just part of your app
 
 Sometimes you don't want to backup everything on your app. Here are a few examples:
 
@@ -153,9 +153,7 @@ Now, any files and folders that are specified in `_backup.filter` will be exclud
 >
 >When a full backup is restored, all content on the site is replaced with whatever is in the backup. If a file is on the site but not in the backup it gets deleted. But when a partial backup is restored, any content that is located in one of the blacklisted directories, or any blacklisted file, is left as is.
 
-<a name="aboutbackups"></a>
-
-## How backups are stored
+## <a name="aboutbackups"></a> How backups are stored
 
 After you have made one or more backups for your app, the backups will be visible on the **Containers** blade of your storage account, as well as your app. In the storage account, each backup consists of a .zip file that contains the backup data and an .xml file that contains a manifest of the .zip file contents. You can unzip and browse these files if you want to access your backups without actually performing an app restore.
 
@@ -163,12 +161,11 @@ The database backup for the app is stored in the root of the .zip file. For a SQ
 
 > [AZURE.WARNING] Altering any of the files in your **websitebackups** container can cause the backup to become invalid and therefore non-restorable.
 
-<a name="nextsteps"></a>
-## Next Steps
-For information on restoring an app from a backup, see [Restore an app in Azure](/documentation/articles/web-sites-restore/). You can also backup and restore Azure Web Apps
-using REST API (see [Use REST to back up and restore Azure Web Apps](/documentation/articles/websites-csm-backup/)).
+## <a name="nextsteps"></a> Next Steps
+For information on restoring an app from a backup, see [Restore an app in Azure](/documentation/articles/web-sites-restore/). You can also backup and restore App Service apps
+using REST API (see [Use REST to back up and restore App Service apps](/documentation/articles/websites-csm-backup/)).
 
->[AZURE.NOTE] If you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.
+>[AZURE.NOTE] If you want to get started with Azure App Service before signing up for an Azure account, go to [Try App Service](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in App Service. No credit cards required; no commitments.
 
 
 <!-- IMAGES -->

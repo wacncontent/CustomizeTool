@@ -8,9 +8,14 @@
    editor="cgronlun"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="06/01/2016"
-	wacn.date=""/>
+   ms.service="hdinsight"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="big-data"
+   ms.date="10/05/2016"
+   wacn.date=""
+   ms.author="nitinme"/>
 
 # Azure HDInsight Documentation Backlog
 

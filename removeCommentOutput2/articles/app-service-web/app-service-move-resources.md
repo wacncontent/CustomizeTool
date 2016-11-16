@@ -1,6 +1,6 @@
 <properties
 	pageTitle="Move Web App Resources to another Resource Group"
-	description="Describes the scenarios where you can move Web Apps and Azure from one Resource Group to another."
+	description="Describes the scenarios where you can move Web Apps and App Services from one Resource Group to another."
 	services="app-service"
 	documentationCenter=""
 	authors="ZainRizvi"
@@ -9,8 +9,13 @@
 
 <tags
 	ms.service="app-service"
+	ms.workload="web"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="01/04/2016"
-	wacn.date=""/>
+	wacn.date=""
+	ms.author="zarizvi"/>
 	
 # Supported Move Configurations
 

@@ -5,17 +5,22 @@
   documentationCenter="virtual-machines"
   authors="ahmetalpbalkan"
   editor="squillace"
-  manager="" 
+  manager="timlt"
   tags="azure-service-management,azure-resource-manager" />
 
 <tags
-	ms.service="virtual-machines-linux"
-	ms.date="07/11/2016"
-	wacn.date=""/>
+  ms.service="virtual-machines-linux"
+  ms.devlang="multiple"
+  ms.topic="article"
+  ms.tgt_pltfrm="vm-linux"
+  ms.workload="infrastructure-services"
+  ms.date="09/27/2016"
+  wacn.date="" 
+  ms.author="ahmetb" />
 
 # Deploying Your Own Private Docker Registry on Azure
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
 
 
 
@@ -79,6 +84,7 @@ For the sake of simplicity, this topic follows option 2, using
 the environment variables.
 
 In order to run a Docker Registry instance which:
+
 * uses your Azure Storage Account for storing the images
 * listens on the Virtual Machine's port 5000
 * has no authentication configured (not recommended, see the note below)

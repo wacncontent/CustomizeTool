@@ -4,18 +4,23 @@
    services="hdinsight"
    documentationCenter=""
    authors="mumian"
-   manager="paulettm"
+   manager="jhubbard"
    tags="azure-portal"
    editor="cgronlun"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="04/28/2016"
-	wacn.date=""/>
+   ms.service="hdinsight"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="big-data"
+   ms.date="07/25/2016"
+   wacn.date=""
+   ms.author="jgao"/>
 
 #Connect Excel to Hadoop with the Microsoft Hive ODBC driver
 
-[AZURE.INCLUDE [ODBC-JDBC-selector](../includes/hdinsight-selector-odbc-jdbc.md)]
+[AZURE.INCLUDE [ODBC-JDBC-selector](../../includes/hdinsight-selector-odbc-jdbc.md)]
 
 Microsoft's Big Data solution integrates  Microsoft Business Intelligence (BI) components with Apache Hadoop clusters that have been deployed by the Azure HDInsight. An example of this integration is the ability to connect Excel to the Hive data warehouse of an Hadoop cluster in HDInsight using the Microsoft Hive Open Database Connectivity (ODBC) Driver.
 
@@ -54,7 +59,7 @@ The following steps show you how to create a Hive ODBC Data Source.
     Property|Description
     ---|---
     Data Source Name|Give a name to your data source
-    Host|Enter <HDInsightClusterName>.azurehdinsight.cn. For example, myHDICluster.azurehdinsight.cn
+    Host|Enter &lt;HDInsightClusterName>.azurehdinsight.cn. For example, myHDICluster.azurehdinsight.cn
     Port|Use <strong>443</strong>. (This port has been changed from 563 to 443.)
     Database|Use <strong>Default</strong>.
     Hive Server Type|Select <strong>Hive Server 2</strong>

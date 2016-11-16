@@ -9,21 +9,26 @@
    tags="azure-service-management"/>
 
 <tags
-	ms.service="virtual-machines-linux"
-	ms.date="06/07/2016"
-	wacn.date=""/>
+   ms.service="virtual-machines-linux"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="vm-linux"
+   ms.workload="infrastructure-services"
+   ms.date="08/29/2016"
+   wacn.date=""
+   ms.author="kyliel"/>
 
 # Create and upload a FreeBSD VHD to Azure
 
 This article shows you how to create and upload a virtual hard disk (VHD) that contains the FreeBSD operating system. After you upload it, you can use it as your own image to create a virtual machine (VM) in Azure.
 
-> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager model.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]
 
 
 ## Prerequisites
 This article assumes that you have the following items:
 
-- **An Azure subscription**--If you don't have an account, you can create one in just a couple of minutes. If you have an MSDN subscription, see [Monthly Azure credit for Visual Studio subscribers.](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/). Otherwise, learn how to [create a trial account](/pricing/1rmb-trial/).
+- **An Azure subscription**--If you don't have an account, you can create one in just a couple of minutes. see [create a trial account](/pricing/1rmb-trial/).  
 
 - **Azure PowerShell tools**--The Azure PowerShell module must be installed and configured to use your Azure subscription. To download the module, see [Azure downloads](/downloads/). A tutorial that describes how install and configure the module is available here. Use the [Azure Downloads](/downloads/) cmdlet to upload the VHD.
 
@@ -67,7 +72,7 @@ On the virtual machine where you installed the FreeBSD operating system, complet
 		# pkg install python27  
 		# pkg install Py27-setuptools27   
 		# ln -s /usr/local/bin/python2.7 /usr/bin/python   
-		# pkg install git 
+		# pkg install git
 
 6. Install Azure Agent.
 
@@ -82,19 +87,20 @@ On the virtual machine where you installed the FreeBSD operating system, complet
 		v2.1.4
 		v2.1.4.rc0
 		v2.1.4.rc1
-   
+
     For 2.0, let's use 2.0.16 as an example:
-    
+
 		# git checkout WALinuxAgent-2.0.16
 		# python setup.py install  
 		# ln -sf /usr/local/sbin/waagent /usr/sbin/waagent  
 
     For 2.1, let's use 2.1.4 as an example:
-    
+
 		# git checkout v2.1.4
 		# python setup.py install  
 		# ln -sf /usr/local/sbin/waagent /usr/sbin/waagent  
 		# ln -sf /usr/local/sbin/waagent2.0 /usr/sbin/waagent2.0
+
     >[AZURE.IMPORTANT] After you install Azure Agent, it's a good idea to verify that it's running:
 
 		# waagent -version
@@ -110,7 +116,7 @@ On the virtual machine where you installed the FreeBSD operating system, complet
 
 		# echo "y" |  /usr/local/sbin/waagent -deprovision+user  
 		# echo  'waagent_enable="YES"' >> /etc/rc.conf
-    
+
     Now you can shut down your VM.
 
 ## Step 2: Create a storage account in Azure ##
@@ -185,7 +191,7 @@ Before you can upload a .vhd file, you need to establish a secure connection bet
 3. Save the .publishsettings file.
 
 4. Type:
-	`Import-AzurePublishSettingsFile -Environment AzureChinaCloud <PathToFile>`
+	`Import-AzurePublishSettingsFile -Environment AzureChinaCloud <PathToFile>`, where
 `<PathToFile>` is the full path to the .publishsettings file.
 
    For more information, see [Get started with Azure cmdlets](http://msdn.microsoft.com/zh-cn/library/azure/jj554332.aspx).

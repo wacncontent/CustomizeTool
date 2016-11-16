@@ -6,10 +6,15 @@
    authors="mgoedtel"
    manager="stevenka"
    editor="tysonn" />
-<tags
-	ms.service="automation"
-	ms.date="02/23/2016"
-	wacn.date=""/>
+<tags 
+   ms.service="automation"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="02/23/2016"
+   wacn.date=""
+   ms.author="magoedte;bwren" />
 
 # Certificate assets in Azure Automation
 
@@ -52,9 +57,6 @@ When you create a new certificate, you upload a .cer or .pfx file to Azure Autom
 4. Browse for a .cer or .pfx file.  If you select a .pfx file, specify a password and whether it should be allowed to be exported.
 1. Click the check mark to upload the certificate file and save the new certificate asset.
 
-
-
-
 ### To create a new certificate with Windows PowerShell
 
 The following sample commands show how to create a new automation certificate and marks it exportable. This imports an existing .pfx file.
@@ -77,4 +79,3 @@ The following sample code shows how to add a certificate to a cloud service in a
 	$cert = Get-AutomationCertificate -Name 'MyCertificate'
 	$certPwd = Get-AutomationVariable -Name 'MyCertPassword'
 	Add-AzureCertificate -ServiceName $serviceName -CertToDeploy $cert
-

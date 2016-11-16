@@ -1,30 +1,32 @@
 <properties 
-	pageTitle="Azure App Service API app triggers" 
-	description="This article demonstrates how to implement triggers in an API App" 
-	services="app-service\logic" 
+	pageTitle="App Service API app triggers | Azure" 
+	description="How to implement triggers in an API App in Azure App Service" 
+	services="logic-apps" 
 	documentationCenter=".net" 
 	authors="guangyang"
 	manager="wpickett" 
 	editor="jimbe"/>
 
 <tags 
-	ms.service="app-service-logic" 
+	ms.service="logic-apps" 
 	ms.workload="na" 
 	ms.tgt_pltfrm="dotnet" 
 	ms.devlang="na" 
 	ms.topic="article" 
-	ms.date="10/15/2015" 
-	ms.author="guayan"/>
+	ms.date="08/25/2016" 
+	wacn.date="" 
+	ms.author="rachelap"/>
 
 # Azure App Service API app triggers
+
+>[AZURE.NOTE] This version of the article applies to API apps 2014-12-01-preview schema version.
+
 
 ## Overview
 
 This article explains how to implement API app triggers and consume them from a Logic app.
 
-If you are new to [API apps](app-service-api-apps-why-best-platform.md) in [Azure App Service](../app-service/app-service-value-prop-what-is.md), we recommend reading the multi-part series on [creating API apps](app-service-dotnet-create-api-app.md)
-
-In addition, all of the code snippets in this topic are copied from the [FileWatcher API App code sample](http://go.microsoft.com/fwlink/?LinkId=534802). 
+All of the code snippets in this topic are copied from the [FileWatcher API App code sample](http://go.microsoft.com/fwlink/?LinkId=534802). 
 
 Note that you'll need to download the following nuget package for the code in this article to build and run: [http://www.nuget.org/packages/Microsoft.Azure.AppService.ApiApps.Service/](http://www.nuget.org/packages/Microsoft.Azure.AppService.ApiApps.Service/).
 
@@ -32,7 +34,7 @@ Note that you'll need to download the following nuget package for the code in th
 
 It's a common scenario for an API app to fire an event so that clients of the API app can take the appropriate action in response to the event. The REST API based mechanism that supports this scenario is called an API app trigger. 
 
-For example, let's say your client code is using the [Twitter Connector API app](../app-service-logic/app-service-logic-connector-twitter.md) and your code needs to perform an action based on new tweets that contain specific words. In this case, you might set up a poll or push trigger to facilitate this need.
+For example, let's say your client code is using the [Twitter Connector API app](/documentation/articles/app-service-logic-connector-twitter/) and your code needs to perform an action based on new tweets that contain specific words. In this case, you might set up a poll or push trigger to facilitate this need.
 
 ## Poll trigger versus push trigger
 
@@ -207,7 +209,7 @@ To test this poll trigger, follow these steps:
 
 ### Describe triggers in API definition
 
-After implementing the triggers and deploying your API app to Azure, navigate to the **API Definition** blade in the Azure preview portal and you'll see that triggers are automatically recognized in the UI, which is driven by the Swagger 2.0 API definition of the API app.
+After implementing the triggers and deploying your API app to Azure, navigate to the **API Definition** blade in the Azure Portal Preview and you'll see that triggers are automatically recognized in the UI, which is driven by the Swagger 2.0 API definition of the API app.
 
 ![API Definition Blade](./media/app-service-api-dotnet-triggers/apidefinitionblade.PNG)
 
@@ -259,7 +261,7 @@ For instance, the **triggerState** parameter for poll triggers should be set to 
 
 	@coalesce(triggers()?.outputs?.body?['triggerState'], '')
 
-NOTE: For an explanation of the functions used in the expression above, refer to the documentation on [Logic App Workflow Definition Language](https://msdn.microsoft.com/library/azure/dn948512.aspx).
+NOTE: For an explanation of the functions used in the expression above, refer to the documentation on [Logic App Workflow Definition Language](https://msdn.microsoft.com/zh-cn/library/azure/dn948512.aspx).
 
 Logic app users would need to provide the expression above for the **triggerState** parameter while using the trigger. It is possible to have this value preset by the Logic app designer through the extension property **x-ms-scheduler-recommendation**.  The **x-ms-visibility** extension property can be set to a value of *internal* so that the parameter itself is not shown on the designer.  The following snippet illustrates that.
 

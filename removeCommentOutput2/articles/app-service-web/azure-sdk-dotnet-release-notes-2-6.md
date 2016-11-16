@@ -8,9 +8,14 @@
    editor=""/>
 
 <tags
-	ms.service="app-service"
-	ms.date="04/25/2016"
-	wacn.date=""/>
+   ms.service="app-service"
+   ms.devlang="multiple"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="integration" 
+   ms.date="10/10/2016" 
+   wacn.date=""
+   ms.author="juliako"/>
 
  
 # Azure SDK for .NET 2.6 Release Notes
@@ -60,15 +65,15 @@ With Azure SDK 2.6 you can develop cloud service applications (PaaS) targeting .
 
 >[AZURE.IMPORTANT]We're announcing the November 30, 2016, retirement for Azure Managed Cache Service and Azure In-Role Cache. We recommend that you migrate to Azure Redis Cache in preparation for this retirement. For more information on dates and migration guidance, see [Which Azure Cache offering is right for me?](/documentation/articles/cache-faq/#which-azure-cache-offering-is-right-for-me)
 
-##Azure Tools
+##Azure App Service Tools
 
 The following items were updated in the Azure SDK 2.6 release.
 
 - Azure publishing enhanced to include Azure API Apps as a deployment target.
 - API Apps provisioning functionality to enable users with API App creation and provisioning functionality.
-- Server Explorer changed to reflect new Azure node, with Web, Mobile, and API apps grouped by Resource Group.
+- Server Explorer changed to reflect new App Service node, with Web, Mobile, and API apps grouped by Resource Group.
 - Add Azure API App Client gesture added to most C# projects that will enable automatic generation of Swagger-enabled API Apps running in a user's Azure subscription.
-- API Apps tooling and Azure nodes in Server Explorer are available in Visual Studio 2013 only. 
+- API Apps tooling and App Service nodes in Server Explorer are available in Visual Studio 2013 only. 
 
 ##Azure Resource Manager Tools updates
 
@@ -98,7 +103,7 @@ The Diagnostics storage account can now be specified in the service configuratio
 	
 	An update to Azure SDK 2.6 was released on 5/18/2015. The updated version is 2.6.30508.1601; it contains fixes for two issues described above. You can identify the build of the SDK from Control Panel -> Programs and Features -> Microsoft Azure Tools for Microsoft Visual Studio 2013 - v 2.6. The Version column will display the build number.
 
-	If you are still facing the above issues, install the latest version of the Azure 2.6 SDK for [VS 2012](http://go.microsoft.com/fwlink/p/?linkid=323511&clcid=0x409), [VS 2013](https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VWDOrVs2013AzurePack.appids) or [VS 2015](http://go.microsoft.com/fwlink/?linkid=518003&clcid=0x409).
+	If you are still facing the above issues, install the latest version of the Azure 2.6 SDK for [VS 2012](http://go.microsoft.com/fwlink/p/?linkid=323511&clcid=0x409), [VS 2013](http://go.microsoft.com/fwlink/p/?linkid=323510&clcid=0x409) or [VS 2015](http://go.microsoft.com/fwlink/?linkid=518003&clcid=0x409).
  
 ##See Also
 

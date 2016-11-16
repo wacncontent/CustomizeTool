@@ -6,14 +6,19 @@
    services="hdinsight"
    documentationCenter=""
    authors="Blackmist"
-   manager="paulettm"
+   manager="jhubbard"
    editor="cgronlun"
 	tags="azure-portal"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="07/12/2016"
-	wacn.date=""/>
+   ms.service="hdinsight"
+   ms.devlang="java"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="big-data"
+   ms.date="09/27/2016"
+   wacn.date=""
+   ms.author="larryfr"/>
 
 #Determine Twitter trending topics with Apache Storm on HDInsight
 

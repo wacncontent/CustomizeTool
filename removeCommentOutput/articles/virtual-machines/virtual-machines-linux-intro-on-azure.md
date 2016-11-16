@@ -10,8 +10,13 @@
 
 <tags
 	ms.service="virtual-machines-linux"
-	ms.date="05/27/2016"
-	wacn.date=""/>
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-linux"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/24/2016"
+	wacn.date=""
+	ms.author="szark"/>
 
 #Introduction to Linux on Azure
 
@@ -24,7 +29,7 @@ When creating a Linux virtual machine using the Azure Classic Management Portal,
 
 
  - See [Create a Virtual Machine Running Linux](/documentation/articles/virtual-machines-linux-quick-create-cli/)
- - See [How to Use SSH with Linux on Azure](/documentation/articles/virtual-machines-linux-ssh-from-linux/)
+ - See [How to Use SSH with Linux on Azure](/documentation/articles/virtual-machines-linux-mac-create-ssh-keys/)
 
 
 ## Obtaining Superuser Privileges Using `sudo`
@@ -92,4 +97,5 @@ On Linux, the resource disk is typically managed by the Azure Linux Agent and au
 
 On Linux the data disk might be named by the kernel as `/dev/sdc`, and users will need to partition, format and mount that resource. This is covered step-by-step in the tutorial: [How to Attach a Data Disk to a Virtual Machine](/documentation/articles/virtual-machines-linux-classic-attach-disk/).
 
- - **See also:** [Configure Software RAID on Linux](/documentation/articles/virtual-machines-linux-configure-raid/)
+ - **See also:** [Configure Software RAID on Linux](/documentation/articles/virtual-machines-linux-configure-raid/) & [Configure LVM on a Linux VM in Azure](/documentation/articles/virtual-machines-linux-configure-lvm/)
+

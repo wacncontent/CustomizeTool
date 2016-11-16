@@ -1,6 +1,6 @@
 <properties 
 	pageTitle="Django and SQL Database on Azure with Python Tools 2.2 for Visual Studio" 
-	description="Learn how to use the Python Tools for Visual Studio to create a Django web app that stores data in a SQL database instance and deploy it to Azure Web Apps." 
+	description="Learn how to use the Python Tools for Visual Studio to create a Django web app that stores data in a SQL database instance and deploy it to Azure App Service Web Apps." 
 	services="app-service\web" 
 	tags="python"
 	documentationCenter="python" 
@@ -8,10 +8,15 @@
 	manager="wpickett" 
 	editor=""/>
 
-<tags
-	ms.service="app-service-web"
-	ms.date="07/07/2016"
-	wacn.date=""/>
+<tags 
+	ms.service="app-service-web" 
+	ms.workload="web" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="python" 
+	ms.topic="article" 
+	ms.date="07/07/2016" 
+	wacn.date=""
+	ms.author="huguesv"/>
 
 
 
@@ -20,11 +25,11 @@
 
 In this tutorial, we'll use [Python Tools for Visual Studio] to create a simple polls web app using one of the PTVS sample templates.
 
-We'll learn how to use a SQL database hosted on Azure, how to configure the web app to use a SQL database, and how to publish the web app to [Azure Web Apps](/documentation/services/web-sites/).
+We'll learn how to use a SQL database hosted on Azure, how to configure the web app to use a SQL database, and how to publish the web app to [Azure App Service Web Apps](/documentation/articles/app-service-changes-existing-services/).
 
-See the [Python Developer Center] for more articles that cover development of Azure Web Apps with PTVS using Bottle, Flask and Django web frameworks, with Azure Table Storage, MySQL and SQL Database services. While this article focuses on Azure Web App, the steps are similar when developing [Azure Cloud Services].
+See the [Python Developer Center] for more articles that cover development of Azure App Service Web Apps with PTVS using Bottle, Flask and Django web frameworks, with Azure Table Storage, MySQL and SQL Database services. While this article focuses on App Service, the steps are similar when developing [Azure Cloud Services].
 
-##<a name="prerequisites"></a> Prerequisites
+## <a name="prerequisites"></a> Prerequisites
 
  - Visual Studio 2015
  - [Python 2.7 32-bit]
@@ -33,7 +38,7 @@ See the [Python Developer Center] for more articles that cover development of Az
  - [Azure SDK Tools for VS 2015]
  - Django 1.9 or later
 
-[AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
+[AZURE.INCLUDE [create-account-and-websites-note](../../includes/create-account-and-websites-note.md)]
 
 ## Create the Project
 
@@ -56,7 +61,6 @@ In this section, we'll create a Visual Studio project using a sample template. W
 1.  In **Solution Explorer**, right-click on the project node and select **Python**, and then select **Django Migrate**.  Then select **Django Create Superuser**.
 
 1.  This will open a Django Management Console and create a sqlite database in the project folder. Follow the prompts to create a user.
-
 
 1.  Confirm that the application works by pressing <kbd>F5</kbd>.
 
@@ -142,9 +146,9 @@ Edit the definition of `DATABASES` to use the values above.
 1.  Run the application with `F5`. Polls that are created with **Create Sample Polls** and the data submitted by voting will be serialized in the SQL database.
 
 
-## Publish the web app to Azure
+## Publish the web app to Azure App Service
 
-The Azure .NET SDK provides an easy way to deploy your web web app to Azure.
+The Azure .NET SDK provides an easy way to deploy your web web app to Azure App Service Web Apps.
 
 1.  In **Solution Explorer**, right-click on the project node and select **Publish**.
 
@@ -172,6 +176,9 @@ Follow these links to learn more about Python Tools for Visual Studio, Django an
   - [Remote Debugging on Azure]
 - [Django Documentation]
 - [SQL Database]
+
+## What's changed
+* For a guide to the change from Websites to App Service see: [Azure App Service and Its Impact on Existing Azure Services](/documentation/articles/app-service-changes-existing-services/)
 
 
 <!--Link references-->

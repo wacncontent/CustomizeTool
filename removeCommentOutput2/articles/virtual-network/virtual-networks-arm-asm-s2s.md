@@ -14,8 +14,6 @@
 
 # Connecting classic VNets to new VNets
 
-[AZURE.INCLUDE [arm-api-version-powershell](../includes/arm-api-version-powershell.md)]
-
 Azure currently has two management modes: Azure Service Manager (referred to as classic), and Azure Resource Manager (ARM). If you have been using Azure for some time, you probably have Azure VMs and instance roles running on a classic VNet. And your newer VMs and role instances may be running on a VNet created in ARM.
 
 In such situations, you will want to ensure the new infrastructure is able to communicate with your classic resources. You can do so by creating a VPN connection between the two VNets. The figure below illustrates a sample environment with two VNets (classic and ARM), along with a secure tunnel connectivity between the VNets.

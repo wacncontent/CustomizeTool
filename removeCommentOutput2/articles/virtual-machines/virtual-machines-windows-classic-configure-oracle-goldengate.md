@@ -8,8 +8,13 @@
 	tags="azure-service-management"/>
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="05/17/2016"
-	wacn.date=""/>
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="vm-windows"
+	ms.workload="infrastructure-services"
+	ms.date="09/06/2016"
+	wacn.date=""
+	ms.author="rclaus" />
 
 
 #Configuring Oracle GoldenGate for Azure

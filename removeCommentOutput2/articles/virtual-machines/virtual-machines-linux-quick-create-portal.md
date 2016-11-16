@@ -1,4 +1,3 @@
-
 <properties
     pageTitle="Create a Linux VM using the Azure Portal | Azure"
     description="Create a Linux VM using the Azure Portal."
@@ -11,18 +10,23 @@
 />
 
 <tags
-	ms.service="virtual-machines-linux"
-	ms.date="04/29/2016"
-	wacn.date=""/>
+    ms.service="virtual-machines-linux"
+    ms.workload="infrastructure-services"
+    ms.tgt_pltfrm="vm-linux"
+    ms.devlang="na"
+    ms.topic="hero-article"
+    ms.date="08/18/2016"
+    wacn.date=""
+    ms.author="v-livech"
+/>
 
 # Create a Linux VM on Azure using the Portal
 
-This article shows how to use the [Azure Portal Preview](https://portal.azure.cn/) to create a Linux Virtual Machine quickly. The only requirements are [an Azure account](/pricing/1rmb-trial/) and [SSH public and private key files](/documentation/articles/virtual-machines-linux-mac-create-ssh-keys/).
-
-> [AZURE.NOTE] If you choose to use a password to secure access to your VM, the password must be greater than 12 characters, and have at least one upper case character, at least one lowercase character, at least one special character, and at least one number. 
+This article shows how to use the [Azure portal](https://portal.azure.cn/) to create a Linux Virtual Machine quickly. The only requirements are [an Azure account](/pricing/1rmb-trial/) and [SSH public and private key files](/documentation/articles/virtual-machines-linux-mac-create-ssh-keys/).
 
 
-1. Signed into the Azure Portal Preview with your Azure account identity, click **+ New** in the upper left corner:
+1. Signed into the Azure portal Preview with your Azure account identity, click **+ New** in the upper left corner:
+
 
     ![screen1](./media/virtual-machines-linux-quick-create-portal/screen1.png)
 
@@ -34,8 +38,8 @@ This article shows how to use the [Azure Portal Preview](https://portal.azure.cn
     - a name for the VM
     - a username for the Admin User
     - the Authentication Type set to **SSH public key**
-    - your SSH public Key as a string (by default, from your `~/.ssh/` directory)
-    - a resource group name (to create a new deployment group) or select an existing group
+    - your SSH public Key as a string (from your `~/.ssh/` directory)
+    - a resource group name or select an existing group
 
     and Click **OK** to continue and choose the VM size; it should look something like the following:
 
@@ -63,16 +67,12 @@ This article shows how to use the [Azure Portal Preview](https://portal.azure.cn
 
 9. SSH into the public IP using your SSH public key
 
-```
-ssh -i ~/.ssh/azure_id_rsa ubuntu@13.91.99.206
-```
+	ssh -i ~/.ssh/azure_id_rsa ubuntu@13.91.99.206
 
 ## Next Steps
 
-Now you've created a Linux VM quickly to use for testing or demonstration purposes. To create a Linux VM customized for your infrastructure you can follow any of the articles below.
+Now you've created a Linux VM quickly to use for testing or demonstration purposes. To create a Linux VM customized for your infrastructure, you can follow any of these articles.
 
 - [Create a Linux VM on Azure using Templates](/documentation/articles/virtual-machines-linux-cli-deploy-templates/)
-- [Create a SSH Secured Linux VM on Azure using Templates](/documentation/articles/virtual-machines-linux-create-ssh-secured-vm-from-template/)
+- [Create an SSH Secured Linux VM on Azure using Templates](/documentation/articles/virtual-machines-linux-create-ssh-secured-vm-from-template/)
 - [Create a Linux VM using the Azure CLI](/documentation/articles/virtual-machines-linux-create-cli-complete/)
-
-Those articles will get you started in building an Azure infrastructure as well as any number of proprietary and open-source infrastructure deployment, configuration, and orchestration tools.

@@ -8,21 +8,26 @@
    editor="jimbe"/>
 
 <tags
-	ms.service="app-service-web"
-	ms.date="02/26/2016"
-	wacn.date=""/>
+	ms.service="app-service-web" 
+	ms.workload="web" 
+	ms.tgt_pltfrm="dotnet" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="02/26/2016" 
+	wacn.date="" 
+	ms.author="cephalin"/>
 
 # Create an ASP.NET 5 web app in Visual Studio Code
 
 ## Overview
 
-This tutorial shows you how to create an ASP.NET 5 web app using [Visual Studio Code (VS Code)](http://code.visualstudio.com//Docs/whyvscode) and deploy it to [Azure Web App](/documentation/services/web-sites/). 
+This tutorial shows you how to create an ASP.NET 5 web app using [Visual Studio Code (VS Code)](http://code.visualstudio.com//Docs/whyvscode) and deploy it to [Azure App Service](/documentation/articles/app-service-value-prop-what-is/). 
 
 > [AZURE.NOTE] Although this article refers to web apps, it also applies to API apps and mobile apps. 
 
-ASP.NET 5 is a significant redesign of ASP.NET. ASP.NET 5 is a new open-source and cross-platform framework for building modern cloud-based web apps using .NET. For more information, see [Introduction to ASP.NET 5](http://docs.asp.net/en/latest/conceptual-overview/aspnet.html). For information about Azure web apps, see [Web Apps Overview](/home/features/web-site/).
+ASP.NET 5 is a significant redesign of ASP.NET. ASP.NET 5 is a new open-source and cross-platform framework for building modern cloud-based web apps using .NET. For more information, see [Introduction to ASP.NET 5](http://docs.asp.net/en/latest/conceptual-overview/aspnet.html). For information about Azure App Service web apps, see [Web Apps Overview](/documentation/articles/app-service-web-overview/).
 
-[AZURE.INCLUDE [app-service-web-try-app-service.md](../includes/app-service-web-try-app-service.md)]
+[AZURE.INCLUDE [app-service-web-try-app-service.md](../../includes/app-service-web-try-app-service.md)]
 
 ## Prerequisites  
 
@@ -156,7 +161,7 @@ The following steps will guide you through creating a web app in the Azure Porta
 
 ## Enable Git publishing for the new web app
 
-Git is a distributed version control system that you can use to deploy your Azure web app. You'll store the code you write for your web app in a local Git repository, and you'll deploy your code to Azure by pushing to a remote repository.   
+Git is a distributed version control system that you can use to deploy your Azure App Service web app. You'll store the code you write for your web app in a local Git repository, and you'll deploy your code to Azure by pushing to a remote repository.   
 
 1. Log into the [Azure Portal](https://portal.azure.cn).
 
@@ -176,7 +181,7 @@ Git is a distributed version control system that you can use to deploy your Azur
 
 	![Azure Local Git Respository](./media/web-sites-create-web-app-using-vscode/15-azure-localrepository.png)
 
-8. If you have not previously set up deployment credentials for publishing a web app or other Azure Web App, set them up now:
+8. If you have not previously set up deployment credentials for publishing a web app or other App Service app, set them up now:
 
 	* Click **Settings** > **Deployment credentials**. The **Set deployment credentials** blade will be displayed.
 
@@ -190,7 +195,7 @@ Git is a distributed version control system that you can use to deploy your Azur
 
 	![Azure Git URL](./media/web-sites-create-web-app-using-vscode/17-azure-giturl.png)
 
-## Publish your web app to Azure
+## Publish your web app to Azure App Service
 
 In this section, you will create a local Git repository and push from that repository to Azure to deploy your web app to Azure.
 
@@ -257,4 +262,4 @@ This can be done in two ways:
 ![Azure web app](./media/web-sites-create-web-app-using-vscode/21-azurewebapp.png)
 
 ## Summary
-In this tutorial, you learned how to create a web app in VS Code and deploy it to Azure. For more information about VS Code, see the article, [Why Visual Studio Code?](https://code.visualstudio.com/Docs/) For information about Azure web apps, see [Web Apps Overview](/home/features/web-site/). 
+In this tutorial, you learned how to create a web app in VS Code and deploy it to Azure. For more information about VS Code, see the article, [Why Visual Studio Code?](https://code.visualstudio.com/Docs/) For information about App Service web apps, see [Web Apps Overview](/documentation/articles/app-service-web-overview/). 

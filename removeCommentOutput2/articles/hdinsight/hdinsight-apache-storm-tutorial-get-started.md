@@ -5,23 +5,27 @@
 	services="hdinsight"
 	documentationCenter=""
 	authors="Blackmist"
-	manager="paulettm"
+	manager="jhubbard"
 	editor="cgronlun"
 	tags="azure-portal"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="06/22/2016"
-	wacn.date=""/>
+   ms.service="hdinsight"
+   ms.devlang="java"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="big-data"
+   ms.date="09/07/2016"
+   wacn.date=""
+   ms.author="larryfr"/>
 
 
 # Apache Storm tutorial: Get started with the Storm Starter samples for big data analytics on HDInsight
 
 Apache Storm is a scalable, fault-tolerant, distributed, real-time computation system for processing streams of data. With Storm on Azure HDInsight, you can create a cloud-based Storm cluster that performs big data analytics in real time. 
 
-## Before you begin
 
-[AZURE.INCLUDE [delete-cluster-warning](../includes/hdinsight-delete-cluster-warning.md)]
+[AZURE.INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
 
 You must have the following to successfully complete this Apache Storm tutorial:
 
@@ -50,7 +54,7 @@ For more information on creating Storage accounts, see
 
 When you provision an HDInsight cluster, you provision Azure compute resources that contain Apache Storm and related applications. You can also create Hadoop clusters for other versions by using the Azure Classic Management Portal, Azure PowerShell cmdlets for HDInsight, or the HDInsight .NET SDK. For instructions, see [Provision HDInsight clusters using custom options][hdinsight-provision]. For information about different HDInsight versions and their service level agreements (SLAs), see the [HDInsight component versioning](/documentation/articles/hdinsight-component-versioning-v1/) page.
 
-[AZURE.INCLUDE [provisioningnote](../includes/hdinsight-provisioning.md)]
+[AZURE.INCLUDE [provisioningnote](../../includes/hdinsight-provisioning.md)]
 
 1. Sign in to the [Azure Classic Management Portal][azureportal].
 
@@ -182,7 +186,7 @@ Return to the **Topology summary** page for the word-count topology, and then se
 
 ##Delete the cluster
 
-[AZURE.INCLUDE [delete-cluster-warning](../includes/hdinsight-delete-cluster-warning.md)]
+[AZURE.INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
 
 ## Summary
 
@@ -218,4 +222,4 @@ In this Apache Storm tutorial, you used the Storm Starter to learn how to create
 [stormjavadocs]: https://storm.incubator.apache.org/apidocs/
 [azureportal]: https://manage.windowsazure.cn/
 [hdinsight-provision]: /documentation/articles/hdinsight-provision-clusters-v1/
-[preview-portal]: https://manage.windowsazure.cn/
+[preview-portal]: https://portal.azure.cn/

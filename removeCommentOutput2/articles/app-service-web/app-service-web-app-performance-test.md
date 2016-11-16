@@ -1,5 +1,3 @@
-<!-- not suitable for Mooncake -->
-
 <properties
    pageTitle="Test your Azure web app's performance | Azure"
    description="Run Azure web app performance tests to check how your app handles user load. Measure response time and find failures that might indicate problems."
@@ -10,9 +8,14 @@
    editor="jimbe"/>
 
 <tags
-	ms.service="app-service-web"
-	ms.date="05/25/2016"
-	wacn.date=""/>
+   ms.service="app-service-web"
+   ms.workload="web"
+   ms.tgt_pltfrm="na"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.date="05/25/2016"
+   wacn.date=""
+   ms.author="estfan; manasma; ahomer"/>
 
 # Performance test your Azure web app under load
 
@@ -20,7 +23,7 @@ Check your web app's performance before you launch it or deploy updates to produ
 That way, you can better assess whether your app is ready for release. Feel more
 confident that your app can handle the traffic during peak use or at your next marketing push.
 
-During public preview, you can performance test your app for free in the Azure Portal.
+During public preview, you can performance test your app for free in the Azure Portal Preview.
 These tests simulate user load on your app over a specific time period and measure your app's response. 
 For example, your test results show how fast your app responds to a specific number 
 of users. They also show how many requests failed, which might indicate problems with your app.      
@@ -44,7 +47,7 @@ That way, you don't affect any existing customers or slow down your app in produ
 
 ## Set up and run your performance test
 
-0.  Sign in to the [Azure Portal](https://portal.azure.cn). 
+0.  Sign in to the [Azure Portal Preview](https://portal.azure.cn). 
 To use a Visual Studio Team Services account that you own, 
 sign in as the account owner.
 
@@ -140,7 +143,7 @@ To upload and run a Visual Studio Web Test file:
 
 #### Q: Is there a limit on how long I can run a test? 
 
-**A**: Yes, you can run your test up to an hour in the Azure Portal.
+**A**: Yes, you can run your test up to an hour in the Azure Portal Preview.
 
 #### Q: How much time do I get to run performance tests? 
 
@@ -152,7 +155,7 @@ you can purchase more time and pay only for what you use.
 
 #### Q: Where can I check how many VUMs I've used so far?
 
-**A**: You can check this amount in the Azure Portal.
+**A**: You can check this amount in the Azure Portal Preview.
 
 ![Go to your Team Services account](./media/app-service-web-app-performance-test/azure-np-vso-accounts.png)
 

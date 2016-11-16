@@ -3,13 +3,18 @@
    description="Learn about the new Network Resource Provider in Azure Resource Manager"
    services="virtual-network"
    documentationCenter="na"
-   authors="telmosampaio"
+   authors="jimdial"
    manager="carmonm"
    editor="tysonn" />
 <tags
-	ms.service="virtual-network"
-	ms.date="03/15/2016"
-	wacn.date=""/>
+   ms.service="virtual-network"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="03/15/2016"
+   wacn.date=""
+   ms.author="jdial" />
 
 # Network Resource Provider
 An underpinning need in today's business success, is the ability to build and manage large scale network aware applications in an agile, flexible, secure and repeatable way. Azure Resource Manager (ARM) enables you to create such applications, as a single collection of resources in resource groups. Such resources are managed through various resource providers under ARM.
@@ -50,25 +55,25 @@ Every resource contains a common set of properties, and their individual propert
 
 You can check the individual properties of resources in the sections below.
 
-[AZURE.INCLUDE [virtual-networks-nrp-pip-include](../includes/virtual-networks-nrp-pip-include.md)]
+[AZURE.INCLUDE [virtual-networks-nrp-pip-include](../../includes/virtual-networks-nrp-pip-include.md)]
 
-[AZURE.INCLUDE [virtual-networks-nrp-nic-include](../includes/virtual-networks-nrp-nic-include.md)]
+[AZURE.INCLUDE [virtual-networks-nrp-nic-include](../../includes/virtual-networks-nrp-nic-include.md)]
 
-[AZURE.INCLUDE [virtual-networks-nrp-nsg-include](../includes/virtual-networks-nrp-nsg-include.md)]
+[AZURE.INCLUDE [virtual-networks-nrp-nsg-include](../../includes/virtual-networks-nrp-nsg-include.md)]
 
-[AZURE.INCLUDE [virtual-networks-nrp-udr-include](../includes/virtual-networks-nrp-udr-include.md)]
+[AZURE.INCLUDE [virtual-networks-nrp-udr-include](../../includes/virtual-networks-nrp-udr-include.md)]
 
-[AZURE.INCLUDE [virtual-networks-nrp-vnet-include](../includes/virtual-networks-nrp-vnet-include.md)]
+[AZURE.INCLUDE [virtual-networks-nrp-vnet-include](../../includes/virtual-networks-nrp-vnet-include.md)]
 
-[AZURE.INCLUDE [virtual-networks-nrp-dns-include](../includes/virtual-networks-nrp-dns-include.md)]
+[AZURE.INCLUDE [virtual-networks-nrp-dns-include](../../includes/virtual-networks-nrp-dns-include.md)]
 
-[AZURE.INCLUDE [virtual-networks-nrp-lb-include](../includes/virtual-networks-nrp-lb-include.md)]
+[AZURE.INCLUDE [virtual-networks-nrp-lb-include](../../includes/virtual-networks-nrp-lb-include.md)]
 
-[AZURE.INCLUDE [virtual-networks-nrp-appgw-include](../includes/virtual-networks-nrp-appgw-include.md)]
+[AZURE.INCLUDE [virtual-networks-nrp-appgw-include](../../includes/virtual-networks-nrp-appgw-include.md)]
 
-[AZURE.INCLUDE [virtual-networks-nrp-vpn-include](../includes/virtual-networks-nrp-vpn-include.md)]
+[AZURE.INCLUDE [virtual-networks-nrp-vpn-include](../../includes/virtual-networks-nrp-vpn-include.md)]
 
-[AZURE.INCLUDE [virtual-networks-nrp-tm-include](../includes/virtual-networks-nrp-tm-include.md)]
+[AZURE.INCLUDE [virtual-networks-nrp-tm-include](../../includes/virtual-networks-nrp-tm-include.md)]
 
 ## Management interfaces
 You can manage your Azure networking resources using different interfaces. In this document we will focus on tow of those interfaces: REST API, and templates.

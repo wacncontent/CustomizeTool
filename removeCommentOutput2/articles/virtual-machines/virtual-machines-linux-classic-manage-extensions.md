@@ -8,14 +8,19 @@
  editor=""
  tags="azure-service-management"/>
 <tags
-	ms.service="virtual-machines-linux"
-	ms.date="04/15/2016"
-	wacn.date=""/>
+ ms.service="virtual-machines-linux"
+ ms.devlang="na"
+ ms.topic="article"
+ ms.tgt_pltfrm="vm-linux"
+ ms.workload="infrastructure-services"
+ ms.date="08/29/2016"
+ wacn.date=""
+ ms.author="rasquill"/>
 
 #Manage virtual machine extensions
 
 Describes how to find, add, modify, or remove VM Extensions with either Windows or Linux Virtual Machines on Azure.
 
-> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager mode
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]
 
-[AZURE.INCLUDE [virtual-machines-common-classic-manage-extensions](../includes/virtual-machines-common-classic-manage-extensions.md)]
+[AZURE.INCLUDE [virtual-machines-common-classic-manage-extensions](../../includes/virtual-machines-common-classic-manage-extensions.md)]

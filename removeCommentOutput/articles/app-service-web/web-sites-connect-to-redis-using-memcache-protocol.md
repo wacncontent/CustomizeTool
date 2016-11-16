@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Connect a web app in Azure to Redis Cache via the Memcache protocol | Azure"
+	pageTitle="Connect a web app in Azure App Service to Redis Cache via the Memcache protocol | Azure"
 	description="Connect a web app in Azure App service to Redis Cache using the Memcache protocol"
 	services="app-service\web"
 	documentationCenter="php"
@@ -9,16 +9,21 @@
 
 <tags
 	ms.service="app-service-web"
+	ms.devlang="php"
+	ms.topic="get-started-article"
+	ms.tgt_pltfrm="windows"
+	ms.workload="na"
 	ms.date="02/29/2016"
-	wacn.date=""/>
+	wacn.date=""
+	ms.author="cfowler"/>
 
-# Connect a web app in Azure to Redis Cache via the Memcache protocol
+# Connect a web app in Azure App Service to Redis Cache via the Memcache protocol
 
-In this article, you'll learn how to connect a WordPress web app in [Azure Web App](/documentation/services/web-sites/) to [Azure Redis Cache][12] using the [Memcache][13] protocol. If you have an existing web app that uses a Memcached server for in-memory caching, You can migrate it to Azure and use the first-party caching solution in Azure with little or no change to your application code. Furthermore, you can use your existing Memcache expertise to create highly scalable, distributed apps in Azure with Azure Redis Cache for in-memory caching, while using popular application frameworks such as .NET, PHP, Node.js, Java, and Python.  
+In this article, you'll learn how to connect a WordPress web app in [Azure App Service](/documentation/articles/app-service-changes-existing-services/) to [Azure Redis Cache][12] using the [Memcache][13] protocol. If you have an existing web app that uses a Memcached server for in-memory caching, You can migrate it to Azure App Service and use the first-party caching solution in Azure with little or no change to your application code. Furthermore, you can use your existing Memcache expertise to create highly scalable, distributed apps in Azure App Service with Azure Redis Cache for in-memory caching, while using popular application frameworks such as .NET, PHP, Node.js, Java, and Python.  
 
-Azure Web Apps enables this application scenario with the Web Apps Memcache shim, which is a local Memcached server that acts as a Memcache proxy for caching calls to Azure Redis Cache. This enables any app that communicates using the Memcache protocol to cache data with Redis Cache. This Memcache shim works at the protocol level, so it can be used by any application or application framework as long as it communicates using the Memcache protocol.
+App Service Web Apps enables this application scenario with the Web Apps Memcache shim, which is a local Memcached server that acts as a Memcache proxy for caching calls to Azure Redis Cache. This enables any app that communicates using the Memcache protocol to cache data with Redis Cache. This Memcache shim works at the protocol level, so it can be used by any application or application framework as long as it communicates using the Memcache protocol.
 
-[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)] 
+[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)] 
 
 ## Prerequisites
 
@@ -29,11 +34,11 @@ Follow the steps outlined in these articles:
 * [Provision an instance of the Azure Redis Cache Service][0]
 * [Deploy a Scalable WordPress site in Azure][1]
 
-Once you have the Scalable WordPress site deployed and a Redis Cache instance provisioned you will be ready to proceed with enabling the Memcache shim in Azure Web Apps.
+Once you have the Scalable WordPress site deployed and a Redis Cache instance provisioned you will be ready to proceed with enabling the Memcache shim in Azure App Service Web Apps.
 
 ## Enable the Web Apps Memcache shim
 
-In order to configure Memcache shim, you must create three app settings. This can be done using a variety of methods including the [Azure Portal](https://manage.windowsazure.cn/), the [Classic Management Portal][3], the [Azure PowerShell Cmdlets][5] or the [Azure Command-Line Interface][5]. For the purposes of this post, I'm going to use the [Azure Portal][4] to set the app settings. The following values can be retrieved from **Settings** blade of your Redis Cache instance.
+In order to configure Memcache shim, you must create three app settings. This can be done using a variety of methods including the [Azure Portal](/documentation/articles/app-service-web-app-azure-portal/), the [Classic Management Portal][3], the [Azure PowerShell Cmdlets][5] or the [Azure Command-Line Interface][5]. For the purposes of this post, I'm going to use the [Azure Portal][4] to set the app settings. The following values can be retrieved from **Settings** blade of your Redis Cache instance.
 
 ![Azure Redis Cache Settings Blade](./media/web-sites-connect-to-redis-using-memcache-protocol/1-azure-redis-cache-settings.png)
 
@@ -172,10 +177,10 @@ The call to list the keys should return a value. If not, try navigating to the w
 
 Congratulations! The WordPress app now has a centralized in-memory cache to aid in increasing throughput. Remember, the Web Apps Memcache Shim can be used with any Memcache client regardless of programming language or application framework. To provide feedback or to ask questions about the Web Apps Memcache shim, post to [MSDN Forums][10] or [Stackoverflow][11].
 
->[AZURE.NOTE] If you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.
+>[AZURE.NOTE] If you want to get started with Azure App Service before signing up for an Azure account, go to [Try App Service](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in App Service. No credit cards required; no commitments.
 
 ## What's changed
-* For a guide to the change from Websites to Azure see: [Azure and its impact on existing Azure Services](/documentation/services/web-sites/)
+* For a guide to the change from Websites to App Service see: [Azure App Service and its impact on existing Azure Services](/documentation/articles/app-service-changes-existing-services/)
 
 
 [0]: /documentation/articles/cache-dotnet-how-to-use-azure-redis-cache/#create-a-cache

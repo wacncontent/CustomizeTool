@@ -6,13 +6,18 @@ description="A list of ports used by Hadoop services running on HDInsight."
 services="hdinsight"
 documentationCenter=""
 authors="Blackmist"
-manager="paulettm"
+manager="jhubbard"
 editor="cgronlun"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="06/14/2016"
-	wacn.date=""/>
+ms.service="hdinsight"
+ms.devlang="na"
+ms.topic="article"
+ms.tgt_pltfrm="na"
+ms.workload="big-data"
+ms.date="10/03/2016"
+wacn.date=""
+ms.author="larryfr"/>
 
 # Ports and URIs used by HDInsight
 
@@ -34,12 +39,12 @@ All the nodes in an HDInsight cluster are located in an Azure Virtual Network, a
 
 | Service | Port | Protocol | Description |
 | ---- | ---------- | -------- | ----------- | ----------- |
-| sshd | 22 | SSH | Connects clients to sshd on head node 0. See [Use SSH with Linux-based HDInsight](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows/) |
+| sshd | 22 | SSH | Connects clients to sshd on the primary headnode. See [Use SSH with Linux-based HDInsight](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows/) |
 | sshd | 22 | SSH | Connects clients to sshd on the edge node (HDInsight Premium only). See [Get started using R Server on HDInsight](/documentation/articles/hdinsight-hadoop-r-server-get-started/) |
-| sshd | 23 | SSH | Connects clients to sshd on head node 1. See [Use SSH with Linux-based HDInsight](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows/) |
+| sshd | 23 | SSH | Connects clients to sshd on the secondary headnode. See [Use SSH with Linux-based HDInsight](/documentation/articles/hdinsight-hadoop-linux-use-ssh-windows/) |
 | Ambari | 443 | HTTPS | Ambari web UI. See [Manage HDInsight using the Ambari Web UI](/documentation/articles/hdinsight-hadoop-manage-ambari/) |
 | Ambari | 443 | HTTPS | Ambari REST API. See [Manage HDInsight using the Ambari REST API](/documentation/articles/hdinsight-hadoop-manage-ambari-rest-api/) |
-| WebHCat | 443 | HTTPS | HCatalog REST API. See [Use Hive with Curl](/documentation/articles/hdinsight-hadoop-use-Pig-curl/), [Use Pig with Curl](/documentation/articles/hdinsight-hadoop-use-Pig-curl/), [Use MapReduce with Curl](/documentation/articles/hdinsight-hadoop-use-mapreduce-curl/) |
+| WebHCat | 443 | HTTPS | HCatalog REST API. See [Use Hive with Curl](/documentation/articles/hdinsight-hadoop-use-pig-curl/), [Use Pig with Curl](/documentation/articles/hdinsight-hadoop-use-pig-curl/), [Use MapReduce with Curl](/documentation/articles/hdinsight-hadoop-use-mapreduce-curl/) |
 | HiveServer2 | 443 | ODBC | Connects to Hive using ODBC. See [Connect Excel to HDInsight with the Microsoft ODBC driver](/documentation/articles/hdinsight-connect-excel-hive-odbc-driver/). |
 | HiveServer2 | 443 | JDBC | Connects to Hive using JDBC. See [Connect to Hive on HDInsight using the Hive JDBC driver](/documentation/articles/hdinsight-connect-hive-jdbc-driver/) |
 
@@ -62,6 +67,8 @@ All services publicly exposed on the internet must be authenticated:
 
 ## Non-public ports
 
+> [AZURE.NOTE] Some services are only available on specific cluster types. For example, HBase is only available on HBase cluster types.
+
 ### HDFS ports
 
 | Service | Node(s) | Port | Protocol | Description |
@@ -72,6 +79,7 @@ All services publicly exposed on the internet must be authenticated:
 | DataNode | All worker nodes | 30010 | &nbsp; | Data transfer |
 | DataNode | All worker nodes | 30020 | IPC | Metadata operations |
 | Secondary NameNode | Head nodes | 50090 | HTTP | Checkpoint for NameNode metadata |
+
 ### YARN ports
 
 | Service | Node(s) | Port | Protocol | Description |
@@ -131,3 +139,9 @@ All services publicly exposed on the internet must be authenticated:
 | Region server | All worker nodes | 16020 | &nbsp; | &nbsp; |
 | &nbsp; | &nbsp; | 2181 | &nbsp; | The port that clients use to connect to ZooKeeper |
 
+### Kafka ports
+
+| Service | Node(s) | Port | Protocol | Description |
+| ------- | ------- | ---- | -------- | ----------- |
+| Broker  | Worker nodes | 9092 | [Kafka Wire Protocol](http://kafka.apache.org/protocol.html) | Used for client communication |
+| &nbsp; | Zookeeper nodes | 2181 | &nbsp; | The port that clients use to connect to Zookeeper |

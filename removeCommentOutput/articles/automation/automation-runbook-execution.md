@@ -7,9 +7,14 @@
    manager="stevenka"
    editor="tysonn" />
 <tags
-	ms.service="automation"
-	ms.date="03/21/2016"
-	wacn.date=""/>
+   ms.service="automation"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="03/21/2016"
+   wacn.date=""
+   ms.author="bwren" />
 
 # Runbook execution in Azure Automation
 

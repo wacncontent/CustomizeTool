@@ -8,10 +8,15 @@
 	editor=""
 	tags="azure-resource-manager"/>
 
-<tags
-	ms.service="virtual-machines-linux"
-	ms.date="11/17/2015"
-	wacn.date=""/>
+<tags 
+	ms.service="virtual-machines-linux" 
+	ms.workload="web" 
+	ms.tgt_pltfrm="vm-linux" 
+	ms.devlang="python" 
+	ms.topic="article" 
+	ms.date="11/17/2015" 
+	wacn.date="" 
+	ms.author="huvalo"/>
 	
 # Django Hello World web application on a Linux VM
 
@@ -34,7 +39,7 @@ A screenshot of the completed application is below:
 
 ![A browser window displaying the hello world page on Azure](./media/virtual-machines-linux-python-django-web-app/mac-linux-django-helloworld-browser.png)
 
-[AZURE.INCLUDE [create-account-and-vms-note](../includes/create-account-and-vms-note.md)]
+[AZURE.INCLUDE [create-account-and-vms-note](../../includes/create-account-and-vms-note.md)]
 
 ## Creating and configuring an Azure virtual machine to host Django
 

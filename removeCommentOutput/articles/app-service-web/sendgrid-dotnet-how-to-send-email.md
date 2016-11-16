@@ -7,10 +7,15 @@
 	manager="dwrede" 
 	editor=""/>
 
-<tags
-	ms.service="app-service-web"
-	ms.date="01/14/2016"
-	wacn.date=""/>
+<tags 
+	ms.service="app-service-web" 
+	ms.workload="na" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="dotnet" 
+	ms.topic="article" 
+	ms.date="01/14/2016" 
+	wacn.date="" 
+	ms.author="team-pi@sendgrid.com"/>
 
 
 
@@ -48,7 +53,7 @@ For more information, see [https://sendgrid.com](https://sendgrid.com) or our [C
 
 ## Create a SendGrid account
 
-[AZURE.INCLUDE [sendgrid-sign-up](../includes/sendgrid-sign-up.md)]
+[AZURE.INCLUDE [sendgrid-sign-up](../../includes/sendgrid-sign-up.md)]
 
 ## Reference the SendGrid .NET class library
 
@@ -149,8 +154,8 @@ by clicking CONFIGURE and adding the key/value pairs under "app settings".
 
  Then, you may access them as follows: 
     
-    var username = System.Environment.GetEnvironmentVariable("SENDGRID_USER"); 
-    var pswd = System.Environment.GetEnvironmentVariable("SENDGRID_PASS");
+    var username = System.Environment.GetEnvironmentVariable("SENDGRID_USERNAME"); 
+    var pswd = System.Environment.GetEnvironmentVariable("SENDGRID_PASSWORD");
     var apiKey = System.Environment.GetEnvironmentVariable("SENDGRID_APIKEY");
 
 Using Credentials:

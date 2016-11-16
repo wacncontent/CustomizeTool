@@ -1,28 +1,32 @@
-
 <properties
    pageTitle="Troubleshoot Linux VM deployment-Classic | Azure"
    description="Troubleshoot classic deployment issues when you create a new Linux virtual machine in Azure"
    services="virtual-machines-linux"
    documentationCenter=""
-   authors="jiangchen79"
+   authors="JiangChen79"
    manager="felixwu"
    editor=""
    tags="top-support-issue"/>
 
 <tags
-	ms.service="virtual-machines-linux"
-	ms.date="06/20/2016"
-	wacn.date=""/>
+  ms.service="virtual-machines-linux"
+  ms.workload="na"
+  ms.tgt_pltfrm="vm-linux"
+  ms.devlang="na"
+  ms.topic="article"
+  ms.date="09/06/2016"
+  wacn.date=""
+  ms.author="cjiang"/>
 
 # Troubleshoot classic deployment issues with creating a new Linux virtual machine in Azure
 
-[AZURE.INCLUDE [virtual-machines-troubleshoot-deployment-new-vm-selectors](../includes/virtual-machines-linux-troubleshoot-deployment-new-vm-selectors-include.md)]
+[AZURE.INCLUDE [virtual-machines-troubleshoot-deployment-new-vm-selectors](../../includes/virtual-machines-linux-troubleshoot-deployment-new-vm-selectors-include.md)]
 
-[AZURE.INCLUDE [virtual-machines-troubleshoot-deployment-new-vm-opening](../includes/virtual-machines-troubleshoot-deployment-new-vm-opening-include.md)]
+[AZURE.INCLUDE [virtual-machines-troubleshoot-deployment-new-vm-opening](../../includes/virtual-machines-troubleshoot-deployment-new-vm-opening-include.md)]
 
-> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager model.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]
 
-[AZURE.INCLUDE [support-disclaimer](../includes/support-disclaimer.md)]
+[AZURE.INCLUDE [support-disclaimer](../../includes/support-disclaimer.md)]
 
 ## Collect audit logs
 
@@ -30,9 +34,9 @@ To start troubleshooting, collect the audit logs to identify the error associate
 
 In the Azure portal Preview, click **Browse** > **Virtual machines** > *your Windows virtual machine* > **Settings** > **Audit logs**.
 
-[AZURE.INCLUDE [virtual-machines-troubleshoot-deployment-new-vm-issue1](../includes/virtual-machines-troubleshoot-deployment-new-vm-issue1-include.md)]
+[AZURE.INCLUDE [virtual-machines-troubleshoot-deployment-new-vm-issue1](../../includes/virtual-machines-troubleshoot-deployment-new-vm-issue1-include.md)]
 
-[AZURE.INCLUDE [virtual-machines-linux-troubleshoot-deployment-new-vm-table](../includes/virtual-machines-linux-troubleshoot-deployment-new-vm-table.md)]
+[AZURE.INCLUDE [virtual-machines-linux-troubleshoot-deployment-new-vm-table](../../includes/virtual-machines-linux-troubleshoot-deployment-new-vm-table.md)]
 
 **Y:** If the OS is Linux generalized, and it is uploaded and/or captured with the generalized setting, then there won't be any errors. Similarly, if the OS is Linux specialized, and it is uploaded and/or captured with the specialized setting, then there won't be any errors.
 

@@ -9,12 +9,17 @@
 
 <tags
 	ms.service="app-service-web"
+	ms.workload="web"
+	ms.tgt_pltfrm="na"
+	ms.devlang="nodejs"
+	ms.topic="article"
 	ms.date="06/06/2016"
-	wacn.date=""/>
+	wacn.date=""
+	ms.author="ranjithr;wadeh"/>
     
 # Best practices and troubleshooting guide for node applications on Azure Web Apps
 
-[AZURE.INCLUDE [tabs](../includes/app-service-web-get-started-nav-tabs.md)]
+[AZURE.INCLUDE [tabs](../../includes/app-service-web-get-started-nav-tabs.md)]
 
 In this article, you will learn the best practices and troubleshooting steps for [node applications](/documentation/articles/app-service-web-nodejs-get-started/) running on Azure Webapps (with [iisnode](https://github.com/azure/iisnode)).
 
@@ -131,7 +136,7 @@ This example assumes you have 4 node.exe running on your VM. If you have a diffe
 
 ### My node application is consuming too much CPU.
 
-You will probably get a recommendation from Azure Webapps on your portal about high cpu consumption. You can also setup monitors to watch for certain [metrics](/documentation/articles/web-sites-monitor/). When checking the CPU usage on the [Azure Portal Dashboard](/documentation/articles/app-insights-web-monitor-performance/), please check the MAX values for CPU so you don't miss out the peak values.
+You will probably get a recommendation from Azure Webapps on your portal about high cpu consumption. You can also setup monitors to watch for certain [metrics](/documentation/articles/web-sites-monitor/). When checking the CPU usage on the Azure Portal Preview Dashboard, please check the MAX values for CPU so you don't miss out the peak values.
 In cases where you think your application is consuming too much CPU and you cannot explain why, you will need to profile your node application.
 
 ### 
@@ -206,7 +211,7 @@ You will see that 95% of the time was consumed by WriteConsoleLog function as sh
 
 ### My node application is consuming too much memory.
 
-You will probably get a recommendation from Azure Webapps on your portal about high memory consumption. You can also setup monitors to watch for certain [metrics](/documentation/articles/web-sites-monitor/). When checking the memory usage on the [Azure Portal Dashboard](/documentation/articles/app-insights-web-monitor-performance/), please check the MAX values for memory so you don't miss out the peak values.
+You will probably get a recommendation from Azure Webapps on your portal about high memory consumption. You can also setup monitors to watch for certain [metrics](/documentation/articles/web-sites-monitor/). When checking the memory usage on the Azure Portal Preview Dashboard, please check the MAX values for memory so you don't miss out the peak values.
 
 #### Leak detection and Heap Diffing for node.js 
 
@@ -271,11 +276,10 @@ There is a setting within NODE.exe called NODE\_PENDING\_PIPE\_INSTANCES. By def
 
 ## More resources
 
-Follow these links to learn more about node.js applications on Azure Web App.
+Follow these links to learn more about node.js applications on Azure App Service.
 
-* [Get started with Node.js web apps in Azure](/documentation/articles/app-service-web-nodejs-get-started/)
-* [How to debug a Node.js web app in Azure](/documentation/articles/web-sites-nodejs-debug/)
+* [Get started with Node.js web apps in Azure App Service](/documentation/articles/app-service-web-nodejs-get-started/)
+* [How to debug a Node.js web app in Azure App Service](/documentation/articles/web-sites-nodejs-debug/)
 * [Using Node.js Modules with Azure applications](/documentation/articles/nodejs-use-node-modules-azure-apps/)
-* [Azure Web Apps: Node.js](https://blogs.msdn.microsoft.com/silverlining/2012/06/14/windows-azure-websites-node-js/)
+* [Azure App Service Web Apps: Node.js](https://blogs.msdn.microsoft.com/silverlining/2012/06/14/windows-azure-websites-node-js/)
 * [Node.js Developer Center](/documentation/articles/nodejs-use-node-modules-azure-apps/)
-* [Exploring the Super Secret Kudu Debug Console](https://azure.microsoft.com/documentation/videos/super-secret-kudu-debug-console-for-azure-web-sites/)

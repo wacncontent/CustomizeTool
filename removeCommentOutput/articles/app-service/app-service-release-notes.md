@@ -4,7 +4,7 @@
    services="app-service" 
    documentationCenter=".net,nodejs,java" 
    authors="Juliako" 
-   manager="dwrede" 
+   manager="erikre" 
    editor=""/>
 
 <tags
@@ -13,7 +13,8 @@
    ms.topic="article"
    ms.tgt_pltfrm="na"
    ms.workload="integration" 
-   ms.date="09/30/2015"
+   ms.date="10/10/2016" 
+   wacn.date=""
    ms.author="juliako"/>
 
 
@@ -27,7 +28,7 @@ The following are new features and updates in the Azure SDK for .NET 2.5.1.
 
 - New features\scenarios related to **Web Tools Extensions**. 
 
-	- Azure Websites was renamed to Azure App Service. For more information see, [Azure App Service and existing Azure Services](app-service-changes-existing-services.md).
+	- Azure Websites was renamed to Azure App Service. For more information see, [Azure App Service and existing Azure Services](/documentation/articles/app-service-changes-existing-services/).
 	- Azure API Apps (Preview) support has been added so that customers can publish ASP.NET projects as API Apps, and then use the Add > Azure API App Client gesture in C# projects to generate code based on the structure of the deployed API App. 
 	- The Websites node in Server Explorer has been deprecated in lieu of the Azure App Service node, which contains support for Resource Group-based grouping of Azure API Apps, Mobile Apps, and Web Apps.
 	- Azure Mobile Apps (Preview) support has been added so that customers can create new Mobile Apps projects, add Mobile Apps controllers, publish the projects, and remotely debug applications.
@@ -35,7 +36,7 @@ The following are new features and updates in the Azure SDK for .NET 2.5.1.
 	- Web App and API App publishing dialogs have been enhanced to support the Azure Portal concept of resource grouping, and selection/creation of Azure Resource Groups and App Service Plans are represented in the new Web App and API App provisioning dialog. 
 	- Azure API App Server Explorer nodes provide links to the API Apps deep link in the Azure Portal, as well as other features like Log Streaming and Remote Debugging.
 
-	For known issues and current limitations in Azure SDK .NET 2.5.1 [this](app-service-release-notes.md#known_issues_2_5_1) section below.
+	For known issues and current limitations in Azure SDK .NET 2.5.1 [this](/documentation/articles/app-service-release-notes/#known_issues_2_5_1) section below.
 
 
 - New features\scenarios related to **HDInsight Tools** in Visual Studio are enabled in this release. 
@@ -44,7 +45,7 @@ The following are new features and updates in the Azure SDK for .NET 2.5.1.
 	- (Public Preview) Keyword auto-completion and IntelliSense support for Hive. To help you author Hive scripts, HDInsight Tools for Visual Studio added keyword auto-completion and IntelliSense support for Hive.
 	- Storm support. You can now use HDInsight Tools for Visual Studio to develop Storm topologies/Spouts/Bolts in C#. You can then submit the developed topology to a Storm cluster and see the topology/bolt/spout status. You can use system logs and customer logs to troubleshoot your Storm topologies/Bolts/Spouts. You can also use existing JAVA assets in Storm on HDInsight.
 	
-	For more information, see [Get started using HDInsight Hadoop Tools for Visual Studio](hdinsight-hadoop-visual-studio-tools-get-started.md).
+	For more information, see [Get started using HDInsight Hadoop Tools for Visual Studio](/documentation/articles/hdinsight-hadoop-visual-studio-tools-get-started/).
 
 
 

@@ -4,14 +4,19 @@
  services="hdinsight"
  documentationCenter=""
  authors="Blackmist"
- manager="paulettm"
+ manager="jhubbard"
  editor="cgronlun"
  tags="azure-portal"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="07/12/2016"
-	wacn.date=""/>
+ ms.service="hdinsight"
+ ms.devlang="na"
+ ms.topic="article"
+ ms.tgt_pltfrm="na"
+ ms.workload="big-data"
+ ms.date="09/27/2016"
+ wacn.date=""
+ ms.author="larryfr"/>
 
 #Understand and resolve errors received from WebHCat (Templeton,) on HDInsight
 
@@ -80,3 +85,4 @@ The following are default configuration values that can impact WebHCat performan
 [maximum-applications]: http://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.1.3/bk_system-admin-guide/content/setting_application_limits.html
 [max-procs]: https://hive.apache.org/javadocs/hcat-r0.5.0/configuration.html
 [max-age-ms]: http://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.0.6.0/ds_Hadoop/hadoop-mapreduce-client/hadoop-mapreduce-client-core/mapred-default.xml
+ 

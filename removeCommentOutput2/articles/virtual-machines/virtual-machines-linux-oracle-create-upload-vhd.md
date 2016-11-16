@@ -10,12 +10,17 @@
 
 <tags
 	ms.service="virtual-machines-linux"
-	ms.date="05/09/2016"
-	wacn.date=""/>
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-linux"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="08/24/2016"
+	wacn.date=""
+	ms.author="szark"/>
 
 # Prepare an Oracle Linux virtual machine for Azure
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
 
 ## Prerequisites ##
 

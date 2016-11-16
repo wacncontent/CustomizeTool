@@ -4,14 +4,19 @@
 	services="hdinsight"
 	documentationCenter=""
 	authors="nitinme"
-	manager="paulettm"
+	manager="jhubbard"
 	editor="cgronlun"
 	tags="azure-portal"/>
 
 <tags
 	ms.service="hdinsight"
+	ms.workload="big-data"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="02/05/2016"
-	wacn.date=""/>
+	wacn.date=""
+	ms.author="nitinme"/>
 
 # Install and use Solr on HDInsight Hadoop clusters
 

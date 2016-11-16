@@ -5,23 +5,28 @@
    documentationCenter=""
    tags="azure-portal"
    authors="mumian"
-   manager="paulettm"
+   manager="jhubbard"
    editor="cgronlun"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="05/27/2016"
-	wacn.date=""/>
+   ms.service="hdinsight"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="big-data"
+   ms.date="09/02/2016"
+   wacn.date=""
+   ms.author="jgao"/>
 
 # Create Windows-based Hadoop clusters in HDInsight using Azure CLI
 
-[AZURE.INCLUDE [selector](../includes/hdinsight-selector-create-clusters.md)]
+[AZURE.INCLUDE [selector](../../includes/hdinsight-selector-create-clusters.md)]
 
 Learn how to create HDInsight clusters using Azure CLI. For other cluster creation tools and features click the tab select on the top of this page or see [Cluster creation methods](/documentation/articles/hdinsight-provision-clusters-v1/#cluster-creation-methods).
 
 ##Prerequisites:
 
-[AZURE.INCLUDE [delete-cluster-warning](../includes/hdinsight-delete-cluster-warning.md)]
+[AZURE.INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
 
 
 Before you begin the instructions in this article, you must have the following:
@@ -29,15 +34,19 @@ Before you begin the instructions in this article, you must have the following:
 - **Azure subscription**. See [Get Azure trial](/pricing/1rmb-trial/).
 - **Azure CLI**.
 
-	[AZURE.INCLUDE [use-latest-version](../includes/hdinsight-use-latest-cli.md)] 
+	[AZURE.INCLUDE [use-latest-version](../../includes/hdinsight-use-latest-cli.md)] 
 
+### Access control requirements
+[AZURE.INCLUDE [access-control](../../includes/hdinsight-access-control-requirements.md)]
 ##Connect to Azure
 
 Use the following command to connect to Azure:
 
-	azure login -e AzureChinaCloud -u <your account>
+	azure config mode asm
+	azure account clear
+	azure account download -e AzureChinaCloud
 
-For more information on authenticating using a work or school account, see [Connect to an Azure subscription from the Azure CLI](/documentation/articles/xplat-cli-connect/).
+	azure account import path/to/<subscription name>-<date>-credentials.publishsettings
 
 To get help, use the **-h** switch.  For example:
 
@@ -49,7 +58,7 @@ You must have a Azure Blob storage account before you can create an HDInsight cl
 
 - **HDInsight cluster name**
 
-- **Location**: One of the Azure data centers that supports HDInsight clusters. For a list of supported locations, see [HDInsight pricing](/home/features/hdinsight/pricing/).
+- **Location**: One of the Azure data centers that supports HDInsight clusters. For a list of supported locations, see [HDInsight pricing](/pricing/details/hdinsight/).
 
 - **Default storage account**: HDInsight uses an Azure Blob storage container as the default file system. An Azure Storage account is required before you can create an HDInsight cluster.
 

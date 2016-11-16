@@ -1,32 +1,34 @@
-
 <properties 
    pageTitle="Manage NSGs using PowerShell in Resource Manager | Azure"
    description="Learn how to manage exising NSGs using PowerShell in Resource Manager"
    services="virtual-network"
    documentationCenter="na"
-   authors="telmosampaio"
+   authors="jimdial"
    manager="carmonm"
    editor=""
    tags="azure-resource-manager"
 />
-<tags
-	ms.service="virtual-network"
-	ms.date="03/14/2016"
-	wacn.date=""/>
+<tags  
+   ms.service="virtual-network"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="03/14/2016"
+   wacn.date=""
+   ms.author="jdial" />
 
 # Manage NSGs using PowerShell
 
-[AZURE.INCLUDE [virtual-network-manage-arm-selectors-include.md](../includes/virtual-network-manage-nsg-arm-selectors-include.md)]
+[AZURE.INCLUDE [virtual-network-manage-arm-selectors-include.md](../../includes/virtual-network-manage-nsg-arm-selectors-include.md)]
 
-[AZURE.INCLUDE [arm-api-version-powershell](../includes/arm-api-version-powershell.md)]
+[AZURE.INCLUDE [virtual-network-manage-nsg-intro-include.md](../../includes/virtual-network-manage-nsg-intro-include.md)]
 
-[AZURE.INCLUDE [virtual-network-manage-nsg-intro-include.md](../includes/virtual-network-manage-nsg-intro-include.md)]
+[AZURE.INCLUDE [azure-arm-classic-important-include](../../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
 
-[AZURE.INCLUDE [azure-arm-classic-important-include](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
+[AZURE.INCLUDE [virtual-network-manage-nsg-arm-scenario-include.md](../../includes/virtual-network-manage-nsg-arm-scenario-include.md)]
 
-[AZURE.INCLUDE [virtual-network-manage-nsg-arm-scenario-include.md](../includes/virtual-network-manage-nsg-arm-scenario-include.md)]
-
-[AZURE.INCLUDE [azure-ps-prerequisites-include.md](../includes/azure-ps-prerequisites-include.md)]
+[AZURE.INCLUDE [azure-ps-prerequisites-include.md](../../includes/azure-ps-prerequisites-include.md)]
 
 ## Retrieve Information
 
@@ -154,7 +156,7 @@ Expected output:
 
 >[AZURE.NOTE] You can also use `Get-AzureRmNetworkSecurityGroup -ResourceGroupName RG-NSG -Name "NSG-FrontEnd" | Select DefaultSecurityRules -ExpandProperty DefaultSecurityRules` to list the default rules from the **NSG-FrontEnd** NSG.
 
-###<a name="View-NSGs-associations"></a> View NSGs associations
+### <a name="View-NSGs-associations"></a> View NSGs associations
 
 To view what resources the **NSG-FrontEnd** NSG is associate with, run the `Get-AzureRmNetworkSecurityGroup` cmdlet as shown below.
 
@@ -357,7 +359,7 @@ To associate the **NSG-FrontEnd** NSG to the **TestNICWeb1** NIC, follow the ste
 		                         "Id": "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/RG-NSG/providers/Microsoft.Network/networkSecurityGroups/NSG-FrontEnd"
 		                       }
 
-###<a name="Dissociate-an-NSG-from-a-NIC"></a> Dissociate an NSG from a NIC
+### <a name="Dissociate-an-NSG-from-a-NIC"></a> Dissociate an NSG from a NIC
 
 To dissociate the **NSG-FrontEnd** NSG from the **TestNICWeb1** NIC, follow the steps below.
 
@@ -383,7 +385,7 @@ To dissociate the **NSG-FrontEnd** NSG from the **TestNICWeb1** NIC, follow the 
 
 		NetworkSecurityGroup : null
 
-###<a name="Dissociate-an-NSG-from-a-subnet"></a> Dissociate an NSG from a subnet
+### <a name="Dissociate-an-NSG-from-a-subnet"></a> Dissociate an NSG from a subnet
 
 To dissociate the **NSG-FrontEnd** NSG from the **FrontEnd** subnet, follow the steps below.
 

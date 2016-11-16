@@ -10,8 +10,13 @@
 
 <tags
 	ms.service="virtual-machines-linux"
-	ms.date="06/24/2016"
-	wacn.date=""/>
+	ms.workload="web"
+	ms.tgt_pltfrm="vm-linux"
+	ms.devlang="ruby"
+	ms.topic="article"
+	ms.date="08/11/2016"
+	wacn.date=""
+	ms.author="robmcm"/>
 
 # Ruby on Rails Web application on an Azure VM
 
@@ -19,8 +24,7 @@ This tutorial shows how to host a Ruby on Rails website on Azure using a Linux v
 
 This tutorial was validated using Ubuntu Server 14.04 LTS. If you use a different Linux distribution, you might need to modify the steps to install Rails.
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
-> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager model.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]
 
 ## Create an Azure VM
 
@@ -121,8 +125,7 @@ You should see output similar to the following.
 
 	![default rails page][default-rails-cloud]
 
-
-##<a id="next"></a>Next steps
+## <a id="next"></a>Next steps
 
 In this tutorial, you did most of the steps manually. In a production environment, you would write your app on a development machine and deploy it to the Azure VM. Also, most production environments host the Rails application in conjunction with another server process such as Apache or NginX, which handles request routing to multiple instances of the Rails application and serving static resources. For more information, see http://rubyonrails.org/deploy/.
 

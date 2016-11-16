@@ -8,10 +8,15 @@
     authors="mgoedtel"
     manager="jwhit"
     editor="tysonn" />
-<tags
-	ms.service="automation"
-	ms.date="06/03/2016"
-	wacn.date=""/>
+<tags 
+    ms.service="automation"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="infrastructure-services"
+    ms.date="06/03/2016"
+    wacn.date=""
+    ms.author="magoedte;bwren" />
 
 # Graphical authoring in Azure Automation
 

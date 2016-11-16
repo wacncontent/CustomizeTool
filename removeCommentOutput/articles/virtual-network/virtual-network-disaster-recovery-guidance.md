@@ -9,8 +9,13 @@
 
 <tags
 	ms.service="virtual-network"
+	ms.workload="virtual-network"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="05/16/2016"
-	wacn.date=""/>
+	wacn.date=""
+	ms.author="narayan;aglick"/>
 
 #Virtual Network - Business Continuity
 

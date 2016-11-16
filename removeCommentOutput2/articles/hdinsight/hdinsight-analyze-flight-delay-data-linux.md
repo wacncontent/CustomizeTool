@@ -6,14 +6,19 @@
 	services="hdinsight" 
 	documentationCenter="" 
 	authors="Blackmist" 
-	manager="paulettm" 
+	manager="jhubbard" 
 	editor="cgronlun"
 	tags="azure-portal"/>
 
-<tags
-	ms.service="hdinsight"
-	ms.date="07/05/2016"
-	wacn.date=""/>
+<tags 
+	ms.service="hdinsight" 
+	ms.workload="big-data" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="10/11/2016" 
+	wacn.date="" 
+	ms.author="larryfr"/>
 
 #Analyze flight delay data by using Hive in HDInsight
 
@@ -33,7 +38,7 @@ Before you begin this tutorial, you must have the following:
 
 - __Azure CLI__. If you have not installed the Azure CLI, see [Install and Configure the Azure CLI](/documentation/articles/xplat-cli-install/) for more steps.
 
-	[AZURE.INCLUDE [use-latest-version](../includes/hdinsight-use-latest-cli.md)]
+	[AZURE.INCLUDE [use-latest-version](../../includes/hdinsight-use-latest-cli.md)]
 
 
 ##Download the flight data
@@ -41,11 +46,11 @@ Before you begin this tutorial, you must have the following:
 1. Browse to [Research and Innovative Technology Administration, Bureau of Transportation Statistics][rita-website].
 2. On the page, select the following values:
 
-	| Name | Value |
+    | Name | Value |
     | ---- | ---- |
-	| Filter Year | 2013 |
-	| Filter Period | January |
-	| Fields | Year, FlightDate, UniqueCarrier, Carrier, FlightNum, OriginAirportID, Origin, OriginCityName, OriginState, DestAirportID, Dest, DestCityName, DestState, DepDelayMinutes, ArrDelay, ArrDelayMinutes, CarrierDelay, WeatherDelay, NASDelay, SecurityDelay, LateAircraftDelay. Clear all other fields |
+    | Filter Year | 2013 |
+    | Filter Period | January |
+    | Fields | Year, FlightDate, UniqueCarrier, Carrier, FlightNum, OriginAirportID, Origin, OriginCityName, OriginState, DestAirportID, Dest, DestCityName, DestState, DepDelayMinutes, ArrDelay, ArrDelayMinutes, CarrierDelay, WeatherDelay, NASDelay, SecurityDelay, LateAircraftDelay. Clear all other fields |
 
 3. Click **Download**. 
 
@@ -157,7 +162,9 @@ Use the following steps to import data from the CSV file into a Hive table named
 	> [AZURE.NOTE] In this example, `localhost` is used since you are connected to the head node of the HDInsight cluster, which is where HiveServer2 is running.
 
 4. Use the following command to open an interactive Beeline session:
+
         beeline -u 'jdbc:hive2://localhost:10001/;transportMode=http' -n admin
+
 5. When you receive the `jdbc:hive2://localhost:10001/>` prompt, use the following to retrieve data from the imported flight delay data.
 
 		INSERT OVERWRITE DIRECTORY '/tutorials/flightdelays/output'
@@ -171,20 +178,12 @@ Use the following steps to import data from the CSV file into a Hive table named
 	This will retrieve a list of cities that experienced weather delays, along with the average delay time, and save it to `/tutorials/flightdelays/output`. Later, Sqoop will read the data from this location and export it to Azure SQL Database.
 
 6. To exit Beeline, enter `!quit` at the prompt.
+
 ## Create a SQL Database
 
 If you already have a SQL Database, you must get the server name. You can find this in the [Azure Portal](https://portal.azure.cn) by selecting __SQL Databases__, and then filtering on the name of the database you wish to use. The server name is listed in the __SERVER__ column.
 
 If you do not already have a SQL Database, use the information in [SQL Database tutorial: Create a SQL database in minutes](/documentation/articles/sql-database-get-started/) to create one. You will need to save the server name used for the database.
-
-
-
-
-
-
-
-
-
 
 ##Create a SQL Database table
 
@@ -233,8 +232,6 @@ If you do not already have a SQL Database, use the information in [SQL Database 
 	
 ##Export data with Sqoop
 
-
-
 2. Use the following command to verify that Sqoop can see your SQL Database:
 
 		sqoop list-databases --connect jdbc:sqlserver://<serverName>.database.chinacloudapi.cn:1433 --username <adminLogin> --password <adminPassword>
@@ -243,9 +240,9 @@ If you do not already have a SQL Database, use the information in [SQL Database 
 
 3. Use the following command to export data from hivesampletable to the mobiledata table:
 
-		sqoop export --connect 'jdbc:sqlserver://<serverName>.database.chinacloudapi.cn:1433;database=<databaseName>' --username <adminLogin> --password <adminPassword> --table 'delays' --export-dir 'wasb:///tutorials/flightdelays/output' --fields-terminated-by '\t' -m 1
+		sqoop export --connect 'jdbc:sqlserver://<serverName>.database.chinacloudapi.cn:1433;database=<databaseName>' --username <adminLogin> --password <adminPassword> --table 'delays' --export-dir 'wasbs:///tutorials/flightdelays/output' --fields-terminated-by '\t' -m 1
 
-	This instructs Sqoop to connect to SQL Database, to the database containing the delays table, and export data from the wasb:///tutorials/flightdelays/output (where we stored the output of the hive query earlier,) to the delays table.
+	This instructs Sqoop to connect to SQL Database, to the database containing the delays table, and export data from the wasbs:///tutorials/flightdelays/output (where we stored the output of the hive query earlier,) to the delays table.
 
 4. After the command completes, use the following to connect to the database using TSQL:
 
@@ -259,6 +256,7 @@ If you do not already have a SQL Database, use the information in [SQL Database 
 	You should see a listing of data in the table. Type `exit` to exit the tsql utility.
 
 ##<a id="nextsteps"></a> Next steps
+
 Now you understand how to upload a file to Azure Blob storage, how to populate a Hive table by using the data from Azure Blob storage, how to run Hive queries, and how to use Sqoop to export data from HDFS to an Azure SQL database. To learn more, see the following articles:
 
 * [Getting started with HDInsight][hdinsight-get-started]

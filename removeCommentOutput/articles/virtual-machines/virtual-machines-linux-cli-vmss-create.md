@@ -11,8 +11,13 @@
 
 <tags
 	ms.service="virtual-machine-linux"
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-linux"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="03/24/2016"
-	wacn.date=""/>
+	wacn.date=""
+	ms.author="gatneil"/>
 
 # What are virtual machine scale sets?
 
@@ -32,7 +37,7 @@ Cons:
 
 ## Quick-create using Azure CLI
 
-[AZURE.INCLUDE [cli-vmss-quick-create](../includes/virtual-machines-linux-cli-vmss-quick-create-include.md)]
+[AZURE.INCLUDE [cli-vmss-quick-create](../../includes/virtual-machines-linux-cli-vmss-quick-create-include.md)]
 
 ## Next steps
 

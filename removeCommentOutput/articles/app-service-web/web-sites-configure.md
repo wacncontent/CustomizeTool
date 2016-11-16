@@ -1,27 +1,32 @@
 <properties 
-	pageTitle="Configure web apps in Azure" 
-	description="How to configure a web app in Azure" 
+	pageTitle="Configure web apps in Azure App Service" 
+	description="How to configure a web app in Azure App Services" 
 	services="app-service\web" 
 	documentationCenter="" 
 	authors="rmcmurray" 
 	manager="wpickett" 
 	editor=""/>
 
-<tags
-	ms.service="app-service"
-	ms.date="06/02/2016"
-	wacn.date=""/>
+<tags 
+	ms.service="app-service" 
+	ms.workload="na" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="08/11/2016" 
+	wacn.date="" 
+	ms.author="robmcm"/>
 
-# Configure web apps in Azure #
+# Configure web apps in Azure App Service #
 
 This topic explains how to configure a web app using the [Azure Portal].
 
-[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)] 
+[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)] 
 
 ## Application settings
 
 1. In the [Azure Portal], open the blade for the web app.
-2. Click **Configure**.
+2. Click **All Settings**.
 3. Click **Application Settings**.
 
 ![Application Settings][configure01]
@@ -49,7 +54,7 @@ For technical reasons, enabling Java for your app disables the .NET, PHP, and Py
 
 **Managed Pipeline Version**. Sets the IIS [pipeline mode]. Leave this set to Integrated (the default) unless you have a legacy app that requires an older version of IIS.
 
-**Auto Swap**. If you enable Auto Swap for a deployment slot, Azure will automatically swap the web app into production when you push an update to that slot. For more information, see [Deploy to staging slots for web apps in Azure] (web-sites-staged-publishing.md).
+**Auto Swap**. If you enable Auto Swap for a deployment slot, App Service will automatically swap the web app into production when you push an update to that slot. For more information, see [Deploy to staging slots for web apps in Azure App Service] (web-sites-staged-publishing.md).
 
 ### Debugging
 
@@ -136,20 +141,21 @@ The full FTP user name is "app\username" where *app* is the name of your web app
 
 In Basic or Standard mode, you can upload SSL certificates for a custom domain. For more information, see [Enable HTTPS for a web app]. 
 
-To view your uploaded certificates, click **Configure** > **Custom domains and SSL**.
+To view your uploaded certificates, click **All Settings** > **Custom domains and SSL**.
 
 ### Domain names
 
-Add custom domain names for your web app. For more information, see [Configure a custom domain name for a web app in Azure].
+Add custom domain names for your web app. For more information, see [Configure a custom domain name for a web app in Azure App Service].
 
-To view your domain names, click **Configure** > **Custom domains and SSL**.
+To view your domain names, click **All Settings** > **Custom domains and SSL**.
 
 ### Deployments
 
-- Set up continuous deployment. See [Using Git to deploy Web Apps in Azure]
-- Deployment slots. See [Deploy to Staging Environments for Web Apps in Azure].
+- Set up continuous deployment. See [Using Git to deploy Web Apps in Azure App Service](/documentation/articles/web-sites-deploy/).
+- Deployment slots. See [Deploy to Staging Environments for Web Apps in Azure App Service].
 
-To view your deployment slots, click **Configure** > **Deployment slots**.
+
+To view your deployment slots, click **All Settings** > **Deployment slots**.
 
 ### Monitoring
 
@@ -157,29 +163,28 @@ In Basic or Standard mode, you can  test the availability of HTTP or HTTPS endpo
 
 For more information, see [How to: Monitor web endpoint status].
 
->[AZURE.NOTE] If you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App], where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.
+>[AZURE.NOTE] If you want to get started with Azure App Service before signing up for an Azure account, go to [Try App Service], where you can immediately create a short-lived starter web app in App Service. No credit cards required; no commitments.
 
 ## Next steps
 
-- [Configure a custom domain name in Azure Web App]
-- [Enable HTTPS for an app in Azure Web App]
-- [Scale a web app in Azure]
-- [Monitoring basics for Web Apps in Azure]
+- [Configure a custom domain name in Azure App Service]
+- [Enable HTTPS for an app in Azure App Service]
+- [Scale a web app in Azure App Service]
+- [Monitoring basics for Web Apps in Azure App Service]
 
 <!-- URL List -->
 
 [ASP.NET SignalR]: http://www.asp.net/signalr
 [Azure Portal]: https://portal.azure.cn/
-[Configure a custom domain name in Azure Web App]: /documentation/articles/web-sites-custom-domain-name/
-[Deploy to Staging Environments for Web Apps in Azure]: /documentation/articles/web-sites-staged-publishing/
-[Enable HTTPS for an app in Azure Web App]: /documentation/articles/web-sites-configure-ssl-certificate/
+[Configure a custom domain name in Azure App Service]: /documentation/articles/web-sites-custom-domain-name/
+[Deploy to Staging Environments for Web Apps in Azure App Service]: /documentation/articles/web-sites-staged-publishing/
+[Enable HTTPS for an app in Azure App Service]: /documentation/articles/web-sites-configure-ssl-certificate/
 [How to: Monitor web endpoint status]: http://go.microsoft.com/fwLink/?LinkID=279906
-[Monitoring basics for Web Apps in Azure]: /documentation/articles/web-sites-monitor/
+[Monitoring basics for Web Apps in Azure App Service]: /documentation/articles/web-sites-monitor/
 [pipeline mode]: http://www.iis.net/learn/get-started/introduction-to-iis/introduction-to-iis-architecture#Application
-[Scale a web app in Azure]: /documentation/articles/web-sites-scale/
+[Scale a web app in Azure App Service]: /documentation/articles/web-sites-scale/
 [socket.io]: /documentation/articles/web-sites-nodejs-chat-app-socketio/
-[Try Azure Web App]: https://tryappservice.azure.com/
-[Using Git to deploy Web Apps in Azure]: /documentation/articles/web-sites-publish-source-control/
+[Try App Service]: https://tryappservice.azure.com/
 
 <!-- IMG List -->
 

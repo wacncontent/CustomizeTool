@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Flighting deployment (beta testing) in Azure Web App"
-	description="Learn how to flight new features in your app or beta test your updates in this end-to-end tutorial. It brings together Azure features like continuous publishing, slots, traffic routing, and Application Insights integration."
+	pageTitle="Flighting deployment (beta testing) in Azure App Service"
+	description="Learn how to flight new features in your app or beta test your updates in this end-to-end tutorial. It brings together App Service features like continuous publishing, slots, traffic routing, and Application Insights integration."
 	services="app-service\web"
 	documentationCenter=""
 	authors="cephalin"
@@ -9,11 +9,16 @@
 
 <tags
 	ms.service="app-service-web"
+	ms.workload="web"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="02/02/2016"
-	wacn.date=""/>
-# Flighting deployment (beta testing) in Azure
+	wacn.date=""
+	ms.author="cephalin"/>
+# Flighting deployment (beta testing) in Azure App Service
 
-This tutorial shows you how to do *flighting deployments* by integrating the various capabilities of [Azure Web App](/documentation/services/web-sites/) and [Azure Application Insights](/home/features/application-insights/). 
+This tutorial shows you how to do *flighting deployments* by integrating the various capabilities of [Azure App Service](/documentation/articles/app-service-changes-existing-services/) and [Azure Application Insights](/home/features/application-insights/). 
 
 *Flighting* is a deployment process that validates a new feature or change with a limited number of real customers, and is a major testing in production 
 scenario. It is akin to beta testing and is sometimes known as "controlled test flight". Many large enterprises with a web presence use this approach to 
@@ -39,7 +44,7 @@ with Application Insights, but you can use New Relic or other technologies that 
 
 ## What you will do
 
-In this tutorial, you will learn how to bring the following scenarios together to test your Azure Web App in production:
+In this tutorial, you will learn how to bring the following scenarios together to test your App Service app in production:
 
 - [Route production traffic](/documentation/articles/app-service-web-test-in-production-get-start/) to your beta app
 - [Instrument your app](/documentation/articles/app-insights-web-track-usage/) to obtain useful metrics
@@ -62,13 +67,13 @@ In this tutorial, you will learn how to bring the following scenarios together t
 > + You can [open an Azure account for free](/pricing/1rmb-trial/) - You get credits you can use to try out paid Azure services, and even after they're used up you can keep the account and use free Azure services, such as Web Apps.
 > + You can [activate Visual Studio subscriber benefits](/pricing/member-offers/msdn-benefits-details/) - Your Visual Studio subscription gives you credits every month that you can use for paid Azure services.
 >
-> If you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.
+> If you want to get started with Azure App Service before signing up for an Azure account, go to [Try App Service](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in App Service. No credit cards required; no commitments.
 
 ## Set up your production web app
 
 >[AZURE.NOTE] The script used in this tutorial will automatically configure continuous publishing from your GitHub repository. This requires that your GitHub credentials are already stored in Azure, otherwise the scripted deployment will fail when attempting to configure source control settings for the web apps.
 >
->To store your GitHub credentials in Azure, create a web app in the [Azure Portal](https://portal.azure.cn/) and [configure GitHub deployment](/documentation/articles/web-sites-publish-source-control/#Step7). You only need to do this once.
+>To store your GitHub credentials in Azure, create a web app in the [Azure Portal](https://portal.azure.cn/) and [configure GitHub deployment](/documentation/articles/app-service-continuous-deployment/#Step7). You only need to do this once.
 
 In a typical DevOps scenario, you have an application that's running live in Azure, and you want to make changes to it through continuous publishing. In this scenario, you will deploy to production a template that you have developed and tested.
 
@@ -292,7 +297,7 @@ Again, for completeness you will set up the server-side app. Unlike the client a
 
     Once the script finishes, all your resources in the original resource group are retained, but a new slot named "beta" is created in it with the same configuration as the "Staging" slot that was created in the beginning.
 
-    >[AZURE.NOTE] This method of creating different deployment environments is different from the method in [Agile software development with Azure Web App](/documentation/articles/app-service-agile-software-development/). Here, you create deployment environments with deployment slots, where as there you create deployment environments with resource groups. Managing deployment environments with resource groups enables you to keep the production environment off-limits to developers, but it's not easy to do testing in production, which you can do easily with slots.
+    >[AZURE.NOTE] This method of creating different deployment environments is different from the method in [Agile software development with Azure App Service](/documentation/articles/app-service-agile-software-development/). Here, you create deployment environments with deployment slots, where as there you create deployment environments with resource groups. Managing deployment environments with resource groups enables you to keep the production environment off-limits to developers, but it's not easy to do testing in production, which you can do easily with slots.
 
 If you wish, you can also create an alpha app by running
 
@@ -375,12 +380,12 @@ You're now ready to move your update to production. What's great is that now you
 
 ## Summary ##
 
-Azure makes it easy for small- to medium-sized businesses to test their customer-facing apps in production, something that has been traditionally done in big enterprises. Hopefully, this tutorial has given you the knowledge you need to bring together Azure and Application Insights to make possible flighting deployment, and even other test-in-production scenarios, in your DevOps world. 
+Azure App Service makes it easy for small- to medium-sized businesses to test their customer-facing apps in production, something that has been traditionally done in big enterprises. Hopefully, this tutorial has given you the knowledge you need to bring together App Service and Application Insights to make possible flighting deployment, and even other test-in-production scenarios, in your DevOps world. 
 
 ## More resources ##
 
--   [Agile software development with Azure Web App](/documentation/articles/app-service-agile-software-development/)
--   [Set up staging environments for web apps in Azure](/documentation/articles/web-sites-staged-publishing/)
+-   [Agile software development with Azure App Service](/documentation/articles/app-service-agile-software-development/)
+-   [Set up staging environments for web apps in Azure App Service](/documentation/articles/web-sites-staged-publishing/)
 -	[Deploy a complex application predictably in Azure](/documentation/articles/app-service-deploy-complex-application-predictably/)
 -	[Authoring Azure Resource Manager Templates](/documentation/articles/resource-group-authoring-templates/)
 -	[JSONLint - The JSON Validator](http://jsonlint.com/)

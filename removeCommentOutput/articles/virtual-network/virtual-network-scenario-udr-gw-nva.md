@@ -3,13 +3,18 @@
    description="Learn how to deploy virtual appliances and UDR to create a multi-tier application environment in Azure"
    services="virtual-network"
    documentationCenter="na"
-   authors="telmosampaio"
-   manager="christb"
+   authors="jimdial"
+   manager="carmonm"
    editor="tysonn" />
-<tags
-	ms.service="virtual-network"
-	ms.date="05/05/2016"
-	wacn.date=""/>
+<tags 
+   ms.service="virtual-network"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="05/05/2016"
+   wacn.date=""
+   ms.author="jdial" />
 
 # Virtual appliance scenario
 
@@ -60,12 +65,12 @@ In this example there is a subscription that contains the following:
 	- **GatewaySubnet**. Azure hybrid connection subnet required for ExpressRoute and VPN Gateway to provide connectivity between Azure VNets and other networks. 
 - There are 3 firewall virtual appliances in the **azurevnet** network. 
 	- **AZF1**. External firewall exposed to the public Internet by using a public IP address resource in Azure. You need to ensure you have a template from the Marketplace, or directly from your appliance vendor, that provisions a 3-NIC virtual appliance.
-	- **AZF2**. Internal firewall used to contrl traffic between **azsn2** and **azsn3**. This is also a 3-NIC virtual appliance.
+	- **AZF2**. Internal firewall used to control traffic between **azsn2** and **azsn3**. This is also a 3-NIC virtual appliance.
 	- **AZF3**. Management firewall accessible to administrators from the on-premises datacenter, and connected to a management subnet used to manage all firewall appliances. You can find 2-NIC virtual appliance templates in the Marketplace, or request one directly from your appliance vendor.
 
 ## User Defined Routing (UDR)
 
-Each subnet in Azure can be linked to a UDR table used to define how traffic initiated in that subnet is routed. If no UDRs are defined, Azure uses default routes to allow traffic to flow from one subnet to another. To better understand UDRs, visit What are User Defined Routes and IP Forwarding.
+Each subnet in Azure can be linked to a UDR table used to define how traffic initiated in that subnet is routed. If no UDRs are defined, Azure uses default routes to allow traffic to flow from one subnet to another. To better understand UDRs, visit [What are User Defined Routes and IP Forwarding](/documentation/articles/virtual-networks-udr-overview/#ip-forwarding).
 
 To ensure communication is done through the right firewall appliance, based on the last requirement above, you need to create the following route table containing UDRs in **azurevnet**.
 

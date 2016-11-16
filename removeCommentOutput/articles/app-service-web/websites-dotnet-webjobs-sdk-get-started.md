@@ -1,6 +1,6 @@
 <properties
-	pageTitle="Create a .NET WebJob in Azure | Azure"
-	description="Create a multi-tier app using ASP.NET MVC and Azure. The front end runs in a web app in Azure, and the backend runs as a WebJob. The app uses Entity Framework, SQL Database, and Azure storage queues and blobs."
+	pageTitle="Create a .NET WebJob in Azure App Service | Azure"
+	description="Create a multi-tier app using ASP.NET MVC and Azure. The front end runs in a web app in Azure App Service, and the backend runs as a WebJob. The app uses Entity Framework, SQL Database, and Azure storage queues and blobs."
 	services="app-service"
 	documentationCenter=".net"
 	authors="tdykstra"
@@ -9,10 +9,15 @@
 
 <tags
 	ms.service="app-service"
+	ms.workload="na"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="06/01/2016"
-	wacn.date=""/>
+	wacn.date=""
+	ms.author="tdykstra"/>
 
-# Create a .NET WebJob in Azure
+# Create a .NET WebJob in Azure App Service
 
 This tutorial shows how to write code for a simple multi-tier ASP.NET MVC 5 application that uses the [WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk/).
 
@@ -22,7 +27,7 @@ The sample application is an advertising bulletin board. Users can upload images
 
 ![Ad list](./media/websites-dotnet-webjobs-sdk-get-started/list.png)
 
-This sample application works with [Azure queues](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/queue-centric-work-pattern) and [Azure blobs](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/unstructured-blob-storage). The tutorial shows how to deploy the application to [Azure Web App](/documentation/services/web-sites/) and [Azure SQL Database](/documentation/articles/sql-database-technical-overview/).
+This sample application works with [Azure queues](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/queue-centric-work-pattern) and [Azure blobs](http://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/unstructured-blob-storage). The tutorial shows how to deploy the application to [Azure App Service](/documentation/articles/app-service-changes-existing-services/) and [Azure SQL Database](/documentation/articles/sql-database-technical-overview/).
 
 ## <a id="prerequisites"></a>Prerequisites
 
@@ -38,7 +43,7 @@ The tutorial can be used with Visual Studio 2015, but before you run the applica
   >
   > + You can [activate MSDN subscriber benefits](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F): Your MSDN subscription gives you credits every month that you can use for paid Azure services.
   >
-  >If you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.
+  >If you want to get started with Azure App Service before signing up for an Azure account, go to [Try App Service](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in App Service. No credit cards required; no commitments.
 
 ## <a id="learn"></a>What you'll learn
 
@@ -47,7 +52,7 @@ The tutorial shows how to do the following tasks:
 * Enable your machine for Azure development by installing the Azure SDK.
 * Create a Console Application project that automatically deploys as an Azure WebJob when you deploy the associated web project.
 * Test a WebJobs SDK backend locally on the development computer.
-* Publish an application with a WebJobs backend to a web app in Azure.
+* Publish an application with a WebJobs backend to a web app in App Service.
 * Upload files and store them in the Azure Blob service.
 * Use the Azure WebJobs SDK to work with Azure Storage queues and blobs.
 
@@ -63,11 +68,13 @@ When a user uploads an image, the web app stores the image in an [Azure blob](ht
 
 ![Contoso Ads architecture](./media/websites-dotnet-webjobs-sdk-get-started/apparchitecture.png)
 
-[AZURE.INCLUDE [install-sdk](../includes/install-sdk-2015-2013.md)]
+[AZURE.INCLUDE [install-sdk](../../includes/install-sdk-2015-2013.md)]
 
 The tutorial instructions apply to Azure SDK for .NET 2.7.1 or later.
 
 ## <a id="storage"></a>Create an Azure Storage account
+
+>[AZURE.NOTE] You need to configure your Visual Studio Environment, in order to use Azure China in Visual Studio 2015. For more information, see [developer differerences](/documentation/articles/developerdifferences/).
 
 An Azure storage account provides resources for storing queue and blob data in the cloud. It's also used by the WebJobs SDK to store logging data for the dashboard.
 
@@ -206,7 +213,7 @@ You've been running the application on your local computer, and it's using a SQL
 
 You'll do the following steps to run the application in the cloud:
 
-* Deploy to Web Apps. Visual Studio automatically creates a new web app in Azure and a SQL Database instance.
+* Deploy to Web Apps. Visual Studio automatically creates a new web app in App Service and a SQL Database instance.
 * Configure the web app to use your Azure SQL database and storage account.
 
 After you've created some ads while running in the cloud, you'll view the WebJobs SDK dashboard to see the rich monitoring features it has to offer.
@@ -301,9 +308,9 @@ It's a security best practice to [avoid putting sensitive information such as co
 
 In this section you use **Server Explorer** to set connection string values in Azure.
 
-7. In **Server Explorer**, right-click your web app under **Azure > Azure > {your resource group}**, and then click **View Settings**.
+7. In **Server Explorer**, right-click your web app under **Azure > App Service > {your resource group}**, and then click **View Settings**.
 
-	The **App Services** window opens on the **Configuration** tab.
+	The **Azure Web App** window opens on the **Configuration** tab.
 
 9. Change the name of the DefaultConnection connection string to ContosoAdsContext.
 
@@ -321,7 +328,7 @@ In this section you use **Server Explorer** to set connection string values in A
 
 12. After the web app stops, right-click the web app again, and then click **Start**.
 
-	The WebJob automatically starts when you publish, but it stops when you make a configuration change. To restart it you can either restart the web app or restart the WebJob in the [Azure Portal](https://manage.windowsazure.cn/). It's generally recommended to restart the web app after a configuration change.
+	The WebJob automatically starts when you publish, but it stops when you make a configuration change. To restart it you can either restart the web app or restart the WebJob in the [Azure Portal](/documentation/articles/app-service-web-app-azure-portal/). It's generally recommended to restart the web app after a configuration change.
 
 9. Refresh the browser window that has the web app URL in its address bar.
 
@@ -598,10 +605,10 @@ Then it gets a reference to the *images* blob container, creates the container i
 		        });
 		}
 
-Similar code gets a reference to the *blobnamerequest* queue and creates a new queue. In this case no permissions change is needed. The [ResolveBlobName](#resolveblobname) section later in the tutorial explains why the queue that the web application writes to is used just for getting blob names and not for generating thumbnails.
+Similar code gets a reference to the *thumbnailrequest* queue and creates a new queue. In this case no permissions change is needed. 
 
 		CloudQueueClient queueClient = storageAccount.CreateCloudQueueClient();
-		var imagesQueue = queueClient.GetQueueReference("blobnamerequest");
+		var imagesQueue = queueClient.GetQueueReference("thumbnailrequest");
 		imagesQueue.CreateIfNotExists();
 
 ### ContosoAdsWeb - _Layout.cshtml

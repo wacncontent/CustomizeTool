@@ -3,15 +3,20 @@
 	description="How to set up Key Vault for use with an Azure Resource Manager virtual machine."
 	services="virtual-machines-linux"
 	documentationCenter=""
-	authors="singhkay"
-	manager="drewm"
+	authors="singhkays"
+	manager="timlt"
 	editor=""
 	tags="azure-resource-manager"/>
 
 <tags
 	ms.service="virtual-machines-linux"
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-linux"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="05/31/2016"
-	wacn.date=""/>
+	wacn.date=""
+	ms.author="singhkay"/>
 
 # Set up Key Vault for virtual machines in Azure Resource Manager
 
@@ -43,6 +48,6 @@ When you use a template, you need to set the `enabledForDeployment` property to 
       }
     }
 
-For other options that you can configure when you create a key vault by using templates, see [Create a key vault](https://github.com/Azure/azure-quickstart-templates/tree/master/101-key-vault-create).
+For other options that you can configure when you create a key vault by using templates, see [Create a key vault](https://github.com/Azure/azure-quickstart-templates/tree/master/101-key-vault-create/).
 
->[AZURE.NOTE] Templates you downloaded from the GitHub Repo "azure-quickstart-templates" must be modified in order to fit in the Azure China Cloud Environment. For example, replace some endpoints -- "blob.core.chinacloudapi.cn" by "blob.core.chinacloudapi.cn", "chinacloudapp.cn" by "chinacloudapp.cn"; change some unsupported VM images; and, changes some unsupported VM sizes.
+>[AZURE.NOTE] Templates you downloaded from the GitHub Repo "azure-quickstart-templates" must be modified in order to fit in the Azure China Cloud Environment. For example, replace some endpoints -- "blob.core.windows.net" by "blob.core.chinacloudapi.cn", "cloudapp.azure.com" by "chinacloudapp.cn"; change some unsupported VM images; and, changes some unsupported VM sizes.

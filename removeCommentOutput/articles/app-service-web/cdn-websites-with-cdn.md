@@ -1,51 +1,58 @@
 <properties 
-	pageTitle="Use Azure CDN in Azure Web App" 
-	description="A tutorial that teaches you how to deploy a web app to Azure that serves content from an integrated Azure CDN endpoint" 
+	pageTitle="Use Azure CDN in Azure App Service" 
+	description="A tutorial that teaches you how to deploy a web app to Azure App Service that serves content from an integrated Azure CDN endpoint" 
 	services="app-service\web,cdn" 
 	documentationCenter=".net" 
 	authors="cephalin" 
 	manager="wpickett" 
 	editor="jimbe"/>
 
-<tags
-	ms.service="app-service"
-	ms.date="07/01/2016"
-	wacn.date=""/>
+<tags 
+	ms.service="app-service" 
+	ms.workload="tbd" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="dotnet" 
+	ms.topic="article" 
+	ms.date="07/01/2016" 
+	wacn.date="" 
+	ms.author="cephalin"/>
 
 
-# Use Azure CDN in Azure
+# Use Azure CDN in Azure App Service
 
-[Azure Web App](/documentation/services/web-sites/) can be integrated with [Azure CDN](/home/features/cdn/), adding to the global scaling capabilities inherent in [Azure Web Apps](/documentation/services/web-sites/) by serving your web app content globally from server nodes near your customers (an updated list of all current node locations can be found [here](http://msdn.microsoft.com/zh-cn/library/azure/gg680302.aspx)). In scenarios like serving static images, this integration can dramatically increase the performance of your Azure Web Apps and significantly improves your web app's user experience worldwide. 
+[App Service](/documentation/articles/app-service-changes-existing-services/) can be integrated with [Azure CDN](/home/features/cdn/), adding to the global scaling capabilities inherent in [App Service Web Apps](/documentation/articles/app-service-changes-existing-services/) by serving your web app content globally from server nodes near your customers (an updated list of all current node locations can be found [here](http://msdn.microsoft.com/zh-cn/library/azure/gg680302.aspx)). In scenarios like serving static images, this integration can dramatically increase the performance of your Azure App Service Web Apps and significantly improves your web app's user experience worldwide. 
 
 Integrating Web Apps with Azure CDN gives you the following advantages:
 
-- Integrate content deployment (images, scripts, and stylesheets) as part of your web app's [continuous deployment](/documentation/articles/web-sites-publish-source-control/) process
-- Easily upgrade the NuGet packages in your web app in Azure, such as jQuery or Bootstrap versions 
+- Integrate content deployment (images, scripts, and stylesheets) as part of your web app's [continuous deployment](/documentation/articles/app-service-continuous-deployment/) process
+- Easily upgrade the NuGet packages in your web app in Azure App Service, such as jQuery or Bootstrap versions 
 - Manage your Web application and your CDN-served content from the same Visual Studio interface
 - Integrate ASP.NET bundling and minification with Azure CDN
 
-[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)] 
+[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)] 
 
 ## What you will build ##
 
-You will deploy a web app to Azure using the default ASP.NET MVC template in Visual Studio, add code to serve content from an integrated Azure CDN, such as an image, controller action results, and the default JavaScript and CSS files, and also write code to configure the fallback mechanism for bundles served in the event that the CDN is offline.
+You will deploy a web app to Azure App Service using the default ASP.NET MVC template in Visual Studio, add code to serve content from an integrated Azure CDN, such as an image, controller action results, and the default JavaScript and CSS files, and also write code to configure the fallback mechanism for bundles served in the event that the CDN is offline.
 
 ## What you will need ##
 
 This tutorial has the following prerequisites:
 
 -	An active [Azure account](/account/)
--	Visual Studio 2015 with the [Azure SDK for .NET](https://www.microsoft.com/web/handlers/webpi.ashx/getinstaller/VWDOrVs2013AzurePack.appids). If you use Visual Studio, the steps may vary.
+-	Visual Studio 2015 with the [Azure SDK for .NET](http://go.microsoft.com/fwlink/p/?linkid=323510&clcid=0x409). If you use Visual Studio, the steps may vary.
 
 > [AZURE.NOTE] You need an Azure account to complete this tutorial:
 > + You can [open an Azure account for free](/pricing/1rmb-trial/) - You get credits you can use to try out paid Azure services, and even after they're used up you can keep the account and use free Azure services, such as Web Apps.
 > + You can [activate Visual Studio subscriber benefits](/pricing/member-offers/msdn-benefits-details/) - Your Visual Studio subscription gives you credits every month that you can use for paid Azure services.
 >
-> If you want to get started with Azure before signing up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure. No credit cards required; no commitments.
+> If you want to get started with Azure App Service before signing up for an Azure account, go to [Try App Service](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in App Service. No credit cards required; no commitments.
 
 ## Deploy a web app to Azure with an integrated CDN endpoint ##
 
-In this section, you will deploy the default ASP.NET MVC application template in Visual Studio 2015 to Azure Web App, and then integrate it with a new CDN endpoint. Follow the instructions below:
+>[AZURE.NOTE] You need to configure your Visual Studio Environment, in order to use Azure China in Visual Studio 2015. For more information, see [developer differerences](/documentation/articles/developerdifferences/).
+
+In this section, you will deploy the default ASP.NET MVC application template in Visual Studio 2015 to App Service, and then integrate it with a new CDN endpoint. Follow the instructions below:
 
 1. In Visual Studio 2015, create a new ASP.NET web application from the menu bar by going to **File > New > Project > Web > ASP.NET Web Application**. Give it a name and click **OK**.
 
@@ -67,7 +74,7 @@ In this section, you will deploy the default ASP.NET MVC application template in
 
 	![](./media/cdn-websites-with-cdn/5-create-website.png)
 
-9. Once your ASP.NET application is created, publish it to Azure in the Azure Activity pane by clicking **Publish `<app name>` to this Web App now**. Click **Publish** to complete the process.
+9. Once your ASP.NET application is created, publish it to Azure in the Azure App Service Activity pane by clicking **Publish `<app name>` to this Web App now**. Click **Publish** to complete the process.
 
 	![](./media/cdn-websites-with-cdn/6-publish-website.png)
 

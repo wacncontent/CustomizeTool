@@ -9,8 +9,13 @@
 
 <tags
 	ms.service="cache"
-	ms.date="05/31/2016"
-	wacn.date=""/>
+	ms.devlang="python"
+	ms.topic="hero-article"
+	ms.tgt_pltfrm="cache-redis"
+	ms.workload="tbd"
+	ms.date="08/16/2016"
+	wacn.date=""
+	ms.author="sdanie"/>
 
 # How to use Azure Redis Cache with Python
 
@@ -31,18 +36,18 @@ Install [redis-py](https://github.com/andymccurdy/redis-py).
 
 ## Create a Redis cache on Azure
 
-[AZURE.INCLUDE [redis-cache-create](../includes/redis-cache-create.md)]
+[AZURE.INCLUDE [redis-cache-create](../../includes/redis-cache-create.md)]
 
 ## Retrieve the host name and access keys
 
-[AZURE.INCLUDE [redis-cache-create](../includes/redis-cache-access-keys.md)]
+[AZURE.INCLUDE [redis-cache-create](../../includes/redis-cache-access-keys.md)]
 
 
 ## Enable the non-SSL endpoint
 
 Some Redis clients don't support SSL, and by default the [non-SSL port is disabled for new Azure Redis Cache instances](/documentation/articles/cache-configure/#access-ports). At the time of this writing, the [redis-py](https://github.com/andymccurdy/redis-py) client doesn't support SSL. 
 
-[AZURE.INCLUDE [redis-cache-create](../includes/redis-cache-non-ssl-port.md)]
+[AZURE.INCLUDE [redis-cache-create](../../includes/redis-cache-non-ssl-port.md)]
 
 
 ## Add something to the cache and retrieve it

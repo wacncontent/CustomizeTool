@@ -9,8 +9,13 @@
 	tags="azure-service-management" />
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="07/15/2016"
-	wacn.date=""/>
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="vm-windows-sql-server"
+	ms.workload="infrastructure-services"
+	ms.date="10/07/2016"
+	wacn.date=""
+	ms.author="jroth" />
 
 # Provision a SQL Server virtual machine using Azure PowerShell (Classic)
 
@@ -18,15 +23,13 @@
 
 This article provides steps for how to create a SQL Server virtual machine in Azure by using the PowerShell cmdlets.
 
-## Install and configure PowerShell
+### Install and configure PowerShell:
 
 1. If you do not have an Azure account, visit [Azure trial](/pricing/1rmb-trial/).
 
-2. [Install the latest Azure PowerShell cmdlets](/documentation/articles/powershell-install-configure/).
+2. [Download and install the latest Azure PowerShell commands](/documentation/articles/powershell-install-configure/).
 
-3. After installing, launch Windows PowerShell.
-
-4. Then connect PowerShell with your Azure subscription with the Add-AzureAccount command.
+3. Start Windows PowerShell, and connect it to your Azure subscription with the **Add-AzureAccount** command.
 
 		Add-AzureAccount
 
@@ -71,7 +74,7 @@ Your SQL Server Virtual Machine will be hosted in a cloud service that resides a
 
 		Get-AzureVMImage | where { $_.ImageFamily -like "SQL*" } | select ImageFamily -Unique | Sort-Object -Property ImageFamily
 
-1. When you find the  virtual machine image family, there could be multiple published images in this family. Use the following script to find the latest published virtual machine image name for your selected image family (such as **SQL Server 2014 SP1 Enterprise on Windows Server 2012 R2**):
+1. When you find the  virtual machine image family, there could be multiple published images in this family. Use the following script to find the latest published virtual machine image name for your selected image family (such as **SQL Server 2016 RTM Enterprise on Windows Server 2012 R2**):
 
 		$family="<ImageFamily value>"
 		$image=Get-AzureVMImage | where { $_.ImageFamily -eq $family } | sort PublishedDate -Descending | select -ExpandProperty ImageName -First 1
@@ -91,7 +94,7 @@ Finally, create the virtual machine with PowerShell:
 2. Specify the virtual machine name and a size. For more information about virtual machine sizes, see [Virtual Machine Sizes for Azure](/documentation/articles/virtual-machines-windows-sizes/).
 
 		$vmname="<machine name>"
-		$vmsize="<Specify a valid machine size>" # see the link to virtual machine sizes
+		$vmsize="<Specify one: Large, ExtraLarge, A5, A6, A7, A8, A9, or see the link to the other VM sizes>"
 		$vm1=New-AzureVMConfig -Name $vmname -InstanceSize $vmsize -ImageName $image
 
 3. Specify the local administrator account and password.
@@ -107,13 +110,13 @@ Finally, create the virtual machine with PowerShell:
 
 ## Example PowerShell script
 
-The following script provides and example of a complete script that creates a **SQL Server 2014 SP1 Enterprise on Windows Server 2012 R2** virtual machine. If you use this script, you must customize the initial variables based on the previous steps in this topic.
+The following script provides and example of a complete script that creates a **SQL Server 2016 RTM Enterprise on Windows Server 2012 R2** virtual machine. If you use this script, you must customize the initial variables based on the previous steps in this topic.
 
 	# Customize these variables based on your settings and requirements:
 	$dcLocation = "China East"
 	$subscr="mysubscription"
 	$staccount="mystorageaccount"
-	$family="SQL Server 2014 SP1 Enterprise on Windows Server 2012 R2"
+	$family="SQL Server 2016 RTM Enterprise on Windows Server 2012 R2"
 	$svcname = "mycloudservice"
 	$vmname="myvirtualmachine"
 	$vmsize="A5"
@@ -150,6 +153,7 @@ The following script provides and example of a complete script that creates a **
 
 1. In the documents directory, launch the RDP file. Connect with the administrator user name and password provided earlier (for example, if your user name was VMAdmin, specify "\VMAdmin" as the user and provide the password).
 
+		cd $documentspath
 		.\vm1.rdp
 
 ## Complete the configuration of the SQL Server Machine for remote access

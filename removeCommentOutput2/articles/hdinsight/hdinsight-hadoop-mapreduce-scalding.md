@@ -4,13 +4,18 @@
  services="hdinsight"
  documentationCenter=""
  authors="Blackmist"
- manager="paulettm"
+ manager="jhubbard"
  editor="cgronlun"
 	tags="azure-portal"/>
 <tags
-	ms.service="hdinsight"
-	ms.date="05/18/2016"
-	wacn.date=""/>
+ ms.service="hdinsight"
+ ms.devlang="na"
+ ms.topic="article"
+ ms.tgt_pltfrm="na"
+ ms.workload="big-data"
+ ms.date="08/02/2016"
+ wacn.date=""
+ ms.author="larryfr"/>
 
 # Develop Scalding MapReduce jobs with Apache Hadoop on HDInsight
 

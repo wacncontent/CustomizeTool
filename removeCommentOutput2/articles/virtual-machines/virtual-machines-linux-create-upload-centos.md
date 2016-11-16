@@ -10,15 +10,20 @@
 
 <tags
 	ms.service="virtual-machines-linux"
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-linux"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="05/09/2016"
-	wacn.date=""/>
+	wacn.date=""
+	ms.author="szarkos"/>
 
 # Prepare a CentOS-based virtual machine for Azure
 
-- [Prepare a CentOS 6.x virtual machine for Azure](#centos-6.x)
-- [Prepare a CentOS 7.0+ virtual machine for Azure](#centos-7.0+)
+- [Prepare a CentOS 6.x virtual machine for Azure](#centos-6x)
+- [Prepare a CentOS 7.0+ virtual machine for Azure](#centos-70)
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
 
 ## Prerequisites ##
 
@@ -40,7 +45,7 @@ This article assumes that you have already installed a CentOS (or similar deriva
 - All of the VHDs must have sizes that are multiples of 1 MB.
 
 
-## <a id="centos-6.x"> </a>CentOS 6.x ##
+## <a id="centos-6.x"></a>CentOS 6.x ##
 
 1. In Hyper-V Manager, select the virtual machine.
 
@@ -201,7 +206,7 @@ This article assumes that you have already installed a CentOS (or similar deriva
 ----------
 
 
-## <a id="centos-7.0+"> </a>CentOS 7.0+ ##
+## <a id="centos-7.0+"></a>CentOS 7.0+ ##
 
 **Changes in CentOS 7 (and similar derivatives)**
 

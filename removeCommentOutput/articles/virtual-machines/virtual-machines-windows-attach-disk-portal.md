@@ -10,8 +10,13 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="07/06/2016"
-	wacn.date=""/>
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-windows"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/27/2016"
+	wacn.date=""
+	ms.author="cynthn"/>
 
 # How to attach a data disk to a Windows VM in the Azure portal
 
@@ -23,7 +28,7 @@ This article shows you how to attach both new and existing disks to a Windows vi
 - For a new disk, you don't need to create it first because Azure creates it when you attach it.
 - For an existing disk, the .vhd file must be available in an Azure storage account. You can use a .vhd that's already there, if it's not attached to another virtual machine, or upload your own .vhd file to the storage account.
 
-[AZURE.INCLUDE [virtual-machines-common-attach-disk-portal](../includes/virtual-machines-common-attach-disk-portal.md)]
+[AZURE.INCLUDE [virtual-machines-common-attach-disk-portal](../../includes/virtual-machines-common-attach-disk-portal.md)]
 
 ## <a id="initializeinWS"></a>How to: initialize a new data disk in Windows Server
 

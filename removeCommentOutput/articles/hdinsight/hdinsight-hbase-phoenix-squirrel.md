@@ -4,13 +4,18 @@
    services="hdinsight" 
    documentationCenter="" 
    authors="mumian" 
-   manager="paulettm" 
+   manager="jhubbard" 
    editor="cgronlun"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="05/27/2016"
-	wacn.date=""/>
+   ms.service="hdinsight"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="big-data" 
+   ms.date="09/02/2016" 
+   wacn.date=""
+   ms.author="jgao"/>
 
 # Use Apache Phoenix and SQuirreL with Windows-based HBase clusters in HDinsight  
 
@@ -89,7 +94,7 @@ Before following the procedures, you must have the following:
 
 - An HBase cluster deployed to an Azure virtual network with a DNS virtual machine.  For instructions, see [Provision HBase clusters on Azure Virtual Network][hdinsight-hbase-provision-vnet-v1]. 
 
-	>[AZURE.IMPORTANT] You must install a DNS server to the virtual network. For instructions, see [Configure DNS between two Azure virtual networks](/documentation/articles/hdinsight-hbase-geo-replication-configure-DNS/)
+	>[AZURE.IMPORTANT] You must install a DNS server to the virtual network. For instructions, see [Configure DNS between two Azure virtual networks](/documentation/articles/hdinsight-hbase-geo-replication-configure-dns/)
 
 - Get the HBase cluster cluster Connection-specific DNS suffix. To get it, RDP into the cluster, and then run IPConfig.  The DNS suffix is similar to:
 

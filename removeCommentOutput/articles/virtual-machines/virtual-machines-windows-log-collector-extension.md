@@ -8,12 +8,17 @@
    editor=""/>
 
 <tags
-	ms.service="virtual-machines-windows"
-	ms.date="05/26/2016"
-	wacn.date=""/>
+   ms.service="virtual-machines-windows"
+   ms.devlang="powershell"
+   ms.topic="article"
+   ms.tgt_pltfrm="vm-windows"
+   ms.workload="infrastructure"
+   ms.date="08/23/2016"
+   wacn.date=""
+   ms.author="rasquill"/>
 
 # AzureLogCollector Extension
 
 
 
-[AZURE.INCLUDE [virtual-machines-common-log-collector-extension](../includes/virtual-machines-common-log-collector-extension.md)]
+[AZURE.INCLUDE [virtual-machines-common-log-collector-extension](../../includes/virtual-machines-common-log-collector-extension.md)]

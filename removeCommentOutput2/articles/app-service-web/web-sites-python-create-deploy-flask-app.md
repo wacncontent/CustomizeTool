@@ -8,19 +8,24 @@
 	manager="wpickett" 
 	editor=""/>
 
-<tags
-	ms.service="app-service-web"
-	ms.date="02/20/2016"
-	wacn.date=""/>
+<tags 
+	ms.service="app-service-web" 
+	ms.workload="web" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="python" 
+	ms.topic="article" 
+	ms.date="02/20/2016" 
+	wacn.date=""
+	ms.author="huvalo"/>
 
 
 # Creating web apps with Flask in Azure
 
-This tutorial describes how to get started running Python in [Azure Web Apps](/documentation/services/web-sites/).  Web Apps provides limited free hosting and rapid deployment, and you can use Python!  As your app grows, you can switch to paid hosting, and you can also integrate with all of the other Azure services.
+This tutorial describes how to get started running Python in [Azure App Service Web Apps](/documentation/articles/app-service-changes-existing-services/).  Web Apps provides limited free hosting and rapid deployment, and you can use Python!  As your app grows, you can switch to paid hosting, and you can also integrate with all of the other Azure services.
 
 You will create an application using the Flask web framework (see alternate versions of this tutorial for [Django](/documentation/articles/web-sites-python-create-deploy-django-app/) and [Bottle](/documentation/articles/web-sites-python-create-deploy-bottle-app/)).  You will create the website, set up Git deployment, and clone the repository locally.  Then you will run the application locally, make changes, commit and push them to Azure.  The tutorial shows how to do this from Windows or Mac/Linux.
 
-[AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
+[AZURE.INCLUDE [create-account-and-websites-note](../../includes/create-account-and-websites-note.md)]
 
 ## Prerequisites
 
@@ -45,29 +50,19 @@ We also recommend installing [Python Tools 2.2 for Visual Studio].  This is opti
 You should have Python and Git already installed, but make sure you have either Python 2.7 or 3.4.
 
 
-## Web app create on the Azure Classic Management Portal
+## Web app create on the Azure Portal Preview
 
-The first step in creating your app is to create the web app via the [Azure Classic Management Portal](https://manage.windowsazure.cn). To do this, you will need to login to the portal and click the NEW button in the bottom left corner. A window will appear. Click **Quick Create**, enter a URL, and select **Create Web App**. 
+The first step in creating your app is to create the web app via the [Azure Portal Preview](https://portal.azure.cn). 
 
-![](./media/web-sites-python-create-deploy-django-app/django-ws-003.png)
-
-The app will be quickly set up.  Next, you will add support for publishing via Git.  This can be done by choosing **Set up deployment from source control**.
-
-![](./media/web-sites-python-create-deploy-django-app/django-ws-004.png)
-
-From the **Set up deployment** dialog, scroll down and select the **Local Git** option. Click the right arrow to continue.
-
-![](./media/web-sites-python-create-deploy-django-app/django-ws-005.png)
-
-After setting up Git publishing, you will momentarily see a page informing you the repo is being created. When the repo is ready, you will be taken to the deployments tab. The deployments tab includes instructions on how to connect.  
-
-![](./media/web-sites-python-create-deploy-django-app/django-ws-006.png)
-
-We'll follow these instructions in the next sections.
+1. Log into the Azure Portal Preview and click the **NEW** button in the bottom left corner. 
+2. Click **Web + Mobile**.
+3. In the search box, type "python".
+4. In the search results, select **Flask**, then click **Create**.
+5. Configure the new Flask app, such as creating a new App Service plan and a new resource group for it. Then, click **Create**.
+6. Configure Git publishing for your newly created web app by following the instructions at [Local Git Deployment to Azure App Service](/documentation/articles/app-service-deploy-local-git/).
 
 
-
-##<a name="application-overview"></a> Application Overview
+## <a name="application-overview"></a> Application Overview
 
 ### Git repository contents
 
@@ -109,11 +104,11 @@ IIS configuration files.  The deployment script will use the appropriate web.x.y
 
 ### Optional files - Customizing deployment
 
-[AZURE.INCLUDE [web-sites-python-customizing-deployment](../includes/web-sites-python-customizing-deployment.md)]
+[AZURE.INCLUDE [web-sites-python-customizing-deployment](../../includes/web-sites-python-customizing-deployment.md)]
 
 ### Optional files - Python runtime
 
-[AZURE.INCLUDE [web-sites-python-customizing-runtime](../includes/web-sites-python-customizing-runtime.md)]
+[AZURE.INCLUDE [web-sites-python-customizing-runtime](../../includes/web-sites-python-customizing-runtime.md)]
 
 ### Additional files on server
 
@@ -138,7 +133,7 @@ The next 3 sections describe how to proceed with the web app development under 3
 
 ### Clone the repository
 
-First, clone the repository using the URL provided on the Azure Classic Management Portal. For more information, see [Continuous deployment using GIT in Azure Web App](/documentation/articles/web-sites-publish-source-control/).
+First, clone the repository using the URL provided on the Azure Portal Preview. For more information, see [Local Git Deployment to Azure App Service](/documentation/articles/app-service-deploy-local-git/).
 
 Open the solution file (.sln) that is included in the root of the repository.
 
@@ -150,7 +145,7 @@ Now we'll create a virtual environment for local development.  Right-click on **
 
 - Make sure the name of the environment is `env`.
 
-- Select the base interpreter.  Make sure to use the same version of Python that is selected for your web app (in runtime.txt or the app configuration page).
+- Select the base interpreter.  Make sure to use the same version of Python that is selected for your web app (in runtime.txt or the **Application Settings** blade of your web app in the Azure Portal Preview).
 
 - Make sure the option to download and install packages is checked.
 
@@ -205,7 +200,7 @@ Browse to the Azure URL to view your changes.
 
 ### Clone the repository
 
-First, clone the repository using the URL provided on the Azure Classic Management Portal, and add the Azure repository as a remote. For more information, see [Continuous deployment using GIT in Azure Web App](/documentation/articles/web-sites-publish-source-control/).
+First, clone the repository using the URL provided on the Azure Portal Preview, and add the Azure repository as a remote. For more information, see [Local Git Deployment to Azure App Service](/documentation/articles/app-service-deploy-local-git/).
 
     git clone <repo-url>
     cd <repo-folder>
@@ -215,7 +210,7 @@ First, clone the repository using the URL provided on the Azure Classic Manageme
 
 We'll create a new virtual environment for development purposes (do not add it to the repository).  Virtual environments in Python are not relocatable, so every developer working on the application will create their own locally.
 
-Make sure to use the same version of Python that is selected for your web app (in runtime.txt or the app configuration page).
+Make sure to use the same version of Python that is selected for your web app (in runtime.txt or the **Application Settings** blade of your web app in the Azure Portal Preview).
 
 For Python 2.7:
 
@@ -284,7 +279,7 @@ Browse to the Azure URL to view your changes.
 
 ### Clone the repository
 
-First, clone the repository using the URL provided on the Azure Classic Management Portal, and add the Azure repository as a remote. For more information, see [Continuous deployment using GIT in Azure Web App](/documentation/articles/web-sites-publish-source-control/).
+First, clone the repository using the URL provided on the Azure Portal Preview, and add the Azure repository as a remote. For more information, see [Local Git Deployment to Azure App Service](/documentation/articles/app-service-deploy-local-git/).
 
     git clone <repo-url>
     cd <repo-folder>
@@ -294,7 +289,7 @@ First, clone the repository using the URL provided on the Azure Classic Manageme
 
 We'll create a new virtual environment for development purposes (do not add it to the repository).  Virtual environments in Python are not relocatable, so every developer working on the application will create their own locally.
 
-Make sure to use the same version of Python that is selected for your web app (in runtime.txt or the app configuration page).
+Make sure to use the same version of Python that is selected for your web app (in runtime.txt or the **Application Settings** blade of your web app in the Azure Portal Preview).
 
 For Python 2.7:
 
@@ -361,14 +356,14 @@ You will see the output of the deployment script, including virtual environment 
 Browse to the Azure URL to view your changes.
 
 
-##<a name="troubleshooting-package-installation"></a> Troubleshooting - Package Installation
+## <a name="troubleshooting-package-installation"></a> Troubleshooting - Package Installation
 
-[AZURE.INCLUDE [web-sites-python-troubleshooting-package-installation](../includes/web-sites-python-troubleshooting-package-installation.md)]
+[AZURE.INCLUDE [web-sites-python-troubleshooting-package-installation](../../includes/web-sites-python-troubleshooting-package-installation.md)]
 
 
 ## Troubleshooting - Virtual Environment
 
-[AZURE.INCLUDE [web-sites-python-troubleshooting-virtual-environment](../includes/web-sites-python-troubleshooting-virtual-environment.md)]
+[AZURE.INCLUDE [web-sites-python-troubleshooting-virtual-environment](../../includes/web-sites-python-troubleshooting-virtual-environment.md)]
 
 
 ## Next Steps
@@ -382,6 +377,11 @@ For information on using Azure Table Storage and MongoDB:
 
 - [Flask and MongoDB on Azure with Python Tools for Visual Studio]
 - [Flask and Azure Table Storage on Azure with Python Tools for Visual Studio]
+
+For more information, see also the [Python Developer Center](/develop/python/).
+
+## What's changed
+* For a guide to the change from Websites to App Service see: [Azure App Service and Its Impact on Existing Azure Services](/documentation/articles/app-service-changes-existing-services/)
 
 
 <!--Link references-->

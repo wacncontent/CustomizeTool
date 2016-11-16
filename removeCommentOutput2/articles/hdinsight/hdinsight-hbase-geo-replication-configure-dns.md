@@ -4,19 +4,24 @@
    services="hdinsight,virtual-network" 
    documentationCenter="" 
    authors="mumian" 
-   manager="paulettm" 
+   manager="jhubbard" 
    editor="cgronlun"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="06/28/2016"
-	wacn.date=""/>
+   ms.service="hdinsight"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="big-data" 
+   ms.date="06/28/2016" 
+   wacn.date=""
+   ms.author="jgao"/>
 
 # Configure DNS between two Azure virtual networks
 
 > [AZURE.SELECTOR]
-- [Configure VPN connectivity](/documentation/articles/hdinsight-hbase-geo-replication-configure-VNETs/)
-- [Configure DNS](/documentation/articles/hdinsight-hbase-geo-replication-configure-DNS/)
+- [Configure VPN connectivity](/documentation/articles/hdinsight-hbase-geo-replication-configure-vnets/)
+- [Configure DNS](/documentation/articles/hdinsight-hbase-geo-replication-configure-dns/)
 - [Configure HBase replication](/documentation/articles/hdinsight-hbase-geo-replication/) 
 
 
@@ -42,13 +47,14 @@ Before you begin this tutorial, you must have the following:
 
 	Before running PowerShell scripts, make sure you are connected to your Azure subscription using the following cmdlet:
 
-		Add-AzureAccount
+		Clear-AzureProfile
+		Import-AzurePublishSettingsFile -PublishSettingsFile path/to/<subscription name>-<date>-credentials.publishsettings
 
 	If you have multiple Azure subscriptions, use the following cmdlet to set the current subscription:
 
 		Select-AzureSubscription <AzureSubscriptionName>
 		
-	[AZURE.INCLUDE [upgrade-powershell](../includes/hdinsight-use-latest-powershell.md)]
+	[AZURE.INCLUDE [upgrade-powershell](../../includes/hdinsight-use-latest-powershell.md)]
 
 - **Two Azure virtual network with VPN connectivity**.  For instructions, see [Configure a VPN connection between two Azure virtual networks][hdinsight-hbase-geo-replication-vnet].
 
@@ -89,7 +95,7 @@ After the virtual machine is created, find out the internal IP and external IP.
 
 - Repeat the same procedure to create a virtual machine with the following values:
 	- VIRTUAL MACHINE NAME: Contoso-DNS-CE
-	- REGION/AFFINITY GROUP/VIRTUAL NETWORK: Select Contoso-VNET-US
+	- REGION/AFFINITY GROUP/VIRTUAL NETWORK: Select Contoso-VNET-CE
 	- VIRTUAL NETWORK SUBNETS: Subnet-1
 	- STORAGE ACCOUNT: Use an automatically generated storage account
 	- ENDPOINTS: (select DNS)
@@ -103,7 +109,9 @@ DNS servers requires static IP addresses.  This step can't be done from the Azur
 1. Open Windows PowerShell ISE.
 2. Run the following cmdlets.  
 
-		Add-AzureAccount
+		Clear-AzureProfile
+		Import-AzurePublishSettingsFile -PublishSettingsFile path/to/<subscription name>-<date>-credentials.publishsettings
+		
 		Select-AzureSubscription [YourAzureSubscriptionName]
 		
 		Get-AzureVM -ServiceName Contoso-DNS-CN -Name Contoso-DNS-CN | Set-AzureStaticVNetIP -IPAddress 10.1.0.4 | Update-AzureVM
@@ -213,7 +221,7 @@ In this tutorial, you have learned how to configure name resolution across virtu
 
 
 [hdinsight-hbase-geo-replication]: /documentation/articles/hdinsight-hbase-geo-replication/
-[hdinsight-hbase-geo-replication-vnet]: /documentation/articles/hdinsight-hbase-geo-replication-configure-VNets/
+[hdinsight-hbase-geo-replication-vnet]: /documentation/articles/hdinsight-hbase-geo-replication-configure-vnets/
 [powershell-install]: /documentation/articles/powershell-install-configure/
 
 [img-vnet-diagram]: ./media/hdinsight-hbase-geo-replication-configure-DNS/HDInsight.HBase.VPN.diagram.png

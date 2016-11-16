@@ -10,15 +10,20 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="04/15/2016"
-	wacn.date=""/>
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-windows"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="07/25/2016"
+	wacn.date=""
+	ms.author="cynthn"/>
 
 
 # Install MySQL on a virtual machine created with the classic deployment model running Windows Server 2012 R2
 
 [MySQL](http://www.mysql.com) is a popular open source, SQL database. This tutorial shows you how to install and run the community version of MySQL 5.6.23 as a MySQL Server on a virtual machine running Windows Server 2012 R2. For instructions on installing MySQL on Linux, refer to: [How to install MySQL on Azure](/documentation/articles/virtual-machines-linux-mysql-install/).
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]
 
 ## Create a virtual machine running Windows Server 2012 R2
 

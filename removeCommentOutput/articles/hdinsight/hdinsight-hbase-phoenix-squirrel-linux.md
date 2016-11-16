@@ -4,15 +4,20 @@
    services="hdinsight" 
    documentationCenter="" 
    authors="mumian" 
-   manager="paulettm" 
+   manager="jhubbard" 
    editor="cgronlun"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="05/27/2016"
-	wacn.date=""/>
+   ms.service="hdinsight"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="big-data" 
+   ms.date="09/02/2016" 
+   wacn.date=""
+   ms.author="jgao"/>
 
-# Use Apache Phoenix with Linux-based HBase clusters in HDinsight  
+# Use Apache Phoenix with Linux-based HBase clusters in HDInsight  
 
 Learn how to use [Apache Phoenix](http://phoenix.apache.org/) in HDInsight, and how to use SQLLine. For more information about Phoenix, see [Phoenix in 15 minutes or less](http://phoenix.apache.org/Phoenix-in-15-minutes-or-less.html). For the Phoenix grammar, see [Phoenix Grammar](http://phoenix.apache.org/language/index.html).
 
@@ -35,7 +40,7 @@ When you connect to an HBase cluster, you will need to connect to one of the Zoo
 1. Open Ambari by browse to **https://<ClusterName>.azurehdinsight.cn**.
 2. Enter the HTTP (cluster) username and password to login.
 3. Click **ZooKeeper** from the left menu. You shall see 3 **ZooKeeper Server** listed.
-4. Click one of the **ZooKeeper Server** listed. On the Summary pane, find the **Hostname**. It is simliar to *zk1-jdolehb.3lnng4rcvp5uzokyktxs4a5dhd.bx.internal.chinacloudapp.cn*.
+4. Click one of the **ZooKeeper Server** listed. On the Summary pane, find the **Hostname**. It is similar to *zk1-jdolehb.3lnng4rcvp5uzokyktxs4a5dhd.bx.internal.chinacloudapp.cn*.
 
 **To use SQLLine**
 

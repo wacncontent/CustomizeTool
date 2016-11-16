@@ -4,19 +4,24 @@
    services="hdinsight,virtual-network" 
    documentationCenter="" 
    authors="mumian" 
-   manager="paulettm" 
+   manager="jhubbard" 
    editor="cgronlun"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="06/28/2016"
-	wacn.date=""/>
+   ms.service="hdinsight"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="big-data" 
+   ms.date="06/28/2016" 
+   wacn.date=""
+   ms.author="jgao"/>
 
 # Configure DNS between two Azure virtual networks
 
 > [AZURE.SELECTOR]
-- [Configure VPN connectivity](/documentation/articles/hdinsight-hbase-geo-replication-configure-VNETs/)
-- [Configure DNS](/documentation/articles/hdinsight-hbase-geo-replication-configure-DNS/)
+- [Configure VPN connectivity](/documentation/articles/hdinsight-hbase-geo-replication-configure-vnets/)
+- [Configure DNS](/documentation/articles/hdinsight-hbase-geo-replication-configure-dns/)
 - [Configure HBase replication](/documentation/articles/hdinsight-hbase-geo-replication/) 
 
 
@@ -48,7 +53,7 @@ Before you begin this tutorial, you must have the following:
 
 		Select-AzureSubscription <AzureSubscriptionName>
 		
-	[AZURE.INCLUDE [upgrade-powershell](../includes/hdinsight-use-latest-powershell.md)]
+	[AZURE.INCLUDE [upgrade-powershell](../../includes/hdinsight-use-latest-powershell.md)]
 
 - **Two Azure virtual network with VPN connectivity**.  For instructions, see [Configure a VPN connection between two Azure virtual networks][hdinsight-hbase-geo-replication-vnet].
 
@@ -213,7 +218,7 @@ In this tutorial, you have learned how to configure name resolution across virtu
 
 
 [hdinsight-hbase-geo-replication]: /documentation/articles/hdinsight-hbase-geo-replication/
-[hdinsight-hbase-geo-replication-vnet]: /documentation/articles/hdinsight-hbase-geo-replication-configure-VNets/
+[hdinsight-hbase-geo-replication-vnet]: /documentation/articles/hdinsight-hbase-geo-replication-configure-vnets/
 [powershell-install]: /documentation/articles/powershell-install-configure/
 
-[img-vnet-diagram]: ./media/hdinsight-hbase-geo-replication-configure-DNS/HDInsight.HBase.VPN.diagram.png
+[img-vnet-diagram]: ./media/hdinsight-hbase-geo-replication-configure-DNS/HDInsight.HBase.VPN.diagram.png 

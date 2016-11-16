@@ -1,5 +1,5 @@
 <properties
-	pageTitle="Enable diagnostics logging for web apps in Azure"
+	pageTitle="Enable diagnostics logging for web apps in Azure App Service"
 	description="Learn how to enable diagnostic logging and add instrumentation to your application, as well as how to access the information logged by Azure."
 	services="app-service"
 	documentationCenter=".net"
@@ -9,20 +9,27 @@
 
 <tags
 	ms.service="app-service"
+	ms.workload="na"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="06/06/2016"
-	wacn.date=""/>
+	wacn.date=""
+	ms.author="cephalin"/>
 
-# Enable diagnostics logging for web apps in Azure
+# Enable diagnostics logging for web apps in Azure App Service
 
 ## Overview
 
-Azure provides built-in diagnostics to assist with debugging an [Azure web app](/documentation/services/web-sites/). In this article you'll learn how to enable diagnostic logging and add instrumentation to your application, as well as how to access the information logged by Azure.
+Azure provides built-in diagnostics to assist with debugging an [App Service web app](/documentation/articles/app-service-changes-existing-services/). In this article you'll learn how to enable diagnostic logging and add instrumentation to your application, as well as how to access the information logged by Azure.
 
-This article uses the [Azure Classic Management Portal](https://manage.windowsazure.cn), Azure PowerShell, and the Azure Command-Line Interface (Azure CLI) to work with diagnostic logs. For information on working with diagnostic logs using Visual Studio, see [Troubleshooting Azure in Visual Studio](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/).
+This article uses the [Azure Portal Preview](https://portal.azure.cn), Azure PowerShell, and the Azure Command-Line Interface (Azure CLI) to work with diagnostic logs.
+
+[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
 
 ## <a name="whatisdiag"></a>Web server diagnostics and application diagnostics
 
-Azure web apps provide diagnostic functionality for logging information from both the web server and the web application. These are logically separated into **web server diagnostics** and **application diagnostics**.
+App Service web apps provide diagnostic functionality for logging information from both the web server and the web application. These are logically separated into **web server diagnostics** and **application diagnostics**.
 
 ### Web server diagnostics
 
@@ -38,17 +45,18 @@ Application diagnostics allows you to capture information produced by a web appl
 
 	System.Diagnostics.Trace.TraceError("If you're seeing this, something bad happened");
 
-At runtime you can retrieve these logs to help with troubleshooting. For more information, see [Troubleshooting Azure web apps in Visual Studio](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/).
-
-Azure web apps also log deployment information when you publish content to a web app. This happens automatically and there are no configuration settings for deployment logging. Deployment logging allows you to determine why a deployment failed. For example, if you are using a custom deployment script, you might use deployment logging to determine why the script is failing.
+App Service web apps also log deployment information when you publish content to a web app. This happens automatically and there are no configuration settings for deployment logging. Deployment logging allows you to determine why a deployment failed. For example, if you are using a custom deployment script, you might use deployment logging to determine why the script is failing.
 
 ## <a name="enablediag"></a>How to enable diagnostics
 
-Diagnostics can be enabled by visiting the **Configure** page of your Azure  Website in the [Azure Classic Management Portal](https://manage.windowsazure.cn). On the **Configure** page, use the **application diagnostics** and **site diagnostics** sections to enable logging.
+To enable diagnostics in the [Azure Portal Preview](https://portal.azure.cn), go to the blade for your web app and click **Settings > Diagnostics logs**.
 
-When enabling **application diagnostics** you must also select the **logging level** and whether to enable logging to the **file system**, **table storage**, or **blob storage**. While all three storage locations provide the same basic information for logged events, **table storage** and **blob storage** log additional information such as the instance ID, thread ID, and a more granular timestamp (tick format) than logging to **file system**.
+<!-- todo:cleanup dogfood addresses in screenshot -->
+![Logs part](./media/web-sites-enable-diagnostic-log/logspart.png)
 
-When enabling **site diagnostics**, you must select **storage** or **file system** for **web server logging**. Selecting **storage** allows you to select a storage account, and then a blob container that the logs will be written to. All other logs for **site diagnostics** are written to the file system only.
+When you enable **application diagnostics** you also choose the **Level**. This setting allows you to filter the information captured to **informational**, **warning** or **error** information. Setting this to **verbose** will log all information produced by the application.
+
+> [AZURE.NOTE] Unlike changing the web.config file, enabling Application diagnostics or changing diagnostic log levels does not recycle the app domain that the application runs within.
 
 In the [Classic Management Portal](https://manage.windowsazure.cn) Web app **Configure** tab, you can select **storage** or **file system** for **web server logging**. Selecting **storage** allows you to select a storage account, and then a blob container that the logs will be written to. All other logs for **site diagnostics** are written to the file system only.
 
@@ -238,6 +246,9 @@ The web server logs are formatted using the [W3C extended log file format](http:
 ##<a name="nextsteps"></a> Next steps
 
 - [How to Monitor Web Apps](/documentation/articles/web-sites-monitor/)
-- [Troubleshooting Azure web apps in Visual Studio](/documentation/articles/web-sites-dotnet-troubleshoot-visual-studio/)
 - [Analyze web app Logs in HDInsight](http://gallery.technet.microsoft.com/scriptcenter/Analyses-Windows-Azure-web-0b27d413)
+
+## What's changed
+* For a guide to the change from Websites to App Service see: [Azure App Service and Its Impact on Existing Azure Services](/documentation/articles/app-service-changes-existing-services/)
+* For a guide to the change of the old portal to the new portal see: [Reference for navigating the Azure Portal Preview](/documentation/articles/app-service-web-app-azure-portal/)
  

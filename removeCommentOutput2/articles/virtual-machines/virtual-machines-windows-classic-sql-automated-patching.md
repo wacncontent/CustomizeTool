@@ -9,8 +9,13 @@
 	tags="azure-service-management" />
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="07/15/2016"
-	wacn.date=""/>
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="vm-windows-sql-server"
+	ms.workload="infrastructure-services"
+	ms.date="09/26/2016"
+	wacn.date=""
+	ms.author="jroth" />
 
 # Automated Patching for SQL Server in Azure Virtual Machines (Classic)
 
@@ -33,13 +38,14 @@ To use Automated Patching, consider the following prerequisites:
 
 **Azure PowerShell**:
 
-- [Install the latest Azure PowerShell commands](/documentation/articles/powershell-install-configure/) if you plan to configure Automated Patching with PowerShell.
+- [Install the latest Azure PowerShell commands](/documentation/articles/powershell-install-configure/).
 
->[AZURE.NOTE] Automated Patching relies on the SQL Server IaaS Agent Extension. Current SQL virtual machine gallery images add this extension by default. For more information, see [SQL Server IaaS Agent Extension](/documentation/articles/virtual-machines-windows-classic-sql-server-agent-extension/).
+**SQL Server IaaS Extension**:
+- [Install the SQL Server IaaS Extension](/documentation/articles/virtual-machines-windows-classic-sql-server-agent-extension/).
 
 ## Settings
 
-The following table describes the options that can be configured for Automated Patching.
+The following table describes the options that can be configured for Automated Patching. For classic VMs, you must use PowerShell to configure these settings.
 
 |Setting|Possible values|Description|
 |---|---|---|
@@ -51,7 +57,6 @@ The following table describes the options that can be configured for Automated P
 
 ## Configuration with PowerShell
 
-You can also use PowerShell to configure Automated Patching.
 
 In the following example, PowerShell is used to configure Automated Patching on an existing SQL Server VM. The **New-AzureVMSqlServerAutoPatchingConfig** command configures a new maintenance window for automatic updates.
 

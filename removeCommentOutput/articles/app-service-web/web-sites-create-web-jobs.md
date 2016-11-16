@@ -7,24 +7,29 @@
 	manager="wpickett" 
 	editor="jimbe"/>
 
-<tags
-	ms.service="app-service"
-	ms.date="04/27/2016"
-	wacn.date=""/>
+<tags 
+	ms.service="app-service" 
+	ms.workload="na" 
+	ms.tgt_pltfrm="na" 
+	ms.devlang="na" 
+	ms.topic="article" 
+	ms.date="04/27/2016" 
+	wacn.date="" 
+	ms.author="tdykstra"/>
 
 # Run Background tasks with WebJobs
 
 ## Overview
 
-You can run programs or scripts in WebJobs in your [Azure Web App](/documentation/services/web-sites/) web app in three ways: on demand, continuously, or on a schedule. There is no additional cost to use WebJobs.
+You can run programs or scripts in WebJobs in your [App Service](/documentation/articles/app-service-changes-existing-services/) web app in three ways: on demand, continuously, or on a schedule. There is no additional cost to use WebJobs.
 
 This article shows how to deploy WebJobs by using the [Azure Portal](https://portal.azure.cn). For information about how to deploy by using Visual Studio or a continuous delivery process, see [How to Deploy Azure WebJobs to Web Apps](/documentation/articles/websites-dotnet-deploy-webjobs/).
 
 The Azure WebJobs SDK simplifies many WebJobs programming tasks. For more information, see [What is the WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk/).
 
- Azure Functions (currently in preview) is another way to run programs and scripts in Azure Web App. For more information, see [Azure Functions overview](/documentation/articles/functions-overview/).
+ Azure Functions (currently in preview) is another way to run programs and scripts in Azure App Service. For more information, see [Azure Functions overview](/documentation/articles/functions-overview/).
 
-[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../includes/app-service-web-to-api-and-mobile.md)] 
+[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)] 
 
 ## <a name="acceptablefiles"></a>Acceptable file types for scripts or programs
 

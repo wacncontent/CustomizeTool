@@ -4,14 +4,19 @@
  services="hdinsight"
  documentationCenter=""
  authors="Blackmist"
- manager="paulettm"
+ manager="jhubbard"
  editor="cgronlun"
 	tags="azure-portal"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="05/27/2016"
-	wacn.date=""/>
+ ms.service="hdinsight"
+ ms.devlang="dotnet"
+ ms.topic="article"
+ ms.tgt_pltfrm="na"
+ ms.workload="big-data"
+ ms.date="08/16/2016"
+ wacn.date=""
+ ms.author="larryfr"/>
 
 # Use Power BI to visualize data from an Apache Storm topology
 
@@ -142,11 +147,11 @@ The topology will continue to run until you stop it or delete the Storm on HDIns
 
 2. Select the **Kill** button to stop the topology.
 
-    ![Kill button on the toplogy summary](./media/hdinsight-storm-power-bi-topology/killtopology.png)
+    ![Kill button on the topology summary](./media/hdinsight-storm-power-bi-topology/killtopology.png)
 
 ## Delete your cluster
 
-[AZURE.INCLUDE [delete-cluster-warning](../includes/hdinsight-delete-cluster-warning.md)]
+[AZURE.INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
 
 ## Next steps
 

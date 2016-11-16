@@ -9,8 +9,13 @@
 	tags="azure-service-management" />
 <tags
 	ms.service="virtual-machines-windows"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="vm-windows-sql-server"
+	ms.workload="infrastructure-services"
 	ms.date="07/12/2016"
-	wacn.date=""/>
+	wacn.date=""
+	ms.author="MikeRayMSFT" />
 
 # Configure an external listener for Always On Availability Groups in Azure
 
@@ -19,8 +24,6 @@
 - [External Listener](/documentation/articles/virtual-machines-windows-classic-ps-sql-ext-listener/)
 
 This topic shows you how to configure a listener for an Always On Availability Group that is externally accessible on the internet. This is made possible by associating the cloud service's **public Virtual IP (VIP)** address with the listener.
-
-> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager model.
 
 Your Availability Group can contain replicas that are on-premises only, Azure only, or span both on-premises and Azure for hybrid configurations. Azure replicas can reside within the same region or across multiple regions using multiple virtual networks (VNets). The steps below assume you have already [configured an availability group](/documentation/articles/virtual-machines-windows-classic-portal-sql-alwayson-availability-groups/) but have not configured a listener.
 
@@ -40,7 +43,7 @@ Note the following guidelines about the availability group listener in Azure whe
 
 ## Determine the accessibility of the listener
 
-[AZURE.INCLUDE [ag-listener-accessibility](../includes/virtual-machines-ag-listener-determine-accessibility.md)]
+[AZURE.INCLUDE [ag-listener-accessibility](../../includes/virtual-machines-ag-listener-determine-accessibility.md)]
 
 This article focuses on creating a listener that uses **external load balancing**. If you want a listener that is private to your virtual network, see the version of this article that provides steps for setting up an [listener with ILB](/documentation/articles/virtual-machines-windows-classic-ps-sql-int-listener/)
 
@@ -48,7 +51,7 @@ This article focuses on creating a listener that uses **external load balancing*
 
 External load balancing uses the virtual the public Virtual IP address of the cloud service that hosts your VMs. So you do not need to create or configure the load balancer in this case.
 
-[AZURE.INCLUDE [load-balanced-endpoints](../includes/virtual-machines-ag-listener-load-balanced-endpoints.md)]
+[AZURE.INCLUDE [load-balanced-endpoints](../../includes/virtual-machines-ag-listener-load-balanced-endpoints.md)]
 
 1. Copy the PowerShell script below into a text editor and set the variable values to suit your environment (defaults have been provided for some parameters). Note that if your availability group spans Azure regions, you must run the script once in each datacenter for the cloud service and nodes that reside in that datacenter.
 
@@ -66,15 +69,15 @@ External load balancing uses the virtual the public Virtual IP address of the cl
 
 ## Verify that KB2854082 is installed if necessary
 
-[AZURE.INCLUDE [kb2854082](../includes/virtual-machines-ag-listener-kb2854082.md)]
+[AZURE.INCLUDE [kb2854082](../../includes/virtual-machines-ag-listener-kb2854082.md)]
 
 ## Open the firewall ports in availability group nodes
 
-[AZURE.INCLUDE [firewall](../includes/virtual-machines-ag-listener-open-firewall.md)]
+[AZURE.INCLUDE [firewall](../../includes/virtual-machines-ag-listener-open-firewall.md)]
 
 ## Create the availability group listener
 
-[AZURE.INCLUDE [firewall](../includes/virtual-machines-ag-listener-create-listener.md)]
+[AZURE.INCLUDE [firewall](../../includes/virtual-machines-ag-listener-create-listener.md)]
 
 1. For external load balancing, you must obtain the public virtual IP address of the cloud service that contains your replicas. Log into the Azure Classic Management Portal. Navigate to the cloud service that contains your availability group VM. Open the **Dashboard** view.
 
@@ -101,15 +104,15 @@ External load balancing uses the virtual the public Virtual IP address of the cl
 
 ## Bring the listener online
 
-[AZURE.INCLUDE [Bring-Listener-Online](../includes/virtual-machines-ag-listener-bring-online.md)]
+[AZURE.INCLUDE [Bring-Listener-Online](../../includes/virtual-machines-ag-listener-bring-online.md)]
 
 ## Follow-up items
 
-[AZURE.INCLUDE [Follow-up](../includes/virtual-machines-ag-listener-follow-up.md)]
+[AZURE.INCLUDE [Follow-up](../../includes/virtual-machines-ag-listener-follow-up.md)]
 
 ## Test the availability group listener (within the same VNet)
 
-[AZURE.INCLUDE [Test-Listener-Within-VNET](../includes/virtual-machines-ag-listener-test.md)]
+[AZURE.INCLUDE [Test-Listener-Within-VNET](../../includes/virtual-machines-ag-listener-test.md)]
 
 ## Test the availability group listener (over the internet)
 
@@ -123,4 +126,4 @@ If the Always On replicas are in different subnets, clients must specify **Multi
 
 ## Next steps
 
-[AZURE.INCLUDE [Listener-Next-Steps](../includes/virtual-machines-ag-listener-next-steps.md)]
+[AZURE.INCLUDE [Listener-Next-Steps](../../includes/virtual-machines-ag-listener-next-steps.md)]

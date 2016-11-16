@@ -6,13 +6,18 @@
 	services="hdinsight"
 	documentationCenter=""
 	authors="Blackmist"
-	manager="paulettm"
+	manager="jhubbard"
 	editor=""/>
 
 <tags
 	ms.service="hdinsight"
-	ms.date="06/29/2016"
-	wacn.date=""/>
+	ms.workload="big-data"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="10/03/2016"
+	wacn.date=""
+	ms.author="larryfr"/>
 
 #Use Maven to build Java applications that use HBase with Linux-based HDInsight (Hadoop)
 
@@ -21,13 +26,15 @@ Learn how to create and build an [Apache HBase](http://hbase.apache.org/) applic
 [Maven](http://maven.apache.org/) is a software project management and comprehension tool that allows you to build software, documentation, and reports for Java projects. In this article, you will learn how to use it to create a basic Java application that that creates, queries, and deletes an HBase table on a Linux-based HDInsight cluster.
 
 > [AZURE.NOTE] The steps in this document assume that you are using a Linux-based HDInsight cluster. For information on using a Windows-based HDInsight cluster, see [Use Maven to build Java applications that use HBase with Windows-based HDInsight](/documentation/articles/hdinsight-hbase-build-java-maven/)
+
 ##Requirements
 
 * [Java platform JDK](http://www.oracle.com/technetwork/java/javase/downloads/index.html) 7 or later
 
 * [Maven](http://maven.apache.org/)
 
-* [An Linux-based Azure HDInsight cluster with HBase](/documentation/articles/hdinsight-hbase-get-started-linux/#create-hbase-cluster)
+* [An Linux-based Azure HDInsight cluster with HBase](/documentation/articles/hdinsight-hbase-tutorial-get-started-v1/#create-hbase-cluster)
+
     > [AZURE.NOTE] The steps in this document have been tested with HDInsight cluster versions 3.2, 3.3, and 3.4. The default values provided in examples are for a HDInsight 3.4 cluster.
 
 * **Familiarity with SSH and SCP**. For more information on using SSH and SCP with HDInsight, see the following:
@@ -63,18 +70,24 @@ Learn how to create and build an [Apache HBase](http://hbase.apache.org/) applic
         </dependency>
 
 	This tells Maven that the project requires __hbase-client__ version __1.1.2__. At compile time, this will be downloaded from the default Maven repository. You can use the [Maven Central Repository Search](http://search.maven.org/#artifactdetails%7Corg.apache.hbase%7Chbase-client%7C0.98.4-hadoop2%7Cjar) to learn more about this dependency.
+
     > [AZURE.IMPORTANT] The version number must match the version of HBase that is provided with your HDInsight cluster. Use the following table to find the correct version number.
+
     | HDInsight cluster version | HBase version to use |
     | ----- | ----- |
     | 3.2 | 0.98.4-hadoop2 |
     | 3.3 and 3.4 | 1.1.2 |
+
     For more information on HDInsight versions and components, see [What are the different Hadoop components available with HDInsight](/documentation/articles/hdinsight-component-versioning-v1/).
+
 2. If you are using an HDInsight 3.3 or 3.4 cluster, you must also add the following to the `<dependencies>` section:
+
         <dependency>
             <groupId>org.apache.phoenix</groupId>
             <artifactId>phoenix-core</artifactId>
             <version>4.4.0-HBase-1.1</version>
         </dependency>
+    
     This will load the phoenix-core components, which are needed with Hbase version 1.1.x.
 
 2. Add the following code to the __pom.xml__ file. This must be inside the `<project>...</project>` tags in the file, for example, between `</dependencies>` and `</project>`.

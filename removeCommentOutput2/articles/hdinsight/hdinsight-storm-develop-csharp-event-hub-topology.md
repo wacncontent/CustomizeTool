@@ -4,13 +4,18 @@
    services="hdinsight,notification hubs"
    documentationCenter=""
    authors="Blackmist"
-   manager="paulettm"
+   manager="jhubbard"
    editor="cgronlun"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="05/17/2016"
-	wacn.date=""/>
+   ms.service="hdinsight"
+   ms.devlang="dotnet"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="big-data"
+   ms.date="08/02/2016"
+   wacn.date=""
+   ms.author="larryfr"/>
 
 # Process events from Azure Event Hubs with Storm on HDInsight (C#)
 
@@ -109,7 +114,7 @@ Table storage will be used to hold the values that are read from Event Hubs beca
 
     ![Cloud explorer](./media/hdinsight-storm-develop-csharp-event-hub-topology/createtablestorage.png)
 
-5. Right click __Tables__ for your storage account, and then select __Create Table__. When prompted, enter a **events** as the name of your table. Save the name as you will need it in later steps.
+5. Right click __Tables__ for your storage account, and then select __Create Table__. When prompted, enter **events** as the name of your table. Save the name as you will need it in later steps.
 
 ## Create EventHubWriter
 
@@ -525,7 +530,7 @@ To stop the topologies, select each topology in the **Storm Topology Viewer**, t
 
 ##Delete your cluster
 
-[AZURE.INCLUDE [delete-cluster-warning](../includes/hdinsight-delete-cluster-warning.md)]
+[AZURE.INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
 
 ## Notes
 

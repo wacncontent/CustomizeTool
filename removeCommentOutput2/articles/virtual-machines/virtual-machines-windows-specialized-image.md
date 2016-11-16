@@ -1,4 +1,3 @@
-
 <properties
 	pageTitle="Create a copy of your Windows VM | Azure"
 	description="Learn how to create a copy of your Azure virtual machine running Windows, in the Resource Manager deployment model, by creating a *specialized image*."
@@ -53,9 +52,9 @@ Ensure that you meet the following prerequisites before you start the steps:
 
 1. Find the access keys for the storage account that contains your source VHD, as well as the storage account where you will copy your VHD to create the new VM. The key for the account from where we are copying the VHD is called the *Source Key*, and that for the account to which it will be copied is called the *Destination Key*. For more information about access keys, see [About Azure storage accounts](/documentation/articles/storage-create-storage-account/).
 
-	- If your source VM was created by using the classic deployment model, click **Browse** > **Storage accounts (classic)** > *your storage account* > **Configure** > **Keys**. Copy the key labeled as **PRIMARY ACCESS KEY**.
+	- If your source VM was created by using the classic deployment model, click **Browse** > **Storage accounts (classic)** > *your storage account* > **All Settings** > **Keys**. Copy the key labeled as **PRIMARY ACCESS KEY**.
 
-	- If your source VM was created by using the Resource Manager deployment model, or for the storage account that you will use for your new VM, click **Browse** > **Storage accounts** > *your storage account* > **Configure** > **Access keys**. Copy the key labeled as **key1**.
+	- If your source VM was created by using the Resource Manager deployment model, or for the storage account that you will use for your new VM, click **Browse** > **Storage accounts** > *your storage account* > **All Settings** > **Access keys**. Copy the key labeled as **key1**.
 
 1. Get the URLs to access your source and destination storage accounts. In the portal, browse to your storage account and click **Blobs**. Then click the container that hosts your source VHD (for example, *vhds* for the classic deployment model), or the container that you want the VHD to be copied to. Click **Properties** for the container, and copy the text labeled **URL**. You'll need the URLs of both the source and destination containers. The URLs will look similar to `https://myaccount.blob.core.chinacloudapi.cn/mycontainer`.
 
@@ -69,8 +68,6 @@ Ensure that you meet the following prerequisites before you start the steps:
 
 
 ## Create a VM by using the copied VHD
-
-[AZURE.INCLUDE [arm-api-version-powershell](../includes/arm-api-version-powershell.md)]
 
 By using the VHD copied in the preceding steps, you can now use Azure PowerShell to create a Resource Manager-based Windows VM in a new virtual network. The VHD should be present in the same storage account as the new virtual machine that will be created.
 

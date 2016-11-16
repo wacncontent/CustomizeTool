@@ -10,12 +10,17 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="06/15/2016"
-	wacn.date=""/>
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-windows"
+	ms.devlang="na"
+	ms.topic="get-started-article"
+	ms.date="09/27/2016"
+	wacn.date=""
+	ms.author="cynthn"/>
 
 #About Windows virtual machines in Azure
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
 
 
 Azure Virtual Machines is one of several types of on-demand, scalable computing resources that Azure offers. Typically, you'll choose a virtual machine if you need more control over the computing environment than the other choices offer.
@@ -24,9 +29,9 @@ An Azure virtual machine gives you the flexibility of virtualization without hav
 
 This table helps you compare the choices offered by Azure.
 
-[AZURE.INCLUDE [compute-table](../includes/compute-options-table.md)]
+[AZURE.INCLUDE [compute-table](../../includes/compute-options-table.md)]
 
-[AZURE.INCLUDE [virtual-machines-choose-me-content](../includes/virtual-machines-choose-me-content.md)]
+[AZURE.INCLUDE [virtual-machines-choose-me-content](../../includes/virtual-machines-choose-me-content.md)]
 
 
 ## Next steps

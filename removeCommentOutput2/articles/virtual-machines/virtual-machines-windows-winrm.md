@@ -3,15 +3,20 @@
 	description="How to setup WinRM access for use with an Azure Resource Manager virtual machine"
 	services="virtual-machines-windows"
 	documentationCenter=""
-	authors="singhkay"
-	manager="drewm"
+	authors="singhkays"
+	manager="timlt"
 	editor=""
 	tags="azure-resource-manager"/>
 
 <tags
 	ms.service="virtual-machines-windows"
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-windows"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="06/16/2016"
-	wacn.date=""/>
+	wacn.date=""
+	ms.author="singhkay"/>
 
 # Setting up WinRM access for Virtual Machines in Azure Resource Manager
 
@@ -19,7 +24,7 @@
 
 > [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the Resource Manager deployment model, which Azure recommends for most new deployments instead of the classic deployment model
 
-* For an overview of the Azure Resource Manager, please see this [article](/documentation/articles/resource-group-overview/)
+* For an overview of the Azure Resource Manager, please see this [article](../azure-resource-manager/documentation/articles/resource-group-overview)
 * For differences between Azure Service Management and Azure Resource Manager, please see this [article](/documentation/articles/resource-manager-deployment-model/)
 
 The key difference in setting up WinRM configuration between the two stacks is how the certificate gets installed on the VM. In the Azure Resource Manager stack, the certificates are modeled as resources managed by the Key Vault Resource Provider. Therefore, the user needs to provide their own certificate and upload it to a Key Vault before using it in a VM.
@@ -43,7 +48,7 @@ You can create a self-signed certificate using this PowerShell script
 
 	$certificateName = "somename"
 	
-$thumbprint = (New-SelfSignedCertificate -DnsName $certificateName -CertStoreLocation Cert:\CurrentUser\My -KeySpec KeyExchange).Thumbprint
+	$thumbprint = (New-SelfSignedCertificate -DnsName $certificateName -CertStoreLocation Cert:\CurrentUser\My -KeySpec KeyExchange).Thumbprint
 	
 	$cert = (Get-ChildItem -Path cert:\CurrentUser\My\$thumbprint)
 	
@@ -56,7 +61,7 @@ $thumbprint = (New-SelfSignedCertificate -DnsName $certificateName -CertStoreLoc
 Before uploading the certificate to the Key Vault created in step 1, it needs to converted into a format the Microsoft.Compute resource provider will understand. The below PowerShell script will allow you do that
 
 	$fileName = "<Path to the .pfx file>"
-$fileContentBytes = Get-Content $fileName -Encoding Byte
+	$fileContentBytes = Get-Content $fileName -Encoding Byte
 	$fileContentEncoded = [System.Convert]::ToBase64String($fileContentBytes)
 	
 	$jsonObject = @"
@@ -71,7 +76,7 @@ $fileContentBytes = Get-Content $fileName -Encoding Byte
 	$jsonEncoded = [System.Convert]::ToBase64String($jsonObjectBytes)
 	
 	$secret = ConvertTo-SecureString -String $jsonEncoded -AsPlainText -Force
-Set-AzureKeyVaultSecret -VaultName "<vault name>" -Name "<secret name>" -SecretValue $secret
+	Set-AzureKeyVaultSecret -VaultName "<vault name>" -Name "<secret name>" -SecretValue $secret
 
 ## Step 4: Get the URL for your self-signed certificate in the Key Vault
 
@@ -131,9 +136,10 @@ While creating a VM through templates, the certificate gets referenced in the se
           }
         },
 
-A sample template for the above can be found here at [201-vm-winrm-keyvault-windows](https://azure.microsoft.com/documentation/templates/201-vm-winrm-keyvault-windows)
+A sample template for the above can be found here at [201-vm-winrm-keyvault-windows](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vm-winrm-keyvault-windows)
 
 Source code for this template can be found on [GitHub](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vm-winrm-keyvault-windows)
+
 >[AZURE.NOTE] Templates you downloaded from the GitHub Repo "azure-quickstart-templates" must be modified in order to fit in the Azure China Cloud Environment. For example, replace some endpoints -- "blob.core.chinacloudapi.cn" by "blob.core.chinacloudapi.cn", "chinacloudapp.cn" by "chinacloudapp.cn"; change some unsupported VM images; and, changes some unsupported VM sizes.
 
 #### PowerShell

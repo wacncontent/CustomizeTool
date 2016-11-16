@@ -10,12 +10,17 @@
 
 <tags
 	ms.service="virtual-machines-linux"
+	ms.devlang="multiple"
+	ms.topic="article"
+	ms.tgt_pltfrm="vm-linux"
+	ms.workload="infrastructure-services"
 	ms.date="04/15/2015"
-	wacn.date=""/>
+	wacn.date=""
+	ms.author="v-ahsab"/>
 
 # MariaDB (MySQL) cluster - Azure tutorial
 
-> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager model.
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]
 
 We're creating a multi-Master [Galera](http://galeracluster.com/products/) cluster of [MariaDBs](https://mariadb.org/en/about/), a robust, scalable, and reliable drop-in replacement for MySQL, to work in a highly available environment on Azure Virtual Machines.
 
@@ -31,7 +36,7 @@ This topic performs the following steps:
 
 ![Architecture](./media/virtual-machines-linux-classic-mariadb-mysql-cluster/Setup.png)
 
-> [AZURE.NOTE]  This topic uses the [Azure CLI] tools, so make sure to download them and connect them to your Azure subscription according to the instructions. If you need a reference to the commands available in the Azure CLI, check out this link for the [Azure CLI command reference]. You will also need to [create an SSH key for authentication] and make note of the **.pem file location**.
+> [AZURE.NOTE]  This topic uses the [Azure CLI](/documentation/articles/xplat-cli-install/) tools, so make sure to download them and connect them to your Azure subscription according to the instructions. If you need a reference to the commands available in the Azure CLI, check out this link for the [Azure CLI command reference](/documentation/articles/virtual-machines-command-line-tools/). You will also need to [create an SSH key for authentication] and make note of the **.pem file location**.
 
 
 ## Creating the template
@@ -129,12 +134,12 @@ this will output something like `f1179221e23b4dbb89e39d70e5bc9e72__OpenLogic-Cen
 
      - Copy the current MySQL directory into its new location and remove the old directory
 
-    		cpccp -avr /var/lib/mysql /mnt/data  
+    		cp -avr /var/lib/mysql /mnt/data  
     		rm -rf /var/lib/mysql
 
      - Set permissions on new directory accordingly
 
-        	chochown -R mysql:mysql /mnt/data && chmod -R 755 /mnt/data/  
+        	chown -R mysql:mysql /mnt/data && chmod -R 755 /mnt/data/  
 
      - Create a symlink pointing the old directory to the new location on the RAID partition
 
@@ -154,11 +159,11 @@ this will output something like `f1179221e23b4dbb89e39d70e5bc9e72__OpenLogic-Cen
 
     - Secure the MySQL installation, set the root password, remove anonymous users, disabling remote root login and removing the test database
 
-            mysql_smysql_secure_installation
+            mysql_secure_installation
 
     - Create a user on the database for cluster operations and optionally, your applications
 
-			mysql -mysql -u root -p
+			mysql -u root -p
 			GRANT ALL PRIVILEGES ON *.* TO 'cluster'@'%' IDENTIFIED BY 'p@ssw0rd' WITH GRANT OPTION; FLUSH PRIVILEGES;
             exit
 
@@ -197,7 +202,7 @@ this will output something like `f1179221e23b4dbb89e39d70e5bc9e72__OpenLogic-Cen
     - RSYNC: `firewall-cmd --zone=public --add-port=4444/tcp --permanent`
     - Reload the firewall: `firewall-cmd --reload`
 
-9.  Optimize the system for performance. Refer to this article on [performance tuning strategy] for more details
+9.  Optimize the system for performance. Refer to this article on [performance tuning strategy](/documentation/articles/virtual-machines-linux-classic-optimize-mysql/) for more details
 
 	- Edit the MySQL configuration file again
 
@@ -349,7 +354,7 @@ Will result in the table below
 
 In this article, you created a 3 node MariaDB + Galera highly-available cluster on Azure Virtual Machines running CentOS 7. The VMs are load balanced with the Azure Load Balancer.
 
-You may want to take a look at [another way to cluster MySQL on Linux] and ways to [optimize and test MySQL performance on Azure Linux VMs].
+You may want to take a look at [another way to cluster MySQL on Linux](/documentation/articles/virtual-machines-linux-classic-mysql-cluster/) and ways to [optimize and test MySQL performance on Azure Linux VMs](/documentation/articles/virtual-machines-linux-classic-optimize-mysql/).
 
 <!--Anchors-->
 [Architecture overview]: #architecture-overview
@@ -364,10 +369,7 @@ You may want to take a look at [another way to cluster MySQL on Linux] and ways 
 <!--Link references-->
 [Galera]: http://galeracluster.com/products/
 [MariaDBs]: https://mariadb.org/en/about/
-[Azure CLI]: /documentation/articles/xplat-cli-install/
-[Azure CLI command reference]: /documentation/articles/virtual-machines-command-line-tools/
 [create an SSH key for authentication]:http://www.jeff.wilcox.name/2013/06/secure-linux-vms-with-ssh-certificates/
 [performance tuning strategy]: /documentation/articles/virtual-machines-linux-classic-optimize-mysql/
 [optimize and test MySQL performance on Azure Linux VMs]: /documentation/articles/virtual-machines-linux-classic-optimize-mysql/
 [issue #1268 in the Azure CLI]:https://github.com/Azure/azure-xplat-cli/issues/1268
-[another way to cluster MySQL on Linux]: /documentation/articles/virtual-machines-linux-classic-mysql-cluster/ 

@@ -6,10 +6,15 @@
    authors="mgoedtel"
    manager="jwhit"
    editor="tysonn" />
-<tags
-	ms.service="automation"
-	ms.date="06/24/2016"
-	wacn.date=""/>
+<tags 
+   ms.service="automation"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="infrastructure-services"
+   ms.date="09/12/2016"
+   wacn.date=""
+   ms.author="bwren" />
 
 # Learning Windows PowerShell Workflow
 
@@ -89,7 +94,7 @@ Another option is to use another cmdlet that performs the same functionality as 
 	}
 
 
-##<a name="InlineScript"></a> InlineScript
+## <a name="InlineScript"></a> InlineScript
 
 The **InlineScript** activity is useful when you need to run one or more commands as traditional PowerShell script instead of PowerShell workflow.  While commands in a workflow are sent to Windows Workflow Foundation for processing, commands in an InlineScript block are processed by Windows PowerShell. 
 
@@ -139,7 +144,7 @@ While InlineScript activities may be critical in certain workflows, they do not 
 For further details on using InlineScript, see [Running Windows PowerShell Commands in a Workflow](http://technet.microsoft.com/zh-cn/library/jj574197.aspx) and [about_InlineScript](http://technet.microsoft.com/zh-cn/library/jj649082.aspx).
 
 
-##<a name="parallel-processing" id="parallel-execution"></a> Parallel processing
+## <a name="parallel-processing" id="parallel-execution"></a> Parallel processing
 
 One advantage of Windows PowerShell Workflows is the ability to perform a set of commands in parallel instead of sequentially as with a typical script. 
 
@@ -201,7 +206,7 @@ The following example is similar to the previous example copying files in parall
 > [AZURE.NOTE]  We do not recommend running child runbooks in parallel since this has been shown to give unreliable results.  The output from the child runbook sometimes will not show up, and settings in one child runbook can affect the other parallel child runbooks 
 
 
-##<a name="Checkpoints"></a> Checkpoints
+## <a name="Checkpoints"></a> Checkpoints
 
 A *checkpoint* is a snapshot of the current state of the workflow that includes the current value for variables and any output generated to that point. If a workflow ends in error or is suspended, then the next time it is run it will start from its last checkpoint instead of the start of the worfklow.  You can set a checkpoint in a workflow with the **Checkpoint-Workflow** activity.
 
@@ -232,17 +237,24 @@ The following example copies multiple files to a network location and sets a che
 	}
 
 Because username credentials are not persisted after you call the [Suspend-Workflow](https://technet.microsoft.com/zh-cn/library/jj733586.aspx) activity or after the last checkpoint, you need to set the credentials to null and then retrieve them again from the asset store after **Suspend-Workflow** or checkpoint is called.  Otherwise, you may receive the following error message: *The workflow job cannot be resumed, either because persistence data could not be saved completely, or saved persistence data has been corrupted. You must restart the workflow.*
+
 The following same code demonstrates how to handle this in your PowerShell Workflow runbooks.
+
+       
     workflow CreateTestVms
     {
-       $Cred = Get-AzureAutomationCredential -Name "MyCredential"
+       $Cred = Get-AutomationPSCredential -Name "MyCredential"
        $null = Add-AzureRmAccount -Credential $Cred
+
        $VmsToCreate = Get-AzureAutomationVariable -Name "VmsToCreate"
+
        foreach ($VmName in $VmsToCreate)
          {
           # Do work first to create the VM (code not shown)
+        
           # Now add the VM
-          New-AzureRmVm -VM $Vm -Location "WestUs" -ResourceGroupName "ResourceGroup01"
+          New-AzureRmVm -VM $Vm -Location "ChinaNorth" -ResourceGroupName "ResourceGroup01"
+
           # Checkpoint so that VM creation is not repeated if workflow suspends
           $Cred = $null
           Checkpoint-Workflow
@@ -250,6 +262,8 @@ The following same code demonstrates how to handle this in your PowerShell Workf
           $null = Add-AzureRmAccount -Credential $Cred
          }
      } 
+
+
 This is not required if you are authenticating using a Run As account configured with a service principal.  
 
 For more information about checkpoints, see [Adding Checkpoints to a Script Workflow](http://technet.microsoft.com/zh-cn/library/jj574114.aspx).

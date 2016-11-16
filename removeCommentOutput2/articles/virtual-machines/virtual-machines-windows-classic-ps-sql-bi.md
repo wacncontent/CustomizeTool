@@ -4,18 +4,20 @@
 	services="virtual-machines-windows"
 	documentationCenter="na"
 	authors="guyinacube"
-	manager="mblythe"
+	manager="erikre"
 	editor="monicar"
 	tags="azure-service-management"/>
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="05/13/2016"
-	wacn.date=""/>
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="vm-windows-sql-server"
+	ms.workload="infrastructure-services"
+	ms.date="10/04/2016"
+	wacn.date=""
+	ms.author="asaxton" />
 
 # SQL Server Business Intelligence in Azure Virtual Machines
-
-> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager model.
-
 
 The Azure Virtual Machine gallery includes images that contain SQL Server installations. The SQL Server editions supported in the gallery images are the same installation files you can install to on-premises computers and virtual machines. This topic summarizes the SQL Server Business Intelligence (BI) Features installed on the images and configuration steps required after a virtual machine is provisioned. This topic also describes supported deployment topologies for BI features and best practices.
 
@@ -25,9 +27,7 @@ There are two ways to license SQL Server in Azure Virtual Machines:
 
 1. License mobility benefits that are part of Software Assurance. For more information, see [License Mobility through Software Assurance on Azure](/pricing/license-mobility/).
 
-1. Pay per hour rate of Azure Virtual Machines with SQL Server installed. See the "SQL Server" section in [Virtual Machines Pricing](/home/features/virtual-machines/pricing/).
-
-For more information on licensing and current rates, see [Virtual Machines Licensing FAQ](/pricing/licensing-faq/%20/).
+1. Pay per hour rate of Azure Virtual Machines with SQL Server installed. See the "SQL Server" section in [Virtual Machines Pricing](/pricing/details/virtual-machines/).
 
 ## SQL Server Images Available in Azure Virtual Machine Gallery
 

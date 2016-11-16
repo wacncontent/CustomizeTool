@@ -6,66 +6,73 @@
    	services="hdinsight"
    	documentationCenter=""
    	authors="Blackmist"
-   	manager="paulettm"
+   	manager="jhubbard"
    	editor="cgronlun"
 	tags="azure-portal"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="06/13/2016"
-	wacn.date=""/>
+   	ms.service="hdinsight"
+   	ms.devlang="na"
+   	ms.topic="article"
+   	ms.tgt_pltfrm="na"
+   	ms.workload="big-data"
+   	ms.date="09/20/2016"
+   	wacn.date=""
+   	ms.author="larryfr"/>
 
 #Create Linux-based clusters in HDInsight using the Azure CLI
 
-[AZURE.INCLUDE [selector](../includes/hdinsight-selector-create-clusters.md)]
+[AZURE.INCLUDE [selector](../../includes/hdinsight-selector-create-clusters.md)]
 
 The Azure CLI is a cross-platform command-line utility that allows you to manage Azure Services. It can be used, along with Azure Resource management templates, to create an HDInsight cluster, along with associated storage accounts and other services.
 
-Azure Resource Management templates are JSON documents that describe a __resource group__ and all resources in it (such as HDInsight.) This template based approach allows you to define all the resources that you need for HDInsight in one template, and to manage changes to the group as a whole through __deployments__ that apply changes to the group.
+Azure Resource Management templates are JSON documents that describe a __resource group__ and all resources in it (such as HDInsight.) This template-based approach allows you to define all the resources that you need for HDInsight in one template. It also lets you manage changes to the group as a whole through __deployments__, which apply changes to the entire group.
 
 The steps in this document walk through the process of creating a new HDInsight cluster using the Azure CLI and a template.
 
-> [AZURE.IMPORTANT] The steps in this document use the default number of worker nodes (4) for an HDInsight cluster. If you plan on more than 32 worker nodes, either at cluster creation or by scaling the cluster after creation, then you must select a head node size with at least 8 cores and 14GB ram.
+> [AZURE.IMPORTANT] The steps in this document use the default number of worker nodes (4) for an HDInsight cluster. If you plan on more than 32 worker nodes (during cluster creation or by scaling the cluster,) then you must select a head node size with at least 8 cores and 14 GB ram.
 >
-> For more information on node sizes and associated costs, see [HDInsight pricing](/home/features/hdinsight/pricing/).
+> For more information on node sizes and associated costs, see [HDInsight pricing](/pricing/details/hdinsight/).
 
 ##Prerequisites
 
-[AZURE.INCLUDE [delete-cluster-warning](../includes/hdinsight-delete-cluster-warning.md)]
+[AZURE.INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
 
 - **An Azure subscription**. See [Get Azure trial](/pricing/1rmb-trial/).
 - __Azure CLI__. The steps in this document were last tested with Azure CLI version 0.10.1.
 
-    [AZURE.INCLUDE [use-latest-version](../includes/hdinsight-use-latest-cli.md)] 
+    [AZURE.INCLUDE [use-latest-version](../../includes/hdinsight-use-latest-cli.md)] 
 
-##Login to your Azure subscription
+### Access control requirements
+[AZURE.INCLUDE [access-control](../../includes/hdinsight-access-control-requirements.md)]
+##Log in to your Azure subscription
 
 Follow the steps documented in [Connect to an Azure subscription from the Azure Command-Line Interface (Azure CLI)](/documentation/articles/xplat-cli-connect/) and connect to your subscription using the __login__ method.
 
 ##Create a cluster
 
-The following steps should be performed from a command-prompt, shell or terminal session after installing and configuring the Azure CLI.
+The following steps should be performed from a command-prompt, shell, or terminal session after installing and configuring the Azure CLI.
 
 1. Use the following command to authenticate to your Azure subscription:
 
         azure login
 
-    You will be prompted to provide your name and password. If you have multiple Azure subscriptions, you can use `azure account set <subscriptionname>` to set the subscription that the Azure CLI commands will use.
+    You are prompted to provide your name and password. If you have multiple Azure subscriptions, use `azure account set <subscriptionname>` to set the subscription that the Azure CLI commands use.
 
 3. Switch to Azure Resource Manager mode using the following command:
 
         azure config mode arm
 
-4. Create a new resource group. This will contain the HDInsight cluster and associated storage account.
+4. Create a resource group. This resource group will contain the HDInsight cluster and associated storage account.
 
         azure group create groupname location
         
     * Replace __groupname__ with a unique name for the group. 
     * Replace __location__ with the geographic region that you want to create the group in. 
     
-        For a list of valid locations, use the `azure locations list` command, and then use one of the locations from the __Name__ column.
+        For a list of valid locations, use the `azure location list` command, and then use one of the locations from the __Name__ column.
 
-5. Create a new storage account. This will be used as the default storage for the HDInsight cluster.
+5. Create a storage account. This storage account will be used as the default storage for the HDInsight cluster.
 
         azure storage account create -g groupname --sku-name RAGRS -l location --kind Storage storagename
         
@@ -84,7 +91,7 @@ The following steps should be performed from a command-prompt, shell or terminal
     
     In the data that is returned, save the __key__ value for __key1__.
 
-6. Create a new HDInsight cluster.
+6. Create an HDInsight cluster.
 
         azure hdinsight cluster create -g groupname -l location -y Linux --clusterType Hadoop --defaultStorageAccountName storagename.blob.core.chinacloudapi.cn --defaultStorageAccountKey storagekey --defaultStorageContainer clustername --workerNodeCount 2 --userName admin --password httppassword --sshUserName sshuser --sshPassword sshuserpassword clustername
 

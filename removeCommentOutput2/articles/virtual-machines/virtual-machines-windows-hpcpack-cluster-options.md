@@ -8,15 +8,19 @@
  editor=""
  tags="azure-resource-manager,azure-service-management,hpc-pack"/>
 <tags
-	ms.service="virtual-machines-windows"
-	ms.date="06/17/2016"
-	wacn.date=""/>
+ms.service="virtual-machines-windows"
+ ms.devlang="na"
+ ms.topic="article"
+ ms.tgt_pltfrm="vm-windows"
+ ms.workload="big-compute"
+ ms.date="09/26/2016"
+ wacn.date=""
+ ms.author="danlep"/>
 
-# Options to create and manage a Windows high performance computing (HPC) cluster in Azure with Microsoft HPC Pack
+# Options with HPC Pack to create and manage a Windows HPC cluster in Azure
 
-[AZURE.INCLUDE [virtual-machines-common-hpcpack-cluster-options](../includes/virtual-machines-common-hpcpack-cluster-options.md)]
+[AZURE.INCLUDE [virtual-machines-common-hpcpack-cluster-options](../../includes/virtual-machines-common-hpcpack-cluster-options.md)]
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
 
 ## Run an HPC Pack cluster in Azure VMs
 
@@ -51,6 +55,7 @@
 * [Grow and shrink Azure compute resources in an HPC Pack cluster](/documentation/articles/virtual-machines-windows-classic-hpcpack-cluster-node-autogrowshrink/)
 
 * [Submit jobs to an HPC Pack cluster in Azure](/documentation/articles/virtual-machines-windows-hpcpack-cluster-submit-jobs/)
+* [Job management in HPC Pack](https://technet.microsoft.com/zh-cn/library/jj899585.aspx)
 
 
 ## Add worker role nodes to an HPC Pack cluster
@@ -62,12 +67,7 @@
 
 * [Add Azure "burst" nodes to an HPC Pack head node in Azure](/documentation/articles/virtual-machines-windows-classic-hpcpack-cluster-node-burst/)
 
-* [Grow and shrink Azure compute resources in an HPC Pack cluster](/documentation/articles/virtual-machines-windows-classic-hpcpack-cluster-node-autogrowshrink/)
 
 ## Integrate with Azure Batch 
 
 * [Burst to Azure Batch with HPC Pack](https://technet.microsoft.com/zh-cn/library/mt612877.aspx)
-
-## Create RDMA clusters for MPI workloads
-
-* [Set up a Windows RDMA cluster with HPC Pack to run MPI applications](/documentation/articles/virtual-machines-windows-classic-hpcpack-rdma-cluster/)

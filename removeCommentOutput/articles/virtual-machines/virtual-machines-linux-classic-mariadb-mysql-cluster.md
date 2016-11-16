@@ -10,12 +10,17 @@
 
 <tags
 	ms.service="virtual-machines-linux"
+	ms.devlang="multiple"
+	ms.topic="article"
+	ms.tgt_pltfrm="vm-linux"
+	ms.workload="infrastructure-services"
 	ms.date="04/15/2015"
-	wacn.date=""/>
+	wacn.date=""
+	ms.author="v-ahsab"/>
 
 # MariaDB (MySQL) cluster - Azure tutorial
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]
 
 > [AZURE.NOTE]  MariaDB Enterprise cluster is now available in the Azure Marketplace.  The new offering will automatically deploy a MariaDB Galera cluster on ARM. You should use the new offering from  https://azure.microsoft.com/marketplace/partners/mariadb/cluster-maxscale/ 
 
@@ -33,7 +38,7 @@ This topic performs the following steps:
 
 ![Architecture](./media/virtual-machines-linux-classic-mariadb-mysql-cluster/Setup.png)
 
-> [AZURE.NOTE]  This topic uses the [Azure CLI] tools, so make sure to download them and connect them to your Azure subscription according to the instructions. If you need a reference to the commands available in the Azure CLI, check out this link for the [Azure CLI command reference]. You will also need to [create an SSH key for authentication] and make note of the **.pem file location**.
+> [AZURE.NOTE]  This topic uses the [Azure CLI](/documentation/articles/xplat-cli-install/) tools, so make sure to download them and connect them to your Azure subscription according to the instructions. If you need a reference to the commands available in the Azure CLI, check out this link for the [Azure CLI command reference](/documentation/articles/virtual-machines-command-line-tools/). You will also need to [create an SSH key for authentication] and make note of the **.pem file location**.
 
 
 ## Creating the template
@@ -199,7 +204,7 @@ this will output something like `5112500ae3b842c8b9c604889f8753c3__OpenLogic-Cen
     - RSYNC: `firewall-cmd --zone=public --add-port=4444/tcp --permanent`
     - Reload the firewall: `firewall-cmd --reload`
 
-9.  Optimize the system for performance. Refer to this article on [performance tuning strategy] for more details
+9.  Optimize the system for performance. Refer to this article on [performance tuning strategy](/documentation/articles/virtual-machines-linux-classic-optimize-mysql/) for more details
 
 	- Edit the MySQL configuration file again
 
@@ -351,7 +356,7 @@ Will result in the table below
 
 In this article, you created a 3 node MariaDB + Galera highly-available cluster on Azure Virtual Machines running CentOS 7. The VMs are load balanced with the Azure Load Balancer.
 
-You may want to take a look at [another way to cluster MySQL on Linux] and ways to [optimize and test MySQL performance on Azure Linux VMs].
+You may want to take a look at [another way to cluster MySQL on Linux](/documentation/articles/virtual-machines-linux-classic-mysql-cluster/) and ways to [optimize and test MySQL performance on Azure Linux VMs](/documentation/articles/virtual-machines-linux-classic-optimize-mysql/).
 
 <!--Anchors-->
 [Architecture overview]: #architecture-overview
@@ -366,10 +371,5 @@ You may want to take a look at [another way to cluster MySQL on Linux] and ways 
 <!--Link references-->
 [Galera]: http://galeracluster.com/products/
 [MariaDBs]: https://mariadb.org/en/about/
-[Azure CLI]: /documentation/articles/xplat-cli-install/
-[Azure CLI command reference]: /documentation/articles/virtual-machines-command-line-tools/
 [create an SSH key for authentication]:http://www.jeff.wilcox.name/2013/06/secure-linux-vms-with-ssh-certificates/
-[performance tuning strategy]: /documentation/articles/virtual-machines-linux-optimize-mysql-perf/
-[optimize and test MySQL performance on Azure Linux VMs]: /documentation/articles/virtual-machines-linux-optimize-mysql-perf/
 [issue #1268 in the Azure CLI]:https://github.com/Azure/azure-xplat-cli/issues/1268
-[another way to cluster MySQL on Linux]: /documentation/articles/virtual-machines-linux-mysql-cluster/

@@ -1,4 +1,3 @@
-
 <properties
 	pageTitle="Detach a data disk from a Windows VM | Azure"
 	description="Learn to detach a data disk from a virtual machine in Azure using the Resource Manager deployment model."
@@ -11,8 +10,13 @@
 
 <tags
 	ms.service="virtual-machines-windows"
-	ms.date="06/02/2016"
-	wacn.date=""/>
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-windows"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="09/27/2016"
+	wacn.date=""
+	ms.author="cynthn"/>
 
 
 

@@ -1,7 +1,7 @@
 <!-- not suitable for Mooncake -->
 
 <properties
-	pageTitle="Create a WordPress web app in Azure | Azure"
+	pageTitle="Create a WordPress web app in Azure App Service | Azure"
 	description="Learn how to create a new Azure web app for a WordPress blog using the Azure Portal."
 	services="app-service\web"
 	documentationCenter="php"
@@ -11,12 +11,17 @@
 
 <tags
 	ms.service="app-service-web"
-	ms.date="06/24/2016"
-	wacn.date=""/>
+	ms.workload="na"
+	ms.tgt_pltfrm="na"
+	ms.devlang="PHP"
+	ms.topic="hero-article"
+	ms.date="08/11/2016"
+	wacn.date=""
+	ms.author="robmcm"/>
 
-# Create a WordPress web app in Azure
+# Create a WordPress web app in Azure App Service
 
-[AZURE.INCLUDE [tabs](../includes/app-service-web-get-started-nav-tabs.md)]
+[AZURE.INCLUDE [tabs](../../includes/app-service-web-get-started-nav-tabs.md)]
 
 This tutorial shows how to deploy a WordPress blog site from the Azure Marketplace.
 
@@ -27,8 +32,8 @@ When you're done with the tutorial you'll have your own WordPress blog site up a
 You'll learn:
 
 * How to find an application template in the Azure Marketplace.
-* How to create a web app in Azure that is based on the template.
-* How to configure Azure settings for the new web app and database.
+* How to create a web app in Azure App Service that is based on the template.
+* How to configure Azure App Service settings for the new web app and database.
 
 The Azure Marketplace makes available a wide range of popular web apps developed by Microsoft, third party companies, and open source software initiatives. The web apps are built on a wide range of popular frameworks, such as [PHP](/develop/nodejs/) in this WordPress example, [.NET](/develop/net/), [Node.js](/develop/nodejs/), [Java](/develop/java/), and [Python](/develop/python/), to name a few. To create a web app from the Azure Marketplace the only software you need is the browser that you use for the [Azure Portal](https://portal.azure.cn/). 
 
@@ -37,9 +42,9 @@ The WordPress site that you deploy in this tutorial uses MySQL for the database.
 > [AZURE.NOTE]
 > To complete this tutorial, you need a Azure account. If you don't have an account, you can [activate your Visual Studio subscriber benefits](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F) or [sign up for a trial](/pricing/1rmb-trial/?WT.mc_id=A261C142F).
 >
-> If you want to get started with Azure before you sign up for an Azure account, go to [Try Azure Web App](https://tryappservice.azure.com/). There, you can immediately create a short-lived starter web app in Azure--no credit card required, and no commitments.
+> If you want to get started with Azure App Service before you sign up for an Azure account, go to [Try App Service](https://tryappservice.azure.com/). There, you can immediately create a short-lived starter web app in App Service--no credit card required, and no commitments.
 
-## Select WordPress and configure for Azure
+## Select WordPress and configure for Azure App Service
 
 1. Log in to the [Azure Portal](https://portal.azure.cn/).
 
@@ -63,7 +68,7 @@ The WordPress site that you deploy in this tutorial uses MySQL for the database.
 
 5. Select a **Resource Group** or create a new one.
 
-	For more information about resource groups, see [Azure Resource Manager overview](/documentation/articles/resource-group-overview/).
+	For more information about resource groups, see [Azure Resource Manager overview](../azure-resource-manager/documentation/articles/resource-group-overview).
 
 5. Select an **App Service plan/Location** or create a new one.
 
@@ -85,7 +90,7 @@ The WordPress site that you deploy in this tutorial uses MySQL for the database.
 
 	![Configure web app](./media/web-sites-php-web-site-gallery/configure.png)
 
-	Azure creates the web app, typically in less than a minute. You can watch the progress by clicking the bell icon at the top of the portal page.
+	Azure App Service creates the web app, typically in less than a minute. You can watch the progress by clicking the bell icon at the top of the portal page.
 
 	![Progress indicator](./media/web-sites-php-web-site-gallery/progress.png)
 
@@ -117,10 +122,10 @@ The WordPress site that you deploy in this tutorial uses MySQL for the database.
 
 You've seen how to create and deploy a PHP web app from the gallery. For more information about using PHP in Azure, see the [PHP Developer Center](/develop/php/).
 
-For more information about how to work with Azure Web Apps, see the links on the left side of the page (for wide browser windows) or at the top of the page (for narrow browser windows). 
+For more information about how to work with App Service Web Apps, see the links on the left side of the page (for wide browser windows) or at the top of the page (for narrow browser windows). 
 
 ## What's changed
-* For a guide to the change from Websites to Azure Web App, see [Azure and its impact on existing Azure Services](/documentation/services/web-sites/).
+* For a guide to the change from Websites to App Service, see [Azure App Service and its impact on existing Azure Services](/documentation/articles/app-service-changes-existing-services/).
 
 [5]: ./media/web-sites-php-web-site-gallery/startmarketplace.png
 [7]: ./media/web-sites-php-web-site-gallery/search-web-app.png

@@ -1,52 +1,69 @@
 <properties
-   pageTitle="Create Linux-based Hadoop clusters in HDInsight using ARM templates | Azure"
-   	description="Learn how to create clusters for Azure HDInsight using Azure ARM templates."
+   pageTitle="Create Linux-based Hadoop clusters in HDInsight using Azure Resource Manager templates | Azure"
+   	description="Learn how to create clusters for Azure HDInsight using Azure Azure Resource Manager templates."
    services="hdinsight"
    documentationCenter=""
    tags="azure-portal"
    authors="mumian"
-   manager="paulettm"
+   manager="jhubbard"
    editor="cgronlun"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="04/26/2016"
-	wacn.date=""/>
+   ms.service="hdinsight"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="na"
+   ms.workload="big-data"
+   ms.date="09/02/2016"
+   wacn.date=""
+   ms.author="jgao"/>
 
-# Create Linux-based Hadoop clusters in HDInsight using ARM templates
+# Create Linux-based Hadoop clusters in HDInsight using Azure Resource Manager templates
 
-[AZURE.INCLUDE [selector](../includes/hdinsight-selector-create-clusters.md)]
+[AZURE.INCLUDE [selector](../../includes/hdinsight-selector-create-clusters.md)]
 
 Learn how to create HDInsight clusters using Azure Resource Manager(ARM) templates. For more information, see [Deploy an application with Azure Resource Manager template](/documentation/articles/resource-group-template-deploy/). For other cluster creation tools and features click the tab select on the top of this page or see [Cluster creation methods](/documentation/articles/hdinsight-provision-clusters-v1/#cluster-creation-methods).
 
 ##Prerequisites:
 
-[AZURE.INCLUDE [delete-cluster-warning](../includes/hdinsight-delete-cluster-warning.md)]
+[AZURE.INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
 
 Before you begin the instructions in this article, you must have the following:
 
 - [Azure subscription](/pricing/1rmb-trial/).
 - Azure PowerShell and/or Azure CLI
 
-    [AZURE.INCLUDE [use-latest-version](../includes/hdinsight-use-latest-powershell-and-cli.md)]
+    [AZURE.INCLUDE [use-latest-version](../../includes/hdinsight-use-latest-powershell-and-cli.md)]
 
-## ARM templates
+### Access control requirements
 
-ARM template makes it easy to create HDInsight clusters, their dependent resources (such as the default storage account), and other resources (such as Azure SQL Database to use Apache Sqoop) for your application in a single, coordinated operation. In the template, you define the resources that are needed for the application and specify deployment parameters to input values for different environments. The template consists of JSON and expressions which you can use to construct values for your deployment.
+[AZURE.INCLUDE [access-control](../../includes/hdinsight-access-control-requirements.md)]
 
-An ARM template for creating an HDInsight cluster and the dependent Azure Storage account can be found in [Appendix-A](#appx-a-arm-template). Use cross-platform [VSCode](https://code.visualstudio.com/#alt-downloads) with the [ARM extention](https://marketplace.visualstudio.com/items?itemName=msazurermtools.azurerm-vscode-tools) or a text editor to save the template into a file on your workstation. You will learn how to call the template using different methods.
+## Resource Manager templates
 
-For more information about ARM template, see
+Resource Manager template makes it easy to create HDInsight clusters, their dependent resources (such as the default storage account), and other resources (such as Azure SQL Database to use Apache Sqoop) for your application in a single, coordinated operation. In the template, you define the resources that are needed for the application and specify deployment parameters to input values for different environments. The template consists of JSON and expressions which you can use to construct values for your deployment.
+
+A Resource Manager template for creating an HDInsight cluster and the dependent Azure Storage account can be found in [Appendix-A](#appx-a-arm-template). Use cross-platform [VSCode](https://code.visualstudio.com/#alt-downloads) with the [Resource Manager extention](https://marketplace.visualstudio.com/items?itemName=msazurermtools.azurerm-vscode-tools) or a text editor to save the template into a file on your workstation. You will learn how to call the template using different methods.
+
+For more information about Resource Manager template, see
 
 - [Author Azure Resource Manager templates](/documentation/articles/resource-group-authoring-templates/)
 - [Deploy an application with Azure Resource Manager template](/documentation/articles/resource-group-template-deploy/)
 
+To find out the JSON schema for certain elements, you can follow the following procedure:
 
+1. Open [Azure portal](https://portal.azure.cn) to create an HDInsight cluster.  See [Create Linux-based clusters in HDInsight using the Azure portal](/documentation/articles/hdinsight-hadoop-create-linux-clusters-portal/).
+2. Configure the required elements, and the elements you need the JSON schema.
+3. Before clicking **Create**, click **Automation options** as shown in the following screenshot:
+
+    ![HDInsight Hadoop create cluster Resource Manager template schema automation options](./media/hdinsight-hadoop-create-linux-clusters-arm-templates/hdinsight-create-cluster-resource-manager-template-automation-option.png)
+
+    The portal creates a Resource Manager template based on your configurations.
 ## Deploy with PowerShell
 
 The following procedure creates Linux-based HDInsight cluster.
 
-**To deploy a cluster using ARM template**
+**To deploy a cluster using Resource Manager template**
 
 1. Save the json file in [Appendix A](#appx-a-arm-template) to your workstation. In the PowerShell script, the file name is *C:\HDITutorials-ARM\hdinsight-arm-template.json*.
 2. Set the parameters and variables if needed.
@@ -106,14 +123,14 @@ For more information, see  [Deploy with PowerShell](/documentation/articles/reso
 
 ## Deploy with Azure CLI
 
-The following sample creates a cluster and its dependent storage account and container by calling an ARM template:
+The following sample creates a cluster and its dependent storage account and container by calling a Resource Manager template:
 
 	azure login
 	azure config mode arm
     azure group create -n hdi1229rg -l "China East"
     azure group deployment create --resource-group "hdi1229rg" --name "hdi1229" --template-file "C:\HDITutorials-ARM\hdinsight-arm-template.json"
     
-You will be prompted to enter the cluster name, cluster user password (the default username is *admin*), and the SSH user password (the default SSH username is *sshuser*). To provide in-line paramters:
+You will be prompted to enter the cluster name, cluster user password (the default username is *admin*), and the SSH user password (the default SSH username is *sshuser*). To provide in-line parameters:
 
     azure group deployment create --resource-group "hdi1229rg" --name "hdi1229" --template-file "c:\Tutorials\HDInsightARM\create-linux-based-hadoop-cluster-in-hdinsight.json" --parameters '{\"clusterName\":{\"value\":\"hdi1229\"},\"clusterLoginPassword\":{\"value\":\"Pass@word1\"},\"sshPassword\":{\"value\":\"Pass@word1\"}}'
 
@@ -136,9 +153,11 @@ In this article, you have learned several ways to create an HDInsight cluster. T
 - To learn about the sections of the Azure Resource Manager template, see [Authoring templates](/documentation/articles/resource-group-authoring-templates/).
 - For a list of the functions you can use in an Azure Resource Manager template, see [Template functions](/documentation/articles/resource-group-template-functions/).
 
-##Appx-A: ARM template
+##Appx-A: Resource Manager template
 
-The following Azure Resource Manger template creates a Linux-based Hadoop cluster with the dependent Azure storage account.
+The following Azure Resource Manger template creates a Linux-based Hadoop cluster with the dependent Azure storage account. 
+
+> [AZURE.NOTE] The sample includes configuration information for Hive metastore and Oozie metastore.  Remove the section or configure the section before using the template.
 
     {
     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
@@ -160,20 +179,20 @@ The following Azure Resource Manger template creates a Linux-based Hadoop cluste
         "clusterLoginPassword": {
         "type": "securestring",
         "metadata": {
-            "description": "The password for the cluster login."
+            "description": "The password must be at least 10 characters in length and must contain at least one digit, one non-alphanumeric character, and one upper or lower case letter."
         }
         },
         "sshUserName": {
         "type": "string",
         "defaultValue": "sshuser",
         "metadata": {
-            "description": "These credentials can be used to remotely access the cluster and the edge node virtual machine."
+            "description": "These credentials can be used to remotely access the cluster."
         }
         },
         "sshPassword": {
         "type": "securestring",
         "metadata": {
-            "description": "The password for the ssh user."
+            "description": "The password must be at least 10 characters in length and must contain at least one digit, one non-alphanumeric character, and one upper or lower case letter."
         }
         },
         "location": {
@@ -189,7 +208,7 @@ The following Azure Resource Manger template creates a Linux-based Hadoop cluste
             "West Europe",
             "China East",
             "China North",
-            "Japan East",
+            "China East",
             "China East",
             "Australia East",
             "Australia Southeast"
@@ -210,19 +229,19 @@ The following Azure Resource Manger template creates a Linux-based Hadoop cluste
         "metadata": {
             "description": "The type of the HDInsight cluster to create."
         }
-        },  
+        },
         "clusterWorkerNodeCount": {
         "type": "int",
         "defaultValue": 2,
         "metadata": {
             "description": "The number of nodes in the HDInsight cluster."
         }
-        }      
+        }
     },
     "variables": {
         "defaultApiVersion": "2015-05-01-preview",
         "clusterApiVersion": "2015-03-01-preview",
-        "clusterStorageAccountName": "[concat(parameters('clusterName'),'store')]"      
+        "clusterStorageAccountName": "[concat(parameters('clusterName'),'store')]"
     },
     "resources": [
         {
@@ -230,8 +249,8 @@ The following Azure Resource Manger template creates a Linux-based Hadoop cluste
         "type": "Microsoft.Storage/storageAccounts",
         "location": "[parameters('location')]",
         "apiVersion": "[variables('defaultApiVersion')]",
-        "dependsOn": [],
-        "tags": {},
+        "dependsOn": [ ],
+        "tags": { },
         "properties": {
             "accountType": "Standard_LRS"
         }
@@ -241,13 +260,14 @@ The following Azure Resource Manger template creates a Linux-based Hadoop cluste
         "type": "Microsoft.HDInsight/clusters",
         "location": "[parameters('location')]",
         "apiVersion": "[variables('clusterApiVersion')]",
-        "dependsOn": [
-            "[concat('Microsoft.Storage/storageAccounts/',variables('clusterStorageAccountName'))]"
-        ],
-        "tags": {},
+        "dependsOn": [ "[concat('Microsoft.Storage/storageAccounts/',variables('clusterStorageAccountName'))]" ],
+        "tags": {
+
+        },
         "properties": {
-            "clusterVersion": "3.2",
+            "clusterVersion": "3.4",
             "osType": "Linux",
+            "tier": "standard",
             "clusterDefinition": {
             "kind": "[parameters('clusterType')]",
             "configurations": {
@@ -255,7 +275,36 @@ The following Azure Resource Manger template creates a Linux-based Hadoop cluste
                 "restAuthCredential.isEnabled": true,
                 "restAuthCredential.username": "[parameters('clusterLoginUserName')]",
                 "restAuthCredential.password": "[parameters('clusterLoginPassword')]"
-                }
+                },
+                "hive-site": {
+                    "javax.jdo.option.ConnectionDriverName": "com.microsoft.sqlserver.jdbc.SQLServerDriver",
+                    "javax.jdo.option.ConnectionURL": "jdbc:sqlserver://myadla0901dbserver.database.chinacloudapi.cn;database=myhive20160901;encrypt=true;trustServerCertificate=true;create=false;loginTimeout=300",
+                    "javax.jdo.option.ConnectionUserName": "johndole",
+                    "javax.jdo.option.ConnectionPassword": "myPassword$"
+                },
+                "hive-env": {
+                    "hive_database": "Existing MSSQL Server database with SQL authentication",
+                    "hive_database_name": "myhive20160901",
+                    "hive_database_type": "mssql",
+                    "hive_existing_mssql_server_database": "myhive20160901",
+                    "hive_existing_mssql_server_host": "myadla0901dbserver.database.chinacloudapi.cn",
+                    "hive_hostname": "myadla0901dbserver.database.chinacloudapi.cn"
+                },
+                "oozie-site": {
+                    "oozie.service.JPAService.jdbc.driver": "com.microsoft.sqlserver.jdbc.SQLServerDriver",
+                    "oozie.service.JPAService.jdbc.url": "jdbc:sqlserver://myadla0901dbserver.database.chinacloudapi.cn;database=myhive20160901;encrypt=true;trustServerCertificate=true;create=false;loginTimeout=300",
+                    "oozie.service.JPAService.jdbc.username": "johndole",
+                    "oozie.service.JPAService.jdbc.password": "myPassword$",
+                    "oozie.db.schema.name": "oozie"
+                },
+                "oozie-env": {
+                    "oozie_database": "Existing MSSQL Server database with SQL authentication",
+                    "oozie_database_name": "myhive20160901",
+                    "oozie_database_type": "mssql",
+                    "oozie_existing_mssql_server_database": "myhive20160901",
+                    "oozie_existing_mssql_server_host": "myadla0901dbserver.database.chinacloudapi.cn",
+                    "oozie_hostname": "myadla0901dbserver.database.chinacloudapi.cn"
+                }            
             }
             },
             "storageProfile": {
@@ -274,7 +323,7 @@ The following Azure Resource Manger template creates a Linux-based Hadoop cluste
                 "name": "headnode",
                 "targetInstanceCount": "2",
                 "hardwareProfile": {
-                    "vmSize": "Large"
+                    "vmSize": "Standard_D3"
                 },
                 "osProfile": {
                     "linuxOperatingSystemProfile": {
@@ -287,7 +336,7 @@ The following Azure Resource Manger template creates a Linux-based Hadoop cluste
                 "name": "workernode",
                 "targetInstanceCount": "[parameters('clusterWorkerNodeCount')]",
                 "hardwareProfile": {
-                    "vmSize": "Large"
+                    "vmSize": "Standard_D3"
                 },
                 "osProfile": {
                     "linuxOperatingSystemProfile": {

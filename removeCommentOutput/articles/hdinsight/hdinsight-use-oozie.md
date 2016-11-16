@@ -5,18 +5,23 @@
 	documentationCenter=""
 	tags="azure-portal"
 	authors="mumian"
-	manager="paulettm"
+	manager="jhubbard"
 	editor="cgronlun"/>
 
 <tags
 	ms.service="hdinsight"
-	ms.date="05/18/2016"
-	wacn.date=""/>
+	ms.workload="big-data"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.date="07/25/2016"
+	wacn.date=""
+	ms.author="jgao"/>
 
 
 # Use Oozie with Hadoop to define and run a workflow in HDInsight
 
-[AZURE.INCLUDE [oozie-selector](../includes/hdinsight-oozie-selector.md)]
+[AZURE.INCLUDE [oozie-selector](../../includes/hdinsight-oozie-selector.md)]
 
 Learn how to use Apache Oozie to define a workflow and run the workflow on HDInsight. To learn about the Oozie coordinator, see [Use time-based Hadoop Oozie Coordinator with HDInsight][hdinsight-oozie-coordinator-time]. To learn Azure Data Factory, see [Use Pig and Hive with Data Factory][azure-data-factory-pig-hive].
 
@@ -54,7 +59,7 @@ Before you begin this tutorial, you must have the following:
 
 - **A workstation with Azure PowerShell**. 
 
-    [AZURE.INCLUDE [upgrade-powershell](../includes/hdinsight-use-latest-powershell.md)]
+    [AZURE.INCLUDE [upgrade-powershell](../../includes/hdinsight-use-latest-powershell.md)]
     
     To execute Windows PowerShell scripts, you must run as an administrator and set the execution policy to *RemoteSigned*. For more information, see [Run Windows PowerShell scripts][powershell-script].
 
@@ -124,7 +129,7 @@ The RunHiveScript has several variables. You will pass the values when you submi
 <table border = "1">
 <tr><th>Workflow variables</th><th>Description</th></tr>
 <tr><td>${jobTracker}</td><td>Specifies the URL of the Hadoop job tracker. Use <strong>jobtrackerhost:9010</strong> in HDInsight version 3.0 and 2.1.</td></tr>
-<tr><td>${nameNode}</td><td>Specifies the URL of the Hadoop name node. Use the default file system address, for example, <i>wasb://&lt;containerName&gt;@&lt;storageAccountName&gt;.blob.core.chinacloudapi.cn</i>.</td></tr>
+<tr><td>${nameNode}</td><td>Specifies the URL of the Hadoop name node. Use the default file system address, for example, <i>wasbs://&lt;containerName&gt;@&lt;storageAccountName&gt;.blob.core.chinacloudapi.cn</i>.</td></tr>
 <tr><td>${queueName}</td><td>Specifies the queue name that the job will be submitted to. Use the <strong>default</strong>.</td></tr>
 </table>
 
@@ -186,9 +191,9 @@ The PowerShell script in this section performs the following steps:
 
 	Both files are stored in a public Blob container.
 	
-	- Copy the HiveQL script (useoozie.hql) to Azure Storage (wasb:///tutorials/useoozie/useoozie.hql).
-	- Copy workflow.xml to wasb:///tutorials/useoozie/workflow.xml.
-	- Copy the data file (/example/data/sample.log) to wasb:///tutorials/useoozie/data/sample.log.
+	- Copy the HiveQL script (useoozie.hql) to Azure Storage (wasbs:///tutorials/useoozie/useoozie.hql).
+	- Copy workflow.xml to wasbs:///tutorials/useoozie/workflow.xml.
+	- Copy the data file (/example/data/sample.log) to wasbs:///tutorials/useoozie/data/sample.log.
 	 
 6. Submit an Oozie job.
 
@@ -444,7 +449,7 @@ Here is the script.  You can run the script from Windows PowerShell ISE. You onl
 	
 	#region - submit Oozie job
 	
-	$storageUri="wasb://$defaultBlobContainerName@$defaultStorageAccountName.blob.core.chinacloudapi.cn"
+	$storageUri="wasbs://$defaultBlobContainerName@$defaultStorageAccountName.blob.core.chinacloudapi.cn"
 	
 	$oozieJobName = $namePrefix + "OozieJob"
 	

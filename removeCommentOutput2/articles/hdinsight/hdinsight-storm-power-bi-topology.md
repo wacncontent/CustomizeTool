@@ -4,14 +4,19 @@
  services="hdinsight"
  documentationCenter=""
  authors="Blackmist"
- manager="paulettm"
+ manager="jhubbard"
  editor="cgronlun"
 	tags="azure-portal"/>
 
 <tags
-	ms.service="hdinsight"
-	ms.date="05/27/2016"
-	wacn.date=""/>
+ ms.service="hdinsight"
+ ms.devlang="dotnet"
+ ms.topic="article"
+ ms.tgt_pltfrm="na"
+ ms.workload="big-data"
+ ms.date="08/16/2016"
+ wacn.date=""
+ ms.author="larryfr"/>
 
 # Use Power BI to visualize data from an Apache Storm topology
 
@@ -112,7 +117,7 @@ Download the [HDInsight C# Storm Power BI example](https://github.com/Azure-Samp
 
 3. Select __Azure SQL Database__, and then select __Connect__.
 
-4. Enter the information to connect to your Azure SQL Database. You can find this by visiting the [Azure portal](https://portal.azure.cn) and selecting your SQL database.
+4. Enter the information to connect to your Azure SQL Database. You can find this by visiting the [Azure Classic Management portal](https://manage.windowsazure.cn) and selecting your SQL database.
 
     > [AZURE.NOTE] You can also set the refresh interval and custom filters by using __Enable Advanced Options__ from the connect dialog.
 
@@ -144,11 +149,11 @@ The topology will continue to run until you stop it or delete the Storm on HDIns
 
 2. Select the **Kill** button to stop the topology.
 
-    ![Kill button on the toplogy summary](./media/hdinsight-storm-power-bi-topology/killtopology.png)
+    ![Kill button on the topology summary](./media/hdinsight-storm-power-bi-topology/killtopology.png)
 
 ## Delete your cluster
 
-[AZURE.INCLUDE [delete-cluster-warning](../includes/hdinsight-delete-cluster-warning.md)]
+[AZURE.INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
 
 ## Next steps
 

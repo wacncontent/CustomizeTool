@@ -6,10 +6,15 @@
 	authors="mgoedtel"
 	manager="jwhit"
 	editor="tysonn" />
-<tags
+<tags 
 	ms.service="automation"
+	ms.devlang="na"
+	ms.topic="article"
+	ms.tgt_pltfrm="na"
+	ms.workload="infrastructure-services"
 	ms.date="07/06/2016"
-	wacn.date=""/>
+	wacn.date=""
+	ms.author="bwren" />
 
 # Azure Automation scenario - starting and stopping virtual machines
 
@@ -20,11 +25,11 @@ This Azure Automation scenario includes runbooks to start and stop classic virtu
 - Call the runbooks from another runbook as part of an overall solution. 
 - Use the runbooks as tutorials to learn runbook authoring concepts. 
 
-[AZURE.INCLUDE [automation-azurechinacloud-environment-parameter](../includes/automation-azurechinacloud-environment-parameter.md)]
+[AZURE.INCLUDE [automation-azurechinacloud-environment-parameter](../../includes/automation-azurechinacloud-environment-parameter.md)]
 
 ## Getting the scenario
 
-This scenario consists of two PowerShell Workflow runbooks that you can download from the following links.  
+This scenario consists of two PowerShell Workflow runbooks that you can download from the following links.
 
 | Runbook | Link | Type | Description |
 |:---|:---|:---|:---|
@@ -32,7 +37,7 @@ This scenario consists of two PowerShell Workflow runbooks that you can download
 | Stop-AzureVMs | [Stop Azure Classic VMs](https://gallery.technet.microsoft.com/Stop-Azure-Classic-VMs-7a4ae43e) | PowerShell Workflow | Stops all virtual machines in an automation account or all virtual machines with a particular service name.  |
 
 
-##<a id="installing-the-solution"></a> Installing and configuring the scenario
+## <a id="installing-the-solution"></a> Installing and configuring the scenario
 
 ### 1. Install the runbooks
 
@@ -49,7 +54,7 @@ The runbooks require the following assets that you must create and populate with
 | Credential | AzureCredential | Contains credentials for an account that has authority to start and stop virtual machines in the Azure subscription.  Alternatively, you can specify another credential asset in the **Credential** parameter of the **Add-AzureAccount -Environment AzureChinaCloud** activity. |
 | Variable | AzureSubscriptionId | Contains the subscription ID of your Azure subscription. |
 
-##<a id="using-the-solution"></a> Using the scenario
+## <a id="using-the-solution"></a> Using the scenario
 
 ### Parameters
 
@@ -79,9 +84,9 @@ The runbooks will [output a message](/documentation/articles/automation-runbook-
 | Start-AzureVMs | Virtual machine is already running  | MyVM is already running |
 | Start-AzureVMs | Start request for virtual machine successfully submitted | MyVM has been started |
 | Start-AzureVMs | Start request for virtual machine failed  | MyVM failed to start |
-| Stop-AzureVMs | Virtual machine is already running  | MyVM is already stopped |
-| Stop-AzureVMs | Start request for virtual machine successfully submitted | MyVM has been started |
-| Stop-AzureVMs | Start request for virtual machine failed  | MyVM failed to start |
+| Stop-AzureVMs | Virtual machine is already stopped  | MyVM is already stopped |
+| Stop-AzureVMs | Stop request for virtual machine successfully submitted | MyVM has been stopped |
+| Stop-AzureVMs | Stop request for virtual machine failed  | MyVM failed to stop |
 
 For example, the following code snippet from a runbook attempts to start all virtual machines with the service name *MyServiceName*.  If any of the start requests fail, then error actions can be taken. 
 
