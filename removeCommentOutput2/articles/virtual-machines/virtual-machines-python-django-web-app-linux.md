@@ -18,12 +18,12 @@
 # Django Hello World web application on a Linux VM
 
 > [AZURE.SELECTOR]
-- [Windows](/documentation/articles/virtual-machines-python-django-web-app-windows-server)
-- [Mac/Linux](/documentation/articles/virtual-machines-python-django-web-app-linux)
+- [Windows](/documentation/articles/virtual-machines-windows-classic-python-django-web-app/)
+- [Mac/Linux](/documentation/articles/virtual-machines-linux-python-django-web-app/)
 
 <br>
 
-> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the Resource Manager deployment model, which Microsoft recommends for most new deployments instead of the Resource Manager model.
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the Resource Manager deployment model, which Azure recommends for most new deployments instead of the Resource Manager model.
 
 
 This tutorial describes how to host a Django-based website on Microsoft 
@@ -41,19 +41,19 @@ A screenshot of the completed application is below:
 
 ![A browser window displaying the hello world page on Azure](./media/virtual-machines-python-django-web-app-linux/mac-linux-django-helloworld-browser.png)
 
-[AZURE.INCLUDE [create-account-and-vms-note](../includes/create-account-and-vms-note.md)]
+[AZURE.INCLUDE [create-account-and-vms-note](../../includes/create-account-and-vms-note.md)]
 
 ## Creating and configuring an Azure virtual machine to host Django
 
-1. Follow the instructions given [here](/documentation/articles/virtual-machines-linux-tutorial-portal-rm) to create an Azure virtual machine of the *Ubuntu Server 14.04 LTS* distribution.  If you prefer, you can choose password authentication instead of SSH public key.
+1. Follow the instructions given [here](/documentation/articles/virtual-machines-linux-portal-create/) to create an Azure virtual machine of the *Ubuntu Server 14.04 LTS* distribution.  If you prefer, you can choose password authentication instead of SSH public key.
 
-1. Edit the network security group to allow incoming http traffic to port 80 using the instructions [here](/documentation/articles/virtual-networks-create-nsg-arm-pportal).
+1. Edit the network security group to allow incoming http traffic to port 80 using the instructions [here](/documentation/articles/virtual-networks-create-nsg-arm-pportal/).
 
-1. By default, your new virtual machine doesn't have a fully qualified domain name (FQDN).  You can create one by following the instructions [here](/documentation/articles/virtual-machines-create-fqdn-on-portal).  This step is optional to complete this tutorial.
+1. By default, your new virtual machine doesn't have a fully qualified domain name (FQDN).  You can create one by following the instructions [here](/documentation/articles/virtual-machines-create-fqdn-on-portal/).  This step is optional to complete this tutorial.
 
 ## <a id="setup"> </a>Setting up the development environment
 
-**Note:** If you need to install Python or would like to use the Client Libraries, please see the [Python Installation Guide](/documentation/articles/python-how-to-install).
+**Note:** If you need to install Python or would like to use the Client Libraries, please see the [Python Installation Guide](/documentation/articles/python-how-to-install/).
 
 The Ubuntu Linux VM already comes with Python 2.7 pre-installed, but it doesn't have Apache or django installed.  Follow these steps to connect to your VM and install Apache and django.
 

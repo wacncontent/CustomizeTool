@@ -17,7 +17,7 @@
 
 # How to configure an availability set for virtual machines in the classic deployment model
 
-> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the classic deployment model. Microsoft recommends that most new deployments use the Resource Manager model. You can also configure availability sets in Resource Manager deployments.
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager model. You can also configure availability sets in Resource Manager deployments.
 
 
 An availability set helps keep your virtual machines available during downtime, such as during maintenance. Placing two or more similarly configured virtual machines in an availability set creates the redundancy needed to maintain availability of the applications or services that your virtual machine runs. For details about how this works, see [Manage the availability of virtual machines] [].
@@ -57,7 +57,7 @@ To use the Azure classic portal:
 
 	![Create an availability set for a new virtual machine](./media/virtual-machines-how-to-configure-availability/VMavailabilityset.png)
 
-6. On the fourth screen, click the extensions that you want to install. Extensions provide features that make it easier to manage the virtual machine, such as running antimalware or resetting passwords. For details, see [Azure VM Agent and VM Extensions](/documentation/articles/virtual-machines-extensions-agent-about).
+6. On the fourth screen, click the extensions that you want to install. Extensions provide features that make it easier to manage the virtual machine, such as running antimalware or resetting passwords. For details, see [Azure VM Agent and VM Extensions](/documentation/articles/virtual-machines-linux-classic-agents-and-extensions/).
 
 7.	Click the arrow to create the virtual machine and the availability set.
 
@@ -65,8 +65,8 @@ To use the Azure classic portal:
 
 To use Azure PowerShell commands to create an Azure virtual machine and add it to a new or existing availability set, see the following:
 
-- [Use Azure PowerShell to create and preconfigure Windows-based virtual machines](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-vms)
-- [Use Azure PowerShell to create and preconfigure Linux-based virtual machines](/documentation/articles/virtual-machines-ps-create-preconfigure-linux-vms)
+- [Use Azure PowerShell to create and preconfigure Windows-based virtual machines](/documentation/articles/virtual-machines-windows-classic-create-powershell/)
+- [Use Azure PowerShell to create and preconfigure Linux-based virtual machines](/documentation/articles/virtual-machines-linux-classic-createpowershell/)
 
 ## <a id="addmachine"> </a>Option 2: Add an existing virtual machine to an availability set##
 
@@ -105,8 +105,8 @@ To use Azure PowerShell commands, open an administrator-level Azure PowerShell s
 [Option 1: Create a virtual machine and an availability set at the same time]: #createset
 [Option 2: Add an existing virtual machine to an availability set]: #addmachine
 
-[Load balancing for Azure infrastructure services]: /documentation/articles/virtual-machines-load-balance
-[Manage the availability of virtual machines]: /documentation/articles/virtual-machines-manage-availability
-[Create a virtual machine running Windows]: /documentation/articles/virtual-machines-windows-tutorial-classic-portal
-[Virtual Network overview]: /documentation/articles/virtual-networks-overview
-[Articles for virtual machines in Service Management]: /documentation/articles/?tag=azure-service-management&service=virtual-machines 
+[Load balancing for Azure infrastructure services]: /documentation/articles/virtual-machines-linux-load-balance/
+[Manage the availability of virtual machines]: /documentation/articles/virtual-machines-linux-manage-availability/
+[Create a virtual machine running Windows]: /documentation/articles/virtual-machines-windows-classic-tutorial/
+[Virtual Network overview]: /documentation/articles/virtual-networks-overview/
+[Articles for virtual machines in Service Management]: /documentation/articles/?tag=azure-service-management&service=virtual-machines/ 

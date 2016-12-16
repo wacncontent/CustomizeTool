@@ -1,55 +1,92 @@
-<!-- not suitable for Mooncake -->
-
-<properties 
-   pageTitle="How to create NSGs in ARM mode using the preview portal | Windows Azure"
-   description="Learn how to create and deploy NSGs in ARM using the preview portal"
-   services="virtual-network"
-   documentationCenter="na"
-   authors="telmosampaio"
-   manager="carolz"
-   editor="tysonn"
-   tags="azure-resource-manager"
-/>
+<properties
+    pageTitle="How to create NSGs in ARM mode using the Azure portal preview | Azure"
+    description="Learn how to create and deploy NSGs in ARM using the Azure portal preview"
+    services="virtual-network"
+    documentationcenter="na"
+    author="jimdial"
+    manager="carmonm"
+    editor="tysonn"
+    tags="azure-resource-manager" />
 <tags
-	ms.service="virtual-network"
-	ms.date="09/16/2015"
-	wacn.date=""/>
+    ms.assetid="5bc8fc2e-1e81-40e2-8231-0484cd5605cb"
+    ms.service="virtual-network"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="infrastructure-services"
+    ms.date="02/04/2016"
+    wacn.date=""
+    ms.author="jdial" />
 
-# How to manage NSGs using the preview portal
+# How to manage NSGs using the Azure portal preview
+[AZURE.INCLUDE [virtual-networks-create-nsg-selectors-arm-include](../../includes/virtual-networks-create-nsg-selectors-arm-include.md)]
 
-[AZURE.INCLUDE [virtual-networks-create-nsg-selectors-arm-include](../includes/virtual-networks-create-nsg-selectors-arm-include.md)]
+[AZURE.INCLUDE [virtual-networks-create-nsg-intro-include](../../includes/virtual-networks-create-nsg-intro-include.md)]
 
-[AZURE.INCLUDE [virtual-networks-create-nsg-intro-include](../includes/virtual-networks-create-nsg-intro-include.md)]
+[AZURE.INCLUDE [azure-arm-classic-important-include](../../includes/azure-arm-classic-important-include.md)]
 
-[AZURE.INCLUDE [azure-arm-classic-important-include](../includes/azure-arm-classic-important-include.md)] This article covers the Resource Manager deployment model. You can also [create NSGs in the classic deployment model](/documentation/articles/virtual-networks-create-nsg-classic-ps).
+This article covers the Resource Manager deployment model. You can also [create NSGs in the classic deployment model](/documentation/articles/virtual-networks-create-nsg-classic-ps/).
 
-[AZURE.INCLUDE [virtual-networks-create-nsg-scenario-include](../includes/virtual-networks-create-nsg-scenario-include.md)]
+[AZURE.INCLUDE [virtual-networks-create-nsg-scenario-include](../../includes/virtual-networks-create-nsg-scenario-include.md)]
 
-## Deploy the ARM template by using click to deploy
+The sample PowerShell commands below expect a simple environment already created based on the scenario above. If you want to run the commands as they are displayed in this document, first build the test environment by deploying [this template](http://github.com/telmosampaio/azure-templates/tree/master/201-IaaS-WebFrontEnd-SQLBackEnd), click **Deploy to Azure**, replace the default parameter values if necessary, and follow the instructions in the portal. The steps below use **RG-NSG** as the name of the resource group the template was deployed to.
 
-At this time, you cannot create an NSG from the preview. However, you manage existing NSGs. Before you can manage NSGs, use the sample template available in the public repository to create the resources described in the scenario above. Deploy [this this template](http://github.com/telmosampaio/azure-templates/tree/master/201-IaaS-WebFrontEnd-SQLBackEnd-NSG), click **Deploy to Azure**, replace the default parameter values if necessary, and follow the instructions in the portal.
+## Create the NSG-FrontEnd NSG
+To create the **NSG-FrontEnd** NSG as shown in the scenario above, follow the steps below.
+
+1. From a browser, navigate to http://portal.azure.cn and, if necessary, sign in with your Azure account.
+2. Click **Browse >** > **Network Security Groups**.
+   
+    ![Azure portal preview - NSGs](./media/virtual-networks-create-nsg-arm-pportal/figure11.png)
+3. In the **Network security groups** blade, click **Add**.
+   
+    ![Azure portal preview - NSGs](./media/virtual-networks-create-nsg-arm-pportal/figure12.png)
+4. In the **Create network security group** blade, create an NSG named *NSG-FrontEnd* in the *RG-NSG* resource group, and then click **Create**.
+   
+    ![Azure portal preview - NSGs](./media/virtual-networks-create-nsg-arm-pportal/figure13.png)
 
 ## Create rules in an existing NSG
+To create rules in an existing NSG from the Azure portal preview, follow the steps below.
 
-To create rules in an existing NSG from the preview portal, follow the steps below.
+1. Click **Browse >** > **Network security groups**.
+2. In the list of NSGs, click **NSG-FrontEnd** > **Inbound security rules**
+   
+    ![Azure portal preview - NSG-FrontEnd](./media/virtual-networks-create-nsg-arm-pportal/figure2.png)
+3. In the list of **Inbound security rules**, click **Add**.
+   
+    ![Azure portal preview - Add rule](./media/virtual-networks-create-nsg-arm-pportal/figure3.png)
+4. In the **Add inbound security rule** blade, create a rule named *web-rule* with priority of *200* allowing access via *TCP* to port *80* to any VM from any source, and then click **OK**. Notice that most of these settings are default values already.
+   
+    ![Azure portal preview - Rule settings](./media/virtual-networks-create-nsg-arm-pportal/figure4.png)
+5. After a few seconds you will see the new rule in the NSG.
+   
+    ![Azure portal preview - New rule](./media/virtual-networks-create-nsg-arm-pportal/figure5.png)
+6. Repeat steps  to 6 to create an inbound rule named *rdp-rule* with a priority of *250* allowing access via *TCP* to port *3389* to any VM from any source.
 
-1. From a browser, navigate to http://manage.windowsazure.cn and, if necessary, sign in with your Azure account.
-2. Click **Browse>** > **Network security groups**.
+## Associate the NSG to the FrontEnd subnet
+1. Click **Browse >** > **Resource groups** > **RG-NSG**.
+2. In the **RG-NSG** blade, click **...** > **TestVNet**.
+   
+    ![Azure portal preview - TestVNet](./media/virtual-networks-create-nsg-arm-pportal/figure14.png)
+3. In the **Settings** blade, click **Subnets** > **FrontEnd** > **Network security group** > **NSG-FrontEnd**.
+   
+    ![Azure portal preview - Subnet settings](./media/virtual-networks-create-nsg-arm-pportal/figure15.png)
+4. In the **FrontEnd** blade, click **Save**.
+   
+    ![Azure portal preview - Subnet settings](./media/virtual-networks-create-nsg-arm-pportal/figure16.png)
 
-![Preview portal - NSGs](./media/virtual-networks-create-nsg-arm-pportal/figure1.png)
+## Create the NSG-BackEnd NSG
+To create the **NSG-BackEnd** NSG and associate it to the **BackEnd** subnet, follow the steps below.
 
-3. In the list of NSGs, click **NSG-FrontEnd** > **Inbound security rules**
+1. Repeat the steps in [Create the NSG-FrontEnd NSG](#Create-the-NSG-FrontEnd-NSG) to create an NSG named *NSG-BackEnd*
+2. Repeat the steps in [Create rules in an existing NSG](#Create-rules-in-an-existing-NSG) to create the **inbound** rules in the table below.
+   
+   | Inbound rule | Outbound rule |
+   | --- | --- |
+   | ![Azure portal preview - inbound rule](./media/virtual-networks-create-nsg-arm-pportal/figure17.png) |![Azure portal preview - outbound rule](./media/virtual-networks-create-nsg-arm-pportal/figure18.png) |
+3. Repeat the steps in [Associate the NSG to the FrontEnd subnet](#Associate-the-NSG-to-the-FrontEnd-subnet) to associate the **NSG-Backend** NSG to the **BackEnd** subnet.
 
-![Preview portal - NSG-FrontEnd](./media/virtual-networks-create-nsg-arm-pportal/figure2.png)
+## Next Steps
+* Learn how to [manage existing NSGs](/documentation/articles/virtual-network-manage-nsg-arm-portal/)
+* [Enable logging](/documentation/articles/virtual-network-nsg-manage-log/) for NSGs.
 
-4. In the list of **Inbound security rules**, click **Add**.
-
-![Preview portal - Add rule](./media/virtual-networks-create-nsg-arm-pportal/figure3.png)
-
-5. In the **Add inbound security rule** blade, create a rule named *web-rule* with priority of *200* allowing access via *TCP* to port *80* to any VM from any source, and then click **OK**. Notice hos most of these settings are default values already.
-
-![Preview portal - Rule settings](./media/virtual-networks-create-nsg-arm-pportal/figure4.png)
-
-6. After a few seconds you will see the new rule in the NSG.
-
-![Preview portal - New rule](./media/virtual-networks-create-nsg-arm-pportal/figure5.png)

@@ -1,3 +1,5 @@
+<!-- deleted in Global -->
+
 <properties
 	pageTitle="Create an Azure virtual machine running Linux in the Azure classic portal | Azure"
 	description="Use the Azure classic portal to create an Azure virtual machine (VM) running Linux with the Azure resource groups."
@@ -16,12 +18,12 @@
 # Create a Virtual Machine Running Linux using the Azure portal
 
 
-> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the Resource Manager deployment model, which Microsoft recommends for most new deployments instead of the classic deployment model.
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the Resource Manager deployment model, which Azure recommends for most new deployments instead of the classic deployment model.
 
-Creating an Azure virtual machine (VM) that runs Linux is easy to do. This tutorial shows you how to use the Azure portal to create one quickly, and uses the `~/.ssh/id_rsa.pub` public key file to secure your **SSH** connection to the VM. You can also create Linux VMs using [your own images as templates](/documentation/articles/virtual-machines-linux-classic-create-upload-vhd).
+Creating an Azure virtual machine (VM) that runs Linux is easy to do. This tutorial shows you how to use the Azure portal to create one quickly, and uses the `~/.ssh/id_rsa.pub` public key file to secure your **SSH** connection to the VM. You can also create Linux VMs using [your own images as templates](/documentation/articles/virtual-machines-linux-classic-create-upload-vhd/).
 
 
-[AZURE.INCLUDE [free-trial-note](../includes/free-trial-note.md)]
+[AZURE.INCLUDE [free-trial-note](../../includes/free-trial-note.md)]
 
 ## Select the image
 
@@ -35,7 +37,7 @@ Go to the Azure gallery in the Preview portal to find the Windows Server VM imag
 
 	> [AZURE.TIP] To find additional images, click **Marketplace** and then search or filter for available items.
 
-3. At the bottom of the **Ubuntu Server 14.04 LTS** page, select **Use the Resource Manager stack** to create the VM in Azure Resource Manager. Note that for most new workloads, we recommend the Resource Manager stack. For considerations, see [Azure Compute, Network and Storage Providers under the Azure Resource Manager](/documentation/articles/virtual-machines-windows-compare-deployment-models).
+3. At the bottom of the **Ubuntu Server 14.04 LTS** page, select **Use the Resource Manager stack** to create the VM in Azure Resource Manager. Note that for most new workloads, we recommend the Resource Manager stack. For considerations, see [Azure Compute, Network and Storage Providers under the Azure Resource Manager](/documentation/articles/virtual-machines-windows-compare-deployment-models/).
 
 4. Next, click ![create button](./media/virtual-machines-linux-portal-create/createbutton.png).
 
@@ -53,7 +55,7 @@ After you select the image, you can use Azure's default settings for most of the
 
 2. Click **Size** and select an appropriate VM size for your needs. Each size specifies the number of compute cores, memory, and other features, such as support for Premium Storage, which will affect the price. Azure recommends certain sizes automatically depending on the image you choose. When done, click ![select button](./media/virtual-machines-linux-portal-create/selectbutton-size.png).
 
-	>[AZURE.NOTE] Premium storage is available for DS-series virtual machines in certain regions. Premium storage is the best storage option for data intensive workloads such as a database. For details, see [Premium Storage: High-Performance Storage for Azure Virtual Machine Workloads](/documentation/articles/storage-premium-storage).
+	>[AZURE.NOTE] Premium storage is available for DS-series virtual machines in certain regions. Premium storage is the best storage option for data intensive workloads such as a database. For details, see [Premium Storage: High-Performance Storage for Azure Virtual Machine Workloads](/documentation/articles/storage-premium-storage/).
 
 3. Click **Settings** to see storage and networking settings for the new VM. For a first VM you can generally accept the default settings. If you selected a VM size that supports it, you can try out Premium Storage by selecting **Premium (SSD)** under **Disk type**. When done, click ![OK button](./media/virtual-machines-linux-portal-create/okbutton.png).
 
@@ -108,16 +110,16 @@ Now you can **ssh** into your Azure VM, and you're ready to go.
 	ops@ubuntuvm:~$
 
 
-> [AZURE.NOTE] You can also configure a fully qualified domain name (FQDN) for your virtual machine in the portal. Read more about [creating FQDNs in the portal](/documentation/articles/virtual-machines-linux-portal-create-fqdn).
+> [AZURE.NOTE] You can also configure a fully qualified domain name (FQDN) for your virtual machine in the portal. Read more about [creating FQDNs in the portal](/documentation/articles/virtual-machines-linux-portal-create-fqdn/).
 
 ## Next Steps
 
 To learn more about Linux on Azure, see:
 
-- [Linux and Open-Source Computing on Azure](/documentation/articles/virtual-machines-linux-opensource-links)
+- [Linux and Open-Source Computing on Azure](/documentation/articles/virtual-machines-linux-opensource-links/)
 
-- [How to use the Azure Command-Line Tools for Mac and Linux](/documentation/articles/azure-cli-arm-commands)
+- [How to use the Azure Command-Line Tools for Mac and Linux](/documentation/articles/azure-cli-arm-commands/)
 
-- [Deploy a LAMP app using the Azure CustomScript Extension for Linux](/documentation/articles/virtual-machines-linux-classic-lamp-script)
+- [Deploy a LAMP app using the Azure CustomScript Extension for Linux](/documentation/articles/virtual-machines-linux-classic-lamp-script/)
 
-- [The Docker Virtual Machine Extension for Linux on Azure](/documentation/articles/virtual-machines-linux-dockerextension)
+- [The Docker Virtual Machine Extension for Linux on Azure](/documentation/articles/virtual-machines-linux-dockerextension/)

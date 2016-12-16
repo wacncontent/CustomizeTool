@@ -49,7 +49,7 @@ The following is a screenshot of the completed application:
 
 * [Next steps](#next)
 
-##<a id="setup"></a>Set up your development environment
+## <a id="setup"></a>Set up your development environment
 
 1. Install Ruby in your development environment. Depending on your operating system, the steps may vary.
 
@@ -73,7 +73,7 @@ The following is a screenshot of the completed application:
 	
 	> [WACOM.NOTE] [Node.js](http://nodejs.org/) was used for this tutorial, as it is available for OS X, Linux and Windows operating systems.
 
-##<a id="create"></a>Create a Rails application
+## <a id="create"></a>Create a Rails application
 
 1. From the command-line or terminal session, create a new Rails application named "blog_app" by using the following command:
 
@@ -101,7 +101,7 @@ The following is a screenshot of the completed application:
 
 	This will display a list of posts when users visit the  Website.
 
-##<a id="test"></a>Test the application
+## <a id="test"></a>Test the application
 
 1. Change directories to the **blog_app** directory if you are not already there, and start the rails server using the following command.
 
@@ -123,7 +123,7 @@ The following is a screenshot of the completed application:
 
 	To stop the server process, enter CTRL+C in the command-line
 
-##<a id="repository"></a>Create a source repository
+## <a id="repository"></a>Create a source repository
 
 When deploying an application using Capistrano, the files to are pulled from a repository. For this tutorial, we will use [Git](http://git-scm.com/) for version control and [GitHub](https://github.com/) for the repository.
 
@@ -141,7 +141,7 @@ When deploying an application using Capistrano, the files to are pulled from a r
 
 In the next section, you will create the Virtual Machine that this application will be deployed to.
 
-##<a id="createvm"></a>Create an Azure Virtual Machine
+## <a id="createvm"></a>Create an Azure Virtual Machine
 
 Follow the instructions given [here][vm-instructions] to create an Azure virtual machine that hosts Linux.
 
@@ -236,7 +236,7 @@ The default database used by Rails for development is SQLite. Usually you will u
 
 	You should arrive at a `database=>` prompt. To exit the psql utility, enter `\q` at the prompt.
 
-###<a id="nginx"></a>Test Nginx
+### <a id="nginx"></a>Test Nginx
 
 The HTTP endpoint added during the creation of the virtual machine will allow it to accept HTTP requests over port 80. To verify this, use the following steps to verify you can access the default site created by Nginx.
 
@@ -254,7 +254,7 @@ The HTTP endpoint added during the creation of the virtual machine will allow it
 
 At this point, you have an Azure Virtual Machine with Ruby, Nginx, and PostgreSQL that is ready for your deployment. In the next section, you will modify your Rails application to add the scripts and information that perform the deployment.
 
-##<a id="capify"></a>Prepare for deployment
+## <a id="capify"></a>Prepare for deployment
 
 On your development environment, modify the application to use the Unicorn web server, PostgreSQL, and enable Capistrano for deployment, and create the scripts used to deploy and start the application.
 
@@ -400,7 +400,7 @@ The application should now be ready for deployment.
 
 > [WACOM.NOTE] For a more complex application, or for a different database or application server, you may need additional configuration or deployment scripts.
 
-##<a id="deploy"></a>Deploy
+## <a id="deploy"></a>Deploy
 
 2.	From your local development machine, use the following command to deploy the configuration files used by the application to the VM.
 
@@ -430,7 +430,7 @@ The application should now be ready for deployment.
 
 At this point, your Ruby on Rails application should be running on your Azure virtual machine. To verify this, enter the DNS name of your virtual machine in your web browser. For example, http://railsvm.chinacloudapp.cn. The  posts index should appear and you should be able to create, edit and delete posts.
 
-##<a id="next"></a>Next steps
+## <a id="next"></a>Next steps
 
 In this article you have learned how to create and publish a basic Rails application to an Azure Virtual Machine using Capistrano. Working with a basic application such as the one in this article only scratches the surface of what you can do using Capistrano for deployment. For more information on using Capistrano, see:
 
@@ -450,7 +450,7 @@ To learn how to use the Azure SDK for Ruby to access Azure services from your Ru
 
 * [Serve high bandwidth content with the Content Delivery Network][cdn-howto]
 
-[vm-instructions]: /documentation/articles/virtual-machines-linux-tutorial/
+[vm-instructions]: /documentation/articles/virtual-machines-linux-quick-create-cli/
 
 
 [rails-guides]: http://guides.rubyonrails.org/

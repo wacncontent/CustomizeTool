@@ -1,3 +1,5 @@
+<!-- deleted in Global -->
+
 <properties
 	pageTitle="Install the LAMP stack on a Linux virtual machine | Azure"
 	description="Learn how to install the LAMP stack on a Linux virtual machine (VM) in Azure."

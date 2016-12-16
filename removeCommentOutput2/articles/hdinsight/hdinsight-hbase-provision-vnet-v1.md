@@ -148,7 +148,7 @@ Like other HDInsight clusters, HBase cluster requires an Azure Storage account a
 		<tr><td>HTTP Password/Confirm Password</td>
 			<td>Specify the HDInsight cluster user password.</td></tr>
 		<tr><td>Enable remote desktop for cluster</td>
-			<td>Select this check box to specify a username, password, and expiry date for a remote desktop user that can remote into the cluster nodes, once it is provisioned. You can also enable remote desktop later, after the cluster is provisioned. For instructions, see <a href="hdinsight-administer-use-management-portal-v1/#rdp" target="_blank">Connect to HDInsight clusters using RDP</a>.</td></tr>
+			<td>Select this check box to specify a username, password, and expiry date for a remote desktop user that can remote into the cluster nodes, once it is provisioned. You can also enable remote desktop later, after the cluster is provisioned. For instructions, see <a href="/documentation/articles/hdinsight-administer-use-management-portal-v1/#rdp" target="_blank">Connect to HDInsight clusters using RDP</a>.</td></tr>
 	</table>
 
 6. On the **Storage Account** page, provide the following values:

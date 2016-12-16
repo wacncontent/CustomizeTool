@@ -17,7 +17,7 @@
 
 # Azure Infrastructure Services Workload: High-availability line of business application
 
-> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the Resource Manager deployment model, which Microsoft recommends for most new deployments instead of the classic deployment model.
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the Resource Manager deployment model, which Azure recommends for most new deployments instead of the classic deployment model.
 
 
 Set up your first or next web-based, intranet-only line of business application in Azure and take advantage of ease of configuration and the ability to quickly expand the application to include new capacity.
@@ -34,7 +34,7 @@ Your next step is to set up a dev/test line of business application hosted in Az
 
 ## Create a dev/test line of business application hosted in Azure
 
-A cross-premises virtual network is connected to an on-premises network with a site-to-site VPN or ExpressRoute connection. If you want to create a dev/test environment that mimics the final configuration and experiment with accessing the application and performing remote administration over a VPN connection, see [Set up a web-based LOB application in a hybrid cloud for testing](/documentation/articles/virtual-networks-setup-lobapp-hybrid-cloud-testing). 
+A cross-premises virtual network is connected to an on-premises network with a site-to-site VPN or ExpressRoute connection. If you want to create a dev/test environment that mimics the final configuration and experiment with accessing the application and performing remote administration over a VPN connection, see [Set up a web-based LOB application in a hybrid cloud for testing](/documentation/articles/virtual-networks-setup-lobapp-hybrid-cloud-testing/). 
 
 ![](./media/virtual-machines-workload-high-availability-LOB-application/CreateLOBAppHybridCloud_3.png)
  
@@ -60,27 +60,27 @@ To deploy this configuration, use the following process:
 
 - Phase 1: Configure Azure 
 
-	Use Azure PowerShell to create the storage accounts, availability sets, and a cross-premises virtual network. For the detailed configuration steps, see [Phase 1](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-phase1).
+	Use Azure PowerShell to create the storage accounts, availability sets, and a cross-premises virtual network. For the detailed configuration steps, see [Phase 1](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-phase1/).
 
 - Phase 2: Configure the domain controllers 
 
-	Configure two Active Directory replica domain controllers and DNS settings for the virtual network. For the detailed configuration steps, see [Phase 2](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-phase2).
+	Configure two Active Directory replica domain controllers and DNS settings for the virtual network. For the detailed configuration steps, see [Phase 2](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-phase2/).
 
 - Phase 3: Configure the SQL Server infrastructure.  
 
-	Create the virtual machines running SQL Server and the cluster. For the detailed configuration steps, see [Phase 3](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-phase3).
+	Create the virtual machines running SQL Server and the cluster. For the detailed configuration steps, see [Phase 3](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-phase3/).
 
 - Phase 4: Configure the web servers.
 
-	Create the web server virtual machines and add your line of business application to it. For the detailed configuration, see [Phase 4](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-phase4).
+	Create the web server virtual machines and add your line of business application to it. For the detailed configuration, see [Phase 4](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-phase4/).
 
 - Phase 5: Configure a SQL Server AlwaysOn Availability Group.
 
-	Prepare the application databases, create a SQL Server AlwaysOn Availability Group, and then add the application databases to it. For the detailed configuration steps, see [Phase 5](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-phase5).
+	Prepare the application databases, create a SQL Server AlwaysOn Availability Group, and then add the application databases to it. For the detailed configuration steps, see [Phase 5](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-phase5/).
 
 Once configured, you can easily expand this line of business application by adding more web servers or virtual machines running SQL Servers to the cluster.
 
 ## Next step
 
-- Get an [overview](/documentation/articles/virtual-machines-workload-high-availability-lob-application-overview) of the production workload before diving into the configuration.
+- Get an [overview](/documentation/articles/virtual-machines-workload-high-availability-lob-application-overview/) of the production workload before diving into the configuration.
 

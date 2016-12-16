@@ -1,25 +1,24 @@
 <properties
-	pageTitle="Connect Windows VMs in a cloud service | Azure"
-	description="Connect Windows virtual machines created with the classic deployment model to an Azure cloud service or virtual network."
-	services="virtual-machines-windows"
-	documentationCenter=""
-	authors="cynthn"
-	manager="timlt"
-	editor=""
-	tags="azure-service-management"/>
-
+    pageTitle="Connect Windows VMs in a cloud service | Azure"
+    description="Connect Windows virtual machines created with the classic deployment model to an Azure cloud service or virtual network."
+    services="virtual-machines-windows"
+    documentationcenter=""
+    author="cynthn"
+    manager="timlt"
+    editor=""
+    tags="azure-service-management" />
 <tags
-	ms.service="virtual-machines-windows"
-	ms.workload="infrastructure-services"
-	ms.tgt_pltfrm="vm-windows"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="09/27/2016"
-	wacn.date=""
-	ms.author="cynthn"/>
+    ms.assetid="c1cbc802-4352-4d2e-9e49-4ccbd955324b"
+    ms.service="virtual-machines-windows"
+    ms.workload="infrastructure-services"
+    ms.tgt_pltfrm="vm-windows"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="09/27/2016"
+    wacn.date=""
+    ms.author="cynthn" />
 
 # Connect Windows virtual machines created with the classic deployment model with a virtual network or cloud service
-
 [AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]
 
 Windows virtual machines created with the classic deployment model are always placed in a cloud service. The cloud service acts as a container and provides a unique public DNS name, a public IP address, and a set of endpoints to access the virtual machine over the Internet. The cloud service can be in a virtual network, but that's not a requirement. You can also [connect Linux virtual machines with a virtual network or cloud service](/documentation/articles/virtual-machines-linux-classic-connect-vms/).
@@ -31,5 +30,5 @@ If you place your virtual machines in the same standalone cloud service, you can
 [AZURE.INCLUDE [virtual-machines-common-classic-connect-vms](../../includes/virtual-machines-common-classic-connect-vms.md)]
 
 ## Next steps
+After you create a virtual machine, it's a good idea to [add a data disk](/documentation/articles/virtual-machines-windows-classic-attach-disk/) so your services and workloads have a location to store data. 
 
-After you create a virtual machine, it's a good idea to [add a data disk](/documentation/articles/virtual-machines-windows-classic-attach-disk/) so your services and workloads have a location to store data.

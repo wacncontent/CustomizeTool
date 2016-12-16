@@ -1,24 +1,23 @@
-<properties 
-	pageTitle="Deploy a web app that is linked to a GitHub repository" 
-	description="Use an Azure Resource Manager template to deploy a web app that contains a project from a GitHub repository." 
-	services="app-service" 
-	documentationCenter="" 
-	authors="cephalin" 
-	manager="wpickett" 
-	editor=""/>
-
-<tags 
-	ms.service="app-service" 
-	ms.workload="na" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="04/27/2016" 
-	wacn.date="" 
-	ms.author="cephalin"/>
+<properties
+    pageTitle="Deploy a web app that is linked to a GitHub repository"
+    description="Use an Azure Resource Manager template to deploy a web app that contains a project from a GitHub repository."
+    services="app-service"
+    documentationcenter=""
+    author="cephalin"
+    manager="wpickett"
+    editor="" />
+<tags
+    ms.assetid="32739607-85fe-43c8-a4dc-1feb46d93a4d"
+    ms.service="app-service"
+    ms.workload="na"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="04/27/2016"
+    wacn.date=""
+    ms.author="cephalin" />
 
 # Deploy a web app linked to a GitHub repository
-
 In this topic, you will learn how to create an Azure Resource Manager template that deploys a web app that is linked to a project in a GitHub repository. You will learn how to define which resources are deployed and 
 how to define parameters that are specified when the deployment is executed. You can use this template for your own deployments, or customize it to meet your requirements.
 
@@ -26,10 +25,9 @@ For more information about creating templates, see [Authoring Azure Resource Man
 
 For the complete template, see [Web App Linked to GitHub template](https://github.com/Azure/azure-quickstart-templates/blob/master/201-web-app-github-deploy/azuredeploy.json).
 
-[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)] 
+[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
 
 ## What you will deploy
-
 With this template, you will deploy a web app that contains the code from a project in GitHub.
 
 To run the deployment automatically, click the following button:
@@ -39,11 +37,9 @@ To run the deployment automatically, click the following button:
 >[AZURE.NOTE] Templates you are deploying from the GitHub Repo "azure-quickstart-templates" must be modified in order to fit in the Azure China Cloud Environment. For example, replace some endpoints -- "blob.core.windows.net" by "blob.core.chinacloudapi.cn", "cloudapp.azure.com" by "chinacloudapp.cn".
 
 ## Parameters
-
 [AZURE.INCLUDE [app-service-web-deploy-web-parameters](../../includes/app-service-web-deploy-web-parameters.md)]
 
 ### repoURL
-
 The URL for GitHub repository that contains the project to deploy. This parameter contains a default value but this value is only intended to show you how to provide the URL for repository. You can use this value when testing the template but you will want to provide the URL your own repository when working with the template.
 
     "repoURL": {
@@ -52,20 +48,17 @@ The URL for GitHub repository that contains the project to deploy. This paramete
     }
 
 ### branch
-
 The branch of the repository to use when deploying the application. The default value is master, but you can provide the name of any branch in the repository that you wish to deploy.
 
     "branch": {
         "type": "string",
         "defaultValue": "master"
     }
-    
-## Resources to deploy
 
+## Resources to deploy
 [AZURE.INCLUDE [app-service-web-deploy-web-host](../../includes/app-service-web-deploy-web-host.md)]
 
 ### Web app
-
 Creates the web app that is linked to the project in GitHub. 
 
 You specify the name of the web app through the **siteName** parameter, and the location of the web app through the **siteLocation** parameter. In the **dependsOn** element, the template defines the web app 
@@ -108,16 +101,13 @@ Instead of hard-coding the repository URL, you can add a parameter for the repos
 >[AZURE.NOTE] In Azure China, we cannot setup GitHub Credential throught the new portal yet. Hence, `IsManualIntegration` must be `true`.
 
 ## Commands to run deployment
-
 [AZURE.INCLUDE [app-service-deploy-commands](../../includes/app-service-deploy-commands.md)]
 
 ### PowerShell
-
     New-AzureRmResourceGroupDeployment -TemplateFile path/to/azuredeploy.json -siteName ExampleSite -hostingPlanName ExamplePlan -siteLocation "China North" -ResourceGroupName ExampleDeployGroup
 
 ### Azure CLI
-
     azure group deployment create --template-file path/to/azuredeploy.json
 
 
- 
+

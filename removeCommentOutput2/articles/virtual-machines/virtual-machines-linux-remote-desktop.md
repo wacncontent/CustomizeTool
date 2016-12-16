@@ -18,7 +18,7 @@
 
 #Using Remote Desktop to connect to a Azure Linux VM
 
-> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the classic deployment model. Microsoft recommends that most new deployments use the Resource Manager model.
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager model.
 
 
 ##Overview
@@ -30,7 +30,7 @@ This guidance will give you the answer! It will help you to install and config x
 Xrdp is an open source RDP server, which allows you to connect your Linux server with Remote Desktop from a Windows machine. It performs much nicer than VNC (Virtual Network Computing). VNC has this streak of "JPEG" quality and slow behavior, whereas RDP is fast and crystal clear.
 
 
-> [AZURE.NOTE] You must already have an Azure VM running Linux. To create and set up a Linux VM, see the [Azure Linux VM tutorial](/documentation/articles/virtual-machines-linux-tutorial).
+> [AZURE.NOTE] You must already have an Azure VM running Linux. To create and set up a Linux VM, see the [Azure Linux VM tutorial](/documentation/articles/virtual-machines-linux-quick-create-cli/).
 
 
 ##Create endpoint for Remote Desktop
@@ -40,7 +40,7 @@ We will use the default endpoint 3389 for Remote Desktop in this doc. So set up 
 ![image](./media/virtual-machines-linux-remote-desktop/no1.png)
 
 
-if you didn't know how to set up endpoint to your VM, see [guidance](/documentation/articles/virtual-machines-set-up-endpoints).
+if you didn't know how to set up endpoint to your VM, see [guidance](/documentation/articles/virtual-machines-linux-classic-setup-endpoints/).
 
 
 ##Install Gnome Desktop

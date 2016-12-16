@@ -1,14 +1,16 @@
+<!-- deleted in Global -->
+
 <properties 
    pageTitle="How to connect classic VNets to ARM VNets in Azure - Solution Guide"
    description="Learn how to create a VPN connection between classic VNets and new VNets"
-   services="virtual-network"
+   services="vpn-gateway"
    documentationCenter="na"
-   authors="telmosampaio"
-   manager="carolz"
+   authors="cherylmc"
+   manager="carmonm"
    editor="tysonn" />
 <tags
-	ms.service="virtual-network"
-	ms.date="09/18/2015"
+	ms.service="vpn-gateway"
+	ms.date="03/15/2016"
 	wacn.date=""/>
 
 # Connecting classic VNets to new VNets
@@ -19,7 +21,7 @@ In such situations, you will want to ensure the new infrastructure is able to co
 
 ![](./media/virtual-networks-arm-asm-s2s/figure01.png)
 
->[AZURE.NOTE] This document walks you through an end-to-end solution, for testing purposes. If you already have your VNets setup, and are familiar with VPN gateways and site-to-site connection in Azure, visit [Configure a S2S VPN between an ARM VNet and a classic VNet](/documentation/articles/virtual-networks-arm-asm-s2s-howto).
+>[AZURE.NOTE] This document walks you through an end-to-end solution, for testing purposes. If you already have your VNets setup, and are familiar with VPN gateways and site-to-site connection in Azure, visit [Configure a S2S VPN between an ARM VNet and a classic VNet](/documentation/articles/virtual-networks-arm-asm-s2s-howto/).
 
 To test this scenario, you will:
 
@@ -27,11 +29,11 @@ To test this scenario, you will:
 2. [Create a new VNet environment](#Create-a-new-VNet-environment).
 3. [Connect the two VNets](#Connect-the-two-VNets).
 
-You will execute the steps above by first using classic Azure management tools, including the Management Portal, network configuration files, and Azure Service Manager PowerShell cmdlets; and later move on to the new management tools, including the new Azure Management Portal, ARM templates, and ARM PowerShell cmdlets.
+You will execute the steps above by first using classic Azure management tools, including the Classic Management Portal, network configuration files, and Azure Service Manager PowerShell cmdlets; and later move on to the new management tools, including the new Azure portal Preview, ARM templates, and ARM PowerShell cmdlets.
 
 >[AZURE.IMPORTANT] For VNets to be connected to one another, they cannot have a CIDR block clash. Make sure each VNet has a unique CIDR block! 
 
-## Create a classic VNet environment
+##<a name="Create-a-classic-VNet-environment"></a> Create a classic VNet environment
 
 You can use an existing classic VNet to connect to a new ARM VNet. In this example, you will see how to create a new classic VNet, with two subnets, a gateway, and a VM for testing purposes.
 
@@ -39,15 +41,9 @@ You can use an existing classic VNet to connect to a new ARM VNet. In this examp
 
 To create a new VNet that maps to figure 1 above, follow the instructions below.
 
-1. From a PowerShell console, add you Azure account by running the command below.
+1. From a PowerShell console, login to your Azure account by running the command below.
 
-		Add-AzureAccount
-
-2. Follow the sign in dialog box instructions to log on with your Azure account.
-
-3. Make sure you are using Azure Service Management PowerShell cmdlets by running the command below.
-
-		Switch-AzureMode AzureServiceManagement
+		Login-AzureRmAccount
 
 4. Download your Azure network configuration file by running command below.
 
@@ -113,9 +109,9 @@ To create a VM in the classic VNet by using Azure Service Manager PowerShell cmd
 3.  Create the VM by running the commands below. Make sure to replace the user name and password values.
 
 		$vm1 = New-AzureVMConfig -Name "VM01" -InstanceSize "ExtraLarge" `
-		    -Image $WinImage.ImageName –AvailabilitySetName "MyAVSet1" `
+		    -Image $WinImage.ImageName -AvailabilitySetName "MyAVSet1" `
 		    -MediaLocation "https://v1v2teststorage1.blob.core.chinacloudapi.cn/vhd/vm01.vhd"
-		Add-AzureProvisioningConfig –VM $vm1 -Windows `
+		Add-AzureProvisioningConfig -VM $vm1 -Windows `
 		    -AdminUserName "user" -Password "P@ssw0rd" 
 
 4.  Connect the VM to *Subnet1* by running the commands below.
@@ -126,13 +122,13 @@ To create a VM in the classic VNet by using Azure Service Manager PowerShell cmd
 5. Create a new cloud service to host the VM by running the command below.
 
 		New-AzureService -ServiceName "v1v2svc01" -Location "China East"
- 		New-AzureVM -ServiceName "v1v2svc01" –VNetName "vnet01" –VMs $vm1
+ 		New-AzureVM -ServiceName "v1v2svc01" -VNetName "vnet01" -VMs $vm1
 
 ### Step 3: Create a VPN gateway for the classic VNet 
 
-To create the VPN gateway for vnet01 by using the classic Azure Management Portal, follow the instructions below.
+To create the VPN gateway for vnet01 by using the Azure Classic Management Portal, follow the instructions below.
 
-1. Open the classic Azure Management Portal at https://manage.windowsazure.cn. If necessary, specify your credentials.
+1. Open the Azure Classic Management Portal at https://manage.windowsazure.cn. If necessary, specify your credentials.
 2. Scroll down on the list of **ALL ITEMS** and click **NETWORKS**.
 3. On the list of virtual networks, click **vnet01**, and then click on **CONFIGURE**.
 4. Under **site-to-site connectivity**, enable the **Connect to the local network** checkbox.
@@ -155,7 +151,7 @@ To create the VPN gateway for vnet01 by using the classic Azure Management Porta
 
 	![VNet dashboard](./media/virtual-networks-arm-asm-s2s/figure05.png)
 
-## Create a new VNet environment
+##<a name="Create-a-new-VNet-environment"></a> Create a new VNet environment
 
 Now that the classic VNet is up and running with a VM and a gateway, it is time to create the ARM VNet.
 
@@ -189,17 +185,18 @@ To create the ARM VNet, with two subnets, and a local network for the classic VN
 	- **connectionName**: this is the name of the connection object to be created.
 	- **sharedKey**: this is the IPSec shared key for the connection. In this scenario, **abc123**.
 
-5. To create the ARM VNet, and its related objects, in a new resource group named **RG1**, run the following PowerShell command. Make sure you change the path for the template file and the parameters file.  
+5. To create the ARM VNet, and its related objects, in a new resource group named **RG1**, run the following PowerShell commands. Make sure you change the path for the template file and the parameters file.  
 
-		Switch-AzureMode AzureResourceManager
-		New-AzureResourceGroup -Name RG1 -Location "China North" `
+		New-AzureRmResourceGroup -Name RG1 -Location centralus
+
+		New-AzureRmResourceGroupDeployment -Name deployment01 `
 		    -TemplateFile C:\Azure\azuredeploy.json `
 		    -TemplateParameterFile C:\Azure\azuredeploy-parameters.json		
 
 	>[AZURE.NOTE] This operation may take several minutes.
 
-7. From your browser, navigate to https://manage.windowsazure.cn/ and enter your credentials, if necessary.
-8. Click on the **RG1** resource group tile in the Azure Management Portal, as shown below.
+7. From your browser, navigate to https://portal.azure.cn/ and enter your credentials, if necessary.
+8. Click on the **RG1** resource group tile in the Azure portal Preview, as shown below.
 
 	![VNet dashboard](./media/virtual-networks-arm-asm-s2s/figure06.png)
 
@@ -207,7 +204,7 @@ To create the ARM VNet, with two subnets, and a local network for the classic VN
 
 ### Step 2: Create a new VM in ARM
 
-To create a VM in the new VNet, from the Azure Management Portal, follow the instructions below.
+To create a VM in the new VNet, from the Azure portal Preview, follow the instructions below.
 
 1. From the portal, click the **NEW** button, then click **Compute**, and then click **Windows Server 2012 R2 Datacenter**.
 2. At the bottom of the right pane, in the **Select a compute stack**, select **Use the Resource Manager stack** to create the VM in ARM, as seen below, then click **Create**.
@@ -230,7 +227,7 @@ To create a VM in the new VNet, from the Azure Management Portal, follow the ins
 
 	>[AZURE.NOTE] This operation may take several minutes. You can move on to the next part of this document.
 
-## Connect the two VNets
+##<a name="Connect-the-two-VNets"></a> Connect the two VNets
 
 Now that you have two VNets with VMs connected to them, it's time to connect the VNets through the gateways previously established, and test the connection.
 
@@ -258,19 +255,15 @@ You need to configure the classic VNet to use the IP address of the gateway crea
 		                           }
 		DnsSettings              : null
 
-2. Make sure you are using the Azure Service Management API for your PowerShell commands by running the command below.
-
-		Switch-AzureMode AzureServiceManagement
-
 3. Download your Azure network configuration file by running the command below.
 
 		Get-AzureVNetConfig -ExportToFile c:\Azure\classicvnets.netcfg
 
 4. Open the file you just downloaded, and edit the **LocalNetworkSite** element for **vnet02** to add the IP address of the gateway for the new VNet obtained in step 1 above. The element should look similar to the sample below.
 
-	      <LocalNetworkSite name="vnet03">
+	      <LocalNetworkSite name="vnet02">
 	        <AddressSpace>
-	          <AddressPrefix>10.3.0.0/16</AddressPrefix>
+	          <AddressPrefix>10.2.0.0/16</AddressPrefix>
 	        </AddressSpace>
 	        <VPNGatewayAddress>23.99.213.28</VPNGatewayAddress>
 	      </LocalNetworkSite>
@@ -294,26 +287,22 @@ You need to configure the classic VNet to use the IP address of the gateway crea
 
 Now that you have the classic VNet gateway configured, it's time to establish the connection. To do so, follow the instructions below.
 
-1. From a PowerShell console, run the command below to switch to ARM mode. 
-
-		Switch-AzureMode AzureResourceManager
-
 2. Create the connection between the gateways, by running the following commands.
 
-		$vnet01gateway = Get-AzureLocalNetworkGateway -Name vnet01 -ResourceGroupName RG1
-		$vnet02gateway = Get-AzureVirtualNetworkGateway -Name ArmAsmGateway -ResourceGroupName RG1
+		$vnet01gateway = Get-AzureRmLocalNetworkGateway -Name vnet01 -ResourceGroupName RG1
+		$vnet02gateway = Get-AzureRmVirtualNetworkGateway -Name ArmAsmGateway -ResourceGroupName RG1
 		
-		New-AzureVirtualNetworkGatewayConnection -Name arm-asm-s2s-connection `
+		New-AzureRmVirtualNetworkGatewayConnection -Name arm-asm-s2s-connection `
 			-ResourceGroupName RG1 -Location "China North" -VirtualNetworkGateway1 $vnet02gateway `
 			-LocalNetworkGateway2 $vnet01gateway -ConnectionType IPsec `
 			-RoutingWeight 10 -SharedKey 'abc123'
 
-3. Open the Azure Management Portal at https://manage.windowsazure.cn and, if necessary, enter your credentials.
+3. Open the Azure Porta Previewl at https://manage.windowsazure.cn and, if necessary, enter your credentials.
 4. Under **ALL ITEMS**, scroll down and click **NETWORKS**, then click **vnet01**, and then click **DASHBOARD**. Notice the connection between **vnet01** and **vnet02** is now established, as seen below.
 
 	![VNet dashboard](./media/virtual-networks-arm-asm-s2s/figure11.png)
 
-5. Although you can manage the classic VNet and its connection from the Management Portal, it's recommended to use the new Azure Management Portal. To open the new portal, navigate to https://manage.windowsazure.cn.
+5. Although you can manage the classic VNet and its connection from the Classic Management Portal, it's recommended to use the new Azure portal Preview. To open the new portal, navigate to https://portal.azure.cn.
 6. In the new portal, click **BROWSE ALL**, then click **Virtual networks (classic)**, and then click **vnet01**. Notice the **VPN connections** pane shown below.
 
 	![VNet dashboard](./media/virtual-networks-arm-asm-s2s/figure12.png)
@@ -322,7 +311,7 @@ Now that you have the classic VNet gateway configured, it's time to establish th
 
 Now that you have the two VNets connected, it is time to test the connectivity by pinging one VM from the other.  You will need to change the firewall settings in one of the VMs to allow ICMP, and then ping that VM from the other VM. To do so, follow the instructions below.
 
-1. From the Azure Management Portal, click **BROWSE ALL**, then click **Virtual machines**, and then click **VM02**.
+1. From the Azure portal Preview, click **BROWSE ALL**, then click **Virtual machines**, and then click **VM02**.
 2. From the **VM02** blade, click **Connect**. If needed, click **Open** on your browser security banner to open the RDP file.
 3. In the **Remote Desktop Connection** dialog box, click **Connect**.
 4. In the **Windows Security** dialog box, enter your VM user name and password. 
@@ -341,7 +330,7 @@ Now that you have the two VNets connected, it is time to test the connectivity b
 		Default Gateway . . . . . . . . . : 10.2.0.101
 
 10. Write down the IP address for the VM. In this scenario, **10.2.0.101**. You will ping that address from the other VM to test connectivity between the VNets.
-11. From the Azure Management Portal, on the left pane, click **Virtual machines (classic)**, then click **VM01**, and then click **Connect**. If needed, click **Open** on your browser security banner to open the RDP file.
+11. From the Azure portal Preview, on the left pane, click **Virtual machines (classic)**, then click **VM01**, and then click **Connect**. If needed, click **Open** on your browser security banner to open the RDP file.
 12. In the **Remote Desktop Connection** dialog box, click **Connect**.
 13. In the **Windows Security** dialog box, enter your VM user name and password. 
 14. In the **Remote Desktop Connection** dialog box, click **Yes**.
@@ -356,5 +345,5 @@ Now that you have the two VNets connected, it is time to test the connectivity b
 
 ## Next Steps
 
-- Learn more about [the Network Resource Provider (NRP) for ARM](/documentation/articles/resource-groups-networking).
-- View the general guidelines on how to [create a S2S VPN connection between a classic VNet and an ARM VNet](/documentation/articles/virtual-networks-arm-asm-s2s-howto).
+- Learn more about [the Network Resource Provider (NRP) for ARM](/documentation/articles/resource-groups-networking/).
+- View the general guidelines on how to [create a S2S VPN connection between a classic VNet and an ARM VNet](/documentation/articles/virtual-networks-arm-asm-s2s-howto/).

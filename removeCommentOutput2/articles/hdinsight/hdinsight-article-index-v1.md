@@ -1,6 +1,6 @@
 <properties
    pageTitle="HDInsight article index for Azure Classic Management Portal | Azure"
-   description="An index page with links to articles about HDInsight on the Azure Classic Management Portal. Azure recommends the Azure Portal for new Hadoop clusters on HDInsight."
+   description="An index page with links to articles about HDInsight on the Azure Classic Management Portal."
    services="hdinsight"
    documentationCenter="na"
    authors="cjgronlund"

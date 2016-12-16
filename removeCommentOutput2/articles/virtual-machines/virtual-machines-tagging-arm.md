@@ -17,7 +17,7 @@
 
 # How to Tag a Virtual Machine in Azure
 
-> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the Resource Manager deployment model, which Microsoft recommends for most new deployments instead of the classic deployment model.
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the Resource Manager deployment model, which Azure recommends for most new deployments instead of the classic deployment model.
 
 
 This article describes different ways to tag a virtual machine in Azure through the Azure Resource Manager. Tags are user-defined Key/Value pairs which can be placed directly on a resource or a resource group. Azure currently supports up to 15 tags per resource and resource group. Tags may be placed on a resource at the time of creation or added to an existing resource. Please note, tags are supported for resources created via the Azure Resource Manager only.
@@ -180,10 +180,10 @@ By analyzing these tags along with usage, organizations will be able to gain new
 
 
 
-[PowerShell environment with Azure Resource Manager]: /documentation/articles/powershell-azure-resource-manager
+[PowerShell environment with Azure Resource Manager]: /documentation/articles/powershell-azure-resource-manager/
 [Azure Resource Cmdlets]: https://msdn.microsoft.com/zh-cn/library/azure/dn757692.aspx
-[Azure CLI environment]: /documentation/articles/xplat-cli-azure-resource-manager
-[Azure Resource Manager Overview]: /documentation/articles/resource-group-overview
-[Using Tags to organize your Azure Resources]: /documentation/articles/resource-group-using-tags
-[Understanding your Azure Bill]: /documentation/articles/billing-understand-your-bill
-[Gain insights into your Azure resource consumption]: /documentation/articles/billing-usage-rate-card-overview
+[Azure CLI environment]: /documentation/articles/xplat-cli-azure-resource-manager/
+[Azure Resource Manager Overview]: /documentation/articles/resource-group-overview/
+[Using Tags to organize your Azure Resources]: /documentation/articles/resource-group-using-tags/
+[Understanding your Azure Bill]: /documentation/articles/billing-understand-your-bill/
+[Gain insights into your Azure resource consumption]: /documentation/articles/billing-usage-rate-card-overview/

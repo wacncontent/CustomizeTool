@@ -17,7 +17,7 @@
 
 This article shows how to create a virtual machine based on a Microsoft-provided Oracle WebLogic Server 12c and Oracle Database 12c image running on Windows Server 2012 in Azure.
 
-> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the Resource Manager deployment model, which Microsoft recommends for most new deployments instead of the classic deployment model.
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the Resource Manager deployment model, which Azure recommends for most new deployments instead of the classic deployment model.
 
 
 ##To create an Oracle WebLogic Server 12c and Oracle Database 12c virtual machine in Azure
@@ -44,7 +44,7 @@ This article shows how to create a virtual machine based on a Microsoft-provided
 
 	c. Do not add any endpoints at this time.
 
-9.	Choose or create a resource group. For more information, see [Using the Azure portal to manage your Azure resources](/documentation/articles/resource-group-portal).
+9.	Choose or create a resource group. For more information, see [Using the Azure portal to manage your Azure resources](/documentation/articles/resource-group-portal/).
 
 10. Choose a **Subscription**.
 
@@ -53,15 +53,15 @@ This article shows how to create a virtual machine based on a Microsoft-provided
 
 ##To create your database hosted in this virtual machine
 
-Follow the instructions in [Create an Oracle Database 12c virtual machine in Azure](/documentation/articles/virtual-machines-creating-oracle-database-virtual-machine), beginning with the **To create your database using the Oracle Database 12c virtual machine in Azure** section.
+Follow the instructions in [Create an Oracle Database 12c virtual machine in Azure](/documentation/articles/virtual-machines-windows-classic-create-oracle-database/), beginning with the **To create your database using the Oracle Database 12c virtual machine in Azure** section.
 
 ##To configure your Oracle WebLogic Server 12c hosted in this virtual machine
-Follow the instructions in [Create an Oracle WebLogic Server 12c virtual machine in Azure](/documentation/articles/virtual-machines-creating-oracle-webLogic-server-12c-virtual-machine), beginning with the **To configure your Oracle WebLogic Server 12c virtual machine in Azure** section. If you want to set up a WebLogic Server cluster, also see [Create an Oracle WebLogic Server 12c cluster in Azure](/documentation/articles/virtual-machines-creating-oracle-webLogic-server-12c-cluster).
+Follow the instructions in [Create an Oracle WebLogic Server 12c virtual machine in Azure](/documentation/articles/virtual-machines-windows-create-oracle-weblogic-server-12c/), beginning with the **To configure your Oracle WebLogic Server 12c virtual machine in Azure** section. If you want to set up a WebLogic Server cluster, also see [Create an Oracle WebLogic Server 12c cluster in Azure](/documentation/articles/virtual-machines-creating-oracle-webLogic-server-12c-cluster/).
 
 ##Additional resources
-[Miscellaneous considerations for Oracle virtual machine images](/documentation/articles/miscellaneous-considerations-for-oracle-virtual-machine-images-new-article)
+[Miscellaneous considerations for Oracle virtual machine images](/documentation/articles/miscellaneous-considerations-for-oracle-virtual-machine-images-new-article/)
 
-[List of Oracle virtual machine images](/documentation/articles/virtual-machines-oracle-list-oracle-virtual-machine-images)
+[List of Oracle virtual machine images](/documentation/articles/virtual-machines-oracle-list-oracle-virtual-machine-images/)
 
 [Connecting to Oracle Database from a Java Application](http://docs.oracle.com/cd/E11882_01/appdev.112/e12137/getconn.htm#TDPJD136)
 

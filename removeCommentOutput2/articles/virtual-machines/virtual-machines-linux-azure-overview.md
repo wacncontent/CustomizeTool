@@ -1,24 +1,23 @@
- <properties
-   pageTitle="Azure and Linux | Azure"
-   description="Describes Azure Compute, Storage, and Networking services with Linux virtual machines."
-   services="virtual-machines-linux"
-   documentationCenter="virtual-machines-linux"
-   authors="vlivech"
-   manager="timlt"
-   editor=""/>
-
+<properties
+    pageTitle="Azure and Linux | Azure"
+    description="Describes Azure Compute, Storage, and Networking services with Linux virtual machines."
+    services="virtual-machines-linux"
+    documentationcenter="virtual-machines-linux"
+    author="vlivech"
+    manager="timlt"
+    editor="" />
 <tags
-   ms.service="virtual-machines-linux"
-   ms.devlang="NA"
-   ms.topic="article"
-   ms.tgt_pltfrm="vm-linux"
-   ms.workload="infrastructure"
-   ms.date="09/14/2016"
-   wacn.date=""
-   ms.author="v-livech"/>
+    ms.assetid="7965a80f-ea24-4cc2-bc43-60b574101902"
+    ms.service="virtual-machines-linux"
+    ms.devlang="NA"
+    ms.topic="article"
+    ms.tgt_pltfrm="vm-linux"
+    ms.workload="infrastructure"
+    ms.date="09/14/2016"
+    wacn.date=""
+    ms.author="v-livech" />
 
 # Azure and Linux
-
 Azure is a growing collection of integrated public cloud services including analytics, Virtual Machines, databases, mobile, networking, storage, and web -- ideal for hosting your solutions.  Azure provides a scalable computing platform that allows you to only pay for what you use, when you want it - without having to invest in on-premises hardware.  Azure is ready when you are to scale your solutions up and out to whatever scale you require to service the needs of your clients.
 
 ## Availability
@@ -47,25 +46,30 @@ Note: DS-series VMs have access to Premium Storage - our SSD backed high-perform
 ## Automation
 To achieve a proper DevOps culture, all infrastructure must be code.  When all the infrastructure lives in code it can easily be recreated (Phoenix Servers).  Azure works with all the major automation tooling like Ansible, Chef, SaltStack, and Puppet.  Azure also has its own tooling for automation:
 
-- [Azure Templates](/documentation/articles/virtual-machines-linux-create-ssh-secured-vm-from-template/)
-
-- [Azure VMAccess](/documentation/articles/virtual-machines-linux-using-vmaccess-extension/)
+* [Azure Templates](/documentation/articles/virtual-machines-linux-create-ssh-secured-vm-from-template/)
+* [Azure VMAccess](/documentation/articles/virtual-machines-linux-using-vmaccess-extension/)
 
 Azure is rolling out support for [cloud-init](http://cloud-init.io/) across most Linux Distros that support it.  Currently Canonical's Ubuntu VMs are deployed with cloud-init enabled by default.  RedHats RHEL, CentOS, and Fedora support cloud-init, however the Azure images maintained by RedHat do not have cloud-init installed.  To use cloud-init on a RedHat family OS, you must create a custom image with cloud-init installed.
 
-- [Using cloud-init on Azure Linux VMs](/documentation/articles/virtual-machines-linux-using-cloud-init/)
+* [Using cloud-init on Azure Linux VMs](/documentation/articles/virtual-machines-linux-using-cloud-init/)
 
 ## Quotas
 Each Azure Subscription has default quota limits in place that could impact the deployment of a large number of VMs for your project. The current limit on a per subscription basis is 20 VMs per region.  Quota limits can be raised by filing a support ticket requesting a limit increase.  For more details on quota limits:
 
-- [Azure Subscription Service Limits](/documentation/articles/azure-subscription-service-limits/)
-
+* [Azure Subscription Service Limits](/documentation/articles/azure-subscription-service-limits/)
 
 ## Partners
-
 Microsoft works closely with our partners to ensure the images available are updated and optimized for an Azure runtime.  For more information on our partners check their marketplace pages below.
 
-- [Linux on Azure-Endorsed Distributions](/documentation/articles/virtual-machines-linux-endorsed-distros/)
+Linux on Azure - [Endorsed Distributions](/documentation/articles/virtual-machines-linux-endorsed-distros/)
+
+Canonical - [Azure Marketplace - Ubuntu Server 16.04 LTS](https://portal.azure.cn/#create/Canonical.UbuntuServer1604LTS)
+
+Debian - [Azure Marketplace - Debian 8 "Jessie"](https://portal.azure.cn/#create/credativ.Debian8)
+
+FreeBSD - [Azure Marketplace - FreeBSD 10.3](https://portal.azure.cn/#create/Microsoft.FreeBSD103)
+
+CoreOS - [Azure Marketplace - CoreOS (Stable)](https://portal.azure.cn/#create/CoreOS.CoreOSStable)
 
 ## Getting Setup on Azure
 To begin using Azure you need an Azure account, the Azure CLI installed, and a pair of SSH public and private keys.
@@ -74,7 +78,7 @@ To begin using Azure you need an Azure account, the Azure CLI installed, and a p
 The first step in using the Azure Cloud is to sign up for an Azure account.  Go to the [Azure Account Signup](/pricing/1rmb-trial/) page to get started.
 
 ## Install the CLI
-With your new Azure account, you can get started immediately using the Azure portal, which is a web-based admin panel.  To manage the Azure Cloud via the command-line, you install the `azure-cli`.  Install the [Azure CLI ](/documentation/articles/xplat-cli-install/)on your Mac or Linux workstation.
+With your new Azure account, you can get started immediately using the Azure portal preview, which is a web-based admin panel.  To manage the Azure Cloud via the command-line, you install the `azure-cli`.  Install the [Azure CLI ](/documentation/articles/xplat-cli-install/)on your Mac or Linux workstation.
 
 ## Create an SSH key pair
 Now you have an Azure account, the Azure web portal, and the Azure CLI.  The next step is to create an SSH key pair that is used to SSH into Linux without using a password.  [Create SSH keys on Linux and Mac](/documentation/articles/virtual-machines-linux-mac-create-ssh-keys/) to enable password-less logins and better security.
@@ -85,51 +89,33 @@ With your Azure account setup, the Azure CLI installed and SSH keys created you 
 ## Create a VM using the CLI
 Creating a Linux VM using the CLI is a quick way to deploy a VM without leaving the terminal you are working in.  Everything you can specify on the web portal is available via a command-line flag or switch.  
 
-- [Create a Linux VM using the CLI](/documentation/articles/virtual-machines-linux-quick-create-cli/)
+* [Create a Linux VM using the CLI](/documentation/articles/virtual-machines-linux-quick-create-cli/)
 
 ## Create a VM in the portal
 Creating a Linux VM in the Azure web portal is a way to easily point and click through the various options to get to a deployment.  Instead of using command-line flags or switches, you are able to view a nice web layout of various options and settings.  Everything available via the command-line interface is also available in the portal.
 
-- [Create a Linux VM using the Portal](/documentation/articles/virtual-machines-linux-quick-create-portal/)
+* [Create a Linux VM using the Portal](/documentation/articles/virtual-machines-linux-quick-create-portal/)
 
 ## Login using SSH without a password
 The VM is now running on Azure and you are ready to log in.  Using passwords to log in via SSH is insecure and time consuming.  Using SSH keys is the most secure way and also the quickest way to login.  When you create you Linux VM via the portal or the CLI, you have two authentication choices.  If you choose a password for SSH, Azure configures the VM to allow logins via passwords.  If you chose to use an SSH public key, Azure configures the VM to only allow logins via SSH keys and disables password logins. To secure your Linux VM by only allowing SSH key logins, use the SSH public key option during the VM creation in the portal or CLI.
 
-- [Disable SSH passwords on your Linux VM by configuring SSHD](/documentation/articles/virtual-machines-linux-mac-disable-ssh-password-usage/)
+* [Disable SSH passwords on your Linux VM by configuring SSHD](/documentation/articles/virtual-machines-linux-mac-disable-ssh-password-usage/)
 
 ## Related Azure components
-
 ## Storage
-
-- [Introduction to Azure Storage](/documentation/articles/storage-introduction/)
-
-- [Add a disk to a Linux VM using the azure-cli](/documentation/articles/virtual-machines-linux-add-disk/)
-
-- [How to attach a data disk to a Linux VM in the Azure portal](/documentation/articles/virtual-machines-linux-attach-disk-portal/)
+* [Introduction to Azure Storage](/documentation/articles/storage-introduction/)
+* [Add a disk to a Linux VM using the azure-cli](/documentation/articles/virtual-machines-linux-add-disk/)
+* [How to attach a data disk to a Linux VM in the Azure portal preview](/documentation/articles/virtual-machines-linux-attach-disk-portal/)
 
 ## Networking
+* [Virtual Network Overview](/documentation/articles/virtual-networks-overview/)
+* [IP addresses in Azure](/documentation/articles/virtual-network-ip-addresses-overview-arm/)
+* [Opening ports to a Linux VM in Azure](/documentation/articles/virtual-machines-linux-nsg-quickstart/)
+* [Create a Fully Qualified Domain Name in the Azure portal preview](/documentation/articles/virtual-machines-linux-portal-create-fqdn/)
 
-- [Virtual Network Overview](/documentation/articles/virtual-networks-overview/)
-
-- [IP addresses in Azure](/documentation/articles/virtual-network-ip-addresses-overview-arm/)
-
-- [Opening ports to a Linux VM in Azure](/documentation/articles/virtual-machines-linux-nsg-quickstart/)
-
-- [Create a Fully Qualified Domain Name in the Azure portal](/documentation/articles/virtual-machines-linux-portal-create-fqdn/)
-
-
-## Containers
-
-- [Virtual Machines and Containers in Azure](/documentation/articles/virtual-machines-linux-containers/)
-
-- [Azure Container Service introduction](/documentation/articles/container-service-intro/)
-
-- [Deploy an Azure Container Service cluster](/documentation/articles/container-service-deployment/)
 
 ## Next steps
-
 You now have an overview of Linux on Azure.  The next step is to dive in and create a few VMs!
 
-- [Create a Linux VM on Azure using the Portal](/documentation/articles/virtual-machines-linux-quick-create-portal/)
-
-- [Create a Linux VM on Azure by using the CLI](/documentation/articles/virtual-machines-linux-quick-create-cli/)
+* [Create a Linux VM on Azure using the Portal](/documentation/articles/virtual-machines-linux-quick-create-portal/)
+* [Create a Linux VM on Azure by using the CLI](/documentation/articles/virtual-machines-linux-quick-create-cli/)

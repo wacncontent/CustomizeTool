@@ -17,7 +17,7 @@
 
 # Create SharePoint server farms
 
-> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the Resource Manager deployment model, which Microsoft recommends for most new deployments instead of the classic model.
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the Resource Manager deployment model, which Azure recommends for most new deployments instead of the classic model.
 
 With the Azure portal marketplace, you can quickly create pre-configured SharePoint Server 2013 farms. This can save you a lot of time when you need a basic or high-availability SharePoint farm for a development and testing environment or if you are evaluating SharePoint Server 2013 as a collaboration solution for your organization.
 
@@ -51,7 +51,7 @@ To create the high-availability (nine-server) SharePoint farm:
 
 ## Managing the SharePoint farms
 
-You can administer the servers of these farms through Remote Desktop connections. For more information, see [Log on to the virtual machine](/documentation/articles/virtual-machines-windows-tutorial-classic-portal#log-on-to-the-virtual-machine).
+You can administer the servers of these farms through Remote Desktop connections. For more information, see [Log on to the virtual machine](/documentation/articles/virtual-machines-windows-classic-tutorial/#log-on-to-the-virtual-machine).
 
 From the Central Administration SharePoint site, you can configure My sites, SharePoint applications, and other functionality. For more information, see [Configure SharePoint 2013](http://technet.microsoft.com/zh-cn/library/ee836142.aspx).
 

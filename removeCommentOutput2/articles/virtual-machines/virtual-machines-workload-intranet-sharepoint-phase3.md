@@ -17,11 +17,11 @@
 
 # SharePoint Intranet Farm Workload Phase 3: Configure SQL Server Infrastructure
 
-> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the Resource Manager deployment model, which Microsoft recommends for most new deployments instead of the classic deployment model.
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the Resource Manager deployment model, which Azure recommends for most new deployments instead of the classic deployment model.
 
 In this phase of deploying an intranet-only SharePoint 2013 farm with SQL Server AlwaysOn Availability Groups in Azure infrastructure services, you create and configure the two SQL Server computers and the cluster majority node computer, and then combine them into a Windows Server cluster.
 
-You must complete this phase before moving on to [Phase 4](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase4). See [Deploying SharePoint with SQL Server AlwaysOn Availability Groups in Azure](/documentation/articles/virtual-machines-workload-intranet-sharepoint-overview) for all of the phases.
+You must complete this phase before moving on to [Phase 4](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase4/). See [Deploying SharePoint with SQL Server AlwaysOn Availability Groups in Azure](/documentation/articles/virtual-machines-workload-intranet-sharepoint-overview/) for all of the phases.
 
 > [AZURE.NOTE] These instructions use a SQL Server image in the Azure image gallery and you are charged ongoing costs for the use of the SQL Server license. It is also possible to create virtual machines in Azure and install your own SQL Server licenses, but you must have Software Assurance and License Mobility to use your SQL Server license on a virtual machine, including an Azure virtual machine. For more information about installing SQL Server on a virtual machine, see [Installation for SQL Server](https://msdn.microsoft.com/zh-cn/library/bb500469.aspx).
 
@@ -37,7 +37,7 @@ Use the following block of PowerShell commands to create the virtual machines fo
 - Table ST, for your storage accounts
 - Table A, for your availability sets
 
-Recall that you defined Table M in [Phase 2: Configure Domain Controllers](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase2) and Tables V, S, ST, and A in [Phase 1: Configure Azure](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase1).
+Recall that you defined Table M in [Phase 2: Configure Domain Controllers](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase2/) and Tables V, S, ST, and A in [Phase 1: Configure Azure](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase1/).
 
 > [AZURE.NOTE] The following command sets use Azure PowerShell 1.0 and later. For more information, see [Azure PowerShell 1.0](https://azure.microsoft.com/blog/azps-1-0/).
 
@@ -126,9 +126,9 @@ After they restart, reconnect to them using an account that has local administra
 
 For each SQL server, do the following:
 
-1. Use the [Logging on to a virtual machine with a Remote Desktop connection procedure](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase2#logon) to log on using the credentials of the local administrator account.
+1. Use the [Logging on to a virtual machine with a Remote Desktop connection procedure](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase2/#logon) to log on using the credentials of the local administrator account.
 
-2. Use the [To initialize an empty disk procedure](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase2#datadisk) twice, once for each SQL server, to add the extra data disk.
+2. Use the [To initialize an empty disk procedure](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase2/#datadisk) twice, once for each SQL server, to add the extra data disk.
 
 3. Run the following commands from a Windows PowerShell command prompt.
 
@@ -136,7 +136,7 @@ For each SQL server, do the following:
 		md f:\Log
 		md f:\Backup
 
-4. Use the [To test connectivity procedure](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase2#testconn) to test connectivity to locations on your organization network. This procedure ensures that DNS name resolution is working correctly (that the virtual machine is correctly configured with DNS servers in the virtual network) and that packets can be sent to and from the cross-premises virtual network.
+4. Use the [To test connectivity procedure](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase2/#testconn) to test connectivity to locations on your organization network. This procedure ensures that DNS name resolution is working correctly (that the virtual machine is correctly configured with DNS servers in the virtual network) and that packets can be sent to and from the cross-premises virtual network.
 
 Use the following procedure twice, once for each SQL server, to configure the SQL server to use the F: drive for new databases and for accounts and permissions.
 
@@ -169,13 +169,13 @@ SQL Server requires a port that clients use to access the database server. It al
 
 For each of the SQL server virtual machines, sign out as the local administrator.
 
-For information about optimizing SQL Server performance in Azure, see [Performance Best Practices for SQL Server in Azure Virtual Machines](/documentation/articles/virtual-machines-sql-server-performance-best-practices). You can also disable Geo Redundant Storage (GRS) for the SharePoint farm storage account and use storage spaces to optimize IOPs.
+For information about optimizing SQL Server performance in Azure, see [Performance Best Practices for SQL Server in Azure Virtual Machines](/documentation/articles/virtual-machines-windows-sql-performance/). You can also disable Geo Redundant Storage (GRS) for the SharePoint farm storage account and use storage spaces to optimize IOPs.
 
 ## Configure the cluster majority node server
 
-Use the [Logging on to a virtual machine with a Remote Desktop connection procedure](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase2#logon) for the cluster majority node to log on using the credentials of a domain account.
+Use the [Logging on to a virtual machine with a Remote Desktop connection procedure](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase2/#logon) for the cluster majority node to log on using the credentials of a domain account.
 
-On the cluster majority node, use the [To test connectivity procedure](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase2#testconn) to test connectivity to locations on your organization network.
+On the cluster majority node, use the [To test connectivity procedure](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase2/#testconn) to test connectivity to locations on your organization network.
 
 ## Create the Windows server cluster
 
@@ -220,7 +220,7 @@ If a machine cannot be added, and the error message is "the Remote Registry is n
 
 ## Enable AlwaysOn Availability Groups
 
-The next step is to enable AlwaysOn Availability Groups using the SQL Server Configuration Manager. Note that an availability group in SQL Server differs from an Azure availability set. An availability group contains databases that are highly-available and recoverable. An Azure availability set allocates virtual machines to different fault domains. For more information about fault domains, see [Manage the Availability of Virtual Machines](/documentation/articles/virtual-machines-manage-availability).
+The next step is to enable AlwaysOn Availability Groups using the SQL Server Configuration Manager. Note that an availability group in SQL Server differs from an Azure availability set. An availability group contains databases that are highly-available and recoverable. An Azure availability set allocates virtual machines to different fault domains. For more information about fault domains, see [Manage the Availability of Virtual Machines](/documentation/articles/virtual-machines-linux-manage-availability/).
 
 Use these steps to enable AlwaysOn Availability Groups on SQL Server.
 
@@ -239,4 +239,4 @@ The next diagram shows the configuration resulting from the successful completio
 
 ## Next step
 
-- Use [Phase 4](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase4) to continue with the configuration of this workload.
+- Use [Phase 4](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase4/) to continue with the configuration of this workload.

@@ -1,3 +1,5 @@
+<!-- rename to virtual-machines-setup-simulated-hybrid-cloud-environment-testing -->
+
 <properties 
 	pageTitle="Office 365 DirSync test environment  | Azure" 
 	description="Learn how to configure an Office 365 Directory Synchronization (DirSync) server in a hybrid cloud for IT pro or development testing." 
@@ -15,7 +17,7 @@
 
 # Set up Office 365 Directory Synchronization (DirSync) in a hybrid cloud for testing
 
-> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the classic deployment model. Microsoft recommends that most new deployments use the Resource Manager model.
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager model.
  
 
 This topic steps you through creating a hybrid cloud environment for testing Office 365 Directory Synchronization (DirSync) with password synchronization hosted in Azure. Here is the resulting configuration.
@@ -45,13 +47,13 @@ If you do not already have an Azure subscription, you can sign up for a trial at
 
 ## Phase 1: Set up the hybrid cloud environment
 
-Use the instructions in the [Set up a hybrid cloud environment for testing](/documentation/articles/virtual-networks-setup-hybrid-cloud-environment-testing) topic. Because this test environment does not require the presence of the APP1 server on the Corpnet subnet, feel free to shut it down for now.
+Use the instructions in the [Set up a hybrid cloud environment for testing](/documentation/articles/virtual-networks-setup-hybrid-cloud-environment-testing/) topic. Because this test environment does not require the presence of the APP1 server on the Corpnet subnet, feel free to shut it down for now.
 
 This is your current configuration.
 
 ![](./media/virtual-networks-setup-dirsync-hybrid-cloud-testing/CreateDirSyncHybridCloud_1.png)
 
-> [AZURE.NOTE] For Phase 1, you can also set up the simulated hybrid cloud test environment. See [Set up a simulated hybrid cloud environment for testing](/documentation/articles/virtual-networks-setup-simulated-hybrid-cloud-environment-testing) for the instructions.
+> [AZURE.NOTE] For Phase 1, you can also set up the simulated hybrid cloud test environment. See [Set up a simulated hybrid cloud environment for testing](/documentation/articles/virtual-networks-setup-simulated-hybrid-cloud-environment-testing/) for the instructions.
 
 ## Phase 2: Configure the Office 365 FastTrack Trial
 
@@ -169,14 +171,14 @@ This environment is now ready for you to perform testing of Office 365 applicati
 
 [Solutions using Office Servers and the Cloud](http://technet.microsoft.com/zh-cn/library/dn262744.aspx)
 
-[Set up a hybrid cloud environment for testing](/documentation/articles/virtual-networks-setup-hybrid-cloud-environment-testing)
+[Set up a hybrid cloud environment for testing](/documentation/articles/virtual-networks-setup-hybrid-cloud-environment-testing/)
 
-[Set up a SharePoint intranet farm in a hybrid cloud for testing](/documentation/articles/virtual-networks-setup-sharepoint-hybrid-cloud-testing)
+[Set up a SharePoint intranet farm in a hybrid cloud for testing](/documentation/articles/virtual-networks-setup-sharepoint-hybrid-cloud-testing/)
 
-[Set up a web-based LOB application in a hybrid cloud for testing](/documentation/articles/virtual-networks-setup-lobapp-hybrid-cloud-testing)
+[Set up a web-based LOB application in a hybrid cloud for testing](/documentation/articles/virtual-networks-setup-lobapp-hybrid-cloud-testing/)
 
-[Set up a simulated hybrid cloud environment for testing](/documentation/articles/virtual-networks-setup-simulated-hybrid-cloud-environment-testing)
+[Set up a simulated hybrid cloud environment for testing](/documentation/articles/virtual-networks-setup-simulated-hybrid-cloud-environment-testing/)
 
-[Azure hybrid cloud test environments](/documentation/articles/virtual-machines-windows-classic-hybrid-test-env)
+[Azure hybrid cloud test environments](/documentation/articles/virtual-machines-windows-classic-hybrid-test-env/)
 
-[Azure infrastructure services implementation guidelines](/documentation/articles/virtual-machines-linux-infrastructure-service-guidelines)
+[Azure infrastructure services implementation guidelines](/documentation/articles/virtual-machines-linux-infrastructure-service-guidelines/)

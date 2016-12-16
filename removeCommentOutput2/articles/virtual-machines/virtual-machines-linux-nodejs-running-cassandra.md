@@ -17,7 +17,7 @@
 
 # Running Cassandra with Linux on Azure and Accessing it from Node.js 
 
-> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the classic deployment model. Microsoft recommends that most new deployments use the [Resource Manager model](https://azure.microsoft.com/documentation/templates/datastax-on-ubuntu/).
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the [Resource Manager model](https://azure.microsoft.com/documentation/templates/datastax-on-ubuntu/).
 
 ## Overview
 Azure is an open cloud platform that runs both Microsoft as well as non-Microsoft software which  includes operating systems, application servers, messaging middleware as well as SQL and NoSQL databases from both commercial and open source models. Building resilient services on public clouds including Azure requires careful planning and deliberate architecture for both applications servers as well storage layers. Cassandra's distributed storage architecture naturally helps in building highly available systems that are fault tolerant for cluster failures. Cassandra is a cloud scale NoSQL database maintained by Apache Software Foundation at cassandra.apache.org; Cassandra is written in Java and hence runs on both on Windows as well as Linux platforms. 
@@ -289,7 +289,7 @@ Log into the virtual machine using the hostname (hk-cas-template.chinacloudapp.c
 
 Execute the following sequence of actions to capture the image:
 #####1. Deprovision
-Use the command "sudo waagent -deprovision+user" to remove Virtual Machine instance specific information. See for [How to Capture a Linux Virtual Machine](/documentation/articles/virtual-machines-linux-capture-image) to Use as a Template more details on the image capture process. 
+Use the command "sudo waagent -deprovision+user" to remove Virtual Machine instance specific information. See for [How to Capture a Linux Virtual Machine](/documentation/articles/virtual-machines-linux-classic-capture-image/) to Use as a Template more details on the image capture process. 
 
 #####2: Shutdown the VM
 Make sure that the virtual machine is highlighted and click the SHUTDOWN link from the bottom command bar.
@@ -301,7 +301,7 @@ This will take a few seconds and the image should be available in MY IMAGES sect
 
 ##Single Region Deployment Process
 **Step 1: Create the Virtual Network**
-Log into the Azure classic portal and create a Virtual Network with the attributes show in the table. See [Configure a Cloud-Only Virtual Network in the Azure classic portal](/documentation/articles/virtual-networks-create-vnet-classic-portal) for detailed steps of the process.      
+Log into the Azure classic portal and create a Virtual Network with the attributes show in the table. See [Configure a Cloud-Only Virtual Network in the Azure classic portal](/documentation/articles/virtual-networks-create-vnet-classic-portal/) for detailed steps of the process.      
 
 <table>
 <tr><th>VM Attribute Name</th><th>Value</th><th>Remarks</th></tr>
@@ -464,11 +464,11 @@ You should see a display like the one below:
 
 Please note that the keyspace created in step 4 uses SimpleStrategy with a  replication_factor of 3. SimpleStrategy is recommended for single data center deployments whereas NetworkTopologyStrategy for multi-data center deployments. A replication_factor of 3 will give tolerance for node failures. 
 
-##<a id="tworegion"> </a>Multi-Region Deployment Process
+## <a id="tworegion"> </a>Multi-Region Deployment Process
 Will leverage the single region deployment completed and repeat the same process for installing the second region. The key difference between the single and multiple region deployment is the VPN tunnel setup for inter-region communication; we will start with the network installation, provision the VMs and configure Cassandra. 
 
 ###Step 1: Create the Virtual Network at the 2nd Region
-Log into the Azure classic portal and create a Virtual Network with the attributes show in the table. See [Configure a Cloud-Only Virtual Network in the Azure classic portal](/documentation/articles/virtual-networks-create-vnet) for detailed steps of the process.      
+Log into the Azure classic portal and create a Virtual Network with the attributes show in the table. See [Configure a Cloud-Only Virtual Network in the Azure classic portal](/documentation/articles/virtual-networks-create-vnet/) for detailed steps of the process.      
 
 <table>
 <tr><th>Attribute Name    </th><th>Value	</th><th>Remarks</th></tr>
@@ -491,7 +491,7 @@ Add the following subnets:
 
 
 ###Step 2: Create Local Networks
-A Local Network in Azure virtual networking is a proxy address space that maps to a remote site including a private cloud or another Azure region. This proxy address space is bound to a remote gateway for routing network to the right networking destinations. See [Configure a VNet to VNet Connection](/documentation/articles/virtual-networks-configure-vnet-to-vnet-connection) for the instructions on establishing VNET-to-VNET connection. 
+A Local Network in Azure virtual networking is a proxy address space that maps to a remote site including a private cloud or another Azure region. This proxy address space is bound to a remote gateway for routing network to the right networking destinations. See [Configure a VNet to VNet Connection](/documentation/articles/virtual-networks-configure-vnet-to-vnet-connection/) for the instructions on establishing VNET-to-VNET connection. 
 
 Create two local networks per the following details:
 

@@ -16,7 +16,7 @@
 
 # Submit HPC jobs from an on-premises computer to an HPC Pack cluster deployed in Azure
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
 
 This article shows you how to configure an on-premises client computer running Windows to run HPC Pack job submission tools that communicate with an HPC Pack cluster in Azure over HTTPS. This provides a straightforward, flexible way for a variety of cluster users to submit jobs to a cloud-based HPC Pack cluster without needing to connect directly to the head node VM or access an Azure subscription to
 run job submission tools.
@@ -26,7 +26,7 @@ run job submission tools.
 ## Prerequisites
 
 * **HPC Pack head node deployed in an Azure VM** - We recommend that you use
-automated tools such as an an [Azure PowerShell script](/documentation/articles/virtual-machines-hpcpack-cluster-powershell-script)
+automated tools such as an an [Azure PowerShell script](/documentation/articles/virtual-machines-linux-classic-hpcpack-cluster-powershell-script/)
 to deploy the head node and cluster. You will need the DNS
 name of the head node and the credentials of a cluster administrator to
 complete the steps in this article.
@@ -53,7 +53,7 @@ configure the components by running the HPC PowerShell script
 For detailed procedures, see [Install the Microsoft HPC Pack Web
 Components](http://technet.microsoft.com/zh-cn/library/hh314627.aspx).
 
->[AZURE.TIP] If you use the [HPC Pack IaaS deployment script](/documentation/articles/virtual-machines-hpcpack-cluster-powershell-script) to create the cluster,
+>[AZURE.TIP] If you use the [HPC Pack IaaS deployment script](/documentation/articles/virtual-machines-linux-classic-hpcpack-cluster-powershell-script/) to create the cluster,
 you can optionally install and configure the web web components as part of the deployment.
 
 **To install the web components**

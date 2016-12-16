@@ -1,3 +1,5 @@
+<!-- deleted in Global -->
+
 <properties 
    pageTitle="About secure cross-premises connectivity for virtual networks | Azure"
    description="Learn about the types of secure cross-premises connections for virtual networks, including Site-to-Site, Point-to-Site, and ExpressRoute connections."

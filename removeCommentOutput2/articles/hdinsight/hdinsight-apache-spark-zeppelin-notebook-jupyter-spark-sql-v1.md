@@ -1,4 +1,4 @@
-<!-- not suitable for Mooncake -->
+<!-- deleted in Global -->
 
 <properties 
 	pageTitle="Create a Spark cluster on HDInsight and use Spark SQL from Zeppelin and Jupyter for interactive analysis | Azure" 
@@ -17,16 +17,16 @@
 
 # Quick Start: Create Apache Spark on HDInsight Windows and run interactive queries using Spark SQL (Preview)
 
-[AZURE.INCLUDE [hdinsight-azure-portal](../includes/hdinsight-azure-portal.md)]
+[AZURE.INCLUDE [hdinsight-azure-portal](../../includes/hdinsight-azure-portal.md)]
 
-* [Create Apache Spark on HDInsight and run interactive queries using Spark SQL](/documentation/articles/hdinsight-apache-spark-jupyter-spark-sql)
+* [Create Apache Spark on HDInsight and run interactive queries using Spark SQL](/documentation/articles/hdinsight-apache-spark-jupyter-spark-sql/)
 
 Learn how to create an Apache Spark cluster in HDInsight using the Quick Create option and then use the web-based [Zeppelin](https://zeppelin.incubator.apache.org) and [Jupyter](https://jupyter.org) notebooks to run Spark SQL interactive queries on the Spark cluster.
 
 
    ![Get started using Apache Spark in HDInsight](./media/hdinsight-apache-spark-zeppelin-notebook-jupyter-spark-sql-v1/hdispark.getstartedflow.png  "Get started using Apache Spark in HDInsight tutorial. Steps illustrated: create a storage account; create a cluster; run Spark SQL statements")
 
-[AZURE.INCLUDE [delete-cluster-warning](../includes/hdinsight-delete-cluster-warning.md)]
+[AZURE.INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
 
 **Prerequisites:**
 
@@ -50,9 +50,9 @@ Select the new storage account from the list and click **MANAGE ACCESS KEYS** at
 	
 ##Create an HDInsight Spark cluster
 
-In this section, you create an HDInsight version 3.2 cluster, which is based on Spark version 1.3.1. For information about HDInsight versions and their SLAs, see [HDInsight component versioning](/documentation/articles/hdinsight-component-versioning-v1).
+In this section, you create an HDInsight version 3.2 cluster, which is based on Spark version 1.3.1. For information about HDInsight versions and their SLAs, see [HDInsight component versioning](/documentation/articles/hdinsight-component-versioning-v1/).
 
->[AZURE.NOTE] The steps in this article create an Apache Spark cluster in HDInsight by using basic configuration settings. For information about other cluster configuration settings (such as using additional storage, Azure virtual network, or a metastore for Hive), see [Create HDInsight clusters using custom options](/documentation/articles/hdinsight-apache-spark-provision-clusters).
+>[AZURE.NOTE] The steps in this article create an Apache Spark cluster in HDInsight by using basic configuration settings. For information about other cluster configuration settings (such as using additional storage, Azure virtual network, or a metastore for Hive), see [Create HDInsight clusters using custom options](/documentation/articles/hdinsight-apache-spark-provision-clusters/).
 
 
 **To create a Spark cluster** 
@@ -236,29 +236,29 @@ In this section, you use a Jupyter notebook to run Spark SQL queries against a S
 
 ##Delete the cluster
 
-[AZURE.INCLUDE [delete-cluster-warning](../includes/hdinsight-delete-cluster-warning.md)]
+[AZURE.INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
 
 
 ##<a name="seealso"></a>See also
 
 
-* [Overview: Apache Spark on Azure HDInsight](/documentation/articles/hdinsight-apache-spark-overview-v1)
-* [Create a Spark on HDInsight cluster](/documentation/articles/hdinsight-apache-spark-provision-clusters)
-* [Perform interactive data analysis using Spark in HDInsight with BI tools](/documentation/articles/hdinsight-apache-spark-use-bi-tools-v1)
-* [Use Spark in HDInsight for building machine learning applications](/documentation/articles/hdinsight-apache-spark-ipython-notebook-machine-learning-v1)
-* [Use Spark in HDInsight for building real-time streaming applications](/documentation/articles/hdinsight-apache-spark-csharp-apache-zeppelin-eventhub-streaming)
-* [Manage resources for the Apache Spark cluster in Azure HDInsight](/documentation/articles/hdinsight-apache-spark-resource-manager-v1)
+* [Overview: Apache Spark on Azure HDInsight](/documentation/articles/hdinsight-apache-spark-overview-v1/)
+* [Create a Spark on HDInsight cluster](/documentation/articles/hdinsight-apache-spark-provision-clusters/)
+* [Perform interactive data analysis using Spark in HDInsight with BI tools](/documentation/articles/hdinsight-apache-spark-use-bi-tools-v1/)
+* [Use Spark in HDInsight for building machine learning applications](/documentation/articles/hdinsight-apache-spark-ipython-notebook-machine-learning-v1/)
+* [Use Spark in HDInsight for building real-time streaming applications](/documentation/articles/hdinsight-apache-spark-csharp-apache-zeppelin-eventhub-streaming/)
+* [Manage resources for the Apache Spark cluster in Azure HDInsight](/documentation/articles/hdinsight-apache-spark-resource-manager-v1/)
 
 
-[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning-v1
-[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
-[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
+[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning-v1/
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data/
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage/
 
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: /pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
 [azure-management-portal]: https://manage.windowsazure.cn/
-[azure-create-storageaccount]: /documentation/articles/storage-create-storage-account
+[azure-create-storageaccount]: /documentation/articles/storage-create-storage-account/
 
 
 

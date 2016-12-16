@@ -1,4 +1,4 @@
-<!-- not suitable for Mooncake -->
+<!-- deleted in Global -->
 
 <properties 
 	pageTitle="Use Azure Event Hubs with Apache Spark in HDInsight to process streaming data | Azure" 
@@ -18,7 +18,7 @@
 
 # Spark Streaming: Process events from Azure Event Hubs with Apache Spark on HDInsight Windows (Preview)
 
-> [AZURE.NOTE] HDInsight now provides Spark clusters on Linux. For information on how to run a streaming application on HDInsight Spark Linux clusters, see [Spark Streaming: Process events from Azure Event Hubs with Apache Spark on HDInsight (Linux)](/documentation/articles/hdinsight-apache-spark-eventhub-streaming).
+> [AZURE.NOTE] HDInsight now provides Spark clusters on Linux. For information on how to run a streaming application on HDInsight Spark Linux clusters, see [Spark Streaming: Process events from Azure Event Hubs with Apache Spark on HDInsight (Linux)](/documentation/articles/hdinsight-apache-spark-eventhub-streaming/).
 
 Spark Streaming extends the core Spark API to build scalable, high-throughput, fault-tolerant stream processing applications. Data can be ingested from many sources. In this article we use Event Hubs to ingest data. Event Hubs is a highly scalable ingestion system that can intake millions of events per second. 
 
@@ -31,8 +31,8 @@ In this tutorial, you will learn how to create an Azure Event Hub, how to ingest
 You must have the following:
 
 - An Azure subscription. See [Get Azure trial](/pricing/1rmb-trial/).
-- An Apache Spark cluster. For instructions, see [Create Apache Spark clusters in Azure HDInsight](/documentation/articles/hdinsight-apache-spark-provision-clusters).
-- An [Azure Event Hub](/documentation/articles/event-hubs-csharp-ephcs-getstarted).
+- An Apache Spark cluster. For instructions, see [Create Apache Spark clusters in Azure HDInsight](/documentation/articles/hdinsight-apache-spark-provision-clusters/).
+- An [Azure Event Hub](/documentation/articles/event-hubs-csharp-ephcs-getstarted/).
 - A workstation with Microsoft Visual Studio 2013. For instructions, see [Install Visual Studio](https://msdn.microsoft.com/zh-cn/library/e2h7fzkw.aspx).
 
 ##<a name="createeventhub"></a>Create Azure Event Hub
@@ -70,7 +70,7 @@ You must have the following:
 
 	![policy keys](./media/hdinsight-apache-spark-csharp-apache-zeppelin-eventhub-streaming/hdispark.streaming.event.hub.policy.connection.strings.png "Save policy connection strings")
 
-[AZURE.INCLUDE [service-bus-event-hubs-get-started-send-csharp](../includes/service-bus-event-hubs-get-started-send-csharp.md)]
+[AZURE.INCLUDE [service-bus-event-hubs-get-started-send-csharp](../../includes/service-bus-event-hubs-get-started-send-csharp.md)]
 
 ##<a name="receivezeppelin"></a>Receive messages in Spark on HDInsight using Zeppelin
 
@@ -88,7 +88,7 @@ If you combine the two requirements above, this is what you get:
 * The minimum number of cores you must allocate to Zeppelin is 2.
 * The number of allocated cores must always be twice the number of partitions in Event Hub. 
 
-For instructions on how to allocate resources in a Spark cluster, see [Manage resources for the Apache Spark cluster in HDInsight](/documentation/articles/hdinsight-apache-spark-resource-manager-v1).
+For instructions on how to allocate resources in a Spark cluster, see [Manage resources for the Apache Spark cluster in HDInsight](/documentation/articles/hdinsight-apache-spark-resource-manager-v1/).
 
 ### Create a streaming application using Zeppelin
 
@@ -177,19 +177,19 @@ Instructions on how to perform these steps and a sample streaming application ca
 ##<a name="seealso"></a>See also
 
 
-* [Overview: Apache Spark on Azure HDInsight](/documentation/articles/hdinsight-apache-spark-overview-v1)
-* [Quick Start: create Apache Spark on HDInsight and run interactive queries using Spark SQL](/documentation/articles/hdinsight-apache-spark-zeppelin-notebook-jupyter-spark-sql)
-* [Use Spark in HDInsight for building machine learning applications](/documentation/articles/hdinsight-apache-spark-ipython-notebook-machine-learning-v1)
-* [Perform interactive data analysis using Spark in HDInsight with BI tools](/documentation/articles/hdinsight-apache-spark-use-bi-tools-v1)
-* [Manage resources for the Apache Spark cluster in Azure HDInsight](/documentation/articles/hdinsight-apache-spark-resource-manager-v1)
+* [Overview: Apache Spark on Azure HDInsight](/documentation/articles/hdinsight-apache-spark-overview-v1/)
+* [Quick Start: create Apache Spark on HDInsight and run interactive queries using Spark SQL](/documentation/articles/hdinsight-apache-spark-zeppelin-notebook-jupyter-spark-sql/)
+* [Use Spark in HDInsight for building machine learning applications](/documentation/articles/hdinsight-apache-spark-ipython-notebook-machine-learning-v1/)
+* [Perform interactive data analysis using Spark in HDInsight with BI tools](/documentation/articles/hdinsight-apache-spark-use-bi-tools-v1/)
+* [Manage resources for the Apache Spark cluster in Azure HDInsight](/documentation/articles/hdinsight-apache-spark-resource-manager-v1/)
 
 
-[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning-v1
-[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
-[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
+[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning-v1/
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data/
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage/
 
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: /pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
 [azure-management-portal]: https://manage.windowsazure.cn/
-[azure-create-storageaccount]: /documentation/articles/storage-create-storage-account
+[azure-create-storageaccount]: /documentation/articles/storage-create-storage-account/

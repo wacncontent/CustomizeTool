@@ -20,9 +20,9 @@
 
 This tutorial walks you through the steps to create an example cross-premises virtual network with a site-to-site connection. 
 
-If you want to create a cloud-only virtual network, see [Tutorial: Create a Cloud-Only Virtual Network in Azure](/documentation/articles/create-virtual-network). If you want to create a point-to-site VPN by using certificates and a VPN client, see [Configure a Point-to-Site VPN in the Management Portal](/documentation/articles/vpn-gateway-point-to-site-create).
+If you want to create a cloud-only virtual network, see [Tutorial: Create a Cloud-Only Virtual Network in Azure](/documentation/articles/create-virtual-network/). If you want to create a point-to-site VPN by using certificates and a VPN client, see [Configure a Point-to-Site VPN in the Management Portal](/documentation/articles/vpn-gateway-point-to-site-create/).
 
-This tutorial assumes you have no prior experience using Azure. It's meant to help you become familiar with the steps required to create an example cross-premises virtual network. If you're looking for design scenarios and advanced information about Virtual Network, see the [Azure Virtual Network Overview](/documentation/articles/virtual-networks-overview).
+This tutorial assumes you have no prior experience using Azure. It's meant to help you become familiar with the steps required to create an example cross-premises virtual network. If you're looking for design scenarios and advanced information about Virtual Network, see the [Azure Virtual Network Overview](/documentation/articles/virtual-networks-overview/).
 
 After completing this tutorial, you will have an example cross-premises virtual network. The following figure shows the details, based on the example settings in this tutorial.
 
@@ -34,9 +34,9 @@ Note that the example configuration settings used in this tutorial are not custo
 
 For information about adding a virtual machine and extending your on-premises Active Directory to Azure Virtual Network, see the following:
 
--  [How to Custom Create a Virtual Machine](/documentation/articles/virtual-machines-create-custom)
+-  [How to Custom Create a Virtual Machine](/documentation/articles/virtual-machines-linux-classic-createportal/)
 
--  [Install a Replica Active Directory Domain Controller in Azure Virtual Network](/documentation/articles/virtual-networks-install-replica-active-directory-domain-controller)
+-  [Install a Replica Active Directory Domain Controller in Azure Virtual Network](/documentation/articles/virtual-networks-install-replica-active-directory-domain-controller/)
 
 For guidelines about deploying AD DS on Azure Virtual Machines, see [Guidelines for Deploying Windows Server Active Directory on Azure Virtual Machines](http://msdn.microsoft.com/zh-cn/library/azure/jj156090.aspx).
 
@@ -88,7 +88,7 @@ To create an example virtual network that connects to a company network:
 
 	![](./media/virtual-networks-create-site-to-site-cross-premises-connectivity/CreateCrossVnet_01_OpenVirtualNetworkWizard.png)
 
-3.	On the **Virtual Network Details** page, enter the following information, and then click the next arrow on the lower right. For more information about the settings on the details page, see the **Virtual Network Details** section in [About Configuring a Virtual Network using the Management Portal](/documentation/articles/virtual-networks-settings).
+3.	On the **Virtual Network Details** page, enter the following information, and then click the next arrow on the lower right. For more information about the settings on the details page, see the **Virtual Network Details** section in [About Configuring a Virtual Network using the Management Portal](/documentation/articles/virtual-networks-settings/).
 
 	-  **Name:** Name your virtual network. For the example in this tutorial, type **YourVirtualNetwork**.
 
@@ -97,7 +97,7 @@ To create an example virtual network that connects to a company network:
 	
 4.	On the **DNS Servers and VPN Connectivity** page, enter the following information, and then click the forward arrow on the lower right. 
 
-> [AZURE.NOTE] It's possible to select both **Point-To-Site** and **Site-To-Site** configurations on this page concurrently. For the purposes of this tutorial, we will select to configure only **Site-To-Site**. For more information about the settings on this page, see the **DNS Servers and VPN Connectivity** page in [About Configuring a Virtual Network using the Management Portal](/documentation/articles/virtual-networks-settings).
+> [AZURE.NOTE] It's possible to select both **Point-To-Site** and **Site-To-Site** configurations on this page concurrently. For the purposes of this tutorial, we will select to configure only **Site-To-Site**. For more information about the settings on this page, see the **DNS Servers and VPN Connectivity** page in [About Configuring a Virtual Network using the Management Portal](/documentation/articles/virtual-networks-settings/).
 
 	-  **DNS SERVERS:** Enter the DNS server name and IP address that you want to use for name resolution. Typically this would be a DNS server that you use for on-premises name resolution. This setting does not create a DNS server. For the example in this tutorial, type **YourDNS** for the name and **10.1.0.4** for the IP address.
 	-  **Configure Point-To-Site VPN:** Leave this field blank. 
@@ -106,7 +106,7 @@ To create an example virtual network that connects to a company network:
  
 	![](./media/virtual-networks-create-site-to-site-cross-premises-connectivity/CreateCrossVNet_03_DNSServersandVPNConnectivity.png)
 
-5.	On the **Site-To-Site Connectivity** page, enter the information below, and then click the checkmark in the lower right of the page. For more information about the settings on this page, see the **Site-to-Site Connectivity** page section in [About Configuring a Virtual Network using the Management Portal](/documentation/articles/virtual-networks-settings). 
+5.	On the **Site-To-Site Connectivity** page, enter the information below, and then click the checkmark in the lower right of the page. For more information about the settings on this page, see the **Site-to-Site Connectivity** page section in [About Configuring a Virtual Network using the Management Portal](/documentation/articles/virtual-networks-settings/). 
 
 	-  **NAME:** For the example in this tutorial, type **YourCorpHQ**.
 
@@ -119,7 +119,7 @@ To create an example virtual network that connects to a company network:
 
 6.  On the **Virtual Network Address Spaces** page, enter the  information below, and then click the checkmark on the lower right to configure your network. 
 
-	Address space must be a private address range, specified in CIDR notation from the 10.0.0.0/8, 172.16.0.0/12, or 192.168.0.0/16 address spaces (as specified by RFC 1918). For more information about the settings on this page, see **Virtual Network Address Spaces page** in [About Configuring a Virtual Network using the Management Portal](/documentation/articles/virtual-networks-settings).
+	Address space must be a private address range, specified in CIDR notation from the 10.0.0.0/8, 172.16.0.0/12, or 192.168.0.0/16 address spaces (as specified by RFC 1918). For more information about the settings on this page, see **Virtual Network Address Spaces page** in [About Configuring a Virtual Network using the Management Portal](/documentation/articles/virtual-networks-settings/).
 
 	-  **Address Space:** For the example in this tutorial, click **CIDR** in the upper right corner, then enter the following:
 		-  **Starting IP:** 10.4.0.0
@@ -243,26 +243,26 @@ This procedure assumes the following:
 ##  Next Steps
 To extend your on-premises Active Directory to the virtual network you just created, continue with the following tutorials:
 
--  [How to Custom Create a Virtual Machine](/documentation/articles/virtual-machines-create-custom)
+-  [How to Custom Create a Virtual Machine](/documentation/articles/virtual-machines-linux-classic-createportal/)
 
--  [Install a Replica Active Directory Domain Controller in Azure Virtual Network](/documentation/articles/virtual-networks-install-replica-active-directory-domain-controller)
+-  [Install a Replica Active Directory Domain Controller in Azure Virtual Network](/documentation/articles/virtual-networks-install-replica-active-directory-domain-controller/)
 
 If you want to export your virtual network settings to a network configuration file in order to back up your configuration or to use it as a template, see [Export Virtual Network Settings to a Network Configuration File](/documentation/articles/virtual-networks-create-vnet-classic-portal/).
 
 ## See Also
 
--  [Azure Virtual Network Technical Overview](/documentation/articles/virtual-networks-overview)
+-  [Azure Virtual Network Technical Overview](/documentation/articles/virtual-networks-overview/)
 
--  [Virtual Network FAQ](/documentation/articles/virtual-networks-faq)
+-  [Virtual Network FAQ](/documentation/articles/virtual-networks-faq/)
 
--  [Configuring a Virtual Network Using Network Configuration Files](/documentation/articles/virtual-networks-using-network-configuration-file)
+-  [Configuring a Virtual Network Using Network Configuration Files](/documentation/articles/virtual-networks-using-network-configuration-file/)
 
--  [Add a Virtual Machine to a Virtual Network](/documentation/articles/virtual-machines-create-custom)
+-  [Add a Virtual Machine to a Virtual Network](/documentation/articles/virtual-machines-linux-classic-createportal/)
 
 -  [About VPN Devices for Virtual Network](http://msdn.microsoft.com/zh-cn/library/azure/jj156075.aspx)
 
 -  [Name Resolution for VMs and Role Instances](/documentation/articles/virtual-networks-name-resolution-for-vms-and-role-instances/)
--  [Set up a hybrid cloud environment for testing](/documentation/articles/virtual-networks-setup-hybrid-cloud-environment-testing)
+-  [Set up a hybrid cloud environment for testing](/documentation/articles/virtual-networks-setup-hybrid-cloud-environment-testing/)
 
 
 

@@ -17,7 +17,7 @@
 
 # About disks and VHDs for Azure virtual machines
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
 
 
 
@@ -31,13 +31,13 @@ Every virtual machine has one attached operating system disk. It's registered as
 
 The temporary disk is automatically created for you. On Windows virtual machines, this disk is labeled as the D: drive. On Linux virtual machines, the disk is typically /dev/sdb and is formatted and mounted to /mnt/resource by the Azure Linux Agent.
 
->[AZURE.WARNING] Don't store data on the temporary disk. It provides temporary storage for applications and processes and is intended to only store data such as page or swap files. To remap this disk for a Windows virtual machine, see [Change the drive letter of the Windows temporary disk](/documentation/articles/virtual-machines-windows-change-drive-letter).
+>[AZURE.WARNING] Don't store data on the temporary disk. It provides temporary storage for applications and processes and is intended to only store data such as page or swap files. To remap this disk for a Windows virtual machine, see [Change the drive letter of the Windows temporary disk](/documentation/articles/virtual-machines-windows-classic-change-drive-letter/).
 
 ## Data disk
 
 A data disk is a VHD that's attached to a virtual machine to store application data, or other data you need to keep. Data disks are registered as SCSI drives and are labeled with a letter that you choose.  Each data disk has a maximum capacity of 1023 GB. The size of the virtual machine determines how many data disks you can attach to it and the type of storage you can use to host the disks.
 
->[AZURE.NOTE] For more details about virtual machines capacities, see [Sizes for virtual machines](/documentation/articles/virtual-machines-size-specs).
+>[AZURE.NOTE] For more details about virtual machines capacities, see [Sizes for virtual machines](/documentation/articles/virtual-machines-linux-sizes/).
 
 Azure creates an operating system disk when you create a virtual machine from an image. If you use an image that includes data disks, Azure also creates the data disks when it creates the virtual machine. (You can use an image from Azure or a partner, or one you provide.) Otherwise, you add data disks after you create the virtual machine.
 
@@ -45,7 +45,7 @@ You can add data disks to a virtual machine at any time, by 'attaching' the disk
 
 ## About VHDs
 
-The VHDs used in Azure are .vhd files stored as page blobs in a standard or premium storage account in Azure. (Premium storage is available in certain regions.) For details about page blobs, see [Understanding block blobs and page blobs](https://msdn.microsoft.com/zh-cn/library/ee691964.aspx). For details about premium storage, see [Premium storage: High-performance storage for Azure virtual machine workloads](/documentation/articles/storage-premium-storage).
+The VHDs used in Azure are .vhd files stored as page blobs in a standard or premium storage account in Azure. (Premium storage is available in certain regions.) For details about page blobs, see [Understanding block blobs and page blobs](https://msdn.microsoft.com/zh-cn/library/ee691964.aspx). For details about premium storage, see [Premium storage: High-performance storage for Azure virtual machine workloads](/documentation/articles/storage-premium-storage/).
 
 Outside of Azure, virtual hard disks can use either a VHD or a VHDX format. They can also be fixed, dynamically expanding, or differencing. Azure supports VHD format, fixed disks. The fixed format lays the logical disk out linearly within the file, so that disk offset X is stored at blob offset X. A small footer at the end of the blob describes the properties of the VHD. Often, the fixed format wastes space because most disks have large unused ranges in them. However, Azure stores .vhd files in a sparse format, so you receive the benefits of both the fixed and dynamic disks at the same time. For more details, see [Getting started with virtual hard disks](https://technet.microsoft.com/zh-cn/library/dd979539.aspx).
 
@@ -61,13 +61,13 @@ Before you can delete a source .vhd file, you'll need to remove the lease by del
 
 Linux virtual machines:
 
--  [Attach a disk and prep it for use](/documentation/articles/virtual-machines-linux-how-to-attach-disk)
--  [Capture a Linux virtual machine](/documentation/articles/virtual-machines-linux-capture-image)
--  [Detach a disk](/documentation/articles/virtual-machines-linux-how-to-detach-disk)
+-  [Attach a disk and prep it for use](/documentation/articles/virtual-machines-linux-classic-attach-disk/)
+-  [Capture a Linux virtual machine](/documentation/articles/virtual-machines-linux-classic-capture-image/)
+-  [Detach a disk](/documentation/articles/virtual-machines-linux-classic-detach-disk/)
 
 Windows virtual machines:
 
--  [Attach a disks and prepare it for use](/documentation/articles/storage-windows-attach-disk)
-- [Change the drive letter of the Windows temporary disk](/documentation/articles/virtual-machines-windows-change-drive-letter)
--  [Capture a Windows virtual machine](/documentation/articles/virtual-machines-capture-image-windows-server)
--  [Detach a disk](/documentation/articles/storage-windows-detach-disk)
+-  [Attach a disks and prepare it for use](/documentation/articles/virtual-machines-windows-classic-attach-disk/)
+- [Change the drive letter of the Windows temporary disk](/documentation/articles/virtual-machines-windows-classic-change-drive-letter/)
+-  [Capture a Windows virtual machine](/documentation/articles/virtual-machines-windows-classic-capture-image/)
+-  [Detach a disk](/documentation/articles/virtual-machines-windows-classic-detach-disk/)

@@ -1,4 +1,4 @@
-<!-- not suitable for Mooncake -->
+<!-- deleted in Global -->
 
 <properties 
 	pageTitle="Use Apache Spark to build machine learning applications on HDInsight | Azure" 
@@ -18,7 +18,7 @@
 
 # Build Machine Learning applications using Apache Spark on HDInsight Windows (Preview)
 
-> [AZURE.NOTE] HDInsight now provides Spark clusters on Linux. For information on how to create a machine learning application on HDInsight Spark Linux clusters, see [Build Machine Learning applications using Apache Spark on Azure HDInsight (Linux)](/documentation/articles/hdinsight-apache-spark-ipython-notebook-machine-learning).
+> [AZURE.NOTE] HDInsight now provides Spark clusters on Linux. For information on how to create a machine learning application on HDInsight Spark Linux clusters, see [Build Machine Learning applications using Apache Spark on Azure HDInsight (Linux)](/documentation/articles/hdinsight-apache-spark-ipython-notebook-machine-learning/).
 
 Learn how to build a machine learning application using an Apache Spark cluster in HDInsight. This article shows how to use the Jupyter notebook available with the cluster to build and test our application. The application uses the sample HVAC.csv data that is available on all clusters by default.
 
@@ -27,7 +27,7 @@ Learn how to build a machine learning application using an Apache Spark cluster 
 You must have the following:
 
 - An Azure subscription. See [Get Azure trial](/pricing/1rmb-trial/).
-- An Apache Spark cluster. For instructions, see [Create Apache Spark clusters in Azure HDInsight](/documentation/articles/hdinsight-apache-spark-provision-clusters). 
+- An Apache Spark cluster. For instructions, see [Create Apache Spark clusters in Azure HDInsight](/documentation/articles/hdinsight-apache-spark-provision-clusters/). 
 
 ##<a name="data"></a>Show me the data
 
@@ -224,21 +224,21 @@ Apache Spark clusters on HDInsight include Anaconda libraries. This also include
 
 ##<a name="seealso"></a>See also
 
-* [Overview: Apache Spark on Azure HDInsight](/documentation/articles/hdinsight-apache-spark-overview-v1)
-* [Create a Spark on HDInsight cluster](/documentation/articles/hdinsight-apache-spark-provision-clusters)
-* [Perform interactive data analysis using Spark in HDInsight with BI tools](/documentation/articles/hdinsight-apache-spark-use-bi-tools-v1)
-* [Use Spark in HDInsight for building real-time streaming applications](/documentation/articles/hdinsight-apache-spark-csharp-apache-zeppelin-eventhub-streaming)
-* [Manage resources for the Apache Spark cluster in Azure HDInsight](/documentation/articles/hdinsight-apache-spark-resource-manager-v1)
+* [Overview: Apache Spark on Azure HDInsight](/documentation/articles/hdinsight-apache-spark-overview-v1/)
+* [Create a Spark on HDInsight cluster](/documentation/articles/hdinsight-apache-spark-provision-clusters/)
+* [Perform interactive data analysis using Spark in HDInsight with BI tools](/documentation/articles/hdinsight-apache-spark-use-bi-tools-v1/)
+* [Use Spark in HDInsight for building real-time streaming applications](/documentation/articles/hdinsight-apache-spark-csharp-apache-zeppelin-eventhub-streaming/)
+* [Manage resources for the Apache Spark cluster in Azure HDInsight](/documentation/articles/hdinsight-apache-spark-resource-manager-v1/)
 
 
-[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning-v1
-[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
-[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
-[hdinsight-weblogs-sample]: /documentation/articles/hdinsight-hive-analyze-website-log
-[hdinsight-sensor-data-sample]: /documentation/articles/hdinsight-hive-analyze-sensor-data
+[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning-v1/
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data/
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage/
+[hdinsight-weblogs-sample]: /documentation/articles/hdinsight-hive-analyze-website-log/
+[hdinsight-sensor-data-sample]: /documentation/articles/hdinsight-hive-analyze-sensor-data/
 
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: /pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
 [azure-management-portal]: https://manage.windowsazure.cn/
-[azure-create-storageaccount]: /documentation/articles/storage-create-storage-account
+[azure-create-storageaccount]: /documentation/articles/storage-create-storage-account/

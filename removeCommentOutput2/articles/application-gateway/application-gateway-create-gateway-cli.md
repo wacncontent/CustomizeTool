@@ -1,27 +1,24 @@
 <properties
-   pageTitle="Create an application gateway using the Azure CLI in Resource Manager | Azure"
-   description="Learn how to create an Application Gateway by using the Azure CLI in Resource Manager"
-   services="application-gateway"
-   documentationCenter="na"
-   authors="georgewallace"
-   manager="carmonm"
-   editor=""
-   tags="azure-resource-manager"
-/>
-<tags  
-   ms.service="application-gateway"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="09/09/2016"
-   wacn.date=""
-   ms.author="gwallace" />
+    pageTitle="Create an application gateway using the Azure CLI in Resource Manager | Azure"
+    description="Learn how to create an Application Gateway by using the Azure CLI in Resource Manager"
+    services="application-gateway"
+    documentationcenter="na"
+    author="georgewallace"
+    manager="carmonm"
+    editor=""
+    tags="azure-resource-manager" />
+<tags
+    ms.assetid="c2f6516e-3805-49ac-826e-776b909a9104"
+    ms.service="application-gateway"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="infrastructure-services"
+    ms.date="11/16/2016"
+    wacn.date=""
+    ms.author="gwallace" />
 
 # Create an application gateway by using the Azure CLI
-
-Azure Application Gateway is a layer-7 load balancer. It provides failover, performance-routing HTTP requests between different servers, whether they are on the cloud or on-premises. Application gateway has the following application delivery features: HTTP load balancing, cookie-based session affinity, and Secure Sockets Layer (SSL) offload, custom health probes, and support for multi-site.
-
 > [AZURE.SELECTOR]
 - [Azure portal](/documentation/articles/application-gateway-create-gateway-portal/)
 - [Azure Resource Manager PowerShell](/documentation/articles/application-gateway-create-gateway-arm/)
@@ -29,26 +26,34 @@ Azure Application Gateway is a layer-7 load balancer. It provides failover, perf
 - [Azure Resource Manager template](/documentation/articles/application-gateway-create-gateway-arm-template/)
 - [Azure CLI](/documentation/articles/application-gateway-create-gateway-cli/)
 
+Azure Application Gateway is a layer-7 load balancer. It provides failover, performance-routing HTTP requests between different servers, whether they are on the cloud or on-premises. Application gateway has the following application delivery features: HTTP load balancing, cookie-based session affinity, and Secure Sockets Layer (SSL) offload, custom health probes, and support for multi-site.
+
 ## Prerequisite: Install the Azure CLI
 
 To perform the steps in this article, you need to [install the Azure Command-Line Interface for Mac, Linux, and Windows (Azure CLI)](/documentation/articles/xplat-cli-install/) and you need to [log on to Azure](/documentation/articles/xplat-cli-connect/). 
 
-> [AZURE.NOTE] If you don't have an Azure account, you need one. Go sign up for a [trial here](/documentation/articles/sign-up-organization/).
+> [AZURE.NOTE]
+> If you don't have an Azure account, you need one. Go sign up for a [trial here](/documentation/articles/sign-up-organization/).
+> 
+> 
 
 ## Scenario
 
-In this scenario, you learn how to create an application gateway using the Azure portal.
+In this scenario, you learn how to create an application gateway using the Azure portal Preview.
 
 This scenario will:
 
-- Create a medium application gateway with two instances.
-- Create a virtual network named AdatumAppGatewayVNET with a reserved CIDR block of 10.0.0.0/16.
-- Create a subnet called Appgatewaysubnet that uses 10.0.0.0/28 as its CIDR block.
-- Configure a certificate for SSL offload.
+* Create a medium application gateway with two instances.
+* Create a virtual network named AdatumAppGatewayVNET with a reserved CIDR block of 10.0.0.0/16.
+* Create a subnet called Appgatewaysubnet that uses 10.0.0.0/28 as its CIDR block.
+* Configure a certificate for SSL offload.
 
 ![Scenario example][scenario]
 
->[AZURE.NOTE] Additional configuration of the application gateway, including custom health probes, backend pool addresses, and additional rules are configured after the application gateway is configured and not during initial deployment.
+> [AZURE.NOTE]
+> Additional configuration of the application gateway, including custom health probes, backend pool addresses, and additional rules are configured after the application gateway is configured and not during initial deployment.
+> 
+> 
 
 ## Before you begin
 
@@ -59,7 +64,7 @@ only additional application gateways are able to be added to the subnet.
 
 Open the **Azure Command Prompt**, and log in. 
 
-    azure login
+    azure login -e AzureChinaCloud
 
 Once you type the preceding example, a code is provided. Navigate to https://aka.ms/devicelogin in a browser to continue the login process.
 
@@ -102,7 +107,10 @@ The IP addresses used for the backend are the IP addresses for your backend serv
 
     azure network application-gateway create -n AdatumAppGateway -l chinaeast -g AdatumAppGatewayRG -e AdatumAppGatewayVNET -m Appgatewaysubnet -r 134.170.185.46,134.170.188.221,134.170.185.50 -y c:\AdatumAppGateway\adatumcert.pfx -x P@ssw0rd -z 2 -a Standard_Medium -w Basic -j 443 -f Enabled -o 80 -i http -b https -u Standard
 
-
+> [AZURE.NOTE]
+> For a list of parameters that can be provided during creation run the following command: **azure network application-gateway create --help**.
+> 
+> 
 
 This example creates a basic application gateway with default settings for the listener, backend pool, backend http settings, and rules. It also configures SSL offload. You can modify these settings to suit your deployment once the provisioning is successful.
 If you already have your web application defined with the the backend pool in the preceding steps, once created, load balancing begins.

@@ -1,40 +1,38 @@
 <properties
-   pageTitle="Create a custom probe for Application Gateway by using PowerShell in the classic deployment model | Azure"
-   description="Learn how to create a custom probe for Application Gateway by using PowerShell in the classic deployment model"
-   services="application-gateway"
-   documentationCenter="na"
-   authors="georgewallace"
-   manager="carmonm"
-   editor=""
-   tags="azure-service-management"
-/>
-<tags  
-   ms.service="application-gateway"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="08/09/2016"
-   wacn.date=""
-   ms.author="gwallace" />
+    pageTitle="Create a custom probe for Application Gateway by using PowerShell in the classic deployment model | Azure"
+    description="Learn how to create a custom probe for Application Gateway by using PowerShell in the classic deployment model"
+    services="application-gateway"
+    documentationcenter="na"
+    author="georgewallace"
+    manager="carmonm"
+    editor=""
+    tags="azure-service-management" />
+<tags
+    ms.assetid="338a7be1-835c-48e9-a072-95662dc30f5e"
+    ms.service="application-gateway"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="infrastructure-services"
+    ms.date="11/16/2016"
+    wacn.date=""
+    ms.author="gwallace" />
 
 # Create a custom probe for Azure Application Gateway (classic) by using PowerShell
-
 > [AZURE.SELECTOR]
-- [Azure Portal Preview](/documentation/articles/application-gateway-create-probe-portal/)
+- [Azure portal Preview](/documentation/articles/application-gateway-create-probe-portal/)
 - [Azure Resource Manager PowerShell](/documentation/articles/application-gateway-create-probe-ps/)
 - [Azure Classic PowerShell](/documentation/articles/application-gateway-create-probe-classic-ps/)
 
-<BR>
-
 [AZURE.INCLUDE [azure-probe-intro-include](../../includes/application-gateway-create-probe-intro-include.md)]
 
-> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager model. Learn how to [perform these steps using the Resource Manager model](/documentation/articles/application-gateway-create-probe-ps/).
+[AZURE.INCLUDE [azure-arm-classic-important-include](../../includes/learn-about-deployment-models-classic-include.md)]
+
+Learn how to [perform these steps using the Resource Manager model](/documentation/articles/application-gateway-create-probe-ps/).
 
 [AZURE.INCLUDE [azure-ps-prerequisites-include.md](../../includes/azure-ps-prerequisites-include.md)]
 
-
-## Create a application gateway
+## Create an application gateway
 
 To create an application gateway:
 
@@ -48,15 +46,18 @@ To create the gateway, use the **New-AzureApplicationGateway** cmdlet, replacing
 
 The following example creates an application gateway by using a virtual network called "testvnet1" and a subnet called "subnet-1".
 
-	New-AzureApplicationGateway -Name AppGwTest -VnetName testvnet1 -Subnets @("Subnet-1")
+    New-AzureApplicationGateway -Name AppGwTest -VnetName testvnet1 -Subnets @("Subnet-1")
 
 To validate that the gateway was created, you can use the **Get-AzureApplicationGateway** cmdlet.
 
-	Get-AzureApplicationGateway AppGwTest
+    Get-AzureApplicationGateway AppGwTest
 
->[AZURE.NOTE]  The default value for *InstanceCount* is 2, with a maximum value of 10. The default value for *GatewaySize* is Medium. You can choose between Small, Medium, and Large.
+> [AZURE.NOTE]
+> The default value for *InstanceCount* is 2, with a maximum value of 10. The default value for *GatewaySize* is Medium. You can choose between Small, Medium, and Large.
+> 
+> 
 
- *VirtualIPs* and *DnsName* are shown as blank because the gateway has not started yet. These are created once the gateway is in the running state.
+*VirtualIPs* and *DnsName* are shown as blank because the gateway has not started yet. These are created once the gateway is in the running state.
 
 ## Configure an application gateway
 
@@ -70,14 +71,14 @@ In the following example, you use an XML file to configure all application gatew
 
 Copy the following text to Notepad.
 
-	<ApplicationGatewayConfiguration xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/windowsazure">
+    <ApplicationGatewayConfiguration xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/windowsazure">
     <FrontendIPConfigurations>
         <FrontendIPConfiguration>
             <Name>fip1</Name>
             <Type>Private</Type>
         </FrontendIPConfiguration>
     </FrontendIPConfigurations>    
-	<FrontendPorts>
+    <FrontendPorts>
         <FrontendPort>
             <Name>port1</Name>
             <Port>80</Port>
@@ -99,7 +100,7 @@ Copy the following text to Notepad.
             <Name>pool1</Name>
             <IPAddresses>
                 <IPAddress>1.1.1.1</IPAddress>
-				<IPAddress>2.2.2.2</IPAddress>
+                <IPAddress>2.2.2.2</IPAddress>
             </IPAddresses>
         </BackendAddressPool>
     </BackendAddressPools>
@@ -117,7 +118,7 @@ Copy the following text to Notepad.
         <HttpListener>
             <Name>listener1</Name>
             <FrontendIP>fip1</FrontendIP>
-	    <FrontendPort>port1</FrontendPort>
+        <FrontendPort>port1</FrontendPort>
             <Protocol>Http</Protocol>
         </HttpListener>
     </HttpListeners>
@@ -130,25 +131,27 @@ Copy the following text to Notepad.
             <BackendAddressPool>pool1</BackendAddressPool>
         </HttpLoadBalancingRule>
     </HttpLoadBalancingRules>
-	</ApplicationGatewayConfiguration>
-
+    </ApplicationGatewayConfiguration>
 
 Edit the values between the parentheses for the configuration items. Save the file with extension .xml.
 
 The following example shows how to use a configuration file to set up the application gateway, to load balance HTTP traffic on public port 80 and send network traffic to back-end port 80 between two IP addresses by using a custom probe.
 
->[AZURE.IMPORTANT] The protocol item Http or Https is case-sensitive.
+> [AZURE.IMPORTANT]
+> The protocol item Http or Https is case-sensitive.
+> 
+> 
 
-A new configuration item <Probe> is added to configure custom probes.
+A new configuration item \<Probe\> is added to configure custom probes.
 
 The configuration parameters are:
 
-- **Name** - Reference name for custom probe.
-- **Protocol** - Protocol used (possible values are HTTP or HTTPS).
-- **Host** and **Path** - Complete URL path that is invoked by the application gateway to determine the health of the instance. For example, if you have a website http://contoso.com/, then the custom probe can be configured for "http://contoso.com/path/custompath.htm" for probe checks to have a successful HTTP response.
-- **Interval** - Configures the probe interval checks in seconds.
-- **Timeout** - Defines the probe time-out for an HTTP response check.
-- **UnhealthyThreshold** - The number of failed HTTP responses needed to flag the back-end instance as *unhealthy*.
+* **Name** - Reference name for custom probe.
+* **Protocol** - Protocol used (possible values are HTTP or HTTPS).
+* **Host** and **Path** - Complete URL path that is invoked by the application gateway to determine the health of the instance. For example, if you have a website http://contoso.com/, then the custom probe can be configured for "http://contoso.com/path/custompath.htm" for probe checks to have a successful HTTP response.
+* **Interval** - Configures the probe interval checks in seconds.
+* **Timeout** - Defines the probe time-out for an HTTP response check.
+* **UnhealthyThreshold** - The number of failed HTTP responses needed to flag the back-end instance as *unhealthy*.
 
 The probe name is referenced in the <BackendHttpSettings> configuration to assign which back-end pool uses custom probe settings.
 
@@ -160,14 +163,13 @@ Changing the current configuration of an application gateway requires three step
 
 Get the XML file by using get-AzureApplicationGatewayConfig. This exports the configuration XML to be modified to add a probe setting.
 
-	Get-AzureApplicationGatewayConfig -Name "<application gateway name>" -Exporttofile "<path to file>"
-
+    Get-AzureApplicationGatewayConfig -Name "<application gateway name>" -Exporttofile "<path to file>"
 
 ### Step 2
 
 Open the XML file in a text editor. Add a `<probe>` section after `<frontendport>`.
 
-	<Probes>
+    <Probes>
         <Probe>
             <Name>Probe01</Name>
             <Protocol>Http</Protocol>
@@ -181,14 +183,14 @@ Open the XML file in a text editor. Add a `<probe>` section after `<frontendport
 
 In the backendHttpSettings section of the XML, add the probe name as shown in the following example:
 
-        <BackendHttpSettings>
-            <Name>setting1</Name>
-            <Port>80</Port>
-            <Protocol>Http</Protocol>
-            <CookieBasedAffinity>Enabled</CookieBasedAffinity>
-            <RequestTimeout>120</RequestTimeout>
-            <Probe>Probe01</Probe>
-        </BackendHttpSettings>
+    <BackendHttpSettings>
+        <Name>setting1</Name>
+        <Port>80</Port>
+        <Protocol>Http</Protocol>
+        <CookieBasedAffinity>Enabled</CookieBasedAffinity>
+        <RequestTimeout>120</RequestTimeout>
+        <Probe>Probe01</Probe>
+    </BackendHttpSettings>
 
 Save the XML file.
 
@@ -196,8 +198,7 @@ Save the XML file.
 
 Update the application gateway configuration with the new XML file by using **Set-AzureApplicationGatewayConfig**. This updates your application gateway with the new configuration.
 
-	Set-AzureApplicationGatewayConfig -Name "<application gateway name>" -Configfile "<path to file>"
-
+    Set-AzureApplicationGatewayConfig -Name "<application gateway name>" -Configfile "<path to file>"
 
 ## Next steps
 

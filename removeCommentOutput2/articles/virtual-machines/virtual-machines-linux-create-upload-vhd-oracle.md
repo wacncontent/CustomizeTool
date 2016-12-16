@@ -21,7 +21,7 @@
 - [Prepare an Oracle Linux 6.4+ virtual machine for Azure](#oracle6)
 - [Prepare an Oracle Linux 7.0+ virtual machine for Azure](#oracle7)
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
 
 ## Prerequisites ##
 
@@ -36,7 +36,7 @@ This article assumes that you have already installed an Oracle Linux operating s
 
 - The VHDX format is not supported in Azure, only **fixed VHD**.  You can convert the disk to VHD format using Hyper-V Manager or the convert-vhd cmdlet.
 
-- When installing the Linux system it is recommended that you use standard partitions rather than LVM (often the default for many installations). This will avoid LVM name conflicts with cloned VMs, particularly if an OS disk ever needs to be attached to another VM for troubleshooting.  LVM or [RAID](/documentation/articles/virtual-machines-linux-configure-raid) may be used on data disks if preferred.
+- When installing the Linux system it is recommended that you use standard partitions rather than LVM (often the default for many installations). This will avoid LVM name conflicts with cloned VMs, particularly if an OS disk ever needs to be attached to another VM for troubleshooting.  LVM or [RAID](/documentation/articles/virtual-machines-linux-configure-raid/) may be used on data disks if preferred.
 
 - NUMA is not supported for larger VM sizes due to a bug in Linux kernel versions below 2.6.37. This issue primarily impacts distributions using the upstream Red Hat 2.6.32 kernel. Manual installation of the Azure Linux agent (waagent) will automatically disable NUMA in the GRUB configuration for the Linux kernel. More information about this can be found in the steps below.
 
@@ -228,4 +228,4 @@ Preparing an Oracle Linux 7 virtual machine for Azure is very similar to Oracle 
 
 
 ## Next steps
-You're now ready to use your Oracle Linux .vhd to create new virtual machines in Azure. If this is the first time that you're uploading the .vhd file to Azure, see steps 2 and 3 in [Creating and uploading a virtual hard disk that contains the Linux operating system](/documentation/articles/virtual-machines-linux-create-upload-vhd).
+You're now ready to use your Oracle Linux .vhd to create new virtual machines in Azure. If this is the first time that you're uploading the .vhd file to Azure, see steps 2 and 3 in [Creating and uploading a virtual hard disk that contains the Linux operating system](/documentation/articles/virtual-machines-linux-classic-create-upload-vhd/).

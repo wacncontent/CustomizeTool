@@ -20,7 +20,7 @@
 
 # How to Capture a Linux Virtual Machine to Use as a Template with the CLI##
 
-> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the classic deployment model. Microsoft recommends that most new deployments use the
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the
  
 
 This article shows you how to capture an Azure virtual machine running Linux so you can use it like a template to create other virtual machines. This template includes the OS disk and any data disks attached the virtual machine. It doesn't include networking configuration, so you'll need to configure that when you create the other virtual machines that use the template.
@@ -151,13 +151,13 @@ Here is a sample walkthrough of capturing a virtual machine including terminal o
 Visit the [Azure CLI documentation page][] for more details and additional commands.
 
 
-[Azure CLI documentation page]: /documentation/articles/virtual-machines-command-line-tools
+[Azure CLI documentation page]: /documentation/articles/virtual-machines-command-line-tools/
 
-[How to Log on to a Virtual Machine Running Linux]: /documentation/articles/virtual-machines-linux-how-to-log-on
+[How to Log on to a Virtual Machine Running Linux]: /documentation/articles/virtual-machines-linux-classic-log-on/
 
 [About Virtual Machine Images in Azure]: http://msdn.microsoft.com/zh-cn/library/azure/dn790290.aspx
 
-[How to Create a Custom Virtual Machine]: /documentation/articles/virtual-machines-create-custom
+[How to Create a Custom Virtual Machine]: /documentation/articles/virtual-machines-linux-classic-createportal/
 
-[How to Attach a Data Disk to a Virtual Machine]: /documentation/articles/storage-windows-attach-disk
+[How to Attach a Data Disk to a Virtual Machine]: /documentation/articles/virtual-machines-windows-classic-attach-disk/
  

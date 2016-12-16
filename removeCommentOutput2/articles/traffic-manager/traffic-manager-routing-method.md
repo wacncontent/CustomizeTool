@@ -17,7 +17,7 @@
 
 There are three traffic routing methods available in Traffic Manager. Each Traffic Manager profile can use only one traffic routing method at a time, although you can select a different traffic routing method for your profile at any time.
 
-It's important to note that all traffic routing methods include endpoint monitoring. After you configure your Traffic Manager profile to specify the traffic routing method that best fits your requirements, configure your monitoring settings. When monitoring is correctly configured, Traffic Manager will monitor the state of your endpoints, consisting of cloud services and websites, and won't send traffic to endpoints it thinks are unavailable. For information about Traffic Manager monitoring, see [About Traffic Manager Monitoring](/documentation/articles/traffic-manager-monitoring). 
+It's important to note that all traffic routing methods include endpoint monitoring. After you configure your Traffic Manager profile to specify the traffic routing method that best fits your requirements, configure your monitoring settings. When monitoring is correctly configured, Traffic Manager will monitor the state of your endpoints, consisting of cloud services and websites, and won't send traffic to endpoints it thinks are unavailable. For information about Traffic Manager monitoring, see [About Traffic Manager Monitoring](/documentation/articles/traffic-manager-monitoring/). 
 
 The three Traffic Manager traffic routing methods are:
 
@@ -52,7 +52,7 @@ The following numbered steps correspond to the numbers in Figure 1.
 
 ### Round robin traffic routing method
 
-A common traffic routing pattern is to provide a set of identical endpoints and send traffic to each in a round-robin fashion. The Round Robin method splits up traffic across various endpoints. It selects a healthy endpoint at random and will not send traffic to services that are detected as being down. For more information, see [Traffic Manager Monitoring](/documentation/articles/traffic-manager-monitoring).
+A common traffic routing pattern is to provide a set of identical endpoints and send traffic to each in a round-robin fashion. The Round Robin method splits up traffic across various endpoints. It selects a healthy endpoint at random and will not send traffic to services that are detected as being down. For more information, see [Traffic Manager Monitoring](/documentation/articles/traffic-manager-monitoring/).
 
 Figure 2 shows an example of the Round Robin traffic routing method for a set of endpoints.
 
@@ -113,7 +113,7 @@ The following numbered steps correspond to the numbers in Figure 4.
 - If your profile contains multiple endpoints in the same datacenter, then traffic directed to that datacenter is distributed evenly across the endpoints that are available and healthy according to endpoint monitoring.
 - If all endpoints in a given datacenter are not available (according to endpoint monitoring), traffic for those endpoints will be distributed across all other available endpoints that are specified in the profile, not to the next-closest endpoint(s). This is to help avoid a cascading failure that could potentially occur if the next-closest endpoint becomes overloaded.
 - When the Internet Latency Table is updated, you may notice a difference in traffic patterns and load on your endpoints. These changes should be minimal.
-- When using the Performance  traffic routing method with external endpoints, you will need to specify the location of those endpoints. Choose the Azure region closest to your deployment. For more information, see [Manage Endpoints in Traffic Manager](/documentation/articles/traffic-manager-endpoints).
+- When using the Performance  traffic routing method with external endpoints, you will need to specify the location of those endpoints. Choose the Azure region closest to your deployment. For more information, see [Manage Endpoints in Traffic Manager](/documentation/articles/traffic-manager-endpoints/).
 
 ## Traffic Manager figures
 
@@ -121,9 +121,9 @@ If you want the figures in this topic as PowerPoint sides for your own presentat
 
 ## Next steps
 
-[What is Traffic Manager](/documentation/articles/traffic-manager-overview)
+[What is Traffic Manager](/documentation/articles/traffic-manager-overview/)
 
-[About Traffic Manager Monitoring](/documentation/articles/traffic-manager-monitoring)
+[About Traffic Manager Monitoring](/documentation/articles/traffic-manager-monitoring/)
 
 [Operations on Traffic Manager (REST API Reference)](https://msdn.microsoft.com/ZH-CN/library/hh758255.aspx)
 
@@ -133,4 +133,3 @@ If you want the figures in this topic as PowerPoint sides for your own presentat
 
 [Azure Traffic Manager Cmdlets](https://msdn.microsoft.com/zh-cn/library/dn690250.aspx)
 
- 

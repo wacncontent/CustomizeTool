@@ -20,7 +20,7 @@
 This topic describes how to use [Docker](https://www.docker.com/) with [machine](https://github.com/docker/machine) and the [Azure CLI](https://github.com/Azure/azure-xplat-cli) to create an Azure Virtual Machine to quickly and easily manage Linux containers from a computer running Ubuntu. To demonstrate, the tutorial shows how to deploy both the [busybox Docker Hub image](https://registry.hub.docker.com/_/busybox/) image and also the [nginx Docker Hub image](https://registry.hub.docker.com/_/nginx/) and configures the container to route web requests to the nginx container. (The Docker **machine** documentation describes how to modify these instructions for other platforms.)
 
 
-> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the classic deployment model. Microsoft recommends that most new deployments use the Resource Manager model.
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager model.
 
 
 There are some prerequisites for completing this tutorial. You will need to install the following:
@@ -208,7 +208,7 @@ Go to the [Docker user guide](https://docs.docker.com/userguide/) and create som
 [uploaditem]: ./media/virtual-machines-docker-machine/uploaditem.png
 
 <!--Link references-->
-[Link 1 to another azure.microsoft.com documentation topic]: /documentation/articles/virtual-machines-windows-tutorial-classic-portal
-[Link 2 to another azure.microsoft.com documentation topic]: /documentation/articles/web-sites-custom-domain-name
-[Link 3 to another azure.microsoft.com documentation topic]: /documentation/articles/storage-whatis-account
-[Docker Swarm on Azure]: /documentation/articles/virtual-machines-docker-swarm
+[Link 1 to another azure.microsoft.com documentation topic]: /documentation/articles/virtual-machines-windows-classic-tutorial/
+[Link 2 to another azure.microsoft.com documentation topic]: /documentation/articles/web-sites-custom-domain-name/
+[Link 3 to another azure.microsoft.com documentation topic]: /documentation/articles/storage-whatis-account/
+[Docker Swarm on Azure]: /documentation/articles/virtual-machines-linux-docker-swarm/

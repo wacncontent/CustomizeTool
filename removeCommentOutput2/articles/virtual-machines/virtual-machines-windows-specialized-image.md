@@ -1,3 +1,5 @@
+<!-- rename to virtual-machines-windows-vhd-copy.md -->
+
 <properties
 	pageTitle="Create a copy of your Windows VM | Azure"
 	description="Learn how to create a copy of your Azure virtual machine running Windows, in the Resource Manager deployment model, by creating a *specialized image*."
@@ -10,8 +12,13 @@
 
 <tags
 	ms.service="virtual-machines-windows"
+	ms.workload="infrastructure-services"
+	ms.tgt_pltfrm="vm-windows"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="04/26/2016"
-	wacn.date=""/>
+	wacn.date=""
+	ms.author="cynthn"/>
 
 # Create a copy of a Windows virtual machine in the Azure Resource Manager deployment model
 

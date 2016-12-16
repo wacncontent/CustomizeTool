@@ -22,7 +22,7 @@
 In the Azure portal, you use the **Connect** button to start a Remote Desktop session and log on to a Windows VM.
 
 
-> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the Resource Manager deployment model, which Microsoft recommends for most new deployments instead of the [classic deployment model](/documentation/articles/virtual-machines-log-on-windows-server).
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the Resource Manager deployment model, which Azure recommends for most new deployments instead of the [classic deployment model](/documentation/articles/virtual-machines-windows-classic-connect-logon/).
 
 
 ## Connect to the virtual machine
@@ -59,6 +59,6 @@ In the Azure portal, you use the **Connect** button to start a Remote Desktop se
 
 ## Next steps
 
-If you run into trouble when you try to connect, see [Troubleshoot Remote Desktop connections to a Windows-based Azure Virtual Machine](/documentation/articles/virtual-machines-troubleshoot-remote-desktop-connections)
+If you run into trouble when you try to connect, see [Troubleshoot Remote Desktop connections to a Windows-based Azure Virtual Machine](/documentation/articles/virtual-machines-windows-troubleshoot-rdp-connection/)
 
 

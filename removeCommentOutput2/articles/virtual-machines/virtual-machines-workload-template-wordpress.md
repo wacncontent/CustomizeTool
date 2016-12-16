@@ -17,7 +17,7 @@
 
 # Deploy a WordPress server on Ubuntu with an Azure Resource Manager template
 
-> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the Resource Manager deployment model, which Microsoft recommends for most new deployments instead of the classic deployment model. You can't create this resource with the classic deployment model.
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the Resource Manager deployment model, which Azure recommends for most new deployments instead of the classic deployment model. You can't create this resource with the classic deployment model.
 
 Use the instructions in this article to deploy a WordPress server running on Ubuntu using a Resource Manager template. This template creates a single virtual machine in a new virtual network.
 
@@ -43,7 +43,7 @@ Depending on the template, it can take some time for Azure to build the workload
 
 ## Azure PowerShell
 
-[AZURE.INCLUDE [powershell-preview](../includes/powershell-preview-inline-include.md)]
+[AZURE.INCLUDE [powershell-preview](../../includes/powershell-preview-inline-include.md)]
 
 Fill in an Azure deployment name, a new Resource Group name, and an Azure datacenter location in the following set of commands. Remove everything within the quotes, including the < and > characters.
 
@@ -71,7 +71,7 @@ When the template execution is complete, you now have WordPress server running o
 
 ## Azure CLI
 
-Before you begin, make sure you have the right version of Azure CLI installed, you have logged in, and you have switched to the new Resource Manager mode. For the details, click [here](/documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli#getting-ready).
+Before you begin, make sure you have the right version of Azure CLI installed, you have logged in, and you have switched to the new Resource Manager mode. For the details, click [here](/documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli/#getting-ready).
 
 First, you create a new resource group. Use the following command and specify the name of the group and the Azure data center location into which you want to deploy.
 

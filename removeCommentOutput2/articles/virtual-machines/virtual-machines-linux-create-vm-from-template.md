@@ -1,3 +1,5 @@
+<!-- deleted in Global -->
+
 <properties
 	pageTitle="Create a Linux VM using a Azure template | Azure"
 	description="Create a Linux VM on Azure using an Azure Resource Manager template."

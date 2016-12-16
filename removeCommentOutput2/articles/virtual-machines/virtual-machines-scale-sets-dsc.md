@@ -10,9 +10,14 @@
    keywords=""/>
 
 <tags
-	ms.service="virtual-machines-scale-sets"
-	ms.date="08/29/2016"
-	wacn.date=""/>
+   ms.service="virtual-machines-scale-sets"
+   ms.devlang="na"
+   ms.topic="article"
+   ms.tgt_pltfrm="vm-windows"
+   ms.workload="na"
+   ms.date="08/29/2016"
+   wacn.date=""
+   ms.author="zachal"/>
 
 # Using Virtual Machine Scale Sets with the Azure DSC Extension
 

@@ -33,9 +33,9 @@ To create a PHP  Website using the Azure Management Portal, do the following:
 
 To create a PHP  Website using the Azure Command Line Tools for Mac and Linux do the following:
 
-1. Install the Azure Command Line Tools by following the instructions here: [How to install the Azure Command Line Tools for Mac and Linux](/documentation/articles/xplat-cli-install#Download).
+1. Install the Azure Command Line Tools by following the instructions here: [How to install the Azure Command Line Tools for Mac and Linux](/documentation/articles/xplat-cli-install/#Download).
 
-1. Download and import your publish settings file by following the instructions here: [How to download and import publish settings](/documentation/articles/xplat-cli-install#Account).
+1. Download and import your publish settings file by following the instructions here: [How to download and import publish settings](/documentation/articles/xplat-cli-install/#Account).
 
 1. Run the following command from a command prompt:
 
@@ -49,15 +49,15 @@ Note that you can execute the `azure site create` command with any of the follow
 * `--hostname [custom host name]`. This option allows you to specify a custom hostname for your  Website.
 * `--git`. This option allows you to use git to publish to your  Website by creating git repositories in both your local application directory and in your  Website's data center. Note that if your local folder is already a git repository, the command will add a new remote to the existing repository, pointing to the repository in your  Website's data center.
 
-For information about additional options, see [How to create and manage an Azure  Website](/documentation/articles/xplat-cli-install# Websites).
+For information about additional options, see [How to create and manage an Azure  Website](/documentation/articles/xplat-cli-install/# Websites).
 
 <h2><a name="PowerShell"></a>Create a PHP  Website using the Azure PowerShell cmdlets</h2>
 
 To create a PHP  Website using the Azure PowerShell cmdlets, do the following:
 
-1. Install the Azure PowerShell cmdlets by following the instructions here: [Get started with Azure PowerShell](/documentation/articles/powershell-install-configure#GetStarted).
+1. Install the Azure PowerShell cmdlets by following the instructions here: [Get started with Azure PowerShell](/documentation/articles/powershell-install-configure/#GetStarted).
 
-1. Download and import your publish settings file by following the instructions here: [How to: Import publish settings](/documentation/articles/powershell-install-configure#ImportPubSettings).
+1. Download and import your publish settings file by following the instructions here: [How to: Import publish settings](/documentation/articles/powershell-install-configure/#ImportPubSettings).
 
 1. Open a PowerShell command prompt and execute the following command:
 
@@ -79,18 +79,18 @@ Now that you have created a PHP  Website in Azure  Websites, you can manage, con
 
 * [How to configure  Websites](/documentation/articles/web-sites-configure//)
 * [How to configure PHP in Azure  Websites][configure-php]
-* [How to manage  Websites](/documentation/articles/web-sites-manage)
-* [How to monitor  Websites](/documentation/articles/web-sites-monitor)
-* [How to scale  Websites](/documentation/articles/web-sites-scale)
+* [How to manage  Websites](/documentation/articles/web-sites-manage/)
+* [How to monitor  Websites](/documentation/articles/web-sites-monitor/)
+* [How to scale  Websites](/documentation/articles/web-sites-scale/)
 * [Publishing with Git](/documentation/articles/web-sites-publish-source-control//)
 
 For end-to-end tutorials, visit the [PHP Developer Center - Tutorials](/develop/php//) page.
 
 [waws]: /zh-cn/documentation/services/web-sites
 [Azure Management Portal]: http://manage.windowsazure.cn/
-[xplat-tools]: /documentation/articles/xplat-cli-install
-[powershell-cmdlets]: /documentation/articles/powershell-install-configure
-[configure-php]: /documentation/articles/web-sites-php-configure
-[Website-mysql-git]: /documentation/articles/web-sites-php-mysql-deploy-use-git
+[xplat-tools]: /documentation/articles/xplat-cli-install/
+[powershell-cmdlets]: /documentation/articles/powershell-install-configure/
+[configure-php]: /documentation/articles/web-sites-php-configure/
+[Website-mysql-git]: /documentation/articles/web-sites-php-mysql-deploy-use-git/
 [Websites-pricing]: /zh-cn/pricing/overview/
-[scale-Websites]: /documentation/articles/web-sites-scale
+[scale-Websites]: /documentation/articles/web-sites-scale/

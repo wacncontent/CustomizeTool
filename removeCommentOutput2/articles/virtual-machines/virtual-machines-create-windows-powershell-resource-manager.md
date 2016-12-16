@@ -17,7 +17,7 @@
 
 # Create a Windows VM with Resource Manager and PowerShell
 
-> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the Resource Manager deployment model, which Microsoft recommends for most new deployments instead of the classic deployment model.
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the Resource Manager deployment model, which Azure recommends for most new deployments instead of the classic deployment model.
 
 This topic describes how to quickly create a Windows-based Azure virtual machine using Azure Resource Manager and PowerShell.
 
@@ -27,7 +27,7 @@ If you have already installed Azure PowerShell, you must have Azure PowerShell v
 
 	Get-Module azure | format-table version
 
-[AZURE.INCLUDE [powershell-preview](../includes/powershell-preview-inline-include.md)]
+[AZURE.INCLUDE [powershell-preview](../../includes/powershell-preview-inline-include.md)]
 
 First, you must logon to Azure with this command.
 
@@ -123,4 +123,4 @@ Here is an example of you might see:
 
 ## Next Steps
 
-Learn how to manage the virtual machine that you just created by reviewing [Manage virtual machines using Azure Resource Manager and PowerShell](/documentation/articles/virtual-machines-deploy-rmtemplates-powershell).
+Learn how to manage the virtual machine that you just created by reviewing [Manage virtual machines using Azure Resource Manager and PowerShell](/documentation/articles/virtual-machines-deploy-rmtemplates-powershell/).

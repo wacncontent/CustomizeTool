@@ -18,7 +18,7 @@
 
 # Navigate and select Azure virtual machine images with Windows PowerShell and the Azure CLI
 
-> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the Resource Manager deployment model, which Microsoft recommends for most new deployments instead of the classic deployment model.
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the Resource Manager deployment model, which Azure recommends for most new deployments instead of the classic deployment model.
 
 
 
@@ -138,7 +138,7 @@ With this information, you can now find exactly the image you want by calling th
     data:    canonical  ubuntuserver  14.04.2-LTS  14.04.201504270  chinanorth    canonical:ubuntuserver:14.04.2-LTS:14.04.201504270
     info:    vm image list command OK
 
-Now you can choose precisely the image you want to use. To create a virtual machine quickly by using the URN information, which you just found, or to use a template with that URN information, see [Using the Azure CLI for Mac, Linux, and Windows with Azure Resource Manager](/documentation/articles/xplat-cli-azure-resource-manager).
+Now you can choose precisely the image you want to use. To create a virtual machine quickly by using the URN information, which you just found, or to use a template with that URN information, see [Using the Azure CLI for Mac, Linux, and Windows with Azure Resource Manager](/documentation/articles/xplat-cli-azure-resource-manager/).
 
 ### Video walkthrough
 
@@ -149,7 +149,7 @@ This video demonstrates the above steps using the CLI.
 
 ## PowerShell
 
-With PowerShell, type `Switch-AzureMode AzureResourceManager`. See [Using Azure CLI with Resource Manager](/documentation/articles/xplat-cli-azure-resource-manager) and [Using Azure PowerShell with Azure Resource Manager](/documentation/articles/powershell-azure-resource-manager) for more complete update and configuration details.
+With PowerShell, type `Switch-AzureMode AzureResourceManager`. See [Using Azure CLI with Resource Manager](/documentation/articles/xplat-cli-azure-resource-manager/) and [Using Azure PowerShell with Azure Resource Manager](/documentation/articles/powershell-azure-resource-manager/) for more complete update and configuration details.
 
 > [AZURE.NOTE] With Azure PowerShell modules above 1.0, the `Switch-AzureMode` cmdlet was removed. With that version and more recent, please replace the commands below with the `Azure` portion replaced with `AzureRm`. If you are using Azure PowerShell modules below 1.0, you will use the below commands but you must first `Switch-AzureMode AzureResourceManager`. 
 

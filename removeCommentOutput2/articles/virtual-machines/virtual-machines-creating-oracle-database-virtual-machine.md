@@ -15,7 +15,7 @@
 
 #Create an Oracle Database virtual machine in Azure
 
-> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the classic deployment model. Microsoft recommends that most new deployments use the Resource Manager model.
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager model.
 
 
 The following example shows you how you can create a virtual machine (VM) based on a Microsoft-provided Oracle Database image running on Windows Server 2012 in Azure. There are two steps. First, create the VM, and then create the Oracle Database inside the VM. The example shown is Oracle Database version 12c, but the steps are virtually identical for version 11g.
@@ -188,12 +188,12 @@ The **Oracle Database with Advanced Options bundle** includes license-included i
 ##Additional resources
 Now that you've set up your virtual machine and created your database, see the following topics for additional information.
 
--	[Oracle virtual machine images - Miscellaneous considerations](/documentation/articles/virtual-machines-miscellaneous-considerations-oracle-virtual-machine-images)
+-	[Oracle virtual machine images - Miscellaneous considerations](/documentation/articles/virtual-machines-windows-classic-oracle-considerations/)
 
 -	[Oracle Database 12c Documentation Library](http://www.oracle.com/pls/db1211/homepage)
 
 -	[Connecting to Oracle Database from a Java Application](http://docs.oracle.com/cd/E11882_01/appdev.112/e12137/getconn.htm#TDPJD136)
 
--	[Oracle virtual machine images for Azure](/documentation/articles/virtual-machines-oracle-list-oracle-virtual-machine-images)
+-	[Oracle virtual machine images for Azure](/documentation/articles/virtual-machines-oracle-list-oracle-virtual-machine-images/)
 
 -	[Oracle Database 2 Day DBA 12c Release 1](http://docs.oracle.com/cd/E16655_01/server.121/e17643/toc.htm)

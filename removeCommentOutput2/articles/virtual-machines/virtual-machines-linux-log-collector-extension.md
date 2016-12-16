@@ -1,3 +1,5 @@
+<!-- deleted in Global -->
+
 <properties
    pageTitle="AzureLogCollector VM Extension | Azure"
    description="Describes the AzureLogCollector VM extension, which collects all the log files and brings them together into one location in Azure Storage."
@@ -9,11 +11,11 @@
 
 <tags
 	ms.service="virtual-machines-linux"
-	ms.date="11/12/2015"
+	ms.date="05/26/2016"
 	wacn.date=""/>
 
 # AzureLogCollector Extension
 
 
 
-[AZURE.INCLUDE [virtual-machines-common-log-collector-extension](../includes/virtual-machines-common-log-collector-extension.md)]
+[AZURE.INCLUDE [virtual-machines-common-log-collector-extension](../../includes/virtual-machines-common-log-collector-extension.md)]

@@ -18,22 +18,22 @@
 # Automatically scale machines in a Virtual Machine Scale Set
 
 > [AZURE.SELECTOR]
-- [Azure CLI](/documentation/articles/virtual-machines-vmss-walkthrough-cli)
-- [Azure PowerShell](/documentation/articles/virtual-machines-vmss-walkthrough)
+- [Azure CLI](/documentation/articles/virtual-machines-vmss-walkthrough-cli/)
+- [Azure PowerShell](/documentation/articles/virtual-machines-vmss-walkthrough/)
 
 <br>
 
-> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the Resource Manager deployment model, which Microsoft recommends for most new deployments instead of the classic deployment model.
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the Resource Manager deployment model, which Azure recommends for most new deployments instead of the classic deployment model.
 
-Virtual Machine Scale Sets make it easy for you to deploy and manage identical virtual machines as a set. Scale sets provide a highly scalable and customizable compute layer for hyperscale applications, and they support Windows platform images, Linux platform images, custom images, and extensions. For more information about scale sets, see [Virtual Machine Scale Sets](/documentation/articles/virtual-machines-vmss-overview).
+Virtual Machine Scale Sets make it easy for you to deploy and manage identical virtual machines as a set. Scale sets provide a highly scalable and customizable compute layer for hyperscale applications, and they support Windows platform images, Linux platform images, custom images, and extensions. For more information about scale sets, see [Virtual Machine Scale Sets](/documentation/articles/virtual-machines-vmss-overview/).
 
-This tutorial shows you how to create a Virtual Machine Scale Set of Windows virtual machines and automatically scale the machines in the set. You do this by creating an Azure Resource Manager template and deploying it using Azure PowerShell. For more information about templates, see [Authoring Azure Resource Manager templates](/documentation/articles/resource-group-authoring-templates).
+This tutorial shows you how to create a Virtual Machine Scale Set of Windows virtual machines and automatically scale the machines in the set. You do this by creating an Azure Resource Manager template and deploying it using Azure PowerShell. For more information about templates, see [Authoring Azure Resource Manager templates](/documentation/articles/resource-group-authoring-templates/).
 
 The template that you build in this tutorial is similar to a template that can be found in the template gallery. To learn more, see [Deploy a simple VM Scale Set with Windows VMs and a Jumpbox](https://azure.microsoft.com/documentation/templates/201-vmss-windows-jumpbox/).
 
-[AZURE.INCLUDE [powershell-preview-inline-include](../includes/powershell-preview-inline-include.md)]
+[AZURE.INCLUDE [powershell-preview-inline-include](../../includes/powershell-preview-inline-include.md)]
 
-[AZURE.INCLUDE [virtual-machines-vmss-preview-ps](../includes/virtual-machines-vmss-preview-ps-include.md)]
+[AZURE.INCLUDE [virtual-machines-vmss-preview-ps](../../includes/virtual-machines-vmss-preview-ps-include.md)]
 
 ## Step 1: Create a resource group and a storage account
 
@@ -98,12 +98,12 @@ An Azure Resource Manager template makes it possible for you to deploy and manag
 	Add these variables under the variables parent element that you added to the template:
 
 	- DNS names that are used by the network interfaces.
-	- The size of the virtual machines used in the scale set. For more information about virtual machine sizes see, [Sizes for virtual machines](/documentation/articles/virtual-machines-size-specs).
-	- The platform image information for defining the operating system that will run on the virtual machines in the scale set. For more information about selecting images, see [Navigate and select Azure virtual machine images with Windows PowerShell and the Azure CLI](/documentation/articles/resource-groups-vm-searching).
+	- The size of the virtual machines used in the scale set. For more information about virtual machine sizes see, [Sizes for virtual machines](/documentation/articles/virtual-machines-linux-sizes/).
+	- The platform image information for defining the operating system that will run on the virtual machines in the scale set. For more information about selecting images, see [Navigate and select Azure virtual machine images with Windows PowerShell and the Azure CLI](/documentation/articles/virtual-machines-linux-cli-ps-findimage/).
 	- The IP address names and prefixes for the virtual network and subnets.
 	- The names and identifiers of the virtual network, load balancer, and network interfaces.
 	- Storage account names for the accounts associated with the machines in the scale set.
-	- Settings for the Diagnostics extension that is installed on the virtual machines. For more information about the Diagnostics extension, see [Create a Windows Virtual machine with monitoring and diagnostics using Azure Resource Manager Template](/documentation/articles/virtual-machines-extensions-diagnostics-windows-template).
+	- Settings for the Diagnostics extension that is installed on the virtual machines. For more information about the Diagnostics extension, see [Create a Windows Virtual machine with monitoring and diagnostics using Azure Resource Manager Template](/documentation/articles/virtual-machines-extensions-diagnostics-windows-template/).
 
 	```
 	"apiVersion": "2015-06-15"
@@ -151,7 +151,7 @@ An Azure Resource Manager template makes it possible for you to deploy and manag
  - Microsoft.Insights.VMDiagnosticsSettings
  - Microsoft.Insights/autoscaleSettings
 
-	For more information about Resource Manager resources, see [Azure Compute, Network, and Storage Providers under the Azure Resource Manager](/documentation/articles/virtual-machines-azurerm-versus-azuresm).
+	For more information about Resource Manager resources, see [Azure Compute, Network, and Storage Providers under the Azure Resource Manager](/documentation/articles/virtual-machines-azurerm-versus-azuresm/).
 
 	Add the storage account resource under the resources parent element that you added to the template. This template uses a loop to create the recommended 5 storage accounts where the operating system disks and diagnostic data are stored. This set of accounts can support up to 100 virtual machines in a scale set, which is the current maximum. Each storage account is named with a letter designator that was defined in the variables combined with the suffix that you provide in the parameters for the template.
 
@@ -171,7 +171,7 @@ An Azure Resource Manager template makes it possible for you to deploy and manag
 	},
 	```
 
-5. Add the virtual network resource. For more information, see [Network Resource Provider](/documentation/articles/resource-groups-networking).
+5. Add the virtual network resource. For more information, see [Network Resource Provider](/documentation/articles/resource-groups-networking/).
 
 	```
 	{
@@ -226,7 +226,7 @@ An Azure Resource Manager template makes it possible for you to deploy and manag
 	},
 	```
 
-7. Add the load balancer resource that is used by the scale set. For more information, see [Azure Resource Manager Support for Load Balancer](/documentation/articles/load-balancer-arm).
+7. Add the load balancer resource that is used by the scale set. For more information, see [Azure Resource Manager Support for Load Balancer](/documentation/articles/load-balancer-arm/).
 
 	```
 	{

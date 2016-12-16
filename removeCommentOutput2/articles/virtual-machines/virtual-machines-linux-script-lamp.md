@@ -17,7 +17,7 @@
 
 #Deploy a LAMP app using the Azure CustomScript Extension for Linux#
 
-> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the classic deployment model. Microsoft recommends that most new deployments use the Resource Manager model.
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager model.
 
 
 The Azure CustomScript Extension for Linux provides a way to customize your virtual machines (VMs) by running arbitrary code written in any scripting language supported by the VM (for example, Python, and Bash). This provides a very flexible way to automate application deployment to multiple machines.
@@ -32,11 +32,11 @@ For this example, first create two Azure VMs running Ubuntu 14.04 or later. The 
 
 You also need an Azure Storage account and a key to access it (you can get this from the Azure classic portal).
 
-If you need help creating Linux VMs on Azure refer to [Create a Virtual Machine Running Linux](/documentation/articles/virtual-machines-linux-tutorial).
+If you need help creating Linux VMs on Azure refer to [Create a Virtual Machine Running Linux](/documentation/articles/virtual-machines-linux-quick-create-cli/).
 
 The install commands assume Ubuntu, but you can adapt the installation for any supported Linux distro.
 
-The script-vm VM needs to have Azure CLI installed, with a working connection to Azure. For help with this refer to [Install and Configure the Azure Command-Line Interface](/documentation/articles/xplat-cli-install).
+The script-vm VM needs to have Azure CLI installed, with a working connection to Azure. For help with this refer to [Install and Configure the Azure Command-Line Interface](/documentation/articles/xplat-cli-install/).
 
 ## Upload a script
 
@@ -106,4 +106,4 @@ Additional resources for Azure CLI, Linux and the CustomScript Extension are lis
 
 [Azure Linux Extensions (GitHub)](https://github.com/Azure/azure-linux-extensions)
 
-[Linux and Open-Source Computing on Azure](/documentation/articles/virtual-machines-linux-opensource)
+[Linux and Open-Source Computing on Azure](/documentation/articles/virtual-machines-linux-opensource-links/)

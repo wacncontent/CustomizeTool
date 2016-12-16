@@ -42,7 +42,7 @@ The steps in this tutorial use Node.js must have a recent version of [Node.js][n
 
 Additionally, the [Git] must be available from the command-line in your development environment, as this is used to deploy the application to an Azure  Website.
 
-[WACOM.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
+[WACOM.INCLUDE [create-account-and-websites-note](../../includes/create-account-and-websites-note.md)]
 
 ##Create a virtual machine
 
@@ -541,7 +541,7 @@ This will create a new application setting for the  Website, which will be used 
 
 While the steps in this article describe using MongoDB to store information, you can also use the Azure Table Service. See [Node.js Web Application with the Azure Table Service] for more information.
 
-To learn how to use a hosted instance of MongoDB provided by MongoLab, see [Create a Node.js Application on Azure with MongoDB using the MongoLab Add-On](/documentation/articles/store-mongolab-web-sites-nodejs-store-data-mongodb).
+To learn how to use a hosted instance of MongoDB provided by MongoLab, see [Create a Node.js Application on Azure with MongoDB using the MongoLab Add-On](/documentation/articles/store-mongolab-web-sites-nodejs-store-data-mongodb/).
 
 To learn how to secure MongoDB, see [MongoDB Security][mongosecurity].
 
@@ -561,12 +561,12 @@ To learn how to secure MongoDB, see [MongoDB Security][mongosecurity].
 [Git remote]: http://git-scm.com/docs/git-remote
 [azure-sdk-for-node]: https://github.com/WindowsAzure/azure-sdk-for-node
 [iisnode.yml]: https://github.com/WindowsAzure/iisnode/blob/master/src/samples/configuration/iisnode.yml
-[Azure command-line tool for Mac and Linux]: /documentation/articles/xplat-cli-install
+[Azure command-line tool for Mac and Linux]: /documentation/articles/xplat-cli-install/
 [Azure Developer Center]: /develop/nodejs/
-[Create and deploy a Node.js application to Azure  Websites]: /documentation/articles/web-sites-nodejs-develop-deploy-mac
-[Continuous deployment using GIT in Azure Websites]: /documentation/articles/web-sites-publish-source-control
+[Create and deploy a Node.js application to Azure  Websites]: /documentation/articles/web-sites-nodejs-develop-deploy-mac/
+[Continuous deployment using GIT in Azure Websites]: /documentation/articles/web-sites-publish-source-control/
 [Installing MongoDB on a Linux Virtual machine]: /zh-cn/documentation/article/virtual-machines-install-mongodb-centos-linux/
-[Node.js Web Application with the Azure Table Service]: /documentation/articles/storage-nodejs-use-table-storage-web-site
+[Node.js Web Application with the Azure Table Service]: /documentation/articles/storage-nodejs-use-table-storage-web-site/
 [node-mongo-finished]: ./media/web-sites-nodejs-store-data-mongodb/todo_list_empty.png
 [node-mongo-express-results]: ./media/store-mongodb-web-sites-nodejs-use-mac/express_output.png
 [node-mongo-add-item]: ./media/store-mongodb-web-sites-nodejs-use-mac/todo_add_item.png
@@ -575,7 +575,7 @@ To learn how to secure MongoDB, see [MongoDB Security][mongosecurity].
 [installguides]: http://docs.mongodb.org/manual/installation/
 [azureportal]: https://manage.windowsazure.cn/
 [mongodocs]: http://docs.mongodb.org/manual/
-[xplatcli]: /documentation/articles/xplat-cli-install
+[xplatcli]: /documentation/articles/xplat-cli-install/
 [selectdepo]: ./media/web-sites-nodejs-store-data-mongodb/browsedepot.png
 [selectedimage]: ./media/web-sites-nodejs-store-data-mongodb/selectimage.png
 [selectstorage]: ./media/web-sites-nodejs-store-data-mongodb/storageaccount.png
@@ -584,5 +584,5 @@ To learn how to secure MongoDB, see [MongoDB Security][mongosecurity].
 [vmname]: ./media/web-sites-nodejs-store-data-mongodb/vmname.png
 [vmconfig]: ./media/web-sites-nodejs-store-data-mongodb/vmconfig.png
 [vmendpoint]: ./media/web-sites-nodejs-store-data-mongodb/endpoints.png
-[sshazure]: /documentation/articles/linux-use-ssh-key
-[mongodbonazure]: http://docs.mongodb.org/ecosystem/tutorial/install-mongodb-on-linux-in-azure/ 
+[sshazure]: /documentation/articles/linux-use-ssh-key/
+[mongodbonazure]: http://docs.mongodb.org/ecosystem/tutorial/install-mongodb-on-linux-in-azure/

@@ -39,12 +39,12 @@ Before continuing, ensure that you have the following installed:
 
 * [Git]
 
-[AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
+[AZURE.INCLUDE [create-account-and-websites-note](../../includes/create-account-and-websites-note.md)]
 
 <a name="provision"></a>
 ## Provision the database
 
-[AZURE.INCLUDE [howto-provision-mongolab](../includes/howto-provision-mongolab.md)]
+[AZURE.INCLUDE [howto-provision-mongolab](../../includes/howto-provision-mongolab.md)]
 
 <a name="create"></a>
 ## Create the app
@@ -377,7 +377,7 @@ To install the Azure CLI, use the following command:
 
 	npm install azure-cli -g
 
-If you have already installed the <strong>Azure SDK for Node.js</strong> from the <a href="/develop/nodejs/">Azure Developer Center</a>, then the Azure CLI should already be installed. For more information, see <a href="/documentation/articles/virtual-machines-command-line-tools">Azure CLI</a>.
+If you have already installed the <strong>Azure SDK for Node.js</strong> from the <a href="/develop/nodejs/">Azure Developer Center</a>, then the Azure CLI should already be installed. For more information, see <a href="/documentation/articles/virtual-machines-command-line-tools/">Azure CLI</a>.
 
 While the Azure CLI tools were created primarily for Mac and Linux users, they are based on Node.js and should work on any system capable of running Node.
 
@@ -483,11 +483,11 @@ Remember process.env.CUSTOMCONNSTR_MONGOLAB_URI in the code? We want to populate
 
 #### Get the MongoLab connection string
 
-[AZURE.INCLUDE [howto-get-connectioninfo-mongolab](../includes/howto-get-connectioninfo-mongolab.md)]
+[AZURE.INCLUDE [howto-get-connectioninfo-mongolab](../../includes/howto-get-connectioninfo-mongolab.md)]
 
 #### Add the connection string to the web app's environment variables
 
-[AZURE.INCLUDE [howto-save-connectioninfo-mongolab](../includes/howto-save-connectioninfo-mongolab.md)]
+[AZURE.INCLUDE [howto-save-connectioninfo-mongolab](../../includes/howto-save-connectioninfo-mongolab.md)]
 
 ## Success!
 
@@ -498,7 +498,7 @@ Run `azure site browse` from your project directory to automatically open a brow
 <a name="manage"></a>
 ## Manage the database
 
-[AZURE.INCLUDE [howto-access-mongolab-ui](../includes/howto-access-mongolab-ui.md)]
+[AZURE.INCLUDE [howto-access-mongolab-ui](../../includes/howto-access-mongolab-ui.md)]
 
 Congratulations! You've just launched a Node.js application backed by a MongoLab-hosted MongoDB database! Now that you have a MongoLab database, you can contact [support@mongolab.com](mailto:support@mongolab.com) with any questions or concerns about your database, or for help with MongoDB or the node driver itself. Good luck out there!
 
@@ -528,10 +528,10 @@ Congratulations! You've just launched a Node.js application backed by a MongoLab
 [Git remote]: http://git-scm.com/docs/git-remote
 [azure-sdk-for-node]: https://github.com/WindowsAzure/azure-sdk-for-node
 [iisnode.yml]: https://github.com/WindowsAzure/iisnode/blob/master/src/samples/configuration/iisnode.yml
-[Azure CLI]: /documentation/articles/virtual-machines-command-line-tools
+[Azure CLI]: /documentation/articles/virtual-machines-command-line-tools/
 [Azure Developer Center]: /develop/nodejs/
 [Create and deploy a Node.js application to Azure Web Sites]: /develop/nodejs/tutorials/create-a-website-(mac)/
-[Continuous deployment using GIT in Azure Websites]: /documentation/articles/web-sites-publish-source-control
+[Continuous deployment using GIT in Azure Websites]: /documentation/articles/web-sites-publish-source-control/
 [MongoLab]: http://mongolab.com
 [Node.js Web Application with Storage on MongoDB (Virtual Machine)]: /develop/nodejs/tutorials/website-with-mongodb-(mac)/
 [node-mongo-finished]: ./media/store-mongolab-web-sites-nodejs-store-data-mongodb/todo_list_noframe.png

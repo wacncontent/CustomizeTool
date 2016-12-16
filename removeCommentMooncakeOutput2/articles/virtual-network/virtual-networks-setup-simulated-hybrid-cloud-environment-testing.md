@@ -1,5 +1,7 @@
+<!-- rename to virtual-machines-setup-simulated-hybrid-cloud-environment-testing -->
+
 <properties 
-	pageTitle="Simulated hybrid cloud test environment | Windows Azure" 
+	pageTitle="Simulated hybrid cloud test environment | Azure" 
 	description="Create a simulated hybrid cloud environment for IT pro or development testing, using two Azure virtual networks and a VNet-to-VNet connection." 
 	services="virtual-network" 
 	documentationCenter="" 
@@ -10,16 +12,15 @@
 
 <tags
 	ms.service="virtual-network"
-	ms.date="09/10/2015"
+	ms.date="03/28/2016"
 	wacn.date=""/>
 
-# Set up a simulated hybrid cloud environment for testing
+# Set up a simulated hybrid cloud environment for testing (classic deployment mode)
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-classic-include.md)] Resource Manager model.
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the [Resource Manager model](/documentation/articles/virtual-machines-setup-simulated-hybrid-cloud-environment-testing/).
 
-
-This topic steps you through creating a simulated hybrid cloud environment with Windows Azure for testing using two separate Azure virtual networks. Use this configuration as an alternative to 
-[Set up a hybrid cloud environment for testing](/documentation/articles/virtual-networks-setup-hybrid-cloud-environment-testing) when you do not have a direct Internet connection and an available public IP address. Here is the resulting configuration.
+This article steps you through creating a simulated hybrid cloud environment with Azure for testing using two separate Azure virtual networks. Use this configuration as an alternative to 
+[Set up a hybrid cloud environment for testing](/documentation/articles/virtual-networks-setup-hybrid-cloud-environment-testing/) when you do not have a direct Internet connection and an available public IP address. Here is the resulting configuration.
 
 ![](./media/virtual-networks-setup-simulated-hybrid-cloud-environment-testing/CreateSimHybridCloud_4.png)
 
@@ -42,21 +43,21 @@ There are four major phases to setting up this hybrid cloud test environment:
 3.	Create the VNet-to-VNet VPN connection.
 4.	Configure DC2. 
 
-If you don't already have an Azure subscription, you can sign up for a trial at [Try Azure](/pricing/1rmb-trial/). 
+If you don't already have an Azure subscription, you can sign up for a trial at [Try Azure](/pricing/1rmb-trial/).
 
->[AZURE.NOTE] Virtual machines and virtual network gateways in Azure incur an ongoing monetary cost when they are running. This cost is billed against your trial, MSDN subscription, or paid subscription. To reduce the costs of running this test environment when you are not using it, see [Minimizing the ongoing costs of this environment](#costs) in this topic for more information.
+>[AZURE.NOTE] Virtual machines and virtual network gateways in Azure incur an ongoing monetary cost when they are running. This cost is billed against your trial or paid subscription. To reduce the costs of running this test environment when you are not using it, see [Minimizing the ongoing costs of this environment](#costs) in this article for more information.
 
 
 ## Phase 1: Configure the TestLab virtual network
 
-Use the instructions in the [Base Configuration Test Environment](/documentation/articles/virtual-machines-base-configuration-test-environment) to configure the DC1, APP1, and CLIENT1 computers in an Azure virtual network named TestLab. 
+Use the instructions in the [Base Configuration Test Environment](/documentation/articles/virtual-machines-windows-classic-test-config-env/) to configure the DC1, APP1, and CLIENT1 computers in an Azure virtual network named TestLab. 
 
 From the Azure Management Portal on your local computer, connect to DC1 with the CORP\User1 credentials. To configure the CORP domain so that computers and users use their local domain controller for authentication, run these commands from an administrator-level Windows PowerShell command prompt.
 
 	New-ADReplicationSite -Name "TestLab" 
 	New-ADReplicationSite -Name "TestVNET"
-	New-ADReplicationSubnet â€“Name "10.0.0.0/8" â€“Site "TestLab"
-	New-ADReplicationSubnet â€“Name "192.168.0.0/16" â€“Site "TestVNET"
+	New-ADReplicationSubnet -Name "10.0.0.0/8" -Site "TestLab"
+	New-ADReplicationSubnet -Name "192.168.0.0/16" -Site "TestVNET"
 
 This is your current configuration.
 
@@ -77,7 +78,7 @@ First, create a new virtual network named TestVNET.
 	- In the **CIDR (Address Count)** column for the TestSubnet, click **/24 (256)**.
 7.	Click the Complete icon. Wait until the virtual network is created before continuing.
 
-Next, use the instructions in [How to install and configure Azure PowerShell to install Azure PowerShell on your local computer](/documentation/articles/install-configure-powershell).
+Next, use the instructions in [How to install and configure Azure PowerShell to install Azure PowerShell on your local computer](/documentation/articles/powershell-install-configure/).
 
 Next, create a new cloud service for the TestVNET virtual network. You must pick a unique name. For example, you could name it **TestVNET-***UniqueSequence*, in which *UniqueSequence* is an abbreviation of your organization. For example, if your organization is named Tailspin Toys, you could name the cloud service **TestVNET-Tailspin**.
 
@@ -142,7 +143,7 @@ Next, you configure the TestLabLNet and TestVNETLNet local networks with the pub
 Next, you will configure the pre-shared key for both gateways to use the same value, which is the key value determined by the Azure Management Portal for the TestLab virtual network. Run these commands from an Azure PowerShell command prompt on your local computer, filling in the value of the TestLab pre-shared key.
 
 	$preSharedKey="<The preshared key for the TestLab virtual network>"
-	Set-AzureVNetGatewayKey -VNetName TestVNET -LocalNetworkSiteName TestLabLNet â€“SharedKey $preSharedKey
+	Set-AzureVNetGatewayKey -VNetName TestVNET -LocalNetworkSiteName TestLabLNet -SharedKey $preSharedKey
 
 Next, on the Network page of the Azure Management Portal on your local computer, click the **TestLab** virtual network, click **Dashboard**, and then click **Connect** in the task bar. Wait until the TestLab virtual network shows a connected state.
 
@@ -155,14 +156,14 @@ This is your current configuration.
 First, create an Azure Virtual Machine for DC2. Run these commands at the Azure PowerShell command prompt on your local computer.
 
 	$ServiceName="<Your cloud service name from Phase 2>"
-	$cred=Get-Credential â€“Message "Type the name and password of the local administrator account for DC2."
+	$cred=Get-Credential -Message "Type the name and password of the local administrator account for DC2."
 	$image = Get-AzureVMImage | where { $_.ImageFamily -eq "Windows Server 2012 R2 Datacenter" } | sort PublishedDate -Descending | select -ExpandProperty ImageName -First 1
 	$vm1=New-AzureVMConfig -Name DC2 -InstanceSize Medium -ImageName $image
 	$vm1 | Add-AzureProvisioningConfig -Windows -AdminUsername $cred.GetNetworkCredential().Username -Password $cred.GetNetworkCredential().Password
 	$vm1 | Set-AzureSubnet -SubnetNames TestSubnet
 	$vm1 | Set-AzureStaticVNetIP -IPAddress 192.168.0.4
-	$vm1 | Add-AzureDataDisk -CreateNew -DiskSizeInGB 20 -DiskLabel ADFiles â€“LUN 0 -HostCaching None
-	New-AzureVM â€“ServiceName $ServiceName -VMs $vm1 -VNetName TestVNET
+	$vm1 | Add-AzureDataDisk -CreateNew -DiskSizeInGB 20 -DiskLabel ADFiles -LUN 0 -HostCaching None
+	New-AzureVM -ServiceName $ServiceName -VMs $vm1 -VNetName TestVNET
 
 Next, log on to the new DC2 virtual machine.
 
@@ -216,29 +217,16 @@ This is your current configuration.
  
 Your simulated hybrid cloud environment is now ready for testing.
 
-You can also build these configurations in this test environment:
+## Next Steps
 
-- [SharePoint intranet farm](/documentation/articles/virtual-networks-setup-sharepoint-hybrid-cloud-testing)
-- [Web-based LOB application](/documentation/articles/virtual-networks-setup-lobapp-hybrid-cloud-testing)
-- [Office 365 Directory Synchronization (DirSync) server](/documentation/articles/virtual-networks-setup-dirsync-hybrid-cloud-testing)
+- Set up a [SharePoint intranet farm](/documentation/articles/virtual-networks-setup-sharepoint-hybrid-cloud-testing/), a [Web-based line of business application](/documentation/articles/virtual-networks-setup-lobapp-hybrid-cloud-testing/), or an [Office 365 Directory Synchronization (DirSync) server](/documentation/articles/virtual-networks-setup-dirsync-hybrid-cloud-testing/) in the TestVNET virtual network.
 
-## Additional resources
-
-[Set up a hybrid cloud environment for testing](/documentation/articles/virtual-networks-setup-hybrid-cloud-environment-testing)
-
-[Configure a VNet to VNet Connection](/documentation/articles/virtual-networks-configure-vnet-to-vnet-connection)
-
-[Base Configuration Test Environment](/documentation/articles/virtual-machines-base-configuration-test-environment)
-
-[Azure hybrid cloud test environments](/documentation/articles/virtual-machines-hybrid-cloud-test-environments)
-
-[Azure infrastructure services implementation guidelines](/documentation/articles/virtual-machines-infrastructure-services-implementation-guidelines)
 
 ## <a id="costs"></a>Minimizing the ongoing costs of this environment
 
-To minimize the costs of running the virtual machines in this environment, perform your needed testing and demonstration as quickly as possible and then delete them or shut down the virtual machines when you are not using them. For example, you could use Azure automation and a runbook to automatically shut down the virtual machines in the TestLab and Test_VNET virtual networks at the end of each business day. For more information, see [Get started with Azure Automation](/documentation/articles/automation-create-runbook-from-samples). When you start the virtual machines on the Corpnet subnet again, start DC1 first.
+To minimize the costs of running the virtual machines in this environment, perform your needed testing and demonstration as quickly as possible and then delete them or shut down the virtual machines when you are not using them. For example, you could use Azure automation and a runbook to automatically shut down the virtual machines in the TestLab and Test_VNET virtual networks at the end of each business day. When you start the virtual machines on the Corpnet subnet again, start DC1 first.
 
-An Azure VPN gateway is implemented as a set of two Azure virtual machines that incur an ongoing monetary cost. For the details, see [Pricing - Virtual Network](/home/features/networking/#price). To minimize the costs of the two VPN gateways (one for TestLab and one for TestVNET), create the test environment and perform your needed testing and demonstration as quickly as possible or delete the gateways with these steps.
+An Azure VPN gateway is implemented as a set of two Azure virtual machines that incur an ongoing monetary cost. For the details, see [Pricing - Virtual Network](/pricing/details/networking/). To minimize the costs of the two VPN gateways (one for TestLab and one for TestVNET), create the test environment and perform your needed testing and demonstration as quickly as possible or delete the gateways with these steps.
  
 1.	From the Azure Management Portal on your local computer, click **Networks** in the left pane, click **TestLab**, and then click **Dashboard**.
 2.	In the task bar, click **Delete Gateway**. Click **Yes** when prompted. Wait until the gateway is deleted and its status changes to **The Gateway Was Not Created**.
@@ -268,7 +256,6 @@ Next, you configure the TestLabLNet and TestVNETLNet local networks with the new
 Next, you configure the pre-shared key for both gateways to use the same value, which is the key value determined by the Azure Management Portal for the TestLab virtual network. Run these commands from an Azure PowerShell command prompt on your local computer, filling in the value of the TestLab pre-shared key.
 
 	$preSharedKey="<The preshared key for the TestLab virtual network>"
-	Set-AzureVNetGatewayKey -VNetName TestVNET -LocalNetworkSiteName TestLabLNet â€“SharedKey $preSharedKey
+	Set-AzureVNetGatewayKey -VNetName TestVNET -LocalNetworkSiteName TestLabLNet -SharedKey $preSharedKey
 
 Next, on the Network page of the Azure Management Portal, click the **TestLab** virtual network, and then click **Connect** in the task bar. Wait until the TestLab virtual network shows a connected state to the TestVNET local network.
- 

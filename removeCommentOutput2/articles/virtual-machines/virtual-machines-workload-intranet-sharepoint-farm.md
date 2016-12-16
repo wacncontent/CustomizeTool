@@ -17,7 +17,7 @@
 
 # Azure Infrastructure Services Workload: Intranet SharePoint farm
 
-> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the Resource Manager deployment model, which Microsoft recommends for most new deployments instead of the classic deployment model.
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the Resource Manager deployment model, which Azure recommends for most new deployments instead of the classic deployment model.
 
 Set up your first or next SharePoint farm in Azure and take advantage of ease of configuration and the ability to quickly expand the farm to include new capacity or optimization of key functionality. Many SharePoint farms grow from a standard, highly-available, three-tier configuration to a farm with possibly a dozen or more servers optimized for performance or separate roles, such as distributed caching or search.
 
@@ -46,13 +46,13 @@ You can create these dev/test environments for free with your [Visual Studio sub
 
 ### Cloud-only virtual network
 
-A cloud-only virtual network is not connected to an on-premises network. If you just want to quickly create a basic or high-availability SharePoint farm, see [Create SharePoint server farms](/documentation/articles/virtual-machines-sharepoint-farm-azure-preview). The following example shows the basic SharePoint farm configuration.
+A cloud-only virtual network is not connected to an on-premises network. If you just want to quickly create a basic or high-availability SharePoint farm, see [Create SharePoint server farms](/documentation/articles/virtual-machines-sharepoint-farm-azure-preview/). The following example shows the basic SharePoint farm configuration.
 
 ![](./media/virtual-machines-workload-intranet-sharepoint-farm/Non-HAFarm.png)
 
 ### Cross-premises virtual network
 
-A cross-premises virtual network is connected to an on-premises network with a site-to-site VPN or ExpressRoute connection. If you want to create a dev/test environment that mimics the final configuration and experiment with accessing the SharePoint server and performing remote administration over a VPN connection, see [Set up a SharePoint intranet farm in a hybrid cloud for testing](/documentation/articles/virtual-networks-setup-sharepoint-hybrid-cloud-testing).
+A cross-premises virtual network is connected to an on-premises network with a site-to-site VPN or ExpressRoute connection. If you want to create a dev/test environment that mimics the final configuration and experiment with accessing the SharePoint server and performing remote administration over a VPN connection, see [Set up a SharePoint intranet farm in a hybrid cloud for testing](/documentation/articles/virtual-networks-setup-sharepoint-hybrid-cloud-testing/).
 
 ![](./media/virtual-machines-workload-intranet-sharepoint-farm/CreateSPFarmHybridCloud.png)
 
@@ -76,27 +76,27 @@ To deploy this configuration, use the following process:
 
 - Phase 1: Configure Azure.
 
-	Use Azure PowerShell to create a storage account, availability sets, and a cross-premises virtual network. For the detailed configuration steps, see [Phase 1](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase1).
+	Use Azure PowerShell to create a storage account, availability sets, and a cross-premises virtual network. For the detailed configuration steps, see [Phase 1](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase1/).
 
 - Phase 2: Configure the domain controllers.
 
-	Configure two Active Directory replica domain controllers and DNS settings for the virtual network. For the detailed configuration steps, see [Phase 2](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase2).
+	Configure two Active Directory replica domain controllers and DNS settings for the virtual network. For the detailed configuration steps, see [Phase 2](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase2/).
 
 - Phase 3: Configure the SQL Server infrastructure.  
 
-	Prepare the SQL Server virtual machines for use with SharePoint and create the SQL Server cluster. For the detailed configuration steps, see [Phase 3](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase3).
+	Prepare the SQL Server virtual machines for use with SharePoint and create the SQL Server cluster. For the detailed configuration steps, see [Phase 3](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase3/).
 
 - Phase 4: Configure the SharePoint servers.
 
-	Configure the four SharePoint virtual machines for a new SharePoint farm. For the detailed configuration, see [Phase 4](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase4).
+	Configure the four SharePoint virtual machines for a new SharePoint farm. For the detailed configuration, see [Phase 4](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase4/).
 
 - Phase 5: Create an AlwaysOn Availability Group.
 
-	Prepare the SharePoint databases, create an AlwaysOn Availability Group, and then add the SharePoint databases to it. For the detailed configuration steps, see [Phase 5](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase5).
+	Prepare the SharePoint databases, create an AlwaysOn Availability Group, and then add the SharePoint databases to it. For the detailed configuration steps, see [Phase 5](/documentation/articles/virtual-machines-workload-intranet-sharepoint-phase5/).
 
 Once configured, you can expand this SharePoint farm with guidance from [Azure architectures for SharePoint 2013](http://technet.microsoft.com/zh-cn/library/dn635309.aspx).
 
 ## Next step
 
-- Get an [overview](/documentation/articles/virtual-machines-workload-intranet-sharepoint-overview) of the production workload before diving into the configuration.
+- Get an [overview](/documentation/articles/virtual-machines-workload-intranet-sharepoint-overview/) of the production workload before diving into the configuration.
 

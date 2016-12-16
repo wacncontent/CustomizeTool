@@ -1,3 +1,5 @@
+<!-- deleted in Global -->
+
 <properties 
 	pageTitle="Continuous deployment using GIT in Azure Web App" 
 	description="Learn how to use Git to publish an Azure web app, and then enable continuous deployment from Bitbucket, CodePlex, Dropbox, GitHub, or Mercurial." 
@@ -14,5 +16,5 @@
 
 # Continuous deployment using GIT in Azure Web App
 
-[AZURE.INCLUDE [publishing-with-git](../includes/publishing-with-git.md)]
+[AZURE.INCLUDE [publishing-with-git](../../includes/publishing-with-git.md)]
  

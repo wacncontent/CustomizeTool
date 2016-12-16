@@ -18,7 +18,7 @@
 # Tutorial: Create a Cloud-Only Virtual Network in Azure
 
 
-> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the Resource Manager deployment model, which Microsoft recommends for most new deployments instead of the
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the Resource Manager deployment model, which Azure recommends for most new deployments instead of the
 
 
 This tutorial walks you through the steps in the Azure Management Portal to create an example cloud-only Azure Virtual Network that contains two subnets. The resulting virtual network will look like the following:
@@ -27,10 +27,10 @@ This tutorial walks you through the steps in the Azure Management Portal to crea
 
 For example, the FrontEndSubnet could be used for web servers and the BackEndSubnet could be used for SQL servers or domain controllers.
 
-This tutorial assumes you have no prior experience using Azure. It is meant to help you become familiar with the steps required to create your own virtual network by stepping you through an example configuration. If you want to create a cloud-only virtual network that works for your specific configuration, see [Configure a Cloud-Only Virtual Network in the Management Portal](/documentation/articles/virtual-networks-create-vnet). If you are looking for design scenarios and advanced information about Virtual Network, see the [Azure Virtual Network Overview](/documentation/articles/virtual-networks-overview).
+This tutorial assumes you have no prior experience using Azure. It is meant to help you become familiar with the steps required to create your own virtual network by stepping you through an example configuration. If you want to create a cloud-only virtual network that works for your specific configuration, see [Configure a Cloud-Only Virtual Network in the Management Portal](/documentation/articles/virtual-networks-create-vnet/). If you are looking for design scenarios and advanced information about Virtual Network, see the [Azure Virtual Network Overview](/documentation/articles/virtual-networks-overview/).
 
 
-> [AZURE.NOTE] This tutorial does not walk you through creating a cross-premises configuration, in which the virtual network is connected to your organization network. For a tutorial that walks you through creating a virtual network with cross-premises connectivity and a site-to-site VPN connection (i.e., connecting to Active Directory or SharePoint located at your company), see [Tutorial: Create a Cross-Premises Virtual Network for Site-to-Site Connectivity](/documentation/articles/virtual-networks-create-site-to-site-cross-premises-connectivity).
+> [AZURE.NOTE] This tutorial does not walk you through creating a cross-premises configuration, in which the virtual network is connected to your organization network. For a tutorial that walks you through creating a virtual network with cross-premises connectivity and a site-to-site VPN connection (i.e., connecting to Active Directory or SharePoint located at your company), see [Tutorial: Create a Cross-Premises Virtual Network for Site-to-Site Connectivity](/documentation/articles/virtual-networks-create-site-to-site-cross-premises-connectivity/).
 
 
 ##  Objectives
@@ -87,15 +87,15 @@ To create this example cloud-only virtual network, do the following
 
 You can continue learning about Azure infrastructure services with the following:
 
-- [How to Create a Custom Virtual Machine](/documentation/articles/virtual-machines-create-custom) Use this topic to install a virtual machine in your virtual network. For more information about virtual machines and installation options, see [Azure Virtual Machines](/documentation/services/virtual-machines/).
+- [How to Create a Custom Virtual Machine](/documentation/articles/virtual-machines-linux-classic-createportal/) Use this topic to install a virtual machine in your virtual network. For more information about virtual machines and installation options, see [Azure Virtual Machines](/documentation/services/virtual-machines/).
 
-- [Install a new Active Directory forest on an Azure Virtual Network](/documentation/articles/active-directory-new-forest-virtual-machine) - Use this topic to install a new Windows Server Active Directory (AD) forest without connectivity to any other network. The tutorial will explain the specific steps required to create a virtual machine (VM) for a new forest installation. If you plan to use this tutorial, do not create any VMs by using the Management Portal. For more information, see [Guidelines for Deploying Windows Server Active Directory on Azure Virtual Machines](http://msdn.microsoft.com/zh-cn/library/azure/jj156090.aspx).
+- [Install a new Active Directory forest on an Azure Virtual Network](/documentation/articles/active-directory-new-forest-virtual-machine/) - Use this topic to install a new Windows Server Active Directory (AD) forest without connectivity to any other network. The tutorial will explain the specific steps required to create a virtual machine (VM) for a new forest installation. If you plan to use this tutorial, do not create any VMs by using the Management Portal. For more information, see [Guidelines for Deploying Windows Server Active Directory on Azure Virtual Machines](http://msdn.microsoft.com/zh-cn/library/azure/jj156090.aspx).
 
 To remove this virtual network, select it, click **Delete**, and then click **Yes**.
 
-When you are ready to create a cloud-only virtual network that works for your specific configuration, see [Configure a Cloud-Only Virtual Network in the Management Portal](/documentation/articles/virtual-networks-create-vnet). 
+When you are ready to create a cloud-only virtual network that works for your specific configuration, see [Configure a Cloud-Only Virtual Network in the Management Portal](/documentation/articles/virtual-networks-create-vnet/). 
 
-If you are looking for design scenarios and advanced information about Virtual Network, see the [Azure Virtual Network Overview](/documentation/articles/virtual-networks-overview). 
+If you are looking for design scenarios and advanced information about Virtual Network, see the [Azure Virtual Network Overview](/documentation/articles/virtual-networks-overview/). 
 
 For additional Virtual Network configuration procedures and settings, see [Azure Virtual Network Configuration Tasks](/documentation/services/networking/).
 
@@ -106,7 +106,7 @@ For additional Virtual Network configuration procedures and settings, see [Azure
 
 -  [Azure Virtual Network Configuration Tasks](/documentation/services/networking/)
 
--  [Configuring a Virtual Network Using Network Configuration Files](/documentation/articles/virtual-networks-using-network-configuration-file)
+-  [Configuring a Virtual Network Using Network Configuration Files](/documentation/articles/virtual-networks-using-network-configuration-file/)
 
 -  [Name Resoultion for VMs and Role Instances](/documentation/articles/virtual-networks-name-resolution-for-vms-and-role-instances/)
 

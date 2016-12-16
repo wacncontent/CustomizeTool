@@ -17,7 +17,7 @@
 
 # Using load-balanced sets to clusterize MySQL on Linux
 
-> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the classic deployment model. Microsoft recommends that most new deployments use the Resource Manager model.
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager model.
 
 
 The purpose of this article is to explore and illustrate the different approaches available to deploy highly available Linux-based services on Azure, exploring MySQL Server high availability as a primer.

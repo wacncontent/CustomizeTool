@@ -19,7 +19,7 @@
 
 This article walks you through provisioning a [Deis](http://deis.io/) cluster on Azure. It covers all the steps from creating the necessary certificates to deploying and scaling a sample **Go** application on the newly provisioned cluster.
 
-> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the Resource Manager deployment model, which Microsoft recommends for most new deployments instead of the classic deployment model.
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the Resource Manager deployment model, which Azure recommends for most new deployments instead of the classic deployment model.
 
 
 The following diagram shows the architecture of the deployed system. A system administrator manages the cluster using Deis tools such as **deis** and **deisctl**. Connections are established through an Azure load balancer, which forwards the connections to one of the member nodes on the cluster. The clients access deployed applications through the load balancer as well. In this case, the load balancer forwards the traffic to a Deis router mesh, which further routs traffic to corresponding Docker containers hosted on the cluster.
@@ -29,8 +29,8 @@ The following diagram shows the architecture of the deployed system. A system ad
 In order to run through the following steps, you'll need:
 
  * An active Azure subscription. If you don't have one, you can get a free trail on [azure.com](https://azure.microsoft.com/).
- * A work or school id to use Azure resource groups. If you have a personal account and log in with a Microsoft id, you need to [create a work id from your personal one](/documentation/articles/resource-group-create-work-id-from-personal).
- * Either -- depending on your client operating system -- the [Azure PowerShell](/documentation/articles/powershell-install-configure) or the [Azure CLI for Mac, Linux, and Windows](/documentation/articles/xplat-cli-install).
+ * A work or school id to use Azure resource groups. If you have a personal account and log in with a Microsoft id, you need to [create a work id from your personal one](/documentation/articles/virtual-machines-linux-create-aad-work-id/).
+ * Either -- depending on your client operating system -- the [Azure PowerShell](/documentation/articles/powershell-install-configure/) or the [Azure CLI for Mac, Linux, and Windows](/documentation/articles/xplat-cli-install/).
  * [OpenSSL](https://www.openssl.org/). OpenSSL is used to generate the necessary certificates.
  * A Git client such as [Git Bash](https://git-scm.com/).
  * To test the sample application, you'll also need a DNS server. You can use any DNS servers or services that support wildcard A records.
@@ -38,7 +38,7 @@ In order to run through the following steps, you'll need:
 
 ## Provision the cluster
 
-In this section, you'll use an [Azure Resource Manager](/documentation/articles/resource-group-overview) template from the open source repository [azure-quickstart-templates](https://github.com/Azure/azure-quickstart-templates). First, you'll copy down the template. Then, you'll create a new SSH key pair for authentication. And then, you'll configure a new identifier for you cluster. And finally, you'll use either the Shell script or the PowerShell script to provision the cluster.
+In this section, you'll use an [Azure Resource Manager](/documentation/articles/resource-group-overview/) template from the open source repository [azure-quickstart-templates](https://github.com/Azure/azure-quickstart-templates). First, you'll copy down the template. Then, you'll create a new SSH key pair for authentication. And then, you'll configure a new identifier for you cluster. And finally, you'll use either the Shell script or the PowerShell script to provision the cluster.
 
 1. Clone the repository: [https://github.com/Azure/azure-quickstart-templates](https://github.com/Azure/azure-quickstart-templates).
 
@@ -257,6 +257,6 @@ This article walked you through all the steps to provision a new Deis cluster on
 [How to use the Azure CLI] [azure-command-line-tools]  
 [Using Azure PowerShell with Azure Resource Manager] [powershell-azure-resource-manager]  
 
-[azure-command-line-tools]: /documentation/articles/xplat-cli-install
-[resource-group-overview]: /documentation/articles/resource-group-overview
-[powershell-azure-resource-manager]: /documentation/articles/powershell-azure-resource-manager
+[azure-command-line-tools]: /documentation/articles/xplat-cli-install/
+[resource-group-overview]: /documentation/articles/resource-group-overview/
+[powershell-azure-resource-manager]: /documentation/articles/powershell-azure-resource-manager/

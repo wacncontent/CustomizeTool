@@ -1,27 +1,27 @@
 <properties
-   pageTitle="Configure an application gateway for SSL offload by using the portal | Azure"
-   description="This page provides instructions to create an application gateway with SSL offload by using the portal"
-   documentationCenter="na"
-   services="application-gateway"
-   authors="georgewallace"
-   manager="carmonm"
-   editor="tysonn"/>
+    pageTitle="Configure an application gateway for SSL offload by using the portal | Azure"
+    description="This page provides instructions to create an application gateway with SSL offload by using the portal"
+    documentationcenter="na"
+    services="application-gateway"
+    author="georgewallace"
+    manager="carmonm"
+    editor="tysonn" />
 <tags
-   ms.service="application-gateway"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="09/09/2016"
-   wacn.date=""
-   ms.author="gwallace"/>
+    ms.assetid="8373379a-a26a-45d2-aa62-dd282298eff3"
+    ms.service="application-gateway"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="infrastructure-services"
+    ms.date="11/16/2016"
+    wacn.date=""
+    ms.author="gwallace" />
 
 # Configure an application gateway for SSL offload by using the portal
-
 > [AZURE.SELECTOR]
--[Azure portal](/documentation/articles/application-gateway-ssl-portal/)
--[Azure Resource Manager PowerShell](/documentation/articles/application-gateway-ssl-arm/)
--[Azure Classic PowerShell](/documentation/articles/application-gateway-ssl/)
+- [Azure portal](/documentation/articles/application-gateway-ssl-portal/)
+- [Azure Resource Manager PowerShell](/documentation/articles/application-gateway-ssl-arm/)
+- [Azure Classic PowerShell](/documentation/articles/application-gateway-ssl/)
 
 Azure Application Gateway can be configured to terminate the Secure Sockets Layer (SSL) session at the gateway to avoid costly SSL decryption tasks to happen at the web farm. SSL offload also simplifies the front-end server setup and management of the web application.
 
@@ -41,11 +41,11 @@ The HTTPS listener looks for traffic based on its configuration and helps route 
 
 Navigate to the Azure portal and select an existing application gateway
 
-![app gateway overview blade][1]
-
 ### Step 2
 
 Click Listeners and click the Add button to add a listener.
+
+![app gateway overview blade][1]
 
 ### Step 3
 

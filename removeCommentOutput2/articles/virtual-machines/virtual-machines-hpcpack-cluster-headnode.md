@@ -16,7 +16,7 @@
 
 # Create the head node of an HPC Pack cluster in an Azure VM with a Marketplace image
 
-> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the Resource Manager deployment model, which Microsoft recommends for most new deployments instead of the classic deployment model.
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the Resource Manager deployment model, which Azure recommends for most new deployments instead of the classic deployment model.
 
 
 This article shows you how to use a [Microsoft HPC Pack virtual machine image](https://azure.microsoft.com/marketplace/partners/microsoft/hpcpack2012r2onwindowsserver2012r2/) in the Azure gallery
@@ -28,7 +28,7 @@ Pack 2012 R2 Update 3 pre-installed. Use this head node for a proof of concept
 ![HPC Pack head node][headnode]
 
 >[AZURE.TIP]For a production deployment of a complete HPC Pack cluster in Azure, we recommend that you use an automated  method, such as the [HPC Pack IaaS deployment
-script](/documentation/articles/virtual-machines-hpcpack-cluster-powershell-script) or a Resource Manager template such as the [HPC Pack cluster for Windows workloads](https://azure.microsoft.com/marketplace/partners/microsofthpc/newclusterwindowscn/) template. See [HPC Pack cluster options in Azure](/documentation/articles/virtual-machines-hpcpack-cluster-options) for additional templates. 
+script](/documentation/articles/virtual-machines-linux-classic-hpcpack-cluster-powershell-script/) or a Resource Manager template such as the [HPC Pack cluster for Windows workloads](https://azure.microsoft.com/marketplace/partners/microsofthpc/newclusterwindowscn/) template. See [HPC Pack cluster options in Azure](/documentation/articles/virtual-machines-linux-hpcpack-cluster-options/) for additional templates. 
 
 ## Planning considerations
 
@@ -51,13 +51,13 @@ Pack head node by using the Resource Manager deployment model in the Azure porta
 
     ![HPC Pack image][marketplace]
 
-4. Use the portal to configure the settings and create the VM. For detailed steps, follow the tutorial [Create a Windows virtual machine in the Azure portal](/documentation/articles/virtual-machines-windows-tutorial-classic-portal). For a first deployment you can usually accept many default or recommended settings.
+4. Use the portal to configure the settings and create the VM. For detailed steps, follow the tutorial [Create a Windows virtual machine in the Azure portal](/documentation/articles/virtual-machines-windows-classic-tutorial/). For a first deployment you can usually accept many default or recommended settings.
 
     **VNet considerations**
 
    * If you create a new VNet in **Settings**, specify a private network address range such as 10.0.0.0/16 and a subnet address range such as 10.0.0.0/24.
     
-4. After you create the VM and the VM is running, [connect to the VM](/documentation/articles/virtual-machines-log-on-windows-server-preview). 
+4. After you create the VM and the VM is running, [connect to the VM](/documentation/articles/virtual-machines-windows-classic-connect-logon-preview/). 
 
 5. Join the VM to an existing domain forest, or create a new domain forest on the VM itself.
 
@@ -84,7 +84,7 @@ Pack head node by using the Resource Manager deployment model in the Azure porta
 
 * You can now work with the head node of your HPC Pack cluster. For
 example, start HPC Cluster Manager, and complete the [Deployment To-do List](https://technet.microsoft.com/zh-cn/library/jj884141.aspx).
-* Add [Azure burst nodes](/documentation/articles/virtual-machines-hpcpack-cluster-node-burst) in a cloud service to increase the cluster compute capacity on-demand. 
+* Add [Azure burst nodes](/documentation/articles/virtual-machines-windows-classic-hpcpack-cluster-node-burst/) in a cloud service to increase the cluster compute capacity on-demand. 
 
 * Try running a test workload on the cluster. For an example, see the HPC Pack [getting started guide](https://technet.microsoft.com/zh-cn/library/jj884144).
 

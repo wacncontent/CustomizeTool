@@ -18,7 +18,7 @@
 
 Automated Patching establishes a maintenance window for an Azure Virtual Machine running SQL Server 2012 or 2014. Automated Updates can only be installed during this maintenance window. For SQL Server, this ensures that system updates and any associated restarts occur at the best possible time for the database. It depends on the SQL Server IaaS Agent.
 
-> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the classic deployment model. Microsoft recommends that most new deployments use the Resource Manager model.
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager model.
 
 ## Configure Automated Patching in the Azure portal
 
@@ -87,6 +87,6 @@ The following products are compatible with the SQL Server IaaS Agent features 
 
 ## Next steps
 
-A related feature for SQL Server VMs in Azure is [Automated Backup for SQL Server in Azure Virtual Machines](/documentation/articles/virtual-machines-sql-server-automated-backup).
+A related feature for SQL Server VMs in Azure is [Automated Backup for SQL Server in Azure Virtual Machines](/documentation/articles/virtual-machines-windows-classic-sql-automated-backup/).
 
-Review other [resources for running SQL Server in Azure Virtual Machines](/documentation/articles/virtual-machines-sql-server-infrastructure-services).
+Review other [resources for running SQL Server in Azure Virtual Machines](/documentation/articles/virtual-machines-windows-sql-server-iaas-overview/).

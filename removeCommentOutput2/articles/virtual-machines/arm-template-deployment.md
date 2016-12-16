@@ -17,21 +17,21 @@
 
 # Deploy Azure resources using .NET libraries and a template
 
-> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the Resource Manager deployment model, which Microsoft recommends for most new deployments instead of the classic deployment model.
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the Resource Manager deployment model, which Azure recommends for most new deployments instead of the classic deployment model.
 
 By using resource groups and templates, you're able to manage all of the resources that support your application together. This tutorial shows you how to use some of the available clients in the Azure Resource Management Library and how to build a template to deploy a virtual machine, virtual network, and storage account.
 
-[AZURE.INCLUDE [free-trial-note](../includes/free-trial-note.md)]
+[AZURE.INCLUDE [free-trial-note](../../includes/free-trial-note.md)]
 
 To complete this tutorial you also need:
 
 - [Visual Studio](http://msdn.microsoft.com/zh-cn/library/dd831853.aspx)
-- [Azure storage account](/documentation/articles/storage-create-storage-account)
+- [Azure storage account](/documentation/articles/storage-create-storage-account/)
 - [Windows Management Framework 3.0](http://www.microsoft.com/download/details.aspx?id=34595) or [Windows Management Framework 4.0](http://www.microsoft.com/download/details.aspx?id=40855)
 
 >[AZURE.NOTE] The storage account that you create at this point is used to store the template. Another storage account is created when you deploy the template that's used to store the disk for the virtual machine. Create a container in this storage account named templates.
 
-[AZURE.INCLUDE [powershell-preview](../includes/powershell-preview-inline-include.md)]
+[AZURE.INCLUDE [powershell-preview](../../includes/powershell-preview-inline-include.md)]
 
 It takes about 30 minutes to do these steps.
 
@@ -63,7 +63,7 @@ To use Azure AD to authenticate requests to Azure Resource Manager, an applicati
 
 An Azure Resource Manager Template makes it possible for you to deploy and manage Azure resources together by using a JSON description of the resources and associated deployment parameters. The template that you build in this tutorial is similar to a template that can be found in the template GitHub Repo. To learn more, see [Deploy a simple Windows VM](https://github.com/Azure/azure-quickstart-templates/blob/master/101-vm-simple-windows/azuredeploy.json).
 
-[AZURE.INCLUDE [arm-templates-for-azurechinacloud](../includes/arm-templates-for-azurechinacloud.md)]
+[AZURE.INCLUDE [arm-templates-for-azurechinacloud](../../includes/arm-templates-for-azurechinacloud.md)]
 
 In Visual Studio, do the following:
 
@@ -82,7 +82,7 @@ In Visual Studio, do the following:
 			"contentVersion": "1.0.0.0",
 		}
 
-6. [Parameters](/documentation/articles/resource-group-authoring-templates#parameters) are not always required, but they make template management easier. They describe the type of the value, the default value if needed, and possibly the allowed values of the parameter. For this tutorial, the parameters that are used to create a virtual machine, a storage account, and a virtual network are added to the template.
+6. [Parameters](/documentation/articles/resource-group-authoring-templates/#parameters) are not always required, but they make template management easier. They describe the type of the value, the default value if needed, and possibly the allowed values of the parameter. For this tutorial, the parameters that are used to create a virtual machine, a storage account, and a virtual network are added to the template.
 
     Add the parameters element and its child elements after the contentVersion element:
 
@@ -102,7 +102,7 @@ In Visual Studio, do the following:
 			},
 	 	}
 
-7. [Variables](/documentation/articles/resource-group-authoring-templates#variables) can be used in a template to specify values that may change frequently or values that need to be created from a combination of parameter values.
+7. [Variables](/documentation/articles/resource-group-authoring-templates/#variables) can be used in a template to specify values that may change frequently or values that need to be created from a combination of parameter values.
 
     Add the variables element after the parameters section:
 		{
@@ -140,7 +140,7 @@ In Visual Studio, do the following:
 			},
 		}
 
-8. [Resources](/documentation/articles/resource-group-authoring-templates#resources) such as the virtual machine, the virtual network, and the storage account are defined next in the template.
+8. [Resources](/documentation/articles/resource-group-authoring-templates/#resources) such as the virtual machine, the virtual network, and the storage account are defined next in the template.
 
     Add the resources section after the variables section:
 
@@ -306,7 +306,7 @@ To specify values for the resource parameters that were defined in the template,
 			}
 		}
 
-    >[AZURE.NOTE] This tutorial creates a virtual machine running a version of the Windows Server operating system. To learn more about selecting other images, see [Navigate and select Azure virtual machine images with Windows PowerShell and the Azure CLI](/documentation/articles/resource-groups-vm-searching).
+    >[AZURE.NOTE] This tutorial creates a virtual machine running a version of the Windows Server operating system. To learn more about selecting other images, see [Navigate and select Azure virtual machine images with Windows PowerShell and the Azure CLI](/documentation/articles/virtual-machines-linux-cli-ps-findimage/).
 
 
 4. Save the parameters file that you created.

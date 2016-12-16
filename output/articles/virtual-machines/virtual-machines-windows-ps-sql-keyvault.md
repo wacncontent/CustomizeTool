@@ -1,25 +1,24 @@
 <properties
-	pageTitle="Configure Azure Key Vault Integration for SQL Server on Azure VMs (Resource Manager)"
-	description="Learn how to automate the configuration of SQL Server encryption for use with Azure Key Vault. This topic explains how to use Azure Key Vault Integration with SQL Server virtual machines created with Resource Manager."
-	services="virtual-machines-windows"
-	documentationCenter=""
-	authors="rothja"
-	manager="jhubbard"
-	editor=""
-	tags="azure-service-management"/>
-
+    pageTitle="Configure Azure Key Vault Integration for SQL Server on Azure VMs (Resource Manager)"
+    description="Learn how to automate the configuration of SQL Server encryption for use with Azure Key Vault. This topic explains how to use Azure Key Vault Integration with SQL Server virtual machines created with Resource Manager."
+    services="virtual-machines-windows"
+    documentationcenter=""
+    author="rothja"
+    manager="jhubbard"
+    editor=""
+    tags="azure-service-management" />
 <tags
-	ms.service="virtual-machines-windows"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.tgt_pltfrm="vm-windows-sql-server"
-	ms.workload="infrastructure-services"
-	ms.date="07/14/2016"
-	wacn.date=""
-	ms.author="jroth"/>
+    ms.assetid="cd66dfb1-0e9b-4fb0-a471-9deaf4ab4ab8"
+    ms.service="virtual-machines-windows"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.tgt_pltfrm="vm-windows-sql-server"
+    ms.workload="infrastructure-services"
+    ms.date="10/25/2016"
+    wacn.date=""
+    ms.author="jroth" />
 
 # Configure Azure Key Vault Integration for SQL Server on Azure VMs (Resource Manager)
-
 > [AZURE.SELECTOR]
 - [Resource Manager](/documentation/articles/virtual-machines-windows-ps-sql-keyvault/)
 - [Classic](/documentation/articles/virtual-machines-windows-classic-ps-sql-keyvault/)
@@ -37,7 +36,7 @@ When this feature is enabled, it automatically installs the SQL Server Connector
 You can enable AKV integration during provisioning or configure it for existing VMs.
 
 ### New VMs
-If you are provisioning a new SQL Server virtual machine with Resource Manager, the Azure portal provides a step to enable Azure Key Vault integration.
+If you are provisioning a new SQL Server virtual machine with Resource Manager, the Azure portal provides a step to enable Azure Key Vault integration. The Azure Key Vault feature is available only for the Enterprise, Developer and Evaluation Editions of SQL Server.
 
 ![SQL Azure Key Vault Integration](./media/virtual-machines-windows-ps-sql-keyvault/azure-sql-arm-akv.png)
 
@@ -54,6 +53,10 @@ In the **SQL Server configuration** blade, click the **Edit** button in the Auto
 
 When finished, click the **OK** button on the bottom of the **SQL Server configuration** blade to save your changes.
 
->[AZURE.NOTE] You can also configure AKV integration using a template. For more information, see [Azure quickstart template for Azure Key Vault integration](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-sql-existing-keyvault-update).
+> [AZURE.NOTE]
+> You can also configure AKV integration using a template. For more information, see [Azure quickstart template for Azure Key Vault integration](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-sql-existing-keyvault-update).
+> 
+> 
 
 [AZURE.INCLUDE [AKV Integration Next Steps](../../includes/virtual-machines-sql-server-akv-next-steps.md)]
+

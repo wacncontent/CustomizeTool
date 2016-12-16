@@ -1,3 +1,5 @@
+<!-- deleted in Global -->
+
 <properties 
    pageTitle="How to connect classic VNets to ARM VNets in Azure"
    description="Learn how to create a VPN connection between classic VNets and new VNets"
@@ -29,7 +31,7 @@ You can see an overview of tasks to be done to create a S2S VPN connection betwe
 
 3 - [Create a connection between the gateways](#Step-3:-Create-a-connection-between-the-gateways)
 
-##<a name="Step-1:-Create-a-VPN-gateway-for-the-classic-VNet"></a> Step 1: Create a VPN gateway for the classic VNet
+## <a name="Step-1:-Create-a-VPN-gateway-for-the-classic-VNet"></a> Step 1: Create a VPN gateway for the classic VNet
 
 To create the VPN gateway for the classic VNet, follow the instructions below.
 
@@ -48,7 +50,7 @@ To create the VPN gateway for the classic VNet, follow the instructions below.
 8. Once the settings are saved, click on **DASHBOARD**, then on the bottom of the page, click **CREATE GATEWAY**, then click **DYNAMIC ROUTING**, and then click **YES**.
 9. Wait for the gateway to be created and copy its public IP address. You will need it to setup the gateway in the ARM VNet.
 
-##<a name="Step-2:-Create-a-VPN-gateway-for-the-ARM-VNet"></a> Step 2: Create a VPN gateway for the ARM VNet
+## <a name="Step-2:-Create-a-VPN-gateway-for-the-ARM-VNet"></a> Step 2: Create a VPN gateway for the ARM VNet
 
 To create a VPN gateway for the ARM VNet, follow the instructions below.
 
@@ -73,6 +75,7 @@ To create a VPN gateway for the ARM VNet, follow the instructions below.
 
 5. Create an IP configuration object for the gateway by running the command below. Notice the id for a gateway subnet. That subnet must exist in the VNet.
 
+
 		$ipconfig = New-AzureRmVirtualNetworkGatewayIpConfig `
 		-Name ipconfig -SubnetId $subnet.id `
 		-PublicIpAddressId $ipaddress.id
@@ -89,7 +92,7 @@ To create a VPN gateway for the ARM VNet, follow the instructions below.
 
 		Get-AzureRmPublicIpAddress -Name gatewaypubIP -ResourceGroupName RG1
 
-##<a name="Step-3:-Create-a-connection-between-the-gateways"></a> Step 3: Create a connection between the gateways
+## <a name="Step-3:-Create-a-connection-between-the-gateways"></a> Step 3: Create a connection between the gateways
 
 1. Open the Classic Management Portal from https://manage.windowsazure.cn, and enter your credentials, if necessary.
 2. In the Classic Management Portal, scroll down and click **NETWORKS**, then click **LOCAL NETWORKS**, then click the ARM VNet you want to connect to, and then click on the **EDIT** button.

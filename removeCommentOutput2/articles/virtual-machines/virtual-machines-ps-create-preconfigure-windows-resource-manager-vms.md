@@ -18,17 +18,17 @@
 # Create and configure a Windows Virtual Machine with Resource Manager and Azure PowerShell
 
 > [AZURE.SELECTOR]
-- [Portal - Windows](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)
-- [PowerShell](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-resource-manager-vms)
-- [PowerShell - Template](/documentation/articles/virtual-machines-create-windows-powershell-resource-manager-template)
-- [Portal - Linux](/documentation/articles/virtual-machines-linux-tutorial-portal-rm)
-- [CLI](/documentation/articles/virtual-machines-linux-tutorial)
+- [Portal - Windows](/documentation/articles/virtual-machines-windows-classic-tutorial/)
+- [PowerShell](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-resource-manager-vms/)
+- [PowerShell - Template](/documentation/articles/virtual-machines-create-windows-powershell-resource-manager-template/)
+- [Portal - Linux](/documentation/articles/virtual-machines-linux-portal-create/)
+- [CLI](/documentation/articles/virtual-machines-linux-quick-create-cli/)
 
 <br>
 
 
 
-> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the Resource Manager deployment model, which Microsoft recommends for most new deployments instead of the [classic deployment model](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-vms).
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the Resource Manager deployment model, which Azure recommends for most new deployments instead of the [classic deployment model](/documentation/articles/virtual-machines-windows-classic-create-powershell/).
 
 These steps show you how to construct a set of Azure PowerShell commands to create and configure an Azure virtual machine. You can use this building block process to quickly create a command set for a new Windows-based virtual machine and expand an existing deployment. You can also use it to create multiple command sets that quickly build out a custom dev/test or IT pro environment.
 
@@ -36,7 +36,7 @@ These steps follow a fill-in-the-blanks approach for creating Azure PowerShell c
 
 ## Step 1: Install Azure PowerShell
 
-[AZURE.INCLUDE [powershell-preview](../includes/powershell-preview-inline-include.md)]
+[AZURE.INCLUDE [powershell-preview](../../includes/powershell-preview-inline-include.md)]
 
 ## Step 2: Set your subscription
 
@@ -129,7 +129,7 @@ Use this command to list the existing availability sets.
 
 ### NAT rules
 
-Resource Manager-based virtual machines can be configured with inbound NAT rules to allow incoming traffic from the Internet and be placed in a load balanced set. In both cases, you must specify a load balancer instance and other settings. For more information, see [Create a load balancer using Azure Resource Manager](/documentation/articles/load-balancer-arm-powershell).
+Resource Manager-based virtual machines can be configured with inbound NAT rules to allow incoming traffic from the Internet and be placed in a load balanced set. In both cases, you must specify a load balancer instance and other settings. For more information, see [Create a load balancer using Azure Resource Manager](/documentation/articles/load-balancer-arm-powershell/).
 
 VMs created with the Resource Manager deployment model require a Resource Manager virtual network. If needed, create a new Resource Manager-based virtual network with at least one subnet for the new virtual machine. Here is an example for a new virtual network named **TestNet** with two subnets named **frontendSubnet** and **backendSubnet**.
 
@@ -212,7 +212,7 @@ To create a NIC and add it to a load balancer instance for an inbound NAT rule, 
 - The index number of the back end address pool of the load balancer instance to assign to the NIC.
 - The index number of the inbound NAT rule to assign to the NIC.
 
-For information on how to create a load balancer instance with inbound NAT rules, see [Create a load balancer using Azure Resource Manager](/documentation/articles/load-balancer-arm-powershell).
+For information on how to create a load balancer instance with inbound NAT rules, see [Create a load balancer using Azure Resource Manager](/documentation/articles/load-balancer-arm-powershell/).
 
 Copy these lines to your command set and specify the needed names and index numbers.
 
@@ -232,7 +232,7 @@ To create a NIC and add it to a load balancer instance for a load-balanced set, 
 - The name of a previously-created load balancer instance that has a rule for the load-balanced traffic.
 - The index number of the back end address pool of the load balancer instance to assign to the NIC.
 
-For information on how to create a load balancer instance with rules for load-balanced traffic, see [Create a load balancer using Azure Resource Manager](/documentation/articles/load-balancer-arm-powershell).
+For information on how to create a load balancer instance with rules for load-balanced traffic, see [Create a load balancer using Azure Resource Manager](/documentation/articles/load-balancer-arm-powershell/).
 
 Copy these lines to your command set and specify the needed names and index numbers.
 
@@ -294,7 +294,7 @@ Next, you need to determine the publisher, offer, and SKU of the image for your 
 |MicrosoftWindowsServerEssentials | WindowsServerEssentials | WindowsServerEssentials |
 |MicrosoftWindowsServerHPCPack | WindowsServerHPCPack | 2012R2 |
 
-If the virtual machine image you need is not listed, use the instructions [here](/documentation/articles/resource-groups-vm-searching#powershell) to determine the publisher, offer, and SKU names.
+If the virtual machine image you need is not listed, use the instructions [here](/documentation/articles/virtual-machines-linux-cli-ps-findimage/#powershell) to determine the publisher, offer, and SKU names.
 
 Copy these commands to your command set and fill in the publisher, offer, and SKU names.
 
@@ -383,12 +383,12 @@ Here is the Azure PowerShell command set to create this virtual machine.
 
 ## Additional Resources
 
-[Azure Compute, Network and Storage Providers under Azure Resource Manager](/documentation/articles/virtual-machines-azurerm-versus-azuresm)
+[Azure Compute, Network and Storage Providers under Azure Resource Manager](/documentation/articles/virtual-machines-azurerm-versus-azuresm/)
 
-[Azure Resource Manager Overview](/documentation/articles/resource-group-overview)
+[Azure Resource Manager Overview](/documentation/articles/resource-group-overview/)
 
-[Deploy and Manage Azure Virtual Machines using Resource Manager Templates and PowerShell](/documentation/articles/virtual-machines-deploy-rmtemplates-powershell)
+[Deploy and Manage Azure Virtual Machines using Resource Manager Templates and PowerShell](/documentation/articles/virtual-machines-deploy-rmtemplates-powershell/)
 
-[Create a Windows virtual machine with a Resource Manager template and PowerShell](/documentation/articles/virtual-machines-create-windows-powershell-resource-manager-template)
+[Create a Windows virtual machine with a Resource Manager template and PowerShell](/documentation/articles/virtual-machines-create-windows-powershell-resource-manager-template/)
 
-[How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure)
+[How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure/)

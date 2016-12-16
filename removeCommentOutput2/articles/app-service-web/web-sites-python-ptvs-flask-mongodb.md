@@ -45,9 +45,9 @@ See the [Python Developer Center] for more articles that cover development of Az
  - [Python Tools 2.1 for Visual Studio Samples VSIX]
  - [Azure SDK Tools for VS 2013] or [Azure SDK Tools for VS 2012]
  - [Python 2.7 32-bit] or [Python 3.4 32-bit]
- - [RoboMongo](/documentation/articles/optional)
+ - [RoboMongo](/documentation/articles/optional/)
 
-[AZURE.INCLUDE [create-account-and-websites-note](../includes/create-account-and-websites-note.md)]
+[AZURE.INCLUDE [create-account-and-websites-note](../../includes/create-account-and-websites-note.md)]
 
 >[AZURE.NOTE] If you want to get started with Azure Websites before signing up for an Azure account, go to [Try Azure Websites](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in Azure Websites. No credit cards required; no commitments.
 
@@ -219,13 +219,13 @@ Follow these links to learn more about Python Tools for Visual Studio, Flask and
 - [PyMongo Documentation]
 - [PyMongo]
 
-[AZURE.INCLUDE [app-service-web-whats-changed](../includes/app-service-web-whats-changed.md)]
+[AZURE.INCLUDE [app-service-web-whats-changed](../../includes/app-service-web-whats-changed.md)]
  
 
 
 <!--Link references-->
 [Python Developer Center]: /develop/python/
-[Azure Cloud Services]: /documentation/articles/cloud-services-python-ptvs
+[Azure Cloud Services]: /documentation/articles/cloud-services-python-ptvs/
 <!--External Link references-->
 [Azure Management Portal]: https://manage.windowsazure.cn
 [RoboMongo]: http://robomongo.org/
@@ -244,4 +244,3 @@ Follow these links to learn more about Python Tools for Visual Studio, Flask and
 [Remote Debugging on Azure]: http://pytools.codeplex.com/wikipage?title=Features%20Azure%20Remote%20Debugging
 [Web Projects]: http://pytools.codeplex.com/wikipage?title=Features%20Web%20Project
 [Cloud Service Projects]: http://pytools.codeplex.com/wikipage?title=Features%20Cloud%20Project
- 

@@ -18,13 +18,13 @@
 #How to Use SSH with Linux and Mac on Azure
 
 > [AZURE.SELECTOR]
-- [Windows](/documentation/articles/virtual-machines-windows-use-ssh-key)
-- [Linux/Mac](/documentation/articles/virtual-machines-linux-use-ssh-key)
+- [Windows](/documentation/articles/virtual-machines-linux-ssh-from-windows/)
+- [Linux/Mac](/documentation/articles/virtual-machines-linux-ssh-from-linux/)
 
 This topic describes how to use **ssh-keygen** and **openssl** on Linux and Mac to create and use **ssh-rsa** format and **.pem** format files to secure communication with Azure VMs based on Linux. Creating Linux-based Azure Virtual Machines using the Resource Manager deployment model is recommended for new deployments and takes an *ssh-rsa* type public key file or string (depending on the deployment client). The [Azure portal](https://portal.azure.cn) currently accepts only the **ssh-rsa** format strings, whether for classic or Resource Manager deployments.
 
-> [AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
-To create these types of files for use on a Windows computer to communicate securely with Linux VMs in Azure, see [Use SSH keys on Windows](/documentation/articles/virtual-machines-windows-use-ssh-key). 
+> [AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
+To create these types of files for use on a Windows computer to communicate securely with Linux VMs in Azure, see [Use SSH keys on Windows](/documentation/articles/virtual-machines-linux-ssh-from-windows/). 
 
 ## Which files do you need?
 
@@ -33,7 +33,7 @@ A basic ssh setup for Azure includes an **ssh-rsa** public and private key pair 
 Here are the deployment scenarios, and the types of files you use in each:
 
 1. **ssh-rsa** keys are required for any deployment using the [Azure portal](https://portal.azure.cn), regardless of the deployment model.
-2. .pem file are required to create VMs using the [classic portal](https://manage.windowsazure.cn). .pem files are also supported in classic deployments that use the [Azure CLI](/documentation/articles/xplat-cli-install). 
+2. .pem file are required to create VMs using the [classic portal](https://manage.windowsazure.cn). .pem files are also supported in classic deployments that use the [Azure CLI](/documentation/articles/xplat-cli-install/). 
 
 ## Create keys for use with SSH
 
@@ -146,11 +146,11 @@ You can then use the .pem file with either the classic portal or with the classi
 	-l "China North" -n testpemasm \
 	-P -t myCert.pem -e 22 \
 	testpemasm \
-	b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_3-LTS-amd64-server-20150908-en-us-30GB \
+	b549f4301d0b4295b8e76ceb65df47d4__Ubuntu-14_04_3-LTS-amd64-server-20150908-en-us-30GB \
 	ops
 	info:    Executing command vm create
 	warn:    --vm-size has not been specified. Defaulting to "Small".
-	+ Looking up image b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_3-LTS-amd64-server-20150908-en-us-30GB
+	+ Looking up image b549f4301d0b4295b8e76ceb65df47d4__Ubuntu-14_04_3-LTS-amd64-server-20150908-en-us-30GB
 	+ Looking up cloud service
 	info:    cloud service testpemasm not found.
 	+ Creating cloud service
@@ -187,11 +187,11 @@ You can discover the address to use with a VM and the classic deployment model b
 	data:    IPAddress "100.116.160.154"
 	data:    InstanceStatus "ReadyRole"
 	data:    InstanceSize "Small"
-	data:    Image "b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_3-LTS-amd64-server-20150908-en-us-30GB"
+	data:    Image "b549f4301d0b4295b8e76ceb65df47d4__Ubuntu-14_04_3-LTS-amd64-server-20150908-en-us-30GB"
 	data:    OSDisk hostCaching "ReadWrite"
 	data:    OSDisk name "testpemasm-testpemasm-0-201510102050230517"
 	data:    OSDisk mediaLink "https://portalvhds4blttsxgjj1rf.blob.core.chinacloudapi.cn/vhd-store/testpemasm-2747c9c432b043ff.vhd"
-	data:    OSDisk sourceImageName "b39f27a8b8c64d52b05eac6a62ebad85__Ubuntu-14_04_3-LTS-amd64-server-20150908-en-us-30GB"
+	data:    OSDisk sourceImageName "b549f4301d0b4295b8e76ceb65df47d4__Ubuntu-14_04_3-LTS-amd64-server-20150908-en-us-30GB"
 	data:    OSDisk operatingSystem "Linux"
 	data:    OSDisk iOType "Standard"
 	data:    ReservedIPName ""
@@ -291,7 +291,7 @@ If you created a VM using a .pem file created from your `~/.ssh/id_rsa` file, yo
 
 ## If you have trouble connecting
 
-You can read the suggestions at [Troubleshooting SSH Connections](/documentation/articles/virtual-machines-troubleshoot-ssh-connections) to see if they can help resolve the situation.
+You can read the suggestions at [Troubleshooting SSH Connections](/documentation/articles/virtual-machines-linux-troubleshoot-ssh-connection/) to see if they can help resolve the situation.
 
 ## Next steps
  

@@ -1,3 +1,4 @@
+<!-- deleted in Global -->
 
 <properties
 	pageTitle="Base Configuration Test Environment with Azure Resource Manager"
@@ -15,8 +16,6 @@
 	wacn.date=""/>
 
 # Base Configuration test environment
-
-> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the Resource Manager deployment model, which Azure recommends for most new deployments instead of the [classic deployment model](/documentation/articles/virtual-machines-windows-classic-test-config-env/).
 
 This article provides you with step-by-step instructions to create the Base Configuration test environment in a Azure Virtual Network, using virtual machines created in Resource Manager.
 
@@ -49,11 +48,9 @@ There are four phases to setting up the Corpnet subnet of the Windows Server 201
 
 If you do not already have an Azure account, you can sign up for a trial at [Try Azure](/pricing/1rmb-trial/).
 
-> [AZURE.NOTE] Virtual machines in Azure incur an ongoing monetary cost when they are running. This cost is billed against your trial, MSDN subscription, or paid subscription. For more information about the costs of running Azure virtual machines, see [Virtual Machines Pricing Details](/home/features/virtual-machines/pricing/) and [Azure Pricing Calculator](https://azure.microsoft.com/pricing/calculator/). To keep costs down, see [Minimizing the costs of test environment virtual machines in Azure](#costs).
+> [AZURE.NOTE] Virtual machines in Azure incur an ongoing monetary cost when they are running. This cost is billed against your trial, MSDN subscription, or paid subscription. For more information about the costs of running Azure virtual machines, see [Virtual Machines Pricing Details](/pricing/details/virtual-machines/) and [Azure Pricing Calculator](https://azure.microsoft.com/pricing/calculator/). To keep costs down, see [Minimizing the costs of test environment virtual machines in Azure](#costs).
 
 ## Phase 1: Create the virtual network
-
-[AZURE.INCLUDE [arm-api-version-powershell](../includes/arm-api-version-powershell.md)]
 
 First, start an Azure PowerShell prompt.
 

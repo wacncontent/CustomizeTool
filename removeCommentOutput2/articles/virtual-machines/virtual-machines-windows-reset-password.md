@@ -17,7 +17,7 @@
 
 # How to reset a password or the Remote Desktop service for a Windows VM
 
-> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the Resource Manager deployment model, which Microsoft recommends for most new deployments instead of the classic deployment model.
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the Resource Manager deployment model, which Azure recommends for most new deployments instead of the classic deployment model.
 
 
 If you can't connect to a Windows virtual machine because of a forgotten password or a problem with the Remote Desktop service configuration, use the Azure portal or the VMAccess extension to reset the local administrator password or reset the Remote Desktop service configuration.
@@ -101,13 +101,13 @@ If this did not solve your Remote Desktop access problem, run the [Azure IaaS (W
 
 For more information, see the [Azure IaaS (Windows) diagnostics package](http://support.microsoft.com/kb/2976864) Knowledge Base article.
 
-If you were unable to run the Azure IaaS (Windows) diagnostics package or running it did not solve your problem, see [Troubleshoot Remote Desktop connections to a Windows-based Azure virtual machine](/documentation/articles/virtual-machines-troubleshoot-remote-desktop-connections).
+If you were unable to run the Azure IaaS (Windows) diagnostics package or running it did not solve your problem, see [Troubleshoot Remote Desktop connections to a Windows-based Azure virtual machine](/documentation/articles/virtual-machines-windows-troubleshoot-rdp-connection/).
 
 
 ## Additional resources
 
-[Azure VM extensions and features](/documentation/articles/virtual-machines-extensions-features)
+[Azure VM extensions and features](/documentation/articles/virtual-machines-linux-extensions-features/)
 
 [Connect to an Azure virtual machine with RDP or SSH](http://msdn.microsoft.com/zh-cn/library/azure/dn535788.aspx)
 
-[Troubleshoot Remote Desktop connections to a Windows-based Azure virtual machine](/documentation/articles/virtual-machines-troubleshoot-remote-desktop-connections)
+[Troubleshoot Remote Desktop connections to a Windows-based Azure virtual machine](/documentation/articles/virtual-machines-windows-troubleshoot-rdp-connection/)

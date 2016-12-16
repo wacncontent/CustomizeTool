@@ -1,3 +1,5 @@
+<!-- rename to app-service-continuous-deployment.md -->
+
 <properties
 	pageTitle="Continuous Deployment to Azure App Service"
 	description="Learn how to enable continuous deployment to Azure App Service."
@@ -9,8 +11,13 @@
 
 <tags
 	ms.service="app-service"
+	ms.workload="na"
+	ms.tgt_pltfrm="na"
+	ms.devlang="na"
+	ms.topic="article"
 	ms.date="07/23/2016"
-	wacn.date=""/>
+	wacn.date=""
+	ms.author="dariagrigoriu"/>
     
 # Continuous Deployment to Azure App Service
 
@@ -23,7 +30,7 @@ To enable continuous deployment,
 1. Publish your app content to the repository that will be used for continuous deployment.  
     For more information on publishing your project to these services, see [Create a repo (GitHub)], [Create a repo (BitBucket)], and [Get started with VSTS].
 
-2. In your app's blade in the [Azure Portal], click **Settings > Deployment Source**. Click **Choose Source**, then click **GitHub**, for example.  
+2. In your app's blade in the [Azure Portal Preview], click **Settings > Deployment Source**. Click **Choose Source**, then click **GitHub**, for example.  
 
 	![](./media/app-service-continuous-deployment/cd_options.png)
 	
@@ -37,9 +44,9 @@ To enable continuous deployment,
 
 	> [AZURE.NOTE] When enabling continuous deployment with GitHub or BitBucket, both public and private projects will be displayed.
 
-    App Service creates an association with the selected repository, pulls in the files from the specified branch, and maintains a clone of your repository for your App Service app. When you configure VSTS continuous deployment from the Azure Portal, the integration uses the App Service [Kudu deployment engine](https://github.com/projectkudu/kudu/wiki), which already automates build and deployment tasks with every `git push`. You do not need to separately set up continuous deployment in VSTS. After this process completes, the **Deployment** section of your app's blade will show an **Active Deployment** message that indicates deployment has succeeded.
+    App Service creates an association with the selected repository, pulls in the files from the specified branch, and maintains a clone of your repository for your App Service app. When you configure VSTS continuous deployment from the Azure Portal Preview, the integration uses the App Service [Kudu deployment engine](https://github.com/projectkudu/kudu/wiki), which already automates build and deployment tasks with every `git push`. You do not need to separately set up continuous deployment in VSTS. After this process completes, the **Deployment** section of your app's blade will show an **Active Deployment** message that indicates deployment has succeeded.
 
-5. To verify the app is successfully deployed, click the **URL** at the top of the app's blade in the Azure Portal. 
+5. To verify the app is successfully deployed, click the **URL** at the top of the app's blade in the Azure Portal Preview. 
 
 6. To verify that continuous deployment is occurring from the repository of your choice, push a change to the repository. Your app should update to reflect the changes shortly after the push to the repository completes. You can verify that it has pulled in the update in the **Deployments** blade of your app.
 
@@ -61,7 +68,7 @@ Once you have set up your repository as described, and configured your app in Az
 
 To disable continuous deployment, 
 
-1. In your app's blade in the [Azure Portal], click **Settings > Deployment Source**. Then click **Disconnect** in the **Deployments** blade.
+1. In your app's blade in the [Azure Portal Preview], click **Settings > Deployment Source**. Then click **Disconnect** in the **Deployments** blade.
 
     ![](./media/app-service-continuous-deployment/cd_disconnect.png)	
 
@@ -75,10 +82,8 @@ To disable continuous deployment,
 * [Git documentation]
 * [Project Kudu](https://github.com/projectkudu/kudu/wiki)
 
->[AZURE.NOTE] If you want to get started with Azure App Service before signing up for an Azure account, go to [Try App Service](https://tryappservice.azure.com/), where you can immediately create a short-lived starter web app in App Service. No credit cards required; no commitments.
-
 [Azure App Service]: /documentation/articles/app-service-changes-existing-services/ 
-[Azure Portal]: https://portal.azure.cn
+[Azure Portal Preview]: https://portal.azure.cn
 [VSTS Portal]: https://www.visualstudio.com/products/visual-studio-team-services-vs.aspx
 [Installing Git]: http://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%AE%89%E8%A3%85-Git
 [How to use PowerShell for Azure]: /documentation/articles/powershell-install-configure/

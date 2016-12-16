@@ -1,3 +1,4 @@
+<!-- deleted in Global -->
 
 <properties
 	pageTitle="Hybrid cloud test environments in Azure | Azure"

@@ -1,3 +1,5 @@
+<!-- deleted in Global -->
+
 <properties 
 	pageTitle="Simulated hybrid cloud test environment | Azure" 
 	description="Create a simulated hybrid cloud environment for IT pro or development testing, using two Azure virtual networks and a VNet-to-VNet connection." 

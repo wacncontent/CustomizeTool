@@ -20,14 +20,14 @@
 
 The Remote Desktop (RDP) connection to your Windows-based Azure virtual machine can fail due to various reasons. The issue can be with the Remote Desktop service on the VM, the network connection, or the Remote Desktop client on your host computer. This article will help you find out the causes and correct them.  
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
 
-This article applies to Azure virtual machines running Windows. For Azure virtual machines running Linux, see [Troubleshoot SSH connection to an Azure VM](/documentation/articles/virtual-machines-troubleshoot-ssh-connections).
+This article applies to Azure virtual machines running Windows. For Azure virtual machines running Linux, see [Troubleshoot SSH connection to an Azure VM](/documentation/articles/virtual-machines-linux-troubleshoot-ssh-connection/).
 
 If you need more help at any point in this article, you can contact the Azure experts on [the MSDN Azure and the CSDN Azure forums](/support/forums/). Alternatively, you can also file an Azure support incident. Go to the [Azure Support site](/support/contact/) and click on **Get Support**.
 
 
-##<a id="quickfixrdp"></a> Fix common Remote Desktop errors
+## <a id="quickfixrdp"></a> Fix common Remote Desktop errors
 
 This section lists quick fix steps for common Remote Desktop connection issues.
 
@@ -55,7 +55,7 @@ These steps may resolve most Remote Desktop connection failures in Azure virtual
 These steps may resolve most Remote Desktop connection failures in Azure virtual machines created using the Resource Manager deployment model. After each step, try reconnecting to the VM.
 
 - _Reset Remote Access_ using Powershell<br>
-	a. If you haven't already, [install Azure PowerShell and connect to your Azure subscription](/documentation/articles/powershell-install-configure) using the Azure AD method. Note that you do not need to switch to Resource Manager mode in the new Azure PowerShell versions 1.0.x.
+	a. If you haven't already, [install Azure PowerShell and connect to your Azure subscription](/documentation/articles/powershell-install-configure/) using the Azure AD method. Note that you do not need to switch to Resource Manager mode in the new Azure PowerShell versions 1.0.x.
 
 	b. Reset your RDP connection, by using either of the following Azure PowerShell commands. Replace the `myRG`, `myVM`, `myVMAccessExtension` and location with values relevant to your setup.
 
@@ -94,7 +94,7 @@ The following are the most common errors you might see when trying to Remote Des
 
 5. [Remote Desktop connection error: This computer can't connect to the remote computer](#rdpconnect).
 
-###<a id="rdplicense"></a> Remote Desktop connection error: The remote session was disconnected because there are no Remote Desktop License Servers available to provide a license.
+### <a id="rdplicense"></a> Remote Desktop connection error: The remote session was disconnected because there are no Remote Desktop License Servers available to provide a license.
 
 Cause: The 120-day licensing grace period for the Remote Desktop Server role has expired and you need to install licenses.
 
@@ -106,7 +106,7 @@ If you don't actually need more than two simultaneous Remote Desktop connections
 
 Also see the [Azure VM fails with "No Remote Desktop License Servers available"](http://blogs.msdn.com/b/wats/archive/2014/01/21/rdp-to-azure-vm-fails-with-quot-no-remote-desktop-license-servers-available-quot.aspx) blog post.
 
-###<a id="rdpname"></a> Remote Desktop connection error: Remote Desktop can't find the computer "name".
+### <a id="rdpname"></a> Remote Desktop connection error: Remote Desktop can't find the computer "name".
 
 Cause: The Remote Desktop client on your computer could not resolve the name of the computer in the settings of the RDP file.
 
@@ -120,7 +120,7 @@ Possible solutions:
 
 The address portion in this RDP file has the fully qualified domain name of the cloud service containing the VM (tailspin-azdatatier.chinacloudapp.cn in this example) and the external TCP port of the endpoint for Remote Desktop traffic (55919).
 
-###<a id="rdpauth"></a> Remote Desktop connection error: An authentication error has occurred. The Local Security Authority cannot be contacted.
+### <a id="rdpauth"></a> Remote Desktop connection error: An authentication error has occurred. The Local Security Authority cannot be contacted.
 
 Cause: The target VM could not locate the security authority in the user name portion of your credentials.
 
@@ -132,7 +132,7 @@ Possible solutions:
 - If the account is on Active Directory domain, check the spelling of the domain name.
 - If it is an Active Directory domain account and the domain name is spelled correctly, verify that a domain controller is available in that domain. This can be a common issue in an Azure virtual network that contains domain controllers, in which a domain controller computer is not started. As a workaround, you can use a local administrator account instead of a domain account.
 
-###<a id="wincred"></a> Windows Security error: Your credentials did not work.
+### <a id="wincred"></a> Windows Security error: Your credentials did not work.
 
 Cause: The target VM could not validate your account name and password.
 
@@ -145,9 +145,9 @@ If you have promoted your VM to a domain controller in a new Active Directory fo
 
 Make sure that the account name is a name that the virtual machine can verify as a valid account, and that the password is correct.
 
-If you need to change the password of the local administrator account, see [How to reset a password or the Remote Desktop service for Windows virtual machines](/documentation/articles/virtual-machines-windows-reset-password).
+If you need to change the password of the local administrator account, see [How to reset a password or the Remote Desktop service for Windows virtual machines](/documentation/articles/virtual-machines-windows-reset-rdp/).
 
-###<a id="rdpconnect"></a> Remote Desktop connection error: This computer can't connect to the remote computer.
+### <a id="rdpconnect"></a> Remote Desktop connection error: This computer can't connect to the remote computer.
 
 Cause: The account used to connect does not have Remote Desktop logon rights.
 
@@ -157,17 +157,17 @@ Make sure that the account you are using to connect has Remote Desktop logon rig
 
 ## Troubleshooting generic Remote Desktop errors
 
-If none of these errors occurred and you still could not connect to the VM via Remote Desktop, read [the detailed troubleshooting guide for Remote Desktop](/documentation/articles/virtual-machines-rdp-detailed-troubleshoot).
+If none of these errors occurred and you still could not connect to the VM via Remote Desktop, read [the detailed troubleshooting guide for Remote Desktop](/documentation/articles/virtual-machines-windows-detailed-troubleshoot-rdp/).
 
 
 ## Additional resources
 
 [Azure IaaS (Windows) diagnostics package](https://home.diagnostics.support.microsoft.com/SelfHelp?knowledgebaseArticleFilter=2976864)
 
-[How to reset a password or the Remote Desktop service for Windows virtual machines](/documentation/articles/virtual-machines-windows-reset-password)
+[How to reset a password or the Remote Desktop service for Windows virtual machines](/documentation/articles/virtual-machines-windows-reset-rdp/)
 
-[How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure)
+[How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure/)
 
-[Troubleshoot Secure Shell (SSH) connections to a Linux-based Azure virtual machine](/documentation/articles/virtual-machines-troubleshoot-ssh-connections)
+[Troubleshoot Secure Shell (SSH) connections to a Linux-based Azure virtual machine](/documentation/articles/virtual-machines-linux-troubleshoot-ssh-connection/)
 
-[Troubleshoot access to an application running on an Azure virtual machine](/documentation/articles/virtual-machines-troubleshoot-access-application)
+[Troubleshoot access to an application running on an Azure virtual machine](/documentation/articles/virtual-machines-linux-troubleshoot-app-connection/)

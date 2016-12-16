@@ -19,11 +19,11 @@
 
 This article shows you how to get started using Docker and [Compose](http://github.com/docker/compose) to define and run a complex application on a Linux virtual machine in Azure. With Compose (the successor to *Fig*), you use a simple text file to define an application consisting of multiple Docker containers. Then you spin up your application in a single command which does everything to get it running on the VM. As an example, this article shows you how to quickly set up a WordPress blog with a backend MariaDB SQL database, but you can also use Compose to set up more complex applications.
 
-> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the classic deployment model. Microsoft recommends that most new deployments use the Resource Manager model.
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager model.
 
 ## Step 1: Set up a Linux VM as a Docker host
 
-You can use a variety of Azure procedures and available images in the Azure Markeplace to create a Linux VM and set it up as a Docker host. For example, see [Using the Docker VM Extension from the Azure Command-Line Interface](/documentation/articles/virtual-machines-docker-with-xplat-cli) for a quick procedure to create an Ubuntu VM with the Docker VM extension. When you use the Docker VM extension, your VM is automatically set up as a Docker host. The example in that article shows you how to use the the [Azure command-line interface for Mac, Linux, and Windows](/documentation/articles/xplat-cli-install) (the Azure CLI) in Service Management mode to create the VM.
+You can use a variety of Azure procedures and available images in the Azure Markeplace to create a Linux VM and set it up as a Docker host. For example, see [Using the Docker VM Extension from the Azure Command-Line Interface](/documentation/articles/virtual-machines-linux-classic-cli-use-docker/) for a quick procedure to create an Ubuntu VM with the Docker VM extension. When you use the Docker VM extension, your VM is automatically set up as a Docker host. The example in that article shows you how to use the the [Azure command-line interface for Mac, Linux, and Windows](/documentation/articles/xplat-cli-install/) (the Azure CLI) in Service Management mode to create the VM.
 
 ## Step 2: Install Compose
 
@@ -101,7 +101,7 @@ You should now see the WordPress start screen, where you can complete the instal
 ## Next steps
 
 * Check out the [Compose CLI reference](http://docs.docker.com/compose/reference/) and [user guide](http://docs.docker.com/compose/) for more examples of building and deploying multi-container apps.
-* Try integrating Docker Compose with a [Docker Swarm](/documentation/articles/virtual-machines-docker-swarm) cluster. See
+* Try integrating Docker Compose with a [Docker Swarm](/documentation/articles/virtual-machines-linux-docker-swarm/) cluster. See
 [Docker Compose/Swarm integration](https://github.com/docker/compose/blob/master/SWARM.md) for scenarios.
 
 <!--Image references-->

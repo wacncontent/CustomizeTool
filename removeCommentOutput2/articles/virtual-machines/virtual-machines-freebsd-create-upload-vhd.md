@@ -19,7 +19,7 @@
 
 This article shows you how to create and upload a virtual hard disk (VHD) that contains the FreeBSD operating system so you can use it as your own image to create a virtual machine (VM) in Azure.
 
-> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the classic deployment model. Microsoft recommends that most new deployments use the Resource Manager model.
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager model.
 
 
 ##Prerequisites##
@@ -118,7 +118,7 @@ You need a storage account in Azure to upload a .vhd file so it can be used in A
 
 	- Choose the **location or affinity group** for the storage account. An affinity group lets you place your cloud services and storage in the same data center.
 
-	- Decide whether to use **geo-replication** for the storage account. Geo-replication is turned on by default. This option replicates your data to a secondary location, at no cost to you, so that your storage fails over to that location if a major failure occurs at the primary location. The secondary location is assigned automatically, and can't be changed. If you need more control over the location of your cloud-based storage due to legal requirements or organizational policy, you can turn off geo-replication. However, be aware that if you later turn on geo-replication, you will be charged a one-time data transfer fee to replicate your existing data to the secondary location. Storage services without geo-replication are offered at a discount. More details on managing geo-replication of Storage accounts can be found here: [Create, manage, or delete a storage account](/documentation/articles/storage-create-storage-account#replication-options).
+	- Decide whether to use **geo-replication** for the storage account. Geo-replication is turned on by default. This option replicates your data to a secondary location, at no cost to you, so that your storage fails over to that location if a major failure occurs at the primary location. The secondary location is assigned automatically, and can't be changed. If you need more control over the location of your cloud-based storage due to legal requirements or organizational policy, you can turn off geo-replication. However, be aware that if you later turn on geo-replication, you will be charged a one-time data transfer fee to replicate your existing data to the secondary location. Storage services without geo-replication are offered at a discount. More details on managing geo-replication of Storage accounts can be found here: [Create, manage, or delete a storage account](/documentation/articles/storage-create-storage-account/#replication-options).
 
 	![Enter storage account details](./media/virtual-machines-freebsd-create-upload-vhd/Storage-create-account.png)
 
@@ -178,7 +178,7 @@ Before you can upload a .vhd file, you need to establish a secure connection bet
 
    For more information, see [Get Started with Azure Cmdlets](http://msdn.microsoft.com/zh-cn/library/azure/jj554332.aspx)
 
-   For more information on installing and configuring PowerShell, see [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure).
+   For more information on installing and configuring PowerShell, see [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure/).
 
 ## Step 4: Upload the .vhd file ##
 

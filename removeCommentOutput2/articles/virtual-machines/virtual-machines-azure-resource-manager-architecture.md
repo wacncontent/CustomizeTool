@@ -17,7 +17,7 @@
 
 # Azure Resource Manager Architecture
 
-> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the Resource Manager deployment model, which Microsoft recommends for most new deployments instead of the classic deployment model.
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the Resource Manager deployment model, which Azure recommends for most new deployments instead of the classic deployment model.
 
 
 
@@ -67,8 +67,8 @@ This application consists of:
 
 All of these resources of this application are managed through the single resource group that contains them.
 
-You can also see the componentization and dependent relationships between resources when you create a Resource Manager-based virtual machine using Azure PowerShell or the Azure CLI. Before you can run the command that creates the virtual machine, you must create a resource group, a storage account, a virtual network with a subnet, and a NIC with an IP address. For more information, see [Create and preconfigure a Windows Virtual Machine with Resource Manager and Azure PowerShell](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-resource-manager-vms).
+You can also see the componentization and dependent relationships between resources when you create a Resource Manager-based virtual machine using Azure PowerShell or the Azure CLI. Before you can run the command that creates the virtual machine, you must create a resource group, a storage account, a virtual network with a subnet, and a NIC with an IP address. For more information, see [Create and preconfigure a Windows Virtual Machine with Resource Manager and Azure PowerShell](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-resource-manager-vms/).
 
 ## Next steps
 
-Learn about the resources that can be deployed with the resource manager deployment model by reviewing [Azure Compute, Network and Storage Providers under Azure Resource Manager](/documentation/articles/virtual-machines-azurerm-versus-azuresm).
+Learn about the resources that can be deployed with the resource manager deployment model by reviewing [Azure Compute, Network and Storage Providers under Azure Resource Manager](/documentation/articles/virtual-machines-azurerm-versus-azuresm/).

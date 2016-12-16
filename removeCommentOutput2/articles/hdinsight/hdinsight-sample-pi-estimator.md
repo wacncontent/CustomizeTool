@@ -29,8 +29,8 @@ The other samples that are available to help you get up to speed in using HDInsi
 **Other related articles:**
 
 * [Get Started with Azure HDInsight][hdinsight-get-started]
-* [Develop Java MapReduce programs for Hadoop in HDInsight](/documentation/articles/hdinsight-develop-deploy-java-mapreduce)
-* [Submit Hadoop jobs in HDInsight](/documentation/articles/hdinsight-submit-hadoop-jobs-programmatically)
+* [Develop Java MapReduce programs for Hadoop in HDInsight](/documentation/articles/hdinsight-develop-deploy-java-mapreduce/)
+* [Submit Hadoop jobs in HDInsight](/documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/)
 * [Sample: 10GB GraySort][hdinsight-sample-10gb-graysort]
 * [Sample: Wordcount][hdinsight-sample-wordcount]
 * [Sample: C# Steaming][hdinsight-sample-cs-streaming]
@@ -44,8 +44,8 @@ The other samples that are available to help you get up to speed in using HDInsi
 **Prerequisites**:
 
 - **An Azure subscription**. See [Get Azure trial](/pricing/1rmb-trial/).
-- **an HDInsight cluster**. For instructions on the various ways in which such clusters can be created, see [Provision HDInsight Clusters](/documentation/articles/hdinsight-provision-clusters-v1).
-- **A workstation with Azure PowerShell**. See [Install and use Azure PowerShell](/documentation/articles/powershell-install-configure).
+- **an HDInsight cluster**. For instructions on the various ways in which such clusters can be created, see [Provision HDInsight Clusters](/documentation/articles/hdinsight-provision-clusters-v1/).
+- **A workstation with Azure PowerShell**. See [Install and use Azure PowerShell](/documentation/articles/powershell-install-configure/).
 <a id="run-sample"></a>
 
 
@@ -468,16 +468,16 @@ For tutorials that describe running other samples and provide instructions on us
 
 [hdinsight-sdk-documentation]: http://msdn.microsoft.com/zh-cn/library/dn479185.aspx
 
-[powershell-install-configure]: /documentation/articles/powershell-install-configure
+[powershell-install-configure]: /documentation/articles/powershell-install-configure/
 
-[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1/
 
-[hdinsight-samples]: /documentation/articles/hdinsight-run-samples
-[hdinsight-sample-10gb-graysort]: /documentation/articles/hdinsight-sample-10gb-graysort
-[hdinsight-sample-csharp-streaming]: /documentation/articles/hdinsight-sample-csharp-streaming
-[hdinsight-sample-pi-estimator]: /documentation/articles/hdinsight-sample-pi-estimator
-[hdinsight-sample-wordcount]: /documentation/articles/hdinsight-sample-wordcount
+[hdinsight-samples]: /documentation/articles/hdinsight-run-samples/
+[hdinsight-sample-10gb-graysort]: /documentation/articles/hdinsight-sample-10gb-graysort/
+[hdinsight-sample-csharp-streaming]: /documentation/articles/hdinsight-sample-csharp-streaming/
+[hdinsight-sample-pi-estimator]: /documentation/articles/hdinsight-sample-pi-estimator/
+[hdinsight-sample-wordcount]: /documentation/articles/hdinsight-sample-wordcount/
 
-[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
-[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
+[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive/
+[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig/
 [hdinsight-sample-cs-streaming]: /documentation/articles/hdinsight-sample-csharp-streaming

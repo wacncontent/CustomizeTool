@@ -1,33 +1,29 @@
 <properties
-   pageTitle="Technical articles for classic Windows VMs | Azure"
-   description="A complete list of Azure documentation articles for Windows virtual machines in the classic deployment model"
-   services="virtual-machines-windows"
-   documentationCenter=""
-   authors="cynthn"
-   manager="timlt"
-   tags="azure-service-management"
-   editor=""/>
-
+    pageTitle="Technical articles for classic Windows VMs | Azure"
+    description="A complete list of Azure documentation articles for Windows virtual machines in the classic deployment model"
+    services="virtual-machines-windows"
+    documentationcenter=""
+    author="dlepow"
+    manager="timlt"
+    tags="azure-service-management"
+    editor="" />
 <tags
-   ms.service="virtual-machines-windows"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="vm-windows"
-   ms.workload="infrastructure-services"
-   ms.date="08/05/2016"
-   wacn.date=""
-   ms.author="cynthn"/>
+    ms.assetid="7f9a508b-34ec-4bdb-92d1-8844480369d5"
+    ms.service="virtual-machines-windows"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.tgt_pltfrm="vm-windows"
+    ms.workload="infrastructure-services"
+    ms.date="08/05/2016"
+    wacn.date=""
+    ms.author="danlep" />
 
 # Technical articles for Windows VMs in the classic deployment model
-
-
 Find all the documentation you need to create and manage Windows-based Azure virtual machines in the classic deployment model.
 
 [AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-classic-include.md)]
 
-
 ## Overview
-
 [About virtual machines](/documentation/articles/virtual-machines-windows-about/)
 
 [Frequently asked question about Azure Virtual Machines created with the classic deployment model](/documentation/articles/virtual-machines-windows-classic-faq/)
@@ -36,16 +32,12 @@ Find all the documentation you need to create and manage Windows-based Azure vir
 
 [Virtual Machines and Containers in Azure](/documentation/articles/virtual-machines-windows-containers/)
 
-
-
 ## Environment setup
-
 [Free account](https://azure.microsoft.com/free/)
- 
+
 [Install Azure PowerShell](/documentation/articles/powershell-install-configure/)
 
 [Install Azure CLI](/documentation/articles/xplat-cli-install/)
-
 
 ## Get started
 [Learning path for Windows VMs](https://azure.microsoft.com/documentation/learning-paths/virtual-machines/)
@@ -54,11 +46,7 @@ Find all the documentation you need to create and manage Windows-based Azure vir
 
 [How to log on to a classic virtual machine running Windows Server](/documentation/articles/virtual-machines-windows-classic-connect-logon/)
 
-
-
-
 ## Plan
-
 [About images for classic virtual machines](/documentation/articles/virtual-machines-windows-classic-about-images/)
 
 [Sizes for virtual machines](/documentation/articles/virtual-machines-windows-sizes/)
@@ -71,9 +59,7 @@ Find all the documentation you need to create and manage Windows-based Azure vir
 
 [Create an availability set for virtual machines](/documentation/articles/virtual-machines-windows-classic-configure-availability/)
 
-
 ## Deploy
-
 [Create a custom virtual machine running Windows](/documentation/articles/virtual-machines-windows-classic-createportal/)
 
 [Capture a Windows virtual machine created in the classic deployment model](/documentation/articles/virtual-machines-windows-classic-capture-image/)
@@ -86,13 +72,11 @@ Find all the documentation you need to create and manage Windows-based Azure vir
 
 [Injecting custom data into an Azure virtual machine](/documentation/articles/virtual-machines-windows-classic-inject-custom-data/)
 
-
 ## Manage
-
 [Manage your virtual machines by using Azure PowerShell](/documentation/articles/virtual-machines-windows-classic-manage-psh/)
-	
+
 [Connect classic VNets to new VNets](/documentation/articles/vpn-gateway-connect-different-deployment-models-powershell/)
-	
+
 [About the virtual machine agent and extensions](/documentation/articles/virtual-machines-windows-classic-agents-and-extensions/)
 
 [Manage virtual machine extensions](/documentation/articles/virtual-machines-windows-classic-manage-extensions/)
@@ -105,16 +89,13 @@ Find all the documentation you need to create and manage Windows-based Azure vir
 
 [Platform-supported migration from classic to Azure Resource Manager](/documentation/articles/virtual-machines-windows-migration-classic-resource-manager-deep-dive/)
 
-
-
 ## Configure
-
 [How to reset a password or the Remote Desktop service for a Windows VM](/documentation/articles/virtual-machines-windows-reset-rdp/)
 
 [About virtual machine extensions and features](/documentation/articles/virtual-machines-windows-extensions-features/)
 
 [How to install and configure Symantec Endpoint Protection on a Windows VM](/documentation/articles/virtual-machines-windows-classic-install-symantec/)
-	
+
 [How to install and configure Trend Micro Deep Security as a Service on a Windows VM](/documentation/articles/virtual-machines-windows-classic-install-trend/)
 
 [How to configure an availability set for virtual machines in the classic deployment model](/documentation/articles/virtual-machines-windows-classic-configure-availability/)
@@ -122,9 +103,8 @@ Find all the documentation you need to create and manage Windows-based Azure vir
 [How to set up endpoints on a classic Azure virtual machine](/documentation/articles/virtual-machines-windows-classic-setup-endpoints/)
 
 ## Storage
-
 [About disks and VHDs for Azure virtual machines](/documentation/articles/virtual-machines-windows-about-disks-vhds/)
-	
+
 [How to attach a data disk to a classic Windows virtual machine](/documentation/articles/virtual-machines-windows-classic-attach-disk/)
 
 [How to detach a data disk from a classic Windows virtual machine](/documentation/articles/virtual-machines-windows-classic-detach-disk/)
@@ -132,19 +112,15 @@ Find all the documentation you need to create and manage Windows-based Azure vir
 [Use the D drive as a data drive on a Windows VM](/documentation/articles/virtual-machines-windows-classic-change-drive-letter/)
 
 ## Networking
-
 [Virtual Network Overview](/documentation/articles/virtual-networks-overview/)
 
 [Connect virtual machines created with the classic deployment model with a virtual network or cloud service](/documentation/articles/virtual-machines-windows-classic-connect-vms/)
-	
+
 [Manage NSGs using Azure PowerShell](/documentation/articles/virtual-networks-create-nsg-classic-ps/)
-	
+
 [Create a load balancer](/documentation/articles/load-balancer-get-started-internet-classic-portal/)
 
-	
-
 ## Develop
-
 [Create and Manage Azure Virtual Machines in Visual Studio](/documentation/articles/virtual-machines-windows-classic-manage-visual-studio/)
 
 [Creating a virtual machine for a web application with Visual Studio](/documentation/articles/virtual-machines-windows-classic-web-app-visual-studio/)
@@ -152,11 +128,8 @@ Find all the documentation you need to create and manage Windows-based Azure vir
 [How to run a compute-intensive task in Java on a virtual machine](/documentation/articles/virtual-machines-windows-classic-java-run-compute-intensive-task/)
 
 [Django Hello World web application on a Windows Server VM](/documentation/articles/virtual-machines-windows-classic-python-django-web-app/)
-		
-
 
 ## Workloads
-
 [HPC Pack](/documentation/articles/virtual-machines-windows-hpcpack-cluster-options/)
 
 [MongoDB](/documentation/articles/virtual-machines-windows-classic-install-mongodb/)
@@ -171,7 +144,6 @@ Find all the documentation you need to create and manage Windows-based Azure vir
 
 [Tomcat](/documentation/articles/virtual-machines-windows-classic-java-run-tomcat-app-server/)
 
-
 ## Reference
 [Azure CLI commands in Service Management mode](/documentation/articles/virtual-machines-command-line-tools/)
 
@@ -182,7 +154,6 @@ Find all the documentation you need to create and manage Windows-based Azure vir
 [Azure Service Management PowerShell cmdlet reference documentation](https://msdn.microsoft.com/zh-cn/library/azure/dn708504.aspx)
 
 ## Troubleshooting
-
 [Troubleshoot Remote Desktop connections to an Azure virtual machine running Windows](/documentation/articles/virtual-machines-windows-troubleshoot-rdp-connection/)
 
 [Troubleshoot Access to an Application Running on an Azure Virtual Machine](/documentation/articles/virtual-machines-windows-troubleshoot-app-connection/)
@@ -192,7 +163,3 @@ Find all the documentation you need to create and manage Windows-based Azure vir
 [Troubleshoot classic deployment issues with creating a new Windows virtual machine in Azure](/documentation/articles/virtual-machines-windows-classic-troubleshoot-deployment-new-vm/)
 
 [Troubleshoot classic deployment issues with restarting or resizing an existing Windows Virtual Machine in Azure](/documentation/articles/virtual-machines-windows-classic-restart-resize-error-troubleshooting/)
-
-
-
-

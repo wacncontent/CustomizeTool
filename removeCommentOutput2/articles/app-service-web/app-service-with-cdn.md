@@ -20,7 +20,7 @@ Azure Websites can be integrated with [Azure CDN](/home/features/cdn/), adding t
 
 Integrating Azure Web apps with Azure CDN gives you the following advantages:
 
-- Integrate content deployment (images, scripts, and stylesheets) as part of your Azure web app's [continuous deployment](/documentation/articles/web-sites-publish-source-control) process
+- Integrate content deployment (images, scripts, and stylesheets) as part of your Azure web app's [continuous deployment](/documentation/articles/web-sites-publish-source-control/) process
 - Easily upgrade the NuGet packages in your web app in Azure Websites, such as jQuery or Bootstrap versions 
 - Manage your Web application and your CDN-served content from the same Visual Studio interface
 - Integrate ASP.NET bundling and minification with Azure CDN
@@ -38,7 +38,6 @@ This tutorial has the following prerequisites:
 
 > [AZURE.NOTE] You need an Azure account to complete this tutorial:
 > + You can [open an Azure account for free](/pricing/1rmb-trial/?WT.mc_id=A261C142F) - You get credits you can use to try out paid Azure services, and even after they're used up you can keep the account and use free Azure services, such as Web App.
-> + You can [activate MSDN subscriber benefits](/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A261C142F) - Your MSDN subscription gives you credits every month that you can use for paid Azure services.
 
 ## Deploy an Azure web app with an integrated CDN endpoint ##
 
@@ -150,7 +149,7 @@ In [Serve content from controller actions through Azure CDN](#serve-content-from
 
 ## Serve content from controller actions through Azure CDN ##
 
-When you integrate Web App with Azure CDN, it is relatively easy to serve content from controller actions through the Azure CDN. Again, if you decide to serve the entire Azure web app through your CDN, you don't need to do this at all since all the controller actions are reachable through the CDN already. But for the reasons I already pointed out in [Deploy an Azure web app with an integrated CDN endpoint](#deploy-an-azure-web-app-with-an-integrated-cdn-endpoint), you may decide against this and choose instead to select the controller action you want to serve from Azure CDN. [Maarten Balliauw](https://twitter.com/maartenballiauw) shows you how to do it with a fun MemeGenerator controller in [Reducing latency on the web with the Azure CDN](http://channel9.msdn.com/events/TechDays/Techdays-2014-the-Netherlands/Reducing-latency-on-the-web-with-the-Windows-Azure-CDN). I will simply reproduce it here.
+When you integrate Web App with Azure CDN, it is relatively easy to serve content from controller actions through the Azure CDN. Again, if you decide to serve the entire Azure web app through your CDN, you don't need to do this at all since all the controller actions are reachable through the CDN already. But for the reasons I already pointed out in [Deploy an Azure web app with an integrated CDN endpoint](#deploy-an-azure-web-app-with-an-integrated-cdn-endpoint), you may decide against this and choose instead to select the controller action you want to serve from Azure CDN. Maarten Balliauw shows you how to do it with a fun MemeGenerator controller in [Reducing latency on the web with the Azure CDN](http://channel9.msdn.com/events/TechDays/Techdays-2014-the-Netherlands/Reducing-latency-on-the-web-with-the-Windows-Azure-CDN). I will simply reproduce it here.
 
 Suppose in your web app you want to generate memes based on a young Chuck Norris image (photo by [Alan Light](http://www.flickr.com/photos/alan-light/218493788/)) like this:
 
@@ -550,8 +549,8 @@ The [Bundle](http://msdn.microsoft.com/zh-cn/library/system.web.optimization.bun
 
 ## More Information ##
 - [Overview of the Azure Content Delivery Network (CDN)](http://msdn.microsoft.com/zh-cn/library/azure/ff919703.aspx)
-- [Serve Content from Azure CDN in Your Web Application](/documentation/articles/cdn-serve-content-from-cdn-in-your-web-application)
-- [Integrate a cloud service with Azure CDN](/documentation/articles/cdn-cloud-service-with-cdn)
+- [Serve Content from Azure CDN in Your Web Application](/documentation/articles/cdn-serve-content-from-cdn-in-your-web-application/)
+- [Integrate a cloud service with Azure CDN](/documentation/articles/cdn-cloud-service-with-cdn/)
 - [ASP.NET Bundling and Minification](http://www.asp.net/mvc/tutorials/mvc-4/bundling-and-minification)
-- [Using CDN for Azure](/documentation/articles/cdn-how-to-use)
+- [Using CDN for Azure](/documentation/articles/cdn-how-to-use/)
  

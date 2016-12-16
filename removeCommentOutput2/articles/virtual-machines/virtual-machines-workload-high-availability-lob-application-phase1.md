@@ -17,9 +17,9 @@
 
 # Line of Business Application Workload Phase 1: Configure Azure
  
-> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the Resource Manager deployment model, which Microsoft recommends for most new deployments instead of the classic deployment model.
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the Resource Manager deployment model, which Azure recommends for most new deployments instead of the classic deployment model.
  
-In this phase of deploying an intranet-only, high-availability line of business application in Azure infrastructure services, you build out the Azure networking and storage infrastructure. You must complete this phase before moving on to [Phase 2](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-phase2). See [Deploy a High-Availability Line of Business Application in Azure](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-overview) for all of the phases.
+In this phase of deploying an intranet-only, high-availability line of business application in Azure infrastructure services, you build out the Azure networking and storage infrastructure. You must complete this phase before moving on to [Phase 2](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-phase2/). See [Deploy a High-Availability Line of Business Application in Azure](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-overview/) for all of the phases.
 
 Azure must be provisioned with these basic network components:
 
@@ -60,7 +60,7 @@ Item | Subnet name | Subnet address space | Purpose
 
 **Table S: Subnets in the virtual network**
 
-> [AZURE.NOTE] This pre-defined architecture uses a single subnet for simplicity. If you want to overlay a set of traffic filters to emulate subnet isolation, you can use Azure [Network Security Groups](/documentation/articles/virtual-networks-nsg).
+> [AZURE.NOTE] This pre-defined architecture uses a single subnet for simplicity. If you want to overlay a set of traffic filters to emulate subnet isolation, you can use Azure [Network Security Groups](/documentation/articles/virtual-networks-nsg/).
 
 For the two on-premises DNS servers that you want to use when initially setting up the domain controllers in your virtual network, fill in Table D. Give each DNS server a friendly name and a single IP address. This friendly name does not need to match the host name or computer name of the DNS server. Note that two blank entries are listed, but you can add more. Work with your IT department to determine this list. 
 
@@ -178,7 +178,7 @@ Next, use these commands to create the gateways for the site-to-site VPN connect
 	$vnetConnectionKey="<Table V - Item 8 - Value column>"
 	$vnetConnection=New-AzureRMVirtualNetworkGatewayConnection -Name $vnetConnectionName -ResourceGroupName $rgName -Location $locName -ConnectionType IPsec -SharedKey $vnetConnectionKey -VirtualNetworkGateway1 $vnetGateway -LocalNetworkGateway2 $localGateway
 
-Next, configure your on-premises VPN device to connect to the Azure VPN gateway. For more information, see [Configure your VPN device](/documentation/articles/vpn-gateway-configure-vpn-gateway-mp#configure-your-vpn-device).
+Next, configure your on-premises VPN device to connect to the Azure VPN gateway. For more information, see [Configure your VPN device](/documentation/articles/vpn-gateway-configure-vpn-gateway-mp/#configure-your-vpn-device).
 
 To configure your on-premises VPN device, you will need the following:
 
@@ -216,5 +216,5 @@ This is the configuration resulting from the successful completion of this phase
 
 ## Next step
 
-- Use [Phase 2](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-phase2) to continue with the configuration of this workload.
+- Use [Phase 2](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-phase2/) to continue with the configuration of this workload.
 

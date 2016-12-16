@@ -1,3 +1,5 @@
+<!-- deleted in Global -->
+
 <properties
 	pageTitle="Azure infrastructure services implementation guidelines"
 	description="Learn about the key design and implementation guidelines for deploying an IT workload in Azure infrastructure services."

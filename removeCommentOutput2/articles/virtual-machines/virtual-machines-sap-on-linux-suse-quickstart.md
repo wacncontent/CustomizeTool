@@ -128,7 +128,7 @@ file is created, you can deploy the VM by using the following CLI command as an 
 
 You can find more details about JSON template files in [this article] (resource-group-authoring-templates.md) and [this webpage] (https://azure.microsoft.com/documentation/templates/).
 
-You can find more details about CLI and Azure Resource Manager in [this article](/documentation/articles/xplat-cli-azure-resource-manager).
+You can find more details about CLI and Azure Resource Manager in [this article](/documentation/articles/xplat-cli-azure-resource-manager/).
 
 ## SAP license and hardware key
 
@@ -155,7 +155,7 @@ if "no_root_squash" is set for the share. This was the solution in an internal t
 ## Logical volumes
 
 Logical Volume Manager (LVM) isn't fully validated on Azure. If you need a big logical volume across multiple Azure
-data disks (e.g. for the SAP database), you should use mdadm. [This article](/documentation/articles/virtual-machines-linux-configure-raid) describes how to set up Linux RAID on Azure by using mdadm.
+data disks (e.g. for the SAP database), you should use mdadm. [This article](/documentation/articles/virtual-machines-linux-configure-raid/) describes how to set up Linux RAID on Azure by using mdadm.
 
 
 ## Azure SUSE repository

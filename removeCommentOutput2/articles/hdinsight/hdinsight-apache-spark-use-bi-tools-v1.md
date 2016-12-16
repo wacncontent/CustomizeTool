@@ -1,4 +1,4 @@
-<!-- not suitable for Mooncake -->
+<!-- deleted in Global -->
 
 <properties 
 	pageTitle="Use BI tools with Apache Spark on HDInsight | Azure" 
@@ -18,7 +18,7 @@
 
 # Use BI tools with Apache Spark on HDInsight Windows (Preview)
 
-> [AZURE.NOTE] HDInsight now provides Spark clusters on Linux. For information on how to use BI tools with Spark cluster on HDInsight Linux, see [Use BI tools with Apache Spark on Azure HDInsight (Linux)](/documentation/articles/hdinsight-apache-spark-use-bi-tools).
+> [AZURE.NOTE] HDInsight now provides Spark clusters on Linux. For information on how to use BI tools with Spark cluster on HDInsight Linux, see [Use BI tools with Apache Spark on Azure HDInsight (Linux)](/documentation/articles/hdinsight-apache-spark-use-bi-tools/).
 
 Learn how to use Apache Spark in Azure HDInsight to do the following:
 
@@ -30,7 +30,7 @@ Learn how to use Apache Spark in Azure HDInsight to do the following:
 You must have the following:
 
 - An Azure subscription. See [Get Azure trial](/pricing/1rmb-trial/).
-- An Apache Spark cluster. For instructions, see [Create Apache Spark clusters in Azure HDInsight](/documentation/articles/hdinsight-apache-spark-provision-clusters).
+- An Apache Spark cluster. For instructions, see [Create Apache Spark clusters in Azure HDInsight](/documentation/articles/hdinsight-apache-spark-provision-clusters/).
 - A computer with Microsoft Spark ODBC driver installed (required for Spark on HDInsight to work with Tableau). You can install the driver from [here](http://go.microsoft.com/fwlink/?LinkId=616229).
 - BI tools such as [Power BI](http://www.powerbi.com/) or [Tableau Desktop](http://www.tableau.com/products/desktop). You can get a free preview subscription of Power BI from [http://www.powerbi.com/](http://www.powerbi.com/).
 
@@ -194,20 +194,20 @@ Once you have saved the data as a Hive table, you can use Power BI to connect to
 
 ##<a name="seealso"></a>See also
 
-* [Overview: Apache Spark on Azure HDInsight](/documentation/articles/hdinsight-apache-spark-overview-v1)
-* [Quick Start: create Apache Spark on HDInsight and run interactive queries using Spark SQL](/documentation/articles/hdinsight-apache-spark-zeppelin-notebook-jupyter-spark-sql)
-* [Use Spark in HDInsight for building machine learning applications](/documentation/articles/hdinsight-apache-spark-ipython-notebook-machine-learning-v1)
-* [Use Spark in HDInsight for building real-time streaming applications](/documentation/articles/hdinsight-apache-spark-csharp-apache-zeppelin-eventhub-streaming)
-* [Manage resources for the Apache Spark cluster in Azure HDInsight](/documentation/articles/hdinsight-apache-spark-resource-manager-v1)
+* [Overview: Apache Spark on Azure HDInsight](/documentation/articles/hdinsight-apache-spark-overview-v1/)
+* [Quick Start: create Apache Spark on HDInsight and run interactive queries using Spark SQL](/documentation/articles/hdinsight-apache-spark-zeppelin-notebook-jupyter-spark-sql/)
+* [Use Spark in HDInsight for building machine learning applications](/documentation/articles/hdinsight-apache-spark-ipython-notebook-machine-learning-v1/)
+* [Use Spark in HDInsight for building real-time streaming applications](/documentation/articles/hdinsight-apache-spark-csharp-apache-zeppelin-eventhub-streaming/)
+* [Manage resources for the Apache Spark cluster in Azure HDInsight](/documentation/articles/hdinsight-apache-spark-resource-manager-v1/)
 
 
-[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning-v1
-[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
-[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
+[hdinsight-versions]: /documentation/articles/hdinsight-component-versioning-v1/
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data/
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage/
 
 
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: /pricing/member-offers/
 [azure-trial]: /pricing/1rmb-trial/
 [azure-management-portal]: https://manage.windowsazure.cn/
-[azure-create-storageaccount]: /documentation/articles/storage-create-storage-account
+[azure-create-storageaccount]: /documentation/articles/storage-create-storage-account/

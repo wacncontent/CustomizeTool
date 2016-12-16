@@ -19,27 +19,27 @@
 # Create a Linux virtual machine
 
 > [AZURE.SELECTOR]
-- [Portal - Windows](/documentation/articles/virtual-machines-windows-tutorial-classic-portal)
-- [PowerShell](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-resource-manager-vms)
-- [PowerShell - Template](/documentation/articles/virtual-machines-create-windows-powershell-resource-manager-template)
-- [Portal - Linux](/documentation/articles/virtual-machines-linux-tutorial-portal-rm)
-- [CLI](/documentation/articles/virtual-machines-linux-tutorial)
+- [Portal - Windows](/documentation/articles/virtual-machines-windows-classic-tutorial/)
+- [PowerShell](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-resource-manager-vms/)
+- [PowerShell - Template](/documentation/articles/virtual-machines-create-windows-powershell-resource-manager-template/)
+- [Portal - Linux](/documentation/articles/virtual-machines-linux-portal-create/)
+- [CLI](/documentation/articles/virtual-machines-linux-quick-create-cli/)
 
-Creating a Linux virtual machine (VM) is easy to do from the command line or from the portal. This tutorial shows you how to use the Azure Command-Line Interface (CLI) for Mac, Linux, and Windows to quickly create an Ubuntu Server VM running in Azure, connect to it using **ssh**, and create and mount a new disk. This topic uses an Ubuntu Server VM, but you can also create Linux virtual machine using [your own images as templates](/documentation/articles/virtual-machines-linux-create-upload-vhd).
+Creating a Linux virtual machine (VM) is easy to do from the command line or from the portal. This tutorial shows you how to use the Azure Command-Line Interface (CLI) for Mac, Linux, and Windows to quickly create an Ubuntu Server VM running in Azure, connect to it using **ssh**, and create and mount a new disk. This topic uses an Ubuntu Server VM, but you can also create Linux virtual machine using [your own images as templates](/documentation/articles/virtual-machines-linux-classic-create-upload-vhd/).
 
-> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the Resource Manager deployment model, which Microsoft recommends for most new deployments instead of the classic deployment model.
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the Resource Manager deployment model, which Azure recommends for most new deployments instead of the classic deployment model.
 
-[AZURE.INCLUDE [free-trial-note](../includes/free-trial-note.md)]
+[AZURE.INCLUDE [free-trial-note](../../includes/free-trial-note.md)]
 
 ## Install the Azure CLI
 
-The first step is to [install the Azure CLI](/documentation/articles/xplat-cli-install).
+The first step is to [install the Azure CLI](/documentation/articles/xplat-cli-install/).
 
 Good. Now make sure you're in the Resource Manager mode by typing `azure config mode arm`.
 
-Even better. Now [log in with your work or school id](/documentation/articles/xplat-cli-connect#use-the-log-in-method) by typing `azure login` and following the prompts for an interactive login experience to your Azure account.
+Even better. Now [log in with your work or school id](/documentation/articles/xplat-cli-connect/#use-the-log-in-method) by typing `azure login` and following the prompts for an interactive login experience to your Azure account.
 
-> [AZURE.NOTE] If you have a work or school ID and you know you do not have two-factor authentication enabled, you can use `azure login -u` along with the work or school ID to log in without an interactive session. If you don't have a work or school ID, you can [create a work or school id from your personal Microsoft account](/documentation/articles/resource-group-create-work-id-from-personal).
+> [AZURE.NOTE] If you have a work or school ID and you know you do not have two-factor authentication enabled, you can use `azure login -u` along with the work or school ID to log in without an interactive session. If you don't have a work or school ID, you can [create a work or school id from your personal Microsoft account](/documentation/articles/virtual-machines-linux-create-aad-work-id/).
 
 ## Create the Linux virtual machine
 
@@ -78,7 +78,7 @@ and then creates the infrastructure necessary to host the VM. This includes:
 		Resource group name: myuniquegroupname
 		Virtual machine name: myuniquevmname
 		Location name: chinanorth
-		Operating system Type [Windows, Linux]: /documentation/articles/Linux
+		Operating system Type [Windows, Linux]: /documentation/articles/Linux/
 		ImageURN (format: "publisherName:offer:skus:version"): canonical:ubuntuserver:14.04.2-LTS:latest
 		User name: ops
 		Password: *********
@@ -160,7 +160,7 @@ Your VM is up and running and waiting for you to connect.
 
 With Linux virtual machines, you typically connect using **ssh**. 
 
-> [AZURE.NOTE] This topic connects to a VM using usernames and passwords; to use public and private key pairs to communicate with your VM, see [How to Use SSH with Linux on Azure](/documentation/articles/virtual-machines-linux-use-ssh-key). You can modify the **SSH** connectivity of VMs created with the `azure vm quick-create` command by using the `azure vm reset-access` command to reset **SSH** access completely, add or remove users, or add public key files to secure access. This article uses username and password with **SSH** for brevity.
+> [AZURE.NOTE] This topic connects to a VM using usernames and passwords; to use public and private key pairs to communicate with your VM, see [How to Use SSH with Linux on Azure](/documentation/articles/virtual-machines-linux-ssh-from-linux/). You can modify the **SSH** connectivity of VMs created with the `azure vm quick-create` command by using the `azure vm reset-access` command to reset **SSH** access completely, add or remove users, or add public key files to secure access. This article uses username and password with **SSH** for brevity.
 
 If you're not familiar with connecting with **ssh**, the command takes the form `ssh <username>@<publicdnsaddress> -p <the ssh port>`. In this case, we use the username and password from the previous step and port 22, which is the default **ssh** port.
 
@@ -302,18 +302,18 @@ The data disk is now ready to use as `/datadrive`.
 	bin   datadrive  etc   initrd.img  lib64       media  opt   root  sbin  sys  usr  vmlinuz
 	boot  dev        home  lib         lost+found  mnt    proc  run   srv   tmp  var
 
-> [AZURE.NOTE] You can also connect to your Linux virtual machine using an SSH key for identification. For details, see [How to Use SSH with Linux on Azure](/documentation/articles/virtual-machines-linux-use-ssh-key).
+> [AZURE.NOTE] You can also connect to your Linux virtual machine using an SSH key for identification. For details, see [How to Use SSH with Linux on Azure](/documentation/articles/virtual-machines-linux-ssh-from-linux/).
 
 ## Next Steps
 
-Remember, that your new disk will not typically be available to the VM if it reboots unless you write that information to your [fstab](http://en.wikipedia.org/wiki/Fstab) file. If you want, you can add several more disks and [configure RAID](/documentation/articles/virtual-machines-linux-configure-raid). 
+Remember, that your new disk will not typically be available to the VM if it reboots unless you write that information to your [fstab](http://en.wikipedia.org/wiki/Fstab) file. If you want, you can add several more disks and [configure RAID](/documentation/articles/virtual-machines-linux-configure-raid/). 
 
 To learn more about Linux on Azure, see:
 
-- [Linux and Open-Source Computing on Azure](/documentation/articles/virtual-machines-linux-opensource)
+- [Linux and Open-Source Computing on Azure](/documentation/articles/virtual-machines-linux-opensource-links/)
 
-- [How to use the Azure Command-Line Interface](/documentation/articles/virtual-machines-command-line-tools)
+- [How to use the Azure Command-Line Interface](/documentation/articles/virtual-machines-command-line-tools/)
 
-- [Deploy a LAMP app using the Azure CustomScript Extension for Linux](/documentation/articles/virtual-machines-linux-script-lamp)
+- [Deploy a LAMP app using the Azure CustomScript Extension for Linux](/documentation/articles/virtual-machines-linux-classic-lamp-script/)
 
-- [The Docker Virtual Machine Extension for Linux on Azure](/documentation/articles/virtual-machines-docker-vm-extension)
+- [The Docker Virtual Machine Extension for Linux on Azure](/documentation/articles/virtual-machines-linux-dockerextension/)

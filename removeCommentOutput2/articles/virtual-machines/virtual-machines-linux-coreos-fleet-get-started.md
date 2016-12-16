@@ -17,7 +17,7 @@
 
 # Get started with fleet on a CoreOS VM cluster on Azure
 
-> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the classic deployment model. Microsoft recommends that most new deployments use the [Resource Manager model](https://azure.microsoft.com/documentation/templates/coreos-with-fleet-multivm/).
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the [Resource Manager model](https://azure.microsoft.com/documentation/templates/coreos-with-fleet-multivm/).
 
 
 This article gives you two quick examples of using [fleet](https://github.com/coreos/fleet) and [Docker](https://www.docker.com/) to run applications on a cluster of [CoreOS] virtual machines.
@@ -154,7 +154,7 @@ When done, stop and unload units.
 * See [Linux and Open-Source Computing on Azure] for more on using open-source environments on Linux VMs in Azure.
 
 <!--Link references-->
-[Azure Command-Line Interface (Azure)]: /documentation/articles/xplat-cli-install
+[Azure Command-Line Interface (Azure)]: /documentation/articles/xplat-cli-install/
 [CoreOS]: https://coreos.com/
 [CoreOS Overview]: https://coreos.com/using-coreos/
 [CoreOS with Azure]: https://coreos.com/docs/running-coreos/cloud-providers/azure/
@@ -162,10 +162,10 @@ When done, stop and unload units.
 [Patrick Chanezon's CoreOS Tutorial]: https://github.com/chanezon/azure-linux/tree/master/coreos/cloud-init
 [Docker]: http://docker.io
 [YAML]: http://yaml.org/
-[How to Use CoreOS on Azure]: /documentation/articles/virtual-machines-linux-coreos-how-to 
-[Configure a load-balanced set]: /documentation/articles/load-balancer-internet-getstarted
+[How to Use CoreOS on Azure]: /documentation/articles/virtual-machines-linux-classic-coreos-howto/ 
+[Configure a load-balanced set]: /documentation/articles/load-balancer-internet-getstarted/
 [Launching containers with fleet]: https://coreos.com/docs/launching-containers/launching/launching-containers-fleet/
 [Unit Files]: https://coreos.com/docs/launching-containers/launching/fleet-unit-files/
 [busybox Docker Hub image]: https://registry.hub.docker.com/_/busybox/
 [nginx Docker Hub image]: https://hub.docker.com/_/nginx/
-[Linux and Open-Source Computing on Azure]: /documentation/articles/virtual-machines-linux-opensource 
+[Linux and Open-Source Computing on Azure]: /documentation/articles/virtual-machines-linux-opensource-links/ 

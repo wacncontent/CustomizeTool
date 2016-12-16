@@ -20,4 +20,3 @@ Test drive Azure Websites, quickly migrate your web assets to Azure Websites, an
 
 <object type="image/svg+xml" data="https://sidneyhcontent.blob.core.windows.net/documentation/websites-learning-map.svg" width="100%" height="100%">
 </object>
- 

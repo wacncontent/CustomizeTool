@@ -17,13 +17,13 @@
 
 # Sizes for virtual machines
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
 
 ## Overview
 
-This article describes the available sizes and options for the virtual machine-based compute resources you can use to run your apps and workloads.  It also provides deployment considerations to be aware of when you're planning to use these resources. For information about pricing of the various sizes, see [Virtual Machines Pricing](/home/features/virtual-machines/#price).
+This article describes the available sizes and options for the virtual machine-based compute resources you can use to run your apps and workloads.  It also provides deployment considerations to be aware of when you're planning to use these resources. For information about pricing of the various sizes, see [Virtual Machines Pricing](/pricing/details/virtual-machines/).
 
-To see general limits on Azure VMs, see [Azure subscription and service limits, quotas, and constraints](/documentation/articles/azure-subscription-service-limits).
+To see general limits on Azure VMs, see [Azure subscription and service limits, quotas, and constraints](/documentation/articles/azure-subscription-service-limits/).
 
 The standard sizes consist of several series: A, D and DS. Considerations for some of these sizes include:
 
@@ -31,13 +31,13 @@ The standard sizes consist of several series: A, D and DS. Considerations for so
 
 *   Dv2-series, a follow-on to the original D-series, features a more powerful CPU. The Dv2-series CPU is about 35% faster than the D-series CPU. It is based on the latest generation 2.4 GHz Intel Xeon® E5-2673 v3 (Haswell) processor, and with the Intel Turbo Boost Technology 2.0, can go up to 3.2 GHz. The Dv2-series has the same memory and disk configurations as the D-series.
 
-*   DS-series VMs can use Premium Storage, which provides high-performance, low-latency storage for I/O intensive workloads. These VMs use solid-state drives (SSDs) to host a virtual machine's disks and also provide a local SSD disk cache. Premium Storage is available in certain regions. For details, see [Premium Storage: High-performance storage for Azure virtual machine workloads](/documentation/articles/storage-premium-storage).
+*   DS-series VMs can use Premium Storage, which provides high-performance, low-latency storage for I/O intensive workloads. These VMs use solid-state drives (SSDs) to host a virtual machine's disks and also provide a local SSD disk cache. Premium Storage is available in certain regions. For details, see [Premium Storage: High-performance storage for Azure virtual machine workloads](/documentation/articles/storage-premium-storage/).
 
 *   The A-series VMs can be deployed on a variety of hardware types and processors. The size is throttled, based upon the hardware, to offer consistent processor performance for the running instance, regardless of the hardware it is deployed on. To determine the physical hardware on which this size is deployed, query the virtual hardware from within the Virtual Machine.
 
 *   The A0 size is over-subscribed on the physical hardware. For this specific size only, other customer deployments may impact the performance of your running workload. The relative performance is outlined below as the expected baseline, subject to an approximate variability of 15 percent.
 
-The size of the virtual machine affects the pricing. The size also affects the processing, memory, and storage capacity of the virtual machine. Storage costs are calculated separately based on used pages in the storage account. For details, see [Virtual Machines Pricing Details](/home/features/virtual-machines/#price) and [Azure Storage Pricing](/home/features/storage/#price). For more details about storage for VMss, see [About disks and VHDs for virtual machines ](/documentation/articles/virtual-machines-disks-vhds).
+The size of the virtual machine affects the pricing. The size also affects the processing, memory, and storage capacity of the virtual machine. Storage costs are calculated separately based on used pages in the storage account. For details, see [Virtual Machines Pricing Details](/pricing/details/virtual-machines/) and [Azure Storage Pricing](/pricing/details/storage/). For more details about storage for VMss, see [About disks and VHDs for virtual machines ](/documentation/articles/virtual-machines-linux-about-disks-vhds/).
 
 The following considerations might help you decide on a size:
 
@@ -78,7 +78,7 @@ The following tables show the sizes and the capacities they provide.
 
 
 
-##<a name="standard-tier-a-series"></a> Standard tier: A-series
+## <a name="standard-tier-a-series"></a> Standard tier: A-series
 
 In the classic deployment model, some VM sizes are slightly different in Powershell and CLI.
 
@@ -101,7 +101,7 @@ In the classic deployment model, some VM sizes are slightly different in Powersh
 |Standard_A6|4|28 GB|2|Temporary = 285 GB |8|8x500|
 |Standard_A7|8|56 GB|4|Temporary = 605 GB |16|16x500|
 
-##<a name="standard-tier-d-series"></a> Standard tier: D-series
+## <a name="standard-tier-d-series"></a> Standard tier: D-series
 
 |Size |CPU cores|Memory|NICs (Max)|Max. disk size|Max. data disks (1023 GB each)|Max. IOPS (500 per disk)|
 |---|---|---|---|---|---|---|
@@ -114,7 +114,7 @@ In the classic deployment model, some VM sizes are slightly different in Powersh
 |Standard_D13 |8|56 GB|8|Temporary (SSD) =400 GB |16|16x500|
 |Standard_D14 |16|112 GB|8|Temporary (SSD) =800 GB |32|32x500|
 
-##<a name="standard-tier-dv2-series"></a> Standard tier: Dv2-series
+## <a name="standard-tier-dv2-series"></a> Standard tier: Dv2-series
 
 |Size |CPU cores|Memory|NICs (Max)|Max. disk size|Max. data disks (1023 GB each)|Max. IOPS (500 per disk)|
 |---|---|---|---|---|---|---|
@@ -128,7 +128,7 @@ In the classic deployment model, some VM sizes are slightly different in Powersh
 |Standard_D13_v2 |8|56 GB|8|Temporary (SSD) =400 GB |16|16x500|
 |Standard_D14_v2 |16|112 GB|8|Temporary (SSD) =800 GB |32|32x500|
 
-##<a name="standard-tier-ds-series"></a> Standard tier: DS-series*
+## <a name="standard-tier-ds-series"></a> Standard tier: DS-series*
 
 |Size |CPU cores|Memory|NICs (Max)|Max. disk size|Max. data disks (1023 GB each)|Cache size (GB)|Max. disk IOPS &amp; bandwidth|
 |---|---|---|---|---|---|---|---|
@@ -141,11 +141,11 @@ In the classic deployment model, some VM sizes are slightly different in Powersh
 |Standard_DS13 |8|56|8|Local SSD disk = 112 GB |16|288| 25,600  256 MB per second |
 |Standard_DS14 |16|112|8|Local SSD disk = 224 GB |32|576| 50,000  512 MB per second |
 
-*The maximum input/output operations per second (IOPS) and throughput (bandwidth) possible with a DS series VM is affected by the size of the disk. For details, see [Premium Storage: High-performance storage for Azure virtual machine workloads](/documentation/articles/storage-premium-storage).
+*The maximum input/output operations per second (IOPS) and throughput (bandwidth) possible with a DS series VM is affected by the size of the disk. For details, see [Premium Storage: High-performance storage for Azure virtual machine workloads](/documentation/articles/storage-premium-storage/).
 
 ### See also
 
-[Azure subscription and service limits, quotas, and constraints](/documentation/articles/azure-subscription-service-limits)
+[Azure subscription and service limits, quotas, and constraints](/documentation/articles/azure-subscription-service-limits/)
 
 
 

@@ -1,3 +1,4 @@
+<!-- deleted in Global -->
 
 <properties 
 	pageTitle="Hybrid cloud test environment | Azure" 
@@ -42,7 +43,7 @@ There are five major phases to setting up this hybrid cloud test environment:
 
 If you do not already have an Azure subscription, you can sign up for a free account at [Try Azure](/pricing/1rmb-trial/). If you have an MSDN or Visual Studio subscription, see [Monthly Azure credit for Visual Studio subscribers](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/).
 
->[AZURE.NOTE] Virtual machines and virtual network gateways in Azure incur an ongoing monetary cost when they are running. An Azure VPN gateway is implemented as a set of two Azure virtual machines. For the details, see [Pricing - Virtual Network](/home/features/networking/pricing/). To minimize the costs of running the VPN gateway, create the test environment and perform your needed testing and demonstration as quickly as possible.
+>[AZURE.NOTE] Virtual machines and virtual network gateways in Azure incur an ongoing monetary cost when they are running. An Azure VPN gateway is implemented as a set of two Azure virtual machines. For the details, see [Pricing - Virtual Network](/pricing/details/networking/). To minimize the costs of running the VPN gateway, create the test environment and perform your needed testing and demonstration as quickly as possible.
 
 This configuration requires a test subnet of up to four computers connected directly to the Internet using a public IP address. If you don't have these resources, you can also set up a [simulated hybrid cloud environment for testing](/documentation/articles/virtual-machines-windows-ps-hybrid-cloud-test-env-sim/). The simulated hybrid cloud test environment requires only an Azure subscription.
 
@@ -54,8 +55,8 @@ Next, log on to DC1 with the CORP\User1 credentials. To configure the CORP domai
 
 	New-ADReplicationSite -Name "TestLab" 
 	New-ADReplicationSite -Name "TestVNET"
-	New-ADReplicationSubnet "Name "10.0.0.0/8" "Site "TestLab"
-	New-ADReplicationSubnet "Name "192.168.0.0/16" "Site "TestVNET
+	New-ADReplicationSubnet -Name "10.0.0.0/8" -Site "TestLab"
+	New-ADReplicationSubnet -Name "192.168.0.0/16" -Site "TestVNET
 
 This is your current configuration.
 
@@ -84,7 +85,7 @@ Use these commands at an administrator-level Windows PowerShell command prompt o
 	[IPAddress]$publicDNS="<Your ISP DNS server(s)>"
 	Rename-NetAdapter -Name $corpnetAdapterName -NewName Corpnet
 	Rename-NetAdapter -Name $internetAdapterName -NewName Internet
-	New-NetIPAddress -InterfaceAlias "Internet" -IPAddress $publicIP -PrefixLength $publicIPpreflength "DefaultGateway $publicDG
+	New-NetIPAddress -InterfaceAlias "Internet" -IPAddress $publicIP -PrefixLength $publicIPpreflength -DefaultGateway $publicDG
 	Set-DnsClientServerAddress -InterfaceAlias Internet -ServerAddresses $publicDNS
 	New-NetIPAddress -InterfaceAlias "Corpnet" -IPAddress 10.0.0.2 -AddressFamily IPv4 -PrefixLength 24
 	Set-DnsClientServerAddress -InterfaceAlias "Corpnet" -ServerAddresses 10.0.0.1
@@ -102,8 +103,6 @@ This is your current configuration.
 ![](./media/virtual-machines-windows-ps-hybrid-cloud-test-env-base/virtual-machines-windows-ps-hybrid-cloud-test-env-base-ph2.png)
 
 ## Phase 3: Create the cross-premises Azure Virtual Network
-
-[AZURE.INCLUDE [arm-api-version-powershell](../includes/arm-api-version-powershell.md)]
 
 Start an Azure PowerShell prompt.
 

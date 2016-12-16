@@ -28,4 +28,3 @@ If you want to delete a VNet, you can't simply click **Delete**. There are a few
 4. **Delete your virtual network -** Click to the right of the *Name* row to highlight the VNet that you want to delete, and then click **Delete** at the bottom of the page. Follow the on-screen instructions.
 
 5. **Additionally -** You may also choose to delete any local network settings, DNS servers, and the affinity group after deleting your virtual network.
- 

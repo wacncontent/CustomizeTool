@@ -1,33 +1,33 @@
 <properties
-	pageTitle="Use REST to back up and restore App Service apps"
-	description="Learn how to use RESTful API calls to back up and restore an app in Azure App Service"
-	services="app-service"
-	documentationCenter=""
-	authors="NKing92"
-	manager="wpickett"
+    pageTitle="Use REST to back up and restore App Service apps"
+    description="Learn how to use RESTful API calls to back up and restore an app in Azure App Service"
+    services="app-service"
+    documentationcenter=""
+    author="NKing92"
+    manager="wpickett"
     editor="" />
-
 <tags
-	ms.service="app-service"
-	ms.workload="na"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="08/10/2016"
-	wacn.date=""
-	ms.author="nicking"/>
-# Use REST to back up and restore App Service apps
+    ms.assetid="f94d0aea-edc1-43ab-9b51-ea7375859276"
+    ms.service="app-service"
+    ms.workload="na"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="08/10/2016"
+    wacn.date=""
+    ms.author="nicking" />
 
+# Use REST to back up and restore App Service apps
 > [AZURE.SELECTOR]
 - [PowerShell](/documentation/articles/app-service-powershell-backup/)
 - [REST API](/documentation/articles/websites-csm-backup/)
 
 [App Service apps](/home/features/app-service/web-apps/) can be backed up as blobs in Azure storage. The backup can also contain the app's databases. If the app is ever accidentally deleted, or if the app needs to be reverted to a previous version, it can be restored from any previous backup. Backups can be done at any time on demand, or backups can be scheduled at suitable intervals.
 
-This article explains how to backup and restore an app with RESTful API requests. If you would like to create and manage app backups graphically through the Azure Portal Preview, see [Back up a web app in Azure App Service](/documentation/articles/web-sites-backup/)
+This article explains how to backup and restore an app with RESTful API requests. If you would like to create and manage app backups graphically through the Azure portal Preview, see [Back up a web app in Azure App Service](/documentation/articles/web-sites-backup/)
 
 ## <a name="gettingstarted"></a> Getting Started
-To send REST requests, you need to know your app's **name**, **resource group**, and **subscription id**. This information can be found by clicking your app in the **App Service** blade of the [Azure Portal Preview](https://portal.azure.cn). For the examples in this article, we are configuring the website **backuprestoreapiexamples.chinacloudsites.cn**. It is stored in the Default-Web-ChinaNorth resource group and is running on a subscription with the ID 00001111-2222-3333-4444-555566667777.
+To send REST requests, you need to know your app's **name**, **resource group**, and **subscription id**. This information can be found by clicking your app in the **App Service** blade of the [Azure portal Preview](https://portal.azure.cn). For the examples in this article, we are configuring the website **backuprestoreapiexamples.chinacloudsites.cn**. It is stored in the Default-Web-ChinaNorth resource group and is running on a subscription with the ID 00001111-2222-3333-4444-555566667777.
 
 ![Sample Website Information][SampleWebsiteInformation]
 
@@ -46,49 +46,52 @@ Here is what the URL looks like using our example website. **https://management.
 
 Supply a JSON object in the body of your request to specify which storage account to use to store the backup. The JSON object must have a property named **storageAccountUrl**, which holds a [SAS URL](/documentation/articles/storage-dotnet-shared-access-signature-part-1/) granting write access to the Azure Storage container that holds the backup blob. If you want to back up your databases, you must also supply a list containing the names, types, and connection strings of the databases to be backed up.
 
-	{
-    	"properties":
-    	{
-        	"storageAccountUrl": "https://account.blob.core.chinacloudapi.cn/backups?sv=2015-02-21&sr=c&sig=DzlkBl7h32C8qCv%2BifdBRxE63r4iv0kZ9L7E0qP16sY%3D&se=2016-09-15T22%3A46%3A54Z&sp=rwdl",
-        	"databases": [
-    	        {
-                	"databaseType": "SqlAzure",
-                	"name": "MyDatabase1",
-    	            	"connectionString": "<your database connection string>"
-    	        }
-    	    ]
-    	}
-	}
+    {
+        "properties":
+        {
+            "storageAccountUrl": "https://account.blob.core.chinacloudapi.cn/backups?sv=2015-02-21&sr=c&sig=DzlkBl7h32C8qCv%2BifdBRxE63r4iv0kZ9L7E0qP16sY%3D&se=2016-09-15T22%3A46%3A54Z&sp=rwdl",
+            "databases": [
+                {
+                    "databaseType": "SqlAzure",
+                    "name": "MyDatabase1",
+                        "connectionString": "<your database connection string>"
+                }
+            ]
+        }
+    }
 
 A backup of the app begins immediately when the request is received. The backup process may take a long time to complete. The HTTP response contains an ID that you can use in another request to see the status of the backup. Here is an example of the body of the HTTP response to our backup request.
 
-	{
-    	"id": "/subscriptions/00001111-2222-3333-4444-555566667777/resourceGroups/Default-Web-ChinaNorth/providers/Microsoft.Web/sites/backuprestoreapiexamples",
-    	"name": " backuprestoreapiexamples ",
-    	"type": "Microsoft.Web/sites",
-    	"location": "ChinaNorth",
-    	"properties":    {
-    	    "id": 1,
+    {
+        "id": "/subscriptions/00001111-2222-3333-4444-555566667777/resourceGroups/Default-Web-ChinaNorth/providers/Microsoft.Web/sites/backuprestoreapiexamples",
+        "name": " backuprestoreapiexamples ",
+        "type": "Microsoft.Web/sites",
+        "location": "ChinaNorth",
+        "properties":    {
+            "id": 1,
             "storageAccountUrl": "https://account.blob.core.chinacloudapi.cn/backups?sv=2015-02-21&sr=c&sig=DzlkBl7h32C8qCv%2BifdBRxE63r4iv0kZ9L7E0qP16sY%3D&se=2016-09-15T22%3A46%3A54Z&sp=rwdl",
             "blobName": "backup_201509291825.zip",
-    	    "name": "backup_201509291825",
-    	    "status": 4,
-    	    "sizeInBytes": 0,
-    	    "created": "2015-09-29T18:25:26.3992707Z",
-    	    "log": null,
-    	    "databases": [
-    	        {
-    	            "databaseType": "SqlAzure",
-    	            "name": "MyDatabase1",
-    	            "connectionString": "<your database connection string>"
-    	        }
-    	    ],
-    	    "scheduled": false,
-    	    "correlationId": "ea730f4d-dd06-4f7f-a090-9aa09k662h36",
-    	}
-	}
+            "name": "backup_201509291825",
+            "status": 4,
+            "sizeInBytes": 0,
+            "created": "2015-09-29T18:25:26.3992707Z",
+            "log": null,
+            "databases": [
+                {
+                    "databaseType": "SqlAzure",
+                    "name": "MyDatabase1",
+                    "connectionString": "<your database connection string>"
+                }
+            ],
+            "scheduled": false,
+            "correlationId": "ea730f4d-dd06-4f7f-a090-9aa09k662h36",
+        }
+    }
 
->[AZURE.NOTE] Error messages can be found in the log property of the HTTP response.
+> [AZURE.NOTE]
+> Error messages can be found in the log property of the HTTP response.
+> 
+> 
 
 ## <a name="schedule-automatic-backups"></a> Schedule automatic backups
 In addition to backing up an app on demand, you can also schedule a backup to happen automatically.
@@ -100,21 +103,21 @@ Here is what the URL looks like for our example website. **https://management.ch
 
 The request body must have a JSON object that specifies the backup configuration. Here is an example with all the required parameters.
 
-	{
-    	"location": "ChinaNorth",
-    	"properties": // Represents an app restore request
-    	{
-    	    "backupSchedule": { // Required for automatically scheduled backups
-    	        "frequencyInterval": "7",
-    	        "frequencyUnit": "Day",
-    	        "keepAtLeastOneBackup": "True",
-    	        "retentionPeriodInDays": "10",
-    	    },
-    	    "enabled": "True", // Must be set to true to enable automatic backups
+    {
+        "location": "ChinaNorth",
+        "properties": // Represents an app restore request
+        {
+            "backupSchedule": { // Required for automatically scheduled backups
+                "frequencyInterval": "7",
+                "frequencyUnit": "Day",
+                "keepAtLeastOneBackup": "True",
+                "retentionPeriodInDays": "10",
+            },
+            "enabled": "True", // Must be set to true to enable automatic backups
             "name": "mysitebackup",
-    	    "storageAccountUrl": "https://account.blob.core.chinacloudapi.cn/backups?sv=2015-02-21&sr=c&sig=DzlkBl7h32C8qCv%2BifdBRxE63r4iv0kZ9L7E0qP16sY%3D&se=2016-09-15T22%3A46%3A54Z&sp=rwdl"
-    	}
-	}
+            "storageAccountUrl": "https://account.blob.core.chinacloudapi.cn/backups?sv=2015-02-21&sr=c&sig=DzlkBl7h32C8qCv%2BifdBRxE63r4iv0kZ9L7E0qP16sY%3D&se=2016-09-15T22%3A46%3A54Z&sp=rwdl"
+        }
+    }
 
 This example configures the app to be automatically backed up every seven days. The parameters **frequencyInterval** and **frequencyUnit** together determine how often the backups happen. Valid values for **frequencyUnit** are **hour** and **day**. For example, to back up an app every 12 hours, set frequencyInterval to 12 and frequencyUnit to hour.
 
@@ -134,22 +137,22 @@ Here is what the URL looks like for our example website. **https://management.ch
 
 The response body contains a JSON object similar to this example.
 
-	{
-    	"properties":  {
-    	    "id": 1,
-    	    "storageAccountUrl": "https://account.blob.core.chinacloudapi.cn/backups?sv=2015-02-21&sr=c&sig=DzlkBl7h32C8qCv%2BifdBRxE63r4iv0kZ9L7E0qP16sY%3D&se=2016-09-15T22%3A46%3A54Z&sp=rwdl",
-    	    "blobName": "backup_201509291734.zip",
-    	    "name": "backup_201509291734",
-    	    "status": 2,
-    	    "sizeInBytes": 151973,
-    	    "created": "2015-09-29T17:34:57.2091605",
-    	    "scheduled": false,
-    	    "lastRestoreTimeStamp": null,
-    	    "finishedTimeStamp": "2015-09-29T17:35:11.3293602",
-    	    "correlationId": "2379fc13-418a-4b9c-920d-d06e73c5028d",
-    	    "websiteSizeInBytes": 209920
-    	}
-	}
+    {
+        "properties":  {
+            "id": 1,
+            "storageAccountUrl": "https://account.blob.core.chinacloudapi.cn/backups?sv=2015-02-21&sr=c&sig=DzlkBl7h32C8qCv%2BifdBRxE63r4iv0kZ9L7E0qP16sY%3D&se=2016-09-15T22%3A46%3A54Z&sp=rwdl",
+            "blobName": "backup_201509291734.zip",
+            "name": "backup_201509291734",
+            "status": 2,
+            "sizeInBytes": 151973,
+            "created": "2015-09-29T17:34:57.2091605",
+            "scheduled": false,
+            "lastRestoreTimeStamp": null,
+            "finishedTimeStamp": "2015-09-29T17:35:11.3293602",
+            "correlationId": "2379fc13-418a-4b9c-920d-d06e73c5028d",
+            "websiteSizeInBytes": 209920
+        }
+    }
 
 The status of a backup is an enumerated type. Here is every possible state.
 
@@ -171,20 +174,20 @@ Here is what the URL looks like for our example website. **https://management.ch
 
 In the request body, send a JSON object that contains the properties for the restore operation. Here is an example containing all required properties:
 
-	{
-    	"location": "ChinaNorth",
-    	"properties":
-    	{
-    	    "blobName": "backup_201509280431.zip",
-    	    "databases": [ // Not required unless you're restoring databases
-    	        {
-                "databaseType": "SqlAzure",
-                "name": "MyDatabase1"
-    	    }],
-    	    "overwrite": "true",
-    	    "storageAccountUrl": "https://account.blob.core.chinacloudapi.cn/backups?sv=2015-02-21&sr=c&sig=DzlkBl7h32C8qCv%2BifdBRxE63r4iv0kZ9L7E0qP16sY%3D&se=2016-09-15T22%3A46%3A54Z&sp=rwdl" // SAS URL to storage container containing your website backup
-    	}
-	}
+    {
+        "location": "ChinaNorth",
+        "properties":
+        {
+            "blobName": "backup_201509280431.zip",
+            "databases": [ // Not required unless you're restoring databases
+                {
+                    "databaseType": "SqlAzure",
+                    "name": "MyDatabase1"
+            }],
+            "overwrite": "true",
+            "storageAccountUrl": "https://account.blob.core.chinacloudapi.cn/backups?sv=2015-02-21&sr=c&sig=DzlkBl7h32C8qCv%2BifdBRxE63r4iv0kZ9L7E0qP16sY%3D&se=2016-09-15T22%3A46%3A54Z&sp=rwdl" // SAS URL to storage container containing your website backup
+        }
+    }
 
 ### Restore to a new app
 Sometimes you might want to create a new app when you restore a backup, instead of overwriting an already existing app. To do this, change the request URL to point to the new app you want to create, and change the **overwrite** property in the JSON to **false**.
@@ -201,14 +204,17 @@ Here is what the URL looks like for our example website. **https://management.ch
 
 In the request body, send a JSON object that contains the new SAS URL. Here is an example.
 
-	{
-    	"properties":
-    	{
-    	    "storageAccountUrl": "https://account.blob.core.chinacloudapi.cn/backups?sv=2015-02-21&sr=c&sig=DzlkBl7h32C8qCv%2BifdBRxE63r4iv0kZ9L7E0qP16sY%3D&se=2016-09-15T22%3A46%3A54Z&sp=rwdl"
-    	}
-	}
+    {
+        "properties":
+        {
+            "storageAccountUrl": "https://account.blob.core.chinacloudapi.cn/backups?sv=2015-02-21&sr=c&sig=DzlkBl7h32C8qCv%2BifdBRxE63r4iv0kZ9L7E0qP16sY%3D&se=2016-09-15T22%3A46%3A54Z&sp=rwdl"
+        }
+    }
 
->[AZURE.NOTE] For security reasons, the SAS URL associated with a backup is not returned when sending a GET request for a specific backup. If you want to view the SAS URL associated with a backup, send a POST request to the same URL above. Include an empty JSON object in the request body. The response from the server contains all of that backup's information, including its SAS URL.
+> [AZURE.NOTE]
+> For security reasons, the SAS URL associated with a backup is not returned when sending a GET request for a specific backup. If you want to view the SAS URL associated with a backup, send a POST request to the same URL above. Include an empty JSON object in the request body. The response from the server contains all of that backup's information, including its SAS URL.
+> 
+> 
 
 <!-- IMAGES -->
 [SampleWebsiteInformation]: ./media/websites-csm-backup/01siteconfig.png

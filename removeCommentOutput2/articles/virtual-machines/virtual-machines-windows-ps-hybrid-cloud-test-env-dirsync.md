@@ -1,3 +1,4 @@
+<!-- deleted in Global -->
 
 <properties 
 	pageTitle="Office 365 DirSync test environment  | Azure" 
@@ -74,8 +75,6 @@ This is your current configuration.
 ![](./media/virtual-machines-windows-ps-hybrid-cloud-test-env-dirsync/virtual-machines-windows-ps-hybrid-cloud-test-env-dirsync-ph2.png)
 
 ## Phase 3: Configure the DirSync server (DS1)
-
-[AZURE.INCLUDE [arm-api-version-powershell](../includes/arm-api-version-powershell.md)]
 
 From the Azure portal Preview, start the DC2 computer if needed.
 

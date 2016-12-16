@@ -1,42 +1,40 @@
 <properties
-pageTitle="Use DataFu with Pig on HDInsight"
-description="DataFu is a collection of libraries for use with Hadoop. Learn how you can use DataFu with Pig on your HDInsight cluster."
-services="hdinsight"
-documentationCenter=""
-authors="Blackmist"
-manager="jhubbard"
-editor="cgronlun"/>
-
+    pageTitle="Use DataFu with Pig on HDInsight"
+    description="DataFu is a collection of libraries for use with Hadoop. Learn how you can use DataFu with Pig on your HDInsight cluster."
+    services="hdinsight"
+    documentationcenter=""
+    author="Blackmist"
+    manager="jhubbard"
+    editor="cgronlun" />
 <tags
-ms.service="hdinsight"
-ms.devlang="na"
-ms.topic="article"
-ms.tgt_pltfrm="na"
-ms.workload="big-data"
-ms.date="08/23/2016"
-wacn.date=""
-ms.author="larryfr"/>
+    ms.assetid="0016721a-82be-4773-88ad-91e6b2c21cbb"
+    ms.service="hdinsight"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="big-data"
+    ms.date="11/08/2016"
+    wacn.date=""
+    ms.author="larryfr" />
 
-#Use DataFu with pig on HDInsight
+# Use DataFu with pig on HDInsight
 
 DataFu is a collection of Open Source libraries for use with Hadoop. In this document, you will learn how to use DataFu on your HDInsight cluster, and how to use DataFu User Defined Functions (UDF) with Pig.
 
-##Prerequisites
+## Prerequisites
 
 * An Azure subscription.
-
 * An Azure HDInsight cluster (Windows based)
-
 * A basic familiarity with [using Pig on HDInsight](/documentation/articles/hdinsight-use-pig/)
 
-##Use DataFu With Pig
+## Use DataFu With Pig
 
 The steps in this section assume that you are familiar with using Pig on HDInsight, and only provide the Pig Latin statements, not the steps on how to use them with the cluster. For more information on using Pig with HDInsight, see [Use Pig with HDInsight](/documentation/articles/hdinsight-use-pig/).
 
 You will usually define an alias for DataFu functions. For example:
 
     DEFINE SHA datafu.pig.hash.SHA();
-    
+
 This defines an alias named `SHA` for the SHA hashing function. You can then use this in a Pig Latin script to generate a hash for the input data. For example, the following replaces the names in the input data with a hash value:
 
     raw = LOAD '/data/raw/' USING PigStorage(',') AS  
@@ -59,7 +57,7 @@ If this is used with the following input data:
     Eva Makay,8,9,2
     Shi Liao,4,6,0
     Tjasa Zemljaric,0,2,5
-    
+
 It will generate the following output:
 
     (c1a743b0f34d349cfc2ce00ef98369bdc3dba1565fec92b4159a9cd5de186347,5,9,1)
@@ -73,10 +71,10 @@ It will generate the following output:
     (fa9c436469096ff1bd297e182831f460501b826272ae97e921f5f6e3f54747e8,4,6,0)
     (bc22db7c238b86c37af79a62c78f61a304b35143f6087eb99c34040325865654,0,2,5)
 
-##Next steps
+## Next steps
 
 For more information on DataFu or Pig, see the following documents:
 
 * [Apache DataFu Pig Guide](http://datafu.incubator.apache.org/docs/datafu/guide.html).
-
 * [Use Pig with HDInsight](/documentation/articles/hdinsight-use-pig/)
+

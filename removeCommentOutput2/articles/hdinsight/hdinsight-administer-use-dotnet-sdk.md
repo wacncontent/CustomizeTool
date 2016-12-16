@@ -1,74 +1,69 @@
 <properties
-	pageTitle="Manage Hadoop clusters in HDInsight with .NET SDK | Azure"
-	description="Learn how to perform administrative tasks for the Hadoop clusters in HDInsight using HDInsight .NET SDK."
-	services="hdinsight"
-	editor="cgronlun"
-	manager="jhubbard"
-	tags="azure-portal"
-	authors="mumian"
-	documentationCenter=""/>
-
+    pageTitle="Manage Hadoop clusters in HDInsight with .NET SDK | Azure"
+    description="Learn how to perform administrative tasks for the Hadoop clusters in HDInsight using HDInsight .NET SDK."
+    services="hdinsight"
+    editor="cgronlun"
+    manager="jhubbard"
+    tags="azure-portal"
+    author="mumian"
+    documentationcenter="" />
 <tags
-	ms.service="hdinsight"
-	ms.workload="big-data"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="09/02/2016"
-	wacn.date=""
-	ms.author="jgao"/>
+    ms.assetid="fd134765-c2a0-488a-bca6-184d814d78e9"
+    ms.service="hdinsight"
+    ms.workload="big-data"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="11/15/2016"
+    wacn.date=""
+    ms.author="jgao" />
 
 # Manage Hadoop clusters in HDInsight by using .NET SDK
-
 [AZURE.INCLUDE [selector](../../includes/hdinsight-portal-management-selector.md)]
 
 Learn how to manage HDInsight clusters using [HDInsight.NET SDK](https://msdn.microsoft.com/zh-cn/library/mt271028.aspx).
-
 
 **Prerequisites**
 
 Before you begin this article, you must have the following:
 
-- **An Azure subscription**. See [Get Azure trial](/pricing/1rmb-trial/).
+* **An Azure subscription**. See [Get Azure trial](/pricing/1rmb-trial/).
 
-
-##Connect to Azure HDInsight
-
+## Connect to Azure HDInsight
 You will need the following Nuget package:
 
-	Install-Package Microsoft.WindowsAzure.Management.HDInsight
+    Install-Package Microsoft.WindowsAzure.Management.HDInsight
 
 The following code sample shows you how to connect to Azure before you can administer HDInsight clusters under your Azure subscription.
 
-	using System;
-	using Microsoft.WindowsAzure.Management.HDInsight;
-	using System.Security.Cryptography.X509Certificates;
+    using System;
+    using Microsoft.WindowsAzure.Management.HDInsight;
+    using System.Security.Cryptography.X509Certificates;
 
-	namespace HDInsightManagement
-	{
-		class Program
-		{
-			private static IHDInsightClient _hdinsightClient;
-			private static String SubscriptionId = "<Your Azure Subscription ID>";
-			private static Uri baseUri = new Uri("https://management.core.chinacloudapi.cn");
-			private static X509Certificate2 cert = new X509Certificate2("c:/path/to/cert.cer");
+    namespace HDInsightManagement
+    {
+        class Program
+        {
+            private static IHDInsightClient _hdinsightClient;
+            private static String SubscriptionId = "<Your Azure Subscription ID>";
+            private static Uri baseUri = new Uri("https://management.core.chinacloudapi.cn");
+            private static X509Certificate2 cert = new X509Certificate2("c:/path/to/cert.cer");
 
-			static void Main(string[] args)
-			{
-				_hdinsightClient = HDInsightClient.Connect(new HDInsightCertificateCredential(new Guid(SubscriptionId), cert, baseUri));
+            static void Main(string[] args)
+            {
+                _hdinsightClient = HDInsightClient.Connect(new HDInsightCertificateCredential(new Guid(SubscriptionId), cert, baseUri));
 
-				// insert code here
+                // insert code here
 
-				System.Console.WriteLine("Press ENTER to continue");
-				System.Console.ReadLine();
-			}
-		}
-	}
+                System.Console.WriteLine("Press ENTER to continue");
+                System.Console.ReadLine();
+            }
+        }
+    }
 
 To use this piece of code, you need to create your certificate file and upload it to Azure. See [Upload an Azure Management API Management Certificate](/documentation/articles/azure-api-management-certs/) for more details.
 
-##List clusters
-
+## List clusters
 The following code snippet lists clusters and some properties:
 
     var results = _hdinsightClient.ListClusters();
@@ -79,51 +74,45 @@ The following code snippet lists clusters and some properties:
         Console.WriteLine("\t Cluster version: " + name.Version);
     }
 
-##Delete clusters
-
+## Delete clusters
 Use the following code snippet to delete a cluster synchronously or asynchronously: 
 
     _hdinsightClient.DeleteCluster("<Cluster Name>");
     _hdinsightClient.DeleteClusterAsync("<Cluster Name>");
 
-##<a name="grant/revoke-access"></a> Grant/revoke access
+## <a name="grant/revoke-access"></a> Grant/revoke access
 
 HDInsight clusters have the following HTTP web services (all of these services have RESTful endpoints):
 
-- ODBC
-- JDBC
-- Oozie
-- Templeton
-
+* ODBC
+* JDBC
+* Oozie
+* Templeton
 
 By default, these services are granted for access. You can revoke/grant the access. To revoke:
 
-	var cluster = _hdinsightClient.GetCluster("<Cluster Name>");
+    var cluster = _hdinsightClient.GetCluster("<Cluster Name>");
     _hdinsightClient.DisableHttp(cluster.Name, cluster.Location);
 
 To grant:
 
-	_hdinsightClient.EnableHttp(cluster.Name, cluster.Location, "admin","<password>");
+    _hdinsightClient.EnableHttp(cluster.Name, cluster.Location, "admin","<password>");
 
 >[AZURE.NOTE] By granting/revoking the access, you will reset the cluster user name and password.
 
 This can also be done via the Portal. See [Administer HDInsight by using the Classic Management Portal][hdinsight-admin-portal].
 
-##Update HTTP user credentials
-
+## Update HTTP user credentials
 It is the same procedure as [Grant/revoke HTTP access](#grant/revoke-access).If the cluster has been granted the HTTP access, you must first revoke it.  And then grant the access with new HTTP user credentials.
 
-
-##Find the default storage account
-
+## Find the default storage account
 The following code snippet demonstrates how to get the default storage account name and the default storage account key for a cluster.
 
-	var cluster = _hdinsightClient.GetCluster("<Cluster Name>");
-	var storageKey = cluster.DefaultStorageAccount.Key;
+    var cluster = _hdinsightClient.GetCluster("<Cluster Name>");
+    var storageKey = cluster.DefaultStorageAccount.Key;
 
 
-##Submit jobs
-
+## Submit jobs
 **To submit Hive jobs** 
 
 See [Run Hive queries using .NET SDK](/documentation/articles/hdinsight-hadoop-use-hive-dotnet-sdk/).
@@ -140,9 +129,8 @@ See [Use Sqoop with HDInsight](/documentation/articles/hdinsight-hadoop-use-sqoo
 
 See [Use Oozie with Hadoop to define and run a workflow in HDInsight](/documentation/articles/hdinsight-use-oozie/).
 
-##Upload data to Azure Blob storage
+## Upload data to Azure Blob storage
 See [Upload data to HDInsight][hdinsight-upload-data].
-
 
 ## See Also
 * [HDInsight .NET SDK reference documentation](https://msdn.microsoft.com/zh-cn/library/mt271028.aspx)
@@ -151,7 +139,6 @@ See [Upload data to HDInsight][hdinsight-upload-data].
 * [Create HDInsight clusters][hdinsight-provision]
 * [Upload data to HDInsight][hdinsight-upload-data]
 * [Get started with Azure HDInsight][hdinsight-get-started]
-
 
 [azure-purchase-options]: /pricing/overview/
 [azure-member-offers]: /pricing/member-offers/

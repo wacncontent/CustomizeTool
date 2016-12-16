@@ -19,7 +19,7 @@
 
 There are many factors that impact MySQL performance on Azure, both in virtual hardware selection and software configuration. This article focuses on optimizing performance through storage, system, and database configurations.
 
-> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the classic deployment model. Microsoft recommends that most new deployments use the Resource Manager model.
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager model.
 
 
 ##Utilizing RAID on an Azure virtual machine
@@ -69,7 +69,7 @@ You can see the added drives in the virtual machine by looking at the kernel mes
 ####Step 2: Create RAID with the additional disks
 Follow this article for detailed RAID setup steps:  
 
-[Configure software RAID on Linux](/documentation/articles/virtual-machines-linux-configure-raid)
+[Configure software RAID on Linux](/documentation/articles/virtual-machines-linux-configure-raid/)
 
 >[AZURE.NOTE] If you are using the XFS file system, follow the steps below after you have created RAID.
 

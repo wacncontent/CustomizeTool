@@ -18,7 +18,7 @@
 
 # How to capture a Windows virtual machine in the Resource Manager deployment model
 
-> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the Resource Manager deployment model, which Microsoft recommends for most new deployments instead of the [classic deployment model](/documentation/articles/virtual-machines-capture-image-windows-server).
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the Resource Manager deployment model, which Azure recommends for most new deployments instead of the [classic deployment model](/documentation/articles/virtual-machines-windows-classic-capture-image/).
 
 
 This article shows you how to use the Azure PowerShell to capture an Azure virtual machine running Windows so you can use it to create other virtual machines. This image includes the OS disk and data disks attached to the virtual machine. It doesn't include the virtual network resources you'll need to create a Windows VM, so you'll need to set those up before you create another virtual machine that uses the image. This image will also be prepared to be a [generalized Windows image](https://technet.microsoft.com/zh-cn/library/hh824938.aspx).
@@ -26,7 +26,7 @@ This article shows you how to use the Azure PowerShell to capture an Azure virtu
 
 ## Prerequisites
 
-These steps assume that you've already created an Azure virtual machine in the Resource Manager deployment model and configured the operating system, including attaching any data disks and making other customizations like installing applications. If you haven't done this yet, read [How to create a Windows VM with Resource Manager and PowerShell](/documentation/articles/virtual-machines-create-windows-powershell-resource-manager). You can just as easily create a Windows virtual machine using the [Azure portal](https://portal.azure.cn). Read [How to create a Windows virtual machine in the Azure portal](/documentation/articles/virtual-machines-windows-tutorial-classic-portal).
+These steps assume that you've already created an Azure virtual machine in the Resource Manager deployment model and configured the operating system, including attaching any data disks and making other customizations like installing applications. If you haven't done this yet, read [How to create a Windows VM with Resource Manager and PowerShell](/documentation/articles/virtual-machines-create-windows-powershell-resource-manager/). You can just as easily create a Windows virtual machine using the [Azure portal](https://portal.azure.cn). Read [How to create a Windows virtual machine in the Azure portal](/documentation/articles/virtual-machines-windows-classic-tutorial/).
 
 
 ## Prepare the VM for image capture
@@ -210,4 +210,4 @@ You should see the newly created VM in either the [Azure portal](https://portal.
 
 ## Next steps
 
-To manage your new virtual machine with the Azure PowerShell, read [Manage virtual machines using Azure Resource Manager and PowerShell](/documentation/articles/virtual-machines-deploy-rmtemplates-powershell).
+To manage your new virtual machine with the Azure PowerShell, read [Manage virtual machines using Azure Resource Manager and PowerShell](/documentation/articles/virtual-machines-deploy-rmtemplates-powershell/).

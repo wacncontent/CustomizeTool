@@ -71,7 +71,7 @@ mobile device data back to HDInsight by using the following path:
 
 	/tutorials/usesqoop/importeddata
 
-## Create cluster and SQL database
+## <a name="create-cluster-and-sql-database"></a> Create cluster and SQL database
 
 This section shows you how to create a cluster and the SQL database schemas for running the tutorial using the Azure portal and an Azure Resource Manager template.  If you prefer to use Azure PowerShell, see [Appendix A](#appendix-a---a-powershell-sample).
 

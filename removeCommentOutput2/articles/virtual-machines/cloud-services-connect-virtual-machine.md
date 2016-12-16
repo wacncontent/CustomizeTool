@@ -18,14 +18,14 @@
 
 # Connect virtual machines created with the classic deployment model with a virtual network or cloud service
 
-> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the classic deployment model. Microsoft recommends that most new deployments use the Resource Manager model.
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager model.
 
 
 Virtual machines created with the classic deployment model are always placed in a cloud service. The cloud service acts as a container and provides a unique public DNS name, a public IP address, and a set of endpoints to access the virtual machine over the Internet. The cloud service can be in a virtual network, but that's not a requirement.
 
 If a cloud service isn't in a virtual network, it's called a *standalone* cloud service. The virtual machines in a standalone cloud service can only communicate with other virtual machines by using the other virtual machines' public DNS names, and the traffic travels over the Internet. If a cloud service is in a virtual network, the virtual machines in that cloud service can communicate with all other virtual machines in the virtual network without sending any traffic over the Internet.
 
-If you place your virtual machines in the same standalone cloud service, you can still use load balancing and availability sets. For details, see [Load balancing virtual machines](/documentation/articles/load-balance-virtual-machines) and [Manage the availability of virtual machines](/documentation/articles/virtual-machines-manage-availability). However, you can't organize the virtual machines on subnets or connect a standalone cloud service to your on-premises network. Here's an example:
+If you place your virtual machines in the same standalone cloud service, you can still use load balancing and availability sets. For details, see [Load balancing virtual machines](/documentation/articles/load-balance-virtual-machines/) and [Manage the availability of virtual machines](/documentation/articles/virtual-machines-linux-manage-availability/). However, you can't organize the virtual machines on subnets or connect a standalone cloud service to your on-premises network. Here's an example:
 
 ![Virtual machines in a standalone cloud service](./media/howto-connect-vm-cloud-service/CloudServiceExample.png)
 
@@ -33,13 +33,13 @@ If you place your virtual machines in a virtual network, you can decide how many
 
 ![Virtual machines in a virtual network](./media/howto-connect-vm-cloud-service/VirtualNetworkExample.png)
 
-Virtual networks are the recommended way to connect virtual machines in Azure. The best practice is to configure each tier of your application in a separate cloud service. However, you may need to combine some virtual machines from different application tiers into the same cloud service to remain within the maximum of 200 cloud services per subscription. To review this and other limits, see [Azure Subscription and Service Limits, Quotas, and Constraints](/documentation/articles/azure-subscription-service-limits).
+Virtual networks are the recommended way to connect virtual machines in Azure. The best practice is to configure each tier of your application in a separate cloud service. However, you may need to combine some virtual machines from different application tiers into the same cloud service to remain within the maximum of 200 cloud services per subscription. To review this and other limits, see [Azure Subscription and Service Limits, Quotas, and Constraints](/documentation/articles/azure-subscription-service-limits/).
 
 ## Connect VMs in a virtual network
 
 To connect virtual machines in a virtual network:
 
-1.	Create the virtual network in the [Azure portal](/documentation/articles/virtual-networks-create-vnet-classic-pportal).
+1.	Create the virtual network in the [Azure portal](/documentation/articles/virtual-networks-create-vnet-classic-pportal/).
 2.	Create the set of cloud services for your deployment to reflect your design for availability sets and load balancing. In the Azure classic portal, click **New > Compute > Cloud Service > Custom Create** for each cloud service.
 3.	To create each new virtual machine, click **New > Compute > Virtual Machine > From Gallery**. Choose the correct cloud service and virtual network for the VM. If the cloud service is already joined to a virtual network, its name will already be selected for you.
 
@@ -56,12 +56,12 @@ To connect virtual machines in a standalone cloud service:
 	![Add a virtual machine to an existing cloud service](./media/howto-connect-vm-cloud-service/Connect-VM-to-CS.png)
 
 ##Resources
-[Load balancing virtual machines](/documentation/articles/load-balance-virtual-machines)
+[Load balancing virtual machines](/documentation/articles/load-balance-virtual-machines/)
 
-[Manage the availability of virtual machines](/documentation/articles/virtual-machines-manage-availability)
+[Manage the availability of virtual machines](/documentation/articles/virtual-machines-linux-manage-availability/)
 
 After you create a virtual machine, it's a good idea to add a data disk so your services and workloads have a location to store data. See one of the following:
 
-[How to Attach a Data Disk to a Linux Virtual Machine](/documentation/articles/virtual-machines-linux-how-to-attach-disk)
+[How to Attach a Data Disk to a Linux Virtual Machine](/documentation/articles/virtual-machines-linux-classic-attach-disk/)
 
-[How to Attach a Data Disk to a Windows Virtual Machine](/documentation/articles/storage-windows-attach-disk)
+[How to Attach a Data Disk to a Windows Virtual Machine](/documentation/articles/virtual-machines-windows-classic-attach-disk/)

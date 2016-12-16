@@ -16,14 +16,14 @@
 
 # How to Get Started Quickly with Docker in the Azure gallery
 
-> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the classic deployment model. Microsoft recommends that most new deployments use the Resource Manager model.
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager model.
  
 
-The fastest way to get started using [Docker] is to go to the Azure gallery and create a VM using the **Docker on Ubuntu Server** image template created by [Canonical] in conjunction with [MSOpenTech]. This creates an Ubuntu Server VM and automatically installs the [Docker VM Extension](/documentation/articles/virtual-machines-docker-vm-extension) along with the **latest** Docker engine pre-installed and running on on Azure.  
+The fastest way to get started using [Docker] is to go to the Azure gallery and create a VM using the **Docker on Ubuntu Server** image template created by [Canonical] in conjunction with [MSOpenTech]. This creates an Ubuntu Server VM and automatically installs the [Docker VM Extension](/documentation/articles/virtual-machines-linux-dockerextension/) along with the **latest** Docker engine pre-installed and running on on Azure.  
 
 You can immediately connect to the VM using SSH and begin doing work with Docker directly without doing anything else.
 
-> [AZURE.NOTE]The VM created by the Azure gallery template does not host the Docker remote API for management by a remote docker client. To enable controlling the Docker Host on this VM remotely, see either [Running Docker with HTTPS](https://docs.docker.com/articles/https/) or follow the steps in [Using the Docker VM Extension from the Azure classic portal](/documentation/articles/virtual-machines-docker-with-portal) or [Using the Docker VM Extension from the Azure CLI](/documentation/articles/virtual-machines-docker-with-xplat-cli). 
+> [AZURE.NOTE]The VM created by the Azure gallery template does not host the Docker remote API for management by a remote docker client. To enable controlling the Docker Host on this VM remotely, see either [Running Docker with HTTPS](https://docs.docker.com/articles/https/) or follow the steps in [Using the Docker VM Extension from the Azure classic portal](/documentation/articles/virtual-machines-docker-with-portal/) or [Using the Docker VM Extension from the Azure CLI](/documentation/articles/virtual-machines-linux-classic-cli-use-docker/). 
 <!-- -->
 If you want to automate your Azure Docker VM from Windows, you can [install the Docker Toolbox](https://docs.docker.com/installation/windows/) or get Docker.exe [from Chocolatey](https://chocolatey.org/packages/docker).
 

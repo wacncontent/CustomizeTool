@@ -19,13 +19,13 @@
 # Provision a SQL Server virtual machine in Azure Resource Manager
 
 > [AZURE.SELECTOR]
-- [Classic portal](/documentation/articles/virtual-machines-provision-sql-server)
-- [PowerShell](/documentation/articles/virtual-machines-sql-server-create-vm-with-powershell)
-- [Azure Resource Manager portal](/documentation/articles/virtual-machines-sql-server-provision-resource-manager)
+- [Classic portal](/documentation/articles/virtual-machines-windows-classic-ps-sql-create/)
+- [PowerShell](/documentation/articles/virtual-machines-windows-classic-ps-sql-create/)
+- [Azure Resource Manager portal](/documentation/articles/virtual-machines-sql-server-provision-resource-manager/)
 
 <br/>
 
-> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the Resource Manager deployment model, which Microsoft recommends for most new deployments instead of the classic deployment model.
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the Resource Manager deployment model, which Azure recommends for most new deployments instead of the classic deployment model.
 
 This end-to-end tutorial shows you how to provision an Azure virtual machine in the portal using Azure Resource Manager model and configure SQL Server from a template in the Azure gallery.
 
@@ -78,7 +78,7 @@ On the **Create Virtual Machine** blade under **Basics** provide the following i
 * In the **User name** box, a unique user name for the machine's local administrator account. This account will also be a member of the SQL Server sysadmin fixed server role.
 * In the **Password** box, type a strong password.
 * If you have multiple subscriptions, verify the subscription is correct for the VM that you are about to build.
-* In the **Resource group** box, type a name for the resource group. Alternatively, to use an existing resource group click **Select existing**. A resource group is a collection of related services in Azure. For more information about resource groups see [Azure Resource Manager Overview](/documentation/articles/resource-group-overview).
+* In the **Resource group** box, type a name for the resource group. Alternatively, to use an existing resource group click **Select existing**. A resource group is a collection of related services in Azure. For more information about resource groups see [Azure Resource Manager Overview](/documentation/articles/resource-group-overview/).
 Verify that the **Location** is correct for your requirements.
 * Click **OK** to save the settings.
 <br/>
@@ -87,7 +87,7 @@ Verify that the **Location** is correct for your requirements.
 <br/>
 
 ## 2. Choose virtual machine size
-On the **Create Virtual Machine** blade under **Size** choose a virtual machine size. The Azure portal will display recommended sizes. Find more information about virtual machine sizes see, [Sizes for virtual machines](/documentation/articles/virtual-machines-size-specs). The sizes are based on the template you selected. The size estimates the monthly cost to run the VM.  Select a VM size for your server. For considerations about SQL Server VM sizes, see [Performance best practices for SQL Server in Azure Virtual Machines](/documentation/articles/virtual-machines-sql-server-performance-best-practices).
+On the **Create Virtual Machine** blade under **Size** choose a virtual machine size. The Azure portal will display recommended sizes. Find more information about virtual machine sizes see, [Sizes for virtual machines](/documentation/articles/virtual-machines-linux-sizes/). The sizes are based on the template you selected. The size estimates the monthly cost to run the VM.  Select a VM size for your server. For considerations about SQL Server VM sizes, see [Performance best practices for SQL Server in Azure Virtual Machines](/documentation/articles/virtual-machines-windows-sql-performance/).
 
 ## 3. Configure virtual machine settings
 On the **Create Virtual Machine** blade under **Settings**, configure Azure storage, networking and monitoring for the virtual machine.
@@ -102,7 +102,7 @@ On the **Create Virtual Machine** blade under **Settings**, configure Azure stor
 
 - Azure enables **Monitoring** by default with the same storage account designated for the VM. You can change these settings here.
 
-- Under **Availability set** specify an availability set. For the purposes of this tutorial, you can select **none**. If you plan to set up SQL AlwaysOn Availability Groups, configure the availability to avoid recreating the virtual machine.  For more information, see [Manage the Availability of Virtual Machines](/documentation/articles/virtual-machines-manage-availability).
+- Under **Availability set** specify an availability set. For the purposes of this tutorial, you can select **none**. If you plan to set up SQL AlwaysOn Availability Groups, configure the availability to avoid recreating the virtual machine.  For more information, see [Manage the Availability of Virtual Machines](/documentation/articles/virtual-machines-linux-manage-availability/).
 
 ## 4. Configure SQL Server
 On the **Create Virtual Machine** blade under **Configure SQL Server** configure specific settings and optimizations for SQL Server. The settings that you can configure for SQL Server include:
@@ -121,7 +121,7 @@ Under **SQL connectivity**, specify **Public (internet)** to allow connections t
 
 In order to connect to SQL Server via the internet, you will also need to enable SQL Server Authentication.
 
->[AZURE.NOTE]For security, restrict the source port using the Network Security Group. For more information, see [What is a Network Security Group (NSG)?](/documentation/articles/virtual-networks-nsg)
+>[AZURE.NOTE]For security, restrict the source port using the Network Security Group. For more information, see [What is a Network Security Group (NSG)?](/documentation/articles/virtual-networks-nsg/)
 
 If you would prefer to not enable connections to the Database Engine via the internet automatically choose one of the following options:
 - **Local (inside VM only)** to allow connections to SQL Server only from within the VM.
@@ -157,7 +157,7 @@ The following image shows the Storage configuration blade.
 <br/>![SQL ARM Storage](./media/virtual-machines-sql-server-provision-resource-manager/azure-sql-arm-storage.png)
 <br/>
 
->[AZURE.NOTE] Storage configuration limits depend on the virtual machine size. For more information see [Sizes for virtual machines](/documentation/articles/virtual-machines-size-specs)
+>[AZURE.NOTE] Storage configuration limits depend on the virtual machine size. For more information see [Sizes for virtual machines](/documentation/articles/virtual-machines-linux-sizes/)
 
 ### Patching
 **SQL automated patching** is enabled by default. Automated patching allows Azure to automatically patch SQL Server and the operating system. Specify a day of the week, time, and duration for a maintenance window. Azure will perform patching in the maintenance window. The maintenance window schedule uses the VM locale for time. If you do not want Azure to automatically patch SQL Server and the operating system click **Disable**.  
@@ -165,7 +165,7 @@ The following image shows the Storage configuration blade.
 <br/>![SQL ARM Patching](./media/virtual-machines-sql-server-provision-resource-manager/azure-sql-arm-patching.png)
 <br/>
 
-For more information, see [Automated Patching for SQL Server in Azure Virtual Machines](/documentation/articles/virtual-machines-sql-server-automated-patching).
+For more information, see [Automated Patching for SQL Server in Azure Virtual Machines](/documentation/articles/virtual-machines-windows-classic-sql-automated-patching/).
 
 ### Backups
 Enable automatic database backups for all databases under **SQL automated backup**.
@@ -178,7 +178,7 @@ When you enable SQL automated backup you can configure the following:
 <br/>![SQL ARM Backup](./media/virtual-machines-sql-server-provision-resource-manager/azure-sql-arm-autobackup.png)
 <br/>
 
- For more information, see [Automated Backup for SQL Server in Azure Virtual Machines](/documentation/articles/virtual-machines-sql-server-automated-backup).
+ For more information, see [Automated Backup for SQL Server in Azure Virtual Machines](/documentation/articles/virtual-machines-windows-classic-sql-automated-backup/).
 
 ### Key Vault Integration
 To store security secrets in Azure for encryption, click **Azure key vault integration** and click **Enable**.
@@ -195,13 +195,13 @@ The following table lists the parameters required to configure Azure Key Vault I
 | **AKV Principal Secret**|AKV Integration creates a credential within SQL Server, allowing the VM to have access to the key vault. Choose a name for this credential. | 9VTJSQwzlFepD8XODnzy8n2V01Jd8dAjwm/azF1XDKM=|
 |**Credential name**|Choose a name to identify this credential.| mycred1|
 
-For more information, see [Configure Azure Key Vault Integration for SQL Server on Azure VMs](/documentation/articles/virtual-machines-sql-server-azure-key-vault-integration).
+For more information, see [Configure Azure Key Vault Integration for SQL Server on Azure VMs](/documentation/articles/virtual-machines-sql-server-azure-key-vault-integration/).
 
 ## 5. Review the Summary
 Review the summary and click **OK** to create SQL Server, resource group, and resources specified for this VM.
 You can monitor the deployment from the azure portal. The **Notifications** button at the top of the screen shows basic status of the deployment.
 
-##<a id="Open"> Open the virtual machine using Remote Desktop and complete setup
+## <a id="Open"> Open the virtual machine using Remote Desktop and complete setup
 Follow these steps to use Remote Desktop to open the virtual machine:
 
 1.	After the Azure VM is built, and icon for the VM will appear on the Azure dashboard. Click the icon to see information about the VM.
@@ -211,7 +211,7 @@ Follow these steps to use Remote Desktop to open the virtual machine:
 
 Once you connect to the SQL Server virtual machine, you can launch SQL Server Management Studio and connect with Windows Authentication using your local administrator credentials. This also enables you to change firewall settings or SQL Server configuration settings post-provisioning if necessary.
 
-##<a id="Connect"> Connect to SQL Server over the internet
+## <a id="Connect"> Connect to SQL Server over the internet
 
 If you want to connect to your SQL Server database engine from the Internet, there are several steps required, such as configuring the firewall, enabling SQL Server authentication, and configuring your network security group. You must have a Network Security Group rule to allow TCP traffic on port 1433.
 
@@ -221,7 +221,7 @@ If you use the portal to provision a SQL Server virtual machine image with the r
 
 The following steps are not required if you only need to access your Virtual Machine locally or from within the same Virtual Network.
 
-> [AZURE.INCLUDE [Connect to SQL Server in a VM Resource Manager](../includes/virtual-machines-sql-server-connection-steps-resource-manager.md)]
+> [AZURE.INCLUDE [Connect to SQL Server in a VM Resource Manager](../../includes/virtual-machines-sql-server-connection-steps-resource-manager.md)]
 
-##<a id="Next"> Next Steps
-For other information about using SQL Server in Azure, see [SQL Server on Azure Virtual Machines](/documentation/articles/virtual-machines-sql-server-infrastructure-services).
+## <a id="Next"> Next Steps
+For other information about using SQL Server in Azure, see [SQL Server on Azure Virtual Machines](/documentation/articles/virtual-machines-windows-sql-server-iaas-overview/).

@@ -1,24 +1,23 @@
-<properties 
-	pageTitle="Provision a web app that uses a SQL Database" 
-	description="Use an Azure Resource Manager template to deploy a web app that includes a SQL Database." 
-	services="app-service" 
-	documentationCenter="" 
-	authors="cephalin" 
-	manager="wpickett" 
-	editor=""/>
-
-<tags 
-	ms.service="app-service" 
-	ms.workload="na" 
-	ms.tgt_pltfrm="na" 
-	ms.devlang="na" 
-	ms.topic="article" 
-	ms.date="04/27/2016" 
-	wacn.date="" 
-	ms.author="cephalin"/>
+<properties
+    pageTitle="Provision a web app that uses a SQL Database"
+    description="Use an Azure Resource Manager template to deploy a web app that includes a SQL Database."
+    services="app-service"
+    documentationcenter=""
+    author="cephalin"
+    manager="wpickett"
+    editor="" />
+<tags
+    ms.assetid="fb9648e1-9bf2-4537-bc4a-ab8d4953168c"
+    ms.service="app-service"
+    ms.workload="na"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="04/27/2016"
+    wacn.date=""
+    ms.author="cephalin" />
 
 # Provision a web app with a SQL Database
-
 In this topic, you will learn how to create an Azure Resource Manager template that deploys a web app and SQL Database. You will learn how to define which resources are deployed and 
 how to define parameters that are specified when the deployment is executed. You can use this template for your own deployments, or customize it to meet your requirements.
 
@@ -28,17 +27,16 @@ For more information about deploying apps, see [Deploy a complex application pre
 
 For the complete template, see [Web App With SQL Database template](https://github.com/Azure/azure-quickstart-templates/blob/master/201-web-app-sql-database/azuredeploy.json).
 
-[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)] 
+[AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
 
 ## What you will deploy
-
 In this template, you will deploy:
 
-- a web app
-- SQL Database server
-- SQL Database
-- AutoScale settings
-- Alert rules
+* a web app
+* SQL Database server
+* SQL Database
+* AutoScale settings
+* Alert rules
 
 To run the deployment automatically, click the following button:
 
@@ -47,11 +45,9 @@ To run the deployment automatically, click the following button:
 >[AZURE.NOTE] Templates you are deploying from the GitHub Repo "azure-quickstart-templates" must be modified in order to fit in the Azure China Cloud Environment. For example, replace some endpoints -- "blob.core.windows.net" by "blob.core.chinacloudapi.cn", "cloudapp.azure.com" by "chinacloudapp.cn".
 
 ## Parameters to specify
-
 [AZURE.INCLUDE [app-service-web-deploy-web-parameters](../../includes/app-service-web-deploy-web-parameters.md)]
 
 ### administratorLogin
-
 The account name to use for the database server administrator.
 
     "administratorLogin": {
@@ -59,7 +55,6 @@ The account name to use for the database server administrator.
     }
 
 ### administratorLoginPassword
-
 The password to use for the database server administrator.
 
     "administratorLoginPassword": {
@@ -67,7 +62,6 @@ The password to use for the database server administrator.
     }
 
 ### databaseName
-
 The name of the new database to create.
 
     "databaseName": {
@@ -76,7 +70,6 @@ The name of the new database to create.
     }
 
 ### collation
-
 The database collation to use for governing the proper use of characters.
 
     "collation": {
@@ -85,7 +78,6 @@ The database collation to use for governing the proper use of characters.
     }
 
 ### edition
-
 The type of database to create.
 
     "edition": {
@@ -102,7 +94,6 @@ The type of database to create.
     }
 
 ### maxSizeBytes
-
 The maximum size, in bytes, for the database.
 
     "maxSizeBytes": {
@@ -111,7 +102,6 @@ The maximum size, in bytes, for the database.
     }
 
 ### requestedServiceObjectiveName
-
 The name corresponding to the performance level for edition. 
 
     "requestedServiceObjectiveName": {
@@ -132,7 +122,6 @@ The name corresponding to the performance level for edition.
     }
 
 ## Variables for names
-
 This template includes variables that construct names used in the template. The variable values use the **uniqueString** function to generate a name 
 from the resource group id.
 
@@ -144,9 +133,7 @@ from the resource group id.
 
 
 ## Resources to deploy
-
 ### SQL Server and Database
-
 Creates a new SQL Server and database. The name of the server is specified in the **serverName** parameter and the location specified in the **serverLocation** parameter. When creating the new server,
 you must provide a login name and password for the database server administrator. 
 
@@ -199,9 +186,7 @@ you must provide a login name and password for the database server administrator
 
 [AZURE.INCLUDE [app-service-web-deploy-web-host](../../includes/app-service-web-deploy-web-host.md)]
 
-
 ### Web app
-
     {
       "apiVersion": "2015-08-01",
       "name": "[variables('webSiteName')]",
@@ -238,7 +223,6 @@ you must provide a login name and password for the database server administrator
 
 
 ### AutoScale
-
     {
       "apiVersion": "2014-04-01",
       "name": "[concat(variables('hostingPlanName'), '-', resourceGroup().name)]",
@@ -307,8 +291,7 @@ you must provide a login name and password for the database server administrator
     },
 
 
-### Alert rules for status codes 403 and 500's, High CPU, and HTTP Queue Length 
-
+### Alert rules for status codes 403 and 500's, High CPU, and HTTP Queue Length
     {
       "apiVersion": "2014-04-01",
       "name": "[concat('ServerErrors ', variables('webSiteName'))]",
@@ -447,15 +430,12 @@ you must provide a login name and password for the database server administrator
     },
 
 ## Commands to run deployment
-
 [AZURE.INCLUDE [app-service-deploy-commands](../../includes/app-service-deploy-commands.md)]
 
 ### PowerShell
-
     New-AzureRmResourceGroupDeployment -TemplateFile path/to/azuredeploy.json
 
 ### Azure CLI
-
     azure group deployment create --template-file path/to/azuredeploy.json
 
 

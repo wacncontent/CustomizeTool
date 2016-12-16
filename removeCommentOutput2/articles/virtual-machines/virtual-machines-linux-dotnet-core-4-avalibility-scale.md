@@ -30,36 +30,31 @@ An Availability Set logically spans Azure Virtual Machines across physical hosts
 
 Follow this link to see the JSON sample within the Resource Manager template - [Availability Set](https://github.com/Microsoft/dotnet-core-sample-templates/blob/master/dotnet-core-music-linux/azuredeploy.json#L387).
 
-
-```none
-{
-  "apiVersion": "2015-06-15",
-  "type": "Microsoft.Compute/availabilitySets",
-  "name": "[variables('availabilitySetName')]",
-  "location": "[resourceGroup().location]",
-  "dependsOn": [],
-  "tags": {
-    "displayName": "avalibility-set"
-  },
-  "properties": {
-    "platformUpdateDomainCount": 5,
-    "platformFaultDomainCount": 3
-  }
-},
-```
+    {
+      "apiVersion": "2015-06-15",
+      "type": "Microsoft.Compute/availabilitySets",
+      "name": "[variables('availabilitySetName')]",
+      "location": "[resourceGroup().location]",
+      "dependsOn": [],
+      "tags": {
+        "displayName": "avalibility-set"
+      },
+      "properties": {
+        "platformUpdateDomainCount": 5,
+        "platformFaultDomainCount": 3
+      }
+    },
 
 An Availability Set is declared as a property of a Virtual Machine resource. 
 
 Follow this link to see the JSON sample within the Resource Manager template - [Availability Set association with Virtual Machine](https://github.com/Microsoft/dotnet-core-sample-templates/blob/master/dotnet-core-music-linux/azuredeploy.json#L313).
 
+    "properties": {
+      "availabilitySet": {
+        "id": "[resourceId('Microsoft.Compute/availabilitySets', variables('availabilitySetName'))]"
+      },
 
-```none
-"properties": {
-  "availabilitySet": {
-    "id": "[resourceId('Microsoft.Compute/availabilitySets', variables('availabilitySetName'))]"
-  },
-```
-The availability set as seen from the Azure portal. Each virtual machine and details about the configuration are detailed here.
+The availability set as seen from the Azure portal Preview. Each virtual machine and details about the configuration are detailed here.
 
 ![Availability Set](./media/virtual-machines-linux-dotnet-core/aset.png)
 
@@ -71,37 +66,33 @@ Whereas an availability set provides application fault tolerance, a load balance
 
 Follow this link to see the JSON sample within the Resource Manager template - [Network Load Balancer](https://github.com/Microsoft/dotnet-core-sample-templates/blob/master/dotnet-core-music-linux/azuredeploy.json#L208).
 
-```none
-{
-  "apiVersion": "2015-06-15",
-  "type": "Microsoft.Network/loadBalancers",
-  "name": "[variables('loadBalancerName')]",
-  "location": "[resourceGroup().location]",
-  "tags": {
-    "displayName": "load-balancer-front"
-  },
-  ........<truncated>
-}
-```
+    {
+      "apiVersion": "2015-06-15",
+      "type": "Microsoft.Network/loadBalancers",
+      "name": "[variables('loadBalancerName')]",
+      "location": "[resourceGroup().location]",
+      "tags": {
+        "displayName": "load-balancer-front"
+      },
+      ........<truncated>
+    }
 
 Because the sample application is exposed to the internet with a public IP address, this address is associated with the load balancer. 
 
 Follow this link to see the JSON sample within the Resource Manager template - [Network Load Balancer association with Public IP Address](https://github.com/Microsoft/dotnet-core-sample-templates/blob/master/dotnet-core-music-linux/azuredeploy.json#L221).
 
-```none
-"frontendIPConfigurations": [
-  {
-    "properties": {
-      "publicIPAddress": {
-        "id": "[resourceId('Microsoft.Network/publicIPAddresses', variables('publicipaddressName'))]"
+    "frontendIPConfigurations": [
+      {
+        "properties": {
+          "publicIPAddress": {
+            "id": "[resourceId('Microsoft.Network/publicIPAddresses', variables('publicipaddressName'))]"
+          }
+        },
+        "name": "LoadBalancerFrontend"
       }
-    },
-    "name": "LoadBalancerFrontend"
-  }
-],
-```
+    ],
 
-From the Azure portal, the network load balancer overview shows the association with the public IP address.
+From the Azure portal Preview, the network load balancer overview shows the association with the public IP address.
 
 ![Network Load Balancer](./media/virtual-machines-linux-dotnet-core/nlb.png)
 
@@ -111,30 +102,27 @@ When using a load balancer, rules are configured that control how traffic is bal
 
 Follow this link to see the JSON sample within the Resource Manager template - [Load Balancer Rule](https://github.com/Microsoft/dotnet-core-sample-templates/blob/master/dotnet-core-music-linux/azuredeploy.json#L270).
 
-
-```none
-"loadBalancingRules": [
-  {
-    "name": "[variables('loadBalencerRule')]",
-    "properties": {
-      "frontendIPConfiguration": {
-        "id": "[concat(resourceId('Microsoft.Network/loadBalancers', variables('loadBalancerName')), '/frontendIPConfigurations/LoadBalancerFrontend')]"
-      },
-      "backendAddressPool": {
-        "id": "[variables('lbPoolID')]"
-      },
-      "protocol": "Tcp",
-      "frontendPort": 80,
-      "backendPort": 80,
-      "enableFloatingIP": false,
-      "idleTimeoutInMinutes": 5,
-      "probe": {
-        "id": "[variables('lbProbeID')]"
+    "loadBalancingRules": [
+      {
+        "name": "[variables('loadBalencerRule')]",
+        "properties": {
+          "frontendIPConfiguration": {
+            "id": "[concat(resourceId('Microsoft.Network/loadBalancers', variables('loadBalancerName')), '/frontendIPConfigurations/LoadBalancerFrontend')]"
+          },
+          "backendAddressPool": {
+            "id": "[variables('lbPoolID')]"
+          },
+          "protocol": "Tcp",
+          "frontendPort": 80,
+          "backendPort": 80,
+          "enableFloatingIP": false,
+          "idleTimeoutInMinutes": 5,
+          "probe": {
+            "id": "[variables('lbProbeID')]"
+          }
+        }
       }
-    }
-  }
-],
-```
+    ],
 
 A view of the network load balancer rule from the portal.
 
@@ -146,22 +134,19 @@ The load balancer also needs to monitor each virtual machine so that requests ar
 
 Follow this link to see the JSON sample within the Resource Manager template - [Load Balancer Probe](https://github.com/Microsoft/dotnet-core-sample-templates/blob/master/dotnet-core-music-linux/azuredeploy.json#L257).
 
+    "probes": [
+      {
+        "properties": {
+          "protocol": "Tcp",
+          "port": 80,
+          "intervalInSeconds": 15,
+          "numberOfProbes": 2
+        },
+        "name": "lbprobe"
+      }
+    ]
 
-```none
-"probes": [
-  {
-    "properties": {
-      "protocol": "Tcp",
-      "port": 80,
-      "intervalInSeconds": 15,
-      "numberOfProbes": 2
-    },
-    "name": "lbprobe"
-  }
-]
-```
-
-The load balancer probe seen from the Azure portal.
+The load balancer probe seen from the Azure portal Preview.
 
 ![Network Load Balancer Probe](./media/virtual-machines-linux-dotnet-core/lbprobe.png)
 
@@ -173,35 +158,33 @@ With the Music Store application, a port starting at 5000 is mapped to port 22 o
 
 Follow this link to see the JSON sample within the Resource Manager template - [Inbound NAT Rules](https://github.com/Microsoft/dotnet-core-sample-templates/blob/master/dotnet-core-music-linux/azuredeploy.json#L270). 
 
-```none
-{
-  "apiVersion": "2015-06-15",
-  "type": "Microsoft.Network/loadBalancers/inboundNatRules",
-  "name": "[concat(variables('loadBalancerName'), '/', 'SSH-VM', copyIndex())]",
-  "tags": {
-    "displayName": "load-balancer-nat-rule"
-  },
-  "location": "[resourceGroup().location]",
-  "copy": {
-    "name": "lbNatLoop",
-    "count": "[parameters('numberOfInstances')]"
-  },
-  "dependsOn": [
-    "[concat('Microsoft.Network/loadBalancers/', variables('loadBalancerName'))]"
-  ],
-  "properties": {
-    "frontendIPConfiguration": {
-      "id": "[variables('ipConfigID')]"
+    {
+      "apiVersion": "2015-06-15",
+      "type": "Microsoft.Network/loadBalancers/inboundNatRules",
+      "name": "[concat(variables('loadBalancerName'), '/', 'SSH-VM', copyIndex())]",
+      "tags": {
+        "displayName": "load-balancer-nat-rule"
+      },
+      "location": "[resourceGroup().location]",
+      "copy": {
+        "name": "lbNatLoop",
+        "count": "[parameters('numberOfInstances')]"
+      },
+      "dependsOn": [
+        "[concat('Microsoft.Network/loadBalancers/', variables('loadBalancerName'))]"
+      ],
+      "properties": {
+        "frontendIPConfiguration": {
+          "id": "[variables('ipConfigID')]"
+        },
+        "protocol": "tcp",
+        "frontendPort": "[copyIndex(5000)]",
+        "backendPort": 22,
+        "enableFloatingIP": false
+      }
     },
-    "protocol": "tcp",
-    "frontendPort": "[copyIndex(5000)]",
-    "backendPort": 22,
-    "enableFloatingIP": false
-  }
-},
-```
 
-One example inbound NAT rule as seen in the Azure portal. An SSH NAT rule is created for each virtual machine in the deployment.
+One example inbound NAT rule as seen in the Azure portal Preview. An SSH NAT rule is created for each virtual machine in the deployment.
 
 ![Inbound NAT Rule](./media/virtual-machines-linux-dotnet-core/natrule.png)
 
@@ -213,55 +196,47 @@ Finally, for an Availability Set or Load Balancer to effectively function, multi
 
 In the Music Store Sample template, a parameter is defined that takes in an instance count. This number is used throughout the template when creating virtual machines and related resources.
 
-```none
-"numberOfInstances": {
-  "type": "int",
-  "minValue": 1,
-  "defaultValue": 1,
-  "metadata": {
-    "description": "Number of VM instances to be created behind load balancer."
-  }
-},
-```
+    "numberOfInstances": {
+      "type": "int",
+      "minValue": 1,
+      "defaultValue": 1,
+      "metadata": {
+        "description": "Number of VM instances to be created behind load balancer."
+      }
+    },
 
 On the Virtual Machine resource, the copy loop is given a name and the number of instances parameter used to control the number of resulting copies.
 
 Follow this link to see the JSON sample within the Resource Manager template - [Virtual Machine Copy Function](https://github.com/Microsoft/dotnet-core-sample-templates/blob/master/dotnet-core-music-linux/azuredeploy.json#L300). 
 
-
-```none
-"apiVersion": "2015-06-15",
-"type": "Microsoft.Compute/virtualMachines",
-"name": "[concat(variables('vmName'),copyindex())]",
-"location": "[resourceGroup().location]",
-"copy": {
-  "name": "virtualMachineLoop",
-  "count": "[parameters('numberOfInstances')]"
-},
-```
+    "apiVersion": "2015-06-15",
+    "type": "Microsoft.Compute/virtualMachines",
+    "name": "[concat(variables('vmName'),copyindex())]",
+    "location": "[resourceGroup().location]",
+    "copy": {
+      "name": "virtualMachineLoop",
+      "count": "[parameters('numberOfInstances')]"
+    },
 
 The current iteration of the copy function can be accessed with the `copyIndex()` function. The value of the copy index function can be used to name virtual machines and other resources. For instance, if two instances of a virtual machine are deployed, they need different names. The `copyIndex()` function can be used as part of the virtual machine name to create a unique name. An example of the `copyindex()` function used for naming purposes can be seen in the Virtual Machine resource. Here, the computer name is a concatenation of the `vmName` parameter, and the `copyIndex()` function. 
 
 Follow this link to see the JSON sample within the Resource Manager template - [Copy Index Function](https://github.com/Microsoft/dotnet-core-sample-templates/blob/master/dotnet-core-music-linux/azuredeploy.json#L319). 
 
-
-```none
-"osProfile": {
-  "computerName": "[concat(parameters('vmName'),copyindex())]",
-  "adminUsername": "[parameters('adminUsername')]",
-  "linuxConfiguration": {
-    "disablePasswordAuthentication": "true",
-    "ssh": {
-      "publicKeys": [
-        {
-          "path": "[variables('sshKeyPath')]",
-          "keyData": "[parameters('sshKeyData')]"
+    "osProfile": {
+      "computerName": "[concat(parameters('vmName'),copyindex())]",
+      "adminUsername": "[parameters('adminUsername')]",
+      "linuxConfiguration": {
+        "disablePasswordAuthentication": "true",
+        "ssh": {
+          "publicKeys": [
+            {
+              "path": "[variables('sshKeyPath')]",
+              "keyData": "[parameters('sshKeyData')]"
+            }
+          ]
         }
-      ]
-    }
-  }
-},
-```
+      }
+    },
 
 The `copyIndex` function is used several times in the Music Store sample template. Resources and functions utilizing `copyIndex` include anything specific to a single instance of the virtual machine such and network interface, load balancer rules, and any depends on functions. 
 

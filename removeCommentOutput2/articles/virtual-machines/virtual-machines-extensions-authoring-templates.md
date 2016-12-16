@@ -17,14 +17,14 @@
 
 # Authoring Azure Resource Manager Templates with VM Extensions.
 
-> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the Resource Manager deployment model, which Microsoft recommends for most new deployments instead of the classic deployment model.
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the Resource Manager deployment model, which Azure recommends for most new deployments instead of the classic deployment model.
  
 
 ## Overview of Azure Resource Manager Templates.
 
 Azure Resource Manager Template allows you to declaratively specify the Azure IaaS infrastructure in Json language by defining the dependencies between resources. For a detailed overview of Azure Resource Manager Templates, please refer to the articles below:
 
-[Resource Group Overview](/documentation/articles/resource-group-overview)
+[Resource Group Overview](/documentation/articles/resource-group-overview/)
 
 ## Sample template snippet for VM Extensions.
 Deploying VM Extension as part of Azure Resource Manager template requires you to declaratively specify the Extension configuration in the template.
@@ -77,9 +77,9 @@ Note : Its always recommended to use the latest extension version to get the mos
 
 The next step with authoring extension template is to identify the format for providing configuration parameters. Each extension supports its own set of parameters.
 
-To look at sample configuration for Windows Extensions, click the documentation [Windows Extensions Samples](/documentation/articles/virtual-machines-extensions-configuration-samples-windows).
+To look at sample configuration for Windows Extensions, click the documentation [Windows Extensions Samples](/documentation/articles/virtual-machines-extensions-configuration-samples-windows/).
 
-To look at sample configuration for Linux Extensions, click the documentation for  [Linux Extensions Samples ](/documentation/articles/virtual-machines-extensions-configuration-samples-linux).
+To look at sample configuration for Linux Extensions, click the documentation for  [Linux Extensions Samples ](/documentation/articles/virtual-machines-extensions-configuration-samples-linux/).
 
 Please refer to the following to the VM Templates to get a fully complete Template with VM Extensions.
 

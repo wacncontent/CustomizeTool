@@ -17,7 +17,7 @@
 
 # Azure infrastructure services implementation guidelines
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
 
 Azure is an excellent platform to implement dev/test or proof-of-concept configurations, because it requires very little investment to test a particular approach to an implementation of your solutions. However, you must be able to distinguish the easy practices for a dev/test environment from the more difficult, detailed practices for a fully functional, production-ready implementation of an IT workload.
 
@@ -25,7 +25,7 @@ This guidance identifies many areas for which planning is vital to the success o
 
 This article was adapted from the content in the [Azure implementation guidelines](http://blogs.msdn.com/b/thecolorofazure/archive/2014/05/13/azure-implementation-guidelines.aspx) blog post. Thanks to Santiago Cánepa (Application Development Manager for Microsoft) and Hugo Salcedo (Application Development Manager for Microsoft) for their original material.
 
-> [AZURE.NOTE] Affinity groups have been deprecated. Their use is not described here. For more information, see [About regional VNets and affinity groups](/documentation/articles/virtual-networks-migrate-to-regional-vnet).
+> [AZURE.NOTE] Affinity groups have been deprecated. Their use is not described here. For more information, see [About regional VNets and affinity groups](/documentation/articles/virtual-networks-migrate-to-regional-vnet/).
 
 ## 1. Naming conventions
 
@@ -94,7 +94,7 @@ We recommend that the Azure virtual machine name be the same as the underlying o
 
 ### Storage account names
 
-Storage accounts have special rules governing their names. You can only use lowercase letters and numbers. See [Create a storage account](/documentation/articles/storage-create-storage-account#create-a-storage-account) for more information. Additionally, the storage account name, in combination with core.chinacloudapi.cn, should be a globally valid, unique DNS name. For instance, if the storage account is called mystorageaccount, the following resulting DNS names should be unique:
+Storage accounts have special rules governing their names. You can only use lowercase letters and numbers. See [Create a storage account](/documentation/articles/storage-create-storage-account/#create-a-storage-account) for more information. Additionally, the storage account name, in combination with core.chinacloudapi.cn, should be a globally valid, unique DNS name. For instance, if the storage account is called mystorageaccount, the following resulting DNS names should be unique:
 
 - mystorageaccount.blob.core.chinacloudapi.cn
 - mystorageaccount.table.core.chinacloudapi.cn
@@ -159,7 +159,7 @@ Azure Storage is an integral part of many Azure solutions. Azure Storage provide
 
 There are two types of storage accounts available from Azure. A standard storage account gives you access to blob storage (used for storing Azure virtual machine disks), table storage, queue storage, and file storage. Premium storage is designed for high-performance applications, such as SQL Servers in an AlwaysOn cluster, and currently supports Azure virtual machine disks only.
 
-Storage accounts are bound to scalability targets. See [Azure subscription and service limits, quotas, and constraints](/documentation/articles/azure-subscription-service-limits#storage-limits) to become familiar with current Azure storage limits. Also see [Azure storage scalability and performance targets](/documentation/articles/storage-scalability-targets).
+Storage accounts are bound to scalability targets. See [Azure subscription and service limits, quotas, and constraints](/documentation/articles/azure-subscription-service-limits/#storage-limits) to become familiar with current Azure storage limits. Also see [Azure storage scalability and performance targets](/documentation/articles/storage-scalability-targets/).
 
 Azure creates virtual machines with an operating system disk, a temporary disk, and zero or more optional data disks. The operating system disk and data disks are Azure page blobs, whereas the temporary disk is stored locally on the node where the machine lives. This makes the temporary disk unfit for data that must persist during a system recycle, because the machine might silently be migrated from one node to another, losing any data in that disk. Do not store anything on the temporary drive.
 
@@ -168,7 +168,7 @@ Operating system disks and data disks have a maximum size of 1023 gigabytes (GB)
 ### Striped disks
 Besides providing the ability to create disks larger than 1023 GB, in many instances, using striping for data disks enhances performance by allowing multiple blobs to back the storage for a single volume. With striping, the I/O required to write and read data from a single logical disk proceeds in parallel.
 
-Azure imposes limits on the amount of data disks and bandwidth available, depending on the virtual machine size. For details, see [Sizes for virtual machines](/documentation/articles/virtual-machines-size-specs).
+Azure imposes limits on the amount of data disks and bandwidth available, depending on the virtual machine size. For details, see [Sizes for virtual machines](/documentation/articles/virtual-machines-linux-sizes/).
 
 If you are using disk striping for Azure data disks, consider the following guidelines:
 
@@ -210,7 +210,7 @@ Cloud services are a fundamental building block in Azure service management, bot
 
 In the case of IaaS, cloud services offer similar functionality, although in most cases, the load balancer functionality is used to forward traffic to specific TCP or UDP ports from the Internet to the many virtual machines within that cloud service.
 
-> [AZURE.NOTE] Cloud services do not exist in Azure Resource Manager. For an introduction to the advantages of Resource Manager, see [Azure compute, network and storage providers under Azure Resource Manager](/documentation/articles/virtual-machines-azurerm-versus-azuresm).
+> [AZURE.NOTE] Cloud services do not exist in Azure Resource Manager. For an introduction to the advantages of Resource Manager, see [Azure compute, network and storage providers under Azure Resource Manager](/documentation/articles/virtual-machines-azurerm-versus-azuresm/).
 
 Cloud service names are especially important in IaaS because Azure uses them as part of the default naming convention for disks. The cloud service name can contain only letters, numbers, and hyphens. The first and last character in the field must be a letter or number.
 
@@ -428,12 +428,12 @@ This configuration incorporates:
 
 ## Additional resources
 
-[Azure subscription and service limits, quotas, and constraints](/documentation/articles/azure-subscription-service-limits#storage-limits)
+[Azure subscription and service limits, quotas, and constraints](/documentation/articles/azure-subscription-service-limits/#storage-limits)
 
-[Sizes for virtual machines](/documentation/articles/virtual-machines-size-specs)
+[Sizes for virtual machines](/documentation/articles/virtual-machines-linux-sizes/)
 
-[Azure storage scalability and performance targets](/documentation/articles/storage-scalability-targets)
+[Azure storage scalability and performance targets](/documentation/articles/storage-scalability-targets/)
 
 [Datacenter extension reference architecture diagram](https://gallery.technet.microsoft.com/Datacenter-extension-687b1d84)
 
-[Azure compute, network, and storage providers under Azure Resource Manager](/documentation/articles/virtual-machines-azurerm-versus-azuresm)
+[Azure compute, network, and storage providers under Azure Resource Manager](/documentation/articles/virtual-machines-azurerm-versus-azuresm/)

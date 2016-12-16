@@ -1,4 +1,4 @@
-<!-- deleted in Global -->
+<!-- rename to load-balancer-distribution-mode -->
 
 <properties
    pageTitle="Manage: Load Balancer Distribution Mode (Source IP Affinity)"
@@ -28,7 +28,7 @@ Source IP affinity solves a previous [incompatibility between the Azure Load Bal
 
 Source IP Affinity can be configured for:
 
-* [Virtual machine endpoints](/documentation/articles/virtual-machines-windows-classic-setup-endpoints)
+* [Virtual machine endpoints](/documentation/articles/virtual-machines-windows-classic-setup-endpoints/)
 * [Web roles](http://msdn.microsoft.com/zh-cn/library/azure/ee758711.aspx)
 * [Worker roles](http://msdn.microsoft.com/zh-cn/library/azure/ee758711.aspx)
 

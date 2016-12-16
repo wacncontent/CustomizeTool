@@ -34,7 +34,7 @@ At any time throughout this tutorial, feel free to kick off an email to [support
 <a name="provision"></a>
 ## Provision the database
 
-[AZURE.INCLUDE [howto-provision-mongolab](../includes/howto-provision-mongolab.md)]
+[AZURE.INCLUDE [howto-provision-mongolab](../../includes/howto-provision-mongolab.md)]
 
 <a name="create"></a>
 ## Create the app
@@ -406,11 +406,11 @@ Alternatively, you can also configure a web app directly from Visual Studio. Whe
 
 ### Get the MongoLab connection string
 
-[AZURE.INCLUDE [howto-get-connectioninfo-mongolab](../includes/howto-get-connectioninfo-mongolab.md)]
+[AZURE.INCLUDE [howto-get-connectioninfo-mongolab](../../includes/howto-get-connectioninfo-mongolab.md)]
 
 ### Add the connection string to the web app's environment variables
 
-[AZURE.INCLUDE [howto-save-connectioninfo-mongolab](../includes/howto-save-connectioninfo-mongolab.md)]
+[AZURE.INCLUDE [howto-save-connectioninfo-mongolab](../../includes/howto-save-connectioninfo-mongolab.md)]
 
 ### Publish the web app
 1. In Visual Studio, right-click the **mongoNotes** project in the Solution Explorer and select **Publish**. The Publish dialog displays:  
@@ -428,13 +428,11 @@ Alternatively, you can also configure a web app directly from Visual Studio. Whe
 <a name="manage"></a>
 ## Manage the database
 
-[AZURE.INCLUDE [howto-access-mongolab-ui](../includes/howto-access-mongolab-ui.md)]
+[AZURE.INCLUDE [howto-access-mongolab-ui](../../includes/howto-access-mongolab-ui.md)]
 
 Congratulations! You've just launched a C# ASP.NET application backed by a MongoLab-hosted MongoDB database! Now that you have a MongoLab database, you can contact [support@mongolab.com](mailto:support@mongolab.com) with any questions or concerns about your database, or for help with MongoDB or the C# driver itself. Good luck out there!
 
-[AZURE.INCLUDE [app-service-web-whats-changed](../includes/app-service-web-whats-changed.md)]
-
-[AZURE.INCLUDE [app-service-web-try-app-service](../includes/app-service-web-try-app-service.md)]
+[AZURE.INCLUDE [app-service-web-whats-changed](../../includes/app-service-web-whats-changed.md)]
 
 [screen-mongolab-sampleapp]: ./media/store-mongolab-web-sites-dotnet-store-data-mongodb/screen-mongolab-sampleapp.png
 [dialog-mongolab-vspublish]: ./media/store-mongolab-web-sites-dotnet-store-data-mongodb/dialog-mongolab-vspublish.png

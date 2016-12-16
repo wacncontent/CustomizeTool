@@ -25,7 +25,7 @@ By following this tutorial, you will build a simple Tasklist web application in 
 ![Azure PHP  Website][running-app]
 
 > [AZURE.NOTE]
-> To complete this tutorial, you need an Azure account. You can <a href="/zh-cn/pricing/member-offers/msdn-benefits-details/">activate your MSDN subscriber benefits</a> or <a href="/zh-cn/pricing/1rmb-trial/">sign up for a trial</a>.
+> To complete this tutorial, you need an Azure account. You can <a href="/zh-cn/pricing/1rmb-trial/">sign up for a trial</a>.
 > 
 > If you want to get started with Azure Websites before signing up for an account, go to <a href="https://trywebsites.chinacloudsites.cn/?language=php">https://trywebsites.chinacloudsites.cn</a>, where you can immediately create a short-lived ASP.NET starter site in Azure Websites for free. No credit card required, no commitments.
 

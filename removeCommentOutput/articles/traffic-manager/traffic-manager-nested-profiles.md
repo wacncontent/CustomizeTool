@@ -2,12 +2,12 @@
     pageTitle="Nested Traffic Manager Profiles | Azure"
     description="This article explains the 'Nested Profiles' feature of Azure Traffic Manager"
     services="traffic-manager"
-    documentationCenter=""
-    authors="sdwheeler"
+    documentationcenter=""
+    author="sdwheeler"
     manager="carmonm"
-    editor=""
-/>
+    editor="" />
 <tags
+    ms.assetid="f1b112c4-a3b1-496e-90eb-41e235a49609"
     ms.service="traffic-manager"
     ms.devlang="na"
     ms.topic="article"
@@ -15,8 +15,7 @@
     ms.workload="infrastructure-services"
     ms.date="10/11/2016"
     wacn.date=""
-    ms.author="sewhee"
-/>
+    ms.author="sewhee" />
 
 # Nested Traffic Manager profiles
 
@@ -58,8 +57,8 @@ The following figure illustrates this configuration:
 
 ![Nested Profile failover with 'MinChildEndpoints' = 2][4]
 
->[AZURE.NOTE]
->The 'Priority' traffic-routing method distributes all traffic to a single endpoint. Thus there is little purpose in a MinChildEndpoints setting other than '1' for a child profile.
+> [AZURE.NOTE]
+> The 'Priority' traffic-routing method distributes all traffic to a single endpoint. Thus there is little purpose in a MinChildEndpoints setting other than '1' for a child profile.
 
 ## Example 3: Prioritized failover regions in 'Performance' traffic routing
 
@@ -115,8 +114,8 @@ There is no negative pricing impact of using nested profiles.
 
 Traffic Manager billing has two components: endpoint health checks and millions of DNS queries
 
-- Endpoint health checks: There is no charge for a child profile when configured as an endpoint in a parent profile. Monitoring of the endpoints in the child profile are billed in the usual way.
-- DNS queries: Each query is only counted once. A query against a parent profile that returns an endpoint from a child profile is counted against the parent profile only.
+* Endpoint health checks: There is no charge for a child profile when configured as an endpoint in a parent profile. Monitoring of the endpoints in the child profile are billed in the usual way.
+* DNS queries: Each query is only counted once. A query against a parent profile that returns an endpoint from a child profile is counted against the parent profile only.
 
 For full details, see the [Traffic Manager pricing page](/pricing/details/traffic-manager/).
 
@@ -132,14 +131,13 @@ The parent profile doesn't perform health checks on the child directly. Instead,
 
 The following table describes the behavior of Traffic Manager health checks for a nested endpoint.
 
-|Child Profile Monitor status|Parent Endpoint Monitor status|Notes|
-|---|---|---|
-|Disabled. The child profile has been disabled.|Stopped|The parent endpoint state is Stopped, not Disabled. The Disabled state is reserved for indicating that you have disabled the endpoint in the parent profile.|
-|Degraded. At least one child profile endpoint is in a Degraded state.| Online: the number of Online endpoints in the child profile is at least the value of MinChildEndpoints.<BR>CheckingEndpoint: the number of Online plus CheckingEndpoint endpoints in the child profile is at least the value of MinChildEndpoints.<BR>Degraded: otherwise.|Traffic is routed to an endpoint of status CheckingEndpoint. If MinChildEndpoints is set too high, the endpoint is always degraded.|
-|Online. At least one child profile endpoint is an Online state. No endpoint is in the Degraded state.|See above.||
-|CheckingEndpoints. At least one child profile endpoint is 'CheckingEndpoint'. No endpoints are 'Online' or 'Degraded'|Same as above.||
-|Inactive. All child profile endpoints are either Disabled or Stopped, or this profile has no endpoints.|Stopped||
-
+| Child Profile Monitor status | Parent Endpoint Monitor status | Notes |
+| --- | --- | --- |
+| Disabled. The child profile has been disabled. |Stopped |The parent endpoint state is Stopped, not Disabled. The Disabled state is reserved for indicating that you have disabled the endpoint in the parent profile. |
+| Degraded. At least one child profile endpoint is in a Degraded state. |Online: the number of Online endpoints in the child profile is at least the value of MinChildEndpoints.<BR>CheckingEndpoint: the number of Online plus CheckingEndpoint endpoints in the child profile is at least the value of MinChildEndpoints.<BR>Degraded: otherwise. |Traffic is routed to an endpoint of status CheckingEndpoint. If MinChildEndpoints is set too high, the endpoint is always degraded. |
+| Online. At least one child profile endpoint is an Online state. No endpoint is in the Degraded state. |See above. | |
+| CheckingEndpoints. At least one child profile endpoint is 'CheckingEndpoint'. No endpoints are 'Online' or 'Degraded' |Same as above. | |
+| Inactive. All child profile endpoints are either Disabled or Stopped, or this profile has no endpoints. |Stopped | |
 
 ## Next steps
 
@@ -158,4 +156,3 @@ Learn how to [create a Traffic Manager profile](/documentation/articles/traffic-
 [8]: ./media/traffic-manager-nested-profiles/figure-8.png
 [9]: ./media/traffic-manager-nested-profiles/figure-9.png
 [10]: ./media/traffic-manager-nested-profiles/figure-10.png
-

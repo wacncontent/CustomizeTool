@@ -17,7 +17,7 @@
 
 # How to Reset Access and Manage Users and Check Disks with the Azure VMAccess Extension for Linux#
 
-> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the classic deployment model. Microsoft recommends that most new deployments use the Resource Manager model.
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager model.
 
 
 If you can't connect to a Linux virtual machine on Azure because of a forgotten password, an incorrect Secure Shell (SSH) key, or a problem with the SSH configuration, use the Azure portal or the VMAccessForLinux extension with the Azure CLI to reset the password or SSH key, fix the SSH configuration, and check disk consistency. 
@@ -38,7 +38,7 @@ To reset the name and password of the user account with sudo privileges or the S
 You will need the following:
 
 - Azure Linux Agent version 2.0.5 or later. Most Linux images in the Virtual Machine gallery include version 2.0.5. To find out which version is installed, run **waagent -version**. To update the agent, follow the instructions in the [Azure Linux Agent User Guide].
-- Azure Command-Line Interface (CLI). For details on setting up the Azure CLI, see [Install and Configure the Azure Command-Line Interface](/documentation/articles/xplat-cli-install).
+- Azure Command-Line Interface (CLI). For details on setting up the Azure CLI, see [Install and Configure the Azure Command-Line Interface](/documentation/articles/xplat-cli-install/).
 - Azure PowerShell. You'll use commands in the Set-AzureVMExtension cmdlet to automatically load and configure the VMAccessForLinux extension. For details on setting up Azure PowerShell, see [How to install and configure Azure PowerShell].
 - A new password or set of SSH keys, if you want to reset either one. You don't need these if you want to reset the SSH configuration.
 
@@ -310,7 +310,7 @@ To repair disks with fsck utility, run these commands.
 
 
 <!--Link references-->
-[Azure Linux Agent User Guide]: /documentation/articles/virtual-machines-linux-agent-user-guide
-[How to install and configure Azure PowerShell]: /documentation/articles/powershell-install-configure
-[Azure VM Extensions and Features]: /documentation/articles/virtual-machines-extensions-features
+[Azure Linux Agent User Guide]: /documentation/articles/virtual-machines-linux-agent-user-guide/
+[How to install and configure Azure PowerShell]: /documentation/articles/powershell-install-configure/
+[Azure VM Extensions and Features]: /documentation/articles/virtual-machines-linux-extensions-features/
 [Connect to an Azure virtual machine with RDP or SSH]: http://msdn.microsoft.com/zh-cn/library/azure/dn535788.aspx

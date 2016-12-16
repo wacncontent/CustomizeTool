@@ -16,7 +16,7 @@
 #Creating an Oracle WebLogic Server 12c Virtual Machine in Azure
 The following example shows you how you can create a Virtual Machine based on a Microsoft-provided Oracle WebLogic Server 12c image running on Windows Server 2012 in Azure.
 
-> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the Resource Manager deployment model, which Microsoft recommends for most new deployments instead of the classic deployment model.
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the Resource Manager deployment model, which Azure recommends for most new deployments instead of the classic deployment model.
 
 
 
@@ -41,7 +41,7 @@ The following example shows you how you can create a Virtual Machine based on a 
 	2. Leave **Availability Set** as "Not Configured".
 	3. Do not add any **endpoints** at this time.
 
-9.	Choose or Create a [Resource Group](/documentation/articles/resource-group-portal)
+9.	Choose or Create a [Resource Group](/documentation/articles/resource-group-portal/)
 
 10. Choose a **Subscription**
 
@@ -177,10 +177,10 @@ The following example shows you how you can create a Virtual Machine based on a 
 ##Additional resources
 Now that you've set up your Virtual Machine running Oracle WebLogic Server, see the following topics for additional information.
 
--	[Oracle Virtual Machine images - Miscellaneous Considerations](/documentation/articles/virtual-machines-miscellaneous-considerations-oracle-virtual-machine-images)
+-	[Oracle Virtual Machine images - Miscellaneous Considerations](/documentation/articles/virtual-machines-windows-classic-oracle-considerations/)
 
 -	[Oracle WebLogic Server Product Documentation](http://www.oracle.com/technetwork/middleware/weblogic/documentation/index.html)
 
 -	[Oracle WebLogic Server 12c using Linux on Azure](http://www.oracle.com/technetwork/middleware/weblogic/learnmore/oracle-weblogic-on-azure-wp-2020930.pdf)
 
--	[Oracle Virtual Machine images for Azure](/documentation/articles/virtual-machines-oracle-list-oracle-virtual-machine-images)
+-	[Oracle Virtual Machine images for Azure](/documentation/articles/virtual-machines-oracle-list-oracle-virtual-machine-images/)

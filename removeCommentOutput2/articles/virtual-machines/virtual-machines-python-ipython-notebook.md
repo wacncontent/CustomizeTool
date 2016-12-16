@@ -32,9 +32,9 @@ resources without the need for administration and configuration by the user.
 
 If the notebook service does not work for your scenario please continue to read this article which will will show you how to deploy the Jupyter Notebook on Azure, using Linux virtual machines (VMs).
 
-> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the Resource Manager deployment model, which Microsoft recommends for most new deployments instead of the classic deployment model.
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the Resource Manager deployment model, which Azure recommends for most new deployments instead of the classic deployment model.
 
-[AZURE.INCLUDE [create-account-and-vms-note](../includes/create-account-and-vms-note.md)]
+[AZURE.INCLUDE [create-account-and-vms-note](../../includes/create-account-and-vms-note.md)]
 
 ## Create and configure a VM on Azure
 
@@ -249,6 +249,6 @@ profiling and parallel computing integration.
 
 For more information, see the [Python Developer Center](/develop/python/).
 
-[portal-vm-linux]: /documentation/articles/virtual-machines-linux-tutorial-portal-rm/
+[portal-vm-linux]: /documentation/articles/virtual-machines-linux-portal-create/
 [repository]: https://github.com/ipython/ipython
 [Python Tools for Visual Studio]: http://aka.ms/ptvs

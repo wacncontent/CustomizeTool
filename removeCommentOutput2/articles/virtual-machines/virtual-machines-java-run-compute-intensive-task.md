@@ -17,7 +17,7 @@
 
 # How to run a compute-intensive task in Java on a virtual machine
 
-> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the classic deployment model. Microsoft recommends that most new deployments use the Resource Manager model.
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager model.
  
 
 With Azure, you can use a virtual machine to handle compute-intensive tasks. For example, a virtual machine can handle tasks and deliver results to client machines or mobile applications. After reading this article, you will have an understanding of how to create a virtual machine that runs a compute-intensive Java application that can be monitored by another Java application.
@@ -42,7 +42,7 @@ The following is an example of the Java application monitoring the compute-inten
 
 ![Traveling Salesman Problem client][client_output]
 
-[AZURE.INCLUDE [create-account-and-vms-note](../includes/create-account-and-vms-note.md)]
+[AZURE.INCLUDE [create-account-and-vms-note](../../includes/create-account-and-vms-note.md)]
 
 ## To create a virtual machine
 
@@ -538,4 +538,4 @@ For both the solver and client applications, you can press **Ctrl+C** to exit if
 [namespace_list]: ./media/virtual-machines-java-run-compute-intensive-task/SvcBusQueues_05_NamespaceList.jpg
 [properties_pane]: ./media/virtual-machines-java-run-compute-intensive-task/SvcBusQueues_06_PropertiesPane.jpg
 [default_key]: ./media/virtual-machines-java-run-compute-intensive-task/SvcBusQueues_07_DefaultKey.jpg
-[add_ca_cert]: /documentation/articles/java-add-certificate-ca-store
+[add_ca_cert]: /documentation/articles/java-add-certificate-ca-store/

@@ -18,7 +18,7 @@
 
 # Planned maintenance for Azure virtual machines
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
 
 ## Why Azure performs planned maintenance
 
@@ -26,7 +26,7 @@ Azure periodically performs updates across the globe to improve the reliability,
 
 However, some updates do require a reboot to your virtual machines to apply the required updates to the infrastructure. The virtual machines are shut down while we patch the infrastructure, and then the virtual machines are restarted.
 
-Please note that there are two types of maintenance that can impact the availability of your virtual machines: planned and unplanned. This page describes how Azure performs planned maintenance. For more information about unplanned maintenance, see [Understand planned versus unplanned maintenance](/documentation/articles/virtual-machines-manage-availability).
+Please note that there are two types of maintenance that can impact the availability of your virtual machines: planned and unplanned. This page describes how Azure performs planned maintenance. For more information about unplanned maintenance, see [Understand planned versus unplanned maintenance](/documentation/articles/virtual-machines-linux-manage-availability/).
 
 ## Memory-preserving updates
 
@@ -44,7 +44,7 @@ There are two kinds of virtual machine configurations: multi-instance and single
 
 The multi-instance configuration provides redundancy across physical machines, power, and network, and it is recommended to ensure the availability of your application. All virtual machines in the availability set should serve the same purpose to your application.
 
-For more information about configuring your virtual machines for high availability, refer to [Manage the Availability of your Virtual Machines](/documentation/articles/virtual-machines-manage-availability).
+For more information about configuring your virtual machines for high availability, refer to [Manage the Availability of your Virtual Machines](/documentation/articles/virtual-machines-linux-manage-availability/).
 
 By contrast, a single-instance configuration is used for standalone virtual machines that are not placed in an availability set. These virtual machines do not qualify for the service level agreement (SLA), which requires that two or more virtual machines are deployed under the same availability set.
 
@@ -59,7 +59,7 @@ In a multi-instance configuration update, virtual machines are updated in a way 
 
 Each virtual machine in your availability set is assigned an update domain and a fault domain by the underlying Azure platform. Each update domain is a group of virtual machines that will be rebooted in the same time window. Each fault domain is a group of virtual machines that share a common power source and network switch.
 
-For more information about update domains and fault domains, see [Configure multiple virtual machines in an availability set for redundancy](/documentation/articles/virtual-machines-manage-availability#configure-multiple-virtual-machines-in-an-availability-set-for-redundancy).
+For more information about update domains and fault domains, see [Configure multiple virtual machines in an availability set for redundancy](/documentation/articles/virtual-machines-linux-manage-availability/#configure-multiple-virtual-machines-in-an-availability-set-for-redundancy).
 
 To prevent update domains from going offline at the same time, the maintenance is performed by shutting down each virtual machine in an update domain, applying the update to the host machines, restarting the virtual machines, and moving on to the next update domain. The planned maintenance event ends after all update domains have been updated.
 
@@ -111,5 +111,5 @@ China East | China North
 
 
 <!--Link references-->
-[Virtual Machines Manage Availability]: /documentation/articles/virtual-machines-windows-tutorial-classic-portal
-[Understand planned versus unplanned maintenance]: /documentation/articles/virtual-machines-manage-availability#Understand-planned-versus-unplanned-maintenance
+[Virtual Machines Manage Availability]: /documentation/articles/virtual-machines-windows-classic-tutorial/
+[Understand planned versus unplanned maintenance]: /documentation/articles/virtual-machines-linux-manage-availability/#Understand-planned-versus-unplanned-maintenance

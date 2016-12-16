@@ -24,16 +24,16 @@ The program are installed on the clusters. The text file analyzed in this tutori
 **Other related articles:**
 
 * [Get Started with Azure HDInsight][hdinsight-get-started]
-* [Develop Java MapReduce programs for Hadoop in HDInsight](/documentation/articles/hdinsight-develop-deploy-java-mapreduce)
-* [Submit Hadoop jobs in HDInsight](/documentation/articles/hdinsight-submit-hadoop-jobs-programmatically)
+* [Develop Java MapReduce programs for Hadoop in HDInsight](/documentation/articles/hdinsight-develop-deploy-java-mapreduce/)
+* [Submit Hadoop jobs in HDInsight](/documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/)
 * [Sample: 10GB GraySort][hdinsight-sample-10gb-graysort]
 * [Sample: Pi Estimator][hdinsight-sample-pi-estimator]
 * [Sample: C# Steaming][hdinsight-sample-cs-streaming]
 
 **Prerequisites**:
 
-- **An HDInsight cluster**. For instructions about the various ways in which such clusters can be created, see [Get Started with Azure HDInsight][hdinsight-get-started] or [Provision HDInsight Clusters](/documentation/articles/hdinsight-provision-clusters-v1).
-- **A workstation with Azure PowerShell**. See [Install and use Azure PowerShell](/documentation/articles/powershell-install-configure).
+- **An HDInsight cluster**. For instructions about the various ways in which such clusters can be created, see [Get Started with Azure HDInsight][hdinsight-get-started] or [Provision HDInsight Clusters](/documentation/articles/hdinsight-provision-clusters-v1/).
+- **A workstation with Azure PowerShell**. See [Install and use Azure PowerShell](/documentation/articles/powershell-install-configure/).
 
 <a id="run-sample"></a>
 ## Run the sample by using Azure PowerShell
@@ -195,22 +195,22 @@ Note that the output files of a MapReduce job are immutable. So if you rerun thi
 ## Next steps
 
 * [Get Started with Azure HDInsight][hdinsight-get-started]
-* [Develop Java MapReduce programs for Hadoop in HDInsight](/documentation/articles/hdinsight-develop-deploy-java-mapreduce)
-* [Submit Hadoop jobs in HDInsight](/documentation/articles/hdinsight-submit-hadoop-jobs-programmatically)
+* [Develop Java MapReduce programs for Hadoop in HDInsight](/documentation/articles/hdinsight-develop-deploy-java-mapreduce/)
+* [Submit Hadoop jobs in HDInsight](/documentation/articles/hdinsight-submit-hadoop-jobs-programmatically/)
 * [Sample: 10GB GraySort][hdinsight-sample-10gb-graysort]
 * [Sample: Pi Estimator][hdinsight-sample-pi-estimator]
 * [Sample: C# Steaming][hdinsight-sample-cs-streaming]
 
-[hdinsight-sample-10gb-graysort]: /documentation/articles/hdinsight-sample-10gb-graysort
-[hdinsight-sample-pi-estimator]: /documentation/articles/hdinsight-sample-pi-estimator
-[hdinsight-sample-cs-streaming]: /documentation/articles/hdinsight-sample-csharp-streaming
+[hdinsight-sample-10gb-graysort]: /documentation/articles/hdinsight-sample-10gb-graysort/
+[hdinsight-sample-pi-estimator]: /documentation/articles/hdinsight-sample-pi-estimator/
+[hdinsight-sample-cs-streaming]: /documentation/articles/hdinsight-sample-csharp-streaming/
 
 
-[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
-[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
+[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive/
+[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig/
 
-[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1/
 
-[powershell-install-configure]: /documentation/articles/powershell-install-configure
+[powershell-install-configure]: /documentation/articles/powershell-install-configure/
 
 [image-hdi-sample-wordcount-output]: ./media/hdinsight-sample-wordcount/HDI.Sample.WordCount.Output.png

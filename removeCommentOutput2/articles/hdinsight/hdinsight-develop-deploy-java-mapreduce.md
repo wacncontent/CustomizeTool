@@ -1,3 +1,5 @@
+<!-- rename to hdinsight-develop-deploy-java-mapreduce-linux -->
+
 <properties
 	pageTitle="Develop Java MapReduce programs for Hadoop | Azure"
 	description="Learn how to develop Java MapReduce programs on HDInsight emulator, how to deploy them to HDInsight."
@@ -14,7 +16,7 @@
 
 # Develop Java MapReduce programs for Hadoop in HDInsight
 
-[AZURE.INCLUDE [pig-selector](../includes/hdinsight-maven-mapreduce-selector.md)]
+[AZURE.INCLUDE [pig-selector](../../includes/hdinsight-maven-mapreduce-selector.md)]
 
 This tutorial walks you through an end-to-end scenario for developing a word-counting Hadoop MapReduce job in Java by using Apache Maven. The tutorial also shows how to test the application on the HDInsight Emulator for Azure and then deploy and run it on an Windows-based HDInsight cluster.
 
@@ -580,23 +582,23 @@ In this tutorial, you have learned how to develop a Java MapReduce job, how to t
 [azure-purchase-options]: /pricing/overview/
 [azure-trial]: /pricing/1rmb-trial/
 
-[hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop
-[hdinsight-ODBC]: /documentation/articles/hdinsight-connect-excel-hive-ODBC-driver
-[hdinsight-power-query]: /documentation/articles/hdinsight-connect-excel-power-query
+[hdinsight-use-sqoop]: /documentation/articles/hdinsight-use-sqoop/
+[hdinsight-ODBC]: /documentation/articles/hdinsight-connect-excel-hive-ODBC-driver/
+[hdinsight-power-query]: /documentation/articles/hdinsight-connect-excel-power-query/
 
 
-[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1
-[hdinsight-emulator]: /documentation/articles/hdinsight-hadoop-emulator-get-started
-[hdinsight-emulator-wasb]: /documentation/articles/hdinsight-hadoop-emulator-get-started#blobstorage
-[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data
-[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage
-[hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell
-[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive
-[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig
-[hdinsight-power-query]: /documentation/articles/hdinsight-connect-excel-power-query
+[hdinsight-get-started]: /documentation/articles/hdinsight-hadoop-tutorial-get-started-windows-v1/
+[hdinsight-emulator]: /documentation/articles/hdinsight-hadoop-emulator-get-started/
+[hdinsight-emulator-wasb]: /documentation/articles/hdinsight-hadoop-emulator-get-started/#blobstorage
+[hdinsight-upload-data]: /documentation/articles/hdinsight-upload-data/
+[hdinsight-storage]: /documentation/articles/hdinsight-hadoop-use-blob-storage/
+[hdinsight-admin-powershell]: /documentation/articles/hdinsight-administer-use-powershell/
+[hdinsight-use-hive]: /documentation/articles/hdinsight-use-hive/
+[hdinsight-use-pig]: /documentation/articles/hdinsight-use-pig/
+[hdinsight-power-query]: /documentation/articles/hdinsight-connect-excel-power-query/
 
 [powershell-PSCredential]: http://social.technet.microsoft.com/wiki/contents/articles/4546.working-with-passwords-secure-strings-and-credentials-in-windows-powershell.aspx
-[powershell-install-configure]: /documentation/articles/powershell-install-configure
+[powershell-install-configure]: /documentation/articles/powershell-install-configure/
 
 
 

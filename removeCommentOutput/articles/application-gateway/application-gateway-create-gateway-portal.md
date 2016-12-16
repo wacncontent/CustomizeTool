@@ -1,29 +1,24 @@
 <properties
-   pageTitle="Create an application gateway using the portal | Azure"
-   description="Learn how to create an Application Gateway by using the portal"
-   services="application-gateway"
-   documentationCenter="na"
-   authors="georgewallace"
-   manager="carmonm"
-   editor=""
-   tags="azure-resource-manager"
-/>
-<tags  
-   ms.service="application-gateway"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
-   ms.date="09/09/2016"
-   wacn.date=""
-   ms.author="gwallace" />
+    pageTitle="Create an application gateway using the portal | Azure"
+    description="Learn how to create an Application Gateway by using the portal"
+    services="application-gateway"
+    documentationcenter="na"
+    author="georgewallace"
+    manager="carmonm"
+    editor=""
+    tags="azure-resource-manager" />
+<tags
+    ms.assetid="54dffe95-d802-4f86-9e2e-293f49bd1e06"
+    ms.service="application-gateway"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="infrastructure-services"
+    ms.date="11/16/2016"
+    wacn.date=""
+    ms.author="gwallace" />
 
 # Create an application gateway by using the portal
-
-Azure Application Gateway is a layer-7 load balancer. It provides failover, performance-routing HTTP requests between different servers, whether they are on the cloud or on-premises. 
-Application Gateway provides many Application Delivery Controller (ADC) features including HTTP load balancing, cookie-based session affinity, Secure Sockets Layer (SSL) offload, custom health probes, support for multi-site, and many others. 
-To find a complete list of supported features, visit [Application Gateway Overview](/documentation/articles/application-gateway-introduction/)
-
 > [AZURE.SELECTOR]
 - [Azure portal](/documentation/articles/application-gateway-create-gateway-portal/)
 - [Azure Resource Manager PowerShell](/documentation/articles/application-gateway-create-gateway-arm/)
@@ -31,20 +26,27 @@ To find a complete list of supported features, visit [Application Gateway Overvi
 - [Azure Resource Manager template](/documentation/articles/application-gateway-create-gateway-arm-template/)
 - [Azure CLI](/documentation/articles/application-gateway-create-gateway-cli/)
 
+Azure Application Gateway is a layer-7 load balancer. It provides failover, performance-routing HTTP requests between different servers, whether they are on the cloud or on-premises. 
+Application Gateway provides many Application Delivery Controller (ADC) features including HTTP load balancing, cookie-based session affinity, Secure Sockets Layer (SSL) offload, custom health probes, support for multi-site, and many others. 
+To find a complete list of supported features, visit [Application Gateway Overview](/documentation/articles/application-gateway-introduction/)
+
 ## Scenario
 
 In this scenario, you learn how to create an application gateway using the Azure portal.
 
 This scenario will:
 
-- Create a medium application gateway with two instances.
-- Create a virtual network named AdatumAppGatewayVNET with a reserved CIDR block of 10.0.0.0/16.
-- Create a subnet called Appgatewaysubnet that uses 10.0.0.0/28 as its CIDR block.
-- Configure a certificate for SSL offload.
+* Create a medium application gateway with two instances.
+* Create a virtual network named AdatumAppGatewayVNET with a reserved CIDR block of 10.0.0.0/16.
+* Create a subnet called Appgatewaysubnet that uses 10.0.0.0/28 as its CIDR block.
+* Configure a certificate for SSL offload.
 
 ![Scenario example][scenario]
 
->[AZURE.IMPORTANT] Additional configuration of the application gateway, including custom health probes, backend pool addresses, and additional rules are configured after the application gateway is configured and not during initial deployment.
+> [AZURE.IMPORTANT]
+> Additional configuration of the application gateway, including custom health probes, backend pool addresses, and additional rules are configured after the application gateway is configured and not during initial deployment.
+> 
+> 
 
 ## Before you begin
 
@@ -65,15 +67,19 @@ Next fill out the basic information about the application gateway. When complete
 
 The information needed for the basic settings is:
 
-- **Name** - The name for the application gateway.
-- **SKU size** - This setting is the size of the application gateway, available options are (Small, Medium, and Large).
-- **Instance count** - The number of instances, this value should be a number between 2 and 10.
-- **Resource group** - The resource group to hold the application gateway, it can be an existing resource group or a new one.
-- **Location** - The region for the application gateway, it is the same location at the resource group. *The location is important as the virtual network and public IP must be in the same location as the gateway*.
+* **Name** - The name for the application gateway.
+* **Tier** - This is the tier of the application gateway. Two tiers are available, **WAF** and **Standard**. WAF enables the web application firewall feature.
+* **SKU size** - This setting is the size of the application gateway, available options are (**Small**, **Medium**, and **Large**). Small is not available when WAF tier is chosen.
+* **Instance count** - The number of instances, this value should be a number between 2 and 10.
+* **Resource group** - The resource group to hold the application gateway, it can be an existing resource group or a new one.
+* **Location** - The region for the application gateway, it is the same location at the resource group. The location is important as the virtual network and public IP must be in the same location as the gateway.
 
 ![blade showing basic settings][2]
 
->[AZURE.NOTE] An instance count of 1 can be chosen for testing purposes. It is important to know that any instance count under two instances is not covered by the SLA and are therefore not recommended. Small gateways are to be used for dev test and not for production purposes.
+> [AZURE.NOTE]
+> An instance count of 1 can be chosen for testing purposes. It is important to know that any instance count under two instances is not covered by the SLA and are therefore not recommended. Small gateways are to be used for dev test and not for production purposes.
+> 
+> 
 
 ### Step 3
 
@@ -85,7 +91,7 @@ Click **Choose a virtual network** to configure the virtual network.
 
 ### Step 4
 
-In the *Choose Virtual Network* blade, click **Create New**
+In the **Choose Virtual Network** blade, click **Create New**
 
 While not explained in this scenario, an existing Virtual Network could be selected at this point.  If an existing virtual network is used, it is important to know that the virtual network needs an empty subnet or a subnet of only application gateway resources to be used.
 
@@ -142,9 +148,11 @@ Once the application gateway has been created, navigate to it in the portal to c
 
 ![Application Gateway resource view][10]
 
-These steps create a basic application gateway with default settings for the listener, backend pool, backend http settings, and rules. You can modify these settings to suit your deployment once the provisioning is successful. As described earlier, this process creates a default application gateway.  The next steps are to configure the application gateway by adding pool members, modifying settings, and adjusting rules in the gateway for it to work properly.
+These steps create a basic application gateway with default settings for the listener, backend pool, backend http settings, and rules. You can modify these settings to suit your deployment once the provisioning is successful.
 
 ## Next steps
+
+This scenario creates a default application gateway. The next steps are to configure the application gateway by adding pool members, modifying settings, and adjusting rules in the gateway for it to work properly.
 
 Learn how to create custom health probes by visiting [Create a custom health probe](/documentation/articles/application-gateway-create-probe-portal/)
 

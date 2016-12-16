@@ -1,3 +1,5 @@
+<!-- deleted in Global -->
+
 <properties 
 	pageTitle="Use SSH on Linux and Mac | Azure" 
 	description="Generate and use SSH keys on Linux and Mac for the Resource Manager and classic deployment models on Azure." 

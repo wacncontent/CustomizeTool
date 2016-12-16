@@ -1,22 +1,21 @@
-<properties 
-   pageTitle="Testing Traffic Manager Settings | Azure"
-   description="This article will help you test Traffic Manager settings"
-   services="traffic-manager"
-   documentationCenter=""
-   authors="sdwheeler"
-   manager="carmonm"
-    editor=""
-/>
-<tags 
-   ms.service="traffic-manager"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
+<properties
+    pageTitle="Testing Traffic Manager Settings | Azure"
+    description="This article will help you test Traffic Manager settings"
+    services="traffic-manager"
+    documentationcenter=""
+    author="sdwheeler"
+    manager="carmonm"
+    editor="" />
+<tags
+    ms.assetid="2180b640-596e-4fb2-be59-23a38d606d12"
+    ms.service="traffic-manager"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="infrastructure-services"
     ms.date="10/11/2016"
-   wacn.date=""
-    ms.author="sewhee"
-/>
+    wacn.date=""
+    ms.author="sewhee" />
 
 # Test your Traffic Manager settings
 
@@ -29,6 +28,7 @@ To test your Traffic Manager settings, you need to have multiple clients, in var
 You are checking to see that the DNS names resolve to IP addresses of the endpoints in your profile. The names should resolve in a manner consistent with the traffic routing method defined in the Traffic Manager profile. You can use the tools like **nslookup** or **dig** to resolve DNS names.
 
 The following examples help you test your Traffic Manager profile.
+
 ### Check Traffic Manager profile using nslookup and ipconfig in Windows
 
 1. Open a command or Windows PowerShell prompt as an administrator.
@@ -38,8 +38,10 @@ The following examples help you test your Traffic Manager profile.
         nslookup myapp.contoso.trafficmanager.cn
 
     A typical result shows the following information:
-    * The DNS name and IP address of the DNS server being accessed to resolve this Traffic Manager domain name.
-    * The Traffic Manager domain name you typed on the command line after "nslookup" and the IP address to which the Traffic Manager domain resolves. The second IP address is the important one to check. It should match a public virtual IP (VIP) address for one of the cloud services or websites in the Traffic Manager profile you are testing.
+
+    + The DNS name and IP address of the DNS server being accessed to resolve this Traffic Manager domain name.
+    + The Traffic Manager domain name you typed on the command line after "nslookup" and the IP address to which the Traffic Manager domain resolves. The second IP address is the important one to check. It should match a public virtual IP (VIP) address for one of the cloud services or websites in the Traffic Manager profile you are testing.
+
 ## How to test the failover traffic routing method
 
 1. Leave all endpoints up.
@@ -69,7 +71,3 @@ Alternatively, there are free web-based DNS lookup and dig services available. S
 * [About Traffic Manager traffic routing methods](/documentation/articles/traffic-manager-routing-methods/)
 * [Traffic Manager performance considerations](/documentation/articles/traffic-manager-performance-considerations/)
 * [Troubleshooting Traffic Manager degraded state](/documentation/articles/traffic-manager-troubleshooting-degraded/)
-
-
-
-

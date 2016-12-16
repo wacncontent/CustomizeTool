@@ -1,3 +1,5 @@
+<!-- deleted in Global -->
+
 <properties
 	pageTitle="How to Use CoreOS | Azure"
 	description="Describes CoreOS, how to create a CoreOS virtual machine cluster on Azure in the classic deployment model, and its basic usage."
@@ -17,7 +19,7 @@
 
 This topic describes [CoreOS] and shows how to create a cluster of three CoreOS virtual machines on Azure as a quick start to understanding this operating system. It uses the very basic elements of CoreOS deployments and examples from [CoreOS with Azure], [Tim Park's CoreOS Tutorial], and [Patrick Chanezon's CoreOS Tutorial] to demonstrate the absolute minimum requirements to both understand the basic structure of a CoreOS deployment and get a cluster of three virtual machines running successfully.
 
-> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the classic deployment model. Microsoft recommends that most new deployments use the Resource Manager deployment model.
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager deployment model.
 
 
 ## CoreOS, clusters, and Linux containers
@@ -52,7 +54,7 @@ This section describes how to create an Azure cloud cervice with three CoreOS vi
 
 ### Create public and private keys for communication
 
-Use the instructions in [How to Use SSH with Linux on Azure](/documentation/articles/virtual-machines-linux-ssh-from-linux) to create a public and private key for SSH. (The basic steps are in the instructions below.) You are going to use these keys to connect to VMs in the cluster to verify that they are working and can communicate with each other.
+Use the instructions in [How to Use SSH with Linux on Azure](/documentation/articles/virtual-machines-linux-ssh-from-linux/) to create a public and private key for SSH. (The basic steps are in the instructions below.) You are going to use these keys to connect to VMs in the cluster to verify that they are working and can communicate with each other.
 
 > [AZURE.NOTE] This topic assumes that you do not have these keys, and requires you to create `myPrivateKey.pem` and `myCert.pem` files for clarity. If you already have a public and private key pair saved to `~/.ssh/id_rsa`, you can just type `openssl req -x509 -key ~/.ssh/id_rsa -nodes -days 365 -newkey rsa:2048 -out myCert.pem` to obtain the .pem file that you need to upload to Azure.
 
@@ -103,7 +105,7 @@ Still in the same working directory, create a file with your favorite text edito
 3. Create a cloud service for your basic cluster by typing
 `azure service create <cloud-service-name>` where <*cloud-service-name*> is the name for your CoreOS cloud service. This sample uses the name **`coreos-cluster`**; you will need to reuse the name that you choose to create your CoreOS VM instances inside the cloud service.
 
-	One note: If you observe your work so far in the [Azure portal](https://portal.azure.cn), you'll find your cloud service name is both a resource group and domain, as the following image shows:
+	One note: If you observe your work so far in the [Azure Portal Preview](https://portal.azure.cn), you'll find your cloud service name is both a resource group and domain, as the following image shows:
 
 	![][CloudServiceInNewPortal]
 
@@ -190,7 +192,7 @@ You should now have a running three-node CoreOS cluster on Azure. From here, you
 
 
 <!--Link references-->
-[Azure Command-line Interface (Azure CLI)]: /documentation/articles/xplat-cli-install
+[Azure Command-line Interface (Azure CLI)]: /documentation/articles/xplat-cli-install/
 [CoreOS]: https://coreos.com/
 [CoreOS Overview]: https://coreos.com/using-coreos/
 [CoreOS with Azure]: https://coreos.com/docs/running-coreos/cloud-providers/azure/
@@ -198,4 +200,4 @@ You should now have a running three-node CoreOS cluster on Azure. From here, you
 [Patrick Chanezon's CoreOS Tutorial]: https://github.com/chanezon/azure-linux/tree/master/coreos/cloud-init
 [Docker]: http://docker.io
 [YAML]: http://yaml.org/
-[Get Started with Fleet on CoreOS on Azure]: /documentation/articles/virtual-machines-linux-classic-coreos-fleet-get-started
+[Get Started with Fleet on CoreOS on Azure]: /documentation/articles/virtual-machines-linux-classic-coreos-fleet-get-started/

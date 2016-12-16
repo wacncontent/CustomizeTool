@@ -29,7 +29,7 @@ The following example shows you how you can create a Virtual Machine based on a 
 
 	3. Do not add any **endpoints** at this time.
 
-9. Choose or Create a [Resource Group](/documentation/articles/resource-group-portal)
+9. Choose or Create a [Resource Group](/documentation/articles/resource-group-portal/)
 
 10. Choose a **Subscription**
 
@@ -163,8 +163,8 @@ The following example shows you how you can create a Virtual Machine based on a 
 
 Now that you've set up your Virtual Machine running Oracle WebLogic Server, see the following topics for additional information.
 
-- [Oracle Virtual Machine images - Miscellaneous Considerations](/documentation/articles/virtual-machines-miscellaneous-considerations-oracle-virtual-machine-images)
+- [Oracle Virtual Machine images - Miscellaneous Considerations](/documentation/articles/virtual-machines-windows-classic-oracle-considerations/)
 
 - [Oracle WebLogic Server Product Documentation](http://www.oracle.com/technetwork/middleware/weblogic/documentation/index.html)
 
-- [Oracle Virtual Machine images for Azure](/documentation/articles/virtual-machines-oracle-list-oracle-virtual-machine-images)
+- [Oracle Virtual Machine images for Azure](/documentation/articles/virtual-machines-oracle-list-oracle-virtual-machine-images/)

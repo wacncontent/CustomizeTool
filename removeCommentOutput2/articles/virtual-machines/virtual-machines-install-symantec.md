@@ -17,7 +17,7 @@
 
 # How to install and configure Symantec Endpoint Protection on a Windows VM
 
-> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the classic deployment model. Microsoft recommends that most new deployments use the Resource Manager model.
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager model.
 
 
 This article shows you how to install and configure the Symantec Endpoint Protection client on a new or existing virtual machine (VM) running Windows Server. This is the full client, which includes services such as virus and spyware protection, firewall, and intrusion prevention.
@@ -86,12 +86,12 @@ To verify that the Symantec security extension has been installed and is up-to-d
 
 [Portal]: http://manage.windowsazure.cn
 
-[Create]: /documentation/articles/virtual-machines-windows-tutorial-classic-portal
+[Create]: /documentation/articles/virtual-machines-windows-classic-tutorial/
 
-[PS]: /documentation/articles/powershell-install-configure
+[PS]: /documentation/articles/powershell-install-configure/
 
 [Agent]: https://azure.microsoft.com/zh-cn/blog/vm-agent-and-extensions-part-2/
 
-[Logon]: /documentation/articles/virtual-machines-log-on-windows-server
+[Logon]: /documentation/articles/virtual-machines-windows-classic-connect-logon/
 
-[Ext]: /documentation/articles/virtual-machines-extensions-features
+[Ext]: /documentation/articles/virtual-machines-linux-extensions-features/

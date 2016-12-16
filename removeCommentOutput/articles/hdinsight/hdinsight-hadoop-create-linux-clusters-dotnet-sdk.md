@@ -1,67 +1,62 @@
 <properties
-   	pageTitle="Create Hadoop, HBase, Storm, or Spark clusters on Linux in HDInsight using the HDInsight .NET SDK | Azure"
-   	description="Learn how to create Hadoop, HBase, Storm, or Spark clusters on Linux for HDInsight using the HDInsight .NET SDK."
-   	services="hdinsight"
-   	documentationCenter=""
-   	authors="mumian"
-   	manager="jhubbard"
-   	editor="cgronlun"
-	tags="azure-portal"/>
-
+    pageTitle="Create Hadoop, HBase, Storm, or Spark clusters on Linux in HDInsight using the HDInsight .NET SDK | Azure"
+    description="Learn how to create Hadoop, HBase, Storm, or Spark clusters on Linux for HDInsight using the HDInsight .NET SDK."
+    services="hdinsight"
+    documentationcenter=""
+    author="mumian"
+    manager="jhubbard"
+    editor="cgronlun"
+    tags="azure-portal" />
 <tags
-   	ms.service="hdinsight"
-   	ms.devlang="na"
-   	ms.topic="article"
-   	ms.tgt_pltfrm="na"
-   	ms.workload="big-data"
-   	ms.date="09/02/2016"
-   	wacn.date=""
-   	ms.author="jgao"/>
+    ms.assetid="9c74e3dc-837f-4c90-bbb1-489bc7124a3d"
+    ms.service="hdinsight"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="big-data"
+    ms.date="09/02/2016"
+    wacn.date=""
+    ms.author="jgao" />
 
-#Create Linux-based clusters in HDInsight using the .NET SDK
-
+# Create Linux-based clusters in HDInsight using the .NET SDK
 [AZURE.INCLUDE [selector](../../includes/hdinsight-selector-create-clusters.md)]
 
 The HDInsight .NET SDK provides .NET client libraries that make it easier to work with HDInsight from a .NET Framework application. This document demonstrates how to create a Linux-based HDInsight cluster using the .NET SDK.
 
-> [AZURE.IMPORTANT] The steps in this document create a cluster with one worker node. If you plan on more than 32 worker nodes, either at cluster creation or by scaling the cluster after creation, then you must select a head node size with at least 8 cores and 14GB ram.
->
+> [AZURE.IMPORTANT]
+> The steps in this document create a cluster with one worker node. If you plan on more than 32 worker nodes, either at cluster creation or by scaling the cluster after creation, then you must select a head node size with at least 8 cores and 14GB ram.
+> 
 > For more information on node sizes and associated costs, see [HDInsight pricing](/pricing/details/hdinsight/).
+> 
+> 
 
-##Prerequisites
-
+## Prerequisites
 [AZURE.INCLUDE [delete-cluster-warning](../../includes/hdinsight-delete-cluster-warning.md)]
 
-- **An Azure subscription**. See [Get Azure trial](/pricing/1rmb-trial/).
-- __Visual Studio 2013 or 2015__
+* **An Azure subscription**. See [Get Azure trial](/pricing/1rmb-trial/).
+* **Visual Studio 2013 or 2015**
 
 ### Access control requirements
-
 [AZURE.INCLUDE [access-control](../../includes/hdinsight-access-control-requirements.md)]
 
 ## Create clusters
-
 1. Open Visual Studio 2013 or 2015.
-
 2. Create a new Visual Studio project with the following settings
-
-    |Property|Value|
-    |--------|-----|
-    |Template|Templates/Visual C#/Windows/Console Application|
-    |Name|CreateHDICluster|
-
-5. From the **Tools** menu, click **Nuget Package Manager**, and then click **Package Manager Console**.
-
-6. Run the following command in the console to install the packages:
-
+   
+   | Property | Value |
+   | --- | --- |
+   | Template |Templates/Visual C#/Windows/Console Application |
+   | Name |CreateHDICluster |
+3. From the **Tools** menu, click **Nuget Package Manager**, and then click **Package Manager Console**.
+4. Run the following command in the console to install the packages:
+   
         Install-Package Microsoft.Rest.ClientRuntime.Azure.Authentication -Pre
         Install-Package Microsoft.Azure.Management.ResourceManager -Pre
         Install-Package Microsoft.Azure.Management.HDInsight
-
+   
     These commands add .NET libraries and references to them to the current Visual Studio project.
-
-6. From Solution Explorer, double-click **Program.cs** to open it, paste the following code, and provide values for the variables:
-
+5. From Solution Explorer, double-click **Program.cs** to open it, paste the following code, and provide values for the variables:
+   
         using System;
         using System.Threading;
         using System.Threading.Tasks;
@@ -75,19 +70,19 @@ The HDInsight .NET SDK provides .NET client libraries that make it easier to wor
         using System.Net.Http;
         using Newtonsoft.Json;
         using System.Collections.Generic;
-
+   
         namespace CreateHDInsightCluster
         {
             class Program
             {
                 private static HDInsightManagementClient _hdiManagementClient;
-
+   
                 // Replace with your AAD tenant ID if necessary
                 private const string TenantId = UserTokenProvider.CommonTenantId; 
                 private const string SubscriptionId = "<Your Azure Subscription ID>";
                 // This is the GUID for the PowerShell client. Used for interactive logins in this example.
                 private const string ClientId = "1950a258-227b-4e31-a9cf-717495945fc2";
-
+   
                 private static string SubscriptionId = "<Enter Your Subscription ID>";
                 private const string ExistingResourceGroupName = "<Enter Resource Group Name>";
                 private const string ExistingStorageName = "<Enter Default Storage Account Name>.blob.core.chinacloudapi.cn";
@@ -111,18 +106,18 @@ The HDInsight .NET SDK provides .NET client libraries that make it easier to wor
                     pzO36Mtev5XvseLQqzXzZ6aVBdlXoppGHXkoGHAMNOtEWRXpAUtEccjpATsaZhQR
                     zZdZlzHduhM10ofS4YOYBADt9JohporbQVHM5w6qUhIgyiPo7w==
                     ---- END SSH2 PUBLIC KEY ----"; //replace the public key with your own
-
+   
                 static void Main(string[] args)
                 {
                     System.Console.WriteLine("Creating a cluster.  The process takes 10 to 20 minutes ...");
-
+   
                     // Authenticate and get a token
                     var authToken = Authenticate(TenantId, ClientId, SubscriptionId);
                     // Flag subscription for HDInsight, if it isn't already.
                     EnableHDInsight(authToken);
                     // Get an HDInsight management client
                     _hdiManagementClient = new HDInsightManagementClient(authToken);
-
+   
                     // Set parameters for the new cluster
                     var parameters = new ClusterCreateParameters
                     {
@@ -131,24 +126,24 @@ The HDInsight .NET SDK provides .NET client libraries that make it easier to wor
                         ClusterType = NewClusterType,
                         OSType = NewClusterOSType,
                         Version = NewClusterVersion,
-
+   
                         DefaultStorageAccountName = ExistingStorageName,
                         DefaultStorageAccountKey = ExistingStorageKey,
                         DefaultStorageContainer = ExistingBlobContainer,
-
+   
                         Password = NewClusterPassword,
                         Location = NewClusterLocation,
-
+   
                         SshUserName = NewClusterSshUserName,
                         SshPublicKey = NewClusterSshPublicKey
                     };
                     // Create the cluster
                     _hdiManagementClient.Clusters.Create(ExistingResourceGroupName, NewClusterName, parameters);
-
+   
                     System.Console.WriteLine("The cluster has been created. Press ENTER to continue ...");
                     System.Console.ReadLine();
                 }
-
+   
                 /// <summary>
                 /// Authenticate to an Azure subscription and retrieve an authentication token
                 /// </summary>
@@ -182,13 +177,10 @@ The HDInsight .NET SDK provides .NET client libraries that make it easier to wor
                 }
             }
         }
-	
-10. Replace the class member values.
-
+6. Replace the class member values.
 7. Press **F5** to run the application. A console window should open and display the status of the application. You will also be prompted to enter your Azure account credentials. It can take several minutes to create an HDInsight cluster, normally around 15.
 
 ## Use bootstrap
-
 For more information, see [Customize HDInsight clusters using Bootstrap](/documentation/articles/hdinsight-hadoop-customize-cluster-bootstrap/).
 
 Modify the sample in [Create clusters](#create-clusters) to configure a Hive setting:
@@ -316,7 +308,6 @@ Modify the sample in [Create clusters](#create-clusters) to configure a Hive set
 
 
 ## Use Script Action
-
 For more inforamtion, see [Customize Linux-based HDInsight clusters using Script Action](/documentation/articles/hdinsight-hadoop-customize-cluster-v1/).
 
 Modify the sample in [Create clusters](#create-clusters) to call a Script Action to install R:
@@ -356,36 +347,31 @@ Modify the sample in [Create clusters](#create-clusters) to call a Script Action
 
         parameters.ScriptActions.Add(ClusterNodeType.HeadNode,new System.Collections.Generic.List<ScriptAction> { rScriptAction});
         parameters.ScriptActions.Add(ClusterNodeType.WorkerNode, new System.Collections.Generic.List<ScriptAction> { rScriptAction });
-        
+
         _hdiManagementClient.Clusters.Create(ExistingResourceGroupName, NewClusterName, parameters);
 
         System.Console.WriteLine("The cluster has been created. Press ENTER to continue ...");
         System.Console.ReadLine();
     }
 
-##Next steps
-
+## Next steps
 Now that you have successfully created an HDInsight cluster, use the following to learn how to work with your cluster. 
 
-###Hadoop clusters
-
+### Hadoop clusters
 * [Use Hive with HDInsight](/documentation/articles/hdinsight-use-hive/)
 * [Use Pig with HDInsight](/documentation/articles/hdinsight-use-pig/)
 * [Use MapReduce with HDInsight](/documentation/articles/hdinsight-use-mapreduce/)
 
-###HBase clusters
-
+### HBase clusters
 * [Get started with HBase on HDInsight](/documentation/articles/hdinsight-hbase-tutorial-get-started-v1/)
 * [Develop Java applications for HBase on HDInsight](/documentation/articles/hdinsight-hbase-build-java-maven-linux/)
 
-###Storm clusters
-
+### Storm clusters
 * [Develop Java topologies for Storm on HDInsight](/documentation/articles/hdinsight-storm-develop-java-topology/)
 * [Use Python components in Storm on HDInsight](/documentation/articles/hdinsight-storm-develop-python-topology/)
 * [Deploy and monitor topologies with Storm on HDInsight](/documentation/articles/hdinsight-storm-deploy-monitor-topology/)
 
-###Spark clusters
-
+### Spark clusters
 * [Create a standalone application using Scala](/documentation/articles/hdinsight-apache-spark-create-standalone-application/)
 * [Run jobs remotely on a Spark cluster using Livy](/documentation/articles/hdinsight-apache-spark-livy-rest-interface/)
 * [Spark with BI: Perform interactive data analysis using Spark in HDInsight with BI tools](/documentation/articles/hdinsight-apache-spark-use-bi-tools/)
@@ -393,8 +379,8 @@ Now that you have successfully created an HDInsight cluster, use the following t
 * [Spark Streaming: Use Spark in HDInsight for building real-time streaming applications](/documentation/articles/hdinsight-apache-spark-eventhub-streaming/)
 
 ### Run jobs
+* [Run Hive jobs in HDInsight using .NET SDK](/documentation/articles/hdinsight-hadoop-use-hive-dotnet-sdk/)
+* [Run Pig jobs in HDInsight using .NET SDK](/documentation/articles/hdinsight-hadoop-use-pig-dotnet-sdk-v1/)
+* [Run Sqoop jobs in HDInsight using .NET SDK](/documentation/articles/hdinsight-hadoop-use-sqoop-dotnet-sdk/)
+* [Run Oozie jobs in HDInsight](/documentation/articles/hdinsight-use-oozie/)
 
-- [Run Hive jobs in HDInsight using .NET SDK](/documentation/articles/hdinsight-hadoop-use-hive-dotnet-sdk/)
-- [Run Pig jobs in HDInsight using .NET SDK](/documentation/articles/hdinsight-hadoop-use-pig-dotnet-sdk-v1/)
-- [Run Sqoop jobs in HDInsight using .NET SDK](/documentation/articles/hdinsight-hadoop-use-sqoop-dotnet-sdk/)
-- [Run Oozie jobs in HDInsight](/documentation/articles/hdinsight-use-oozie/)

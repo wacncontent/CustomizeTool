@@ -20,10 +20,10 @@
 This article gives an overview of using the Custom Script extension on Windows VMs using Azure PowerShell cmdlets.
 
 Virtual machine (VM) extensions are built by Microsoft and trusted third-party publishers to extend the functionality of the VM. For an overview of VM extensions, see
-[Azure VM extensions and features](/documentation/articles/virtual-machines-extensions-features).
+[Azure VM extensions and features](/documentation/articles/virtual-machines-linux-extensions-features/).
 
 Link:
-> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the classic deployment model. Microsoft recommends that most new deployments use the [Resource Manager model](/documentation/articles/virtual-machines-extensions-customscript%20-with%20template).
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the [Resource Manager model](/documentation/articles/virtual-machines-windows-classic-extensions-customscript%20-with%20template/).
 
 
 ## Custom Script extension overview
@@ -86,7 +86,7 @@ Custom Script Extension can be uninstalled from the VM using the following comma
 
 ### Using Custom Script extension with templates
 
-To learn about using Custom Script extension with Azure Resource Manager templates, see the documentation [here](/documentation/articles/virtual-machines-extensions-customscript%20-with%20template).
+To learn about using Custom Script extension with Azure Resource Manager templates, see the documentation [here](/documentation/articles/virtual-machines-windows-classic-extensions-customscript%20-with%20template/).
 
 <!--Image references-->
 [5]: ./media/virtual-machines-extensions-customscript/addcse.png

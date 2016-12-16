@@ -25,7 +25,7 @@ This tutorial shows how to host a Ruby on Rails website on Azure using a Linux v
 
 This tutorial was validated using Ubuntu Server 14.04 LTS. If you use a different Linux distribution, you might need to modify the steps to install Rails.
 
-> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the classic deployment model. Microsoft recommends that most new deployments use the Resource Manager model.
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager model.
 
 
 ## Create an Azure VM
@@ -128,7 +128,7 @@ You should see output similar to the following.
 	![default rails page][default-rails-cloud]
 
 
-##<a id="next"></a>Next steps
+## <a id="next"></a>Next steps
 
 In this tutorial, you did most of the steps manually. In a production environment, you would write your app on a development machine and deploy it to the Azure VM. Also, most production environments host the Rails application in conjunction with another server process such as Apache or NginX, which handles request routing to multiple instances of the Rails application and serving static resources. For more information, see http://rubyonrails.org/deploy/.
 
@@ -145,7 +145,7 @@ To use Azure services from your Ruby application, see:
 
 
 <!-- WA.com links -->
-[blobs]: /documentation/articles/storage-ruby-how-to-use-blob-storage
+[blobs]: /documentation/articles/storage-ruby-how-to-use-blob-storage/
 
 [cdn-howto]: /develop/ruby/app-services/
 
@@ -153,7 +153,7 @@ To use Azure services from your Ruby application, see:
 
 [tables]: /develop/ruby/
 
-[vm-instructions]: /documentation/articles/virtual-machines-linux-tutorial
+[vm-instructions]: /documentation/articles/virtual-machines-linux-quick-create-cli/
 
 
 <!-- External Links -->

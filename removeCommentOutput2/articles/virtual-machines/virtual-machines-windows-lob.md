@@ -1,3 +1,4 @@
+<!-- deleted in Global -->
 
 <properties 
 	pageTitle="Line of business application in Azure | Azure" 
@@ -15,9 +16,6 @@
 	wacn.date=""/>
 
 # Azure Infrastructure Services Workload: High-availability line of business application
-
-
-> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the Resource Manager deployment model, which Azure recommends for most new deployments instead of the classic deployment model.
 
 Set up your first or next web-based, intranet-only line of business application in Azure and take advantage of ease of configuration and the ability to quickly expand the application to include new capacity.
  

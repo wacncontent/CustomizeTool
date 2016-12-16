@@ -1,3 +1,5 @@
+<!-- rename to app-service-web-troubleshoot-http-502-http-503 -->
+
 <properties
 	pageTitle="Troubleshoot: web app unavailable due to HTTP 502/503"
 	description="This article helps you troubleshoot HTTP 502/503 errors in your web app hosted in Azure Web App."
@@ -41,12 +43,10 @@ Troubleshooting can be divided into three distinct tasks, in sequential order:
 
 [Azure Web Apps](/home/features/web-site/) gives you various options at each step.
 
-
 <a name="observe"></a>
 ### 1. Observe and monitor application behavior
 
 ####	Monitor your web app
-
 
 This page let you find out if your application is having any issues. In Azure Management Portal, click **Monitor** of your web app.
 
@@ -62,12 +62,10 @@ Some of the metrics that you might want to monitor for your web app are
 
 For more information, see:
 
--	[Monitor Web Apps in Azure](/documentation/articles/web-sites-monitor)
-
+-	[Monitor Web Apps in Azure](/documentation/articles/web-sites-monitor/)
 
 <a name="collect"></a>
 ### 2. Collect data
-
 
 ####	Use the FTP Diagnostic Logs
 
@@ -80,7 +78,7 @@ Find the FTP Diagnostic Logs link in your web app's **Dashboard** page, which us
 
 In Azure Web App, for increased performance and throughput,  you can adjust the scale at which you are running your application. Scaling up a web app involves two related actions: changing your App Service plan to a higher pricing tier, and configuring certain settings after you have switched to the higher pricing tier.
 
-For more information on scaling, see [Scale a web app in Azure](/documentation/articles/web-sites-scale).
+For more information on scaling, see [Scale a web app in Azure](/documentation/articles/web-sites-scale/).
 
 Additionally, you can choose to run your application on more than one instance . This not only provides you with more processing capability, but also gives you some amount of fault tolerance. If the process goes down on one instance, the other instance will still continue serving requests.
 
@@ -100,4 +98,4 @@ This is often the simplest way to recover from one-time issues. On the [Azure Ma
  ![](./media/app-service-web-troubleshoot-HTTP-502-503/2-restart.png)
 
 You can also manage your web app using Azure Powershell. For more information, see
-[Using Azure PowerShell with Azure Resource Manager](/documentation/articles/powershell-azure-resource-manager).
+[Using Azure PowerShell with Azure Resource Manager](/documentation/articles/powershell-azure-resource-manager/).

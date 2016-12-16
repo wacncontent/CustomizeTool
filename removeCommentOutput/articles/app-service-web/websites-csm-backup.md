@@ -1,23 +1,23 @@
-<properties
-	pageTitle="Use REST to back up and restore App Service apps"
-	description="Learn how to use RESTful API calls to back up and restore an app in Azure App Service"
-	services="app-service"
-	documentationCenter=""
-	authors="NKing92"
-	manager="wpickett"
+﻿<properties
+    pageTitle="Use REST to back up and restore App Service apps"
+    description="Learn how to use RESTful API calls to back up and restore an app in Azure App Service"
+    services="app-service"
+    documentationcenter=""
+    author="NKing92"
+    manager="wpickett"
     editor="" />
-
 <tags
-	ms.service="app-service"
-	ms.workload="na"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="08/10/2016"
-	wacn.date=""
-	ms.author="nicking"/>
-# Use REST to back up and restore App Service apps
+    ms.assetid="f94d0aea-edc1-43ab-9b51-ea7375859276"
+    ms.service="app-service"
+    ms.workload="na"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="08/10/2016"
+    wacn.date=""
+    ms.author="nicking" />
 
+# Use REST to back up and restore App Service apps
 > [AZURE.SELECTOR]
 - [PowerShell](/documentation/articles/app-service-powershell-backup/)
 - [REST API](/documentation/articles/websites-csm-backup/)
@@ -94,7 +94,10 @@ A backup of the app begins immediately when the request is received. The backup 
 }
 ```
 
->[AZURE.NOTE] Error messages can be found in the log property of the HTTP response.
+> [AZURE.NOTE]
+> Error messages can be found in the log property of the HTTP response.
+> 
+> 
 
 ## <a name="schedule-automatic-backups"></a> Schedule automatic backups
 In addition to backing up an app on demand, you can also schedule a backup to happen automatically.
@@ -222,7 +225,10 @@ In the request body, send a JSON object that contains the new SAS URL. Here is a
 }
 ```
 
->[AZURE.NOTE] For security reasons, the SAS URL associated with a backup is not returned when sending a GET request for a specific backup. If you want to view the SAS URL associated with a backup, send a POST request to the same URL above. Include an empty JSON object in the request body. The response from the server contains all of that backup's information, including its SAS URL.
+> [AZURE.NOTE]
+> For security reasons, the SAS URL associated with a backup is not returned when sending a GET request for a specific backup. If you want to view the SAS URL associated with a backup, send a POST request to the same URL above. Include an empty JSON object in the request body. The response from the server contains all of that backup's information, including its SAS URL.
+> 
+> 
 
 <!-- IMAGES -->
 [SampleWebsiteInformation]: ./media/websites-csm-backup/01siteconfig.png

@@ -16,7 +16,7 @@
 
 # Manage the number and availability of compute nodes in an HPC Pack cluster in Azure
 
-> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the classic deployment model. Microsoft recommends that most new deployments use the Resource Manager model.
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager model.
 
 
 If you created an HPC Pack cluster in Azure VMs, you might want ways to easily add, remove,
@@ -30,7 +30,7 @@ run each of the scripts as an administrator.
 
 ## Prerequisites
 
-* **HPC Pack cluster in Azure VMs** - Create an HPC Pack cluster in the classic (Service Management) deployment model by using at least HPC Pack 2012 R2 Update 1. For example, you can automate the deployment by using the HPC Pack VM image in the Azure gallery and an Azure PowerShell script. For information and prerequisites, see [Create an HPC Cluster with the HPC Pack IaaS deployment script](/documentation/articles/virtual-machines-hpcpack-cluster-powershell-script).
+* **HPC Pack cluster in Azure VMs** - Create an HPC Pack cluster in the classic (Service Management) deployment model by using at least HPC Pack 2012 R2 Update 1. For example, you can automate the deployment by using the HPC Pack VM image in the Azure gallery and an Azure PowerShell script. For information and prerequisites, see [Create an HPC Cluster with the HPC Pack IaaS deployment script](/documentation/articles/virtual-machines-linux-classic-hpcpack-cluster-powershell-script/).
 
 * **Azure publish settings file or management certificate** - You need to do one of the following on the head node:
 
@@ -169,4 +169,4 @@ Stop-HPCIaaSNode.ps1 -Name HPCNodeCN-* -Force
 
 * If you want a way to
 automatically grow or shrink the cluster nodes according to
-the current workload of jobs and tasks on the cluster, see [Automatically grow and shrink Azure compute resources in an HPC Pack cluster](/documentation/articles/virtual-machines-hpcpack-cluster-node-autogrowshrink).
+the current workload of jobs and tasks on the cluster, see [Automatically grow and shrink Azure compute resources in an HPC Pack cluster](/documentation/articles/virtual-machines-windows-classic-hpcpack-cluster-node-autogrowshrink/).

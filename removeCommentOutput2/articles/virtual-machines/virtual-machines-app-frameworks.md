@@ -17,7 +17,7 @@
 
 # Deploy popular application frameworks by using Azure Resource Manager templates
 
-> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the Resource Manager deployment model, which Microsoft recommends for most new deployments instead of the classic deployment model.
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the Resource Manager deployment model, which Azure recommends for most new deployments instead of the classic deployment model.
 
 Workloads usually require many resources to function according to design. Azure Resource Manager templates make it possible for you to not only define how applications are configured, but also how the resources are deployed to support configured applications. This article introduces you to the most popular templates in the gallery and gives you information for using the Azure portal, Azure PowerShell, or Azure CLI to deploy them.
 
@@ -69,7 +69,7 @@ Depending on the template, it can take some time for Azure to deploy the resourc
 
 ## Azure PowerShell
 
-[AZURE.INCLUDE [powershell-preview](../includes/powershell-preview-inline-include.md)]
+[AZURE.INCLUDE [powershell-preview](../../includes/powershell-preview-inline-include.md)]
 
 Run these commands to create the resource group and the deployment after you replace the text in brackets with the resource group name, location, deployment name, and template name:
 
@@ -80,7 +80,7 @@ When you run the **New-AzureRmResourceGroupDeployment** command, you are prompte
 
 ## Azure CLI
 
-[Install Azure CLI](/documentation/articles/xplat-cli-install), log in, and make sure you enable Resource Manager commands. For information about how to do this, see [Use the Azure CLI for Mac, Linux, and Windows with Azure Resource Manager](/documentation/articles/xplat-cli-azure-resource-manager).
+[Install Azure CLI](/documentation/articles/xplat-cli-install/), log in, and make sure you enable Resource Manager commands. For information about how to do this, see [Use the Azure CLI for Mac, Linux, and Windows with Azure Resource Manager](/documentation/articles/xplat-cli-azure-resource-manager/).
 
 Run these commands to create the resource group and the deployment after you replace the text in brackets with the resource group name, location, deployment name, and template name:
 
@@ -93,4 +93,4 @@ When you run the **azure group deployment create** command, you are prompted to 
 
 Discover all the templates at your disposal on [GitHub](https://github.com/Azure/azure-quickstart-templates).
 
-Learn more about [Azure Resource Manager](/documentation/articles/resource-group-template-deploy).
+Learn more about [Azure Resource Manager](/documentation/articles/resource-group-template-deploy/).

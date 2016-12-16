@@ -1,3 +1,5 @@
+<!-- deleted in Global -->
+
 <properties 
    pageTitle="How to Create Routes and Enable IP Forwarding in Azure"
    description="Learn how to manage UDRs and IP forwarding"

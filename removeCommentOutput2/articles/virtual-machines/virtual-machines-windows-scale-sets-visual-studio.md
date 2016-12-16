@@ -1,3 +1,5 @@
+<!-- deleted in Global -->
+
 <properties
 	pageTitle="Deploying Virtual Machine Scale Set Templates in Visual Studio | Azure"
 	description="How to deploy Virtual Machine Scale Set using a Visual Studio Resource Group Deployment"
@@ -15,6 +17,6 @@
 
 # Deploying Virtual Machine Scale Set Templates in Visual Studio
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] [classic deployment model](/documentation/articles/virtual-machines-windows-classic-create-powershell).
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-rm-include.md)] [classic deployment model](/documentation/articles/virtual-machines-windows-classic-create-powershell/).
 
-[AZURE.INCLUDE [virtual-machines-common-scale-sets-visual-studio](../includes/virtual-machines-common-scale-sets-visual-studio.md)]
+[AZURE.INCLUDE [virtual-machines-common-scale-sets-visual-studio](../../includes/virtual-machines-common-scale-sets-visual-studio.md)]

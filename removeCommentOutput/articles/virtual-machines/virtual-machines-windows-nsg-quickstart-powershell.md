@@ -1,60 +1,72 @@
 <properties
-   pageTitle="Open ports to a VM using PowerShell | Azure"
-   description="Learn how to open a port / create an endpoint to your Windows VM using the Azure resource manager deployment mode and Azure PowerShell"
-   services="virtual-machines-windows"
-   documentationCenter=""
-   authors="iainfoulds"
-   manager="timlt"
-   editor=""/>
-
+    pageTitle="Open ports to a VM using PowerShell | Azure"
+    description="Learn how to open a port / create an endpoint to your Windows VM using the Azure resource manager deployment mode and Azure PowerShell"
+    services="virtual-machines-windows"
+    documentationcenter=""
+    author="iainfoulds"
+    manager="timlt"
+    editor="" />
 <tags
-   ms.service="virtual-machines-windows"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="vm-windows"
-   ms.workload="infrastructure-services"
-   ms.date="08/08/2016"
-   wacn.date=""
-   ms.author="iainfou"/>
+    ms.assetid="cf45f7d8-451a-48ab-8419-730366d54f1e"
+    ms.service="virtual-machines-windows"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.tgt_pltfrm="vm-windows"
+    ms.workload="infrastructure-services"
+    ms.date="10/27/2016"
+    wacn.date=""
+    ms.author="iainfou" />
 
-# Opening ports to a VM in Azure using PowerShell
+# Opening ports and endpoints to a VM in Azure using PowerShell
 [AZURE.INCLUDE [virtual-machines-common-nsg-quickstart](../../includes/virtual-machines-common-nsg-quickstart.md)]
 
 ## Quick commands
 To create a Network Security Group and ACL rules you need [the latest version of Azure PowerShell installed](/documentation/articles/powershell-install-configure/). You can also [perform these steps using the Azure portal](/documentation/articles/virtual-machines-windows-nsg-quickstart-portal/).
 
-First, you need to create a rule to allow HTTP traffic on TCP port 80 entering your own name and description:
+Log in to your Azure account:
 
+```powershell
+Login-AzureRmAccount
 ```
-$httprule = New-AzureRmNetworkSecurityRuleConfig -Name http-rule -Description "Allow HTTP" `
-    -Access Allow -Protocol Tcp -Direction Inbound -Priority 100 `
-    -SourceAddressPrefix Internet -SourcePortRange * `
+
+In the following examples, replace example parameter names with your own values. Example parameter names included `myResourceGroup`, `myNetworkSecurityGroup`, and `myVnet`.
+
+Create a rule. The following example creates a rule named `myNetworkSecurityGroupRule` to allow TCP traffic on port 80:
+
+```powershell
+$httprule = New-AzureRmNetworkSecurityRuleConfig -Name "myNetworkSecurityGroupRule" `
+    -Description "Allow HTTP" -Access "Allow" -Protocol "Tcp" -Direction "Inbound" `
+    -Priority "100" -SourceAddressPrefix "Internet" -SourcePortRange * `
     -DestinationAddressPrefix * -DestinationPortRange 80
 ```
 
-Next, create your Network Security group and assign the HTTP rule you just created as follows, entering your own resource group name and location:
+Next, create your Network Security group and assign the HTTP rule you just created as follows. The following example creates a Network Security Group named `myNetworkSecurityGroup`:
 
-```
-$nsg = New-AzureRmNetworkSecurityGroup -ResourceGroupName TestRG -Location chinanorth `
-    -Name "TestNSG" -SecurityRules $httprule
-```
-
-Now let's assign your Network Security Group to a subnet. First, select the virtual network:
-
-```
-$vnet = Get-AzureRmVirtualNetwork -ResourceGroupName TestRG -Name TestVNet
+```powershell
+$nsg = New-AzureRmNetworkSecurityGroup -ResourceGroupName "myResourceGroup" `
+    -Location "ChinaNorth" -Name "myNetworkSecurityGroup" -SecurityRules $httprule
 ```
 
-Associate your Network Security Group with your subnet:
+Now let's assign your Network Security Group to a subnet. The following example assigns an existing virtual network named `myVnet` to the variable `$vnet`:
 
+```powershell
+$vnet = Get-AzureRmVirtualNetwork -ResourceGroupName "myResourceGroup" `
+    -Name "myVnet"
 ```
-Set-AzureRmVirtualNetworkSubnetConfig -VirtualNetwork $vnet -Name TestSubnet `
+
+Associate your Network Security Group with your subnet. The following example associates the subnet named `mySubnet` with your Network Security Group:
+
+```powershell
+$subnetPrefix = $vnet.Subnets|?{$_.Name -eq 'mySubnet'}
+
+Set-AzureRmVirtualNetworkSubnetConfig -VirtualNetwork $vnet -Name "mySubnet" `
+    -AddressPrefix $subnetPrefix.AddressPrefix `
     -NetworkSecurityGroup $nsg
 ```
 
 Finally, update your virtual network in order for your changes to take effect:
 
-```
+```powershell
 Set-AzureRmVirtualNetwork -VirtualNetwork $vnet
 ```
 
@@ -69,6 +81,7 @@ If you need to use port-forwarding to map a unique external port to an internal 
 ## Next steps
 In this example, you created a simple rule to allow HTTP traffic. You can find information on creating more detailed environments in the following articles:
 
-- [Azure Resource Manager overview](/documentation/articles/resource-group-overview/)
-- [What is a Network Security Group (NSG)?](/documentation/articles/virtual-networks-nsg/)
-- [Azure Resource Manager Overview for Load Balancers](/documentation/articles/load-balancer-arm/)
+* [Azure Resource Manager overview](/documentation/articles/resource-group-overview/)
+* [What is a Network Security Group (NSG)?](/documentation/articles/virtual-networks-nsg/)
+* [Azure Resource Manager Overview for Load Balancers](/documentation/articles/load-balancer-arm/)
+

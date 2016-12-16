@@ -2,21 +2,20 @@
     pageTitle="Configure Traffic Manager routing methods | Azure"
     description="This article explains how to configures different routing methods in Traffic Manager"
     services="traffic-manager"
-    documentationCenter=""
-    authors="sdwheeler"
+    documentationcenter=""
+    author="sdwheeler"
     manager="carmonm"
-    editor=""
-/>
+    editor="" />
 <tags
+    ms.assetid="6dca6de1-18f7-4962-bd98-6055771fab22"
     ms.service="traffic-manager"
     ms.devlang="na"
     ms.topic="article"
     ms.tgt_pltfrm="na"
     ms.workload="infrastructure-services"
-    ms.date="10/11/2016"
+    ms.date="10/18/2016"
     wacn.date=""
-    ms.author="sewhee"
-/>
+    ms.author="sewhee" />
 
 # Configure Traffic Manager routing methods
 
@@ -24,9 +23,9 @@ Azure Traffic Manager provides three routing methods that control how traffic is
 
 There are three traffic routing methods available in Traffic Manager:
 
-- **Priority:** Select 'Priority' when you want to use a primary service endpoint and provide backups in case the primary is unavailable.
-- **Weighted:** Select 'Weighted' when you want to distribute traffic across a set of endpoints, either evenly or according to weights, which you define.
-- **Performance:** Select 'Performance' when you have endpoints in different geographic locations and you want end users to use the "closest" endpoint in terms of the lowest network latency.
+* **Priority:** Select 'Priority' when you want to use a primary service endpoint and provide backups in case the primary is unavailable.
+* **Weighted:** Select 'Weighted' when you want to distribute traffic across a set of endpoints, either evenly or according to weights, which you define.
+* **Performance:** Select 'Performance' when you have endpoints in different geographic locations and you want end users to use the "closest" endpoint in terms of the lowest network latency.
 
 ## Configure Priority routing method
 
@@ -49,7 +48,8 @@ A common pattern for service failover is to send traffic to a primary service an
 
 A common traffic routing method pattern is to provide a set of identical endpoints, which include cloud services and websites, and send traffic to each in a round-robin fashion. The following steps outline how to configure this type of traffic routing method.
 
->[AZURE.NOTE] Azure Websites already provide round-robin load balancing functionality for websites within a datacenter (also known as a region). Traffic Manager allows you to specify round-robin traffic routing method for websites in different datacenters.
+> [AZURE.NOTE]
+> Azure Websites already provide round-robin load balancing functionality for websites within a datacenter (also known as a region). Traffic Manager allows you to specify round-robin traffic routing method for websites in different datacenters.
 
 1. In the Azure Classic Management Portal, in the left pane, click the **Traffic Manager** icon to open the Traffic Manager pane.
 2. In the Traffic Manager pane, locate the Traffic Manager profile that contains the settings that you want to modify. To open the profile settings page, click the arrow to the right of the profile name.
@@ -81,6 +81,6 @@ The Performance traffic routing method allows you to direct traffic to the endpo
 * [Traffic Manager routing methods](/documentation/articles/traffic-manager-routing-methods/)
 * [Testing Traffic Manager Settings](/documentation/articles/traffic-manager-testing-settings/)
 * [Point a company Internet domain to a Traffic Manager domain](/documentation/articles/traffic-manager-point-internet-domain/)
-* [Traffic Manager - Disable or enable an endpoint](/documentation/articles/disable-or-enable-an-endpoint/)
-* [Traffic Manager - Disable, enable, or delete a profile](/documentation/articles/disable-enable-or-delete-a-profile/)
+* [Manage Traffic Manager endpoints](/documentation/articles/traffic-manager-manage-endpoints/)
 * [Troubleshooting Traffic Manager degraded state](/documentation/articles/traffic-manager-troubleshooting-degraded/)
+

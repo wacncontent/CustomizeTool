@@ -1,3 +1,5 @@
+<!-- deleted in Global -->
+
 <properties
 	pageTitle="SharePoint Server 2013 farm Phase 5 | Azure"
 	description="Create an availability group and add your SharePoint databases to it in Phase 5 of the SharePoint Server 2013 farm in Azure."
@@ -15,11 +17,11 @@
 
 # SharePoint Intranet Farm Workload Phase 5: Create the availability group and add the SharePoint databases
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-rm-include.md)] classic deployment model.
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the Resource Manager deployment model, which Azure recommends for most new deployments instead of the classic deployment model.
 
 In this final phase of deploying an intranet-only SharePoint 2013 farm with SQL Server AlwaysOn Availability Groups in Azure infrastructure services, you create a new AlwaysOn availability group and add the databases of the SharePoint farm.
 
-See [Deploying SharePoint with SQL Server AlwaysOn Availability Groups in Azure](/documentation/articles/virtual-machines-windows-sp-intranet-overview) for all of the phases.
+See [Deploying SharePoint with SQL Server AlwaysOn Availability Groups in Azure](/documentation/articles/virtual-machines-windows-sp-intranet-overview/) for all of the phases.
 
 ## Create the availability group and add databases
 

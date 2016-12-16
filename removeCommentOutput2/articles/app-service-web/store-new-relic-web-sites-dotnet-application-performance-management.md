@@ -1,4 +1,4 @@
-<!-- not suitable for Mooncake -->
+<!-- deleted in Global -->
 
 <properties 
 	pageTitle=".NET web app in Azure with New Relic application performance management" 
@@ -55,7 +55,7 @@ To sign up for New Relic directly from the Azure gallery, follow these four easy
 
 ## Step 1. Create a New Relic account
 
-1. Log in to the [Azure Portal](https://portal.azure.cn/) and click **New** in the corner.
+1. Log in to the [Azure Portal Preview](https://portal.azure.cn/) and click **New** in the corner.
 3. Click **Developer services** > **New Relic APM**.
 4. Configure your New Relic account by specifying the following, then click **Create**.
 	- **Name**
@@ -71,7 +71,7 @@ To sign up for New Relic directly from the Azure gallery, follow these four easy
 
 ## Step 2: Configure New Relic integration for your web app
 
-1. Open your web app's blade in the [Azure Portal](https://portal.azure.cn/).
+1. Open your web app's blade in the [Azure Portal Preview](https://portal.azure.cn/).
 2. Click the "..." menu at the top of the blade and select **Add tiles**.
 3. On the **Monitoring** tab select **Application summary** and drag it to where you want the tile to appear on your web app's blade.
 4. Click Done to finish adding tiles.
@@ -92,7 +92,7 @@ Using Visual Studio, publish your web app. If you have previously published your
 
 To view your New Relic dashboard:
 
-2. Open your web app's blade in the [Azure Portal](https://portal.azure.cn/).
+2. Open your web app's blade in the [Azure Portal Preview](https://portal.azure.cn/).
 3. Click **Application monitoring** > **application name** > **View at New Relic**.
 
 	![](./media/store-new-relic-web-sites-dotnet-application-performance-management/view-new-relic-data.png)
@@ -177,7 +177,7 @@ browsers to load your webpages, where they come from, and what browsers they use
 * For a guide to the change from Websites to Azure see: [Azure and Its Impact on Existing Azure Services](/documentation/services/web-sites/)
 
 
-[vswebsite]: /documentation/articles/web-sites-dotnet-get-started
+[vswebsite]: /documentation/articles/web-sites-dotnet-get-started/
 
 [wmnugetbutton]: ./media/store-new-relic-web-sites-dotnet-application-performce-management/nrwmnugetbutton.png
 [wmnugetgallery]: ./media/store-new-relic-web-sites-dotnet-application-performce-management/nrwmnugetgallery.png

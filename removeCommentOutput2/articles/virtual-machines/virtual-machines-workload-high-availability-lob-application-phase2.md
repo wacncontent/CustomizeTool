@@ -17,12 +17,12 @@
 
 # Line of Business Application Workload Phase 2: Configure domain controllers
 
-> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the Resource Manager deployment model, which Microsoft recommends for most new deployments instead of the classic deployment model.
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the Resource Manager deployment model, which Azure recommends for most new deployments instead of the classic deployment model.
  
 
 In this phase of deploying a high-availability line of business application in Azure infrastructure services, you configure two replica domain controllers in the Azure Virtual Network so that client web requests for web resources can be authenticated locally within the Azure virtual network, rather than sending that authentication traffic across the connection to your on-premises network. 
 
-You must complete this phase before moving on to [Phase 3](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-phase3). See [Deploy a High-Availability Line of Business Application in Azure](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-overview) for all of the phases.
+You must complete this phase before moving on to [Phase 3](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-phase3/). See [Deploy a High-Availability Line of Business Application in Azure](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-overview/) for all of the phases.
 
 ## Create the domain controller virtual machines in Azure
 
@@ -40,7 +40,7 @@ Item | Virtual machine name | Gallery image | Minimum size
 
 **Table M - Virtual machines for the high-availability line of business application in Azure**
 
-For the complete list of virtual machine sizes, see [Sizes for virtual machines](/documentation/articles/virtual-machines-size-specs).
+For the complete list of virtual machine sizes, see [Sizes for virtual machines](/documentation/articles/virtual-machines-linux-sizes/).
 
 Use the following block of Azure PowerShell commands to create the virtual machines for the two domain controllers. Specify the values for the variables, removing the < and > characters. Note that this PowerShell command block uses values from the following:
 
@@ -50,7 +50,7 @@ Use the following block of Azure PowerShell commands to create the virtual machi
 - Table ST, for your storage accounts
 - Table A, for your availability sets
 
-Recall that you defined Tables V, S, ST, and A in [Phase 1: Configure Azure](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-phase1).
+Recall that you defined Tables V, S, ST, and A in [Phase 1: Configure Azure](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-phase1/).
 
 > [AZURE.NOTE] The following command sets use Azure PowerShell 1.0 and later. For more information, see [Azure PowerShell 1.0](https://azure.microsoft.com/blog/azps-1-0/).
 
@@ -193,5 +193,5 @@ This diagram shows the configuration resulting from the successful completion of
 
 ## Next step
 
-- Use [Phase 3](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-phase3) to continue with the configuration of this workload.
+- Use [Phase 3](/documentation/articles/virtual-machines-workload-high-availability-LOB-application-phase3/) to continue with the configuration of this workload.
 

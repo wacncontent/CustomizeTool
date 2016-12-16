@@ -17,12 +17,12 @@
 
 # Using the Azure CLI for Mac, Linux, and Windows with Azure Service Management
 
-> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the classic deployment model. Microsoft recommends that most new deployments use the [Resource Manager model](/documentation/articles/azure-cli-arm-commands).
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the [Resource Manager model](/documentation/articles/azure-cli-arm-commands/).
 
 This article describes how to use the Azure CLI in the Service Management mode (asm mode) to create, manage, and delete services on the command line of Mac, Linux, and Windows computers. You can perform many of the same tasks using the various libraries of the Azure SDKs, with Azure PowerShell, and using the Azure classic portal. Using Azure services with the Service Management mode is conceptually similar to creating and managing individual Azure concepts and services like Websites, Virtual Machines, Virtual Networks, Storage, and so on.  
 
 > [AZURE.NOTE]
-To get started, first [install the Azure CLI](/documentation/articles/xplat-cli-install) and [log on to use Azure resources associated with your account](/documentation/articles/xplat-cli-connect).
+To get started, first [install the Azure CLI](/documentation/articles/xplat-cli-install/) and [log on to use Azure resources associated with your account](/documentation/articles/xplat-cli-connect/).
 
 ## Scope of article
 
@@ -492,7 +492,7 @@ Some systems impose per-process file descriptor limits. If this limit is exceede
 	info:   http://myaccount.blob.core.azure.com/vm-images/Sample.vhd is uploaded successfully
 	info:   vm image create command OK
 
-##<a name="commands-to-manage-your-azure-virtual-machine-data-disks"></a> Commands to manage your Azure virtual machine data disks
+## <a name="commands-to-manage-your-azure-virtual-machine-data-disks"></a> Commands to manage your Azure virtual machine data disks
 
 Data disks are .vhd files in blob storage that can be used by a virtual machine. For more information about how data disks are deployed to blob storage, see the Azure technical diagram shown earlier.
 
@@ -1453,7 +1453,7 @@ This commands removes all rows of data from the table.
 
 ### <a name="Mobile_Scripts"></a>Commands to manage scripts
 
-Commands in this section are used to manage the server scripts that belong to a mobile service. For more information, see [Work with server scripts in Mobile Services](/documentation/articles/mobile-services-how-to-use-server-scripts).
+Commands in this section are used to manage the server scripts that belong to a mobile service. For more information, see [Work with server scripts in Mobile Services](/documentation/articles/mobile-services-how-to-use-server-scripts/).
 
 **mobile script list [options] [servicename]**
 

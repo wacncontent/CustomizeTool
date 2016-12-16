@@ -22,9 +22,9 @@
 
 In the Azure classic portal, you use the **Connect** button to start a Remote Desktop session and log on to a Windows VM.
 
-Do you want to connect to a Linux VM? See [How to log on to a virtual machine running Linux](/documentation/articles/virtual-machines-linux-how-to-log-on).
+Do you want to connect to a Linux VM? See [How to log on to a virtual machine running Linux](/documentation/articles/virtual-machines-linux-classic-log-on/).
 
-> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the classic deployment model. Microsoft recommends that most new deployments use the Resource Manager model.
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager model.
 
 ## Connect to the virtual machine
 
@@ -40,7 +40,7 @@ Do you want to connect to a Linux VM? See [How to log on to a virtual machine ru
 
 ## Log on to the virtual machine
 
-[AZURE.INCLUDE [virtual-machines-log-on-win-server](../includes/virtual-machines-log-on-win-server.md)]
+[AZURE.INCLUDE [virtual-machines-log-on-win-server](../../includes/virtual-machines-log-on-win-server.md)]
 
 ## Troubleshooting tips
 
@@ -49,6 +49,6 @@ Here are a few things to try:
 -	If the **Connect** button is inactive or you are having other problems with the Remote Desktop connection, try resetting the configuration. From the virtual machine dashboard, under **Quick Glance**, click **Reset remote configuration**.
 -	For problems with your password, try resetting it. From the virtual machine dashboard, under **Quick Glance**, click **Reset password**.
 
-If those tips don't work or aren't what you need, see [Troubleshoot Remote Desktop connections to a Windows-based Azure Virtual Machine](/documentation/articles/virtual-machines-troubleshoot-remote-desktop-connections). This article walks you through diagnosing and resolving common problems.
+If those tips don't work or aren't what you need, see [Troubleshoot Remote Desktop connections to a Windows-based Azure Virtual Machine](/documentation/articles/virtual-machines-windows-troubleshoot-rdp-connection/). This article walks you through diagnosing and resolving common problems.
 
 

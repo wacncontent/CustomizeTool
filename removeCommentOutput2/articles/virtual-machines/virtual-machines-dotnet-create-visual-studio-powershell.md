@@ -17,7 +17,7 @@
 
 # Creating a virtual machine for a web application with Visual Studio
 
-> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the classic deployment model. Microsoft recommends that most new deployments use the Resource Manager model.
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager model.
 
 When you create a web application project for Azure, you can provision a virtual machine in Azure. You can then configure the virtual machine with additional software, or use the virtual machine for diagnostic or debugging purposes.
 
@@ -60,7 +60,7 @@ To create a virtual machine when you create a web application, follow these step
 
 ## Next steps
 
-If you want to customize the published scripts you created, read more in-depth information at [Using Windows PowerShell Scripts to Publish to Dev and Test Environments](/documentation/articles/vs-azure-tools-publishing-using-powershell-scripts).
+If you want to customize the published scripts you created, read more in-depth information at [Using Windows PowerShell Scripts to Publish to Dev and Test Environments](/documentation/articles/vs-azure-tools-publishing-using-powershell-scripts/).
 
 [0]: ./media/virtual-machines-dotnet-create-visual-studio-powershell/CreateVM_NewProject.PNG
 [1]: ./media/dotnet-visual-studio-create-virtual-machine/CreateVM_SignIn.PNG

@@ -1,25 +1,24 @@
 <properties
-   pageTitle="Troubleshooting Windows VM extension failures | Azure"
-   description="Learn about troubleshooting Azure Windows VM extension failures"
-   services="virtual-machines-windows"
-   documentationCenter=""
-   authors="kundanap"
-   manager="timlt"
-   editor=""
-   tags="top-support-issue,azure-resource-manager"/>
-
+    pageTitle="Troubleshooting Windows VM extension failures | Azure"
+    description="Learn about troubleshooting Azure Windows VM extension failures"
+    services="virtual-machines-windows"
+    documentationcenter=""
+    author="kundanap"
+    manager="timlt"
+    editor=""
+    tags="top-support-issue,azure-resource-manager" />
 <tags
-   ms.service="virtual-machines-windows"
-   ms.devlang="na"
-   ms.topic="support-article"
-   ms.tgt_pltfrm="vm-windows"
-   ms.workload="infrastructure-services"
-   ms.date="03/29/2016"
-   wacn.date=""
-   ms.author="kundanap"/>
+    ms.assetid="878ab9b6-c3e6-40be-82d4-d77fecd5030f"
+    ms.service="virtual-machines-windows"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.tgt_pltfrm="vm-windows"
+    ms.workload="infrastructure-services"
+    ms.date="03/29/2016"
+    wacn.date=""
+    ms.author="kundanap" />
 
 # Troubleshooting Azure Windows VM extension failures
-
 [AZURE.INCLUDE [virtual-machines-common-extensions-troubleshoot](../../includes/virtual-machines-common-extensions-troubleshoot.md)]
 
 ## Viewing extension status
@@ -56,16 +55,13 @@ Here is the sample output:
     }
   ]
 
-## Troubleshooting extenson failures
-
+## Troubleshooting extension failures
 ### Re-running the extension on the VM
-
 If you are running scripts on the VM using Custom Script Extension, you could sometimes run into an error where VM was created successfully but the script has failed. Under these conditons, the recommended way to recover from this error is to remove the extension and rerun the template again.
 Note: In future, this functionality would be enhanced to remove the need for uninstalling the extension.
 
-
 #### Remove the extension from Azure PowerShell
-
     Remove-AzureRmVMExtension -ResourceGroupName $RGName -VMName $vmName -Name "myCustomScriptExtension"
 
 Once the extension has been removed, the template can be re-executed to run the scripts on the VM.
+

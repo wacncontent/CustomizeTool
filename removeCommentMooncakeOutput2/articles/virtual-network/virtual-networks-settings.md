@@ -1,14 +1,16 @@
+<!-- deleted in Global -->
+
 <properties 
    pageTitle="How to manage Virtual Network (VNet) Properties"
    description="Learn how to view and edit virtual network settings"
    services="virtual-network"
    documentationCenter="na"
    authors="telmosampaio"
-   manager="carolz"
+   manager="carmonm"
    editor="tysonn" />
 <tags
 	ms.service="virtual-network"
-	ms.date="09/02/2015"
+	ms.date="12/11/2015"
 	wacn.date=""/>
 
 # How to manage Virtual Network (VNet) Properties
@@ -90,8 +92,8 @@ After you deploy your virtual network, only certain settings can be modified. Th
 
 ## Next Steps
 
-[How to manage DNS servers used by a virtual network (VNet)](/documentation/articles/virtual-networks-manage-dns-in-vnet)
+[How to manage DNS servers used by a virtual network (VNet)](/documentation/articles/virtual-networks-manage-dns-in-vnet/)
 
-[How to use public IP addresses in a virtual network](/documentation/articles/virtual-networks-public-ip-within-vnet)
+[How to use public IP addresses in a virtual network](/documentation/articles/virtual-networks-public-ip-within-vnet/)
 
-[How to delete a Virtual Network (VNet)](/documentation/articles/virtual-networks-delete-vnet) 
+[How to delete a Virtual Network (VNet)](/documentation/articles/virtual-networks-delete-vnet/)

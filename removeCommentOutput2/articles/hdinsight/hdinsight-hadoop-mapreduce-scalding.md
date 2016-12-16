@@ -1,47 +1,42 @@
 <properties
- pageTitle="Develop Scalding MapReduce jobs with Maven | Azure"
- description="Learn how to use Maven to create a Scalding MapReduce job, then deploy and run the job on a Hadoop on HDInsight cluster."
- services="hdinsight"
- documentationCenter=""
- authors="Blackmist"
- manager="jhubbard"
- editor="cgronlun"
-	tags="azure-portal"/>
+    pageTitle="Develop Scalding MapReduce jobs with Maven | Azure"
+    description="Learn how to use Maven to create a Scalding MapReduce job, then deploy and run the job on a Hadoop on HDInsight cluster."
+    services="hdinsight"
+    documentationcenter=""
+    author="Blackmist"
+    manager="jhubbard"
+    editor="cgronlun"
+    tags="azure-portal" />
 <tags
- ms.service="hdinsight"
- ms.devlang="na"
- ms.topic="article"
- ms.tgt_pltfrm="na"
- ms.workload="big-data"
- ms.date="08/02/2016"
- wacn.date=""
- ms.author="larryfr"/>
+    ms.assetid="26a4d4e8-2623-4fae-a0ca-17792b7a5713"
+    ms.service="hdinsight"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="big-data"
+    ms.date="10/18/2016"
+    wacn.date=""
+    ms.author="larryfr" />
 
 # Develop Scalding MapReduce jobs with Apache Hadoop on HDInsight
-
 Scalding is a Scala library that makes it easy to create Hadoop MapReduce jobs. It offers a concise syntax, as well as tight integration with Scala.
 
 In this document, learn how to use Maven to create a basic word count MapReduce job written in Scalding. You will then learn how to deploy and run this job on an HDInsight cluster.
 
 ## Prerequisites
-
-- **An Azure subscription**. See [Get Azure trial](/pricing/1rmb-trial/).
+* **An Azure subscription**. See [Get Azure trial](/pricing/1rmb-trial/).
 * **A Windows based Hadoop on HDInsight cluster**. See [Provision Windows-based Hadoop on HDInsight](/documentation/articles/hdinsight-provision-clusters-v1/) for more information.
-
 * **[Maven](http://maven.apache.org/)**
-
 * **[Java platform JDK](http://www.oracle.com/technetwork/java/javase/downloads/index.html) 7 or later**
 
 ## Create and build the project
-
 1. Use the following command to create a new Maven project:
-
+   
         mvn archetype:generate -DgroupId=com.microsoft.example -DartifactId=scaldingwordcount -DarchetypeGroupId=org.scala-tools.archetypes -DarchetypeArtifactId=scala-archetype-simple -DinteractiveMode=false
-
+   
     This command will create a new directory named **scaldingwordcount**, and create the scaffolding for an Scala application.
-
 2. In the **scaldingwordcount** directory, open the **pom.xml** file and replace the contents with the following:
-
+   
         <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
             <modelVersion>4.0.0</modelVersion>
             <groupId>com.microsoft.example</groupId>
@@ -133,31 +128,24 @@ In this document, learn how to use Maven to create a basic word count MapReduce 
             </plugins>
             </build>
         </project>
-
+   
     This file describes the project, dependencies, and plugins. Here are the important entries:
-
-    * **maven.compiler.source** and **maven.compiler.target**: sets the Java version for this project
-
-    * **repositories**: the repositories that contain the dependency files used by this project
-
-    * **scalding-core_2.11** and **hadoop-core**: this project depends on both Scalding and Hadoop core packages
-
-    * **maven-scala-plugin**: plugin to compile scala applications
-
-    * **maven-shade-plugin**: plugin to create shaded (fat) jars. This plugin applies filters and transformations; specificially:
-
-        * **filters**: The filters applied modify the meta information included with in the jar file. To prevent signing exceptions at runtime, this excludes various signature files that may be included with dependencies.
-
-        * **executions**: The package phase execution configuration specifies the **com.twitter.scalding.Tool** class as the main class for the package. Without this, you would need to specify com.twitter.scalding.Tool, as well as the class that contains the application logic, when running the job with the hadoop command.
-
+   
+   * **maven.compiler.source** and **maven.compiler.target**: sets the Java version for this project
+   * **repositories**: the repositories that contain the dependency files used by this project
+   * **scalding-core_2.11** and **hadoop-core**: this project depends on both Scalding and Hadoop core packages
+   * **maven-scala-plugin**: plugin to compile scala applications
+   * **maven-shade-plugin**: plugin to create shaded (fat) jars. This plugin applies filters and transformations; specificially:
+     
+     * **filters**: The filters applied modify the meta information included with in the jar file. To prevent signing exceptions at runtime, this excludes various signature files that may be included with dependencies.
+     * **executions**: The package phase execution configuration specifies the **com.twitter.scalding.Tool** class as the main class for the package. Without this, you would need to specify com.twitter.scalding.Tool, as well as the class that contains the application logic, when running the job with the hadoop command.
 3. Delete the **src/test** directory, as you will not be creating tests with this example.
-
-4. Open the **src/main/scala/com/microsoft/example/app.scala** file and replace the contents with the following:
-
+4. Open the **src/main/scala/com/microsoft/example/App.scala** file and replace the contents with the following:
+   
         package com.microsoft.example
-
+   
         import com.twitter.scalding._
-
+   
         class WordCount(args : Args) extends Job(args) {
             // 1. Read lines from the specified input location
             // 2. Extract individual words from each line
@@ -167,26 +155,23 @@ In this document, learn how to use Maven to create a basic word count MapReduce 
             .flatMap('line -> 'word) { line : String => tokenize(line) }
             .groupBy('word) { _.size }
             .write(Tsv(args("output")))
-
+   
             //Tokenizer to split sentance into words
             def tokenize(text : String) : Array[String] = {
             text.toLowerCase.replaceAll("[^a-zA-Z0-9\\s]", "").split("\\s+")
             }
         }
-
+   
     This implements a basic word count job.
-
 5. Save and close the files.
-
 6. Use the following command from the **scaldingwordcount** directory to build and package the application:
-
+   
         mvn package
-
+   
     Once this job completes, the package containing the WordCount application can be found at **target/scaldingwordcount-1.0-SNAPSHOT.jar**.
 
 ## Run the job on a Windows-based cluster
-
-> [AZURE.NOTE] The following steps use Windows PowerShell. For other methods of running MapReduce jobs, see [Use MapReduce in Hadoop on HDInsight](/documentation/articles/hdinsight-use-mapreduce/).
+The following steps use Windows PowerShell. For other methods of running MapReduce jobs, see [Use MapReduce in Hadoop on HDInsight](/documentation/articles/hdinsight-use-mapreduce/).
 
 1. [Install and configure Azure PowerShell](/documentation/articles/powershell-install-configure/).
 
@@ -213,12 +198,12 @@ In this document, learn how to use Maven to create a basic word count MapReduce 
 
         Get-HDInsightFile -clusterName $clusterName -remotePath example/wordcountout/part-00000 -localPath output.txt
 
-6. Once the job completes, the output will be downloaded to the file __output.txt__ in the current directory. Use the following command to display the results.
-
+4. Once the job completes, the output will be downloaded to the file **output.txt** in the current directory. Use the following command to display the results.
+   
         cat output.txt
-
+   
     The file should contain values similar to the following:
-
+   
         writers 9
         writes  18
         writhed 1
@@ -234,11 +219,9 @@ In this document, learn how to use Maven to create a basic word count MapReduce 
         wrought 7
 
 ## Next steps
-
 Now that you have learned how to use Scalding to create MapReduce jobs for HDInsight, use the following links to explore other ways to work with Azure HDInsight.
 
 * [Use Hive with HDInsight](/documentation/articles/hdinsight-use-hive/)
-
 * [Use Pig with HDInsight](/documentation/articles/hdinsight-use-pig/)
-
 * [Use MapReduce jobs with HDInsight](/documentation/articles/hdinsight-use-mapreduce/)
+

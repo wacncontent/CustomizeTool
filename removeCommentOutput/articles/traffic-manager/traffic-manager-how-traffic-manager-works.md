@@ -2,12 +2,12 @@
     pageTitle="How Traffic Manager Works | Azure"
     description="This article explains how Azure Traffic Manager works"
     services="traffic-manager"
-    documentationCenter=""
-    authors="sdwheeler"
+    documentationcenter=""
+    author="sdwheeler"
     manager="carmonm"
-    editor=""
-/>
+    editor="" />
 <tags
+    ms.assetid="a6c9370d-e60d-440f-aa82-b6d3fa5416b0"
     ms.service="traffic-manager"
     ms.devlang="na"
     ms.topic="article"
@@ -15,8 +15,7 @@
     ms.workload="infrastructure-services"
     ms.date="10/11/2016"
     wacn.date=""
-    ms.author="sewhee"
-/>
+    ms.author="sewhee" />
 
 # How Traffic Manager works
 
@@ -37,13 +36,14 @@ Contoso Corp have developed a new partner portal. The URL for this portal is htt
 
 To achieve this configuration:
 
-- They deploy three instances of their service. The DNS names of these deployments are 'contoso-us.chinacloudapp.cn', 'contoso-eu.chinacloudapp.cn', and 'contoso-asia.chinacloudapp.cn'.
-- They then create a Traffic Manager profile, named 'contoso.trafficmanager.cn', and configure it to use the 'Performance' traffic-routing method across the three endpoints.
-- Finally, they configure their vanity domain name, 'partners.contoso.com', to point to 'contoso.trafficmanager.cn', using a DNS CNAME record.
+* They deploy three instances of their service. The DNS names of these deployments are 'contoso-us.chinacloudapp.cn', 'contoso-eu.chinacloudapp.cn', and 'contoso-asia.chinacloudapp.cn'.
+* They then create a Traffic Manager profile, named 'contoso.trafficmanager.cn', and configure it to use the 'Performance' traffic-routing method across the three endpoints.
+* Finally, they configure their vanity domain name, 'partners.contoso.com', to point to 'contoso.trafficmanager.cn', using a DNS CNAME record.
 
 ![Traffic Manager DNS configuration][1]
 
-> [AZURE.NOTE] When using a vanity domain with Azure Traffic Manager, you must use a CNAME to point your vanity domain name to your Traffic Manager domain name. DNS standards do not allow you to create a CNAME at the 'apex' (or root) of a domain. Thus you cannot create a CNAME for 'contoso.com' (sometimes called a 'naked' domain). You can only create a CNAME for a domain under 'contoso.com', such as 'www.contoso.com'. To work around this limitation, we recommend using a simple HTTP redirect to direct requests for 'contoso.com' to an alternative name such as 'www.contoso.com'.
+> [AZURE.NOTE]
+> When using a vanity domain with Azure Traffic Manager, you must use a CNAME to point your vanity domain name to your Traffic Manager domain name. DNS standards do not allow you to create a CNAME at the 'apex' (or root) of a domain. Thus you cannot create a CNAME for 'contoso.com' (sometimes called a 'naked' domain). You can only create a CNAME for a domain under 'contoso.com', such as 'www.contoso.com'. To work around this limitation, we recommend using a simple HTTP redirect to direct requests for 'contoso.com' to an alternative name such as 'www.contoso.com'.
 
 ## How clients connect using Traffic Manager
 
@@ -56,9 +56,9 @@ Continuing from the previous example, when a client requests the page https://pa
 3. Next, the recursive DNS service finds the name servers for the 'trafficmanager.cn' domain, which are provided by the Azure Traffic Manager service. It then sends a request for the 'contoso.trafficmanager.cn' DNS record to those DNS servers.
 4. The Traffic Manager name servers receive the request. They choose an endpoint based on:
 
-    * The configured state of each endpoint (disabled endpoints are not returned)
-    * The current health of each endpoint, as determined by the Traffic Manager health checks. For more information, see [Traffic Manager Endpoint Monitoring](/documentation/articles/traffic-manager-monitoring/).
-    * The chosen traffic-routing method. For more information, see [Traffic Manager Routing Methods](/documentation/articles/traffic-manager-routing-methods/).
+    - The configured state of each endpoint (disabled endpoints are not returned)
+    - The current health of each endpoint, as determined by the Traffic Manager health checks. For more information, see [Traffic Manager Endpoint Monitoring](/documentation/articles/traffic-manager-monitoring/).
+    - The chosen traffic-routing method. For more information, see [Traffic Manager Routing Methods](/documentation/articles/traffic-manager-routing-methods/).
 
 5. The chosen endpoint is returned as another DNS CNAME record. In this case, let us suppose contoso-us.chinacloudapp.cn is returned.
 6. Next, the recursive DNS service finds the name servers for the 'chinacloudapp.cn' domain. It contacts those name servers to request the 'contoso-us.chinacloudapp.cn' DNS record. A DNS 'A' record containing the IP address of the US-based service endpoint is returned.
@@ -120,4 +120,3 @@ Learn more about Traffic Manager [traffic routing methods](/documentation/articl
 <!--Image references-->
 [1]: ./media/traffic-manager-how-traffic-manager-works/dns-configuration.png
 [2]: ./media/traffic-manager-how-traffic-manager-works/flow.png
-

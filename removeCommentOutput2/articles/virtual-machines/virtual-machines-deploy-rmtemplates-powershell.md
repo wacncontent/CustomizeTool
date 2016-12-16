@@ -18,15 +18,15 @@
 # Manage virtual machines using Azure Resource Manager and PowerShell
 
 > [AZURE.SELECTOR]
-- [PowerShell](/documentation/articles/virtual-machines-deploy-rmtemplates-powershell)
-- [CLI](/documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli)
+- [PowerShell](/documentation/articles/virtual-machines-deploy-rmtemplates-powershell/)
+- [CLI](/documentation/articles/virtual-machines-deploy-rmtemplates-azure-cli/)
 
 <br>
 
 
 Using Azure PowerShell and Resource Manager templates provides you with a lot of power and flexibility when managing resources in Azure. You can use the tasks in this article to manage virtual machine resources.
 
-> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the Resource Manager deployment model, which Microsoft recommends for most new deployments instead of the classic deployment model.
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the Resource Manager deployment model, which Azure recommends for most new deployments instead of the classic deployment model.
 
 These tasks use only PowerShell:
 
@@ -36,7 +36,7 @@ These tasks use only PowerShell:
 - [Restart a virtual machine](#restart)
 - [Delete a virtual machine](#delete)
 
-[AZURE.INCLUDE [powershell-preview](../includes/powershell-preview-inline-include.md)]
+[AZURE.INCLUDE [powershell-preview](../../includes/powershell-preview-inline-include.md)]
 
 ## <a id="displayvm"></a>Display information about a virtual machine
 

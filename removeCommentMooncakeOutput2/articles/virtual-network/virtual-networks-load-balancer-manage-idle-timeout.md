@@ -1,3 +1,5 @@
+<!-- rename to load-balancer-tcp-idle-timeout -->
+
 <properties 
    authors="danielceckert" 
    documentationCenter="dev-center-name" 
@@ -17,7 +19,7 @@
 
 **TCP idle timeout** allows a developer to specify a guaranteed threshold for inactivity during client-server sessions involving the Azure load balancer.  A TCP idle timeout value of 4 minutes (the default for the Azure load balancer) means that if there is a period of inactivity lasting longer than 4 minutes during a client-server session involving the Azure load balancer, the connection will be closed.
 
-When a client-server connection is closed, the client application will get an error message similar to “The underlying connection was closed: A connection that was expected to be kept alive was closed by the server”.
+When a client-server connection is closed, the client application will get an error message similar to "The underlying connection was closed: A connection that was expected to be kept alive was closed by the server".
 
 [TCP Keep-Alive](http://tools.ietf.org/html/rfc1122#page-101) is a common practice to maintain connections during a long otherwise-inactive period [(MSDN example)](http://msdn.microsoft.com/zh-cn/library/system.net.servicepoint.settcpkeepalive.aspx). When TCP Keep-Alive is used, simple packets are sent periodically by a client (typically with a frequency period shorter than the server's idle timeout threshold).  The server considers these transmissions as evidence of connection activity even when no other activity occurs -- thus the idle timeout value is never met and the connection can be maintained over a long period of time.
 
@@ -29,9 +31,8 @@ To support mobile device scenarios, the Azure load balancer supports a configura
 
 TCP idle timeout can be configured for: 
 
-* [Instance-Level Public IPs](/documentation/articles/virtual-networks-instance-level-public-ip)
-* [Load-Balanced endpoint sets](/documentation/articles/load-balancer-overview)
-* [Virtual Machine endpoints](/documentation/articles/virtual-machines-set-up-endpoints)
+* [Instance-Level Public IPs](/documentation/articles/virtual-networks-instance-level-public-ip/)
+* [Virtual Machine endpoints](/documentation/articles/virtual-machines-windows-classic-setup-endpoints/)
 * [Web roles](http://msdn.microsoft.com/zh-cn/library/azure/ee758711.aspx)
 * [Worker roles](http://msdn.microsoft.com/zh-cn/library/azure/ee758711.aspx)
 
@@ -43,7 +44,7 @@ Please download [the latest Azure PowerShell release](https://github.com/Azure/a
 
 ### Configure TCP timeout for your Instance-Level Public IP to 15 minutes
 
-    Set-AzurePublicIP –PublicIPName webip –VM MyVM -IdleTimeoutInMinutes 15
+    Set-AzurePublicIP -PublicIPName webip -VM MyVM -IdleTimeoutInMinutes 15
 
 IdleTimeoutInMinutes is optional. If not set, the default timeout is 4 minutes. Its value can now be set between 4 and 30 minutes.
 
@@ -53,7 +54,7 @@ IdleTimeoutInMinutes is optional. If not set, the default timeout is 4 minutes. 
 
 ### Retrieve your idle timeout configuration
 
-    PS C:\> Get-AzureVM –ServiceName “MyService” –Name “MyVM” | Get-AzureEndpoint
+    PS C:\> Get-AzureVM -ServiceName "MyService" -Name "MyVM" | Get-AzureEndpoint
     
     VERBOSE: 6:43:50 PM - Completed Operation: Get Deployment
     LBSetName : MyLoadBalancedSet

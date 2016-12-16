@@ -232,4 +232,4 @@ You've seen how to create and deploy a website from WebMatrix to Azure. To learn
 
 
 [sendmailissues]: http://go.microsoft.com/fwlink/?LinkId=253001#email
-[sendgridexample]: /documentation/articles/sendgrid-dotnet-how-to-send-email
+[sendgridexample]: /documentation/articles/sendgrid-dotnet-how-to-send-email/

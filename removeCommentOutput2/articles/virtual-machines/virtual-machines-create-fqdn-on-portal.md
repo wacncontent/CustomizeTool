@@ -17,7 +17,7 @@
 
 # Create a Fully Qualified Domain Name in the Azure portal
 
-> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the Resource Manager deployment model, which Microsoft recommends for most new deployments instead of the classic deployment model.
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the Resource Manager deployment model, which Azure recommends for most new deployments instead of the classic deployment model.
 
 
 When you create a virtual machine in the [Azure portal](https://portal.azure.cn) using the **Resource Manager** deployment model, the portal creates a public IP resource for the virtual machine. You can use this IP address to remotely access the virtual machine. Although the portal does not create a [fully qualified domain name](https://en.wikipedia.org/wiki/Fully_qualified_domain_name) or FQDN, by default, it is extremely easy to create one once the virtual machine is created. This article demonstrates the steps to create a DNS name or FQDN.

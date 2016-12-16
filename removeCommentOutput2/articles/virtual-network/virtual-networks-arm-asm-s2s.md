@@ -1,3 +1,4 @@
+<!-- deleted in Global -->
 
 <properties 
    pageTitle="How to connect classic VNets to ARM VNets in Azure - Solution Guide"

@@ -17,25 +17,25 @@
 
 # Deploy Azure Resources Using the Compute, Network, and Storage .NET Libraries
 
-> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the Resource Manager deployment model, which Microsoft recommends for most new deployments instead of the classic deployment model.
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the Resource Manager deployment model, which Azure recommends for most new deployments instead of the classic deployment model.
 
 This tutorial shows you how to use the Compute, Storage, and Network .NET libraries to create and delete resources in Azure. It also shows you how to authenticate the requests to Azure Resource Manager by using Azure Active Directory.
 
-[AZURE.INCLUDE [free-trial-note](../includes/free-trial-note.md)]
+[AZURE.INCLUDE [free-trial-note](../../includes/free-trial-note.md)]
 
 To complete this tutorial you also need:
 
 - [Visual Studio](http://msdn.microsoft.com/zh-cn/library/dd831853.aspx)
-- [Azure storage account](/documentation/articles/storage-create-storage-account)
+- [Azure storage account](/documentation/articles/storage-create-storage-account/)
 - [Windows Management Framework 3.0](http://www.microsoft.com/download/details.aspx?id=34595) or [Windows Management Framework 4.0](http://www.microsoft.com/download/details.aspx?id=40855)
 
-[AZURE.INCLUDE [powershell-preview](../includes/powershell-preview-inline-include.md)]
+[AZURE.INCLUDE [powershell-preview](../../includes/powershell-preview-inline-include.md)]
 
 It takes about 30 minutes to do these steps.
 
 ## Step 1: Add an application to Azure AD and set permissions
 
-To use Azure AD to authenticate requests to Azure Resource Manager, an application must be added to the Default Directory. For more information, see [Authenticating a service principal with Azure Resource Manager](/documentation/articles/resource-group-authenticate-service-principal)
+To use Azure AD to authenticate requests to Azure Resource Manager, an application must be added to the Default Directory. For more information, see [Authenticating a service principal with Azure Resource Manager](/documentation/articles/resource-group-authenticate-service-principal/)
 
 1. Open an Azure PowerShell prompt, run this command, and then enter the credentials for your subscription when prompted:
 
@@ -487,7 +487,7 @@ Now that you created all of the supporting resources, you can create a virtual m
 	}
 	```
 
-	>[AZURE.NOTE] This tutorial creates a virtual machine running a version of the Windows Server operating system. To learn more about selecting other images, see [Navigate and select Azure virtual machine images with Windows PowerShell and the Azure CLI](/documentation/articles/resource-groups-vm-searching).
+	>[AZURE.NOTE] This tutorial creates a virtual machine running a version of the Windows Server operating system. To learn more about selecting other images, see [Navigate and select Azure virtual machine images with Windows PowerShell and the Azure CLI](/documentation/articles/virtual-machines-linux-cli-ps-findimage/).
 
 2. Add the following code to the Main method to call the method that you just added:
 

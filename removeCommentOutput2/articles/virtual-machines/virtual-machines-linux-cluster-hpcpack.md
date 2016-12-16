@@ -18,7 +18,7 @@
 
 This article shows you how to use an Azure PowerShell script to set up a Microsoft HPC Pack cluster in Azure which contains a head node running Windows Server and several compute nodes running a Linux distribution. We also show several ways to move data files to the Linux compute nodes. You can use this cluster to run Linux HPC workloads in Azure.
 
-> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the classic deployment model. Microsoft recommends that most new deployments use the Resource Manager model.
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager model.
 
 
 At a high level the following diagram shows the HPC Pack cluster you'll create.
@@ -29,13 +29,13 @@ At a high level the following diagram shows the HPC Pack cluster you'll create.
 
 You'll use the Microsoft HPC Pack IaaS deployment script (**New-HpcIaaSCluster.ps1**) to automate the cluster deployment in Azure infrastructure services (IaaS). This Azure PowerShell script uses an HPC Pack VM image in the Azure gallery for fast deployment and provides a comprehensive set of configuration parameters to make the deployment easy and flexible. The script deploys the Azure virtual network, storage accounts, cloud services, domain controller, optional separate SQL Server database server, cluster head node, compute nodes, broker nodes, Azure PaaS ("burst") nodes, and Linux compute nodes (Linux support introduced in [HPC Pack 2012 R2 Update 2](https://technet.microsoft.com/zh-cn/library/mt269417.aspx)).
 
-For an overview of HPC Pack cluster deployment options, see the [Getting started guide for HPC Pack 2012 R2 and HPC Pack 2012](https://technet.microsoft.com/zh-cn/library/jj884144.aspx) and [Options to create and manage a high peformance computing (HPC) cluster in Azure with Microsoft HPC Pack](/documentation/articles/virtual-machines-hpcpack-cluster-options).
+For an overview of HPC Pack cluster deployment options, see the [Getting started guide for HPC Pack 2012 R2 and HPC Pack 2012](https://technet.microsoft.com/zh-cn/library/jj884144.aspx) and [Options to create and manage a high peformance computing (HPC) cluster in Azure with Microsoft HPC Pack](/documentation/articles/virtual-machines-linux-hpcpack-cluster-options/).
 
 ### Prerequisites
 
 * **Client computer** - You'll need a Windows-based client computer to run the cluster deployment script.
 
-* **Azure PowerShell** - [Install and configure Azure PowerShell](/documentation/articles/powershell-install-configure) (version 0.8.10 or later) on your client computer.
+* **Azure PowerShell** - [Install and configure Azure PowerShell](/documentation/articles/powershell-install-configure/) (version 0.8.10 or later) on your client computer.
 
 * **HPC Pack IaaS deployment script** - Download and unpack the latest version of the script from the [Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=44949). You can check the version of the script by running `New-HPCIaaSCluster.ps1 -Version`. This article is based on version 4.4.0 or later of the script.
 
@@ -45,7 +45,7 @@ For an overview of HPC Pack cluster deployment options, see the [Getting started
 
 ### Create the configuration file
 
-The HPC Pack IaaS deployment script uses an XML configuration file as input which describes the infrastructure of the HPC cluster. To deploy a small cluster consisting of a head node and 2 Linux compute nodes, substitute values for your environment into the following sample configuration file. For more information about the configuration file, see the Manual.rtf file in the script folder and [Create an HPC cluster with the HPC Pack IaaS deployment script](/documentation/articles/virtual-machines-hpcpack-cluster-powershell-script).
+The HPC Pack IaaS deployment script uses an XML configuration file as input which describes the infrastructure of the HPC cluster. To deploy a small cluster consisting of a head node and 2 Linux compute nodes, substitute values for your environment into the following sample configuration file. For more information about the configuration file, see the Manual.rtf file in the script folder and [Create an HPC cluster with the HPC Pack IaaS deployment script](/documentation/articles/virtual-machines-linux-classic-hpcpack-cluster-powershell-script/).
 
 	<?xml version="1.0" encoding="utf-8" ?>
 	<IaaSClusterConfig>
@@ -117,7 +117,7 @@ Here are brief descriptions of the elements in the configuration file.
 
 * Linux images that support RDMA connectivity for size A8 and A9 VMs are available. If you specify an image with Linux RDMA drivers installed and enabled, the HPC Pack IaaS deployment script will deploy them. For example, specify the image name `b4590d9e3ed742e4a1d46e5424aa335e__suse-sles-12-hpc-v20150708` for the current SUSE Linux Enterprise Server 12 - Optimized for High Performance Compute image in the Marketplace.
 
-* To enable Linux RDMA on the Linux VMs created from supported images to run MPI jobs, install and configure a specific MPI library on the Linux nodes after cluster deployment according to your application needs. For an example, see [Run OpenFOAM with Microsoft HPC Pack on a Linux RDMA cluster in Azure](/documentation/articles/virtual-machines-linux-cluster-hpcpack-openfoam).
+* To enable Linux RDMA on the Linux VMs created from supported images to run MPI jobs, install and configure a specific MPI library on the Linux nodes after cluster deployment according to your application needs. For an example, see [Run OpenFOAM with Microsoft HPC Pack on a Linux RDMA cluster in Azure](/documentation/articles/virtual-machines-linux-classic-hpcpack-cluster-openfoam/).
 
 * Make sure you deploy all the Linux RDMA nodes within one service so that the RDMA network connection works between the nodes.
 
@@ -170,7 +170,7 @@ You have several choices to move data among Linux nodes and the Windows head nod
 
 ### Azure File storage
 
-The [Azure File](/home/features/storage/files/) service exposes file shares using the standard SMB 2.1 protocol. Azure VMs and cloud services can share file data across application components via mounted shares, and on-premises applications can access file data in a share through the File storage API. For more information, see [How to use Azure File storage with PowerShell and .NET](/documentation/articles/storage-dotnet-how-to-use-files).
+The [Azure File](/home/features/storage/files/) service exposes file shares using the standard SMB 2.1 protocol. Azure VMs and cloud services can share file data across application components via mounted shares, and on-premises applications can access file data in a share through the File storage API. For more information, see [How to use Azure File storage with PowerShell and .NET](/documentation/articles/storage-dotnet-how-to-use-files/).
 
 To create an Azure File share, see the detailed steps in [Introducing Azure File Service](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/12/introducing-microsoft-azure-file-service.aspx). To set up persisting connections, see [Persisting connections to Azure Files](http://blogs.msdn.com/b/windowsazurestorage/archive/2014/05/27/persisting-connections-to-microsoft-azure-files.aspx).
 
@@ -250,7 +250,7 @@ There are several ways to submit jobs to the HPC Pack cluster
 
 * REST API
 
-Job submission to the cluster in Azure via HPC Pack GUI tools and the HPC web portal are the same as for Windows compute nodes. See [HPC Pack Job Manager](https://technet.microsoft.com/zh-cn/library/ff919691.aspx) and [How to Submit Jobs from and On-premises Client](/documentation/articles/virtual-machines-hpcpack-cluster-submit-jobs).
+Job submission to the cluster in Azure via HPC Pack GUI tools and the HPC web portal are the same as for Windows compute nodes. See [HPC Pack Job Manager](https://technet.microsoft.com/zh-cn/library/ff919691.aspx) and [How to Submit Jobs from and On-premises Client](/documentation/articles/virtual-machines-windows-hpcpack-cluster-submit-jobs/).
 
 To submit jobs via the REST API, refer to [Creating and Submitting Jobs by Using the REST API in Microsoft HPC Pack](http://social.technet.microsoft.com/wiki/contents/articles/7737.creating-and-submitting-jobs-by-using-the-rest-api-in-microsoft-hpc-pack-windows-hpc-server.aspx). Also refer to the Python sample in the [HPC Pack SDK](https://www.microsoft.com/download/details.aspx?id=47756) to submit jobs from a Linux client.
 
@@ -274,9 +274,9 @@ The HPC Pack **clusrun** tool can be used to execute commands on Linux nodes eit
 
 ## Next steps
 
-* Try scaling up the cluster to a larger number of nodes, or try running a Linux workload on the cluster. For an example, see [Run NAMD with Microsoft HPC Pack on Linux compute nodes in Azure](/documentation/articles/virtual-machines-linux-cluster-hpcpack-namd).
+* Try scaling up the cluster to a larger number of nodes, or try running a Linux workload on the cluster. For an example, see [Run NAMD with Microsoft HPC Pack on Linux compute nodes in Azure](/documentation/articles/virtual-machines-linux-classic-hpcpack-cluster-namd/).
 
-* Try a cluster with size [A8 or A9](/documentation/articles/virtual-machines-a8-a9-a10-a11-specs) compute nodes to run MPI workloads. For an example, see [Run OpenFOAM with Microsoft HPC Pack on a Linux RDMA cluster in Azure](/documentation/articles/virtual-machines-linux-cluster-hpcpack-openfoam).
+* Try a cluster with size [A8 or A9](/documentation/articles/virtual-machines-a8-a9-a10-a11-specs/) compute nodes to run MPI workloads. For an example, see [Run OpenFOAM with Microsoft HPC Pack on a Linux RDMA cluster in Azure](/documentation/articles/virtual-machines-linux-classic-hpcpack-cluster-openfoam/).
 
 * Try an [Azure quickstart template](https://azure.microsoft.com/documentation/templates/create-hpc-cluster-linux-cn/) with Azure Resource Manager to speed up deployments of HPC Pack with a larger number of  Linux compute nodes.
 

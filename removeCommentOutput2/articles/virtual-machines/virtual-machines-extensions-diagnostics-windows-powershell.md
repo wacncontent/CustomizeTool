@@ -17,13 +17,13 @@
 
 # Use PowerShell to enable Azure Diagnostics in a virtual machine running Windows
 
-[AZURE.INCLUDE [learn-about-deployment-models](../includes/learn-about-deployment-models-both-include.md)]
+[AZURE.INCLUDE [learn-about-deployment-models](../../includes/learn-about-deployment-models-both-include.md)]
 
-Azure Diagnostics is the capability within Azure that enables the collection of diagnostic data on a deployed application. You can use the diagnostics extension to collect diagnostic data like application logs or performance counters from an Azure virtual machine (VM) that is running Windows. This article describes how to use Windows PowerShell to enable the diagnostics extension for a VM. See [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure) for the prerequisites needed for this article.
+Azure Diagnostics is the capability within Azure that enables the collection of diagnostic data on a deployed application. You can use the diagnostics extension to collect diagnostic data like application logs or performance counters from an Azure virtual machine (VM) that is running Windows. This article describes how to use Windows PowerShell to enable the diagnostics extension for a VM. See [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure/) for the prerequisites needed for this article.
 
 ## Enable the diagnostics extension if you use the Resource Manager deployment model
 
-You can enable the diagnostics extension while you create a Windows VM through the Azure Resource Manager deployment model by adding the extension configuration to the Resource Manager template. See [Create a Windows virtual machine with monitoring and diagnostics by using the Azure Resource Manager template](/documentation/articles/virtual-machines-extensions-diagnostics-windows-template).
+You can enable the diagnostics extension while you create a Windows VM through the Azure Resource Manager deployment model by adding the extension configuration to the Resource Manager template. See [Create a Windows virtual machine with monitoring and diagnostics by using the Azure Resource Manager template](/documentation/articles/virtual-machines-extensions-diagnostics-windows-template/).
 
 To enable the diagnostics extension on an existing VM that was created through the Resource Manager deployment model, you can use the [Set-AzureRMVMDiagnosticsExtension](https://msdn.microsoft.com/zh-cn/library/mt603499.aspx) PowerShell cmdlet as shown below.
 
@@ -85,7 +85,7 @@ The configuration needs to be updated to include the following:
 
 		<Metrics resourceId="/subscriptions/11111111-1111-1111-1111-111111111111/resourceGroups/MyResourceGroup/providers/Microsoft.Compute/virtualMachines/MyWindowsVM" >
 
-	- For more information on how metrics are generated based on the performance counters and metrics configuration, see [Azure Diagnostics metrics table in storage](/documentation/articles/virtual-machines-extensions-diagnostics-windows-template#wadmetrics-tables-in-storage).
+	- For more information on how metrics are generated based on the performance counters and metrics configuration, see [Azure Diagnostics metrics table in storage](/documentation/articles/virtual-machines-extensions-diagnostics-windows-template/#wadmetrics-tables-in-storage).
 
 - The **StorageAccount** element needs to be updated with the name of the diagnostics storage account.
 
@@ -192,5 +192,5 @@ The configuration needs to be updated to include the following:
 		</PublicConfig>
 
 ## Next steps
-- For additional guidance on using the Azure Diagnostics capability and other techniques to troubleshoot problems, see [Enabling Diagnostics in Azure Cloud Services and Virtual Machines](/documentation/articles/cloud-services-dotnet-diagnostics).
+- For additional guidance on using the Azure Diagnostics capability and other techniques to troubleshoot problems, see [Enabling Diagnostics in Azure Cloud Services and Virtual Machines](/documentation/articles/cloud-services-dotnet-diagnostics/).
 - [Diagnostics configurations schema](https://msdn.microsoft.com/zh-cn/library/azure/mt634524.aspx) explains the various XML configurations options for the diagnostics extension.

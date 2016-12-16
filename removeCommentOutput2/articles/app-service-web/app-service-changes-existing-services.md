@@ -1,38 +1,35 @@
 <properties
-	pageTitle="Azure App Service and its impact on existing Azure services"
-	description="Explains how the new Azure App Service and its features impact existing services in Azure."
-	services="app-service"
-    documentationCenter=""
-	authors="yochay"
-	manager="nirma"
-	editor=""/>
-
+    pageTitle="Azure App Service and its impact on existing Azure services"
+    description="Explains how the new Azure App Service and its features impact existing services in Azure."
+    services="app-service"
+    documentationcenter=""
+    author="yochay"
+    manager="nirma"
+    editor="" />
 <tags
-	ms.service="app-service"
-	ms.workload="na"
-	ms.tgt_pltfrm="na"
-	ms.devlang="na"
-	ms.topic="article"
-	ms.date="02/12/2016"
-	wacn.date=""
-	ms.author="yochayk"/>
-
+    ms.assetid="86c6a292-3c33-49f4-890c-89cc0321b397"
+    ms.service="app-service"
+    ms.workload="na"
+    ms.tgt_pltfrm="na"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.date="02/12/2016"
+    wacn.date=""
+    ms.author="yochayk" />
 
 # Azure App Service and existing Azure services
-
 This article outlines the changes to existing Azure services as part of the change to bring together several Azure services into [Azure App Service](/home/features/app-service/), a new integrated offering.
 
 [AZURE.INCLUDE [app-service-web-to-api-and-mobile](../../includes/app-service-web-to-api-and-mobile.md)]
 
 ## Overview
-
 [Azure App Service](/home/features/app-service/) is a new and unique cloud service that enables developers to create web and mobile apps for any platform and any device. App Service is an integrated solution designed to streamline repeated coding functions, integrate with enterprise and SaaS systems, and automate business processes while meeting your needs for security, reliability, and scalability.
 
 App Service brings together the following existing Azure services - [Websites](/home/features/app-service/web-apps/) and [Mobile Services](/home/features/mobile-services/) into a single combined service, while adding powerful new capabilities.  App Service allows you to host the following app types:
 
--   Web Apps
--   Mobile Apps
--   API Apps
+* Web Apps
+* Mobile Apps
+* API Apps
 
 The following table explains how existing Azure services map to App Service and the app types available within it.
 
@@ -75,3 +72,4 @@ The following table explains how existing Azure services map to App Service and 
 </table>
 
 To learn more, please visit [App Service documentation](/documentation/services/app-service/).
+

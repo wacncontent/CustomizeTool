@@ -302,7 +302,7 @@ For example:
 
 Now that you've set up your cluster running Oracle WebLogic Server, see the following topics for additional information.
 
-- [Oracle Virtual Machine images - Miscellaneous Considerations](/documentation/articles/virtual-machines-miscellaneous-considerations-oracle-virtual-machine-images)
+- [Oracle Virtual Machine images - Miscellaneous Considerations](/documentation/articles/virtual-machines-windows-classic-oracle-considerations/)
 
 - [Oracle WebLogic Server Product Documentation](http://www.oracle.com/technetwork/middleware/weblogic/documentation/index.html)
 

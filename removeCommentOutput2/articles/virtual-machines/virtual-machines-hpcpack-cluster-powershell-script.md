@@ -16,7 +16,7 @@
 
 # Create a high performance computing (HPC) cluster in Azure VMs with the HPC Pack IaaS deployment script
 
-> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the classic deployment model. Microsoft recommends that most new deployments use the Resource Manager model.
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the Resource Manager model.
 
 
 
@@ -32,10 +32,10 @@ For background information about planning an HPC Pack cluster, see the [Product 
 
 ## Prerequisites
 
-* **Azure subscription** - You can use a subscription in either the Azure Global or Azure China service. Your subscription limits will affect the number and type of cluster nodes you can deploy. For information, see [Azure subscription and service limits, quotas, and constraints](/documentation/articles/azure-subscription-service-limits).
+* **Azure subscription** - You can use a subscription in either the Azure Global or Azure China service. Your subscription limits will affect the number and type of cluster nodes you can deploy. For information, see [Azure subscription and service limits, quotas, and constraints](/documentation/articles/azure-subscription-service-limits/).
 
 
-* **Windows client computer with Azure PowerShell 0.8.7 or later installed and configured** - See [Install and configure Azure PowerShell](/documentation/articles/powershell-install-configure). The script runs in Azure Service Management.
+* **Windows client computer with Azure PowerShell 0.8.7 or later installed and configured** - See [Install and configure Azure PowerShell](/documentation/articles/powershell-install-configure/). The script runs in Azure Service Management.
 
 
 * **HPC Pack IaaS deployment script** - Download and unpack the latest version of the script from the [Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=44949). Check the version of the script by running `New-HPCIaaSCluster.ps1 -Version`. This article is based on version 4.4.0 of the script.
@@ -88,7 +88,7 @@ credentials for installing the cluster.
 * The script can optionally run custom pre- and post-configuration scripts on the head node if you want to install additional software or configure other settings.
 
 
-##<a name="Configuration-file"></a> Configuration file
+## <a name="Configuration-file"></a> Configuration file
 
 The configuration file for the deployment script is an XML
 file. The schema file HPCIaaSClusterConfig.xsd is in the HPC Pack IaaS
@@ -97,7 +97,7 @@ the configuration file, which contains the child elements described in
 detail in the file Manual.rtf in the deployment script folder. For example files for different scenarios, see
 [Example configuration files](#Example-configuration-files) in this article.
 
-##<a name="Example-configuration-files"></a> Example configuration files
+## <a name="Example-configuration-files"></a> Example configuration files
 
 ### Example 1
 
@@ -432,6 +432,6 @@ extension might be stuck in the installing state.
 
 * Try running a test workload on the cluster. For an example, see the HPC Pack [getting started guide](https://technet.microsoft.com/zh-cn/library/jj884144).
 
-* For tutorials that use the script to create a cluster and run an HPC workload, see [Get started with an HPC Pack cluster in Azure to run Excel and SOA workloads](/documentation/articles/virtual-machines-excel-cluster-hpcpac), [Run NAMD with Microsoft HPC Pack on Linux compute nodes in Azure](/documentation/articles/virtual-machines-linux-cluster-hpcpack-namd), or [Run OpenFOAM with Microsoft HPC Pack on Linux compute nodes in Azure](/documentation/articles/virtual-machines-linux-cluster-hpcpack-openfoam).
+* For tutorials that use the script to create a cluster and run an HPC workload, see [Get started with an HPC Pack cluster in Azure to run Excel and SOA workloads](/documentation/articles/virtual-machines-excel-cluster-hpcpac/), [Run NAMD with Microsoft HPC Pack on Linux compute nodes in Azure](/documentation/articles/virtual-machines-linux-classic-hpcpack-cluster-namd/), or [Run OpenFOAM with Microsoft HPC Pack on Linux compute nodes in Azure](/documentation/articles/virtual-machines-linux-classic-hpcpack-cluster-openfoam/).
 
-* Try HPC Pack's tools to start, stop, add, and remove compute nodes from a cluster you create. See [Manage compute nodes in an HPC Pack cluster in Azure](/documentation/articles/virtual-machines-hpcpack-cluster-node-manage)
+* Try HPC Pack's tools to start, stop, add, and remove compute nodes from a cluster you create. See [Manage compute nodes in an HPC Pack cluster in Azure](/documentation/articles/virtual-machines-windows-classic-hpcpack-cluster-node-manage/)

@@ -17,7 +17,7 @@
 
 # Base Configuration test environment with Azure Resource Manager
 
-> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the Resource Manager deployment model, which Microsoft recommends for most new deployments instead of the [classic deployment model](/documentation/articles/virtual-machines-base-configuration-test-environment).
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the Resource Manager deployment model, which Azure recommends for most new deployments instead of the [classic deployment model](/documentation/articles/virtual-machines-windows-classic-test-config-env/).
 
 This article provides you with step-by-step instructions to create the Base Configuration test environment in a Azure Virtual Network, using virtual machines created in Resource Manager.
 
@@ -50,7 +50,7 @@ There are four phases to setting up the Corpnet subnet of the Windows Server 201
 
 If you do not already have an Azure account, you can sign up for a trial at [Try Azure](/pricing/1rmb-trial/).
 
-> [AZURE.NOTE] Virtual machines in Azure incur an ongoing monetary cost when they are running. This cost is billed against your trial, MSDN subscription, or paid subscription. For more information about the costs of running Azure virtual machines, see [Virtual Machines Pricing Details](/home/features/virtual-machines/#price) and [Azure Pricing Calculator](https://azure.microsoft.com/pricing/calculator/). To keep costs down, see [Minimizing the costs of test environment virtual machines in Azure](#costs).
+> [AZURE.NOTE] Virtual machines in Azure incur an ongoing monetary cost when they are running. This cost is billed against your trial, MSDN subscription, or paid subscription. For more information about the costs of running Azure virtual machines, see [Virtual Machines Pricing Details](/pricing/details/virtual-machines/) and [Azure Pricing Calculator](https://azure.microsoft.com/pricing/calculator/). To keep costs down, see [Minimizing the costs of test environment virtual machines in Azure](#costs).
 
 ## Phase 1: Create the virtual network
 
@@ -242,7 +242,7 @@ This is your current configuration.
 
 CLIENT1 acts as a typical laptop, tablet, or desktop computer on the Contoso intranet.
 
-> [AZURE.NOTE] The following command set creates CLIENT1 running Windows Server 2012 R2 Datacenter, which can be done for all types of Azure subscriptions. If you have an MSDN-based Azure subscription, you can create CLIENT1 running Windows 10, Windows 8, or Windows 7 using the [Azure portal](/documentation/articles/virtual-machines-windows-tutorial-classic-portal).
+> [AZURE.NOTE] The following command set creates CLIENT1 running Windows Server 2012 R2 Datacenter, which can be done for all types of Azure subscriptions. If you have an MSDN-based Azure subscription, you can create CLIENT1 running Windows 10, Windows 8, or Windows 7 using the [Azure portal](/documentation/articles/virtual-machines-windows-classic-tutorial/).
 
 First, fill in the name of your resource group, Azure location, and storage account name and run these commands at the Azure PowerShell command prompt on your local computer to create an Azure Virtual Machine for CLIENT1.
 
@@ -296,7 +296,7 @@ Your base configuration in Azure is now ready for application development and te
 
 ## Next step
 
-- [Add a new virtual machine](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-resource-manager-vms) to the Corpnet subnet, such as one running Microsoft SQL Server.
+- [Add a new virtual machine](/documentation/articles/virtual-machines-ps-create-preconfigure-windows-resource-manager-vms/) to the Corpnet subnet, such as one running Microsoft SQL Server.
 
 
 ## <a id="costs"></a>Minimizing the costs of test environment virtual machines in Azure

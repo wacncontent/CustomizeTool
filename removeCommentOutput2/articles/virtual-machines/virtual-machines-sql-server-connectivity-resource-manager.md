@@ -17,8 +17,8 @@
 # Connect to a SQL Server Virtual Machine on Azure (Resource Manager)
 
 > [AZURE.SELECTOR]
-- [Resource Manager](/documentation/articles/virtual-machines-sql-server-connectivity-resource-manager)
-- [Classic](/documentation/articles/virtual-machines-sql-server-connectivity)
+- [Resource Manager](/documentation/articles/virtual-machines-windows-classic-sql-connect-resource-manager/)
+- [Classic](/documentation/articles/virtual-machines-windows-classic-sql-connect/)
 
 ## Overview
 
@@ -26,9 +26,9 @@ Configuring connectivity to SQL Server running on an Azure Virtual Machine in Re
 
 But there are some SQL Server connectivity aspects that are specific to Azure VMs. This article covers some [general connectivity scenarios](#connection-scenarios) and then provides [detailed steps for configuring SQL Server connectivity in an Azure VM](#steps-for-manually-configuring-sql-server-connectivity-in-an-azure-vm).
 
-This article focuses on connectivity. For a full walk-through of both provisioning and connectivity, see [Provisioning a SQL Server Virtual Machine on Azure](/documentation/articles/virtual-machines-provision-sql-server).
+This article focuses on connectivity. For a full walk-through of both provisioning and connectivity, see [Provisioning a SQL Server Virtual Machine on Azure](/documentation/articles/virtual-machines-windows-classic-ps-sql-create/).
 
-> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the Resource Manager deployment model, which Microsoft recommends for most new deployments instead of the classic deployment model.
+> [AZURE.NOTE] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the Resource Manager deployment model, which Azure recommends for most new deployments instead of the classic deployment model.
 
 ## Connection scenarios
 
@@ -55,11 +55,11 @@ Although this enables connectivity for clients over the internet, this does not 
 
 	"Server=sqlvmlabel.chinaeast.chinacloudapp.cn,1500;Integrated Security=false;User ID=<login_name>;Password=<your_password>"
 
->[AZURE.NOTE] It is important to note that when you use this technique to communicate with SQL Server, all data returned is considered outgoing traffic from the datacenter. It is subject to normal [pricing on outbound data transfers](/home/features/data-transfers/#price). This is true even if you use this technique from another machine or cloud service within the same Azure datacenter, because traffic still goes through Azure's public load balancer.
+>[AZURE.NOTE] It is important to note that when you use this technique to communicate with SQL Server, all data returned is considered outgoing traffic from the datacenter. It is subject to normal [pricing on outbound data transfers](/pricing/details/data-transfers/). This is true even if you use this technique from another machine or cloud service within the same Azure datacenter, because traffic still goes through Azure's public load balancer.
 
 ### Connect to SQL Server in the same virtual network
 
-[Virtual Network](/documentation/articles/virtual-networks-overview) enables additional scenarios. You can connect VMs in the same virtual network, even if those VMs exist in different resource groups. And with a [site-to-site VPN](/documentation/articles/vpn-gateway-site-to-site-create), you can create a hybrid architecture that connects VMs with on-premises networks and machines.
+[Virtual Network](/documentation/articles/virtual-networks-overview/) enables additional scenarios. You can connect VMs in the same virtual network, even if those VMs exist in different resource groups. And with a [site-to-site VPN](/documentation/articles/vpn-gateway-site-to-site-create/), you can create a hybrid architecture that connects VMs with on-premises networks and machines.
 
 Virtual networks also enables you to join your Azure VMs to a domain. This is the only way to use Windows Authentication to SQL Server. The other connection scenarios require SQL Authentication with user names and passwords.
 
@@ -84,16 +84,16 @@ Before you can connect to the instance of SQL Server from another VM or the inte
 - [Configure a DNS Label for the public IP address](#configure-a-dns-label-for-the-public-ip-address)
 - [Connect to the Database Engine from another computer](#connect-to-the-database-engine-from-another-computer)
 
-[AZURE.INCLUDE [Connect to SQL Server in a VM](../includes/virtual-machines-sql-server-connection-steps.md)]
+[AZURE.INCLUDE [Connect to SQL Server in a VM](../../includes/virtual-machines-sql-server-connection-steps.md)]
 
-[AZURE.INCLUDE [Connect to SQL Server in a VM Resource Manager](../includes/virtual-machines-sql-server-connection-steps-resource-manager-nsg-rule.md)]
+[AZURE.INCLUDE [Connect to SQL Server in a VM Resource Manager](../../includes/virtual-machines-sql-server-connection-steps-resource-manager-nsg-rule.md)]
 
-[AZURE.INCLUDE [Connect to SQL Server in a VM Resource Manager](../includes/virtual-machines-sql-server-connection-steps-resource-manager.md)]
+[AZURE.INCLUDE [Connect to SQL Server in a VM Resource Manager](../../includes/virtual-machines-sql-server-connection-steps-resource-manager.md)]
 
 ## Next Steps
 
-To see provisioning instructions along with these connectivity steps, see [Provisioning a SQL Server Virtual Machine on Azure](/documentation/articles/virtual-machines-provision-sql-server).
+To see provisioning instructions along with these connectivity steps, see [Provisioning a SQL Server Virtual Machine on Azure](/documentation/articles/virtual-machines-windows-classic-ps-sql-create/).
 
-It is important to review all of the security best practices for SQL Server running on an Azure virtual machine. For more information, see [Security Considerations for SQL Server in Azure Virtual Machines](/documentation/articles/virtual-machines-sql-server-security-considerations).
+It is important to review all of the security best practices for SQL Server running on an Azure virtual machine. For more information, see [Security Considerations for SQL Server in Azure Virtual Machines](/documentation/articles/virtual-machines-windows-sql-security/).
 
-For other topics related to running SQL Server in Azure VMs, see [SQL Server on Azure Virtual Machines](/documentation/articles/virtual-machines-sql-server-infrastructure-services). 
+For other topics related to running SQL Server in Azure VMs, see [SQL Server on Azure Virtual Machines](/documentation/articles/virtual-machines-windows-sql-server-iaas-overview/). 

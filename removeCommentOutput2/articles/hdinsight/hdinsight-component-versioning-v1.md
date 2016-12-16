@@ -98,7 +98,6 @@ The following table lists the versions of HDInsight currently available, the cor
 
 <table border="1">
 <tr><th>HDInsight Version</th><th>HDP Version</a><th>High Availability</th></th><th>Release Date</th><th>Available on Azure Classic Management Portal</th><th>Support Expiration Date</th><th>Deprecation Date</th></tr>
-<tr><td>HDI 3.3</td><td>HDP 2.3</td><td>Yes</td><td>12/02/2015</td><td>Yes</td><td></td><td></td></tr> 
 <tr><td>HDI 3.2</td><td>HDP 2.2</td><td>Yes</td><td>2/18/2015</td><td>Yes</td><td></td><td></td></tr>
 <tr><td>HDI 3.1</td><td>HDP 2.1</td><td>Yes</td><td>6/24/2014</td><td>Yes</td><td></td><td></td></tr>
 <tr><td>HDI 3.0</td><td>HDP 2.0</td><td>Yes</td><td>02/11/2014</td><td>Yes</td><td>09/17/2014</td><td>06/30/2015</td></tr>
@@ -153,6 +152,6 @@ The **Deprecation Date** is the date after which the cluster version cannot be c
 
 [hdp-1-3-0]: http://docs.hortonworks.com/HDPDocuments/HDP1/HDP-1.3.0/bk_releasenotes_hdp_1.x/content/ch_relnotes-hdp1.3.0_1.html
 
-[hdp-1-1-0]: http://docs.hortonworks.com/HDPDocuments/HDP1/HDP-Win-1.1/bk_releasenotes_HDP-Win/content/ch_relnotes-hdp-win-1.1.0_1.html
+[hdp-1-1-0]: http://docs.hortonworks.com/HDPDocuments/HDP1/HDP-1.3.0/bk_releasenotes_hdp_1.x/content/ch_relnotes-hdp1.1.0.15_1.html
 
 [zookeeper]: http://zookeeper.apache.org/

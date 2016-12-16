@@ -1,3 +1,5 @@
+<!-- deleted in Global -->
+
 <properties 
 	pageTitle="Release notes: Microsoft HDInsight Emulator for Azure | Azure" 
 	description="Get late-breaking information about the most recent releases of the HDInsight Hadoop Emulator, a Hadoop sandbox environment." 
@@ -30,7 +32,7 @@
 
 ### What's new? 
  
-* [Updated Hadoop component versions](/documentation/articles/hdinsight-component-versioning-v1) corresponding to version 3.1 of the service. This includes Hive 0.13 and Tez support.
+* [Updated Hadoop component versions](/documentation/articles/hdinsight-component-versioning-v1/) corresponding to version 3.1 of the service. This includes Hive 0.13 and Tez support.
 
 ## Version 1.0.0.0, released October 28, 2013
 
@@ -275,5 +277,5 @@
 
 
 
-[hdinsight-hadoop-emulator-get-started]: /documentation/articles/hdinsight-hadoop-emulator-get-started
+[hdinsight-hadoop-emulator-get-started]: /documentation/articles/hdinsight-hadoop-emulator-get-started/
 

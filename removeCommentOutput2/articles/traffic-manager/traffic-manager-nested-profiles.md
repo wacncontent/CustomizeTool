@@ -1,22 +1,21 @@
-<properties 
-   pageTitle="Nested Traffic Manager Profiles | Azure"
-   description="This article explains the 'Nested Profiles' feature of Azure Traffic Manager"
-   services="traffic-manager"
-   documentationCenter=""
-   authors="sdwheeler"
-   manager="carmonm"
-    editor=""
-/>
-<tags 
-   ms.service="traffic-manager"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
+<properties
+    pageTitle="Nested Traffic Manager Profiles | Azure"
+    description="This article explains the 'Nested Profiles' feature of Azure Traffic Manager"
+    services="traffic-manager"
+    documentationcenter=""
+    author="sdwheeler"
+    manager="carmonm"
+    editor="" />
+<tags
+    ms.assetid="f1b112c4-a3b1-496e-90eb-41e235a49609"
+    ms.service="traffic-manager"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="infrastructure-services"
     ms.date="10/11/2016"
-   wacn.date=""
-    ms.author="sewhee"
-/>
+    wacn.date=""
+    ms.author="sewhee" />
 
 # Nested Traffic Manager profiles
 
@@ -25,8 +24,6 @@ Traffic Manager includes a range of traffic-routing methods that allow you to co
 Each Traffic Manager profile specifies a single traffic-routing method. However, there are scenarios that require more sophisticated traffic routing than the routing provided by a single Traffic Manager profile. You can nest Traffic Manager profiles to combine the benefits of more than one traffic-routing method. Nested profiles allow you to override the default Traffic Manager behavior to support larger and more complex application deployments.
 
 The following examples illustrate how to use nested Traffic Manager profiles in various scenarios.
-
-
 
 ## Example 1: Combining 'Performance' and 'Weighted' traffic routing
 
@@ -52,7 +49,6 @@ Traffic Manager actively monitors the health of each service endpoint. If an end
 
 Returning to the previous example, suppose the production deployment in West Europe fails. By default, the 'child' profile directs all traffic to the test deployment. If the test deployment also fails, the parent profile determines that the child profile should not receive traffic since all child endpoints are unhealthy. Then, the parent profile distributes traffic to the other regions.
 
-
 ![Nested Profile failover (default behavior)][3]
 
 You might be happy with this arrangement. Or you might be concerned that all traffic for China East site 1 is now going to the test deployment instead of a limited subset traffic. Regardless of the health of the test deployment, you want to fail over to the other regions when the production deployment in China East site 1 fails. To enable this failover, you can specify the 'MinChildEndpoints' parameter when configuring the child profile as an endpoint in the parent profile. The parameter determines the minimum number of available endpoints in the child profile. The default value is '1'. For this scenario, you set the MinChildEndpoints value to 2. Below this threshold, the parent profile considers the entire child profile to be unavailable and directs traffic to the other endpoints.
@@ -61,8 +57,8 @@ The following figure illustrates this configuration:
 
 ![Nested Profile failover with 'MinChildEndpoints' = 2][4]
 
->[AZURE.NOTE]
->The 'Priority' traffic-routing method distributes all traffic to a single endpoint. Thus there is little purpose in a MinChildEndpoints setting other than '1' for a child profile.
+> [AZURE.NOTE]
+> The 'Priority' traffic-routing method distributes all traffic to a single endpoint. Thus there is little purpose in a MinChildEndpoints setting other than '1' for a child profile.
 
 ## Example 3: Prioritized failover regions in 'Performance' traffic routing
 
@@ -102,9 +98,10 @@ The monitoring settings in a Traffic Manager profile apply to all endpoints with
 
 ### How do I configure nested profiles?
 
-Nested Traffic Manager profiles can be configured using both the Azure Resource Manager and the classic Azure REST APIs, Azure PowerShell cmdlets and cross-platform Azure CLI commands. They are also supported via the new Azure Portal. Preview They are not supported in the Classic Management Portal.
+Nested Traffic Manager profiles can be configured using both the Azure Resource Manager and the classic Azure REST APIs, Azure PowerShell cmdlets and cross-platform Azure CLI commands. They are also supported via the new Azure portal Preview. They are not supported in the Classic Management Portal.
 
 ### How many layers of nesting does Traffic Manger support?
+
 You can nest profiles up to 10 levels deep. 'Loops' are not permitted.
 
 ### Can I mix other endpoint types with nested child profiles, in the same Traffic Manager profile?
@@ -117,8 +114,8 @@ There is no negative pricing impact of using nested profiles.
 
 Traffic Manager billing has two components: endpoint health checks and millions of DNS queries
 
-- Endpoint health checks: There is no charge for a child profile when configured as an endpoint in a parent profile. Monitoring of the endpoints in the child profile are billed in the usual way.
-- DNS queries: Each query is only counted once. A query against a parent profile that returns an endpoint from a child profile is counted against the parent profile only.
+* Endpoint health checks: There is no charge for a child profile when configured as an endpoint in a parent profile. Monitoring of the endpoints in the child profile are billed in the usual way.
+* DNS queries: Each query is only counted once. A query against a parent profile that returns an endpoint from a child profile is counted against the parent profile only.
 
 For full details, see the [Traffic Manager pricing page](/pricing/details/traffic-manager/).
 
@@ -134,14 +131,13 @@ The parent profile doesn't perform health checks on the child directly. Instead,
 
 The following table describes the behavior of Traffic Manager health checks for a nested endpoint.
 
-|Child Profile Monitor status|Parent Endpoint Monitor status|Notes|
-|---|---|---|
-|Disabled. The child profile has been disabled.|Stopped|The parent endpoint state is Stopped, not Disabled. The Disabled state is reserved for indicating that you have disabled the endpoint in the parent profile.|
-|Degraded. At least one child profile endpoint is in a Degraded state.| Online: the number of Online endpoints in the child profile is at least the value of MinChildEndpoints.<BR>CheckingEndpoint: the number of Online plus CheckingEndpoint endpoints in the child profile is at least the value of MinChildEndpoints.<BR>Degraded: otherwise.|Traffic is routed to an endpoint of status CheckingEndpoint. If MinChildEndpoints is set too high, the endpoint is always degraded.|
-|Online. At least one child profile endpoint is an Online state. No endpoint is in the Degraded state.|See above.||
-|CheckingEndpoints. At least one child profile endpoint is 'CheckingEndpoint'. No endpoints are 'Online' or 'Degraded'|Same as above.||
-|Inactive. All child profile endpoints are either Disabled or Stopped, or this profile has no endpoints.|Stopped||
-
+| Child Profile Monitor status | Parent Endpoint Monitor status | Notes |
+| --- | --- | --- |
+| Disabled. The child profile has been disabled. |Stopped |The parent endpoint state is Stopped, not Disabled. The Disabled state is reserved for indicating that you have disabled the endpoint in the parent profile. |
+| Degraded. At least one child profile endpoint is in a Degraded state. |Online: the number of Online endpoints in the child profile is at least the value of MinChildEndpoints.<BR>CheckingEndpoint: the number of Online plus CheckingEndpoint endpoints in the child profile is at least the value of MinChildEndpoints.<BR>Degraded: otherwise. |Traffic is routed to an endpoint of status CheckingEndpoint. If MinChildEndpoints is set too high, the endpoint is always degraded. |
+| Online. At least one child profile endpoint is an Online state. No endpoint is in the Degraded state. |See above. | |
+| CheckingEndpoints. At least one child profile endpoint is 'CheckingEndpoint'. No endpoints are 'Online' or 'Degraded' |Same as above. | |
+| Inactive. All child profile endpoints are either Disabled or Stopped, or this profile has no endpoints. |Stopped | |
 
 ## Next steps
 
@@ -160,4 +156,3 @@ Learn how to [create a Traffic Manager profile](/documentation/articles/traffic-
 [8]: ./media/traffic-manager-nested-profiles/figure-8.png
 [9]: ./media/traffic-manager-nested-profiles/figure-9.png
 [10]: ./media/traffic-manager-nested-profiles/figure-10.png
-

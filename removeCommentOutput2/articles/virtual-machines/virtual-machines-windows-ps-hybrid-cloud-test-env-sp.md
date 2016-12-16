@@ -1,3 +1,4 @@
+<!-- deleted in Global -->
 
 <properties 
 	pageTitle="SharePoint 2013 farm test environment | Azure" 
@@ -51,8 +52,6 @@ This is your current configuration.
 > [AZURE.NOTE] For Phase 1, you can also set up the [simulated hybrid cloud test environment](/documentation/articles/virtual-machines-windows-ps-hybrid-cloud-test-env-sim/).
  
 ## Phase 2: Configure the SQL server computer (SQL1)
-
-[AZURE.INCLUDE [arm-api-version-powershell](../includes/arm-api-version-powershell.md)]
 
 From the Azure portal Preview, start the DC2 computer if needed.
 

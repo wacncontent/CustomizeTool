@@ -23,9 +23,9 @@ You can easily create an availability set for a virtual machine by using Azure P
 
 Before you start, make sure you have Azure PowerShell and Azure CLI configured and ready to go.
 
-[AZURE.INCLUDE [arm-getting-setup-powershell](../includes/arm-getting-setup-powershell.md)]
+[AZURE.INCLUDE [arm-getting-setup-powershell](../../includes/arm-getting-setup-powershell.md)]
 
-[AZURE.INCLUDE [xplat-getting-set-up](../includes/xplat-getting-set-up.md)]
+[AZURE.INCLUDE [xplat-getting-set-up](../../includes/xplat-getting-set-up.md)]
 
 
 ## Create an availability set with a Resource Manager template

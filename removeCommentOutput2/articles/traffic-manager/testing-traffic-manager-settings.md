@@ -6,7 +6,7 @@
    authors="sdwheeler"
    manager="carmonm"
    editor="tysonn" />
-<tags 
+<tags
    ms.service="traffic-manager"
    ms.devlang="na"
    ms.topic="article"
@@ -19,22 +19,3 @@
 # Testing Traffic Manager Settings
 
 This article as been replace by [Testing your Traffic Manager settings](/documentation/articles/traffic-manager-testing-settings/)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

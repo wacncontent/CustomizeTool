@@ -18,7 +18,7 @@
 
 # SharePoint 2010 deployment on Azure virtual machines
 
-> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model).  This article covers using the classic deployment model. Microsoft recommends that most new deployments use the 
+> [AZURE.IMPORTANT] Azure has two different deployment models for creating and working with resources:  [Resource Manager and classic](/documentation/articles/resource-manager-deployment-model/).  This article covers using the classic deployment model. Azure recommends that most new deployments use the 
 
 
 Microsoft SharePoint Server 2010 provides rich deployment flexibility, which can help organizations determine the appropriate deployment scenarios to align with their business needs and objectives. Hosted and managed in Azure, the Azure Virtual Machines offering provides complete, reliable, and available infrastructure to support various on-demand application and database workloads, such as Microsoft SQL Server and SharePoint deployments.
@@ -27,7 +27,7 @@ While Azure virtual machines support multiple workloads, this article focuses on
 
 Azure virtual machines mitigate the need for hardware, so organizations can turn attention from handling high, upfront cost and complexity to building and managing infrastructure at scale. This means that they can innovate, experiment, and iterate in hours, as opposed to days and weeks with traditional deployments.
 
-> [AZURE.NOTE] For information about deploying SharePoint 2013 in Azure, see [Azure Architectures for SharePoint 2013](https://technet.microsoft.com/zh-cn/library/dn635309.aspx) and [SharePoint farms hosted in Azure infrastructure services](/documentation/articles/virtual-machines-sharepoint-infrastructure-services).
+> [AZURE.NOTE] For information about deploying SharePoint 2013 in Azure, see [Azure Architectures for SharePoint 2013](https://technet.microsoft.com/zh-cn/library/dn635309.aspx) and [SharePoint farms hosted in Azure infrastructure services](/documentation/articles/none/).
 
 ## SharePoint on Azure virtual machines
 
@@ -57,15 +57,15 @@ Azure virtual machines provide developers with the flexibility to pick their des
 
 ## Provisioning process
 
-The image library in Azure provides the list of available preconfigured virtual machines. Users can publish SharePoint Server, SQL Server, Windows Server, and other ISO/VHDs to the image library. To simplify the creation of virtual machines, base images are created and published to the library. Authorized users can use these images to generate the desired virtual machine. For more information, go to [Create a virtual machine running Windows in the Azure Management Portal](/documentation/articles/virtual-machines-windows-tutorial-classic-portal). Figure 1 shows the basic steps for creating a virtual machine using the Azure Management Portal.
+The image library in Azure provides the list of available preconfigured virtual machines. Users can publish SharePoint Server, SQL Server, Windows Server, and other ISO/VHDs to the image library. To simplify the creation of virtual machines, base images are created and published to the library. Authorized users can use these images to generate the desired virtual machine. For more information, go to [Create a virtual machine running Windows in the Azure Management Portal](/documentation/articles/virtual-machines-windows-classic-tutorial/). Figure 1 shows the basic steps for creating a virtual machine using the Azure Management Portal.
 
 ![azure-sharepoint-wp-13](./media/virtual-machines-deploy-sharepoint-2010/azure-sharepoint-wp-2.png)
 
 **Figure 1: Overview of steps for creating a virtual machine**
 
-Users also can upload a sysprepped image on the Azure Management Portal. For more information, go to [Create and upload a Windows Server VHD to Azure](/documentation/articles/virtual-machines-create-upload-vhd-windows-server). Figure 2 shows the basic steps for uploading an image to create a VM.
+Users also can upload a sysprepped image on the Azure Management Portal. For more information, go to [Create and upload a Windows Server VHD to Azure](/documentation/articles/virtual-machines-windows-classic-createupload-vhd/). Figure 2 shows the basic steps for uploading an image to create a VM.
 
-On the Azure Management Portal, users also can upload an image on which the SysPrep tool has already been run. For more information, go to [Create and upload a Windows Server VHD to Azure](/documentation/articles/virtual-machines-create-upload-vhd-windows-server). Figure 2 shows the basic steps for uploading an image to create a virtual machine.
+On the Azure Management Portal, users also can upload an image on which the SysPrep tool has already been run. For more information, go to [Create and upload a Windows Server VHD to Azure](/documentation/articles/virtual-machines-windows-classic-createupload-vhd/). Figure 2 shows the basic steps for uploading an image to create a virtual machine.
 
 ![azure-sharepoint-wp-13](./media/virtual-machines-deploy-sharepoint-2010/azure-sharepoint-wp-3.png)
 
@@ -87,15 +87,15 @@ You can deploy SharePoint 2010 on Azure using the classic deployment model by fo
 5. The second **Virtual machine configuration** dialog box appears. Provide the following information:
 	- In **Cloud Service**, select **Create a new cloud service**, in which case you must also provide a cloud service DNS name, or select an existing cloud service.
 	- In **Region/Affinity Group/Virtual Network**, select the region where the virtual image will be hosted.
-	- In the **Storage account**, click **Use an automatically generated storage account** or select an existing storage account name. Only one storage account per region is automatically created. All other virtual machines created with this setting are located in this Storage account. You are limited to 20 Storage accounts. For more information, go to [Create a Storage account in Azure](/documentation/articles/virtual-machines-create-upload-vhd-windows-server#step-2-create-a-storage-account-in-azure).
+	- In the **Storage account**, click **Use an automatically generated storage account** or select an existing storage account name. Only one storage account per region is automatically created. All other virtual machines created with this setting are located in this Storage account. You are limited to 20 Storage accounts. For more information, go to [Create a Storage account in Azure](/documentation/articles/virtual-machines-windows-classic-createupload-vhd/#step-2-create-a-storage-account-in-azure).
 	- In **Availability Set**, select **(none)**, and then click the right arrow.
 6. In the third **Virtual machine configuration** dialog box, click the checkmark to create the virtual machine.
 
-To connect to the virtual machine, see [How to sign in to a virtual machine running Windows Server](/documentation/articles/virtual-machines-log-on-windows-server).
+To connect to the virtual machine, see [How to sign in to a virtual machine running Windows Server](/documentation/articles/virtual-machines-windows-classic-connect-logon/).
 
 Build the SQL Server virtual machine using any of the following options:
 
-- Create a SQL Server 2012 virtual machine by following steps 1 to 7 above, except in step 3, use the SQL Server 2012 image instead of the Windows Server 2008 R2 SP1 image. For more information, go to [Provisioning a SQL Server virtual machine on Azure](/documentation/articles/virtual-machines-provision-sql-server).
+- Create a SQL Server 2012 virtual machine by following steps 1 to 7 above, except in step 3, use the SQL Server 2012 image instead of the Windows Server 2008 R2 SP1 image. For more information, go to [Provisioning a SQL Server virtual machine on Azure](/documentation/articles/virtual-machines-windows-classic-ps-sql-create/).
 	- When you click this option, the provisioning process keeps a copy of SQL Server 2012 setup files in the C:\SQLServer_11.0_Full directory path so that you can customize the installation. For example, you can convert the evaluation installation of SQL Server 2012 to a licensed version by using your license key.
 
 - Use the SQL Server System Preparation (SysPrep) tool to install SQL Server on the virtual machine with the base operating system (as shown above in steps 1 to 7). For more information, go to [Install SQL Server 2012 using SysPrep](http://msdn.microsoft.com/zh-cn/library/ee210664.aspx).
@@ -133,7 +133,7 @@ To verify the SharePoint configuration, sign in to the SharePoint Server, and th
 
 ### Creating and uploading a virtual hard disk
 
-You also can create your own images and upload them to Azure as a VHD file. For information, see [Create and upload a Windows Server VHD to Azure](/documentation/articles/virtual-machines-create-upload-vhd-windows-server).
+You also can create your own images and upload them to Azure as a VHD file. For information, see [Create and upload a Windows Server VHD to Azure](/documentation/articles/virtual-machines-windows-classic-createupload-vhd/).
 
 ## Usage scenarios
 
@@ -155,9 +155,9 @@ Figure 3 shows a SharePoint development and testing environment on an Azure virt
 
 To implement a SharePoint development and testing environment on Azure, follow these steps:
 
-1. Provision: First, provision a VPN connection between on-premises and Azure using Azure Virtual Network. (Because Active Directory is not used here, a VPN tunnel is needed.) For more information, go to [Virtual Network overview](/documentation/articles/virtual-networks-overview). Then, use the Azure Management Portal to provision a new virtual machine using a stock image from the image library.
+1. Provision: First, provision a VPN connection between on-premises and Azure using Azure Virtual Network. (Because Active Directory is not used here, a VPN tunnel is needed.) For more information, go to [Virtual Network overview](/documentation/articles/virtual-networks-overview/). Then, use the Azure Management Portal to provision a new virtual machine using a stock image from the image library.
 	- You can upload the on-premises SharePoint development and testing virtual machines to your Azure storage account and reference those virtual machines through the image library for building the required environment.
-	- You can use the SQL Server 2012 image instead of the Windows Server 2008 R2 SP1 image. For more information, go to [Provision a SQL Server virtual machine on Azure](/documentation/articles/virtual-machines-provision-sql-server).
+	- You can use the SQL Server 2012 image instead of the Windows Server 2008 R2 SP1 image. For more information, go to [Provision a SQL Server virtual machine on Azure](/documentation/articles/virtual-machines-windows-classic-ps-sql-create/).
 
 2. Install: Install SharePoint Server, Visual Studio, and SQL Server on the virtual machines using a Remote Desktop connection.
 	- Use the SharePoint 2010 Easy Setup Script to build a SharePoint developer machine. For more information, go to [SharePoint 2010 Easy Setup Script](http://www.microsoft.com/download/details.aspx?id=23415). Use Windows PowerShell. For more information, go to [Install SharePoint Server 2010 by using Windows PowerShell](http://technet.microsoft.com/zh-cn/library/cc262839.aspx). Use the CodePlex Project's AutoSPInstaller. For more information, go to [CodePlex: AutoSPInstaller](http://autospinstaller.codeplex.com/).
@@ -195,7 +195,7 @@ To implement a public-facing SharePoint farm on Azure, follow these steps:
 
 1. Deploy Active Directory: The fundamental requirements for deploying Active Directory on Azure virtual machines are similar but not identical to deploying it on virtual machines (and, to some extent, physical machines) on-premises. For more information about the differences, guidelines, and other considerations, go to [Guidelines for deploying Active Directory on Azure Virtual Machines](http://msdn.microsoft.com/zh-cn/library/jj156090). To deploy Active Directory in Azure:
 	- Define and create a virtual network where the virtual machines can be assigned to specific subnets.
-	- Use the Azure Management Portal to create and deploy the domain controller on a new virtual machine on Azure. You also can refer to the Windows PowerShell script to deploy a stand-alone domain in the cloud using Azure Virtual Machines and Azure Virtual Network. For more information about creating a new Active Directory forest on a virtual machine on Azure Virtual Network, go to [Install a new Active Directory forest in Azure](/documentation/articles/active-directory-new-forest-virtual-machine).
+	- Use the Azure Management Portal to create and deploy the domain controller on a new virtual machine on Azure. You also can refer to the Windows PowerShell script to deploy a stand-alone domain in the cloud using Azure Virtual Machines and Azure Virtual Network. For more information about creating a new Active Directory forest on a virtual machine on Azure Virtual Network, go to [Install a new Active Directory forest in Azure](/documentation/articles/active-directory-new-forest-virtual-machine/).
 2. Provision a virtual machine: Use the Azure Management Portal to provision a new virtual machine from a stock image in the image library.
 3. Deploy a SharePoint farm.
 	- Use the Azure Management Portal to configure the load balancing. Configure the virtual machine endpoints, select the option to load balance traffic on an existing endpoint, and then specify the name of the load-balanced virtual machine.
@@ -221,7 +221,7 @@ To scale out the deployment of BI components, a new application server with serv
 To scale out a BI environment on Azure, follow these steps:
 
 1. Provision:
-	- Provision a VPN connection between on-premises and Azure using Azure Virtual Network. For more information, go to [Virtual Network overview](/documentation/articles/virtual-networks-overview).
+	- Provision a VPN connection between on-premises and Azure using Azure Virtual Network. For more information, go to [Virtual Network overview](/documentation/articles/virtual-networks-overview/).
 	- Use the Azure Management Portal to provision a new virtual machine from a stock image in the image library. You can upload SharePoint Server or SQL Server BI workload images to the image library and any authorized user can pick those BI component virtual machines to build the scaled-out environment.
 2. Install:
 	- If your organization does not have prebuilt images of SharePoint Server or SQL Server BI components, install SharePoint Server and SQL Server on the virtual machines using a Remote Desktop connection.
@@ -254,13 +254,13 @@ The following steps show how to create a customized SharePoint farm environment 
 1. Deploy Active Directory: The fundamental requirements for deploying Active Directory on Azure virtual machines are similar but not identical to deploying it on virtual machines (and, to some extent, physical machines) on-premises. For more information about the differences, guidelines, and other considerations, go to [Guidelines for deploying Active Directory on Azure virtual machines](http://msdn.microsoft.com/zh-cn/library/jj156090). To deploy Active Directory in Azure:
 	- Define and create a virtual network where the virtual machines can be assigned to specific subnets.
 	- Use the Azure Management Portal to create and deploy the domain controller on a new virtual machine on Azure.
-	- For more information about creating a new Active Directory forest on a virtual machine on Azure Virtual Network, go to [Install a new Active Directory forest in Azure](/documentation/articles/active-directory-new-forest-virtual-machine).
+	- For more information about creating a new Active Directory forest on a virtual machine on Azure Virtual Network, go to [Install a new Active Directory forest in Azure](/documentation/articles/active-directory-new-forest-virtual-machine/).
 2. Deploy SQL Server:
 	- Use the Azure Management Portal to provision a new virtual machine from a stock image in the image library.
 	- Configure SQL Server on the virtual machine. For more information, go to [Install SQL Server using SysPrep](http://msdn.microsoft.com/zh-cn/library/ee210664.aspx).
 	- Join the virtual machine to the newly created Active Directory domain.
 3. Deploy a multi-server SharePoint farm:
-	- Create a virtual network. For more information, go to [Virtual Network overview](/documentation/articles/virtual-networks-overview).
+	- Create a virtual network. For more information, go to [Virtual Network overview](/documentation/articles/virtual-networks-overview/).
 	- When deploying the SharePoint virtual machines, you need subnets provided for SharePoint Server so that the DNS addresses in the local Active Directory box are available during provisioning.
 	- Use the Azure Management Portal to create a virtual machine.
 	- Install SharePoint Server on this virtual machine and generate a reusable image. For more information about installing SharePoint Server, go to [Install and configure SharePoint Server 2010 by using Windows PowerShell](http://technet.microsoft.com/zh-cn/library/cc262839.aspx) or [CodePlex: AutoSPInstaller](http://autospinstaller.codeplex.com/).
@@ -278,10 +278,10 @@ Successful deployment of SharePoint Server on Azure virtual machines requires so
 
 ## Additional resources
 
-[SharePoint farms hosted in Azure infrastructure services](/documentation/articles/virtual-machines-sharepoint-infrastructure-services)
+[SharePoint farms hosted in Azure infrastructure services](/documentation/articles/none/)
 
-[Azure infrastructure services workload: Intranet SharePoint farm](/documentation/articles/virtual-machines-workload-intranet-sharepoint-farm)
+[Azure infrastructure services workload: Intranet SharePoint farm](/documentation/articles/virtual-machines-workload-intranet-sharepoint-farm/)
 
-[Azure infrastructure services implementation guidelines](/documentation/articles/virtual-machines-infrastructure-services-implementation-guidelines)
+[Azure infrastructure services implementation guidelines](/documentation/articles/virtual-machines-linux-infrastructure-service-guidelines/)
 
 [Test the SharePoint Server 2016 IT Preview in Azure](http://azure.microsoft.com/blog/test-sharepoint-server-2016-it-preview-4/)

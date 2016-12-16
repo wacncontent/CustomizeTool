@@ -1,22 +1,21 @@
 <properties
-   pageTitle="How Traffic Manager Works | Azure"
+    pageTitle="How Traffic Manager Works | Azure"
     description="This article explains how Azure Traffic Manager works"
-   services="traffic-manager"
-   documentationCenter=""
-   authors="sdwheeler"
-   manager="carmonm"
-    editor=""
-/>
+    services="traffic-manager"
+    documentationcenter=""
+    author="sdwheeler"
+    manager="carmonm"
+    editor="" />
 <tags
-   ms.service="traffic-manager"
-   ms.devlang="na"
-   ms.topic="article"
-   ms.tgt_pltfrm="na"
-   ms.workload="infrastructure-services"
+    ms.assetid="a6c9370d-e60d-440f-aa82-b6d3fa5416b0"
+    ms.service="traffic-manager"
+    ms.devlang="na"
+    ms.topic="article"
+    ms.tgt_pltfrm="na"
+    ms.workload="infrastructure-services"
     ms.date="10/11/2016"
-   wacn.date=""
-    ms.author="sewhee"
-/>
+    wacn.date=""
+    ms.author="sewhee" />
 
 # How Traffic Manager works
 
@@ -37,19 +36,18 @@ Contoso Corp have developed a new partner portal. The URL for this portal is htt
 
 To achieve this configuration:
 
-- They deploy three instances of their service. The DNS names of these deployments are 'contoso-us.chinacloudapp.cn', 'contoso-eu.chinacloudapp.cn', and 'contoso-asia.chinacloudapp.cn'.
-- They then create a Traffic Manager profile, named 'contoso.trafficmanager.cn', and configure it to use the 'Performance' traffic-routing method across the three endpoints.
-- Finally, they configure their vanity domain name, 'partners.contoso.com', to point to 'contoso.trafficmanager.cn', using a DNS CNAME record.
+* They deploy three instances of their service. The DNS names of these deployments are 'contoso-us.chinacloudapp.cn', 'contoso-eu.chinacloudapp.cn', and 'contoso-asia.chinacloudapp.cn'.
+* They then create a Traffic Manager profile, named 'contoso.trafficmanager.cn', and configure it to use the 'Performance' traffic-routing method across the three endpoints.
+* Finally, they configure their vanity domain name, 'partners.contoso.com', to point to 'contoso.trafficmanager.cn', using a DNS CNAME record.
 
 ![Traffic Manager DNS configuration][1]
 
-> [AZURE.NOTE] When using a vanity domain with Azure Traffic Manager, you must use a CNAME to point your vanity domain name to your Traffic Manager domain name. DNS standards do not allow you to create a CNAME at the 'apex' (or root) of a domain. Thus you cannot create a CNAME for 'contoso.com' (sometimes called a 'naked' domain). You can only create a CNAME for a domain under 'contoso.com', such as 'www.contoso.com'. To work around this limitation, we recommend using a simple HTTP redirect to direct requests for 'contoso.com' to an alternative name such as 'www.contoso.com'.
+> [AZURE.NOTE]
+> When using a vanity domain with Azure Traffic Manager, you must use a CNAME to point your vanity domain name to your Traffic Manager domain name. DNS standards do not allow you to create a CNAME at the 'apex' (or root) of a domain. Thus you cannot create a CNAME for 'contoso.com' (sometimes called a 'naked' domain). You can only create a CNAME for a domain under 'contoso.com', such as 'www.contoso.com'. To work around this limitation, we recommend using a simple HTTP redirect to direct requests for 'contoso.com' to an alternative name such as 'www.contoso.com'.
 
-## How clients connect using Traffic Manager
+## <a name="how-clients-connect-using-traffic-manager"></a> How clients connect using Traffic Manager
 
 Continuing from the previous example, when a client requests the page https://partners.contoso.com/login.aspx, the client performs the following steps to resolve the DNS name and establish a connection:
-
-
 
 ![Connection establishment using Traffic Manager][2]
 
@@ -58,13 +56,15 @@ Continuing from the previous example, when a client requests the page https://pa
 3. Next, the recursive DNS service finds the name servers for the 'trafficmanager.cn' domain, which are provided by the Azure Traffic Manager service. It then sends a request for the 'contoso.trafficmanager.cn' DNS record to those DNS servers.
 4. The Traffic Manager name servers receive the request. They choose an endpoint based on:
 
-    * The configured state of each endpoint (disabled endpoints are not returned)
-    * The current health of each endpoint, as determined by the Traffic Manager health checks. For more information, see [Traffic Manager Endpoint Monitoring](/documentation/articles/traffic-manager-monitoring/).
-    * The chosen traffic-routing method. For more information, see [Traffic Manager Routing Methods](/documentation/articles/traffic-manager-routing-methods/).
+    - The configured state of each endpoint (disabled endpoints are not returned)
+    - The current health of each endpoint, as determined by the Traffic Manager health checks. For more information, see [Traffic Manager Endpoint Monitoring](/documentation/articles/traffic-manager-monitoring/).
+    - The chosen traffic-routing method. For more information, see [Traffic Manager Routing Methods](/documentation/articles/traffic-manager-routing-methods/).
+
 5. The chosen endpoint is returned as another DNS CNAME record. In this case, let us suppose contoso-us.chinacloudapp.cn is returned.
 6. Next, the recursive DNS service finds the name servers for the 'chinacloudapp.cn' domain. It contacts those name servers to request the 'contoso-us.chinacloudapp.cn' DNS record. A DNS 'A' record containing the IP address of the US-based service endpoint is returned.
 7. The recursive DNS service consolidates the results and returns a single DNS response to the client.
 8. The client receives the DNS results and connects to the given IP address. The client connects to the application service endpoint directly, not through Traffic Manager. Since it is an HTTPS endpoint, the client performs the necessary SSL/TLS handshake, and then makes an HTTP GET request for the '/login.aspx' page.
+
 The recursive DNS service caches the DNS responses it receives. The DNS resolver on the client device also caches the result. Caching enables subsequent DNS queries to be answered more quickly by using data from the cache rather than querying other name servers. The duration of the cache is determined by the 'time-to-live' (TTL) property of each DNS record. Shorter values result in faster cache expiry and thus more round-trips to the Traffic Manager name servers. Longer values mean that it can take longer to direct traffic away from a failed endpoint. Traffic Manager allows you to configure the TTL used in Traffic Manager DNS responses, enabling you to choose the value that best balances the needs of your application.
 
 ## FAQ
@@ -85,12 +85,9 @@ Additionally, the source IP address of the DNS query received by Traffic Manager
 
 As explained [previously](#how-clients-connect-using-traffic-manager), Traffic Manager works at the DNS level. It uses DNS responses to direct clients to the appropriate service endpoint. Clients then connect to the service endpoint directly, not through Traffic Manager. Traffic Manager does not see HTTP traffic between client and server. Therefore, any HTTP error you see must be coming from your application. For the client to connect to the application, all DNS resolution steps are complete. That includes any interaction that Traffic Manager has on the application traffic flow.
 
-
-
 Further investigation should therefore focus on the application.
 
 The HTTP host header sent from the client's browser is the most common source of problems. Make sure that the application is configured to accept the correct host header for the domain name you are using. For endpoints using the Azure App Service, see [configuring a custom domain name for a web app in Azure App Service using Traffic Manager](/documentation/articles/web-sites-traffic-manager-custom-domain-name/).
-
 
 ### What is the performance impact of using Traffic Manager?
 
@@ -99,8 +96,6 @@ As explained [previously](#how-clients-connect-using-traffic-manager), Traffic M
 Since Traffic Manager integrates with applications at the DNS level, it does require an additional DNS lookup to be inserted into the DNS resolution chain (see [Traffic Manager examples](#traffic-manager-example)). The impact of Traffic Manager on DNS resolution time is minimal. Traffic Manager uses a global network of name servers, and uses [anycast](https://en.wikipedia.org/wiki/Anycast) networking to ensure DNS queries are always routed to the closest available name server. In addition, caching of DNS responses means that the additional DNS latency incurred by using Traffic Manager applies only to a fraction of sessions.
 
 The Performance method routes traffic to the closest available endpoint. The net result is that the overall performance impact associated with this method should be minimal. Any increase in DNS latency should be offset by lower network latency to the endpoint.
-
-
 
 ### What application protocols can I use with Traffic Manager?
 
@@ -125,4 +120,3 @@ Learn more about Traffic Manager [traffic routing methods](/documentation/articl
 <!--Image references-->
 [1]: ./media/traffic-manager-how-traffic-manager-works/dns-configuration.png
 [2]: ./media/traffic-manager-how-traffic-manager-works/flow.png
-
