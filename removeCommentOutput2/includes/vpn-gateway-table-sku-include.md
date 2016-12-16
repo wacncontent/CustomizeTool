@@ -1,3 +1,5 @@
+<!-- deleted in Global -->
+
 There are 3 VPN Gateway SKUs:
 
 - Basic
@@ -5,7 +7,7 @@ There are 3 VPN Gateway SKUs:
 - High Performance
 
 The table below shows the gateway types and the estimated aggregate throughput. 
-Pricing does differ between gateway SKUs. For information about pricing, see [VPN Gateway Pricing](/home/features/vpn-gateway/pricing/). This table applies to both the Resource Manager and classic deployment models.
+Pricing does differ between gateway SKUs. For information about pricing, see [VPN Gateway Pricing](/pricing/details/vpn-gateway/). This table applies to both the Resource Manager and classic deployment models.
 
 
 |    | **VPN Gateway throughput** | **VPN Gateway max IPsec tunnels** | **ExpressRoute Gateway throughput** | **VPN Gateway and ExpressRoute coexist**|

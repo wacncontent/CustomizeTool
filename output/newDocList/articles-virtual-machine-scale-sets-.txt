@@ -1,7 +1,27 @@
-new docs: 3, word count: 2895
+new docs: 19, word count: {word_count_TODO}
+articles/virtual-machine-scale-sets/index.md
+articles/virtual-machine-scale-sets/TOC.md
+articles/virtual-machine-scale-sets/virtual-machine-scale-sets-advanced-autoscale.md
+articles/virtual-machine-scale-sets/virtual-machine-scale-sets-autoscale-overview.md
+articles/virtual-machine-scale-sets/virtual-machine-scale-sets-cli-quick-create.md
+articles/virtual-machine-scale-sets/virtual-machine-scale-sets-deploy-app.md
+articles/virtual-machine-scale-sets/virtual-machine-scale-sets-design-overview.md
 articles/virtual-machine-scale-sets/virtual-machine-scale-sets-dsc.md
+articles/virtual-machine-scale-sets/virtual-machine-scale-sets-linux-autoscale.md
+articles/virtual-machine-scale-sets/virtual-machine-scale-sets-linux-create-cli.md
+articles/virtual-machine-scale-sets/virtual-machine-scale-sets-overview.md
 articles/virtual-machine-scale-sets/virtual-machine-scale-sets-portal-create.md
+articles/virtual-machine-scale-sets/virtual-machine-scale-sets-troubleshoot.md
 articles/virtual-machine-scale-sets/virtual-machine-scale-sets-upgrade-scale-set.md
+articles/virtual-machine-scale-sets/virtual-machine-scale-sets-vertical-scale-reprovision.md
+articles/virtual-machine-scale-sets/virtual-machine-scale-sets-vs-create.md
+articles/virtual-machine-scale-sets/virtual-machine-scale-sets-windows-autoscale.md
+articles/virtual-machine-scale-sets/virtual-machine-scale-sets-windows-create.md
+articles/virtual-machine-scale-sets/virtual-machine-scale-sets-windows-manage.md
 
-new includes: 1
+new includes: 5
+includes/virtual-machines-linux-cli-vmss-quick-create-include.md
+includes/virtual-machines-vmss-preview-cli-include.md
+includes/virtual-machines-vmss-preview-ps-include.md
+includes/azure-virtual-machine-scale-sets-limits.md
 includes/insights-advanced-autoscale-virtual-machine-scale-sets.md

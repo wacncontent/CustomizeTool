@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 1. In the Solution view (or **Solution Explorer** in Visual Studio), right-click the **Components** folder, click  **Get More Components...**, search for the **Google Cloud Messaging Client** component and add it to the project. 
 
 2. Open the ToDoActivity.cs project file and add the following using statement to the class:

@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 1. Navigate to the [Google Cloud Console](https://console.developers.google.com/project) and sign-in with your Google account credentials, and then click **Select a project**, then **Create a project**.
 
 2. Enter a project name, accept the terms of service, and click **Create**. If requested, carry out the SMS Verification, and click **Create** again.

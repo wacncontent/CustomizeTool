@@ -1,3 +1,4 @@
+<!-- not suitable for Mooncake -->
 
 1. Open the shared project file MainPage.cs and add the following code snippet to the MainPage class:
 	

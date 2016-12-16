@@ -1,3 +1,4 @@
+<!-- deleted in Global -->
 
 * In **QSAppDelegate.m**, import the iOS SDK and **QSTodoService.h**:
 

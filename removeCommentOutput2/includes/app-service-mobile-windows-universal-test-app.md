@@ -1,3 +1,4 @@
+<!-- not suitable for Mooncake -->
 
 Go back to Visual Studio and select the Shared Code Client App project (it is named like `<your app name>.Shared`)
 

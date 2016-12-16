@@ -1,4 +1,5 @@
 > [AZURE.SELECTOR]
-[PowerShell](/documentation/articles/load-balancer-get-started-ilb-arm-ps)
-[Azure CLI](/documentation/articles/load-balancer-get-started-ilb-arm-cli)
-[Template](/documentation/articles/load-balancer-get-started-ilb-arm-template)
+[Azure Portal](../articles/load-balancer/load-balancer-get-started-ilb-arm-portal.md)
+[PowerShell](../articles/load-balancer/load-balancer-get-started-ilb-arm-ps.md)
+[Azure CLI](../articles/load-balancer/load-balancer-get-started-ilb-arm-cli.md)
+[Template](../articles/load-balancer/load-balancer-get-started-ilb-arm-template.md)

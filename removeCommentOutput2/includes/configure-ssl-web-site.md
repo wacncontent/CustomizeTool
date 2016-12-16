@@ -1,4 +1,4 @@
-<!-- new to rollback -->
+<!-- deleted in Global -->
 
 
 This article shows you how to configure HTTPS for a web app in Azure. It does not cover client certificate authentication; for information about that, see [How To Configure TLS Mutual Authentication for Web Apps](/documentation/articles/app-service-web-configure-tls-mutual-auth/).
@@ -13,11 +13,11 @@ The rest of this document provides details on enabling HTTPS for custom domains,
 To enable HTTPS for a custom domain, such as **contoso.com**, you must first [configure a custom domain name in Azure Web App](/documentation/articles/web-sites-custom-domain-name/). Then, you do the following:
 
 1. [Get an SSL certificate](#bkmk_getcert)
-2. [Configure Standard or Premium pricing tier](#bkmk_standardmode)
+2. [Configure Standard tier](#bkmk_standardmode)
 2. [Configure SSL in your app](#bkmk_configuressl)
 3. [Enforce SSL on your app](#bkmk_enforce) (Optional)
 
-If you need more help at any point in this article, you can contact the Azure experts on [the MSDN Azure and the Stack Overflow forums](https://azure.microsoft.com/support/forums/). Alternatively, you can also file an Azure support incident. Go to the [Azure Support site](https://azure.microsoft.com/support/contact/) and click on **Get Support**.
+If you need more help at any point in this article, you can contact the Azure experts on [the MSDN Azure and CSDN Azure](/support/forums/). Alternatively, you can also file an Azure support incident. Go to the [Azure Support site](/support/contact/) and click on **Get Support**.
 
 <a name="bkmk_getcert"></a>
 ## 1. Get an SSL certificate
@@ -381,9 +381,9 @@ You can create a test certificate from a Windows system that has Visual Studio i
 	The **myserver.pfx** produced by this command can be used to secure your app for testing purposes.
 
 <a name="bkmk_standardmode"></a>
-## 2. Configure Standard or Premium pricing tier
+## 2. Configure Standard pricing tier
 
-Enabling HTTPS for a custom domain is only available for the **Standard** and **Premium** pricing tiers in Azure Web App. Use the following steps to switch your App Service plan to **Standard** tier.
+Enabling HTTPS for a custom domain is only available for the **Standard** pricing tier in Azure Web App. Use the following steps to switch your App Service plan to **Standard** tier.
 
 > [AZURE.NOTE] Before switching an app from the **Free** tier to **Standard** tier, you should remove spending caps in place for your subscription, otherwise you risk your app becoming unavailable if you reach your caps before the billing period ends. For more information on shared and **Standard** tier, see [Pricing Details][pricing].
 
@@ -520,7 +520,7 @@ Once you deploy a web.config with a rewrite rule to force HTTPS, it should take 
 For more information on the IIS URL Rewrite module, see the [URL Rewrite](http://www.iis.net/downloads/microsoft/url-rewrite) documentation.
 
 ## More Resources ##
-- [Azure Trust Center](/support/trust-center/security/)
+- [Azure Trust Center](https://www.trustcenter.cn/zh-cn/security/default.html)
 - [Configuration options unlocked in Azure Web Sites](/blog/2014/01/28/more-to-explore-configuration-options-unlocked-in-windows-azure-web-sites/)
 - [Enable diagnostic logging](/documentation/articles/web-sites-enable-diagnostic-log/)
 - [Configure web apps in Azure](/documentation/articles/web-sites-configure/)

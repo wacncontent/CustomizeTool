@@ -1,12 +1,5 @@
-new docs: 8, word count: 11151
-articles/virtual-network/virtual-network-accelerated-networking-portal.md
-articles/virtual-network/virtual-network-accelerated-networking-powershell.md
-articles/virtual-network/virtual-network-multiple-ip-addresses-powershell.md
-articles/virtual-network/virtual-network-network-interface-overview.md
-articles/virtual-network/virtual-network-nsg-troubleshoot-portal.md
-articles/virtual-network/virtual-network-nsg-troubleshoot-powershell.md
-articles/virtual-network/virtual-network-routes-troubleshoot-portal.md
-articles/virtual-network/virtual-network-routes-troubleshoot-powershell.md
-
-new includes: 1
-includes/virtual-network-preview.md
+new docs: 2, word count: 4141
+articles/virtual-network/virtual-network-multiple-ip-addresses-cli.md
+articles/virtual-network/virtual-network-multiple-ip-addresses-portal.md
+ 
+new includes: 0

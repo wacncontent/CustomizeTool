@@ -1,3 +1,5 @@
+<!-- deleted in Global -->
+
 ## Review API app metadata
 
 The metadata that enables a Web API project to be deployed as an API app is contained in an *apiapp.json* file and a *Metadata* folder.

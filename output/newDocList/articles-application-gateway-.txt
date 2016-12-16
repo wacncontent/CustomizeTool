@@ -1,8 +1,5 @@
-new docs: 5, word count: 5693
-articles/application-gateway/application-gateway-backend-ssl.md
-articles/application-gateway/application-gateway-end-to-end-ssl-powershell.md
-articles/application-gateway/application-gateway-web-application-firewall-portal.md
-articles/application-gateway/application-gateway-web-application-firewall-powershell.md
-articles/application-gateway/application-gateway-webapplicationfirewall-overview.md
-
-new includes: 0
+new docs: 1, word count: 1156
+articles/application-gateway/application-gateway-create-multisite-portal.md
+ 
+new includes: 1
+includes/application-gateway-limits.md

@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 1. In Visual Studio **Solution Explorer**, expand the **Controllers** folder in the mobile backend project. Open **TodoItemController.cs**. At the top of the file, add the following `using` statements:
 
         using Microsoft.Azure.Mobile.Server.Notifications;

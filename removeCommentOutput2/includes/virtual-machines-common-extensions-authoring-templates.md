@@ -33,5 +33,5 @@ As you can see from the above, the extension template contains two main parts:
 2. Extension Configuration.
 
 ## Identifying the publisher, type, and typeHandlerVersion for any extension
+Azure VM extensions are published by Microsoft and trusted 3rd party publishers and each extension is uniquely identified by its publisher,type and the typeHandlerVersion. These can be determined as following:  
 
-Azure VM extensions are published by Microsoft and trusted 3rd party publishers and each extension is uniquely identified by its publisher,type and the typeHandlerVersion. These can be determined as following:

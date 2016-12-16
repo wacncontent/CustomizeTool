@@ -50,7 +50,7 @@
     "articles/sql-database/": [ "sql-database" ],
     "articles/storage/": [ "storage" ],
     "articles/virtual-machine-scale-sets/": [ "vmss", "virtual-machine-scale-sets" ],
-    "articles/virtual-machines/": [ "virtual-machines", "vm", "howto-detach-disk-linux", "guidance-pnp-header-include" ],
+    "articles/virtual-machines/": [ "virtual-machines", "vm", "howto-detach-disk-linux", "guidance-pnp-header-include", "howto-attach-disk-linux", "learn-about-deployment-models" ],
     "articles/azure-portal/": [ "azure-portal" ],
     "articles/biztalk-services/": [ "biztalk-service" ],
     "articles/documentdb/": [ "documentdb" ],

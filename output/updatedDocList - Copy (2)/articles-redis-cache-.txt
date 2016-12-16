@@ -1,12 +1,6 @@
-updated docs: 8
-articles/redis-cache/cache-administration.md
-articles/redis-cache/cache-faq.md
-articles/redis-cache/cache-how-to-import-export-data.md
-articles/redis-cache/cache-how-to-premium-clustering.md
-articles/redis-cache/cache-how-to-premium-persistence.md
+updated docs: 2
 articles/redis-cache/cache-how-to-premium-vnet.md
-articles/redis-cache/cache-premium-tier-intro.md
-articles/redis-cache/cache-web-app-howto.md
+articles/redis-cache/cache-howto-manage-redis-cache-powershell.md
 
-updated includes: 1
-includes/redis-cache-browse.md
+
+updated includes: 0

@@ -1,4 +1,5 @@
 > [AZURE.SELECTOR]
-- [PowerShell](/documentation/articles/load-balancer-get-started-internet-arm-ps)
-- [Azure CLI](/documentation/articles/load-balancer-get-started-internet-arm-cli)
-- [Template](/documentation/articles/load-balancer-get-started-internet-arm-template)
+- [Portal](load-balancer-get-started-internet-portal.md)
+- [PowerShell](load-balancer-get-started-internet-arm-ps.md)
+- [Azure CLI](load-balancer-get-started-internet-arm-cli.md)
+- [Template](load-balancer-get-started-internet-arm-template.md)

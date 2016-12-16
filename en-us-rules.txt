@@ -73,7 +73,6 @@ Southeast Asia = China North
 eastasia = chinaeast
 Japan West = China East
 JapanWest = ChinaEast
-[AZURE.INFORMATION] = [AZURE.NOTE]
 Stack Overflow forums = CSDN Azure
 
 New York = Beijing
@@ -795,7 +794,7 @@ http://aka.ms/sspk = /documentation/articles/media-services-sspk/
 
 http://aka.ms/aadscenarios = /documentation/articles/active-directory-authentication-scenarios/
 http://aka.ms/aaddev = /documentation/articles/active-directory-developers-guide/
-http://aka.ms/aadsamples = https://github.com/azure-samples?query=active-directory
+http://aka.ms/aadsamples = https://github.com/azure-samples?query{equal}active-directory
 
 http://msdn.microsoft.com/library/dn642480.aspx = /documentation/articles/vs-azure-tools-publishing-using-powershell-scripts/
 
@@ -942,13 +941,16 @@ https://acom-sandbox.azurewebsites.net/en-us/documentation/articles/web-sites-ja
 /IaaS-Story/11-MultiNIC/arm/multinic. = /IaaS-Story/11-MultiNIC/arm/virtual-network-deploy-multinic-arm-cli.
 /IaaS-Story/11-MultiNIC/classic/multinic. = /IaaS-Story/11-MultiNIC/classic/virtual-network-deploy-multinic-classic-cli.
 
-
-
+# [!NOTE] = [AZURE.NOTE]
+# [!IMPORTANT] = [AZURE.IMPORTANT]
+# [!WARNING] = [AZURE.WARNING]
+# [!INCLUDE = [AZURE.INCLUDE
+# [!TIP] =[AZURE.TIP]
 
 [REGEX]
-
+(.)\?toc{equal}(\%2f[\w-]+)+.json = \1
 # tag
-(\s*)(ms\.date\{equal}\"[^"]*\") = \1\2\1wacn.date{equal}""
+# (\s*)(ms\.date\{equal}\"[^"]*\") = \1\2\1wacn.date{equal}""
 
 
 //azure\.microsoft\.com/documentation/templates/(\w) = //github.com/Azure/azure-quickstart-templates/tree/master/\1
@@ -975,10 +977,10 @@ https://acom-sandbox.azurewebsites.net/en-us/documentation/articles/web-sites-ja
 # [(Any | .NET)](mobile-services-dotnet-backend-service-side-authorization.md)
 # [Monitor and troubleshoot protection for VMware, VMM, Hyper-V and Physical sites](./site-recovery-monitoring-and-troubleshooting.md)
 # [Reaching out for Microsoft Support](./site-recovery-monitoring-and-troubleshooting.md#reaching-out-for-microsoft-support)
-\[([^\[|^\]]*)\]\((\.\./|\./)?(?!includes/|media/|services/)([\w|\-]+/)?(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(\.md)?/?\) = [\1](/documentation/articles/\5/)
-\[([^\[|^\]]*)\]\((\.\./|\./)?(?!includes/|media/|services/)([\w|\-]+/)?(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(\.md)?/?(#[^\(|^\)|^/]*)/?\) = [\1](/documentation/articles/\5/\7)
-\[([^\[|^\]]*)\]\((\.\./|\./)?(?!includes/|media/|services/)([\w|\-]+/)?(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(\.md)?/?\s*("[^"]*")\) = [\1](/documentation/articles/\5/ \7)
-\[([^\[|^\]]*)\]\((\.\./|\./)?(?!includes/|media/|services/)([\w|\-]+/)?(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(\.md)?/?(#[^\(|^\)|^/]*)/?\s*("[^"]*")\) = [\1](/documentation/articles/\5/\7 \8)
+\[([^\[\]]*)\]\((\.\./|\./)?(?!includes/|media/|services/)([\w|\-]+/)?(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(\.md)?/?\) = [\1](/documentation/articles/\5/)
+\[([^\[\]]*)\]\((\.\./|\./)?(?!includes/|media/|services/)([\w|\-]+/)?(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(\.md)?/?(#[^\(\)/]*)/?\) = [\1](/documentation/articles/\5/\7)
+\[([^\[\]]*)\]\((\.\./|\./)?(?!includes/|media/|services/)([\w|\-]+/)?(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(\.md)?/?\s*("[^"]*")\) = [\1](/documentation/articles/\5/ \7)
+\[([^\[\]]*)\]\((\.\./|\./)?(?!includes/|media/|services/)([\w|\-]+/)?(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(\.md)?/?(#[^\(\)/]*)/?\s*("[^"]*")\) = [\1](/documentation/articles/\5/\7 \8)
 \[(\(Any \|.+\))\]\(([\w|\-]+)(\.md)?/?\) = [\1](/documentation/articles/\2/)
 
 # Reference like [xxxx]: xxxx
@@ -998,24 +1000,24 @@ https://acom-sandbox.azurewebsites.net/en-us/documentation/articles/web-sites-ja
 # [execution model-vms]: fundamentals-application-models.md#VMachine
 # [execution model-cloud services]: fundamentals-application-models.md#CloudServices
 # [dotnet]: /develop/net/
-\[([^\[|^\]]*)\]:\s*(\.\./|\./)?(?!includes/|media/|services/)([\w|\-]+/)?(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(\.md)?/?[ \t\f\v\r]*\n = [\1]: /documentation/articles/\5/\n
-\[([^\[|^\]]*)\]:\s*(\.\./|\./)?(?!includes/|media/|services/)([\w|\-]+/)?(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(\.md)?/?(#[^/]*)/?[ \t\f\v\r]*\n = [\1]: /documentation/articles/\5/\7\n
-\[([^\[|^\]]*)\]:\s*(\.\./|\./)?(?!includes/|media/|services/)([\w|\-]+/)?(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(\.md)?/?\s*("[^"]*")[ \t\f\v\r]*\n = [\1]: /documentation/articles/\5/ \7\n
-\[([^\[|^\]]*)\]:\s*(\.\./|\./)?(?!includes/|media/|services/)([\w|\-]+/)?(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(\.md)?/?(#[^/]*)/?\s*("[^"]*")[ \t\f\v\r]*\n = [\1]: /documentation/articles/\5/\7 \8\n
-\[([^\[|^\]]*)\]:\s*(\.\./|\./)?(?!includes/|media/|services/)([\w|\-]+/)?(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(\.md)?/?[ \t\f\v]*$ = [\1]: /documentation/articles/\5/
-\[([^\[|^\]]*)\]:\s*(\.\./|\./)?(?!includes/|media/|services/)([\w|\-]+/)?(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(\.md)?/?(#[^/]*)/?[ \t\f\v\r]*$ = [\1]: /documentation/articles/\5/\7
-\[([^\[|^\]]*)\]:\s*(\.\./|\./)?(?!includes/|media/|services/)([\w|\-]+/)?(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(\.md)?/?\s*("[^"]*")[ \t\f\v\r]*$ = [\1]: /documentation/articles/\5/ \7
-\[([^\[|^\]]*)\]:\s*(\.\./|\./)?(?!includes/|media/|services/)([\w|\-]+/)?(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(\.md)?/?(#[^/]*)/?\s*("[^"]*")[ \t\f\v\r]*$ = [\1]: /documentation/articles/\5/\7 \8
+\[([^\[\]]*)\]:\s*(\.\./|\./)?(?!includes/|media/|services/)([\w|\-]+/)?(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(\.md)?/?[ \t\f\v\r]*\n = [\1]: /documentation/articles/\5/\n
+\[([^\[\]]*)\]:\s*(\.\./|\./)?(?!includes/|media/|services/)([\w|\-]+/)?(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(\.md)?/?(#[^/]*)/?[ \t\f\v\r]*\n = [\1]: /documentation/articles/\5/\7\n
+\[([^\[\]]*)\]:\s*(\.\./|\./)?(?!includes/|media/|services/)([\w|\-]+/)?(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(\.md)?/?\s*("[^"]*")[ \t\f\v\r]*\n = [\1]: /documentation/articles/\5/ \7\n
+\[([^\[\]]*)\]:\s*(\.\./|\./)?(?!includes/|media/|services/)([\w|\-]+/)?(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(\.md)?/?(#[^/]*)/?\s*("[^"]*")[ \t\f\v\r]*\n = [\1]: /documentation/articles/\5/\7 \8\n
+\[([^\[\]]*)\]:\s*(\.\./|\./)?(?!includes/|media/|services/)([\w|\-]+/)?(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(\.md)?/?[ \t\f\v]*$ = [\1]: /documentation/articles/\5/
+\[([^\[\]]*)\]:\s*(\.\./|\./)?(?!includes/|media/|services/)([\w|\-]+/)?(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(\.md)?/?(#[^/"\n]*)/?[ \t\f\v\r]*$ = [\1]: /documentation/articles/\5/\7
+\[([^\[\]]*)\]:\s*(\.\./|\./)?(?!includes/|media/|services/)([\w|\-]+/)?(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(\.md)?/?\s*("[^/"]*")[ \t\f\v\r]*$ = [\1]: /documentation/articles/\5/ \7
+\[([^\[\]]*)\]:\s*(\.\./|\./)?(?!includes/|media/|services/)([\w|\-]+/)?(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(\.md)?/?(#[^/"]*)/?\s*("[^"]*")[ \t\f\v\r]*$ = [\1]: /documentation/articles/\5/\7 \8
 
 # [link text](/documentation/articles/xxx-xxx-xxx.md#xxx-xxx)
 # [link text](/documentation/articles/xxx-xxx-xxx.md)
-\[([^\[|^\]]*)\]\(/documentation/articles/([\w|\-]+)\.md/?\) = [\1](/documentation/articles/\2/)
-\[([^\[|^\]]*)\]\(/documentation/articles/([\w|\-]+)\.md/?(#[^\(|^\)|^/]*)/?\) = [\1](/documentation/articles/\2/\3)
+\[([^\[\]]*)\]\(/documentation/articles/([\w|\-]+)\.md/?\) = [\1](/documentation/articles/\2/)
+\[([^\[\]]*)\]\(/documentation/articles/([\w|\-]+)\.md/?(#[^\(\)/]*)/?\) = [\1](/documentation/articles/\2/\3)
 
 # [link text]: /documentation/articles/xxx-xxx-xxx.md#xxx-xxx
 # [link text]: /documentation/articles/xxx-xxx-xxx.md
-\[([^\[|^\]]*)\]:\s*/documentation/articles/([\w|\-]+)\.md/?[ \t\f\v\r]*\n = [\1]: /documentation/articles/\2/\n
-\[([^\[|^\]]*)\]:\s*/documentation/articles/([\w|\-]+)\.md/?(#[^/]*)/[ \t\f\v\r]*\n? = [\1]: /documentation/articles/\2/\3\n
+\[([^\[\]]*)\]:\s*/documentation/articles/([\w|\-]+)\.md/?[ \t\f\v\r]*\n = [\1]: /documentation/articles/\2/\n
+\[([^\[\]]*)\]:\s*/documentation/articles/([\w|\-]+)\.md/?(#[^/]*)/[ \t\f\v\r]*\n? = [\1]: /documentation/articles/\2/\3\n
 
 # href="hdinsight-use-mapreduce.md"
 # href="../hdinsight-hadoop-linux-use-ssh-unix/"
@@ -1026,26 +1028,26 @@ href{equal}"\.\./(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(.md)?/?#([
 
 /documentation/articles/# = #
 # ../services/xxxx = /home/features/xxxx
-\[([^\[|^\]]*)\]\s*\((\.\./)*services/([\w|\-]+)(\.md)?/?\) = [\1](/home/features/\3/)
+\[([^\[\]]*)\]\s*\((\.\./)*services/([\w|\-]+)(\.md)?/?\) = [\1](/home/features/\3/)
 
 
 
 # Media
 #![image text](media/xxx-xxx-xxx/xxx-xxx.xxx) = ![image text](./media/xxx-xxx-xxx/xxx-xxx.xxx)
-\!\[([^\[|^\]]*)\]\(media/([\w|\-]+)/([^\(|^\)]*)\) = ![\1](./media/\2/\3)
+\!\[([^\[\]]*)\]\(media/([\w|\-]+)/([^\(\)]*)\) = ![\1](./media/\2/\3)
 
 # [image text]: media/xxx-xxx-xxx/xxx-xxx.xxx = ![image text]: ./media/xxx-xxx-xxx/xxx-xxx.xxx
 # [apps_service_principals_directory]:media/active-directory-how-applications-are-added/HowAppsAreAddedToAAD.jpg
 # [app_settings]:media/active-directory-how-applications-are-added/IntegratedAppSettings.jpg
-\[([^\[|^\]]*)\]:\s*media/([\w|\-]+)/([^\(|^\)]*)[ \t\f\v\r]*\n = [\1]: ./media/\2/\3\n
-\[([^\[|^\]]*)\]:\s*media/([\w|\-]+)/([^\(|^\)]*)[ \t\f\v\r]*$ = [\1]: ./media/\2/\3
+\[([^\[\]]*)\]:\s*media/([\w|\-]+)/([^\(\)]*)[ \t\f\v\r]*\n = [\1]: ./media/\2/\3\n
+\[([^\[\]]*)\]:\s*media/([\w|\-]+)/([^\(\)]*)[ \t\f\v\r]*$ = [\1]: ./media/\2/\3
 
 # (..\virtual-network\media\virtual-networks-arm-asm-s2s\figure01.png) = (.\media\virtual-networks-arm-asm-s2s\figure01.png)
-\(\.\.[\\|/][\w|\-]+[\\|/]media[\\|/]([\w|\-]+)[\\|/]([^\(|^\)]+\.\w+)\) = (./media/\1/\2)
+\(\.\.[\\|/][\w|\-]+[\\|/]media[\\|/]([\w|\-]+)[\\|/]([^\(\)]+\.\w+)\) = (./media/\1/\2)
 
 #[image text]: ..\virtual-network\media\xxx-xxx-xxx\xxx-xxx.xxx = ![image text]: ./media/xxx-xxx-xxx/xxx-xxx.xxx
-\[([^\[|^\]]*)\]:\s*\.\.[\\|/][\w|\-]+[\\|/]media[\\|/]([\w|\-]+)[\\|/]([^\s]+\.\w+)[ \t\f\v\r]*\n = [\1]: ./media/\2/\3\n
-\[([^\[|^\]]*)\]:\s*\.\.[\\|/][\w|\-]+[\\|/]media[\\|/]([\w|\-]+)[\\|/]([^\s]+\.\w+)[ \t\f\v\r]*$ = [\1]: ./media/\2/\3
+\[([^\[\]]*)\]:\s*\.\.[\\|/][\w|\-]+[\\|/]media[\\|/]([\w|\-]+)[\\|/]([^\s]+\.\w+)[ \t\f\v\r]*\n = [\1]: ./media/\2/\3\n
+\[([^\[\]]*)\]:\s*\.\.[\\|/][\w|\-]+[\\|/]media[\\|/]([\w|\-]+)[\\|/]([^\s]+\.\w+)[ \t\f\v\r]*$ = [\1]: ./media/\2/\3
 
 # /home/feature/
 \[(.+)\]: /pricing/details/ = [\1]: /pricing/overview/
@@ -1061,6 +1063,16 @@ href{equal}"\.\./(?!includes/|media/|services/)([\w|\-]+/)?([\w|\-]+)(.md)?/?#([
 # Terminology
 
 /support/legal/sla/([\w\-]+)/(v1_0/)? = /support/sla/\1/
+
+# Selector
+# \s*\>\s*\[\!div\s+class\{equal}\"op_single_selector\"\]\s*\n\s*\>?\s*\*\s+(\[.+\]\(.+\))\s*\n\s*\>?\s*\*\s+(\[.+\]\(.+\))\s*\n\s*\>?\s*\*\s+(\[.+\]\(.+\))\s*\n\s*\>?\s*\*\s+(\[.+\]\(.+\))\s*\n\s*\>?\s*\*\s+(\[.+\]\(.+\))\s*\n\s*\>?\s*\*\s+(\[.+\]\(.+\))\s*\n\s*\>?\s*\*\s+(\[.+\]\(.+\))\s*\n\s*\>?\s*\*\s+(\[.+\]\(.+\))\s*\n\s*\>?\s*\*\s+(\[.+\]\(.+\))\s*\n\s*(\s*\>\s*\n)* = \n> [AZURE.SELECTOR]\n- \1\n- \2\n- \3\n- \4\n- \5\n- \6\n- \7\n- \8\n- \9\n\n
+# \s*\>\s*\[\!div\s+class\{equal}\"op_single_selector\"\]\s*\n\s*\>?\s*\*\s+(\[.+\]\(.+\))\s*\n\s*\>?\s*\*\s+(\[.+\]\(.+\))\s*\n\s*\>?\s*\*\s+(\[.+\]\(.+\))\s*\n\s*\>?\s*\*\s+(\[.+\]\(.+\))\s*\n\s*\>?\s*\*\s+(\[.+\]\(.+\))\s*\n\s*\>?\s*\*\s+(\[.+\]\(.+\))\s*\n\s*\>?\s*\*\s+(\[.+\]\(.+\))\s*\n\s*\>?\s*\*\s+(\[.+\]\(.+\))\s*\n\s*(\s*\>\s*\n)* = \n> [AZURE.SELECTOR]\n- \1\n- \2\n- \3\n- \4\n- \5\n- \6\n- \7\n- \8\n\n
+# \s*\>\s*\[\!div\s+class\{equal}\"op_single_selector\"\]\s*\n\s*\>?\s*\*\s+(\[.+\]\(.+\))\s*\n\s*\>?\s*\*\s+(\[.+\]\(.+\))\s*\n\s*\>?\s*\*\s+(\[.+\]\(.+\))\s*\n\s*\>?\s*\*\s+(\[.+\]\(.+\))\s*\n\s*\>?\s*\*\s+(\[.+\]\(.+\))\s*\n\s*\>?\s*\*\s+(\[.+\]\(.+\))\s*\n\s*\>?\s*\*\s+(\[.+\]\(.+\))\s*\n\s*(\s*\>\s*\n)* = \n> [AZURE.SELECTOR]\n- \1\n- \2\n- \3\n- \4\n- \5\n- \6\n- \7\n\n
+# \s*\>\s*\[\!div\s+class\{equal}\"op_single_selector\"\]\s*\n\s*\>?\s*\*\s+(\[.+\]\(.+\))\s*\n\s*\>?\s*\*\s+(\[.+\]\(.+\))\s*\n\s*\>?\s*\*\s+(\[.+\]\(.+\))\s*\n\s*\>?\s*\*\s+(\[.+\]\(.+\))\s*\n\s*\>?\s*\*\s+(\[.+\]\(.+\))\s*\n\s*\>?\s*\*\s+(\[.+\]\(.+\))\s*\n\s*(\s*\>\s*\n)* = \n> [AZURE.SELECTOR]\n- \1\n- \2\n- \3\n- \4\n- \5\n- \6\n\n
+# \s*\>\s*\[\!div\s+class\{equal}\"op_single_selector\"\]\s*\n\s*\>?\s*\*\s+(\[.+\]\(.+\))\s*\n\s*\>?\s*\*\s+(\[.+\]\(.+\))\s*\n\s*\>?\s*\*\s+(\[.+\]\(.+\))\s*\n\s*\>?\s*\*\s+(\[.+\]\(.+\))\s*\n\s*\>?\s*\*\s+(\[.+\]\(.+\))\s*\n\s*(\s*\>\s*\n)* = \n> [AZURE.SELECTOR]\n- \1\n- \2\n- \3\n- \4\n- \5\n\n
+# \s*\>\s*\[\!div\s+class\{equal}\"op_single_selector\"\]\s*\n\s*\>?\s*\*\s+(\[.+\]\(.+\))\s*\n\s*\>?\s*\*\s+(\[.+\]\(.+\))\s*\n\s*\>?\s*\*\s+(\[.+\]\(.+\))\s*\n\s*\>?\s*\*\s+(\[.+\]\(.+\))\s*\n\s*(\s*\>\s*\n)* = \n> [AZURE.SELECTOR]\n- \1\n- \2\n- \3\n- \4\n\n
+# \s*\>\s*\[\!div\s+class\{equal}\"op_single_selector\"\]\s*\n\s*\>?\s*\*\s+(\[.+\]\(.+\))\s*\n\s*\>?\s*\*\s+(\[.+\]\(.+\))\s*\n\s*\>?\s*\*\s+(\[.+\]\(.+\))\s*\n\s*(\s*\>\s*\n)* = \n> [AZURE.SELECTOR]\n- \1\n- \2\n- \3\n\n
+# \s*\>\s*\[\!div\s+class\{equal}\"op_single_selector\"\]\s*\n\s*\>?\s*\*\s+(\[.+\]\(.+\))\s*\n\s*\>?\s*\*\s+(\[.+\]\(.+\))\s*\n\s*(\s*\>\s*\n)* = \n> [AZURE.SELECTOR]\n- \1\n- \2\n\n
 
 
 

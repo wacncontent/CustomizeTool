@@ -1,5 +1,4 @@
-new docs: 2, word count: 2090
-articles/traffic-manager/traffic-manager-configure-routing-method.md
-articles/traffic-manager/traffic-manager-manage-endpoints.md
+new docs: 1, word count: 2418
+articles/traffic-manager/traffic-manager-load-balancing-azure.md
 
 new includes: 0

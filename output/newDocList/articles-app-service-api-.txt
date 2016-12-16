@@ -1,3 +1,20 @@
-new docs: 0, word count: 0
+new docs: 14, word count: {word_count_TODO}
+articles/app-service-api/app-service-api-apps-why-best-platform.md
+articles/app-service-api/app-service-api-authentication.md
+articles/app-service-api/app-service-api-cors-consume-javascript.md
+articles/app-service-api/app-service-api-dotnet-get-started.md
+articles/app-service-api/app-service-api-dotnet-service-principal-auth.md
+articles/app-service-api/app-service-api-dotnet-swashbuckle-customize.md
+articles/app-service-api/app-service-api-dotnet-triggers.md
+articles/app-service-api/app-service-api-dotnet-user-principal-auth.md
+articles/app-service-api/app-service-api-java-api-app.md
+articles/app-service-api/app-service-api-metadata.md
+articles/app-service-api/app-service-api-nodejs-api-app.md
+articles/app-service-api/app-service-api-whats-changed.md
+articles/app-service-api/index.md
+articles/app-service-api/TOC.md
 
-new includes: 0
+new includes: 3
+includes/app-service-api-auth-troubleshooting.md
+includes/app-service-api-get-started-selector.md
+includes/app-service-api-v2-note.md

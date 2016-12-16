@@ -1,3 +1,4 @@
+<!-- not suitable for Mooncake -->
 
 1. Right-click the Windows Store project, click **Set as StartUp Project**, then press the F5 key to run the Windows Store app.
 	

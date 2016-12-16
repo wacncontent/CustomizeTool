@@ -1,3 +1,4 @@
+<!-- not suitable for Mooncake -->
 
 1. In Visual Studio in Solution Explorer, right click the service project and click **Start new instance** under the **Debug** context menu.
 

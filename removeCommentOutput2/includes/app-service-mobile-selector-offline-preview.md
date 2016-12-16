@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 > [AZURE.SELECTOR]
 - [iOS](/documentation/articles/app-service-mobile-ios-get-started-offline-data-preview)
 - [Windows](/documentation/articles/app-service-mobile-windows-store-dotnet-get-started-offline-data-preview)

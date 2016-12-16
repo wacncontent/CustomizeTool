@@ -1,7 +1,6 @@
-new docs: 4, word count: 2063
-articles/app-service-web/app-service-linux-how-to-create-a-web-app.md
-articles/app-service-web/app-service-linux-intro.md
-articles/app-service-web/app-service-linux-using-nodejs-pm2.md
-articles/app-service-web/app-service-web-app-azure-resource-manager-xplat-cli.md
-
+new docs: 3, word count: 1479
+articles/app-service-web/app-service-linux-using-custom-docker-image.md
+articles/app-service-web/app-service-linux-using-dotnetcore.md
+articles/app-service-web/app-service-web-azure-web-app-plugin-for-jenkins.md
+ 
 new includes: 0

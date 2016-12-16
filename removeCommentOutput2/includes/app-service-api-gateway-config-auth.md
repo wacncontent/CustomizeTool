@@ -1,3 +1,5 @@
+<!-- deleted in Global -->
+
 4. Navigate to your API app's gateway blade.
 
 	![Click gateway](./media/app-service-api-gateway-config-auth/gateway.png)

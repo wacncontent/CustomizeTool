@@ -1,13 +1,13 @@
 
 ## Start your PowerShell session
 
-First you need to have [Azure PowerShell](https://msdn.microsoft.com/zh-cn/library/mt619274.aspx) (1.0 or later) installed and running. For detailed information, see [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure/).
+First you need to have the latest [Azure PowerShell](https://msdn.microsoft.com/zh-cn/library/mt619274.aspx) installed and running. For detailed information, see [How to install and configure Azure PowerShell](/documentation/articles/powershell-install-configure/).
 
 
->[AZURE.NOTE] Many new features of SQL Database are only supported using the [Azure Resource Manager deployment model](/documentation/articles/resource-group-overview/) so examples use the [Azure SQL Database PowerShell cmdlets](https://msdn.microsoft.com/zh-cn/library/azure/mt574084.aspx) for Resource Manager. The existing classic deployment model [Azure SQL Database (classic) cmdlets](https://msdn.microsoft.com/zh-cn/library/azure/dn546723.aspx) are supported for backward compatibility, but we recommend you use the Resource Manager cmdlets. 
+>[AZURE.NOTE] Many new features of SQL Database are only supported when you are using the [Azure Resource Manager deployment model](/documentation/articles/resource-group-overview/) so examples use the [Azure SQL Database PowerShell cmdlets](https://msdn.microsoft.com/zh-cn/library/azure/mt574084.aspx) for Resource Manager. The existing classic deployment model [Azure SQL Database (classic) cmdlets](https://msdn.microsoft.com/zh-cn/library/azure/dn546723.aspx) are supported for backward compatibility, but we recommend you use the Resource Manager cmdlets. 
 
 
-Run the [**Add-AzureRmAccount**](https://msdn.microsoft.com/zh-cn/library/mt619267.aspx) cmdlet and you will be presented with a sign in screen to enter your credentials. Use the same credentials that you use to sign in to the Azure portal.
+Run the [**Add-AzureRmAccount**](https://msdn.microsoft.com/zh-cn/library/mt619267.aspx), cmdlet and you will be presented with a sign in screen to enter your credentials. Use the same credentials that you use to sign in to the Azure portal.
 
 	Add-AzureRmAccount -EnvironmentName AzureChinaCloud
 

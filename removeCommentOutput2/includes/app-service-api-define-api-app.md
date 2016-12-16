@@ -1,3 +1,5 @@
+<!-- deleted in Global -->
+
 ## Add Web API code
 
 In the following steps you add code for a simple HTTP Get method that returns a hard-coded list of contacts. 

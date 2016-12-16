@@ -3,18 +3,8 @@
     "path": "E:/GitHub/azure-content-mooncake-pr/",
     "language": "en-us",
     "folders": [
-    "articles/virtual-machine-scale-sets/",
-    "articles/virtual-machines/",
-    "articles/app-service-api/",
-    "articles/app-service-web/",
-    "articles/app-service/",
-    "articles/hdinsight/",
-    "articles/redis-cache/",
-    "articles/traffic-manager/",
     "articles/virtual-network/",
-    "articles/automation/",
-    "articles/vpn-gateway/",
-    "articles/application-gateway/"
+    "articles/vpn-gateway/"
     ],
   "output_folder": "output/",
   "compare": {
@@ -68,12 +58,12 @@
   },
     "check_dates": false,
     "815path": "E:/GitHub/techcontent/",
-    "removeComment": {
-        "remove": false,
-        "path": "removeCommentOutput/",
-        "matchspace": false,
+  "removeComment": {
+    "remove": false,
+    "path": "removeCommentOutput/",
+    "matchspace": false,
     "mooncakepath": "E:/GitHub/azure-content-mooncake-pr/"
-    },
+  },
     "updateLinks": false,
     "addComment": {
         "add": false,

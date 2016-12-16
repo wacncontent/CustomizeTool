@@ -1,19 +1,31 @@
-updated docs: 16
-articles/app-service-web/app-service-app-service-environment-create-ilb-ase-resourcemanager.md
-articles/app-service-web/app-service-app-service-environment-intro.md
-articles/app-service-web/app-service-web-app-azure-resource-manager-powershell.md
-articles/app-service-web/app-service-web-configure-an-app-service-environment.md
-articles/app-service-web/app-service-web-eclipse-create-hello-world-web-app.md
-articles/app-service-web/app-service-web-get-started-dotnet.md
-articles/app-service-web/app-service-web-get-started-html.md
-articles/app-service-web/app-service-web-get-started-nodejs.md
-articles/app-service-web/app-service-web-get-started-php.md
-articles/app-service-web/app-service-web-get-started-python.md
-articles/app-service-web/app-service-web-get-started.md
-articles/app-service-web/app-service-web-how-to-create-an-app-service-environment.md
-articles/app-service-web/app-service-web-nodejs-get-started.md
-articles/app-service-web/app-service-web-nodejs-sails.md
-articles/app-service-web/web-sites-streaming-logs-and-console.md
-articles/app-service-web/web-sites-traffic-manager-custom-domain-name.md
+updated docs: 26
+articles/app-service-web/app-service-app-service-environment-control-inbound-traffic.md
+articles/app-service-web/app-service-deploy-content-sync.md
+articles/app-service-web/app-service-environment-with-internal-load-balancer.md
+articles/app-service-web/app-service-linux-how-to-create-a-web-app.md
+articles/app-service-web/app-service-linux-intro.md
+articles/app-service-web/app-service-linux-using-nodejs-pm2.md
+articles/app-service-web/app-service-web-intellij-create-hello-world-web-app.md
+articles/app-service-web/app-service-web-staged-publishing-realworld-scenarios.md
+articles/app-service-web/azure-sdk-dotnet-release-notes-2-9.md
+articles/app-service-web/web-sites-java-add-app.md
+articles/app-service-web/web-sites-java-get-started.md
+articles/app-service-web/web-sites-php-enterprise-wordpress.md
+articles/app-service-web/web-sites-scale.md
+
+articles/app-service-web/web-sites-dotnet-deploy-aspnet-mvc-mobile-app.md
+articles/app-service-web/web-sites-dotnet-get-started.md
+articles/app-service-web/web-sites-dotnet-lob-application-adfs.md
+articles/app-service-web/web-sites-dotnet-lob-application-azure-ad.md
+articles/app-service-web/web-sites-dotnet-rest-service-aspnet-api-sql-database.md
+articles/app-service-web/web-sites-dotnet-store-data-mongodb-vm.md
+articles/app-service-web/web-sites-enable-diagnostic-log.md
+articles/app-service-web/web-sites-manage-azure-website.md
+articles/app-service-web/web-sites-python-ptvs-bottle-table-storage.md
+articles/app-service-web/web-sites-python-ptvs-django-mysql.md
+articles/app-service-web/web-sites-python-ptvs-django-sql.md
+articles/app-service-web/web-sites-python-ptvs-flask-table-storage.md
+articles/app-service-web/websites-dotnet-webjobs-sdk-get-started.md
+
 
 updated includes: 0

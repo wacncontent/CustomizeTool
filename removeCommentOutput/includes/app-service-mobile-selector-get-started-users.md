@@ -1,3 +1,4 @@
+
 > [AZURE.SELECTOR]
 - [Android](/documentation/articles/app-service-mobile-android-get-started-users/)
 - [Cordova](/documentation/articles/app-service-mobile-cordova-get-started-users/)

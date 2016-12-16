@@ -1,12 +1,6 @@
-new docs: 4, word count: 7895
-articles/vpn-gateway/vpn-gateway-activeactive-rm-powershell.md
-articles/vpn-gateway/vpn-gateway-highlyavailable.md
-articles/vpn-gateway/vpn-gateway-howto-multi-site-to-site-resource-manager-portal.md
-articles/vpn-gateway/vpn-gateway-howto-point-to-site-classic-azure-portal.md
-
-new includes: 5
-includes/vpn-gateway-about-pricing-include.md
-includes/vpn-gateway-deployment-models-include.md
-includes/vpn-gateway-gwsku-include.md
-includes/vpn-gateway-verify-connection-portal-rm-include.md
-includes/vpn-gateway-verify-connection-ps-rm-include.md
+new docs: 3, word count: 4686
+articles/vpn-gateway/vpn-gateway-classic-resource-manager-migration.md
+articles/vpn-gateway/vpn-gateway-howto-point-to-site-resource-manager-portal.md
+articles/vpn-gateway/vpn-gateway-howto-vnet-vnet-resource-manager-portal.md
+ 
+new includes: 0

@@ -1,3 +1,5 @@
+<!-- deleted in Global -->
+
 1. In the portal, go to **New**, then **Browse**. Select **Virtual network gateways** from the list.
 2. Click **Add**.
 3. Name your gateway. This is not the same as naming a gateway subnet. This is the name of the gateway object. 

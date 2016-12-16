@@ -1,6 +1,5 @@
 
 ## Resources
-
 * [Full WebJobs Resources List](/documentation/articles/websites-webjobs-resources/)
 * [Get Started with the Azure WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk-get-started/)
 * [How to use Azure queue storage with the WebJobs SDK](/documentation/articles/websites-dotnet-webjobs-sdk-storage-queues-how-to/)

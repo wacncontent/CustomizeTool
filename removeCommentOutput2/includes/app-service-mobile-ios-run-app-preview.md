@@ -1,3 +1,4 @@
+<!-- not suitable for Mooncake -->
 
 1. On your Mac, visit the [Azure Management Portal]. Click **Browse All** > **Mobile Apps** > the backend that you just created. In the mobile app settings, click **Quickstart** > **iOS (Objective-C)**. If you prefer Swift, click **Quickstart** > **iOS (Swift)** instead. Under **Download and run your iOS project**, click **Download**. This downloads a complete Xcode project for an app pre-configured to connect to your backend. Open the project using Xcode.
 

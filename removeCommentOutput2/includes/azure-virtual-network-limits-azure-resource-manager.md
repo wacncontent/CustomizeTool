@@ -1,3 +1,5 @@
+<!-- deleted in Global -->
+
 <table cellspacing="0" border="1">
 <tr>
    <th align="left" valign="middle">Resource</th>

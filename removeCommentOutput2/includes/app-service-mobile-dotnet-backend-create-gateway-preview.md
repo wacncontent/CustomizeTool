@@ -1,3 +1,4 @@
+<!-- not suitable for Mooncake -->
 
 Follow these steps to create a new Azure Websites gateway to handle authentication. If you already have a gateway in the same resource group, you do not need to complete this section.
 

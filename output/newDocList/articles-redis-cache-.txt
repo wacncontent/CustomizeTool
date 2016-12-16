@@ -1,3 +1,37 @@
-new docs: 0, word count: 0
+new docs: 26, word count: {word_count_TODO}
+articles/redis-cache/cache-administration.md
+articles/redis-cache/cache-aspnet-output-cache-provider.md
+articles/redis-cache/cache-aspnet-session-state-provider.md
+articles/redis-cache/cache-configure.md
+articles/redis-cache/cache-dotnet-how-to-use-azure-redis-cache.md
+articles/redis-cache/cache-faq.md
+articles/redis-cache/cache-how-to-import-export-data.md
+articles/redis-cache/cache-how-to-monitor.md
+articles/redis-cache/cache-how-to-premium-clustering.md
+articles/redis-cache/cache-how-to-premium-persistence.md
+articles/redis-cache/cache-how-to-premium-vnet.md
+articles/redis-cache/cache-how-to-scale.md
+articles/redis-cache/cache-how-to-troubleshoot.md
+articles/redis-cache/cache-howto-manage-redis-cache-powershell.md
+articles/redis-cache/cache-java-get-started.md
+articles/redis-cache/cache-manage-cli.md
+articles/redis-cache/cache-migrate-to-redis.md
+articles/redis-cache/cache-nodejs-get-started.md
+articles/redis-cache/cache-premium-tier-intro.md
+articles/redis-cache/cache-python-get-started.md
+articles/redis-cache/cache-redis-cache-arm-provision.md
+articles/redis-cache/cache-redis-samples.md
+articles/redis-cache/cache-web-app-arm-with-redis-cache-provision.md
+articles/redis-cache/cache-web-app-howto.md
+articles/redis-cache/index.md
+articles/redis-cache/TOC.md
 
-new includes: 0
+new includes: 8
+includes/cache-deploy-parameters.md
+includes/redis-cache-access-keys.md
+includes/redis-cache-browse.md
+includes/redis-cache-configure-stackexchange-redis-nuget.md
+includes/redis-cache-create.md
+includes/redis-cache-non-ssl-port.md
+includes/redis-cache-premium-create.md
+includes/redis-cache-service-limits.md

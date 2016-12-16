@@ -1,3 +1,5 @@
+<!-- deleted in Global -->
+
 1. Navigate to the **API App** blade for the API app that you want to protect.
 
 2. In the **API App** blade, click **Settings**, and then click **Application settings**.

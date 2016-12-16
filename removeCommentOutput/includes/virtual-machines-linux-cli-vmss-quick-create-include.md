@@ -1,16 +1,15 @@
-If you haven't already, you can get an [Azure subscription trial](/pricing/1rmb-trial/) and the [Azure CLI](/documentation/articles/xplat-cli-install/) [connected to your Azure account](/documentation/articles/xplat-cli-connect/). Once you do, you can run the following commands to quick-create a scale set:
+If you haven't already, you can get an [Azure subscription trial](/pricing/1rmb-trial/) and the [Azure CLI](/documentation/articles/xplat-cli-install/) [connected to your Azure account](/documentation/articles/xplat-cli-connect/). Make sure the Azure CLI is in Resource Manager mode as follows:
 
-```bash
-# make sure we are in Resource Manager mode (/documentation/articles/resource-manager-deployment-model/)
+```azurecli
 azure config mode arm
+```
 
-# quick-create a scale set
-#
-# generic syntax:
-# azure vmss quick-create -n SCALE-SET-NAME -g RESOURCE-GROUP-NAME -l LOCATION -u USERNAME -p PASSWORD -C INSTANCE-COUNT -Q IMAGE-URN
-#
-# example:
-azure vmss quick-create -n negatvmss -g negatvmssrg -l chinanorth -u negat -p P4ssw0rd -C 5 -Q Canonical:UbuntuServer:14.04.3-LTS:latest
+Now create your scale set using the `azure vmss quick-create` command. The following example creates a scale set named `myVMSS` with 5 VM instances in the resource group named `myResourceGroup`:
+
+```azurecli
+azure vmss quick-create -n myVMSS -g myResourceGroup -l chinanorth \
+    -u ops -p P@ssw0rd! \
+    -C 5 -Q Canonical:UbuntuServer:14.04.3-LTS:latest
 ```
 
 If you want to customize the location or image-urn, please look into the commands `azure location list` and `azure vm image {list-publishers|list-offers|list-skus|list|show}`.
@@ -30,7 +29,8 @@ line=$(azure network lb list -g negatvmssrg | grep negatvmssrg)
 split_line=( $line )
 lb_name=${split_line[1]}
 
-# now that we have the name of the load balancer, we can show the details to find which Public IP (PIP) is associated to it
+# now that we have the name of the load balancer, we can show the details to find which Public IP (PIP) is 
+# associated to it
 #
 # generic syntax:
 # azure network lb show -g RESOURCE-GROUP-NAME -n LOAD-BALANCER-NAME

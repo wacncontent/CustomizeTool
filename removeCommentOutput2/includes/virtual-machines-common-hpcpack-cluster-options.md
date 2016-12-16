@@ -2,4 +2,3 @@ Create and manage a cloud-based high-performance computing (HPC) cluster by taki
 
 For more options to run large-scale parallel, batch, and HPC workloads in Azure, see [Technical resources for batch and high-performance computing](/documentation/articles/big-compute-resources/).
 
-

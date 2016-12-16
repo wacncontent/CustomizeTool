@@ -1,3 +1,4 @@
+<!-- not suitable for Mooncake -->
 
 The following are screen captures from the completed app:
 

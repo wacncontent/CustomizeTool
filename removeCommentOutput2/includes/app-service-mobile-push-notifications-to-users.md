@@ -1,3 +1,5 @@
+<!-- not suitable for Mooncake -->
+
 <!---Use the procedure that matches your backend project type&mdash;either [.NET backend](#dotnet) or [Node.js backend](#nodejs).
 
 ### <a name="dotnet"></a>.NET backend project -->

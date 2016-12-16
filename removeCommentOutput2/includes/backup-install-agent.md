@@ -1,4 +1,4 @@
-## Download, install, and register the Azure Backup agent
+## Download, install, and register the Azure Backup Agent
 
 After creating the Azure Backup vault, an agent should be installed on each of your Windows machines (Windows Server, Windows client, System Center Data Protection Manager server, or Azure Backup Server machine) that enables back up of data and applications to Azure.
 
@@ -12,11 +12,11 @@ After creating the Azure Backup vault, an agent should be installed on each of y
 
     ![Save agent](./media/backup-install-agent/agent.png)
 
-4. Once the agent is installed, double click MARSAgentInstaller.exe to launch the installation of the Azure Backup agent. Choose the installation folder and scratch folder required for the agent. The cache location specified must have free space which is at least 5% of the backup data.
+4. Once the agent is installed, double click MARSAgentInstaller.exe to launch the installation of the Azure Backup Agent. Choose the installation folder and scratch folder required for the agent. The cache location specified must have free space which is at least 5% of the backup data.
 
 5.	If you use a proxy server to connect to the internet, in the **Proxy configuration** screen, enter the proxy server details. If you use an authenticated proxy, enter the user name and password details in this screen.
 
-6.	The Azure Backup agent installs .NET Framework 4.5 and Windows PowerShell (if it’s not available already) to complete the installation.
+6.	The Azure Backup Agent installs .NET Framework 4.5 and Windows PowerShell (if it’s not available already) to complete the installation.
 
 7.	Once the agent is installed, click the **Proceed to Registration** button to continue with the workflow.
 

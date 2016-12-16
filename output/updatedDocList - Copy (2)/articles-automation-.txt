@@ -1,8 +1,12 @@
-updated docs: 5
-articles/automation/automation-hybrid-runbook-worker.md
-articles/automation/automation-manage-send-joblogs-log-analytics.md
-articles/automation/automation-runbook-input-parameters.md
-articles/automation/automation-schedules.md
-articles/automation/automation-solution-startstopvm-psworkflow.md
+updated docs: 8
+articles/automation/automation-dsc-cd-chocolatey.md
+articles/automation/automation-runbook-execution.md
+articles/automation/automation-runbook-settings.md
+articles/automation/automation-runbook-types.md
+articles/automation/automation-sec-configure-aduser-account.md
+articles/automation/automation-security-overview.md
+articles/automation/automation-solution-vm-management.md
+articles/automation/automation-variables.md
+
 
 updated includes: 0

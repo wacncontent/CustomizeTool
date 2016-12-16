@@ -22,6 +22,6 @@ If there is a change in the usage pattern of your data, you can also switch betw
 
 For more details on Blob storage accounts, see [Azure Blob Storage: Cool and Hot tiers](/documentation/articles/storage-blob-storage-tiers/).
 
-Before you can create a storage account, you must have an Azure subscription, which is a plan that gives you access to a variety of Azure services. You can get started with Azure with a [1rmb account](/pricing/1rmb-trial/). Once you decide to purchase a subscription plan, you can choose from a variety of [purchase options](/pricing/purchase-options/). See [Azure Storage Pricing ](/home/features/storage/pricing/) for information on volume pricing.
+Before you can create a storage account, you must have an Azure subscription, which is a plan that gives you access to a variety of Azure services. You can get started with Azure with a [1rmb account](/pricing/1rmb-trial/). Once you decide to purchase a subscription plan, you can choose from a variety of [purchase options](/pricing/purchase-options/). See [Azure Storage Pricing ](/pricing/details/storage/) for information on volume pricing.
 
 To learn how to create a storage account, see [Create a storage account](/documentation/articles/storage-create-storage-account/#create-a-storage-account) for more details. You can create up to 100 uniquely named storage accounts with a single subscription. See [Azure Storage Scalability and Performance Targets](/documentation/articles/storage-scalability-targets/) for details about storage account limits.

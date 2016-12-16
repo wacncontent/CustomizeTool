@@ -1,3 +1,5 @@
+<!-- deleted in Global -->
+
 3. In **Solution Explorer**, right-click the project (not the solution) and select **Add > Azure API App Client**. 
 
 	![](./media/app-service-api-dotnet-add-generated-client/03-add-azure-api-client-v3.png)

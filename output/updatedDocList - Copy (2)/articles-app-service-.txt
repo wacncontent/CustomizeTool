@@ -1,4 +1,9 @@
-updated docs: 1
-articles/app-service/azure-web-sites-web-hosting-plans-in-depth-overview.md
+updated docs: 5
+articles/app-service/app-service-environment-auto-scale.md
+articles/app-service/app-service-high-density-hosting.md
+articles/app-service/app-service-how-works-readme.md
+articles/app-service/app-service-security-readme.md
+articles/app-service/app-service-value-prop-what-is.md
+
 
 updated includes: 0

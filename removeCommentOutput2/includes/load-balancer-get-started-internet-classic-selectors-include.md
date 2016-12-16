@@ -1,6 +1,6 @@
 >[AZURE.SELECTOR]
-- [Azure Management Portal](/documentation/articles/load-balancer-get-started-internet-classic-pportal)
-- [Azure Management Portal](/documentation/articles/load-balancer-get-started-internet-classic-portal)
-- [PowerShell](/documentation/articles/load-balancer-get-started-internet-classic-ps)
-- [Azure CLI](/documentation/articles/load-balancer-get-started-internet-classic-cli)
-- [Azure Cloud Services](/documentation/articles/load-balancer-get-started-internet-classic-cloud)
+- [Azure Portal](load-balancer-get-started-internet-classic-pportal.md)
+- [Azure classic Portal](load-balancer-get-started-internet-classic-portal.md)
+- [PowerShell](load-balancer-get-started-internet-classic-ps.md)
+- [Azure CLI](load-balancer-get-started-internet-classic-cli.md)
+- [Azure Cloud Services](load-balancer-get-started-internet-classic-cloud.md)

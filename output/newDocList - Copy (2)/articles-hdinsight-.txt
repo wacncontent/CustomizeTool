@@ -1,6 +1,16 @@
-new docs: 2, word count: {word_count_TODO}
-articles/hdinsight/hdinsight-apache-spark-zeppelin-notebook.md
-articles/hdinsight/hdinsight-hadoop-use-interactive-hive.md
+new docs: 12, word count: {word_count_TODO}
+articles/hdinsight/hdinsight-apache-kafka-get-started.md
+articles/hdinsight/hdinsight-apache-kafka-introduction.md
+articles/hdinsight/hdinsight-apache-kafka-mirroring.md
+articles/hdinsight/hdinsight-apache-spark-use-with-data-lake-store.md
+articles/hdinsight/hdinsight-apache-spark-with-kafka.md
+articles/hdinsight/hdinsight-apache-storm-with-kafka.md
+articles/hdinsight/hdinsight-domain-joined-configure-use-powershell.md
+articles/hdinsight/hdinsight-domain-joined-configure.md
+articles/hdinsight/hdinsight-domain-joined-introduction.md
+articles/hdinsight/hdinsight-domain-joined-manage.md
+articles/hdinsight/hdinsight-domain-joined-run-hive.md
+articles/hdinsight/hdinsight-hadoop-use-mapreduce-dotnet-sdk.md
 
 new includes: 1
-includes/hdinsight-access-control-requirements.md
+includes/hdinsight-storm-scpdotnet-version.md

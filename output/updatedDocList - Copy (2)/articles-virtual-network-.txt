@@ -1,7 +1,38 @@
-updated docs: 3
+updated docs: 33
+articles/virtual-network/resource-groups-networking.md
+articles/virtual-network/virtual-network-create-udr-arm-cli.md
+articles/virtual-network/virtual-network-create-udr-arm-ps.md
+articles/virtual-network/virtual-network-create-udr-arm-template.md
+articles/virtual-network/virtual-network-create-udr-classic-cli.md
+articles/virtual-network/virtual-network-create-udr-classic-ps.md
+articles/virtual-network/virtual-network-deploy-multinic-arm-cli.md
+articles/virtual-network/virtual-network-deploy-multinic-arm-ps.md
+articles/virtual-network/virtual-network-deploy-multinic-arm-template.md
+articles/virtual-network/virtual-network-deploy-multinic-classic-cli.md
+articles/virtual-network/virtual-network-deploy-multinic-classic-ps.md
+articles/virtual-network/virtual-network-deploy-static-pip-arm-cli.md
+articles/virtual-network/virtual-network-deploy-static-pip-arm-portal.md
+articles/virtual-network/virtual-network-deploy-static-pip-arm-ps.md
+articles/virtual-network/virtual-network-deploy-static-pip-arm-template.md
+articles/virtual-network/virtual-network-disaster-recovery-guidance.md
 articles/virtual-network/virtual-network-ip-addresses-overview-arm.md
-articles/virtual-network/virtual-network-peering-overview.md
-articles/virtual-network/virtual-networks-create-nsg-arm-ps.md
+articles/virtual-network/virtual-network-ip-addresses-overview-classic.md
+articles/virtual-network/virtual-network-manage-nsg-arm-cli.md
+articles/virtual-network/virtual-network-manage-nsg-arm-portal.md
+articles/virtual-network/virtual-network-manage-nsg-arm-ps.md
+articles/virtual-network/virtual-network-multiple-ip-addresses-powershell.md
+articles/virtual-network/virtual-network-network-interface-overview.md
+articles/virtual-network/virtual-networks-create-nsg-arm-template.md
+articles/virtual-network/virtual-networks-create-vnet-arm-cli.md
+articles/virtual-network/virtual-networks-create-vnet-arm-pportal.md
+articles/virtual-network/virtual-networks-create-vnet-arm-ps.md
+articles/virtual-network/virtual-networks-create-vnet-arm-template-click.md
+articles/virtual-network/virtual-networks-instance-level-public-ip.md
+articles/virtual-network/virtual-networks-multiple-nics.md
+articles/virtual-network/virtual-networks-nsg.md
+articles/virtual-network/virtual-networks-overview.md
+articles/virtual-network/virtual-networks-reserved-public-ip.md
+
 
 updated includes: 1
-includes/virtual-networks-vnet-faq-include.md
+includes/azure-virtual-network-limits.md

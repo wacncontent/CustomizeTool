@@ -1,4 +1,4 @@
-
+<!-- not suitable for Mooncake -->
 
 The mobile app project lets you to run your new mobile app backend locally. This makes it easy to debug your service code before you even publish it to Azure.
 

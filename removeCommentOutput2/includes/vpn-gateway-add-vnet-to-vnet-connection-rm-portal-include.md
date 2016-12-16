@@ -1,3 +1,5 @@
+<!-- deleted in Global -->
+
 When adding a VNet-to-VNet connection, verify that both of your virtual networks have a virtual network gateway and that your virtual networks do not have any overlapping address ranges.
 
 1. From the **Virtual networks** blade, locate your virtual network and click to open the blade. On the blade, you will see your gateway listed as a *Connected device*. You can also configure settings directly from your virtual network gateway without first expanding the VNet.
