@@ -1,3 +1,5 @@
+> **Note**: This tool has been abandoned. The functionality has been migrated in to [this tool](https://github.com/wacncontent/SourceTreeScript)
+
 **CustomizeTool** is a text process tool (replace , delete) **based on your own rules**.
 
 ## Support for
